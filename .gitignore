@@ -1,6 +1,10 @@
 bin/
 obj/
 _ReSharper*
+*.Cache
 *.pidb
 *.suo
 *.user
+libmonobjc.dylib
+runtime
+monobjc.h
