@@ -1,0 +1,56 @@
+Monobjc Tools
+=============
+
+This repository contains a set of tools used by the other Monobjc projects:
+- A class generator (Monobjc.Generator)
+- A general purpose library (Monobjc.Tools)
+- A set of NAnt tasks (Monobjc.NAnt)
+- A set of MSBuild tasks (Monobjc.MSBuild)
+
+-- Monobjc.Generator --
+-----------------------
+
+This project contains the class generator used by the Monobjc Project to provide
+the wrappers around Mac OS X frameworks.
+
+The generator crawls the Apple documentation and extracts all the class and
+protocol information. Once this information is extracted, the C# wrappers are
+generated with full documentation.
+
+The tool can be invoked on the command line.
+
+On Windows, the following command will launch the tool:
+
+    %> MonobjcGenerator.exe
+
+On Unix with Mono installed, the following command will launch the tool:
+
+    %> mono MonobjcGenerator.exe
+
+The tool embed an help that contains the commands and the options.
+
+-- Monobjc.Generator --
+-----------------------
+
+This project contains a set of classes used by other Monobjc projects. They provide
+object-oriented access to many Mac OS utilities and wraps complex behavior as well
+as complex file parsing.
+
+-- Monobjc.NAnt --
+-----------------------
+
+This set of tasks is merely a wrapper around the tools to allow their use within
+a NAnt script.
+
+-- Monobjc.MSBuild --
+-----------------------
+
+This set of tasks is merely a wrapper around the tools to allow their use within
+a MSBuild script.
+
+What else ?
+===========
+
+If you have any comments or queries, please send them to laurent [dot] etiemble [at] monobjc.net.
+
+This software is licenced under the GPL licence (see GPL.rtf).

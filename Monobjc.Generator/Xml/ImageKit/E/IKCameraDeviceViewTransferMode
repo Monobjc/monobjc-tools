@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Override="false" Flags="false">
+  <Summary>
+    <Line>These constants specify the transfer mode used by the camera view. These constants are used by mode.</Line>
+  </Summary>
+  <MinAvailability>Mac OS X v10.6</MinAvailability>
+  <Name>IKCameraDeviceViewTransferMode</Name>
+  <Namespace>ImageKit</Namespace>
+  <BaseType>int</BaseType>
+  <MixedType>int,long</MixedType>
+  <Values>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>Transferred files will be saved to disk by the delegate.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.6</MinAvailability>
+      <Name>IKCameraDeviceViewTransferModeFileBased</Name>
+      <Value>0</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>Transferred files will be supplied to the delegate as an NSData object.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.6</MinAvailability>
+      <Name>IKCameraDeviceViewTransferModeMemoryBased</Name>
+      <Value></Value>
+    </EnumerationValue>
+  </Values>
+</Enumeration>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Override="false" Flags="false">
+  <Summary>
+    <Line>Types of candidates windows provide by the Input Method Kit.</Line>
+  </Summary>
+  <MinAvailability>Mac OS X v10.5</MinAvailability>
+  <Name>IMKCandidatePanelType</Name>
+  <Namespace>InputMethodKit</Namespace>
+  <BaseType>uint</BaseType>
+  <Values>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>A window that displays one column and can scroll if necessary.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.5</MinAvailability>
+      <Name>kIMKSingleColumnScrollingCandidatePanel</Name>
+      <Value>1</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>A window that displays a grid and can scroll if necessary.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.5</MinAvailability>
+      <Name>kIMKScrollingGridCandidatePanel</Name>
+      <Value>2</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>A window that displays a single row.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.5</MinAvailability>
+      <Name>kIMKSingleRowSteppingCandidatePanel</Name>
+      <Value>3</Value>
+    </EnumerationValue>
+  </Values>
+</Enumeration>

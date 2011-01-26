@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Override="false" Flags="false">
+  <Summary>
+    <Line>These constants specify the display mode of the device browser.</Line>
+  </Summary>
+  <MinAvailability>Mac OS X v10.6</MinAvailability>
+  <Name>IKDeviceBrowserViewDisplayMode</Name>
+  <Namespace>ImageKit</Namespace>
+  <BaseType>int</BaseType>
+  <MixedType>int,long</MixedType>
+  <Values>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>The devices are displayed in a table.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.6</MinAvailability>
+      <Name>IKDeviceBrowserViewDisplayModeTable</Name>
+      <Value>0</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>The devices are displayed in an outline.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.6</MinAvailability>
+      <Name>IKDeviceBrowserViewDisplayModeOutline</Name>
+      <Value></Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>The devices are displayed as icons.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.6</MinAvailability>
+      <Name>IKDeviceBrowserViewDisplayModeIcon</Name>
+      <Value></Value>
+    </EnumerationValue>
+  </Values>
+</Enumeration>

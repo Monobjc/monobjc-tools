@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Flags="true">
+  <Summary>
+  </Summary>
+  <MinAvailability>Mac OS X v10.4</MinAvailability>
+  <Name>QTSampleBufferAudioBufferListOptions</Name>
+  <Namespace>QTKit</Namespace>
+  <BaseType>NSUInteger</BaseType>
+  <MixedType>uint,ulong</MixedType>
+  <Enumerations />
+  <Constants />
+  <Notifications />
+  <Functions />
+  <Values>
+    <EnumerationValue Generate="true">
+      <Summary>
+      </Summary>
+      <MinAvailability>Mac OS X v10.4</MinAvailability>
+      <Name>QTSampleBufferAudioBufferListOptionAssure16ByteAlignment</Name>
+      <Value><![CDATA[(1 << 0)]]></Value>
+    </EnumerationValue>
+  </Values>
+</Enumeration>

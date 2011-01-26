@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Flags="false">
+  <Summary>
+    <Line>The styles available for markup annotations in PDF Kit:</Line>
+  </Summary>
+  <MinAvailability>Mac OS X v10.5</MinAvailability>
+  <MaxAvailability>VERSION</MaxAvailability>
+  <Name>PDFMarkupType</Name>
+  <Namespace>PDFKit</Namespace>
+  <BaseType>int</BaseType>
+  <Enumerations />
+  <Constants />
+  <Notifications />
+  <Functions />
+  <Values>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>Highlight style for the markup.</Line>
+      </Summary>
+      <Name>kPDFMarkupTypeHighlight</Name>
+      <MinAvailability>Mac OS X v10.5</MinAvailability>
+      <Value />
+    </EnumerationValue>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>Strikethrough style for the markup.</Line>
+      </Summary>
+      <Name>kPDFMarkupTypeStrikeOut</Name>
+      <MinAvailability>Mac OS X v10.5</MinAvailability>
+      <Value />
+    </EnumerationValue>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>Underline style for the markup.</Line>
+      </Summary>
+      <Name>kPDFMarkupTypeUnderline</Name>
+      <MinAvailability>Mac OS X v10.5</MinAvailability>
+      <Value />
+    </EnumerationValue>
+  </Values>
+</Enumeration>

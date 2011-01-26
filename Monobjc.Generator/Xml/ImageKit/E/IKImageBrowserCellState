@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Override="false" Flags="false">
+  <Summary>
+    <Line>The possible states for the browser cell. These values are used by the cellState method.</Line>
+  </Summary>
+  <MinAvailability>Mac OS X v10.6</MinAvailability>
+  <Name>IKImageBrowserCellState</Name>
+  <Namespace>ImageKit</Namespace>
+  <BaseType>int</BaseType>
+  <Values>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>Returned until a thumbnail has been created from the represented object.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.6</MinAvailability>
+      <Name>IKImageStateNoImage</Name>
+      <Value>0</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>The thumbnail is invalid. For example, an unsupported image is provided.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.6</MinAvailability>
+      <Name>IKImageStateInvalid</Name>
+      <Value></Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>The receiver’s represented object has been set and the cell is ready to display.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.6</MinAvailability>
+      <Name>IKImageStateReady</Name>
+      <Value></Value>
+    </EnumerationValue>
+  </Values>
+</Enumeration>

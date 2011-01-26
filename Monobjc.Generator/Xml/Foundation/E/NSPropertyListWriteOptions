@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Override="false" Flags="false">
+  <Summary>
+    <Line>The write options should be set to one of the “NSPropertyListMutabilityOptions” constants.</Line>
+  </Summary>
+  <MinAvailability>Mac OS X v10.6</MinAvailability>
+  <Name>NSPropertyListWriteOptions</Name>
+  <Namespace>Foundation</Namespace>
+  <BaseType>uint</BaseType>
+  <MixedType>uint,ulong</MixedType>
+  <Values>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>Causes the returned property list to contain immutable objects.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.2</MinAvailability>
+      <Name>NSPropertyListImmutable</Name>
+      <Value>0</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>Causes the returned property list to have mutable containers but immutable leaves.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.2</MinAvailability>
+      <Name>NSPropertyListMutableContainers</Name>
+      <Value />
+    </EnumerationValue>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>Causes the returned property list to have mutable containers and leaves.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.2</MinAvailability>
+      <Name>NSPropertyListMutableContainersAndLeaves</Name>
+      <Value />
+    </EnumerationValue>
+  </Values>
+</Enumeration>

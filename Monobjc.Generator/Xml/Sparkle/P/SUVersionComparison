@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Protocol xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" nature="P">
+  <Summary>
+    <Line>Managed wrapper for "SUVersionComparison" Objective-C protocol.</Line>
+    <Line>Implement this protocol to provide version comparison facilities for Sparkle.</Line>
+  </Summary>
+  <MinAvailability>Sparkle 1.5b6</MinAvailability>
+  <MaxAvailability>VERSION</MaxAvailability>
+  <Obsolete xsi:nil="true" />
+  <Name>SUVersionComparison</Name>
+  <Namespace>Sparkle</Namespace>
+  <Enumerations />
+  <Constants />
+  <Notifications />
+  <Functions />
+  <Methods>
+    <Method Generate="true" Static="false" GenerateConstructor="true">
+      <Summary>
+        <Line>An abstract method to compare two version strings.</Line>
+      </Summary>
+      <MinAvailability>Sparkle 1.5b6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>CompareVersionToVersion</Name>
+      <Selector>compareVersion:toVersion:</Selector>
+      <Signature>- (NSComparisonResult)compareVersion:(NSString *)versionA toVersion:(NSString *)versionB</Signature>
+      <ReturnType>NSComparisonResult</ReturnType>
+      <Parameters>
+        <Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false">
+          <Summary>
+            <Line>MISSING</Line>
+          </Summary>
+          <Obsolete xsi:nil="true" />
+          <Name>versionA</Name>
+          <Type>NSString</Type>
+        </Parameter>
+        <Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false">
+          <Summary>
+            <Line>MISSING</Line>
+          </Summary>
+          <Obsolete xsi:nil="true" />
+          <Name>versionB</Name>
+          <Type>NSString</Type>
+        </Parameter>
+      </Parameters>
+    </Method>
+  </Methods>
+  <Properties />
+</Protocol>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Protocol xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" nature="P">
+  <Summary />
+  <MinAvailability>Sparkle 1.5b6</MinAvailability>
+  <MaxAvailability>VERSION</MaxAvailability>
+  <Obsolete xsi:nil="true" />
+  <Name>SUAppcastDelegate</Name>
+  <Namespace>Sparkle</Namespace>
+  <Enumerations />
+  <Constants />
+  <Notifications />
+  <Functions />
+  <Methods>
+    <Method Generate="true" Static="false" GenerateConstructor="true">
+      <Summary />
+      <MinAvailability>Sparkle 1.5b6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>AppcastDidFinishLoading</Name>
+      <Selector>appcastDidFinishLoading:</Selector>
+      <Signature>- (void)appcastDidFinishLoading:(SUAppcast *)appcast</Signature>
+      <ReturnType>void</ReturnType>
+      <Parameters>
+        <Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false">
+          <Summary>
+            <Line>MISSING</Line>
+          </Summary>
+          <Obsolete xsi:nil="true" />
+          <Name>appcast</Name>
+          <Type>SUAppcast</Type>
+        </Parameter>
+      </Parameters>
+    </Method>
+    <Method Generate="true" Static="false" GenerateConstructor="true">
+      <Summary />
+      <MinAvailability>Sparkle 1.5b6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>AppcastFailedToLoadWithError</Name>
+      <Selector>appcast:failedToLoadWithError:</Selector>
+      <Signature>- (void)appcast:(SUAppcast *)appcast failedToLoadWithError:(NSError *)error</Signature>
+      <ReturnType>void</ReturnType>
+      <Parameters>
+        <Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false">
+          <Summary>
+            <Line>MISSING</Line>
+          </Summary>
+          <Obsolete xsi:nil="true" />
+          <Name>appcast</Name>
+          <Type>SUAppcast</Type>
+        </Parameter>
+        <Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false">
+          <Summary>
+            <Line>MISSING</Line>
+          </Summary>
+          <Obsolete xsi:nil="true" />
+          <Name>error</Name>
+          <Type>NSError</Type>
+        </Parameter>
+      </Parameters>
+    </Method>
+  </Methods>
+  <Properties />
+  <DelegateFor>SUAppcast</DelegateFor>
+</Protocol>
