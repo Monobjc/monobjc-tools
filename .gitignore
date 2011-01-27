@@ -1,4 +1,6 @@
 bin/
+build/
+dist/
 obj/
 _ReSharper*
 *.Cache
@@ -6,5 +8,5 @@ _ReSharper*
 *.suo
 *.user
 libmonobjc.dylib
-runtime
 monobjc.h
+runtime
