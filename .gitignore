@@ -5,8 +5,10 @@ obj/
 _ReSharper*
 *.Cache
 *.pidb
+*.resources
 *.suo
 *.user
+*.userprefs
 libmonobjc.dylib
 monobjc.h
 runtime
