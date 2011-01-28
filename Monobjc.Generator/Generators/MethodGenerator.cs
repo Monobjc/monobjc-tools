@@ -270,6 +270,7 @@ namespace Monobjc.Tools.Generator.Generators
             // Append parameters' comments
             foreach (MethodParameterEntity methodParameterEntity in methodEntity.Parameters.Where(p => p.Generate))
             {
+                // TODO
                 this.Writer.WriteLineFormat(2, "/// <param name=\"{0}\">{1}</param>", methodParameterEntity.Name.Trim('@'), methodParameterEntity.Summary.Count > 0 ? methodParameterEntity.Summary[0] : "MISSING");
             }
 

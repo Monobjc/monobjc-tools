@@ -212,9 +212,15 @@ namespace Monobjc.Tools.Generator.Generators
                 name = name.Substring(typedEntity.Name.Length);
             }
 
-            // TODO: Compute framework path...
+            // TODO: Compute proper framework path...
             // TODO: Test with embedded frameworks...
             this.Writer.WriteLineFormat(2, "[DllImport(\"{0}\", EntryPoint=\"{1}\")]", GetFrameworkPath(typedEntity.Namespace), functionEntity.Name);
+
+            // Add custom tag for return type
+            if (TypeManager.HasClass(functionEntity.ReturnType))
+            {
+                this.Writer.WriteLineFormat(2, "[return : MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof (IdMarshaler<{0}>))]", functionEntity.ReturnType);
+            }
 
             StringBuilder signature = new StringBuilder();
             signature.AppendFormat("{0} static extern {1} {2}(", isPublic ? "public" : "private", functionEntity.ReturnType, name + suffix ?? String.Empty);
@@ -229,7 +235,12 @@ namespace Monobjc.Tools.Generator.Generators
                 }
                 else
                 {
-                    parameters.Add(GetTypeSignature(methodParameterEntity));
+                    String parameter = GetTypeSignature(methodParameterEntity);
+                    if (TypeManager.HasClass(methodParameterEntity.Type))
+                    {
+                        parameter = String.Format("[MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof (IdMarshaler<{0}>))]", methodParameterEntity.Type) + " " + parameter;
+                    }
+                    parameters.Add(parameter);
                 }
             }
             signature.Append(String.Join(", ", parameters.ToArray()));

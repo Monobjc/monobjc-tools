@@ -51,6 +51,12 @@ namespace Monobjc.Tools.Generator.Generators
         public static String License { get; set; }
 
         /// <summary>
+        ///   Gets or sets the type manager.
+        /// </summary>
+        /// <value>The type manager.</value>
+        public static TypeManager TypeManager { get; set; }
+
+        /// <summary>
         ///   Gets or sets the writer.
         /// </summary>
         /// <value>The writer.</value>

@@ -29,6 +29,11 @@ namespace Monobjc.Tools.Generator.Utilities
 
         private readonly Dictionary<String, String> Mappings = new Dictionary<String, String>();
 
+        /// <summary>
+        /// Converts the name.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
         public string ConvertName(string name)
         {
             switch (name)
@@ -52,6 +57,11 @@ namespace Monobjc.Tools.Generator.Utilities
             }
         }
 
+        /// <summary>
+        /// Converts the type.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns></returns>
         public String ConvertType(String type)
         {
             bool isOut;
@@ -60,6 +70,14 @@ namespace Monobjc.Tools.Generator.Utilities
             return this.ConvertType(type, out isOut, out isByRef, out isBlock);
         }
 
+        /// <summary>
+        /// Converts the type.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="isOut">if set to <c>true</c> [is out].</param>
+        /// <param name="isByRef">if set to <c>true</c> [is by ref].</param>
+        /// <param name="isBlock">if set to <c>true</c> [is block].</param>
+        /// <returns></returns>
         public String ConvertType(String type, out bool isOut, out bool isByRef, out bool isBlock)
         {
             isOut = false;
@@ -142,6 +160,10 @@ namespace Monobjc.Tools.Generator.Utilities
             return type;
         }
 
+        /// <summary>
+        /// Sets the mappings.
+        /// </summary>
+        /// <param name="file">The file.</param>
         public void SetMappings(String file)
         {
             this.Mappings.Clear();
@@ -160,11 +182,27 @@ namespace Monobjc.Tools.Generator.Utilities
             }
         }
 
+        /// <summary>
+        /// Sets the classes.
+        /// </summary>
+        /// <param name="classes">The classes.</param>
         public void SetClasses(IEnumerable<string> classes)
         {
             this.Classes.Clear();
 
             this.Classes.AddRange(classes);
+        }
+
+        /// <summary>
+        /// Determines whether the specified instance has class.
+        /// </summary>
+        /// <param name="class">The @class.</param>
+        /// <returns>
+        /// 	<c>true</c> if the specified instance has class; otherwise, <c>false</c>.
+        /// </returns>
+        public bool HasClass(string @class)
+        {
+            return this.Classes.Contains(@class);
         }
     }
 }

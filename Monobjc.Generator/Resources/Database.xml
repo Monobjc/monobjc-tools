@@ -2787,6 +2787,9 @@
   <Entry ns="SecurityFoundation" nature="C" name="SFAuthorization.Deprecated" style="Cocoa" file="SFAuthorization.Deprecated">
     <url>http://developer.apple.com/library/mac/documentation/Security/Reference/SecurityFoundationFramework/Classes/SFAuthorization_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</url>
   </Entry>
+  <Entry ns="SecurityFoundation" nature="T" name="KeychainServices" style="Cocoa" file="KeychainServices">
+  <url>http://developer.apple.com/library/mac/documentation/Security/Reference/keychainservices/Reference/reference.html</url>
+  </Entry>
   <Entry ns="SecurityFoundation" nature="T" name="SecurityFoundationFramework.Functions" style="Cocoa" file="SecurityFoundationFramework.Functions">
     <url>http://developer.apple.com/library/mac/documentation/Security/Reference/authorization_ref/Reference/reference.html</url>
   </Entry>

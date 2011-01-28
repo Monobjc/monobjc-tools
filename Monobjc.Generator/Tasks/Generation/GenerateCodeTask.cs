@@ -48,8 +48,15 @@ namespace Monobjc.Tools.Generator.Tasks.Generation
             this.usings = new Dictionary<string, List<string>>();
             this.statistics = new GenerationStatistics();
 
+            IEnumerable<String> names = (from e in this.Entries
+                                         where e.Nature == TypedEntity.CLASS_NATURE ||
+                                               e.Nature == TypedEntity.PROTOCOL_NATURE
+                                         select e.Name);
+            this.TypeManager.SetClasses(names);
+
             this.LoadLicense();
             BaseGenerator.License = GenerationHelper.License;
+            BaseGenerator.TypeManager = this.TypeManager;
             this.LoadUsings();
             this.LoadMixedTypes();
 
