@@ -1,9 +1,11 @@
 <?xml version="1.0"?>
 <project name="Monobjc Tools" default="build" basedir=".">
+  <description>Monobjc Tools Build File</description>
 
   <!-- Define some properties if they are missing -->
-  <property name="build.dir" value="build" unless="${property::exists('build.dir')}"/>
-  <property name="dist.dir" value="dist" unless="${property::exists('property.dir')}"/>
+  <property name="build.dir" value="${path::get-full-path('./build')}" unless="${property::exists('build.dir')}"/>
+  <property name="dist.dir" value="${path::get-full-path('./dist')}" unless="${property::exists('dist.dir')}"/>
+  <property name="binaries.dir" value="${dist.dir}" unless="${property::exists('binaries.dir')}"/>
   <property name="testing" value="false" unless="${property::exists('testing')}"/>
   <property name="embedded.dir" value="Monobjc.Tools/Embedded" />
 
@@ -13,30 +15,31 @@
   <target name="update" depends="prepare">
 
     <!-- Create/Embed header file -->
-    <property name="src.file" value="${dist.dir}/monobjc.h"/>
+    <property name="src.file" value="${binaries.dir}/monobjc.h"/>
     <property name="dst.file" value="${embedded.dir}/monobjc.h" />
     <if test="${file::exists(src.file)}">
       <copy file="${src.file}" tofile="${dst.file}" unless="${file::up-to-date(src.file, dst.file)}"/>
     </if>
     <touch file="${dst.file}" unless="${file::exists(dst.file)}"/>
-	
+
     <!-- Create/Embed runtime executables -->
     <foreach item="String" in="10.5,10.6" delim=" ," property="version">
       <mkdir dir="${embedded.dir}/${version}" />
 
-      <property name="src.file" value="${dist.dir}/${version}/runtime"/>
+      <property name="src.file" value="${binaries.dir}/${version}/runtime"/>
       <property name="dst.file" value="${embedded.dir}/${version}/runtime"/>
       <if test="${file::exists(src.file)}">
         <copy file="${src.file}" tofile="${dst.file}" unless="${file::up-to-date(src.file, dst.file)}"/>
       </if>
       <touch file="${dst.file}" unless="${file::exists(dst.file)}"/>
 
-      <property name="src.file" value="${dist.dir}/${version}/libmonobjc.dylib"/>
+      <property name="src.file" value="${binaries.dir}/${version}/libmonobjc.dylib"/>
       <property name="dst.file" value="${embedded.dir}/${version}/libmonobjc.dylib"/>
       <if test="${file::exists(src.file)}">
         <copy file="${src.file}" tofile="${dst.file}" unless="${file::up-to-date(src.file, dst.file)}"/>
       </if>
       <touch file="${dst.file}" unless="${file::exists(dst.file)}"/>
+
     </foreach>
 
   </target>
@@ -51,7 +54,6 @@
 
     <!-- Create the assembly info -->
     <property name="version" value="3.0"/>
-    <property name="revision" value="${timespan::get-days(datetime::now() - datetime::parse('2007-07-01'))}"/>
     <property name="version.info" value="${build.dir}/GeneratedAssemblyInfo.${version}.${revision}.0.cs"/>
     <asminfo output="${version.info}" language="CSharp" unless="${file::exists(version.info)}">
       <imports>
@@ -127,12 +129,15 @@
   <target name="prepare">
     <mkdir dir="${build.dir}"/>
     <mkdir dir="${dist.dir}"/>
+
+    <!-- Compute the revision -->
+    <property name="revision" value="${timespan::get-days(datetime::now() - datetime::parse('2007-07-01'))}"/>
   </target>
 
   <!-- Clean the directories -->
   <target name="clean">
-    <delete dir="${build.dir}"/>
-    <delete dir="${dist.dir}"/>
+    <delete dir="${build.dir}" failonerror="false" />
+    <delete dir="${dist.dir}" failonerror="false" />
   </target>
 
 </project>
