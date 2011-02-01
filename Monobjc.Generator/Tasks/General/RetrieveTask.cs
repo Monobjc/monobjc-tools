@@ -18,17 +18,16 @@
 using System;
 using System.IO;
 using Monobjc.Tools.Generator.Model.Database;
-using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Tasks.General
 {
-    public class ValidateTask : BaseTask
+    public class RetrieveTask : BaseTask
     {
         /// <summary>
-        ///   Initializes a new instance of the <see cref = "ValidateTask" /> class.
+        ///   Initializes a new instance of the <see cref = "RetrieveTask" /> class.
         /// </summary>
         /// <param name = "name">The name.</param>
-        public ValidateTask(String name) : base(name) {}
+        public RetrieveTask(String name) : base(name) {}
 
         /// <summary>
         ///   Executes this instance.
@@ -37,26 +36,24 @@ namespace Monobjc.Tools.Generator.Tasks.General
         {
             this.DisplayBanner();
 
-            // Print entry with no URL
-            foreach (Entry entry in this.EntriesWithEmptyUrls)
-            {
-                Console.WriteLine("No URL for '{0}'", entry.Name);
-            }
-
-            // Print entry with invalid URL
+            // Download entry with valid URL
             foreach (Entry entry in this.EntriesWithUrls)
             {
-                Console.WriteLine("Validating '{0}'...", entry.Name);
-
                 if (String.Equals(entry.RemoteUrl, "N/A"))
                 {
                     continue;
                 }
-                if (File.Exists(entry.RemoteUrl)) {
+
+                String htmlFile = entry[EntryFolderType.Html];
+                if (!this.Context.Force && File.Exists(htmlFile))
+                {
                     continue;
                 }
                 
-                Console.WriteLine("Invalid URL for '{0}'", entry.Name);
+                if (File.Exists(entry.RemoteUrl)) {
+                    Console.WriteLine("Retrieving '{0}'...", entry.Name);
+                    File.Copy(entry.RemoteUrl, htmlFile);
+                }
             }
         }
     }

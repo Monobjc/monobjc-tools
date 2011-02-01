@@ -43,7 +43,7 @@ namespace Monobjc.Tools.Generator
             Console.WriteLine();
             Console.WriteLine("\t--help        : Display this help");
             Console.WriteLine("\t--tasks=value : A comma separated list of task to execute");
-            Console.WriteLine("\t                The available tasks are: download, extract, generate");
+            Console.WriteLine("\t                The available tasks are: 'retrieve', 'extract', 'generate'");
             Console.WriteLine("\t--dir=value   : The directory where to copy generated code");
             Console.WriteLine();
         }
@@ -78,14 +78,11 @@ namespace Monobjc.Tools.Generator
             {
                 switch (task)
                 {
-                    case "update":
-                        manager.AddTask(new UpdateTask("Update"));
-                        break;
                     case "validate":
                         manager.AddTask(new ValidateTask("Validate"));
                         break;
-                    case "download":
-                        manager.AddTask(new DownloadTask("Download"));
+                    case "retrieve":
+                        manager.AddTask(new RetrieveTask("Download"));
                         break;
                     case "extract":
                         manager.AddTask(new CleanClassicTask("Clean Classic HTML"));

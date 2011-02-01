@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Entities>
   <Framework name="AddressBook" usings="Foundation,AppKit" assembly="Monobjc.AddressBook">
     <Types>
@@ -339,56 +339,56 @@
         <Patch>Functions[CGShadingGetTypeID].Generate=false</Patch>
       </Type>
       <Type name="CTFont">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CTFontManager">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CTFontCollection">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CTFontDescriptor">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CTFrame">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CTFramesetter">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CTGlyphInfo">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CTLine">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CTParagraphStyle">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CTRun">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CTTextTab">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CTTypesetter">
-        <Patch>Generate=false</Patch>
+
       </Type>
 
       <Type name="CGContext.Deprecated">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CGDataProvider.Deprecated">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CGFont.Deprecated">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CGGLContext.Deprecated">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CGPDFDocument.Deprecated">
-        <Patch>Generate=false</Patch>
+
       </Type>
 
     </Types>
@@ -1859,142 +1859,142 @@ enum {]]>
   <Framework name="CoreFoundation" usings="Foundation" assembly="Monobjc.Foundation">
     <Types>
       <Type name="CFAllocator">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFArray">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFAttributedString">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFBag">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFBinaryHeap">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFBitVector">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFBoolean">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFBundle">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFCalendar">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFCharacterSet">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFData">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFDate">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFDateFormatter">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFDictionary">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFError">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFFileDescriptor">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFLocale">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFMachPort">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFMessagePort">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFMutableArray">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFMutableAttributedString">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFMutableBag">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFMutableBitVector">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFMutableCharacterSet">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFMutableData">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFMutableDictionary">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFMutableSet">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFMutableString">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFNotificationCenter">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFNull">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFNumber">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFNumberFormatter">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFPlugIn">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFPlugInInstance">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFPropertyList">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFReadStream">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFRunLoop">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFRunLoopObserver">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFRunLoopSource">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFRunLoopTimer">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFSet">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFSocket">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFString">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFStringTokenizer">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFTimeZone">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFTree">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFType">
         <Patch>Functions[CFCopyTypeIDDescription].Generate=false</Patch>
@@ -2003,25 +2003,25 @@ enum {]]>
         <Patch>Functions[CFHash].Generate=false</Patch>
       </Type>
       <Type name="CFURL">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFUserNotification">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFUUID">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFWriteStream">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFXMLNode">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFXMLParser">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="CFXMLTree">
-        <Patch>Generate=false</Patch>
+
       </Type>
     </Types>
     <Structures>
@@ -2059,13 +2059,13 @@ enum {]]>
   <Framework name="CoreMIDI" usings="Foundation" assembly="Monobjc.CoreMIDI">
     <Types>
       <Type name="MIDIServices">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="MIDISetup">
-        <Patch>Generate=false</Patch>
+
       </Type>
       <Type name="MIDIThruConnection">
-        <Patch>Generate=false</Patch>
+
       </Type>
     </Types>
   </Framework>
@@ -2175,46 +2175,46 @@ enum {]]>
         <Patch>AdditionFor=DRCDTextBlock</Patch>
       </Class>
       <Class name="DRContentFile_Header">
-        <Patch>Generate=false</Patch>
+
       </Class>
       <Class name="DRContentFolder_Header">
-        <Patch>Generate=false</Patch>
+
       </Class>
       <Class name="DRContentObject_Header">
-        <Patch>Generate=false</Patch>
+
       </Class>
       <Class name="DRContentProperties_Header">
-        <Patch>Generate=false</Patch>
+
       </Class>
       <Class name="DRContentTrack_Header">
-        <Patch>Generate=false</Patch>
+
       </Class>
       <Class name="DRCoreBurn_Header">
-        <Patch>Generate=false</Patch>
+
       </Class>
       <Class name="DRCoreCDText_Header">
-        <Patch>Generate=false</Patch>
+
       </Class>
       <Class name="DRCoreDevice_Header">
-        <Patch>Generate=false</Patch>
+
       </Class>
       <Class name="DRCoreErase_Header">
-        <Patch>Generate=false</Patch>
+
       </Class>
       <Class name="DRCoreErrors_Header">
-        <Patch>Generate=false</Patch>
+
       </Class>
       <Class name="DRCoreNotifications_Header">
-        <Patch>Generate=false</Patch>
+
       </Class>
       <Class name="DRCoreObject_Header">
-        <Patch>Generate=false</Patch>
+
       </Class>
       <Class name="DRCoreStatus_Header">
-        <Patch>Generate=false</Patch>
+
       </Class>
       <Class name="DRCoreTrack_Header">
-        <Patch>Generate=false</Patch>
+
       </Class>
       <Class name="DRDevice">
       </Class>
@@ -2325,7 +2325,7 @@ enum {]]>
         </Replace>
       </Class>
       <Class name="DRStatus_Header">
-        <Patch>Generate=false</Patch>
+
       </Class>
       <Class name="DRTrack">
       </Class>
@@ -3977,16 +3977,16 @@ enum]]>
       </Protocol>
 
       <Protocol name="NSKeyValueCoding.Deprecated">
-        <Patch>Generate=false</Patch>
+
       </Protocol>
       <Protocol name="NSKeyValueObserving.Deprecated">
-        <Patch>Generate=false</Patch>
+
       </Protocol>
       <Protocol name="NSObjCTypeSerializationCallBack.Deprecated">
-        <Patch>Generate=false</Patch>
+
       </Protocol>
       <Protocol name="NSURLHandleClient.Deprecated">
-        <Patch>Generate=false</Patch>
+
       </Protocol>
 
     </Protocols>

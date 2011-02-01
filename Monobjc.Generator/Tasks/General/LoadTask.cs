@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -103,12 +103,11 @@ namespace Monobjc.Tools.Generator.Tasks.General
             Entry entry = this.Entries.SingleOrDefault(en => en.Nature.Equals(nature) && en.Name.Equals(name));
             if (entry == null)
             {
+                Console.WriteLine("Adding '{0}'...", entry.Name);
                 entry = new Entry();
                 entry.Name = name;
                 this.Entries.Add(entry);
             }
-
-            Console.WriteLine("Adding '{0}'...", entry.Name);
 
             entry.Namespace = framework;
             entry.Nature = nature;

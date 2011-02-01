@@ -142,7 +142,6 @@
     <Compile Include="Tasks\Conversion\Xhtml2XmlTask.cs" />
     <Compile Include="Tasks\Conversion\Html2XhtmlTask.cs" />
     <Compile Include="Tasks\Generation\GenerateInfoTask.cs" />
-    <Compile Include="Tasks\General\UpdateTask.cs" />
     <Compile Include="Tasks\General\ValidateTask.cs" />
     <Compile Include="Tasks\General\LoadTask.cs" />
     <Compile Include="Tasks\Generation\GenerateCodeTask.cs" />
@@ -158,7 +157,7 @@
     <Compile Include="Options\Options.cs" />
     <Compile Include="Utilities\TypeManager.cs" />
     <Compile Include="Tasks\TaskManager.cs" />
-    <Compile Include="Tasks\General\DownloadTask.cs" />
+    <Compile Include="Tasks\General\RetrieveTask.cs" />
     <Compile Include="Tasks\TaskContext.cs" />
     <Compile Include="Tasks\ITask.cs" />
     <Compile Include="Utilities\Extensions.cs" />
@@ -168,8 +167,6 @@
     <Compile Include="Model\Entities\BaseEntity.cs" />
     <Compile Include="Utilities\HtmlCleaner.cs" />
     <Compile Include="Utilities\PathExtensions.cs" />
-    <Compile Include="Utilities\UrlGenerator.cs" />
-    <Compile Include="Utilities\DownloadHelper.cs" />
     <Compile Include="Model\Entities\ClassEntity.cs" />
     <Compile Include="Model\Entities\EnumerationEntity.cs" />
     <Compile Include="Model\Entities\EnumerationValueEntity.cs" />

@@ -33,6 +33,7 @@ namespace Monobjc.Tools.Generator.Generators
     {
         private const string SUFFIX_32 = "_32";
         private const string SUFFIX_64 = "_64";
+        private const string SUFFIX_INNER = "_Inner";
 
         /// <summary>
         ///   Initializes a new instance of the <see cref = "FunctionGenerator" /> class.
@@ -84,7 +85,7 @@ namespace Monobjc.Tools.Generator.Generators
                 {
                     this.GenerateWrapperFunction(typedEntity, functionEntity, null, null, needStorage);
 
-                    this.GenerateNativeFunction(typedEntity, functionEntity, "Inner", false);
+                    this.GenerateNativeFunction(typedEntity, functionEntity, SUFFIX_INNER, false);
                 }
             }
             else
@@ -136,7 +137,7 @@ namespace Monobjc.Tools.Generator.Generators
             }
             else
             {
-                this.GenerateFunctionBody(3, typedEntity, functionEntity, null, needStorage);
+                this.GenerateFunctionBody(3, typedEntity, functionEntity, null, needStorage, SUFFIX_INNER);
             }
 
             this.Writer.WriteLineFormat(2, "}}");
