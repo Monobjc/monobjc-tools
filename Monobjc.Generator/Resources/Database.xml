@@ -58,7 +58,7 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Classes/NSAnimation_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="AppKit" nature="C" name="NSAnimationContext" style="Cocoa" file="NSAnimationContext">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSAnimationContext_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSAnimationContext_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="AppKit" nature="C" name="NSAppleScript_AppKitAdditions" style="Cocoa" file="NSAppleScript_AppKitAdditions">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Classes/NSAppleScript_AppKitAdditions/Reference/Reference.html</url>
@@ -250,7 +250,7 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Classes/NSGlyphInfo_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="AppKit" nature="C" name="NSGradient" style="Cocoa" file="NSGradient">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSGradient_Class/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSGradient_class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="AppKit" nature="C" name="NSGraphicsContext" style="Cocoa" file="NSGraphicsContext">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Classes/NSGraphicsContext_Class/Reference/Reference.html</url>
@@ -370,13 +370,13 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPasteboardItem_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="AppKit" nature="C" name="NSPathCell" style="Cocoa" file="NSPathCell">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPathCell_Class/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPathCell_class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="AppKit" nature="C" name="NSPathComponentCell" style="Cocoa" file="NSPathComponentCell">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPathComponentCell_Class/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPathComponentCell_class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="AppKit" nature="C" name="NSPathControl" style="Cocoa" file="NSPathControl">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPathControl_Class/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPathControl_class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="AppKit" nature="C" name="NSPDFImageRep" style="Cocoa" file="NSPDFImageRep">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPDFImageRep_Class/Reference/Reference.html</url>
@@ -397,10 +397,10 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPopUpButtonCell_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="AppKit" nature="C" name="NSPredicateEditor" style="Cocoa" file="NSPredicateEditor">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPredicateEditor_Class/Reference/NSPredicateEditor.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPredicateEditor_class/Reference/NSPredicateEditor.html</url>
   </Entry>
   <Entry ns="AppKit" nature="C" name="NSPredicateEditorRowTemplate" style="Cocoa" file="NSPredicateEditorRowTemplate">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPredicateEditorRowTemplate_Class/Reference/NSPredicateEditorRowTemplate.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPredicateEditorRowTemplate_class/Reference/NSPredicateEditorRowTemplate.html</url>
   </Entry>
   <Entry ns="AppKit" nature="C" name="NSPrinter" style="Cocoa" file="NSPrinter">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPrinter_Class/Reference/Reference.html</url>
@@ -436,7 +436,7 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Classes/NSResponder_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="AppKit" nature="C" name="NSRuleEditor" style="Cocoa" file="NSRuleEditor">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSRuleEditor_Class/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSRuleEditor_class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="AppKit" nature="C" name="NSRulerMarker" style="Cocoa" file="NSRulerMarker">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Classes/NSRulerMarker_Class/Reference/Reference.html</url>
@@ -622,13 +622,13 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/AppKit/Reference/NSTouch_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="AppKit" nature="C" name="NSTrackingArea" style="Cocoa" file="NSTrackingArea">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSTrackingArea_Class/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSTrackingArea_class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="AppKit" nature="C" name="NSTreeController" style="Cocoa" file="NSTreeController">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTreeController_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="AppKit" nature="C" name="NSTreeNode" style="Cocoa" file="NSTreeNode">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSTreeNode_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSTreeNode_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="AppKit" nature="C" name="NSTypesetter" style="Cocoa" file="NSTypesetter">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Classes/NSTypesetter_Class/Reference/Reference.html</url>
@@ -676,7 +676,7 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSAlertDelegate_Protocol/Reference/Reference.html</url>
   </Entry>
   <Entry ns="AppKit" nature="P" name="NSAnimatablePropertyContainer" style="Cocoa" file="NSAnimatablePropertyContainer">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSAnimatablePropertyContainer_Protocol/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSAnimatablePropertyContainer_protocol/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="AppKit" nature="P" name="NSAnimationDelegate" style="Cocoa" file="NSAnimationDelegate">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSAnimationDelegate_Protocol/Reference/Reference.html</url>
@@ -787,10 +787,10 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPasteboardWriting_Protocol/Reference/Reference.html</url>
   </Entry>
   <Entry ns="AppKit" nature="P" name="NSPathCellDelegate" style="Cocoa" file="NSPathCellDelegate">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPathCellDelegate_Protocol/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPathCellDelegate_protocol/Reference/Reference.html</url>
   </Entry>
   <Entry ns="AppKit" nature="P" name="NSPathControlDelegate" style="Cocoa" file="NSPathControlDelegate">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPathControlDelegate_Protocol/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPathControlDelegate_protocol/Reference/Reference.html</url>
   </Entry>
   <Entry ns="AppKit" nature="P" name="NSPlaceholders" style="Cocoa" file="NSPlaceholders">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSPlaceholders_Protocol/Reference/Reference.html</url>
@@ -1048,10 +1048,10 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Carbon/Reference/CTTypesetterRef/Reference/reference.html</url>
   </Entry>
   <Entry ns="CoreData" nature="C" name="NSAtomicStore" style="Cocoa" file="NSAtomicStore">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSAtomicStore_Class/Reference/NSAtomicStore.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSAtomicStore_class/Reference/NSAtomicStore.html</url>
   </Entry>
   <Entry ns="CoreData" nature="C" name="NSAtomicStoreCacheNode" style="Cocoa" file="NSAtomicStoreCacheNode">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSAtomicStoreCacheNode_Class/Reference/NSAtomicStoreCacheNode.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSAtomicStoreCacheNode_class/Reference/NSAtomicStoreCacheNode.html</url>
   </Entry>
   <Entry ns="CoreData" nature="C" name="NSAttributeDescription" style="Cocoa" file="NSAttributeDescription">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSAttributeDescription_Class/reference.html</url>
@@ -1060,10 +1060,10 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/NSEntityDescription.html</url>
   </Entry>
   <Entry ns="CoreData" nature="C" name="NSEntityMapping" style="Cocoa" file="NSEntityMapping">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSEntityMapping_Class/Reference/NSEntityMapping.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSEntityMapping_class/Reference/NSEntityMapping.html</url>
   </Entry>
   <Entry ns="CoreData" nature="C" name="NSEntityMigrationPolicy" style="Cocoa" file="NSEntityMigrationPolicy">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSEntityMigrationPolicy_Class/NSEntityMigrationPolicy.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSEntityMigrationPolicy_class/NSEntityMigrationPolicy.html</url>
   </Entry>
   <Entry ns="CoreData" nature="C" name="NSExpressionDescription" style="Cocoa" file="NSExpressionDescription">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSExpressionDescription_Class/NSExpressionDescription.html</url>
@@ -1075,7 +1075,7 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSFetchRequest_Class/NSFetchRequest.html</url>
   </Entry>
   <Entry ns="CoreData" nature="C" name="NSFetchRequestExpression" style="Cocoa" file="NSFetchRequestExpression">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSFetchRequestExpression_Class/Reference/NSFetchRequestExpression.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSFetchRequestExpression_class/Reference/NSFetchRequestExpression.html</url>
   </Entry>
   <Entry ns="CoreData" nature="C" name="NSManagedObject" style="Cocoa" file="NSManagedObject">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObject_Class/Reference/NSManagedObject.html</url>
@@ -1090,10 +1090,10 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="CoreData" nature="C" name="NSMappingModel" style="Cocoa" file="NSMappingModel">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSMappingModel_Class/NSMappingModel.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSMappingModel_class/NSMappingModel.html</url>
   </Entry>
   <Entry ns="CoreData" nature="C" name="NSMigrationManager" style="Cocoa" file="NSMigrationManager">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSMigrationManager_Class/Reference/NSMigrationManager.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSMigrationManager_class/Reference/NSMigrationManager.html</url>
   </Entry>
   <Entry ns="CoreData" nature="C" name="NSPersistentStore" style="Cocoa" file="NSPersistentStore">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPersistentStore_Class/NSPersistentStore.html</url>
@@ -1108,7 +1108,7 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/NSPropertyDescription.html</url>
   </Entry>
   <Entry ns="CoreData" nature="C" name="NSPropertyMapping" style="Cocoa" file="NSPropertyMapping">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPropertyMapping_Class/Reference/NSPropertyMapping.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPropertyMapping_class/Reference/NSPropertyMapping.html</url>
   </Entry>
   <Entry ns="CoreData" nature="C" name="NSRelationshipDescription" style="Cocoa" file="NSRelationshipDescription">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/Reference/Reference.html</url>
@@ -1570,7 +1570,7 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSAutoreleasePool_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSBlockOperation" style="Cocoa" file="NSBlockOperation">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSBlockOperation_Class/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSBlockOperation_class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSBundle" style="Cocoa" file="NSBundle">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/Reference/Reference.html</url>
@@ -1609,7 +1609,7 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSCompoundPredicate_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSCondition" style="Cocoa" file="NSCondition">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSCondition_Class/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSCondition_class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSConditionLock" style="Cocoa" file="NSConditionLock">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSConditionLock_Class/Reference/Reference.html</url>
@@ -1711,16 +1711,16 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSFormatter_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSGarbageCollector" style="Cocoa" file="NSGarbageCollector">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSGarbageCollector_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSGarbageCollector_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSGarbageCollector.Deprecated" style="Cocoa" file="NSGarbageCollector.Deprecated">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSGarbageCollector_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSGarbageCollector_class/DeprecationAppendix/AppendixADeprecatedAPI.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSGetCommand" style="Cocoa" file="NSGetCommand">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSGetCommand_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSHashTable" style="Cocoa" file="NSHashTable">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSHashTable_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSHashTable_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSHost" style="Cocoa" file="NSHost">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSHost_Class/Reference/Reference.html</url>
@@ -1774,7 +1774,7 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSMachPort_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSMapTable" style="Cocoa" file="NSMapTable">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSMapTable_Class/Reference/NSMapTable.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSMapTable_class/Reference/NSMapTable.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSMessagePort" style="Cocoa" file="NSMessagePort">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSMessagePort_Class/Reference/Reference.html</url>
@@ -1873,10 +1873,10 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSOperation" style="Cocoa" file="NSOperation">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSOperation_Class/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSOperation_class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSOperationQueue" style="Cocoa" file="NSOperationQueue">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSOperationQueue_Class/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSOperationQueue_class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSOrthography" style="Cocoa" file="NSOrthography">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSOrthography_Class/Reference/Reference.html</url>
@@ -2140,7 +2140,7 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Protocols/NSErrorRecoveryAttempting_Protocol/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="P" name="NSFastEnumeration" style="Cocoa" file="NSFastEnumeration">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSFastEnumeration_Protocol/Reference/NSFastEnumeration.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSFastEnumeration_protocol/Reference/NSFastEnumeration.html</url>
   </Entry>
   <Entry ns="Foundation" nature="P" name="NSKeyedArchiverDelegate" style="Cocoa" file="NSKeyedArchiverDelegate">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSKeyedArchiverDelegate_Protocol/Reference/Reference.html</url>
@@ -2245,13 +2245,13 @@
     <url>N/A</url>
   </Entry>
   <Entry ns="Foundation" nature="T" name="FoundationFramework.Constants" style="Cocoa" file="FoundationFramework.Constants">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Constants/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Constants/Reference/reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="T" name="FoundationFramework.DataTypes" style="Cocoa" file="FoundationFramework.DataTypes">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_DataTypes/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_DataTypes/Reference/reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="T" name="FoundationFramework.Functions" style="Cocoa" file="FoundationFramework.Functions">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/Reference/reference.html</url>
   </Entry>
   <Entry ns="Growl" nature="C" name="GrowlApplicationBridge" style="Cocoa" file="GrowlApplicationBridge">
     <url>N/A</url>
@@ -2275,7 +2275,7 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKFilterBrowserView_Class/IKFilterBrowserView_Reference.html</url>
   </Entry>
   <Entry ns="ImageKit" nature="C" name="IKFilterUIView" style="Cocoa" file="IKFilterUIView">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKFilterUIView_Class/IKFilterUIView_Ref.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKFilterUIView_Class/IKFIlterUIView_Ref.html</url>
   </Entry>
   <Entry ns="ImageKit" nature="C" name="IKImageBrowserCell" style="Cocoa" file="IKImageBrowserCell">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKImageBrowserCell_Class/IKImageBrowserCell.html</url>
@@ -2302,7 +2302,7 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKScannerDeviceView_Class/Reference.html</url>
   </Entry>
   <Entry ns="ImageKit" nature="C" name="IKSlideshow" style="Cocoa" file="IKSlideshow">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKSlideshow/IKSlideshow_Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKSlideShow/IKSlideshow_Reference.html</url>
   </Entry>
   <Entry ns="ImageKit" nature="P" name="IKCameraDeviceViewDelegate" style="Cocoa" file="IKCameraDeviceViewDelegate">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKCameraDeviceViewDelegate_Protocol/Reference.html</url>
@@ -2329,7 +2329,7 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKScannerDeviceViewDelegate_Protocol/Reference.html</url>
   </Entry>
   <Entry ns="ImageKit" nature="P" name="IKSlideshowDataSource" style="Cocoa" file="IKSlideshowDataSource">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKSlideshowDataSource/IKSlideshowDataSource_Ref.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKSlideShowDataSource/IKSlideshowDataSource_ref.html</url>
   </Entry>
   <Entry ns="InputMethodKit" nature="C" name="IMKCandidates" style="Cocoa" file="IMKCandidates">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/IMKCandidates_Class/Reference/IMKCandidates_ref.html</url>
@@ -2353,7 +2353,7 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/IMKTextInput_Protocol/Reference/IMKTextInput_Protocol.html</url>
   </Entry>
   <Entry ns="MobileCoreServices" nature="T" name="UTType" style="Cocoa" file="UTType">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/MobileCoreServices/Reference/UTTypeRef/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/MobileCoreServices/Reference/UTTypeRef/Reference/reference.html</url>
   </Entry>
   <Entry ns="PDFKit" nature="C" name="PDFAction" style="Cocoa" file="PDFAction">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFAction_Class/Reference/Reference.html</url>
@@ -2551,19 +2551,19 @@
     <url>N/A</url>
   </Entry>
   <Entry ns="QTKit" nature="T" name="QTKitFramework.Constants" style="Cocoa" file="QTKitFramework.Constants">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuickTime/Reference/QTKitCaptureConstants_Ref/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuickTime/Reference/QTKitCaptureConstants_Ref/Reference/reference.html</url>
   </Entry>
   <Entry ns="QTKit" nature="T" name="QTKitFramework.DataTypes" style="Cocoa" file="QTKitFramework.DataTypes">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuickTime/Reference/QTKitFramework/Miscellaneous/QTKit_DataTypes/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuickTime/Reference/QTKitFramework/Miscellaneous/QTKit_DataTypes/Reference/reference.html</url>
   </Entry>
   <Entry ns="QTKit" nature="T" name="QTKitFramework.Functions" style="Cocoa" file="QTKitFramework.Functions">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuickTime/Reference/QTKitFramework/Miscellaneous/QTKit_Functions/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuickTime/Reference/QTKitFramework/Miscellaneous/QTKit_Functions/Reference/reference.html</url>
   </Entry>
   <Entry ns="QuartzComposer" nature="C" name="QCComposition" style="Cocoa" file="QCComposition">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/QCComposition_Class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzComposer" nature="C" name="QCCompositionLayer" style="Cocoa" file="QCCompositionLayer">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QCCompositionLayer_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QCCompositionLayer_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzComposer" nature="C" name="QCCompositionParameterView" style="Cocoa" file="QCCompositionParameterView">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/QCCompositionParameterView_Class/Introduction/Introduction.html</url>
@@ -2608,19 +2608,19 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/QCPlugInOutputImageProvider_Protocol/Reference/Reference.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CAAnimation" style="Cocoa" file="CAAnimation">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAAnimation_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAAnimation_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CAAnimationGroup" style="Cocoa" file="CAAnimationGroup">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAAnimationGroup_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAAnimationGroup_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CABasicAnimation" style="Cocoa" file="CABasicAnimation">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CABasicAnimation_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CABasicAnimation_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CAConstraint" style="Cocoa" file="CAConstraint">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAConstraint_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAConstraint_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CAConstraintLayoutManager" style="Cocoa" file="CAConstraintLayoutManager">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAConstraintLayoutManager_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAConstraintLayoutManager_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CAEmitterCell" style="Cocoa" file="CAEmitterCell">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAEmitterCell_class/Reference/Reference.html</url>
@@ -2632,46 +2632,46 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAGradientLayer_class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CAKeyframeAnimation" style="Cocoa" file="CAKeyframeAnimation">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAKeyframeAnimation_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CALayer" style="Cocoa" file="CALayer">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CALayer_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CAMediaTimingFunction" style="Cocoa" file="CAMediaTimingFunction">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/CAMediaTimingFunction_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/CAMediaTimingFunction_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CAOpenGLLayer" style="Cocoa" file="CAOpenGLLayer">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAOpenGLLayer_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAOpenGLLayer_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CAPropertyAnimation" style="Cocoa" file="CAPropertyAnimation">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAPropertyAnimation_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAPropertyAnimation_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CARenderer" style="Cocoa" file="CARenderer">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CARenderer_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CARenderer_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CAReplicatorLayer" style="Cocoa" file="CAReplicatorLayer">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CAScrollLayer" style="Cocoa" file="CAScrollLayer">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAScrollLayer_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAScrollLayer_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CAShapeLayer" style="Cocoa" file="CAShapeLayer">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAShapeLayer_class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CATextLayer" style="Cocoa" file="CATextLayer">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CATextLayer_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CATextLayer_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CATiledLayer" style="Cocoa" file="CATiledLayer">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CATiledLayer_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CATiledLayer_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CATransaction" style="Cocoa" file="CATransaction">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CATransaction_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CATransaction_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CATransformLayer" style="Cocoa" file="CATransformLayer">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CATransformLayer_class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CATransition" style="Cocoa" file="CATransition">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CATransition_Class/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CATransition_class/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CAValueFunction" style="Cocoa" file="CAValueFunction">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAValueFunction_class/Reference/Reference.html</url>
@@ -2719,13 +2719,13 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/NSValue_CA_additions/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="P" name="CAAction" style="Cocoa" file="CAAction">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAAction_Protocol/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAAction_protocol/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="P" name="CALayoutManager" style="Cocoa" file="CALayoutManager">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CALayoutManager_Protocol/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CALayoutManager_protocol/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="P" name="CAMediaTiming" style="Cocoa" file="CAMediaTiming">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAMediaTiming_Protocol/Introduction/Introduction.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="P" name="CIImageProvider" style="Cocoa" file="CIImageProvider">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Protocols/CIImageProvider_Protocol/Reference/Reference.html</url>
@@ -2734,40 +2734,40 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Protocols/CIPlugInRegistration_Protocol/Reference/Reference.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="T" name="CVBuffer" style="Cocoa" file="CVBuffer">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVBufferRef/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVBufferRef/Reference/reference.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="T" name="CVDisplayLink" style="Cocoa" file="CVDisplayLink">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVDisplayLinkRef/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVDisplayLinkRef/Reference/reference.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="T" name="CVImageBuffer" style="Cocoa" file="CVImageBuffer">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVImageBufferRef/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVImageBufferRef/Reference/reference.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="T" name="CVOpenGLBuffer" style="Cocoa" file="CVOpenGLBuffer">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVOpenGLBufferRef/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVOpenGLBufferRef/Reference/reference.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="T" name="CVOpenGLBufferPool" style="Cocoa" file="CVOpenGLBufferPool">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVOpenGLBufferPoolRef/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVOpenGLBufferPoolRef/Reference/reference.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="T" name="CVOpenGLTexture" style="Cocoa" file="CVOpenGLTexture">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVOpenGLTextureRef/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVOpenGLTextureRef/Reference/reference.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="T" name="CVPixelBuffer" style="Cocoa" file="CVPixelBuffer">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVPixelBufferRef/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVPixelBufferRef/Reference/reference.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="T" name="CVPixelBufferPool" style="Cocoa" file="CVPixelBufferPool">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVPixelBufferPoolRef/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVPixelBufferPoolRef/Reference/reference.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="T" name="CVPixelFormatDescription" style="Cocoa" file="CVPixelFormatDescription">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVPixelFormatDescriptionRef/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVPixelFormatDescriptionRef/Reference/reference.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="T" name="CVTime" style="Cocoa" file="CVTime">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVTimeRef/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVTimeRef/Reference/reference.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="T" name="QuartzCoreFramework.Constants" style="Cocoa" file="QuartzCoreFramework.Constants">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVConstantsRef/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuartzCore/Reference/CVConstantsRef/Reference/reference.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="T" name="QuartzCoreFramework.Functions" style="Cocoa" file="QuartzCoreFramework.Functions">
-    <url>http://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreAnimation_functions/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/CoreAnimation_functions/Reference/reference.html</url>
   </Entry>
   <Entry ns="QuickLook" nature="C" name="QLPreviewPanel" style="Cocoa" file="QLPreviewPanel">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/QLPreviewPanel_Class/Reference/Reference.html</url>
@@ -2938,6 +2938,6 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/WebKit/Protocols/WebUIDelegate_Protocol/DeprecationAppendix/AppendixADeprecatedAPI.html</url>
   </Entry>
   <Entry ns="WebKit" nature="T" name="WebKitFramework.Constants" style="Cocoa" file="WebKitFramework.Constants">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/WebKit/Miscellaneous/WebKit_Constants/Reference/Reference.html</url>
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/WebKit/Miscellaneous/WebKit_Constants/Reference/reference.html</url>
   </Entry>
 </Entries>

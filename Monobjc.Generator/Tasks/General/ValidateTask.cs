@@ -46,7 +46,7 @@ namespace Monobjc.Tools.Generator.Tasks.General
             // Print entry with invalid URL
             foreach (Entry entry in this.EntriesWithUrls)
             {
-                Console.WriteLine("Validating '{0}'...", entry.Name);
+                //Console.WriteLine("Validating '{0}'...", entry.Name);
 
                 if (String.Equals(entry.RemoteUrl, "N/A"))
                 {
