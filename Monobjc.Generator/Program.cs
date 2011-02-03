@@ -110,7 +110,7 @@ namespace Monobjc.Tools.Generator
                             Environment.Exit(-1);
                         }
                         manager.AddTask(new CopyInPlaceTask("Coyy In Place", targetDir));
-                        manager.AddTask(new GenerateInfoTask("Generate Assembly Info"));
+                        manager.AddTask(new GenerateInfoTask("Generate Assembly Info", targetDir));
                         break;
                     case "analyze":
                         manager.AddTask(new DumpStaticInitializersTask("Search Static Initializers"));

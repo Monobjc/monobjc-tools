@@ -4821,7 +4821,7 @@ enum
     <Classes>
       <Class name="QLPreviewPanel">
       </Class>
-  </Classes>
+    </Classes>
     <Protocols>
       <Protocol name="QLPreviewPanelDataSource">
       </Protocol>

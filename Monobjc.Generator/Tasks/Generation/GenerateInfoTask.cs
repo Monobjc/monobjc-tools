@@ -34,7 +34,12 @@ namespace Monobjc.Tools.Generator.Tasks.Generation
         ///   Initializes a new instance of the <see cref = "GenerateInfoTask" /> class.
         /// </summary>
         /// <param name = "name">The name.</param>
-        public GenerateInfoTask(String name) : base(name) {}
+        public GenerateInfoTask(String name, String targetDir) : base(name)
+        {
+            this.TargetDirectory = targetDir;
+        }
+
+        private string TargetDirectory { get; set; }
 
         /// <summary>
         ///   Executes this instance.
@@ -43,8 +48,7 @@ namespace Monobjc.Tools.Generator.Tasks.Generation
         {
             this.DisplayBanner();
 
-            String outputDirectory = this.Settings["TargetDir"];
-            if (String.IsNullOrEmpty(outputDirectory))
+            if (String.IsNullOrEmpty(this.TargetDirectory))
             {
                 return;
             }
@@ -60,7 +64,7 @@ namespace Monobjc.Tools.Generator.Tasks.Generation
 
                 foreach (String assembly in assemblies)
                 {
-                    String path = Path.Combine(outputDirectory, assembly);
+                    String path = Path.Combine(this.TargetDirectory, assembly);
                     path = Path.Combine(path, "Properties");
                     path = Path.Combine(path, "AssemblyInfo.cs");
 
