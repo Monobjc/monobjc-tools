@@ -1303,9 +1303,6 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/CLLocationManagerDelegate/CLLocationManagerDelegate.html</url>
   </Entry>
   <Entry ns="CoreLocation" nature="T" name="CoreLocationFramework.Constants" style="Cocoa" file="CoreLocationFramework.Constants">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/CoreLocation/Reference/CoreLocationDataTypesRef/Reference/reference.html</url>
-  </Entry>
-  <Entry ns="CoreLocation" nature="T" name="CoreLocationFramework.Functions" style="Cocoa" file="CoreLocationFramework.Functions">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/CoreLocation/Reference/CoreLocationConstantsRef/Reference/reference.html</url>
   </Entry>
   <Entry ns="CoreMIDI" nature="T" name="MIDIServices" style="Classic" file="MIDIServices">

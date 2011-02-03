@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -109,7 +109,7 @@ namespace Monobjc.Tools.Generator.Model.Entities
             String minAvailability = "VERSION";
             String maxAvailability = "VERSION";
 
-            foreach (BaseEntity value in this.Children)
+            foreach (BaseEntity value in this.Children.Where(c => c.Generate))
             {
                 string valueMinAvailability = value.MinAvailability ?? String.Empty;
                 if (String.Compare(valueMinAvailability, minAvailability) < 0)

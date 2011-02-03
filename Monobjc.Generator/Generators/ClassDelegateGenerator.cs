@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -295,7 +295,7 @@ namespace Monobjc.Tools.Generator.Generators
             // Append parameters' comments
             foreach (MethodParameterEntity methodParameterEntity in methodEntity.Parameters.Where(p => p.Generate))
             {
-                this.Writer.WriteLineFormat(indent, "/// <param name=\"{0}\">{1}</param>", methodParameterEntity.Name, methodParameterEntity.Summary.Count > 0 ? methodParameterEntity.Summary[0] : "MISSING");
+                this.Writer.WriteLineFormat(indent, "/// <param name=\"{0}\">{1}</param>", methodParameterEntity.Name.Trim('@'), methodParameterEntity.Summary.Count > 0 ? methodParameterEntity.Summary[0] : "MISSING");
             }
 
             // Append returns' comments
@@ -304,39 +304,5 @@ namespace Monobjc.Tools.Generator.Generators
                 this.Writer.WriteLineFormat(indent, "/// <returns>{0}</returns>", methodEntity.ReturnsDocumentation);
             }
         }
-
-        //private static String GetDefaultValue(String type)
-        //{
-        //    switch (type)
-        //    {
-        //        case "bool":
-        //            return "false";
-        //        case "IntPtr":
-        //            return "IntPtr.Zero";
-        //        case "float":
-        //        case "CGFloat":
-        //        case "NSInteger":
-        //        case "NSUInteger":
-        //            return "0";
-        //        case "NSRange":
-        //            return "new NSRange(0, 0)";
-        //        case "NSSize":
-        //            return "new NSSize(0, 0)";
-        //        case "NSRect":
-        //            return "new NSRect(0, 0, 0, 0)";
-        //        case "NSApplicationPrintReply":
-        //            return "NSApplicationPrintReply.NSPrintingSuccess";
-        //        case "NSApplicationTerminateReply":
-        //            return "NSApplicationTerminateReply.NSTerminateNow";
-        //        case "NSDragOperation":
-        //            return "NSDragOperation.NSDragOperationNone";
-        //        case "NSTextCheckingTypes":
-        //            return "NSTextCheckingTypes.NSTextCheckingAllTypes";
-        //        case "NSTokenStyle":
-        //            return "NSTokenStyle.NSDefaultTokenStyle";
-        //        default:
-        //            return "null";
-        //    }
-        //}
     }
 }

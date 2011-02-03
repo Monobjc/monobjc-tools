@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -97,9 +97,10 @@ namespace Monobjc.Tools.Generator
                         break;
                     case "generate":
                         manager.AddTask(new GenerateCodeTask("Generate"));
-                        manager.AddTask(new ReplaceTextTask("Patch Generated Code 1/3", EntryFolderType.Generated, ".cs"));
-                        manager.AddTask(new ReplaceTextTask("Patch Generated Code 2/3", EntryFolderType.Generated, ".Class.cs"));
-                        manager.AddTask(new ReplaceTextTask("Patch Generated Code 3/3", EntryFolderType.Generated, ".Constants.cs"));
+                        manager.AddTask(new ReplaceTextTask("Patch Generated Code 1/4", EntryFolderType.Generated, ".cs"));
+                        manager.AddTask(new ReplaceTextTask("Patch Generated Code 2/4", EntryFolderType.Generated, ".Class.cs"));
+                        manager.AddTask(new ReplaceTextTask("Patch Generated Code 3/4", EntryFolderType.Generated, ".Constants.cs"));
+                        manager.AddTask(new ReplaceTextTask("Patch Generated Code 4/4", EntryFolderType.Generated, ".Constructors.cs"));
                         break;
                     case "copy":
                         if (String.IsNullOrEmpty(targetDir))

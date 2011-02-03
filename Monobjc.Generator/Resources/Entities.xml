@@ -635,6 +635,7 @@
       <Class name="NSCollectionView">
         <Patch>Methods[DraggingImageForItemsAtIndexesWithEventOffset].Parameters[dragImageOffset].Type=NSPoint</Patch>
         <Patch>Methods[DraggingImageForItemsAtIndexesWithEventOffset].Parameters[dragImageOffset].IsOut=true</Patch>
+		<Patch>Properties[Delegate].MinAvailability=Mac OS X v10.5</Patch>
       </Class>
       <Class name="NSCollectionViewItem">
         <Replace type="Generated">
@@ -646,6 +647,20 @@
 #else
         NSObject
 #endif
+]]>
+          </With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[#if MACOSX_10_5
+    public partial class NSCollectionViewItem
+    {
+#if MACOSX_10_5
+]]></Source>
+          <With>
+            <![CDATA[#if MACOSX_10_5
+    public partial class NSCollectionViewItem
+    {
+#if MACOSX_10_6
 ]]>
           </With>
         </Replace>
@@ -1753,13 +1768,13 @@ enum {]]>
       <Protocol name="NSTokenFieldCellDelegate">
         <Patch>DelegateFor=NSTokenFieldCell</Patch>
         <Patch>DelegateProperty=Delegate</Patch>
-        <Patch>Methods[TokenFieldCellCompletionsForSubstringIndexOfTokenIndexOfSelectedItem].Parameters[selectedIndex].Type=NSTextCheckingTypes</Patch>
+        <Patch>Methods[TokenFieldCellCompletionsForSubstringIndexOfTokenIndexOfSelectedItem].Parameters[selectedIndex].Type=NSInteger</Patch>
         <Patch>Methods[TokenFieldCellCompletionsForSubstringIndexOfTokenIndexOfSelectedItem].Parameters[selectedIndex].IsOut=true</Patch>
       </Protocol>
       <Protocol name="NSTokenFieldDelegate">
         <Patch>DelegateFor=NSTokenField</Patch>
         <Patch>DelegateProperty=Delegate</Patch>
-        <Patch>Methods[TokenFieldCompletionsForSubstringIndexOfTokenIndexOfSelectedItem].Parameters[selectedIndex].Type=NSTextCheckingTypes</Patch>
+        <Patch>Methods[TokenFieldCompletionsForSubstringIndexOfTokenIndexOfSelectedItem].Parameters[selectedIndex].Type=NSInteger</Patch>
         <Patch>Methods[TokenFieldCompletionsForSubstringIndexOfTokenIndexOfSelectedItem].Parameters[selectedIndex].IsOut=true</Patch>
       </Protocol>
       <Protocol name="NSToolbarDelegate">
@@ -2032,12 +2047,11 @@ enum {]]>
       <Structure name="CFTypeID"></Structure>
     </Structures>
   </Framework>
-  <Framework name="CoreLocation" usings="Foundation,AppKit" assembly="Monobjc.CoreLocation">
+  <Framework name="CoreLocation" usings="Foundation" assembly="Monobjc.CoreLocation">
     <Types>
-      <Type name="CoreLocationFramework.Constants"></Type>
-      <Type name="CoreLocationFramework.Functions">
+      <Type name="CoreLocationFramework.Constants">
         <Patch>Enumerations[CLError].Generate=false</Patch>
-      </Type>
+	  </Type>
     </Types>
     <Classes>
       <Class name="CLLocation">
@@ -2045,8 +2059,10 @@ enum {]]>
         <Patch>Methods[GetDistanceFrom].Parameters[location].Type=CLLocation</Patch>
       </Class>
       <Class name="CLLocationManager">
+		<Patch>MinAvailability=Mac OS X v10.6</Patch>
         <Patch>Properties[LocationServicesEnabled][Static=true].Generate=false</Patch>
         <Patch>Enumerations[CLError].BaseType=int</Patch>
+        <Patch>Constants[CLLocationDistance].Generate=false</Patch>
       </Class>
     </Classes>
     <Protocols>
@@ -2970,6 +2986,18 @@ enum {]]>
         <Replace type="Generated">
           <Source><![CDATA[1UL <<]]></Source>
           <With><![CDATA[1U <<]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[NSDataReadingMapped,]]></Source>
+          <With><![CDATA[1U << 0,]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[NSDataReadingUncached,]]></Source>
+          <With><![CDATA[1U << 1,]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[NSDataWritingAtomic,]]></Source>
+          <With><![CDATA[1U << 0,]]></With>
         </Replace>
       </Class>
       <Class name="NSDate">
