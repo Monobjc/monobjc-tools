@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -17,6 +17,7 @@
 //
 using System;
 using System.IO;
+using System.Linq;
 using Monobjc.Tools.Generator.Model.Database;
 using Monobjc.Tools.Generator.Model.Entities;
 
@@ -78,10 +79,15 @@ namespace Monobjc.Tools.Generator.Tasks.Output
                 }
 
                 String name = classEntity.Name.Substring(prefix.Length);
-                PropertyEntity propertyEntity = classEntity.Properties.Find(p => p.Name.Equals(name));
+                PropertyEntity propertyEntity = classEntity.Properties.Find(p => p.Name.Equals(name) && p.Type == "Id");
                 if (propertyEntity != null)
                 {
                     Console.WriteLine("Found: {0}.{1}", classEntity.Name, propertyEntity.Name);
+                }
+
+                foreach(MethodEntity methodEntity in classEntity.Methods.Where(m => m.Name.StartsWith(name) && m.ReturnType == "Id"))
+                {
+                    Console.WriteLine("Found: {0}.{1}()", classEntity.Name, methodEntity.Name);
                 }
             }
         }

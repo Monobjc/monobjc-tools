@@ -3765,6 +3765,10 @@ enum]]>
         </Replace>
       </Class>
       <Class name="NSURLRequest">
+	    <Patch>Methods[RequestWithURL].ReturnType=NSURLRequest</Patch>
+	    <Patch>Methods[RequestWithURL].CopyInDescendants=true</Patch>
+	    <Patch>Methods[RequestWithURLCachePolicyTimeoutInterval].ReturnType=NSURLRequest</Patch>
+	    <Patch>Methods[RequestWithURLCachePolicyTimeoutInterval].CopyInDescendants=true</Patch>
       </Class>
       <Class name="NSURLResponse">
       </Class>

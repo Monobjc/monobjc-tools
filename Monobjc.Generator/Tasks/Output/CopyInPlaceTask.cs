@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -127,10 +127,30 @@ namespace Monobjc.Tools.Generator.Tasks.Output
                         files.Add(prefix.Insert(pos, ".") + ".cs");
                     }
 
-                    // Special case NSControlTextEditingDelegate protocol
+                    // Special case some protocols
                     if (String.Equals(Path.GetFileName(prefix), "NSControlTextEditingDelegate"))
                     {
                         files.Add(Path.Combine(Path.GetDirectoryName(prefix), "NSControl.Delegate.cs"));
+                    }
+                    if (String.Equals(Path.GetFileName(prefix), "WebEditingDelegate"))
+                    {
+                        files.Add(Path.Combine(Path.GetDirectoryName(prefix), "WebView.EditingDelegate.cs"));
+                    }
+                    if (String.Equals(Path.GetFileName(prefix), "WebFrameLoadDelegate"))
+                    {
+                        files.Add(Path.Combine(Path.GetDirectoryName(prefix), "WebView.FrameLoadDelegate.cs"));
+                    }
+                    if (String.Equals(Path.GetFileName(prefix), "WebViewPolicyDelegate"))
+                    {
+                        files.Add(Path.Combine(Path.GetDirectoryName(prefix), "WebView.PolicyDelegate.cs"));
+                    }
+                    if (String.Equals(Path.GetFileName(prefix), "WebViewResourceLoadDelegate"))
+                    {
+                        files.Add(Path.Combine(Path.GetDirectoryName(prefix), "WebView.ResourceLoadDelegate.cs"));
+                    }
+                    if (String.Equals(Path.GetFileName(prefix), "WebViewUIDelegate"))
+                    {
+                        files.Add(Path.Combine(Path.GetDirectoryName(prefix), "WebView.UIDelegate.cs"));
                     }
                     break;
                 case TypedEntity.ENUMERATION_NATURE:
