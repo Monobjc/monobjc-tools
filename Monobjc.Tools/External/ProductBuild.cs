@@ -37,7 +37,15 @@ namespace Monobjc.Tools.External
         public static String ArchiveApplication(String bundle, String identity, String productDefinition)
         {
             String package = Path.ChangeExtension(bundle, ".pkg");
-            String arguments = String.Format(CultureInfo.InvariantCulture, "--component \"{0}\" /Applications --sign \"{1}\" --product \"{2}\" \"{3}\"", bundle, identity, productDefinition, package);
+            String arguments;
+            if (productDefinition != null)
+            {
+                arguments = String.Format(CultureInfo.InvariantCulture, "--component \"{0}\" /Applications --sign \"{1}\" --product \"{2}\" \"{3}\"", bundle, identity, productDefinition, package);
+            }
+            else
+            {
+                arguments = String.Format(CultureInfo.InvariantCulture, "--component \"{0}\" /Applications --sign \"{1}\" \"{2}\"", bundle, identity, package);
+            }
             ProcessHelper helper = new ProcessHelper(Executable, arguments);
             String output = helper.Execute();
             return output;

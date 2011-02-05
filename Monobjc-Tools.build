@@ -20,6 +20,7 @@
     <if test="${file::exists(src.file)}">
       <copy file="${src.file}" tofile="${dst.file}" unless="${file::up-to-date(src.file, dst.file)}"/>
     </if>
+    <echo message="Warning: '${src.file}' file is missing. It will be replaced by a placeholder !!!" unless="${file::exists(src.file)}"/>
     <touch file="${dst.file}" unless="${file::exists(dst.file)}"/>
 
     <!-- Create/Embed runtime executables -->
@@ -31,6 +32,7 @@
       <if test="${file::exists(src.file)}">
         <copy file="${src.file}" tofile="${dst.file}" unless="${file::up-to-date(src.file, dst.file)}"/>
       </if>
+      <echo message="Warning: '${src.file}' file is missing. It will be replaced by a placeholder !!!" unless="${file::exists(src.file)}"/>
       <touch file="${dst.file}" unless="${file::exists(dst.file)}"/>
 
       <property name="src.file" value="${binaries.dir}/${version}/libmonobjc.dylib"/>
@@ -38,6 +40,7 @@
       <if test="${file::exists(src.file)}">
         <copy file="${src.file}" tofile="${dst.file}" unless="${file::up-to-date(src.file, dst.file)}"/>
       </if>
+      <echo message="Warning: '${src.file}' file is missing. It will be replaced by a placeholder !!!" unless="${file::exists(src.file)}"/>
       <touch file="${dst.file}" unless="${file::exists(dst.file)}"/>
 
     </foreach>
