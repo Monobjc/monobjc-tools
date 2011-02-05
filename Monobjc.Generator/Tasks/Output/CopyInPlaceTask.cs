@@ -36,6 +36,10 @@ namespace Monobjc.Tools.Generator.Tasks.Output
             this.TargetDirectory = targetDir;
         }
 
+        /// <summary>
+        /// Gets or sets the target directory.
+        /// </summary>
+        /// <value>The target directory.</value>
         private string TargetDirectory { get; set; }
 
         /// <summary>

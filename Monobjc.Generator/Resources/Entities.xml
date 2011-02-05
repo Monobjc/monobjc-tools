@@ -430,6 +430,16 @@
         <Patch>Functions[NSCountWindows].Parameters[count].IsOut=true</Patch>
         <Patch>Functions[NSEventMaskFromType].ReturnType=NSEventMask</Patch>
 
+        <Patch>Functions[NSBeginAlertSheet].Parameters[values].Generate=false</Patch>
+        <Patch>Functions[NSBeginCriticalAlertSheet].Parameters[values].Generate=false</Patch>
+        <Patch>Functions[NSBeginInformationalAlertSheet].Parameters[values].Generate=false</Patch>
+        <Patch>Functions[NSGetAlertPanel].Parameters[values].Generate=false</Patch>
+        <Patch>Functions[NSGetCriticalAlertPanel].Parameters[values].Generate=false</Patch>
+        <Patch>Functions[NSGetInformationalAlertPanel].Parameters[values].Generate=false</Patch>
+        <Patch>Functions[NSRunAlertPanel].Parameters[values].Generate=false</Patch>
+        <Patch>Functions[NSRunCriticalAlertPanel].Parameters[values].Generate=false</Patch>
+        <Patch>Functions[NSRunInformationalAlertPanel].Parameters[values].Generate=false</Patch>
+
         <Patch>Functions[NSApplicationLoad].Generate=false</Patch>
         <Patch>Functions[NSApplicationMain].Generate=false</Patch>
         <Patch>Functions[NSConvertGlyphsToPackedGlyphs].Generate=false</Patch>
@@ -635,7 +645,7 @@
       <Class name="NSCollectionView">
         <Patch>Methods[DraggingImageForItemsAtIndexesWithEventOffset].Parameters[dragImageOffset].Type=NSPoint</Patch>
         <Patch>Methods[DraggingImageForItemsAtIndexesWithEventOffset].Parameters[dragImageOffset].IsOut=true</Patch>
-		<Patch>Properties[Delegate].MinAvailability=Mac OS X v10.5</Patch>
+    <Patch>Properties[Delegate].MinAvailability=Mac OS X v10.5</Patch>
       </Class>
       <Class name="NSCollectionViewItem">
         <Replace type="Generated">
@@ -2051,7 +2061,7 @@ enum {]]>
     <Types>
       <Type name="CoreLocationFramework.Constants">
         <Patch>Enumerations[CLError].Generate=false</Patch>
-	  </Type>
+    </Type>
     </Types>
     <Classes>
       <Class name="CLLocation">
@@ -2059,7 +2069,7 @@ enum {]]>
         <Patch>Methods[GetDistanceFrom].Parameters[location].Type=CLLocation</Patch>
       </Class>
       <Class name="CLLocationManager">
-		<Patch>MinAvailability=Mac OS X v10.6</Patch>
+    <Patch>MinAvailability=Mac OS X v10.6</Patch>
         <Patch>Properties[LocationServicesEnabled][Static=true].Generate=false</Patch>
         <Patch>Enumerations[CLError].BaseType=int</Patch>
         <Patch>Constants[CLLocationDistance].Generate=false</Patch>
@@ -3765,10 +3775,10 @@ enum]]>
         </Replace>
       </Class>
       <Class name="NSURLRequest">
-	    <Patch>Methods[RequestWithURL].ReturnType=NSURLRequest</Patch>
-	    <Patch>Methods[RequestWithURL].CopyInDescendants=true</Patch>
-	    <Patch>Methods[RequestWithURLCachePolicyTimeoutInterval].ReturnType=NSURLRequest</Patch>
-	    <Patch>Methods[RequestWithURLCachePolicyTimeoutInterval].CopyInDescendants=true</Patch>
+      <Patch>Methods[RequestWithURL].ReturnType=NSURLRequest</Patch>
+      <Patch>Methods[RequestWithURL].CopyInDescendants=true</Patch>
+      <Patch>Methods[RequestWithURLCachePolicyTimeoutInterval].ReturnType=NSURLRequest</Patch>
+      <Patch>Methods[RequestWithURLCachePolicyTimeoutInterval].CopyInDescendants=true</Patch>
       </Class>
       <Class name="NSURLResponse">
       </Class>
