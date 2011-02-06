@@ -255,7 +255,7 @@ namespace Monobjc.Tools.Generator.Generators
             this.Writer.WriteLineFormat(2, "/// <summary>");
             foreach (String line in methodEntity.Summary)
             {
-                this.Writer.WriteLineFormat(2, "/// <para>{0}</para>", line);
+                this.Writer.WriteLineFormat(2, "/// <para>{0}</para>", line.EscapeAll());
             }
             this.Writer.WriteLineFormat(2, "/// <para>Original signature is '{0}'</para>", methodEntity.Signature);
             this.AppendAvailability(2, methodEntity);
@@ -271,13 +271,13 @@ namespace Monobjc.Tools.Generator.Generators
             foreach (MethodParameterEntity methodParameterEntity in methodEntity.Parameters.Where(p => p.Generate))
             {
                 // TODO
-                this.Writer.WriteLineFormat(2, "/// <param name=\"{0}\">{1}</param>", methodParameterEntity.Name.Trim('@'), methodParameterEntity.Summary.Count > 0 ? methodParameterEntity.Summary[0] : "MISSING");
+                this.Writer.WriteLineFormat(2, "/// <param name=\"{0}\">{1}</param>", methodParameterEntity.Name.Trim('@'), methodParameterEntity.Summary.Count > 0 ? methodParameterEntity.Summary[0].EscapeAll() : "MISSING");
             }
 
             // Append returns' comments
             if (!String.Equals(methodEntity.ReturnType, "void"))
             {
-                this.Writer.WriteLineFormat(2, "/// <returns>{0}</returns>", methodEntity.ReturnsDocumentation);
+                this.Writer.WriteLineFormat(2, "/// <returns>{0}</returns>", methodEntity.ReturnsDocumentation.EscapeAll());
             }
         }
 

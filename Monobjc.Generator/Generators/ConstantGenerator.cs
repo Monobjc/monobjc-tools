@@ -54,7 +54,7 @@ namespace Monobjc.Tools.Generator.Generators
             this.Writer.WriteLineFormat(2, "/// <summary>");
             foreach (String line in entity.Summary)
             {
-                this.Writer.WriteLineFormat(2, "/// <para>{0}</para>", line);
+                this.Writer.WriteLineFormat(2, "/// <para>{0}</para>", line.EscapeAll());
             }
             this.AppendAvailability(2, entity);
             this.Writer.WriteLineFormat(2, "/// </summary>");

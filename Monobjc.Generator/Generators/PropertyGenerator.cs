@@ -189,7 +189,7 @@ namespace Monobjc.Tools.Generator.Generators
             this.Writer.WriteLineFormat(2, "/// <summary>");
             foreach (String line in propertyEntity.Summary)
             {
-                this.Writer.WriteLineFormat(2, "/// <para>{0}</para>", line);
+                this.Writer.WriteLineFormat(2, "/// <para>{0}</para>", line.EscapeAll());
             }
             this.Writer.WriteLineFormat(2, "/// <para>Original signature is '{0}'</para>", propertyEntity.Getter.Signature);
             this.AppendAvailability(2, propertyEntity);

@@ -78,7 +78,7 @@ namespace Monobjc.Tools.Generator.Generators
             this.Writer.WriteLineFormat(1, "/// <summary>");
             foreach (String line in enumerationEntity.Summary)
             {
-                this.Writer.WriteLineFormat(1, "/// <para>{0}</para>", line);
+                this.Writer.WriteLineFormat(1, "/// <para>{0}</para>", line.EscapeAll());
             }
             this.AppendAvailability(1, enumerationEntity);
             this.Writer.WriteLineFormat(1, "/// </summary>");
@@ -122,7 +122,7 @@ namespace Monobjc.Tools.Generator.Generators
                 this.Writer.WriteLineFormat(2, "/// <summary>");
                 foreach (String line in enumerationValueEntity.Summary)
                 {
-                    this.Writer.WriteLineFormat(2, "/// <para>{0}</para>", line);
+                    this.Writer.WriteLineFormat(2, "/// <para>{0}</para>", line.EscapeAll());
                 }
                 this.AppendAvailability(2, enumerationValueEntity);
                 this.Writer.WriteLineFormat(2, "/// </summary>");

@@ -104,8 +104,15 @@ namespace Monobjc.Tools.Generator.Generators
         {
             bool useMixedInvocation = functionEntity32 != null && functionEntity64 != null;
 
+            // Strip name if the prefix is the same
+            String name = functionEntity.Name;
+            if (name.StartsWith(typedEntity.Name))
+            {
+                name = name.Substring(typedEntity.Name.Length);
+            }
+
             StringBuilder signature = new StringBuilder();
-            signature.AppendFormat("public static {0} {1}(", functionEntity.ReturnType, functionEntity.Name);
+            signature.AppendFormat("public static {0} {1}(", functionEntity.ReturnType, name);
 
             // Append parameters
             List<String> parameters = new List<String>();
