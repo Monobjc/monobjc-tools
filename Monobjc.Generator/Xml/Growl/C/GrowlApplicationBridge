@@ -701,7 +701,7 @@
         <Summary />
         <Obsolete xsi:nil="true" />
         <Selector>growlDelegate</Selector>
-        <Signature>+ (NSObject &lt;GrowlApplicationBridgeDelegate&amp;&gt; *) growlDelegate</Signature>
+        <Signature>+ (NSObject &amp;lt;GrowlApplicationBridgeDelegate&amp;gt; *) growlDelegate</Signature>
         <ReturnType>Id</ReturnType>
         <Parameters />
       </Getter>

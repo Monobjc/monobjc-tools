@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -85,7 +85,7 @@ namespace Monobjc.Tools.Generator.Generators
                     continue;
                 }
                 methodEntity.ReturnType = classEntity.Name;
-                this.MethodGenerator.Generate(classEntity, methodEntity, true, false);
+                this.MethodGenerator.Generate(classEntity, methodEntity, true, false, true);
                 this.Writer.WriteLine();
             }
 
@@ -108,7 +108,7 @@ namespace Monobjc.Tools.Generator.Generators
                     continue;
                 }
                 propertyEntity.Type = classEntity.Name;
-                this.PropertyGenerator.Generate(classEntity, propertyEntity);
+                this.PropertyGenerator.Generate(classEntity, propertyEntity, true, true);
                 this.Writer.WriteLine();
             }
 

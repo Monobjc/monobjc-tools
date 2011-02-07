@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -44,7 +44,7 @@ namespace Monobjc.Tools.Generator.Generators
         /// <param name = "methodEntity">The method entity.</param>
         /// <param name = "implementation">if set to <c>true</c> generate the implementation.</param>
         /// <param name = "extension">if set to <c>true</c> this method is an extension method.</param>
-        public void Generate(ClassEntity classEntity, MethodEntity methodEntity, bool implementation, bool extension)
+        public void Generate(ClassEntity classEntity, MethodEntity methodEntity, bool implementation = true, bool extension = false, bool markedAsNew = false)
         {
             // Don't generate if required
             if (!methodEntity.Generate)
@@ -71,7 +71,7 @@ namespace Monobjc.Tools.Generator.Generators
             StringBuilder signature = new StringBuilder();
 
             // Append keywords
-            String keywords = GetKeywords(methodEntity, implementation, extension);
+            String keywords = GetKeywords(methodEntity, implementation, extension, markedAsNew);
             signature.Append(keywords);
 
             // Append return type and name
@@ -281,17 +281,27 @@ namespace Monobjc.Tools.Generator.Generators
             }
         }
 
-        private static String GetKeywords(MethodEntity methodEntity, bool implementation, bool extension)
+        private static String GetKeywords(MethodEntity methodEntity, bool implementation, bool extension, bool markedAsNew)
         {
+			String keywords = String.Empty;
             if (!implementation)
             {
-                return String.Empty;
+                return keywords;
             }
+			keywords = "public ";
+			if (markedAsNew)
+			{
+				keywords += "new ";
+			}
             if (methodEntity.Static || extension)
             {
-                return "public static ";
+                keywords += "static ";
             }
-            return "public virtual ";
+			else if (!markedAsNew)
+			{
+                keywords += "virtual ";
+			}
+            return keywords;
         }
 
         private static string GetExtraParameter(ClassEntity classEntity, MethodEntity methodEntity, bool extension)

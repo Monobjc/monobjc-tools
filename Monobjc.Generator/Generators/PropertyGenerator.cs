@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -49,18 +49,8 @@ namespace Monobjc.Tools.Generator.Generators
         /// </summary>
         /// <param name = "classEntity">The class entity.</param>
         /// <param name = "propertyEntity">The property entity.</param>
-        public void Generate(ClassEntity classEntity, PropertyEntity propertyEntity)
-        {
-            this.Generate(classEntity, propertyEntity, true);
-        }
-
-        /// <summary>
-        ///   Generates the specified entity.
-        /// </summary>
-        /// <param name = "classEntity">The class entity.</param>
-        /// <param name = "propertyEntity">The property entity.</param>
         /// <param name = "implementation">if set to <c>true</c> generate the implementation.</param>
-        public void Generate(ClassEntity classEntity, PropertyEntity propertyEntity, bool implementation)
+        public void Generate(ClassEntity classEntity, PropertyEntity propertyEntity, bool implementation = true, bool markedAsNew = false)
         {
             // Don't generate if required
             if (!propertyEntity.Generate)
@@ -84,10 +74,8 @@ namespace Monobjc.Tools.Generator.Generators
                 type = "Id";
             }
 
-            this.Writer.WriteLineFormat(2, "{0}{1}{2}{3} {4}",
-                                        implementation ? "public " : String.Empty,
-                                        (!propertyEntity.Static && implementation) ? "virtual " : String.Empty,
-                                        propertyEntity.Static ? "static " : String.Empty,
+            this.Writer.WriteLineFormat(2, "{0}{1} {2}",
+										GetKeywords(propertyEntity, implementation, markedAsNew),
                                         type,
                                         propertyEntity.Name);
 
@@ -194,6 +182,29 @@ namespace Monobjc.Tools.Generator.Generators
             this.Writer.WriteLineFormat(2, "/// <para>Original signature is '{0}'</para>", propertyEntity.Getter.Signature);
             this.AppendAvailability(2, propertyEntity);
             this.Writer.WriteLineFormat(2, "/// </summary>");
+        }
+		
+        private static String GetKeywords(PropertyEntity propertyEntity, bool implementation, bool markedAsNew)
+        {
+			String keywords = String.Empty;
+            if (!implementation)
+            {
+                return keywords;
+            }
+			keywords = "public ";
+			if (markedAsNew)
+			{
+				keywords += "new ";
+			}
+            if (propertyEntity.Static)
+            {
+                keywords += "static ";
+            }
+			else if (!markedAsNew)
+			{
+                keywords += "virtual ";
+			}
+            return keywords;
         }
     }
 }

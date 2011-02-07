@@ -265,7 +265,7 @@
       <Obsolete xsi:nil="true" />
       <Name>VersionComparatorForUpdater</Name>
       <Selector>versionComparatorForUpdater:</Selector>
-      <Signature>- (id &amp;ltSUVersionComparison&amp;gt)versionComparatorForUpdater:(SUUpdater *)updater</Signature>
+      <Signature>- (id &amp;lt;SUVersionComparison&amp;gt;)versionComparatorForUpdater:(SUUpdater *)updater</Signature>
       <ReturnType>ISUVersionComparison</ReturnType>
       <Parameters>
         <Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false">

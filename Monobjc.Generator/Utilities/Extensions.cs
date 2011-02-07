@@ -58,6 +58,7 @@ namespace Monobjc.Tools.Generator.Utilities
             str = str.Replace("<", "&lt;");
             str = str.Replace(">", "&gt;");
             str = str.Replace("&nbsp;", " ");
+            str = str.Replace("&amp;", "&");
             return str;
         }
 
