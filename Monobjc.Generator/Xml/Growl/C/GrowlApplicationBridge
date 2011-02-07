@@ -390,7 +390,7 @@
     </Method>
     <Method Generate="true" Static="true" GenerateConstructor="true">
       <Summary>
-        <Line>DetectsNotifies using a userInfo dictionary suitable for passing to &lt;see cref="NSDistributedNotificationCenter"/&gt;.</Line>
+        <Line>DetectsNotifies using a userInfo dictionary suitable for passing to NSDistributedNotificationCenter.</Line>
       </Summary>
       <MinAvailability>Growl v1.2</MinAvailability>
       <Obsolete xsi:nil="true" />
@@ -600,8 +600,7 @@
     <Method Generate="true" Static="true" GenerateConstructor="true">
       <Summary>
         <Line>Tries to fill in missing keys in a registration dictionary.</Line>
-        <Line>The dictionary with the keys filled in. This is an autoreleased copy of &lt;code&gt;regDict&lt;/code&gt;.</Line>
-        <Line>&lt;/returns&gt;</Line>
+        <Line>The dictionary with the keys filled in. This is an autoreleased copy of regDict.</Line>
       </Summary>
       <MinAvailability>Growl v1.2</MinAvailability>
       <Obsolete xsi:nil="true" />
@@ -658,7 +657,7 @@
     <Property Generate="true" Static="true">
       <Summary>
         <Line>Obtains a registration dictionary, filled out to the best of GrowlApplicationBridge's knowledge.</Line>
-        <Line>&lt;value&gt;A registration dictionary.&lt;/value&gt;</Line>
+        <Line>A registration dictionary.</Line>
       </Summary>
       <MinAvailability>Growl v1.2</MinAvailability>
       <Obsolete xsi:nil="true" />
@@ -675,7 +674,7 @@
     <Property Generate="true" Static="true">
       <Summary>
         <Line>Gets the framework info dictionary.</Line>
-        <Line>&lt;value&gt;The framework info dictionary.&lt;/value&gt;</Line>
+        <Line>The framework info dictionary.</Line>
       </Summary>
       <MinAvailability>Growl v1.2</MinAvailability>
       <Obsolete xsi:nil="true" />
@@ -692,7 +691,7 @@
     <Property Generate="true" Static="true">
       <Summary>
         <Line>Get or set the object which will be responsible for providing and receiving Growl information.</Line>
-        <Line>&lt;value&gt;The Growl delegate.&lt;/value&gt;</Line>
+        <Line>The Growl delegate.</Line>
       </Summary>
       <MinAvailability>Growl v1.2</MinAvailability>
       <Obsolete xsi:nil="true" />
@@ -702,7 +701,7 @@
         <Summary />
         <Obsolete xsi:nil="true" />
         <Selector>growlDelegate</Selector>
-        <Signature>+ (NSObject&amp;ltGrowlApplicationBridgeDelegate&amp;gt *) growlDelegate</Signature>
+        <Signature>+ (NSObject &lt;GrowlApplicationBridgeDelegate&amp;&gt; *) growlDelegate</Signature>
         <ReturnType>Id</ReturnType>
         <Parameters />
       </Getter>
@@ -724,7 +723,7 @@
     <Property Generate="true" Static="true">
       <Summary>
         <Line>Detects whether Growl is installed.</Line>
-        <Line>&lt;value&gt;Returns YES if Growl is installed, NO otherwise.&lt;/value&gt;</Line>
+        <Line>Returns YES if Growl is installed, NO otherwise.</Line>
       </Summary>
       <MinAvailability>Growl v1.2</MinAvailability>
       <Obsolete xsi:nil="true" />
@@ -741,7 +740,7 @@
     <Property Generate="true" Static="true">
       <Summary>
         <Line>Detects whether GrowlHelperApp is currently running.</Line>
-        <Line>&lt;value&gt;Returns YES if Growl is installed, NO otherwise.&lt;/value&gt;</Line>
+        <Line>Returns YES if Growl is installed, NO otherwise.</Line>
       </Summary>
       <MinAvailability>Growl v1.2</MinAvailability>
       <Obsolete xsi:nil="true" />
@@ -758,7 +757,7 @@
     <Property Generate="true" Static="true">
       <Summary>
         <Line>Asks the delegate for a registration dictionary.</Line>
-        <Line>&lt;value&gt;A registration dictionary.&lt;/value&gt;</Line>
+        <Line>A registration dictionary.</Line>
       </Summary>
       <MinAvailability>Growl v1.2</MinAvailability>
       <Obsolete xsi:nil="true" />
@@ -775,9 +774,7 @@
     <Property Generate="true" Static="true">
       <Summary>
         <Line>Reports whether GrowlApplicationBridge will register with Growl when Growl next launches.</Line>
-        <Line>&lt;value&gt;</Line>
-        <Line>&lt;code&gt;YES&lt;/code&gt; if GrowlApplicationBridge will register with Growl.</Line>
-        <Line>&lt;/value&gt;</Line>
+        <Line>YES if GrowlApplicationBridge will register with Growl.</Line>
       </Summary>
       <MinAvailability>Growl v1.2</MinAvailability>
       <Obsolete xsi:nil="true" />
