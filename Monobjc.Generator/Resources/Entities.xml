@@ -4745,8 +4745,14 @@ enum
         <Patch>Properties[LevelsOfDetailBias].Getter.ReturnType=IntPtr</Patch>
       </Class>
       <Class name="CATransaction">
-        <Patch>Methods[SetValueForKey].Generate=false</Patch>
-        <Patch>Methods[ValueForKey].Generate=false</Patch>
+        <Replace type="Generated">
+          <Source>public static void SetValueForKey(</Source>
+          <With>public new static void SetValueForKey(</With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>public static Id ValueForKey(</Source>
+          <With>public new static Id ValueForKey(</With>
+        </Replace>
       </Class>
       <Class name="CATransformLayer">
       </Class>
