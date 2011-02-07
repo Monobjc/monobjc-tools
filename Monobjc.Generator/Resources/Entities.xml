@@ -24,6 +24,16 @@
       </Class>
       <Class name="ABPeoplePickerView">
         <Patch>Enumerations[ABPeoplePickerSelectionBehavior].BaseType=int</Patch>
+        <Patch>Properties[AccessoryView].MinAvailability=Mac OS X v10.5</Patch>
+        <Patch>Properties[AllowsGroupSelection].MinAvailability=Mac OS X v10.5</Patch>
+        <Patch>Properties[AllowsMultipleSelection].MinAvailability=Mac OS X v10.5</Patch>
+        <Patch>Properties[AutosaveName].MinAvailability=Mac OS X v10.5</Patch>
+        <Patch>Properties[DisplayedProperty].MinAvailability=Mac OS X v10.5</Patch>
+        <Patch>Properties[GroupDoubleAction].MinAvailability=Mac OS X v10.5</Patch>
+        <Patch>Properties[NameDoubleAction].MinAvailability=Mac OS X v10.5</Patch>
+        <Patch>Properties[SelectedGroups].MinAvailability=Mac OS X v10.5</Patch>
+        <Patch>Properties[SelectedRecords].MinAvailability=Mac OS X v10.5</Patch>
+        <Patch>Properties[ValueSelectionBehavior].MinAvailability=Mac OS X v10.5</Patch>
       </Class>
       <Class name="ABPerson">
       </Class>
