@@ -1008,6 +1008,10 @@
         <Patch>Methods[GetRowColumnOfCell].Parameters[column].Type=NSInteger</Patch>
         <Patch>Methods[GetRowColumnOfCell].Parameters[column].IsOut=true</Patch>
         <Patch>Enumerations[NSMatrixMode].BaseType=NSUInteger</Patch>
+        <Replace type="Generated">
+          <Source>public virtual Class CellClass</Source>
+          <With>public new Class CellClass</With>
+        </Replace>
       </Class>
       <Class name="NSMenu">
         <Replace type="Xhtml">
@@ -1434,6 +1438,7 @@ enum {]]>
       </Class>
       <Class name="NSATSTypesetter.Deprecated">
         <Patch>AdditionFor=NSATSTypesetter</Patch>
+        <Patch>Methods[InsertGlyphAtGlyphIndexCharacterIndex].Generate=false</Patch>
       </Class>
       <Class name="NSAttributedString_AppKitAdditions.Deprecated">
         <Patch>AdditionFor=NSAttributedString_AppKitAdditions</Patch>
@@ -4740,6 +4745,8 @@ enum
         <Patch>Properties[LevelsOfDetailBias].Getter.ReturnType=IntPtr</Patch>
       </Class>
       <Class name="CATransaction">
+        <Patch>Methods[SetValueForKey].Generate=false</Patch>
+        <Patch>Methods[ValueForKey].Generate=false</Patch>
       </Class>
       <Class name="CATransformLayer">
       </Class>
