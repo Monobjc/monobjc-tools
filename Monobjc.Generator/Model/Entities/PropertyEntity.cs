@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -112,7 +112,21 @@ namespace Monobjc.Tools.Generator.Model.Entities
             {
                 return true;
             }
-            return base.Equals(other) && other.Static.Equals(this.Static) && Equals(other.Name, this.Name);
+			if (other.Static != this.Static)
+			{
+				return false;
+			}
+			/*
+			if (!Equals(other.Getter, this.Getter))
+			{
+				return false;
+			}
+			if (!Equals(other.Setter, this.Setter))
+			{
+				return false;
+			}
+			*/
+            return base.Equals(other);
         }
 
         /// <summary>

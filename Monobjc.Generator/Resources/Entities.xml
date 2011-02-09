@@ -742,8 +742,10 @@
       <Class name="NSColorWell">
       </Class>
       <Class name="NSComboBox">
+        <Patch>Properties[DataSource].Type=Id</Patch>
       </Class>
       <Class name="NSComboBoxCell">
+        <Patch>Properties[DataSource].Type=Id</Patch>
       </Class>
       <Class name="NSControl">
 
@@ -1244,6 +1246,7 @@
       <Class name="NSTableView">
         <Patch>Methods[DragImageForRowsWithIndexesTableColumnsEventOffset].Parameters[dragImageOffset].Type=NSPoint</Patch>
         <Patch>Methods[DragImageForRowsWithIndexesTableColumnsEventOffset].Parameters[dragImageOffset].IsByRef=true</Patch>
+        <Patch>Properties[DataSource].Type=Id</Patch>
         <Patch>Enumerations[NSTableViewDraggingDestinationFeedbackStyle].BaseType=NSInteger</Patch>
         <Patch>Enumerations[Grid_styles].Name=NSGridStyleMask</Patch>
         <Patch>Enumerations[NSGridStyleMask].BaseType=NSUInteger</Patch>
@@ -2365,8 +2368,8 @@ enum {]]>
           <With><![CDATA[<span class="param">aName </span>]]></With>
         </Replace>
       </Class>
-      <Class name="DRStatus_Header">
-
+      <Class name="DRStatus">
+	    <Patch>BaseType=NSObject</Patch>
       </Class>
       <Class name="DRTrack">
       </Class>
@@ -2459,7 +2462,7 @@ enum {]]>
   </Framework>
   <Framework name="DiscRecordingUI" usings="Foundation,AppKit,DiscRecording" assembly="Monobjc.DiscRecordingUI">
     <Types>
-      <Type name="DiscRecordingUI.Constants">
+      <Type name="DiscRecordingUIFramework.Constants">
       </Type>
     </Types>
     <Classes>
@@ -4091,7 +4094,8 @@ enum]]>
         <Patch>Enumerations[IKImageBrowserDropOperation].BaseType=int</Patch>
       </Class>
       <Class name="IKImageEditPanel">
-      </Class>
+         <Patch>Properties[DataSource].Type=Id</Patch>
+     </Class>
       <Class name="IKImageView">
       </Class>
       <Class name="IKImagePicker">
@@ -4858,7 +4862,8 @@ enum
   <Framework name="QuickLook" usings="Foundation,AppKit" assembly="Monobjc.QuickLook">
     <Classes>
       <Class name="QLPreviewPanel">
-      </Class>
+        <Patch>Properties[DataSource].Type=Id</Patch>
+     </Class>
     </Classes>
     <Protocols>
       <Protocol name="QLPreviewPanelDataSource">

@@ -1458,7 +1458,7 @@
   <Entry ns="DiscRecording" nature="C" name="DRNotificationCenter" style="Classic" file="DRNotificationCenter">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/MusicAudio/Reference/DiscRecordingFrameworkRef/DRNotificationCenter_h/Classes/DRNotificationCenter/index.html</url>
   </Entry>
-  <Entry ns="DiscRecording" nature="C" name="DRStatus_Header" style="Classic" file="DRStatus_Header">
+  <Entry ns="DiscRecording" nature="C" name="DRStatus" style="Classic" file="DRStatus">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/MusicAudio/Reference/DiscRecordingFrameworkRef/DRStatus_h/index.html</url>
   </Entry>
   <Entry ns="DiscRecording" nature="C" name="DRTrack" style="Classic" file="DRTrack">
@@ -1533,7 +1533,7 @@
   <Entry ns="DiscRecordingUI" nature="P" name="DRSetupPanelDelegate" style="Classic" file="DRSetupPanelDelegate">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/MusicAudio/Reference/DiscRecordingUIFrameworkReference/DRSetupPanel_h/Categories/NSObject_DRSetupPanelDelegate_/index.html</url>
   </Entry>
-  <Entry ns="DiscRecordingUI" nature="T" name="DiscRecordingUI.Constants" style="Classic" file="DiscRecordingUI.Constants">
+  <Entry ns="DiscRecordingUI" nature="T" name="DiscRecordingUIFramework.Constants" style="Classic" file="DiscRecordingUIFramework.Constants">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/MusicAudio/Reference/DiscRecordingUIFrameworkReference/DiscRecordingUIResources_h/index.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSAffineTransform" style="Cocoa" file="NSAffineTransform">
