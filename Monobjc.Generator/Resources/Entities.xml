@@ -4959,6 +4959,8 @@ enum
       <Class name="SFChooseIdentityPanel">
       </Class>
       <Class name="SFKeychainSavePanel">
+        <Patch>Methods[BeginSheetForDirectoryFileModalForWindowModalDelegateDidEndSelectorContextInfo].Generate=false</Patch>
+        <Patch>Methods[RunModalForDirectoryFile].Generate=false</Patch>
       </Class>
       <Class name="SFKeychainSettingsPanel">
         <Patch>Methods[BeginSheetForWindowModalDelegateDidEndSelectorContextInfoSettingsKeychain].Parameters[settings].Type=IntPtr</Patch>
