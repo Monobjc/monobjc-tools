@@ -748,7 +748,7 @@
         <Patch>Properties[DataSource].Type=Id</Patch>
       </Class>
       <Class name="NSControl">
-
+        <Patch>Properties[Delegate]=<![CDATA[<Property Generate="true" CopyInDescendants="false" Static="false"><Summary><Line>Returns the delegate used by the receiver.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>Delegate</Name><Type>Id</Type><Getter Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true"><Summary/><MinAvailability>Mac OS X v10.0</MinAvailability><Name>Delegate</Name><Selector>delegate</Selector><Signature>- (id)delegate</Signature><ReturnType>Id</ReturnType><ReturnsDocumentation>The delegate used by the receiver and all other text views sharing the receiver’s layout manager, or nil if there is none.</ReturnsDocumentation><Parameters /></Getter><Setter Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true"><Summary/><MinAvailability>Mac OS X v10.0</MinAvailability><Name>SetDelegate</Name><Selector>setDelegate:</Selector><Signature>- (void)setDelegate:(id)anObject</Signature><ReturnType>void</ReturnType><Parameters><Parameter Generate="true" CopyInDescendants="false" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The new delegate object.</Line></Summary><Name>anObject</Name><Type>Id</Type></Parameter></Parameters></Setter></Property>]]></Patch>
       </Class>
       <Class name="NSController">
       </Class>

@@ -45,7 +45,7 @@ namespace Monobjc.Tools.Generator.Generators
         {
             ProtocolEntity protocolEntity = (ProtocolEntity) entity;
             ClassEntity delegatorEntity = protocolEntity.DelegatorEntity;
-            String property = protocolEntity.DelegateProperty;
+			String property = protocolEntity.DelegateProperty;
 
             // Append License
             this.Writer.WriteLineFormat(0, License);
@@ -97,7 +97,7 @@ namespace Monobjc.Tools.Generator.Generators
                 this.Writer.WriteLineFormat(2, "/// Set the {0} property of a <see cref=\"{1}\"/> instance.", property, delegatorEntity.Name);
                 this.Writer.WriteLineFormat(2, "/// </summary>");
                 this.Writer.WriteLineFormat(2, "/// <param name=\"assignment\">The assignment of delegation methods.</param>");
-                this.Writer.WriteLineFormat(2, "public void Set{0}(Action<{0}EventDispatcher> assignment)", protocolEntity.Name);
+                this.Writer.WriteLineFormat(2, "public void Set{0}(Action<{1}EventDispatcher> assignment)", property, protocolEntity.Name);
                 this.Writer.WriteLineFormat(2, "{{");
                 this.Writer.WriteLineFormat(3, "{0}EventDispatcher @delegate = this.{1}.SafeCastAs<{0}EventDispatcher>();", protocolEntity.Name, property);
                 this.Writer.WriteLineFormat(3, "if (@delegate != null)");
