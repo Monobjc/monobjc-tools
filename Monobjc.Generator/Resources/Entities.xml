@@ -2685,6 +2685,10 @@ enum {]]>
         <Patch>Functions[NSJavaSetup].Generate=false</Patch>
         <Patch>Functions[NSJavaSetupVirtualMachine].Generate=false</Patch>
         <Patch>Functions[NSLocationInRange].Generate=false</Patch>
+        <Patch>Functions[NSLocalizedString].Generate=false</Patch>
+        <Patch>Functions[NSLocalizedStringFromTable].Generate=false</Patch>
+        <Patch>Functions[NSLocalizedStringFromTableInBundle].Generate=false</Patch>
+        <Patch>Functions[NSLocalizedStringWithDefaultValue].Generate=false</Patch>
         <Patch>Functions[NSLog].Generate=false</Patch>
         <Patch>Functions[NSLogPageSize].Generate=false</Patch>
         <Patch>Functions[NSLogv].Generate=false</Patch>
