@@ -4273,7 +4273,7 @@ enum]]>
       </Structure>
     </Structures>
   </Framework>
-  <Framework name="Quartz" usings="Foundation,AppKit,QuartzCore" assembly="Monobjc.Quartz">
+  <Framework name="Quartz" usings="Foundation,AppKit,QuartzCore,ApplicationServices" assembly="Monobjc.Quartz">
     <Classes>
       <Class name="CIFilter_ImageKitAdditions">
         <Patch>AdditionFor=CIFilter</Patch>
