@@ -6,7 +6,7 @@
   <MinAvailability>Mac OS X v10.4</MinAvailability>
   <MaxAvailability>VERSION</MaxAvailability>
   <Name>PDFLineStyle</Name>
-  <Namespace>PDFKit</Namespace>
+  <Namespace>Quartz</Namespace>
   <BaseType>int</BaseType>
   <Enumerations />
   <Constants />

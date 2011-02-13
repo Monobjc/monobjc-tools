@@ -4071,85 +4071,6 @@ enum]]>
       </Structure>
     </Structures>
   </Framework>
-  <Framework name="ImageKit" usings="Foundation,AppKit,QuartzCore,ApplicationServices" assembly="Monobjc.ImageKit">
-    <Classes>
-      <Class name="CIFilter_ImageKitAdditions">
-        <Patch>AdditionFor=CIFilter</Patch>
-      </Class>
-      <Class name="IKCameraDeviceView">
-      </Class>
-      <Class name="IKDeviceBrowserView">
-      </Class>
-      <Class name="IKFilterBrowserPanel">
-        <Patch>Methods[FilterBrowserPanelWithStyleMask].ReturnType=IKFilterBrowserPanel</Patch>
-      </Class>
-      <Class name="IKFilterBrowserView">
-      </Class>
-      <Class name="IKFilterUIView">
-      </Class>
-      <Class name="IKImageBrowserCell">
-        <Patch>Enumerations[IKImageBrowserCellState].BaseType=int</Patch>
-      </Class>
-      <Class name="IKImageBrowserView">
-        <Patch>Enumerations[Cell_Appearance_Style_Masks].Name=IKCellAppearanceStyleMask</Patch>
-        <Patch>Enumerations[IKCellAppearanceStyleMask].BaseType=int</Patch>
-        <Patch>Enumerations[Group_Style_Attributes].Name=IKGroupStyleAttribute</Patch>
-        <Patch>Enumerations[IKGroupStyleAttribute].BaseType=int</Patch>
-        <Patch>Enumerations[IKImageBrowserDropOperation].BaseType=int</Patch>
-      </Class>
-      <Class name="IKImageEditPanel">
-         <Patch>Properties[DataSource].Type=Id</Patch>
-     </Class>
-      <Class name="IKImageView">
-      </Class>
-      <Class name="IKImagePicker">
-      </Class>
-      <Class name="IKPictureTaker;IKImagePicker">
-      </Class>
-      <Class name="IKSaveOptions">
-        <Patch>Properties[ImageProperties].Type=NSDictionary</Patch>
-        <Patch>Properties[ImageProperties].Getter.ReturnType=NSDictionary</Patch>
-        <Patch>Properties[ImageUTType].Type=NSString</Patch>
-        <Patch>Properties[ImageUTType].Getter.ReturnType=NSString</Patch>
-        <Patch>Properties[UserSelection].Type=NSDictionary</Patch>
-        <Patch>Properties[UserSelection].Getter.ReturnType=NSDictionary</Patch>
-      </Class>
-      <Class name="IKScannerDeviceView">
-      </Class>
-      <Class name="IKSlideshow">
-      </Class>
-    </Classes>
-    <Protocols>
-      <Protocol name="IKCameraDeviceViewDelegate">
-        <Patch>DelegateFor=IKCameraDeviceView</Patch>
-        <Patch>DelegateProperty=Delegate</Patch>
-        <Patch>Methods[CameraDeviceViewDidDownloadFileLocationFileDataError].Parameters[file].Type=IntPtr</Patch>
-        <Patch>Methods[CameraDeviceViewDidDownloadFileLocationFileDataError].Parameters[file].Type=IntPtr</Patch>
-      </Protocol>
-      <Protocol name="IKDeviceBrowserViewDelegate">
-        <Patch>DelegateFor=IKDeviceBrowserView</Patch>
-        <Patch>DelegateProperty=Delegate</Patch>
-      </Protocol>
-      <Protocol name="IKFilterCustomUIProvider">
-      </Protocol>
-      <Protocol name="IKImageBrowserDataSource">
-      </Protocol>
-      <Protocol name="IKImageBrowserDelegate">
-        <Patch>DelegateFor=IKImageBrowser</Patch>
-        <Patch>DelegateProperty=Delegate</Patch>
-      </Protocol>
-      <Protocol name="IKImageBrowserItem">
-      </Protocol>
-      <Protocol name="IKImageEditPanelDataSource">
-      </Protocol>
-      <Protocol name="IKScannerDeviceViewDelegate">
-        <Patch>DelegateFor=IKScannerDeviceView</Patch>
-        <Patch>DelegateProperty=Delegate</Patch>
-      </Protocol>
-      <Protocol name="IKSlideshowDataSource">
-      </Protocol>
-    </Protocols>
-  </Framework>
   <Framework name="InputMethodKit" usings="Foundation,AppKit" assembly="Monobjc.InputMethodKit">
     <Classes>
       <Class name="IMKCandidates">
@@ -4194,104 +4115,6 @@ enum]]>
         </Replace>
       </Type>
     </Types>
-  </Framework>
-  <Framework name="PDFKit" usings="Foundation,AppKit" assembly="Monobjc.PDFKit">
-    <Classes>
-      <Class name="PDFAction">
-      </Class>
-      <Class name="PDFActionGoTo">
-      </Class>
-      <Class name="PDFActionNamed">
-        <Patch>Enumerations[Named_Action_Names].Name=PDFActionNamedName</Patch>
-        <Patch>Enumerations[PDFActionNamedName].BaseType=NSInteger</Patch>
-      </Class>
-      <Class name="PDFActionRemoteGoTo">
-      </Class>
-      <Class name="PDFActionResetForm">
-      </Class>
-      <Class name="PDFActionURL">
-      </Class>
-      <Class name="PDFAnnotation">
-      </Class>
-      <Class name="PDFAnnotationButtonWidget">
-        <Patch>Enumerations[PDFWidgetControlType].BaseType=NSInteger</Patch>
-        <Replace type="Xhtml">
-          <Source>
-            <![CDATA[typedef <!--a-->NSInteger<!--/a--> PDFWidgetControlType;
-enum]]>
-          </Source>
-          <With><![CDATA[enum]]></With>
-        </Replace>
-        <Replace type="Xhtml">
-          <Source>
-            <![CDATA[<a href="#//apple_ref/doc/c_ref/kPDFWidgetCheckBoxControl">kPDFWidgetCheckBoxControl</a> = 2
-};
-</pre>]]>
-          </Source>
-          <With>
-            <![CDATA[<a href="#//apple_ref/doc/c_ref/kPDFWidgetCheckBoxControl">kPDFWidgetCheckBoxControl</a> = 2
-}; typedef <!--a-->NSInteger<!--/a--> PDFWidgetControlType;
-</pre>]]>
-          </With>
-        </Replace>
-      </Class>
-      <Class name="PDFAnnotationChoiceWidget">
-      </Class>
-      <Class name="PDFAnnotationCircle">
-      </Class>
-      <Class name="PDFAnnotationFreeText">
-      </Class>
-      <Class name="PDFAnnotationInk">
-      </Class>
-      <Class name="PDFAnnotationLine">
-      </Class>
-      <Class name="PDFAnnotationLink">
-      </Class>
-      <Class name="PDFAnnotationMarkup">
-      </Class>
-      <Class name="PDFAnnotationPopup">
-      </Class>
-      <Class name="PDFAnnotationSquare">
-      </Class>
-      <Class name="PDFAnnotationStamp">
-      </Class>
-      <Class name="PDFAnnotationText">
-      </Class>
-      <Class name="PDFAnnotationTextWidget">
-      </Class>
-      <Class name="PDFBorder">
-      </Class>
-      <Class name="PDFDestination">
-      </Class>
-      <Class name="PDFDocument">
-        <Patch>Enumerations[PDF_Page_Scaling_Modes_for_Printing].Name=PDFPrintScalingMode</Patch>
-        <Patch>Enumerations[PDFPrintScalingMode].BaseType=NSInteger</Patch>
-      </Class>
-      <Class name="PDFOutline">
-      </Class>
-      <Class name="PDFPage">
-      </Class>
-      <Class name="PDFSelection">
-      </Class>
-      <Class name="PDFThumbnailView">
-      </Class>
-      <Class name="PDFView">
-      </Class>
-
-      <Class name="PDFAnnotationButtonWidget.Deprecated">
-        <Patch>AdditionFor=PDFAnnotationButtonWidget</Patch>
-      </Class>
-
-    </Classes>
-    <Enumerations>
-      <Enumeration name="PDFAreaOfInterest"></Enumeration>
-      <Enumeration name="PDFBorderStyle"></Enumeration>
-      <Enumeration name="PDFDisplayBox"></Enumeration>
-      <Enumeration name="PDFDisplayMode"></Enumeration>
-      <Enumeration name="PDFLineStyle"></Enumeration>
-      <Enumeration name="PDFMarkupType"></Enumeration>
-      <Enumeration name="PDFTextAnnotationIconType"></Enumeration>
-    </Enumerations>
   </Framework>
   <Framework name="QTKit" usings="Foundation,AppKit,QuartzCore" assembly="Monobjc.QTKit">
     <Types>
@@ -4450,8 +4273,136 @@ enum]]>
       </Structure>
     </Structures>
   </Framework>
-  <Framework name="QuartzComposer" usings="Foundation,AppKit,QuartzCore" assembly="Monobjc.QuartzComposer">
+  <Framework name="Quartz" usings="Foundation,AppKit,QuartzCore" assembly="Monobjc.Quartz">
     <Classes>
+      <Class name="CIFilter_ImageKitAdditions">
+        <Patch>AdditionFor=CIFilter</Patch>
+      </Class>
+      <Class name="IKCameraDeviceView">
+      </Class>
+      <Class name="IKDeviceBrowserView">
+      </Class>
+      <Class name="IKFilterBrowserPanel">
+        <Patch>Methods[FilterBrowserPanelWithStyleMask].ReturnType=IKFilterBrowserPanel</Patch>
+      </Class>
+      <Class name="IKFilterBrowserView">
+      </Class>
+      <Class name="IKFilterUIView">
+      </Class>
+      <Class name="IKImageBrowserCell">
+        <Patch>Enumerations[IKImageBrowserCellState].BaseType=int</Patch>
+      </Class>
+      <Class name="IKImageBrowserView">
+        <Patch>Enumerations[Cell_Appearance_Style_Masks].Name=IKCellAppearanceStyleMask</Patch>
+        <Patch>Enumerations[IKCellAppearanceStyleMask].BaseType=int</Patch>
+        <Patch>Enumerations[Group_Style_Attributes].Name=IKGroupStyleAttribute</Patch>
+        <Patch>Enumerations[IKGroupStyleAttribute].BaseType=int</Patch>
+        <Patch>Enumerations[IKImageBrowserDropOperation].BaseType=int</Patch>
+      </Class>
+      <Class name="IKImageEditPanel">
+         <Patch>Properties[DataSource].Type=Id</Patch>
+     </Class>
+      <Class name="IKImageView">
+      </Class>
+      <Class name="IKImagePicker">
+      </Class>
+      <Class name="IKPictureTaker;IKImagePicker">
+      </Class>
+      <Class name="IKSaveOptions">
+        <Patch>Properties[ImageProperties].Type=NSDictionary</Patch>
+        <Patch>Properties[ImageProperties].Getter.ReturnType=NSDictionary</Patch>
+        <Patch>Properties[ImageUTType].Type=NSString</Patch>
+        <Patch>Properties[ImageUTType].Getter.ReturnType=NSString</Patch>
+        <Patch>Properties[UserSelection].Type=NSDictionary</Patch>
+        <Patch>Properties[UserSelection].Getter.ReturnType=NSDictionary</Patch>
+      </Class>
+      <Class name="IKScannerDeviceView">
+      </Class>
+      <Class name="IKSlideshow">
+      </Class>
+      <Class name="PDFAction">
+      </Class>
+      <Class name="PDFActionGoTo">
+      </Class>
+      <Class name="PDFActionNamed">
+        <Patch>Enumerations[Named_Action_Names].Name=PDFActionNamedName</Patch>
+        <Patch>Enumerations[PDFActionNamedName].BaseType=NSInteger</Patch>
+      </Class>
+      <Class name="PDFActionRemoteGoTo">
+      </Class>
+      <Class name="PDFActionResetForm">
+      </Class>
+      <Class name="PDFActionURL">
+      </Class>
+      <Class name="PDFAnnotation">
+      </Class>
+      <Class name="PDFAnnotationButtonWidget">
+        <Patch>Enumerations[PDFWidgetControlType].BaseType=NSInteger</Patch>
+        <Replace type="Xhtml">
+          <Source>
+            <![CDATA[typedef <!--a-->NSInteger<!--/a--> PDFWidgetControlType;
+enum]]>
+          </Source>
+          <With><![CDATA[enum]]></With>
+        </Replace>
+        <Replace type="Xhtml">
+          <Source>
+            <![CDATA[<a href="#//apple_ref/doc/c_ref/kPDFWidgetCheckBoxControl">kPDFWidgetCheckBoxControl</a> = 2
+};
+</pre>]]>
+          </Source>
+          <With>
+            <![CDATA[<a href="#//apple_ref/doc/c_ref/kPDFWidgetCheckBoxControl">kPDFWidgetCheckBoxControl</a> = 2
+}; typedef <!--a-->NSInteger<!--/a--> PDFWidgetControlType;
+</pre>]]>
+          </With>
+        </Replace>
+      </Class>
+      <Class name="PDFAnnotationChoiceWidget">
+      </Class>
+      <Class name="PDFAnnotationCircle">
+      </Class>
+      <Class name="PDFAnnotationFreeText">
+      </Class>
+      <Class name="PDFAnnotationInk">
+      </Class>
+      <Class name="PDFAnnotationLine">
+      </Class>
+      <Class name="PDFAnnotationLink">
+      </Class>
+      <Class name="PDFAnnotationMarkup">
+      </Class>
+      <Class name="PDFAnnotationPopup">
+      </Class>
+      <Class name="PDFAnnotationSquare">
+      </Class>
+      <Class name="PDFAnnotationStamp">
+      </Class>
+      <Class name="PDFAnnotationText">
+      </Class>
+      <Class name="PDFAnnotationTextWidget">
+      </Class>
+      <Class name="PDFBorder">
+      </Class>
+      <Class name="PDFDestination">
+      </Class>
+      <Class name="PDFDocument">
+        <Patch>Enumerations[PDF_Page_Scaling_Modes_for_Printing].Name=PDFPrintScalingMode</Patch>
+        <Patch>Enumerations[PDFPrintScalingMode].BaseType=NSInteger</Patch>
+      </Class>
+      <Class name="PDFOutline">
+      </Class>
+      <Class name="PDFPage">
+      </Class>
+      <Class name="PDFSelection">
+      </Class>
+      <Class name="PDFThumbnailView">
+      </Class>
+      <Class name="PDFView">
+      </Class>
+      <Class name="PDFAnnotationButtonWidget.Deprecated">
+        <Patch>AdditionFor=PDFAnnotationButtonWidget</Patch>
+      </Class>
       <Class name="QCComposition">
       </Class>
       <Class name="QCCompositionLayer">
@@ -4474,8 +4425,39 @@ enum]]>
       </Class>
       <Class name="QCView">
       </Class>
+      <Class name="QLPreviewPanel">
+        <Patch>Properties[DataSource].Type=Id</Patch>
+     </Class>
     </Classes>
     <Protocols>
+      <Protocol name="IKCameraDeviceViewDelegate">
+        <Patch>DelegateFor=IKCameraDeviceView</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+        <Patch>Methods[CameraDeviceViewDidDownloadFileLocationFileDataError].Parameters[file].Type=IntPtr</Patch>
+        <Patch>Methods[CameraDeviceViewDidDownloadFileLocationFileDataError].Parameters[file].Type=IntPtr</Patch>
+      </Protocol>
+      <Protocol name="IKDeviceBrowserViewDelegate">
+        <Patch>DelegateFor=IKDeviceBrowserView</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
+      <Protocol name="IKFilterCustomUIProvider">
+      </Protocol>
+      <Protocol name="IKImageBrowserDataSource">
+      </Protocol>
+      <Protocol name="IKImageBrowserDelegate">
+        <Patch>DelegateFor=IKImageBrowser</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
+      <Protocol name="IKImageBrowserItem">
+      </Protocol>
+      <Protocol name="IKImageEditPanelDataSource">
+      </Protocol>
+      <Protocol name="IKScannerDeviceViewDelegate">
+        <Patch>DelegateFor=IKScannerDeviceView</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
+      <Protocol name="IKSlideshowDataSource">
+      </Protocol>
       <Protocol name="QCCompositionParameterViewDelegate">
         <Patch>DelegateFor=QCCompositionParameterView</Patch>
         <Patch>DelegateProperty=Delegate</Patch>
@@ -4499,7 +4481,25 @@ enum]]>
         <Patch>Methods[CopyRenderedTextureForCGLContextPixelFormatBoundsIsFlipped].Parameters[flipped].Type=bool</Patch>
         <Patch>Methods[CopyRenderedTextureForCGLContextPixelFormatBoundsIsFlipped].Parameters[flipped].IsOut=true</Patch>
       </Protocol>
+      <Protocol name="QLPreviewPanelDataSource">
+      </Protocol>
+      <Protocol name="QLPreviewPanelDelegate">
+      <Patch>DelegateFor=QLPreviewPanel</Patch>
+        <Patch>Methods[PreviewPanelTransitionImageForPreviewItemContentRect].Parameters[contentRect].Type=NSRect</Patch>
+        <Patch>Methods[PreviewPanelTransitionImageForPreviewItemContentRect].Parameters[contentRect].IsOut=true</Patch>
+      </Protocol>
+      <Protocol name="QLPreviewItem">
+      </Protocol>
     </Protocols>
+    <Enumerations>
+      <Enumeration name="PDFAreaOfInterest"></Enumeration>
+      <Enumeration name="PDFBorderStyle"></Enumeration>
+      <Enumeration name="PDFDisplayBox"></Enumeration>
+      <Enumeration name="PDFDisplayMode"></Enumeration>
+      <Enumeration name="PDFLineStyle"></Enumeration>
+      <Enumeration name="PDFMarkupType"></Enumeration>
+      <Enumeration name="PDFTextAnnotationIconType"></Enumeration>
+    </Enumerations>
   </Framework>
   <Framework name="QuartzCore" usings="Foundation,AppKit,ApplicationServices" assembly="Monobjc.AppKit">
     <Types>
@@ -4860,24 +4860,6 @@ enum
         <Patch>Methods[ProvideImageDataBytesPerRowOriginSizeUserInfo].Parameters[height].Type=IntPtr</Patch>
       </Protocol>
       <Protocol name="CIPlugInRegistration">
-      </Protocol>
-    </Protocols>
-  </Framework>
-  <Framework name="QuickLook" usings="Foundation,AppKit" assembly="Monobjc.QuickLook">
-    <Classes>
-      <Class name="QLPreviewPanel">
-        <Patch>Properties[DataSource].Type=Id</Patch>
-     </Class>
-    </Classes>
-    <Protocols>
-      <Protocol name="QLPreviewPanelDataSource">
-      </Protocol>
-      <Protocol name="QLPreviewPanelDelegate">
-      <Patch>DelegateFor=QLPreviewPanel</Patch>
-        <Patch>Methods[PreviewPanelTransitionImageForPreviewItemContentRect].Parameters[contentRect].Type=NSRect</Patch>
-        <Patch>Methods[PreviewPanelTransitionImageForPreviewItemContentRect].Parameters[contentRect].IsOut=true</Patch>
-      </Protocol>
-      <Protocol name="QLPreviewItem">
       </Protocol>
     </Protocols>
   </Framework>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Flags="false">
   <Summary>
-    <Line>The following box types may be used with PDFPage drawing and bounds-setting methods. See the Adobe PDF Specification for more information on box types, units, and coordinate systems.</Line>
+    <Line>PDF Kit annotation borders may have the following styles:</Line>
   </Summary>
   <MinAvailability>Mac OS X v10.4</MinAvailability>
   <MaxAvailability>VERSION</MaxAvailability>
-  <Name>PDFDisplayBox</Name>
-  <Namespace>PDFKit</Namespace>
+  <Name>PDFBorderStyle</Name>
+  <Namespace>Quartz</Namespace>
   <BaseType>int</BaseType>
   <Enumerations />
   <Constants />
@@ -15,41 +15,41 @@
   <Values>
     <EnumerationValue Generate="true">
       <Summary>
-        <Line>A rectangle defining the boundaries of the physical medium for display or printing, expressed in default user-space units.</Line>
+        <Line>Solid border.</Line>
       </Summary>
-      <Name>kPDFDisplayBoxMediaBox</Name>
+      <Name>kPDFBorderStyleSolid</Name>
       <MinAvailability>Mac OS X v10.4</MinAvailability>
       <Value />
     </EnumerationValue>
     <EnumerationValue Generate="true">
       <Summary>
-        <Line>A rectangle defining the boundaries of the visible region , expressed in default user-space units. Default value equal to kPDFDisplayBoxMediaBox.</Line>
+        <Line>Dashed border.</Line>
       </Summary>
-      <Name>kPDFDisplayBoxCropBox</Name>
+      <Name>kPDFBorderStyleDashed</Name>
       <MinAvailability>Mac OS X v10.4</MinAvailability>
       <Value />
     </EnumerationValue>
     <EnumerationValue Generate="true">
       <Summary>
-        <Line>A rectangle defining the boundaries of the clip region for the page contents in a production environment. Default value equal to kPDFDisplayBoxCropBox.</Line>
+        <Line>Beveled border.</Line>
       </Summary>
-      <Name>kPDFDisplayBoxBleedBox</Name>
+      <Name>kPDFBorderStyleBeveled</Name>
       <MinAvailability>Mac OS X v10.4</MinAvailability>
       <Value />
     </EnumerationValue>
     <EnumerationValue Generate="true">
       <Summary>
-        <Line>A rectangle defining the intended boundaries of the finished page. Default value equal to kPDFDisplayBoxCropBox.</Line>
+        <Line>Inset border.</Line>
       </Summary>
-      <Name>kPDFDisplayBoxTrimBox</Name>
+      <Name>kPDFBorderStyleInset</Name>
       <MinAvailability>Mac OS X v10.4</MinAvailability>
       <Value />
     </EnumerationValue>
     <EnumerationValue Generate="true">
       <Summary>
-        <Line>A rectangle defining the boundaries of the page�s meaningful content including surrounding white space intended for display. Default value equal to kPDFDisplayBoxCropBox.</Line>
+        <Line>Underline border.</Line>
       </Summary>
-      <Name>kPDFDisplayBoxArtBox</Name>
+      <Name>kPDFBorderStyleUnderline</Name>
       <MinAvailability>Mac OS X v10.4</MinAvailability>
       <Value />
     </EnumerationValue>

@@ -2256,78 +2256,6 @@
   <Entry ns="Growl" nature="P" name="GrowlApplicationBridgeDelegate" style="Cocoa" file="GrowlApplicationBridgeDelegate">
     <url>N/A</url>
   </Entry>
-  <Entry ns="ImageKit" nature="C" name="CIFilter_ImageKitAdditions" style="Cocoa" file="CIFilter_ImageKitAdditions">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKFilterUIAddition/IKFIlterUI_Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="C" name="IKCameraDeviceView" style="Cocoa" file="IKCameraDeviceView">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKCameraDeviceView_Class/Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="C" name="IKDeviceBrowserView" style="Cocoa" file="IKDeviceBrowserView">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKDeviceBrowserView_Class/Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="C" name="IKFilterBrowserPanel" style="Cocoa" file="IKFilterBrowserPanel">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKFilterBrowserPanel_Class/IKFilterBrowserPanel_Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="C" name="IKFilterBrowserView" style="Cocoa" file="IKFilterBrowserView">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKFilterBrowserView_Class/IKFilterBrowserView_Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="C" name="IKFilterUIView" style="Cocoa" file="IKFilterUIView">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKFilterUIView_Class/IKFIlterUIView_Ref.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="C" name="IKImageBrowserCell" style="Cocoa" file="IKImageBrowserCell">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKImageBrowserCell_Class/IKImageBrowserCell.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="C" name="IKImageBrowserView" style="Cocoa" file="IKImageBrowserView">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImageBrowserView/IKImageBrowserView_Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="C" name="IKImageEditPanel" style="Cocoa" file="IKImageEditPanel">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImageEditPanel/IKImageEditPanel_Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="C" name="IKImagePicker" style="Cocoa" file="IKImagePicker">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImagePicker_Class/IKImagePicker_Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="C" name="IKImageView" style="Cocoa" file="IKImageView">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImageView/IKImageView_Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="C" name="IKPictureTaker" style="Cocoa" file="IKImagePicker">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImagePicker_Class/IKImagePicker_Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="C" name="IKSaveOptions" style="Cocoa" file="IKSaveOptions">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKSaveOptions/IKSaveOptions_Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="C" name="IKScannerDeviceView" style="Cocoa" file="IKScannerDeviceView">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKScannerDeviceView_Class/Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="C" name="IKSlideshow" style="Cocoa" file="IKSlideshow">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKSlideShow/IKSlideshow_Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="P" name="IKCameraDeviceViewDelegate" style="Cocoa" file="IKCameraDeviceViewDelegate">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKCameraDeviceViewDelegate_Protocol/Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="P" name="IKDeviceBrowserViewDelegate" style="Cocoa" file="IKDeviceBrowserViewDelegate">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKDeviceBrowserViewDelegate_Protocol/Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="P" name="IKFilterCustomUIProvider" style="Cocoa" file="IKFilterCustomUIProvider">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKFilterCustomUIProvider_Protocol/IKFilterCustomUIProvider_Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="P" name="IKImageBrowserDataSource" style="Cocoa" file="IKImageBrowserDataSource">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImageBrowserDataSource_Protocol/IKImageBrowserDataSource_Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="P" name="IKImageBrowserDelegate" style="Cocoa" file="IKImageBrowserDelegate">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImageBrowserDelegate_Protocol/IKImageBrowserDelegate_Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="P" name="IKImageBrowserItem" style="Cocoa" file="IKImageBrowserItem">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImageBrowserItem_Protocol/IKImageBrowserItem_Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="P" name="IKImageEditPanelDataSource" style="Cocoa" file="IKImageEditPanelDataSource">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImageEditPanelDataSource/IKImageEditPanelDataSource_Ref.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="P" name="IKScannerDeviceViewDelegate" style="Cocoa" file="IKScannerDeviceViewDelegate">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKScannerDeviceViewDelegate_Protocol/Reference.html</url>
-  </Entry>
-  <Entry ns="ImageKit" nature="P" name="IKSlideshowDataSource" style="Cocoa" file="IKSlideshowDataSource">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKSlideShowDataSource/IKSlideshowDataSource_ref.html</url>
-  </Entry>
   <Entry ns="InputMethodKit" nature="C" name="IMKCandidates" style="Cocoa" file="IMKCandidates">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/IMKCandidates_Class/Reference/IMKCandidates_ref.html</url>
   </Entry>
@@ -2351,114 +2279,6 @@
   </Entry>
   <Entry ns="MobileCoreServices" nature="T" name="UTType" style="Cocoa" file="UTType">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/MobileCoreServices/Reference/UTTypeRef/Reference/reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFAction" style="Cocoa" file="PDFAction">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFAction_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFActionGoTo" style="Cocoa" file="PDFActionGoTo">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFActionGoTo_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFActionNamed" style="Cocoa" file="PDFActionNamed">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFActionNamed_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFActionRemoteGoTo" style="Cocoa" file="PDFActionRemoteGoTo">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFActionRemoteGoTo_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFActionResetForm" style="Cocoa" file="PDFActionResetForm">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFActionResetForm_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFActionURL" style="Cocoa" file="PDFActionURL">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFActionURL_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFAnnotation" style="Cocoa" file="PDFAnnotation">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotation_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFAnnotationButtonWidget" style="Cocoa" file="PDFAnnotationButtonWidget">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationButtonWidget_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFAnnotationButtonWidget.Deprecated" style="Cocoa" file="PDFAnnotationButtonWidget.Deprecated">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationButtonWidget_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFAnnotationChoiceWidget" style="Cocoa" file="PDFAnnotationChoiceWidget">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFAnnotationChoiceWidget_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFAnnotationCircle" style="Cocoa" file="PDFAnnotationCircle">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationCircle_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFAnnotationFreeText" style="Cocoa" file="PDFAnnotationFreeText">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationFreeText_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFAnnotationInk" style="Cocoa" file="PDFAnnotationInk">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationInk_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFAnnotationLine" style="Cocoa" file="PDFAnnotationLine">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationLine_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFAnnotationLink" style="Cocoa" file="PDFAnnotationLink">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationLink_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFAnnotationMarkup" style="Cocoa" file="PDFAnnotationMarkup">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationMarkup_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFAnnotationPopup" style="Cocoa" file="PDFAnnotationPopup">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFAnnotationPopup_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFAnnotationSquare" style="Cocoa" file="PDFAnnotationSquare">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationSquare_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFAnnotationStamp" style="Cocoa" file="PDFAnnotationStamp">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFAnnotationStamp_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFAnnotationText" style="Cocoa" file="PDFAnnotationText">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationText_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFAnnotationTextWidget" style="Cocoa" file="PDFAnnotationTextWidget">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationTextWidget_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFBorder" style="Cocoa" file="PDFBorder">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFBorder_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFDestination" style="Cocoa" file="PDFDestination">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFDestination_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFDocument" style="Cocoa" file="PDFDocument">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFDocument_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFOutline" style="Cocoa" file="PDFOutline">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFOutline_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFPage" style="Cocoa" file="PDFPage">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFPage_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFSelection" style="Cocoa" file="PDFSelection">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFSelection_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFThumbnailView" style="Cocoa" file="PDFThumbnailView">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFThumbnailView_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="C" name="PDFView" style="Cocoa" file="PDFView">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFView_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="E" name="PDFAreaOfInterest" style="Cocoa" file="PDFAreaOfInterest">
-    <url>N/A</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="E" name="PDFBorderStyle" style="Cocoa" file="PDFBorderStyle">
-    <url>N/A</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="E" name="PDFDisplayBox" style="Cocoa" file="PDFDisplayBox">
-    <url>N/A</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="E" name="PDFDisplayMode" style="Cocoa" file="PDFDisplayMode">
-    <url>N/A</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="E" name="PDFLineStyle" style="Cocoa" file="PDFLineStyle">
-    <url>N/A</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="E" name="PDFMarkupType" style="Cocoa" file="PDFMarkupType">
-    <url>N/A</url>
-  </Entry>
-  <Entry ns="PDFKit" nature="E" name="PDFTextAnnotationIconType" style="Cocoa" file="PDFTextAnnotationIconType">
-    <url>N/A</url>
   </Entry>
   <Entry ns="QTKit" nature="C" name="NSCoder_QTKitAdditions" style="Cocoa" file="NSCoder_QTKitAdditions">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuickTime/Reference/QTKitFramework/Classes/NSCoder_QTKitAdditions/Reference/Reference.html</url>
@@ -2556,53 +2376,245 @@
   <Entry ns="QTKit" nature="T" name="QTKitFramework.Functions" style="Cocoa" file="QTKitFramework.Functions">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuickTime/Reference/QTKitFramework/Miscellaneous/QTKit_Functions/Reference/reference.html</url>
   </Entry>
-  <Entry ns="QuartzComposer" nature="C" name="QCComposition" style="Cocoa" file="QCComposition">
+  <Entry ns="Quartz" nature="C" name="CIFilter_ImageKitAdditions" style="Cocoa" file="CIFilter_ImageKitAdditions">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKFilterUIAddition/IKFIlterUI_Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="IKCameraDeviceView" style="Cocoa" file="IKCameraDeviceView">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKCameraDeviceView_Class/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="IKDeviceBrowserView" style="Cocoa" file="IKDeviceBrowserView">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKDeviceBrowserView_Class/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="IKFilterBrowserPanel" style="Cocoa" file="IKFilterBrowserPanel">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKFilterBrowserPanel_Class/IKFilterBrowserPanel_Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="IKFilterBrowserView" style="Cocoa" file="IKFilterBrowserView">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKFilterBrowserView_Class/IKFilterBrowserView_Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="IKFilterUIView" style="Cocoa" file="IKFilterUIView">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKFilterUIView_Class/IKFIlterUIView_Ref.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="IKImageBrowserCell" style="Cocoa" file="IKImageBrowserCell">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKImageBrowserCell_Class/IKImageBrowserCell.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="IKImageBrowserView" style="Cocoa" file="IKImageBrowserView">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImageBrowserView/IKImageBrowserView_Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="IKImageEditPanel" style="Cocoa" file="IKImageEditPanel">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImageEditPanel/IKImageEditPanel_Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="IKImagePicker" style="Cocoa" file="IKImagePicker">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImagePicker_Class/IKImagePicker_Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="IKImageView" style="Cocoa" file="IKImageView">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImageView/IKImageView_Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="IKPictureTaker" style="Cocoa" file="IKImagePicker">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImagePicker_Class/IKImagePicker_Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="IKSaveOptions" style="Cocoa" file="IKSaveOptions">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKSaveOptions/IKSaveOptions_Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="IKScannerDeviceView" style="Cocoa" file="IKScannerDeviceView">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKScannerDeviceView_Class/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="IKSlideshow" style="Cocoa" file="IKSlideshow">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKSlideShow/IKSlideshow_Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFAction" style="Cocoa" file="PDFAction">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFAction_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFActionGoTo" style="Cocoa" file="PDFActionGoTo">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFActionGoTo_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFActionNamed" style="Cocoa" file="PDFActionNamed">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFActionNamed_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFActionRemoteGoTo" style="Cocoa" file="PDFActionRemoteGoTo">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFActionRemoteGoTo_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFActionResetForm" style="Cocoa" file="PDFActionResetForm">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFActionResetForm_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFActionURL" style="Cocoa" file="PDFActionURL">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFActionURL_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFAnnotation" style="Cocoa" file="PDFAnnotation">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotation_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFAnnotationButtonWidget" style="Cocoa" file="PDFAnnotationButtonWidget">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationButtonWidget_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFAnnotationButtonWidget.Deprecated" style="Cocoa" file="PDFAnnotationButtonWidget.Deprecated">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationButtonWidget_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFAnnotationChoiceWidget" style="Cocoa" file="PDFAnnotationChoiceWidget">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFAnnotationChoiceWidget_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFAnnotationCircle" style="Cocoa" file="PDFAnnotationCircle">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationCircle_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFAnnotationFreeText" style="Cocoa" file="PDFAnnotationFreeText">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationFreeText_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFAnnotationInk" style="Cocoa" file="PDFAnnotationInk">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationInk_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFAnnotationLine" style="Cocoa" file="PDFAnnotationLine">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationLine_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFAnnotationLink" style="Cocoa" file="PDFAnnotationLink">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationLink_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFAnnotationMarkup" style="Cocoa" file="PDFAnnotationMarkup">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationMarkup_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFAnnotationPopup" style="Cocoa" file="PDFAnnotationPopup">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFAnnotationPopup_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFAnnotationSquare" style="Cocoa" file="PDFAnnotationSquare">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationSquare_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFAnnotationStamp" style="Cocoa" file="PDFAnnotationStamp">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFAnnotationStamp_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFAnnotationText" style="Cocoa" file="PDFAnnotationText">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationText_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFAnnotationTextWidget" style="Cocoa" file="PDFAnnotationTextWidget">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationTextWidget_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFBorder" style="Cocoa" file="PDFBorder">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFBorder_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFDestination" style="Cocoa" file="PDFDestination">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFDestination_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFDocument" style="Cocoa" file="PDFDocument">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFDocument_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFOutline" style="Cocoa" file="PDFOutline">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFOutline_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFPage" style="Cocoa" file="PDFPage">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFPage_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFSelection" style="Cocoa" file="PDFSelection">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFSelection_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFThumbnailView" style="Cocoa" file="PDFThumbnailView">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/PDFThumbnailView_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="PDFView" style="Cocoa" file="PDFView">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/PDFView_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="C" name="QCComposition" style="Cocoa" file="QCComposition">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/QCComposition_Class/Introduction/Introduction.html</url>
   </Entry>
-  <Entry ns="QuartzComposer" nature="C" name="QCCompositionLayer" style="Cocoa" file="QCCompositionLayer">
+  <Entry ns="Quartz" nature="C" name="QCCompositionLayer" style="Cocoa" file="QCCompositionLayer">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QCCompositionLayer_class/Introduction/Introduction.html</url>
   </Entry>
-  <Entry ns="QuartzComposer" nature="C" name="QCCompositionParameterView" style="Cocoa" file="QCCompositionParameterView">
+  <Entry ns="Quartz" nature="C" name="QCCompositionParameterView" style="Cocoa" file="QCCompositionParameterView">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/QCCompositionParameterView_Class/Introduction/Introduction.html</url>
   </Entry>
-  <Entry ns="QuartzComposer" nature="C" name="QCCompositionPickerPanel" style="Cocoa" file="QCCompositionPickerPanel">
+  <Entry ns="Quartz" nature="C" name="QCCompositionPickerPanel" style="Cocoa" file="QCCompositionPickerPanel">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/QCCompositionPickerPanel_Class/Introduction/Introduction.html</url>
   </Entry>
-  <Entry ns="QuartzComposer" nature="C" name="QCCompositionPickerView" style="Cocoa" file="QCCompositionPickerView">
+  <Entry ns="Quartz" nature="C" name="QCCompositionPickerView" style="Cocoa" file="QCCompositionPickerView">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/QCCompositionPickerView_Class/Introduction/Introduction.html</url>
   </Entry>
-  <Entry ns="QuartzComposer" nature="C" name="QCCompositionRepository" style="Cocoa" file="QCCompositionRepository">
+  <Entry ns="Quartz" nature="C" name="QCCompositionRepository" style="Cocoa" file="QCCompositionRepository">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/QCCompositionRepository_Class/Introduction/Introduction.html</url>
   </Entry>
-  <Entry ns="QuartzComposer" nature="C" name="QCPlugIn" style="Cocoa" file="QCPlugIn">
+  <Entry ns="Quartz" nature="C" name="QCPlugIn" style="Cocoa" file="QCPlugIn">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/QCPlugIn_Class/Introduction/Introduction.html</url>
   </Entry>
-  <Entry ns="QuartzComposer" nature="C" name="QCPlugInViewController" style="Cocoa" file="QCPlugInViewController">
+  <Entry ns="Quartz" nature="C" name="QCPlugInViewController" style="Cocoa" file="QCPlugInViewController">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/QCPlugInViewController_Class/Introduction/Introduction.html</url>
   </Entry>
-  <Entry ns="QuartzComposer" nature="C" name="QCRenderer" style="Cocoa" file="QCRenderer">
+  <Entry ns="Quartz" nature="C" name="QCRenderer" style="Cocoa" file="QCRenderer">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/QCRenderer_Class/Reference/Reference.html</url>
   </Entry>
-  <Entry ns="QuartzComposer" nature="C" name="QCView" style="Cocoa" file="QCView">
+  <Entry ns="Quartz" nature="C" name="QCView" style="Cocoa" file="QCView">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/QuartzFramework/Classes/QCView_Class/Reference/Reference.html</url>
   </Entry>
-  <Entry ns="QuartzComposer" nature="P" name="QCCompositionParameterViewDelegate" style="Cocoa" file="QCCompositionParameterViewDelegate">
+  <Entry ns="Quartz" nature="C" name="QLPreviewPanel" style="Cocoa" file="QLPreviewPanel">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/QLPreviewPanel_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="E" name="PDFAreaOfInterest" style="Cocoa" file="PDFAreaOfInterest">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="Quartz" nature="E" name="PDFBorderStyle" style="Cocoa" file="PDFBorderStyle">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="Quartz" nature="E" name="PDFDisplayBox" style="Cocoa" file="PDFDisplayBox">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="Quartz" nature="E" name="PDFDisplayMode" style="Cocoa" file="PDFDisplayMode">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="Quartz" nature="E" name="PDFLineStyle" style="Cocoa" file="PDFLineStyle">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="Quartz" nature="E" name="PDFMarkupType" style="Cocoa" file="PDFMarkupType">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="Quartz" nature="E" name="PDFTextAnnotationIconType" style="Cocoa" file="PDFTextAnnotationIconType">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="Quartz" nature="P" name="IKCameraDeviceViewDelegate" style="Cocoa" file="IKCameraDeviceViewDelegate">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKCameraDeviceViewDelegate_Protocol/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="P" name="IKDeviceBrowserViewDelegate" style="Cocoa" file="IKDeviceBrowserViewDelegate">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKDeviceBrowserViewDelegate_Protocol/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="P" name="IKFilterCustomUIProvider" style="Cocoa" file="IKFilterCustomUIProvider">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKFilterCustomUIProvider_Protocol/IKFilterCustomUIProvider_Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="P" name="IKImageBrowserDataSource" style="Cocoa" file="IKImageBrowserDataSource">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImageBrowserDataSource_Protocol/IKImageBrowserDataSource_Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="P" name="IKImageBrowserDelegate" style="Cocoa" file="IKImageBrowserDelegate">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImageBrowserDelegate_Protocol/IKImageBrowserDelegate_Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="P" name="IKImageBrowserItem" style="Cocoa" file="IKImageBrowserItem">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImageBrowserItem_Protocol/IKImageBrowserItem_Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="P" name="IKImageEditPanelDataSource" style="Cocoa" file="IKImageEditPanelDataSource">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImageEditPanelDataSource/IKImageEditPanelDataSource_Ref.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="P" name="IKScannerDeviceViewDelegate" style="Cocoa" file="IKScannerDeviceViewDelegate">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKScannerDeviceViewDelegate_Protocol/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="P" name="IKSlideshowDataSource" style="Cocoa" file="IKSlideshowDataSource">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKSlideShowDataSource/IKSlideshowDataSource_ref.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="P" name="QCCompositionParameterViewDelegate" style="Cocoa" file="QCCompositionParameterViewDelegate">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/QCCompositionParameterViewDelegateProtocolRef/Introduction/Introduction.html</url>
   </Entry>
-  <Entry ns="QuartzComposer" nature="P" name="QCCompositionPickerViewDelegate" style="Cocoa" file="QCCompositionPickerViewDelegate">
+  <Entry ns="Quartz" nature="P" name="QCCompositionPickerViewDelegate" style="Cocoa" file="QCCompositionPickerViewDelegate">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/QCCompositionPickerViewDelegate_Protocol/Introduction/Introduction.html</url>
   </Entry>
-  <Entry ns="QuartzComposer" nature="P" name="QCCompositionRenderer" style="Cocoa" file="QCRenderer">
+  <Entry ns="Quartz" nature="P" name="QCCompositionRenderer" style="Cocoa" file="QCRenderer">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/QCRenderer_Protocol/Reference/Reference.html</url>
   </Entry>
-  <Entry ns="QuartzComposer" nature="P" name="QCPlugInContext" style="Cocoa" file="QCPlugInContext">
+  <Entry ns="Quartz" nature="P" name="QCPlugInContext" style="Cocoa" file="QCPlugInContext">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/QCPlugInContext_Protocol/Reference/Reference.html</url>
   </Entry>
-  <Entry ns="QuartzComposer" nature="P" name="QCPlugInInputImageSource" style="Cocoa" file="QCPlugInInputImageSource">
+  <Entry ns="Quartz" nature="P" name="QCPlugInInputImageSource" style="Cocoa" file="QCPlugInInputImageSource">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/QCPlugInInputImageSource_Protocol/Reference/Reference.html</url>
   </Entry>
-  <Entry ns="QuartzComposer" nature="P" name="QCPlugInOutputImageProvider" style="Cocoa" file="QCPlugInOutputImageProvider">
+  <Entry ns="Quartz" nature="P" name="QCPlugInOutputImageProvider" style="Cocoa" file="QCPlugInOutputImageProvider">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/QCPlugInOutputImageProvider_Protocol/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="P" name="QLPreviewItem" style="Cocoa" file="QLPreviewItem">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/QLPreviewItem_Protocol/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="P" name="QLPreviewPanelDataSource" style="Cocoa" file="QLPreviewPanelDataSource">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/QLPreviewPanelDataSource_Protocol/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="P" name="QLPreviewPanelDelegate" style="Cocoa" file="QLPreviewPanelDelegate">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/QLPreviewPanelDelegate_Protocol/Reference/Reference.html</url>
   </Entry>
   <Entry ns="QuartzCore" nature="C" name="CAAnimation" style="Cocoa" file="CAAnimation">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAAnimation_class/Introduction/Introduction.html</url>
@@ -2765,18 +2777,6 @@
   </Entry>
   <Entry ns="QuartzCore" nature="T" name="QuartzCoreFramework.Functions" style="Cocoa" file="QuartzCoreFramework.Functions">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/CoreAnimation_functions/Reference/reference.html</url>
-  </Entry>
-  <Entry ns="QuickLook" nature="C" name="QLPreviewPanel" style="Cocoa" file="QLPreviewPanel">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/QLPreviewPanel_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="QuickLook" nature="P" name="QLPreviewItem" style="Cocoa" file="QLPreviewItem">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/QLPreviewItem_Protocol/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="QuickLook" nature="P" name="QLPreviewPanelDataSource" style="Cocoa" file="QLPreviewPanelDataSource">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/QLPreviewPanelDataSource_Protocol/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="QuickLook" nature="P" name="QLPreviewPanelDelegate" style="Cocoa" file="QLPreviewPanelDelegate">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/QLPreviewPanelDelegate_Protocol/Reference/Reference.html</url>
   </Entry>
   <Entry ns="SecurityFoundation" nature="C" name="SFAuthorization" style="Cocoa" file="SFAuthorization">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Security/Reference/SecurityFoundationFramework/Classes/SFAuthorization_Class/Reference/Reference.html</url>

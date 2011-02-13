@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Flags="false">
   <Summary>
-    <Line>Text annotations can use the following icon types.</Line>
+    <Line>The following box types may be used with PDFPage drawing and bounds-setting methods. See the Adobe PDF Specification for more information on box types, units, and coordinate systems.</Line>
   </Summary>
   <MinAvailability>Mac OS X v10.4</MinAvailability>
   <MaxAvailability>VERSION</MaxAvailability>
-  <Name>PDFTextAnnotationIconType</Name>
-  <Namespace>PDFKit</Namespace>
+  <Name>PDFDisplayBox</Name>
+  <Namespace>Quartz</Namespace>
   <BaseType>int</BaseType>
   <Enumerations />
   <Constants />
@@ -15,57 +15,41 @@
   <Values>
     <EnumerationValue Generate="true">
       <Summary>
-        <Line>Comment annotation icon.</Line>
+        <Line>A rectangle defining the boundaries of the physical medium for display or printing, expressed in default user-space units.</Line>
       </Summary>
-      <Name>kPDFTextAnnotationIconComment</Name>
+      <Name>kPDFDisplayBoxMediaBox</Name>
       <MinAvailability>Mac OS X v10.4</MinAvailability>
       <Value />
     </EnumerationValue>
     <EnumerationValue Generate="true">
       <Summary>
-        <Line>Key annotation icon.</Line>
+        <Line>A rectangle defining the boundaries of the visible region , expressed in default user-space units. Default value equal to kPDFDisplayBoxMediaBox.</Line>
       </Summary>
-      <Name>kPDFTextAnnotationIconKey</Name>
+      <Name>kPDFDisplayBoxCropBox</Name>
       <MinAvailability>Mac OS X v10.4</MinAvailability>
       <Value />
     </EnumerationValue>
     <EnumerationValue Generate="true">
       <Summary>
-        <Line>Note annotation icon.</Line>
+        <Line>A rectangle defining the boundaries of the clip region for the page contents in a production environment. Default value equal to kPDFDisplayBoxCropBox.</Line>
       </Summary>
-      <Name>kPDFTextAnnotationIconNote</Name>
+      <Name>kPDFDisplayBoxBleedBox</Name>
       <MinAvailability>Mac OS X v10.4</MinAvailability>
       <Value />
     </EnumerationValue>
     <EnumerationValue Generate="true">
       <Summary>
-        <Line>Help annotation icon.</Line>
+        <Line>A rectangle defining the intended boundaries of the finished page. Default value equal to kPDFDisplayBoxCropBox.</Line>
       </Summary>
-      <Name>kPDFTextAnnotationIconHelp</Name>
+      <Name>kPDFDisplayBoxTrimBox</Name>
       <MinAvailability>Mac OS X v10.4</MinAvailability>
       <Value />
     </EnumerationValue>
     <EnumerationValue Generate="true">
       <Summary>
-        <Line>New Paragraph annotation icon.</Line>
+        <Line>A rectangle defining the boundaries of the page�s meaningful content including surrounding white space intended for display. Default value equal to kPDFDisplayBoxCropBox.</Line>
       </Summary>
-      <Name>kPDFTextAnnotationIconNewParagraph</Name>
-      <MinAvailability>Mac OS X v10.4</MinAvailability>
-      <Value />
-    </EnumerationValue>
-    <EnumerationValue Generate="true">
-      <Summary>
-        <Line>Paragraph annotation icon.</Line>
-      </Summary>
-      <Name>kPDFTextAnnotationIconParagraph</Name>
-      <MinAvailability>Mac OS X v10.4</MinAvailability>
-      <Value />
-    </EnumerationValue>
-    <EnumerationValue Generate="true">
-      <Summary>
-        <Line>Insert annotation icon.</Line>
-      </Summary>
-      <Name>kPDFTextAnnotationIconInsert</Name>
+      <Name>kPDFDisplayBoxArtBox</Name>
       <MinAvailability>Mac OS X v10.4</MinAvailability>
       <Value />
     </EnumerationValue>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Flags="false">
   <Summary>
-    <Line>PDF Kit annotation borders may have the following styles:</Line>
+    <Line>Text annotations can use the following icon types.</Line>
   </Summary>
   <MinAvailability>Mac OS X v10.4</MinAvailability>
   <MaxAvailability>VERSION</MaxAvailability>
-  <Name>PDFBorderStyle</Name>
-  <Namespace>PDFKit</Namespace>
+  <Name>PDFTextAnnotationIconType</Name>
+  <Namespace>Quartz</Namespace>
   <BaseType>int</BaseType>
   <Enumerations />
   <Constants />
@@ -15,41 +15,57 @@
   <Values>
     <EnumerationValue Generate="true">
       <Summary>
-        <Line>Solid border.</Line>
+        <Line>Comment annotation icon.</Line>
       </Summary>
-      <Name>kPDFBorderStyleSolid</Name>
+      <Name>kPDFTextAnnotationIconComment</Name>
       <MinAvailability>Mac OS X v10.4</MinAvailability>
       <Value />
     </EnumerationValue>
     <EnumerationValue Generate="true">
       <Summary>
-        <Line>Dashed border.</Line>
+        <Line>Key annotation icon.</Line>
       </Summary>
-      <Name>kPDFBorderStyleDashed</Name>
+      <Name>kPDFTextAnnotationIconKey</Name>
       <MinAvailability>Mac OS X v10.4</MinAvailability>
       <Value />
     </EnumerationValue>
     <EnumerationValue Generate="true">
       <Summary>
-        <Line>Beveled border.</Line>
+        <Line>Note annotation icon.</Line>
       </Summary>
-      <Name>kPDFBorderStyleBeveled</Name>
+      <Name>kPDFTextAnnotationIconNote</Name>
       <MinAvailability>Mac OS X v10.4</MinAvailability>
       <Value />
     </EnumerationValue>
     <EnumerationValue Generate="true">
       <Summary>
-        <Line>Inset border.</Line>
+        <Line>Help annotation icon.</Line>
       </Summary>
-      <Name>kPDFBorderStyleInset</Name>
+      <Name>kPDFTextAnnotationIconHelp</Name>
       <MinAvailability>Mac OS X v10.4</MinAvailability>
       <Value />
     </EnumerationValue>
     <EnumerationValue Generate="true">
       <Summary>
-        <Line>Underline border.</Line>
+        <Line>New Paragraph annotation icon.</Line>
       </Summary>
-      <Name>kPDFBorderStyleUnderline</Name>
+      <Name>kPDFTextAnnotationIconNewParagraph</Name>
+      <MinAvailability>Mac OS X v10.4</MinAvailability>
+      <Value />
+    </EnumerationValue>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>Paragraph annotation icon.</Line>
+      </Summary>
+      <Name>kPDFTextAnnotationIconParagraph</Name>
+      <MinAvailability>Mac OS X v10.4</MinAvailability>
+      <Value />
+    </EnumerationValue>
+    <EnumerationValue Generate="true">
+      <Summary>
+        <Line>Insert annotation icon.</Line>
+      </Summary>
+      <Name>kPDFTextAnnotationIconInsert</Name>
       <MinAvailability>Mac OS X v10.4</MinAvailability>
       <Value />
     </EnumerationValue>

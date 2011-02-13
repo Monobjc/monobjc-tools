@@ -6,7 +6,7 @@
   <MinAvailability>Mac OS X v10.5</MinAvailability>
   <MaxAvailability>VERSION</MaxAvailability>
   <Name>PDFMarkupType</Name>
-  <Namespace>PDFKit</Namespace>
+  <Namespace>Quartz</Namespace>
   <BaseType>int</BaseType>
   <Enumerations />
   <Constants />
