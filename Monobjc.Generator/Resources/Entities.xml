@@ -639,6 +639,7 @@
         <Patch>Enumerations[NSCellStateValue].BaseType=NSInteger</Patch>
         <Patch>Enumerations[State_Masks].Name=NSStateMask</Patch>
         <Patch>Enumerations[NSStateMask].BaseType=NSInteger</Patch>
+        <Patch>Enumerations[NSStateMask].Flags=true</Patch>
         <Patch>Enumerations[Hit_Testing].Name=NSHitTesting</Patch>
         <Patch>Enumerations[NSHitTesting].BaseType=NSUInteger</Patch>
         <!-- TODO: Deprecated -->
@@ -726,6 +727,7 @@
         <Patch>Enumerations[NSColorPanelMode].BaseType=NSInteger</Patch>
         <Patch>Enumerations[Color_Picker_Mode_Masks].Name=NSColorPickerModeMask</Patch>
         <Patch>Enumerations[NSColorPickerModeMask].BaseType=NSUInteger</Patch>
+        <Patch>Enumerations[NSColorPickerModeMask].Flags=true</Patch>
       </Class>
       <Class name="NSColorPicker">
       </Class>
@@ -799,6 +801,7 @@
         <Patch>Enumerations[NSMouseEventSubType].BaseType=short</Patch>
         <Patch>Enumerations[Tablet_event_masks].Name=TabletEventMask</Patch>
         <Patch>Enumerations[TabletEventMask].BaseType=NSUInteger</Patch>
+        <Patch>Enumerations[TabletEventMask].Flags=true</Patch>
         <Patch>Enumerations[NSPointingDeviceType].BaseType=NSUInteger</Patch>
         <!-- TODO: Move to constants -->
         <Patch>Enumerations[Types_Defined_by_the_Application_Kit].Generate=false</Patch>
@@ -903,9 +906,9 @@
         <Patch>Enumerations[Font_Collection_Mask].Name=NSFontCollectionMask</Patch>
         <!-- TODO: Move to constants -->
         <Patch>Enumerations[NSFontCollectionMask].Generate=false</Patch>
-        <Patch>Enumerations[Font_traits].Name=NSFontTrait</Patch>
-        <Patch>Enumerations[NSFontTrait].BaseType=NSUInteger</Patch>
-        <Patch>Enumerations[NSFontTrait].Flags=true</Patch>
+        <Patch>Enumerations[Font_traits].Name=NSFontTraitMask</Patch>
+        <Patch>Enumerations[NSFontTraitMask].BaseType=NSUInteger</Patch>
+        <Patch>Enumerations[NSFontTraitMask].Flags=true</Patch>
         <Patch>Enumerations[NSFontAction].BaseType=NSUInteger</Patch>
       </Class>
       <Class name="NSFontPanel">
@@ -1290,6 +1293,7 @@
       <Class name="NSTextStorage">
         <Patch>Enumerations[Change_notifications].Name=NSTextStorageEditedMask</Patch>
         <Patch>Enumerations[NSTextStorageEditedMask].BaseType=NSUInteger</Patch>
+        <Patch>Enumerations[NSTextStorageEditedMask].Flags=true</Patch>
       </Class>
       <Class name="NSTextTab">
         <Patch>Enumerations[NSTextTabType].BaseType=NSUInteger</Patch>
@@ -1403,6 +1407,7 @@ NSString *NSFindPanelCaseInsensitiveSearch;
 
         <Patch>Enumerations[Window_Style_Masks].Name=NSWindowStyleMask</Patch>
         <Patch>Enumerations[NSWindowStyleMask].BaseType=NSUInteger</Patch>
+        <Patch>Enumerations[NSWindowStyleMask].Flags=true</Patch>
         <Patch>Enumerations[NSWindowStyleMask].Values[NSDocModalWindowMask]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>The panel is created as a modal sheet.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>NSDocModalWindowMask</Name><Value>1 &amp;lt;&amp;lt; 6</Value></EnumerationValue>]]></Patch>
         <Patch>Enumerations[NSWindowStyleMask].Values[NSNonactivatingPanelMask]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>The panel can receive keyboard input without activating the owning application.</Line><Line>Valid only for an instance of NSPanel or its subclasses; not valid for a window.</Line></Summary><MinAvailability>Mac OS X v10.2</MinAvailability><Name>NSNonactivatingPanelMask</Name><Value>1 &amp;lt;&amp;lt; 7</Value></EnumerationValue>]]></Patch>
         <Patch>Enumerations[NSWindowStyleMask].Values[NSHUDWindowMask]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>The panel is created as a transparent panel (sometimes called a “heads-up display”).</Line><Line>Valid only for an instance of NSPanel or its subclasses; not valid for a window.</Line><Line>Using the C bitwise OR operator, , NSHUDWindowMask can be combined with other style masks (some of which are documented in Window_Style_Masks) with the following results:</Line><Line>The following constants cannot be combined with , NSHUDWindowMask: NSMiniaturizableWindowMask, NSTexturedBackgroundWindowMask, NSDocModalWindowMask, and NSUnifiedTitleAndToolbarWindowMask.</Line></Summary><MinAvailability>Mac OS X v10.5</MinAvailability><Name>NSHUDWindowMask</Name><Value>1 &amp;lt;&amp;lt; 13</Value></EnumerationValue>]]></Patch>
@@ -2338,6 +2343,7 @@ enum {]]>
         <Patch>AdditionFor=DRFSObject</Patch>
         <Patch>Enumerations[DRFilesystemInclusionMask_constants].Name=DRFilesystemInclusionMask</Patch>
         <Patch>Enumerations[DRFilesystemInclusionMask].BaseType=uint</Patch>
+        <Patch>Enumerations[DRFilesystemInclusionMask].Flags=true</Patch>
       </Class>
       <Class name="DRMSF">
         <Patch>Methods[InitWithFrames].GenerateConstructor=false</Patch>
@@ -2739,15 +2745,8 @@ enum {]]>
         <Patch>Functions[NSSizeFromCGSize].Generate=false</Patch>
         <Patch>Functions[NSSizeFromString].Generate=false</Patch>
         <Patch>Functions[NSSizeToCGSize].Generate=false</Patch>
-        <Patch>Functions[NSStringFromClass].Generate=false</Patch>
         <Patch>Functions[NSStringFromHashTable].Generate=false</Patch>
         <Patch>Functions[NSStringFromMapTable].Generate=false</Patch>
-        <Patch>Functions[NSStringFromPoint].Generate=false</Patch>
-        <Patch>Functions[NSStringFromProtocol].Generate=false</Patch>
-        <Patch>Functions[NSStringFromRange].Generate=false</Patch>
-        <Patch>Functions[NSStringFromRect].Generate=false</Patch>
-        <Patch>Functions[NSStringFromSelector].Generate=false</Patch>
-        <Patch>Functions[NSStringFromSize].Generate=false</Patch>
         <Patch>Functions[NSSwapBigDoubleToHost].Generate=false</Patch>
         <Patch>Functions[NSSwapBigFloatToHost].Generate=false</Patch>
         <Patch>Functions[NSSwapBigIntToHost].Generate=false</Patch>
@@ -4295,6 +4294,7 @@ enum]]>
       <Class name="IKImageBrowserView">
         <Patch>Enumerations[Cell_Appearance_Style_Masks].Name=IKCellAppearanceStyleMask</Patch>
         <Patch>Enumerations[IKCellAppearanceStyleMask].BaseType=int</Patch>
+        <Patch>Enumerations[IKCellAppearanceStyleMask].Flags=true</Patch>
         <Patch>Enumerations[Group_Style_Attributes].Name=IKGroupStyleAttribute</Patch>
         <Patch>Enumerations[IKGroupStyleAttribute].BaseType=int</Patch>
         <Patch>Enumerations[IKImageBrowserDropOperation].BaseType=int</Patch>
@@ -4733,7 +4733,9 @@ enum
         <Patch>Properties[Layer].Getter.ReturnType=CALayer</Patch>
         <Patch>Properties[Layer].CopyInDescendants=true</Patch>
         <Patch>Enumerations[CAAutoresizingMask].BaseType=uint</Patch>
+        <Patch>Enumerations[CAAutoresizingMask].Flags=true</Patch>
         <Patch>Enumerations[CAEdgeAntialiasingMask].BaseType=uint</Patch>
+        <Patch>Enumerations[CAEdgeAntialiasingMask].Flags=true</Patch>
         <Patch>Constants[CATransform3DIdentity].Generate=false</Patch>
       </Class>
       <Class name="CAMediaTimingFunction">
