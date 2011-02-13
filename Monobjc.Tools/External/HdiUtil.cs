@@ -1,4 +1,4 @@
-//
+﻿//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -16,34 +16,18 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System;
-using Microsoft.Build.Framework;
-using Microsoft.Build.Utilities;
-using Monobjc.Tools.External;
-using Monobjc.Tools.Properties;
+using Monobjc.Tools.Utilities;
 
-namespace Monobjc.MSBuild.Tasks
+namespace Monobjc.Tools.External
 {
     /// <summary>
-    ///   This task extracts the latest Mercurial revision from a folder under Mercurial version control.
+    ///   Wrapper class around the <c>hdiutil</c> command line tool.
     /// </summary>
-    public class MercurialSummary : Task
+    public static class HdiUtil
     {
-        [Required]
-        public string Name { get; set; }
-
-        [Required]
-        public string Directory { get; set; }
-
-        public override bool Execute()
+        private static string Executable
         {
-            String number = Mercurial.Revision(this.Directory);
-            if (number != null)
-            {
-                Environment.SetEnvironmentVariable(this.Name, number);
-                this.Log.LogMessage(Resources.FoundValidRevision, number);
-                return true;
-            }
-            return false;
+            get { return "/usr/bin/hdiutil"; }
         }
     }
 }

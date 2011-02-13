@@ -16,6 +16,7 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System;
+using System.Globalization;
 using Monobjc.Tools.Utilities;
 
 namespace Monobjc.Tools.External
@@ -33,9 +34,15 @@ namespace Monobjc.Tools.External
         /// <returns>The result of the command.</returns>
         public static String ApplyTo(String mask, String file)
         {
-            ProcessHelper helper = new ProcessHelper("chmod", mask + " " + file);
+            String arguments = String.Format(CultureInfo.InvariantCulture, "{0} \"{1}\"", mask, file);
+            ProcessHelper helper = new ProcessHelper(Executable, arguments);
             String output = helper.Execute();
             return output;
+        }
+
+        private static string Executable
+        {
+            get { return "chmod"; }
         }
     }
 }

@@ -34,9 +34,15 @@ namespace Monobjc.Tools.External
         /// <returns>The result of the command.</returns>
         public static String Recursivly(String source, String destination)
         {
-            ProcessHelper helper = new ProcessHelper("cp", string.Format(CultureInfo.InvariantCulture, "-R {0} {1}", source, destination));
+            String arguments = String.Format(CultureInfo.InvariantCulture, "-R \"{0}\" \"{1}\"", source, destination);
+            ProcessHelper helper = new ProcessHelper(Executable, arguments);
             String output = helper.Execute();
             return output;
+        }
+
+        private static string Executable
+        {
+            get { return "cp"; }
         }
     }
 }

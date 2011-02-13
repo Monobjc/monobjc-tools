@@ -175,6 +175,7 @@ namespace Monobjc.Tools.InterfaceBuilder
                     return new IBDouble(attributes);
 
                 case "float":
+                case "real":
                     return new IBFloat(attributes);
 
                 case "nil":
