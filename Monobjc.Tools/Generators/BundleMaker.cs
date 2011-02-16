@@ -141,5 +141,10 @@ namespace Monobjc.Tools.Generators
             String destinationFile = Path.Combine(directory, Path.GetFileName(file));
             File.Copy(file, destinationFile, true);
         }
+
+        public String Combine(String directory, String file)
+        {
+            return Path.Combine(directory, Path.GetFileName(file));
+        }
     }
 }
