@@ -1314,6 +1314,9 @@
   <Entry ns="CoreMIDI" nature="T" name="MIDIThruConnection" style="Classic" file="MIDIThruConnection">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/MusicAudio/Reference/CACoreMIDIRef/MIDIThruConnection/CompositePage.html</url>
   </Entry>
+  <Entry ns="CoreServices" nature="T" name="UTType" style="Cocoa" file="UTType">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/MobileCoreServices/Reference/UTTypeRef/Reference/reference.html</url>
+  </Entry>
   <Entry ns="CoreWLAN" nature="C" name="CW8021XProfile" style="Classic" file="CW8021XProfile">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Networking/Reference/CoreWLANFrameworkRef/CW8021XProfile_h/Classes/CW8021XProfile/index.html</url>
   </Entry>
@@ -2276,9 +2279,6 @@
   </Entry>
   <Entry ns="InputMethodKit" nature="P" name="IMKTextInput" style="Cocoa" file="IMKTextInput">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/IMKTextInput_Protocol/Reference/IMKTextInput_Protocol.html</url>
-  </Entry>
-  <Entry ns="MobileCoreServices" nature="T" name="UTType" style="Cocoa" file="UTType">
-    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/MobileCoreServices/Reference/UTTypeRef/Reference/reference.html</url>
   </Entry>
   <Entry ns="QTKit" nature="C" name="NSCoder_QTKitAdditions" style="Cocoa" file="NSCoder_QTKitAdditions">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuickTime/Reference/QTKitFramework/Classes/NSCoder_QTKitAdditions/Reference/Reference.html</url>

@@ -2118,6 +2118,20 @@ enum {]]>
       </Type>
     </Types>
   </Framework>
+  <Framework name="CoreServices" usings="CoreFoundation,Foundation,ApplicationServices" assembly="Monobjc.AppKit">
+    <Types>
+      <Type name="UTType">
+        <Replace type="Xhtml">
+          <Source><![CDATA[const <!--a-->CFStringRef<!--/a-->]]></Source>
+          <With><![CDATA[const <!--a-->CFStringRef <!--/a-->]]></With>
+        </Replace>
+        <Replace type="Xhtml">
+          <Source><![CDATA[>kUTTypeAppleICNS</a>]]></Source>
+          <With><![CDATA[>kUTTypeAppleICNS;</a>]]></With>
+        </Replace>
+      </Type>
+    </Types>
+  </Framework>
   <Framework name="CoreWLAN" usings="Foundation,SecurityFoundation" assembly="Monobjc.CoreWLAN">
     <Types>
       <Type name="CoreWLANFramework.Constants">
@@ -4100,20 +4114,6 @@ enum]]>
         <Patch>Methods[CharacterIndexForPointTrackingInMarkedRange].Parameters[inMarkedRange].IsOut=true</Patch>
       </Protocol>
     </Protocols>
-  </Framework>
-  <Framework name="MobileCoreServices" usings="CoreFoundation,Foundation,ApplicationServices" assembly="Monobjc.AppKit">
-    <Types>
-      <Type name="UTType">
-        <Replace type="Xhtml">
-          <Source><![CDATA[const <!--a-->CFStringRef<!--/a-->]]></Source>
-          <With><![CDATA[const <!--a-->CFStringRef <!--/a-->]]></With>
-        </Replace>
-        <Replace type="Xhtml">
-          <Source><![CDATA[>kUTTypeAppleICNS</a>]]></Source>
-          <With><![CDATA[>kUTTypeAppleICNS;</a>]]></With>
-        </Replace>
-      </Type>
-    </Types>
   </Framework>
   <Framework name="QTKit" usings="Foundation,AppKit,QuartzCore" assembly="Monobjc.QTKit">
     <Types>
