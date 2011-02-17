@@ -100,7 +100,6 @@ namespace Monobjc.Tools.Generators
             PListDict dict = list.Dict;
 
             // Set default values
-            this.Icon = this.Icon ?? String.Empty;
             this.Identifier = this.Identifier ?? "net.monobjc.app";
             this.Version = this.Version ?? "1.0";
             this.MainNibFile = this.MainNibFile ?? "MainMenu";
@@ -136,6 +135,9 @@ namespace Monobjc.Tools.Generators
         {
             if (value == null)
             {
+				if (dict.ContainsKey(key)) {
+					dict.Remove(key);
+				}
                 return;
             }
 
@@ -146,7 +148,7 @@ namespace Monobjc.Tools.Generators
             }
 
             PListString pListString = dict[key] as PListString;
-            if (pListString != null)
+            if (pListString == null)
             {
                 dict[key] = new PListString(value);
                 return;
