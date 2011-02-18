@@ -18,6 +18,7 @@
 using System;
 using System.Globalization;
 using System.IO;
+using System.Text;
 using Monobjc.Tools.Utilities;
 
 namespace Monobjc.Tools.External
@@ -37,16 +38,20 @@ namespace Monobjc.Tools.External
         public static String ArchiveApplication(String bundle, String identity, String productDefinition)
         {
             String package = Path.ChangeExtension(bundle, ".pkg");
-            String arguments;
+			
+            StringBuilder arguments = new StringBuilder();
+			arguments.AppendFormat(" --component \"{0}\" /Applications ", bundle);
+			if (identity != null)
+			{
+				arguments.AppendFormat(" --sign \"{0}\" ", identity);
+			}
             if (productDefinition != null)
             {
-                arguments = String.Format(CultureInfo.InvariantCulture, "--component \"{0}\" /Applications --sign \"{1}\" --product \"{2}\" \"{3}\"", bundle, identity, productDefinition, package);
+				arguments.AppendFormat(" --product \"{0}\" ", productDefinition);
             }
-            else
-            {
-                arguments = String.Format(CultureInfo.InvariantCulture, "--component \"{0}\" /Applications --sign \"{1}\" \"{2}\"", bundle, identity, package);
-            }
-            ProcessHelper helper = new ProcessHelper(Executable, arguments);
+			arguments.AppendFormat(" \"{0}\" ", package);
+			
+            ProcessHelper helper = new ProcessHelper(Executable, arguments.ToString());
             String output = helper.Execute();
             return output;
         }
