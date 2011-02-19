@@ -163,7 +163,6 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
 				{
 	                setter = classEntity.Methods.Find(m => m.IsSetterFor(getter));
 				}
-				
                 if (setter != null)
                 {
                     classEntity.Methods.Remove(setter);

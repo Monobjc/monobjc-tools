@@ -189,7 +189,8 @@ namespace Monobjc.Tools.Generator.Utilities
         public void SetClasses(IEnumerable<string> classes)
         {
             this.Classes.Clear();
-
+			this.Classes.Add("Id");
+			this.Classes.Add("Class");
             this.Classes.AddRange(classes);
         }
 

@@ -1036,6 +1036,24 @@
       </Class>
       <Class name="NSMenuItem">
         <Patch>Properties[State].Type=NSCellStateValue</Patch>
+        <Replace type="Generated">
+        	<Source><![CDATA[{
+            get { return ObjectiveCRuntime.SendMessage<bool>(this, "hasSubmenu"); }
+            set { ObjectiveCRuntime.SendMessage(this, "setSubmenu:", value); }
+        }]]></Source>
+        	<With><![CDATA[{
+            get { return ObjectiveCRuntime.SendMessage<bool>(this, "hasSubmenu"); }
+        }]]></With>
+        </Replace>
+        <Replace type="Generated">
+        	<Source><![CDATA[{
+            get { return ObjectiveCRuntime.SendMessage<NSMenu>(this, "submenu"); }
+        }]]></Source>
+        	<With><![CDATA[{
+            get { return ObjectiveCRuntime.SendMessage<NSMenu>(this, "submenu"); }
+            set { ObjectiveCRuntime.SendMessage(this, "setSubmenu:", value); }
+        }]]></With>
+        </Replace>
       </Class>
       <Class name="NSMenuItemCell">
       </Class>
@@ -2108,13 +2126,10 @@ enum {]]>
   <Framework name="CoreMIDI" usings="Foundation" assembly="Monobjc.CoreMIDI">
     <Types>
       <Type name="MIDIServices">
-
       </Type>
       <Type name="MIDISetup">
-
       </Type>
       <Type name="MIDIThruConnection">
-
       </Type>
     </Types>
   </Framework>
@@ -2822,18 +2837,24 @@ enum {]]>
       </Class>
       <Class name="NSArray">
         <Patch>Methods[ArrayWithArray].ReturnType=NSArray</Patch>
+        <Patch>Methods[ArrayWithArray].CopyInDescendants=true</Patch>
         <Patch>Methods[ArrayWithContentsOfFile].ReturnType=NSArray</Patch>
+        <Patch>Methods[ArrayWithContentsOfFile].CopyInDescendants=true</Patch>
         <Patch>Methods[ArrayWithContentsOfURL].ReturnType=NSArray</Patch>
+        <Patch>Methods[ArrayWithContentsOfURL].CopyInDescendants=true</Patch>
         <Patch>Methods[ArrayWithObject].ReturnType=NSArray</Patch>
+        <Patch>Methods[ArrayWithObject].CopyInDescendants=true</Patch>
         <Patch>Methods[ArrayWithObjects].Parameters[firstObj,...].Generate=false</Patch>
-        <Patch><![CDATA[Methods[ArrayWithObjects].Parameters[firstObj]=<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>firstObj</Name><Type>Id</Type></Parameter>]]></Patch>
-        <Patch><![CDATA[Methods[ArrayWithObjects].Parameters[values]=<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
+        <Patch>Methods[ArrayWithObjects].Parameters[firstObj]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>firstObj</Name><Type>Id</Type></Parameter>]]></Patch>
+        <Patch>Methods[ArrayWithObjects].Parameters[values]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
         <Patch>Methods[ArrayWithObjects].ReturnType=NSArray</Patch>
+        <Patch>Methods[ArrayWithObjects].CopyInDescendants=true</Patch>
         <Patch>Methods[ArrayWithObjectsCount].ReturnType=NSArray</Patch>
         <Patch>Methods[ArrayWithObjectsCount].Generate=false</Patch>
+        <Patch>Methods[ArrayWithObjectsCount].CopyInDescendants=true</Patch>
         <Patch>Methods[InitWithObjects].Parameters[firstObj,...].Generate=false</Patch>
-        <Patch><![CDATA[Methods[InitWithObjects].Parameters[firstObj]=<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>firstObj</Name><Type>Id</Type></Parameter>]]></Patch>
-        <Patch><![CDATA[Methods[InitWithObjects].Parameters[values]=<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
+        <Patch>Methods[InitWithObjects].Parameters[firstObj]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>firstObj</Name><Type>Id</Type></Parameter>]]></Patch>
+        <Patch>Methods[InitWithObjects].Parameters[values]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
         <Patch>Methods[InitWithObjectsCount].Generate=false</Patch>
         <Patch>Methods[GetObjectsRange].Parameters[aBuffer].Type=IntPtr</Patch>
         <Patch>Properties[Array].Type=NSArray</Patch>
@@ -3086,24 +3107,33 @@ enum {]]>
       </Class>
       <Class name="NSDictionary">
         <Patch>Methods[DictionaryWithContentsOfFile].ReturnType=NSDictionary</Patch>
+        <Patch>Methods[DictionaryWithContentsOfFile].CopyInDescendants=true</Patch>
         <Patch>Methods[DictionaryWithContentsOfURL].ReturnType=NSDictionary</Patch>
+        <Patch>Methods[DictionaryWithContentsOfURL].CopyInDescendants=true</Patch>
         <Patch>Methods[DictionaryWithDictionary].ReturnType=NSDictionary</Patch>
+        <Patch>Methods[DictionaryWithDictionary].CopyInDescendants=true</Patch>
         <Patch>Methods[DictionaryWithObjectForKey].ReturnType=NSDictionary</Patch>
+        <Patch>Methods[DictionaryWithObjectForKey].CopyInDescendants=true</Patch>
         <Patch>Methods[DictionaryWithObjectsForKeys].ReturnType=NSDictionary</Patch>
+        <Patch>Methods[DictionaryWithObjectsForKeys].CopyInDescendants=true</Patch>
         <Patch>Methods[DictionaryWithObjectsForKeysCount].ReturnType=NSDictionary</Patch>
+        <Patch>Methods[DictionaryWithObjectsForKeysCount].CopyInDescendants=true</Patch>
         <Patch>Methods[DictionaryWithObjectsAndKeys].ReturnType=NSDictionary</Patch>
+        <Patch>Methods[DictionaryWithObjectsAndKeys].CopyInDescendants=true</Patch>
         <Patch>Methods[DictionaryWithObjectsForKeysCount].Parameters[objects].Type=IntPtr</Patch>
         <Patch>Methods[DictionaryWithObjectsForKeysCount].Parameters[keys].Type=IntPtr</Patch>
+        <Patch>Methods[DictionaryWithObjectsForKeysCount].CopyInDescendants=true</Patch>
         <Patch>Methods[DictionaryWithObjectsAndKeys].Parameters[firstObject,].Generate=false</Patch>
-        <Patch><![CDATA[Methods[DictionaryWithObjectsAndKeys].Parameters[firstObject]=<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>firstObject</Name><Type>Id</Type></Parameter>]]></Patch>
-        <Patch><![CDATA[Methods[DictionaryWithObjectsAndKeys].Parameters[values]=<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
+        <Patch>Methods[DictionaryWithObjectsAndKeys].Parameters[firstObject]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>firstObject</Name><Type>Id</Type></Parameter>]]></Patch>
+        <Patch>Methods[DictionaryWithObjectsAndKeys].Parameters[values]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
+        <Patch>Methods[DictionaryWithObjectsAndKeys].CopyInDescendants=true</Patch>
         <Patch>Methods[GetObjectsAndKeys].Parameters[objects].Type=IntPtr</Patch>
         <Patch>Methods[GetObjectsAndKeys].Parameters[keys].Type=IntPtr</Patch>
         <Patch>Methods[InitWithObjectsForKeysCount].Parameters[objects].Type=IntPtr</Patch>
         <Patch>Methods[InitWithObjectsForKeysCount].Parameters[keys].Type=IntPtr</Patch>
         <Patch>Methods[InitWithObjectsAndKeys].Parameters[firstObject,].Generate=false</Patch>
-        <Patch><![CDATA[Methods[InitWithObjectsAndKeys].Parameters[firstObject]=<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>firstObject</Name><Type>Id</Type></Parameter>]]></Patch>
-        <Patch><![CDATA[Methods[InitWithObjectsAndKeys].Parameters[values]=<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
+        <Patch>Methods[InitWithObjectsAndKeys].Parameters[firstObject]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>firstObject</Name><Type>Id</Type></Parameter>]]></Patch>
+        <Patch>Methods[InitWithObjectsAndKeys].Parameters[values]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
         <Patch>Properties[Dictionary].Type=NSDictionary</Patch>
         <Patch>Properties[Dictionary].Getter.ReturnType=NSDictionary</Patch>
         <Patch>Properties[Dictionary].CopyInDescendants=true</Patch>
@@ -3214,7 +3244,9 @@ enum {]]>
       <Class name="NSIndexSet">
         <Patch>Methods[GetIndexesMaxCountInIndexRange].Parameters[indexBuffer].Type=IntPtr</Patch>
         <Patch>Methods[IndexSetWithIndex].ReturnType=NSIndexSet</Patch>
+        <Patch>Methods[IndexSetWithIndex].CopyInDescendants=true</Patch>
         <Patch>Methods[IndexSetWithIndexesInRange].ReturnType=NSIndexSet</Patch>
+        <Patch>Methods[IndexSetWithIndexesInRange].CopyInDescendants=true</Patch>
         <Patch>Properties[IndexSet].Type=NSIndexSet</Patch>
         <Patch>Properties[IndexSet].Getter.ReturnType=NSIndexSet</Patch>
         <Patch>Properties[IndexSet].CopyInDescendants=true</Patch>
@@ -3318,8 +3350,8 @@ enum {]]>
       </Class>
       <Class name="NSMutableString">
         <Patch>Methods[AppendFormat].Parameters[format...].Generate=false</Patch>
-        <Patch><![CDATA[Methods[AppendFormat].Parameters[format]=<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary /><Name>format</Name><Type>NSString</Type></Parameter>]]></Patch>
-        <Patch><![CDATA[Methods[AppendFormat].Parameters[values]=<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
+        <Patch>Methods[AppendFormat].Parameters[format]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary /><Name>format</Name><Type>NSString</Type></Parameter>]]></Patch>
+        <Patch>Methods[AppendFormat].Parameters[values]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
       </Class>
       <Class name="NSMutableURLRequest">
       </Class>
@@ -4114,6 +4146,12 @@ enum]]>
         <Patch>Methods[CharacterIndexForPointTrackingInMarkedRange].Parameters[inMarkedRange].IsOut=true</Patch>
       </Protocol>
     </Protocols>
+  </Framework>
+  <Framework name="OpenGL" usings="Foundation" assembly="Monobjc.OpenGL">
+    <Types>
+      <Type name="OpenGLFramework">
+      </Type>
+    </Types>
   </Framework>
   <Framework name="QTKit" usings="Foundation,AppKit,QuartzCore" assembly="Monobjc.QTKit">
     <Types>

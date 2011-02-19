@@ -103,7 +103,7 @@ namespace Monobjc.Tools.Generator.Tasks.General
             Entry entry = this.Entries.SingleOrDefault(en => en.Nature.Equals(nature) && en.Name.Equals(name));
             if (entry == null)
             {
-                Console.WriteLine("Adding '{0}'...", entry.Name);
+                Console.WriteLine("Adding '{0}'...", name);
                 entry = new Entry();
                 entry.Name = name;
                 this.Entries.Add(entry);

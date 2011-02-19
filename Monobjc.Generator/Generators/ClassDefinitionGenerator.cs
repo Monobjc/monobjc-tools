@@ -92,7 +92,7 @@ namespace Monobjc.Tools.Generator.Generators
             this.Writer.WriteLineFormat(2, "/// <param name=\"selector\">The selector.</param>");
             this.Writer.WriteLineFormat(2, "/// <param name=\"firstParameter\">The first paramater.</param>");
             this.Writer.WriteLineFormat(2, "/// <param name=\"otherParameters\">The other parameters.</param>");
-            this.Writer.WriteLineFormat(2, "public {0}(String selector, Object firstParameter, params Object[] otherParameters)", classEntity.Name);
+            this.Writer.WriteLineFormat(2, "protected {0}(String selector, Object firstParameter, params Object[] otherParameters)", classEntity.Name);
             this.Writer.WriteLineFormat(3, ": base(selector, firstParameter, otherParameters) {{}}");
 
             // Append class ender

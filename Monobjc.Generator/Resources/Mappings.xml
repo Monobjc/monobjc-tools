@@ -135,7 +135,6 @@
   <Mapping type="NSAnimationProgress">float</Mapping>
   <Mapping type="NSComparator"><![CDATA[block:Func<Id, Id, NSComparisonResult>]]></Mapping>
   <Mapping type="NSEvent* (^)(NSEvent*)"><![CDATA[block:Func<NSEvent, NSEvent>]]></Mapping>
-  <Mapping type="NSFontTraitMask">uint</Mapping>
   <Mapping type="NSFontSymbolicTraits">uint</Mapping>
   <Mapping type="NSInt">int</Mapping>
   <Mapping type="NSInteger (*)(id, id, void *)">IdComparator</Mapping>

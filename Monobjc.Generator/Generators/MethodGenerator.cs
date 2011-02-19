@@ -461,7 +461,25 @@ namespace Monobjc.Tools.Generator.Generators
 
                 if (methodParameterEntity.IsOut)
                 {
-                    index++;
+                    if ("bool,char,byte,short,ushort,int,uint,long,ulong".Contains(methodParameterEntity.Type)) // Boolean
+                    {
+						// TODO: Add zeroing
+						index++;
+                    }
+                    else if ("float,double".Contains(methodParameterEntity.Type))
+                    {
+						// TODO: Add zeroing
+						index++;
+                    }
+                    else if (IsMixedType(methodParameterEntity.Type))
+                    {
+						// TODO: Add zeroing
+						index++;
+                    }
+                    else
+                    {
+						this.Writer.WriteLineFormat(indent, "Marshal.WriteIntPtr(__local{0}, IntPtr.Zero);", index++);
+                    }
                 }
                 else if (methodParameterEntity.IsByRef)
                 {
