@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -77,7 +77,7 @@ namespace Monobjc.Tools.Generator.Generators
                 {
                     this.GenerateWrapperFunction(typedEntity, functionEntity, functionEntity32, functionEntity64, needStorage);
 #if MIXED_MODE
-                    this.GenerateNativeFunction(typedEntity, typedEntity, functionEntity64, SUFFIX_64, false);
+                    this.GenerateNativeFunction(typedEntity, functionEntity64, SUFFIX_64, false);
 #endif
                     this.GenerateNativeFunction(typedEntity, functionEntity32, SUFFIX_32, false);
                 }

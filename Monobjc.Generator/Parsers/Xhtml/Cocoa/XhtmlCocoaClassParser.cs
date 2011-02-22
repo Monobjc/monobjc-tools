@@ -158,7 +158,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
                 classEntity.Methods.Remove(methodModel);
                 MethodEntity getter = methodModel;
 				
-				MethodEntity setter = classEntity.Methods.Find(m => String.Equals("Set" + getter.Name, m.Name));
+				MethodEntity setter = classEntity.Methods.Find(m => String.Equals("Set" + getter.Name, m.Name) && String.Equals(m.ReturnType, "void"));
                 if (setter == null)
 				{
 	                setter = classEntity.Methods.Find(m => m.IsSetterFor(getter));
