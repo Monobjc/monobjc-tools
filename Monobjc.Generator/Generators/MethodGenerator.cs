@@ -236,6 +236,7 @@ namespace Monobjc.Tools.Generator.Generators
 //#endif
 //            }
 //            else if (hasReturnParameters)
+            if (hasReturnParameters)
             {
                 this.GenerateConstructorBody(4, target, methodEntity, null, needStorage, varargs);
             }
