@@ -112,24 +112,24 @@ namespace Monobjc.Tools.Generator.Generators
 
                 String target = GetTarget(classEntity, methodEntity, extension);
 
-                if (useMixedInvocation)
-                {
-#if MIXED_MODE
-                    this.Writer.WriteLineFormat(3, "if (ObjectiveCRuntime.Is64Bits)");
-                    this.Writer.WriteLineFormat(3, "{{");
-
-                    this.GenerateMethodBody(4, target, methodEntity, methodEntity64, needStorage, varargs);
-
-                    this.Writer.WriteLineFormat(3, "}}");
-                    this.Writer.WriteLineFormat(3, "else");
-                    this.Writer.WriteLineFormat(3, "{{");
-#endif
-                    this.GenerateMethodBody(4, target, methodEntity, methodEntity32, needStorage, varargs);
-#if MIXED_MODE
-                    this.Writer.WriteLineFormat(3, "}}");
-#endif
-                }
-                else
+//                if (useMixedInvocation)
+//                {
+//#if MIXED_MODE
+//                    this.Writer.WriteLineFormat(3, "if (ObjectiveCRuntime.Is64Bits)");
+//                    this.Writer.WriteLineFormat(3, "{{");
+//
+//                    this.GenerateMethodBody(4, target, methodEntity, methodEntity64, needStorage, varargs);
+//
+//                    this.Writer.WriteLineFormat(3, "}}");
+//                    this.Writer.WriteLineFormat(3, "else");
+//                    this.Writer.WriteLineFormat(3, "{{");
+//#endif
+//                    this.GenerateMethodBody(4, target, methodEntity, methodEntity32, needStorage, varargs);
+//#if MIXED_MODE
+//                    this.Writer.WriteLineFormat(3, "}}");
+//#endif
+//                }
+//                else
                 {
                     this.GenerateMethodBody(3, target, methodEntity, null, needStorage, varargs);
                 }
@@ -218,24 +218,24 @@ namespace Monobjc.Tools.Generator.Generators
             this.Writer.WriteLineFormat(2, "{{");
 
             String target = "this";
-            if (useMixedInvocation)
-            {
-#if MIXED_MODE
-                this.Writer.WriteLineFormat(3, "if (ObjectiveCRuntime.Is64Bits)");
-                this.Writer.WriteLineFormat(3, "{{");
-
-                this.GenerateConstructorBody(4, target, methodEntity, methodEntity64, needStorage, varargs);
-
-                this.Writer.WriteLineFormat(3, "}}");
-                this.Writer.WriteLineFormat(3, "else");
-                this.Writer.WriteLineFormat(3, "{{");
-#endif
-                this.GenerateConstructorBody(4, target, methodEntity, methodEntity32, needStorage, varargs);
-#if MIXED_MODE
-                this.Writer.WriteLineFormat(3, "}}");
-#endif
-            }
-            else if (hasReturnParameters)
+//            if (useMixedInvocation)
+//            {
+//#if MIXED_MODE
+//                this.Writer.WriteLineFormat(3, "if (ObjectiveCRuntime.Is64Bits)");
+//                this.Writer.WriteLineFormat(3, "{{");
+//
+//                this.GenerateConstructorBody(4, target, methodEntity, methodEntity64, needStorage, varargs);
+//
+//                this.Writer.WriteLineFormat(3, "}}");
+//                this.Writer.WriteLineFormat(3, "else");
+//                this.Writer.WriteLineFormat(3, "{{");
+//#endif
+//                this.GenerateConstructorBody(4, target, methodEntity, methodEntity32, needStorage, varargs);
+//#if MIXED_MODE
+//                this.Writer.WriteLineFormat(3, "}}");
+//#endif
+//            }
+//            else if (hasReturnParameters)
             {
                 this.GenerateConstructorBody(4, target, methodEntity, null, needStorage, varargs);
             }

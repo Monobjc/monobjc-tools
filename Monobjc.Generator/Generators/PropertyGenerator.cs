@@ -88,28 +88,28 @@ namespace Monobjc.Tools.Generator.Generators
             {
                 this.Writer.WriteLineFormat(2, "{{");
 
-                if (useMixedInvocation)
-                {
-                    this.Writer.WriteLineFormat(3, "get {{");
-#if MIXED_MODE
-                    this.Writer.WriteLineFormat(4, "if (ObjectiveCRuntime.Is64Bits)");
-                    this.Writer.WriteLineFormat(4, "{{");
-
-                    this.Writer.WriteLineFormat(5, "return ({0}) ObjectiveCRuntime.SendMessage<{1}>({2}, \"{3}\");", type, GetRealType(type, true), propertyEntity.Static ? classEntity.Name + "Class" : "this",
-                                                "" + propertyEntity.Getter.Selector);
-
-                    this.Writer.WriteLineFormat(4, "}}");
-                    this.Writer.WriteLineFormat(4, "else");
-                    this.Writer.WriteLineFormat(4, "{{");
-#endif
-                    this.Writer.WriteLineFormat(5, "return ({0}) ObjectiveCRuntime.SendMessage<{1}>({2}, \"{3}\");", type, GetRealType(type, false), propertyEntity.Static ? classEntity.Name + "Class" : "this",
-                                                "" + propertyEntity.Getter.Selector);
-#if MIXED_MODE
-                    this.Writer.WriteLineFormat(4, "}}");
-#endif
-                    this.Writer.WriteLineFormat(3, "}}");
-                }
-                else
+//                if (useMixedInvocation)
+//                {
+//                    this.Writer.WriteLineFormat(3, "get {{");
+//#if MIXED_MODE
+//                    this.Writer.WriteLineFormat(4, "if (ObjectiveCRuntime.Is64Bits)");
+//                    this.Writer.WriteLineFormat(4, "{{");
+//
+//                    this.Writer.WriteLineFormat(5, "return ({0}) ObjectiveCRuntime.SendMessage<{1}>({2}, \"{3}\");", type, GetRealType(type, true), propertyEntity.Static ? classEntity.Name + "Class" : "this",
+//                                                "" + propertyEntity.Getter.Selector);
+//
+//                    this.Writer.WriteLineFormat(4, "}}");
+//                    this.Writer.WriteLineFormat(4, "else");
+//                    this.Writer.WriteLineFormat(4, "{{");
+//#endif
+//                    this.Writer.WriteLineFormat(5, "return ({0}) ObjectiveCRuntime.SendMessage<{1}>({2}, \"{3}\");", type, GetRealType(type, false), propertyEntity.Static ? classEntity.Name + "Class" : "this",
+//                                                "" + propertyEntity.Getter.Selector);
+//#if MIXED_MODE
+//                    this.Writer.WriteLineFormat(4, "}}");
+//#endif
+//                    this.Writer.WriteLineFormat(3, "}}");
+//                }
+//                else
                 {
                     this.Writer.WriteLineFormat(3, "get {{ return ObjectiveCRuntime.SendMessage<{0}>({1}, \"{2}\"); }}", type, propertyEntity.Static ? classEntity.Name + "Class" : "this", "" + propertyEntity.Getter.Selector);
                 }
@@ -117,26 +117,26 @@ namespace Monobjc.Tools.Generator.Generators
                 // Append setter
                 if (propertyEntity.Setter != null)
                 {
-                    if (useMixedInvocation)
-                    {
-                        this.Writer.WriteLineFormat(3, "set {{");
-#if MIXED_MODE
-                        this.Writer.WriteLineFormat(4, "if (ObjectiveCRuntime.Is64Bits)");
-                        this.Writer.WriteLineFormat(4, "{{");
-
-                        this.Writer.WriteLineFormat(5, "ObjectiveCRuntime.SendMessage({0}, \"{1}\", ({2}) value);", propertyEntity.Static ? classEntity.Name + "Class" : "this", "" + propertyEntity.Setter.Selector, GetRealType(type, true));
-
-                        this.Writer.WriteLineFormat(4, "}}");
-                        this.Writer.WriteLineFormat(4, "else");
-                        this.Writer.WriteLineFormat(4, "{{");
-#endif
-                        this.Writer.WriteLineFormat(5, "ObjectiveCRuntime.SendMessage({0}, \"{1}\", ({2}) value);", propertyEntity.Static ? classEntity.Name + "Class" : "this", "" + propertyEntity.Setter.Selector, GetRealType(type, false));
-#if MIXED_MODE
-                        this.Writer.WriteLineFormat(4, "}}");
-#endif
-                        this.Writer.WriteLineFormat(3, "}}");
-                    }
-                    else
+//                    if (useMixedInvocation)
+//                    {
+//                        this.Writer.WriteLineFormat(3, "set {{");
+//#if MIXED_MODE
+//                        this.Writer.WriteLineFormat(4, "if (ObjectiveCRuntime.Is64Bits)");
+//                        this.Writer.WriteLineFormat(4, "{{");
+//
+//                        this.Writer.WriteLineFormat(5, "ObjectiveCRuntime.SendMessage({0}, \"{1}\", ({2}) value);", propertyEntity.Static ? classEntity.Name + "Class" : "this", "" + propertyEntity.Setter.Selector, GetRealType(type, true));
+//
+//                        this.Writer.WriteLineFormat(4, "}}");
+//                        this.Writer.WriteLineFormat(4, "else");
+//                        this.Writer.WriteLineFormat(4, "{{");
+//#endif
+//                        this.Writer.WriteLineFormat(5, "ObjectiveCRuntime.SendMessage({0}, \"{1}\", ({2}) value);", propertyEntity.Static ? classEntity.Name + "Class" : "this", "" + propertyEntity.Setter.Selector, GetRealType(type, false));
+//#if MIXED_MODE
+//                        this.Writer.WriteLineFormat(4, "}}");
+//#endif
+//                        this.Writer.WriteLineFormat(3, "}}");
+//                    }
+//                    else
                     {
                         this.Writer.WriteLineFormat(3, "set {{ ObjectiveCRuntime.SendMessage({0}, \"{1}\", value); }}", propertyEntity.Static ? classEntity.Name + "Class" : "this", "" + propertyEntity.Setter.Selector);
                     }
