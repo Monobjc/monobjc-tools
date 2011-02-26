@@ -17,8 +17,6 @@
 //
 using System;
 using System.IO;
-using Monobjc.Tools.External;
-using Monobjc.Tools.Properties;
 using Monobjc.Tools.PropertyList;
 using Monobjc.Tools.Utilities;
 
@@ -43,18 +41,7 @@ namespace Monobjc.Tools.Generators
 
         public void WriteRuntime(MacOSVersion version)
         {
-            switch (version)
-            {
-                case MacOSVersion.MacOS105:
-                    File.WriteAllBytes(this.Runtime, Resources.runtime_10_5);
-                    break;
-                case MacOSVersion.MacOS106:
-                    File.WriteAllBytes(this.Runtime, Resources.runtime_10_6);
-                    break;
-            }
-
-            // Apply permissions
-            Chmod.ApplyTo("a+x", this.Runtime);
+            FileProvider.CopyFile(version, "runtime", this.Runtime, "a+x");
         }
 
         public void WriteInfoPList(PListDocument document)

@@ -18,7 +18,6 @@
 using System;
 using System.Globalization;
 using System.IO;
-using Monobjc.Tools.Properties;
 
 namespace Monobjc.Tools.Utilities
 {
@@ -45,7 +44,8 @@ namespace Monobjc.Tools.Utilities
         /// <param name = "directory">The directory.</param>
         public void WriteHeader(String directory)
         {
-            File.WriteAllText(Path.Combine(directory, "monobjc.h"), Resources.monobjc_h);
+            String file = Path.Combine(directory, "monobjc.h");
+            FileProvider.CopyFile(this.version, "monobjc.h", file);
         }
 
         /// <summary>
@@ -54,15 +54,8 @@ namespace Monobjc.Tools.Utilities
         /// <param name = "directory">The directory.</param>
         public void WriteLibrary(String directory)
         {
-            switch (this.version)
-            {
-                case MacOSVersion.MacOS105:
-                    File.WriteAllBytes(Path.Combine(directory, "libmonobjc.dylib"), Resources.libmonobjc_10_5);
-                    break;
-                case MacOSVersion.MacOS106:
-                    File.WriteAllBytes(Path.Combine(directory, "libmonobjc.dylib"), Resources.libmonobjc_10_6);
-                    break;
-            }
+            String file = Path.Combine(directory, "libmonobjc.dylib");
+            FileProvider.CopyFile(this.version, "libmonobjc.dylib", file);
         }
 
         /// <summary>

@@ -16,7 +16,6 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System;
-using System.Globalization;
 using System.IO;
 using System.Text;
 using Monobjc.Tools.Utilities;
@@ -38,19 +37,19 @@ namespace Monobjc.Tools.External
         public static String ArchiveApplication(String bundle, String identity, String productDefinition)
         {
             String package = Path.ChangeExtension(bundle, ".pkg");
-			
+
             StringBuilder arguments = new StringBuilder();
-			arguments.AppendFormat(" --component \"{0}\" /Applications ", bundle);
-			if (identity != null)
-			{
-				arguments.AppendFormat(" --sign \"{0}\" ", identity);
-			}
+            arguments.AppendFormat(" --component \"{0}\" /Applications ", bundle);
+            if (identity != null)
+            {
+                arguments.AppendFormat(" --sign \"{0}\" ", identity);
+            }
             if (productDefinition != null)
             {
-				arguments.AppendFormat(" --product \"{0}\" ", productDefinition);
+                arguments.AppendFormat(" --product \"{0}\" ", productDefinition);
             }
-			arguments.AppendFormat(" \"{0}\" ", package);
-			
+            arguments.AppendFormat(" \"{0}\" ", package);
+
             ProcessHelper helper = new ProcessHelper(Executable, arguments.ToString());
             String output = helper.Execute();
             return output;

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -114,12 +114,10 @@
     <Compile Include="External\ProductBuild.cs" />
     <Compile Include="External\HdiUtil.cs" />
     <Compile Include="Generators\DmgCreator.cs" />
+    <Compile Include="Utilities\FileProvider.cs" />
+    <Compile Include="External\Lipo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Embedded\10.5\libmonobjc.dylib" />
-    <None Include="Embedded\10.5\runtime" />
-    <None Include="Embedded\10.6\libmonobjc.dylib" />
-    <None Include="Embedded\10.6\runtime" />
     <None Include="Embedded\Info.plist" />
     <None Include="Embedded\PropertyList.dtd" />
     <Compile Include="Generators\ManagedReferenceCollector.cs" />
@@ -131,9 +129,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Embedded\monobjc.h" />
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -142,4 +137,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup />
 </Project>

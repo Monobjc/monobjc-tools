@@ -103,18 +103,18 @@ namespace Monobjc.Tools.Generators
             // For each assembly and its config, generate a native library);
             foreach (String assembly in this.Assemblies)
             {
-				String name = Path.GetFileName(assembly);
-				
-	            this.Logger.LogInfo("Processing static library " + name);
+                String name = Path.GetFileName(assembly);
 
-				Dictionary<string, string> bundle = CreateBundle(creator, assembly, false);
+                this.Logger.LogInfo("Processing static library " + name);
+
+                Dictionary<string, string> bundle = CreateBundle(creator, assembly, false);
                 assemblies.Add(bundle);
 
                 String config = assembly + ".config";
                 if (File.Exists(config))
                 {
-		            this.Logger.LogInfo("Processing configuration for " + name);
-					
+                    this.Logger.LogInfo("Processing configuration for " + name);
+
                     bundle = CreateBundle(creator, config, true);
                     bundle[KEY_ASSEMBLY] = name;
                     configurations.Add(bundle);
@@ -139,7 +139,7 @@ namespace Monobjc.Tools.Generators
 
             // Generate the main source file
             String mainSource = Path.Combine(directory, "main.c");
-            GenerateMainSource(mainSource, mainImage, assemblies, configurations, machineConfig);
+            this.GenerateMainSource(mainSource, mainImage, assemblies, configurations, machineConfig);
 
             // Dump the header file
             nativeContext.WriteHeader(directory);
@@ -212,7 +212,7 @@ namespace Monobjc.Tools.Generators
                 sourceWriter.WriteLine();
 
                 // Output the symbols for the assemblies
-				this.Logger.LogInfo("Output symbols for assemblies (" + assemblies.Count() + ")");
+                this.Logger.LogInfo("Output symbols for assemblies (" + assemblies.Count() + ")");
                 sourceWriter.WriteLine("// Symbols for assemblies");
                 foreach (Dictionary<string, string> dictionary in assemblies)
                 {
@@ -221,7 +221,7 @@ namespace Monobjc.Tools.Generators
                 sourceWriter.WriteLine();
 
                 // Output the symbols for the configuration
-				this.Logger.LogInfo("Output symbols for configuration (" + configurations.Count() + ")");
+                this.Logger.LogInfo("Output symbols for configuration (" + configurations.Count() + ")");
                 sourceWriter.WriteLine("// Symbols for configurations");
                 foreach (Dictionary<string, string> dictionary in configurations)
                 {
@@ -231,7 +231,7 @@ namespace Monobjc.Tools.Generators
 
                 // Output the symbol for the machine configuration
                 sourceWriter.WriteLine("// Symbol for machine configuration");
-				this.Logger.LogInfo("Output symbol for machine configuration");
+                this.Logger.LogInfo("Output symbol for machine configuration");
                 if (machineConfig != null)
                 {
                     sourceWriter.WriteLine("extern const char {0}[];", machineConfig[KEY_SYMBOL]);
@@ -239,7 +239,7 @@ namespace Monobjc.Tools.Generators
                 sourceWriter.WriteLine();
 
                 // Output the bundle for each assembly
-				this.Logger.LogInfo("Output bundle for assemblies (" + assemblies.Count() + ")");
+                this.Logger.LogInfo("Output bundle for assemblies (" + assemblies.Count() + ")");
                 sourceWriter.WriteLine("// Bundle for assemblies");
                 foreach (Dictionary<string, string> dictionary in assemblies)
                 {

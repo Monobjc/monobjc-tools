@@ -145,25 +145,10 @@
   <data name="PropertyList_Dtd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>../Embedded/PropertyList.dtd;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="runtime_10_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>../Embedded/10.5/runtime;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="runtime_10_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>../Embedded/10.6/runtime;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="ValueDescriptionFormat" xml:space="preserve">
     <value>{0}: {1}</value>
   </data>
   <data name="XibCompilationFailed" xml:space="preserve">
     <value>The XIB compilation failed.</value>
-  </data>
-  <data name="libmonobjc_10_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>../Embedded/10.5/libmonobjc.dylib;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="libmonobjc_10_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>../Embedded/10.6/libmonobjc.dylib;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="monobjc_h" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>../Embedded/monobjc.h;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

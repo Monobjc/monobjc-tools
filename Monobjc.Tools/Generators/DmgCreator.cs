@@ -16,46 +16,39 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System;
-using System.IO;
-using Monobjc.Tools.External;
-using Monobjc.Tools.Properties;
-using Monobjc.Tools.PropertyList;
-using Monobjc.Tools.Utilities;
 
 namespace Monobjc.Tools
 {
-	public class DmgCreator
-	{
-		private readonly DmgOptions options;
-		
-		public DmgCreator (DmgOptions options)
-		{
-			this.options = options;
-		}
-		
-		public void Create(String destinationDir)
-		{
-		}
-	}
-	
-	public class DmgOptions
-	{
-		public float WindowX { get; set; }
-		
-		public float WindowY { get; set; }
-		
-		public float WindowWidth { get; set; }
-		
-		public float WindowHeight { get; set; }
-		
-		public float IconSize { get; set; }
-		
-		public String ImageFile { get; set; }
-		
-		public String SourceFolder  { get; set; }
-		
-		public String VolumeName { get; set; }
-		
-		public String EulaFile { get; set; }
-	}
+    public class DmgCreator
+    {
+        private readonly DmgOptions options;
+
+        public DmgCreator(DmgOptions options)
+        {
+            this.options = options;
+        }
+
+        public void Create(String destinationDir) {}
+    }
+
+    public class DmgOptions
+    {
+        public float WindowX { get; set; }
+
+        public float WindowY { get; set; }
+
+        public float WindowWidth { get; set; }
+
+        public float WindowHeight { get; set; }
+
+        public float IconSize { get; set; }
+
+        public String ImageFile { get; set; }
+
+        public String SourceFolder { get; set; }
+
+        public String VolumeName { get; set; }
+
+        public String EulaFile { get; set; }
+    }
 }

@@ -15,9 +15,6 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
-using System;
-using Monobjc.Tools.Utilities;
-
 namespace Monobjc.Tools.External
 {
     /// <summary>

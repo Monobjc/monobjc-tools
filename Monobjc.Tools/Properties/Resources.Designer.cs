@@ -111,46 +111,12 @@ namespace Monobjc.Tools.Properties {
             }
         }
         
-        internal static byte[] libmonobjc_10_5 {
-            get {
-                object obj = ResourceManager.GetObject("libmonobjc_10_5", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        internal static byte[] libmonobjc_10_6 {
-            get {
-                object obj = ResourceManager.GetObject("libmonobjc_10_6", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
         /// <summary>
         ///   Looks up a localized string similar to MOMC model &apos;{0}&apos; is up-to-date..
         /// </summary>
         internal static string MomcModelUpToDate {
             get {
                 return ResourceManager.GetString("MomcModelUpToDate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to // 
-        ///// This file is part of Monobjc, a .NET/Objective-C bridge
-        ///// Copyright (C) 2007-2010 - Laurent Etiemble
-        ///// 
-        ///// Monobjc is free software: you can redistribute it and/or modify
-        ///// it under the terms of the GNU Lesser General Public License as published
-        ///// by the Free Software Foundation, either version 3 of the License, or
-        ///// any later version.
-        ///// 
-        ///// Monobjc is distributed in the hope that it will be useful,
-        ///// but WITHOUT ANY WARRANTY; without even the implied warranty of
-        ///// MERCHANTABILITY or FITNESS  [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string monobjc_h {
-            get {
-                return ResourceManager.GetString("monobjc_h", resourceCulture);
             }
         }
         
@@ -184,20 +150,6 @@ namespace Monobjc.Tools.Properties {
         internal static byte[] PropertyList_Dtd {
             get {
                 object obj = ResourceManager.GetObject("PropertyList_Dtd", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        internal static byte[] runtime_10_5 {
-            get {
-                object obj = ResourceManager.GetObject("runtime_10_5", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        internal static byte[] runtime_10_6 {
-            get {
-                object obj = ResourceManager.GetObject("runtime_10_6", resourceCulture);
                 return ((byte[])(obj));
             }
         }

@@ -135,9 +135,10 @@ namespace Monobjc.Tools.Generators
         {
             if (value == null)
             {
-				if (dict.ContainsKey(key)) {
-					dict.Remove(key);
-				}
+                if (dict.ContainsKey(key))
+                {
+                    dict.Remove(key);
+                }
                 return;
             }
 
