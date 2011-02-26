@@ -5,52 +5,12 @@
   <!-- Define some properties if they are missing -->
   <property name="build.dir" value="${path::get-full-path('./build')}" unless="${property::exists('build.dir')}"/>
   <property name="dist.dir" value="${path::get-full-path('./dist')}" unless="${property::exists('dist.dir')}"/>
-  <property name="binaries.dir" value="${dist.dir}" unless="${property::exists('binaries.dir')}"/>
   <property name="testing" value="false" unless="${property::exists('testing')}"/>
-  <property name="embedded.dir" value="Monobjc.Tools/Embedded" />
-
-  <!-- ===============================================================================
-  Update the runtime files
-  ================================================================================ -->
-  <target name="update" depends="prepare">
-
-    <!-- Create/Embed header file -->
-    <property name="src.file" value="${binaries.dir}/monobjc.h"/>
-    <property name="dst.file" value="${embedded.dir}/monobjc.h" />
-    <if test="${file::exists(src.file)}">
-      <copy file="${src.file}" tofile="${dst.file}"/>
-    </if>
-    <echo message="Warning: '${src.file}' file is missing. It will be replaced by a placeholder !!!" unless="${file::exists(src.file)}"/>
-    <touch file="${dst.file}" unless="${file::exists(dst.file)}"/>
-
-    <!-- Create/Embed runtime executables -->
-    <foreach item="String" in="10.5,10.6" delim=" ," property="version">
-      <mkdir dir="${embedded.dir}/${version}" />
-
-      <property name="src.file" value="${binaries.dir}/${version}/runtime"/>
-      <property name="dst.file" value="${embedded.dir}/${version}/runtime"/>
-      <if test="${file::exists(src.file)}">
-        <copy file="${src.file}" tofile="${dst.file}"/>
-      </if>
-      <echo message="Warning: '${src.file}' file is missing. It will be replaced by a placeholder !!!" unless="${file::exists(src.file)}"/>
-      <touch file="${dst.file}" unless="${file::exists(dst.file)}"/>
-
-      <property name="src.file" value="${binaries.dir}/${version}/libmonobjc.dylib"/>
-      <property name="dst.file" value="${embedded.dir}/${version}/libmonobjc.dylib"/>
-      <if test="${file::exists(src.file)}">
-        <copy file="${src.file}" tofile="${dst.file}"/>
-      </if>
-      <echo message="Warning: '${src.file}' file is missing. It will be replaced by a placeholder !!!" unless="${file::exists(src.file)}"/>
-      <touch file="${dst.file}" unless="${file::exists(dst.file)}"/>
-
-    </foreach>
-
-  </target>
 
   <!-- ===============================================================================
   Build the tool libraries
   ================================================================================ -->
-  <target name="build" depends="update">
+  <target name="build" depends="prepare">
     <echo message="------------------------"/>
     <echo message="Building Tools"/>
     <echo message="------------------------"/>

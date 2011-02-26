@@ -149,22 +149,8 @@ namespace Monobjc.NAnt.Tasks
             {
                 this.Log(Level.Info, "Copying custom runtime...");
 
-                byte[] runtime;
-                switch (this.TargetOSVersion)
-                {
-                    case MacOSVersion.MacOS105:
-                        runtime = Resources.runtime_10_5;
-                        break;
-                    case MacOSVersion.MacOS106:
-                        runtime = Resources.runtime_10_6;
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
-
                 String path = Path.Combine(bundleMacOS, this.ApplicationName);
-                File.WriteAllBytes(path, runtime);
-                Chmod.ApplyTo("a+rx", path);
+                FileProvider.CopyFile(this.TargetOSVersion, "runtime", path, "a+x");
             }
 
             // Copy files in Contents if any
