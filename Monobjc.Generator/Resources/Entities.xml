@@ -407,6 +407,8 @@
       </Enumeration>
     </Enumerations>
     <Structures>
+      <Structure name="CGAffineTransform">
+      </Structure>
       <Structure name="CGFloat">
       </Structure>
       <Structure name="CGPoint">

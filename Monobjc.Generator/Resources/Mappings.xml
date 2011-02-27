@@ -132,6 +132,7 @@
   <Mapping type="NS String *">NSString</Mapping>
   <Mapping type="NSAppleEventManagerSuspensionID">IntPtr</Mapping>
   <Mapping type="float">float</Mapping>
+  <Mapping type="NSAffineTransformStruct">CGAffineTransform</Mapping>
   <Mapping type="NSAnimationProgress">float</Mapping>
   <Mapping type="NSComparator"><![CDATA[block:Func<Id, Id, NSComparisonResult>]]></Mapping>
   <Mapping type="NSEvent* (^)(NSEvent*)"><![CDATA[block:Func<NSEvent, NSEvent>]]></Mapping>
