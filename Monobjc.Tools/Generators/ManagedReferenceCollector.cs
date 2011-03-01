@@ -194,7 +194,8 @@ namespace Monobjc.Tools.Generators
                     return a;
                 }
             }
-            return null;
+			
+			throw new Exception(String.Format(CultureInfo.CurrentCulture, "Assembly reference not found: '{0}'", nameOrFile));
         }
 
         /// <summary>
