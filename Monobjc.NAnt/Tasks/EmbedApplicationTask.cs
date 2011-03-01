@@ -56,7 +56,7 @@ namespace Monobjc.NAnt.Tasks
         public DirectoryInfo ToDirectory { get; set; }
 
         /// <summary>
-        /// Gets or sets the target OS version.
+        ///   Gets or sets the target OS version.
         /// </summary>
         /// <value>The target OS version.</value>
         [TaskAttribute("target-os")]
@@ -64,7 +64,7 @@ namespace Monobjc.NAnt.Tasks
         public MacOSVersion TargetOSVersion { get; set; }
 
         /// <summary>
-        /// Gets or sets the target architecture.
+        ///   Gets or sets the target architecture.
         /// </summary>
         /// <value>The target architecture.</value>
         [TaskAttribute("target-architecture")]
@@ -99,7 +99,7 @@ namespace Monobjc.NAnt.Tasks
         public Argument[] IncludedLibraries { get; set; }
 
         /// <summary>
-        /// Gets or sets the machine configuration.
+        ///   Gets or sets the machine configuration.
         /// </summary>
         /// <value>The machine configuration.</value>
         [TaskAttribute("machine-configuration")]
@@ -153,7 +153,7 @@ namespace Monobjc.NAnt.Tasks
             // Relocate the libraries
             NativeCodeRelocator relocator = new NativeCodeRelocator();
             relocator.Logger = new ExecutionLogger(this);
-            relocator.DependencyPattern = new List<string> { "Mono.framework" };
+            relocator.DependencyPattern = new List<string> {"Mono.framework"};
             relocator.Relocate(executableFile, directory);
             relocator.Relocate(libraryFile, directory);
         }

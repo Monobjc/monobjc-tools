@@ -19,7 +19,6 @@ using System;
 using System.IO;
 using Monobjc.NAnt.Types;
 using Monobjc.Tools.External;
-using Monobjc.Tools.Properties;
 using Monobjc.Tools.Utilities;
 using NAnt.Core;
 using NAnt.Core.Attributes;

@@ -1,4 +1,4 @@
-//
+﻿//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -15,30 +15,34 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Monobjc.NAnt.Properties;
+using System.IO;
 using Monobjc.Tools.External;
-using Monobjc.Tools.Utilities;
 using NAnt.Core;
 using NAnt.Core.Attributes;
 
 namespace Monobjc.NAnt.Tasks
 {
     /// <summary>
-    ///   This task signs application bundle.
+    ///   This task generate and signs the application installer.
     /// </summary>
-    [TaskName("codesign")]
-    public class CodeSignTask : SigningTask
+    [TaskName("product-build")]
+    public class ProductBuildTask : SigningTask
     {
         /// <summary>
-        /// Performs the signing.
+        ///   Gets or sets the product definition.
         /// </summary>
-        /// <param name="identity">The identity.</param>
+        /// <value>The product definition.</value>
+        [TaskAttribute("definition", Required = false)]
+        [StringValidator(AllowEmpty = false)]
+        public FileInfo ProductDefinition { get; set; }
+
+        /// <summary>
+        ///   Performs the signing.
+        /// </summary>
+        /// <param name = "identity">The identity.</param>
         protected override void PerformSigning(string identity)
         {
-            String output = CodeSign.SignApplication(this.Bundle.ToString(), identity);
+            string output = ProductBuild.ArchiveApplication(this.Bundle.ToString(), identity, (this.ProductDefinition != null && this.ProductDefinition.Exists) ? this.ProductDefinition.ToString() : null);
             this.Log(Level.Info, output);
         }
     }

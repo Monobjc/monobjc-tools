@@ -18,7 +18,6 @@
 using System;
 using System.IO;
 using System.Reflection;
-using System.Text;
 using Monobjc.NAnt.Properties;
 using Monobjc.Tools.Generators;
 using Monobjc.Tools.Utilities;
