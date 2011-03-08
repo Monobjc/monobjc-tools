@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_c_p_color_space_8h" kind="file">
+    <compoundname>CPColorSpace.h</compoundname>
+    <includes local="no">Foundation/Foundation.h</includes>
+    <includes local="no">QuartzCore/QuartzCore.h</includes>
+    <includedby refid="_c_p_color_8m" local="yes">Source/CPColor.m</includedby>
+    <includedby refid="_c_p_color_space_8m" local="yes">Source/CPColorSpace.m</includedby>
+    <includedby refid="_c_p_gradient_8m" local="yes">Source/CPGradient.m</includedby>
+    <includedby refid="_c_p_text_layer_8m" local="yes">Source/CPTextLayer.m</includedby>
+    <incdepgraph>
+      <node id="630">
+        <label>Source/CPColorSpace.h</label>
+        <link refid="CPColorSpace.h"/>
+        <childnode refid="631" relation="include">
+        </childnode>
+        <childnode refid="632" relation="include">
+        </childnode>
+      </node>
+      <node id="631">
+        <label>Foundation/Foundation.h</label>
+      </node>
+      <node id="632">
+        <label>QuartzCore/QuartzCore.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interface_c_p_color_space" prot="public">CPColorSpace</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPColorSpace.h"/>
+  </compounddef>
+</doxygen>

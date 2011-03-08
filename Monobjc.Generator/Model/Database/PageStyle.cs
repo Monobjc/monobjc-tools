@@ -30,5 +30,9 @@ namespace Monobjc.Tools.Generator.Model.Database
         /// The Classic style documentation.
         /// </summary>
         Classic,
+        /// <summary>
+        /// The Doxygen style documentation.
+        /// </summary>
+        Doxygen,
     }
 }

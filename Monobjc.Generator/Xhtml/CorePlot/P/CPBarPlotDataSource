@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="protocol_c_p_bar_plot_data_source-p" kind="protocol" prot="public">
+    <compoundname>CPBarPlotDataSource-p</compoundname>
+    <basecompoundref refid="protocol_c_p_plot_data_source-p" prot="public" virt="non-virtual">&lt;CPPlotDataSource&gt;</basecompoundref>
+    <includes refid="_c_p_bar_plot_8h" local="no">CPBarPlot.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="protocol_c_p_bar_plot_data_source-p_1a24f93ede31fe1296ad0ffa27bc757a89" prot="public" static="no" const="no" explicit="no" inline="no" optional="yes" virt="virtual">
+        <type><ref refid="interface_c_p_fill" kindref="compound">CPFill</ref> *</type>
+        <definition>CPFill * CPBarPlotDataSource-p::barFillForBarPlot:recordIndex:</definition>
+        <argsstring>(CPBarPlot *barPlot,[recordIndex] NSUInteger index)</argsstring>
+        <name>barFillForBarPlot:recordIndex:</name>
+        <param>
+          <type><ref refid="interface_c_p_bar_plot" kindref="compound">CPBarPlot</ref> *</type>
+          <declname>barPlot</declname>
+        </param>
+        <param>
+          <attributes>[recordIndex]</attributes>
+          <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_DataTypes/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSUInteger</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Gets a bar fill for the given bar plot. This method is optional. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>barPlot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bar plot. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data index of interest. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The bar fill for the point with the given index. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPBarPlot.h" line="44"/>
+      </memberdef>
+      <memberdef kind="function" id="protocol_c_p_bar_plot_data_source-p_1a1007f7e8f1337887940ba6080df929f0" prot="public" static="no" const="no" explicit="no" inline="no" optional="yes" virt="virtual">
+        <type><ref refid="interface_c_p_text_layer" kindref="compound">CPTextLayer</ref> *</type>
+        <definition>CPTextLayer * CPBarPlotDataSource-p::barLabelForBarPlot:recordIndex:</definition>
+        <argsstring>(CPBarPlot *barPlot,[recordIndex] NSUInteger index)</argsstring>
+        <name>barLabelForBarPlot:recordIndex:</name>
+        <param>
+          <type><ref refid="interface_c_p_bar_plot" kindref="compound">CPBarPlot</ref> *</type>
+          <declname>barPlot</declname>
+        </param>
+        <param>
+          <attributes>[recordIndex]</attributes>
+          <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_DataTypes/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSUInteger</ref></type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Gets a bar label for the given bar plot. This method is no longer used. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>barPlot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bar plot. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data index of interest. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The bar label for the point with the given index. If you return nil, the default bar label will be used. If you return an instance of <ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSNull_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSNull</ref>, no label will be shown for the index in question. </para></simplesect>
+<xrefsect id="deprecated_1_deprecated000001"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This method has been replaced by the <ref refid="protocol_c_p_plot_data_source-p_1ab9fc00ba66d5e8508f0fac6ae087b44d" kindref="member">dataLabelForPlot:recordIndex: (CPPlotDataSource-p)</ref> method and is no longer used. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPBarPlot.h" line="54"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A bar plot data source. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1390">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1388">
+        <label>&lt;CPBarPlotDataSource&gt;</label>
+        <link refid="protocol_c_p_bar_plot_data_source-p"/>
+        <childnode refid="1389" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1389">
+        <label>&lt;CPPlotDataSource&gt;</label>
+        <link refid="protocol_c_p_plot_data_source-p"/>
+        <childnode refid="1390" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1393">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1391">
+        <label>&lt;CPBarPlotDataSource&gt;</label>
+        <link refid="protocol_c_p_bar_plot_data_source-p"/>
+        <childnode refid="1392" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1392">
+        <label>&lt;CPPlotDataSource&gt;</label>
+        <link refid="protocol_c_p_plot_data_source-p"/>
+        <childnode refid="1393" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPBarPlot.h" line="36" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPBarPlot.h" bodystart="36" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="protocol_c_p_bar_plot_data_source-p_1a24f93ede31fe1296ad0ffa27bc757a89" prot="public" virt="virtual"><scope>CPBarPlotDataSource-p</scope><name>barFillForBarPlot:recordIndex:</name></member>
+      <member refid="protocol_c_p_bar_plot_data_source-p_1a1007f7e8f1337887940ba6080df929f0" prot="public" virt="virtual"><scope>CPBarPlotDataSource-p</scope><name>barLabelForBarPlot:recordIndex:</name></member>
+      <member refid="protocol_c_p_plot_data_source-p_1a812b698fd83e72f1c70f3a3d62e23f64" prot="public" virt="virtual"><scope>CPBarPlotDataSource-p</scope><name>dataForPlot:field:recordIndexRange:</name></member>
+      <member refid="protocol_c_p_plot_data_source-p_1ab9fc00ba66d5e8508f0fac6ae087b44d" prot="public" virt="virtual"><scope>CPBarPlotDataSource-p</scope><name>dataLabelForPlot:recordIndex:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/description" prot="public" virt="non-virtual"><scope>CPBarPlotDataSource-p</scope><name>description</name></member>
+      <member refid="protocol_c_p_plot_data_source-p_1aa45631db4a58f0bfc6bdbb5a97353d20" prot="public" virt="virtual"><scope>CPBarPlotDataSource-p</scope><name>doubleForPlot:field:recordIndex:</name></member>
+      <member refid="protocol_c_p_plot_data_source-p_1a4da80ab57fae127b65033b92ebd42e2c" prot="public" virt="virtual"><scope>CPBarPlotDataSource-p</scope><name>doublesForPlot:field:recordIndexRange:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/hash" prot="public" virt="non-virtual"><scope>CPBarPlotDataSource-p</scope><name>hash</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/isEqual:" prot="public" virt="non-virtual"><scope>CPBarPlotDataSource-p</scope><name>isEqual:</name></member>
+      <member refid="protocol_c_p_plot_data_source-p_1a5c84ac1d2b66ff12345571f00048ad54" prot="public" virt="virtual"><scope>CPBarPlotDataSource-p</scope><name>numberForPlot:field:recordIndex:</name></member>
+      <member refid="protocol_c_p_plot_data_source-p_1a6311af19207de429e6e0ae6bcff90c7f" prot="public" virt="virtual"><scope>CPBarPlotDataSource-p</scope><name>numberOfRecordsForPlot:</name></member>
+      <member refid="protocol_c_p_plot_data_source-p_1af3f285c6ab136c36ce4c72e626dfd08e" prot="public" virt="virtual"><scope>CPBarPlotDataSource-p</scope><name>numbersForPlot:field:recordIndexRange:</name></member>
+      <member refid="protocol_c_p_plot_data_source-p_1a753fd6fb2d9763d2706d9355d79d8307" prot="public" virt="virtual"><scope>CPBarPlotDataSource-p</scope><name>recordIndexRangeForPlot:plotRange:</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

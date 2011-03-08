@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_c_p_plot_space_annotation_8h" kind="file">
+    <compoundname>CPPlotSpaceAnnotation.h</compoundname>
+    <includes refid="_c_p_annotation_8h" local="yes">CPAnnotation.h</includes>
+    <includes local="no">Foundation/Foundation.h</includes>
+    <includedby refid="_c_p_bar_plot_8m" local="yes">Source/CPBarPlot.m</includedby>
+    <includedby refid="_c_p_pie_chart_8m" local="yes">Source/CPPieChart.m</includedby>
+    <includedby refid="_c_p_plot_8m" local="yes">Source/CPPlot.m</includedby>
+    <includedby refid="_c_p_plot_space_annotation_8m" local="yes">Source/CPPlotSpaceAnnotation.m</includedby>
+    <includedby refid="_c_p_range_plot_8m" local="yes">Source/CPRangePlot.m</includedby>
+    <includedby refid="_c_p_scatter_plot_8m" local="yes">Source/CPScatterPlot.m</includedby>
+    <includedby refid="_c_p_trading_range_plot_8m" local="yes">Source/CPTradingRangePlot.m</includedby>
+    <incdepgraph>
+      <node id="1418">
+        <label>Source/CPPlotSpaceAnnotation.h</label>
+        <link refid="CPPlotSpaceAnnotation.h"/>
+        <childnode refid="1419" relation="include">
+        </childnode>
+        <childnode refid="1420" relation="include">
+        </childnode>
+      </node>
+      <node id="1419">
+        <label>CPAnnotation.h</label>
+        <link refid="_c_p_annotation_8h_source"/>
+        <childnode refid="1420" relation="include">
+        </childnode>
+        <childnode refid="1421" relation="include">
+        </childnode>
+      </node>
+      <node id="1420">
+        <label>Foundation/Foundation.h</label>
+      </node>
+      <node id="1421">
+        <label>QuartzCore/QuartzCore.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interface_c_p_plot_space_annotation" prot="public">CPPlotSpaceAnnotation</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpaceAnnotation.h"/>
+  </compounddef>
+</doxygen>

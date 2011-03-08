@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="interface_c_p_plot_space_07_abstract_methods_08" kind="category" prot="public">
+    <compoundname>CPPlotSpace(AbstractMethods)</compoundname>
+    <includes refid="_c_p_plot_space_8h" local="no">CPPlotSpace.h</includes>
+      <sectiondef kind="user-defined">
+      <header>Coordinate Space Conversions</header>
+      <memberdef kind="function" id="interface_c_p_plot_space_1a575ff0b8c1e5a7515c6c3fe5e0cb2d0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGPoint" kindref="compound" external="doxygen-cocoa-tags.xml">CGPoint</ref></type>
+        <definition>CGPoint CPPlotSpace(AbstractMethods)::plotAreaViewPointForPlotPoint:</definition>
+        <argsstring>(NSDecimal *plotPoint)</argsstring>
+        <name>plotAreaViewPointForPlotPoint:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_DataTypes/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSDecimal</ref> *</type>
+          <declname>plotPoint</declname>
+        </param>
+        <briefdescription>
+<para>Converts a data point to plot area drawing coordinates. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>plotPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A c-style array of data point coordinates (as NSDecimals). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The drawing coordinates of the data point. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" line="115" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.m" bodystart="122" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_plot_space_1a8804db244e4744896791adaec07235b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGPoint" kindref="compound" external="doxygen-cocoa-tags.xml">CGPoint</ref></type>
+        <definition>CGPoint CPPlotSpace(AbstractMethods)::plotAreaViewPointForDoublePrecisionPlotPoint:</definition>
+        <argsstring>(double *plotPoint)</argsstring>
+        <name>plotAreaViewPointForDoublePrecisionPlotPoint:</name>
+        <param>
+          <type>double *</type>
+          <declname>plotPoint</declname>
+        </param>
+        <briefdescription>
+<para>Converts a data point to plot area drawing coordinates. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>plotPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A c-style array of data point coordinates (as doubles). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The drawing coordinates of the data point. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" line="116" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.m" bodystart="131" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_plot_space_1a5a9b3207ba376b00faede97da368ccf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPPlotSpace(AbstractMethods)::plotPoint:forPlotAreaViewPoint:</definition>
+        <argsstring>(NSDecimal *plotPoint,[forPlotAreaViewPoint] CGPoint point)</argsstring>
+        <name>plotPoint:forPlotAreaViewPoint:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_DataTypes/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSDecimal</ref> *</type>
+          <declname>plotPoint</declname>
+        </param>
+        <param>
+          <attributes>[forPlotAreaViewPoint]</attributes>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGPoint" kindref="compound" external="doxygen-cocoa-tags.xml">CGPoint</ref></type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+<para>Converts a point given in plot area drawing coordinates to the data coordinate space. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>plotPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A c-style array of data point coordinates (as NSDecimals). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The drawing coordinates of the data point. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" line="117" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.m" bodystart="140" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_plot_space_1a04149fc9eed8f5fc0dcdb10a9a670190" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPPlotSpace(AbstractMethods)::doublePrecisionPlotPoint:forPlotAreaViewPoint:</definition>
+        <argsstring>(double *plotPoint,[forPlotAreaViewPoint] CGPoint point)</argsstring>
+        <name>doublePrecisionPlotPoint:forPlotAreaViewPoint:</name>
+        <param>
+          <type>double *</type>
+          <declname>plotPoint</declname>
+        </param>
+        <param>
+          <attributes>[forPlotAreaViewPoint]</attributes>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGPoint" kindref="compound" external="doxygen-cocoa-tags.xml">CGPoint</ref></type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+<para>Converts a point given in drawing coordinates to the data coordinate space. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>plotPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A c-style array of data point coordinates (as doubles). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The drawing coordinates of the data point. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" line="118" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.m" bodystart="148" bodyend="150"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Coordinate Range</header>
+      <memberdef kind="function" id="interface_c_p_plot_space_1a431d774a3507bab929f38116122c74c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPPlotSpace(AbstractMethods)::setPlotRange:forCoordinate:</definition>
+        <argsstring>(CPPlotRange *newRange,[forCoordinate] CPCoordinate coordinate)</argsstring>
+        <name>setPlotRange:forCoordinate:</name>
+        <param>
+          <type><ref refid="interface_c_p_plot_range" kindref="compound">CPPlotRange</ref> *</type>
+          <declname>newRange</declname>
+        </param>
+        <param>
+          <attributes>[forCoordinate]</attributes>
+          <type><ref refid="_c_p_definitions_8h_1af5622437e5d4c00cce803754eb974446" kindref="member">CPCoordinate</ref></type>
+          <declname>coordinate</declname>
+        </param>
+        <briefdescription>
+<para>Sets the range of values for a given coordinate. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newRange</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new plot range. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>coordinate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The axis coordinate. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" line="123" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.m" bodystart="156" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_plot_space_1ae7701723aeb0f0fa7a657b8cbe2aa57e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="interface_c_p_plot_range" kindref="compound">CPPlotRange</ref> *</type>
+        <definition>CPPlotRange * CPPlotSpace(AbstractMethods)::plotRangeForCoordinate:</definition>
+        <argsstring>(CPCoordinate coordinate)</argsstring>
+        <name>plotRangeForCoordinate:</name>
+        <param>
+          <type><ref refid="_c_p_definitions_8h_1af5622437e5d4c00cce803754eb974446" kindref="member">CPCoordinate</ref></type>
+          <declname>coordinate</declname>
+        </param>
+        <briefdescription>
+<para>Gets the range of values for a given coordinate. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>coordinate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The axis coordinate. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The range of values. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" line="124" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.m" bodystart="164" bodyend="167"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Adjusting Ranges</header>
+      <memberdef kind="function" id="interface_c_p_plot_space_1aefd10f294c945688a21ac71ea9da7c9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPPlotSpace(AbstractMethods)::scaleToFitPlots:</definition>
+        <argsstring>(NSArray *plots)</argsstring>
+        <name>scaleToFitPlots:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSArray</ref> *</type>
+          <declname>plots</declname>
+        </param>
+        <briefdescription>
+<para>Scales the plot ranges so that the plots just fit in the visible space. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>plots</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of the plots that have to fit in the visible area. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" line="129" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.m" bodystart="172" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_plot_space_1a4c8fe2736b6a799fab78d7518ec433ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPPlotSpace(AbstractMethods)::scaleBy:aboutPoint:</definition>
+        <argsstring>(CGFloat interactionScale,[aboutPoint] CGPoint interactionPoint)</argsstring>
+        <name>scaleBy:aboutPoint:</name>
+        <param>
+          <type>CGFloat</type>
+          <declname>interactionScale</declname>
+        </param>
+        <param>
+          <attributes>[aboutPoint]</attributes>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGPoint" kindref="compound" external="doxygen-cocoa-tags.xml">CGPoint</ref></type>
+          <declname>interactionPoint</declname>
+        </param>
+        <briefdescription>
+<para>Zooms the plot space equally in each dimension. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>interactionScale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scaling factor. One gives no scaling. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>interactionPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The plot area view point about which the scaling occurs. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" line="130" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.m" bodystart="179" bodyend="181"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="interface_c_p_plot_space" kindref="compound">CPPlotSpace</ref> abstract methods—must be overridden by subclasses. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" line="111" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" bodystart="111" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="interface_c_p_plot_space_1a04149fc9eed8f5fc0dcdb10a9a670190" prot="public" virt="virtual"><scope>CPPlotSpace(AbstractMethods)</scope><name>doublePrecisionPlotPoint:forPlotAreaViewPoint:</name></member>
+      <member refid="interface_c_p_plot_space_1a8804db244e4744896791adaec07235b8" prot="public" virt="virtual"><scope>CPPlotSpace(AbstractMethods)</scope><name>plotAreaViewPointForDoublePrecisionPlotPoint:</name></member>
+      <member refid="interface_c_p_plot_space_1a575ff0b8c1e5a7515c6c3fe5e0cb2d0f" prot="public" virt="virtual"><scope>CPPlotSpace(AbstractMethods)</scope><name>plotAreaViewPointForPlotPoint:</name></member>
+      <member refid="interface_c_p_plot_space_1a5a9b3207ba376b00faede97da368ccf4" prot="public" virt="virtual"><scope>CPPlotSpace(AbstractMethods)</scope><name>plotPoint:forPlotAreaViewPoint:</name></member>
+      <member refid="interface_c_p_plot_space_1ae7701723aeb0f0fa7a657b8cbe2aa57e" prot="public" virt="virtual"><scope>CPPlotSpace(AbstractMethods)</scope><name>plotRangeForCoordinate:</name></member>
+      <member refid="interface_c_p_plot_space_1a4c8fe2736b6a799fab78d7518ec433ea" prot="public" virt="virtual"><scope>CPPlotSpace(AbstractMethods)</scope><name>scaleBy:aboutPoint:</name></member>
+      <member refid="interface_c_p_plot_space_1aefd10f294c945688a21ac71ea9da7c9a" prot="public" virt="virtual"><scope>CPPlotSpace(AbstractMethods)</scope><name>scaleToFitPlots:</name></member>
+      <member refid="interface_c_p_plot_space_1a431d774a3507bab929f38116122c74c9" prot="public" virt="virtual"><scope>CPPlotSpace(AbstractMethods)</scope><name>setPlotRange:forCoordinate:</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

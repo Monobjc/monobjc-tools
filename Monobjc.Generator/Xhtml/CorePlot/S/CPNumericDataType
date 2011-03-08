@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="struct___c_p_numeric_data_type" kind="struct" prot="public">
+    <compoundname>_CPNumericDataType</compoundname>
+    <includes refid="_c_p_numeric_data_type_8h" local="no">CPNumericDataType.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct___c_p_numeric_data_type_1ac5fa0eea37e19c2afe988cf2b428a0c5" prot="public" static="no" mutable="no">
+        <type><ref refid="_c_p_numeric_data_type_8h_1a601963e836b7d9a621edbdc16d08cd78" kindref="member">CPDataTypeFormat</ref></type>
+        <definition>CPDataTypeFormat _CPNumericDataType::dataTypeFormat</definition>
+        <argsstring></argsstring>
+        <name>dataTypeFormat</name>
+        <briefdescription>
+<para>Data type format. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPNumericDataType.h" line="19" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPNumericDataType.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___c_p_numeric_data_type_1a7f8102a301404e0b4c3aea5ca9e3b985" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t _CPNumericDataType::sampleBytes</definition>
+        <argsstring></argsstring>
+        <name>sampleBytes</name>
+        <briefdescription>
+<para>Number of bytes in each sample. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPNumericDataType.h" line="20" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPNumericDataType.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___c_p_numeric_data_type_1a37582c6aadec3ebf2f6529a40d7e3bd6" prot="public" static="no" mutable="no">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/corefoundation/Reference/CFByteOrderUtils/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">CFByteOrder</ref></type>
+        <definition>CFByteOrder _CPNumericDataType::byteOrder</definition>
+        <argsstring></argsstring>
+        <name>byteOrder</name>
+        <briefdescription>
+<para>Byte order. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPNumericDataType.h" line="21" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPNumericDataType.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Struct that describes the encoding of numeric data samples. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1222">
+        <label>CFByteOrder</label>
+        <link refid="http://developer.apple.com/mac/library/documentation/corefoundation/Reference/CFByteOrderUtils/Reference/reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1221">
+        <label>_CPNumericDataType</label>
+        <link refid="struct___c_p_numeric_data_type"/>
+        <childnode refid="1222" relation="usage">
+          <edgelabel>byteOrder</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPNumericDataType.h" line="18" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPNumericDataType.h" bodystart="18" bodyend="22"/>
+    <listofallmembers>
+      <member refid="struct___c_p_numeric_data_type_1a37582c6aadec3ebf2f6529a40d7e3bd6" prot="public" virt="non-virtual"><scope>_CPNumericDataType</scope><name>byteOrder</name></member>
+      <member refid="struct___c_p_numeric_data_type_1ac5fa0eea37e19c2afe988cf2b428a0c5" prot="public" virt="non-virtual"><scope>_CPNumericDataType</scope><name>dataTypeFormat</name></member>
+      <member refid="struct___c_p_numeric_data_type_1a7f8102a301404e0b4c3aea5ca9e3b985" prot="public" virt="non-virtual"><scope>_CPNumericDataType</scope><name>sampleBytes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

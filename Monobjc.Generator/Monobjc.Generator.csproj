@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -126,6 +126,13 @@
     <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicTypeParser.cs" />
     <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaFunctionParser.cs" />
     <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaConstantParser.cs" />
+    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenClassParser.cs" />
+    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenConstantParser.cs" />
+    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenEnumerationParser.cs" />
+    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenFunctionParser.cs" />
+    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenMethodParser.cs" />
+    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenPropertyParser.cs" />
+    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenTypeParser.cs" />
     <Compile Include="Parsers\Xhtml\XhtmlBaseParser.cs" />
     <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaClassParser.cs" />
     <Compile Include="Parsers\MethodParametersEnumerator.cs" />
@@ -346,6 +353,321 @@
     <Content Include="Xml\ApplicationServices\S\CGAffineTransform">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Xhtml\CorePlot\C\CPAnnotation">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPAnnotationHostLayer">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPAnnotation_AbstractMethods">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPAxis">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPAxisLabel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPAxisLabelGroup">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPAxisSet">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPAxisTitle">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPAxis_AbstractMethods">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPBarPlot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPBorderedLayer">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPColor">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPColorSpace">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPColor_CPPlatformSpecificColorExtensions">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPConstrainedPosition">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPDarkGradientTheme">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPDecimalNumberValueTransformer">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPDerivedXYGraph">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPFill">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPFill_AbstractMethods">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPGradient">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPGraph">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPGraph_AbstractFactoryMethods">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPGridLineGroup">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPGridLines">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPImage">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPLayer">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPLayerAnnotation">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPLayerHostingView">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPLayer_CPPlatformSpecificLayerExtensions">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPLimitBand">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPLineStyle">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPMutableLineStyle">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPMutableNumericData">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPMutableNumericData_TypeConversion">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPMutableTextStyle">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPNumericData">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPNumericData_TypeConversion">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPPieChart">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPPlainBlackTheme">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPPlainWhiteTheme">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPPlot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPPlotArea">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPPlotAreaFrame">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPPlotGroup">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPPlotRange">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPPlotSpace">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPPlotSpaceAnnotation">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPPlotSpace_AbstractMethods">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPPlotSymbol">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPPlot_AbstractMethods">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPPolarPlotSpace">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPRangePlot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPScatterPlot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPSlateTheme">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPStocksTheme">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPTextLayer">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPTextStyle">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPTheme">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPTheme_AbstractMethods">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPTimeFormatter">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPTradingRangePlot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPXYAxis">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPXYAxisSet">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPXYGraph">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPXYPlotSpace">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\CPXYTheme">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\NSDecimalNumber_CPExtensions">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\NSException_CPExtensions">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\NSNumber_CPExtensions">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\NSString_CPTextStyleExtensions">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\_CPFillColor">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\_CPFillGradient">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xhtml\CorePlot\C\_CPFillImage">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Xhtml\CorePlot\P\CPAxisDelegate" />
+    <None Include="Xhtml\CorePlot\P\CPBarPlotDataSource" />
+    <None Include="Xhtml\CorePlot\P\CPBarPlotDelegate" />
+    <None Include="Xhtml\CorePlot\P\CPLayoutManager" />
+    <None Include="Xhtml\CorePlot\P\CPPieChartDataSource" />
+    <None Include="Xhtml\CorePlot\P\CPPieChartDelegate" />
+    <None Include="Xhtml\CorePlot\P\CPPlotDataSource" />
+    <None Include="Xhtml\CorePlot\P\CPPlotSpaceDelegate" />
+    <None Include="Xhtml\CorePlot\P\CPResponder" />
+    <None Include="Xhtml\CorePlot\P\CPScatterPlotDataSource" />
+    <None Include="Xhtml\CorePlot\P\CPScatterPlotDelegate" />
+    <None Include="Xhtml\CorePlot\S\CPConstraints" />
+    <None Include="Xhtml\CorePlot\S\CPContextNode" />
+    <None Include="Xhtml\CorePlot\S\CPGradientElement" />
+    <None Include="Xhtml\CorePlot\S\CPNumericDataType" />
+    <None Include="Xhtml\CorePlot\S\CPRGBAColor" />
+    <None Include="Xhtml\CorePlot\T\CorePlot_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPAnnotationHostLayer_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPAnnotation_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPAxisLabelGroup_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPAxisLabel_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPAxisSet_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPAxisTitle_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPAxis_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPBarPlot_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPBorderedLayer_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPColorSpace_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPColor_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPConstrainedPosition_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPDarkGradientTheme_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPDecimalNumberValueTransformer_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPDefinitions_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPDerivedXYGraph_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPExceptions_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPFill_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPGradient_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPGraph_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPGridLineGroup_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPGridLines_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPImage_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPLayerAnnotation_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPLayerHostingView_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPLayer_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPLayoutManager_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPLimitBand_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPLineStyle_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPMutableLineStyle_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPMutableNumericData+TypeConversion_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPMutableNumericData_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPMutableTextStyle_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPNumericData+TypeConversion_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPNumericDataType_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPNumericData_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPPathExtensions_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPPieChart_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPPlainBlackTheme_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPPlainWhiteTheme_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPPlatformSpecificCategories_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPPlatformSpecificDefines_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPPlatformSpecificFunctions_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPPlotAreaFrame_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPPlotArea_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPPlotGroup_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPPlotRange_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPPlotSpaceAnnotation_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPPlotSpace_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPPlotSymbol_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPPlot_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPPolarPlotSpace_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPRangePlot_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPResponder_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPScatterPlot_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPSlateTheme_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPStocksTheme_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPTextLayer_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPTextStylePlatformSpecific_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPTextStyle_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPTheme_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPTimeFormatter_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPTradingRangePlot_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPUtilities_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPXYAxisSet_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPXYAxis_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPXYGraph_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPXYPlotSpace_Definitions" />
+    <None Include="Xhtml\CorePlot\T\CPXYTheme_Definitions" />
+    <None Include="Xhtml\CorePlot\T\mainpage_Definitions" />
+    <None Include="Xhtml\CorePlot\T\NSDecimalNumberExtensions_Definitions" />
+    <None Include="Xhtml\CorePlot\T\NSExceptionExtensions_Definitions" />
+    <None Include="Xhtml\CorePlot\T\NSNumberExtensions_Definitions" />
+    <None Include="Xhtml\CorePlot\T\_CPFillColor_Definitions" />
+    <None Include="Xhtml\CorePlot\T\_CPFillGradient_Definitions" />
+    <None Include="Xhtml\CorePlot\T\_CPFillImage_Definitions" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

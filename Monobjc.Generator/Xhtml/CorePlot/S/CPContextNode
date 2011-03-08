@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="struct___c_p_context_node" kind="struct" prot="public">
+    <compoundname>_CPContextNode</compoundname>
+    <includes refid="_c_p_platform_specific_defines_8h" local="no">CPPlatformSpecificDefines.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct___c_p_context_node_1a951751715d0cba122942a4c82ed813dd" prot="public" static="no" mutable="no">
+        <type>NSGraphicsContext *</type>
+        <definition>NSGraphicsContext* _CPContextNode::context</definition>
+        <argsstring></argsstring>
+        <name>context</name>
+        <briefdescription>
+<para>The graphics context. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/MacOnly/CPPlatformSpecificDefines.h" line="12" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/MacOnly/CPPlatformSpecificDefines.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___c_p_context_node_1ae3a5aa84a3fbee81d6a6c39b9bbbdaa4" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="struct___c_p_context_node" kindref="compound">_CPContextNode</ref> *</type>
+        <definition>struct _CPContextNode* _CPContextNode::nextNode</definition>
+        <argsstring></argsstring>
+        <name>nextNode</name>
+        <briefdescription>
+<para>Pointer to the next node in the list. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/MacOnly/CPPlatformSpecificDefines.h" line="13" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/MacOnly/CPPlatformSpecificDefines.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Node in a linked list of graphics contexts. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1167">
+        <label>_CPContextNode</label>
+        <link refid="struct___c_p_context_node"/>
+        <childnode refid="1167" relation="usage">
+          <edgelabel>nextNode</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/MacOnly/CPPlatformSpecificDefines.h" line="11" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/MacOnly/CPPlatformSpecificDefines.h" bodystart="11" bodyend="14"/>
+    <listofallmembers>
+      <member refid="struct___c_p_context_node_1a951751715d0cba122942a4c82ed813dd" prot="public" virt="non-virtual"><scope>_CPContextNode</scope><name>context</name></member>
+      <member refid="struct___c_p_context_node_1ae3a5aa84a3fbee81d6a6c39b9bbbdaa4" prot="public" virt="non-virtual"><scope>_CPContextNode</scope><name>nextNode</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

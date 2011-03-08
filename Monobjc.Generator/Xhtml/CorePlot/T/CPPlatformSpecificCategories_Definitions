@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_c_p_platform_specific_categories_8h" kind="file">
+    <compoundname>CPPlatformSpecificCategories.h</compoundname>
+    <includes local="no">AppKit/AppKit.h</includes>
+    <includes local="no">QuartzCore/QuartzCore.h</includes>
+    <includes local="yes">CPLayer.h</includes>
+    <includes local="yes">CPColor.h</includes>
+    <includedby refid="_c_p_platform_specific_categories_8m" local="yes">MacOnly/CPPlatformSpecificCategories.m</includedby>
+    <includedby refid="_c_p_text_style_platform_specific_8m" local="yes">MacOnly/CPTextStylePlatformSpecific.m</includedby>
+    <incdepgraph>
+      <node id="292">
+        <label>CPColor.h</label>
+      </node>
+      <node id="289">
+        <label>AppKit/AppKit.h</label>
+      </node>
+      <node id="288">
+        <label>MacOnly/CPPlatformSpecificCategories.h</label>
+        <link refid="CPPlatformSpecificCategories.h"/>
+        <childnode refid="289" relation="include">
+        </childnode>
+        <childnode refid="290" relation="include">
+        </childnode>
+        <childnode refid="291" relation="include">
+        </childnode>
+        <childnode refid="292" relation="include">
+        </childnode>
+      </node>
+      <node id="290">
+        <label>QuartzCore/QuartzCore.h</label>
+      </node>
+      <node id="291">
+        <label>CPLayer.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interface_c_p_layer_07_c_p_platform_specific_layer_extensions_08" prot="public">CPLayer(CPPlatformSpecificLayerExtensions)</innerclass>
+    <innerclass refid="interface_c_p_color_07_c_p_platform_specific_color_extensions_08" prot="public">CPColor(CPPlatformSpecificColorExtensions)</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/MacOnly/CPPlatformSpecificCategories.h"/>
+  </compounddef>
+</doxygen>

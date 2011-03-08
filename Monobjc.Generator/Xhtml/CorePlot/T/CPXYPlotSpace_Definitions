@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_c_p_x_y_plot_space_8h" kind="file">
+    <compoundname>CPXYPlotSpace.h</compoundname>
+    <includes refid="_c_p_definitions_8h" local="yes">CPDefinitions.h</includes>
+    <includes refid="_c_p_plot_space_8h" local="yes">CPPlotSpace.h</includes>
+    <includedby refid="_c_p_bar_plot_8m" local="yes">Source/CPBarPlot.m</includedby>
+    <includedby refid="_c_p_dark_gradient_theme_8m" local="yes">Source/CPDarkGradientTheme.m</includedby>
+    <includedby refid="_c_p_plain_black_theme_8m" local="yes">Source/CPPlainBlackTheme.m</includedby>
+    <includedby refid="_c_p_plain_white_theme_8m" local="yes">Source/CPPlainWhiteTheme.m</includedby>
+    <includedby refid="_c_p_range_plot_8m" local="yes">Source/CPRangePlot.m</includedby>
+    <includedby refid="_c_p_scatter_plot_8m" local="yes">Source/CPScatterPlot.m</includedby>
+    <includedby refid="_c_p_slate_theme_8m" local="yes">Source/CPSlateTheme.m</includedby>
+    <includedby refid="_c_p_stocks_theme_8m" local="yes">Source/CPStocksTheme.m</includedby>
+    <includedby refid="_c_p_trading_range_plot_8m" local="yes">Source/CPTradingRangePlot.m</includedby>
+    <includedby refid="_c_p_x_y_axis_8m" local="yes">Source/CPXYAxis.m</includedby>
+    <includedby refid="_c_p_x_y_graph_8m" local="yes">Source/CPXYGraph.m</includedby>
+    <includedby refid="_c_p_x_y_plot_space_8m" local="yes">Source/CPXYPlotSpace.m</includedby>
+    <includedby refid="_c_p_x_y_theme_8m" local="yes">Source/CPXYTheme.m</includedby>
+    <incdepgraph>
+      <node id="1889">
+        <label>CPDefinitions.h</label>
+        <link refid="_c_p_definitions_8h"/>
+        <childnode refid="1890" relation="include">
+        </childnode>
+        <childnode refid="1891" relation="include">
+        </childnode>
+      </node>
+      <node id="1892">
+        <label>CPPlotSpace.h</label>
+        <link refid="_c_p_plot_space_8h_source"/>
+        <childnode refid="1893" relation="include">
+        </childnode>
+        <childnode refid="1889" relation="include">
+        </childnode>
+      </node>
+      <node id="1893">
+        <label>CPResponder.h</label>
+        <link refid="_c_p_responder_8h_source"/>
+        <childnode refid="1890" relation="include">
+        </childnode>
+      </node>
+      <node id="1888">
+        <label>Source/CPXYPlotSpace.h</label>
+        <link refid="CPXYPlotSpace.h"/>
+        <childnode refid="1889" relation="include">
+        </childnode>
+        <childnode refid="1892" relation="include">
+        </childnode>
+      </node>
+      <node id="1890">
+        <label>Foundation/Foundation.h</label>
+      </node>
+      <node id="1891">
+        <label>QuartzCore/QuartzCore.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interface_c_p_x_y_plot_space" prot="public">CPXYPlotSpace</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPXYPlotSpace.h"/>
+  </compounddef>
+</doxygen>

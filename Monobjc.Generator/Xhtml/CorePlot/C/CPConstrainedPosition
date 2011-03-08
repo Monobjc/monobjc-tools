@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="interface_c_p_constrained_position" kind="class" prot="public">
+    <compoundname>CPConstrainedPosition</compoundname>
+    <basecompoundref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference" prot="public" virt="non-virtual">NSObject</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="interface_c_p_constrained_position_1a153eba942e6f208e1e4ae49bf854464e" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>CGFloat</type>
+        <definition>CPConstrainedPosition::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>The current position. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPConstrainedPosition.h" line="5" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPConstrainedPosition.h" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_constrained_position_1a85e7e86761a47f7a0bf4c3d2827a365d" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>CGFloat</type>
+        <definition>CGFloat CPConstrainedPosition::lowerBound</definition>
+        <argsstring></argsstring>
+        <name>lowerBound</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPConstrainedPosition.h" line="6" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPConstrainedPosition.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_constrained_position_1ae42d967bf00e1cf07ccfe559f9f009dd" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>CGFloat</type>
+        <definition>CPConstrainedPosition::upperBound</definition>
+        <argsstring></argsstring>
+        <name>upperBound</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>The upper bound. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPConstrainedPosition.h" line="7" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPConstrainedPosition.h" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_constrained_position_1a9be7e8a1530566bad51248d82fc88a3c" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type><ref refid="struct___c_p_constraints" kindref="compound">CPConstraints</ref></type>
+        <definition>CPConstrainedPosition::constraints</definition>
+        <argsstring></argsstring>
+        <name>constraints</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>The positioning constraints. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPConstrainedPosition.h" line="8" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPConstrainedPosition.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interface_c_p_constrained_position_1ac933f394e7a021c10b17e3e8449a87e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">id</ref></type>
+        <definition>id CPConstrainedPosition::initWithPosition:lowerBound:upperBound:</definition>
+        <argsstring>(CGFloat newPosition,[lowerBound] CGFloat newLowerBound,[upperBound] CGFloat newUpperBound)</argsstring>
+        <name>initWithPosition:lowerBound:upperBound:</name>
+        <param>
+          <type>CGFloat</type>
+          <declname>newPosition</declname>
+        </param>
+        <param>
+          <attributes>[lowerBound]</attributes>
+          <type>CGFloat</type>
+          <declname>newLowerBound</declname>
+        </param>
+        <param>
+          <attributes>[upperBound]</attributes>
+          <type>CGFloat</type>
+          <declname>newUpperBound</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a newly allocated <ref refid="interface_c_p_constrained_position" kindref="compound">CPConstrainedPosition</ref> object with the provided position and bounds. This is the designated initializer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newPosition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newLowerBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The lower bound. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newUpperBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The upper bound. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="interface_c_p_constrained_position" kindref="compound">CPConstrainedPosition</ref> instance initialized with the provided position and bounds. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPConstrainedPosition.h" line="16" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPConstrainedPosition.m" bodystart="38" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_constrained_position_1ab7b479077d285c1c5899df01b915fa24" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">id</ref></type>
+        <definition>id CPConstrainedPosition::initWithAlignment:lowerBound:upperBound:</definition>
+        <argsstring>(CPAlignment newAlignment,[lowerBound] CGFloat newLowerBound,[upperBound] CGFloat newUpperBound)</argsstring>
+        <name>initWithAlignment:lowerBound:upperBound:</name>
+        <param>
+          <type><ref refid="_c_p_definitions_8h_1aaa8ec15e6455ad3dad5c033ff1feff1b" kindref="member">CPAlignment</ref></type>
+          <declname>newAlignment</declname>
+        </param>
+        <param>
+          <attributes>[lowerBound]</attributes>
+          <type>CGFloat</type>
+          <declname>newLowerBound</declname>
+        </param>
+        <param>
+          <attributes>[upperBound]</attributes>
+          <type>CGFloat</type>
+          <declname>newUpperBound</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a newly allocated <ref refid="interface_c_p_constrained_position" kindref="compound">CPConstrainedPosition</ref> object with the provided alignment and bounds. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newAlignment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The alignment. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newLowerBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The lower bound. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newUpperBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The upper bound. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="interface_c_p_constrained_position" kindref="compound">CPConstrainedPosition</ref> instance initialized with the provided alignment and bounds. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPConstrainedPosition.h" line="17" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPConstrainedPosition.m" bodystart="56" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_constrained_position_1a8c182b6435f327c94befc243d1e01f35" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPConstrainedPosition::adjustPositionForOldLowerBound:oldUpperBound:</definition>
+        <argsstring>(CGFloat oldLowerBound,[oldUpperBound] CGFloat oldUpperBound)</argsstring>
+        <name>adjustPositionForOldLowerBound:oldUpperBound:</name>
+        <param>
+          <type>CGFloat</type>
+          <declname>oldLowerBound</declname>
+        </param>
+        <param>
+          <attributes>[oldUpperBound]</attributes>
+          <type>CGFloat</type>
+          <declname>oldUpperBound</declname>
+        </param>
+        <briefdescription>
+<para>Adjust the position given the previous bounds. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>oldLowerBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The old lower bound. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>oldUpperBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The old upper bound. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPConstrainedPosition.h" line="19" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPConstrainedPosition.m" bodystart="100" bodyend="115"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implements a spring and strut positioning algorithm for one dimension. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1451">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1452">
+        <label>&lt;NSKeyValueBindingCreation-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1449">
+        <label>CPConstrainedPosition</label>
+        <link refid="interface_c_p_constrained_position"/>
+        <childnode refid="1450" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1450">
+        <label>NSObject</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1451" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1452" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1455">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1456">
+        <label>&lt;NSKeyValueBindingCreation-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1453">
+        <label>CPConstrainedPosition</label>
+        <link refid="interface_c_p_constrained_position"/>
+        <childnode refid="1454" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1454">
+        <label>NSObject</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1455" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1456" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPConstrainedPosition.h" line="4" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPConstrainedPosition.h" bodystart="4" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="interface_c_p_constrained_position_1a8c182b6435f327c94befc243d1e01f35" prot="public" virt="virtual"><scope>CPConstrainedPosition</scope><name>adjustPositionForOldLowerBound:oldUpperBound:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/bind:toObject:withKeyPath:options:" prot="public" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>bind:toObject:withKeyPath:options:</name></member>
+      <member refid="interface_c_p_constrained_position_1a9be7e8a1530566bad51248d82fc88a3c" prot="protected" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>constraints</name></member>
+      <member refid="interface_c_p_constrained_position_1a9be7e8a1530566bad51248d82fc88a3c" prot="public" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>constraints</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/copy" prot="public" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>copy</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/dealloc" prot="public" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>dealloc</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/description" prot="public" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>description</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/clm/NSObject/exposeBinding:" prot="public" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>exposeBinding:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/exposedBindings" prot="public" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>exposedBindings</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/hash" prot="public" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>hash</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/infoForBinding:" prot="public" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>infoForBinding:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/init" prot="public" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>init</name></member>
+      <member refid="interface_c_p_constrained_position_1ab7b479077d285c1c5899df01b915fa24" prot="public" virt="virtual"><scope>CPConstrainedPosition</scope><name>initWithAlignment:lowerBound:upperBound:</name></member>
+      <member refid="interface_c_p_constrained_position_1ac933f394e7a021c10b17e3e8449a87e6" prot="public" virt="virtual"><scope>CPConstrainedPosition</scope><name>initWithPosition:lowerBound:upperBound:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/isEqual:" prot="public" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>isEqual:</name></member>
+      <member refid="interface_c_p_constrained_position_1a85e7e86761a47f7a0bf4c3d2827a365d" prot="protected" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>lowerBound</name></member>
+      <member refid="interface_c_p_constrained_position_1a85e7e86761a47f7a0bf4c3d2827a365d" prot="public" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>lowerBound</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/optionDescriptionsForBinding:" prot="public" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>optionDescriptionsForBinding:</name></member>
+      <member refid="interface_c_p_constrained_position_1a153eba942e6f208e1e4ae49bf854464e" prot="protected" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>position</name></member>
+      <member refid="interface_c_p_constrained_position_1a153eba942e6f208e1e4ae49bf854464e" prot="public" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>position</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/unbind:" prot="public" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>unbind:</name></member>
+      <member refid="interface_c_p_constrained_position_1ae42d967bf00e1cf07ccfe559f9f009dd" prot="protected" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>upperBound</name></member>
+      <member refid="interface_c_p_constrained_position_1ae42d967bf00e1cf07ccfe559f9f009dd" prot="public" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>upperBound</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/valueClassForBinding:" prot="public" virt="non-virtual"><scope>CPConstrainedPosition</scope><name>valueClassForBinding:</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

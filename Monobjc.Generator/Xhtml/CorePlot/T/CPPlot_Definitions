@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_c_p_plot_8h" kind="file">
+    <compoundname>CPPlot.h</compoundname>
+    <includes refid="_c_p_plot_range_8h" local="yes">CPPlotRange.h</includes>
+    <includes refid="_c_p_numeric_data_type_8h" local="yes">CPNumericDataType.h</includes>
+    <includes refid="_c_p_annotation_host_layer_8h" local="yes">CPAnnotationHostLayer.h</includes>
+    <includes refid="_c_p_mutable_text_style_8h" local="yes">CPMutableTextStyle.h</includes>
+    <includes refid="_c_p_definitions_8h" local="yes">CPDefinitions.h</includes>
+    <includedby refid="_c_p_bar_plot_8h" local="yes">Source/CPBarPlot.h</includedby>
+    <includedby refid="_c_p_graph_8m" local="yes">Source/CPGraph.m</includedby>
+    <includedby refid="_c_p_pie_chart_8h" local="yes">Source/CPPieChart.h</includedby>
+    <includedby refid="_c_p_plot_8m" local="yes">Source/CPPlot.m</includedby>
+    <includedby refid="_c_p_plot_group_8m" local="yes">Source/CPPlotGroup.m</includedby>
+    <includedby refid="_c_p_range_plot_8h" local="yes">Source/CPRangePlot.h</includedby>
+    <includedby refid="_c_p_scatter_plot_8h" local="yes">Source/CPScatterPlot.h</includedby>
+    <includedby refid="_c_p_trading_range_plot_8h" local="yes">Source/CPTradingRangePlot.h</includedby>
+    <includedby refid="_c_p_x_y_plot_space_8m" local="yes">Source/CPXYPlotSpace.m</includedby>
+    <incdepgraph>
+      <node id="1253">
+        <label>CPNumericDataType.h</label>
+        <link refid="_c_p_numeric_data_type_8h"/>
+        <childnode refid="1251" relation="include">
+        </childnode>
+      </node>
+      <node id="1250">
+        <label>CPDefinitions.h</label>
+        <link refid="_c_p_definitions_8h"/>
+        <childnode refid="1251" relation="include">
+        </childnode>
+        <childnode refid="1252" relation="include">
+        </childnode>
+      </node>
+      <node id="1256">
+        <label>CPLineStyle.h</label>
+        <link refid="_c_p_line_style_8h_source"/>
+        <childnode refid="1252" relation="include">
+        </childnode>
+        <childnode refid="1251" relation="include">
+        </childnode>
+      </node>
+      <node id="1255">
+        <label>CPLayer.h</label>
+        <link refid="_c_p_layer_8h_source"/>
+        <childnode refid="1252" relation="include">
+        </childnode>
+        <childnode refid="1256" relation="include">
+        </childnode>
+        <childnode refid="1257" relation="include">
+        </childnode>
+        <childnode refid="1258" relation="include">
+        </childnode>
+        <childnode refid="1251" relation="include">
+        </childnode>
+      </node>
+      <node id="1260">
+        <label>CPTextStyle.h</label>
+        <link refid="_c_p_text_style_8h_source"/>
+        <childnode refid="1251" relation="include">
+        </childnode>
+        <childnode refid="1252" relation="include">
+        </childnode>
+      </node>
+      <node id="1257">
+        <label>CPResponder.h</label>
+        <link refid="_c_p_responder_8h_source"/>
+        <childnode refid="1251" relation="include">
+        </childnode>
+      </node>
+      <node id="1254">
+        <label>CPAnnotationHostLayer.h</label>
+        <link refid="_c_p_annotation_host_layer_8h_source"/>
+        <childnode refid="1255" relation="include">
+        </childnode>
+      </node>
+      <node id="1259">
+        <label>CPMutableTextStyle.h</label>
+        <link refid="_c_p_mutable_text_style_8h_source"/>
+        <childnode refid="1260" relation="include">
+        </childnode>
+        <childnode refid="1251" relation="include">
+        </childnode>
+      </node>
+      <node id="1251">
+        <label>Foundation/Foundation.h</label>
+      </node>
+      <node id="1249">
+        <label>CPPlotRange.h</label>
+        <link refid="_c_p_plot_range_8h"/>
+        <childnode refid="1250" relation="include">
+        </childnode>
+        <childnode refid="1251" relation="include">
+        </childnode>
+      </node>
+      <node id="1252">
+        <label>QuartzCore/QuartzCore.h</label>
+      </node>
+      <node id="1258">
+        <label>CPPlatformSpecificDefines.h</label>
+      </node>
+      <node id="1248">
+        <label>Source/CPPlot.h</label>
+        <link refid="CPPlot.h"/>
+        <childnode refid="1249" relation="include">
+        </childnode>
+        <childnode refid="1253" relation="include">
+        </childnode>
+        <childnode refid="1254" relation="include">
+        </childnode>
+        <childnode refid="1259" relation="include">
+        </childnode>
+        <childnode refid="1250" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1262">
+        <label>Source/CPBarPlot.h</label>
+        <link refid="_c_p_bar_plot_8h"/>
+      </node>
+      <node id="1266">
+        <label>Source/CPTradingRangePlot.h</label>
+        <link refid="_c_p_trading_range_plot_8h"/>
+      </node>
+      <node id="1264">
+        <label>Source/CPRangePlot.h</label>
+        <link refid="_c_p_range_plot_8h_source"/>
+      </node>
+      <node id="1263">
+        <label>Source/CPPieChart.h</label>
+        <link refid="_c_p_pie_chart_8h"/>
+      </node>
+      <node id="1261">
+        <label>Source/CPPlot.h</label>
+        <link refid="CPPlot.h"/>
+        <childnode refid="1262" relation="include">
+        </childnode>
+        <childnode refid="1263" relation="include">
+        </childnode>
+        <childnode refid="1264" relation="include">
+        </childnode>
+        <childnode refid="1265" relation="include">
+        </childnode>
+        <childnode refid="1266" relation="include">
+        </childnode>
+      </node>
+      <node id="1265">
+        <label>Source/CPScatterPlot.h</label>
+        <link refid="_c_p_scatter_plot_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="protocol_c_p_plot_data_source-p" prot="public">CPPlotDataSource-p</innerclass>
+    <innerclass refid="interface_c_p_plot" prot="public">CPPlot</innerclass>
+    <innerclass refid="interface_c_p_plot_07_abstract_methods_08" prot="public">CPPlot(AbstractMethods)</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_c_p_plot_8h_1afca86896188bcf5babdd6fd7d88af9c9" prot="public" static="no">
+        <name>_CPPlotCachePrecision</name>
+        <enumvalue id="_c_p_plot_8h_1afca86896188bcf5babdd6fd7d88af9c9a0e7f37da23cbe4194dfaff295a942139" prot="public">
+          <name>CPPlotCachePrecisionAuto</name>
+          <briefdescription>
+<para>Cache precision is determined automatically from the data. All cached data will be converted to match the last data loaded. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_plot_8h_1afca86896188bcf5babdd6fd7d88af9c9a73ecb348c74d2e388aa7cc564a8bb00d" prot="public">
+          <name>CPPlotCachePrecisionDouble</name>
+          <briefdescription>
+<para>All cached data will be converted to double precision. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_plot_8h_1afca86896188bcf5babdd6fd7d88af9c9a80ead1db81b292e1de31fea02c546f52" prot="public">
+          <name>CPPlotCachePrecisionDecimal</name>
+          <briefdescription>
+<para>All cached data will be converted to <ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_DataTypes/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSDecimal</ref>. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of cache precisions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlot.h" line="19" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlot.h" bodystart="19" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_c_p_plot_8h_1a683544d5ae9f27a910a5a3d972451c92" prot="public" static="no">
+        <type>enum <ref refid="_c_p_plot_8h_1afca86896188bcf5babdd6fd7d88af9c9" kindref="member">_CPPlotCachePrecision</ref></type>
+        <definition>typedef enum _CPPlotCachePrecision  CPPlotCachePrecision</definition>
+        <argsstring></argsstring>
+        <name>CPPlotCachePrecision</name>
+        <briefdescription>
+<para>Enumeration of cache precisions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlot.h" line="23"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlot.h"/>
+  </compounddef>
+</doxygen>

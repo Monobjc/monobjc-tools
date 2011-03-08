@@ -1,0 +1,788 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="interface_c_p_layer" kind="class" prot="public">
+    <compoundname>CPLayer</compoundname>
+    <basecompoundref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction" prot="public" virt="non-virtual">CALayer</basecompoundref>
+    <basecompoundref refid="protocol_c_p_responder-p" prot="public" virt="non-virtual">&lt;CPResponder&gt;</basecompoundref>
+    <derivedcompoundref refid="interface_c_p_annotation_host_layer" prot="public" virt="non-virtual">CPAnnotationHostLayer</derivedcompoundref>
+    <derivedcompoundref refid="interface_c_p_axis" prot="public" virt="non-virtual">CPAxis</derivedcompoundref>
+    <derivedcompoundref refid="interface_c_p_axis_label_group" prot="public" virt="non-virtual">CPAxisLabelGroup</derivedcompoundref>
+    <derivedcompoundref refid="interface_c_p_axis_set" prot="public" virt="non-virtual">CPAxisSet</derivedcompoundref>
+    <derivedcompoundref refid="interface_c_p_grid_line_group" prot="public" virt="non-virtual">CPGridLineGroup</derivedcompoundref>
+    <derivedcompoundref refid="interface_c_p_grid_lines" prot="public" virt="non-virtual">CPGridLines</derivedcompoundref>
+    <derivedcompoundref refid="interface_c_p_plot_group" prot="public" virt="non-virtual">CPPlotGroup</derivedcompoundref>
+    <derivedcompoundref refid="interface_c_p_text_layer" prot="public" virt="non-virtual">CPTextLayer</derivedcompoundref>
+      <sectiondef kind="user-defined">
+      <header>Graph</header>
+      <memberdef kind="property" id="interface_c_p_layer_1aaecd0345e0b871679ab69e8c7f125710" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>__weak <ref refid="interface_c_p_graph" kindref="compound">CPGraph</ref> *</type>
+        <definition>__weak CPGraph * CPLayer::graph</definition>
+        <argsstring></argsstring>
+        <name>graph</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="20" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Padding</header>
+      <memberdef kind="property" id="interface_c_p_layer_1ad0fd0e023ee4f9b64ecfbd369820ec1c" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>CGFloat</type>
+        <definition>CPLayer::paddingLeft</definition>
+        <argsstring></argsstring>
+        <name>paddingLeft</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>Amount to inset the left side of each sublayer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="12" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_layer_1abde3adfc0ca84bbc138f1214f94cf9c3" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>CGFloat</type>
+        <definition>CPLayer::paddingTop</definition>
+        <argsstring></argsstring>
+        <name>paddingTop</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>Amount to inset the top of each sublayer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="13" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_layer_1a4a89230854cf58adca1fdb71292027d6" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>CGFloat</type>
+        <definition>CPLayer::paddingRight</definition>
+        <argsstring></argsstring>
+        <name>paddingRight</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>Amount to inset the right side of each sublayer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="14" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_layer_1a8b212a178e641e2cbd1824b4d31605f9" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>CGFloat</type>
+        <definition>CPLayer::paddingBottom</definition>
+        <argsstring></argsstring>
+        <name>paddingBottom</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>Amount to inset the bottom of each sublayer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="15" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Drawing</header>
+      <memberdef kind="property" id="interface_c_p_layer_1a9606eb7a34734ea623bda6f8768591d7" prot="public" static="no" readable="yes" writable="no" gettable="no" settable="no" accessor="assign">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">BOOL</ref></type>
+        <definition>CPLayer::useFastRendering</definition>
+        <argsstring></argsstring>
+        <name>useFastRendering</name>
+        <read></read>
+        <briefdescription>
+<para>If YES, subclasses should optimize their drawing for speed over precision. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="19" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_layer_1ac3b8b3138c38dcf4d38e1e9e07173ebf" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPLayer::renderAsVectorInContext:</definition>
+        <argsstring>(CGContextRef context)</argsstring>
+        <name>renderAsVectorInContext:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/doc/c_ref/CGContextRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGContextRef</ref></type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>Draws layer content into the provided graphics context. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method replaces the drawInContext: method to ensure that layer content is always drawn as vectors and objects rather than as a cached bitmapped image representation. Subclasses should do all drawing here and must call super to set up the clipping path.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graphics context to draw into. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="65" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.m" bodystart="231" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_layer_1a9cee7d548fdd8e632c419652da848e91" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPLayer::recursivelyRenderInContext:</definition>
+        <argsstring>(CGContextRef context)</argsstring>
+        <name>recursivelyRenderInContext:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/doc/c_ref/CGContextRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGContextRef</ref></type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>Draws layer content and the content of all sublayers into the provided graphics context. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graphics context to draw into. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="66" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.m" bodystart="240" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_layer_1a5ad6f83d128efed79af26e968653706a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPLayer::layoutAndRenderInContext:</definition>
+        <argsstring>(CGContextRef context)</argsstring>
+        <name>layoutAndRenderInContext:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/doc/c_ref/CGContextRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGContextRef</ref></type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>Updates the layer layout if needed and then draws layer content and the content of all sublayers into the provided graphics context. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graphics context to draw into. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="67" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.m" bodystart="308" bodyend="323"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_layer_1af1d7b9cee5b364818d5c9b46330326ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSData</ref> *</type>
+        <definition>NSData * CPLayer::dataForPDFRepresentationOfLayer</definition>
+        <argsstring>()</argsstring>
+        <name>dataForPDFRepresentationOfLayer</name>
+        <briefdescription>
+<para>Draws layer content and the content of all sublayers into a PDF document. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>PDF representation of the layer content. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="68" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.m" bodystart="328" bodyend="349"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Masking</header>
+      <memberdef kind="property" id="interface_c_p_layer_1afb877eb63758f6faec6a03c2ba12d75f" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">BOOL</ref></type>
+        <definition>CPLayer::masksToBorder</definition>
+        <argsstring></argsstring>
+        <name>masksToBorder</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>If YES, a sublayer mask is applied to clip sublayer content to the inside of the border. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="16" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_layer_1a3f1e02fcdc05eb3b8e6bb26f78a9ee1c" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGPath/Reference/reference.html#//apple_ref/doc/c_ref/CGPathRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGPathRef</ref></type>
+        <definition>CPLayer::outerBorderPath</definition>
+        <argsstring></argsstring>
+        <name>outerBorderPath</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>A drawing path that encompasses the outer boundary of the layer border. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="21" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_layer_1a840443578f7dfd7aca2b61e52a4b1863" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGPath/Reference/reference.html#//apple_ref/doc/c_ref/CGPathRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGPathRef</ref></type>
+        <definition>CPLayer::innerBorderPath</definition>
+        <argsstring></argsstring>
+        <name>innerBorderPath</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>A drawing path that encompasses the inner boundary of the layer border. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="22" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_layer_1ac14276fee59574f07a7b24c9bf2dad80" prot="public" static="no" readable="yes" writable="no" gettable="no" settable="no" accessor="assign">
+        <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGPath/Reference/reference.html#//apple_ref/doc/c_ref/CGPathRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGPathRef</ref></type>
+        <definition>CGPathRef CPLayer::maskingPath</definition>
+        <argsstring></argsstring>
+        <name>maskingPath</name>
+        <read></read>
+        <briefdescription>
+<para>A drawing path that encompasses the layer content including any borders. Set to NULL when no masking is desired. </para>        </briefdescription>
+        <detaileddescription>
+<para>This path defines the outline of the layer and is used to mask all drawing. Set to NULL when no masking is desired. The caller must NOT release the path returned by this property. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="48" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_layer_1a479b978da77780f81cadecd8355f20d0" prot="public" static="no" readable="yes" writable="no" gettable="no" settable="no" accessor="assign">
+        <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGPath/Reference/reference.html#//apple_ref/doc/c_ref/CGPathRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGPathRef</ref></type>
+        <definition>CGPathRef CPLayer::sublayerMaskingPath</definition>
+        <argsstring></argsstring>
+        <name>sublayerMaskingPath</name>
+        <read></read>
+        <briefdescription>
+<para>A drawing path that encompasses the layer content excluding any borders. Set to NULL when no masking is desired. </para>        </briefdescription>
+        <detaileddescription>
+<para>This path defines the outline of the part of the layer where sublayers should draw and is used to mask all sublayer drawing. Set to NULL when no masking is desired. The caller must NOT release the path returned by this property. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="49" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_layer_1af89526361a9e80c0ba21b31f80922507" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPLayer::applySublayerMaskToContext:forSublayer:withOffset:</definition>
+        <argsstring>(CGContextRef context,[forSublayer] CPLayer *sublayer,[withOffset] CGPoint offset)</argsstring>
+        <name>applySublayerMaskToContext:forSublayer:withOffset:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/doc/c_ref/CGContextRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGContextRef</ref></type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <attributes>[forSublayer]</attributes>
+          <type><ref refid="interface_c_p_layer" kindref="compound">CPLayer</ref> *</type>
+          <declname>sublayer</declname>
+        </param>
+        <param>
+          <attributes>[withOffset]</attributes>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGPoint" kindref="compound" external="doxygen-cocoa-tags.xml">CGPoint</ref></type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+<para>Recursively sets the clipping path of the given graphics context to the sublayer masking paths of its superlayers. </para>        </briefdescription>
+        <detaileddescription>
+<para>The clipping path is built by recursively climbing the layer tree and combining the sublayer masks from each super layer. The tree traversal stops when a layer is encountered that is not a <ref refid="interface_c_p_layer" kindref="compound">CPLayer</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graphics context to clip. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sublayer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The sublayer that called this method. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cumulative position offset between the receiver and the first layer in the recursive calling chain. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="73" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.m" bodystart="534" bodyend="570"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_layer_1acc3cffe1242a6147161bc3120747b8ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPLayer::applyMaskToContext:</definition>
+        <argsstring>(CGContextRef context)</argsstring>
+        <name>applyMaskToContext:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/doc/c_ref/CGContextRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGContextRef</ref></type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>Sets the clipping path of the given graphics context to mask the content. </para>        </briefdescription>
+        <detaileddescription>
+<para>The clipping path is built by recursively climbing the layer tree and combining the sublayer masks from each super layer. The tree traversal stops when a layer is encountered that is not a <ref refid="interface_c_p_layer" kindref="compound">CPLayer</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graphics context to clip. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="74" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.m" bodystart="579" bodyend="590"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Layout</header>
+      <memberdef kind="property" id="interface_c_p_layer_1aa39195c52b4883f547802f5a9cd20dc8" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="retain">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">id</ref>&lt; <ref refid="protocol_c_p_layout_manager-p" kindref="compound">CPLayoutManager</ref> &gt;</type>
+        <definition>CPLayer::layoutManager</definition>
+        <argsstring></argsstring>
+        <name>layoutManager</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>The layout manager for this layer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="17" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_layer_1a1c60a6582dfa6012719e3e92825d8aef" prot="public" static="no" readable="yes" writable="no" gettable="no" settable="no" accessor="assign">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSSet</ref> *</type>
+        <definition>NSSet * CPLayer::sublayersExcludedFromAutomaticLayout</definition>
+        <argsstring></argsstring>
+        <name>sublayersExcludedFromAutomaticLayout</name>
+        <read></read>
+        <briefdescription>
+<para>A set of sublayers that should be excluded from the automatic sublayer layout. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="55" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_layer_1a175cf29bb2c8375ddb563ca8060a5284" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPLayer::pixelAlign</definition>
+        <argsstring>()</argsstring>
+        <name>pixelAlign</name>
+        <briefdescription>
+<para>Align the receiver&apos;s position with pixel boundaries. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="80" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.m" bodystart="409" bodyend="418"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_layer_1a512071c472f620c9e65889149bf84412" prot="public" static="yes" const="no" explicit="no" inline="no" virt="virtual">
+        <type>CGFloat</type>
+        <definition>CGFloat CPLayer::defaultZPosition</definition>
+        <argsstring>()</argsstring>
+        <name>defaultZPosition</name>
+        <briefdescription>
+<para>The default z-position for the layer. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The z-position. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="79" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.m" bodystart="455" bodyend="458"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Initialization</header>
+      <memberdef kind="function" id="interface_c_p_layer_1a55e20db52d41e3bc276e3ff4f0e07e5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">id</ref></type>
+        <definition>id CPLayer::initWithFrame:</definition>
+        <argsstring>(CGRect newFrame)</argsstring>
+        <name>initWithFrame:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGRect" kindref="compound" external="doxygen-cocoa-tags.xml">CGRect</ref></type>
+          <declname>newFrame</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a newly allocated <ref refid="interface_c_p_layer" kindref="compound">CPLayer</ref> object with the provided frame rectangle. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is the designated initializer. The initialized layer will have the following properties that are different than a <ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction" kindref="compound" external="doxygen-cocoa-tags.xml">CALayer</ref>:<itemizedlist>
+<listitem><para>needsDisplayOnBoundsChange = NO</para></listitem><listitem><para>opaque = NO</para></listitem><listitem><para>masksToBounds = NO</para></listitem><listitem><para>zPosition = defaultZPosition</para></listitem><listitem><para>padding = 0 on all four sides</para></listitem><listitem><para>Default animations for changes in position, bounds, and sublayers are turned off.</para></listitem></itemizedlist>
+</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newFrame</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The frame rectangle. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The initialized <ref refid="interface_c_p_layer" kindref="compound">CPLayer</ref> object. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="60" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.m" bodystart="128" bodyend="161"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Images</header>
+      <memberdef kind="function" id="interface_c_p_layer_1aaf206234345a192a5f4c2c79c31d3275" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Classes/NSImage_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">CPNativeImage</ref> *</type>
+        <definition>CPNativeImage * CPLayer(CPPlatformSpecificLayerExtensions)::imageOfLayer</definition>
+        <argsstring>()</argsstring>
+        <name>imageOfLayer</name>
+        <briefdescription>
+<para>Gets an image of the layer contents. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A native image representation of the layer content. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/MacOnly/CPPlatformSpecificCategories.h" line="13" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/MacOnly/CPPlatformSpecificCategories.m" bodystart="11" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="interface_c_p_layer_1a5d925272b587a498355d03664e9b8b2b" prot="private" static="no" mutable="no">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">BOOL</ref></type>
+        <definition>BOOL CPLayer::renderingRecursively</definition>
+        <argsstring></argsstring>
+        <name>renderingRecursively</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="18" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Base class for all Core Animation layers in Core Plot. </para>    </briefdescription>
+    <detaileddescription>
+<para>Default animations for changes in position, bounds, and sublayers are turned off. The default layer is not opaque and does not mask to bounds.</para><para><xrefsect id="todo_1_todo000009"><xreftitle>Todo</xreftitle><xrefdescription><para>More documentation needed </para></xrefdescription></xrefsect></para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1642">
+        <label>CPPlot</label>
+        <link refid="interface_c_p_plot"/>
+        <childnode refid="1636" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1641">
+        <label>CPPlotAreaFrame</label>
+        <link refid="interface_c_p_plot_area_frame"/>
+        <childnode refid="1637" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1656">
+        <label>CPPlotGroup</label>
+        <link refid="interface_c_p_plot_group"/>
+        <childnode refid="1628" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1637">
+        <label>CPBorderedLayer</label>
+        <link refid="interface_c_p_bordered_layer"/>
+        <childnode refid="1636" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1649">
+        <label>CPAxis</label>
+        <link refid="interface_c_p_axis"/>
+        <childnode refid="1628" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1655">
+        <label>CPGridLines</label>
+        <link refid="interface_c_p_grid_lines"/>
+        <childnode refid="1628" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1654">
+        <label>CPGridLineGroup</label>
+        <link refid="interface_c_p_grid_line_group"/>
+        <childnode refid="1628" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1647">
+        <label>CPTradingRangePlot</label>
+        <link refid="interface_c_p_trading_range_plot"/>
+        <childnode refid="1642" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1634">
+        <label>&lt;CAMediaTiming-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1638">
+        <label>CPGraph</label>
+        <link refid="interface_c_p_graph"/>
+        <childnode refid="1637" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1646">
+        <label>CPScatterPlot</label>
+        <link refid="interface_c_p_scatter_plot"/>
+        <childnode refid="1642" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1635">
+        <label>&lt;CPResponder&gt;</label>
+        <link refid="protocol_c_p_responder-p"/>
+        <childnode refid="1631" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1636">
+        <label>CPAnnotationHostLayer</label>
+        <link refid="interface_c_p_annotation_host_layer"/>
+        <childnode refid="1628" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1639">
+        <label>CPXYGraph</label>
+        <link refid="interface_c_p_x_y_graph"/>
+        <childnode refid="1638" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1631">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1653">
+        <label>CPXYAxisSet</label>
+        <link refid="interface_c_p_x_y_axis_set"/>
+        <childnode refid="1652" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1645">
+        <label>CPRangePlot</label>
+        <link refid="interface_c_p_range_plot"/>
+        <childnode refid="1642" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1650">
+        <label>CPXYAxis</label>
+        <link refid="interface_c_p_x_y_axis"/>
+        <childnode refid="1649" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1633">
+        <label>&lt;NSCoding-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCoding_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1632">
+        <label>&lt;NSKeyValueBindingCreation-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1640">
+        <label>CPDerivedXYGraph</label>
+        <link refid="interface_c_p_derived_x_y_graph"/>
+        <childnode refid="1639" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1629">
+        <label>CALayer</label>
+        <link refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1630" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1633" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1634" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1644">
+        <label>CPPieChart</label>
+        <link refid="interface_c_p_pie_chart"/>
+        <childnode refid="1642" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1630">
+        <label>NSObject</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1631" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1632" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1648">
+        <label>CPPlotArea</label>
+        <link refid="interface_c_p_plot_area"/>
+        <childnode refid="1636" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1628">
+        <label>CPLayer</label>
+        <link refid="interface_c_p_layer"/>
+        <childnode refid="1629" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1635" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1657">
+        <label>CPTextLayer</label>
+        <link refid="interface_c_p_text_layer"/>
+        <childnode refid="1628" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1652">
+        <label>CPAxisSet</label>
+        <link refid="interface_c_p_axis_set"/>
+        <childnode refid="1628" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1651">
+        <label>CPAxisLabelGroup</label>
+        <link refid="interface_c_p_axis_label_group"/>
+        <childnode refid="1628" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1643">
+        <label>CPBarPlot</label>
+        <link refid="interface_c_p_bar_plot"/>
+        <childnode refid="1642" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1664">
+        <label>&lt;CAMediaTiming-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1666">
+        <label>BOOL</label>
+        <link refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1665">
+        <label>&lt;CPResponder&gt;</label>
+        <link refid="protocol_c_p_responder-p"/>
+        <childnode refid="1661" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1661">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1663">
+        <label>&lt;NSCoding-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCoding_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1662">
+        <label>&lt;NSKeyValueBindingCreation-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1659">
+        <label>CALayer</label>
+        <link refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1660" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1663" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1664" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1660">
+        <label>NSObject</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1661" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1662" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1658">
+        <label>CPLayer</label>
+        <link refid="interface_c_p_layer"/>
+        <childnode refid="1659" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1665" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1666" relation="usage">
+          <edgelabel>renderingRecursively</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" line="10" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayer.h" bodystart="10" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="interface_c_p_layer_1acc3cffe1242a6147161bc3120747b8ad" prot="public" virt="virtual"><scope>CPLayer</scope><name>applyMaskToContext:</name></member>
+      <member refid="interface_c_p_layer_1af89526361a9e80c0ba21b31f80922507" prot="public" virt="virtual"><scope>CPLayer</scope><name>applySublayerMaskToContext:forSublayer:withOffset:</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/autoreverses" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>autoreverses</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/beginTime" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>beginTime</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/bind:toObject:withKeyPath:options:" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>bind:toObject:withKeyPath:options:</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction_1//apple_ref/occ/instm/CALayer/containsPoint:" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>containsPoint:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/copy" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>copy</name></member>
+      <member refid="interface_c_p_layer_1af1d7b9cee5b364818d5c9b46330326ee" prot="public" virt="virtual"><scope>CPLayer</scope><name>dataForPDFRepresentationOfLayer</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/dealloc" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>dealloc</name></member>
+      <member refid="interface_c_p_layer_1a512071c472f620c9e65889149bf84412" prot="public" virt="virtual"><scope>CPLayer</scope><name>defaultZPosition</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/description" prot="public" virt="non-virtual" ambiguityscope="CALayer::"><scope>CPLayer</scope><name>description</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/description" prot="public" virt="non-virtual" ambiguityscope="CPResponder-p::"><scope>CPLayer</scope><name>description</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction_1//apple_ref/occ/instm/CALayer/drawInContext:" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>drawInContext:</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/duration" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>duration</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCoding_Protocol/Reference/Reference_1//apple_ref/occ/intfm/NSCoding/encodeWithCoder:" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>encodeWithCoder:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/clm/NSObject/exposeBinding:" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>exposeBinding:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/exposedBindings" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>exposedBindings</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/fillMode" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>fillMode</name></member>
+      <member refid="interface_c_p_layer_1aaecd0345e0b871679ab69e8c7f125710" prot="private" virt="non-virtual"><scope>CPLayer</scope><name>graph</name></member>
+      <member refid="interface_c_p_layer_1aaecd0345e0b871679ab69e8c7f125710" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>graph</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/hash" prot="public" virt="non-virtual" ambiguityscope="CALayer::"><scope>CPLayer</scope><name>hash</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/hash" prot="public" virt="non-virtual" ambiguityscope="CPResponder-p::"><scope>CPLayer</scope><name>hash</name></member>
+      <member refid="interface_c_p_layer_1aaf206234345a192a5f4c2c79c31d3275" prot="public" virt="virtual"><scope>CPLayer</scope><name>imageOfLayer</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/infoForBinding:" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>infoForBinding:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/init" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>init</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCoding_Protocol/Reference/Reference_1//apple_ref/occ/intfm/NSCoding/initWithCoder:" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>initWithCoder:</name></member>
+      <member refid="interface_c_p_layer_1a55e20db52d41e3bc276e3ff4f0e07e5d" prot="public" virt="virtual"><scope>CPLayer</scope><name>initWithFrame:</name></member>
+      <member refid="interface_c_p_layer_1a840443578f7dfd7aca2b61e52a4b1863" prot="private" virt="non-virtual"><scope>CPLayer</scope><name>innerBorderPath</name></member>
+      <member refid="interface_c_p_layer_1a840443578f7dfd7aca2b61e52a4b1863" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>innerBorderPath</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/isEqual:" prot="public" virt="non-virtual" ambiguityscope="CALayer::"><scope>CPLayer</scope><name>isEqual:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/isEqual:" prot="public" virt="non-virtual" ambiguityscope="CPResponder-p::"><scope>CPLayer</scope><name>isEqual:</name></member>
+      <member refid="interface_c_p_layer_1a5ad6f83d128efed79af26e968653706a" prot="public" virt="virtual"><scope>CPLayer</scope><name>layoutAndRenderInContext:</name></member>
+      <member refid="interface_c_p_layer_1aa39195c52b4883f547802f5a9cd20dc8" prot="private" virt="non-virtual"><scope>CPLayer</scope><name>layoutManager</name></member>
+      <member refid="interface_c_p_layer_1aa39195c52b4883f547802f5a9cd20dc8" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>layoutManager</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction_1//apple_ref/occ/instm/CALayer/layoutSublayers" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>layoutSublayers</name></member>
+      <member refid="interface_c_p_layer_1ac14276fee59574f07a7b24c9bf2dad80" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>maskingPath</name></member>
+      <member refid="interface_c_p_layer_1afb877eb63758f6faec6a03c2ba12d75f" prot="private" virt="non-virtual"><scope>CPLayer</scope><name>masksToBorder</name></member>
+      <member refid="interface_c_p_layer_1afb877eb63758f6faec6a03c2ba12d75f" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>masksToBorder</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/optionDescriptionsForBinding:" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>optionDescriptionsForBinding:</name></member>
+      <member refid="interface_c_p_layer_1a3f1e02fcdc05eb3b8e6bb26f78a9ee1c" prot="private" virt="non-virtual"><scope>CPLayer</scope><name>outerBorderPath</name></member>
+      <member refid="interface_c_p_layer_1a3f1e02fcdc05eb3b8e6bb26f78a9ee1c" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>outerBorderPath</name></member>
+      <member refid="interface_c_p_layer_1a8b212a178e641e2cbd1824b4d31605f9" prot="private" virt="non-virtual"><scope>CPLayer</scope><name>paddingBottom</name></member>
+      <member refid="interface_c_p_layer_1a8b212a178e641e2cbd1824b4d31605f9" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>paddingBottom</name></member>
+      <member refid="interface_c_p_layer_1ad0fd0e023ee4f9b64ecfbd369820ec1c" prot="private" virt="non-virtual"><scope>CPLayer</scope><name>paddingLeft</name></member>
+      <member refid="interface_c_p_layer_1ad0fd0e023ee4f9b64ecfbd369820ec1c" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>paddingLeft</name></member>
+      <member refid="interface_c_p_layer_1a4a89230854cf58adca1fdb71292027d6" prot="private" virt="non-virtual"><scope>CPLayer</scope><name>paddingRight</name></member>
+      <member refid="interface_c_p_layer_1a4a89230854cf58adca1fdb71292027d6" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>paddingRight</name></member>
+      <member refid="interface_c_p_layer_1abde3adfc0ca84bbc138f1214f94cf9c3" prot="private" virt="non-virtual"><scope>CPLayer</scope><name>paddingTop</name></member>
+      <member refid="interface_c_p_layer_1abde3adfc0ca84bbc138f1214f94cf9c3" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>paddingTop</name></member>
+      <member refid="interface_c_p_layer_1a175cf29bb2c8375ddb563ca8060a5284" prot="public" virt="virtual"><scope>CPLayer</scope><name>pixelAlign</name></member>
+      <member refid="protocol_c_p_responder-p_1ace0ad0d241f95b417bdca45ee37b75a5" prot="public" virt="virtual"><scope>CPLayer</scope><name>pointingDeviceCancelledEvent:</name></member>
+      <member refid="protocol_c_p_responder-p_1af61d6f0ff4e166a407833d08e958aa23" prot="public" virt="virtual"><scope>CPLayer</scope><name>pointingDeviceDownEvent:atPoint:</name></member>
+      <member refid="protocol_c_p_responder-p_1a2126a7f09ce199218ead6af802a7dcda" prot="public" virt="virtual"><scope>CPLayer</scope><name>pointingDeviceDraggedEvent:atPoint:</name></member>
+      <member refid="protocol_c_p_responder-p_1a1d79a7d4c26b474e68cea2712789f085" prot="public" virt="virtual"><scope>CPLayer</scope><name>pointingDeviceUpEvent:atPoint:</name></member>
+      <member refid="interface_c_p_layer_1a9cee7d548fdd8e632c419652da848e91" prot="public" virt="virtual"><scope>CPLayer</scope><name>recursivelyRenderInContext:</name></member>
+      <member refid="interface_c_p_layer_1ac3b8b3138c38dcf4d38e1e9e07173ebf" prot="public" virt="virtual"><scope>CPLayer</scope><name>renderAsVectorInContext:</name></member>
+      <member refid="interface_c_p_layer_1a5d925272b587a498355d03664e9b8b2b" prot="private" virt="non-virtual"><scope>CPLayer</scope><name>renderingRecursively</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/repeatCount" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>repeatCount</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/repeatDuration" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>repeatDuration</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/speed" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>speed</name></member>
+      <member refid="interface_c_p_layer_1a479b978da77780f81cadecd8355f20d0" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>sublayerMaskingPath</name></member>
+      <member refid="interface_c_p_layer_1a1c60a6582dfa6012719e3e92825d8aef" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>sublayersExcludedFromAutomaticLayout</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/timeOffset" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>timeOffset</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/unbind:" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>unbind:</name></member>
+      <member refid="interface_c_p_layer_1a9606eb7a34734ea623bda6f8768591d7" prot="private" virt="non-virtual"><scope>CPLayer</scope><name>useFastRendering</name></member>
+      <member refid="interface_c_p_layer_1a9606eb7a34734ea623bda6f8768591d7" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>useFastRendering</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/valueClassForBinding:" prot="public" virt="non-virtual"><scope>CPLayer</scope><name>valueClassForBinding:</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

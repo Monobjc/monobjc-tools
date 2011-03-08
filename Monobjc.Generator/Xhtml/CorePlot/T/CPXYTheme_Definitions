@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_c_p_x_y_theme_8h" kind="file">
+    <compoundname>CPXYTheme.h</compoundname>
+    <includes local="no">Foundation/Foundation.h</includes>
+    <includes refid="_c_p_theme_8h" local="yes">CPTheme.h</includes>
+    <includedby refid="_c_p_dark_gradient_theme_8h" local="yes">Source/CPDarkGradientTheme.h</includedby>
+    <includedby refid="_c_p_plain_black_theme_8h" local="yes">Source/CPPlainBlackTheme.h</includedby>
+    <includedby refid="_c_p_plain_white_theme_8h" local="yes">Source/CPPlainWhiteTheme.h</includedby>
+    <includedby refid="_c_p_slate_theme_8h" local="yes">Source/CPSlateTheme.h</includedby>
+    <includedby refid="_c_p_stocks_theme_8h" local="yes">Source/CPStocksTheme.h</includedby>
+    <includedby refid="_c_p_x_y_theme_8m" local="yes">Source/CPXYTheme.m</includedby>
+    <incdepgraph>
+      <node id="1922">
+        <label>Source/CPXYTheme.h</label>
+        <link refid="CPXYTheme.h"/>
+        <childnode refid="1923" relation="include">
+        </childnode>
+        <childnode refid="1924" relation="include">
+        </childnode>
+      </node>
+      <node id="1923">
+        <label>Foundation/Foundation.h</label>
+      </node>
+      <node id="1924">
+        <label>CPTheme.h</label>
+        <link refid="_c_p_theme_8h"/>
+        <childnode refid="1923" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1925">
+        <label>Source/CPXYTheme.h</label>
+        <link refid="CPXYTheme.h"/>
+        <childnode refid="1926" relation="include">
+        </childnode>
+        <childnode refid="1927" relation="include">
+        </childnode>
+        <childnode refid="1928" relation="include">
+        </childnode>
+        <childnode refid="1929" relation="include">
+        </childnode>
+        <childnode refid="1930" relation="include">
+        </childnode>
+      </node>
+      <node id="1928">
+        <label>Source/CPPlainWhiteTheme.h</label>
+        <link refid="_c_p_plain_white_theme_8h_source"/>
+      </node>
+      <node id="1926">
+        <label>Source/CPDarkGradientTheme.h</label>
+        <link refid="_c_p_dark_gradient_theme_8h_source"/>
+      </node>
+      <node id="1929">
+        <label>Source/CPSlateTheme.h</label>
+        <link refid="_c_p_slate_theme_8h_source"/>
+      </node>
+      <node id="1930">
+        <label>Source/CPStocksTheme.h</label>
+        <link refid="_c_p_stocks_theme_8h_source"/>
+      </node>
+      <node id="1927">
+        <label>Source/CPPlainBlackTheme.h</label>
+        <link refid="_c_p_plain_black_theme_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="interface_c_p_x_y_theme" prot="public">CPXYTheme</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPXYTheme.h"/>
+  </compounddef>
+</doxygen>

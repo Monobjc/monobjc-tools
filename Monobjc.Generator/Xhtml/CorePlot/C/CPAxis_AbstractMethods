@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="interface_c_p_axis_07_abstract_methods_08" kind="category" prot="public">
+    <compoundname>CPAxis(AbstractMethods)</compoundname>
+    <includes refid="_c_p_axis_8h" local="no">CPAxis.h</includes>
+      <sectiondef kind="user-defined">
+      <header>Coordinate Space Conversions</header>
+      <memberdef kind="function" id="interface_c_p_axis_1a6593cd47fc89d17d72fc5d39f9b8ca3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGPoint" kindref="compound" external="doxygen-cocoa-tags.xml">CGPoint</ref></type>
+        <definition>CGPoint CPAxis(AbstractMethods)::viewPointForCoordinateDecimalNumber:</definition>
+        <argsstring>(NSDecimal coordinateDecimalNumber)</argsstring>
+        <name>viewPointForCoordinateDecimalNumber:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_DataTypes/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSDecimal</ref></type>
+          <declname>coordinateDecimalNumber</declname>
+        </param>
+        <briefdescription>
+<para>Converts a position on the axis to drawing coordinates. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>coordinateDecimalNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The axis value in data coordinate space. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The drawing coordinates of the point. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAxis.h" line="227" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAxis.m" bodystart="1615" bodyend="1618"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Grid Lines</header>
+      <memberdef kind="function" id="interface_c_p_axis_1a578eb28e2f90dc5713b913efc15bafe6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPAxis(AbstractMethods)::drawGridLinesInContext:isMajor:</definition>
+        <argsstring>(CGContextRef context,[isMajor] BOOL major)</argsstring>
+        <name>drawGridLinesInContext:isMajor:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/doc/c_ref/CGContextRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGContextRef</ref></type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <attributes>[isMajor]</attributes>
+          <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">BOOL</ref></type>
+          <declname>major</declname>
+        </param>
+        <briefdescription>
+<para>Draws grid lines into the provided graphics context. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graphics context to draw into. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>major</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Draw the major grid lines if YES, minor grid lines otherwise. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAxis.h" line="232" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAxis.m" bodystart="1624" bodyend="1627"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Background Bands</header>
+      <memberdef kind="function" id="interface_c_p_axis_1a1395075493d201fb8e9c386d80882af1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPAxis(AbstractMethods)::drawBackgroundBandsInContext:</definition>
+        <argsstring>(CGContextRef context)</argsstring>
+        <name>drawBackgroundBandsInContext:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/doc/c_ref/CGContextRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGContextRef</ref></type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>Draws alternating background bands into the provided graphics context. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graphics context to draw into. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAxis.h" line="237" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAxis.m" bodystart="1632" bodyend="1635"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_axis_1a9a0b2f3250993338f45eb8929ba40281" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPAxis(AbstractMethods)::drawBackgroundLimitsInContext:</definition>
+        <argsstring>(CGContextRef context)</argsstring>
+        <name>drawBackgroundLimitsInContext:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/doc/c_ref/CGContextRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGContextRef</ref></type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>Draws background limit ranges into the provided graphics context. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graphics context to draw into. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAxis.h" line="238" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAxis.m" bodystart="1640" bodyend="1643"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="interface_c_p_axis" kindref="compound">CPAxis</ref> abstract methods—must be overridden by subclasses. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAxis.h" line="223" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAxis.h" bodystart="223" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="interface_c_p_axis_1a1395075493d201fb8e9c386d80882af1" prot="public" virt="virtual"><scope>CPAxis(AbstractMethods)</scope><name>drawBackgroundBandsInContext:</name></member>
+      <member refid="interface_c_p_axis_1a9a0b2f3250993338f45eb8929ba40281" prot="public" virt="virtual"><scope>CPAxis(AbstractMethods)</scope><name>drawBackgroundLimitsInContext:</name></member>
+      <member refid="interface_c_p_axis_1a578eb28e2f90dc5713b913efc15bafe6" prot="public" virt="virtual"><scope>CPAxis(AbstractMethods)</scope><name>drawGridLinesInContext:isMajor:</name></member>
+      <member refid="interface_c_p_axis_1a6593cd47fc89d17d72fc5d39f9b8ca3d" prot="public" virt="virtual"><scope>CPAxis(AbstractMethods)</scope><name>viewPointForCoordinateDecimalNumber:</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

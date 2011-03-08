@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_c_p_pie_chart_8h" kind="file">
+    <compoundname>CPPieChart.h</compoundname>
+    <includes local="no">Foundation/Foundation.h</includes>
+    <includes refid="_c_p_plot_8h" local="yes">CPPlot.h</includes>
+    <includes refid="_c_p_definitions_8h" local="yes">CPDefinitions.h</includes>
+    <includedby refid="_c_p_pie_chart_8m" local="yes">Source/CPPieChart.m</includedby>
+    <incdepgraph>
+      <node id="1140">
+        <label>CPNumericDataType.h</label>
+        <link refid="_c_p_numeric_data_type_8h"/>
+        <childnode refid="1135" relation="include">
+        </childnode>
+      </node>
+      <node id="1138">
+        <label>CPDefinitions.h</label>
+        <link refid="_c_p_definitions_8h"/>
+        <childnode refid="1135" relation="include">
+        </childnode>
+        <childnode refid="1139" relation="include">
+        </childnode>
+      </node>
+      <node id="1143">
+        <label>CPLineStyle.h</label>
+        <link refid="_c_p_line_style_8h_source"/>
+        <childnode refid="1139" relation="include">
+        </childnode>
+        <childnode refid="1135" relation="include">
+        </childnode>
+      </node>
+      <node id="1142">
+        <label>CPLayer.h</label>
+        <link refid="_c_p_layer_8h_source"/>
+        <childnode refid="1139" relation="include">
+        </childnode>
+        <childnode refid="1143" relation="include">
+        </childnode>
+        <childnode refid="1144" relation="include">
+        </childnode>
+        <childnode refid="1145" relation="include">
+        </childnode>
+        <childnode refid="1135" relation="include">
+        </childnode>
+      </node>
+      <node id="1147">
+        <label>CPTextStyle.h</label>
+        <link refid="_c_p_text_style_8h_source"/>
+        <childnode refid="1135" relation="include">
+        </childnode>
+        <childnode refid="1139" relation="include">
+        </childnode>
+      </node>
+      <node id="1144">
+        <label>CPResponder.h</label>
+        <link refid="_c_p_responder_8h_source"/>
+        <childnode refid="1135" relation="include">
+        </childnode>
+      </node>
+      <node id="1141">
+        <label>CPAnnotationHostLayer.h</label>
+        <link refid="_c_p_annotation_host_layer_8h_source"/>
+        <childnode refid="1142" relation="include">
+        </childnode>
+      </node>
+      <node id="1146">
+        <label>CPMutableTextStyle.h</label>
+        <link refid="_c_p_mutable_text_style_8h_source"/>
+        <childnode refid="1147" relation="include">
+        </childnode>
+        <childnode refid="1135" relation="include">
+        </childnode>
+      </node>
+      <node id="1135">
+        <label>Foundation/Foundation.h</label>
+      </node>
+      <node id="1134">
+        <label>Source/CPPieChart.h</label>
+        <link refid="CPPieChart.h"/>
+        <childnode refid="1135" relation="include">
+        </childnode>
+        <childnode refid="1136" relation="include">
+        </childnode>
+        <childnode refid="1138" relation="include">
+        </childnode>
+      </node>
+      <node id="1137">
+        <label>CPPlotRange.h</label>
+        <link refid="_c_p_plot_range_8h"/>
+        <childnode refid="1138" relation="include">
+        </childnode>
+        <childnode refid="1135" relation="include">
+        </childnode>
+      </node>
+      <node id="1139">
+        <label>QuartzCore/QuartzCore.h</label>
+      </node>
+      <node id="1145">
+        <label>CPPlatformSpecificDefines.h</label>
+      </node>
+      <node id="1136">
+        <label>CPPlot.h</label>
+        <link refid="_c_p_plot_8h"/>
+        <childnode refid="1137" relation="include">
+        </childnode>
+        <childnode refid="1140" relation="include">
+        </childnode>
+        <childnode refid="1141" relation="include">
+        </childnode>
+        <childnode refid="1146" relation="include">
+        </childnode>
+        <childnode refid="1138" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="protocol_c_p_pie_chart_data_source-p" prot="public">CPPieChartDataSource-p</innerclass>
+    <innerclass refid="protocol_c_p_pie_chart_delegate-p" prot="public">CPPieChartDelegate-p</innerclass>
+    <innerclass refid="interface_c_p_pie_chart" prot="public">CPPieChart</innerclass>
+      <sectiondef kind="user-defined">
+      <header>Binding Identifiers</header>
+      <memberdef kind="variable" id="_c_p_pie_chart_8h_1a155b167cc87e6095254e346a1f09f7b2" prot="public" static="no" mutable="no">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString" kindref="compound" external="doxygen-cocoa-tags.xml">NSString</ref> *const</type>
+        <definition>NSString* const CPPieChartBindingPieSliceWidthValues</definition>
+        <argsstring></argsstring>
+        <name>CPPieChartBindingPieSliceWidthValues</name>
+        <briefdescription>
+<para>Pie slice widths. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPieChart.h" line="17" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPieChart.m" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_c_p_pie_chart_8h_1a5a54245423ecb13758bfdd2edc995aaa" prot="public" static="no">
+        <name>_CPPieChartField</name>
+        <enumvalue id="_c_p_pie_chart_8h_1a5a54245423ecb13758bfdd2edc995aaaae1c7166b4fb396c6a88245c353d2a7da" prot="public">
+          <name>CPPieChartFieldSliceWidth</name>
+          <briefdescription>
+<para>Pie slice width. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_pie_chart_8h_1a5a54245423ecb13758bfdd2edc995aaaabdafb1f59e0cb106c38a1dbab5a3b192" prot="public">
+          <name>CPPieChartFieldSliceWidthNormalized</name>
+          <briefdescription>
+<para>Pie slice width normalized [0, 1]. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_pie_chart_8h_1a5a54245423ecb13758bfdd2edc995aaaa1d389d5f6e99e4bafb306f0fdcc43f01" prot="public">
+          <name>CPPieChartFieldSliceWidthSum</name>
+          <briefdescription>
+<para>Cumulative sum of pie slice widths. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of pie chart data source field types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPieChart.h" line="22" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPieChart.h" bodystart="22" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="enum" id="_c_p_pie_chart_8h_1a229ddd920c21c93e844768e8d1dd034a" prot="public" static="no">
+        <name>_CPPieDirection</name>
+        <enumvalue id="_c_p_pie_chart_8h_1a229ddd920c21c93e844768e8d1dd034aa4db35293390f92931bde39b7dc160707" prot="public">
+          <name>CPPieDirectionClockwise</name>
+          <briefdescription>
+<para>Pie slices are drawn in a clockwise direction. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_pie_chart_8h_1a229ddd920c21c93e844768e8d1dd034aa347b9ed3f3dff6f707f55b5a46e0cdf3" prot="public">
+          <name>CPPieDirectionCounterClockwise</name>
+          <briefdescription>
+<para>Pie slices are drawn in a counter-clockwise direction. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of pie slice drawing directions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPieChart.h" line="30" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPieChart.h" bodystart="30" bodyend="33"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_c_p_pie_chart_8h_1a00880a847680d989d0dfffa94dd584f5" prot="public" static="no">
+        <type>enum <ref refid="_c_p_pie_chart_8h_1a5a54245423ecb13758bfdd2edc995aaa" kindref="member">_CPPieChartField</ref></type>
+        <definition>typedef enum _CPPieChartField  CPPieChartField</definition>
+        <argsstring></argsstring>
+        <name>CPPieChartField</name>
+        <briefdescription>
+<para>Enumeration of pie chart data source field types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPieChart.h" line="26"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_c_p_pie_chart_8h_1ad8aff098475214dc0d30a6c4c5201239" prot="public" static="no">
+        <type>enum <ref refid="_c_p_pie_chart_8h_1a229ddd920c21c93e844768e8d1dd034a" kindref="member">_CPPieDirection</ref></type>
+        <definition>typedef enum _CPPieDirection  CPPieDirection</definition>
+        <argsstring></argsstring>
+        <name>CPPieDirection</name>
+        <briefdescription>
+<para>Enumeration of pie slice drawing directions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPieChart.h" line="33"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPieChart.h"/>
+  </compounddef>
+</doxygen>

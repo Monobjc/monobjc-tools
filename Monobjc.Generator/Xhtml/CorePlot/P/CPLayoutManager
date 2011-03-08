@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="protocol_c_p_layout_manager-p" kind="protocol" prot="public">
+    <compoundname>CPLayoutManager-p</compoundname>
+    <basecompoundref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" prot="public" virt="non-virtual">&lt;NSObject-p&gt;</basecompoundref>
+    <includes refid="_c_p_layout_manager_8h" local="no">CPLayoutManager.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="protocol_c_p_layout_manager-p_1aacec7bb389212b8d3f51b6df2e6eead3" prot="public" static="no" const="no" explicit="no" inline="no" optional="yes" virt="virtual">
+        <type>void</type>
+        <definition>void CPLayoutManager-p::invalidateLayoutOfLayer:</definition>
+        <argsstring>(CALayer *layer)</argsstring>
+        <name>invalidateLayoutOfLayer:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction" kindref="compound" external="doxygen-cocoa-tags.xml">CALayer</ref> *</type>
+          <declname>layer</declname>
+        </param>
+        <briefdescription>
+<para>Invalidates the layout of a layer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>layer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The layer that requires layout.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+This method is called when the preferred size of the layer may have changed. The receiver should invalidate any cached state. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayoutManager.h" line="15"/>
+      </memberdef>
+      <memberdef kind="function" id="protocol_c_p_layout_manager-p_1a017af00f1b77c1281a20081bbc22cd59" prot="public" static="no" const="no" explicit="no" inline="no" optional="yes" virt="virtual">
+        <type>void</type>
+        <definition>void CPLayoutManager-p::layoutSublayersOfLayer:</definition>
+        <argsstring>(CALayer *layer)</argsstring>
+        <name>layoutSublayersOfLayer:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction" kindref="compound" external="doxygen-cocoa-tags.xml">CALayer</ref> *</type>
+          <declname>layer</declname>
+        </param>
+        <briefdescription>
+<para>Layout each sublayer of the given layer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>layer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The layer whose sublayers require layout.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+The receiver should set the frame of each sublayer that requires layout. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayoutManager.h" line="22"/>
+      </memberdef>
+      <memberdef kind="function" id="protocol_c_p_layout_manager-p_1aa9fe76e00b26501528cf8471a935ce63" prot="public" static="no" const="no" explicit="no" inline="no" optional="yes" virt="virtual">
+        <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGSize" kindref="compound" external="doxygen-cocoa-tags.xml">CGSize</ref></type>
+        <definition>CGSize CPLayoutManager-p::preferredSizeOfLayer:</definition>
+        <argsstring>(CALayer *layer)</argsstring>
+        <name>preferredSizeOfLayer:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction" kindref="compound" external="doxygen-cocoa-tags.xml">CALayer</ref> *</type>
+          <declname>layer</declname>
+        </param>
+        <briefdescription>
+<para>Returns the preferred size of a layer in its coordinate system. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>layer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The layer that requires layout. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The preferred size of the layer.</para></simplesect>
+If this method is not implemented the preferred size is assumed to be the size of the bounds of <computeroutput>layer</computeroutput>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayoutManager.h" line="30"/>
+      </memberdef>
+      <memberdef kind="function" id="protocol_c_p_layout_manager-p_1abf5b9fe9cc44f137dd78e9e99af32b4e" prot="public" static="no" const="no" explicit="no" inline="no" optional="yes" virt="virtual">
+        <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGSize" kindref="compound" external="doxygen-cocoa-tags.xml">CGSize</ref></type>
+        <definition>CGSize CPLayoutManager-p::minimumSizeOfLayer:</definition>
+        <argsstring>(CALayer *layer)</argsstring>
+        <name>minimumSizeOfLayer:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction" kindref="compound" external="doxygen-cocoa-tags.xml">CALayer</ref> *</type>
+          <declname>layer</declname>
+        </param>
+        <briefdescription>
+<para>Returns the minimum size of a layer in its coordinate system. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>layer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The layer that requires layout. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The minimum size of the layer.</para></simplesect>
+If this method is not implemented the minimum size is assumed to be (0, 0). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayoutManager.h" line="38"/>
+      </memberdef>
+      <memberdef kind="function" id="protocol_c_p_layout_manager-p_1af2575e5cd99f9c70b52db6d461251300" prot="public" static="no" const="no" explicit="no" inline="no" optional="yes" virt="virtual">
+        <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGSize" kindref="compound" external="doxygen-cocoa-tags.xml">CGSize</ref></type>
+        <definition>CGSize CPLayoutManager-p::maximumSizeOfLayer:</definition>
+        <argsstring>(CALayer *layer)</argsstring>
+        <name>maximumSizeOfLayer:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction" kindref="compound" external="doxygen-cocoa-tags.xml">CALayer</ref> *</type>
+          <declname>layer</declname>
+        </param>
+        <briefdescription>
+<para>Returns the maximum size of a layer in its coordinate system. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>layer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The layer that requires layout. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The maximum size of the layer.</para></simplesect>
+If this method is not implemented the maximum size is assumed to be the size of the bounds of <computeroutput>layer</computeroutput>&apos;s superlayer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayoutManager.h" line="46"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Defines a layer layout manager. All methods are optional. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1695">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1694">
+        <label>&lt;CPLayoutManager&gt;</label>
+        <link refid="protocol_c_p_layout_manager-p"/>
+        <childnode refid="1695" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1697">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1696">
+        <label>&lt;CPLayoutManager&gt;</label>
+        <link refid="protocol_c_p_layout_manager-p"/>
+        <childnode refid="1697" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayoutManager.h" line="6" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPLayoutManager.h" bodystart="6" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/description" prot="public" virt="non-virtual"><scope>CPLayoutManager-p</scope><name>description</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/hash" prot="public" virt="non-virtual"><scope>CPLayoutManager-p</scope><name>hash</name></member>
+      <member refid="protocol_c_p_layout_manager-p_1aacec7bb389212b8d3f51b6df2e6eead3" prot="public" virt="virtual"><scope>CPLayoutManager-p</scope><name>invalidateLayoutOfLayer:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/isEqual:" prot="public" virt="non-virtual"><scope>CPLayoutManager-p</scope><name>isEqual:</name></member>
+      <member refid="protocol_c_p_layout_manager-p_1a017af00f1b77c1281a20081bbc22cd59" prot="public" virt="virtual"><scope>CPLayoutManager-p</scope><name>layoutSublayersOfLayer:</name></member>
+      <member refid="protocol_c_p_layout_manager-p_1af2575e5cd99f9c70b52db6d461251300" prot="public" virt="virtual"><scope>CPLayoutManager-p</scope><name>maximumSizeOfLayer:</name></member>
+      <member refid="protocol_c_p_layout_manager-p_1abf5b9fe9cc44f137dd78e9e99af32b4e" prot="public" virt="virtual"><scope>CPLayoutManager-p</scope><name>minimumSizeOfLayer:</name></member>
+      <member refid="protocol_c_p_layout_manager-p_1aa9fe76e00b26501528cf8471a935ce63" prot="public" virt="virtual"><scope>CPLayoutManager-p</scope><name>preferredSizeOfLayer:</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

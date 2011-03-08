@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="interface_c_p_fill_07_abstract_methods_08" kind="category" prot="public">
+    <compoundname>CPFill(AbstractMethods)</compoundname>
+    <includes refid="_c_p_fill_8h" local="no">CPFill.h</includes>
+      <sectiondef kind="user-defined">
+      <header>Drawing</header>
+      <memberdef kind="function" id="interface_c_p_fill_1a9d22cd40651d57d813fd74177c2c4adc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPFill(AbstractMethods)::fillRect:inContext:</definition>
+        <argsstring>(CGRect theRect,[inContext] CGContextRef theContext)</argsstring>
+        <name>fillRect:inContext:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGRect" kindref="compound" external="doxygen-cocoa-tags.xml">CGRect</ref></type>
+          <declname>theRect</declname>
+        </param>
+        <param>
+          <attributes>[inContext]</attributes>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/doc/c_ref/CGContextRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGContextRef</ref></type>
+          <declname>theContext</declname>
+        </param>
+        <briefdescription>
+<para>Draws the gradient into the given graphics context inside the provided rectangle. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>theRect</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The rectangle to draw into. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>theContext</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graphics context to draw into. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPFill.h" line="36" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPFill.m" bodystart="123" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_fill_1a762d7e21920469575b65413d6808a82c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPFill(AbstractMethods)::fillPathInContext:</definition>
+        <argsstring>(CGContextRef theContext)</argsstring>
+        <name>fillPathInContext:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/doc/c_ref/CGContextRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGContextRef</ref></type>
+          <declname>theContext</declname>
+        </param>
+        <briefdescription>
+<para>Draws the gradient into the given graphics context clipped to the current drawing path. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>theContext</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graphics context to draw into. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPFill.h" line="37" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPFill.m" bodystart="131" bodyend="134"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="interface_c_p_fill" kindref="compound">CPFill</ref> abstract methods—must be overridden by subclasses. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPFill.h" line="32" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPFill.h" bodystart="32" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="interface_c_p_fill_1a762d7e21920469575b65413d6808a82c" prot="public" virt="virtual"><scope>CPFill(AbstractMethods)</scope><name>fillPathInContext:</name></member>
+      <member refid="interface_c_p_fill_1a9d22cd40651d57d813fd74177c2c4adc" prot="public" virt="virtual"><scope>CPFill(AbstractMethods)</scope><name>fillRect:inContext:</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

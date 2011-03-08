@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="interface_n_s_number_07_c_p_extensions_08" kind="category" prot="public">
+    <compoundname>NSNumber(CPExtensions)</compoundname>
+    <includes refid="_n_s_number_extensions_8h" local="no">NSNumberExtensions.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interface_n_s_number_07_c_p_extensions_08_1ac6da554efc534d3230fd37c3db4ac932" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSDecimalNumber</ref> *</type>
+        <definition>NSDecimalNumber * NSNumber(CPExtensions)::decimalNumber</definition>
+        <argsstring>()</argsstring>
+        <name>decimalNumber</name>
+        <briefdescription>
+<para>Returns the value of the receiver as an <ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSDecimalNumber</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The value of the receiver as an <ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSDecimalNumber</ref>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/NSNumberExtensions.h" line="8" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/NSNumberExtensions.m" bodystart="8" bodyend="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Core Plot extensions to <ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSNumber</ref>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/NSNumberExtensions.h" line="6" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/NSNumberExtensions.h" bodystart="6" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="interface_n_s_number_07_c_p_extensions_08_1ac6da554efc534d3230fd37c3db4ac932" prot="public" virt="virtual"><scope>NSNumber(CPExtensions)</scope><name>decimalNumber</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

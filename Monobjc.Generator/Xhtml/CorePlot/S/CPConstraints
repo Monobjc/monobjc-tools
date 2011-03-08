@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="struct___c_p_constraints" kind="struct" prot="public">
+    <compoundname>_CPConstraints</compoundname>
+    <includes refid="_c_p_definitions_8h" local="no">CPDefinitions.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct___c_p_constraints_1a4105b439348ef876d05a8d5c5754b13e" prot="public" static="no" mutable="no">
+        <type><ref refid="_c_p_definitions_8h_1a1fd13c7bf8a44726bfba899396e38c01" kindref="member">CPConstraint</ref></type>
+        <definition>CPConstraint _CPConstraints::lower</definition>
+        <argsstring></argsstring>
+        <name>lower</name>
+        <briefdescription>
+<para>The constraint on the lower range. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="77" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___c_p_constraints_1a1ba8df718afb8049bf0a379d1c6da4b9" prot="public" static="no" mutable="no">
+        <type><ref refid="_c_p_definitions_8h_1a1fd13c7bf8a44726bfba899396e38c01" kindref="member">CPConstraint</ref></type>
+        <definition>CPConstraint _CPConstraints::upper</definition>
+        <argsstring></argsstring>
+        <name>upper</name>
+        <briefdescription>
+<para>The constraint on the upper range. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="78" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Constraints for a relative position. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="76" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" bodystart="76" bodyend="79"/>
+    <listofallmembers>
+      <member refid="struct___c_p_constraints_1a4105b439348ef876d05a8d5c5754b13e" prot="public" virt="non-virtual"><scope>_CPConstraints</scope><name>lower</name></member>
+      <member refid="struct___c_p_constraints_1a1ba8df718afb8049bf0a379d1c6da4b9" prot="public" virt="non-virtual"><scope>_CPConstraints</scope><name>upper</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

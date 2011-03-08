@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="interface_c_p_graph_07_abstract_factory_methods_08" kind="category" prot="public">
+    <compoundname>CPGraph(AbstractFactoryMethods)</compoundname>
+    <includes refid="_c_p_graph_8h" local="no">CPGraph.h</includes>
+      <sectiondef kind="user-defined">
+      <header>Factory Methods</header>
+      <memberdef kind="function" id="interface_c_p_graph_1ad5aeaa629e71bd2d915c036326497f0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="interface_c_p_plot_space" kindref="compound">CPPlotSpace</ref> *</type>
+        <definition>CPPlotSpace * CPGraph(AbstractFactoryMethods)::newPlotSpace</definition>
+        <argsstring>()</argsstring>
+        <name>newPlotSpace</name>
+        <briefdescription>
+<para>Creates a new plot space for the graph. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A new plot space. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPGraph.h" line="113" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPGraph.m" bodystart="645" bodyend="648"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_graph_1a009a51b612e879aa7de0eebc1aeb2390" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="interface_c_p_axis_set" kindref="compound">CPAxisSet</ref> *</type>
+        <definition>CPAxisSet * CPGraph(AbstractFactoryMethods)::newAxisSet</definition>
+        <argsstring>()</argsstring>
+        <name>newAxisSet</name>
+        <briefdescription>
+<para>Creates a new axis set for the graph. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A new axis set. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPGraph.h" line="114" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPGraph.m" bodystart="653" bodyend="656"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="interface_c_p_graph" kindref="compound">CPGraph</ref> abstract methods—must be overridden by subclasses. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPGraph.h" line="109" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPGraph.h" bodystart="109" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="interface_c_p_graph_1a009a51b612e879aa7de0eebc1aeb2390" prot="public" virt="virtual"><scope>CPGraph(AbstractFactoryMethods)</scope><name>newAxisSet</name></member>
+      <member refid="interface_c_p_graph_1ad5aeaa629e71bd2d915c036326497f0a" prot="public" virt="virtual"><scope>CPGraph(AbstractFactoryMethods)</scope><name>newPlotSpace</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

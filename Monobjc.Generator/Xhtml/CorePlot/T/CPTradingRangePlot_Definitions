@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_c_p_trading_range_plot_8h" kind="file">
+    <compoundname>CPTradingRangePlot.h</compoundname>
+    <includes local="no">Foundation/Foundation.h</includes>
+    <includes refid="_c_p_plot_8h" local="yes">CPPlot.h</includes>
+    <includes refid="_c_p_definitions_8h" local="yes">CPDefinitions.h</includes>
+    <includedby refid="_c_p_trading_range_plot_8m" local="yes">Source/CPTradingRangePlot.m</includedby>
+    <incdepgraph>
+      <node id="1743">
+        <label>CPNumericDataType.h</label>
+        <link refid="_c_p_numeric_data_type_8h"/>
+        <childnode refid="1738" relation="include">
+        </childnode>
+      </node>
+      <node id="1741">
+        <label>CPDefinitions.h</label>
+        <link refid="_c_p_definitions_8h"/>
+        <childnode refid="1738" relation="include">
+        </childnode>
+        <childnode refid="1742" relation="include">
+        </childnode>
+      </node>
+      <node id="1746">
+        <label>CPLineStyle.h</label>
+        <link refid="_c_p_line_style_8h_source"/>
+        <childnode refid="1742" relation="include">
+        </childnode>
+        <childnode refid="1738" relation="include">
+        </childnode>
+      </node>
+      <node id="1745">
+        <label>CPLayer.h</label>
+        <link refid="_c_p_layer_8h_source"/>
+        <childnode refid="1742" relation="include">
+        </childnode>
+        <childnode refid="1746" relation="include">
+        </childnode>
+        <childnode refid="1747" relation="include">
+        </childnode>
+        <childnode refid="1748" relation="include">
+        </childnode>
+        <childnode refid="1738" relation="include">
+        </childnode>
+      </node>
+      <node id="1750">
+        <label>CPTextStyle.h</label>
+        <link refid="_c_p_text_style_8h_source"/>
+        <childnode refid="1738" relation="include">
+        </childnode>
+        <childnode refid="1742" relation="include">
+        </childnode>
+      </node>
+      <node id="1747">
+        <label>CPResponder.h</label>
+        <link refid="_c_p_responder_8h_source"/>
+        <childnode refid="1738" relation="include">
+        </childnode>
+      </node>
+      <node id="1744">
+        <label>CPAnnotationHostLayer.h</label>
+        <link refid="_c_p_annotation_host_layer_8h_source"/>
+        <childnode refid="1745" relation="include">
+        </childnode>
+      </node>
+      <node id="1749">
+        <label>CPMutableTextStyle.h</label>
+        <link refid="_c_p_mutable_text_style_8h_source"/>
+        <childnode refid="1750" relation="include">
+        </childnode>
+        <childnode refid="1738" relation="include">
+        </childnode>
+      </node>
+      <node id="1737">
+        <label>Source/CPTradingRangePlot.h</label>
+        <link refid="CPTradingRangePlot.h"/>
+        <childnode refid="1738" relation="include">
+        </childnode>
+        <childnode refid="1739" relation="include">
+        </childnode>
+        <childnode refid="1741" relation="include">
+        </childnode>
+      </node>
+      <node id="1738">
+        <label>Foundation/Foundation.h</label>
+      </node>
+      <node id="1740">
+        <label>CPPlotRange.h</label>
+        <link refid="_c_p_plot_range_8h"/>
+        <childnode refid="1741" relation="include">
+        </childnode>
+        <childnode refid="1738" relation="include">
+        </childnode>
+      </node>
+      <node id="1742">
+        <label>QuartzCore/QuartzCore.h</label>
+      </node>
+      <node id="1748">
+        <label>CPPlatformSpecificDefines.h</label>
+      </node>
+      <node id="1739">
+        <label>CPPlot.h</label>
+        <link refid="_c_p_plot_8h"/>
+        <childnode refid="1740" relation="include">
+        </childnode>
+        <childnode refid="1743" relation="include">
+        </childnode>
+        <childnode refid="1744" relation="include">
+        </childnode>
+        <childnode refid="1749" relation="include">
+        </childnode>
+        <childnode refid="1741" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interface_c_p_trading_range_plot" prot="public">CPTradingRangePlot</innerclass>
+      <sectiondef kind="user-defined">
+      <header>Binding Identifiers</header>
+      <memberdef kind="variable" id="_c_p_trading_range_plot_8h_1aba2d87518f3d43ee4c17e27d6056ceb8" prot="public" static="no" mutable="no">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString" kindref="compound" external="doxygen-cocoa-tags.xml">NSString</ref> *const</type>
+        <definition>NSString* const CPTradingRangePlotBindingXValues</definition>
+        <argsstring></argsstring>
+        <name>CPTradingRangePlotBindingXValues</name>
+        <briefdescription>
+<para>X values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTradingRangePlot.h" line="16" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTradingRangePlot.m" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_c_p_trading_range_plot_8h_1a62ab3c8eeb78a5b338bbc804fd18272a" prot="public" static="no" mutable="no">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString" kindref="compound" external="doxygen-cocoa-tags.xml">NSString</ref> *const</type>
+        <definition>NSString* const CPTradingRangePlotBindingOpenValues</definition>
+        <argsstring></argsstring>
+        <name>CPTradingRangePlotBindingOpenValues</name>
+        <briefdescription>
+<para>Open price values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTradingRangePlot.h" line="17" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTradingRangePlot.m" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_c_p_trading_range_plot_8h_1aba268c37cb8e3b7d87fd618dcd840590" prot="public" static="no" mutable="no">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString" kindref="compound" external="doxygen-cocoa-tags.xml">NSString</ref> *const</type>
+        <definition>NSString* const CPTradingRangePlotBindingHighValues</definition>
+        <argsstring></argsstring>
+        <name>CPTradingRangePlotBindingHighValues</name>
+        <briefdescription>
+<para>High price values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTradingRangePlot.h" line="18" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTradingRangePlot.m" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_c_p_trading_range_plot_8h_1a2590f860ce0b54d1a6791c79493768eb" prot="public" static="no" mutable="no">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString" kindref="compound" external="doxygen-cocoa-tags.xml">NSString</ref> *const</type>
+        <definition>NSString* const CPTradingRangePlotBindingLowValues</definition>
+        <argsstring></argsstring>
+        <name>CPTradingRangePlotBindingLowValues</name>
+        <briefdescription>
+<para>Low price values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTradingRangePlot.h" line="19" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTradingRangePlot.m" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_c_p_trading_range_plot_8h_1a4854012d8e65934e79b7ca91d758de9e" prot="public" static="no" mutable="no">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString" kindref="compound" external="doxygen-cocoa-tags.xml">NSString</ref> *const</type>
+        <definition>NSString* const CPTradingRangePlotBindingCloseValues</definition>
+        <argsstring></argsstring>
+        <name>CPTradingRangePlotBindingCloseValues</name>
+        <briefdescription>
+<para>Close price values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTradingRangePlot.h" line="20" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTradingRangePlot.m" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_c_p_trading_range_plot_8h_1a07ee6591bd2aace26043b8849829de15" prot="public" static="no">
+        <name>_CPTradingRangePlotStyle</name>
+        <enumvalue id="_c_p_trading_range_plot_8h_1a07ee6591bd2aace26043b8849829de15a586744f5b624c5e58b4be75ed0bf28a7" prot="public">
+          <name>CPTradingRangePlotStyleOHLC</name>
+          <briefdescription>
+<para>OHLC. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_trading_range_plot_8h_1a07ee6591bd2aace26043b8849829de15a0f10ed8b3b8083af6328cf8992d6a768" prot="public">
+          <name>CPTradingRangePlotStyleCandleStick</name>
+          <briefdescription>
+<para>Candle. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of Quote plot render style types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTradingRangePlot.h" line="25" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTradingRangePlot.h" bodystart="25" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="enum" id="_c_p_trading_range_plot_8h_1aaeaa314760612ed394b0277a26fe3b3b" prot="public" static="no">
+        <name>_CPTradingRangePlotField</name>
+        <enumvalue id="_c_p_trading_range_plot_8h_1aaeaa314760612ed394b0277a26fe3b3ba7ce7201bdbd1be291878ac5ae47c08b3" prot="public">
+          <name>CPTradingRangePlotFieldX</name>
+          <briefdescription>
+<para>X values. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_trading_range_plot_8h_1aaeaa314760612ed394b0277a26fe3b3ba3736b641425275c09a54d3463325c675" prot="public">
+          <name>CPTradingRangePlotFieldOpen</name>
+          <briefdescription>
+<para>Open values. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_trading_range_plot_8h_1aaeaa314760612ed394b0277a26fe3b3ba7090da43921839a6f10babae65c01c55" prot="public">
+          <name>CPTradingRangePlotFieldHigh</name>
+          <briefdescription>
+<para>High values. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_trading_range_plot_8h_1aaeaa314760612ed394b0277a26fe3b3ba234e767823dc694bfc081f67a440e812" prot="public">
+          <name>CPTradingRangePlotFieldLow</name>
+          <briefdescription>
+<para>Low values. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_trading_range_plot_8h_1aaeaa314760612ed394b0277a26fe3b3bad4bd561097d79f3b89ae651c1119d22a" prot="public">
+          <name>CPTradingRangePlotFieldClose</name>
+          <briefdescription>
+<para>Close values. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of Quote plot data source field types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTradingRangePlot.h" line="32" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTradingRangePlot.h" bodystart="32" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_c_p_trading_range_plot_8h_1af9bec7100ffbd143bb047eeef365d599" prot="public" static="no">
+        <type>enum <ref refid="_c_p_trading_range_plot_8h_1a07ee6591bd2aace26043b8849829de15" kindref="member">_CPTradingRangePlotStyle</ref></type>
+        <definition>typedef enum _CPTradingRangePlotStyle  CPTradingRangePlotStyle</definition>
+        <argsstring></argsstring>
+        <name>CPTradingRangePlotStyle</name>
+        <briefdescription>
+<para>Enumeration of Quote plot render style types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTradingRangePlot.h" line="28"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_c_p_trading_range_plot_8h_1a794c44c14b07769600f9e201df465cd8" prot="public" static="no">
+        <type>enum <ref refid="_c_p_trading_range_plot_8h_1aaeaa314760612ed394b0277a26fe3b3b" kindref="member">_CPTradingRangePlotField</ref></type>
+        <definition>typedef enum _CPTradingRangePlotField  CPTradingRangePlotField</definition>
+        <argsstring></argsstring>
+        <name>CPTradingRangePlotField</name>
+        <briefdescription>
+<para>Enumeration of Quote plot data source field types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTradingRangePlot.h" line="38"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTradingRangePlot.h"/>
+  </compounddef>
+</doxygen>

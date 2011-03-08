@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="protocol_c_p_axis_delegate-p" kind="protocol" prot="public">
+    <compoundname>CPAxisDelegate-p</compoundname>
+    <basecompoundref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" prot="public" virt="non-virtual">&lt;NSObject-p&gt;</basecompoundref>
+    <includes refid="_c_p_axis_8h" local="no">CPAxis.h</includes>
+      <sectiondef kind="user-defined">
+      <header>Labels</header>
+      <memberdef kind="function" id="protocol_c_p_axis_delegate-p_1ad99cf63a40b80ae9d609374156112f7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">BOOL</ref></type>
+        <definition>BOOL CPAxisDelegate-p::axisShouldRelabel:</definition>
+        <argsstring>(CPAxis *axis)</argsstring>
+        <name>axisShouldRelabel:</name>
+        <param>
+          <type><ref refid="interface_c_p_axis" kindref="compound">CPAxis</ref> *</type>
+          <declname>axis</declname>
+        </param>
+        <briefdescription>
+<para>Determines if the axis should relabel itself now. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The axis. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>YES if the axis should relabel now. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAxis.h" line="42"/>
+      </memberdef>
+      <memberdef kind="function" id="protocol_c_p_axis_delegate-p_1a2a81cc2e5f1abf08fc86b18e3ab1885a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPAxisDelegate-p::axisDidRelabel:</definition>
+        <argsstring>(CPAxis *axis)</argsstring>
+        <name>axisDidRelabel:</name>
+        <param>
+          <type><ref refid="interface_c_p_axis" kindref="compound">CPAxis</ref> *</type>
+          <declname>axis</declname>
+        </param>
+        <briefdescription>
+<para>The method is called after the axis is relabeled to allow the delegate to perform any necessary cleanup or further labeling actions. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The axis. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAxis.h" line="48"/>
+      </memberdef>
+      <memberdef kind="function" id="protocol_c_p_axis_delegate-p_1a8504b6bd52267fef0bcd2b2b3ad09ed1" prot="public" static="no" const="no" explicit="no" inline="no" optional="yes" virt="virtual">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">BOOL</ref></type>
+        <definition>BOOL CPAxisDelegate-p::axis:shouldUpdateAxisLabelsAtLocations:</definition>
+        <argsstring>(CPAxis *axis,[shouldUpdateAxisLabelsAtLocations] NSSet *locations)</argsstring>
+        <name>axis:shouldUpdateAxisLabelsAtLocations:</name>
+        <param>
+          <type><ref refid="interface_c_p_axis" kindref="compound">CPAxis</ref> *</type>
+          <declname>axis</declname>
+        </param>
+        <param>
+          <attributes>[shouldUpdateAxisLabelsAtLocations]</attributes>
+          <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSSet</ref> *</type>
+          <declname>locations</declname>
+        </param>
+        <briefdescription>
+<para>This method gives the delegate a chance to create custom labels for each tick. It can be used with any relabeling policy. Returning NO will cause the axis not to update the labels. It is then the delegates responsiblity to do this. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The axis. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>locations</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The locations of the major ticks. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>YES if the axis class should proceed with automatic relabeling. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAxis.h" line="59"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Axis labeling delegate. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1299">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1298">
+        <label>&lt;CPAxisDelegate&gt;</label>
+        <link refid="protocol_c_p_axis_delegate-p"/>
+        <childnode refid="1299" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1301">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1300">
+        <label>&lt;CPAxisDelegate&gt;</label>
+        <link refid="protocol_c_p_axis_delegate-p"/>
+        <childnode refid="1301" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAxis.h" line="33" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAxis.h" bodystart="33" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="protocol_c_p_axis_delegate-p_1a8504b6bd52267fef0bcd2b2b3ad09ed1" prot="public" virt="virtual"><scope>CPAxisDelegate-p</scope><name>axis:shouldUpdateAxisLabelsAtLocations:</name></member>
+      <member refid="protocol_c_p_axis_delegate-p_1a2a81cc2e5f1abf08fc86b18e3ab1885a" prot="public" virt="virtual"><scope>CPAxisDelegate-p</scope><name>axisDidRelabel:</name></member>
+      <member refid="protocol_c_p_axis_delegate-p_1ad99cf63a40b80ae9d609374156112f7c" prot="public" virt="virtual"><scope>CPAxisDelegate-p</scope><name>axisShouldRelabel:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/description" prot="public" virt="non-virtual"><scope>CPAxisDelegate-p</scope><name>description</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/hash" prot="public" virt="non-virtual"><scope>CPAxisDelegate-p</scope><name>hash</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/isEqual:" prot="public" virt="non-virtual"><scope>CPAxisDelegate-p</scope><name>isEqual:</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

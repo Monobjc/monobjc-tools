@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_c_p_platform_specific_defines_8h" kind="file">
+    <compoundname>CPPlatformSpecificDefines.h</compoundname>
+    <includes local="no">Foundation/Foundation.h</includes>
+    <includes local="no">AppKit/AppKit.h</includes>
+    <includedby refid="_c_p_platform_specific_functions_8m" local="yes">MacOnly/CPPlatformSpecificFunctions.m</includedby>
+    <incdepgraph>
+      <node id="302">
+        <label>MacOnly/CPPlatformSpecificDefines.h</label>
+        <link refid="CPPlatformSpecificDefines.h"/>
+        <childnode refid="303" relation="include">
+        </childnode>
+        <childnode refid="304" relation="include">
+        </childnode>
+      </node>
+      <node id="304">
+        <label>AppKit/AppKit.h</label>
+      </node>
+      <node id="303">
+        <label>Foundation/Foundation.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct___c_p_context_node" prot="public">_CPContextNode</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_c_p_platform_specific_defines_8h_1a3dbbe3e796b59f1d22fafe9ae16f210b" prot="public" static="no">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Classes/NSImage_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSImage</ref></type>
+        <definition>typedef NSImage CPNativeImage</definition>
+        <argsstring></argsstring>
+        <name>CPNativeImage</name>
+        <briefdescription>
+<para>Platform-native image format. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/MacOnly/CPPlatformSpecificDefines.h" line="7" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/MacOnly/CPPlatformSpecificDefines.h" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_c_p_platform_specific_defines_8h_1a9e3532f16b66f865db08ba4350e199de" prot="public" static="no">
+        <type>struct <ref refid="struct___c_p_context_node" kindref="compound">_CPContextNode</ref></type>
+        <definition>typedef struct _CPContextNode  CPContextNode</definition>
+        <argsstring></argsstring>
+        <name>CPContextNode</name>
+        <briefdescription>
+<para>Node in a linked list of graphics contexts. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/MacOnly/CPPlatformSpecificDefines.h" line="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/MacOnly/CPPlatformSpecificDefines.h"/>
+  </compounddef>
+</doxygen>

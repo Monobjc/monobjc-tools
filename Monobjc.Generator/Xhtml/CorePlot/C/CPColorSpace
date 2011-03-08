@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="interface_c_p_color_space" kind="class" prot="public">
+    <compoundname>CPColorSpace</compoundname>
+    <basecompoundref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference" prot="public" virt="non-virtual">NSObject</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="interface_c_p_color_space_1aa64c8d48724904b18b54e3ca12c21a79" prot="public" static="no" readable="yes" writable="no" gettable="no" settable="no" accessor="assign">
+        <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGColorSpace/Reference/reference.html#//apple_ref/doc/c_ref/CGColorSpaceRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGColorSpaceRef</ref></type>
+        <definition>CPColorSpace::cgColorSpace</definition>
+        <argsstring></argsstring>
+        <name>cgColorSpace</name>
+        <read></read>
+        <briefdescription>
+<para>The CGColorSpace to wrap around. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPColorSpace.h" line="7" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPColorSpace.h" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="interface_c_p_color_space_1a59128769be7a370e23e538c5d9bcd210" prot="public" static="yes" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="interface_c_p_color_space" kindref="compound">CPColorSpace</ref> *</type>
+        <definition>CPColorSpace * CPColorSpace::genericRGBSpace</definition>
+        <argsstring>()</argsstring>
+        <name>genericRGBSpace</name>
+        <briefdescription>
+<para>Returns a shared instance of <ref refid="interface_c_p_color_space" kindref="compound">CPColorSpace</ref> initialized with the standard RGB space. </para>        </briefdescription>
+        <detaileddescription>
+<para>For the iPhone this is CGColorSpaceCreateDeviceRGB(), for Mac OS X CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB).</para><para><simplesect kind="return"><para>A shared <ref refid="interface_c_p_color_space" kindref="compound">CPColorSpace</ref> object initialized with the standard RGB colorspace. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPColorSpace.h" line="12" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPColorSpace.m" bodystart="34" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interface_c_p_color_space_1aadcca3c13c878d28432549e698729eb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">id</ref></type>
+        <definition>id CPColorSpace::initWithCGColorSpace:</definition>
+        <argsstring>(CGColorSpaceRef colorSpace)</argsstring>
+        <name>initWithCGColorSpace:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGColorSpace/Reference/reference.html#//apple_ref/doc/c_ref/CGColorSpaceRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGColorSpaceRef</ref></type>
+          <declname>colorSpace</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a newly allocated colorspace object with the specified color space. This is the designated initializer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>colorSpace</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color space. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The initialized <ref refid="interface_c_p_color_space" kindref="compound">CPColorSpace</ref> object. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPColorSpace.h" line="14" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPColorSpace.m" bodystart="59" bodyend="66"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Wrapper around <ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGColorSpace/Reference/reference.html#//apple_ref/doc/c_ref/CGColorSpaceRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGColorSpaceRef</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>A wrapper class around <ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGColorSpace/Reference/reference.html#//apple_ref/doc/c_ref/CGColorSpaceRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGColorSpaceRef</ref></para><para><xrefsect id="todo_1_todo000005"><xreftitle>Todo</xreftitle><xrefdescription><para>More documentation needed </para></xrefdescription></xrefsect></para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1443">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1444">
+        <label>&lt;NSKeyValueBindingCreation-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1442">
+        <label>NSObject</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1443" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1444" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1441">
+        <label>CPColorSpace</label>
+        <link refid="interface_c_p_color_space"/>
+        <childnode refid="1442" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1447">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1448">
+        <label>&lt;NSKeyValueBindingCreation-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1446">
+        <label>NSObject</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1447" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1448" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1445">
+        <label>CPColorSpace</label>
+        <link refid="interface_c_p_color_space"/>
+        <childnode refid="1446" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPColorSpace.h" line="5" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPColorSpace.h" bodystart="5" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/bind:toObject:withKeyPath:options:" prot="public" virt="non-virtual"><scope>CPColorSpace</scope><name>bind:toObject:withKeyPath:options:</name></member>
+      <member refid="interface_c_p_color_space_1aa64c8d48724904b18b54e3ca12c21a79" prot="private" virt="non-virtual"><scope>CPColorSpace</scope><name>cgColorSpace</name></member>
+      <member refid="interface_c_p_color_space_1aa64c8d48724904b18b54e3ca12c21a79" prot="public" virt="non-virtual"><scope>CPColorSpace</scope><name>cgColorSpace</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/copy" prot="public" virt="non-virtual"><scope>CPColorSpace</scope><name>copy</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/dealloc" prot="public" virt="non-virtual"><scope>CPColorSpace</scope><name>dealloc</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/description" prot="public" virt="non-virtual"><scope>CPColorSpace</scope><name>description</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/clm/NSObject/exposeBinding:" prot="public" virt="non-virtual"><scope>CPColorSpace</scope><name>exposeBinding:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/exposedBindings" prot="public" virt="non-virtual"><scope>CPColorSpace</scope><name>exposedBindings</name></member>
+      <member refid="interface_c_p_color_space_1a59128769be7a370e23e538c5d9bcd210" prot="public" virt="virtual"><scope>CPColorSpace</scope><name>genericRGBSpace</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/hash" prot="public" virt="non-virtual"><scope>CPColorSpace</scope><name>hash</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/infoForBinding:" prot="public" virt="non-virtual"><scope>CPColorSpace</scope><name>infoForBinding:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/init" prot="public" virt="non-virtual"><scope>CPColorSpace</scope><name>init</name></member>
+      <member refid="interface_c_p_color_space_1aadcca3c13c878d28432549e698729eb2" prot="public" virt="virtual"><scope>CPColorSpace</scope><name>initWithCGColorSpace:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/isEqual:" prot="public" virt="non-virtual"><scope>CPColorSpace</scope><name>isEqual:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/optionDescriptionsForBinding:" prot="public" virt="non-virtual"><scope>CPColorSpace</scope><name>optionDescriptionsForBinding:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/unbind:" prot="public" virt="non-virtual"><scope>CPColorSpace</scope><name>unbind:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/valueClassForBinding:" prot="public" virt="non-virtual"><scope>CPColorSpace</scope><name>valueClassForBinding:</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

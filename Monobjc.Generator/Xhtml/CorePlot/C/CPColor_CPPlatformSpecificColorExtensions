@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="interface_c_p_color_07_c_p_platform_specific_color_extensions_08" kind="category" prot="public">
+    <compoundname>CPColor(CPPlatformSpecificColorExtensions)</compoundname>
+    <includes refid="_c_p_platform_specific_categories_8h" local="no">CPPlatformSpecificCategories.h</includes>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="interface_c_p_color_1a7ea52114753fa5f05c8225e1206eb050" prot="public" static="no" readable="yes" writable="no" gettable="no" settable="no" accessor="retain">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Classes/NSColor_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSColor</ref> *</type>
+        <definition>NSColor * CPColor(CPPlatformSpecificColorExtensions)::nsColor</definition>
+        <argsstring></argsstring>
+        <name>nsColor</name>
+        <read></read>
+        <briefdescription>
+<para>Gets the color value as an <ref refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Classes/NSColor_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSColor</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/MacOnly/CPPlatformSpecificCategories.h" line="23" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/MacOnly/CPPlatformSpecificCategories.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Platform-specific extensions to <ref refid="interface_c_p_color" kindref="compound">CPColor</ref>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/MacOnly/CPPlatformSpecificCategories.h" line="21" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/MacOnly/CPPlatformSpecificCategories.h" bodystart="21" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="interface_c_p_color_1a7ea52114753fa5f05c8225e1206eb050" prot="public" virt="non-virtual"><scope>CPColor(CPPlatformSpecificColorExtensions)</scope><name>nsColor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

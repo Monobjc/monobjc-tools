@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_c_p_layer_hosting_view_8h" kind="file">
+    <compoundname>CPLayerHostingView.h</compoundname>
+    <includes local="no">Cocoa/Cocoa.h</includes>
+    <includedby refid="_c_p_layer_hosting_view_8m" local="yes">MacOnly/CPLayerHostingView.m</includedby>
+    <incdepgraph>
+      <node id="281">
+        <label>Cocoa/Cocoa.h</label>
+      </node>
+      <node id="280">
+        <label>MacOnly/CPLayerHostingView.h</label>
+        <link refid="CPLayerHostingView.h"/>
+        <childnode refid="281" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interface_c_p_layer_hosting_view" prot="public">CPLayerHostingView</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/MacOnly/CPLayerHostingView.h"/>
+  </compounddef>
+</doxygen>

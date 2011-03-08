@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="interface_n_s_string_07_c_p_text_style_extensions_08" kind="category" prot="public">
+    <compoundname>NSString(CPTextStyleExtensions)</compoundname>
+    <includes refid="_c_p_text_style_8h" local="no">CPTextStyle.h</includes>
+      <sectiondef kind="user-defined">
+      <header>Measurement</header>
+      <memberdef kind="function" id="interface_n_s_string_07_c_p_text_style_extensions_08_1acfdb96701bd167653336a4087911ae3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGSize" kindref="compound" external="doxygen-cocoa-tags.xml">CGSize</ref></type>
+        <definition>CGSize NSString(CPTextStyleExtensions)::sizeWithTextStyle:</definition>
+        <argsstring>(CPTextStyle *style)</argsstring>
+        <name>sizeWithTextStyle:</name>
+        <param>
+          <type><ref refid="interface_c_p_text_style" kindref="compound">CPTextStyle</ref> *</type>
+          <declname>style</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTextStyle.h" line="33"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Drawing</header>
+      <memberdef kind="function" id="interface_n_s_string_07_c_p_text_style_extensions_08_1a3372c49428298bcdbd37a9ec591ff2e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void NSString(CPTextStyleExtensions)::drawAtPoint:withTextStyle:inContext:</definition>
+        <argsstring>(CGPoint point,[withTextStyle] CPTextStyle *style,[inContext] CGContextRef context)</argsstring>
+        <name>drawAtPoint:withTextStyle:inContext:</name>
+        <param>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGPoint" kindref="compound" external="doxygen-cocoa-tags.xml">CGPoint</ref></type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <attributes>[withTextStyle]</attributes>
+          <type><ref refid="interface_c_p_text_style" kindref="compound">CPTextStyle</ref> *</type>
+          <declname>style</declname>
+        </param>
+        <param>
+          <attributes>[inContext]</attributes>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGContext/Reference/reference.html#//apple_ref/doc/c_ref/CGContextRef" kindref="compound" external="doxygen-cocoa-tags.xml">CGContextRef</ref></type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTextStyle.h" line="38"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString" kindref="compound" external="doxygen-cocoa-tags.xml">NSString</ref> extensions for drawing styled text. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTextStyle.h" line="29" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPTextStyle.h" bodystart="29" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="interface_n_s_string_07_c_p_text_style_extensions_08_1a3372c49428298bcdbd37a9ec591ff2e3" prot="public" virt="virtual"><scope>NSString(CPTextStyleExtensions)</scope><name>drawAtPoint:withTextStyle:inContext:</name></member>
+      <member refid="interface_n_s_string_07_c_p_text_style_extensions_08_1acfdb96701bd167653336a4087911ae3a" prot="public" virt="virtual"><scope>NSString(CPTextStyleExtensions)</scope><name>sizeWithTextStyle:</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

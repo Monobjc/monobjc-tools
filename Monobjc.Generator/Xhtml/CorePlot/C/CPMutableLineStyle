@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="interface_c_p_mutable_line_style" kind="class" prot="public">
+    <compoundname>CPMutableLineStyle</compoundname>
+    <basecompoundref refid="interface_c_p_line_style" prot="public" virt="non-virtual">CPLineStyle</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="interface_c_p_mutable_line_style_1a8ea5266998ad2aa6bded2d8a3a85eba0" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>CGLineCap</type>
+        <definition>CPMutableLineStyle::lineCap</definition>
+        <argsstring></argsstring>
+        <name>lineCap</name>
+        <read></read>
+        <write></write>
+        <reimplements refid="interface_c_p_line_style_1a16950b878a96eff0475d160e0f72db28">lineCap</reimplements>
+        <briefdescription>
+<para>The style for the endpoints of lines drawn in a graphics context. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableLineStyle.h" line="11" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableLineStyle.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_mutable_line_style_1a97ed6631fa6ad1a113901204ab39fe42" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>CGLineJoin</type>
+        <definition>CPMutableLineStyle::lineJoin</definition>
+        <argsstring></argsstring>
+        <name>lineJoin</name>
+        <read></read>
+        <write></write>
+        <reimplements refid="interface_c_p_line_style_1a0434eaf26b9a10ae720c636665d21412">lineJoin</reimplements>
+        <briefdescription>
+<para>The style for the joins of connected lines in a graphics context. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableLineStyle.h" line="12" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableLineStyle.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_mutable_line_style_1a89cd18b3457c47834a4ee941db2addb4" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>CGFloat</type>
+        <definition>CPMutableLineStyle::miterLimit</definition>
+        <argsstring></argsstring>
+        <name>miterLimit</name>
+        <read></read>
+        <write></write>
+        <reimplements refid="interface_c_p_line_style_1a83492aa3dc677141a5de74d1cede2457">miterLimit</reimplements>
+        <briefdescription>
+<para>The miter limit for the joins of connected lines in a graphics context. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableLineStyle.h" line="13" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableLineStyle.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_mutable_line_style_1ab77a15682c9fffce85f792a35e91b43e" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>CGFloat</type>
+        <definition>CPMutableLineStyle::lineWidth</definition>
+        <argsstring></argsstring>
+        <name>lineWidth</name>
+        <read></read>
+        <write></write>
+        <reimplements refid="interface_c_p_line_style_1a1bfc833634f9edd1ce7e5851003f25bb">lineWidth</reimplements>
+        <briefdescription>
+<para>The line width for a graphics context. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableLineStyle.h" line="14" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableLineStyle.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_mutable_line_style_1aa7200e7ec02345eebe247ece1970fec8" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="retain">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSArray</ref> *</type>
+        <definition>CPMutableLineStyle::dashPattern</definition>
+        <argsstring></argsstring>
+        <name>dashPattern</name>
+        <read></read>
+        <write></write>
+        <reimplements refid="interface_c_p_line_style_1a179e99aba8d2227e8bdb813ed9c2b689">dashPattern</reimplements>
+        <briefdescription>
+<para>The dash-and-space pattern for the line. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableLineStyle.h" line="15" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableLineStyle.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_mutable_line_style_1a9f699e2b97ae972ab57e6873e2f54c43" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>CGFloat</type>
+        <definition>CPMutableLineStyle::patternPhase</definition>
+        <argsstring></argsstring>
+        <name>patternPhase</name>
+        <read></read>
+        <write></write>
+        <reimplements refid="interface_c_p_line_style_1a3debb52f8a87a4798b7ea9d80fafc62b">patternPhase</reimplements>
+        <briefdescription>
+<para>The starting phase of the line dash pattern. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableLineStyle.h" line="16" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableLineStyle.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_mutable_line_style_1a4048dad932515f24833e517cf4fc10e4" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="retain">
+        <type><ref refid="interface_c_p_color" kindref="compound">CPColor</ref> *</type>
+        <definition>CPMutableLineStyle::lineColor</definition>
+        <argsstring></argsstring>
+        <name>lineColor</name>
+        <read></read>
+        <write></write>
+        <reimplements refid="interface_c_p_line_style_1a7ab92374f031d4c703f699b4af4d14eb">lineColor</reimplements>
+        <briefdescription>
+<para>The current stroke color in a context. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableLineStyle.h" line="17" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableLineStyle.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Mutable wrapper for various line drawing properties. </para>    </briefdescription>
+    <detaileddescription>
+<para>If you need to customize properties of a line, you should use this class rather than the immutable super class. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1726">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1728">
+        <label>&lt;NSCopying-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCopying_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1724">
+        <label>CPLineStyle</label>
+        <link refid="interface_c_p_line_style"/>
+        <childnode refid="1725" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1728" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1729" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1727">
+        <label>&lt;NSKeyValueBindingCreation-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1729">
+        <label>&lt;NSMutableCopying-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSMutableCopying_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1723">
+        <label>CPMutableLineStyle</label>
+        <link refid="interface_c_p_mutable_line_style"/>
+        <childnode refid="1724" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1725">
+        <label>NSObject</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1726" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1727" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1733">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1735">
+        <label>&lt;NSCopying-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCopying_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1731">
+        <label>CPLineStyle</label>
+        <link refid="interface_c_p_line_style"/>
+        <childnode refid="1732" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1735" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1736" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1734">
+        <label>&lt;NSKeyValueBindingCreation-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1736">
+        <label>&lt;NSMutableCopying-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSMutableCopying_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1730">
+        <label>CPMutableLineStyle</label>
+        <link refid="interface_c_p_mutable_line_style"/>
+        <childnode refid="1731" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1732">
+        <label>NSObject</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1733" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1734" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableLineStyle.h" line="7" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableLineStyle.h" bodystart="7" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/bind:toObject:withKeyPath:options:" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>bind:toObject:withKeyPath:options:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/copy" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>copy</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCopying_Protocol/Reference/Reference_1//apple_ref/occ/intfm/NSCopying/copyWithZone:" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>copyWithZone:</name></member>
+      <member refid="interface_c_p_mutable_line_style_1aa7200e7ec02345eebe247ece1970fec8" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>dashPattern</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/dealloc" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>dealloc</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/description" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>description</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/clm/NSObject/exposeBinding:" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>exposeBinding:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/exposedBindings" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>exposedBindings</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/hash" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>hash</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/infoForBinding:" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>infoForBinding:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/init" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>init</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/isEqual:" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>isEqual:</name></member>
+      <member refid="interface_c_p_mutable_line_style_1a8ea5266998ad2aa6bded2d8a3a85eba0" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>lineCap</name></member>
+      <member refid="interface_c_p_mutable_line_style_1a4048dad932515f24833e517cf4fc10e4" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>lineColor</name></member>
+      <member refid="interface_c_p_mutable_line_style_1a97ed6631fa6ad1a113901204ab39fe42" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>lineJoin</name></member>
+      <member refid="interface_c_p_line_style_1ab33945ba1ce499b5cfcd5b3d783965bd" prot="public" virt="virtual"><scope>CPMutableLineStyle</scope><name>lineStyle</name></member>
+      <member refid="interface_c_p_mutable_line_style_1ab77a15682c9fffce85f792a35e91b43e" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>lineWidth</name></member>
+      <member refid="interface_c_p_mutable_line_style_1a89cd18b3457c47834a4ee941db2addb4" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>miterLimit</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSMutableCopying_Protocol/Reference/Reference_1//apple_ref/occ/intfm/NSMutableCopying/mutableCopyWithZone:" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>mutableCopyWithZone:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/optionDescriptionsForBinding:" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>optionDescriptionsForBinding:</name></member>
+      <member refid="interface_c_p_mutable_line_style_1a9f699e2b97ae972ab57e6873e2f54c43" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>patternPhase</name></member>
+      <member refid="interface_c_p_line_style_1a24afb738e4a81ea2ea2978df5d6fe878" prot="public" virt="virtual"><scope>CPMutableLineStyle</scope><name>setLineStyleInContext:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/unbind:" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>unbind:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/valueClassForBinding:" prot="public" virt="non-virtual"><scope>CPMutableLineStyle</scope><name>valueClassForBinding:</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

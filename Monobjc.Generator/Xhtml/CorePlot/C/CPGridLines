@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="interface_c_p_grid_lines" kind="class" prot="public">
+    <compoundname>CPGridLines</compoundname>
+    <basecompoundref refid="interface_c_p_layer" prot="public" virt="non-virtual">CPLayer</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="interface_c_p_grid_lines_1a1dd94a2498b830ae332f8bcef39bb9af" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>__weak <ref refid="interface_c_p_axis" kindref="compound">CPAxis</ref> *</type>
+        <definition>CPGridLines::axis</definition>
+        <argsstring></argsstring>
+        <name>axis</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>The axis. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPGridLines.h" line="8" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPGridLines.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_grid_lines_1adaf03d141cc5765d31f201909275eef4" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">BOOL</ref></type>
+        <definition>CPGridLines::major</definition>
+        <argsstring></argsstring>
+        <name>major</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>If YES, draw the major grid lines, else draw the minor grid lines. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPGridLines.h" line="9" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPGridLines.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An abstract class that draws grid lines for an axis. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1599">
+        <label>CPGridLines</label>
+        <link refid="interface_c_p_grid_lines"/>
+        <childnode refid="1600" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1606">
+        <label>&lt;CAMediaTiming-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1607">
+        <label>&lt;CPResponder&gt;</label>
+        <link refid="protocol_c_p_responder-p"/>
+        <childnode refid="1603" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1603">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1605">
+        <label>&lt;NSCoding-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCoding_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1604">
+        <label>&lt;NSKeyValueBindingCreation-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1601">
+        <label>CALayer</label>
+        <link refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1602" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1605" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1606" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1602">
+        <label>NSObject</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1603" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1604" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1600">
+        <label>CPLayer</label>
+        <link refid="interface_c_p_layer"/>
+        <childnode refid="1601" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1607" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1608">
+        <label>CPGridLines</label>
+        <link refid="interface_c_p_grid_lines"/>
+        <childnode refid="1609" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1615">
+        <label>&lt;CAMediaTiming-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1617">
+        <label>BOOL</label>
+        <link refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1616">
+        <label>&lt;CPResponder&gt;</label>
+        <link refid="protocol_c_p_responder-p"/>
+        <childnode refid="1612" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1612">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1614">
+        <label>&lt;NSCoding-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCoding_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1613">
+        <label>&lt;NSKeyValueBindingCreation-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1610">
+        <label>CALayer</label>
+        <link refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1611" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1614" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1615" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1611">
+        <label>NSObject</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1612" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1613" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1609">
+        <label>CPLayer</label>
+        <link refid="interface_c_p_layer"/>
+        <childnode refid="1610" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1616" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1617" relation="usage">
+          <edgelabel>renderingRecursively</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPGridLines.h" line="6" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPGridLines.h" bodystart="6" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="interface_c_p_layer_1acc3cffe1242a6147161bc3120747b8ad" prot="public" virt="virtual"><scope>CPGridLines</scope><name>applyMaskToContext:</name></member>
+      <member refid="interface_c_p_layer_1af89526361a9e80c0ba21b31f80922507" prot="public" virt="virtual"><scope>CPGridLines</scope><name>applySublayerMaskToContext:forSublayer:withOffset:</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/autoreverses" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>autoreverses</name></member>
+      <member refid="interface_c_p_grid_lines_1a1dd94a2498b830ae332f8bcef39bb9af" prot="private" virt="non-virtual"><scope>CPGridLines</scope><name>axis</name></member>
+      <member refid="interface_c_p_grid_lines_1a1dd94a2498b830ae332f8bcef39bb9af" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>axis</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/beginTime" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>beginTime</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/bind:toObject:withKeyPath:options:" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>bind:toObject:withKeyPath:options:</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction_1//apple_ref/occ/instm/CALayer/containsPoint:" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>containsPoint:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/copy" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>copy</name></member>
+      <member refid="interface_c_p_layer_1af1d7b9cee5b364818d5c9b46330326ee" prot="public" virt="virtual"><scope>CPGridLines</scope><name>dataForPDFRepresentationOfLayer</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/dealloc" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>dealloc</name></member>
+      <member refid="interface_c_p_layer_1a512071c472f620c9e65889149bf84412" prot="public" virt="virtual"><scope>CPGridLines</scope><name>defaultZPosition</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/description" prot="public" virt="non-virtual" ambiguityscope="CALayer::"><scope>CPGridLines</scope><name>description</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/description" prot="public" virt="non-virtual" ambiguityscope="CPResponder-p::"><scope>CPGridLines</scope><name>description</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction_1//apple_ref/occ/instm/CALayer/drawInContext:" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>drawInContext:</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/duration" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>duration</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCoding_Protocol/Reference/Reference_1//apple_ref/occ/intfm/NSCoding/encodeWithCoder:" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>encodeWithCoder:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/clm/NSObject/exposeBinding:" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>exposeBinding:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/exposedBindings" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>exposedBindings</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/fillMode" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>fillMode</name></member>
+      <member refid="interface_c_p_layer_1aaecd0345e0b871679ab69e8c7f125710" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>graph</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/hash" prot="public" virt="non-virtual" ambiguityscope="CALayer::"><scope>CPGridLines</scope><name>hash</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/hash" prot="public" virt="non-virtual" ambiguityscope="CPResponder-p::"><scope>CPGridLines</scope><name>hash</name></member>
+      <member refid="interface_c_p_layer_1aaf206234345a192a5f4c2c79c31d3275" prot="public" virt="virtual"><scope>CPGridLines</scope><name>imageOfLayer</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/infoForBinding:" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>infoForBinding:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/init" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>init</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCoding_Protocol/Reference/Reference_1//apple_ref/occ/intfm/NSCoding/initWithCoder:" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>initWithCoder:</name></member>
+      <member refid="interface_c_p_layer_1a55e20db52d41e3bc276e3ff4f0e07e5d" prot="public" virt="virtual"><scope>CPGridLines</scope><name>initWithFrame:</name></member>
+      <member refid="interface_c_p_layer_1a840443578f7dfd7aca2b61e52a4b1863" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>innerBorderPath</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/isEqual:" prot="public" virt="non-virtual" ambiguityscope="CALayer::"><scope>CPGridLines</scope><name>isEqual:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/isEqual:" prot="public" virt="non-virtual" ambiguityscope="CPResponder-p::"><scope>CPGridLines</scope><name>isEqual:</name></member>
+      <member refid="interface_c_p_layer_1a5ad6f83d128efed79af26e968653706a" prot="public" virt="virtual"><scope>CPGridLines</scope><name>layoutAndRenderInContext:</name></member>
+      <member refid="interface_c_p_layer_1aa39195c52b4883f547802f5a9cd20dc8" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>layoutManager</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction_1//apple_ref/occ/instm/CALayer/layoutSublayers" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>layoutSublayers</name></member>
+      <member refid="interface_c_p_grid_lines_1adaf03d141cc5765d31f201909275eef4" prot="private" virt="non-virtual"><scope>CPGridLines</scope><name>major</name></member>
+      <member refid="interface_c_p_grid_lines_1adaf03d141cc5765d31f201909275eef4" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>major</name></member>
+      <member refid="interface_c_p_layer_1ac14276fee59574f07a7b24c9bf2dad80" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>maskingPath</name></member>
+      <member refid="interface_c_p_layer_1afb877eb63758f6faec6a03c2ba12d75f" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>masksToBorder</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/optionDescriptionsForBinding:" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>optionDescriptionsForBinding:</name></member>
+      <member refid="interface_c_p_layer_1a3f1e02fcdc05eb3b8e6bb26f78a9ee1c" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>outerBorderPath</name></member>
+      <member refid="interface_c_p_layer_1a8b212a178e641e2cbd1824b4d31605f9" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>paddingBottom</name></member>
+      <member refid="interface_c_p_layer_1ad0fd0e023ee4f9b64ecfbd369820ec1c" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>paddingLeft</name></member>
+      <member refid="interface_c_p_layer_1a4a89230854cf58adca1fdb71292027d6" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>paddingRight</name></member>
+      <member refid="interface_c_p_layer_1abde3adfc0ca84bbc138f1214f94cf9c3" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>paddingTop</name></member>
+      <member refid="interface_c_p_layer_1a175cf29bb2c8375ddb563ca8060a5284" prot="public" virt="virtual"><scope>CPGridLines</scope><name>pixelAlign</name></member>
+      <member refid="protocol_c_p_responder-p_1ace0ad0d241f95b417bdca45ee37b75a5" prot="public" virt="virtual"><scope>CPGridLines</scope><name>pointingDeviceCancelledEvent:</name></member>
+      <member refid="protocol_c_p_responder-p_1af61d6f0ff4e166a407833d08e958aa23" prot="public" virt="virtual"><scope>CPGridLines</scope><name>pointingDeviceDownEvent:atPoint:</name></member>
+      <member refid="protocol_c_p_responder-p_1a2126a7f09ce199218ead6af802a7dcda" prot="public" virt="virtual"><scope>CPGridLines</scope><name>pointingDeviceDraggedEvent:atPoint:</name></member>
+      <member refid="protocol_c_p_responder-p_1a1d79a7d4c26b474e68cea2712789f085" prot="public" virt="virtual"><scope>CPGridLines</scope><name>pointingDeviceUpEvent:atPoint:</name></member>
+      <member refid="interface_c_p_layer_1a9cee7d548fdd8e632c419652da848e91" prot="public" virt="virtual"><scope>CPGridLines</scope><name>recursivelyRenderInContext:</name></member>
+      <member refid="interface_c_p_layer_1ac3b8b3138c38dcf4d38e1e9e07173ebf" prot="public" virt="virtual"><scope>CPGridLines</scope><name>renderAsVectorInContext:</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/repeatCount" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>repeatCount</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/repeatDuration" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>repeatDuration</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/speed" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>speed</name></member>
+      <member refid="interface_c_p_layer_1a479b978da77780f81cadecd8355f20d0" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>sublayerMaskingPath</name></member>
+      <member refid="interface_c_p_layer_1a1c60a6582dfa6012719e3e92825d8aef" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>sublayersExcludedFromAutomaticLayout</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/timeOffset" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>timeOffset</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/unbind:" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>unbind:</name></member>
+      <member refid="interface_c_p_layer_1a9606eb7a34734ea623bda6f8768591d7" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>useFastRendering</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/valueClassForBinding:" prot="public" virt="non-virtual"><scope>CPGridLines</scope><name>valueClassForBinding:</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

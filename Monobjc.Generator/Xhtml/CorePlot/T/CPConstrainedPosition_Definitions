@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_c_p_constrained_position_8h" kind="file">
+    <compoundname>CPConstrainedPosition.h</compoundname>
+    <includes local="no">Foundation/Foundation.h</includes>
+    <includes refid="_c_p_definitions_8h" local="yes">CPDefinitions.h</includes>
+    <includedby refid="_c_p_constrained_position_8m" local="yes">Source/CPConstrainedPosition.m</includedby>
+    <includedby refid="_c_p_layer_annotation_8h" local="yes">Source/CPLayerAnnotation.h</includedby>
+    <includedby refid="_c_p_layer_annotation_8m" local="yes">Source/CPLayerAnnotation.m</includedby>
+    <includedby refid="_c_p_x_y_axis_8m" local="yes">Source/CPXYAxis.m</includedby>
+    <incdepgraph>
+      <node id="641">
+        <label>CPDefinitions.h</label>
+        <link refid="_c_p_definitions_8h"/>
+        <childnode refid="640" relation="include">
+        </childnode>
+        <childnode refid="642" relation="include">
+        </childnode>
+      </node>
+      <node id="639">
+        <label>Source/CPConstrainedPosition.h</label>
+        <link refid="CPConstrainedPosition.h"/>
+        <childnode refid="640" relation="include">
+        </childnode>
+        <childnode refid="641" relation="include">
+        </childnode>
+      </node>
+      <node id="640">
+        <label>Foundation/Foundation.h</label>
+      </node>
+      <node id="642">
+        <label>QuartzCore/QuartzCore.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="644">
+        <label>Source/CPLayerAnnotation.h</label>
+        <link refid="_c_p_layer_annotation_8h_source"/>
+      </node>
+      <node id="643">
+        <label>Source/CPConstrainedPosition.h</label>
+        <link refid="CPConstrainedPosition.h"/>
+        <childnode refid="644" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="interface_c_p_constrained_position" prot="public">CPConstrainedPosition</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPConstrainedPosition.h"/>
+  </compounddef>
+</doxygen>

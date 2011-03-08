@@ -1,0 +1,388 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="interface_c_p_range_plot" kind="class" prot="public">
+    <compoundname>CPRangePlot</compoundname>
+    <basecompoundref refid="interface_c_p_plot" prot="public" virt="non-virtual">CPPlot</basecompoundref>
+      <sectiondef kind="user-defined">
+      <header>Bar Appearance</header>
+      <memberdef kind="property" id="interface_c_p_range_plot_1aff77455fc55af62180aa12ea878cb16b" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="copy">
+        <type><ref refid="interface_c_p_line_style" kindref="compound">CPLineStyle</ref> *</type>
+        <definition>CPRangePlot::barLineStyle</definition>
+        <argsstring></argsstring>
+        <name>barLineStyle</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>The line style of the range bars. Set to nil to have no bars. Default is a black line style. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" line="27" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_range_plot_1aa4a685c4c6b7401c05be735b8546921d" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>CGFloat</type>
+        <definition>CPRangePlot::barWidth</definition>
+        <argsstring></argsstring>
+        <name>barWidth</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>Width of the lateral sections of the bars. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" line="28" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_range_plot_1a491c110746b3d454f11aaeac137d99dd" prot="protected" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>CGFloat</type>
+        <definition>CPRangePlot::gapHeight</definition>
+        <argsstring></argsstring>
+        <name>gapHeight</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>Height of the central gap. Set to zero to have no gap. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" line="29" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_range_plot_1afcf697338c7560285855efd0585aab51" prot="protected" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>CGFloat</type>
+        <definition>CPRangePlot::gapWidth</definition>
+        <argsstring></argsstring>
+        <name>gapWidth</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>Width of the central gap. Set to zero to have no gap. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" line="30" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Area Fill</header>
+      <memberdef kind="property" id="interface_c_p_range_plot_1a3f95c902ac67260cff5879df1a0d3405" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="copy">
+        <type><ref refid="interface_c_p_fill" kindref="compound">CPFill</ref> *</type>
+        <definition>CPRangePlot::areaFill</definition>
+        <argsstring></argsstring>
+        <name>areaFill</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>The fill used to render the area. Set to nil to have no fill. Default is nil. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" line="31" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A plot class representing a range of values in one coordinate, such as typically used to show errors. A range plot can show bars (error bars), or an area fill, or both. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2025">
+        <label>CPPlot</label>
+        <link refid="interface_c_p_plot"/>
+        <childnode refid="2026" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2033">
+        <label>&lt;CAMediaTiming-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="2034">
+        <label>&lt;CPResponder&gt;</label>
+        <link refid="protocol_c_p_responder-p"/>
+        <childnode refid="2030" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2026">
+        <label>CPAnnotationHostLayer</label>
+        <link refid="interface_c_p_annotation_host_layer"/>
+        <childnode refid="2027" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2030">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="2024">
+        <label>CPRangePlot</label>
+        <link refid="interface_c_p_range_plot"/>
+        <childnode refid="2025" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2032">
+        <label>&lt;NSCoding-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCoding_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="2031">
+        <label>&lt;NSKeyValueBindingCreation-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="2028">
+        <label>CALayer</label>
+        <link refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="2029" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2032" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2033" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2029">
+        <label>NSObject</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="2030" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2031" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2027">
+        <label>CPLayer</label>
+        <link refid="interface_c_p_layer"/>
+        <childnode refid="2028" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2034" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2036">
+        <label>CPPlot</label>
+        <link refid="interface_c_p_plot"/>
+        <childnode refid="2037" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2046" relation="usage">
+          <edgelabel>labelFormatterChanged</edgelabel>
+        </childnode>
+        <childnode refid="2047" relation="usage">
+          <edgelabel>labelAnnotations</edgelabel>
+        </childnode>
+        <childnode refid="2051" relation="usage">
+          <edgelabel>labelIndexRange</edgelabel>
+        </childnode>
+      </node>
+      <node id="2049">
+        <label>&lt;NSFastEnumeration-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/NSFastEnumeration_protocol/Reference/NSFastEnumeration" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="2047">
+        <label>NSMutableArray</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="2040" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2043" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2048" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2049" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2050" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2044">
+        <label>&lt;CAMediaTiming-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="2046">
+        <label>BOOL</label>
+        <link refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="2045">
+        <label>&lt;CPResponder&gt;</label>
+        <link refid="protocol_c_p_responder-p"/>
+        <childnode refid="2041" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2037">
+        <label>CPAnnotationHostLayer</label>
+        <link refid="interface_c_p_annotation_host_layer"/>
+        <childnode refid="2038" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2047" relation="usage">
+          <edgelabel>mutableAnnotations</edgelabel>
+        </childnode>
+      </node>
+      <node id="2041">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="2035">
+        <label>CPRangePlot</label>
+        <link refid="interface_c_p_range_plot"/>
+        <childnode refid="2036" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2048">
+        <label>&lt;NSCopying-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCopying_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="2043">
+        <label>&lt;NSCoding-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCoding_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="2042">
+        <label>&lt;NSKeyValueBindingCreation-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="2039">
+        <label>CALayer</label>
+        <link refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="2040" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2043" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2044" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2050">
+        <label>&lt;NSMutableCopying-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSMutableCopying_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="2051">
+        <label>NSRange</label>
+        <link refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_DataTypes/Reference/reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="2040">
+        <label>NSObject</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="2041" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2042" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2038">
+        <label>CPLayer</label>
+        <link refid="interface_c_p_layer"/>
+        <childnode refid="2039" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2045" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2046" relation="usage">
+          <edgelabel>renderingRecursively</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" line="26" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" bodystart="26" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="interface_c_p_annotation_host_layer_1aa5eaca5144e9366cc85034078062bff8" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>addAnnotation:</name></member>
+      <member refid="interface_c_p_annotation_host_layer_1a4336e3a37cdfe215ae267b7fcae56b20" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>annotations</name></member>
+      <member refid="interface_c_p_layer_1acc3cffe1242a6147161bc3120747b8ad" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>applyMaskToContext:</name></member>
+      <member refid="interface_c_p_layer_1af89526361a9e80c0ba21b31f80922507" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>applySublayerMaskToContext:forSublayer:withOffset:</name></member>
+      <member refid="interface_c_p_range_plot_1a3f95c902ac67260cff5879df1a0d3405" prot="protected" virt="non-virtual"><scope>CPRangePlot</scope><name>areaFill</name></member>
+      <member refid="interface_c_p_range_plot_1a3f95c902ac67260cff5879df1a0d3405" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>areaFill</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/autoreverses" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>autoreverses</name></member>
+      <member refid="interface_c_p_range_plot_1aff77455fc55af62180aa12ea878cb16b" prot="protected" virt="non-virtual"><scope>CPRangePlot</scope><name>barLineStyle</name></member>
+      <member refid="interface_c_p_range_plot_1aff77455fc55af62180aa12ea878cb16b" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>barLineStyle</name></member>
+      <member refid="interface_c_p_range_plot_1aa4a685c4c6b7401c05be735b8546921d" prot="protected" virt="non-virtual"><scope>CPRangePlot</scope><name>barWidth</name></member>
+      <member refid="interface_c_p_range_plot_1aa4a685c4c6b7401c05be735b8546921d" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>barWidth</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/beginTime" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>beginTime</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/bind:toObject:withKeyPath:options:" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>bind:toObject:withKeyPath:options:</name></member>
+      <member refid="interface_c_p_plot_1af14bd478c2fc11feb129127b01b1ea60" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>cachedDataCount</name></member>
+      <member refid="interface_c_p_plot_1aa28ead0dc9621465adcc51b4d2f4ff9a" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>cachedDecimalForField:recordIndex:</name></member>
+      <member refid="interface_c_p_plot_1ac305beb5cb441a8485b4ba60dd0bc1a9" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>cachedDoubleForField:recordIndex:</name></member>
+      <member refid="interface_c_p_plot_1a7156a49b80698075ce57fcfbd940280b" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>cachedNumberForField:recordIndex:</name></member>
+      <member refid="interface_c_p_plot_1abea13cc17a614c5192d390058daf0e04" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>cachedNumbersForField:</name></member>
+      <member refid="interface_c_p_plot_1aaa78ae76bb0845eef7fa1ee1104add02" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>cacheNumbers:forField:</name></member>
+      <member refid="interface_c_p_plot_1a6edea00cafee2e712c66910c1ff67d67" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>cacheNumbers:forField:atRecordIndex:</name></member>
+      <member refid="interface_c_p_plot_1a78b773f68839b2df749c7a12f114af1e" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>cachePrecision</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction_1//apple_ref/occ/instm/CALayer/containsPoint:" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>containsPoint:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/copy" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>copy</name></member>
+      <member refid="interface_c_p_layer_1af1d7b9cee5b364818d5c9b46330326ee" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>dataForPDFRepresentationOfLayer</name></member>
+      <member refid="interface_c_p_plot_1a990b5bdc90ef9c82b973db03627cd80a" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>dataNeedsReloading</name></member>
+      <member refid="interface_c_p_plot_1a92c4c55a66f01e0dfb4ebdee6caef4f0" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>dataSource</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/dealloc" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>dealloc</name></member>
+      <member refid="interface_c_p_plot_1a43ab253660c547c1050ad29c08759fa4" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>decimalDataType</name></member>
+      <member refid="interface_c_p_layer_1a512071c472f620c9e65889149bf84412" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>defaultZPosition</name></member>
+      <member refid="interface_c_p_plot_1ac5376fe9529aaa257cdda2524efc3aa7" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>deleteDataInIndexRange:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/description" prot="public" virt="non-virtual" ambiguityscope="CALayer::"><scope>CPRangePlot</scope><name>description</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/description" prot="public" virt="non-virtual" ambiguityscope="CPResponder-p::"><scope>CPRangePlot</scope><name>description</name></member>
+      <member refid="interface_c_p_plot_1af4ae3289b904e271d8d97a3df3a6bea1" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>doubleDataType</name></member>
+      <member refid="interface_c_p_plot_1a06db62b4341fac39612193331ffe65a6" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>doublePrecisionCache</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction_1//apple_ref/occ/instm/CALayer/drawInContext:" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>drawInContext:</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/duration" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>duration</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCoding_Protocol/Reference/Reference_1//apple_ref/occ/intfm/NSCoding/encodeWithCoder:" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>encodeWithCoder:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/clm/NSObject/exposeBinding:" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>exposeBinding:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/exposedBindings" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>exposedBindings</name></member>
+      <member refid="interface_c_p_plot_1aa506910d30afc9339b56606006cedd97" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>fieldIdentifiers</name></member>
+      <member refid="interface_c_p_plot_1a7d1601b1617ca501437808e3c052f9ce" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>fieldIdentifiersForCoordinate:</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/fillMode" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>fillMode</name></member>
+      <member refid="interface_c_p_range_plot_1a491c110746b3d454f11aaeac137d99dd" prot="protected" virt="non-virtual"><scope>CPRangePlot</scope><name>gapHeight</name></member>
+      <member refid="interface_c_p_range_plot_1a491c110746b3d454f11aaeac137d99dd" prot="protected" virt="non-virtual"><scope>CPRangePlot</scope><name>gapHeight</name></member>
+      <member refid="interface_c_p_range_plot_1afcf697338c7560285855efd0585aab51" prot="protected" virt="non-virtual"><scope>CPRangePlot</scope><name>gapWidth</name></member>
+      <member refid="interface_c_p_range_plot_1afcf697338c7560285855efd0585aab51" prot="protected" virt="non-virtual"><scope>CPRangePlot</scope><name>gapWidth</name></member>
+      <member refid="interface_c_p_layer_1aaecd0345e0b871679ab69e8c7f125710" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>graph</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/hash" prot="public" virt="non-virtual" ambiguityscope="CALayer::"><scope>CPRangePlot</scope><name>hash</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/hash" prot="public" virt="non-virtual" ambiguityscope="CPResponder-p::"><scope>CPRangePlot</scope><name>hash</name></member>
+      <member refid="interface_c_p_plot_1a289e2ae3c24b9f74bdde1cf92e9eaf47" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>identifier</name></member>
+      <member refid="interface_c_p_layer_1aaf206234345a192a5f4c2c79c31d3275" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>imageOfLayer</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/infoForBinding:" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>infoForBinding:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/init" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>init</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCoding_Protocol/Reference/Reference_1//apple_ref/occ/intfm/NSCoding/initWithCoder:" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>initWithCoder:</name></member>
+      <member refid="interface_c_p_layer_1a55e20db52d41e3bc276e3ff4f0e07e5d" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>initWithFrame:</name></member>
+      <member refid="interface_c_p_layer_1a840443578f7dfd7aca2b61e52a4b1863" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>innerBorderPath</name></member>
+      <member refid="interface_c_p_plot_1a2967f1902f59912e620989e7a6c1841a" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>insertDataAtIndex:numberOfRecords:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/isEqual:" prot="public" virt="non-virtual" ambiguityscope="CALayer::"><scope>CPRangePlot</scope><name>isEqual:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/isEqual:" prot="public" virt="non-virtual" ambiguityscope="CPResponder-p::"><scope>CPRangePlot</scope><name>isEqual:</name></member>
+      <member refid="interface_c_p_plot_1ad9b2460ea871407a8038f58f26b2ff67" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>labelField</name></member>
+      <member refid="interface_c_p_plot_1a98ddd224bf279ed3444094134d51beeb" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>labelFormatter</name></member>
+      <member refid="interface_c_p_plot_1a11e9b3c2e1ba87a2e459814982905f5e" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>labelOffset</name></member>
+      <member refid="interface_c_p_plot_1a94b158b8180b54aca630a36977e2df75" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>labelRotation</name></member>
+      <member refid="interface_c_p_plot_1a872b079ba7918daf78f72f01abb16f59" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>labelTextStyle</name></member>
+      <member refid="interface_c_p_layer_1a5ad6f83d128efed79af26e968653706a" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>layoutAndRenderInContext:</name></member>
+      <member refid="interface_c_p_layer_1aa39195c52b4883f547802f5a9cd20dc8" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>layoutManager</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction_1//apple_ref/occ/instm/CALayer/layoutSublayers" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>layoutSublayers</name></member>
+      <member refid="interface_c_p_layer_1ac14276fee59574f07a7b24c9bf2dad80" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>maskingPath</name></member>
+      <member refid="interface_c_p_layer_1afb877eb63758f6faec6a03c2ba12d75f" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>masksToBorder</name></member>
+      <member refid="interface_c_p_plot_1a3c84194773ef3e57a8a9cd9462240f11" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>needsRelabel</name></member>
+      <member refid="interface_c_p_plot_1ad8920b8efd5308b0270c25665e05c78a" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>numberOfFields</name></member>
+      <member refid="interface_c_p_plot_1a3b0e6cf18f1da3fba8744545c36bdc07" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>numbersFromDataSourceForField:recordIndexRange:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/optionDescriptionsForBinding:" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>optionDescriptionsForBinding:</name></member>
+      <member refid="interface_c_p_layer_1a3f1e02fcdc05eb3b8e6bb26f78a9ee1c" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>outerBorderPath</name></member>
+      <member refid="interface_c_p_layer_1a8b212a178e641e2cbd1824b4d31605f9" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>paddingBottom</name></member>
+      <member refid="interface_c_p_layer_1ad0fd0e023ee4f9b64ecfbd369820ec1c" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>paddingLeft</name></member>
+      <member refid="interface_c_p_layer_1a4a89230854cf58adca1fdb71292027d6" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>paddingRight</name></member>
+      <member refid="interface_c_p_layer_1abde3adfc0ca84bbc138f1214f94cf9c3" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>paddingTop</name></member>
+      <member refid="interface_c_p_layer_1a175cf29bb2c8375ddb563ca8060a5284" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>pixelAlign</name></member>
+      <member refid="interface_c_p_plot_1a7d3ab46ebc9683b84cbda60581867704" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>plotArea</name></member>
+      <member refid="interface_c_p_plot_1a40b0e8b0699aa593d1f25afb45f73663" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>plotRangeForCoordinate:</name></member>
+      <member refid="interface_c_p_plot_1a5de6298e1124a9c72e52d85277f9f797" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>plotRangeForField:</name></member>
+      <member refid="interface_c_p_plot_1a0b75011d1c7ca4582a7d5da0355c4dfb" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>plotSpace</name></member>
+      <member refid="protocol_c_p_responder-p_1ace0ad0d241f95b417bdca45ee37b75a5" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>pointingDeviceCancelledEvent:</name></member>
+      <member refid="protocol_c_p_responder-p_1af61d6f0ff4e166a407833d08e958aa23" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>pointingDeviceDownEvent:atPoint:</name></member>
+      <member refid="protocol_c_p_responder-p_1a2126a7f09ce199218ead6af802a7dcda" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>pointingDeviceDraggedEvent:atPoint:</name></member>
+      <member refid="protocol_c_p_responder-p_1a1d79a7d4c26b474e68cea2712789f085" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>pointingDeviceUpEvent:atPoint:</name></member>
+      <member refid="interface_c_p_plot_1a84aca20115dce104aa2f951b36c76bce" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>positionLabelAnnotation:forIndex:</name></member>
+      <member refid="interface_c_p_layer_1a9cee7d548fdd8e632c419652da848e91" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>recursivelyRenderInContext:</name></member>
+      <member refid="interface_c_p_plot_1ada0d973965cc92501cfd28085f11e35b" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>relabel</name></member>
+      <member refid="interface_c_p_plot_1a61711d4b5560e4b9d7ac561a98d357cd" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>relabelIndexRange:</name></member>
+      <member refid="interface_c_p_plot_1afcfc7132c7c5604a232a6b4cdfe5b082" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>reloadData</name></member>
+      <member refid="interface_c_p_plot_1a717108b9b0d9b230ba3e3c01af549826" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>reloadDataIfNeeded</name></member>
+      <member refid="interface_c_p_plot_1a904fb4fcdbb6828f81945979a5321e38" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>reloadDataInIndexRange:</name></member>
+      <member refid="interface_c_p_annotation_host_layer_1abe046aad1419ef6241ce1668041dcbd3" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>removeAllAnnotations</name></member>
+      <member refid="interface_c_p_annotation_host_layer_1af36f89f94d3ec941e68f92b48098ea32" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>removeAnnotation:</name></member>
+      <member refid="interface_c_p_layer_1ac3b8b3138c38dcf4d38e1e9e07173ebf" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>renderAsVectorInContext:</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/repeatCount" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>repeatCount</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/repeatDuration" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>repeatDuration</name></member>
+      <member refid="interface_c_p_plot_1ae20207cbd470c4c3f2838c027ab3c58d" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>setDataNeedsReloading</name></member>
+      <member refid="interface_c_p_plot_1a6eb6039f8128e68e3e9c477fb9ffebd4" prot="public" virt="virtual"><scope>CPRangePlot</scope><name>setNeedsRelabel</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/speed" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>speed</name></member>
+      <member refid="interface_c_p_layer_1a479b978da77780f81cadecd8355f20d0" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>sublayerMaskingPath</name></member>
+      <member refid="interface_c_p_layer_1a1c60a6582dfa6012719e3e92825d8aef" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>sublayersExcludedFromAutomaticLayout</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/timeOffset" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>timeOffset</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/unbind:" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>unbind:</name></member>
+      <member refid="interface_c_p_layer_1a9606eb7a34734ea623bda6f8768591d7" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>useFastRendering</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/valueClassForBinding:" prot="public" virt="non-virtual"><scope>CPRangePlot</scope><name>valueClassForBinding:</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

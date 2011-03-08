@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="struct___c_p_r_g_b_a_color" kind="struct" prot="public">
+    <compoundname>_CPRGBAColor</compoundname>
+    <includes refid="_c_p_definitions_8h" local="no">CPDefinitions.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct___c_p_r_g_b_a_color_1a2772340ea36c3c5620b54fa66ef33d65" prot="public" static="no" mutable="no">
+        <type>CGFloat</type>
+        <definition>CGFloat _CPRGBAColor::red</definition>
+        <argsstring></argsstring>
+        <name>red</name>
+        <briefdescription>
+<para>The red component (0 ≤ red ≤ 1). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="50" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___c_p_r_g_b_a_color_1af9e45cee6ef7b00c808ced6720a1dd38" prot="public" static="no" mutable="no">
+        <type>CGFloat</type>
+        <definition>CGFloat _CPRGBAColor::green</definition>
+        <argsstring></argsstring>
+        <name>green</name>
+        <briefdescription>
+<para>The green component (0 ≤ green ≤ 1). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="51" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___c_p_r_g_b_a_color_1a370c5c41b4f65489b5dce21d91d97038" prot="public" static="no" mutable="no">
+        <type>CGFloat</type>
+        <definition>CGFloat _CPRGBAColor::blue</definition>
+        <argsstring></argsstring>
+        <name>blue</name>
+        <briefdescription>
+<para>The blue component (0 ≤ blue ≤ 1). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="52" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct___c_p_r_g_b_a_color_1a3cece2718915c870decdcaabc34253f6" prot="public" static="no" mutable="no">
+        <type>CGFloat</type>
+        <definition>CGFloat _CPRGBAColor::alpha</definition>
+        <argsstring></argsstring>
+        <name>alpha</name>
+        <briefdescription>
+<para>The alpha component (0 ≤ alpha ≤ 1). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="53" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>RGBA color for gradients. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="49" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" bodystart="49" bodyend="54"/>
+    <listofallmembers>
+      <member refid="struct___c_p_r_g_b_a_color_1a3cece2718915c870decdcaabc34253f6" prot="public" virt="non-virtual"><scope>_CPRGBAColor</scope><name>alpha</name></member>
+      <member refid="struct___c_p_r_g_b_a_color_1a370c5c41b4f65489b5dce21d91d97038" prot="public" virt="non-virtual"><scope>_CPRGBAColor</scope><name>blue</name></member>
+      <member refid="struct___c_p_r_g_b_a_color_1af9e45cee6ef7b00c808ced6720a1dd38" prot="public" virt="non-virtual"><scope>_CPRGBAColor</scope><name>green</name></member>
+      <member refid="struct___c_p_r_g_b_a_color_1a2772340ea36c3c5620b54fa66ef33d65" prot="public" virt="non-virtual"><scope>_CPRGBAColor</scope><name>red</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="interface_c_p_mutable_numeric_data_07_type_conversion_08" kind="category" prot="public">
+    <compoundname>CPMutableNumericData(TypeConversion)</compoundname>
+    <includes refid="_c_p_mutable_numeric_data_09_type_conversion_8h" local="no">CPMutableNumericData+TypeConversion.h</includes>
+      <sectiondef kind="user-defined">
+      <header>Data Format</header>
+      <memberdef kind="property" id="interface_c_p_mutable_numeric_data_1adea7856355ae47895d84154320234188" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type><ref refid="struct___c_p_numeric_data_type" kindref="compound">CPNumericDataType</ref></type>
+        <definition>id CPMutableNumericData(TypeConversion)::dataType</definition>
+        <argsstring></argsstring>
+        <name>dataType</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableNumericData+TypeConversion.h" line="12" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableNumericData+TypeConversion.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_mutable_numeric_data_1ac133b9623e5e2f171239cd713f887c4e" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type><ref refid="_c_p_numeric_data_type_8h_1a601963e836b7d9a621edbdc16d08cd78" kindref="member">CPDataTypeFormat</ref></type>
+        <definition>CPMutableNumericData(TypeConversion)::dataTypeFormat</definition>
+        <argsstring></argsstring>
+        <name>dataTypeFormat</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>The format of the data stored in the data buffer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableNumericData+TypeConversion.h" line="13" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableNumericData+TypeConversion.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_mutable_numeric_data_1a4ea88466776ab3d79788ddf11549ecf5" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>size_t</type>
+        <definition>CPMutableNumericData(TypeConversion)::sampleBytes</definition>
+        <argsstring></argsstring>
+        <name>sampleBytes</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>The number of bytes in a single sample of data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableNumericData+TypeConversion.h" line="14" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableNumericData+TypeConversion.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_mutable_numeric_data_1a4ecf9772a7f3a0688cc034dfc671b344" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/corefoundation/Reference/CFByteOrderUtils/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">CFByteOrder</ref></type>
+        <definition>CPMutableNumericData(TypeConversion)::byteOrder</definition>
+        <argsstring></argsstring>
+        <name>byteOrder</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>The byte order used to store each sample in the data buffer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableNumericData+TypeConversion.h" line="15" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableNumericData+TypeConversion.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Type Conversion</header>
+      <memberdef kind="function" id="interface_c_p_mutable_numeric_data_1a2f8683b29db80fbee1f7debeed5897cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPMutableNumericData(TypeConversion)::convertToType:sampleBytes:byteOrder:</definition>
+        <argsstring>(CPDataTypeFormat newDataType,[sampleBytes] size_t newSampleBytes,[byteOrder] CFByteOrder newByteOrder)</argsstring>
+        <name>convertToType:sampleBytes:byteOrder:</name>
+        <param>
+          <type><ref refid="_c_p_numeric_data_type_8h_1a601963e836b7d9a621edbdc16d08cd78" kindref="member">CPDataTypeFormat</ref></type>
+          <declname>newDataType</declname>
+        </param>
+        <param>
+          <attributes>[sampleBytes]</attributes>
+          <type>size_t</type>
+          <declname>newSampleBytes</declname>
+        </param>
+        <param>
+          <attributes>[byteOrder]</attributes>
+          <type><ref refid="http://developer.apple.com/mac/library/documentation/corefoundation/Reference/CFByteOrderUtils/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">CFByteOrder</ref></type>
+          <declname>newByteOrder</declname>
+        </param>
+        <briefdescription>
+<para>Converts the current numeric data to a new data type. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newDataType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new data type format. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newSampleBytes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of bytes used to store each sample. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newByteOrder</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new byte order. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A copy of the current numeric data converted to the new data type. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableNumericData+TypeConversion.h" line="22" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableNumericData+TypeConversion.m" bodystart="34" bodyend="39"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Type conversion methods for <ref refid="interface_c_p_mutable_numeric_data" kindref="compound">CPMutableNumericData</ref>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableNumericData+TypeConversion.h" line="8" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPMutableNumericData+TypeConversion.h" bodystart="8" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="interface_c_p_mutable_numeric_data_1a4ecf9772a7f3a0688cc034dfc671b344" prot="public" virt="non-virtual"><scope>CPMutableNumericData(TypeConversion)</scope><name>byteOrder</name></member>
+      <member refid="interface_c_p_mutable_numeric_data_1a2f8683b29db80fbee1f7debeed5897cb" prot="public" virt="virtual"><scope>CPMutableNumericData(TypeConversion)</scope><name>convertToType:sampleBytes:byteOrder:</name></member>
+      <member refid="interface_c_p_mutable_numeric_data_1adea7856355ae47895d84154320234188" prot="public" virt="non-virtual"><scope>CPMutableNumericData(TypeConversion)</scope><name>dataType</name></member>
+      <member refid="interface_c_p_mutable_numeric_data_1ac133b9623e5e2f171239cd713f887c4e" prot="public" virt="non-virtual"><scope>CPMutableNumericData(TypeConversion)</scope><name>dataTypeFormat</name></member>
+      <member refid="interface_c_p_mutable_numeric_data_1a4ea88466776ab3d79788ddf11549ecf5" prot="public" virt="non-virtual"><scope>CPMutableNumericData(TypeConversion)</scope><name>sampleBytes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

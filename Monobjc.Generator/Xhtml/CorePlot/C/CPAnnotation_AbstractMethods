@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="interface_c_p_annotation_07_abstract_methods_08" kind="category" prot="public">
+    <compoundname>CPAnnotation(AbstractMethods)</compoundname>
+    <includes refid="_c_p_annotation_8h" local="no">CPAnnotation.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interface_c_p_annotation_1ad906de4d2e570ac7b5aadd9c7417b78d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPAnnotation(AbstractMethods)::positionContentLayer</definition>
+        <argsstring>()</argsstring>
+        <name>positionContentLayer</name>
+        <briefdescription>
+<para>Positions the content layer relative to its reference anchor. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method must be overridden by subclasses. The default implementation does nothing. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAnnotation.h" line="31" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAnnotation.m" bodystart="131" bodyend="134"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="interface_c_p_annotation" kindref="compound">CPAnnotation</ref> abstract methods—must be overridden by subclasses. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAnnotation.h" line="29" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPAnnotation.h" bodystart="29" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="interface_c_p_annotation_1ad906de4d2e570ac7b5aadd9c7417b78d" prot="public" virt="virtual"><scope>CPAnnotation(AbstractMethods)</scope><name>positionContentLayer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

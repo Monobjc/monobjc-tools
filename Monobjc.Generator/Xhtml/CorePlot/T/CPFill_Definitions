@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_c_p_fill_8h" kind="file">
+    <compoundname>CPFill.h</compoundname>
+    <includes local="no">QuartzCore/QuartzCore.h</includes>
+    <includes local="no">Foundation/Foundation.h</includes>
+    <includedby refid="___c_p_fill_color_8h" local="yes">Source/_CPFillColor.h</includedby>
+    <includedby refid="___c_p_fill_gradient_8h" local="yes">Source/_CPFillGradient.h</includedby>
+    <includedby refid="___c_p_fill_image_8h" local="yes">Source/_CPFillImage.h</includedby>
+    <includedby refid="_c_p_axis_8m" local="yes">Source/CPAxis.m</includedby>
+    <includedby refid="_c_p_bar_plot_8m" local="yes">Source/CPBarPlot.m</includedby>
+    <includedby refid="_c_p_bordered_layer_8m" local="yes">Source/CPBorderedLayer.m</includedby>
+    <includedby refid="_c_p_dark_gradient_theme_8m" local="yes">Source/CPDarkGradientTheme.m</includedby>
+    <includedby refid="_c_p_fill_8m" local="yes">Source/CPFill.m</includedby>
+    <includedby refid="_c_p_graph_8m" local="yes">Source/CPGraph.m</includedby>
+    <includedby refid="_c_p_limit_band_8m" local="yes">Source/CPLimitBand.m</includedby>
+    <includedby refid="_c_p_pie_chart_8m" local="yes">Source/CPPieChart.m</includedby>
+    <includedby refid="_c_p_plain_black_theme_8m" local="yes">Source/CPPlainBlackTheme.m</includedby>
+    <includedby refid="_c_p_plain_white_theme_8m" local="yes">Source/CPPlainWhiteTheme.m</includedby>
+    <includedby refid="_c_p_plot_area_8m" local="yes">Source/CPPlotArea.m</includedby>
+    <includedby refid="_c_p_plot_symbol_8m" local="yes">Source/CPPlotSymbol.m</includedby>
+    <includedby refid="_c_p_range_plot_8m" local="yes">Source/CPRangePlot.m</includedby>
+    <includedby refid="_c_p_scatter_plot_8m" local="yes">Source/CPScatterPlot.m</includedby>
+    <includedby refid="_c_p_slate_theme_8m" local="yes">Source/CPSlateTheme.m</includedby>
+    <includedby refid="_c_p_stocks_theme_8m" local="yes">Source/CPStocksTheme.m</includedby>
+    <includedby refid="_c_p_trading_range_plot_8m" local="yes">Source/CPTradingRangePlot.m</includedby>
+    <includedby refid="_c_p_x_y_axis_8m" local="yes">Source/CPXYAxis.m</includedby>
+    <incdepgraph>
+      <node id="753">
+        <label>Source/CPFill.h</label>
+        <link refid="CPFill.h"/>
+        <childnode refid="754" relation="include">
+        </childnode>
+        <childnode refid="755" relation="include">
+        </childnode>
+      </node>
+      <node id="755">
+        <label>Foundation/Foundation.h</label>
+      </node>
+      <node id="754">
+        <label>QuartzCore/QuartzCore.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="759">
+        <label>Source/_CPFillImage.h</label>
+        <link refid="___c_p_fill_image_8h_source"/>
+      </node>
+      <node id="757">
+        <label>Source/_CPFillColor.h</label>
+        <link refid="___c_p_fill_color_8h_source"/>
+      </node>
+      <node id="756">
+        <label>Source/CPFill.h</label>
+        <link refid="CPFill.h"/>
+        <childnode refid="757" relation="include">
+        </childnode>
+        <childnode refid="758" relation="include">
+        </childnode>
+        <childnode refid="759" relation="include">
+        </childnode>
+      </node>
+      <node id="758">
+        <label>Source/_CPFillGradient.h</label>
+        <link refid="___c_p_fill_gradient_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="interface_c_p_fill" prot="public">CPFill</innerclass>
+    <innerclass refid="interface_c_p_fill_07_abstract_methods_08" prot="public">CPFill(AbstractMethods)</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPFill.h"/>
+  </compounddef>
+</doxygen>

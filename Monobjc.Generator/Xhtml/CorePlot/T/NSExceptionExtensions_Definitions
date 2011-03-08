@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_n_s_exception_extensions_8h" kind="file">
+    <compoundname>NSExceptionExtensions.h</compoundname>
+    <includes local="no">Foundation/Foundation.h</includes>
+    <includedby refid="_c_p_numeric_data_type_8m" local="yes">Source/CPNumericDataType.m</includedby>
+    <includedby refid="_n_s_exception_extensions_8m" local="yes">Source/NSExceptionExtensions.m</includedby>
+    <incdepgraph>
+      <node id="1961">
+        <label>Source/NSExceptionExtensions.h</label>
+        <link refid="NSExceptionExtensions.h"/>
+        <childnode refid="1962" relation="include">
+        </childnode>
+      </node>
+      <node id="1962">
+        <label>Foundation/Foundation.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interface_n_s_exception_07_c_p_extensions_08" prot="public">NSException(CPExtensions)</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/NSExceptionExtensions.h"/>
+  </compounddef>
+</doxygen>

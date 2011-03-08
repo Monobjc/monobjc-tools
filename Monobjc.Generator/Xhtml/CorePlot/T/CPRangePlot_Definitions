@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_c_p_range_plot_8h" kind="file">
+    <compoundname>CPRangePlot.h</compoundname>
+    <includes local="no">Foundation/Foundation.h</includes>
+    <includes refid="_c_p_plot_8h" local="yes">CPPlot.h</includes>
+    <includes refid="_c_p_definitions_8h" local="yes">CPDefinitions.h</includes>
+    <includedby refid="_c_p_range_plot_8m" local="yes">Source/CPRangePlot.m</includedby>
+    <incdepgraph>
+      <node id="1471">
+        <label>CPNumericDataType.h</label>
+        <link refid="_c_p_numeric_data_type_8h"/>
+        <childnode refid="1466" relation="include">
+        </childnode>
+      </node>
+      <node id="1469">
+        <label>CPDefinitions.h</label>
+        <link refid="_c_p_definitions_8h"/>
+        <childnode refid="1466" relation="include">
+        </childnode>
+        <childnode refid="1470" relation="include">
+        </childnode>
+      </node>
+      <node id="1474">
+        <label>CPLineStyle.h</label>
+        <link refid="_c_p_line_style_8h_source"/>
+        <childnode refid="1470" relation="include">
+        </childnode>
+        <childnode refid="1466" relation="include">
+        </childnode>
+      </node>
+      <node id="1473">
+        <label>CPLayer.h</label>
+        <link refid="_c_p_layer_8h_source"/>
+        <childnode refid="1470" relation="include">
+        </childnode>
+        <childnode refid="1474" relation="include">
+        </childnode>
+        <childnode refid="1475" relation="include">
+        </childnode>
+        <childnode refid="1476" relation="include">
+        </childnode>
+        <childnode refid="1466" relation="include">
+        </childnode>
+      </node>
+      <node id="1478">
+        <label>CPTextStyle.h</label>
+        <link refid="_c_p_text_style_8h_source"/>
+        <childnode refid="1466" relation="include">
+        </childnode>
+        <childnode refid="1470" relation="include">
+        </childnode>
+      </node>
+      <node id="1475">
+        <label>CPResponder.h</label>
+        <link refid="_c_p_responder_8h_source"/>
+        <childnode refid="1466" relation="include">
+        </childnode>
+      </node>
+      <node id="1472">
+        <label>CPAnnotationHostLayer.h</label>
+        <link refid="_c_p_annotation_host_layer_8h_source"/>
+        <childnode refid="1473" relation="include">
+        </childnode>
+      </node>
+      <node id="1477">
+        <label>CPMutableTextStyle.h</label>
+        <link refid="_c_p_mutable_text_style_8h_source"/>
+        <childnode refid="1478" relation="include">
+        </childnode>
+        <childnode refid="1466" relation="include">
+        </childnode>
+      </node>
+      <node id="1465">
+        <label>Source/CPRangePlot.h</label>
+        <link refid="CPRangePlot.h"/>
+        <childnode refid="1466" relation="include">
+        </childnode>
+        <childnode refid="1467" relation="include">
+        </childnode>
+        <childnode refid="1469" relation="include">
+        </childnode>
+      </node>
+      <node id="1466">
+        <label>Foundation/Foundation.h</label>
+      </node>
+      <node id="1468">
+        <label>CPPlotRange.h</label>
+        <link refid="_c_p_plot_range_8h"/>
+        <childnode refid="1469" relation="include">
+        </childnode>
+        <childnode refid="1466" relation="include">
+        </childnode>
+      </node>
+      <node id="1470">
+        <label>QuartzCore/QuartzCore.h</label>
+      </node>
+      <node id="1476">
+        <label>CPPlatformSpecificDefines.h</label>
+      </node>
+      <node id="1467">
+        <label>CPPlot.h</label>
+        <link refid="_c_p_plot_8h"/>
+        <childnode refid="1468" relation="include">
+        </childnode>
+        <childnode refid="1471" relation="include">
+        </childnode>
+        <childnode refid="1472" relation="include">
+        </childnode>
+        <childnode refid="1477" relation="include">
+        </childnode>
+        <childnode refid="1469" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interface_c_p_range_plot" prot="public">CPRangePlot</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_c_p_range_plot_8h_1aac2876014a218a4b9c0c6b7d1a792845" prot="public" static="no">
+        <name>_CPRangePlotField</name>
+        <enumvalue id="_c_p_range_plot_8h_1aac2876014a218a4b9c0c6b7d1a792845a2c4377e10599e8e239b7b710447a07fb" prot="public">
+          <name>CPRangePlotFieldX</name>
+          <briefdescription>
+<para>X values. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_range_plot_8h_1aac2876014a218a4b9c0c6b7d1a792845a1adccc9bb4386d01e0b67335ff09e316" prot="public">
+          <name>CPRangePlotFieldY</name>
+          <briefdescription>
+<para>Y values. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_range_plot_8h_1aac2876014a218a4b9c0c6b7d1a792845a76a92daea33d8fbf23cf4457e347ac1c" prot="public">
+          <name>CPRangePlotFieldHigh</name>
+          <briefdescription>
+<para>relative High values. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_range_plot_8h_1aac2876014a218a4b9c0c6b7d1a792845affa11198b39e504b95e23b68daea1137" prot="public">
+          <name>CPRangePlotFieldLow</name>
+          <briefdescription>
+<para>relative Low values. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_range_plot_8h_1aac2876014a218a4b9c0c6b7d1a792845adcfb0fa8f092d2036526b928280dc3f4" prot="public">
+          <name>CPRangePlotFieldLeft</name>
+          <briefdescription>
+<para>relative Left values. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_range_plot_8h_1aac2876014a218a4b9c0c6b7d1a792845a4ddf0db1ec7e90a835903ed32debbb3d" prot="public">
+          <name>CPRangePlotFieldRight</name>
+          <briefdescription>
+<para>relative Right values. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of range plot data source field types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" line="17" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" bodystart="17" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_c_p_range_plot_8h_1ac11040a89cde8f260633c82d90c23f83" prot="public" static="no">
+        <type>enum _CPRangePlotField</type>
+        <definition>typedef enum _CPRangePlotField  CPRangePlotField</definition>
+        <argsstring></argsstring>
+        <name>CPRangePlotField</name>
+        <briefdescription>
+<para>Enumeration of range plot data source field types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" line="24"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_c_p_range_plot_8h_1a20cedaa62063d39809ef181d27082656" prot="public" static="no" mutable="no">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString" kindref="compound" external="doxygen-cocoa-tags.xml">NSString</ref> *const</type>
+        <definition>NSString* const CPRangePlotBindingXValues</definition>
+        <argsstring></argsstring>
+        <name>CPRangePlotBindingXValues</name>
+        <briefdescription>
+<para>X values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" line="8" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.m" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_c_p_range_plot_8h_1a44cce19275219b70abb75fe04d72aa44" prot="public" static="no" mutable="no">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString" kindref="compound" external="doxygen-cocoa-tags.xml">NSString</ref> *const</type>
+        <definition>NSString* const CPRangePlotBindingYValues</definition>
+        <argsstring></argsstring>
+        <name>CPRangePlotBindingYValues</name>
+        <briefdescription>
+<para>Y values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" line="9" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.m" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_c_p_range_plot_8h_1a717a6d7309d21abc83c5fef8b05d4aa8" prot="public" static="no" mutable="no">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString" kindref="compound" external="doxygen-cocoa-tags.xml">NSString</ref> *const</type>
+        <definition>NSString* const CPRangePlotBindingHighValues</definition>
+        <argsstring></argsstring>
+        <name>CPRangePlotBindingHighValues</name>
+        <briefdescription>
+<para>high values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" line="10" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.m" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_c_p_range_plot_8h_1aefb444738b3cd37ec468150833c84cc7" prot="public" static="no" mutable="no">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString" kindref="compound" external="doxygen-cocoa-tags.xml">NSString</ref> *const</type>
+        <definition>NSString* const CPRangePlotBindingLowValues</definition>
+        <argsstring></argsstring>
+        <name>CPRangePlotBindingLowValues</name>
+        <briefdescription>
+<para>low values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" line="11" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.m" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_c_p_range_plot_8h_1adc16c6ce36d599d1a507fcc4910d392c" prot="public" static="no" mutable="no">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString" kindref="compound" external="doxygen-cocoa-tags.xml">NSString</ref> *const</type>
+        <definition>NSString* const CPRangePlotBindingLeftValues</definition>
+        <argsstring></argsstring>
+        <name>CPRangePlotBindingLeftValues</name>
+        <briefdescription>
+<para>left price values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" line="12" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.m" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_c_p_range_plot_8h_1a0cab5f61c5b875db10f1f3edd8c3b400" prot="public" static="no" mutable="no">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString" kindref="compound" external="doxygen-cocoa-tags.xml">NSString</ref> *const</type>
+        <definition>NSString* const CPRangePlotBindingRightValues</definition>
+        <argsstring></argsstring>
+        <name>CPRangePlotBindingRightValues</name>
+        <briefdescription>
+<para>right price values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h" line="13" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.m" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPRangePlot.h"/>
+  </compounddef>
+</doxygen>

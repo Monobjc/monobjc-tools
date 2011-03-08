@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_c_p_plot_area_frame_8h" kind="file">
+    <compoundname>CPPlotAreaFrame.h</compoundname>
+    <includes refid="_c_p_bordered_layer_8h" local="yes">CPBorderedLayer.h</includes>
+    <includedby refid="_c_p_dark_gradient_theme_8m" local="yes">Source/CPDarkGradientTheme.m</includedby>
+    <includedby refid="_c_p_graph_8m" local="yes">Source/CPGraph.m</includedby>
+    <includedby refid="_c_p_plain_black_theme_8m" local="yes">Source/CPPlainBlackTheme.m</includedby>
+    <includedby refid="_c_p_plain_white_theme_8m" local="yes">Source/CPPlainWhiteTheme.m</includedby>
+    <includedby refid="_c_p_plot_8m" local="yes">Source/CPPlot.m</includedby>
+    <includedby refid="_c_p_plot_area_frame_8m" local="yes">Source/CPPlotAreaFrame.m</includedby>
+    <includedby refid="_c_p_plot_space_annotation_8m" local="yes">Source/CPPlotSpaceAnnotation.m</includedby>
+    <includedby refid="_c_p_slate_theme_8m" local="yes">Source/CPSlateTheme.m</includedby>
+    <includedby refid="_c_p_stocks_theme_8m" local="yes">Source/CPStocksTheme.m</includedby>
+    <includedby refid="_c_p_x_y_plot_space_8m" local="yes">Source/CPXYPlotSpace.m</includedby>
+    <incdepgraph>
+      <node id="1329">
+        <label>Source/CPPlotAreaFrame.h</label>
+        <link refid="CPPlotAreaFrame.h"/>
+        <childnode refid="1330" relation="include">
+        </childnode>
+      </node>
+      <node id="1330">
+        <label>CPBorderedLayer.h</label>
+        <link refid="_c_p_bordered_layer_8h_source"/>
+        <childnode refid="1331" relation="include">
+        </childnode>
+        <childnode refid="1335" relation="include">
+        </childnode>
+      </node>
+      <node id="1334">
+        <label>CPLineStyle.h</label>
+        <link refid="_c_p_line_style_8h_source"/>
+        <childnode refid="1333" relation="include">
+        </childnode>
+        <childnode refid="1335" relation="include">
+        </childnode>
+      </node>
+      <node id="1332">
+        <label>CPLayer.h</label>
+        <link refid="_c_p_layer_8h_source"/>
+        <childnode refid="1333" relation="include">
+        </childnode>
+        <childnode refid="1334" relation="include">
+        </childnode>
+        <childnode refid="1336" relation="include">
+        </childnode>
+        <childnode refid="1337" relation="include">
+        </childnode>
+        <childnode refid="1335" relation="include">
+        </childnode>
+      </node>
+      <node id="1336">
+        <label>CPResponder.h</label>
+        <link refid="_c_p_responder_8h_source"/>
+        <childnode refid="1335" relation="include">
+        </childnode>
+      </node>
+      <node id="1331">
+        <label>CPAnnotationHostLayer.h</label>
+        <link refid="_c_p_annotation_host_layer_8h_source"/>
+        <childnode refid="1332" relation="include">
+        </childnode>
+      </node>
+      <node id="1335">
+        <label>Foundation/Foundation.h</label>
+      </node>
+      <node id="1333">
+        <label>QuartzCore/QuartzCore.h</label>
+      </node>
+      <node id="1337">
+        <label>CPPlatformSpecificDefines.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interface_c_p_plot_area_frame" prot="public">CPPlotAreaFrame</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotAreaFrame.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,510 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="interface_c_p_plot_area" kind="class" prot="public">
+    <compoundname>CPPlotArea</compoundname>
+    <basecompoundref refid="interface_c_p_annotation_host_layer" prot="public" virt="non-virtual">CPAnnotationHostLayer</basecompoundref>
+      <sectiondef kind="user-defined">
+      <header>Layers</header>
+      <memberdef kind="property" id="interface_c_p_plot_area_1aa26703903c78346fc683bf2ae64113d0" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="retain">
+        <type><ref refid="interface_c_p_grid_line_group" kindref="compound">CPGridLineGroup</ref> *</type>
+        <definition>CPPlotArea::minorGridLineGroup</definition>
+        <argsstring></argsstring>
+        <name>minorGridLineGroup</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>The parent layer for all minor grid lines. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" line="16" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_plot_area_1aed603770e54ba8b357b29e5387da19a9" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="retain">
+        <type><ref refid="interface_c_p_grid_line_group" kindref="compound">CPGridLineGroup</ref> *</type>
+        <definition>CPPlotArea::majorGridLineGroup</definition>
+        <argsstring></argsstring>
+        <name>majorGridLineGroup</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>The parent layer for all major grid lines. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" line="17" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_plot_area_1ad737a17c51d800e0957d1ed3014975d4" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="retain">
+        <type><ref refid="interface_c_p_axis_set" kindref="compound">CPAxisSet</ref> *</type>
+        <definition>CPPlotArea::axisSet</definition>
+        <argsstring></argsstring>
+        <name>axisSet</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>The axis set. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" line="18" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_plot_area_1a30450efe4781aece5554e98b66eb41b4" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="retain">
+        <type><ref refid="interface_c_p_plot_group" kindref="compound">CPPlotGroup</ref> *</type>
+        <definition>CPPlotArea::plotGroup</definition>
+        <argsstring></argsstring>
+        <name>plotGroup</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>The plot group. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" line="19" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_plot_area_1ae3fc9caa4f7106dfee3be46116d9c140" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="retain">
+        <type><ref refid="interface_c_p_axis_label_group" kindref="compound">CPAxisLabelGroup</ref> *</type>
+        <definition>CPPlotArea::axisLabelGroup</definition>
+        <argsstring></argsstring>
+        <name>axisLabelGroup</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>The parent layer for all axis labels. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" line="20" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_plot_area_1aeb56a29b99d6a5c0a0feb7b09de8cf1a" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="retain">
+        <type><ref refid="interface_c_p_axis_label_group" kindref="compound">CPAxisLabelGroup</ref> *</type>
+        <definition>CPPlotArea::axisTitleGroup</definition>
+        <argsstring></argsstring>
+        <name>axisTitleGroup</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>The parent layer for all axis titles. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" line="21" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Layer ordering</header>
+      <memberdef kind="property" id="interface_c_p_plot_area_1a559195a5b27bbb99e3e41fc6c6bf9fb0" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="retain">
+        <type><ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSArray</ref> *</type>
+        <definition>CPPlotArea::topDownLayerOrder</definition>
+        <argsstring></argsstring>
+        <name>topDownLayerOrder</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>An array of graph layers to be drawn in an order other than the default. </para>        </briefdescription>
+        <detaileddescription>
+<para>The array should reference the layers using the constants defined in <ref refid="_c_p_graph_8h_1a38d3a737e60b4a6449fbb027ae8ec91b" kindref="member">CPGraphLayerType</ref>. Layers should be specified in order starting from the top layer. Only the layers drawn out of the default order need be specified; all others will automatically be placed at the bottom of the view in their default order.</para><para>If this property is nil, the layers will be drawn in the default order (bottom to top):<orderedlist>
+<listitem><para>Minor grid lines</para></listitem><listitem><para>Major grid lines</para></listitem><listitem><para>Axis lines, including the tick marks</para></listitem><listitem><para>Plots</para></listitem><listitem><para>Axis labels</para></listitem><listitem><para>Axis titles</para></listitem></orderedlist>
+</para><para>Example usage: <computeroutput>[graph setTopDownLayerOrder:[<ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSArray</ref> arrayWithObjects: [<ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSNumber</ref> numberWithInt:CPGraphLayerTypePlots], [<ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSNumber</ref> numberWithInt:CPGraphLayerTypeAxisLabels], [<ref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSNumber_Class/Reference/Reference" kindref="compound" external="doxygen-cocoa-tags.xml">NSNumber</ref> numberWithInt:CPGraphLayerTypeMajorGridLines], ..., nil]];</computeroutput> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" line="23" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Decorations</header>
+      <memberdef kind="property" id="interface_c_p_plot_area_1a392077615c2cdd7de7eadf165f2a477d" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="copy">
+        <type><ref refid="interface_c_p_line_style" kindref="compound">CPLineStyle</ref> *</type>
+        <definition>CPLineStyle * CPPlotArea::borderLineStyle</definition>
+        <argsstring></argsstring>
+        <name>borderLineStyle</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>The line style for the layer border. If nil, the border is not drawn. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" line="45" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_c_p_plot_area_1aed19552936ee5441855488c45748df80" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="copy">
+        <type><ref refid="interface_c_p_fill" kindref="compound">CPFill</ref> *</type>
+        <definition>CPPlotArea::fill</definition>
+        <argsstring></argsstring>
+        <name>fill</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+<para>The fill for the layer background. If nil, the layer background is not filled. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" line="22" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Axis set layer management</header>
+      <memberdef kind="function" id="interface_c_p_plot_area_1a240e601543912f65d3fca2a44fa6e613" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPPlotArea::updateAxisSetLayersForType:</definition>
+        <argsstring>(CPGraphLayerType layerType)</argsstring>
+        <name>updateAxisSetLayersForType:</name>
+        <param>
+          <type><ref refid="_c_p_graph_8h_1a38d3a737e60b4a6449fbb027ae8ec91b" kindref="member">CPGraphLayerType</ref></type>
+          <declname>layerType</declname>
+        </param>
+        <briefdescription>
+<para>Checks for the presence of the specified layer group and adds or removes it as needed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>layerType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The layer type being updated. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" line="51" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.m" bodystart="308" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_plot_area_1a610e59f8d425eafd65aa655b0e3ab8fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPPlotArea::setAxisSetLayersForType:</definition>
+        <argsstring>(CPGraphLayerType layerType)</argsstring>
+        <name>setAxisSetLayersForType:</name>
+        <param>
+          <type><ref refid="_c_p_graph_8h_1a38d3a737e60b4a6449fbb027ae8ec91b" kindref="member">CPGraphLayerType</ref></type>
+          <declname>layerType</declname>
+        </param>
+        <briefdescription>
+<para>Ensures that a group layer is set for the given layer type. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>layerType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The layer type being updated. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" line="52" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.m" bodystart="366" bodyend="400"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_c_p_plot_area_1a5dbdba295295115cfaeb7c3a6e95ad05" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>unsigned</type>
+        <definition>unsigned CPPlotArea::sublayerIndexForAxis:layerType:</definition>
+        <argsstring>(CPAxis *axis,[layerType] CPGraphLayerType layerType)</argsstring>
+        <name>sublayerIndexForAxis:layerType:</name>
+        <param>
+          <type><ref refid="interface_c_p_axis" kindref="compound">CPAxis</ref> *</type>
+          <declname>axis</declname>
+        </param>
+        <param>
+          <attributes>[layerType]</attributes>
+          <type><ref refid="_c_p_graph_8h_1a38d3a737e60b4a6449fbb027ae8ec91b" kindref="member">CPGraphLayerType</ref></type>
+          <declname>layerType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" line="53" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.m" bodystart="402" bodyend="428"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="interface_c_p_plot_area_1ad32e89bb6f837e30f8d51acfc024c70a" prot="private" static="no" mutable="no">
+        <type><ref refid="_c_p_graph_8h_1a38d3a737e60b4a6449fbb027ae8ec91b" kindref="member">CPGraphLayerType</ref> *</type>
+        <definition>CPGraphLayerType* CPPlotArea::bottomUpLayerOrder</definition>
+        <argsstring></argsstring>
+        <name>bottomUpLayerOrder</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" line="24" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="interface_c_p_plot_area_1a9ea4e5be9ee23a3f47189883a3a6ab2f" prot="private" static="no" mutable="no">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">BOOL</ref></type>
+        <definition>BOOL CPPlotArea::updatingLayers</definition>
+        <argsstring></argsstring>
+        <name>updatingLayers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" line="25" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A layer representing the actual plotting area of a graph. </para>    </briefdescription>
+    <detaileddescription>
+<para>All plots are drawn inside this area while axes, titles, and borders may fall outside. The layers are arranged so that the graph elements are drawn in the following order:<orderedlist>
+<listitem><para>Background fill</para></listitem><listitem><para>Minor grid lines</para></listitem><listitem><para>Major grid lines</para></listitem><listitem><para>Background border</para></listitem><listitem><para>Axis lines with major and minor tick marks</para></listitem><listitem><para>Plots</para></listitem><listitem><para>Axis labels</para></listitem><listitem><para>Axis titles </para></listitem></orderedlist>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1891">
+        <label>&lt;CAMediaTiming-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1892">
+        <label>&lt;CPResponder&gt;</label>
+        <link refid="protocol_c_p_responder-p"/>
+        <childnode refid="1888" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1884">
+        <label>CPAnnotationHostLayer</label>
+        <link refid="interface_c_p_annotation_host_layer"/>
+        <childnode refid="1885" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1888">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1890">
+        <label>&lt;NSCoding-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCoding_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1889">
+        <label>&lt;NSKeyValueBindingCreation-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1886">
+        <label>CALayer</label>
+        <link refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1887" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1890" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1891" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1887">
+        <label>NSObject</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1888" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1889" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1883">
+        <label>CPPlotArea</label>
+        <link refid="interface_c_p_plot_area"/>
+        <childnode refid="1884" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1885">
+        <label>CPLayer</label>
+        <link refid="interface_c_p_layer"/>
+        <childnode refid="1886" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1892" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1906">
+        <label>&lt;NSFastEnumeration-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/NSFastEnumeration_protocol/Reference/NSFastEnumeration" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1904">
+        <label>NSMutableArray</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSMutableArray_Class/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1897" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1900" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1905" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1906" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1907" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1901">
+        <label>&lt;CAMediaTiming-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1903">
+        <label>BOOL</label>
+        <link refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1902">
+        <label>&lt;CPResponder&gt;</label>
+        <link refid="protocol_c_p_responder-p"/>
+        <childnode refid="1898" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1894">
+        <label>CPAnnotationHostLayer</label>
+        <link refid="interface_c_p_annotation_host_layer"/>
+        <childnode refid="1895" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1904" relation="usage">
+          <edgelabel>mutableAnnotations</edgelabel>
+        </childnode>
+      </node>
+      <node id="1898">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1905">
+        <label>&lt;NSCopying-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCopying_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1900">
+        <label>&lt;NSCoding-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCoding_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1899">
+        <label>&lt;NSKeyValueBindingCreation-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1896">
+        <label>CALayer</label>
+        <link refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1897" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1900" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1901" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1907">
+        <label>&lt;NSMutableCopying-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSMutableCopying_Protocol/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+      </node>
+      <node id="1897">
+        <label>NSObject</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference" external="doxygen-cocoa-tags.xml"/>
+        <childnode refid="1898" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1899" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1893">
+        <label>CPPlotArea</label>
+        <link refid="interface_c_p_plot_area"/>
+        <childnode refid="1894" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1903" relation="usage">
+          <edgelabel>updatingLayers</edgelabel>
+        </childnode>
+      </node>
+      <node id="1895">
+        <label>CPLayer</label>
+        <link refid="interface_c_p_layer"/>
+        <childnode refid="1896" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1902" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1903" relation="usage">
+          <edgelabel>renderingRecursively</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" line="14" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotArea.h" bodystart="14" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="interface_c_p_annotation_host_layer_1aa5eaca5144e9366cc85034078062bff8" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>addAnnotation:</name></member>
+      <member refid="interface_c_p_annotation_host_layer_1a4336e3a37cdfe215ae267b7fcae56b20" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>annotations</name></member>
+      <member refid="interface_c_p_layer_1acc3cffe1242a6147161bc3120747b8ad" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>applyMaskToContext:</name></member>
+      <member refid="interface_c_p_layer_1af89526361a9e80c0ba21b31f80922507" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>applySublayerMaskToContext:forSublayer:withOffset:</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/autoreverses" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>autoreverses</name></member>
+      <member refid="interface_c_p_plot_area_1ae3fc9caa4f7106dfee3be46116d9c140" prot="private" virt="non-virtual"><scope>CPPlotArea</scope><name>axisLabelGroup</name></member>
+      <member refid="interface_c_p_plot_area_1ae3fc9caa4f7106dfee3be46116d9c140" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>axisLabelGroup</name></member>
+      <member refid="interface_c_p_plot_area_1ad737a17c51d800e0957d1ed3014975d4" prot="private" virt="non-virtual"><scope>CPPlotArea</scope><name>axisSet</name></member>
+      <member refid="interface_c_p_plot_area_1ad737a17c51d800e0957d1ed3014975d4" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>axisSet</name></member>
+      <member refid="interface_c_p_plot_area_1aeb56a29b99d6a5c0a0feb7b09de8cf1a" prot="private" virt="non-virtual"><scope>CPPlotArea</scope><name>axisTitleGroup</name></member>
+      <member refid="interface_c_p_plot_area_1aeb56a29b99d6a5c0a0feb7b09de8cf1a" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>axisTitleGroup</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/beginTime" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>beginTime</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/bind:toObject:withKeyPath:options:" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>bind:toObject:withKeyPath:options:</name></member>
+      <member refid="interface_c_p_plot_area_1a392077615c2cdd7de7eadf165f2a477d" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>borderLineStyle</name></member>
+      <member refid="interface_c_p_plot_area_1ad32e89bb6f837e30f8d51acfc024c70a" prot="private" virt="non-virtual"><scope>CPPlotArea</scope><name>bottomUpLayerOrder</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction_1//apple_ref/occ/instm/CALayer/containsPoint:" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>containsPoint:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/copy" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>copy</name></member>
+      <member refid="interface_c_p_layer_1af1d7b9cee5b364818d5c9b46330326ee" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>dataForPDFRepresentationOfLayer</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/dealloc" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>dealloc</name></member>
+      <member refid="interface_c_p_layer_1a512071c472f620c9e65889149bf84412" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>defaultZPosition</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/description" prot="public" virt="non-virtual" ambiguityscope="CALayer::"><scope>CPPlotArea</scope><name>description</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/description" prot="public" virt="non-virtual" ambiguityscope="CPResponder-p::"><scope>CPPlotArea</scope><name>description</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction_1//apple_ref/occ/instm/CALayer/drawInContext:" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>drawInContext:</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/duration" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>duration</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCoding_Protocol/Reference/Reference_1//apple_ref/occ/intfm/NSCoding/encodeWithCoder:" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>encodeWithCoder:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/clm/NSObject/exposeBinding:" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>exposeBinding:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/exposedBindings" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>exposedBindings</name></member>
+      <member refid="interface_c_p_plot_area_1aed19552936ee5441855488c45748df80" prot="private" virt="non-virtual"><scope>CPPlotArea</scope><name>fill</name></member>
+      <member refid="interface_c_p_plot_area_1aed19552936ee5441855488c45748df80" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>fill</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/fillMode" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>fillMode</name></member>
+      <member refid="interface_c_p_layer_1aaecd0345e0b871679ab69e8c7f125710" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>graph</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/hash" prot="public" virt="non-virtual" ambiguityscope="CALayer::"><scope>CPPlotArea</scope><name>hash</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/hash" prot="public" virt="non-virtual" ambiguityscope="CPResponder-p::"><scope>CPPlotArea</scope><name>hash</name></member>
+      <member refid="interface_c_p_layer_1aaf206234345a192a5f4c2c79c31d3275" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>imageOfLayer</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/infoForBinding:" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>infoForBinding:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference_1//apple_ref/occ/instm/NSObject/init" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>init</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSCoding_Protocol/Reference/Reference_1//apple_ref/occ/intfm/NSCoding/initWithCoder:" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>initWithCoder:</name></member>
+      <member refid="interface_c_p_layer_1a55e20db52d41e3bc276e3ff4f0e07e5d" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>initWithFrame:</name></member>
+      <member refid="interface_c_p_layer_1a840443578f7dfd7aca2b61e52a4b1863" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>innerBorderPath</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/isEqual:" prot="public" virt="non-virtual" ambiguityscope="CALayer::"><scope>CPPlotArea</scope><name>isEqual:</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/isEqual:" prot="public" virt="non-virtual" ambiguityscope="CPResponder-p::"><scope>CPPlotArea</scope><name>isEqual:</name></member>
+      <member refid="interface_c_p_layer_1a5ad6f83d128efed79af26e968653706a" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>layoutAndRenderInContext:</name></member>
+      <member refid="interface_c_p_layer_1aa39195c52b4883f547802f5a9cd20dc8" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>layoutManager</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CALayer_class/Introduction/Introduction_1//apple_ref/occ/instm/CALayer/layoutSublayers" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>layoutSublayers</name></member>
+      <member refid="interface_c_p_plot_area_1aed603770e54ba8b357b29e5387da19a9" prot="private" virt="non-virtual"><scope>CPPlotArea</scope><name>majorGridLineGroup</name></member>
+      <member refid="interface_c_p_plot_area_1aed603770e54ba8b357b29e5387da19a9" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>majorGridLineGroup</name></member>
+      <member refid="interface_c_p_layer_1ac14276fee59574f07a7b24c9bf2dad80" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>maskingPath</name></member>
+      <member refid="interface_c_p_layer_1afb877eb63758f6faec6a03c2ba12d75f" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>masksToBorder</name></member>
+      <member refid="interface_c_p_plot_area_1aa26703903c78346fc683bf2ae64113d0" prot="private" virt="non-virtual"><scope>CPPlotArea</scope><name>minorGridLineGroup</name></member>
+      <member refid="interface_c_p_plot_area_1aa26703903c78346fc683bf2ae64113d0" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>minorGridLineGroup</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/optionDescriptionsForBinding:" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>optionDescriptionsForBinding:</name></member>
+      <member refid="interface_c_p_layer_1a3f1e02fcdc05eb3b8e6bb26f78a9ee1c" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>outerBorderPath</name></member>
+      <member refid="interface_c_p_layer_1a8b212a178e641e2cbd1824b4d31605f9" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>paddingBottom</name></member>
+      <member refid="interface_c_p_layer_1ad0fd0e023ee4f9b64ecfbd369820ec1c" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>paddingLeft</name></member>
+      <member refid="interface_c_p_layer_1a4a89230854cf58adca1fdb71292027d6" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>paddingRight</name></member>
+      <member refid="interface_c_p_layer_1abde3adfc0ca84bbc138f1214f94cf9c3" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>paddingTop</name></member>
+      <member refid="interface_c_p_layer_1a175cf29bb2c8375ddb563ca8060a5284" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>pixelAlign</name></member>
+      <member refid="interface_c_p_plot_area_1a30450efe4781aece5554e98b66eb41b4" prot="private" virt="non-virtual"><scope>CPPlotArea</scope><name>plotGroup</name></member>
+      <member refid="interface_c_p_plot_area_1a30450efe4781aece5554e98b66eb41b4" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>plotGroup</name></member>
+      <member refid="protocol_c_p_responder-p_1ace0ad0d241f95b417bdca45ee37b75a5" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>pointingDeviceCancelledEvent:</name></member>
+      <member refid="protocol_c_p_responder-p_1af61d6f0ff4e166a407833d08e958aa23" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>pointingDeviceDownEvent:atPoint:</name></member>
+      <member refid="protocol_c_p_responder-p_1a2126a7f09ce199218ead6af802a7dcda" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>pointingDeviceDraggedEvent:atPoint:</name></member>
+      <member refid="protocol_c_p_responder-p_1a1d79a7d4c26b474e68cea2712789f085" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>pointingDeviceUpEvent:atPoint:</name></member>
+      <member refid="interface_c_p_layer_1a9cee7d548fdd8e632c419652da848e91" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>recursivelyRenderInContext:</name></member>
+      <member refid="interface_c_p_annotation_host_layer_1abe046aad1419ef6241ce1668041dcbd3" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>removeAllAnnotations</name></member>
+      <member refid="interface_c_p_annotation_host_layer_1af36f89f94d3ec941e68f92b48098ea32" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>removeAnnotation:</name></member>
+      <member refid="interface_c_p_layer_1ac3b8b3138c38dcf4d38e1e9e07173ebf" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>renderAsVectorInContext:</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/repeatCount" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>repeatCount</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/repeatDuration" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>repeatDuration</name></member>
+      <member refid="interface_c_p_plot_area_1a610e59f8d425eafd65aa655b0e3ab8fb" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>setAxisSetLayersForType:</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/speed" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>speed</name></member>
+      <member refid="interface_c_p_plot_area_1a5dbdba295295115cfaeb7c3a6e95ad05" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>sublayerIndexForAxis:layerType:</name></member>
+      <member refid="interface_c_p_layer_1a479b978da77780f81cadecd8355f20d0" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>sublayerMaskingPath</name></member>
+      <member refid="interface_c_p_layer_1a1c60a6582dfa6012719e3e92825d8aef" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>sublayersExcludedFromAutomaticLayout</name></member>
+      <member refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction_1//apple_ref/occ/intfp/CAMediaTiming/timeOffset" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>timeOffset</name></member>
+      <member refid="interface_c_p_plot_area_1a559195a5b27bbb99e3e41fc6c6bf9fb0" prot="private" virt="non-virtual"><scope>CPPlotArea</scope><name>topDownLayerOrder</name></member>
+      <member refid="interface_c_p_plot_area_1a559195a5b27bbb99e3e41fc6c6bf9fb0" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>topDownLayerOrder</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/unbind:" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>unbind:</name></member>
+      <member refid="interface_c_p_plot_area_1a240e601543912f65d3fca2a44fa6e613" prot="public" virt="virtual"><scope>CPPlotArea</scope><name>updateAxisSetLayersForType:</name></member>
+      <member refid="interface_c_p_plot_area_1a9ea4e5be9ee23a3f47189883a3a6ab2f" prot="private" virt="non-virtual"><scope>CPPlotArea</scope><name>updatingLayers</name></member>
+      <member refid="interface_c_p_layer_1a9606eb7a34734ea623bda6f8768591d7" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>useFastRendering</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference_1//apple_ref/occ/instm/NSObject/valueClassForBinding:" prot="public" virt="non-virtual"><scope>CPPlotArea</scope><name>valueClassForBinding:</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

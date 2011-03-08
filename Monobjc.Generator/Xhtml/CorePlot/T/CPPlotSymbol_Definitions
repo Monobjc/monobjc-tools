@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_c_p_plot_symbol_8h" kind="file">
+    <compoundname>CPPlotSymbol.h</compoundname>
+    <includes local="no">Foundation/Foundation.h</includes>
+    <includedby refid="_c_p_plot_symbol_8m" local="yes">Source/CPPlotSymbol.m</includedby>
+    <includedby refid="_c_p_scatter_plot_8m" local="yes">Source/CPScatterPlot.m</includedby>
+    <includedby refid="_c_p_trading_range_plot_8m" local="yes">Source/CPTradingRangePlot.m</includedby>
+    <incdepgraph>
+      <node id="1441">
+        <label>Foundation/Foundation.h</label>
+      </node>
+      <node id="1440">
+        <label>Source/CPPlotSymbol.h</label>
+        <link refid="CPPlotSymbol.h"/>
+        <childnode refid="1441" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interface_c_p_plot_symbol" prot="public">CPPlotSymbol</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_c_p_plot_symbol_8h_1adb0c66c47e1473d667c25ebfc3954b4f" prot="public" static="no">
+        <name>_CPPlotSymbolType</name>
+        <enumvalue id="_c_p_plot_symbol_8h_1adb0c66c47e1473d667c25ebfc3954b4fae38aea2160311aa04f5539f4785f831d" prot="public">
+          <name>CPPlotSymbolTypeNone</name>
+          <briefdescription>
+<para>No symbol. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_plot_symbol_8h_1adb0c66c47e1473d667c25ebfc3954b4fa32a425e5cebad056148794599720af09" prot="public">
+          <name>CPPlotSymbolTypeRectangle</name>
+          <briefdescription>
+<para>Rectangle symbol. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_plot_symbol_8h_1adb0c66c47e1473d667c25ebfc3954b4fa89e1fc3ad5bf175f5b42bdf7823192fd" prot="public">
+          <name>CPPlotSymbolTypeEllipse</name>
+          <briefdescription>
+<para>Elliptical symbol. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_plot_symbol_8h_1adb0c66c47e1473d667c25ebfc3954b4fa3eadc1052b27d1ebe1cb832257b4a6f4" prot="public">
+          <name>CPPlotSymbolTypeDiamond</name>
+          <briefdescription>
+<para>Diamond symbol. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_plot_symbol_8h_1adb0c66c47e1473d667c25ebfc3954b4fa32319271bed4eae8f7e36a39261f08ff" prot="public">
+          <name>CPPlotSymbolTypeTriangle</name>
+          <briefdescription>
+<para>Triangle symbol. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_plot_symbol_8h_1adb0c66c47e1473d667c25ebfc3954b4facc30b7963e4df639db1b21c63631cb48" prot="public">
+          <name>CPPlotSymbolTypeStar</name>
+          <briefdescription>
+<para>5-point star symbol. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_plot_symbol_8h_1adb0c66c47e1473d667c25ebfc3954b4fa2537cc078639a6c80ac3d406758a8dac" prot="public">
+          <name>CPPlotSymbolTypePentagon</name>
+          <briefdescription>
+<para>Pentagon symbol. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_plot_symbol_8h_1adb0c66c47e1473d667c25ebfc3954b4fad309ed3b42b60bedbbd1ce61fdc648c6" prot="public">
+          <name>CPPlotSymbolTypeHexagon</name>
+          <briefdescription>
+<para>Hexagon symbol. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_plot_symbol_8h_1adb0c66c47e1473d667c25ebfc3954b4fa3ef1d7837dbeaa73c3d35ee75115769a" prot="public">
+          <name>CPPlotSymbolTypeCross</name>
+          <briefdescription>
+<para>X symbol. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_plot_symbol_8h_1adb0c66c47e1473d667c25ebfc3954b4fae63f0b93549b64932dac5765c5a20982" prot="public">
+          <name>CPPlotSymbolTypePlus</name>
+          <briefdescription>
+<para>Plus symbol. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_plot_symbol_8h_1adb0c66c47e1473d667c25ebfc3954b4fae982013b604d4f98f7649b569dad251c" prot="public">
+          <name>CPPlotSymbolTypeDash</name>
+          <briefdescription>
+<para>Dash symbol. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_plot_symbol_8h_1adb0c66c47e1473d667c25ebfc3954b4fa7392ea1f7b56e0ceb5e164ea2b0dcbbc" prot="public">
+          <name>CPPlotSymbolTypeSnow</name>
+          <briefdescription>
+<para>Snowflake symbol. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_plot_symbol_8h_1adb0c66c47e1473d667c25ebfc3954b4fa5da7863b45fd07a1287ef81c1bb22991" prot="public">
+          <name>CPPlotSymbolTypeCustom</name>
+          <briefdescription>
+<para>Custom symbol. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Plot symbol types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSymbol.h" line="10" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSymbol.h" bodystart="10" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_c_p_plot_symbol_8h_1a435ffa8a47a53be13f8773963f762fc9" prot="public" static="no">
+        <type>enum <ref refid="_c_p_plot_symbol_8h_1adb0c66c47e1473d667c25ebfc3954b4f" kindref="member">_CPPlotSymbolType</ref></type>
+        <definition>typedef enum _CPPlotSymbolType  CPPlotSymbolType</definition>
+        <argsstring></argsstring>
+        <name>CPPlotSymbolType</name>
+        <briefdescription>
+<para>Plot symbol types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSymbol.h" line="24"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSymbol.h"/>
+  </compounddef>
+</doxygen>

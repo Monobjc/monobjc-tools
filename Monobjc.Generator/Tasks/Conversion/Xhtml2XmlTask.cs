@@ -25,6 +25,7 @@ using Monobjc.Tools.Generator.Parsers.Xhtml;
 using Monobjc.Tools.Generator.Parsers.Xhtml.Classic;
 using Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa;
 using Monobjc.Tools.Generator.Utilities;
+using Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen;
 
 namespace Monobjc.Tools.Generator.Tasks.Conversion
 {
@@ -140,6 +141,8 @@ namespace Monobjc.Tools.Generator.Tasks.Conversion
                     return new XhtmlCocoaTypeParser(this.Settings, this.TypeManager);
                 case PageStyle.Classic:
                     return new XhtmlClassicTypeParser(this.Settings, this.TypeManager);
+                case PageStyle.Doxygen:
+                    return new XhtmlDoxygenTypeParser(this.Settings, this.TypeManager);
                 default:
                     throw new NotSupportedException();
             }
@@ -153,6 +156,8 @@ namespace Monobjc.Tools.Generator.Tasks.Conversion
                     return new XhtmlCocoaClassParser(this.Settings, this.TypeManager);
                 case PageStyle.Classic:
                     return new XhtmlClassicClassParser(this.Settings, this.TypeManager);
+                case PageStyle.Doxygen:
+                    return new XhtmlDoxygenClassParser(this.Settings, this.TypeManager);
                 default:
                     throw new NotSupportedException();
             }
@@ -166,6 +171,8 @@ namespace Monobjc.Tools.Generator.Tasks.Conversion
                     return new XhtmlCocoaClassParser(this.Settings, this.TypeManager);
                 case PageStyle.Classic:
                     return new XhtmlClassicClassParser(this.Settings, this.TypeManager);
+                case PageStyle.Doxygen:
+                    return new XhtmlDoxygenClassParser(this.Settings, this.TypeManager);
                 default:
                     throw new NotSupportedException();
             }

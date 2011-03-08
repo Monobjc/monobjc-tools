@@ -1,0 +1,416 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="protocol_c_p_plot_space_delegate-p" kind="protocol" prot="public">
+    <compoundname>CPPlotSpaceDelegate-p</compoundname>
+    <basecompoundref refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" prot="public" virt="non-virtual">&lt;NSObject-p&gt;</basecompoundref>
+    <includes refid="_c_p_plot_space_8h" local="no">CPPlotSpace.h</includes>
+      <sectiondef kind="user-defined">
+      <header>Scrolling</header>
+      <memberdef kind="function" id="protocol_c_p_plot_space_delegate-p_1ae9e818196d0c3f621cb399e23d55099f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">BOOL</ref></type>
+        <definition>BOOL CPPlotSpaceDelegate-p::plotSpace:shouldScaleBy:aboutPoint:</definition>
+        <argsstring>(CPPlotSpace *space,[shouldScaleBy] CGFloat interactionScale,[aboutPoint] CGPoint interactionPoint)</argsstring>
+        <name>plotSpace:shouldScaleBy:aboutPoint:</name>
+        <param>
+          <type><ref refid="interface_c_p_plot_space" kindref="compound">CPPlotSpace</ref> *</type>
+          <declname>space</declname>
+        </param>
+        <param>
+          <attributes>[shouldScaleBy]</attributes>
+          <type>CGFloat</type>
+          <declname>interactionScale</declname>
+        </param>
+        <param>
+          <attributes>[aboutPoint]</attributes>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGPoint" kindref="compound" external="doxygen-cocoa-tags.xml">CGPoint</ref></type>
+          <declname>interactionPoint</declname>
+        </param>
+        <briefdescription>
+<para>Informs the receiver that it should uniformly scale (eg in response to a pinch on iOS) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>space</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The plot space. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>interactionScale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The scaling factor. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>interactionPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The coordinates of the scaling centroid. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>YES should be returned if the gesture should be handled by the plot space, and NO to prevent handling. In either case, the delegate may choose to take extra actions, or handle the scaling itself. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" line="27"/>
+      </memberdef>
+      <memberdef kind="function" id="protocol_c_p_plot_space_delegate-p_1a652d84fce08b2d540db2ca45950ee5a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">BOOL</ref></type>
+        <definition>BOOL CPPlotSpaceDelegate-p::plotSpace:shouldHandlePointingDeviceDownEvent:atPoint:</definition>
+        <argsstring>(CPPlotSpace *space,[shouldHandlePointingDeviceDownEvent] id event,[atPoint] CGPoint point)</argsstring>
+        <name>plotSpace:shouldHandlePointingDeviceDownEvent:atPoint:</name>
+        <param>
+          <type><ref refid="interface_c_p_plot_space" kindref="compound">CPPlotSpace</ref> *</type>
+          <declname>space</declname>
+        </param>
+        <param>
+          <attributes>[shouldHandlePointingDeviceDownEvent]</attributes>
+          <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">id</ref></type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <attributes>[atPoint]</attributes>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGPoint" kindref="compound" external="doxygen-cocoa-tags.xml">CGPoint</ref></type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+<para>Notifies that plot space intercepted a device down event. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>space</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The plot space. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The native event (eg UIEvent on iPhone) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The point in the host view. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Whether the plot space should handle the event or not. In either case, the delegate may choose to take extra actions, or handle the scaling itself. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" line="36"/>
+      </memberdef>
+      <memberdef kind="function" id="protocol_c_p_plot_space_delegate-p_1af4fb29a870fc96763458c5f30c16833e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">BOOL</ref></type>
+        <definition>BOOL CPPlotSpaceDelegate-p::plotSpace:shouldHandlePointingDeviceDraggedEvent:atPoint:</definition>
+        <argsstring>(CPPlotSpace *space,[shouldHandlePointingDeviceDraggedEvent] id event,[atPoint] CGPoint point)</argsstring>
+        <name>plotSpace:shouldHandlePointingDeviceDraggedEvent:atPoint:</name>
+        <param>
+          <type><ref refid="interface_c_p_plot_space" kindref="compound">CPPlotSpace</ref> *</type>
+          <declname>space</declname>
+        </param>
+        <param>
+          <attributes>[shouldHandlePointingDeviceDraggedEvent]</attributes>
+          <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">id</ref></type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <attributes>[atPoint]</attributes>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGPoint" kindref="compound" external="doxygen-cocoa-tags.xml">CGPoint</ref></type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+<para>Notifies that plot space intercepted a device dragged event. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>space</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The plot space. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The native event (eg UIEvent on iPhone) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The point in the host view. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Whether the plot space should handle the event or not. In either case, the delegate may choose to take extra actions, or handle the scaling itself. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" line="45"/>
+      </memberdef>
+      <memberdef kind="function" id="protocol_c_p_plot_space_delegate-p_1adfc863dc797adb8ecef438fa982ddf51" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">BOOL</ref></type>
+        <definition>BOOL CPPlotSpaceDelegate-p::plotSpace:shouldHandlePointingDeviceCancelledEvent:</definition>
+        <argsstring>(CPPlotSpace *space,[shouldHandlePointingDeviceCancelledEvent] id event)</argsstring>
+        <name>plotSpace:shouldHandlePointingDeviceCancelledEvent:</name>
+        <param>
+          <type><ref refid="interface_c_p_plot_space" kindref="compound">CPPlotSpace</ref> *</type>
+          <declname>space</declname>
+        </param>
+        <param>
+          <attributes>[shouldHandlePointingDeviceCancelledEvent]</attributes>
+          <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">id</ref></type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Notifies that plot space intercepted a device cancelled event. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>space</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The plot space. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The native event (eg UIEvent on iPhone) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Whether the plot space should handle the event or not. In either case, the delegate may choose to take extra actions, or handle the scaling itself. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" line="53"/>
+      </memberdef>
+      <memberdef kind="function" id="protocol_c_p_plot_space_delegate-p_1a1fd69c8feb30c5551d865367da0f3005" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">BOOL</ref></type>
+        <definition>BOOL CPPlotSpaceDelegate-p::plotSpace:shouldHandlePointingDeviceUpEvent:atPoint:</definition>
+        <argsstring>(CPPlotSpace *space,[shouldHandlePointingDeviceUpEvent] id event,[atPoint] CGPoint point)</argsstring>
+        <name>plotSpace:shouldHandlePointingDeviceUpEvent:atPoint:</name>
+        <param>
+          <type><ref refid="interface_c_p_plot_space" kindref="compound">CPPlotSpace</ref> *</type>
+          <declname>space</declname>
+        </param>
+        <param>
+          <attributes>[shouldHandlePointingDeviceUpEvent]</attributes>
+          <type><ref refid="http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference" kindref="compound" external="doxygen-cocoa-tags.xml">id</ref></type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <attributes>[atPoint]</attributes>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGPoint" kindref="compound" external="doxygen-cocoa-tags.xml">CGPoint</ref></type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+<para>Notifies that plot space intercepted a device up event. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>space</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The plot space. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The native event (eg UIEvent on iPhone) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The point in the host view. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Whether the plot space should handle the event or not. In either case, the delegate may choose to take extra actions, or handle the scaling itself. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" line="62"/>
+      </memberdef>
+      <memberdef kind="function" id="protocol_c_p_plot_space_delegate-p_1a27114600f3a41896cc7d9e19150e6585" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGPoint" kindref="compound" external="doxygen-cocoa-tags.xml">CGPoint</ref></type>
+        <definition>CGPoint CPPlotSpaceDelegate-p::plotSpace:willDisplaceBy:</definition>
+        <argsstring>(CPPlotSpace *space,[willDisplaceBy] CGPoint proposedDisplacementVector)</argsstring>
+        <name>plotSpace:willDisplaceBy:</name>
+        <param>
+          <type><ref refid="interface_c_p_plot_space" kindref="compound">CPPlotSpace</ref> *</type>
+          <declname>space</declname>
+        </param>
+        <param>
+          <attributes>[willDisplaceBy]</attributes>
+          <type><ref refid="http://developer.apple.com/documentation/GraphicsImaging/Reference/CGGeometry/Reference/reference.html#//apple_ref/doc/c_ref/CGPoint" kindref="compound" external="doxygen-cocoa-tags.xml">CGPoint</ref></type>
+          <declname>proposedDisplacementVector</declname>
+        </param>
+        <briefdescription>
+<para>Notifies that plot space is going to scroll. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>space</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The plot space. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>proposedDisplacementVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proposed amount by which the plot space will shift </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The displacement actually applied. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" line="69"/>
+      </memberdef>
+      <memberdef kind="function" id="protocol_c_p_plot_space_delegate-p_1ab0e7eaaf46729766b807b63b90a23e53" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="interface_c_p_plot_range" kindref="compound">CPPlotRange</ref> *</type>
+        <definition>CPPlotRange * CPPlotSpaceDelegate-p::plotSpace:willChangePlotRangeTo:forCoordinate:</definition>
+        <argsstring>(CPPlotSpace *space,[willChangePlotRangeTo] CPPlotRange *newRange,[forCoordinate] CPCoordinate coordinate)</argsstring>
+        <name>plotSpace:willChangePlotRangeTo:forCoordinate:</name>
+        <param>
+          <type><ref refid="interface_c_p_plot_space" kindref="compound">CPPlotSpace</ref> *</type>
+          <declname>space</declname>
+        </param>
+        <param>
+          <attributes>[willChangePlotRangeTo]</attributes>
+          <type><ref refid="interface_c_p_plot_range" kindref="compound">CPPlotRange</ref> *</type>
+          <declname>newRange</declname>
+        </param>
+        <param>
+          <attributes>[forCoordinate]</attributes>
+          <type><ref refid="_c_p_definitions_8h_1af5622437e5d4c00cce803754eb974446" kindref="member">CPCoordinate</ref></type>
+          <declname>coordinate</declname>
+        </param>
+        <briefdescription>
+<para>Notifies that plot space is going to change a plot range. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>space</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The plot space. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newRange</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proposed new plot range. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>coordinate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The coordinate of the range. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The new plot range to be used. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" line="77"/>
+      </memberdef>
+      <memberdef kind="function" id="protocol_c_p_plot_space_delegate-p_1aa04cd1e286852314721bb455b1cf8ca3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CPPlotSpaceDelegate-p::plotSpace:didChangePlotRangeForCoordinate:</definition>
+        <argsstring>(CPPlotSpace *space,[didChangePlotRangeForCoordinate] CPCoordinate coordinate)</argsstring>
+        <name>plotSpace:didChangePlotRangeForCoordinate:</name>
+        <param>
+          <type><ref refid="interface_c_p_plot_space" kindref="compound">CPPlotSpace</ref> *</type>
+          <declname>space</declname>
+        </param>
+        <param>
+          <attributes>[didChangePlotRangeForCoordinate]</attributes>
+          <type><ref refid="_c_p_definitions_8h_1af5622437e5d4c00cce803754eb974446" kindref="member">CPCoordinate</ref></type>
+          <declname>coordinate</declname>
+        </param>
+        <briefdescription>
+<para>Notifies that plot space has changed a plot range. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>space</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The plot space. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>coordinate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The coordinate of the range. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" line="83"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Plot space delegate. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1997">
+        <label>&lt;CPPlotSpaceDelegate&gt;</label>
+        <link refid="protocol_c_p_plot_space_delegate-p"/>
+        <childnode refid="1998" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1998">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1999">
+        <label>&lt;CPPlotSpaceDelegate&gt;</label>
+        <link refid="protocol_c_p_plot_space_delegate-p"/>
+        <childnode refid="2000" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2000">
+        <label>&lt;NSObject-p&gt;</label>
+        <link refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject" external="doxygen-cocoa-tags.xml"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" line="13" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPPlotSpace.h" bodystart="13" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/description" prot="public" virt="non-virtual"><scope>CPPlotSpaceDelegate-p</scope><name>description</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/hash" prot="public" virt="non-virtual"><scope>CPPlotSpaceDelegate-p</scope><name>hash</name></member>
+      <member refid="http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject_1//apple_ref/occ/intfm/NSObject/isEqual:" prot="public" virt="non-virtual"><scope>CPPlotSpaceDelegate-p</scope><name>isEqual:</name></member>
+      <member refid="protocol_c_p_plot_space_delegate-p_1aa04cd1e286852314721bb455b1cf8ca3" prot="public" virt="virtual"><scope>CPPlotSpaceDelegate-p</scope><name>plotSpace:didChangePlotRangeForCoordinate:</name></member>
+      <member refid="protocol_c_p_plot_space_delegate-p_1adfc863dc797adb8ecef438fa982ddf51" prot="public" virt="virtual"><scope>CPPlotSpaceDelegate-p</scope><name>plotSpace:shouldHandlePointingDeviceCancelledEvent:</name></member>
+      <member refid="protocol_c_p_plot_space_delegate-p_1a652d84fce08b2d540db2ca45950ee5a9" prot="public" virt="virtual"><scope>CPPlotSpaceDelegate-p</scope><name>plotSpace:shouldHandlePointingDeviceDownEvent:atPoint:</name></member>
+      <member refid="protocol_c_p_plot_space_delegate-p_1af4fb29a870fc96763458c5f30c16833e" prot="public" virt="virtual"><scope>CPPlotSpaceDelegate-p</scope><name>plotSpace:shouldHandlePointingDeviceDraggedEvent:atPoint:</name></member>
+      <member refid="protocol_c_p_plot_space_delegate-p_1a1fd69c8feb30c5551d865367da0f3005" prot="public" virt="virtual"><scope>CPPlotSpaceDelegate-p</scope><name>plotSpace:shouldHandlePointingDeviceUpEvent:atPoint:</name></member>
+      <member refid="protocol_c_p_plot_space_delegate-p_1ae9e818196d0c3f621cb399e23d55099f" prot="public" virt="virtual"><scope>CPPlotSpaceDelegate-p</scope><name>plotSpace:shouldScaleBy:aboutPoint:</name></member>
+      <member refid="protocol_c_p_plot_space_delegate-p_1ab0e7eaaf46729766b807b63b90a23e53" prot="public" virt="virtual"><scope>CPPlotSpaceDelegate-p</scope><name>plotSpace:willChangePlotRangeTo:forCoordinate:</name></member>
+      <member refid="protocol_c_p_plot_space_delegate-p_1a27114600f3a41896cc7d9e19150e6585" prot="public" virt="virtual"><scope>CPPlotSpaceDelegate-p</scope><name>plotSpace:willDisplaceBy:</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

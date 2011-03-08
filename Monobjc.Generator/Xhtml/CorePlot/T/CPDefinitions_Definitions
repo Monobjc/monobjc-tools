@@ -1,0 +1,768 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.3">
+  <compounddef id="_c_p_definitions_8h" kind="file">
+    <compoundname>CPDefinitions.h</compoundname>
+    <includes local="no">Foundation/Foundation.h</includes>
+    <includes local="no">QuartzCore/QuartzCore.h</includes>
+    <includedby refid="_c_p_gradient_8h" local="yes">Source/CPGradient.h</includedby>
+    <includedby refid="_c_p_axis_8h" local="yes">Source/CPAxis.h</includedby>
+    <includedby refid="_c_p_axis_label_8h" local="yes">Source/CPAxisLabel.h</includedby>
+    <includedby refid="_c_p_plot_range_8h" local="yes">Source/CPPlotRange.h</includedby>
+    <includedby refid="_c_p_graph_8h" local="yes">Source/CPGraph.h</includedby>
+    <includedby refid="_c_p_utilities_8h" local="yes">Source/CPUtilities.h</includedby>
+    <includedby refid="_c_p_bar_plot_8h" local="yes">Source/CPBarPlot.h</includedby>
+    <includedby refid="_c_p_x_y_plot_space_8h" local="yes">Source/CPXYPlotSpace.h</includedby>
+    <includedby refid="_c_p_constrained_position_8h" local="yes">Source/CPConstrainedPosition.h</includedby>
+    <includedby refid="_c_p_x_y_graph_8h" local="yes">Source/CPXYGraph.h</includedby>
+    <includedby refid="_c_p_x_y_axis_8h" local="yes">Source/CPXYAxis.h</includedby>
+    <includedby refid="_c_p_definitions_8m" local="yes">Source/CPDefinitions.m</includedby>
+    <includedby refid="_c_p_pie_chart_8h" local="yes">Source/CPPieChart.h</includedby>
+    <includedby refid="_c_p_plot_8h" local="yes">Source/CPPlot.h</includedby>
+    <includedby refid="_c_p_plot_area_frame_8m" local="yes">Source/CPPlotAreaFrame.m</includedby>
+    <includedby refid="_c_p_plot_range_8m" local="yes">Source/CPPlotRange.m</includedby>
+    <includedby refid="_c_p_plot_space_8h" local="yes">Source/CPPlotSpace.h</includedby>
+    <includedby refid="_c_p_range_plot_8h" local="yes">Source/CPRangePlot.h</includedby>
+    <includedby refid="_c_p_scatter_plot_8h" local="yes">Source/CPScatterPlot.h</includedby>
+    <includedby refid="_c_p_trading_range_plot_8h" local="yes">Source/CPTradingRangePlot.h</includedby>
+    <includedby refid="_c_p_x_y_axis_8m" local="yes">Source/CPXYAxis.m</includedby>
+    <includedby refid="_c_p_x_y_axis_set_8m" local="yes">Source/CPXYAxisSet.m</includedby>
+    <incdepgraph>
+      <node id="688">
+        <label>Source/CPDefinitions.h</label>
+        <link refid="CPDefinitions.h"/>
+        <childnode refid="689" relation="include">
+        </childnode>
+        <childnode refid="690" relation="include">
+        </childnode>
+      </node>
+      <node id="689">
+        <label>Foundation/Foundation.h</label>
+      </node>
+      <node id="690">
+        <label>QuartzCore/QuartzCore.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="693">
+        <label>Source/CPAxis.h</label>
+        <link refid="_c_p_axis_8h"/>
+        <childnode refid="694" relation="include">
+        </childnode>
+      </node>
+      <node id="694">
+        <label>Source/CPXYAxis.h</label>
+        <link refid="_c_p_x_y_axis_8h_source"/>
+      </node>
+      <node id="691">
+        <label>Source/CPDefinitions.h</label>
+        <link refid="CPDefinitions.h"/>
+        <childnode refid="692" relation="include">
+        </childnode>
+        <childnode refid="693" relation="include">
+        </childnode>
+        <childnode refid="695" relation="include">
+        </childnode>
+        <childnode refid="697" relation="include">
+        </childnode>
+        <childnode refid="704" relation="include">
+        </childnode>
+        <childnode refid="708" relation="include">
+        </childnode>
+        <childnode refid="699" relation="include">
+        </childnode>
+        <childnode refid="709" relation="include">
+        </childnode>
+        <childnode refid="710" relation="include">
+        </childnode>
+        <childnode refid="706" relation="include">
+        </childnode>
+        <childnode refid="694" relation="include">
+        </childnode>
+        <childnode refid="700" relation="include">
+        </childnode>
+        <childnode refid="698" relation="include">
+        </childnode>
+        <childnode refid="712" relation="include">
+        </childnode>
+        <childnode refid="701" relation="include">
+        </childnode>
+        <childnode refid="702" relation="include">
+        </childnode>
+        <childnode refid="703" relation="include">
+        </childnode>
+      </node>
+      <node id="699">
+        <label>Source/CPBarPlot.h</label>
+        <link refid="_c_p_bar_plot_8h"/>
+      </node>
+      <node id="706">
+        <label>Source/CPXYGraph.h</label>
+        <link refid="_c_p_x_y_graph_8h_source"/>
+        <childnode refid="707" relation="include">
+        </childnode>
+      </node>
+      <node id="711">
+        <label>Source/CPLayerAnnotation.h</label>
+        <link refid="_c_p_layer_annotation_8h_source"/>
+      </node>
+      <node id="712">
+        <label>Source/CPPlotSpace.h</label>
+        <link refid="_c_p_plot_space_8h_source"/>
+        <childnode refid="713" relation="include">
+        </childnode>
+        <childnode refid="709" relation="include">
+        </childnode>
+      </node>
+      <node id="692">
+        <label>Source/CPGradient.h</label>
+        <link refid="_c_p_gradient_8h"/>
+      </node>
+      <node id="696">
+        <label>Source/CPAxisTitle.h</label>
+        <link refid="_c_p_axis_title_8h_source"/>
+      </node>
+      <node id="707">
+        <label>Source/CPDerivedXYGraph.h</label>
+        <link refid="_c_p_derived_x_y_graph_8h_source"/>
+      </node>
+      <node id="708">
+        <label>Source/CPUtilities.h</label>
+        <link refid="_c_p_utilities_8h"/>
+      </node>
+      <node id="695">
+        <label>Source/CPAxisLabel.h</label>
+        <link refid="_c_p_axis_label_8h_source"/>
+        <childnode refid="696" relation="include">
+        </childnode>
+      </node>
+      <node id="703">
+        <label>Source/CPTradingRangePlot.h</label>
+        <link refid="_c_p_trading_range_plot_8h"/>
+      </node>
+      <node id="710">
+        <label>Source/CPConstrainedPosition.h</label>
+        <link refid="_c_p_constrained_position_8h_source"/>
+        <childnode refid="711" relation="include">
+        </childnode>
+      </node>
+      <node id="709">
+        <label>Source/CPXYPlotSpace.h</label>
+        <link refid="_c_p_x_y_plot_space_8h_source"/>
+      </node>
+      <node id="701">
+        <label>Source/CPRangePlot.h</label>
+        <link refid="_c_p_range_plot_8h_source"/>
+      </node>
+      <node id="700">
+        <label>Source/CPPieChart.h</label>
+        <link refid="_c_p_pie_chart_8h"/>
+      </node>
+      <node id="713">
+        <label>Source/CPPolarPlotSpace.h</label>
+        <link refid="_c_p_polar_plot_space_8h_source"/>
+      </node>
+      <node id="697">
+        <label>Source/CPPlotRange.h</label>
+        <link refid="_c_p_plot_range_8h"/>
+        <childnode refid="698" relation="include">
+        </childnode>
+      </node>
+      <node id="704">
+        <label>Source/CPGraph.h</label>
+        <link refid="_c_p_graph_8h"/>
+        <childnode refid="705" relation="include">
+        </childnode>
+        <childnode refid="706" relation="include">
+        </childnode>
+      </node>
+      <node id="698">
+        <label>Source/CPPlot.h</label>
+        <link refid="_c_p_plot_8h"/>
+        <childnode refid="699" relation="include">
+        </childnode>
+        <childnode refid="700" relation="include">
+        </childnode>
+        <childnode refid="701" relation="include">
+        </childnode>
+        <childnode refid="702" relation="include">
+        </childnode>
+        <childnode refid="703" relation="include">
+        </childnode>
+      </node>
+      <node id="702">
+        <label>Source/CPScatterPlot.h</label>
+        <link refid="_c_p_scatter_plot_8h"/>
+      </node>
+      <node id="705">
+        <label>Source/CPPlotArea.h</label>
+        <link refid="_c_p_plot_area_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct___c_p_r_g_b_a_color" prot="public">_CPRGBAColor</innerclass>
+    <innerclass refid="struct___c_p_constraints" prot="public">_CPConstraints</innerclass>
+      <sectiondef kind="user-defined">
+      <header>Default Z Positions</header>
+      <memberdef kind="variable" id="_c_p_definitions_8h_1af85641b2f60faa531b5221e5c88ccdcb" prot="public" static="no" mutable="no">
+        <type>const CGFloat</type>
+        <definition>const CGFloat CPDefaultZPositionAxis</definition>
+        <argsstring></argsstring>
+        <name>CPDefaultZPositionAxis</name>
+        <briefdescription>
+<para>Default Z position for <ref refid="interface_c_p_axis" kindref="compound">CPAxis</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="110" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.m" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_c_p_definitions_8h_1a2d8dc002a88e722c965c24491a051b69" prot="public" static="no" mutable="no">
+        <type>const CGFloat</type>
+        <definition>const CGFloat CPDefaultZPositionAxisSet</definition>
+        <argsstring></argsstring>
+        <name>CPDefaultZPositionAxisSet</name>
+        <briefdescription>
+<para>Default Z position for <ref refid="interface_c_p_axis_set" kindref="compound">CPAxisSet</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="111" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.m" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_c_p_definitions_8h_1a9c2ce48d3b455f4f1b187f443b4050c8" prot="public" static="no" mutable="no">
+        <type>const CGFloat</type>
+        <definition>const CGFloat CPDefaultZPositionGraph</definition>
+        <argsstring></argsstring>
+        <name>CPDefaultZPositionGraph</name>
+        <briefdescription>
+<para>Default Z position for <ref refid="interface_c_p_graph" kindref="compound">CPGraph</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="112" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.m" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_c_p_definitions_8h_1a81fa8992de1680077cd802a40602750e" prot="public" static="no" mutable="no">
+        <type>const CGFloat</type>
+        <definition>const CGFloat CPDefaultZPositionPlot</definition>
+        <argsstring></argsstring>
+        <name>CPDefaultZPositionPlot</name>
+        <briefdescription>
+<para>Default Z position for <ref refid="interface_c_p_plot" kindref="compound">CPPlot</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="113" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.m" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_c_p_definitions_8h_1a16512d26e71ea5f1a45ee1eaad017d0a" prot="public" static="no" mutable="no">
+        <type>const CGFloat</type>
+        <definition>const CGFloat CPDefaultZPositionPlotArea</definition>
+        <argsstring></argsstring>
+        <name>CPDefaultZPositionPlotArea</name>
+        <briefdescription>
+<para>Default Z position for <ref refid="interface_c_p_plot_area" kindref="compound">CPPlotArea</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="114" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.m" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_c_p_definitions_8h_1a9ed779893380c5ad1a19155fe0ef6c18" prot="public" static="no" mutable="no">
+        <type>const CGFloat</type>
+        <definition>const CGFloat CPDefaultZPositionPlotAreaFrame</definition>
+        <argsstring></argsstring>
+        <name>CPDefaultZPositionPlotAreaFrame</name>
+        <briefdescription>
+<para>Default Z position for <ref refid="interface_c_p_plot_area_frame" kindref="compound">CPPlotAreaFrame</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="115" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.m" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_c_p_definitions_8h_1a6052f2d13b14f4adc33a6eb172caf2ce" prot="public" static="no" mutable="no">
+        <type>const CGFloat</type>
+        <definition>const CGFloat CPDefaultZPositionPlotGroup</definition>
+        <argsstring></argsstring>
+        <name>CPDefaultZPositionPlotGroup</name>
+        <briefdescription>
+<para>Default Z position for <ref refid="interface_c_p_plot_group" kindref="compound">CPPlotGroup</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="116" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.m" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_c_p_definitions_8h_1a364cb7909df08d2bcee46286c5fb7c42" prot="public" static="no">
+        <name>_CPNumericType</name>
+        <enumvalue id="_c_p_definitions_8h_1a364cb7909df08d2bcee46286c5fb7c42ab33928bb160daf482308ce13b89bd798" prot="public">
+          <name>CPNumericTypeInteger</name>
+          <briefdescription>
+<para>Integer. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1a364cb7909df08d2bcee46286c5fb7c42a2c45fec0a90914bdeac199e31ca4faea" prot="public">
+          <name>CPNumericTypeFloat</name>
+          <briefdescription>
+<para>Float. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1a364cb7909df08d2bcee46286c5fb7c42a813f78391fd97dc1dade49c88ad8bccd" prot="public">
+          <name>CPNumericTypeDouble</name>
+          <briefdescription>
+<para>Double. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of numeric types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="10" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" bodystart="10" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="enum" id="_c_p_definitions_8h_1ada8b1f0c456c8af59c1dbf0b8d4820f4" prot="public" static="no">
+        <name>_CPErrorBarType</name>
+        <enumvalue id="_c_p_definitions_8h_1ada8b1f0c456c8af59c1dbf0b8d4820f4afbec5f9d6c1f1125d3a919f35c26da5f" prot="public">
+          <name>CPErrorBarTypeCustom</name>
+          <briefdescription>
+<para>Custom error bars. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1ada8b1f0c456c8af59c1dbf0b8d4820f4a1673af4a8f7ade2fa0e452e971466ad5" prot="public">
+          <name>CPErrorBarTypeConstantRatio</name>
+          <briefdescription>
+<para>Constant ratio error bars. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1ada8b1f0c456c8af59c1dbf0b8d4820f4a5cc7598627bf0c2ad0d15eca37b783dd" prot="public">
+          <name>CPErrorBarTypeConstantValue</name>
+          <briefdescription>
+<para>Constant value error bars. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of error bar types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="19" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" bodystart="19" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="enum" id="_c_p_definitions_8h_1aa43c58dc21567b4a15227a40b4684f3e" prot="public" static="no">
+        <name>_CPScaleType</name>
+        <enumvalue id="_c_p_definitions_8h_1aa43c58dc21567b4a15227a40b4684f3ea2e3ab24dda11d77cceabd5479a3e1c16" prot="public">
+          <name>CPScaleTypeLinear</name>
+          <briefdescription>
+<para>Linear axis scale. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1aa43c58dc21567b4a15227a40b4684f3ead31a27686d0967c2b145343010151780" prot="public">
+          <name>CPScaleTypeLogN</name>
+          <briefdescription>
+<para>Log base <emphasis>n</emphasis> axis scale. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1aa43c58dc21567b4a15227a40b4684f3ea35ae8e31bfad953b0fdb61bcc085a1c8" prot="public">
+          <name>CPScaleTypeLog10</name>
+          <briefdescription>
+<para>Log base 10 axis scale. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1aa43c58dc21567b4a15227a40b4684f3ea39cdb95b185f68052b8c722b45e81e62" prot="public">
+          <name>CPScaleTypeAngular</name>
+          <briefdescription>
+<para>Angular axis scale. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1aa43c58dc21567b4a15227a40b4684f3eab0a07a647a38b7cf829b16101a05331f" prot="public">
+          <name>CPScaleTypeDateTime</name>
+          <briefdescription>
+<para>Date/time axis scale. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1aa43c58dc21567b4a15227a40b4684f3ead50a13b19e615850fc7236c4cbf9e22e" prot="public">
+          <name>CPScaleTypeCategory</name>
+          <briefdescription>
+<para>Category axis scale. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of axis scale types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="28" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" bodystart="28" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="enum" id="_c_p_definitions_8h_1a4b31e26b827d05c03a920a47a406e8c1" prot="public" static="no">
+        <name>_CPCoordinate</name>
+        <enumvalue id="_c_p_definitions_8h_1a4b31e26b827d05c03a920a47a406e8c1afb29f17a7a829e2b816cdc5a41b816dd" prot="public">
+          <name>CPCoordinateX</name>
+          <initializer> 0</initializer>
+          <briefdescription>
+<para>X axis. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1a4b31e26b827d05c03a920a47a406e8c1a3eb8fa3b11670985ce29fed251e6011c" prot="public">
+          <name>CPCoordinateY</name>
+          <initializer> 1</initializer>
+          <briefdescription>
+<para>Y axis. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1a4b31e26b827d05c03a920a47a406e8c1afda4e29f7992c9a58cd4772d1283a236" prot="public">
+          <name>CPCoordinateZ</name>
+          <initializer> 2</initializer>
+          <briefdescription>
+<para>Z axis. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of axis coordinates. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="40" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" bodystart="40" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="enum" id="_c_p_definitions_8h_1ab948e4dca55418cc1a05f1afa94348c3" prot="public" static="no">
+        <name>_CPSign</name>
+        <enumvalue id="_c_p_definitions_8h_1ab948e4dca55418cc1a05f1afa94348c3a405eb122bb6b454e878a2ab8f877e81f" prot="public">
+          <name>CPSignNone</name>
+          <initializer>  0</initializer>
+          <briefdescription>
+<para>No offset. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1ab948e4dca55418cc1a05f1afa94348c3aeaec92697fd3a969cef0c37cb147bcc9" prot="public">
+          <name>CPSignPositive</name>
+          <initializer> +1</initializer>
+          <briefdescription>
+<para>Positive offset. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1ab948e4dca55418cc1a05f1afa94348c3a36df4e8f24942f9355a12e96daa216e3" prot="public">
+          <name>CPSignNegative</name>
+          <initializer> -1</initializer>
+          <briefdescription>
+<para>Negative offset. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of label positioning offset directions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="59" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" bodystart="59" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="enum" id="_c_p_definitions_8h_1a3adf3cb70b2d1b2d3aaa2bc8950192b2" prot="public" static="no">
+        <name>_CPConstraint</name>
+        <enumvalue id="_c_p_definitions_8h_1a3adf3cb70b2d1b2d3aaa2bc8950192b2ad9a4ab31bced5b33a542ebf0b7648eb0" prot="public">
+          <name>CPConstraintNone</name>
+          <briefdescription>
+<para>No constraint. Free movement, equivalent to &quot;spring&quot;. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1a3adf3cb70b2d1b2d3aaa2bc8950192b2ac6cbc8d1a2057fd967ad88843f2872b2" prot="public">
+          <name>CPConstraintFixed</name>
+          <briefdescription>
+<para>Distance is fixed. Equivalent to a &quot;strut&quot;. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of constraint types used in spring and strut model. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="68" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" bodystart="68" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="enum" id="_c_p_definitions_8h_1ad04917517d00fa89f0487ce600ac4df4" prot="public" static="no">
+        <name>_CPRectAnchor</name>
+        <enumvalue id="_c_p_definitions_8h_1ad04917517d00fa89f0487ce600ac4df4a680bffabddec6398926aec7baa5b961b" prot="public">
+          <name>CPRectAnchorBottomLeft</name>
+          <briefdescription>
+<para>The bottom left corner. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1ad04917517d00fa89f0487ce600ac4df4ad6fabc75e7d2621c1ddf9f723e8bcae2" prot="public">
+          <name>CPRectAnchorBottom</name>
+          <briefdescription>
+<para>The bottom center. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1ad04917517d00fa89f0487ce600ac4df4ae2eb1703f2bf56e024739a85ce25b777" prot="public">
+          <name>CPRectAnchorBottomRight</name>
+          <briefdescription>
+<para>The bottom right corner. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1ad04917517d00fa89f0487ce600ac4df4a442bab5e461f4e0764d8bb60efc4cb38" prot="public">
+          <name>CPRectAnchorLeft</name>
+          <briefdescription>
+<para>The left middle. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1ad04917517d00fa89f0487ce600ac4df4ae41628f64068c3b7e198a5e23ab5103c" prot="public">
+          <name>CPRectAnchorRight</name>
+          <briefdescription>
+<para>The right middle. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1ad04917517d00fa89f0487ce600ac4df4a30e847eef73b7924c877025f2ae739fe" prot="public">
+          <name>CPRectAnchorTopLeft</name>
+          <briefdescription>
+<para>The top left corner. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1ad04917517d00fa89f0487ce600ac4df4ada0c8212e889e7a81be8d8af952c34d9" prot="public">
+          <name>CPRectAnchorTop</name>
+          <briefdescription>
+<para>The top center. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1ad04917517d00fa89f0487ce600ac4df4a1a9e34d8d82caee5fd4ad7be843c2e77" prot="public">
+          <name>CPRectAnchorTopRight</name>
+          <briefdescription>
+<para>The top right. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1ad04917517d00fa89f0487ce600ac4df4a908aa80eeb6a3aaf4b34713f990a6f6c" prot="public">
+          <name>CPRectAnchorCenter</name>
+          <briefdescription>
+<para>The center of the rect. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Locations around the edge of a rectangle. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="84" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" bodystart="84" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="enum" id="_c_p_definitions_8h_1ae549bdd0509b9855f0a3d9acd80840fe" prot="public" static="no">
+        <name>_CPAlignment</name>
+        <enumvalue id="_c_p_definitions_8h_1ae549bdd0509b9855f0a3d9acd80840fea40936739b7583c447deebfd7bf329531" prot="public">
+          <name>CPAlignmentLeft</name>
+          <briefdescription>
+<para>Align horizontally to the left side. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1ae549bdd0509b9855f0a3d9acd80840fea380545317006da53caab020cc1c45dba" prot="public">
+          <name>CPAlignmentCenter</name>
+          <briefdescription>
+<para>Align horizontally to the center. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1ae549bdd0509b9855f0a3d9acd80840fea488c5e5ffc99168b87cd923bae9c45dd" prot="public">
+          <name>CPAlignmentRight</name>
+          <briefdescription>
+<para>Align horizontally to the right side. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1ae549bdd0509b9855f0a3d9acd80840fea83fb13143013340fdb3e096ab24bb44a" prot="public">
+          <name>CPAlignmentTop</name>
+          <briefdescription>
+<para>Align vertically to the top. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1ae549bdd0509b9855f0a3d9acd80840fea71185b7ec00cd6e48d9a8c2970ffc91a" prot="public">
+          <name>CPAlignmentMiddle</name>
+          <briefdescription>
+<para>Align vertically to the middle. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_c_p_definitions_8h_1ae549bdd0509b9855f0a3d9acd80840fea0ff65fcd030cc4164bf11ea9f2764450" prot="public">
+          <name>CPAlignmentBottom</name>
+          <briefdescription>
+<para>Align vertically to the bottom. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Label and constraint alignment constants. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="99" bodyfile="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" bodystart="99" bodyend="106"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_c_p_definitions_8h_1acd06764998b89e11508d1096b11efa7a" prot="public" static="no">
+        <type>enum <ref refid="_c_p_definitions_8h_1a364cb7909df08d2bcee46286c5fb7c42" kindref="member">_CPNumericType</ref></type>
+        <definition>typedef enum _CPNumericType  CPNumericType</definition>
+        <argsstring></argsstring>
+        <name>CPNumericType</name>
+        <briefdescription>
+<para>Enumeration of numeric types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="14"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_c_p_definitions_8h_1a5e34a69f80c7858f83381a7236d8a113" prot="public" static="no">
+        <type>enum <ref refid="_c_p_definitions_8h_1ada8b1f0c456c8af59c1dbf0b8d4820f4" kindref="member">_CPErrorBarType</ref></type>
+        <definition>typedef enum _CPErrorBarType  CPErrorBarType</definition>
+        <argsstring></argsstring>
+        <name>CPErrorBarType</name>
+        <briefdescription>
+<para>Enumeration of error bar types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="23"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_c_p_definitions_8h_1a4d37dc951c06bea8e7d32ce63986ab58" prot="public" static="no">
+        <type>enum <ref refid="_c_p_definitions_8h_1aa43c58dc21567b4a15227a40b4684f3e" kindref="member">_CPScaleType</ref></type>
+        <definition>typedef enum _CPScaleType  CPScaleType</definition>
+        <argsstring></argsstring>
+        <name>CPScaleType</name>
+        <briefdescription>
+<para>Enumeration of axis scale types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="35"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_c_p_definitions_8h_1af5622437e5d4c00cce803754eb974446" prot="public" static="no">
+        <type>enum <ref refid="_c_p_definitions_8h_1a4b31e26b827d05c03a920a47a406e8c1" kindref="member">_CPCoordinate</ref></type>
+        <definition>typedef enum _CPCoordinate  CPCoordinate</definition>
+        <argsstring></argsstring>
+        <name>CPCoordinate</name>
+        <briefdescription>
+<para>Enumeration of axis coordinates. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="44"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_c_p_definitions_8h_1a76c2823cdb87417f664934dd3715ff8a" prot="public" static="no">
+        <type>struct <ref refid="struct___c_p_r_g_b_a_color" kindref="compound">_CPRGBAColor</ref></type>
+        <definition>typedef struct _CPRGBAColor  CPRGBAColor</definition>
+        <argsstring></argsstring>
+        <name>CPRGBAColor</name>
+        <briefdescription>
+<para>RGBA color for gradients. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="54"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_c_p_definitions_8h_1aee207dddb1b7f2cf6e5c432e2f1620b6" prot="public" static="no">
+        <type>enum <ref refid="_c_p_definitions_8h_1ab948e4dca55418cc1a05f1afa94348c3" kindref="member">_CPSign</ref></type>
+        <definition>typedef enum _CPSign  CPSign</definition>
+        <argsstring></argsstring>
+        <name>CPSign</name>
+        <briefdescription>
+<para>Enumeration of label positioning offset directions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="63"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_c_p_definitions_8h_1a1fd13c7bf8a44726bfba899396e38c01" prot="public" static="no">
+        <type>enum <ref refid="_c_p_definitions_8h_1a3adf3cb70b2d1b2d3aaa2bc8950192b2" kindref="member">_CPConstraint</ref></type>
+        <definition>typedef enum _CPConstraint  CPConstraint</definition>
+        <argsstring></argsstring>
+        <name>CPConstraint</name>
+        <briefdescription>
+<para>Enumeration of constraint types used in spring and strut model. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="71"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_c_p_definitions_8h_1abb5c5c19d20df9becf4bbdcb1e1ac8e0" prot="public" static="no">
+        <type>struct <ref refid="struct___c_p_constraints" kindref="compound">_CPConstraints</ref></type>
+        <definition>typedef struct _CPConstraints  CPConstraints</definition>
+        <argsstring></argsstring>
+        <name>CPConstraints</name>
+        <briefdescription>
+<para>Constraints for a relative position. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="79"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_c_p_definitions_8h_1a8b8cfe4dcb527f93eb8308c49aa81ecb" prot="public" static="no">
+        <type>enum <ref refid="_c_p_definitions_8h_1ad04917517d00fa89f0487ce600ac4df4" kindref="member">_CPRectAnchor</ref></type>
+        <definition>typedef enum _CPRectAnchor  CPRectAnchor</definition>
+        <argsstring></argsstring>
+        <name>CPRectAnchor</name>
+        <briefdescription>
+<para>Locations around the edge of a rectangle. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="94"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_c_p_definitions_8h_1aaa8ec15e6455ad3dad5c033ff1feff1b" prot="public" static="no">
+        <type>enum <ref refid="_c_p_definitions_8h_1ae549bdd0509b9855f0a3d9acd80840fe" kindref="member">_CPAlignment</ref></type>
+        <definition>typedef enum _CPAlignment  CPAlignment</definition>
+        <argsstring></argsstring>
+        <name>CPAlignment</name>
+        <briefdescription>
+<para>Label and constraint alignment constants. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h" line="106"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/laurent/Projects/GoogleCode/CorePlot/framework/Source/CPDefinitions.h"/>
+  </compounddef>
+</doxygen>
