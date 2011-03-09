@@ -73,16 +73,11 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
             {
                 XElement root = XElement.Load(xmlTextReader);
 
-                // Extract name
-                String name = (from el in root.Descendants("compoundname")
-                               select el.Value).FirstOrDefault();
-                classEntity.Name = name;
-
                 // Extract inheritance
                 IEnumerable<String> conformsElements = (from el in root.Descendants("basecompoundref")
                                                         select el.Value);
                 List<String> protocols = new List<string>();
-                foreach (var conformsElement in conformsElements)
+                foreach (string conformsElement in conformsElements)
                 {
                     if (conformsElement.StartsWith("<"))
                     {
@@ -116,7 +111,6 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
                 this.ExtractEnumerations(classEntity, root);
             }
 
-            /*
             // Extract getter and search for setter
             List<String> notGetterMethods = this.Settings["NotGetterMethods"].Split(',').ToList();
             List<MethodEntity> methodModels = new List<MethodEntity>(classEntity.Methods);
@@ -129,7 +123,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
 
                 classEntity.Methods.Remove(methodModel);
                 MethodEntity getter = methodModel;
-                
+
                 MethodEntity setter = classEntity.Methods.Find(m => String.Equals("Set" + getter.Name, m.Name) && String.Equals(m.ReturnType, "void"));
                 if (setter == null)
                 {
@@ -139,6 +133,8 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
                 {
                     classEntity.Methods.Remove(setter);
                 }
+
+                Console.WriteLine("Converting " + getter.Name + " to property");
 
                 PropertyEntity property = new PropertyEntity();
                 property.Name = getter.Name;
@@ -151,7 +147,6 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
 
                 classEntity.Properties.Add(property);
             }
-             */
 
             // Ensure that availability is set on entity.
             entity.AdjustAvailability();
@@ -159,13 +154,17 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
 
         protected void ExtractProperties(ClassEntity classEntity, XElement root)
         {
+            // Extract name
+            String compoundname = (from el in root.Descendants("compoundname")
+                                   select el.Value).FirstOrDefault();
+
             IEnumerable<XElement> memberDefs = (from el in root.Descendants("memberdef")
-                                               where el.Attribute("kind").Value == "property"
-                                               select el);
+                                                where el.Attribute("kind").Value == "property"
+                                                select el);
             foreach (XElement memberDef in memberDefs)
             {
                 String definition = memberDef.Element("definition").Value;
-                if (!definition.Contains(classEntity.Name + "::"))
+                if (!definition.Contains(compoundname + "::"))
                 {
                     continue;
                 }
@@ -176,13 +175,17 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
 
         protected void ExtractMethods(ClassEntity classEntity, XElement root)
         {
+            // Extract name
+            String compoundname = (from el in root.Descendants("compoundname")
+                                   select el.Value).FirstOrDefault();
+
             IEnumerable<XElement> memberDefs = (from el in root.Descendants("memberdef")
                                                 where el.Attribute("kind").Value == "function"
                                                 select el);
             foreach (XElement memberDef in memberDefs)
             {
                 String definition = memberDef.Element("definition").Value;
-                if (!definition.Contains(classEntity.Name + "::"))
+                if (!definition.Contains(compoundname + "::"))
                 {
                     continue;
                 }

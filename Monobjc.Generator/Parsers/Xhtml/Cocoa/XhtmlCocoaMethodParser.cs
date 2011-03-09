@@ -159,7 +159,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
                 IEnumerable<String> documentations = (from el in methodElement.Elements("div").Elements("p")
                                                       where (String) el.Parent.Attribute("class") == "return_value"
                                                       select el.Value.TrimAll());
-                methodEntity.ReturnsDocumentation = String.Join(String.Empty, documentations.ToArray());
+                methodEntity.ReturnsDocumentation = String.Join(" ", documentations.ToArray());
             }
 
             // Get the availability

@@ -20,10 +20,10 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Xml.Linq;
 using Monobjc.Tools.Generator.Model.Entities;
 using Monobjc.Tools.Generator.Utilities;
-using System.Text;
 
 namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
 {
@@ -59,24 +59,46 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
             String name = propertyElement.Element("name").Value;
 
             // Rebuild the signature from the documentation
-            String returnType = propertyElement.Element("type").Value;
+            String returnType = propertyElement.Element("type").Value.TrimAll();
             bool isStatic = (propertyElement.Attribute("static").Value == "yes");
             bool readable = (propertyElement.Attribute("readable").Value == "yes");
             bool writable = (propertyElement.Attribute("writable").Value == "yes");
-            String accessor = propertyElement.Attribute("accessor").Value;
+            String accessor = propertyElement.Attribute("accessor").Value.TrimAll();
+            ;
+
+            // Remove weak modifier
+            if (returnType.StartsWith("__weak"))
+            {
+                returnType = returnType.Replace("__weak", String.Empty).TrimAll();
+            }
 
             // Extract brief description
             IEnumerable<XElement> abstractElements = propertyElement.Element("briefdescription").Elements("para");
 
+            // Extract for detailed description
+            IEnumerable<XElement> detailsElements = (from el in propertyElement.Element("detaileddescription").Elements("para")
+                                                     where !el.Elements("simplesect").Any()
+                                                           && el.Elements("parameterlist").Any()
+                                                           && el.Elements("xrefsect").Any()
+                                                     select el);
+
+            // Add brief description
+            List<String> summary = new List<String>();
+            foreach (XElement paragraph in abstractElements)
+            {
+                summary.Add(paragraph.Value.TrimAll());
+            }
+            foreach (XElement paragraph in detailsElements)
+            {
+                summary.Add(paragraph.Value.TrimAll());
+            }
+
+            // Recreate the signature
             StringBuilder signatureBuilder = new StringBuilder();
             signatureBuilder.Append("@property (nonatomic");
             if (readable)
             {
-                if (writable)
-                {
-                    signatureBuilder.Append(",readwrite");
-                }
-                else
+                if (!writable)
                 {
                     signatureBuilder.Append(",readonly");
                 }
@@ -87,12 +109,6 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
             signatureBuilder.AppendFormat("{0} {1};", returnType, name);
 
             String signature = signatureBuilder.ToString();
-
-            List<String> summary = new List<String>();
-            foreach (XElement paragraph in abstractElements)
-            {
-                summary.Add(paragraph.Value);
-            }
 
             String getterSelector = name;
 

@@ -48,93 +48,49 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
             throw new NotImplementedException();
         }
 
-        public EnumerationEntity Parse(String name, IEnumerable<XElement> elements)
+        public EnumerationEntity Parse(XElement enumerationElement)
         {
             EnumerationEntity enumerationEntity = new EnumerationEntity();
 
-            XElement declarationElement = (from el in elements
-                                           where el.Name == "div" &&
-                                                 el.Attribute("class") != null &&
-                                                 el.Attribute("class").Value == "declaration_indent"
-                                           select el).FirstOrDefault();
-
-            XElement parameterElement = (from el in elements
-                                         where el.Name == "div" &&
-                                               el.Attribute("class") != null &&
-                                               el.Attribute("class").Value == "param_indent"
-                                         select el).FirstOrDefault();
-
-            //XElement discussionElement = (from el in elements
-            //                              where el.Name == "h5" && el.Value.Trim() == "Discussion"
-            //                              select el).FirstOrDefault();
-
-            XElement availabilityElement = (from el in elements
-                                            let term = el.Descendants("dt").FirstOrDefault()
-                                            let definition = el.Descendants("dd").FirstOrDefault()
-                                            where el.Name == "dl" &&
-                                                  term != null &&
-                                                  term.Value.Trim() == "Availability"
-                                            select definition).FirstOrDefault();
-
-            String declaration = declarationElement.TrimAll();
-            String type = "NOTYPE";
-            String values = String.Empty;
-
-            bool result = this.SplitEnumeration(declaration, ref name, ref type, ref values);
-            if (!result)
-            {
-                return null;
-            }
-
-            enumerationEntity.Name = name;
-            enumerationEntity.BaseType = type;
+            enumerationEntity.Name = enumerationElement.Element("name").Value.TrimAll();
+            enumerationEntity.BaseType = "MISSING";
             enumerationEntity.Namespace = "MISSING";
 
-            // Extract abstract
-            IEnumerable<XElement> abstractElements = elements.SkipWhile(el => el.Name != "p").TakeWhile(el => el.Name == "p");
-            foreach (XElement element in abstractElements)
+            // Elements for brief description
+            IEnumerable<XElement> abstractElements = enumerationElement.Element("briefdescription").Elements("para");
+
+            // Extract for detailed description
+            IEnumerable<XElement> detailsElements = (from el in enumerationElement.Element("detaileddescription").Elements("para")
+                                                     where !el.Elements("simplesect").Any()
+                                                           && el.Elements("parameterlist").Any()
+                                                           && el.Elements("xrefsect").Any()
+                                                     select el);
+
+            // Elements for values
+            IEnumerable<XElement> enumerationValueElements = enumerationElement.Elements("enumvalue");
+
+            // Add brief description
+            foreach (XElement paragraph in abstractElements)
             {
-                String line = element.TrimAll();
-                if (!String.IsNullOrEmpty(line))
-                {
-                    enumerationEntity.Summary.Add(line);
-                }
+                enumerationEntity.Summary.Add(paragraph.Value.TrimAll());
+            }
+            foreach (XElement paragraph in detailsElements)
+            {
+                enumerationEntity.Summary.Add(paragraph.Value.TrimAll());
             }
 
-            //// Extract discussion
-            //if (discussionElement != null)
-            //{
-            //    IEnumerable<XElement> discussionElements = discussionElement.ElementsAfterSelf().TakeWhile(el => el.Name == "p");
-            //    foreach (XElement element in discussionElements)
-            //    {
-            //        String line = element.TrimAll();
-            //        if (!String.IsNullOrEmpty(line))
-            //        {
-            //            enumerationEntity.Summary.Add(line);
-            //        }
-            //    }
-            //}
-
-            // Parse the values
-            string[] pairs = values.Split(',');
-            foreach (string pair in pairs)
+            // Add each value
+            foreach (XElement enumerationValueElement in enumerationValueElements)
             {
-                if (String.Equals(pair.TrimAll(), String.Empty))
+                String key = enumerationValueElement.Element("name").Value.TrimAll();
+                String value;
+                if (enumerationValueElement.Element("initializer") != null)
                 {
-                    continue;
-                }
-
-                String key;
-                String value = String.Empty;
-                if (pair.IndexOf('=') != -1)
-                {
-                    string[] parts = pair.Split('=');
-                    key = parts[0].Trim();
-                    value = parts[1].Trim();
+                    value = enumerationValueElement.Element("initializer").Value.TrimAll();
                 }
                 else
                 {
-                    key = pair.Trim();
+                    value = String.Empty;
                 }
 
                 // Add a new value
@@ -142,41 +98,24 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
                 enumerationValueEntity.Name = key;
                 enumerationValueEntity.Value = value;
                 enumerationEntity.Values.Add(enumerationValueEntity);
-            }
 
-            XElement termList = parameterElement != null ? parameterElement.Descendants("dl").FirstOrDefault() : null;
-            if (termList != null)
-            {
-                IEnumerable<XElement> dtList = from el in termList.Elements("dt") select el;
-                IEnumerable<XElement> ddList = from el in termList.Elements("dd") select el;
+                // Elements for brief description
+                abstractElements = enumerationValueElement.Element("briefdescription").Elements("para");
 
-                if (dtList.Count() == ddList.Count())
+                // Add brief description
+                foreach (XElement paragraph in abstractElements)
                 {
-                    // Iterate over definitions
-                    for (int i = 0; i < dtList.Count(); i++)
-                    {
-                        String term = dtList.ElementAt(i).TrimAll();
-                        //String summary = ddList.ElementAt(i).TrimAll();
-                        IEnumerable<String> summaries = ddList.ElementAt(i).Elements("p").Select(p => p.Value.TrimAll());
-
-                        // Find the parameter
-                        EnumerationValueEntity enumerationValueEntity = enumerationEntity.Values.Find(p => String.Equals(p.Name, term));
-                        if (enumerationValueEntity != null)
-                        {
-                            foreach (string sum in summaries)
-                            {
-                                enumerationValueEntity.Summary.Add(sum);
-                            }
-                        }
-                    }
+                    enumerationValueEntity.Summary.Add(paragraph.Value.TrimAll());
                 }
             }
 
+            /*
             // Get the availability
             if (availabilityElement != null)
             {
                 enumerationEntity.MinAvailability = CommentHelper.ExtractAvailability(availabilityElement.TrimAll());
             }
+             */
 
             return enumerationEntity;
         }

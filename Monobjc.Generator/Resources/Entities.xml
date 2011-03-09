@@ -1042,19 +1042,19 @@
       <Class name="NSMenuItem">
         <Patch>Properties[State].Type=NSCellStateValue</Patch>
         <Replace type="Generated">
-        	<Source><![CDATA[{
+          <Source><![CDATA[{
             get { return ObjectiveCRuntime.SendMessage<bool>(this, "hasSubmenu"); }
             set { ObjectiveCRuntime.SendMessage(this, "setSubmenu:", value); }
         }]]></Source>
-        	<With><![CDATA[{
+          <With><![CDATA[{
             get { return ObjectiveCRuntime.SendMessage<bool>(this, "hasSubmenu"); }
         }]]></With>
         </Replace>
         <Replace type="Generated">
-        	<Source><![CDATA[{
+          <Source><![CDATA[{
             get { return ObjectiveCRuntime.SendMessage<NSMenu>(this, "submenu"); }
         }]]></Source>
-        	<With><![CDATA[{
+          <With><![CDATA[{
             get { return ObjectiveCRuntime.SendMessage<NSMenu>(this, "submenu"); }
             set { ObjectiveCRuntime.SendMessage(this, "setSubmenu:", value); }
         }]]></With>
@@ -2409,7 +2409,7 @@ enum {]]>
         </Replace>
       </Class>
       <Class name="DRStatus">
-	    <Patch>BaseType=NSObject</Patch>
+      <Patch>BaseType=NSObject</Patch>
       </Class>
       <Class name="DRTrack">
       </Class>
@@ -5136,89 +5136,8 @@ enum
   <!--
   User Frameworks
   -->
-  <Framework name="CorePlot" usings="Foundation,AppKit" assembly="Monobjc.CorePlot">
-    <Types>
-      <Type name="CorePlot_Definitions" />
-      <Type name="CPDecimalNumberValueTransformer_Definitions" />
-      <Type name="CPLayerHostingView_Definitions" />
-      <Type name="CPPlatformSpecificCategories_Definitions" />
-      <Type name="CPPlatformSpecificDefines_Definitions" />
-      <Type name="CPPlatformSpecificFunctions_Definitions" />
-      <Type name="CPTextStylePlatformSpecific_Definitions" />
-      <Type name="_CPFillColor_Definitions" />
-      <Type name="_CPFillGradient_Definitions" />
-      <Type name="_CPFillImage_Definitions" />
-      <Type name="CPAnnotation_Definitions" />
-      <Type name="CPAnnotationHostLayer_Definitions" />
-      <Type name="CPAxis_Definitions" />
-      <Type name="CPAxisLabel_Definitions" />
-      <Type name="CPAxisLabelGroup_Definitions" />
-      <Type name="CPAxisSet_Definitions" />
-      <Type name="CPAxisTitle_Definitions" />
-      <Type name="CPBarPlot_Definitions" />
-      <Type name="CPBorderedLayer_Definitions" />
-      <Type name="CPColor_Definitions" />
-      <Type name="CPColorSpace_Definitions" />
-      <Type name="CPConstrainedPosition_Definitions" />
-      <Type name="CPDarkGradientTheme_Definitions" />
-      <Type name="CPDefinitions_Definitions" />
-      <Type name="CPDerivedXYGraph_Definitions" />
-      <Type name="CPExceptions_Definitions" />
-      <Type name="CPFill_Definitions" />
-      <Type name="CPGradient_Definitions" />
-      <Type name="CPGraph_Definitions" />
-      <Type name="CPGridLineGroup_Definitions" />
-      <Type name="CPGridLines_Definitions" />
-      <Type name="CPImage_Definitions" />
-      <Type name="CPLayer_Definitions" />
-      <Type name="CPLayerAnnotation_Definitions" />
-      <Type name="CPLayoutManager_Definitions" />
-      <Type name="CPLimitBand_Definitions" />
-      <Type name="CPLineStyle_Definitions" />
-      <Type name="CPMutableLineStyle_Definitions" />
-      <Type name="CPMutableNumericData+TypeConversion_Definitions" />
-      <Type name="CPMutableNumericData_Definitions" />
-      <Type name="CPMutableTextStyle_Definitions" />
-      <Type name="CPNumericData+TypeConversion_Definitions" />
-      <Type name="CPNumericData_Definitions" />
-      <Type name="CPNumericDataType_Definitions" />
-      <Type name="CPPathExtensions_Definitions" />
-      <Type name="CPPieChart_Definitions" />
-      <Type name="CPPlainBlackTheme_Definitions" />
-      <Type name="CPPlainWhiteTheme_Definitions" />
-      <Type name="CPPlot_Definitions" />
-      <Type name="CPPlotArea_Definitions" />
-      <Type name="CPPlotAreaFrame_Definitions" />
-      <Type name="CPPlotGroup_Definitions" />
-      <Type name="CPPlotRange_Definitions" />
-      <Type name="CPPlotSpace_Definitions" />
-      <Type name="CPPlotSpaceAnnotation_Definitions" />
-      <Type name="CPPlotSymbol_Definitions" />
-      <Type name="CPPolarPlotSpace_Definitions" />
-      <Type name="CPRangePlot_Definitions" />
-      <Type name="CPResponder_Definitions" />
-      <Type name="CPScatterPlot_Definitions" />
-      <Type name="CPSlateTheme_Definitions" />
-      <Type name="CPStocksTheme_Definitions" />
-      <Type name="CPTextLayer_Definitions" />
-      <Type name="CPTextStyle_Definitions" />
-      <Type name="CPTheme_Definitions" />
-      <Type name="CPTimeFormatter_Definitions" />
-      <Type name="CPTradingRangePlot_Definitions" />
-      <Type name="CPUtilities_Definitions" />
-      <Type name="CPXYAxis_Definitions" />
-      <Type name="CPXYAxisSet_Definitions" />
-      <Type name="CPXYGraph_Definitions" />
-      <Type name="CPXYPlotSpace_Definitions" />
-      <Type name="CPXYTheme_Definitions" />
-      <Type name="NSDecimalNumberExtensions_Definitions" />
-      <Type name="NSExceptionExtensions_Definitions" />
-      <Type name="NSNumberExtensions_Definitions" />
-    </Types>
+  <Framework name="CorePlot" usings="Foundation,AppKit,QuartzCore" assembly="Monobjc.CorePlot">
     <Classes>
-      <Class name="_CPFillColor" />
-      <Class name="_CPFillGradient" />
-      <Class name="_CPFillImage" />
       <Class name="CPAnnotation" />
       <Class name="CPAnnotationHostLayer" />
       <Class name="CPAxis" />
@@ -5233,11 +5152,9 @@ enum
       <Class name="CPConstrainedPosition" />
       <Class name="CPDarkGradientTheme" />
       <Class name="CPDecimalNumberValueTransformer" />
-      <Class name="CPDerivedXYGraph" />
       <Class name="CPFill" />
       <Class name="CPGradient" />
       <Class name="CPGraph" />
-      <Class name="CPGridLineGroup" />
       <Class name="CPGridLines" />
       <Class name="CPImage" />
       <Class name="CPLayer" />
@@ -5320,6 +5237,216 @@ enum
       <Class name="NSString_CPTextStyleExtensions">
         <Patch>AdditionFor=NSString</Patch>
       </Class>
+      <Class name="CorePlot_Definitions">
+        <Patch>AdditionFor=CorePlot</Patch>
+      </Class>
+      <Class name="CPAnnotation_Definitions">
+        <Patch>AdditionFor=CPAnnotation</Patch>
+      </Class>
+      <Class name="CPAnnotationHostLayer_Definitions">
+        <Patch>AdditionFor=CPAnnotationHostLayer</Patch>
+      </Class>
+      <Class name="CPAxis_Definitions">
+        <Patch>AdditionFor=CPAxis</Patch>
+      </Class>
+      <Class name="CPAxisLabel_Definitions">
+        <Patch>AdditionFor=CPAxisLabel</Patch>
+      </Class>
+      <Class name="CPAxisLabelGroup_Definitions">
+        <Patch>AdditionFor=CPAxisLabelGroup</Patch>
+      </Class>
+      <Class name="CPAxisSet_Definitions">
+        <Patch>AdditionFor=CPAxisSet</Patch>
+      </Class>
+      <Class name="CPAxisTitle_Definitions">
+        <Patch>AdditionFor=CPAxisTitle</Patch>
+      </Class>
+      <Class name="CPBarPlot_Definitions">
+        <Patch>AdditionFor=CPBarPlot</Patch>
+      </Class>
+      <Class name="CPBorderedLayer_Definitions">
+        <Patch>AdditionFor=CPBorderedLayer</Patch>
+      </Class>
+      <Class name="CPColor_Definitions">
+        <Patch>AdditionFor=CPColor</Patch>
+      </Class>
+      <Class name="CPColorSpace_Definitions">
+        <Patch>AdditionFor=CPColorSpace</Patch>
+      </Class>
+      <Class name="CPConstrainedPosition_Definitions">
+        <Patch>AdditionFor=CPConstrainedPosition</Patch>
+      </Class>
+      <Class name="CPDarkGradientTheme_Definitions">
+        <Patch>AdditionFor=CPDarkGradientTheme</Patch>
+      </Class>
+      <Class name="CPDecimalNumberValueTransformer_Definitions">
+        <Patch>AdditionFor=CPDecimalNumberValueTransformer</Patch>
+      </Class>
+      <Class name="CPDefinitions_Definitions">
+        <Patch>AdditionFor=CPDefinitions</Patch>
+      </Class>
+      <Class name="CPExceptions_Definitions">
+        <Patch>AdditionFor=CPExceptions</Patch>
+      </Class>
+      <Class name="CPFill_Definitions">
+        <Patch>AdditionFor=CPFill</Patch>
+      </Class>
+      <Class name="CPGradient_Definitions">
+        <Patch>AdditionFor=CPGradient</Patch>
+      </Class>
+      <Class name="CPGraph_Definitions">
+        <Patch>AdditionFor=CPGraph</Patch>
+      </Class>
+      <Class name="CPGridLines_Definitions">
+        <Patch>AdditionFor=CPGridLines</Patch>
+      </Class>
+      <Class name="CPImage_Definitions">
+        <Patch>AdditionFor=CPImage</Patch>
+      </Class>
+      <Class name="CPLayer_Definitions">
+        <Patch>AdditionFor=CPLayer</Patch>
+      </Class>
+      <Class name="CPLayerAnnotation_Definitions">
+        <Patch>AdditionFor=CPLayerAnnotation</Patch>
+      </Class>
+      <Class name="CPLayerHostingView_Definitions">
+        <Patch>AdditionFor=CPLayerHostingView</Patch>
+      </Class>
+      <Class name="CPLayoutManager_Definitions">
+        <Patch>AdditionFor=CPLayoutManager</Patch>
+      </Class>
+      <Class name="CPLimitBand_Definitions">
+        <Patch>AdditionFor=CPLimitBand</Patch>
+      </Class>
+      <Class name="CPLineStyle_Definitions">
+        <Patch>AdditionFor=CPLineStyle</Patch>
+      </Class>
+      <Class name="CPMutableLineStyle_Definitions">
+        <Patch>AdditionFor=CPMutableLineStyle</Patch>
+      </Class>
+      <Class name="CPMutableNumericData_TypeConversion_Definitions">
+        <Patch>AdditionFor=CPMutableNumericData_TypeConversion</Patch>
+      </Class>
+      <Class name="CPMutableNumericData_Definitions">
+        <Patch>AdditionFor=CPMutableNumericData</Patch>
+      </Class>
+      <Class name="CPMutableTextStyle_Definitions">
+        <Patch>AdditionFor=CPMutableTextStyle</Patch>
+      </Class>
+      <Class name="CPNumericData_TypeConversion_Definitions">
+        <Patch>AdditionFor=CPNumericData_TypeConversion</Patch>
+      </Class>
+      <Class name="CPNumericData_Definitions">
+        <Patch>AdditionFor=CPNumericData</Patch>
+      </Class>
+      <Class name="CPNumericDataType_Definitions">
+        <Patch>AdditionFor=CPNumericDataType</Patch>
+      </Class>
+      <Class name="CPPathExtensions_Definitions">
+        <Patch>AdditionFor=CPPathExtensions</Patch>
+      </Class>
+      <Class name="CPPieChart_Definitions">
+        <Patch>AdditionFor=CPPieChart</Patch>
+      </Class>
+      <Class name="CPPlainBlackTheme_Definitions">
+        <Patch>AdditionFor=CPPlainBlackTheme</Patch>
+      </Class>
+      <Class name="CPPlainWhiteTheme_Definitions">
+        <Patch>AdditionFor=CPPlainWhiteTheme</Patch>
+      </Class>
+      <Class name="CPPlatformSpecificCategories_Definitions">
+        <Patch>AdditionFor=CPPlatformSpecificCategories</Patch>
+      </Class>
+      <Class name="CPPlatformSpecificDefines_Definitions">
+        <Patch>AdditionFor=CPPlatformSpecificDefines</Patch>
+      </Class>
+      <Class name="CPPlatformSpecificFunctions_Definitions">
+        <Patch>AdditionFor=CPPlatformSpecificFunctions</Patch>
+      </Class>
+      <Class name="CPPlot_Definitions">
+        <Patch>AdditionFor=CPPlot</Patch>
+      </Class>
+      <Class name="CPPlotArea_Definitions">
+        <Patch>AdditionFor=CPPlotArea</Patch>
+      </Class>
+      <Class name="CPPlotAreaFrame_Definitions">
+        <Patch>AdditionFor=CPPlotAreaFrame</Patch>
+      </Class>
+      <Class name="CPPlotGroup_Definitions">
+        <Patch>AdditionFor=CPPlotGroup</Patch>
+      </Class>
+      <Class name="CPPlotRange_Definitions">
+        <Patch>AdditionFor=CPPlotRange</Patch>
+      </Class>
+      <Class name="CPPlotSpace_Definitions">
+        <Patch>AdditionFor=CPPlotSpace</Patch>
+      </Class>
+      <Class name="CPPlotSpaceAnnotation_Definitions">
+        <Patch>AdditionFor=CPPlotSpaceAnnotation</Patch>
+      </Class>
+      <Class name="CPPlotSymbol_Definitions">
+        <Patch>AdditionFor=CPPlotSymbol</Patch>
+      </Class>
+      <Class name="CPPolarPlotSpace_Definitions">
+        <Patch>AdditionFor=CPPolarPlotSpace</Patch>
+      </Class>
+      <Class name="CPRangePlot_Definitions">
+        <Patch>AdditionFor=CPRangePlot</Patch>
+      </Class>
+      <Class name="CPResponder_Definitions">
+        <Patch>AdditionFor=CPResponder</Patch>
+      </Class>
+      <Class name="CPScatterPlot_Definitions">
+        <Patch>AdditionFor=CPScatterPlot</Patch>
+      </Class>
+      <Class name="CPSlateTheme_Definitions">
+        <Patch>AdditionFor=CPSlateTheme</Patch>
+      </Class>
+      <Class name="CPStocksTheme_Definitions">
+        <Patch>AdditionFor=CPStocksTheme</Patch>
+      </Class>
+      <Class name="CPTextLayer_Definitions">
+        <Patch>AdditionFor=CPTextLayer</Patch>
+      </Class>
+      <Class name="CPTextStyle_Definitions">
+        <Patch>AdditionFor=CPTextStyle</Patch>
+      </Class>
+      <Class name="CPTheme_Definitions">
+        <Patch>AdditionFor=CPTheme</Patch>
+      </Class>
+      <Class name="CPTimeFormatter_Definitions">
+        <Patch>AdditionFor=CPTimeFormatter</Patch>
+      </Class>
+      <Class name="CPTradingRangePlot_Definitions">
+        <Patch>AdditionFor=CPTradingRangePlot</Patch>
+      </Class>
+      <Class name="CPUtilities_Definitions">
+        <Patch>AdditionFor=CPUtilities</Patch>
+      </Class>
+      <Class name="CPXYAxis_Definitions">
+        <Patch>AdditionFor=CPXYAxis</Patch>
+      </Class>
+      <Class name="CPXYAxisSet_Definitions">
+        <Patch>AdditionFor=CPXYAxisSet</Patch>
+      </Class>
+      <Class name="CPXYGraph_Definitions">
+        <Patch>AdditionFor=CPXYGraph</Patch>
+      </Class>
+      <Class name="CPXYPlotSpace_Definitions">
+        <Patch>AdditionFor=CPXYPlotSpace</Patch>
+      </Class>
+      <Class name="CPXYTheme_Definitions">
+        <Patch>AdditionFor=CPXYTheme</Patch>
+      </Class>
+      <Class name="NSDecimalNumberExtensions_Definitions">
+        <Patch>AdditionFor=NSDecimalNumberExtensions</Patch>
+      </Class>
+      <Class name="NSExceptionExtensions_Definitions">
+        <Patch>AdditionFor=NSExceptionExtensions</Patch>
+      </Class>
+      <Class name="NSNumberExtensions_Definitions">
+        <Patch>AdditionFor=NSNumberExtensions</Patch>
+      </Class>
     </Classes>
     <Protocols>
       <Protocol name="CPAxisDelegate" />
@@ -5341,7 +5468,8 @@ enum
       <Structure name="CPNumericDataType" />
       <Structure name="CPRGBAColor" />
     </Structures>
-  </Framework>
+  </Framework> 
+  
   <Framework name="Growl" usings="Foundation,AppKit" assembly="Monobjc.Growl">
     <Classes>
       <Class name="GrowlApplicationBridge">
