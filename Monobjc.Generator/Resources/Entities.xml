@@ -5146,7 +5146,7 @@ enum
   <!--
   User Frameworks
   -->
-  <Framework name="CorePlot" usings="Foundation,AppKit,QuartzCore" assembly="Monobjc.CorePlot">
+  <Framework name="CorePlot" usings="Foundation,AppKit,QuartzCore,ApplicationServices" assembly="Monobjc.CorePlot">
     <Classes>
       <Class name="CPAnnotation" />
       <Class name="CPAnnotationHostLayer" />
@@ -5465,7 +5465,9 @@ enum
       <Protocol name="CPLayoutManager" />
       <Protocol name="CPPieChartDataSource" />
       <Protocol name="CPPieChartDelegate" />
-      <Protocol name="CPPlotDataSource" />
+      <Protocol name="CPPlotDataSource">
+        <Patch>Methods[DoublesForPlotFieldRecordIndexRange].ReturnType=IntPtr</Patch>
+      </Protocol>
       <Protocol name="CPPlotSpaceDelegate" />
       <Protocol name="CPResponder" />
       <Protocol name="CPScatterPlotDataSource" />
@@ -5482,9 +5484,48 @@ enum
   <Framework name="Growl" usings="Foundation,AppKit" assembly="Monobjc.Growl">
     <Classes>
       <Class name="GrowlApplicationBridge">
+        <Patch>Properties[GrowlDelegate].Type=Id</Patch>
       </Class>
       <Class name="GrowlDefines_Definitions">
+        <Replace type="Xhtml">
+          <Source><![CDATA[XSTR(]]></Source>
+          <With><![CDATA[new NSString(]]></With>
+        </Replace>
         <Patch>AdditionFor=GrowlApplicationBridge</Patch>
+        <Patch>Constants[XSTR].Generate=false</Patch>
+        <Patch>Constants[STRING_TYPE].Generate=false</Patch>
+        <Patch>Constants[GROWL_APP_NAME].Type=NSString</Patch>
+        <Patch>Constants[GROWL_APP_ID].Type=NSString</Patch>
+        <Patch>Constants[GROWL_APP_ICON].Type=NSString</Patch>
+        <Patch>Constants[GROWL_NOTIFICATIONS_DEFAULT].Type=NSString</Patch>
+        <Patch>Constants[GROWL_NOTIFICATIONS_ALL].Type=NSString</Patch>
+        <Patch>Constants[GROWL_NOTIFICATIONS_HUMAN_READABLE_NAMES].Type=NSString</Patch>
+        <Patch>Constants[GROWL_NOTIFICATIONS_DESCRIPTIONS].Type=NSString</Patch>
+        <Patch>Constants[GROWL_TICKET_VERSION].Type=NSString</Patch>
+        <Patch>Constants[GROWL_NOTIFICATION_NAME].Type=NSString</Patch>
+        <Patch>Constants[GROWL_NOTIFICATION_TITLE].Type=NSString</Patch>
+        <Patch>Constants[GROWL_NOTIFICATION_DESCRIPTION].Type=NSString</Patch>
+        <Patch>Constants[GROWL_NOTIFICATION_ICON].Type=NSString</Patch>
+        <Patch>Constants[GROWL_NOTIFICATION_APP_ICON].Type=NSString</Patch>
+        <Patch>Constants[GROWL_NOTIFICATION_PRIORITY].Type=NSString</Patch>
+        <Patch>Constants[GROWL_NOTIFICATION_STICKY].Type=NSString</Patch>
+        <Patch>Constants[GROWL_NOTIFICATION_CLICK_CONTEXT].Type=NSString</Patch>
+        <Patch>Constants[GROWL_DISPLAY_PLUGIN].Type=NSString</Patch>
+        <Patch>Constants[GROWL_NOTIFICATION_IDENTIFIER].Type=NSString</Patch>
+        <Patch>Constants[GROWL_APP_PID].Type=NSString</Patch>
+        <Patch>Constants[GROWL_NOTIFICATION_PROGRESS].Type=NSString</Patch>
+        <Patch>Constants[GROWL_APP_REGISTRATION].Type=NSString</Patch>
+        <Patch>Constants[GROWL_APP_REGISTRATION_CONF].Type=NSString</Patch>
+        <Patch>Constants[GROWL_NOTIFICATION].Type=NSString</Patch>
+        <Patch>Constants[GROWL_SHUTDOWN].Type=NSString</Patch>
+        <Patch>Constants[GROWL_PING].Type=NSString</Patch>
+        <Patch>Constants[GROWL_PONG].Type=NSString</Patch>
+        <Patch>Constants[GROWL_IS_READY].Type=NSString</Patch>
+        <Patch>Constants[GROWL_NOTIFICATION_CLICKED].Type=NSString</Patch>
+        <Patch>Constants[GROWL_NOTIFICATION_TIMED_OUT].Type=NSString</Patch>
+        <Patch>Constants[GROWL_KEY_CLICKED_CONTEXT].Type=NSString</Patch>
+        <Patch>Constants[GROWL_REG_DICT_EXTENSION].Type=NSString</Patch>
+        <Patch>Constants[GROWL_POSITION_PREFERENCE_KEY].Type=NSString</Patch>
       </Class>
     </Classes>
     <Protocols>
@@ -5496,19 +5537,54 @@ enum
   </Framework>
   <Framework name="SM2DGraphView" usings="Foundation,AppKit" assembly="Monobjc.SM2DGraphView">
     <Classes>
-      <Class name="SM2DGraphView" />
-      <Class name="SMPieChartView" />
+      <Class name="SM2DGraphView">
+        <Patch>Methods[SetLabelForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
+        <Patch>Methods[LabelForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
+        <Patch>Methods[SetNumberOfTickMarksForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
+        <Patch>Methods[NumberOfTickMarksForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
+        <Patch>Methods[SetNumberOfMinorTickMarksForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
+        <Patch>Methods[NumberOfMinorTickMarksForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
+        <Patch>Methods[SetTickMarkPositionForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
+        <Patch>Methods[TickMarkPositionForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
+        <Patch>Methods[SetAxisInsetForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
+        <Patch>Methods[AxisInsetForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
+        <Patch>Methods[SetDrawsLineAtZeroForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
+        <Patch>Methods[DrawsLineAtZeroForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
+        <Patch>Constants[delegate].Generate=false</Patch>
+        <Patch>Constants[dataSource].Generate=false</Patch>
+        <Patch>Constants[_SM2DGraphView_Private].Generate=false</Patch>
+      </Class>
+      <Class name="SMPieChartView">
+        <Patch>Properties[LabelPosition].Type=SMLabelPosition</Patch>
+        <Patch>Constants[delegate].Generate=false</Patch>
+        <Patch>Constants[dataSource].Generate=false</Patch>
+        <Patch>Constants[_SMPieChartView_Private].Generate=false</Patch>
+      </Class>
       <Class name="SM2DGraphView_Definitions">
         <Patch>AdditionFor=SM2DGraphView</Patch>
+        <Patch>Constants[SM2D_EPSILON].Generate=false</Patch>
+        <Patch>Enumerations[SM2DGraphLineDashStyleEnum].Name=SM2DGraphLineDashStyle</Patch>
+        <Patch>Enumerations[SM2DGraphLineDashStyle].BaseType=int</Patch>
+        <Patch>Enumerations[SM2DGraphSymbolTypeEnum].Name=SM2DGraphSymbolType</Patch>
+        <Patch>Enumerations[SM2DGraphSymbolType].BaseType=int</Patch>
+        <Patch>Enumerations[SM2DGraphLineWidthEnum].Name=SM2DGraphLineWidth</Patch>
+        <Patch>Enumerations[SM2DGraphLineWidth].BaseType=int</Patch>
+        <Patch>Enumerations[SM2DGraphAxisEnum].Name=SM2DGraphAxis</Patch>
+        <Patch>Enumerations[SM2DGraphAxis].BaseType=int</Patch>
       </Class>
       <Class name="SMPieChartView_Definitions">
         <Patch>AdditionFor=SMPieChartView</Patch>
+        <Patch>Enumerations[SMTitlePosition].BaseType=int</Patch>
+        <Patch>Enumerations[SMLabelPosition].BaseType=int</Patch>
       </Class>
     </Classes>
     <Protocols>
       <Protocol name="SM2DGraphDataSource">
+        <Patch>Methods[TwoDGraphViewMaximumValueForLineIndexForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
+        <Patch>Methods[TwoDGraphViewMinimumValueForLineIndexForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
       </Protocol>
       <Protocol name="SM2DGraphDelegate">
+        <Patch>Methods[TwoDGraphViewLabelForTickMarkIndexForAxisDefaultLabel].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
       </Protocol>
       <Protocol name="SMPieChartDataSource">
       </Protocol>
@@ -5519,10 +5595,28 @@ enum
   <Framework name="Sparkle" usings="Foundation,AppKit" assembly="Monobjc.Sparkle">
     <Classes>
       <Class name="SUAppcast">
+        <Patch>Constants[items].Generate=false</Patch>
+        <Patch>Constants[userAgentString].Generate=false</Patch>
+        <Patch>Constants[delegate].Generate=false</Patch>
+        <Patch>Constants[incrementalData].Generate=false</Patch>
       </Class>
       <Class name="SUAppcastItem">
+        <Patch>Constants[title].Generate=false</Patch>
+        <Patch>Constants[date].Generate=false</Patch>
+        <Patch>Constants[itemDescription].Generate=false</Patch>
+        <Patch>Constants[releaseNotesURL].Generate=false</Patch>
+        <Patch>Constants[DSASignature].Generate=false</Patch>
+        <Patch>Constants[minimumSystemVersion].Generate=false</Patch>
+        <Patch>Constants[fileURL].Generate=false</Patch>
+        <Patch>Constants[versionString].Generate=false</Patch>
+        <Patch>Constants[displayVersionString].Generate=false</Patch>
+        <Patch>Constants[propertiesDictionary].Generate=false</Patch>
       </Class>
       <Class name="SUUpdater">
+        <Patch>Constants[checkTimer].Generate=false</Patch>
+        <Patch>Constants[driver].Generate=false</Patch>
+        <Patch>Constants[host].Generate=false</Patch>
+        <Patch>Constants[delegate].Generate=false</Patch>
       </Class>
     </Classes>
     <Protocols>
