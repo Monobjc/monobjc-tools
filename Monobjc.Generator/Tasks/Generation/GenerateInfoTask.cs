@@ -40,7 +40,7 @@ namespace Monobjc.Tools.Generator.Tasks.Generation
         }
 
         /// <summary>
-        /// Gets or sets the target directory.
+        ///   Gets or sets the target directory.
         /// </summary>
         /// <value>The target directory.</value>
         private string TargetDirectory { get; set; }

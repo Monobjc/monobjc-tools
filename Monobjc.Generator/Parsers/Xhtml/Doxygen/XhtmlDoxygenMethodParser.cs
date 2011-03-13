@@ -54,8 +54,8 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
             MethodEntity methodEntity = new MethodEntity();
 
             bool isStatic = (methodElement.Attribute("static").Value == "yes");
-            String selector = methodElement.Element("name").Value.TrimAll();
-            String returnType = methodElement.Element("type").Value.TrimAll();
+            String selector = methodElement.Element("name").TrimAll();
+            String returnType = methodElement.Element("type").TrimAll();
 
             // Elements for brief description
             IEnumerable<XElement> abstractElements = methodElement.Element("briefdescription").Elements("para");
@@ -81,11 +81,11 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
             // Add brief description
             foreach (XElement paragraph in abstractElements)
             {
-                methodEntity.Summary.Add(paragraph.Value.TrimAll());
+                methodEntity.Summary.Add(paragraph.TrimAll());
             }
             foreach (XElement paragraph in detailsElements)
             {
-                methodEntity.Summary.Add(paragraph.Value.TrimAll());
+                methodEntity.Summary.Add(paragraph.TrimAll());
             }
 
             // Recreate the signature
@@ -98,7 +98,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
                 for (int i = 0; i < parameterElements.Count(); i++)
                 {
                     XElement parameterElement = parameterElements.ElementAt(i);
-                    String parameterType = parameterElement.Element("type").Value.TrimAll();
+                    String parameterType = parameterElement.Element("type").TrimAll();
 
                     String parameterName;
                     if (parameterType.Equals("..."))
@@ -107,10 +107,10 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
                     }
                     else
                     {
-                        parameterName = parameterElement.Element("declname").Value.TrimAll();
+                        parameterName = parameterElement.Element("declname").TrimAll();
                         if (parameterElement.Element("defname") != null)
                         {
-                            parameterName = parameterElement.Element("defname").Value.TrimAll();
+                            parameterName = parameterElement.Element("defname").TrimAll();
                         }
                     }
 
@@ -137,7 +137,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
                 if (returnTypeSectionElement != null)
                 {
                     IEnumerable<String> documentations = (from el in returnTypeSectionElement.Elements("para")
-                                                          select el.Value.TrimAll());
+                                                          select el.TrimAll());
                     methodEntity.ReturnsDocumentation = String.Join(" ", documentations.ToArray());
                 }
             }
@@ -146,7 +146,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
             for (int i = 0; i < parameterElements.Count(); i++)
             {
                 XElement parameterElement = parameterElements.ElementAt(i);
-                String parameterType = parameterElement.Element("type").Value.TrimAll();
+                String parameterType = parameterElement.Element("type").TrimAll();
 
                 String parameterName;
                 if (parameterType.Equals("..."))
@@ -156,10 +156,10 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
                 }
                 else
                 {
-                    parameterName = parameterElement.Element("declname").Value.TrimAll();
+                    parameterName = parameterElement.Element("declname").TrimAll();
                     if (parameterElement.Element("defname") != null)
                     {
-                        parameterName = parameterElement.Element("defname").Value.TrimAll();
+                        parameterName = parameterElement.Element("defname").TrimAll();
                     }
                 }
 
@@ -184,7 +184,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
                 for (int i = 0; i < parameterElements.Count(); i++)
                 {
                     XElement parameterElement = parameterElements.ElementAt(i);
-                    String parameterType = parameterElement.Element("type").Value.TrimAll();
+                    String parameterType = parameterElement.Element("type").TrimAll();
                     String parameterName;
                     if (parameterType.Equals("..."))
                     {
@@ -192,10 +192,10 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
                     }
                     else
                     {
-                        parameterName = parameterElement.Element("declname").Value.TrimAll();
+                        parameterName = parameterElement.Element("declname").TrimAll();
                         if (parameterElement.Element("defname") != null)
                         {
-                            parameterName = parameterElement.Element("defname").Value.TrimAll();
+                            parameterName = parameterElement.Element("defname").TrimAll();
                         }
                     }
 
@@ -205,10 +205,13 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
                                                             let filter = el.Element("parameternamelist").Value.TrimAll()
                                                             where String.Equals(filter, parameterName)
                                                             select el);
-                    XElement documentation = documentations.Elements("parameterdescription").First();
-                    foreach (XElement element in documentation.Elements("para"))
+                    if (documentations.Count() > 0)
                     {
-                        parameterEntity.Summary.Add(element.Value.TrimAll());
+                        XElement documentation = documentations.Elements("parameterdescription").First();
+                        foreach (XElement element in documentation.Elements("para"))
+                        {
+                            parameterEntity.Summary.Add(element.TrimAll());
+                        }
                     }
                 }
             }

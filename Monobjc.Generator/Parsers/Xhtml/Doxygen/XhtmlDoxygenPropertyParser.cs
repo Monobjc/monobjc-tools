@@ -59,12 +59,11 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
             String name = propertyElement.Element("name").Value;
 
             // Rebuild the signature from the documentation
-            String returnType = propertyElement.Element("type").Value.TrimAll();
+            String returnType = propertyElement.Element("type").TrimAll();
             bool isStatic = (propertyElement.Attribute("static").Value == "yes");
             bool readable = (propertyElement.Attribute("readable").Value == "yes");
             bool writable = (propertyElement.Attribute("writable").Value == "yes");
-            String accessor = propertyElement.Attribute("accessor").Value.TrimAll();
-            ;
+            String accessor = propertyElement.Attribute("accessor").Value;
 
             // Remove weak modifier
             if (returnType.StartsWith("__weak"))
@@ -86,11 +85,11 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
             List<String> summary = new List<String>();
             foreach (XElement paragraph in abstractElements)
             {
-                summary.Add(paragraph.Value.TrimAll());
+                summary.Add(paragraph.TrimAll());
             }
             foreach (XElement paragraph in detailsElements)
             {
-                summary.Add(paragraph.Value.TrimAll());
+                summary.Add(paragraph.TrimAll());
             }
 
             // Recreate the signature

@@ -185,10 +185,10 @@ namespace Monobjc.Tools.Generator.Model.Entities
             {
                 return true;
             }
-			if (other.Static != this.Static)
-			{
-				return false;
-			}
+            if (other.Static != this.Static)
+            {
+                return false;
+            }
             return base.Equals(other);
         }
 

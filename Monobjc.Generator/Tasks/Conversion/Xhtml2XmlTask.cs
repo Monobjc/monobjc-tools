@@ -24,8 +24,8 @@ using Monobjc.Tools.Generator.Model.Entities;
 using Monobjc.Tools.Generator.Parsers.Xhtml;
 using Monobjc.Tools.Generator.Parsers.Xhtml.Classic;
 using Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa;
-using Monobjc.Tools.Generator.Utilities;
 using Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen;
+using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Tasks.Conversion
 {

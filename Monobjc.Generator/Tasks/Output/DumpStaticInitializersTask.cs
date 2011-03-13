@@ -85,7 +85,7 @@ namespace Monobjc.Tools.Generator.Tasks.Output
                     Console.WriteLine("Found: {0}.{1}", classEntity.Name, propertyEntity.Name);
                 }
 
-                foreach(MethodEntity methodEntity in classEntity.Methods.Where(m => m.Name.StartsWith(name) && m.ReturnType == "Id"))
+                foreach (MethodEntity methodEntity in classEntity.Methods.Where(m => m.Name.StartsWith(name) && m.ReturnType == "Id"))
                 {
                     Console.WriteLine("Found: {0}.{1}()", classEntity.Name, methodEntity.Name);
                 }

@@ -151,12 +151,13 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
         protected void ExtractConstants(TypedEntity typedEntity, XElement root)
         {
             IEnumerable<XElement> memberDefs = (from el in root.Descendants("memberdef")
-                                                where el.Attribute("kind").Value == "variable"
+                                                where el.Attribute("kind").Value == "variable" ||
+                                                      el.Attribute("kind").Value == "define"
                                                 select el);
             foreach (XElement memberDef in memberDefs)
             {
-                //ConstantEntity constantEntity = this.ConstantParser.Parse(memberDef);
-                //typedEntity.Constants.Add(constantEntity);
+                ConstantEntity constantEntity = this.ConstantParser.Parse(memberDef);
+                typedEntity.Constants.Add(constantEntity);
             }
         }
 

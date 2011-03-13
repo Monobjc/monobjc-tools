@@ -45,7 +45,7 @@ namespace Monobjc.Tools.Generator.Generators
         {
             ProtocolEntity protocolEntity = (ProtocolEntity) entity;
             ClassEntity delegatorEntity = protocolEntity.DelegatorEntity;
-			String property = protocolEntity.DelegateProperty;
+            String property = protocolEntity.DelegateProperty;
 
             // Append License
             this.Writer.WriteLineFormat(0, License);

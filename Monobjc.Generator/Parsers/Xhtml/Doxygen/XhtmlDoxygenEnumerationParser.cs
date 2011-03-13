@@ -52,7 +52,8 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
         {
             EnumerationEntity enumerationEntity = new EnumerationEntity();
 
-            enumerationEntity.Name = enumerationElement.Element("name").Value.TrimAll();
+            String name = enumerationElement.Element("name").TrimAll();
+            enumerationEntity.Name = name.Trim('_');
             enumerationEntity.BaseType = "MISSING";
             enumerationEntity.Namespace = "MISSING";
 
@@ -72,21 +73,21 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
             // Add brief description
             foreach (XElement paragraph in abstractElements)
             {
-                enumerationEntity.Summary.Add(paragraph.Value.TrimAll());
+                enumerationEntity.Summary.Add(paragraph.TrimAll());
             }
             foreach (XElement paragraph in detailsElements)
             {
-                enumerationEntity.Summary.Add(paragraph.Value.TrimAll());
+                enumerationEntity.Summary.Add(paragraph.TrimAll());
             }
 
             // Add each value
             foreach (XElement enumerationValueElement in enumerationValueElements)
             {
-                String key = enumerationValueElement.Element("name").Value.TrimAll();
+                String key = enumerationValueElement.Element("name").TrimAll();
                 String value;
                 if (enumerationValueElement.Element("initializer") != null)
                 {
-                    value = enumerationValueElement.Element("initializer").Value.TrimAll();
+                    value = enumerationValueElement.Element("initializer").TrimAll();
                 }
                 else
                 {
@@ -105,7 +106,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
                 // Add brief description
                 foreach (XElement paragraph in abstractElements)
                 {
-                    enumerationValueEntity.Summary.Add(paragraph.Value.TrimAll());
+                    enumerationValueEntity.Summary.Add(paragraph.TrimAll());
                 }
             }
 

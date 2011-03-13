@@ -2721,10 +2721,16 @@
   <Entry ns="Foundation" nature="T" name="FoundationFramework.Functions" style="Cocoa" file="FoundationFramework.Functions">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/Reference/reference.html</url>
   </Entry>
-  <Entry ns="Growl" nature="C" name="GrowlApplicationBridge" style="Cocoa" file="GrowlApplicationBridge">
+  <Entry ns="Growl" nature="C" name="GrowlApplicationBridge" style="Doxygen" file="GrowlApplicationBridge">
     <url>N/A</url>
   </Entry>
-  <Entry ns="Growl" nature="P" name="GrowlApplicationBridgeDelegate" style="Cocoa" file="GrowlApplicationBridgeDelegate">
+  <Entry ns="Growl" nature="C" name="GrowlDefines_Definitions" style="Doxygen" file="GrowlDefines_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="Growl" nature="P" name="GrowlApplicationBridgeDelegate" style="Doxygen" file="GrowlApplicationBridgeDelegate">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="Growl" nature="P" name="GrowlApplicationBridgeInstallationDelegate" style="Doxygen" file="GrowlApplicationBridgeInstallationDelegate">
     <url>N/A</url>
   </Entry>
   <Entry ns="InputMethodKit" nature="C" name="IMKCandidates" style="Cocoa" file="IMKCandidates">
@@ -3291,22 +3297,46 @@
   <Entry ns="SecurityInterface" nature="T" name="SecurityInterfaceFramework.DataTypes" style="Cocoa" file="SecurityInterfaceFramework.DataTypes">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Security/Reference/SecurityInterfaceFramework/Miscellaneous/SecurityInterface_DataTypes/Reference/reference.html</url>
   </Entry>
-  <Entry ns="Sparkle" nature="C" name="SUAppcast" style="Cocoa" file="SUAppcast">
+  <Entry ns="SM2DGraphView" nature="C" name="SM2DGraphView" style="Doxygen" file="SM2DGraphView">
     <url>N/A</url>
   </Entry>
-  <Entry ns="Sparkle" nature="C" name="SUAppcastItem" style="Cocoa" file="SUAppcastItem">
+  <Entry ns="SM2DGraphView" nature="C" name="SM2DGraphView_Definitions" style="Doxygen" file="SM2DGraphView_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="Sparkle" nature="C" name="SUUpdater" style="Cocoa" file="SUUpdater">
+  <Entry ns="SM2DGraphView" nature="C" name="SMPieChartView" style="Doxygen" file="SMPieChartView">
     <url>N/A</url>
   </Entry>
-  <Entry ns="Sparkle" nature="P" name="SUAppcastDelegate" style="Cocoa" file="SUAppcastDelegate">
+  <Entry ns="SM2DGraphView" nature="C" name="SMPieChartView_Definitions" style="Doxygen" file="SMPieChartView_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="Sparkle" nature="P" name="SUUpdaterDelegate" style="Cocoa" file="SUUpdaterDelegate">
+  <Entry ns="SM2DGraphView" nature="P" name="SM2DGraphDataSource" style="Doxygen" file="SM2DGraphDataSource">
     <url>N/A</url>
   </Entry>
-  <Entry ns="Sparkle" nature="P" name="SUVersionComparison" style="Cocoa" file="SUVersionComparison">
+  <Entry ns="SM2DGraphView" nature="P" name="SM2DGraphDelegate" style="Doxygen" file="SM2DGraphDelegate">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="SM2DGraphView" nature="P" name="SMPieChartDataSource" style="Doxygen" file="SMPieChartDataSource">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="SM2DGraphView" nature="P" name="SMPieChartDelegate" style="Doxygen" file="SMPieChartDelegate">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="Sparkle" nature="C" name="SUAppcast" style="Doxygen" file="SUAppcast">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="Sparkle" nature="C" name="SUAppcastItem" style="Doxygen" file="SUAppcastItem">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="Sparkle" nature="C" name="SUUpdater" style="Doxygen" file="SUUpdater">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="Sparkle" nature="P" name="SUAppcastDelegate" style="Doxygen" file="SUAppcastDelegate">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="Sparkle" nature="P" name="SUUpdaterDelegate" style="Doxygen" file="SUUpdaterDelegate">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="Sparkle" nature="P" name="SUVersionComparison" style="Doxygen" file="SUVersionComparison">
     <url>N/A</url>
   </Entry>
   <Entry ns="WebKit" nature="C" name="WebArchive" style="Cocoa" file="WebArchive">

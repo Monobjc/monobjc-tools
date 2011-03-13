@@ -85,7 +85,7 @@ namespace Monobjc.Tools.Generator.Model.Entities
         public bool Generate { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to copy this instance in descendants.
+        ///   Gets or sets a value indicating whether to copy this instance in descendants.
         /// </summary>
         /// <value><c>true</c> to copy this instance in descendants; otherwise, <c>false</c>.</value>
         [XmlAttribute]

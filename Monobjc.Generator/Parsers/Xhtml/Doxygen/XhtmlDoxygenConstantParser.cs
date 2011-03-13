@@ -20,7 +20,6 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using Monobjc.Tools.Generator.Model.Entities;
 using Monobjc.Tools.Generator.Utilities;
@@ -49,87 +48,60 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
             throw new NotImplementedException();
         }
 
-        public ConstantEntity Parse(string constantElement, IEnumerable<XElement> elements)
+        public ConstantEntity Parse(XElement constantElement)
         {
             ConstantEntity constantEntity = new ConstantEntity();
 
-            XElement declarationElement = (from el in elements
-                                           where el.Name == "div" &&
-                                                 el.Attribute("class") != null &&
-                                                 el.Attribute("class").Value == "declaration_indent"
-                                           select el).FirstOrDefault();
+            String kind = constantElement.Attribute("kind").Value;
+            constantEntity.Name = constantElement.Element("name").TrimAll();
 
-            //XElement discussionElement = (from el in elements
-            //                              where el.Name == "h5" && el.Value.Trim() == "Discussion"
-            //                              select el).FirstOrDefault();
+            // Elements for brief description
+            IEnumerable<XElement> abstractElements = constantElement.Element("briefdescription").Elements("para");
 
-            XElement availabilityElement = (from el in elements
-                                            let term = el.Descendants("dt").FirstOrDefault()
-                                            let definition = el.Descendants("dd").FirstOrDefault()
-                                            where el.Name == "dl" &&
-                                                  term != null &&
-                                                  term.Value.Trim() == "Availability"
-                                            select definition).FirstOrDefault();
+            // Extract for detailed description
+            IEnumerable<XElement> detailsElements = (from el in constantElement.Element("detaileddescription").Elements("para")
+                                                     where !el.Elements("simplesect").Any()
+                                                           && el.Elements("parameterlist").Any()
+                                                           && el.Elements("xrefsect").Any()
+                                                     select el);
 
-            String stripped = declarationElement.TrimAll();
-            stripped = stripped.Trim(';');
-            while (stripped.Contains("  "))
+            // Add brief description
+            foreach (XElement paragraph in abstractElements)
             {
-                stripped = stripped.Replace("  ", " ");
+                constantEntity.Summary.Add(paragraph.TrimAll());
             }
-            stripped = stripped.Replace("extern", String.Empty);
-            stripped = stripped.Replace("const", String.Empty);
-            stripped = stripped.TrimAll();
-
-            Match r = CONSTANT_REGEX.Match(stripped);
-            if (r.Success)
+            foreach (XElement paragraph in detailsElements)
             {
-                String type = r.Groups[1].Value.Trim(' ', '*', ' ');
-
-                bool isOut;
-                bool isByRef;
-                bool isBlock;
-                type = this.TypeManager.ConvertType(type, out isOut, out isByRef, out isBlock);
-
-                constantEntity.Type = type;
-                constantEntity.Name = r.Groups[2].Value.Trim();
-            }
-            else
-            {
-                Console.WriteLine("FAILED to parse constant '{0}'", stripped);
-                return constantEntity;
+                constantEntity.Summary.Add(paragraph.TrimAll());
             }
 
-            // Extract abstract
-            IEnumerable<XElement> abstractElements = elements.SkipWhile(el => el.Name != "p").TakeWhile(el => el.Name == "p");
-            foreach (XElement element in abstractElements)
+            switch (kind)
             {
-                String line = element.TrimAll();
-                if (!String.IsNullOrEmpty(line))
-                {
-                    constantEntity.Summary.Add(line);
-                }
+                case "define":
+                    {
+                        constantEntity.Type = "MISSING";
+                        constantEntity.Static = true;
+                        constantEntity.Value = constantElement.Element("initializer").TrimAll();
+                    }
+                    break;
+                case "variable":
+                    {
+                        String type = constantElement.Element("type").TrimAll();
+                        type = type.Replace("const", String.Empty).Trim();
+
+                        bool isOut, isByRef, isBlock;
+                        constantEntity.Type = this.TypeManager.ConvertType(type, out isOut, out isByRef, out isBlock);
+                    }
+                    break;
             }
 
-            //// Extract discussion
-            //if (discussionElement != null)
-            //{
-            //    IEnumerable<XElement> discussionElements = discussionElement.ElementsAfterSelf().TakeWhile(el => el.Name == "p");
-            //    foreach (XElement element in discussionElements)
-            //    {
-            //        String line = element.TrimAll();
-            //        if (!String.IsNullOrEmpty(line))
-            //        {
-            //            constantEntity.Summary.Add(line);
-            //        }
-            //    }
-            //}
-
+            /*
             // Get the availability
             if (availabilityElement != null)
             {
                 constantEntity.MinAvailability = CommentHelper.ExtractAvailability(availabilityElement.TrimAll());
             }
+             */
 
             return constantEntity;
         }

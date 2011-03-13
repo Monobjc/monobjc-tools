@@ -283,24 +283,24 @@ namespace Monobjc.Tools.Generator.Generators
 
         private static String GetKeywords(MethodEntity methodEntity, bool implementation, bool extension, bool markedAsNew)
         {
-			String keywords = String.Empty;
+            String keywords = String.Empty;
             if (!implementation)
             {
                 return keywords;
             }
-			keywords = "public ";
-			if (markedAsNew)
-			{
-				keywords += "new ";
-			}
+            keywords = "public ";
+            if (markedAsNew)
+            {
+                keywords += "new ";
+            }
             if (methodEntity.Static || extension)
             {
                 keywords += "static ";
             }
-			else if (!markedAsNew)
-			{
+            else if (!markedAsNew)
+            {
                 keywords += "virtual ";
-			}
+            }
             return keywords;
         }
 
@@ -463,22 +463,22 @@ namespace Monobjc.Tools.Generator.Generators
                 {
                     if ("bool,char,byte,short,ushort,int,uint,long,ulong".Contains(methodParameterEntity.Type)) // Boolean
                     {
-						// TODO: Add zeroing
-						index++;
+                        // TODO: Add zeroing
+                        index++;
                     }
                     else if ("float,double".Contains(methodParameterEntity.Type))
                     {
-						// TODO: Add zeroing
-						index++;
+                        // TODO: Add zeroing
+                        index++;
                     }
                     else if (IsMixedType(methodParameterEntity.Type))
                     {
-						// TODO: Add zeroing
-						index++;
+                        // TODO: Add zeroing
+                        index++;
                     }
                     else
                     {
-						this.Writer.WriteLineFormat(indent, "Marshal.WriteIntPtr(__local{0}, IntPtr.Zero);", index++);
+                        this.Writer.WriteLineFormat(indent, "Marshal.WriteIntPtr(__local{0}, IntPtr.Zero);", index++);
                     }
                 }
                 else if (methodParameterEntity.IsByRef)

@@ -58,10 +58,10 @@ namespace Monobjc.Tools.Generator.Tasks
         /// </summary>
         public void Load()
         {
-            if (File.Exists(Storage))
+            if (File.Exists(this.Storage))
             {
                 Console.WriteLine("Loading database...");
-                using (StreamReader reader = new StreamReader(Storage))
+                using (StreamReader reader = new StreamReader(this.Storage))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof (Entries));
                     this.Entries = (Entries) serializer.Deserialize(reader);
@@ -83,7 +83,7 @@ namespace Monobjc.Tools.Generator.Tasks
                 this.Entries.Sort();
 
                 Console.WriteLine("Saving database...");
-                using (StreamWriter writer = new StreamWriter(Storage))
+                using (StreamWriter writer = new StreamWriter(this.Storage))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof (Entries));
                     serializer.Serialize(writer, this.Entries);

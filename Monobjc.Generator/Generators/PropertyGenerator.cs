@@ -75,7 +75,7 @@ namespace Monobjc.Tools.Generator.Generators
             }
 
             this.Writer.WriteLineFormat(2, "{0}{1} {2}",
-										GetKeywords(propertyEntity, implementation, markedAsNew),
+                                        GetKeywords(propertyEntity, implementation, markedAsNew),
                                         type,
                                         propertyEntity.Name);
 
@@ -183,27 +183,27 @@ namespace Monobjc.Tools.Generator.Generators
             this.AppendAvailability(2, propertyEntity);
             this.Writer.WriteLineFormat(2, "/// </summary>");
         }
-		
+
         private static String GetKeywords(PropertyEntity propertyEntity, bool implementation, bool markedAsNew)
         {
-			String keywords = String.Empty;
+            String keywords = String.Empty;
             if (!implementation)
             {
                 return keywords;
             }
-			keywords = "public ";
-			if (markedAsNew)
-			{
-				keywords += "new ";
-			}
+            keywords = "public ";
+            if (markedAsNew)
+            {
+                keywords += "new ";
+            }
             if (propertyEntity.Static)
             {
                 keywords += "static ";
             }
-			else if (!markedAsNew)
-			{
+            else if (!markedAsNew)
+            {
                 keywords += "virtual ";
-			}
+            }
             return keywords;
         }
     }

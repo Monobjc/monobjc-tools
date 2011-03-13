@@ -18,7 +18,6 @@
 using System;
 using System.IO;
 using Monobjc.Tools.Generator.Model.Database;
-using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Tasks.General
 {
@@ -52,10 +51,11 @@ namespace Monobjc.Tools.Generator.Tasks.General
                 {
                     continue;
                 }
-                if (File.Exists(entry.RemoteUrl)) {
+                if (File.Exists(entry.RemoteUrl))
+                {
                     continue;
                 }
-                
+
                 Console.WriteLine("Invalid URL for '{0}'", entry.Name);
             }
         }

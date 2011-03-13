@@ -661,7 +661,7 @@
       <Class name="NSCollectionView">
         <Patch>Methods[DraggingImageForItemsAtIndexesWithEventOffset].Parameters[dragImageOffset].Type=NSPoint</Patch>
         <Patch>Methods[DraggingImageForItemsAtIndexesWithEventOffset].Parameters[dragImageOffset].IsOut=true</Patch>
-    <Patch>Properties[Delegate].MinAvailability=Mac OS X v10.5</Patch>
+        <Patch>Properties[Delegate].MinAvailability=Mac OS X v10.5</Patch>
       </Class>
       <Class name="NSCollectionViewItem">
         <Replace type="Generated">
@@ -677,11 +677,13 @@
           </With>
         </Replace>
         <Replace type="Generated">
-          <Source><![CDATA[#if MACOSX_10_5
+          <Source>
+            <![CDATA[#if MACOSX_10_5
     public partial class NSCollectionViewItem
     {
 #if MACOSX_10_5
-]]></Source>
+]]>
+          </Source>
           <With>
             <![CDATA[#if MACOSX_10_5
     public partial class NSCollectionViewItem
@@ -1042,22 +1044,30 @@
       <Class name="NSMenuItem">
         <Patch>Properties[State].Type=NSCellStateValue</Patch>
         <Replace type="Generated">
-          <Source><![CDATA[{
+          <Source>
+            <![CDATA[{
             get { return ObjectiveCRuntime.SendMessage<bool>(this, "hasSubmenu"); }
             set { ObjectiveCRuntime.SendMessage(this, "setSubmenu:", value); }
-        }]]></Source>
-          <With><![CDATA[{
+        }]]>
+          </Source>
+          <With>
+            <![CDATA[{
             get { return ObjectiveCRuntime.SendMessage<bool>(this, "hasSubmenu"); }
-        }]]></With>
+        }]]>
+          </With>
         </Replace>
         <Replace type="Generated">
-          <Source><![CDATA[{
+          <Source>
+            <![CDATA[{
             get { return ObjectiveCRuntime.SendMessage<NSMenu>(this, "submenu"); }
-        }]]></Source>
-          <With><![CDATA[{
+        }]]>
+          </Source>
+          <With>
+            <![CDATA[{
             get { return ObjectiveCRuntime.SendMessage<NSMenu>(this, "submenu"); }
             set { ObjectiveCRuntime.SendMessage(this, "setSubmenu:", value); }
-        }]]></With>
+        }]]>
+          </With>
         </Replace>
       </Class>
       <Class name="NSMenuItemCell">
@@ -2107,7 +2117,7 @@ enum {]]>
     <Types>
       <Type name="CoreLocationFramework.Constants">
         <Patch>Enumerations[CLError].Generate=false</Patch>
-    </Type>
+      </Type>
     </Types>
     <Classes>
       <Class name="CLLocation">
@@ -2115,7 +2125,7 @@ enum {]]>
         <Patch>Methods[GetDistanceFrom].Parameters[location].Type=CLLocation</Patch>
       </Class>
       <Class name="CLLocationManager">
-    <Patch>MinAvailability=Mac OS X v10.6</Patch>
+        <Patch>MinAvailability=Mac OS X v10.6</Patch>
         <Patch>Properties[LocationServicesEnabled][Static=true].Generate=false</Patch>
         <Patch>Enumerations[CLError].BaseType=int</Patch>
         <Patch>Constants[CLLocationDistance].Generate=false</Patch>
@@ -2409,7 +2419,7 @@ enum {]]>
         </Replace>
       </Class>
       <Class name="DRStatus">
-      <Patch>BaseType=NSObject</Patch>
+        <Patch>BaseType=NSObject</Patch>
       </Class>
       <Class name="DRTrack">
       </Class>
@@ -3847,10 +3857,10 @@ enum]]>
         </Replace>
       </Class>
       <Class name="NSURLRequest">
-      <Patch>Methods[RequestWithURL].ReturnType=NSURLRequest</Patch>
-      <Patch>Methods[RequestWithURL].CopyInDescendants=true</Patch>
-      <Patch>Methods[RequestWithURLCachePolicyTimeoutInterval].ReturnType=NSURLRequest</Patch>
-      <Patch>Methods[RequestWithURLCachePolicyTimeoutInterval].CopyInDescendants=true</Patch>
+        <Patch>Methods[RequestWithURL].ReturnType=NSURLRequest</Patch>
+        <Patch>Methods[RequestWithURL].CopyInDescendants=true</Patch>
+        <Patch>Methods[RequestWithURLCachePolicyTimeoutInterval].ReturnType=NSURLRequest</Patch>
+        <Patch>Methods[RequestWithURLCachePolicyTimeoutInterval].CopyInDescendants=true</Patch>
       </Class>
       <Class name="NSURLResponse">
       </Class>
@@ -4343,8 +4353,8 @@ enum]]>
         <Patch>Enumerations[IKImageBrowserDropOperation].BaseType=int</Patch>
       </Class>
       <Class name="IKImageEditPanel">
-         <Patch>Properties[DataSource].Type=Id</Patch>
-     </Class>
+        <Patch>Properties[DataSource].Type=Id</Patch>
+      </Class>
       <Class name="IKImageView">
       </Class>
       <Class name="IKImagePicker">
@@ -4470,7 +4480,7 @@ enum]]>
       </Class>
       <Class name="QLPreviewPanel">
         <Patch>Properties[DataSource].Type=Id</Patch>
-     </Class>
+      </Class>
     </Classes>
     <Protocols>
       <Protocol name="IKCameraDeviceViewDelegate">
@@ -4527,7 +4537,7 @@ enum]]>
       <Protocol name="QLPreviewPanelDataSource">
       </Protocol>
       <Protocol name="QLPreviewPanelDelegate">
-      <Patch>DelegateFor=QLPreviewPanel</Patch>
+        <Patch>DelegateFor=QLPreviewPanel</Patch>
         <Patch>Methods[PreviewPanelTransitionImageForPreviewItemContentRect].Parameters[contentRect].Type=NSRect</Patch>
         <Patch>Methods[PreviewPanelTransitionImageForPreviewItemContentRect].Parameters[contentRect].IsOut=true</Patch>
       </Protocol>
@@ -4965,12 +4975,12 @@ enum
   </Framework>
   <Framework name="SecurityInterface" usings="Foundation,AppKit,SecurityFoundation" assembly="Monobjc.SecurityInterface">
     <Types>
-    <Type name="SecurityInterfaceFramework.Constants">
-    </Type>
-    <Type name="SecurityInterfaceFramework.DataTypes">
-      <Patch>Enumerations[SFAuthorizationViewState].BaseType=uint</Patch>
-    </Type>
-  </Types>
+      <Type name="SecurityInterfaceFramework.Constants">
+      </Type>
+      <Type name="SecurityInterfaceFramework.DataTypes">
+        <Patch>Enumerations[SFAuthorizationViewState].BaseType=uint</Patch>
+      </Type>
+    </Types>
     <Classes>
       <Class name="SFAuthorizationPluginView">
         <Patch>Methods[InitWithCallbacksAndEngineRef].Parameters[callbacks].Type=IntPtr</Patch>
@@ -5468,15 +5478,41 @@ enum
       <Structure name="CPNumericDataType" />
       <Structure name="CPRGBAColor" />
     </Structures>
-  </Framework> 
-  
+  </Framework>
   <Framework name="Growl" usings="Foundation,AppKit" assembly="Monobjc.Growl">
     <Classes>
       <Class name="GrowlApplicationBridge">
       </Class>
+      <Class name="GrowlDefines_Definitions">
+        <Patch>AdditionFor=GrowlApplicationBridge</Patch>
+      </Class>
     </Classes>
     <Protocols>
       <Protocol name="GrowlApplicationBridgeDelegate">
+      </Protocol>
+      <Protocol name="GrowlApplicationBridgeInstallationDelegate">
+      </Protocol>
+    </Protocols>
+  </Framework>
+  <Framework name="SM2DGraphView" usings="Foundation,AppKit" assembly="Monobjc.SM2DGraphView">
+    <Classes>
+      <Class name="SM2DGraphView" />
+      <Class name="SMPieChartView" />
+      <Class name="SM2DGraphView_Definitions">
+        <Patch>AdditionFor=SM2DGraphView</Patch>
+      </Class>
+      <Class name="SMPieChartView_Definitions">
+        <Patch>AdditionFor=SMPieChartView</Patch>
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="SM2DGraphDataSource">
+      </Protocol>
+      <Protocol name="SM2DGraphDelegate">
+      </Protocol>
+      <Protocol name="SMPieChartDataSource">
+      </Protocol>
+      <Protocol name="SMPieChartDelegate">
       </Protocol>
     </Protocols>
   </Framework>
@@ -5497,5 +5533,7 @@ enum
       <Protocol name="SUUpdaterDelegate">
       </Protocol>
     </Protocols>
+    <Structures />
   </Framework>
+
 </Entities>

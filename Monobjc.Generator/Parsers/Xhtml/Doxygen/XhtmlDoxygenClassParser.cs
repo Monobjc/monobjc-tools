@@ -75,7 +75,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
 
                 // Extract inheritance
                 IEnumerable<String> conformsElements = (from el in root.Descendants("basecompoundref")
-                                                        select el.Value);
+                                                        select el.TrimAll());
                 List<String> protocols = new List<string>();
                 foreach (string conformsElement in conformsElements)
                 {
@@ -92,6 +92,11 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
                     {
                         classEntity.BaseType = conformsElement.Trim();
                     }
+                }
+
+                if (!(classEntity is ProtocolEntity) && String.IsNullOrEmpty(classEntity.BaseType))
+                {
+                    classEntity.BaseType = "NSObject";
                 }
                 classEntity.ConformsTo = String.Join(",", protocols.Distinct().ToArray());
 
@@ -156,14 +161,14 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
         {
             // Extract name
             String compoundname = (from el in root.Descendants("compoundname")
-                                   select el.Value).FirstOrDefault();
+                                   select el.TrimAll()).FirstOrDefault();
 
             IEnumerable<XElement> memberDefs = (from el in root.Descendants("memberdef")
                                                 where el.Attribute("kind").Value == "property"
                                                 select el);
             foreach (XElement memberDef in memberDefs)
             {
-                String definition = memberDef.Element("definition").Value;
+                String definition = memberDef.Element("definition").TrimAll();
                 if (!definition.Contains(compoundname + "::"))
                 {
                     continue;
@@ -177,14 +182,14 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
         {
             // Extract name
             String compoundname = (from el in root.Descendants("compoundname")
-                                   select el.Value).FirstOrDefault();
+                                   select el.TrimAll()).FirstOrDefault();
 
             IEnumerable<XElement> memberDefs = (from el in root.Descendants("memberdef")
                                                 where el.Attribute("kind").Value == "function"
                                                 select el);
             foreach (XElement memberDef in memberDefs)
             {
-                String definition = memberDef.Element("definition").Value;
+                String definition = memberDef.Element("definition").TrimAll();
                 if (!definition.Contains(compoundname + "::"))
                 {
                     continue;

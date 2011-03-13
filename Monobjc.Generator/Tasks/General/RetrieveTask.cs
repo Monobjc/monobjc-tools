@@ -49,8 +49,9 @@ namespace Monobjc.Tools.Generator.Tasks.General
                 {
                     continue;
                 }
-                
-                if (File.Exists(entry.RemoteUrl)) {
+
+                if (File.Exists(entry.RemoteUrl))
+                {
                     Console.WriteLine("Retrieving '{0}'...", entry.Name);
                     File.Copy(entry.RemoteUrl, htmlFile);
                 }

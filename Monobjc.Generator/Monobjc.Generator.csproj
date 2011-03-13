@@ -305,30 +305,6 @@
     <Content Include="Xml\ApplicationServices\S\CGSize">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Xml\Growl\C\GrowlApplicationBridge">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Growl\P\GrowlApplicationBridgeDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Sparkle\C\SUAppcast">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Sparkle\C\SUAppcastItem">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Sparkle\C\SUUpdater">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Sparkle\P\SUAppcastDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Sparkle\P\SUUpdaterDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Sparkle\P\SUVersionComparison">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Xml\Quartz\E\PDFAreaOfInterest">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
