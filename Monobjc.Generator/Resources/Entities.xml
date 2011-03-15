@@ -570,6 +570,7 @@
         <Patch>Enumerations[NSSpellingStateAttributeName_Flags].Name=NSSpellingStateAttributeNameFlags</Patch>
         <Patch>Enumerations[NSSpellingStateAttributeNameFlags].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSSpellingStateAttributeNameFlags].Flags=true</Patch>
+        <Patch>Constants[NSUnderlineByWordMask].Type=NSUInteger</Patch>
       </Class>
       <Class name="NSBezierPath">
         <Patch>Methods[AppendBezierPathWithGlyphsCountInFont].Parameters[glyphs].Type=IntPtr</Patch>
@@ -5535,9 +5536,10 @@ enum
       </Protocol>
     </Protocols>
   </Framework>
-  <Framework name="SM2DGraphView" usings="Foundation,AppKit" assembly="Monobjc.SM2DGraphView">
+  <Framework name="SM2DGraphView" usings="Foundation,AppKit,ApplicationServices" assembly="Monobjc.SM2DGraphView">
     <Classes>
       <Class name="SM2DGraphView">
+        <Patch>BaseType=NSView</Patch>
         <Patch>Methods[SetLabelForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
         <Patch>Methods[LabelForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
         <Patch>Methods[SetNumberOfTickMarksForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
@@ -5555,6 +5557,7 @@ enum
         <Patch>Constants[_SM2DGraphView_Private].Generate=false</Patch>
       </Class>
       <Class name="SMPieChartView">
+        <Patch>BaseType=NSView</Patch>
         <Patch>Properties[LabelPosition].Type=SMLabelPosition</Patch>
         <Patch>Constants[delegate].Generate=false</Patch>
         <Patch>Constants[dataSource].Generate=false</Patch>
@@ -5563,6 +5566,16 @@ enum
       <Class name="SM2DGraphView_Definitions">
         <Patch>AdditionFor=SM2DGraphView</Patch>
         <Patch>Constants[SM2D_EPSILON].Generate=false</Patch>
+        <Patch>Constants[CGFloatValue].Generate=false</Patch>
+        <Patch>Constants[setCGFloatValue].Generate=false</Patch>
+        <Patch>Constants[CGFloatRound].Generate=false</Patch>
+        <Patch>Constants[CGFloatAbs].Generate=false</Patch>
+        <Patch>Constants[CGFloatCeil].Generate=false</Patch>
+        <Patch>Constants[CGFloatFloor].Generate=false</Patch>
+        <Patch>Constants[CGFloatTan].Generate=false</Patch>
+        <Patch>Constants[CGFloatSin].Generate=false</Patch>
+        <Patch>Constants[CGFloatCos].Generate=false</Patch>
+        <Patch>Constants[CGFloatMod].Generate=false</Patch>
         <Patch>Enumerations[SM2DGraphLineDashStyleEnum].Name=SM2DGraphLineDashStyle</Patch>
         <Patch>Enumerations[SM2DGraphLineDashStyle].BaseType=int</Patch>
         <Patch>Enumerations[SM2DGraphSymbolTypeEnum].Name=SM2DGraphSymbolType</Patch>
