@@ -77,6 +77,7 @@
     <Compile Include="InterfaceBuilder\Visitors\ClassDescriptionCollector.cs" />
     <Compile Include="InterfaceBuilder\Visitors\PrintVisitor.cs" />
     <Compile Include="InterfaceBuilder\IIBVisitor.cs" />
+    <Compile Include="Utilities\EnumExtensions.cs" />
     <Compile Include="Utilities\KeyChainAccess.cs" />
     <Compile Include="Utilities\IExecutionLogger.cs" />
     <Compile Include="Utilities\MacOSArchitecture.cs" />
@@ -116,6 +117,34 @@
     <Compile Include="Generators\DmgCreator.cs" />
     <Compile Include="Utilities\FileProvider.cs" />
     <Compile Include="External\Lipo.cs" />
+    <Compile Include="Xcode\IPBXElement.cs" />
+    <Compile Include="Xcode\IPBXVisitor.cs" />
+    <Compile Include="Xcode\PBXAggregateTarget.cs" />
+    <Compile Include="Xcode\PBXAppleScriptBuildPhase.cs" />
+    <Compile Include="Xcode\PBXBuildFile.cs" />
+    <Compile Include="Xcode\PBXBuildPhase.cs" />
+    <Compile Include="Xcode\PBXContainerItemProxy.cs" />
+    <Compile Include="Xcode\PBXCopyFilesBuildPhase.cs" />
+    <Compile Include="Xcode\PBXDocument.cs" />
+    <Compile Include="Xcode\PBXElement.cs" />
+    <Compile Include="Xcode\PBXElementType.cs" />
+    <Compile Include="Xcode\PBXFileReference.cs" />
+    <Compile Include="Xcode\PBXFrameworksBuildPhase.cs" />
+    <Compile Include="Xcode\PBXGroup.cs" />
+    <Compile Include="Xcode\PBXHeadersBuildPhase.cs" />
+    <Compile Include="Xcode\PBXNativeTarget.cs" />
+    <Compile Include="Xcode\PBXProject.cs" />
+    <Compile Include="Xcode\PBXResourcesBuildPhase.cs" />
+    <Compile Include="Xcode\PBXShellScriptBuildPhase.cs" />
+    <Compile Include="Xcode\PBXSourcesBuildPhase.cs" />
+    <Compile Include="Xcode\PBXTarget.cs" />
+    <Compile Include="Xcode\PBXTargetDependency.cs" />
+    <Compile Include="Xcode\PBXVariantGroup.cs" />
+    <Compile Include="Xcode\TextWriterExtensions.cs" />
+    <Compile Include="Xcode\Visitors\CollectVisitor.cs" />
+    <Compile Include="Xcode\XCBuildConfiguration.cs" />
+    <Compile Include="Xcode\XCConfigurationList.cs" />
+    <Compile Include="Xcode\XcodeCompatibilityVersion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Embedded\Info.plist" />
