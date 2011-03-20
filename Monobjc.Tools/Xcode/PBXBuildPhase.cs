@@ -15,12 +15,24 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
+using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Monobjc.Tools.Xcode
 {
     public abstract class PBXBuildPhase : PBXElement
     {
+        /// <summary>
+        ///   Initializes a new instance of the <see cref = "PBXBuildPhase" /> class.
+        /// </summary>
+        protected PBXBuildPhase()
+        {
+            this.BuildActionMask = Int32.MaxValue;
+            this.Files = new List<PBXFileReference>();
+            this.RunOnlyForDeploymentPostprocessing = 0;
+        }
+
         /// <summary>
         ///   Gets or sets the build action mask.
         /// </summary>
@@ -38,5 +50,19 @@ namespace Monobjc.Tools.Xcode
         /// </summary>
         /// <value>The flag to run only for deployment postprocessing.</value>
         public int RunOnlyForDeploymentPostprocessing { get; set; }
+
+        /// <summary>
+        ///   Writes this element to the writer.
+        /// </summary>
+        /// <param name = "writer">The writer.</param>
+        /// <param name = "map">The map.</param>
+        public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
+        {
+            writer.writeElementPrologue(map, this);
+            writer.WriteAttribute("buildActionMask", this.BuildActionMask);
+            writer.WriteReferences(map, "targets", this.Files);
+            writer.WriteAttribute("runOnlyForDeploymentPostprocessing", this.RunOnlyForDeploymentPostprocessing);
+            writer.writeElementEpilogue();
+        }
     }
 }

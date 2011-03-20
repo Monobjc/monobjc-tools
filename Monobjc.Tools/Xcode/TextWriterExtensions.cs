@@ -23,16 +23,74 @@ namespace Monobjc.Tools.Xcode
 {
     public static class TextWriterExtensions
     {
+        /// <summary>
+        ///   Writes the element prologue.
+        /// </summary>
+        /// <param name = "writer">The writer.</param>
+        /// <param name = "map">The map.</param>
+        /// <param name = "element">The element.</param>
         public static void writeElementPrologue(this TextWriter writer, IDictionary<IPBXElement, string> map, IPBXElement element)
         {
             writer.WriteLine("{0} /* {1} */ = {{", map[element], element.Description);
+            writer.WriteAttribute("isa", element.Isa);
         }
 
+        /// <summary>
+        ///   Writes the element epilogue.
+        /// </summary>
+        /// <param name = "writer">The writer.</param>
         public static void writeElementEpilogue(this TextWriter writer)
         {
             writer.WriteLine("};");
         }
 
+        /// <summary>
+        ///   Writes the list.
+        /// </summary>
+        public static void WriteList(this TextWriter writer, String name, IEnumerable<String> values)
+        {
+            writer.WriteLine("    {0} = (", name);
+            foreach (String value in values)
+            {
+                writer.WriteLine("        \"{0}\",", value);
+            }
+            writer.WriteLine("    );");
+        }
+
+        /// <summary>
+        ///   Writes the list.
+        /// </summary>
+        public static void WriteMap(this TextWriter writer, String name, IDictionary<String, Object> map)
+        {
+            writer.WriteLine("    {0} = {{", name);
+            foreach (KeyValuePair<String, Object> pair in map)
+            {
+                if (pair.Value.GetType() == typeof (int))
+                {
+                    writer.WriteLine("        {0} = {1};", pair.Key, (int) pair.Value);
+                }
+                String s = pair.Value as String;
+                if (s != null)
+                {
+                    writer.WriteLine("        {0} = \"{1}\";", pair.Key, s);
+                }
+                List<String> values = pair.Value as List<String>;
+                if (values != null)
+                {
+                    writer.WriteLine("        {0} = (", name);
+                    foreach (String value in values)
+                    {
+                        writer.WriteLine("            \"{0}\",", value);
+                    }
+                    writer.WriteLine("        );");
+                }
+            }
+            writer.WriteLine("    };");
+        }
+
+        /// <summary>
+        ///   Writes the references.
+        /// </summary>
         public static void WriteReferences<T>(this TextWriter writer, IDictionary<IPBXElement, string> map, String name, IEnumerable<T> elements) where T : IPBXElement
         {
             writer.WriteLine("    {0} = (", name);
@@ -43,37 +101,48 @@ namespace Monobjc.Tools.Xcode
             writer.WriteLine("    );");
         }
 
+        /// <summary>
+        ///   Writes the reference.
+        /// </summary>
         public static void WriteReference(this TextWriter writer, IDictionary<IPBXElement, string> map, String name, IPBXElement element)
         {
-            writer.WriteAttribute(name, map[element], element.Description);
+            writer.WriteAttribute(name, map[element], element.Description, false);
         }
 
+        /// <summary>
+        ///   Writes the attribute.
+        /// </summary>
         public static void WriteAttribute(this TextWriter writer, String name, int value)
         {
-            writer.WriteAttribute(name, value.ToString(), null);
+            writer.WriteAttribute(name, value.ToString(), null, false);
         }
 
+        /// <summary>
+        ///   Writes the attribute.
+        /// </summary>
         public static void WriteAttribute(this TextWriter writer, String name, int value, String comment)
         {
-            writer.WriteAttribute(name, value.ToString(), comment);
+            writer.WriteAttribute(name, value.ToString(), comment, false);
         }
 
+        /// <summary>
+        ///   Writes the attribute.
+        /// </summary>
         public static void WriteAttribute(this TextWriter writer, String name, String value)
         {
-            writer.WriteAttribute(name, value, null);
+            writer.WriteAttribute(name, value, null, true);
         }
 
-        public static void WriteAttribute(this TextWriter writer, String name, String value, String comment)
+        /// <summary>
+        ///   Writes the attribute.
+        /// </summary>
+        public static void WriteAttribute(this TextWriter writer, String name, String value, String comment, bool quotes)
         {
             if (value == null)
             {
                 return;
             }
-            if (String.IsNullOrEmpty(value))
-            {
-                value = "\"\"";
-            }
-            if (value.Contains(" "))
+            if (quotes)
             {
                 value = "\"" + value + "\"";
             }

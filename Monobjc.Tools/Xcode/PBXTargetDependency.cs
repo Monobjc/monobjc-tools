@@ -23,6 +23,18 @@ namespace Monobjc.Tools.Xcode
     public class PBXTargetDependency : PBXElement
     {
         /// <summary>
+        ///   Gets or sets the target.
+        /// </summary>
+        /// <value>The target.</value>
+        public PBXTarget Target { get; set; }
+
+        /// <summary>
+        ///   Gets or sets the target proxy.
+        /// </summary>
+        /// <value>The target proxy.</value>
+        public PBXContainerItemProxy TargetProxy { get; set; }
+
+        /// <summary>
         ///   Gets the elemnt's nature.
         /// </summary>
         /// <value>The nature.</value>
@@ -47,6 +59,15 @@ namespace Monobjc.Tools.Xcode
         public override void Accept(IPBXVisitor visitor)
         {
             visitor.Visit(this);
+
+            if (this.Target != null)
+            {
+                this.Target.Accept(visitor);
+            }
+            if (this.TargetProxy != null)
+            {
+                this.TargetProxy.Accept(visitor);
+            }
         }
 
         /// <summary>
@@ -54,6 +75,12 @@ namespace Monobjc.Tools.Xcode
         /// </summary>
         /// <param name = "writer">The writer.</param>
         /// <param name = "map">The map.</param>
-        public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map) {}
+        public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
+        {
+            writer.writeElementPrologue(map, this);
+            writer.WriteReference(map, "target", this.Target);
+            writer.WriteReference(map, "targetProxy", this.TargetProxy);
+            writer.writeElementEpilogue();
+        }
     }
 }

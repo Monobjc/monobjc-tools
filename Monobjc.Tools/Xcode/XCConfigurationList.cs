@@ -23,6 +23,33 @@ namespace Monobjc.Tools.Xcode
     public class XCConfigurationList : PBXElement
     {
         /// <summary>
+        ///   Initializes a new instance of the <see cref = "XCConfigurationList" /> class.
+        /// </summary>
+        public XCConfigurationList()
+        {
+            this.BuildConfigurations = new List<XCBuildConfiguration>();
+            this.DefaultConfigurationIsVisible = 0;
+        }
+
+        /// <summary>
+        ///   Gets or sets the build configurations.
+        /// </summary>
+        /// <value>The build configurations.</value>
+        public IList<XCBuildConfiguration> BuildConfigurations { get; set; }
+
+        /// <summary>
+        ///   Gets or sets the default configuration is visible.
+        /// </summary>
+        /// <value>The default configuration is visible.</value>
+        public int DefaultConfigurationIsVisible { get; set; }
+
+        /// <summary>
+        ///   Gets or sets the default name of the configuration.
+        /// </summary>
+        /// <value>The default name of the configuration.</value>
+        public string DefaultConfigurationName { get; set; }
+
+        /// <summary>
         ///   Gets the elemnt's nature.
         /// </summary>
         /// <value>The nature.</value>
@@ -47,6 +74,14 @@ namespace Monobjc.Tools.Xcode
         public override void Accept(IPBXVisitor visitor)
         {
             visitor.Visit(this);
+
+            if (this.BuildConfigurations != null)
+            {
+                foreach (XCBuildConfiguration configuration in this.BuildConfigurations)
+                {
+                    configuration.Accept(visitor);
+                }
+            }
         }
 
         /// <summary>
@@ -54,6 +89,13 @@ namespace Monobjc.Tools.Xcode
         /// </summary>
         /// <param name = "writer">The writer.</param>
         /// <param name = "map">The map.</param>
-        public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map) {}
+        public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
+        {
+            writer.writeElementPrologue(map, this);
+            writer.WriteReferences(map, "buildConfigurations", this.BuildConfigurations);
+            writer.WriteAttribute("defaultConfigurationIsVisible", this.DefaultConfigurationIsVisible);
+            writer.WriteAttribute("defaultConfigurationName", this.DefaultConfigurationName);
+            writer.writeElementEpilogue();
+        }
     }
 }

@@ -63,7 +63,6 @@ namespace Monobjc.Tools.Xcode
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
             writer.writeElementPrologue(map, this);
-            writer.WriteAttribute("isa", this.Isa);
             if (this.FileRef != null)
             {
                 writer.WriteReference(map, "fileRef", this.FileRef);

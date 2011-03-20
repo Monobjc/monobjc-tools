@@ -15,13 +15,47 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
+using System;
 using System.Collections.Generic;
 using System.IO;
+using Monobjc.Tools.Utilities;
 
 namespace Monobjc.Tools.Xcode
 {
     public class PBXNativeTarget : PBXTarget
     {
+        /// <summary>
+        ///   Initializes a new instance of the <see cref = "PBXNativeTarget" /> class.
+        /// </summary>
+        public PBXNativeTarget()
+        {
+            this.BuildRules = new List<String>();
+        }
+
+        /// <summary>
+        ///   Gets or sets the build rules.
+        /// </summary>
+        /// <value>The build rules.</value>
+        public IList<String> BuildRules { get; set; }
+
+        /// <summary>
+        ///   Gets or sets the product install path.
+        /// </summary>
+        /// <value>The product install path.</value>
+        public String ProductInstallPath { get; set; }
+
+        /// <summary>
+        ///   Gets or sets the product reference.
+        /// </summary>
+        /// <value>The product reference.</value>
+        public PBXFileReference ProductReference { get; set; }
+
+        /// <summary>
+        ///   Gets or sets the type of the product.
+        /// </summary>
+        /// <value>The type of the product.</value>
+        public PBXProductType ProductType { get; set; }
+
         /// <summary>
         ///   Gets the elemnt's nature.
         /// </summary>
@@ -47,6 +81,25 @@ namespace Monobjc.Tools.Xcode
         public override void Accept(IPBXVisitor visitor)
         {
             visitor.Visit(this);
+
+            if (this.BuildConfigurationList != null)
+            {
+                this.BuildConfigurationList.Accept(visitor);
+            }
+            if (this.BuildPhases != null)
+            {
+                foreach (PBXBuildPhase phase in this.BuildPhases)
+                {
+                    phase.Accept(visitor);
+                }
+            }
+            if (this.Dependencies != null)
+            {
+                foreach (PBXTargetDependency dependency in this.Dependencies)
+                {
+                    dependency.Accept(visitor);
+                }
+            }
         }
 
         /// <summary>
@@ -56,8 +109,19 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "map">The map.</param>
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
-            base.WriteTo(writer, map);
-            // TODO;
+            writer.writeElementPrologue(map, this);
+            if (this.BuildConfigurationList != null)
+            {
+                writer.WriteReference(map, "buildConfigurationList", this.BuildConfigurationList);
+            }
+            writer.WriteReferences(map, "buildPhases", this.BuildPhases);
+            writer.WriteReferences(map, "dependencies", this.Dependencies);
+            writer.WriteAttribute("name", this.Name);
+            writer.WriteAttribute("productInstallPath", this.ProductInstallPath);
+            writer.WriteAttribute("productName", this.ProductName);
+            writer.WriteReference(map, "productReference", this.ProductReference);
+            writer.WriteAttribute("productType", this.ProductType.ToDescription());
+            writer.writeElementEpilogue();
         }
     }
 }

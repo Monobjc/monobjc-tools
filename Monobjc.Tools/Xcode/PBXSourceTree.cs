@@ -15,43 +15,28 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
+using System.ComponentModel;
+
 namespace Monobjc.Tools.Xcode
 {
-    public class PBXVariantGroup : PBXGroup
+    /// <summary>
+    /// </summary>
+    public enum PBXSourceTree
     {
         /// <summary>
-        ///   Gets the elemnt's nature.
         /// </summary>
-        /// <value>The nature.</value>
-        public override PBXElementType Nature
-        {
-            get { return PBXElementType.PBXVariantGroup; }
-        }
-
+        None = 0,
         /// <summary>
-        ///   Gets the description.
         /// </summary>
-        /// <value>The description.</value>
-        public override string Description
-        {
-            get { return "Variant"; }
-        }
-
+        [Description("\"<group>\"")]
+        Group,
         /// <summary>
-        ///   Accepts the specified visitor.
         /// </summary>
-        /// <param name = "visitor">The visitor.</param>
-        public override void Accept(IPBXVisitor visitor)
-        {
-            visitor.Visit(this);
-
-            if (this.Children != null)
-            {
-                foreach (PBXFileElement target in this.Children)
-                {
-                    target.Accept(visitor);
-                }
-            }
-        }
+        [Description("BUILT_PRODUCTS_DIR")]
+        BuildProductDir,
+        /// <summary>
+        /// </summary>
+        [Description("SDKROOT")]
+        SdkRoot,
     }
 }

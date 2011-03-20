@@ -15,9 +15,6 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
-using System.Collections.Generic;
-using System.IO;
-
 namespace Monobjc.Tools.Xcode
 {
     public class PBXAggregateTarget : PBXTarget
@@ -47,17 +44,25 @@ namespace Monobjc.Tools.Xcode
         public override void Accept(IPBXVisitor visitor)
         {
             visitor.Visit(this);
-        }
 
-        /// <summary>
-        ///   Writes this element to the writer.
-        /// </summary>
-        /// <param name = "writer">The writer.</param>
-        /// <param name = "map">The map.</param>
-        public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
-        {
-            base.WriteTo(writer, map);
-            // TODO;
+            if (this.BuildConfigurationList != null)
+            {
+                this.BuildConfigurationList.Accept(visitor);
+            }
+            if (this.BuildPhases != null)
+            {
+                foreach (PBXBuildPhase phase in this.BuildPhases)
+                {
+                    phase.Accept(visitor);
+                }
+            }
+            if (this.Dependencies != null)
+            {
+                foreach (PBXTargetDependency dependency in this.Dependencies)
+                {
+                    dependency.Accept(visitor);
+                }
+            }
         }
     }
 }

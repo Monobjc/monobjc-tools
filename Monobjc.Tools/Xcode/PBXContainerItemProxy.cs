@@ -15,13 +15,46 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
+using System;
 using System.Collections.Generic;
 using System.IO;
 
 namespace Monobjc.Tools.Xcode
 {
-    public class PBXContainerItemProxy : PBXBuildPhase
+    public class PBXContainerItemProxy : PBXElement
     {
+        /// <summary>
+        ///   Initializes a new instance of the <see cref = "PBXContainerItemProxy" /> class.
+        /// </summary>
+        public PBXContainerItemProxy()
+        {
+            this.ProxyType = 1;
+        }
+
+        /// <summary>
+        ///   Gets or sets the container portal.
+        /// </summary>
+        /// <value>The container portal.</value>
+        public PBXProject ContainerPortal { get; set; }
+
+        /// <summary>
+        ///   Gets or sets the type of the proxy.
+        /// </summary>
+        /// <value>The type of the proxy.</value>
+        public int ProxyType { get; set; }
+
+        /// <summary>
+        ///   Gets or sets the remote global ID string.
+        /// </summary>
+        /// <value>The remote global ID string.</value>
+        public PBXTarget RemoteGlobalIDString { get; set; }
+
+        /// <summary>
+        ///   Gets or sets the remote info.
+        /// </summary>
+        /// <value>The remote info.</value>
+        public String RemoteInfo { get; set; }
+
         /// <summary>
         ///   Gets the nature.
         /// </summary>
@@ -47,6 +80,15 @@ namespace Monobjc.Tools.Xcode
         public override void Accept(IPBXVisitor visitor)
         {
             visitor.Visit(this);
+
+            if (this.ContainerPortal != null)
+            {
+                this.ContainerPortal.Accept(visitor);
+            }
+            if (this.RemoteGlobalIDString != null)
+            {
+                this.RemoteGlobalIDString.Accept(visitor);
+            }
         }
 
         /// <summary>
@@ -54,6 +96,13 @@ namespace Monobjc.Tools.Xcode
         /// </summary>
         /// <param name = "writer">The writer.</param>
         /// <param name = "map">The map.</param>
-        public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map) {}
+        public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
+        {
+            writer.writeElementPrologue(map, this);
+            writer.WriteAttribute("proxyType", this.ProxyType);
+            writer.WriteReference(map, "remoteGlobalIDString", this.RemoteGlobalIDString);
+            writer.WriteAttribute("remoteInfo", this.RemoteInfo);
+            writer.writeElementEpilogue();
+        }
     }
 }

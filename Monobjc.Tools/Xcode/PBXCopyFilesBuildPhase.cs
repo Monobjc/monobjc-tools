@@ -15,6 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -22,6 +23,27 @@ namespace Monobjc.Tools.Xcode
 {
     public class PBXCopyFilesBuildPhase : PBXBuildPhase
     {
+        /// <summary>
+        ///   Initializes a new instance of the <see cref = "PBXCopyFilesBuildPhase" /> class.
+        /// </summary>
+        public PBXCopyFilesBuildPhase()
+        {
+            this.DstPath = string.Empty;
+            this.DstSubfolderSpec = 16;
+        }
+
+        /// <summary>
+        ///   Gets or sets the DST path.
+        /// </summary>
+        /// <value>The DST path.</value>
+        public String DstPath { get; set; }
+
+        /// <summary>
+        ///   Gets or sets the DST subfolder spec.
+        /// </summary>
+        /// <value>The DST subfolder spec.</value>
+        public int DstSubfolderSpec { get; set; }
+
         /// <summary>
         ///   Gets the nature.
         /// </summary>
@@ -47,6 +69,14 @@ namespace Monobjc.Tools.Xcode
         public override void Accept(IPBXVisitor visitor)
         {
             visitor.Visit(this);
+
+            if (this.Files != null)
+            {
+                foreach (PBXFileReference file in this.Files)
+                {
+                    file.Accept(visitor);
+                }
+            }
         }
 
         /// <summary>
@@ -56,7 +86,13 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "map">The map.</param>
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
-            // TODO;
+            writer.writeElementPrologue(map, this);
+            writer.WriteAttribute("buildActionMask", this.BuildActionMask);
+            writer.WriteAttribute("dstPath", this.DstPath);
+            writer.WriteAttribute("dstSubfolderSpec", this.DstSubfolderSpec);
+            writer.WriteReferences(map, "files", this.Files);
+            writer.WriteAttribute("runOnlyForDeploymentPostprocessing", this.RunOnlyForDeploymentPostprocessing);
+            writer.writeElementEpilogue();
         }
     }
 }

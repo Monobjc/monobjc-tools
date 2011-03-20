@@ -18,10 +18,11 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Monobjc.Tools.Utilities;
 
 namespace Monobjc.Tools.Xcode
 {
-    public class PBXFileReference : PBXElement
+    public class PBXFileReference : PBXFileElement
     {
         /// <summary>
         ///   Initializes a new instance of the <see cref = "PBXFileReference" /> class.
@@ -41,19 +42,13 @@ namespace Monobjc.Tools.Xcode
         ///   Gets or sets the type of the explicit file.
         /// </summary>
         /// <value>The type of the explicit file.</value>
-        public String ExplicitFileType { get; set; }
+        public PBXFileType ExplicitFileType { get; set; }
 
         /// <summary>
         ///   Gets or sets the last type of the known file.
         /// </summary>
         /// <value>The last type of the known file.</value>
-        public String LastKnownFileType { get; set; }
-
-        /// <summary>
-        ///   Gets or sets the name.
-        /// </summary>
-        /// <value>The name.</value>
-        public String Name { get; set; }
+        public PBXFileType LastKnownFileType { get; set; }
 
         /// <summary>
         ///   Gets or sets the path.
@@ -102,15 +97,14 @@ namespace Monobjc.Tools.Xcode
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
             writer.writeElementPrologue(map, this);
-            writer.WriteAttribute("isa", this.Isa);
             writer.WriteAttribute("fileEncoding", this.FileEncoding);
-            if (!String.IsNullOrEmpty(this.ExplicitFileType))
+            if (this.ExplicitFileType != PBXFileType.None)
             {
-                writer.WriteAttribute("explicitFileType", this.ExplicitFileType);
+                writer.WriteAttribute("explicitFileType", this.ExplicitFileType.ToDescription());
             }
-            if (!String.IsNullOrEmpty(this.LastKnownFileType))
+            if (this.LastKnownFileType != PBXFileType.None)
             {
-                writer.WriteAttribute("lastKnownFileType", this.LastKnownFileType);
+                writer.WriteAttribute("lastKnownFileType", this.LastKnownFileType.ToDescription());
             }
             writer.WriteAttribute("name", this.Name);
             writer.WriteAttribute("path", this.Path);

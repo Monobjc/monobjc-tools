@@ -15,7 +15,6 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
-using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -28,11 +27,8 @@ namespace Monobjc.Tools.Xcode
         /// </summary>
         public PBXAppleScriptBuildPhase()
         {
-            this.BuildActionMask = Int32.MaxValue;
             this.ContextName = string.Empty;
-            this.Files = new List<PBXFileReference>();
             this.IsSharedContext = 0;
-            this.RunOnlyForDeploymentPostprocessing = 0;
         }
 
         /// <summary>
@@ -74,6 +70,14 @@ namespace Monobjc.Tools.Xcode
         public override void Accept(IPBXVisitor visitor)
         {
             visitor.Visit(this);
+
+            if (this.Files != null)
+            {
+                foreach (PBXFileReference file in this.Files)
+                {
+                    file.Accept(visitor);
+                }
+            }
         }
 
         /// <summary>
@@ -84,10 +88,9 @@ namespace Monobjc.Tools.Xcode
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
             writer.writeElementPrologue(map, this);
-            writer.WriteAttribute("isa", this.Isa);
             writer.WriteAttribute("buildActionMask", this.BuildActionMask);
             writer.WriteAttribute("contextName", this.ContextName);
-            writer.WriteReferences(map, "targets", this.Files);
+            writer.WriteReferences(map, "files", this.Files);
             writer.WriteAttribute("isSharedContext", this.IsSharedContext);
             writer.WriteAttribute("runOnlyForDeploymentPostprocessing", this.RunOnlyForDeploymentPostprocessing);
             writer.writeElementEpilogue();

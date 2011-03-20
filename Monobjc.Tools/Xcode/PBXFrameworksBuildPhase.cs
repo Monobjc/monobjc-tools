@@ -15,24 +15,10 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
-using System;
-using System.Collections.Generic;
-using System.IO;
-
 namespace Monobjc.Tools.Xcode
 {
     public class PBXFrameworksBuildPhase : PBXBuildPhase
     {
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "PBXFrameworksBuildPhase" /> class.
-        /// </summary>
-        public PBXFrameworksBuildPhase()
-        {
-            this.BuildActionMask = Int32.MaxValue;
-            this.Files = new List<PBXFileReference>();
-            this.RunOnlyForDeploymentPostprocessing = 0;
-        }
-
         /// <summary>
         ///   Gets the elemnt's nature.
         /// </summary>
@@ -58,21 +44,14 @@ namespace Monobjc.Tools.Xcode
         public override void Accept(IPBXVisitor visitor)
         {
             visitor.Visit(this);
-        }
 
-        /// <summary>
-        ///   Writes this element to the writer.
-        /// </summary>
-        /// <param name = "writer">The writer.</param>
-        /// <param name = "map">The map.</param>
-        public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
-        {
-            writer.writeElementPrologue(map, this);
-            writer.WriteAttribute("isa", this.Isa);
-            writer.WriteAttribute("buildActionMask", this.BuildActionMask);
-            writer.WriteReferences(map, "targets", this.Files);
-            writer.WriteAttribute("runOnlyForDeploymentPostprocessing", this.RunOnlyForDeploymentPostprocessing);
-            writer.writeElementEpilogue();
+            if (this.Files != null)
+            {
+                foreach (PBXFileReference file in this.Files)
+                {
+                    file.Accept(visitor);
+                }
+            }
         }
     }
 }

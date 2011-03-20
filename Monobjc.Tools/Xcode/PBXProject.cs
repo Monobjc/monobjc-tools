@@ -145,7 +145,6 @@ namespace Monobjc.Tools.Xcode
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
             writer.writeElementPrologue(map, this);
-            writer.WriteAttribute("isa", this.Isa);
             if (this.BuildConfigurationList != null)
             {
                 writer.WriteReference(map, "buildConfigurationList", this.BuildConfigurationList);

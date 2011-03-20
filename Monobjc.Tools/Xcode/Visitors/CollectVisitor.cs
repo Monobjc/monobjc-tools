@@ -210,6 +210,10 @@ namespace Monobjc.Tools.Xcode.Visitors
         /// <param name = "element">The element.</param>
         private void Add(IPBXElement element)
         {
+            if (this.Map.ContainsKey(element))
+            {
+                return;
+            }
             this.Map.Add(element, this.GetElementUID(element));
         }
 

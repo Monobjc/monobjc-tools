@@ -17,11 +17,33 @@
 //
 using System.Collections.Generic;
 using System.IO;
+using Monobjc.Tools.Utilities;
 
 namespace Monobjc.Tools.Xcode
 {
-    public class PBXGroup : PBXElement
+    public class PBXGroup : PBXFileElement
     {
+        /// <summary>
+        ///   Initializes a new instance of the <see cref = "PBXGroup" /> class.
+        /// </summary>
+        public PBXGroup()
+        {
+            this.Children = new List<PBXFileElement>();
+            this.SourceTree = PBXSourceTree.Group;
+        }
+
+        /// <summary>
+        ///   Gets or sets the children.
+        /// </summary>
+        /// <value>The children.</value>
+        public IList<PBXFileElement> Children { get; set; }
+
+        /// <summary>
+        ///   Gets or sets the source tree.
+        /// </summary>
+        /// <value>The source tree.</value>
+        public PBXSourceTree SourceTree { get; set; }
+
         /// <summary>
         ///   Gets the elemnt's nature.
         /// </summary>
@@ -47,6 +69,14 @@ namespace Monobjc.Tools.Xcode
         public override void Accept(IPBXVisitor visitor)
         {
             visitor.Visit(this);
+
+            if (this.Children != null)
+            {
+                foreach (PBXFileElement target in this.Children)
+                {
+                    target.Accept(visitor);
+                }
+            }
         }
 
         /// <summary>
@@ -54,6 +84,13 @@ namespace Monobjc.Tools.Xcode
         /// </summary>
         /// <param name = "writer">The writer.</param>
         /// <param name = "map">The map.</param>
-        public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map) {}
+        public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
+        {
+            writer.writeElementPrologue(map, this);
+            writer.WriteReferences(map, "children", this.Children);
+            writer.WriteAttribute("compatibilityVersion", this.Name);
+            writer.WriteAttribute("sourceTree", this.SourceTree.ToDescription());
+            writer.writeElementEpilogue();
+        }
     }
 }
