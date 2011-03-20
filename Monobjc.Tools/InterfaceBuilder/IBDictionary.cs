@@ -265,8 +265,10 @@ namespace Monobjc.Tools.InterfaceBuilder
 
             if (this.usesXmlCoder)
             {
-                IBArray keys = this.DereferenceItem(resolver, this.Find<IIBItem>("dict.sortedKeys")) as IBArray;
-                IBArray values = this.DereferenceItem(resolver, this.Find<IBArray>("dict.values")) as IBArray;
+                IIBItem item1 = this.Find<IIBItem>("dict.sortedKeys");
+                IBArray keys = this.DereferenceItem(resolver, item1) as IBArray;
+                IIBItem item2 = this.Find<IIBItem>("dict.values");
+                IBArray values = this.DereferenceItem(resolver, item2) as IBArray;
                 if (keys != null && values != null)
                 {
                     for (int i = 0; i < keys.Count; i++)
@@ -281,7 +283,7 @@ namespace Monobjc.Tools.InterfaceBuilder
                 }
                 else
                 {
-                    throw new Exception();
+                    throw new Exception("It seems that the parsing has really gone wrong. Can't find either keys or values...");
                 }
             }
             else

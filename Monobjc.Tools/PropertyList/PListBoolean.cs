@@ -44,5 +44,15 @@ namespace Monobjc.Tools.PropertyList
             writer.WriteStartElement(this.Value ? "true" : "false");
             writer.WriteEndElement();
         }
+
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="Monobjc.Tools.PropertyList.PListBoolean"/> to <see cref="System.Boolean"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>The result of the conversion.</returns>
+        public static implicit operator bool(PListBoolean value)
+        {
+            return value.Value;
+        }
     }
 }

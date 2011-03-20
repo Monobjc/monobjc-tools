@@ -53,5 +53,15 @@ namespace Monobjc.Tools.PropertyList
         {
             writer.WriteElementString("string", this.Value);
         }
+
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="Monobjc.Tools.PropertyList.PListString"/> to <see cref="System.String"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>The result of the conversion.</returns>
+        public static implicit operator String(PListString value)
+        {
+            return value.Value;
+        }
     }
 }

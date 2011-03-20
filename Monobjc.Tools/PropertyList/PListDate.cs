@@ -60,5 +60,15 @@ namespace Monobjc.Tools.PropertyList
         {
             writer.WriteElementString("date", this.Value.ToUniversalTime().ToString(DATEFORMAT, CultureInfo.InvariantCulture));
         }
+
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="Monobjc.Tools.PropertyList.PListDate"/> to <see cref="System.DateTime"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>The result of the conversion.</returns>
+        public static implicit operator DateTime(PListDate value)
+        {
+            return value.Value;
+        }
     }
 }

@@ -1,0 +1,105 @@
+﻿using System;
+using System.IO;
+using Monobjc.Tools.Properties;
+using Monobjc.Tools.PropertyList;
+using NUnit.Framework;
+
+namespace Monobjc.Tools
+{
+    [TestFixture]
+    [Category("XIB")]
+    [Category("Parsing")]
+    public class PListLoadTests
+    {
+        [Test]
+        public void TestPListReading001()
+        {
+            String content = ReadResource(Resources.Info_001);
+            PListDocument document = PListDocument.LoadFromXml(content);
+            CheckDocument(document);
+
+            Assert.AreEqual(String.Empty, (String)(PListString)document.Root.Dict["CFBundleIconFile"]);
+            Assert.AreEqual("com.Perspx.${PRODUCT_NAME:rfc1034identifier}", (String)(PListString)document.Root.Dict["CFBundleIdentifier"]);
+        }
+
+        [Test]
+        public void TestPListReading002()
+        {
+            String content = ReadResource(Resources.Info_002);
+            PListDocument document = PListDocument.LoadFromXml(content);
+            CheckDocument(document);
+
+            Assert.AreEqual(String.Empty, (String)(PListString)document.Root.Dict["CFBundleIconFile"]);
+            Assert.AreEqual("se.hunch.${PRODUCT_NAME:rfc1034identifier}", (String)(PListString)document.Root.Dict["CFBundleIdentifier"]);
+        }
+
+        [Test]
+        public void TestPListReading004()
+        {
+            String content = ReadResource(Resources.Info_004);
+            PListDocument document = PListDocument.LoadFromXml(content);
+            CheckDocument(document);
+
+            Assert.AreEqual(String.Empty, (String)(PListString)document.Root.Dict["CFBundleIconFile"]);
+            Assert.AreEqual("com.yourcompany.${PRODUCT_NAME:rfc1034identifier}", (String)(PListString)document.Root.Dict["CFBundleIdentifier"]);
+        }
+
+        [Test]
+        public void TestPListReading005()
+        {
+            String content = ReadResource(Resources.Info_005);
+            PListDocument document = PListDocument.LoadFromXml(content);
+            CheckDocument(document);
+
+            Assert.IsTrue(document.Root.Dict.ContainsKey("CFBundleDocumentTypes"));
+            PListItemBase item = document.Root.Dict["CFBundleDocumentTypes"];
+            Assert.IsTrue(item is PListArray);
+            PListArray array = (PListArray) item;
+            Assert.AreEqual(1, array.Count);
+        }
+
+        [Test]
+        public void TestPListReading010()
+        {
+            String content = ReadResource(Resources.Info_010);
+            PListDocument document = PListDocument.LoadFromXml(content);
+            CheckDocument(document);
+
+            Assert.AreEqual(String.Empty, (String)(PListString)document.Root.Dict["CFBundleIconFile"]);
+            Assert.AreEqual("net.monobjc.${PRODUCT_NAME:rfc1034identifier}", (String)(PListString)document.Root.Dict["CFBundleIdentifier"]);
+        }
+
+        private static String ReadResource(byte[] resource)
+        {
+            using (MemoryStream stream = new MemoryStream(resource))
+            {
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    return reader.ReadToEnd();
+                }
+            }
+        }
+
+        private static void CheckDocument(PListDocument document)
+        {
+            Assert.IsNotNull(document.Root);
+            Assert.IsNotNull(document.Root.Dict);
+            Assert.IsTrue(document.Root.Dict.ContainsKey("CFBundleDevelopmentRegion"));
+            Assert.IsTrue(document.Root.Dict.ContainsKey("CFBundleExecutable"));
+            Assert.IsTrue(document.Root.Dict.ContainsKey("CFBundleIconFile"));
+            Assert.IsTrue(document.Root.Dict.ContainsKey("CFBundleIdentifier"));
+            Assert.IsTrue(document.Root.Dict.ContainsKey("CFBundleInfoDictionaryVersion"));
+            Assert.IsTrue(document.Root.Dict.ContainsKey("CFBundleName"));
+            Assert.IsTrue(document.Root.Dict.ContainsKey("CFBundlePackageType"));
+            Assert.IsTrue(document.Root.Dict.ContainsKey("CFBundleSignature"));
+            Assert.IsTrue(document.Root.Dict.ContainsKey("CFBundleShortVersionString"));
+            Assert.IsTrue(document.Root.Dict.ContainsKey("LSMinimumSystemVersion"));
+            Assert.IsTrue(document.Root.Dict.ContainsKey("CFBundleVersion"));
+            Assert.AreEqual("1", (String) (PListString) document.Root.Dict["CFBundleVersion"]);
+            Assert.IsTrue(document.Root.Dict.ContainsKey("NSMainNibFile"));
+            Assert.AreEqual("MainMenu", (String)(PListString)document.Root.Dict["NSMainNibFile"]);
+            Assert.IsTrue(document.Root.Dict.ContainsKey("NSPrincipalClass"));
+            Assert.AreEqual("NSApplication", (String)(PListString)document.Root.Dict["NSPrincipalClass"]);
+        }
+    }
+}

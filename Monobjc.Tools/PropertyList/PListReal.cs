@@ -58,5 +58,15 @@ namespace Monobjc.Tools.PropertyList
         {
             writer.WriteElementString("real", this.Value.ToString(CultureInfo.InvariantCulture));
         }
+
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="Monobjc.Tools.PropertyList.PListReal"/> to <see cref="System.Double"/>.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>The result of the conversion.</returns>
+        public static implicit operator Double(PListReal value)
+        {
+            return value.Value;
+        }
     }
 }

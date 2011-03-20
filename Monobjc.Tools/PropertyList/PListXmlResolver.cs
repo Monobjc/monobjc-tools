@@ -66,17 +66,20 @@ namespace Monobjc.Tools.PropertyList
             if (absoluteUri.Scheme == Uri.UriSchemeHttp)
             {
                 String url = absoluteUri.AbsoluteUri;
-                switch (url)
+                if (url.Equals(PListDocument.SYSTEM_ID))
                 {
-                    case PListDocument.SYSTEM_ID:
-                        return new MemoryStream(Resources.PropertyList_Dtd);
-                    default:
-                        break;
+                    return new MemoryStream(Resources.PropertyList_Dtd);
                 }
             }
 
             if (absoluteUri.Scheme == Uri.UriSchemeFile)
             {
+                String url = absoluteUri.AbsoluteUri;
+                url = url.Replace("%20", " ");
+                if (url.EndsWith(PListDocument.PUBLIC_ID.Replace("//", "/")))
+                {
+                    return new MemoryStream(Resources.PropertyList_Dtd);
+                }
                 return new FileStream(absoluteUri.AbsolutePath, FileMode.Open, FileAccess.Read);
             }
 

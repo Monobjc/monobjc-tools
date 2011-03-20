@@ -28,7 +28,7 @@ namespace Monobjc.Tools.PropertyList
     /// </summary>
     public class PListDocument
     {
-        internal const String PUBLIC_ID = "-//Apple Computer//DTD PLIST 1.0//EN";
+        internal const String PUBLIC_ID = "-//Apple//DTD PLIST 1.0//EN";
         internal const String SYSTEM_ID = "http://www.apple.com/DTDs/PropertyList-1.0.dtd";
 
         /// <summary>
