@@ -33,8 +33,8 @@ namespace Monobjc.Tools.Xcode
         {
             this.ArchivedVersion = 1;
             this.Classes = new List<String>();
-            this.ObjectVersion = XcodeCompatibilityVersion.Xcode_3_2;
             this.RootObject = new PBXProject();
+            this.ObjectVersion = XcodeCompatibilityVersion.Xcode_3_2;
         }
 
         /// <summary>
@@ -53,14 +53,32 @@ namespace Monobjc.Tools.Xcode
         ///   Gets or sets the object version.
         /// </summary>
         /// <value>The object version.</value>
-        public XcodeCompatibilityVersion ObjectVersion { get; set; }
+        public XcodeCompatibilityVersion ObjectVersion
+        {
+            get { return this.Project.CompatibilityVersion; }
+            set { this.Project.CompatibilityVersion = value; }
+        }
 
         /// <summary>
         ///   Gets or sets the root object.
         /// </summary>
         /// <value>The root object.</value>
-        public PBXProject RootObject { get; set; }
+        public PBXProject RootObject { get; private set; }
 
+        /// <summary>
+        ///   Gets the project.
+        /// </summary>
+        /// <value>The project.</value>
+        public PBXProject Project
+        {
+            get { return this.RootObject; }
+        }
+
+        /// <summary>
+        ///   Loads the specified content.
+        /// </summary>
+        /// <param name = "content">The content.</param>
+        /// <returns></returns>
         public static PBXDocument Load(String content)
         {
             using (StringReader reader = new StringReader(content))
@@ -69,11 +87,21 @@ namespace Monobjc.Tools.Xcode
             }
         }
 
+        /// <summary>
+        ///   Loads the specified reader.
+        /// </summary>
+        /// <param name = "reader">The reader.</param>
+        /// <returns></returns>
         public static PBXDocument Load(TextReader reader)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        ///   Loads from file.
+        /// </summary>
+        /// <param name = "path">The path.</param>
+        /// <returns></returns>
         public static PBXDocument LoadFromFile(String path)
         {
             using (StreamReader reader = new StreamReader(path))
@@ -82,6 +110,10 @@ namespace Monobjc.Tools.Xcode
             }
         }
 
+        /// <summary>
+        ///   Writes the specified writer.
+        /// </summary>
+        /// <param name = "writer">The writer.</param>
         public void Write(TextWriter writer)
         {
             // 1. Collect all the objects
@@ -99,10 +131,31 @@ namespace Monobjc.Tools.Xcode
 
             // 3. Output the objects by nature
             writer.WriteLine("    {0} = {{", "objects");
-            IEnumerable<KeyValuePair<IPBXElement, String>> list = from entry in map orderby entry.Key.Nature ascending select entry;
+            writer.WriteLine();
+
+            // Iterate and output being/end section before dumping objects
+            IEnumerable<KeyValuePair<IPBXElement, String>> list = from entry in map orderby entry.Key.Isa ascending select entry;
+            PBXElementType currentType = PBXElementType.None;
             foreach (KeyValuePair<IPBXElement, string> pair in list)
             {
+                if (currentType != pair.Key.Nature)
+                {
+                    if (currentType != PBXElementType.None)
+                    {
+                        writer.WriteLine("/* End {0} section */", currentType);
+                        writer.WriteLine();
+                    }
+                    currentType = pair.Key.Nature;
+                    writer.WriteLine("/* Begin {0} section */", currentType);
+                }
+
                 pair.Key.WriteTo(writer, map);
+            }
+
+            if (currentType != PBXElementType.None)
+            {
+                writer.WriteLine("/* End {0} section */", currentType);
+                writer.WriteLine();
             }
             writer.WriteLine("    };");
 
@@ -111,6 +164,10 @@ namespace Monobjc.Tools.Xcode
             writer.WriteLine("}");
         }
 
+        /// <summary>
+        ///   Writes to file.
+        /// </summary>
+        /// <param name = "path">The path.</param>
         public void WriteToFile(String path)
         {
             using (StreamWriter writer = new StreamWriter(path, false, Encoding.UTF8))

@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		870C88131338ABB600A69309 /* All */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 870C88141338ABB600A69309 /* Build configuration list for PBXAggregateTarget "All" */;
+			buildPhases = (
+			);
+			dependencies = (
+				870C881A1338ABBD00A69309 /* PBXTargetDependency */,
+				870C88181338ABBB00A69309 /* PBXTargetDependency */,
+			);
+			name = All;
+			productName = All;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		870C87EF1338A77600A69309 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870C87EE1338A77600A69309 /* Cocoa.framework */; };
+		870C87FC1338A77600A69309 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 870C87FB1338A77600A69309 /* main.m */; };
+		870C88021338A77600A69309 /* CocoaAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 870C88011338A77600A69309 /* CocoaAppAppDelegate.m */; };
+		870C88051338A77600A69309 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870C88031338A77600A69309 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		870C880F1338A85400A69309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 870C87E11338A77600A69309 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 870C87E91338A77600A69309;
+			remoteInfo = CocoaApp;
+		};
+		870C88171338ABBB00A69309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 870C87E11338A77600A69309 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 870C87E91338A77600A69309;
+			remoteInfo = CocoaApp;
+		};
+		870C88191338ABBD00A69309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 870C87E11338A77600A69309 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 870C880B1338A84A00A69309;
+			remoteInfo = TestExternal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		870C87EA1338A77600A69309 /* CocoaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		870C87EE1338A77600A69309 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		870C87F61338A77600A69309 /* CocoaApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaApp-Info.plist"; sourceTree = "<group>"; };
+		870C87FA1338A77600A69309 /* CocoaApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaApp-Prefix.pch"; sourceTree = "<group>"; };
+		870C87FB1338A77600A69309 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		870C88001338A77600A69309 /* CocoaAppAppDelegate.h */ = {isa = PBXFileReference; explicitFileType = text.script.worksheet; fileEncoding = 4; lineEnding = 0; path = CocoaAppAppDelegate.h; sourceTree = "<group>"; };
+		870C88011338A77600A69309 /* CocoaAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaAppAppDelegate.m; sourceTree = "<group>"; };
+		870C88041338A77600A69309 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		870C88211338B0CB00A69309 /* Encoding.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Encoding.txt; sourceTree = "<group>"; };
+		870C88221338B0E700A69309 /* FileTypes.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = FileTypes.txt; sourceTree = "<group>"; };
+		870C88231338B11000A69309 /* project.pbxproj */ = {isa = PBXFileReference; explicitFileType = text.pbxproject; name = project.pbxproj; path = CocoaApp.xcodeproj/project.pbxproj; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		870C87E71338A77600A69309 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				870C87EF1338A77600A69309 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		870C87DF1338A77600A69309 = {
+			isa = PBXGroup;
+			children = (
+				870C87F41338A77600A69309 /* CocoaApp */,
+				870C87ED1338A77600A69309 /* Frameworks */,
+				870C87EB1338A77600A69309 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		870C87EB1338A77600A69309 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				870C87EA1338A77600A69309 /* CocoaApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		870C87ED1338A77600A69309 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				870C87EE1338A77600A69309 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		870C87F41338A77600A69309 /* CocoaApp */ = {
+			isa = PBXGroup;
+			children = (
+				870C88111338AB7D00A69309 /* Classes */,
+				870C88121338AB8F00A69309 /* Resources */,
+				870C87F51338A77600A69309 /* Supporting Files */,
+			);
+			path = CocoaApp;
+			sourceTree = "<group>";
+		};
+		870C87F51338A77600A69309 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				870C87F61338A77600A69309 /* CocoaApp-Info.plist */,
+				870C87FA1338A77600A69309 /* CocoaApp-Prefix.pch */,
+				870C87FB1338A77600A69309 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		870C88111338AB7D00A69309 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				870C88001338A77600A69309 /* CocoaAppAppDelegate.h */,
+				870C88011338A77600A69309 /* CocoaAppAppDelegate.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		870C88121338AB8F00A69309 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				870C88231338B11000A69309 /* project.pbxproj */,
+				870C88211338B0CB00A69309 /* Encoding.txt */,
+				870C88221338B0E700A69309 /* FileTypes.txt */,
+				870C88031338A77600A69309 /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		870C880B1338A84A00A69309 /* TestExternal */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 870C880C1338A84A00A69309 /* Build configuration list for PBXLegacyTarget "TestExternal" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = /Developer;
+			dependencies = (
+				870C88101338A85400A69309 /* PBXTargetDependency */,
+			);
+			name = TestExternal;
+			passBuildSettingsInEnvironment = 1;
+			productName = TestExternal;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		870C87E91338A77600A69309 /* CocoaApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 870C88081338A77600A69309 /* Build configuration list for PBXNativeTarget "CocoaApp" */;
+			buildPhases = (
+				870C87E61338A77600A69309 /* Sources */,
+				870C87E71338A77600A69309 /* Frameworks */,
+				870C87E81338A77600A69309 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CocoaApp;
+			productName = CocoaApp;
+			productReference = 870C87EA1338A77600A69309 /* CocoaApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		870C87E11338A77600A69309 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = Praxedo;
+			};
+			buildConfigurationList = 870C87E41338A77600A69309 /* Build configuration list for PBXProject "CocoaApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 870C87DF1338A77600A69309;
+			productRefGroup = 870C87EB1338A77600A69309 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				870C87E91338A77600A69309 /* CocoaApp */,
+				870C880B1338A84A00A69309 /* TestExternal */,
+				870C88131338ABB600A69309 /* All */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		870C87E81338A77600A69309 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				870C88051338A77600A69309 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		870C87E61338A77600A69309 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				870C87FC1338A77600A69309 /* main.m in Sources */,
+				870C88021338A77600A69309 /* CocoaAppAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		870C88101338A85400A69309 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 870C87E91338A77600A69309 /* CocoaApp */;
+			targetProxy = 870C880F1338A85400A69309 /* PBXContainerItemProxy */;
+		};
+		870C88181338ABBB00A69309 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 870C87E91338A77600A69309 /* CocoaApp */;
+			targetProxy = 870C88171338ABBB00A69309 /* PBXContainerItemProxy */;
+		};
+		870C881A1338ABBD00A69309 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 870C880B1338A84A00A69309 /* TestExternal */;
+			targetProxy = 870C88191338ABBD00A69309 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		870C88031338A77600A69309 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				870C88041338A77600A69309 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		870C88061338A77600A69309 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		870C88071338A77600A69309 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		870C88091338A77600A69309 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CocoaApp/CocoaApp-Prefix.pch";
+				INFOPLIST_FILE = "CocoaApp/CocoaApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		870C880A1338A77600A69309 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CocoaApp/CocoaApp-Prefix.pch";
+				INFOPLIST_FILE = "CocoaApp/CocoaApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		870C880D1338A84A00A69309 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		870C880E1338A84A00A69309 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		870C88151338ABB600A69309 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		870C88161338ABB600A69309 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		870C87E41338A77600A69309 /* Build configuration list for PBXProject "CocoaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				870C88061338A77600A69309 /* Debug */,
+				870C88071338A77600A69309 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		870C88081338A77600A69309 /* Build configuration list for PBXNativeTarget "CocoaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				870C88091338A77600A69309 /* Debug */,
+				870C880A1338A77600A69309 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		870C880C1338A84A00A69309 /* Build configuration list for PBXLegacyTarget "TestExternal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				870C880D1338A84A00A69309 /* Debug */,
+				870C880E1338A84A00A69309 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		870C88141338ABB600A69309 /* Build configuration list for PBXAggregateTarget "All" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				870C88151338ABB600A69309 /* Debug */,
+				870C88161338ABB600A69309 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 870C87E11338A77600A69309 /* Project object */;
+}

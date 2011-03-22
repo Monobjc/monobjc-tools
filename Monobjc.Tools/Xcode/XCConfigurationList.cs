@@ -15,19 +15,23 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 
 namespace Monobjc.Tools.Xcode
 {
     public class XCConfigurationList : PBXElement
     {
+        private readonly IList<XCBuildConfiguration> buildConfigurations;
+
         /// <summary>
         ///   Initializes a new instance of the <see cref = "XCConfigurationList" /> class.
         /// </summary>
         public XCConfigurationList()
         {
-            this.BuildConfigurations = new List<XCBuildConfiguration>();
+            this.buildConfigurations = new List<XCBuildConfiguration>();
             this.DefaultConfigurationIsVisible = 0;
         }
 
@@ -35,7 +39,28 @@ namespace Monobjc.Tools.Xcode
         ///   Gets or sets the build configurations.
         /// </summary>
         /// <value>The build configurations.</value>
-        public IList<XCBuildConfiguration> BuildConfigurations { get; set; }
+        public IEnumerable<XCBuildConfiguration> BuildConfigurations
+        {
+            get { return this.buildConfigurations; }
+        }
+
+        /// <summary>
+        ///   Adds the build configuration.
+        /// </summary>
+        /// <param name = "configuration">The configuration.</param>
+        public void AddBuildConfiguration(XCBuildConfiguration configuration)
+        {
+            this.buildConfigurations.Add(configuration);
+        }
+
+        /// <summary>
+        ///   Removes the build configuration.
+        /// </summary>
+        /// <param name = "configuration">The configuration.</param>
+        public void RemoveBuildConfiguration(XCBuildConfiguration configuration)
+        {
+            this.buildConfigurations.Remove(configuration);
+        }
 
         /// <summary>
         ///   Gets or sets the default configuration is visible.
@@ -48,6 +73,12 @@ namespace Monobjc.Tools.Xcode
         /// </summary>
         /// <value>The default name of the configuration.</value>
         public string DefaultConfigurationName { get; set; }
+
+        /// <summary>
+        ///   Gets or sets the target.
+        /// </summary>
+        /// <value>The target.</value>
+        internal PBXElement Target { get; set; }
 
         /// <summary>
         ///   Gets the elemnt's nature.
@@ -64,7 +95,7 @@ namespace Monobjc.Tools.Xcode
         /// <value>The description.</value>
         public override string Description
         {
-            get { return "ConfigurationList"; }
+            get { return String.Format(CultureInfo.CurrentCulture, "Build configuration list for {0} \"{1}\"", this.Target.Isa, this.Target.Description); }
         }
 
         /// <summary>

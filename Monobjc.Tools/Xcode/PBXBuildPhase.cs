@@ -23,13 +23,15 @@ namespace Monobjc.Tools.Xcode
 {
     public abstract class PBXBuildPhase : PBXElement
     {
+        private readonly IList<PBXBuildFile> files;
+
         /// <summary>
         ///   Initializes a new instance of the <see cref = "PBXBuildPhase" /> class.
         /// </summary>
         protected PBXBuildPhase()
         {
             this.BuildActionMask = Int32.MaxValue;
-            this.Files = new List<PBXFileReference>();
+            this.files = new List<PBXBuildFile>();
             this.RunOnlyForDeploymentPostprocessing = 0;
         }
 
@@ -43,7 +45,30 @@ namespace Monobjc.Tools.Xcode
         ///   Gets or sets the files.
         /// </summary>
         /// <value>The files.</value>
-        public IList<PBXFileReference> Files { get; set; }
+        public IEnumerable<PBXBuildFile> Files
+        {
+            get { return this.files; }
+        }
+
+        /// <summary>
+        ///   Adds the file.
+        /// </summary>
+        /// <param name = "file">The file.</param>
+        public void AddFile(PBXBuildFile file)
+        {
+            file.BuildPhase = this;
+            this.files.Add(file);
+        }
+
+        /// <summary>
+        ///   Removes the file.
+        /// </summary>
+        /// <param name = "file">The file.</param>
+        public void RemoveFile(PBXBuildFile file)
+        {
+            file.BuildPhase = null;
+            this.files.Remove(file);
+        }
 
         /// <summary>
         ///   Gets or sets the flag to run only for deployment postprocessing.

@@ -15,32 +15,23 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
-using System.ComponentModel;
-
 namespace Monobjc.Tools.Xcode
 {
     /// <summary>
     /// </summary>
-    public enum PBXSourceTree
+    public enum PBXLineEnding
     {
         /// <summary>
         /// </summary>
-        None = 0,
+        Default = 0,
         /// <summary>
         /// </summary>
-        [Description("<absolute>")]
-        Absolute,
+        Unix = 0,
         /// <summary>
         /// </summary>
-        [Description("<group>")]
-        Group,
+        MacOS = 1,
         /// <summary>
         /// </summary>
-        [Description("BUILT_PRODUCTS_DIR")]
-        BuildProductDir,
-        /// <summary>
-        /// </summary>
-        [Description("SDKROOT")]
-        SdkRoot,
+        Windows = 2,
     }
 }

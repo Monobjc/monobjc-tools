@@ -73,7 +73,7 @@ namespace Monobjc.Tools.Xcode
 
             if (this.Files != null)
             {
-                foreach (PBXFileReference file in this.Files)
+                foreach (PBXBuildFile file in this.Files)
                 {
                     file.Accept(visitor);
                 }

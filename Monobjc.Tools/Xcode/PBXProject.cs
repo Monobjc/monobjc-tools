@@ -27,24 +27,39 @@ namespace Monobjc.Tools.Xcode
     /// </summary>
     public class PBXProject : PBXElement
     {
+        private XCConfigurationList buildConfigurationList;
+        private readonly IList<String> knownRegions;
+        private readonly IList<PBXTarget> targets;
+
+        /// <summary>
+        ///   Initializes a new instance of the <see cref = "PBXProject" /> class.
+        /// </summary>
         public PBXProject()
         {
             this.BuildConfigurationList = new XCConfigurationList();
             this.CompatibilityVersion = XcodeCompatibilityVersion.Xcode_3_2;
             this.DevelopmentRegion = "English";
             this.HasScannedForEncodings = 1;
-            this.KnownRegions = new List<string> {"English", "Japanese", "French", "German"};
+            this.knownRegions = new List<string> {"English", "Japanese", "French", "German"};
             this.MainGroup = new PBXGroup();
             this.ProjectDirPath = String.Empty;
             this.ProjectRoot = String.Empty;
-            this.Targets = new List<PBXTarget>();
+            this.targets = new List<PBXTarget>();
         }
 
         /// <summary>
         ///   Gets or sets the build configuration list.
         /// </summary>
         /// <value>The build configuration list.</value>
-        public XCConfigurationList BuildConfigurationList { get; set; }
+        public XCConfigurationList BuildConfigurationList
+        {
+            get { return this.buildConfigurationList; }
+            set
+            {
+                this.buildConfigurationList = value;
+                this.buildConfigurationList.Target = this;
+            }
+        }
 
         /// <summary>
         ///   Gets or sets the compatibility version.
@@ -68,7 +83,28 @@ namespace Monobjc.Tools.Xcode
         ///   Gets or sets the known regions.
         /// </summary>
         /// <value>The known regions.</value>
-        public IList<String> KnownRegions { get; set; }
+        public IEnumerable<String> KnownRegions
+        {
+            get { return this.knownRegions; }
+        }
+
+        /// <summary>
+        ///   Adds the region.
+        /// </summary>
+        /// <param name = "region">The region.</param>
+        public void AddRegion(String region)
+        {
+            this.knownRegions.Add(region);
+        }
+
+        /// <summary>
+        ///   Removes the region.
+        /// </summary>
+        /// <param name = "region">The region.</param>
+        public void RemoveRegion(String region)
+        {
+            this.knownRegions.Remove(region);
+        }
 
         /// <summary>
         ///   Gets or sets the main group.
@@ -92,7 +128,28 @@ namespace Monobjc.Tools.Xcode
         ///   Gets or sets the targets.
         /// </summary>
         /// <value>The targets.</value>
-        public IList<PBXTarget> Targets { get; set; }
+        public IEnumerable<PBXTarget> Targets
+        {
+            get { return this.targets; }
+        }
+
+        /// <summary>
+        ///   Adds the target.
+        /// </summary>
+        /// <param name = "target">The target.</param>
+        public void AddTarget(PBXTarget target)
+        {
+            this.targets.Add(target);
+        }
+
+        /// <summary>
+        ///   Removes the target.
+        /// </summary>
+        /// <param name = "target">The target.</param>
+        public void RemoveTarget(PBXTarget target)
+        {
+            this.targets.Remove(target);
+        }
 
         /// <summary>
         ///   Gets the nature.
@@ -109,7 +166,7 @@ namespace Monobjc.Tools.Xcode
         /// <value>The description.</value>
         public override string Description
         {
-            get { return "Project"; }
+            get { return this.MainGroup.Name ?? this.Isa; }
         }
 
         /// <summary>

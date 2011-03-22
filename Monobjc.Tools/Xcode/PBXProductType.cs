@@ -28,19 +28,19 @@ namespace Monobjc.Tools.Xcode
         None = 0,
         /// <summary>
         /// </summary>
-        [Description("\"com.apple.product-type.application\"")]
+        [Description("com.apple.product-type.application")]
         Application,
         /// <summary>
         /// </summary>
-        [Description("\"com.apple.product-type.tool\"")]
+        [Description("com.apple.product-type.tool")]
         Tool,
         /// <summary>
         /// </summary>
-        [Description("\"com.apple.product-type.library.static\"")]
+        [Description("com.apple.product-type.library.static")]
         LibraryStatic,
         /// <summary>
         /// </summary>
-        [Description("\"com.apple.product-type.library.dynamic\"")]
+        [Description("com.apple.product-type.library.dynamic")]
         LibraryDynamic,
     }
 }

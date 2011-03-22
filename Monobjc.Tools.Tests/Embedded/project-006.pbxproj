@@ -1,0 +1,117 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		870C88331338F3E500A69309 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		870C88451338F3E500A69309 /* SurrogateTestAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SurrogateTestAppDelegate.h; sourceTree = "<group>"; };
+		870C88491338F3E500A69309 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		870C8857133900B100A69309 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		870C88241338F3E500A69309 = {
+			isa = PBXGroup;
+			children = (
+				870C88391338F3E500A69309 /* Classes */,
+				870C88501338F41B00A69309 /* Resources */,
+				870C88321338F3E500A69309 /* Frameworks */,
+				870C88301338F3E500A69309 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		870C88301338F3E500A69309 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		870C88321338F3E500A69309 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				870C88331338F3E500A69309 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		870C88391338F3E500A69309 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				870C88451338F3E500A69309 /* SurrogateTestAppDelegate.h */,
+			);
+			name = Classes;
+			path = SurrogateTest;
+			sourceTree = "<group>";
+		};
+		870C88501338F41B00A69309 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				870C88481338F3E500A69309 /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		870C88261338F3E500A69309 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = Praxedo;
+			};
+			buildConfigurationList = 870C88291338F3E500A69309 /* Build configuration list for PBXProject "SurrogateTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 870C88241338F3E500A69309;
+			productRefGroup = 870C88301338F3E500A69309 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXVariantGroup section */
+		870C88481338F3E500A69309 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				870C88491338F3E500A69309 /* en */,
+				870C8857133900B100A69309 /* fr */,
+			);
+			name = MainMenu.xib;
+			path = SurrogateTest;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		870C884C1338F3E500A69309 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		870C88291338F3E500A69309 /* Build configuration list for PBXProject "SurrogateTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				870C884C1338F3E500A69309 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 870C88261338F3E500A69309 /* Project object */;
+}

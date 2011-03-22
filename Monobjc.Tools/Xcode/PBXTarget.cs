@@ -23,32 +23,89 @@ namespace Monobjc.Tools.Xcode
 {
     public abstract class PBXTarget : PBXElement
     {
+        private XCConfigurationList buildConfigurationList;
+
+        private readonly IList<PBXBuildPhase> buildPhases;
+
+        private readonly IList<PBXTargetDependency> dependencies;
+
         /// <summary>
         ///   Initializes a new instance of the <see cref = "PBXTarget" /> class.
         /// </summary>
         protected PBXTarget()
         {
-            this.BuildPhases = new List<PBXBuildPhase>();
-            this.Dependencies = new List<PBXTargetDependency>();
+            this.BuildConfigurationList = new XCConfigurationList();
+            this.buildPhases = new List<PBXBuildPhase>();
+            this.dependencies = new List<PBXTargetDependency>();
         }
 
         /// <summary>
         ///   Gets or sets the build configuration list.
         /// </summary>
         /// <value>The build configuration list.</value>
-        public XCConfigurationList BuildConfigurationList { get; set; }
-
-        /// <summary>
-        ///   Gets or sets the dependencies.
-        /// </summary>
-        /// <value>The dependencies.</value>
-        public IList<PBXTargetDependency> Dependencies { get; set; }
+        public XCConfigurationList BuildConfigurationList
+        {
+            get { return this.buildConfigurationList; }
+            set
+            {
+                this.buildConfigurationList = value;
+                this.buildConfigurationList.Target = this;
+            }
+        }
 
         /// <summary>
         ///   Gets or sets the build phases.
         /// </summary>
         /// <value>The build phases.</value>
-        public IList<PBXBuildPhase> BuildPhases { get; set; }
+        public IEnumerable<PBXBuildPhase> BuildPhases
+        {
+            get { return this.buildPhases; }
+        }
+
+        /// <summary>
+        ///   Adds the build phase.
+        /// </summary>
+        /// <param name = "phase">The phase.</param>
+        public void AddBuildPhase(PBXBuildPhase phase)
+        {
+            this.buildPhases.Add(phase);
+        }
+
+        /// <summary>
+        ///   Removes the build phase.
+        /// </summary>
+        /// <param name = "phase">The phase.</param>
+        public void RemoveBuildPhase(PBXBuildPhase phase)
+        {
+            this.buildPhases.Remove(phase);
+        }
+
+        /// <summary>
+        ///   Gets or sets the dependencies.
+        /// </summary>
+        /// <value>The dependencies.</value>
+        public IEnumerable<PBXTargetDependency> Dependencies
+        {
+            get { return this.dependencies; }
+        }
+
+        /// <summary>
+        ///   Adds the target dependency.
+        /// </summary>
+        /// <param name = "dependency">The dependency.</param>
+        public void AddTargetDependency(PBXTargetDependency dependency)
+        {
+            this.dependencies.Add(dependency);
+        }
+
+        /// <summary>
+        ///   Removes the target dependency.
+        /// </summary>
+        /// <param name = "dependency">The dependency.</param>
+        public void RemoveTargetDependency(PBXTargetDependency dependency)
+        {
+            this.dependencies.Remove(dependency);
+        }
 
         /// <summary>
         ///   Gets or sets the name.
@@ -61,6 +118,15 @@ namespace Monobjc.Tools.Xcode
         /// </summary>
         /// <value>The name of the product.</value>
         public String ProductName { get; set; }
+
+        /// <summary>
+        ///   Gets the description.
+        /// </summary>
+        /// <value>The description.</value>
+        public override string Description
+        {
+            get { return this.Name; }
+        }
 
         /// <summary>
         ///   Writes this element to the writer.

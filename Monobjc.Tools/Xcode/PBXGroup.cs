@@ -15,20 +15,35 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Monobjc.Tools.Utilities;
 
 namespace Monobjc.Tools.Xcode
 {
-    public class PBXGroup : PBXFileElement
+    public partial class PBXGroup : PBXFileElement
     {
+        private readonly IList<PBXFileElement> children;
+
         /// <summary>
         ///   Initializes a new instance of the <see cref = "PBXGroup" /> class.
         /// </summary>
+        /// <param name="part"></param>
         public PBXGroup()
         {
-            this.Children = new List<PBXFileElement>();
+            this.children = new List<PBXFileElement>();
+            this.SourceTree = PBXSourceTree.Group;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PBXGroup"/> class.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        public PBXGroup(String name) : base(name)
+        {
+            this.children = new List<PBXFileElement>();
             this.SourceTree = PBXSourceTree.Group;
         }
 
@@ -36,7 +51,28 @@ namespace Monobjc.Tools.Xcode
         ///   Gets or sets the children.
         /// </summary>
         /// <value>The children.</value>
-        public IList<PBXFileElement> Children { get; set; }
+        public IEnumerable<PBXFileElement> Children
+        {
+            get { return this.children; }
+        }
+
+        /// <summary>
+        ///   Adds the child.
+        /// </summary>
+        /// <param name = "element">The element.</param>
+        public void AddChild(PBXFileElement element)
+        {
+            this.children.Add(element);
+        }
+
+        /// <summary>
+        ///   Removes the child.
+        /// </summary>
+        /// <param name = "element">The element.</param>
+        public void RemoveChild(PBXFileElement element)
+        {
+            this.children.Remove(element);
+        }
 
         /// <summary>
         ///   Gets or sets the source tree.
@@ -51,15 +87,6 @@ namespace Monobjc.Tools.Xcode
         public override PBXElementType Nature
         {
             get { return PBXElementType.PBXGroup; }
-        }
-
-        /// <summary>
-        ///   Gets the description.
-        /// </summary>
-        /// <value>The description.</value>
-        public override string Description
-        {
-            get { return "Group"; }
         }
 
         /// <summary>
@@ -88,9 +115,40 @@ namespace Monobjc.Tools.Xcode
         {
             writer.writeElementPrologue(map, this);
             writer.WriteReferences(map, "children", this.Children);
-            writer.WriteAttribute("compatibilityVersion", this.Name);
+            writer.WriteAttribute("name", this.Name);
             writer.WriteAttribute("sourceTree", this.SourceTree.ToDescription());
             writer.writeElementEpilogue();
+        }
+
+        /// <summary>
+        /// Finds the specified nature.
+        /// </summary>
+        /// <param name="nature">The nature.</param>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
+        public PBXFileElement Find(PBXElementType nature, String name)
+        {
+            return this.children.FirstOrDefault(c => c.Nature == nature && String.Equals(c.Name, name));
+        }
+
+        /// <summary>
+        /// Finds the group.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
+        public PBXGroup FindGroup(String name)
+        {
+            return this.Find(PBXElementType.PBXGroup, name) as PBXGroup;
+        }
+
+        /// <summary>
+        /// Finds the file reference.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
+        public PBXFileReference FindFileReference(String name)
+        {
+            return this.Find(PBXElementType.PBXFileReference, name) as PBXFileReference;
         }
     }
 }

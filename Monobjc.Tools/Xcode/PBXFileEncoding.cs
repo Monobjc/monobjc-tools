@@ -19,73 +19,58 @@ namespace Monobjc.Tools.Xcode
 {
     /// <summary>
     /// </summary>
-    public enum PBXElementType
+    public enum PBXFileEncoding : uint
     {
         /// <summary>
         /// </summary>
-        None = 0,
+        Default = 0,
         /// <summary>
         /// </summary>
-        PBXBuildFile,
+        UTF8 = 4,
         /// <summary>
         /// </summary>
-        PBXBuildPhase,
+        UTF16 = 10,
         /// <summary>
         /// </summary>
-        PBXAppleScriptBuildPhase,
+        UTF16_BE = 2415919360,
         /// <summary>
         /// </summary>
-        PBXCopyFilesBuildPhase,
+        UTF16_LE = 2483028224,
         /// <summary>
         /// </summary>
-        PBXFrameworksBuildPhase,
+        Western = 30,
         /// <summary>
         /// </summary>
-        PBXHeadersBuildPhase,
+        Japanese = 2147483649,
         /// <summary>
         /// </summary>
-        PBXResourcesBuildPhase,
+        TraditionalChinese = 2147483650,
         /// <summary>
         /// </summary>
-        PBXShellScriptBuildPhase,
+        Korean = 2147483651,
         /// <summary>
         /// </summary>
-        PBXSourcesBuildPhase,
+        Arabic = 2147483652,
         /// <summary>
         /// </summary>
-        PBXContainerItemProxy,
+        Hebrew = 2147483653,
         /// <summary>
         /// </summary>
-        PBXFileReference,
+        Greek = 2147483654,
         /// <summary>
         /// </summary>
-        PBXGroup,
+        Cyrillic = 2147483655,
         /// <summary>
         /// </summary>
-        PBXTarget,
+        SimplifiedChinese = 2147483673,
         /// <summary>
         /// </summary>
-        PBXAggregateTarget,
+        CentralEuropean = 2147483677,
         /// <summary>
         /// </summary>
-        PBXLegacyTarget,
+        Turkish = 2147483683,
         /// <summary>
         /// </summary>
-        PBXNativeTarget,
-        /// <summary>
-        /// </summary>
-        PBXProject,
-        /// <summary>
-        /// </summary>
-        PBXTargetDependency,
-        /// <summary>
-        /// </summary>
-        PBXVariantGroup,
-        /// <summary>
-        /// </summary>
-        XCBuildConfiguration,
-        /// <summary>
-        /// </summary>
-        XCConfigurationList,
+        Icelandic = 2147483685,
     }
 }

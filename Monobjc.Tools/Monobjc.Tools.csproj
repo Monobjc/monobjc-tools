@@ -129,11 +129,14 @@
     <Compile Include="Xcode\PBXElement.cs" />
     <Compile Include="Xcode\PBXElementType.cs" />
     <Compile Include="Xcode\PBXFileElement.cs" />
+    <Compile Include="Xcode\PBXFileEncoding.cs" />
     <Compile Include="Xcode\PBXFileReference.cs" />
     <Compile Include="Xcode\PBXFileType.cs" />
     <Compile Include="Xcode\PBXFrameworksBuildPhase.cs" />
     <Compile Include="Xcode\PBXGroup.cs" />
     <Compile Include="Xcode\PBXHeadersBuildPhase.cs" />
+    <Compile Include="Xcode\PBXLegacyTarget.cs" />
+    <Compile Include="Xcode\PBXLineEnding.cs" />
     <Compile Include="Xcode\PBXNativeTarget.cs" />
     <Compile Include="Xcode\PBXProductType.cs" />
     <Compile Include="Xcode\PBXProject.cs" />
@@ -149,6 +152,7 @@
     <Compile Include="Xcode\XCBuildConfiguration.cs" />
     <Compile Include="Xcode\XCConfigurationList.cs" />
     <Compile Include="Xcode\XcodeCompatibilityVersion.cs" />
+    <Compile Include="Xcode\XcodeProject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Embedded\Info.plist" />

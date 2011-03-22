@@ -18,56 +18,42 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Monobjc.Tools.Utilities;
 
 namespace Monobjc.Tools.Xcode
 {
-    public class PBXNativeTarget : PBXTarget
+    public class PBXLegacyTarget : PBXTarget
     {
-        private readonly IList<String> buildRules;
-
         /// <summary>
-        ///   Initializes a new instance of the <see cref = "PBXNativeTarget" /> class.
+        ///   Gets or sets the build arguments string.
         /// </summary>
-        public PBXNativeTarget()
-        {
-            this.buildRules = new List<String>();
-        }
+        /// <value>The build arguments string.</value>
+        public String BuildArgumentsString { get; set; }
 
         /// <summary>
-        ///   Gets or sets the build rules.
+        ///   Gets or sets the build tool path.
         /// </summary>
-        /// <value>The build rules.</value>
-        public IEnumerable<String> BuildRules
-        {
-            get { return this.buildRules; }
-        }
+        /// <value>The build tool path.</value>
+        public String BuildToolPath { get; set; }
 
         /// <summary>
-        ///   Gets or sets the product install path.
+        ///   Gets or sets the build working directory.
         /// </summary>
-        /// <value>The product install path.</value>
-        public String ProductInstallPath { get; set; }
+        /// <value>The build working directory.</value>
+        public String BuildWorkingDirectory { get; set; }
 
         /// <summary>
-        ///   Gets or sets the product reference.
+        ///   Gets or sets the pass build settings in environment.
         /// </summary>
-        /// <value>The product reference.</value>
-        public PBXFileReference ProductReference { get; set; }
+        /// <value>The pass build settings in environment.</value>
+        public int PassBuildSettingsInEnvironment { get; set; }
 
         /// <summary>
-        ///   Gets or sets the type of the product.
-        /// </summary>
-        /// <value>The type of the product.</value>
-        public PBXProductType ProductType { get; set; }
-
-        /// <summary>
-        ///   Gets the elemnt's nature.
+        ///   Gets the nature.
         /// </summary>
         /// <value>The nature.</value>
         public override PBXElementType Nature
         {
-            get { return PBXElementType.PBXNativeTarget; }
+            get { return PBXElementType.PBXLegacyTarget; }
         }
 
         /// <summary>
@@ -106,20 +92,18 @@ namespace Monobjc.Tools.Xcode
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
             writer.writeElementPrologue(map, this);
+            writer.WriteAttribute("buildArgumentsString", this.BuildArgumentsString);
             if (this.BuildConfigurationList != null)
             {
                 writer.WriteReference(map, "buildConfigurationList", this.BuildConfigurationList);
             }
             writer.WriteReferences(map, "buildPhases", this.BuildPhases);
+            writer.WriteAttribute("buildToolPath", this.BuildToolPath);
+            writer.WriteAttribute("buildWorkingDirectory", this.BuildWorkingDirectory);
             writer.WriteReferences(map, "dependencies", this.Dependencies);
             writer.WriteAttribute("name", this.Name);
-            writer.WriteAttribute("productInstallPath", this.ProductInstallPath);
+            writer.WriteAttribute("passBuildSettingsInEnvironment", this.PassBuildSettingsInEnvironment);
             writer.WriteAttribute("productName", this.ProductName);
-            if (this.ProductReference != null)
-            {
-                writer.WriteReference(map, "productReference", this.ProductReference);
-            }
-            writer.WriteAttribute("productType", this.ProductType.ToDescription());
             writer.writeElementEpilogue();
         }
     }

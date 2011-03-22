@@ -15,7 +15,9 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 
 namespace Monobjc.Tools.Xcode
@@ -27,6 +29,12 @@ namespace Monobjc.Tools.Xcode
         /// </summary>
         /// <value>The file reference.</value>
         public PBXFileReference FileRef { get; set; }
+
+        /// <summary>
+        ///   Gets or sets the build phase.
+        /// </summary>
+        /// <value>The build phase.</value>
+        internal PBXBuildPhase BuildPhase { get; set; }
 
         /// <summary>
         ///   Gets the nature.
@@ -43,7 +51,7 @@ namespace Monobjc.Tools.Xcode
         /// <value>The description.</value>
         public override string Description
         {
-            get { return "BuildFile"; }
+            get { return String.Format(CultureInfo.CurrentCulture, "{0} in {1}", this.FileRef.Description, this.BuildPhase.Description); }
         }
 
         /// <summary>

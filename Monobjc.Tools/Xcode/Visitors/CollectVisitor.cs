@@ -25,7 +25,7 @@ namespace Monobjc.Tools.Xcode.Visitors
     /// </summary>
     public class CollectVisitor : IPBXVisitor
     {
-        private readonly int counter;
+        private int counter;
 
         /// <summary>
         ///   Initializes a new instance of the <see cref = "CollectVisitor" /> class.
@@ -33,7 +33,7 @@ namespace Monobjc.Tools.Xcode.Visitors
         public CollectVisitor()
         {
             this.Map = new Dictionary<IPBXElement, String>();
-            this.counter = 1;
+            this.counter = 0;
         }
 
         /// <summary>
@@ -119,6 +119,15 @@ namespace Monobjc.Tools.Xcode.Visitors
         /// </summary>
         /// <param name = "element">The element.</param>
         public void Visit(PBXHeadersBuildPhase element)
+        {
+            this.Add(element);
+        }
+
+        /// <summary>
+        ///   Visits the specified element.
+        /// </summary>
+        /// <param name = "element">The element.</param>
+        public void Visit(PBXLegacyTarget element)
         {
             this.Add(element);
         }
@@ -224,7 +233,8 @@ namespace Monobjc.Tools.Xcode.Visitors
         /// <returns></returns>
         private string GetElementUID(IPBXElement element)
         {
-            return String.Format(CultureInfo.CurrentCulture, "{0}{1}", ((int) element.Nature).ToString("X4"), this.counter.ToString("8X"));
+            this.counter++;
+            return String.Format(CultureInfo.CurrentCulture, "{0}{1}", ((int) element.Nature).ToString("X4"), this.counter.ToString("X8"));
         }
     }
 }

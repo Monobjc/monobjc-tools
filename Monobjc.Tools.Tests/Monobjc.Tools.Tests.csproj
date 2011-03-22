@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="XcodeProjectGenerationTests.cs" />
+    <Compile Include="PBXProjectGenerationTests.cs" />
     <Compile Include="XIBLoadTests.cs" />
     <Compile Include="PListLoadTests.cs" />
     <Compile Include="Program.cs" />
@@ -80,6 +82,10 @@
     <None Include="Embedded\MainMenu-008.xib" />
     <None Include="Embedded\MainMenu-010.xib" />
     <None Include="Embedded\MyDocument-005.xib" />
+    <None Include="Embedded\project-003.pbxproj" />
+    <None Include="Embedded\project-004.pbxproj" />
+    <None Include="Embedded\project-005.pbxproj" />
+    <None Include="Embedded\project-006.pbxproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

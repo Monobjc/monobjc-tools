@@ -32,7 +32,7 @@ namespace Monobjc.Tools.Xcode
         public static void writeElementPrologue(this TextWriter writer, IDictionary<IPBXElement, string> map, IPBXElement element)
         {
             writer.WriteLine("{0} /* {1} */ = {{", map[element], element.Description);
-            writer.WriteAttribute("isa", element.Isa);
+            writer.WriteAttribute("isa", element.Isa, null, false);
         }
 
         /// <summary>
@@ -148,11 +148,25 @@ namespace Monobjc.Tools.Xcode
             }
             if (String.IsNullOrEmpty(comment))
             {
-                writer.WriteLine("    {0} = {1};", name, value);
+                //if (newLine)
+                {
+                    writer.WriteLine("    {0} = {1};", name, value);
+                }
+                //else
+                //{
+                //    writer.Write("    {0} = {1}; ", name, value);
+                //}
             }
             else
             {
-                writer.WriteLine("    {0} = {1}; /* {2} */", name, value, comment);
+                //if (newLine)
+                {
+                    writer.WriteLine("    {0} = {1}; /* {2} */", name, value, comment);
+                }
+                //else
+                //{
+                //    writer.Write("    {0} = {1}; /* {2} */ ", name, value, comment);
+                //}
             }
         }
     }

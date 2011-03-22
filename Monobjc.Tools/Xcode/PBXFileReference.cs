@@ -25,18 +25,21 @@ namespace Monobjc.Tools.Xcode
     public class PBXFileReference : PBXFileElement
     {
         /// <summary>
-        ///   Initializes a new instance of the <see cref = "PBXFileReference" /> class.
+        /// Initializes a new instance of the <see cref="PBXFileReference"/> class.
         /// </summary>
-        public PBXFileReference()
-        {
-            this.FileEncoding = 4; // UTF-8
-        }
+        public PBXFileReference() {}
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PBXFileReference"/> class.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        public PBXFileReference(string name) : base(name) {}
 
         /// <summary>
         ///   Gets or sets the file encoding.
         /// </summary>
         /// <value>The file encoding.</value>
-        public int FileEncoding { get; set; }
+        public PBXFileEncoding FileEncoding { get; set; }
 
         /// <summary>
         ///   Gets or sets the type of the explicit file.
@@ -51,6 +54,12 @@ namespace Monobjc.Tools.Xcode
         public PBXFileType LastKnownFileType { get; set; }
 
         /// <summary>
+        ///   Gets or sets the line ending.
+        /// </summary>
+        /// <value>The line ending.</value>
+        public PBXLineEnding LineEnding { get; set; }
+
+        /// <summary>
         ///   Gets or sets the path.
         /// </summary>
         /// <value>The path.</value>
@@ -60,7 +69,7 @@ namespace Monobjc.Tools.Xcode
         ///   Gets or sets the source tree.
         /// </summary>
         /// <value>The source tree.</value>
-        public String SourceTree { get; set; }
+        public PBXSourceTree SourceTree { get; set; }
 
         /// <summary>
         ///   Gets the elemnt's nature.
@@ -69,15 +78,6 @@ namespace Monobjc.Tools.Xcode
         public override PBXElementType Nature
         {
             get { return PBXElementType.PBXFileReference; }
-        }
-
-        /// <summary>
-        ///   Gets the description.
-        /// </summary>
-        /// <value>The description.</value>
-        public override string Description
-        {
-            get { return this.Name; }
         }
 
         /// <summary>
@@ -97,7 +97,10 @@ namespace Monobjc.Tools.Xcode
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
             writer.writeElementPrologue(map, this);
-            writer.WriteAttribute("fileEncoding", this.FileEncoding);
+            if (this.FileEncoding != PBXFileEncoding.Default)
+            {
+                writer.WriteAttribute("fileEncoding", (int) this.FileEncoding);
+            }
             if (this.ExplicitFileType != PBXFileType.None)
             {
                 writer.WriteAttribute("explicitFileType", this.ExplicitFileType.ToDescription());
@@ -106,9 +109,10 @@ namespace Monobjc.Tools.Xcode
             {
                 writer.WriteAttribute("lastKnownFileType", this.LastKnownFileType.ToDescription());
             }
+            writer.WriteAttribute("lineEnding", (int) this.LineEnding);
             writer.WriteAttribute("name", this.Name);
             writer.WriteAttribute("path", this.Path);
-            writer.WriteAttribute("sourceTree", this.SourceTree);
+            writer.WriteAttribute("sourceTree", this.SourceTree.ToDescription());
             writer.writeElementEpilogue();
         }
     }

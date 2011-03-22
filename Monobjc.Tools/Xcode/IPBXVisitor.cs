@@ -80,6 +80,12 @@ namespace Monobjc.Tools.Xcode
         ///   Visits the specified element.
         /// </summary>
         /// <param name = "element">The element.</param>
+        void Visit(PBXLegacyTarget element);
+
+        /// <summary>
+        ///   Visits the specified element.
+        /// </summary>
+        /// <param name = "element">The element.</param>
         void Visit(PBXNativeTarget element);
 
         /// <summary>

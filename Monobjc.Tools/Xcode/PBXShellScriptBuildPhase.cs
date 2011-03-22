@@ -23,13 +23,17 @@ namespace Monobjc.Tools.Xcode
 {
     public class PBXShellScriptBuildPhase : PBXBuildPhase
     {
+        private readonly IList<String> inputPaths;
+
+        private readonly IList<String> outputPaths;
+
         /// <summary>
         ///   Initializes a new instance of the <see cref = "PBXShellScriptBuildPhase" /> class.
         /// </summary>
         public PBXShellScriptBuildPhase()
         {
-            this.InputPaths = new List<String>();
-            this.OutputPaths = new List<String>();
+            this.inputPaths = new List<String>();
+            this.outputPaths = new List<String>();
             this.ShellPath = String.Empty;
             this.ShellScript = String.Empty;
         }
@@ -38,13 +42,55 @@ namespace Monobjc.Tools.Xcode
         ///   Gets or sets the input paths.
         /// </summary>
         /// <value>The input paths.</value>
-        public IList<string> InputPaths { get; set; }
+        public IEnumerable<string> InputPaths
+        {
+            get { return this.inputPaths; }
+        }
+
+        /// <summary>
+        ///   Adds the input path.
+        /// </summary>
+        /// <param name = "path">The path.</param>
+        public void AddInputPath(String path)
+        {
+            this.inputPaths.Add(path);
+        }
+
+        /// <summary>
+        ///   Removes the input path.
+        /// </summary>
+        /// <param name = "path">The path.</param>
+        public void RemoveInputPath(String path)
+        {
+            this.inputPaths.Remove(path);
+        }
 
         /// <summary>
         ///   Gets or sets the output paths.
         /// </summary>
         /// <value>The output paths.</value>
-        public IList<string> OutputPaths { get; set; }
+        public IEnumerable<string> OutputPaths
+        {
+            get { return this.outputPaths; }
+        }
+
+        /// <summary>
+        ///   Adds the output path.
+        /// </summary>
+        /// <param name = "path">The path.</param>
+        public void AddOutputPath(String path)
+        {
+            this.outputPaths.Add(path);
+        }
+
+        /// <summary>
+        ///   Removes the output path.
+        /// </summary>
+        /// <param name = "path">The path.</param>
+        public void RemoveOutputPath(String path)
+        {
+            this.outputPaths.Remove(path);
+        }
 
         /// <summary>
         ///   Gets or sets the shell path.
@@ -86,7 +132,7 @@ namespace Monobjc.Tools.Xcode
 
             if (this.Files != null)
             {
-                foreach (PBXFileReference file in this.Files)
+                foreach (PBXBuildFile file in this.Files)
                 {
                     file.Accept(visitor);
                 }
