@@ -26,8 +26,8 @@ namespace Monobjc.Tools
     {
         public static void Main(String[] args)
         {
-            //PBXProjectGenerationTests pBXProjectGenerationTests = new PBXProjectGenerationTests();
-            //pBXProjectGenerationTests.TestProjectGeneration001();
+            PBXProjectGenerationTests pBXProjectGenerationTests = new PBXProjectGenerationTests();
+            pBXProjectGenerationTests.TestProjectGeneration001();
 
             XcodeProjectGenerationTests xcodeProjectGenerationTests = new XcodeProjectGenerationTests();
             xcodeProjectGenerationTests.TestProjectGeneration001();

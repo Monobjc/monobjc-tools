@@ -113,6 +113,12 @@ namespace Monobjc.Tools.Xcode
         public PBXGroup MainGroup { get; set; }
 
         /// <summary>
+        /// Gets or sets the product ref group.
+        /// </summary>
+        /// <value>The product ref group.</value>
+        public PBXGroup ProductRefGroup { get; set; }
+
+        /// <summary>
         ///   Gets or sets the project dir path.
         /// </summary>
         /// <value>The project dir path.</value>
@@ -218,6 +224,10 @@ namespace Monobjc.Tools.Xcode
             if (this.MainGroup != null)
             {
                 writer.WriteReference(map, "mainGroup", this.MainGroup);
+            }
+            if (this.ProductRefGroup != null)
+            {
+                writer.WriteReference(map, "productRefGroup", this.ProductRefGroup);
             }
             writer.WriteAttribute("projectDirPath", this.ProjectDirPath);
             writer.WriteAttribute("projectRoot", this.ProjectRoot);
