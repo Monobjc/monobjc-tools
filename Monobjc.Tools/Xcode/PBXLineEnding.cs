@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -21,9 +21,6 @@ namespace Monobjc.Tools.Xcode
     /// </summary>
     public enum PBXLineEnding
     {
-        /// <summary>
-        /// </summary>
-        Default = 0,
         /// <summary>
         /// </summary>
         Unix = 0,

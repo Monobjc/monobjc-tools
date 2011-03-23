@@ -55,14 +55,14 @@ namespace Monobjc.Tools
             file3.Name = "en";
             file3.Path = "en.lproj/MainMenu.xib";
             file3.LastKnownFileType = PBXFileType.FileXib;
-            file3.SourceTree = PBXSourceTree.SdkRoot;
+            file3.SourceTree = PBXSourceTree.Group;
 
             PBXFileReference file4 = new PBXFileReference();
             file4.LastKnownFileType = PBXFileType.WrapperFramework;
             file4.Name = "fr";
             file4.Path = "fr.lproj/MainMenu.xib";
             file4.LastKnownFileType = PBXFileType.FileXib;
-            file4.SourceTree = PBXSourceTree.SdkRoot;
+            file4.SourceTree = PBXSourceTree.Group;
 
             PBXVariantGroup variantGroup = new PBXVariantGroup("MainMenu.xib");
             variantGroup.SourceTree = PBXSourceTree.Group;

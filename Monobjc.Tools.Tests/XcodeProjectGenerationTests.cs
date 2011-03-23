@@ -40,7 +40,7 @@ namespace Monobjc.Tools
             project.AddFile("Resources", "en.lproj/MainMenu.xib");
             project.AddFile("Resources", "fr.lproj/MainMenu.xib");
             project.AddGroup("Frameworks");
-            project.AddFramework("Frameworks", "/System/Library/Frameworks/Cocoa.framework");
+            project.AddFramework("Frameworks", "Cocoa");
             project.AddGroup("Products");
 
             project.Save();

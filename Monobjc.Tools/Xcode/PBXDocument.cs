@@ -170,7 +170,9 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "path">The path.</param>
         public void WriteToFile(String path)
         {
-            using (StreamWriter writer = new StreamWriter(path, false, Encoding.UTF8))
+            // Create a BOM-less encoding
+            Encoding encoding = new UTF8Encoding(false);
+            using (StreamWriter writer = new StreamWriter(path, false, encoding))
             {
                 this.Write(writer);
             }

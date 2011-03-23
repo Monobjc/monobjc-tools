@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -25,15 +25,12 @@ namespace Monobjc.Tools.Xcode.Visitors
     /// </summary>
     public class CollectVisitor : IPBXVisitor
     {
-        private int counter;
-
         /// <summary>
         ///   Initializes a new instance of the <see cref = "CollectVisitor" /> class.
         /// </summary>
         public CollectVisitor()
         {
             this.Map = new Dictionary<IPBXElement, String>();
-            this.counter = 0;
         }
 
         /// <summary>
@@ -233,8 +230,7 @@ namespace Monobjc.Tools.Xcode.Visitors
         /// <returns></returns>
         private string GetElementUID(IPBXElement element)
         {
-            this.counter++;
-            return String.Format(CultureInfo.CurrentCulture, "{0}{1}", ((int) element.Nature).ToString("X4"), this.counter.ToString("X8"));
+            return String.Format(CultureInfo.CurrentCulture, "{0}{1}", element.Nature.GetHashCode().ToString("X8"), element.GetHashCode().ToString("X16"));
         }
     }
 }

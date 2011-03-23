@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -109,7 +109,10 @@ namespace Monobjc.Tools.Xcode
             {
                 writer.WriteAttribute("lastKnownFileType", this.LastKnownFileType.ToDescription());
             }
-            writer.WriteAttribute("lineEnding", (int) this.LineEnding);
+            if (this.LineEnding != PBXLineEnding.Unix)
+            {
+				writer.WriteAttribute("lineEnding", (int) this.LineEnding);
+            }
             writer.WriteAttribute("name", this.Name);
             writer.WriteAttribute("path", this.Path);
             writer.WriteAttribute("sourceTree", this.SourceTree.ToDescription());

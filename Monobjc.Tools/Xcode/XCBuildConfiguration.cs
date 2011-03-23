@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -28,7 +28,7 @@ namespace Monobjc.Tools.Xcode
         /// </summary>
         public XCBuildConfiguration()
         {
-            this.Settings = new Dictionary<String, Object>();
+            this.BuildSettings = new Dictionary<String, Object>();
         }
 
         /// <summary>
@@ -38,10 +38,10 @@ namespace Monobjc.Tools.Xcode
         public PBXFileReference BaseConfigurationReference { get; set; }
 
         /// <summary>
-        ///   Gets or sets the settings.
+        ///   Gets or sets the build settings.
         /// </summary>
-        /// <value>The settings.</value>
-        public IDictionary<String, Object> Settings { get; set; }
+        /// <value>The build settings.</value>
+        public IDictionary<String, Object> BuildSettings { get; set; }
 
         /// <summary>
         ///   Gets or sets the name.
@@ -93,7 +93,7 @@ namespace Monobjc.Tools.Xcode
             {
                 writer.WriteReference(map, "baseConfigurationReference", this.BaseConfigurationReference);
             }
-            writer.WriteMap("settings", this.Settings);
+            writer.WriteMap("buildSettings", this.BuildSettings);
             writer.WriteAttribute("name", this.Name);
             writer.writeElementEpilogue();
         }

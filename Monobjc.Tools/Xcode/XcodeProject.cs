@@ -16,6 +16,7 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 
@@ -23,6 +24,11 @@ namespace Monobjc.Tools.Xcode
 {
     public class XcodeProject
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="XcodeProject"/> class.
+        /// </summary>
+        /// <param name="dir">The dir.</param>
+        /// <param name="name">The name.</param>
         public XcodeProject(String dir, string name)
         {
             this.Dir = dir;
@@ -30,10 +36,22 @@ namespace Monobjc.Tools.Xcode
             this.Document = new PBXDocument();
         }
 
+        /// <summary>
+        /// Gets or sets the dir.
+        /// </summary>
+        /// <value>The dir.</value>
         public String Dir { get; private set; }
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>The name.</value>
         public String Name { get; private set; }
 
+        /// <summary>
+        /// Gets or sets the document.
+        /// </summary>
+        /// <value>The document.</value>
         public PBXDocument Document { get; private set; }
 
         public PBXGroup AddGroup(String groups)
@@ -103,6 +121,51 @@ namespace Monobjc.Tools.Xcode
             return fileReference;
         }
 
+        public void RemoveFile(String groups, String file)
+        {
+            PBXGroup group = this.AddGroup(groups);
+            String name = Path.GetFileName(file);
+            var fileReference = group.FindFileReference(name);
+            group.RemoveChild(fileReference);
+        }
+
+        public PBXFileReference AddFramework(String groups, String framework)
+        {
+            // Test for presence in System
+            String path = String.Format(CultureInfo.CurrentCulture, "/System/Library/Frameworks/{0}.framework/{0}", framework);
+            if (File.Exists(path))
+            {
+                goto bail;
+            }
+
+            // Test for presence in Library
+            path = String.Format(CultureInfo.CurrentCulture, "/Library/Frameworks/{0}.framework/{0}", framework);
+            if (File.Exists(path))
+            {
+                goto bail;
+            }
+
+            // Fallback: Assume it is a system framework
+            path = String.Format(CultureInfo.CurrentCulture, "/System/Library/Frameworks/{0}.framework/{0}", framework);
+
+        bail:
+            path = Path.GetDirectoryName(path);
+            return this.AddFile(groups, path);
+        }
+
+        public void RemoveFramework(String groups, String framework)
+        {
+            this.RemoveFile(groups, framework + ".framework");
+        }
+
+        public void Save()
+        {
+            String folder = Path.Combine(this.Dir, this.Name + ".xcodeproj");
+            Directory.CreateDirectory(folder);
+            String file = Path.Combine(folder, "project.pbxproj");
+            this.Document.WriteToFile(file);
+        }
+
         private PBXFileType GetFileType(String name)
         {
             String ext = Path.GetExtension(name);
@@ -113,6 +176,8 @@ namespace Monobjc.Tools.Xcode
                 case ".cpp":
                 case ".cxx":
                     return PBXFileType.SourcecodeCppCpp;
+                case ".framework":
+                    return PBXFileType.WrapperFramework;
                 case ".h":
                     return PBXFileType.SourcecodeCH;
                 case ".hpp":
@@ -124,29 +189,6 @@ namespace Monobjc.Tools.Xcode
                     return PBXFileType.FileXib;
             }
             return PBXFileType.None;
-        }
-
-        public void RemoveFile(String path, String file)
-        {
-            String[] parts = path.Split('/');
-        }
-
-        public void AddFramework(String path, String framework)
-        {
-            String[] parts = path.Split('/');
-        }
-
-        public void RemoveFramework(String path, String framework)
-        {
-            String[] parts = path.Split('/');
-        }
-
-        public void Save()
-        {
-            String folder = Path.Combine(this.Dir, this.Name + ".xcodeproj");
-            Directory.CreateDirectory(folder);
-            String file = Path.Combine(folder, "project.pbxproj");
-            this.Document.WriteToFile(file);
         }
     }
 }
