@@ -16,6 +16,7 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -25,10 +26,10 @@ namespace Monobjc.Tools.Xcode
     public class XcodeProject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="XcodeProject"/> class.
+        ///   Initializes a new instance of the <see cref = "XcodeProject" /> class.
         /// </summary>
-        /// <param name="dir">The dir.</param>
-        /// <param name="name">The name.</param>
+        /// <param name = "dir">The dir.</param>
+        /// <param name = "name">The name.</param>
         public XcodeProject(String dir, string name)
         {
             this.Dir = dir;
@@ -37,32 +38,39 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Gets or sets the dir.
+        ///   Gets or sets the dir.
         /// </summary>
         /// <value>The dir.</value>
         public String Dir { get; private set; }
 
         /// <summary>
-        /// Gets or sets the name.
+        ///   Gets or sets the name.
         /// </summary>
         /// <value>The name.</value>
         public String Name { get; private set; }
 
         /// <summary>
-        /// Gets or sets the document.
+        ///   Gets or sets the document.
         /// </summary>
         /// <value>The document.</value>
         public PBXDocument Document { get; private set; }
 
+        /// <summary>
+        /// Adds a group.
+        /// </summary>
+        /// <param name="groups">The group paths.</param>
+        /// <returns>The created instance.</returns>
         public PBXGroup AddGroup(String groups)
         {
-            var parts = groups.Split('/').ToList();
+            // Split the group paths
+            List<string> parts = groups.Split('/').ToList();
             PBXGroup group = this.Document.Project.MainGroup;
             foreach (string part in parts)
             {
                 PBXGroup g = group.FindGroup(part);
                 if (g == null)
                 {
+                    // For each group not found, create it
                     g = new PBXGroup(part);
                     group.AddChild(g);
                 }
@@ -71,39 +79,74 @@ namespace Monobjc.Tools.Xcode
             return group;
         }
 
+        /// <summary>
+        /// Removes a group.
+        /// </summary>
+        /// <param name="groups">The group paths.</param>
         public void RemoveGroup(String groups)
         {
-            var parts = groups.Split('/').ToList();
+            // Only keep the n-1 groups
+            List<string> parts = groups.Split('/').ToList();
             String last = parts.Last();
             parts.RemoveAt(parts.Count - 1);
 
-            PBXGroup g;
-            PBXGroup group = this.Document.Project.MainGroup;
+            // Go to the parent group
+            PBXGroup g, group = this.Document.Project.MainGroup;
             foreach (string part in parts)
             {
                 g = group.FindGroup(part);
                 if (g == null)
                 {
+                    // For each group not found, create it
                     g = new PBXGroup(part);
                     group.AddChild(g);
                 }
                 group = g;
             }
 
+            // If the group to delete exists, remove it
             g = group.FindGroup(last);
-            if (g!=null)
+            if (g != null)
             {
                 group.RemoveChild(g);
             }
         }
 
+        /// <summary>
+        /// Adds a file.
+        /// </summary>
+        /// <param name="groups">The group paths.</param>
+        /// <param name="file">The file.</param>
+        /// <returns>The created instance.</returns>
         public PBXFileReference AddFile(String groups, String file)
         {
+            // Prepare the group that will contain the file
             PBXGroup group = this.AddGroup(groups);
+
+            // Extract information
+            String name = Path.GetFileName(file);
             String path = Path.GetFullPath(file);
             String baseDir = Path.GetFullPath(this.Dir);
+            String parentDir = Path.GetDirectoryName(file);
 
-            PBXFileReference fileReference = new PBXFileReference(Path.GetFileName(path));
+            // If the file is localized, then add it to a variant group
+            if (Path.GetExtension(parentDir).Equals(".lproj"))
+            {
+                // The variant group may exists to search for it
+                PBXVariantGroup variantGroup = group.FindVariantGroup(name);
+                if (variantGroup == null)
+                {
+                    variantGroup = new PBXVariantGroup(name);
+                    group.AddChild(variantGroup);
+                }
+
+                // The file is named like the language
+                name = Path.GetFileNameWithoutExtension(parentDir);
+                group = variantGroup;
+            }
+
+            // Create a file reference
+            PBXFileReference fileReference = new PBXFileReference(name);
             if (path.StartsWith(baseDir))
             {
                 path = path.Substring(baseDir.Length + 1);
@@ -114,21 +157,57 @@ namespace Monobjc.Tools.Xcode
                 fileReference.SourceTree = PBXSourceTree.Absolute;
             }
             fileReference.Path = path;
-            fileReference.LastKnownFileType = GetFileType(fileReference.Name);
+            fileReference.LastKnownFileType = GetFileType(file);
 
+            // Add it to the group
             group.AddChild(fileReference);
 
             return fileReference;
         }
 
+        /// <summary>
+        /// Removes a file.
+        /// </summary>
+        /// <param name="groups">The group paths.</param>
+        /// <param name="file">The file.</param>
         public void RemoveFile(String groups, String file)
         {
+            // Prepare the group that contains the file
             PBXGroup group = this.AddGroup(groups);
+
+            // Extract information
             String name = Path.GetFileName(file);
-            var fileReference = group.FindFileReference(name);
-            group.RemoveChild(fileReference);
+            String parentDir = Path.GetDirectoryName(file);
+
+            // If the file is localized, search for the variant group
+            if (Path.GetExtension(parentDir).Equals(".lproj"))
+            {
+                PBXVariantGroup variantGroup = group.FindVariantGroup(name);
+                if (variantGroup != null)
+                {
+                    // The file is named like the language
+                    name = Path.GetFileNameWithoutExtension(parentDir);
+                }
+                group = variantGroup;
+            }
+
+            if (group != null)
+            {
+                // Search for the file and remove it
+                PBXFileReference fileReference = group.FindFileReference(name);
+                if (fileReference != null)
+                {
+                    group.RemoveChild(fileReference);
+                }
+            }
         }
 
+        /// <summary>
+        /// Adds a framework.
+        /// </summary>
+        /// <param name="groups">The group paths.</param>
+        /// <param name="framework">The framework.</param>
+        /// <returns>The created instance.</returns>
         public PBXFileReference AddFramework(String groups, String framework)
         {
             // Test for presence in System
@@ -148,16 +227,48 @@ namespace Monobjc.Tools.Xcode
             // Fallback: Assume it is a system framework
             path = String.Format(CultureInfo.CurrentCulture, "/System/Library/Frameworks/{0}.framework/{0}", framework);
 
-        bail:
+            bail:
             path = Path.GetDirectoryName(path);
-            return this.AddFile(groups, path);
+            PBXFileReference fileReference = this.AddFile(groups, path);
+            fileReference.SourceTree = PBXSourceTree.SdkRoot;
+            return fileReference;
         }
 
+        /// <summary>
+        /// Removes a framework.
+        /// </summary>
+        /// <param name="groups">The group paths.</param>
+        /// <param name="framework">The framework.</param>
         public void RemoveFramework(String groups, String framework)
         {
             this.RemoveFile(groups, framework + ".framework");
         }
 
+        /// <summary>
+        /// Adds a build configuration.
+        /// </summary>
+        /// <param name="buildConfiguration">The build configuration.</param>
+        /// <param name="targetName">Name of the target or null to add it to the project only.</param>
+        public void AddBuildConfiguration(XCBuildConfiguration buildConfiguration, String targetName)
+        {
+            // Add the configuration to the project
+            this.Document.Project.BuildConfigurationList.AddBuildConfiguration(buildConfiguration);
+            if (String.IsNullOrEmpty(targetName))
+            {
+                return;
+            }
+
+            // If the target exists, add the configuration to the target
+            PBXTarget target = this.Document.Project.Targets.FirstOrDefault(t => String.Equals(t.Name, targetName));
+            if (target != null)
+            {
+                target.BuildConfigurationList.AddBuildConfiguration(buildConfiguration);
+            }
+        }
+
+        /// <summary>
+        /// Saves the project; create the xcodeproj bundle and write the project file.
+        /// </summary>
         public void Save()
         {
             String folder = Path.Combine(this.Dir, this.Name + ".xcodeproj");
@@ -166,10 +277,13 @@ namespace Monobjc.Tools.Xcode
             this.Document.WriteToFile(file);
         }
 
-        private PBXFileType GetFileType(String name)
+        /// <summary>
+        /// Gets the project type of the file.
+        /// </summary>
+        private static PBXFileType GetFileType(String file)
         {
-            String ext = Path.GetExtension(name);
-            switch (ext)
+            String extension = Path.GetExtension(file);
+            switch (extension)
             {
                 case ".c":
                     return PBXFileType.SourcecodeC;

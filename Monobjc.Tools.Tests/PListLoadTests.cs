@@ -35,8 +35,8 @@ namespace Monobjc.Tools
             PListDocument document = PListDocument.LoadFromXml(content);
             CheckDocument(document);
 
-            Assert.AreEqual(String.Empty, (String)(PListString)document.Root.Dict["CFBundleIconFile"]);
-            Assert.AreEqual("com.Perspx.${PRODUCT_NAME:rfc1034identifier}", (String)(PListString)document.Root.Dict["CFBundleIdentifier"]);
+            Assert.AreEqual(String.Empty, (String) (PListString) document.Root.Dict["CFBundleIconFile"]);
+            Assert.AreEqual("com.Perspx.${PRODUCT_NAME:rfc1034identifier}", (String) (PListString) document.Root.Dict["CFBundleIdentifier"]);
         }
 
         [Test]
@@ -46,8 +46,8 @@ namespace Monobjc.Tools
             PListDocument document = PListDocument.LoadFromXml(content);
             CheckDocument(document);
 
-            Assert.AreEqual(String.Empty, (String)(PListString)document.Root.Dict["CFBundleIconFile"]);
-            Assert.AreEqual("se.hunch.${PRODUCT_NAME:rfc1034identifier}", (String)(PListString)document.Root.Dict["CFBundleIdentifier"]);
+            Assert.AreEqual(String.Empty, (String) (PListString) document.Root.Dict["CFBundleIconFile"]);
+            Assert.AreEqual("se.hunch.${PRODUCT_NAME:rfc1034identifier}", (String) (PListString) document.Root.Dict["CFBundleIdentifier"]);
         }
 
         [Test]
@@ -57,8 +57,8 @@ namespace Monobjc.Tools
             PListDocument document = PListDocument.LoadFromXml(content);
             CheckDocument(document);
 
-            Assert.AreEqual(String.Empty, (String)(PListString)document.Root.Dict["CFBundleIconFile"]);
-            Assert.AreEqual("com.yourcompany.${PRODUCT_NAME:rfc1034identifier}", (String)(PListString)document.Root.Dict["CFBundleIdentifier"]);
+            Assert.AreEqual(String.Empty, (String) (PListString) document.Root.Dict["CFBundleIconFile"]);
+            Assert.AreEqual("com.yourcompany.${PRODUCT_NAME:rfc1034identifier}", (String) (PListString) document.Root.Dict["CFBundleIdentifier"]);
         }
 
         [Test]
@@ -82,8 +82,8 @@ namespace Monobjc.Tools
             PListDocument document = PListDocument.LoadFromXml(content);
             CheckDocument(document);
 
-            Assert.AreEqual(String.Empty, (String)(PListString)document.Root.Dict["CFBundleIconFile"]);
-            Assert.AreEqual("net.monobjc.${PRODUCT_NAME:rfc1034identifier}", (String)(PListString)document.Root.Dict["CFBundleIdentifier"]);
+            Assert.AreEqual(String.Empty, (String) (PListString) document.Root.Dict["CFBundleIconFile"]);
+            Assert.AreEqual("net.monobjc.${PRODUCT_NAME:rfc1034identifier}", (String) (PListString) document.Root.Dict["CFBundleIdentifier"]);
         }
 
         private static String ReadResource(byte[] resource)
@@ -114,9 +114,9 @@ namespace Monobjc.Tools
             Assert.IsTrue(document.Root.Dict.ContainsKey("CFBundleVersion"));
             Assert.AreEqual("1", (String) (PListString) document.Root.Dict["CFBundleVersion"]);
             Assert.IsTrue(document.Root.Dict.ContainsKey("NSMainNibFile"));
-            Assert.AreEqual("MainMenu", (String)(PListString)document.Root.Dict["NSMainNibFile"]);
+            Assert.AreEqual("MainMenu", (String) (PListString) document.Root.Dict["NSMainNibFile"]);
             Assert.IsTrue(document.Root.Dict.ContainsKey("NSPrincipalClass"));
-            Assert.AreEqual("NSApplication", (String)(PListString)document.Root.Dict["NSPrincipalClass"]);
+            Assert.AreEqual("NSApplication", (String) (PListString) document.Root.Dict["NSPrincipalClass"]);
         }
     }
 }

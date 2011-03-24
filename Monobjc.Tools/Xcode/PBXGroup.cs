@@ -150,5 +150,15 @@ namespace Monobjc.Tools.Xcode
         {
             return this.Find(PBXElementType.PBXFileReference, name) as PBXFileReference;
         }
+
+        /// <summary>
+        /// Finds the file reference.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
+        public PBXVariantGroup FindVariantGroup(String name)
+        {
+            return this.Find(PBXElementType.PBXVariantGroup, name) as PBXVariantGroup;
+        }
     }
 }

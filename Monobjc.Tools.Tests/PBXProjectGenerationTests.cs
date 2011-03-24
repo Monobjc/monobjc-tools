@@ -15,12 +15,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
-using System;
-using System.IO;
-using Monobjc.Tools.Properties;
-using Monobjc.Tools.PropertyList;
-using NUnit.Framework;
 using Monobjc.Tools.Xcode;
+using NUnit.Framework;
 
 namespace Monobjc.Tools
 {

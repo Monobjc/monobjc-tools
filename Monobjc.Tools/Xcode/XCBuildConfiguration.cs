@@ -32,6 +32,15 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="XCBuildConfiguration"/> class.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        public XCBuildConfiguration(String name) : this()
+        {
+            this.Name = name;
+        }
+
+        /// <summary>
         ///   Gets or sets the base configuration reference.
         /// </summary>
         /// <value>The base configuration reference.</value>
@@ -64,7 +73,7 @@ namespace Monobjc.Tools.Xcode
         /// <value>The description.</value>
         public override string Description
         {
-            get { return "BuildConfiguration"; }
+            get { return this.Name; }
         }
 
         /// <summary>

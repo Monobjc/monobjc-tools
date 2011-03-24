@@ -15,12 +15,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
-using System;
-using System.IO;
-using Monobjc.Tools.Properties;
-using Monobjc.Tools.PropertyList;
-using NUnit.Framework;
 using Monobjc.Tools.Xcode;
+using NUnit.Framework;
 
 namespace Monobjc.Tools
 {
@@ -34,14 +30,23 @@ namespace Monobjc.Tools
         {
             // Create the document
             XcodeProject project = new XcodeProject(".", "MyApplication");
-            project.AddGroup("Classes");
+
             project.AddFile("Classes", "Classes/AppDelegate.h");
-            project.AddGroup("Resources");
+            project.AddFile("Classes", "Classes/Wrong.h");
+            project.RemoveFile("Classes", "Classes/Wrong.h");
+
             project.AddFile("Resources", "en.lproj/MainMenu.xib");
             project.AddFile("Resources", "fr.lproj/MainMenu.xib");
-            project.AddGroup("Frameworks");
+            project.RemoveFile("Resources", "fr.lproj/MainMenu.xib");
+
             project.AddFramework("Frameworks", "Cocoa");
+            project.AddFramework("Frameworks", "AddressBook");
+            project.RemoveFramework("Frameworks", "AddressBook");
+
             project.AddGroup("Products");
+
+            XCBuildConfiguration buildConfiguration = new XCBuildConfiguration("Release");
+            project.AddBuildConfiguration(buildConfiguration, null);
 
             project.Save();
         }
