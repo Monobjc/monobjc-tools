@@ -16,12 +16,14 @@
   <Mapping type="BOOL (^)(NSUInteger idx, BOOL *stop)"><![CDATA[block:Func<NSUInteger, IntPtr, bool>]]></Mapping>
   <Mapping type="BOOL (^)(NSURL *url, NSError *error)"><![CDATA[block:Func<NSURL, NSError, bool>]]></Mapping>
   <Mapping type="Boolean">bool</Mapping>
+  <Mapping type="CFByteOrder">NSInteger</Mapping>
   <Mapping type="CFAllocatorRef">IntPtr</Mapping>
   <Mapping type="CFAllocatorContext *">IntPtr</Mapping>
   <Mapping type="CFArrayRef">NSArray</Mapping>
   <Mapping type="CFDataRef">NSData</Mapping>
   <Mapping type="CFDateRef">NSDate</Mapping>
   <Mapping type="CFDictionaryRef">NSDictionary</Mapping>
+  <Mapping type="CFIndex">NSInteger</Mapping>
   <Mapping type="CFMutableDataRef">NSMutableData</Mapping>
   <Mapping type="CFRunLoopRef">IntPtr</Mapping>
   <Mapping type="CFStringRef">NSString</Mapping>

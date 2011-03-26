@@ -5158,16 +5158,27 @@ enum
       <Class name="CPAxisTitle" />
       <Class name="CPBarPlot" />
       <Class name="CPBorderedLayer" />
-      <Class name="CPColor" />
-      <Class name="CPColorSpace" />
+      <Class name="CPColor">
+        <Patch>Methods[InitWithCGColor].GenerateConstructor=false</Patch>
+      </Class>
+      <Class name="CPColorSpace">
+        <Patch>Methods[InitWithCGColorSpace].GenerateConstructor=false</Patch>
+      </Class>
       <Class name="CPConstrainedPosition" />
       <Class name="CPDarkGradientTheme" />
       <Class name="CPDecimalNumberValueTransformer" />
       <Class name="CPFill" />
-      <Class name="CPGradient" />
+      <Class name="CPGradient">
+        <Patch>Constants[colorspace].Generate=false</Patch>
+        <Patch>Constants[elementList].Generate=false</Patch>
+        <Patch>Constants[gradientFunction].Generate=false</Patch>
+      </Class>
       <Class name="CPGraph" />
+      <Class name="CPGridLineGroup" />
       <Class name="CPGridLines" />
-      <Class name="CPImage" />
+      <Class name="CPImage">
+        <Patch>Methods[InitWithCGImage].GenerateConstructor=false</Patch>
+      </Class>
       <Class name="CPLayer" />
       <Class name="CPLayerAnnotation" />
       <Class name="CPLayerHostingView" />
@@ -5180,12 +5191,21 @@ enum
       <Class name="CPPieChart" />
       <Class name="CPPlainBlackTheme" />
       <Class name="CPPlainWhiteTheme" />
-      <Class name="CPPlot" />
-      <Class name="CPPlotArea" />
+      <Class name="CPPlot">
+        <Patch>Properties[Identifier].Type=Id</Patch>
+      </Class>
+      <Class name="CPPlotArea">
+        <Patch>Constants[bottomUpLayerOrder].Generate=false</Patch>
+        <Patch>Constants[updatingLayers].Generate=false</Patch>
+      </Class>
       <Class name="CPPlotAreaFrame" />
-      <Class name="CPPlotGroup" />
+      <Class name="CPPlotGroup">
+        <Patch>Properties[Identifier].Type=Id</Patch>
+      </Class>
       <Class name="CPPlotRange" />
-      <Class name="CPPlotSpace" />
+      <Class name="CPPlotSpace">
+        <Patch>Properties[Identifier].Type=Id</Patch>
+      </Class>
       <Class name="CPPlotSpaceAnnotation" />
       <Class name="CPPlotSymbol" />
       <Class name="CPPolarPlotSpace" />
@@ -5220,18 +5240,32 @@ enum
       </Class>
       <Class name="CPLayer_CPPlatformSpecificLayerExtensions">
         <Patch>AdditionFor=CPLayer</Patch>
+        <Patch>Properties[ImageOfLayer].Type=NSImage</Patch>
       </Class>
       <Class name="CPMutableNumericData_TypeConversion">
         <Patch>AdditionFor=CPMutableNumericData</Patch>
       </Class>
       <Class name="CPNumericData_TypeConversion">
         <Patch>AdditionFor=CPNumericData</Patch>
+        <Patch>Methods[ConvertDataDataTypeToDataDataType].Generate=false</Patch>
+        <Patch>Methods[ConvertDataDataTypeToDataDataType].Parameters[sourceDataType].Type=CPNumericDataType</Patch>
+        <Patch>Methods[ConvertDataDataTypeToDataDataType].Parameters[sourceDataType].IsByRef=true</Patch>
+        <Patch>Methods[ConvertDataDataTypeToDataDataType].Parameters[destDataType].Type=CPNumericDataType</Patch>
+        <Patch>Methods[ConvertDataDataTypeToDataDataType].Parameters[destDataType].IsByRef=true</Patch>
       </Class>
       <Class name="CPPlot_AbstractMethods">
         <Patch>AdditionFor=CPPlot</Patch>
       </Class>
       <Class name="CPPlotSpace_AbstractMethods">
         <Patch>AdditionFor=CPPlotSpace</Patch>
+        <Patch>Methods[PlotAreaViewPointForPlotPoint].Parameters[plotPoint].Type=NSDecimal</Patch>
+        <Patch>Methods[PlotAreaViewPointForPlotPoint].Parameters[plotPoint].IsByRef=true</Patch>
+        <Patch>Methods[PlotAreaViewPointForDoublePrecisionPlotPoint].Parameters[plotPoint].Type=double</Patch>
+        <Patch>Methods[PlotAreaViewPointForDoublePrecisionPlotPoint].Parameters[plotPoint].IsByRef=true</Patch>
+        <Patch>Methods[PlotPointForPlotAreaViewPoint].Parameters[plotPoint].Type=NSDecimal</Patch>
+        <Patch>Methods[PlotPointForPlotAreaViewPoint].Parameters[plotPoint].IsByRef=true</Patch>
+        <Patch>Methods[DoublePrecisionPlotPointForPlotAreaViewPoint].Parameters[plotPoint].Type=double</Patch>
+        <Patch>Methods[DoublePrecisionPlotPointForPlotAreaViewPoint].Parameters[plotPoint].IsByRef=true</Patch>
       </Class>
       <Class name="CPTheme_AbstractMethods">
         <Patch>AdditionFor=CPTheme</Patch>
@@ -5259,6 +5293,7 @@ enum
       </Class>
       <Class name="CPAxis_Definitions">
         <Patch>AdditionFor=CPAxis</Patch>
+        <Patch>Enumerations[CPAxisLabelingPolicy].BaseType=int</Patch>
       </Class>
       <Class name="CPAxisLabel_Definitions">
         <Patch>AdditionFor=CPAxisLabel</Patch>
@@ -5274,6 +5309,7 @@ enum
       </Class>
       <Class name="CPBarPlot_Definitions">
         <Patch>AdditionFor=CPBarPlot</Patch>
+        <Patch>Enumerations[CPBarPlotField].BaseType=int</Patch>
       </Class>
       <Class name="CPBorderedLayer_Definitions">
         <Patch>AdditionFor=CPBorderedLayer</Patch>
@@ -5295,6 +5331,14 @@ enum
       </Class>
       <Class name="CPDefinitions_Definitions">
         <Patch>AdditionFor=CPDefinitions</Patch>
+        <Patch>Enumerations[CPNumericType].BaseType=int</Patch>
+        <Patch>Enumerations[CPErrorBarType].BaseType=int</Patch>
+        <Patch>Enumerations[CPScaleType].BaseType=int</Patch>
+        <Patch>Enumerations[CPCoordinate].BaseType=int</Patch>
+        <Patch>Enumerations[CPSign].BaseType=int</Patch>
+        <Patch>Enumerations[CPConstraint].BaseType=int</Patch>
+        <Patch>Enumerations[CPRectAnchor].BaseType=int</Patch>
+        <Patch>Enumerations[CPAlignment].BaseType=int</Patch>
       </Class>
       <Class name="CPExceptions_Definitions">
         <Patch>AdditionFor=CPExceptions</Patch>
@@ -5304,9 +5348,16 @@ enum
       </Class>
       <Class name="CPGradient_Definitions">
         <Patch>AdditionFor=CPGradient</Patch>
+        <Patch>Enumerations[CPBlendingMode].Name=CPGradientBlendingMode</Patch>
+        <Patch>Enumerations[CPGradientBlendingMode].BaseType=int</Patch>
+        <Patch>Enumerations[CPGradientType].BaseType=int</Patch>
       </Class>
       <Class name="CPGraph_Definitions">
         <Patch>AdditionFor=CPGraph</Patch>
+        <Patch>Enumerations[CPGraphLayerType].BaseType=int</Patch>
+      </Class>
+      <Class name="CPGridLineGroup_Definitions">
+        <Patch>AdditionFor=CPGridLineGroup</Patch>
       </Class>
       <Class name="CPGridLines_Definitions">
         <Patch>AdditionFor=CPGridLines</Patch>
@@ -5352,12 +5403,15 @@ enum
       </Class>
       <Class name="CPNumericDataType_Definitions">
         <Patch>AdditionFor=CPNumericDataType</Patch>
+        <Patch>Enumerations[CPDataTypeFormat].BaseType=int</Patch>
       </Class>
       <Class name="CPPathExtensions_Definitions">
         <Patch>AdditionFor=CPPathExtensions</Patch>
       </Class>
       <Class name="CPPieChart_Definitions">
         <Patch>AdditionFor=CPPieChart</Patch>
+        <Patch>Enumerations[CPPieChartField].BaseType=int</Patch>
+        <Patch>Enumerations[CPPieDirection].BaseType=int</Patch>
       </Class>
       <Class name="CPPlainBlackTheme_Definitions">
         <Patch>AdditionFor=CPPlainBlackTheme</Patch>
@@ -5376,6 +5430,7 @@ enum
       </Class>
       <Class name="CPPlot_Definitions">
         <Patch>AdditionFor=CPPlot</Patch>
+        <Patch>Enumerations[CPPlotCachePrecision].BaseType=int</Patch>
       </Class>
       <Class name="CPPlotArea_Definitions">
         <Patch>AdditionFor=CPPlotArea</Patch>
@@ -5388,6 +5443,7 @@ enum
       </Class>
       <Class name="CPPlotRange_Definitions">
         <Patch>AdditionFor=CPPlotRange</Patch>
+        <Patch>Enumerations[CPPlotRangeComparisonResult].BaseType=int</Patch>
       </Class>
       <Class name="CPPlotSpace_Definitions">
         <Patch>AdditionFor=CPPlotSpace</Patch>
@@ -5397,18 +5453,22 @@ enum
       </Class>
       <Class name="CPPlotSymbol_Definitions">
         <Patch>AdditionFor=CPPlotSymbol</Patch>
+        <Patch>Enumerations[CPPlotSymbolType].BaseType=int</Patch>
       </Class>
       <Class name="CPPolarPlotSpace_Definitions">
         <Patch>AdditionFor=CPPolarPlotSpace</Patch>
       </Class>
       <Class name="CPRangePlot_Definitions">
         <Patch>AdditionFor=CPRangePlot</Patch>
+        <Patch>Enumerations[CPRangePlotField].BaseType=int</Patch>
       </Class>
       <Class name="CPResponder_Definitions">
         <Patch>AdditionFor=CPResponder</Patch>
       </Class>
       <Class name="CPScatterPlot_Definitions">
         <Patch>AdditionFor=CPScatterPlot</Patch>
+        <Patch>Enumerations[CPScatterPlotField].BaseType=int</Patch>
+        <Patch>Enumerations[CPScatterPlotInterpolation].BaseType=int</Patch>
       </Class>
       <Class name="CPSlateTheme_Definitions">
         <Patch>AdditionFor=CPSlateTheme</Patch>
@@ -5430,6 +5490,8 @@ enum
       </Class>
       <Class name="CPTradingRangePlot_Definitions">
         <Patch>AdditionFor=CPTradingRangePlot</Patch>
+        <Patch>Enumerations[CPTradingRangePlotStyle].BaseType=int</Patch>
+        <Patch>Enumerations[CPTradingRangePlotField].BaseType=int</Patch>
       </Class>
       <Class name="CPUtilities_Definitions">
         <Patch>AdditionFor=CPUtilities</Patch>

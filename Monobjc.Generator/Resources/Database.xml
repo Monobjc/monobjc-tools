@@ -1443,6 +1443,12 @@
   <Entry ns="CorePlot" nature="C" name="CPGraph_Definitions" style="Doxygen" file="CPGraph_Definitions">
     <url>N/A</url>
   </Entry>
+  <Entry ns="CorePlot" nature="C" name="CPGridLineGroup" style="Doxygen" file="CPGridLineGroup">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="CorePlot" nature="C" name="CPGridLineGroup_Definitions" style="Doxygen" file="CPGridLineGroup_Definitions">
+    <url>N/A</url>
+  </Entry>
   <Entry ns="CorePlot" nature="C" name="CPGridLines" style="Doxygen" file="CPGridLines">
     <url>N/A</url>
   </Entry>
