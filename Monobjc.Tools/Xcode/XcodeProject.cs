@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -55,6 +55,29 @@ namespace Monobjc.Tools.Xcode
         /// <value>The document.</value>
         public PBXDocument Document { get; private set; }
 
+        /// <summary>
+        ///   Gets or sets the project folder with the xcodeproj extension.
+        /// </summary>
+        /// <value>The folder.</value>
+		public String ProjectFolder
+		{
+			get
+			{
+				String folder = Path.Combine(this.Dir, this.Name + ".xcodeproj");
+				Directory.CreateDirectory(folder);
+				return folder;
+			}
+		}
+		
+        /// <summary>
+        ///   Gets or sets the project file with the pbxproj extension.
+        /// </summary>
+        /// <value>The file.</value>
+		public String ProjectFile
+		{
+			get { return Path.Combine(this.ProjectFolder, "project.pbxproj"); }
+		}
+		
         /// <summary>
         /// Adds a group.
         /// </summary>
@@ -271,10 +294,7 @@ namespace Monobjc.Tools.Xcode
         /// </summary>
         public void Save()
         {
-            String folder = Path.Combine(this.Dir, this.Name + ".xcodeproj");
-            Directory.CreateDirectory(folder);
-            String file = Path.Combine(folder, "project.pbxproj");
-            this.Document.WriteToFile(file);
+            this.Document.WriteToFile(this.ProjectFile);
         }
 
         /// <summary>
