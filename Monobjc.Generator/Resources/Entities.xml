@@ -5299,7 +5299,9 @@ enum
       <Class name="CPImage">
         <Patch>Methods[InitWithCGImage].GenerateConstructor=false</Patch>
       </Class>
-      <Class name="CPLayer" />
+      <Class name="CPLayer">
+        <Patch>BaseType=CALayer</Patch>
+      </Class>
       <Class name="CPLayerAnnotation" />
       <Class name="CPLayerHostingView" />
       <Class name="CPLimitBand" />
