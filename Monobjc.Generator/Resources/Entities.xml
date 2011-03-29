@@ -513,10 +513,12 @@
         <Patch>Methods[AlertWithMessageTextDefaultButtonAlternateButtonOtherButtonInformativeTextWithFormat].Parameters[informativeText,].Generate=false</Patch>
         <Patch>Methods[AlertWithMessageTextDefaultButtonAlternateButtonOtherButtonInformativeTextWithFormat].Parameters[informativeText]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary /><Name>informativeText</Name><Type>NSString</Type></Parameter>]]></Patch>
         <Patch>Methods[AlertWithMessageTextDefaultButtonAlternateButtonOtherButtonInformativeTextWithFormat].Parameters[values]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Enumerations[Button_Return_Values].Name=NSButtonReturn</Patch>
         <Patch>Enumerations[NSButtonReturn].BaseType=NSInteger</Patch>
       </Class>
       <Class name="NSAnimation">
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Constants[NSAnimationProgress].Generate=false</Patch>
       </Class>
       <Class name="NSAnimationContext">
@@ -524,8 +526,11 @@
       <Class name="NSAppleScript_AppKitAdditions">
       </Class>
       <Class name="NSApplication">
+        <Patch>Methods[DiscardEventsMatchingMaskBeforeEvent].Parameters[mask].Type=NSEventMask</Patch>
+        <Patch>Methods[NextEventMatchingMaskUntilDateInModeDequeue].Parameters[mask].Type=NSEventMask</Patch>
         <Patch>Methods[SearchStringInUserInterfaceItemStringSearchRangeFoundRange].Parameters[foundRange].Type=NSRange</Patch>
         <Patch>Methods[SearchStringInUserInterfaceItemStringSearchRangeFoundRange].Parameters[foundRange].IsOut=true</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Constants[NSApp].Generate=false</Patch>
         <Patch>Enumerations[Return_values_for_modal_operations].Name=NSRunResponse</Patch>
         <Patch>Enumerations[NSRunResponse].BaseType=NSInteger</Patch>
@@ -533,6 +538,7 @@
         <Patch>Enumerations[NSUpdateWindowsRunLoopOrdering].Generate=false</Patch>
       </Class>
       <Class name="NSArrayController">
+        <Patch>Properties[ArrangedObjects].Type=NSArray</Patch>
       </Class>
       <Class name="NSATSTypesetter">
         <Patch>Methods[GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits].Parameters[glyphBuffer].Type=IntPtr</Patch>
@@ -591,6 +597,7 @@
         <Patch>Methods[GetBitmapDataPlanes].Parameters[data].Type=IntPtr</Patch>
         <Patch>Methods[GetCompressionFactor].Parameters[compression].Type=IntPtr</Patch>
         <Patch>Methods[GetCompressionFactor].Parameters[factor].Type=IntPtr</Patch>
+        <Patch>Methods[ImageRepWithData].ReturnType=NSBitmapImageRep</Patch>
         <Patch>Methods[InitWithBitmapDataPlanesPixelsWidePixelsHighBitsPerSampleSamplesPerPixelHasAlphaIsPlanarColorSpaceNameBitmapFormatBytesPerRowBitsPerPixel].Parameters[planes].Type=IntPtr</Patch>
         <Patch>Methods[InitWithBitmapDataPlanesPixelsWidePixelsHighBitsPerSampleSamplesPerPixelHasAlphaIsPlanarColorSpaceNameBytesPerRowBitsPerPixel].Parameters[planes].Type=IntPtr</Patch>
         <Patch>Methods[InitWithCGImage].GenerateConstructor=false</Patch>
@@ -599,6 +606,7 @@
       </Class>
       <Class name="NSBox">
         <Patch>Enumerations[NSTitlePosition].BaseType=NSUInteger</Patch>
+        <Patch>Properties[TitleCell].Type=NSCell</Patch>
       </Class>
       <Class name="NSBrowser">
         <Patch>Methods[DraggingImageForRowsWithIndexesInColumnWithEventOffset].Parameters[dragImageOffset].Type=NSPoint</Patch>
@@ -607,6 +615,10 @@
         <Patch>Methods[GetRowColumnForPoint].Parameters[row].IsOut=true</Patch>
         <Patch>Methods[GetRowColumnForPoint].Parameters[column].Type=NSInteger</Patch>
         <Patch>Methods[GetRowColumnForPoint].Parameters[column].IsOut=true</Patch>
+        <Patch>Methods[LoadedCellAtRowColumn].ReturnType=NSCell</Patch>
+        <Patch>Properties[CellPrototype].Type=NSCell</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
+        <Patch>Properties[SelectedCell].Type=NSCell</Patch>
       </Class>
       <Class name="NSBrowserCell">
       </Class>
@@ -628,6 +640,8 @@
         <Patch>Methods[GetPeriodicDelayInterval].Parameters[delay].IsOut=true</Patch>
         <Patch>Methods[GetPeriodicDelayInterval].Parameters[interval].Type=float</Patch>
         <Patch>Methods[GetPeriodicDelayInterval].Parameters[interval].IsOut=true</Patch>
+        <Patch>Properties[HighlightsBy].Type=NSCellAttribute</Patch>
+        <Patch>Properties[KeyEquivalentModifierMask].Type=NSModifierFlag</Patch>
         <Patch>Enumerations[Bezel_Styles].Name=NSBezelStyle</Patch>
         <Patch>Enumerations[NSBezelStyle].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[Button_Types].Name=NSButtonType</Patch>
@@ -641,6 +655,7 @@
         <Patch>Methods[GetPeriodicDelayInterval].Parameters[delay].IsOut=true</Patch>
         <Patch>Methods[GetPeriodicDelayInterval].Parameters[interval].Type=float</Patch>
         <Patch>Methods[GetPeriodicDelayInterval].Parameters[interval].IsOut=true</Patch>
+        <Patch>Properties[NextState].Type=NSArray</Patch>
         <Patch>Properties[State].Type=NSCellStateValue</Patch>
         <Patch>Enumerations[NSCellStateValue].BaseType=NSInteger</Patch>
         <Patch>Enumerations[State_Masks].Name=NSStateMask</Patch>
@@ -653,6 +668,7 @@
         <Patch>Enumerations[Data_Entry_Types].Generate=false</Patch>
       </Class>
       <Class name="NSCIImageRep">
+        <Patch>Methods[ImageRepWithCIImage].ReturnType=NSCIImageRep</Patch>
       </Class>
       <Class name="NSClipView">
       </Class>
@@ -662,6 +678,7 @@
       <Class name="NSCollectionView">
         <Patch>Methods[DraggingImageForItemsAtIndexesWithEventOffset].Parameters[dragImageOffset].Type=NSPoint</Patch>
         <Patch>Methods[DraggingImageForItemsAtIndexesWithEventOffset].Parameters[dragImageOffset].IsOut=true</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Properties[Delegate].MinAvailability=Mac OS X v10.5</Patch>
       </Class>
       <Class name="NSCollectionViewItem">
@@ -753,12 +770,19 @@
       </Class>
       <Class name="NSComboBox">
         <Patch>Properties[DataSource].Type=Id</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSComboBoxCell">
         <Patch>Properties[DataSource].Type=Id</Patch>
       </Class>
       <Class name="NSControl">
+		<!--
+        <Patch>Methods[SendActionOn].Parameters[mask].Type=NSEventMask</Patch>
+		-->
         <Patch>Properties[Delegate]=<![CDATA[<Property Generate="true" CopyInDescendants="false" Static="false"><Summary><Line>Returns the delegate used by the receiver.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>Delegate</Name><Type>Id</Type><Getter Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true"><Summary/><MinAvailability>Mac OS X v10.0</MinAvailability><Name>Delegate</Name><Selector>delegate</Selector><Signature>- (id)delegate</Signature><ReturnType>Id</ReturnType><ReturnsDocumentation>The delegate used by the receiver and all other text views sharing the receiver’s layout manager, or nil if there is none.</ReturnsDocumentation><Parameters /></Getter><Setter Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true"><Summary/><MinAvailability>Mac OS X v10.0</MinAvailability><Name>SetDelegate</Name><Selector>setDelegate:</Selector><Signature>- (void)setDelegate:(id)anObject</Signature><ReturnType>void</ReturnType><Parameters><Parameter Generate="true" CopyInDescendants="false" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The new delegate object.</Line></Summary><Name>anObject</Name><Type>Id</Type></Parameter></Parameters></Setter></Property>]]></Patch>
+        <Patch>Properties[Cell].Type=NSCell</Patch>
+        <Patch>Properties[Formatter].Type=NSFormatter</Patch>
+        <Patch>Properties[SelectedCell].Type=NSCell</Patch>
       </Class>
       <Class name="NSController">
       </Class>
@@ -766,10 +790,13 @@
         <Patch>Methods[Pop][Static=True].Generate=false</Patch>
       </Class>
       <Class name="NSCustomImageRep">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSDatePicker">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSDatePickerCell">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSDictionaryController">
       </Class>
@@ -784,6 +811,7 @@
       <Class name="NSDocumentController">
       </Class>
       <Class name="NSDrawer">
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Enumerations[NSDrawerState].BaseType=NSUInteger</Patch>
       </Class>
       <Class name="NSEPSImageRep">
@@ -911,6 +939,7 @@
         <Patch>Enumerations[NSTypefaceInformation].BaseType=uint</Patch>
       </Class>
       <Class name="NSFontManager">
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Enumerations[Font_Collection_Mask].Name=NSFontCollectionMask</Patch>
         <!-- TODO: Move to constants -->
         <Patch>Enumerations[NSFontCollectionMask].Generate=false</Patch>
@@ -924,6 +953,7 @@
         <Patch>Enumerations[Tags_of_Views_in_the_FontPanel].Generate=false</Patch>
       </Class>
       <Class name="NSForm">
+        <Patch>Methods[CellAtIndex].ReturnType=NSCell</Patch>
       </Class>
       <Class name="NSFormCell">
         <Patch>Methods[TitleWidth].Name=GetTitleWidth</Patch>
@@ -959,6 +989,7 @@
         <Patch>Methods[ImageNamed].ReturnType=NSImage</Patch>
         <Patch>Methods[InitWithDataIgnoringOrientation].GenerateConstructor=false</Patch>
         <Patch>Methods[InitWithIconRef].GenerateConstructor=false</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSImageCell">
       </Class>
@@ -966,8 +997,11 @@
         <Patch>Methods[CGImageForProposedRectContextHints].Parameters[proposedDestRect].Type=NSRect</Patch>
         <Patch>Methods[CGImageForProposedRectContextHints].Parameters[proposedDestRect].IsByRef=true</Patch>
         <Patch>Methods[ImageRepWithContentsOfFile].ReturnType=NSImageRep</Patch>
+        <Patch>Methods[ImageRepWithContentsOfFile].CopyInDescendants=true</Patch>
         <Patch>Methods[ImageRepWithContentsOfURL].ReturnType=NSImageRep</Patch>
+        <Patch>Methods[ImageRepWithContentsOfURL].CopyInDescendants=true</Patch>
         <Patch>Methods[ImageRepWithPasteboard].ReturnType=NSImageRep</Patch>
+        <Patch>Methods[ImageRepWithPasteboard].CopyInDescendants=true</Patch>
         <Patch>Enumerations[Display_Device_Matching].Name=NSDisplayDeviceMatching</Patch>
         <!-- TODO: Move to constants -->
         <Patch>Enumerations[NSDisplayDeviceMatching].Generate=false</Patch>
@@ -1008,6 +1042,7 @@
         <Patch>Methods[RectArrayForGlyphRangeWithinSelectedGlyphRangeInTextContainerRectCount].Parameters[rectCount].IsOut=true</Patch>
         <Patch>Methods[SetLocationsStartingGlyphIndexesCountForGlyphRange].Parameters[glyphIndexes].Type=IntPtr</Patch>
         <Patch>Methods[ShowPackedGlyphsLengthGlyphRangeAtPointFontColorPrintingAdjustment].Parameters[glyphs].Type=IntPtr</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Enumerations[Glyph_Attributes].Name=NSGlyphAttributes</Patch>
         <Patch>Enumerations[NSGlyphAttributes].BaseType=NSInteger</Patch>
         <Patch>Enumerations[NSGlyphInscription].BaseType=NSUInteger</Patch>
@@ -1018,6 +1053,8 @@
       <Class name="NSLevelIndicatorCell">
       </Class>
       <Class name="NSMatrix">
+        <Patch>Methods[CellAtRowColumn].ReturnType=NSCell</Patch>
+        <Patch>Methods[CellWithTag].ReturnType=NSCell</Patch>
         <Patch>Methods[GetNumberOfRowsColumns].Parameters[rowCount].Type=NSInteger</Patch>
         <Patch>Methods[GetNumberOfRowsColumns].Parameters[rowCount].IsOut=true</Patch>
         <Patch>Methods[GetNumberOfRowsColumns].Parameters[columnCount].Type=NSInteger</Patch>
@@ -1030,6 +1067,10 @@
         <Patch>Methods[GetRowColumnOfCell].Parameters[row].IsOut=true</Patch>
         <Patch>Methods[GetRowColumnOfCell].Parameters[column].Type=NSInteger</Patch>
         <Patch>Methods[GetRowColumnOfCell].Parameters[column].IsOut=true</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
+        <Patch>Properties[KeyCell].Type=NSCell</Patch>
+        <Patch>Properties[Prototype].Type=NSCell</Patch>
+        <Patch>Properties[SelectedCell].Type=NSCell</Patch>
         <Patch>Enumerations[NSMatrixMode].BaseType=NSUInteger</Patch>
         <Replace type="Generated">
           <Source>public virtual Class CellClass</Source>
@@ -1037,6 +1078,7 @@
         </Replace>
       </Class>
       <Class name="NSMenu">
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Replace type="Xhtml">
           <Source><![CDATA[<a href="#//apple_ref/doc/c_ref/NSMenuPropertyItemKeyEquivalent">NSMenuPropertyItemKeyEquivalent</a> = 1 &amp;lt;&amp;lt; 2,]]></Source>
           <With><![CDATA[<a href="#//apple_ref/doc/c_ref/NSMenuPropertyItemKeyEquivalent">, NSMenuPropertyItemKeyEquivalent</a> = 1 &amp;lt;&amp;lt; 2,]]></With>
@@ -1114,6 +1156,7 @@
       <Class name="NSOpenPanel">
       </Class>
       <Class name="NSOutlineView">
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <!-- TODO: Move to constants -->
         <Patch>Enumerations[Drop_on_Item_Index].Generate=false</Patch>
       </Class>
@@ -1154,10 +1197,12 @@
       <Class name="NSPasteboardItem">
       </Class>
       <Class name="NSPathCell">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSPathComponentCell">
       </Class>
       <Class name="NSPathControl">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSPDFImageRep">
       </Class>
@@ -1197,6 +1242,7 @@
       <Class name="NSResponder">
       </Class>
       <Class name="NSRuleEditor">
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Enumerations[Nesting_Modes].Name=NSRuleEditorNestingMode</Patch>
         <Patch>Enumerations[NSRuleEditorNestingMode].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[Row_Types].Name=NSRuleEditorRowType</Patch>
@@ -1210,6 +1256,7 @@
       <Class name="NSRunningApplication">
       </Class>
       <Class name="NSSavePanel">
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <!-- TODO: Move to constant -->
         <Patch>Enumerations[Button_tags].Generate=false</Patch>
       </Class>
@@ -1241,17 +1288,22 @@
       <Class name="NSShadow">
       </Class>
       <Class name="NSSlider">
+        <Patch>Properties[TitleCell].Type=NSCell</Patch>
       </Class>
       <Class name="NSSliderCell">
+        <Patch>Properties[TitleCell].Type=NSCell</Patch>
         <Patch>Enumerations[NSTickMarkPosition].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSSliderType].BaseType=NSUInteger</Patch>
       </Class>
       <Class name="NSSound">
         <Patch>Methods[SoundNamed].ReturnType=NSSound</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSSpeechRecognizer">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSSpeechSynthesizer">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSSpellChecker">
         <Patch>Methods[CheckSpellingOfStringStartingAtLanguageWrapInSpellDocumentWithTagWordCount].Parameters[wordCount].Type=NSInteger</Patch>
@@ -1260,6 +1312,7 @@
         <Patch>Methods[CheckStringRangeTypesOptionsInSpellDocumentWithTagOrthographyWordCount].Parameters[wordCount].IsOut=true</Patch>
       </Class>
       <Class name="NSSplitView">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSStatusBar">
       </Class>
@@ -1273,6 +1326,9 @@
         <Patch>AdditionFor=NSString</Patch>
       </Class>
       <Class name="NSTableColumn">
+        <Patch>Methods[DataCellForRow].ReturnType=NSCell</Patch>
+        <Patch>Properties[DataCell].Type=NSCell</Patch>
+        <Patch>Properties[HeaderCell].Type=NSCell</Patch>
         <Patch>Enumerations[Resizing_Modes].Name=NSResizingMode</Patch>
         <Patch>Enumerations[NSResizingMode].BaseType=NSUInteger</Patch>
       </Class>
@@ -1284,17 +1340,20 @@
         <Patch>Methods[DragImageForRowsWithIndexesTableColumnsEventOffset].Parameters[dragImageOffset].Type=NSPoint</Patch>
         <Patch>Methods[DragImageForRowsWithIndexesTableColumnsEventOffset].Parameters[dragImageOffset].IsByRef=true</Patch>
         <Patch>Properties[DataSource].Type=Id</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Enumerations[NSTableViewDraggingDestinationFeedbackStyle].BaseType=NSInteger</Patch>
         <Patch>Enumerations[Grid_styles].Name=NSGridStyleMask</Patch>
         <Patch>Enumerations[NSGridStyleMask].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSGridStyleMask].Flags=true</Patch>
       </Class>
       <Class name="NSTabView">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSTabViewItem">
         <Patch>Enumerations[NSTabState].BaseType=NSUInteger</Patch>
       </Class>
       <Class name="NSText">
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Enumerations[NSTextAlignment].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[Additional_Writing_Directions].Name=NSAdditionalWritingDirection</Patch>
         <Patch>Enumerations[NSAdditionalWritingDirection].BaseType=NSInteger</Patch>
@@ -1317,6 +1376,7 @@
         <Patch>Enumerations[NSLineSweepDirection].BaseType=NSUInteger</Patch>
       </Class>
       <Class name="NSTextField">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSTextFieldCell">
       </Class>
@@ -1325,6 +1385,7 @@
       <Class name="NSTextList">
       </Class>
       <Class name="NSTextStorage">
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Enumerations[Change_notifications].Name=NSTextStorageEditedMask</Patch>
         <Patch>Enumerations[NSTextStorageEditedMask].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSTextStorageEditedMask].Flags=true</Patch>
@@ -1339,6 +1400,7 @@
       <Class name="NSTextView">
         <Patch>Methods[CompletionsForPartialWordRangeIndexOfSelectedItem].Parameters[index].Type=NSInteger</Patch>
         <Patch>Methods[CompletionsForPartialWordRangeIndexOfSelectedItem].Parameters[index].IsOut=true</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Enumerations[NSSelectionGranularity].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSSelectionAffinity].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSFindPanelAction].BaseType=NSUInteger</Patch>
@@ -1356,10 +1418,13 @@ NSString *NSFindPanelCaseInsensitiveSearch;
         </Replace>
       </Class>
       <Class name="NSTokenField">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSTokenFieldCell">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSToolbar">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSToolbarItem">
         <Patch>Enumerations[Item_Priority].Name=NSItemPriority</Patch>
@@ -1429,6 +1494,11 @@ NSString *NSFindPanelCaseInsensitiveSearch;
       <Class name="NSViewController">
       </Class>
       <Class name="NSWindow">
+        <Patch>Methods[ContentRectForFrameRectStyleMask].Parameters[windowStyle].Type=NSWindowStyleMask</Patch>
+        <Patch>Methods[FrameRectForContentRectStyleMask].Parameters[windowStyle].Type=NSWindowStyleMask</Patch>
+        <Patch>Methods[MinFrameWidthWithTitleStyleMask].Parameters[windowStyle].Type=NSWindowStyleMask</Patch>
+        <Patch>Methods[InitWithContentRectStyleMaskBackingDefer].Parameters[windowStyle].Type=NSWindowStyleMask</Patch>
+        <Patch>Methods[InitWithContentRectStyleMaskBackingDeferScreen].Parameters[windowStyle].Type=NSWindowStyleMask</Patch>
         <Patch>Methods[InitWithWindowRef].GenerateConstructor=false</Patch>
         <Patch>Methods[NextEventMatchingMask].Parameters[eventMask].Type=NSEventMask</Patch>
         <Patch>Methods[NextEventMatchingMaskUntilDateInModeDequeue].Parameters[eventMask].Type=NSEventMask</Patch>
@@ -1438,6 +1508,8 @@ NSString *NSFindPanelCaseInsensitiveSearch;
         <Patch>Properties[Animator].Getter.ReturnType=NSWindow</Patch>
         <Patch>Properties[ContentView].Type=NSView</Patch>
         <Patch>Properties[ContentView].Getter.ReturnType=NSView</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
+        <Patch>Properties[StyleMask].Type=NSWindowStyleMask</Patch>
 
         <Patch>Enumerations[Window_Style_Masks].Name=NSWindowStyleMask</Patch>
         <Patch>Enumerations[NSWindowStyleMask].BaseType=NSUInteger</Patch>
@@ -2127,6 +2199,7 @@ enum {]]>
       </Class>
       <Class name="CLLocationManager">
         <Patch>MinAvailability=Mac OS X v10.6</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Properties[LocationServicesEnabled][Static=true].Generate=false</Patch>
         <Patch>Enumerations[CLError].BaseType=int</Patch>
         <Patch>Constants[CLLocationDistance].Generate=false</Patch>
@@ -2912,6 +2985,7 @@ enum {]]>
         </Replace>
       </Class>
       <Class name="NSCache">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSCachedURLResponse">
         <Patch>Enumerations[NSURLCacheStoragePolicy].BaseType=NSUInteger</Patch>
@@ -3025,6 +3099,7 @@ enum {]]>
         <Patch>Methods[ConnectionWithReceivePortSendPort].ReturnType=NSConnection</Patch>
         <Patch>Methods[ConnectionWithRegisteredNameHost].ReturnType=NSConnection</Patch>
         <Patch>Methods[ConnectionWithRegisteredNameHostUsingNameServer].ReturnType=NSConnection</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSCountCommand">
       </Class>
@@ -3095,6 +3170,8 @@ enum {]]>
         <Patch>Methods[InitWithTimeIntervalSinceReferenceDate].GenerateConstructor=false</Patch>
         <Patch>Properties[Date].Type=NSDate</Patch>
         <Patch>Properties[Date].Getter.ReturnType=NSDate</Patch>
+        <Patch>Properties[DistantFuture].Type=NSDate</Patch>
+        <Patch>Properties[DistantPast].Type=NSDate</Patch>
         <Patch>Properties[TimeIntervalSinceReferenceDate][Static=True].Generate=false</Patch>
         <Patch>Methods[DateWithCalendarFormatTimeZone].ReturnType=IntPtr</Patch>
       </Class>
@@ -3209,6 +3286,7 @@ enum {]]>
         <Patch>Methods[FileExistsAtPathIsDirectory].Parameters[isDirectory].IsOut=true</Patch>
         <Patch>Methods[FileSystemRepresentationWithPath].ReturnType=IntPtr</Patch>
         <Patch>Methods[StringWithFileSystemRepresentationLength].Parameters[@string].Type=String</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Replace type="Generated">
           <Source><![CDATA[1UL <<]]></Source>
           <With><![CDATA[1U <<]]></With>
@@ -3286,6 +3364,7 @@ enum {]]>
         <Patch>Methods[EncodeBytesLengthForKey].Parameters[bytesp].Type=IntPtr</Patch>
         <Patch>Methods[ClassNameForClass][Static=True].Generate=false</Patch>
         <Patch>Methods[SetClassNameForClass][Static=True].Generate=false</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSKeyedUnarchiver">
         <Patch>Methods[DecodeBytesForKeyReturnedLength].Parameters[lengthp].Type=NSUInteger</Patch>
@@ -3293,6 +3372,7 @@ enum {]]>
         <Patch>Methods[DecodeBytesForKeyReturnedLength].ReturnType=IntPtr</Patch>
         <Patch>Methods[ClassForClassName][Static=True].Generate=false</Patch>
         <Patch>Methods[SetClassForClassName][Static=True].Generate=false</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSLocale">
         <Patch>Enumerations[NSLocaleLanguageDirection].Values[NSLocaleLanguageDirectionUnknown].Value=0</Patch>
@@ -3308,6 +3388,7 @@ enum {]]>
       <Class name="NSMachBootstrapServer">
       </Class>
       <Class name="NSMachPort">
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Enumerations[Mach_Port_Rights].Name=NSMachPortRights</Patch>
         <Patch>Enumerations[NSMachPortRights].BaseType=int</Patch>
       </Class>
@@ -3333,6 +3414,7 @@ enum {]]>
       <Class name="NSMetadataItem">
       </Class>
       <Class name="NSMetadataQuery">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSMetadataQueryAttributeValueTuple">
       </Class>
@@ -3374,9 +3456,11 @@ enum {]]>
       <Class name="NSNameSpecifier">
       </Class>
       <Class name="NSNetService">
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Enumerations[NSNetServicesError].BaseType=NSInteger</Patch>
       </Class>
       <Class name="NSNetServiceBrowser">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSNotification">
         <Patch>Methods[NotificationWithNameObject].ReturnType=NSNotification</Patch>
@@ -3498,6 +3582,7 @@ enum {]]>
         <Patch>Enumerations[NSPointerFunctionsOptions].BaseType=NSUInteger</Patch>
       </Class>
       <Class name="NSPort">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSPortCoder">
         <Patch>Methods[PortCoderWithReceivePortSendPortComponents].ReturnType=NSPortCoder</Patch>
@@ -3657,8 +3742,10 @@ enum {]]>
         <Patch>Enumerations[NSTestComparisonOperation].BaseType=NSUInteger</Patch>
       </Class>
       <Class name="NSSpellServer">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSStream">
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Enumerations[Stream_Status_Constants].Name=NSStreamStatus</Patch>
         <Patch>Enumerations[NSStreamStatus].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[Stream_Event_Constants].Name=NSStreamEvent</Patch>
@@ -3910,6 +3997,7 @@ enum]]>
         </Replace>
       </Class>
       <Class name="NSXMLParser">
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Enumerations[NSXMLParserError].BaseType=NSInteger</Patch>
       </Class>
 
@@ -4141,6 +4229,7 @@ enum]]>
         <Patch>Properties[Client].Getter.ReturnType=IIMKTextInput</Patch>
         <Patch>Properties[Delegate;].Getter.Name=Delegate</Patch>
         <Patch>Properties[Delegate;].Name=Delegate</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="IMKServer">
         <Patch>Protocols= </Patch>
@@ -4205,8 +4294,10 @@ enum]]>
       <Class name="QTCaptureConnection">
       </Class>
       <Class name="QTCaptureDecompressedAudioOutput">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="QTCaptureDecompressedVideoOutput">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="QTCaptureDevice">
         <Patch>Enumerations[Enumerations].Name=QTCaptureDeviceAVCTransportControl</Patch>
@@ -4215,6 +4306,7 @@ enum]]>
       <Class name="QTCaptureDeviceInput">
       </Class>
       <Class name="QTCaptureFileOutput">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="QTCaptureInput">
       </Class>
@@ -4231,8 +4323,10 @@ enum]]>
         </Replace>
       </Class>
       <Class name="QTCaptureVideoPreviewOutput">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="QTCaptureView">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="QTCompressionOptions">
         <Patch>Methods[CompressionOptionsWithIdentifier].ReturnType=QTCompressionOptions</Patch>
@@ -4289,6 +4383,7 @@ enum]]>
         <Patch>Methods[MovieWithQuickTimeMovieDisposeWhenDoneError].ReturnType=QTMovie</Patch>
         <Patch>Methods[MovieWithURLError].ReturnType=QTMovie</Patch>
         <Patch>Methods[MovieWithTimeRangeError].ReturnType=QTMovie</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Properties[Movie].Type=QTMovie</Patch>
         <Patch>Properties[Movie].Getter.ReturnType=QTMovie</Patch>
         <Patch>Enumerations[QTMovieFileTypeOptions].BaseType=int</Patch>
@@ -4298,6 +4393,7 @@ enum]]>
       <Class name="QTMovieLayer">
       </Class>
       <Class name="QTMovieView">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="QTSampleBuffer">
         <Patch>Methods[AudioBufferListWithOptions].ReturnType=IntPtr</Patch>
@@ -4332,8 +4428,10 @@ enum]]>
         <Patch>AdditionFor=CIFilter</Patch>
       </Class>
       <Class name="IKCameraDeviceView">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="IKDeviceBrowserView">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="IKFilterBrowserPanel">
         <Patch>Methods[FilterBrowserPanelWithStyleMask].ReturnType=IKFilterBrowserPanel</Patch>
@@ -4346,6 +4444,7 @@ enum]]>
         <Patch>Enumerations[IKImageBrowserCellState].BaseType=int</Patch>
       </Class>
       <Class name="IKImageBrowserView">
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Enumerations[Cell_Appearance_Style_Masks].Name=IKCellAppearanceStyleMask</Patch>
         <Patch>Enumerations[IKCellAppearanceStyleMask].BaseType=int</Patch>
         <Patch>Enumerations[IKCellAppearanceStyleMask].Flags=true</Patch>
@@ -4357,12 +4456,14 @@ enum]]>
         <Patch>Properties[DataSource].Type=Id</Patch>
       </Class>
       <Class name="IKImageView">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="IKImagePicker">
       </Class>
       <Class name="IKPictureTaker;IKImagePicker">
       </Class>
       <Class name="IKSaveOptions">
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Properties[ImageProperties].Type=NSDictionary</Patch>
         <Patch>Properties[ImageProperties].Getter.ReturnType=NSDictionary</Patch>
         <Patch>Properties[ImageUTType].Type=NSString</Patch>
@@ -4371,6 +4472,7 @@ enum]]>
         <Patch>Properties[UserSelection].Getter.ReturnType=NSDictionary</Patch>
       </Class>
       <Class name="IKScannerDeviceView">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="IKSlideshow">
       </Class>
@@ -4441,6 +4543,7 @@ enum]]>
       <Class name="PDFDestination">
       </Class>
       <Class name="PDFDocument">
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Enumerations[PDF_Page_Scaling_Modes_for_Printing].Name=PDFPrintScalingMode</Patch>
         <Patch>Enumerations[PDFPrintScalingMode].BaseType=NSInteger</Patch>
       </Class>
@@ -4453,6 +4556,7 @@ enum]]>
       <Class name="PDFThumbnailView">
       </Class>
       <Class name="PDFView">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="PDFAnnotationButtonWidget.Deprecated">
         <Patch>AdditionFor=PDFAnnotationButtonWidget</Patch>
@@ -4462,10 +4566,12 @@ enum]]>
       <Class name="QCCompositionLayer">
       </Class>
       <Class name="QCCompositionParameterView">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="QCCompositionPickerPanel">
       </Class>
       <Class name="QCCompositionPickerView">
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="QCCompositionRepository">
       </Class>
@@ -4481,6 +4587,7 @@ enum]]>
       </Class>
       <Class name="QLPreviewPanel">
         <Patch>Properties[DataSource].Type=Id</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
     </Classes>
     <Protocols>
@@ -4755,6 +4862,7 @@ enum
         <Patch>Properties[Animation].Type=CAAnimation</Patch>
         <Patch>Properties[Animation].Getter.ReturnType=CAAnimation</Patch>
         <Patch>Properties[Animation].CopyInDescendants=true</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="CAAnimationGroup">
       </Class>
@@ -4768,6 +4876,7 @@ enum
         <Patch>Enumerations[CAConstraintAttribute].BaseType=int</Patch>
       </Class>
       <Class name="CAConstraintLayoutManager">
+        <Patch>Properties[LayoutManager].Type=CAConstraintLayoutManager</Patch>
       </Class>
       <Class name="CAEmitterCell">
         <Patch>Properties[EmitterCell].Type=CAEmitterCell</Patch>
@@ -4783,6 +4892,10 @@ enum
         </Replace>
       </Class>
       <Class name="CALayer">
+        <Patch>Properties[AutoresizingMask].Type=CAAutoresizingMask</Patch>
+        <Patch>Properties[CompositingFilter].Type=CIFilter</Patch>
+        <Patch>Properties[EdgeAntialiasingMask].Type=CAEdgeAntialiasingMask</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Properties[Layer].Type=CALayer</Patch>
         <Patch>Properties[Layer].Getter.ReturnType=CALayer</Patch>
         <Patch>Properties[Layer].CopyInDescendants=true</Patch>
@@ -4793,6 +4906,8 @@ enum
         <Patch>Constants[CATransform3DIdentity].Generate=false</Patch>
       </Class>
       <Class name="CAMediaTimingFunction">
+        <Patch>Methods[FunctionWithControlPoints].ReturnType=CAMediaTimingFunction</Patch>
+        <Patch>Methods[FunctionWithName].ReturnType=CAMediaTimingFunction</Patch>
         <Patch>Methods[GetControlPointAtIndexValues].Parameters[index].Type=IntPtr</Patch>
       </Class>
       <Class name="CAOpenGLLayer">
@@ -4800,6 +4915,8 @@ enum
         <Patch>Methods[DrawInCGLContextPixelFormatForLayerTimeDisplayTime].Parameters[timeStamp].Type=IntPtr</Patch>
       </Class>
       <Class name="CAPropertyAnimation">
+        <Patch>Methods[AnimationWithKeyPath].ReturnType=CAPropertyAnimation</Patch>
+        <Patch>Methods[AnimationWithKeyPath].CopyInDescendants=true</Patch>
       </Class>
       <Class name="CARenderer">
         <Patch>Methods[BeginFrameAtTimeTimeStamp].Parameters[timeStamp].Type=IntPtr</Patch>
@@ -4857,6 +4974,7 @@ enum
       <Class name="CIFilterGenerator">
       </Class>
       <Class name="CIFilterShape">
+        <Patch>Methods[ShapeWithRect].ReturnType=CIFilterShape</Patch>
       </Class>
       <Class name="CIImage">
         <Patch>Methods[ImageWithBitmapDataBytesPerRowSizeFormatColorSpace].Parameters[bpr].Type=IntPtr</Patch>
@@ -4880,6 +4998,7 @@ enum
       </Class>
       <Class name="CISampler">
         <Patch>Methods[InitWithImageKeysAndValues].Parameters[keysAndValues]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>keysAndValues</Name><Type>params object[]</Type></Parameter>]]></Patch>
+        <Patch>Methods[SamplerWithImageKeysAndValues].Parameters[keysAndValues]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>keysAndValues</Name><Type>params object[]</Type></Parameter>]]></Patch>
       </Class>
       <Class name="CIVector">
         <Patch>Methods[VectorWithValuesCount].Parameters[values].Type=IntPtr</Patch>
@@ -4991,6 +5110,7 @@ enum
       <Class name="SFAuthorizationView">
         <Patch>Properties[AuthorizationRights].Type=IntPtr</Patch>
         <Patch>Properties[AuthorizationRights].Getter.ReturnType=IntPtr</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="SFCertificatePanel">
       </Class>
@@ -5204,6 +5324,7 @@ enum
       </Class>
       <Class name="CPPlotRange" />
       <Class name="CPPlotSpace">
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Properties[Identifier].Type=Id</Patch>
       </Class>
       <Class name="CPPlotSpaceAnnotation" />
@@ -5614,12 +5735,14 @@ enum
         <Patch>Methods[AxisInsetForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
         <Patch>Methods[SetDrawsLineAtZeroForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
         <Patch>Methods[DrawsLineAtZeroForAxis].Parameters[inAxis].Type=SM2DGraphAxis</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Constants[delegate].Generate=false</Patch>
         <Patch>Constants[dataSource].Generate=false</Patch>
         <Patch>Constants[_SM2DGraphView_Private].Generate=false</Patch>
       </Class>
       <Class name="SMPieChartView">
         <Patch>BaseType=NSView</Patch>
+        <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Properties[LabelPosition].Type=SMLabelPosition</Patch>
         <Patch>Constants[delegate].Generate=false</Patch>
         <Patch>Constants[dataSource].Generate=false</Patch>

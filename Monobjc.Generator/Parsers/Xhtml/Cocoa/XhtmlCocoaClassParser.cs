@@ -132,6 +132,9 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
                 // Instance Methods
                 this.ExtractInstanceMethods(classEntity, root);
 
+                // Delegate Methods
+                this.ExtractDelegateMethods(classEntity, root);
+
                 // Properties
                 this.ExtractProperties(classEntity, root);
 
@@ -158,7 +161,11 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
                 classEntity.Methods.Remove(methodModel);
                 MethodEntity getter = methodModel;
 
-                MethodEntity setter = classEntity.Methods.Find(m => String.Equals("Set" + getter.Name, m.Name) && String.Equals(m.ReturnType, "void"));
+				// TODO: Refactor to use the IsSetterFor with an optional parameter to strip the prefix
+                MethodEntity setter = classEntity.Methods.Find(m => String.Equals("Set" + getter.Name, m.Name) && 
+				                                                    String.Equals(m.ReturnType, "void") &&
+																	m.Parameters.Count == 1 &&
+																	m.Static == getter.Static);
                 if (setter == null)
                 {
                     setter = classEntity.Methods.Find(m => m.IsSetterFor(getter));
@@ -217,6 +224,18 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
             {
                 MethodEntity methodEntity = this.MethodParser.Parse(methodElement);
                 classEntity.Methods.Add(methodEntity);
+            }
+        }
+
+        protected void ExtractDelegateMethods(ClassEntity classEntity, XElement root)
+        {
+            IEnumerable<XElement> methods = from el in root.Descendants("div")
+                                            where (String) el.Attribute("class") == "api delegateMethod"
+                                            select el;
+            foreach (XElement methodElement in methods)
+            {
+                MethodEntity methodEntity = this.MethodParser.Parse(methodElement);
+                classEntity.DelegateMethods.Add(methodEntity);
             }
         }
     }

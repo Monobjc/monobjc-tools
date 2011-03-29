@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -79,11 +79,11 @@ namespace Monobjc.Tools.Generator.Generators
 #endif
             if (string.IsNullOrEmpty(classEntity.BaseType))
             {
-                this.Writer.WriteLineFormat(1, "public interface I{0} : {1}", classEntity.Name, "IManagedWrapper");
+                this.Writer.WriteLineFormat(1, "public partial interface I{0} : {1}", classEntity.Name, "IManagedWrapper");
             }
             else
             {
-                this.Writer.WriteLineFormat(1, "public interface I{0} : I{1}", classEntity.Name, classEntity.BaseType);
+                this.Writer.WriteLineFormat(1, "public partial interface I{0} : I{1}", classEntity.Name, classEntity.BaseType);
             }
             this.Writer.WriteLineFormat(1, "{{");
 

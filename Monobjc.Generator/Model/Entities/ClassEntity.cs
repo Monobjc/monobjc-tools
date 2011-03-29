@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -36,6 +36,7 @@ namespace Monobjc.Tools.Generator.Model.Entities
         {
             this.Methods = new List<MethodEntity>();
             this.Properties = new List<PropertyEntity>();
+            this.DelegateMethods = new List<MethodEntity>();
         }
 
         /// <summary>
@@ -60,6 +61,14 @@ namespace Monobjc.Tools.Generator.Model.Entities
         [XmlArray]
         [XmlArrayItem(typeof (PropertyEntity), ElementName = "Property")]
         public List<PropertyEntity> Properties { get; set; }
+
+        /// <summary>
+        ///   Gets or sets the delegate methods.
+        /// </summary>
+        /// <value>The delegate methods.</value>
+        [XmlArray]
+        [XmlArrayItem(typeof (MethodEntity), ElementName = "DelegateMethod")]
+        public List<MethodEntity> DelegateMethods { get; set; }
 
         /// <summary>
         ///   Gets or sets the conforms to.
