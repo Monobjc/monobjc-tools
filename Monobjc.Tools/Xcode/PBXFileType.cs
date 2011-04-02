@@ -426,5 +426,9 @@ namespace Monobjc.Tools.Xcode
         /// </summary>
         [Description("wrapper.framework")]
         WrapperFramework,
+        /// <summary>
+        /// </summary>
+        [Description("wrapper.pb-project")]
+        WrapperPBProject,
     }
 }

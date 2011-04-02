@@ -98,11 +98,11 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "map">The map.</param>
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
-            writer.writeElementPrologue(map, this);
-            writer.WriteAttribute("proxyType", this.ProxyType);
-            writer.WriteReference(map, "remoteGlobalIDString", this.RemoteGlobalIDString);
-            writer.WriteAttribute("remoteInfo", this.RemoteInfo);
-            writer.writeElementEpilogue();
+            writer.WritePBXElementPrologue(2, map, this);
+            writer.WritePBXProperty(3, map, "proxyType", this.ProxyType);
+            writer.WritePBXProperty(3, map, "remoteGlobalIDString", this.RemoteGlobalIDString);
+            writer.WritePBXProperty(3, map, "remoteInfo", this.RemoteInfo);
+            writer.WritePBXElementEpilogue(2);
         }
     }
 }

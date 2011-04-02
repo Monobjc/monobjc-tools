@@ -70,12 +70,12 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "map">The map.</param>
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
-            writer.writeElementPrologue(map, this);
+            writer.WritePBXElementPrologue(2, map, this);
             if (this.FileRef != null)
             {
-                writer.WriteReference(map, "fileRef", this.FileRef);
+                writer.WritePBXProperty(3, map, "fileRef", this.FileRef);
             }
-            writer.writeElementEpilogue();
+            writer.WritePBXElementEpilogue(2);
         }
     }
 }

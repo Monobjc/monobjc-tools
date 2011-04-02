@@ -23,14 +23,14 @@ using Monobjc.Tools.Utilities;
 
 namespace Monobjc.Tools.Xcode
 {
-    public partial class PBXGroup : PBXFileElement
+    public class PBXGroup : PBXFileElement
     {
         private readonly IList<PBXFileElement> children;
 
         /// <summary>
         ///   Initializes a new instance of the <see cref = "PBXGroup" /> class.
         /// </summary>
-        /// <param name="part"></param>
+        /// <param name = "part"></param>
         public PBXGroup()
         {
             this.children = new List<PBXFileElement>();
@@ -38,9 +38,9 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PBXGroup"/> class.
+        ///   Initializes a new instance of the <see cref = "PBXGroup" /> class.
         /// </summary>
-        /// <param name="name">The name.</param>
+        /// <param name = "name">The name.</param>
         public PBXGroup(String name) : base(name)
         {
             this.children = new List<PBXFileElement>();
@@ -113,18 +113,18 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "map">The map.</param>
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
-            writer.writeElementPrologue(map, this);
-            writer.WriteReferences(map, "children", this.Children);
-            writer.WriteAttribute("name", this.Name);
-            writer.WriteAttribute("sourceTree", this.SourceTree.ToDescription());
-            writer.writeElementEpilogue();
+            writer.WritePBXElementPrologue(2, map, this);
+            writer.WritePBXProperty(3, map, "children", this.Children);
+            writer.WritePBXProperty(3, map, "name", this.Name);
+            writer.WritePBXProperty(3, map, "sourceTree", this.SourceTree.ToDescription());
+            writer.WritePBXElementEpilogue(2);
         }
 
         /// <summary>
-        /// Finds the specified nature.
+        ///   Finds the specified nature.
         /// </summary>
-        /// <param name="nature">The nature.</param>
-        /// <param name="name">The name.</param>
+        /// <param name = "nature">The nature.</param>
+        /// <param name = "name">The name.</param>
         /// <returns></returns>
         public PBXFileElement Find(PBXElementType nature, String name)
         {
@@ -132,9 +132,9 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Finds the group.
+        ///   Finds the group.
         /// </summary>
-        /// <param name="name">The name.</param>
+        /// <param name = "name">The name.</param>
         /// <returns></returns>
         public PBXGroup FindGroup(String name)
         {
@@ -142,9 +142,9 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Finds the file reference.
+        ///   Finds the file reference.
         /// </summary>
-        /// <param name="name">The name.</param>
+        /// <param name = "name">The name.</param>
         /// <returns></returns>
         public PBXFileReference FindFileReference(String name)
         {
@@ -152,9 +152,9 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Finds the file reference.
+        ///   Finds the file reference.
         /// </summary>
-        /// <param name="name">The name.</param>
+        /// <param name = "name">The name.</param>
         /// <returns></returns>
         public PBXVariantGroup FindVariantGroup(String name)
         {

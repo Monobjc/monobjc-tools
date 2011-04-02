@@ -77,10 +77,10 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "map">The map.</param>
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
-            writer.writeElementPrologue(map, this);
-            writer.WriteReference(map, "target", this.Target);
-            writer.WriteReference(map, "targetProxy", this.TargetProxy);
-            writer.writeElementEpilogue();
+            writer.WritePBXElementPrologue(2, map, this);
+            writer.WritePBXProperty(3, map, "target", this.Target);
+            writer.WritePBXProperty(3, map, "targetProxy", this.TargetProxy);
+            writer.WritePBXElementEpilogue(2);
         }
     }
 }

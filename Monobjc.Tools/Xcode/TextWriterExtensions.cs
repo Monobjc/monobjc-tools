@@ -16,6 +16,7 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 
@@ -24,150 +25,144 @@ namespace Monobjc.Tools.Xcode
     public static class TextWriterExtensions
     {
         /// <summary>
+        ///   Writes the indent.
+        /// </summary>
+        /// <param name = "writer">The writer.</param>
+        /// <param name = "indentLevel">The indent level.</param>
+        public static void WriteIndent(this TextWriter writer, int indentLevel)
+        {
+            while (indentLevel-- > 0)
+            {
+                writer.Write("    ");
+            }
+        }
+
+        /// <summary>
         ///   Writes the element prologue.
         /// </summary>
         /// <param name = "writer">The writer.</param>
+        /// <param name = "indentLevel">The indent level.</param>
         /// <param name = "map">The map.</param>
         /// <param name = "element">The element.</param>
-        public static void writeElementPrologue(this TextWriter writer, IDictionary<IPBXElement, string> map, IPBXElement element)
+        public static void WritePBXElementPrologue(this TextWriter writer, int indentLevel, IDictionary<IPBXElement, string> map, IPBXElement element)
         {
+            writer.WriteIndent(indentLevel);
             writer.WriteLine("{0} /* {1} */ = {{", map[element], element.Description);
-            writer.WriteAttribute("isa", element.Isa, null, false);
+            writer.WriteIndent(indentLevel + 1);
+            writer.WriteLine("{0} = {1};", "isa", element.Isa);
         }
 
         /// <summary>
         ///   Writes the element epilogue.
         /// </summary>
         /// <param name = "writer">The writer.</param>
-        public static void writeElementEpilogue(this TextWriter writer)
+        /// <param name = "indentLevel">The indent level.</param>
+        public static void WritePBXElementEpilogue(this TextWriter writer, int indentLevel)
         {
+            writer.WriteIndent(indentLevel);
             writer.WriteLine("};");
         }
 
         /// <summary>
-        ///   Writes the list.
+        ///   Writes the PBX property.
         /// </summary>
-        public static void WriteList(this TextWriter writer, String name, IEnumerable<String> values)
-        {
-            writer.WriteLine("    {0} = (", name);
-            foreach (String value in values)
-            {
-                writer.WriteLine("        \"{0}\",", value);
-            }
-            writer.WriteLine("    );");
-        }
-
-        /// <summary>
-        ///   Writes the list.
-        /// </summary>
-        public static void WriteMap(this TextWriter writer, String name, IDictionary<String, Object> map)
-        {
-            writer.WriteLine("    {0} = {{", name);
-            foreach (KeyValuePair<String, Object> pair in map)
-            {
-                if (pair.Value.GetType() == typeof (int))
-                {
-                    writer.WriteLine("        {0} = {1};", pair.Key, (int) pair.Value);
-                }
-                String s = pair.Value as String;
-                if (s != null)
-                {
-                    writer.WriteLine("        {0} = \"{1}\";", pair.Key, s);
-                }
-                List<String> values = pair.Value as List<String>;
-                if (values != null)
-                {
-                    writer.WriteLine("        {0} = (", name);
-                    foreach (String value in values)
-                    {
-                        writer.WriteLine("            \"{0}\",", value);
-                    }
-                    writer.WriteLine("        );");
-                }
-            }
-            writer.WriteLine("    };");
-        }
-
-        /// <summary>
-        ///   Writes the references.
-        /// </summary>
-        public static void WriteReferences<T>(this TextWriter writer, IDictionary<IPBXElement, string> map, String name, IEnumerable<T> elements) where T : IPBXElement
-        {
-            writer.WriteLine("    {0} = (", name);
-            foreach (IPBXElement element in elements)
-            {
-                writer.WriteLine("        {0}, /* {1} */", map[element], element.Description);
-            }
-            writer.WriteLine("    );");
-        }
-
-        /// <summary>
-        ///   Writes the reference.
-        /// </summary>
-        public static void WriteReference(this TextWriter writer, IDictionary<IPBXElement, string> map, String name, IPBXElement element)
-        {
-            writer.WriteAttribute(name, map[element], element.Description, false);
-        }
-
-        /// <summary>
-        ///   Writes the attribute.
-        /// </summary>
-        public static void WriteAttribute(this TextWriter writer, String name, int value)
-        {
-            writer.WriteAttribute(name, value.ToString(), null, false);
-        }
-
-        /// <summary>
-        ///   Writes the attribute.
-        /// </summary>
-        public static void WriteAttribute(this TextWriter writer, String name, int value, String comment)
-        {
-            writer.WriteAttribute(name, value.ToString(), comment, false);
-        }
-
-        /// <summary>
-        ///   Writes the attribute.
-        /// </summary>
-        public static void WriteAttribute(this TextWriter writer, String name, String value)
-        {
-            writer.WriteAttribute(name, value, null, true);
-        }
-
-        /// <summary>
-        ///   Writes the attribute.
-        /// </summary>
-        public static void WriteAttribute(this TextWriter writer, String name, String value, String comment, bool quotes)
+        /// <param name = "writer">The writer.</param>
+        /// <param name = "indentLevel">The indent level.</param>
+        /// <param name = "map">The map.</param>
+        /// <param name = "name">The name.</param>
+        /// <param name = "value">The value.</param>
+        public static void WritePBXProperty(this TextWriter writer, int indentLevel, IDictionary<IPBXElement, String> map, String name, Object value)
         {
             if (value == null)
             {
                 return;
             }
-            if (quotes)
+
+            writer.WriteIndent(indentLevel);
+            writer.Write("{0} = ", name);
+            writer.WritePBXValue(indentLevel, map, value);
+            writer.WriteLine(";");
+        }
+
+        /// <summary>
+        ///   Writes the PBX value.
+        /// </summary>
+        /// <param name = "writer">The writer.</param>
+        /// <param name = "indentLevel">The indent level.</param>
+        /// <param name = "map">The map.</param>
+        /// <param name = "value">The value.</param>
+        public static void WritePBXValue(this TextWriter writer, int indentLevel, IDictionary<IPBXElement, String> map, Object value)
+        {
+            Type type = value.GetType();
+            if (type == typeof (int))
             {
-                value = "\"" + value + "\"";
+                writer.Write("{0}", value);
             }
-            if (String.IsNullOrEmpty(comment))
+            else if (type == typeof (String))
             {
-                //if (newLine)
-                {
-                    writer.WriteLine("    {0} = {1};", name, value);
-                }
-                //else
-                //{
-                //    writer.Write("    {0} = {1}; ", name, value);
-                //}
+                writer.Write("\"{0}\"", value);
+            }
+            else if (typeof (IPBXElement).IsAssignableFrom(type))
+            {
+                writer.Write("{0} /* {1} */", map[(IPBXElement) value], ((IPBXElement) value).Description);
+            }
+            else if (typeof (IList).IsAssignableFrom(type))
+            {
+                writer.WritePBXList(indentLevel, map, (IList) value);
+            }
+            else if (typeof (IDictionary).IsAssignableFrom(type))
+            {
+                writer.WritePBXDictionary(indentLevel, map, (IDictionary) value);
             }
             else
             {
-                //if (newLine)
-                {
-                    writer.WriteLine("    {0} = {1}; /* {2} */", name, value, comment);
-                }
-                //else
-                //{
-                //    writer.Write("    {0} = {1}; /* {2} */ ", name, value, comment);
-                //}
+                throw new NotSupportedException();
             }
+        }
+
+        /// <summary>
+        ///   Writes the list.
+        /// </summary>
+        /// <param name = "writer">The writer.</param>
+        /// <param name = "indentLevel">The indent level.</param>
+        /// <param name = "map">The map.</param>
+        /// <param name = "values">The values.</param>
+        public static void WritePBXList(this TextWriter writer, int indentLevel, IDictionary<IPBXElement, String> map, IList values)
+        {
+            writer.WriteLine("(");
+
+            // For each value, the output is different
+            foreach (Object value in values)
+            {
+                writer.WriteIndent(indentLevel + 1);
+                writer.WritePBXValue(indentLevel + 1, map, value);
+                writer.WriteLine(",");
+            }
+
+            writer.WriteIndent(indentLevel);
+            writer.Write(")");
+        }
+
+        /// <summary>
+        ///   Writes the dictionary.
+        /// </summary>
+        /// <param name = "writer">The writer.</param>
+        /// <param name = "indentLevel">The indent level.</param>
+        /// <param name = "map">The map.</param>
+        /// <param name = "dictionary">The dictionary.</param>
+        public static void WritePBXDictionary(this TextWriter writer, int indentLevel, IDictionary<IPBXElement, String> map, IDictionary dictionary)
+        {
+            writer.WriteLine("{");
+
+            // For each key/value pair, the output is different
+            foreach (String key in dictionary.Keys)
+            {
+                Object value = dictionary[key];
+                writer.WritePBXProperty(indentLevel + 1, map, key, value);
+            }
+
+            writer.WriteIndent(indentLevel);
+            writer.Write("}");
         }
     }
 }

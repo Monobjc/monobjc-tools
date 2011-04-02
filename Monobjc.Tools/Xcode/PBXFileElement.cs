@@ -22,16 +22,14 @@ namespace Monobjc.Tools.Xcode
     public abstract class PBXFileElement : PBXElement
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PBXFileElement"/> class.
+        ///   Initializes a new instance of the <see cref = "PBXFileElement" /> class.
         /// </summary>
-        protected  PBXFileElement()
-        {
-        }
+        protected PBXFileElement() {}
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PBXFileElement"/> class.
+        ///   Initializes a new instance of the <see cref = "PBXFileElement" /> class.
         /// </summary>
-        /// <param name="name">The name.</param>
+        /// <param name = "name">The name.</param>
         protected PBXFileElement(string name)
         {
             this.Name = name;

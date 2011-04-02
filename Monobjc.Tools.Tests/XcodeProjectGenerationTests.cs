@@ -28,27 +28,57 @@ namespace Monobjc.Tools
         [Test]
         public void TestProjectGeneration001()
         {
-            // Create the document
-            XcodeProject project = new XcodeProject(".", "MyApplication");
+            // Create the dependant project
+            XcodeProject project1 = new XcodeProject(".", "MyLibrary");
 
-            project.AddFile("Classes", "Classes/AppDelegate.h");
-            project.AddFile("Classes", "Classes/Wrong.h");
-            project.RemoveFile("Classes", "Classes/Wrong.h");
+            project1.AddFile("Classes", "Classes/AppDelegate.h");
+            project1.AddFile("Classes", "Classes/Wrong.h");
+            project1.RemoveFile("Classes", "Classes/Wrong.h");
 
-            project.AddFile("Resources", "en.lproj/MainMenu.xib");
-            project.AddFile("Resources", "fr.lproj/MainMenu.xib");
-            project.RemoveFile("Resources", "fr.lproj/MainMenu.xib");
+            project1.AddFile("Resources", "en.lproj/MainMenu.xib");
+            project1.AddFile("Resources", "fr.lproj/MainMenu.xib");
+            project1.RemoveFile("Resources", "fr.lproj/MainMenu.xib");
 
-            project.AddFramework("Frameworks", "Cocoa");
-            project.AddFramework("Frameworks", "AddressBook");
-            project.RemoveFramework("Frameworks", "AddressBook");
+            project1.AddFramework("Frameworks", "Cocoa");
+            project1.AddFramework("Frameworks", "AddressBook");
+            project1.RemoveFramework("Frameworks", "AddressBook");
 
-            project.AddGroup("Products");
+            project1.AddGroup("Products");
 
-            XCBuildConfiguration buildConfiguration = new XCBuildConfiguration("Release");
-            project.AddBuildConfiguration(buildConfiguration, null);
+            XCBuildConfiguration buildConfiguration1 = new XCBuildConfiguration("Release");
+            buildConfiguration1.BuildSettings.Add("ARCHS", "$(ARCHS_STANDARD_32_64_BIT)");
+            buildConfiguration1.BuildSettings.Add("MACOSX_DEPLOYMENT_TARGET", "10.6");
+            buildConfiguration1.BuildSettings.Add("SDKROOT", "macosx");
+            project1.AddBuildConfiguration(buildConfiguration1, null);
 
-            project.Save();
+            project1.Save();
+
+            // Create the main project
+            XcodeProject project2 = new XcodeProject(".", "MyApplication");
+
+            project2.AddFile("Classes", "Classes/AppDelegate.h");
+            project2.AddFile("Classes", "Classes/Wrong.h");
+            project2.RemoveFile("Classes", "Classes/Wrong.h");
+
+            project2.AddFile("Resources", "en.lproj/MainMenu.xib");
+            project2.AddFile("Resources", "fr.lproj/MainMenu.xib");
+            project2.RemoveFile("Resources", "fr.lproj/MainMenu.xib");
+
+            project2.AddFramework("Frameworks", "Cocoa");
+            project2.AddFramework("Frameworks", "AddressBook");
+            project2.RemoveFramework("Frameworks", "AddressBook");
+
+            project2.AddGroup("Products");
+
+            XCBuildConfiguration buildConfiguration2 = new XCBuildConfiguration("Release");
+            buildConfiguration2.BuildSettings.Add("ARCHS", "$(ARCHS_STANDARD_32_64_BIT)");
+            buildConfiguration2.BuildSettings.Add("MACOSX_DEPLOYMENT_TARGET", "10.6");
+            buildConfiguration2.BuildSettings.Add("SDKROOT", "macosx");
+            project2.AddBuildConfiguration(buildConfiguration2, null);
+
+            project2.AddDependantProject(project1);
+
+            project2.Save();
         }
     }
 }

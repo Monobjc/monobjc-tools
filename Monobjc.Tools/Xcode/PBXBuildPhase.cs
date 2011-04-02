@@ -83,11 +83,11 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "map">The map.</param>
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
-            writer.writeElementPrologue(map, this);
-            writer.WriteAttribute("buildActionMask", this.BuildActionMask);
-            writer.WriteReferences(map, "targets", this.Files);
-            writer.WriteAttribute("runOnlyForDeploymentPostprocessing", this.RunOnlyForDeploymentPostprocessing);
-            writer.writeElementEpilogue();
+            writer.WritePBXElementPrologue(2, map, this);
+            writer.WritePBXProperty(3, map, "buildActionMask", this.BuildActionMask);
+            writer.WritePBXProperty(3, map, "targets", this.Files);
+            writer.WritePBXProperty(3, map, "runOnlyForDeploymentPostprocessing", this.RunOnlyForDeploymentPostprocessing);
+            writer.WritePBXElementEpilogue(2);
         }
     }
 }

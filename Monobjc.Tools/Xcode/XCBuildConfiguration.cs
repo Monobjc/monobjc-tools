@@ -18,6 +18,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Monobjc.Tools.Xcode
 {
@@ -32,9 +33,9 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="XCBuildConfiguration"/> class.
+        ///   Initializes a new instance of the <see cref = "XCBuildConfiguration" /> class.
         /// </summary>
-        /// <param name="name">The name.</param>
+        /// <param name = "name">The name.</param>
         public XCBuildConfiguration(String name) : this()
         {
             this.Name = name;
@@ -97,14 +98,14 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "map">The map.</param>
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
-            writer.writeElementPrologue(map, this);
+            writer.WritePBXElementPrologue(2, map, this);
             if (this.BaseConfigurationReference != null)
             {
-                writer.WriteReference(map, "baseConfigurationReference", this.BaseConfigurationReference);
+                writer.WritePBXProperty(3, map, "baseConfigurationReference", this.BaseConfigurationReference);
             }
-            writer.WriteMap("buildSettings", this.BuildSettings);
-            writer.WriteAttribute("name", this.Name);
-            writer.writeElementEpilogue();
+            writer.WritePBXProperty(3, map, "buildSettings", this.BuildSettings.ToDictionary(kvp => kvp.Key, kvp => kvp.Value));
+            writer.WritePBXProperty(3, map, "name", this.Name);
+            writer.WritePBXElementEpilogue(2);
         }
     }
 }

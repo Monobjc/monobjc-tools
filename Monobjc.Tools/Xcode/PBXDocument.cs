@@ -124,13 +124,13 @@ namespace Monobjc.Tools.Xcode
             // 2. Ouput the prologue
             writer.WriteLine("// !$*UTF8*$!");
             writer.WriteLine("{");
-            writer.WriteAttribute("archiveVersion", this.ArchivedVersion);
-            writer.WriteLine("    {0} = {{", "classes");
-            writer.WriteLine("    };");
-            writer.WriteAttribute("objectVersion", (int) this.ObjectVersion);
+            writer.WritePBXProperty(1, map, "archiveVersion", this.ArchivedVersion);
+            writer.WritePBXProperty(1, map, "classes", new Dictionary<String, String>().ToDictionary(kvp => kvp.Key, kvp => kvp.Value));
+            writer.WritePBXProperty(1, map, "objectVersion", (int) this.ObjectVersion);
 
             // 3. Output the objects by nature
-            writer.WriteLine("    {0} = {{", "objects");
+            writer.WriteIndent(1);
+            writer.WriteLine("{0} = {{", "objects");
             writer.WriteLine();
 
             // Iterate and output being/end section before dumping objects
@@ -157,10 +157,12 @@ namespace Monobjc.Tools.Xcode
                 writer.WriteLine("/* End {0} section */", currentType);
                 writer.WriteLine();
             }
-            writer.WriteLine("    };");
+
+            writer.WriteIndent(1);
+            writer.WriteLine("};");
 
             // 4. Output the epilogue
-            writer.WriteReference(map, "rootObject", this.RootObject);
+            writer.WritePBXProperty(1, map, "rootObject", this.RootObject);
             writer.WriteLine("}");
         }
 

@@ -86,13 +86,13 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "map">The map.</param>
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
-            writer.writeElementPrologue(map, this);
-            writer.WriteAttribute("buildActionMask", this.BuildActionMask);
-            writer.WriteAttribute("dstPath", this.DstPath);
-            writer.WriteAttribute("dstSubfolderSpec", this.DstSubfolderSpec);
-            writer.WriteReferences(map, "files", this.Files);
-            writer.WriteAttribute("runOnlyForDeploymentPostprocessing", this.RunOnlyForDeploymentPostprocessing);
-            writer.writeElementEpilogue();
+            writer.WritePBXElementPrologue(2, map, this);
+            writer.WritePBXProperty(3, map, "buildActionMask", this.BuildActionMask);
+            writer.WritePBXProperty(3, map, "dstPath", this.DstPath);
+            writer.WritePBXProperty(3, map, "dstSubfolderSpec", this.DstSubfolderSpec);
+            writer.WritePBXProperty(3, map, "files", this.Files);
+            writer.WritePBXProperty(3, map, "runOnlyForDeploymentPostprocessing", this.RunOnlyForDeploymentPostprocessing);
+            writer.WritePBXElementEpilogue(2);
         }
     }
 }

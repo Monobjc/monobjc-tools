@@ -20,14 +20,14 @@ namespace Monobjc.Tools.Xcode
     public class PBXVariantGroup : PBXGroup
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PBXVariantGroup"/> class.
+        ///   Initializes a new instance of the <see cref = "PBXVariantGroup" /> class.
         /// </summary>
         public PBXVariantGroup() {}
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PBXVariantGroup"/> class.
+        ///   Initializes a new instance of the <see cref = "PBXVariantGroup" /> class.
         /// </summary>
-        /// <param name="name">The name.</param>
+        /// <param name = "name">The name.</param>
         public PBXVariantGroup(string name) : base(name) {}
 
         /// <summary>

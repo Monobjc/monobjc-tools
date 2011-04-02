@@ -18,6 +18,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Monobjc.Tools.Xcode
 {
@@ -146,15 +147,15 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "map">The map.</param>
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
-            writer.writeElementPrologue(map, this);
-            writer.WriteAttribute("buildActionMask", this.BuildActionMask);
-            writer.WriteReferences(map, "files", this.Files);
-            writer.WriteList("inputPaths", this.InputPaths);
-            writer.WriteList("outputPaths", this.OutputPaths);
-            writer.WriteAttribute("runOnlyForDeploymentPostprocessing", this.RunOnlyForDeploymentPostprocessing);
-            writer.WriteAttribute("shellPath", this.ShellPath);
-            writer.WriteAttribute("shellScript", this.ShellScript);
-            writer.writeElementEpilogue();
+            writer.WritePBXElementPrologue(2, map, this);
+            writer.WritePBXProperty(3, map, "buildActionMask", this.BuildActionMask);
+            writer.WritePBXProperty(3, map, "files", this.Files);
+            writer.WritePBXProperty(3, map, "inputPaths", this.InputPaths.ToList());
+            writer.WritePBXProperty(3, map, "outputPaths", this.OutputPaths.ToList());
+            writer.WritePBXProperty(3, map, "runOnlyForDeploymentPostprocessing", this.RunOnlyForDeploymentPostprocessing);
+            writer.WritePBXProperty(3, map, "shellPath", this.ShellPath);
+            writer.WritePBXProperty(3, map, "shellScript", this.ShellScript);
+            writer.WritePBXElementEpilogue(2);
         }
     }
 }

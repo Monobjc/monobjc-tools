@@ -18,6 +18,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Monobjc.Tools.Utilities;
 
 namespace Monobjc.Tools.Xcode
@@ -30,6 +31,7 @@ namespace Monobjc.Tools.Xcode
         private XCConfigurationList buildConfigurationList;
         private readonly IList<String> knownRegions;
         private readonly IList<PBXTarget> targets;
+        private readonly IList<Dictionary<String, IPBXElement>> projectReferences;
 
         /// <summary>
         ///   Initializes a new instance of the <see cref = "PBXProject" /> class.
@@ -43,6 +45,7 @@ namespace Monobjc.Tools.Xcode
             this.knownRegions = new List<string> {"English", "Japanese", "French", "German"};
             this.MainGroup = new PBXGroup();
             this.ProjectDirPath = String.Empty;
+            this.projectReferences = new List<Dictionary<String, IPBXElement>>();
             this.ProjectRoot = String.Empty;
             this.targets = new List<PBXTarget>();
         }
@@ -113,7 +116,7 @@ namespace Monobjc.Tools.Xcode
         public PBXGroup MainGroup { get; set; }
 
         /// <summary>
-        /// Gets or sets the product ref group.
+        ///   Gets or sets the product ref group.
         /// </summary>
         /// <value>The product ref group.</value>
         public PBXGroup ProductRefGroup { get; set; }
@@ -123,6 +126,51 @@ namespace Monobjc.Tools.Xcode
         /// </summary>
         /// <value>The project dir path.</value>
         public String ProjectDirPath { get; set; }
+
+        /// <summary>
+        ///   Gets the project references.
+        /// </summary>
+        /// <value>The project references.</value>
+        public IEnumerable<Dictionary<String, IPBXElement>> ProjectReferences
+        {
+            get { return this.projectReferences; }
+        }
+
+        /// <summary>
+        ///   Adds the project reference.
+        /// </summary>
+        /// <param name = "group">The group.</param>
+        /// <param name = "file">The file.</param>
+        public void AddProjectReference(PBXGroup group, PBXFileReference file)
+        {
+            Dictionary<String, IPBXElement> reference = (from pr in this.projectReferences
+                                                         where pr["ProjectRef"] == file
+                                                         select pr).FirstOrDefault();
+            if (reference != null)
+            {
+                return;
+            }
+            reference = new Dictionary<String, IPBXElement>();
+            reference["ProductGroup"] = group;
+            reference["ProjectRef"] = file;
+            this.projectReferences.Add(reference);
+        }
+
+        /// <summary>
+        ///   Removes the project reference.
+        /// </summary>
+        /// <param name = "file">The file.</param>
+        public void RemoveProjectReference(PBXFileReference file)
+        {
+            Dictionary<String, IPBXElement> reference = (from pr in this.projectReferences
+                                                         where pr["ProjectRef"] == file
+                                                         select pr).FirstOrDefault();
+            if (reference == null)
+            {
+                return;
+            }
+            this.projectReferences.Remove(reference);
+        }
 
         /// <summary>
         ///   Gets or sets the project root.
@@ -207,32 +255,31 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "map">The map.</param>
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
-            writer.writeElementPrologue(map, this);
+            writer.WritePBXElementPrologue(2, map, this);
             if (this.BuildConfigurationList != null)
             {
-                writer.WriteReference(map, "buildConfigurationList", this.BuildConfigurationList);
+                writer.WritePBXProperty(3, map, "buildConfigurationList", this.BuildConfigurationList);
             }
-            writer.WriteAttribute("compatibilityVersion", this.CompatibilityVersion.ToDescription());
-            writer.WriteAttribute("developmentRegion", this.DevelopmentRegion);
-            writer.WriteAttribute("hasScannedForEncodings", this.HasScannedForEncodings);
-            writer.WriteLine("    {0} = (", "knownRegions");
-            foreach (string region in this.KnownRegions)
-            {
-                writer.WriteLine("        {0},", region);
-            }
-            writer.WriteLine("    );");
+            writer.WritePBXProperty(3, map, "compatibilityVersion", this.CompatibilityVersion.ToDescription());
+            writer.WritePBXProperty(3, map, "developmentRegion", this.DevelopmentRegion);
+            writer.WritePBXProperty(3, map, "hasScannedForEncodings", this.HasScannedForEncodings);
+            writer.WritePBXProperty(3, map, "knownRegions", this.KnownRegions.ToList());
             if (this.MainGroup != null)
             {
-                writer.WriteReference(map, "mainGroup", this.MainGroup);
+                writer.WritePBXProperty(3, map, "mainGroup", this.MainGroup);
             }
             if (this.ProductRefGroup != null)
             {
-                writer.WriteReference(map, "productRefGroup", this.ProductRefGroup);
+                writer.WritePBXProperty(3, map, "productRefGroup", this.ProductRefGroup);
             }
-            writer.WriteAttribute("projectDirPath", this.ProjectDirPath);
-            writer.WriteAttribute("projectRoot", this.ProjectRoot);
-            writer.WriteReferences(map, "targets", this.Targets);
-            writer.writeElementEpilogue();
+            writer.WritePBXProperty(3, map, "projectDirPath", this.ProjectDirPath);
+            if (this.ProjectReferences.Count() > 0)
+            {
+                writer.WritePBXProperty(3, map, "projectReferences", this.ProjectReferences.ToList());
+            }
+            writer.WritePBXProperty(3, map, "projectRoot", this.ProjectRoot);
+            writer.WritePBXProperty(3, map, "targets", this.Targets);
+            writer.WritePBXElementEpilogue(2);
         }
     }
 }

@@ -91,20 +91,20 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "map">The map.</param>
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
-            writer.writeElementPrologue(map, this);
-            writer.WriteAttribute("buildArgumentsString", this.BuildArgumentsString);
+            writer.WritePBXElementPrologue(2, map, this);
+            writer.WritePBXProperty(3, map, "buildArgumentsString", this.BuildArgumentsString);
             if (this.BuildConfigurationList != null)
             {
-                writer.WriteReference(map, "buildConfigurationList", this.BuildConfigurationList);
+                writer.WritePBXProperty(3, map, "buildConfigurationList", this.BuildConfigurationList);
             }
-            writer.WriteReferences(map, "buildPhases", this.BuildPhases);
-            writer.WriteAttribute("buildToolPath", this.BuildToolPath);
-            writer.WriteAttribute("buildWorkingDirectory", this.BuildWorkingDirectory);
-            writer.WriteReferences(map, "dependencies", this.Dependencies);
-            writer.WriteAttribute("name", this.Name);
-            writer.WriteAttribute("passBuildSettingsInEnvironment", this.PassBuildSettingsInEnvironment);
-            writer.WriteAttribute("productName", this.ProductName);
-            writer.writeElementEpilogue();
+            writer.WritePBXProperty(3, map, "buildPhases", this.BuildPhases);
+            writer.WritePBXProperty(3, map, "buildToolPath", this.BuildToolPath);
+            writer.WritePBXProperty(3, map, "buildWorkingDirectory", this.BuildWorkingDirectory);
+            writer.WritePBXProperty(3, map, "dependencies", this.Dependencies);
+            writer.WritePBXProperty(3, map, "name", this.Name);
+            writer.WritePBXProperty(3, map, "passBuildSettingsInEnvironment", this.PassBuildSettingsInEnvironment);
+            writer.WritePBXProperty(3, map, "productName", this.ProductName);
+            writer.WritePBXElementEpilogue(2);
         }
     }
 }

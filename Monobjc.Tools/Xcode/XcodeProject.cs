@@ -59,34 +59,40 @@ namespace Monobjc.Tools.Xcode
         ///   Gets or sets the project folder with the xcodeproj extension.
         /// </summary>
         /// <value>The folder.</value>
-		public String ProjectFolder
-		{
-			get
-			{
-				String folder = Path.Combine(this.Dir, this.Name + ".xcodeproj");
-				Directory.CreateDirectory(folder);
-				return folder;
-			}
-		}
-		
+        public String ProjectFolder
+        {
+            get
+            {
+                String folder = Path.Combine(this.Dir, this.Name + ".xcodeproj");
+                folder = Path.GetFullPath(folder);
+                Directory.CreateDirectory(folder);
+                return folder;
+            }
+        }
+
         /// <summary>
         ///   Gets or sets the project file with the pbxproj extension.
         /// </summary>
         /// <value>The file.</value>
-		public String ProjectFile
-		{
-			get { return Path.Combine(this.ProjectFolder, "project.pbxproj"); }
-		}
-		
+        public String ProjectFile
+        {
+            get
+            {
+                String file = Path.Combine(this.ProjectFolder, "project.pbxproj");
+                file = Path.GetFullPath(file);
+                return file;
+            }
+        }
+
         /// <summary>
-        /// Adds a group.
+        ///   Adds a group.
         /// </summary>
-        /// <param name="groups">The group paths.</param>
+        /// <param name = "groups">The group paths.</param>
         /// <returns>The created instance.</returns>
         public PBXGroup AddGroup(String groups)
         {
             // Split the group paths
-            List<string> parts = groups.Split('/').ToList();
+            List<string> parts = groups.Split(new[] {'/'}, StringSplitOptions.RemoveEmptyEntries).ToList();
             PBXGroup group = this.Document.Project.MainGroup;
             foreach (string part in parts)
             {
@@ -103,13 +109,13 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Removes a group.
+        ///   Removes a group.
         /// </summary>
-        /// <param name="groups">The group paths.</param>
+        /// <param name = "groups">The group paths.</param>
         public void RemoveGroup(String groups)
         {
             // Only keep the n-1 groups
-            List<string> parts = groups.Split('/').ToList();
+            List<string> parts = groups.Split(new[] {'/'}, StringSplitOptions.RemoveEmptyEntries).ToList();
             String last = parts.Last();
             parts.RemoveAt(parts.Count - 1);
 
@@ -136,10 +142,10 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Adds a file.
+        ///   Adds a file.
         /// </summary>
-        /// <param name="groups">The group paths.</param>
-        /// <param name="file">The file.</param>
+        /// <param name = "groups">The group paths.</param>
+        /// <param name = "file">The file.</param>
         /// <returns>The created instance.</returns>
         public PBXFileReference AddFile(String groups, String file)
         {
@@ -168,8 +174,15 @@ namespace Monobjc.Tools.Xcode
                 group = variantGroup;
             }
 
+            // Check if the file already exists
+            PBXFileReference fileReference = group.FindFileReference(name);
+            if (fileReference != null)
+            {
+                return fileReference;
+            }
+
             // Create a file reference
-            PBXFileReference fileReference = new PBXFileReference(name);
+            fileReference = new PBXFileReference(name);
             if (path.StartsWith(baseDir))
             {
                 path = path.Substring(baseDir.Length + 1);
@@ -189,10 +202,10 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Removes a file.
+        ///   Removes a file.
         /// </summary>
-        /// <param name="groups">The group paths.</param>
-        /// <param name="file">The file.</param>
+        /// <param name = "groups">The group paths.</param>
+        /// <param name = "file">The file.</param>
         public void RemoveFile(String groups, String file)
         {
             // Prepare the group that contains the file
@@ -226,10 +239,10 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Adds a framework.
+        ///   Adds a framework.
         /// </summary>
-        /// <param name="groups">The group paths.</param>
-        /// <param name="framework">The framework.</param>
+        /// <param name = "groups">The group paths.</param>
+        /// <param name = "framework">The framework.</param>
         /// <returns>The created instance.</returns>
         public PBXFileReference AddFramework(String groups, String framework)
         {
@@ -247,7 +260,7 @@ namespace Monobjc.Tools.Xcode
                 goto bail;
             }
 
-            // Fallback: Assume it is a system framework
+            // HACK: Assume it is a system framework
             path = String.Format(CultureInfo.CurrentCulture, "/System/Library/Frameworks/{0}.framework/{0}", framework);
 
             bail:
@@ -258,20 +271,20 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Removes a framework.
+        ///   Removes a framework.
         /// </summary>
-        /// <param name="groups">The group paths.</param>
-        /// <param name="framework">The framework.</param>
+        /// <param name = "groups">The group paths.</param>
+        /// <param name = "framework">The framework.</param>
         public void RemoveFramework(String groups, String framework)
         {
             this.RemoveFile(groups, framework + ".framework");
         }
 
         /// <summary>
-        /// Adds a build configuration.
+        ///   Adds a build configuration.
         /// </summary>
-        /// <param name="buildConfiguration">The build configuration.</param>
-        /// <param name="targetName">Name of the target or null to add it to the project only.</param>
+        /// <param name = "buildConfiguration">The build configuration.</param>
+        /// <param name = "targetName">Name of the target or null to add it to the project only.</param>
         public void AddBuildConfiguration(XCBuildConfiguration buildConfiguration, String targetName)
         {
             // Add the configuration to the project
@@ -290,7 +303,33 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Saves the project; create the xcodeproj bundle and write the project file.
+        ///   Adds the dependant project.
+        /// </summary>
+        /// <param name = "project">The project.</param>
+        public void AddDependantProject(XcodeProject project)
+        {
+            PBXGroup group = this.AddGroup("Products");
+            PBXFileReference fileReference = this.AddFile(String.Empty, project.ProjectFolder);
+            this.Document.Project.AddProjectReference(group, fileReference);
+        }
+
+        /// <summary>
+        ///   Removes the dependant project.
+        /// </summary>
+        /// <param name = "project">The project.</param>
+        public void RemoveDependantProject(XcodeProject project)
+        {
+            PBXFileReference fileReference = this.Project.MainGroup.FindFileReference(project.ProjectFolder);
+            if (fileReference == null)
+            {
+                return;
+            }
+            this.Project.MainGroup.RemoveChild(fileReference);
+            this.Document.Project.RemoveProjectReference(fileReference);
+        }
+
+        /// <summary>
+        ///   Saves the project; create the xcodeproj bundle and write the project file.
         /// </summary>
         public void Save()
         {
@@ -298,7 +337,16 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Gets the project type of the file.
+        ///   Gets or sets the project.
+        /// </summary>
+        /// <value>The project.</value>
+        private PBXProject Project
+        {
+            get { return this.Document.Project; }
+        }
+
+        /// <summary>
+        ///   Gets the project type of the file.
         /// </summary>
         private static PBXFileType GetFileType(String file)
         {
@@ -319,6 +367,8 @@ namespace Monobjc.Tools.Xcode
                     return PBXFileType.SourcecodeCppH;
                 case ".m":
                     return PBXFileType.SourcecodeCObjc;
+                case ".xcodeproj":
+                    return PBXFileType.WrapperPBProject;
                 case ".xib":
                     return PBXFileType.FileXib;
             }

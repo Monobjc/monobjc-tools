@@ -122,11 +122,11 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "map">The map.</param>
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
-            writer.writeElementPrologue(map, this);
-            writer.WriteReferences(map, "buildConfigurations", this.BuildConfigurations);
-            writer.WriteAttribute("defaultConfigurationIsVisible", this.DefaultConfigurationIsVisible);
-            writer.WriteAttribute("defaultConfigurationName", this.DefaultConfigurationName);
-            writer.writeElementEpilogue();
+            writer.WritePBXElementPrologue(2, map, this);
+            writer.WritePBXProperty(3, map, "buildConfigurations", this.BuildConfigurations);
+            writer.WritePBXProperty(3, map, "defaultConfigurationIsVisible", this.DefaultConfigurationIsVisible);
+            writer.WritePBXProperty(3, map, "defaultConfigurationName", this.DefaultConfigurationName);
+            writer.WritePBXElementEpilogue(2);
         }
     }
 }

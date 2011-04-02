@@ -105,22 +105,22 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "map">The map.</param>
         public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
         {
-            writer.writeElementPrologue(map, this);
+            writer.WritePBXElementPrologue(2, map, this);
             if (this.BuildConfigurationList != null)
             {
-                writer.WriteReference(map, "buildConfigurationList", this.BuildConfigurationList);
+                writer.WritePBXProperty(3, map, "buildConfigurationList", this.BuildConfigurationList);
             }
-            writer.WriteReferences(map, "buildPhases", this.BuildPhases);
-            writer.WriteReferences(map, "dependencies", this.Dependencies);
-            writer.WriteAttribute("name", this.Name);
-            writer.WriteAttribute("productInstallPath", this.ProductInstallPath);
-            writer.WriteAttribute("productName", this.ProductName);
+            writer.WritePBXProperty(3, map, "buildPhases", this.BuildPhases);
+            writer.WritePBXProperty(3, map, "dependencies", this.Dependencies);
+            writer.WritePBXProperty(3, map, "name", this.Name);
+            writer.WritePBXProperty(3, map, "productInstallPath", this.ProductInstallPath);
+            writer.WritePBXProperty(3, map, "productName", this.ProductName);
             if (this.ProductReference != null)
             {
-                writer.WriteReference(map, "productReference", this.ProductReference);
+                writer.WritePBXProperty(3, map, "productReference", this.ProductReference);
             }
-            writer.WriteAttribute("productType", this.ProductType.ToDescription());
-            writer.writeElementEpilogue();
+            writer.WritePBXProperty(3, map, "productType", this.ProductType.ToDescription());
+            writer.WritePBXElementEpilogue(2);
         }
     }
 }
