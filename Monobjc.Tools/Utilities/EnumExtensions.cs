@@ -27,7 +27,7 @@ namespace Monobjc.Tools.Utilities
     public static class EnumExtensions
     {
         /// <summary>
-        /// Return the description of an enumeration value if a <see cref="DescriptionAttribute"/> is attached.
+        ///   Return the description of an enumeration value if a <see cref = "DescriptionAttribute" /> is attached.
         /// </summary>
         /// <returns>Either the description or the string value of the enumeration value.</returns>
         public static string ToDescription(this Enum en)
@@ -37,7 +37,7 @@ namespace Monobjc.Tools.Utilities
 
             if (memInfo != null && memInfo.Length > 0)
             {
-                object[] attrs = memInfo[0].GetCustomAttributes(typeof (DescriptionAttribute),false);
+                object[] attrs = memInfo[0].GetCustomAttributes(typeof (DescriptionAttribute), false);
                 if (attrs != null && attrs.Length > 0)
                 {
                     return ((DescriptionAttribute) attrs[0]).Description;

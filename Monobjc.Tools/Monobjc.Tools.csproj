@@ -77,6 +77,12 @@
     <Compile Include="InterfaceBuilder\Visitors\ClassDescriptionCollector.cs" />
     <Compile Include="InterfaceBuilder\Visitors\PrintVisitor.cs" />
     <Compile Include="InterfaceBuilder\IIBVisitor.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="ObjectiveC\ObjCClass.cs" />
+    <Compile Include="ObjectiveC\ObjCId.cs" />
+    <Compile Include="CSSM_KEYUSE.cs" />
+    <Compile Include="CSSM_DB_RECORDTYPE.cs" />
+    <Compile Include="CSSM_DL_DB_RECORD.cs" />
     <Compile Include="Utilities\EnumExtensions.cs" />
     <Compile Include="Utilities\KeyChainAccess.cs" />
     <Compile Include="Utilities\IExecutionLogger.cs" />
@@ -109,7 +115,9 @@
     <Compile Include="Utilities\FileExtensions.cs" />
     <Compile Include="Utilities\MacOSVersion.cs" />
     <Compile Include="Utilities\NativeContext.cs" />
+    <Compile Include="Utilities\NativeVersionExtractor.cs" />
     <Compile Include="Utilities\NullLogger.cs" />
+    <Compile Include="OSStatus.cs" />
     <Compile Include="Utilities\ProcessHelper.cs" />
     <Compile Include="External\CodeSign.cs" />
     <Compile Include="External\ProductBuild.cs" />
@@ -117,6 +125,7 @@
     <Compile Include="Generators\DmgCreator.cs" />
     <Compile Include="Utilities\FileProvider.cs" />
     <Compile Include="External\Lipo.cs" />
+    <Compile Include="Utilities\SecItemClass.cs" />
     <Compile Include="Xcode\IPBXElement.cs" />
     <Compile Include="Xcode\IPBXVisitor.cs" />
     <Compile Include="Xcode\PBXAggregateTarget.cs" />

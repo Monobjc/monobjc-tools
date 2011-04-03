@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KeyChainAccessTests.cs" />
+    <Compile Include="NativeVersionExtractorTests.cs" />
     <Compile Include="XcodeProjectGenerationTests.cs" />
     <Compile Include="PBXProjectGenerationTests.cs" />
     <Compile Include="XIBLoadTests.cs" />
