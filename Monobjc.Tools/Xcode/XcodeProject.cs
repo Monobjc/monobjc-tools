@@ -23,6 +23,9 @@ using System.Linq;
 
 namespace Monobjc.Tools.Xcode
 {
+    /// <summary>
+    /// Wraps a Xcode project.
+    /// </summary>
     public class XcodeProject
     {
         /// <summary>
@@ -94,7 +97,7 @@ namespace Monobjc.Tools.Xcode
             // Split the group paths
             List<string> parts = groups.Split(new[] {'/'}, StringSplitOptions.RemoveEmptyEntries).ToList();
             PBXGroup group = this.Document.Project.MainGroup;
-            foreach (string part in parts)
+            foreach (String part in parts)
             {
                 PBXGroup g = group.FindGroup(part);
                 if (g == null)
@@ -115,13 +118,13 @@ namespace Monobjc.Tools.Xcode
         public void RemoveGroup(String groups)
         {
             // Only keep the n-1 groups
-            List<string> parts = groups.Split(new[] {'/'}, StringSplitOptions.RemoveEmptyEntries).ToList();
+            List<String> parts = groups.Split(new[] {'/'}, StringSplitOptions.RemoveEmptyEntries).ToList();
             String last = parts.Last();
             parts.RemoveAt(parts.Count - 1);
 
             // Go to the parent group
             PBXGroup g, group = this.Document.Project.MainGroup;
-            foreach (string part in parts)
+            foreach (String part in parts)
             {
                 g = group.FindGroup(part);
                 if (g == null)
@@ -155,7 +158,7 @@ namespace Monobjc.Tools.Xcode
             // Extract information
             String name = Path.GetFileName(file);
             String path = Path.GetFullPath(file);
-            String baseDir = Path.GetFullPath(this.Dir);
+            String baseDir = Path.GetFullPath(this.Project.ProjectDirPath ?? this.Dir);
             String parentDir = Path.GetDirectoryName(file);
 
             // If the file is localized, then add it to a variant group
