@@ -5038,6 +5038,26 @@ enum
       </Protocol>
     </Protocols>
   </Framework>
+  <Framework name="ScriptingBridge" usings="Foundation,AppKit,ApplicationServices" assembly="Monobjc.ScriptingBridge">
+    <Classes>
+      <Class name="SBApplication">
+        <Patch>Methods[ApplicationWithBundleIdentifier].ReturnType=SBApplication</Patch>
+        <Patch>Methods[ApplicationWithProcessIdentifier].ReturnType=SBApplication</Patch>
+        <Patch>Methods[ApplicationWithURL].ReturnType=SBApplication</Patch>
+      </Class>
+      <Class name="SBElementArray">
+      </Class>
+      <Class name="SBObject">
+        <Patch>Methods[SendEventIdParameters].Parameters[firstParamCode,...].Name=firstParamCode</Patch>
+        <Patch>Methods[SendEventIdParameters].Parameters[values]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="SBApplicationDelegate">
+        <Patch>Methods[EventDidFailWithError].Parameters[@event].Type=IntPtr</Patch>
+      </Protocol>
+    </Protocols>
+  </Framework>
   <Framework name="SecurityFoundation" usings="Foundation" assembly="Monobjc.SecurityFoundation">
     <Types>
       <Type name="SecurityFoundationFramework.Functions">

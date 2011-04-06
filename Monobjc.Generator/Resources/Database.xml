@@ -3261,6 +3261,18 @@
   <Entry ns="QuartzCore" nature="T" name="QuartzCoreFramework.Functions" style="Cocoa" file="QuartzCoreFramework.Functions">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/CoreAnimation_functions/Reference/reference.html</url>
   </Entry>
+  <Entry ns="ScriptingBridge" nature="C" name="SBApplication" style="Cocoa" file="SBApplication">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/SBApplication_Class/SBApplication/SBApplication.html</url>
+  </Entry>
+  <Entry ns="ScriptingBridge" nature="C" name="SBElementArray" style="Cocoa" file="SBElementArray">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/SBElementArray_Class/SBElementArray/SBElementArray.html</url>
+  </Entry>
+  <Entry ns="ScriptingBridge" nature="C" name="SBObject" style="Cocoa" file="SBObject">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/SBObject_Class/SBObject/SBObject.html</url>
+  </Entry>
+  <Entry ns="ScriptingBridge" nature="P" name="SBApplicationDelegate" style="Cocoa" file="SBApplicationDelegate">
+    <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/SBApplicationDelegate_Protocol/SBApplicationDelegate/SBApplicationDelegate.html</url>
+  </Entry>
   <Entry ns="SecurityFoundation" nature="C" name="SFAuthorization" style="Cocoa" file="SFAuthorization">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Security/Reference/SecurityFoundationFramework/Classes/SFAuthorization_Class/Reference/Reference.html</url>
   </Entry>
