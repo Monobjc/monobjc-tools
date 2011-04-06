@@ -5,9 +5,10 @@ This repository contains a set of tools used by the other Monobjc projects:
 - A general purpose library (Monobjc.Tools)
 - A set of NAnt tasks (Monobjc.NAnt)
 - A set of MSBuild tasks (Monobjc.MSBuild)
+- A Doxygen preprocessor (Monobjc.Doxygenator)
 - A class generator (Monobjc.Generator)
 
--- Monobjc.Generator --
+-- Monobjc.Tools --
 -----------------------
 
 This project contains a set of classes used by other Monobjc projects. They provide
@@ -25,6 +26,12 @@ a NAnt script.
 
 This set of tasks is merely a wrapper around the tools to allow their use within
 a MSBuild script. The work is still IN PROGRESS.
+
+-- Monobjc.Doxygenator --
+-----------------------
+
+This project contains a Doxygen pre-processor. It generates Xml fragments to be integrated
+into the Monobjc.Generator project.
 
 -- Monobjc.Generator --
 -----------------------
