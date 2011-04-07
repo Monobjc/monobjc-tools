@@ -44,9 +44,9 @@ namespace Monobjc.Tools.Xcode
             this.HasScannedForEncodings = 1;
             this.knownRegions = new List<string> {"English", "Japanese", "French", "German"};
             this.MainGroup = new PBXGroup();
-            this.ProjectDirPath = String.Empty;
+            this.ProjectDirPath = null;
             this.projectReferences = new List<Dictionary<String, IPBXElement>>();
-            this.ProjectRoot = String.Empty;
+            this.ProjectRoot = null;
             this.targets = new List<PBXTarget>();
         }
 
