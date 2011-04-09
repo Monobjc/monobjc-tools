@@ -19,6 +19,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 
 namespace Monobjc.Tools.Xcode
 {
@@ -60,6 +61,11 @@ namespace Monobjc.Tools.Xcode
         public void RemoveBuildConfiguration(XCBuildConfiguration configuration)
         {
             this.buildConfigurations.Remove(configuration);
+        }
+
+        public XCBuildConfiguration FindConfiguration(String name)
+        {
+            return this.buildConfigurations.FirstOrDefault(c => String.Equals(c.Name, name));
         }
 
         /// <summary>

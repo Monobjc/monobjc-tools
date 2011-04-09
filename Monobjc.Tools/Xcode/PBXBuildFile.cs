@@ -25,10 +25,24 @@ namespace Monobjc.Tools.Xcode
     public class PBXBuildFile : PBXElement
     {
         /// <summary>
+        ///   Initializes a new instance of the <see cref = "PBXBuildFile" /> class.
+        /// </summary>
+        public PBXBuildFile() {}
+
+        /// <summary>
+        ///   Initializes a new instance of the <see cref = "PBXBuildFile" /> class.
+        /// </summary>
+        /// <param name = "fileRef">The file ref.</param>
+        public PBXBuildFile(PBXFileElement fileRef)
+        {
+            this.FileRef = fileRef;
+        }
+
+        /// <summary>
         ///   Gets or sets the file reference.
         /// </summary>
         /// <value>The file reference.</value>
-        public PBXFileReference FileRef { get; set; }
+        public PBXFileElement FileRef { get; set; }
 
         /// <summary>
         ///   Gets or sets the build phase.

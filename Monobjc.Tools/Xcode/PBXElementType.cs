@@ -53,6 +53,9 @@ namespace Monobjc.Tools.Xcode
         PBXSourcesBuildPhase,
         /// <summary>
         /// </summary>
+        PBXBuildRule,
+        /// <summary>
+        /// </summary>
         PBXContainerItemProxy,
         /// <summary>
         /// </summary>

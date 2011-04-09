@@ -27,13 +27,19 @@ namespace Monobjc.Tools.Xcode
         /// <summary>
         ///   Initializes a new instance of the <see cref = "PBXFileReference" /> class.
         /// </summary>
-        public PBXFileReference() {}
+        public PBXFileReference()
+        {
+            this.IncludeInIndex = 1;
+        }
 
         /// <summary>
         ///   Initializes a new instance of the <see cref = "PBXFileReference" /> class.
         /// </summary>
         /// <param name = "name">The name.</param>
-        public PBXFileReference(string name) : base(name) {}
+        public PBXFileReference(string name) : base(name)
+        {
+            this.IncludeInIndex = 1;
+        }
 
         /// <summary>
         ///   Gets or sets the file encoding.
@@ -46,6 +52,12 @@ namespace Monobjc.Tools.Xcode
         /// </summary>
         /// <value>The type of the explicit file.</value>
         public PBXFileType ExplicitFileType { get; set; }
+
+        /// <summary>
+        /// Gets or sets if the file is included in the index.
+        /// </summary>
+        /// <value>If the file is included in the index.</value>
+        public int IncludeInIndex { get; set; }
 
         /// <summary>
         ///   Gets or sets the last type of the known file.
@@ -81,6 +93,15 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
+        /// Gets the description.
+        /// </summary>
+        /// <value>The description.</value>
+        public override string Description
+        {
+            get { return String.IsNullOrEmpty(this.Name) ? this.Path : this.Name; }
+        }
+
+        /// <summary>
         ///   Accepts the specified visitor.
         /// </summary>
         /// <param name = "visitor">The visitor.</param>
@@ -104,6 +125,10 @@ namespace Monobjc.Tools.Xcode
             if (this.ExplicitFileType != PBXFileType.None)
             {
                 writer.WritePBXProperty(3, map, "explicitFileType", this.ExplicitFileType.ToDescription());
+            }
+            if (this.IncludeInIndex != 1)
+            {
+                writer.WritePBXProperty(3, map, "includeInIndex", this.IncludeInIndex);
             }
             if (this.LastKnownFileType != PBXFileType.None)
             {

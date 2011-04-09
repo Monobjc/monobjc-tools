@@ -23,14 +23,14 @@ namespace Monobjc.Tools
     {
         public static void Main(String[] args)
         {
-            KeyChainAccessTests keyChainAccessTests = new KeyChainAccessTests();
-            keyChainAccessTests.TestKeyChainAccess();
+            //KeyChainAccessTests keyChainAccessTests = new KeyChainAccessTests();
+            //keyChainAccessTests.TestKeyChainAccess();
 
-            NativeVersionExtractorTests nativeVersionExtractorTests = new NativeVersionExtractorTests();
-            nativeVersionExtractorTests.TestNativeVersionExtractor();
+            //NativeVersionExtractorTests nativeVersionExtractorTests = new NativeVersionExtractorTests();
+            //nativeVersionExtractorTests.TestNativeVersionExtractor();
 
-            PBXProjectGenerationTests pBXProjectGenerationTests = new PBXProjectGenerationTests();
-            pBXProjectGenerationTests.TestProjectGeneration001();
+            //PBXProjectGenerationTests pBXProjectGenerationTests = new PBXProjectGenerationTests();
+            //pBXProjectGenerationTests.TestProjectGeneration001();
 
             XcodeProjectGenerationTests xcodeProjectGenerationTests = new XcodeProjectGenerationTests();
             xcodeProjectGenerationTests.TestProjectGeneration001();

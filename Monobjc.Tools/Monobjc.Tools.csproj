@@ -126,6 +126,10 @@
     <Compile Include="Utilities\FileProvider.cs" />
     <Compile Include="External\Lipo.cs" />
     <Compile Include="Utilities\SecItemClass.cs" />
+    <Compile Include="Xcode\PBXBuildRule.cs" />
+    <Compile Include="Xcode\PBXCompilerSpec.cs" />
+    <Compile Include="Xcode\XcodeProject.Files.cs" />
+    <Compile Include="Xcode\XcodeProject.Targets.cs" />
     <Compile Include="Xcode\IPBXElement.cs" />
     <Compile Include="Xcode\IPBXVisitor.cs" />
     <Compile Include="Xcode\PBXAggregateTarget.cs" />

@@ -40,15 +40,6 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        ///   Gets the description.
-        /// </summary>
-        /// <value>The description.</value>
-        public override string Description
-        {
-            get { return "Variant"; }
-        }
-
-        /// <summary>
         ///   Accepts the specified visitor.
         /// </summary>
         /// <param name = "visitor">The visitor.</param>

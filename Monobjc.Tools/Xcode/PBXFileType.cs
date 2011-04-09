@@ -172,6 +172,10 @@ namespace Monobjc.Tools.Xcode
         ImageTiff,
         /// <summary>
         /// </summary>
+        [Description("pattern.proxy")]
+        PatternProxy,
+        /// <summary>
+        /// </summary>
         [Description("sourcecode.ada")]
         SourcecodeAda,
         /// <summary>

@@ -18,6 +18,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Monobjc.Tools.Xcode
 {
@@ -70,6 +71,11 @@ namespace Monobjc.Tools.Xcode
             this.files.Remove(file);
         }
 
+        public PBXBuildFile FindFile(PBXFileElement file)
+        {
+            return this.files.FirstOrDefault(f => f.FileRef == file);
+        }
+
         /// <summary>
         ///   Gets or sets the flag to run only for deployment postprocessing.
         /// </summary>
@@ -85,7 +91,7 @@ namespace Monobjc.Tools.Xcode
         {
             writer.WritePBXElementPrologue(2, map, this);
             writer.WritePBXProperty(3, map, "buildActionMask", this.BuildActionMask);
-            writer.WritePBXProperty(3, map, "targets", this.Files);
+            writer.WritePBXProperty(3, map, "files", this.Files);
             writer.WritePBXProperty(3, map, "runOnlyForDeploymentPostprocessing", this.RunOnlyForDeploymentPostprocessing);
             writer.WritePBXElementEpilogue(2);
         }

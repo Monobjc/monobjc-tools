@@ -70,6 +70,15 @@ namespace Monobjc.Tools.Xcode.Visitors
         ///   Visits the specified element.
         /// </summary>
         /// <param name = "element">The element.</param>
+        public void Visit(PBXBuildRule element)
+        {
+            this.Add(element);
+        }
+
+        /// <summary>
+        ///   Visits the specified element.
+        /// </summary>
+        /// <param name = "element">The element.</param>
         public void Visit(PBXContainerItemProxy element)
         {
             this.Add(element);

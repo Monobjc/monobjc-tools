@@ -24,23 +24,33 @@ namespace Monobjc.Tools.Xcode
 {
     public class PBXNativeTarget : PBXTarget
     {
-        private readonly IList<String> buildRules;
+        private readonly IList<PBXBuildRule> buildRules;
 
         /// <summary>
         ///   Initializes a new instance of the <see cref = "PBXNativeTarget" /> class.
         /// </summary>
         public PBXNativeTarget()
         {
-            this.buildRules = new List<String>();
+            this.buildRules = new List<PBXBuildRule>();
         }
 
         /// <summary>
         ///   Gets or sets the build rules.
         /// </summary>
         /// <value>The build rules.</value>
-        public IEnumerable<String> BuildRules
+        public IEnumerable<PBXBuildRule> BuildRules
         {
             get { return this.buildRules; }
+        }
+
+        public void AddBuildRule(PBXBuildRule rule)
+        {
+            this.buildRules.Add(rule);
+        }
+
+        public void RemoveBuildRule(PBXBuildRule rule)
+        {
+            this.buildRules.Remove(rule);
         }
 
         /// <summary>
@@ -111,6 +121,7 @@ namespace Monobjc.Tools.Xcode
                 writer.WritePBXProperty(3, map, "buildConfigurationList", this.BuildConfigurationList);
             }
             writer.WritePBXProperty(3, map, "buildPhases", this.BuildPhases);
+            writer.WritePBXProperty(3, map, "buildRules", this.BuildRules);
             writer.WritePBXProperty(3, map, "dependencies", this.Dependencies);
             writer.WritePBXProperty(3, map, "name", this.Name);
             writer.WritePBXProperty(3, map, "productInstallPath", this.ProductInstallPath);

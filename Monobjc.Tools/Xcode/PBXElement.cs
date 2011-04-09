@@ -45,7 +45,7 @@ namespace Monobjc.Tools.Xcode
         ///   Gets the description.
         /// </summary>
         /// <value>The description.</value>
-        public abstract string Description { get; }
+        public abstract String Description { get; }
 
         /// <summary>
         ///   Accepts the specified visitor.

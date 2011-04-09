@@ -44,6 +44,12 @@ namespace Monobjc.Tools.Xcode
         ///   Visits the specified element.
         /// </summary>
         /// <param name = "element">The element.</param>
+        void Visit(PBXBuildRule element);
+
+        /// <summary>
+        ///   Visits the specified element.
+        /// </summary>
+        /// <param name = "element">The element.</param>
         void Visit(PBXContainerItemProxy element);
 
         /// <summary>

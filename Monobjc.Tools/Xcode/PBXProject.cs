@@ -42,11 +42,11 @@ namespace Monobjc.Tools.Xcode
             this.CompatibilityVersion = XcodeCompatibilityVersion.Xcode_3_2;
             this.DevelopmentRegion = "English";
             this.HasScannedForEncodings = 1;
-            this.knownRegions = new List<string> {"English", "Japanese", "French", "German"};
+            this.knownRegions = new List<String> {"en"};
             this.MainGroup = new PBXGroup();
-            this.ProjectDirPath = null;
+            this.ProjectDirPath = String.Empty;
             this.projectReferences = new List<Dictionary<String, IPBXElement>>();
-            this.ProjectRoot = null;
+            this.ProjectRoot = String.Empty;
             this.targets = new List<PBXTarget>();
         }
 
