@@ -152,6 +152,7 @@
     <Compile Include="Tasks\General\LoadTask.cs" />
     <Compile Include="Tasks\Generation\GenerateCodeTask.cs" />
     <Compile Include="Tasks\General\CopyURLTask.cs" />
+    <Compile Include="Tasks\Output\DumpDelegateMethodsTask.cs" />
     <Compile Include="Tasks\Output\DumpStaticInitializersTask.cs" />
     <Compile Include="Tasks\Output\CopyInPlaceTask.cs" />
     <Compile Include="Tasks\Output\DumpPropertyNamesTask.cs" />

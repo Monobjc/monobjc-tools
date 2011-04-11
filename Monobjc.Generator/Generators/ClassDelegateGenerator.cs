@@ -47,7 +47,11 @@ namespace Monobjc.Tools.Generator.Generators
             ClassEntity delegatorEntity = protocolEntity.DelegatorEntity;
             String property = protocolEntity.DelegateProperty;
 
-            // Append License
+            // Gather methods for delegate
+            IEnumerable<MethodEntity> methods = protocolEntity.Methods.Where(e => e.Generate);
+            methods = methods.Concat(delegatorEntity.DelegateMethods.Where(e => e.Generate));
+
+            // Append License)
             this.Writer.WriteLineFormat(0, License);
 
             // Append usings
@@ -65,7 +69,7 @@ namespace Monobjc.Tools.Generator.Generators
             this.Writer.WriteLineFormat(1, "{{");
 
             // Emit delegate handlers
-            foreach (MethodEntity methodEntity in protocolEntity.Methods.Where(e => e.Generate))
+            foreach (MethodEntity methodEntity in methods)
             {
                 // Append static condition if needed
                 this.AppendStartCondition(methodEntity);
@@ -156,7 +160,7 @@ namespace Monobjc.Tools.Generator.Generators
             this.Writer.WriteLineFormat(4, "String message = ObjectiveCRuntime.Selector(aSelector);");
             this.Writer.WriteLineFormat(4, "switch (message)");
             this.Writer.WriteLineFormat(4, "{{");
-            foreach (MethodEntity methodEntity in protocolEntity.Methods.Where(e => e.Generate))
+            foreach (MethodEntity methodEntity in methods)
             {
                 // Append static condition if needed
                 this.AppendStartCondition(methodEntity);
@@ -177,7 +181,7 @@ namespace Monobjc.Tools.Generator.Generators
             this.Writer.WriteLineFormat(3, "[ObjectiveCMessage(\"dealloc\")]");
             this.Writer.WriteLineFormat(3, "public override void Dealloc()");
             this.Writer.WriteLineFormat(3, "{{");
-            foreach (MethodEntity methodEntity in protocolEntity.Methods.Where(e => e.Generate))
+            foreach (MethodEntity methodEntity in methods)
             {
                 // Append static condition if needed
                 this.AppendStartCondition(methodEntity);
@@ -198,7 +202,7 @@ namespace Monobjc.Tools.Generator.Generators
             this.Writer.WriteLine();
 
             // Emit the event handlers
-            foreach (MethodEntity methodEntity in protocolEntity.Methods.Where(e => e.Generate))
+            foreach (MethodEntity methodEntity in methods)
             {
                 // Append static condition if needed
                 this.AppendStartCondition(methodEntity);
@@ -213,7 +217,7 @@ namespace Monobjc.Tools.Generator.Generators
             }
 
             // Emit the handler methods
-            foreach (MethodEntity methodEntity in protocolEntity.Methods.Where(e => e.Generate))
+            foreach (MethodEntity methodEntity in methods)
             {
                 bool hasReturnType = !String.Equals(methodEntity.ReturnType, "void", StringComparison.OrdinalIgnoreCase);
 

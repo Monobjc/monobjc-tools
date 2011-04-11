@@ -24,13 +24,13 @@ using Monobjc.Tools.Generator.Model.Entities;
 
 namespace Monobjc.Tools.Generator.Tasks.Output
 {
-    public class DumpPropertyNamesTask : BaseTask
+    public class DumpDelegateMethodsTask : BaseTask
     {
         /// <summary>
-        ///   Initializes a new instance of the <see cref = "DumpPropertyNamesTask" /> class.
+        /// Initializes a new instance of the <see cref="DumpDelegateMethodsTask"/> class.
         /// </summary>
-        /// <param name = "name">The name.</param>
-        public DumpPropertyNamesTask(String name) : base(name) { }
+        /// <param name="name">The name.</param>
+        public DumpDelegateMethodsTask(String name) : base(name) { }
 
         /// <summary>
         ///   Executes this instance.
@@ -52,35 +52,25 @@ namespace Monobjc.Tools.Generator.Tasks.Output
                 switch (entry.Nature)
                 {
                     case TypedEntity.CLASS_NATURE:
-                    case TypedEntity.PROTOCOL_NATURE:
-                        if (entry.Nature == TypedEntity.CLASS_NATURE)
-                        {
-                            classEntity = BaseEntity.LoadFrom<ClassEntity>(xmlFile);
-                        }
-                        else
-                        {
-                            classEntity = BaseEntity.LoadFrom<ProtocolEntity>(xmlFile);
-                        }
+                        classEntity = BaseEntity.LoadFrom<ClassEntity>(xmlFile);
                         break;
                     default:
                         continue;
                 }
 
-                Console.WriteLine("Parsing '{0}'...", entry.Name);
-
-                DumpProperties(classEntity, names);
+                if (classEntity.DelegateMethods.Count > 0)
+                {
+                    names.Add(classEntity.Name);
+                }
             }
+
+            Console.WriteLine("Class that have delegate methods");
 
             names.Sort();
             foreach (String name in names.Distinct())
             {
-                Console.WriteLine("Name: '" + name + "'");
+                Console.WriteLine(name);
             }
-        }
-
-        private static void DumpProperties(ClassEntity classEntity, List<String> names)
-        {
-            names.AddRange(classEntity.Properties.Select(propertyEntity => propertyEntity.Name));
         }
     }
 }
