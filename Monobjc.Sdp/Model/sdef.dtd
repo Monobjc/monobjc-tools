@@ -1,0 +1,251 @@
+<!-- BASICS -->
+<!ENTITY % Typename "NMTOKENS">
+<!ENTITY % Classname "NMTOKENS">
+<!ENTITY % EventCode "CDATA">
+<!ENTITY % OSType "CDATA">
+<!ENTITY % Term "NMTOKENS">
+<!ENTITY % Text "CDATA">
+<!ENTITY % Verbname "NMTOKENS">
+
+<!ENTITY % yorn "(yes | no)">
+
+<!ENTITY % common.attrib
+	"xmlns:xi	CDATA	#FIXED 'http://www.w3.org/2003/XInclude'
+	 xml:base	CDATA	#IMPLIED">
+
+<!-- DICTIONARY (ROOT ELEMENT) -->
+<!ELEMENT dictionary (documentation*, suite+)>
+<!ATTLIST dictionary
+  %common.attrib;
+  title      CDATA           #IMPLIED 
+  >
+
+<!-- DOCUMENTATION ELEMENTS -->
+<!ELEMENT documentation (html*)>
+<!ELEMENT html (#PCDATA)>
+
+<!ELEMENT xref EMPTY>
+<!ATTLIST xref
+  %common.attrib;
+  target     CDATA           #REQUIRED
+  hidden     %yorn;          #IMPLIED 
+  >
+
+<!-- IMPLEMENTATION ELEMENTS -->
+<!ENTITY % implementation "(cocoa)">
+<!ELEMENT cocoa EMPTY>
+<!ATTLIST cocoa
+  %common.attrib;
+  name       NMTOKEN         #IMPLIED
+  class      NMTOKEN         #IMPLIED
+  key        NMTOKEN         #IMPLIED
+  method     NMTOKEN         #IMPLIED
+  insert-at-beginning %yorn; #IMPLIED
+  boolean-value (YES|NO)     #IMPLIED
+  integer-value NMTOKEN      #IMPLIED
+  string-value  CDATA        #IMPLIED
+  >
+
+<!-- SUITES -->
+<!ELEMENT suite ((%implementation;)?, (class | class-extension | command | documentation | enumeration | event | record-type | value-type)+)>
+<!ATTLIST suite
+  %common.attrib;
+  name       CDATA           #REQUIRED
+  code       %OSType;        #REQUIRED 
+  description  %Text;        #IMPLIED
+  hidden     %yorn;          #IMPLIED 
+  >
+
+<!-- SYNONYMS -->
+<!ELEMENT synonym ((%implementation;)?)>
+<!ATTLIST synonym
+  %common.attrib;
+  name       %Term;          #IMPLIED
+  code       %OSType;		 #IMPLIED
+  hidden     %yorn;          #IMPLIED 
+  >
+  <!-- at least one of "name" and "code" is required. -->
+
+<!-- TYPES -->
+<!ELEMENT type EMPTY>
+<!ATTLIST type
+  %common.attrib;
+  type       %Typename;      #REQUIRED 
+  list       %yorn;          #IMPLIED
+  hidden     %yorn;          #IMPLIED 
+  >
+
+<!-- VERBS (COMMANDS OR EVENTS) -->
+<!ELEMENT command ((%implementation;)?, synonym*, direct-parameter?, parameter*, result?, documentation*, xref*)>
+<!ATTLIST command
+  %common.attrib;
+  name       %Verbname;      #REQUIRED
+  id         ID              #IMPLIED
+  code       %EventCode;     #REQUIRED 
+  description  %Text;        #IMPLIED
+  hidden     %yorn;          #IMPLIED 
+  >
+
+<!ELEMENT event ((%implementation;)?, synonym*, documentation*, direct-parameter?, (documentation | parameter)*, result?, documentation*, xref*)>
+<!ATTLIST event
+  %common.attrib;
+  name       %Verbname;      #REQUIRED
+  id         ID              #IMPLIED
+  code       %EventCode;     #REQUIRED 
+  description  %Text;        #IMPLIED
+  hidden     %yorn;          #IMPLIED 
+  >
+
+<!ELEMENT direct-parameter (type*)>
+<!ATTLIST direct-parameter
+  %common.attrib;
+  type       %Typename;      #IMPLIED 
+  optional   %yorn;          #IMPLIED 
+  description  %Text;        #IMPLIED 
+  >
+
+<!ELEMENT result (type*)>
+<!ATTLIST result
+  %common.attrib;
+  type       %Typename;      #IMPLIED 
+  description  %Text;        #IMPLIED 
+  >
+
+<!ELEMENT parameter ((%implementation;)?, (type*))>
+<!ATTLIST parameter
+  %common.attrib;
+  name       %Term;          #REQUIRED
+  code       %OSType;        #REQUIRED 
+  hidden     %yorn;          #IMPLIED 
+  type       %Typename;      #IMPLIED 
+  optional   %yorn;          #IMPLIED 
+  description  %Text;        #IMPLIED 
+  >
+
+<!-- CLASSES -->
+<!ENTITY % class-contents "(contents | documentation | element | property | responds-to | synonym | xref)">
+<!ELEMENT class ((%implementation;)?, (%class-contents;)*)>
+	<!-- not quite accurate; there can be at most one contents element. -->
+<!ATTLIST class
+  %common.attrib;
+  name       %Term;          #REQUIRED
+  id         ID              #IMPLIED
+  code       %OSType;        #REQUIRED 
+  hidden     %yorn;          #IMPLIED 
+  plural     %Term;          #IMPLIED 
+  inherits   %Classname;     #IMPLIED 
+  description  %Text;        #IMPLIED 
+  >
+
+<!-- contents -->
+<!ELEMENT contents ((%implementation;)?, (type*))>
+<!ATTLIST contents
+  %common.attrib;
+  name       %Term;          #IMPLIED
+  code       %OSType;        #IMPLIED 
+  type       %Typename;      #IMPLIED
+  access     (r | w | rw)    "rw"     
+  hidden     %yorn;          #IMPLIED 
+  description  %Text;        #IMPLIED 
+  >
+
+<!-- element access -->
+<!ELEMENT element ((%implementation;)?, accessor*)>
+<!ATTLIST element
+  %common.attrib;
+  type       %Typename;      #REQUIRED
+  access     (r | w | rw)    "rw"     
+  hidden     %yorn;          #IMPLIED 
+  description  %Text;        #IMPLIED 
+  >
+
+<!ENTITY % accessor-type "(index | name | id | range | relative | test)">
+<!ELEMENT accessor EMPTY>
+<!ATTLIST accessor
+  %common.attrib;
+  style      %accessor-type;  #REQUIRED
+  >
+
+<!-- properties -->
+<!ELEMENT property ((%implementation;)?, (type | synonym | documentation)*)>
+<!ATTLIST property
+  %common.attrib;
+  name       %Term;          #REQUIRED
+  code       %OSType;        #REQUIRED 
+  hidden     %yorn;          #IMPLIED 
+  type       %Typename;      #IMPLIED 
+  access     (r | w | rw)    "rw"     
+  in-properties  %yorn;      #IMPLIED 
+  description  %Text;        #IMPLIED 
+  >
+
+<!-- supported verbs -->
+<!ELEMENT responds-to ((%implementation;)?)>
+<!ATTLIST responds-to
+  %common.attrib;
+  command    %Verbname;      #REQUIRED
+  hidden     %yorn;          #IMPLIED 
+
+  name       %Verbname;      #IMPLIED
+  >
+  <!-- "name" is now "command"; "name" is still defined for backward compatibility. -->
+
+<!-- class extensions -->
+<!ELEMENT class-extension ((%implementation;)?, (%class-contents;)*)>
+<!ATTLIST class-extension
+  %common.attrib;
+  id         ID              #IMPLIED
+  extends    %Classname;     #REQUIRED
+  hidden     %yorn;          #IMPLIED 
+  description  %Text;        #IMPLIED 
+  >
+
+
+<!-- SIMPLE TYPES -->
+
+<!-- values -->
+<!ELEMENT value-type ((%implementation;)?, synonym*, documentation*, xref*)>
+<!ATTLIST value-type
+  %common.attrib;
+  name       %Term;          #REQUIRED
+  id         ID              #IMPLIED
+  code       %OSType;        #REQUIRED 
+  hidden     %yorn;          #IMPLIED 
+  plural     %Term;          #IMPLIED 
+  description  %Text;        #IMPLIED 
+  >
+
+<!-- records -->
+<!ELEMENT record-type ((%implementation;)?, synonym*, (documentation | property | xref)+)>
+	<!-- should be at least one property. -->
+<!ATTLIST record-type
+  %common.attrib;
+  name       %Term;          #REQUIRED
+  id         ID              #IMPLIED
+  code       %OSType;        #REQUIRED 
+  hidden     %yorn;          #IMPLIED 
+  plural     %Term;          #IMPLIED 
+  description  %Text;        #IMPLIED 
+  >
+
+<!-- enumerations -->
+<!ELEMENT enumeration ((%implementation;)?, (documentation | enumerator | xref)+)>
+	<!-- should be at least one enumerator. -->
+<!ATTLIST enumeration
+  %common.attrib;
+  name       %Term;          #REQUIRED
+  id         ID              #IMPLIED
+  code       %OSType;        #REQUIRED
+  hidden     %yorn;          #IMPLIED
+  description  %Text;        #IMPLIED
+  inline     CDATA           #IMPLIED
+  >
+
+<!ELEMENT enumerator ((%implementation;)?, synonym*, documentation*)>
+<!ATTLIST enumerator
+  %common.attrib;
+  name       %Term;          #REQUIRED
+  code       %OSType;        #REQUIRED 
+  hidden     %yorn;          #IMPLIED 
+  description  %Text;        #IMPLIED 
+  >

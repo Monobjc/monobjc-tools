@@ -1,0 +1,651 @@
+<schema
+  xmlns='http://www.w3.org/2000/10/XMLSchema'
+  targetNamespace='http://www.w3.org/namespace/'
+  xmlns:t='http://www.w3.org/namespace/'>
+
+ <element name='dictionary'>
+  <complexType>
+   <sequence>
+    <element ref='t:documentation' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:suite' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='title' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='documentation'>
+  <complexType>
+   <sequence>
+    <element ref='t:html' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='html'>
+  <complexType mixed='true'>
+  </complexType>
+ </element>
+
+ <element name='xref'>
+  <complexType>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='target' type='string' use='required'/>
+   <attribute name='hidden' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+  </complexType>
+ </element>
+
+ <element name='cocoa'>
+  <complexType>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='name' type='NMTOKEN' use='optional'/>
+   <attribute name='class' type='NMTOKEN' use='optional'/>
+   <attribute name='key' type='NMTOKEN' use='optional'/>
+   <attribute name='method' type='NMTOKEN' use='optional'/>
+   <attribute name='insert-at-beginning' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='boolean-value' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='YES'/>
+      <enumeration value='NO'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='integer-value' type='NMTOKEN' use='optional'/>
+   <attribute name='string-value' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='suite'>
+  <complexType>
+   <sequence>
+    <sequence minOccurs='0' maxOccurs='1'>
+     <sequence>
+      <element ref='t:cocoa'/>
+     </sequence>
+    </sequence>
+    <choice maxOccurs='unbounded'>
+     <element ref='t:class'/>
+     <element ref='t:class-extension'/>
+     <element ref='t:command'/>
+     <element ref='t:documentation'/>
+     <element ref='t:enumeration'/>
+     <element ref='t:event'/>
+     <element ref='t:record-type'/>
+     <element ref='t:value-type'/>
+    </choice>
+   </sequence>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='name' type='string' use='required'/>
+   <attribute name='code' type='string' use='required'/>
+   <attribute name='description' type='string' use='optional'/>
+   <attribute name='hidden' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+  </complexType>
+ </element>
+
+ <element name='synonym'>
+  <complexType>
+   <sequence minOccurs='0' maxOccurs='1'>
+    <sequence>
+     <element ref='t:cocoa'/>
+    </sequence>
+   </sequence>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='name' type='NMTOKENS' use='optional'/>
+   <attribute name='code' type='string' use='optional'/>
+   <attribute name='hidden' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+  </complexType>
+ </element>
+
+ <element name='type'>
+  <complexType>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='type' type='NMTOKENS' use='required'/>
+   <attribute name='list' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='hidden' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+  </complexType>
+ </element>
+
+ <element name='command'>
+  <complexType>
+   <sequence>
+    <sequence minOccurs='0' maxOccurs='1'>
+     <sequence>
+      <element ref='t:cocoa'/>
+     </sequence>
+    </sequence>
+    <element ref='t:synonym' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:direct-parameter' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:parameter' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:result' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:documentation' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:xref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='name' type='NMTOKENS' use='required'/>
+   <attribute name='id' type='ID' use='optional'/>
+   <attribute name='code' type='string' use='required'/>
+   <attribute name='description' type='string' use='optional'/>
+   <attribute name='hidden' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+  </complexType>
+ </element>
+
+ <element name='event'>
+  <complexType>
+   <sequence>
+    <sequence minOccurs='0' maxOccurs='1'>
+     <sequence>
+      <element ref='t:cocoa'/>
+     </sequence>
+    </sequence>
+    <element ref='t:synonym' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:documentation' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:direct-parameter' minOccurs='0' maxOccurs='1'/>
+    <choice minOccurs='0' maxOccurs='unbounded'>
+     <element ref='t:documentation'/>
+     <element ref='t:parameter'/>
+    </choice>
+    <element ref='t:result' minOccurs='0' maxOccurs='1'/>
+    <element ref='t:documentation' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:xref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='name' type='NMTOKENS' use='required'/>
+   <attribute name='id' type='ID' use='optional'/>
+   <attribute name='code' type='string' use='required'/>
+   <attribute name='description' type='string' use='optional'/>
+   <attribute name='hidden' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+  </complexType>
+ </element>
+
+ <element name='direct-parameter'>
+  <complexType>
+   <sequence>
+    <element ref='t:type' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='type' type='NMTOKENS' use='optional'/>
+   <attribute name='optional' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='description' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='result'>
+  <complexType>
+   <sequence>
+    <element ref='t:type' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='type' type='NMTOKENS' use='optional'/>
+   <attribute name='description' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='parameter'>
+  <complexType>
+   <sequence>
+    <sequence minOccurs='0' maxOccurs='1'>
+     <sequence>
+      <element ref='t:cocoa'/>
+     </sequence>
+    </sequence>
+    <sequence>
+     <element ref='t:type' minOccurs='0' maxOccurs='unbounded'/>
+    </sequence>
+   </sequence>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='name' type='NMTOKENS' use='required'/>
+   <attribute name='code' type='string' use='required'/>
+   <attribute name='hidden' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='type' type='NMTOKENS' use='optional'/>
+   <attribute name='optional' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='description' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='class'>
+  <complexType>
+   <sequence>
+    <sequence minOccurs='0' maxOccurs='1'>
+     <sequence>
+      <element ref='t:cocoa'/>
+     </sequence>
+    </sequence>
+    <sequence minOccurs='0' maxOccurs='unbounded'>
+     <choice>
+      <element ref='t:contents'/>
+      <element ref='t:documentation'/>
+      <element ref='t:element'/>
+      <element ref='t:property'/>
+      <element ref='t:responds-to'/>
+      <element ref='t:synonym'/>
+      <element ref='t:xref'/>
+     </choice>
+    </sequence>
+   </sequence>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='name' type='NMTOKENS' use='required'/>
+   <attribute name='id' type='ID' use='optional'/>
+   <attribute name='code' type='string' use='required'/>
+   <attribute name='hidden' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='plural' type='NMTOKENS' use='optional'/>
+   <attribute name='inherits' type='NMTOKENS' use='optional'/>
+   <attribute name='description' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='contents'>
+  <complexType>
+   <sequence>
+    <sequence minOccurs='0' maxOccurs='1'>
+     <sequence>
+      <element ref='t:cocoa'/>
+     </sequence>
+    </sequence>
+    <sequence>
+     <element ref='t:type' minOccurs='0' maxOccurs='unbounded'/>
+    </sequence>
+   </sequence>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='name' type='NMTOKENS' use='optional'/>
+   <attribute name='code' type='string' use='optional'/>
+   <attribute name='type' type='NMTOKENS' use='optional'/>
+   <attribute name='access' use='default' value='rw'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='r'/>
+      <enumeration value='w'/>
+      <enumeration value='rw'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='hidden' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='description' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='element'>
+  <complexType>
+   <sequence>
+    <sequence minOccurs='0' maxOccurs='1'>
+     <sequence>
+      <element ref='t:cocoa'/>
+     </sequence>
+    </sequence>
+    <element ref='t:accessor' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='type' type='NMTOKENS' use='required'/>
+   <attribute name='access' use='default' value='rw'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='r'/>
+      <enumeration value='w'/>
+      <enumeration value='rw'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='hidden' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='description' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='accessor'>
+  <complexType>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='style' use='required'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='index'/>
+      <enumeration value='name'/>
+      <enumeration value='id'/>
+      <enumeration value='range'/>
+      <enumeration value='relative'/>
+      <enumeration value='test'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+  </complexType>
+ </element>
+
+ <element name='property'>
+  <complexType>
+   <sequence>
+    <sequence minOccurs='0' maxOccurs='1'>
+     <sequence>
+      <element ref='t:cocoa'/>
+     </sequence>
+    </sequence>
+    <choice minOccurs='0' maxOccurs='unbounded'>
+     <element ref='t:type'/>
+     <element ref='t:synonym'/>
+     <element ref='t:documentation'/>
+    </choice>
+   </sequence>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='name' type='NMTOKENS' use='required'/>
+   <attribute name='code' type='string' use='required'/>
+   <attribute name='hidden' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='type' type='NMTOKENS' use='optional'/>
+   <attribute name='access' use='default' value='rw'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='r'/>
+      <enumeration value='w'/>
+      <enumeration value='rw'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='in-properties' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='description' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='responds-to'>
+  <complexType>
+   <sequence minOccurs='0' maxOccurs='1'>
+    <sequence>
+     <element ref='t:cocoa'/>
+    </sequence>
+   </sequence>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='command' type='NMTOKENS' use='required'/>
+   <attribute name='hidden' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='name' type='NMTOKENS' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='class-extension'>
+  <complexType>
+   <sequence>
+    <sequence minOccurs='0' maxOccurs='1'>
+     <sequence>
+      <element ref='t:cocoa'/>
+     </sequence>
+    </sequence>
+    <sequence minOccurs='0' maxOccurs='unbounded'>
+     <choice>
+      <element ref='t:contents'/>
+      <element ref='t:documentation'/>
+      <element ref='t:element'/>
+      <element ref='t:property'/>
+      <element ref='t:responds-to'/>
+      <element ref='t:synonym'/>
+      <element ref='t:xref'/>
+     </choice>
+    </sequence>
+   </sequence>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='id' type='ID' use='optional'/>
+   <attribute name='extends' type='NMTOKENS' use='required'/>
+   <attribute name='hidden' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='description' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='value-type'>
+  <complexType>
+   <sequence>
+    <sequence minOccurs='0' maxOccurs='1'>
+     <sequence>
+      <element ref='t:cocoa'/>
+     </sequence>
+    </sequence>
+    <element ref='t:synonym' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:documentation' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:xref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='name' type='NMTOKENS' use='required'/>
+   <attribute name='id' type='ID' use='optional'/>
+   <attribute name='code' type='string' use='required'/>
+   <attribute name='hidden' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='plural' type='NMTOKENS' use='optional'/>
+   <attribute name='description' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='record-type'>
+  <complexType>
+   <sequence>
+    <sequence minOccurs='0' maxOccurs='1'>
+     <sequence>
+      <element ref='t:cocoa'/>
+     </sequence>
+    </sequence>
+    <element ref='t:synonym' minOccurs='0' maxOccurs='unbounded'/>
+    <choice maxOccurs='unbounded'>
+     <element ref='t:documentation'/>
+     <element ref='t:property'/>
+     <element ref='t:xref'/>
+    </choice>
+   </sequence>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='name' type='NMTOKENS' use='required'/>
+   <attribute name='id' type='ID' use='optional'/>
+   <attribute name='code' type='string' use='required'/>
+   <attribute name='hidden' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='plural' type='NMTOKENS' use='optional'/>
+   <attribute name='description' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='enumeration'>
+  <complexType>
+   <sequence>
+    <sequence minOccurs='0' maxOccurs='1'>
+     <sequence>
+      <element ref='t:cocoa'/>
+     </sequence>
+    </sequence>
+    <choice maxOccurs='unbounded'>
+     <element ref='t:documentation'/>
+     <element ref='t:enumerator'/>
+     <element ref='t:xref'/>
+    </choice>
+   </sequence>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='name' type='NMTOKENS' use='required'/>
+   <attribute name='id' type='ID' use='optional'/>
+   <attribute name='code' type='string' use='required'/>
+   <attribute name='hidden' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='description' type='string' use='optional'/>
+   <attribute name='inline' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='enumerator'>
+  <complexType>
+   <sequence>
+    <sequence minOccurs='0' maxOccurs='1'>
+     <sequence>
+      <element ref='t:cocoa'/>
+     </sequence>
+    </sequence>
+    <element ref='t:synonym' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='t:documentation' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='xmlns:xi' type='string' use='fixed' value='http://www.w3.org/2003/XInclude'/>
+   <attribute name='xml:base' type='string' use='optional'/>
+   <attribute name='name' type='NMTOKENS' use='required'/>
+   <attribute name='code' type='string' use='required'/>
+   <attribute name='hidden' use='optional'>
+    <simpleType>
+     <restriction base='string'>
+      <enumeration value='yes'/>
+      <enumeration value='no'/>
+     </restriction>
+    </simpleType>
+   </attribute>
+   <attribute name='description' type='string' use='optional'/>
+  </complexType>
+ </element>
+</schema>
