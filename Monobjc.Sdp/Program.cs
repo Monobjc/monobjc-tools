@@ -15,6 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
+using System;
 using Monobjc.Tools.Sdp.Generation;
 
 namespace Monobjc.Tools.Sdp
@@ -23,8 +24,8 @@ namespace Monobjc.Tools.Sdp
     {
         static void Main(string[] args)
         {
-            string file = args[0];
-            string prefix = args[1];
+            String file = args[0];
+            String prefix = args[1];
             Generator generator = Generator.CreateGenerator("CSharp");
             generator.Generate(prefix, file, prefix + ".cs");
         }

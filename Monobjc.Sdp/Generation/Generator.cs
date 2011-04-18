@@ -16,6 +16,7 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
@@ -23,8 +24,16 @@ using Monobjc.Tools.Sdp.Model;
 
 namespace Monobjc.Tools.Sdp.Generation
 {
+    /// <summary>
+    /// Generator base-class.
+    /// </summary>
     public abstract class Generator
     {
+        /// <summary>
+        /// Creates the generator.
+        /// </summary>
+        /// <param name="language">The language.</param>
+        /// <returns>A generator.</returns>
         public static Generator CreateGenerator(String language)
         {
             switch (language)
@@ -36,6 +45,12 @@ namespace Monobjc.Tools.Sdp.Generation
             }
         }
 
+        /// <summary>
+        /// Generates a wrapper.
+        /// </summary>
+        /// <param name="prefix">The prefix.</param>
+        /// <param name="input">The input.</param>
+        /// <param name="output">The output.</param>
         public void Generate(String prefix, String input, String output)
         {
             if (!File.Exists(input))
@@ -51,9 +66,15 @@ namespace Monobjc.Tools.Sdp.Generation
             }
         }
 
+        /// <summary>
+        /// Generates a wrapper.
+        /// </summary>
+        /// <param name="prefix">The prefix.</param>
+        /// <param name="reader">The reader.</param>
+        /// <param name="writer">The writer.</param>
         public void Generate(String prefix, TextReader reader, TextWriter writer)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(dictionary));
+            XmlSerializer serializer = new XmlSerializer(typeof (dictionary));
             dictionary dictionary = serializer.Deserialize(reader) as dictionary;
 
             if (dictionary == null)
@@ -61,16 +82,20 @@ namespace Monobjc.Tools.Sdp.Generation
                 return;
             }
 
-            GenerationContext context = new GenerationContext();
-            context.Prefix = prefix;
-            context.Classes = dictionary.suite.SelectMany(s => s.Items).Where(i => i is @class).Cast<@class>();
-            context.Commands = dictionary.suite.SelectMany(s => s.Items).Where(i => i is command).Cast<command>();
-            context.Enumerations = dictionary.suite.SelectMany(s => s.Items).Where(i => i is enumeration).Cast<enumeration>();
+            IEnumerable<@class> classes = dictionary.suite.Where(s => s.Items != null).SelectMany(s => s.Items).Where(i => i is @class).Cast<@class>();
+            IEnumerable<command> commands = dictionary.suite.Where(s => s.Items != null).SelectMany(s => s.Items).Where(i => i is command).Cast<command>();
+            IEnumerable<enumeration> enumerations = dictionary.suite.Where(s => s.Items != null).SelectMany(s => s.Items).Where(i => i is enumeration).Cast<enumeration>();
+            GenerationContext context = new GenerationContext(prefix, classes, commands, enumerations);
 
             String contents = this.Generate(context);
             writer.Write(contents);
         }
 
+        /// <summary>
+        /// Generates a wrapper.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <returns></returns>
         protected abstract String Generate(GenerationContext context);
     }
 }

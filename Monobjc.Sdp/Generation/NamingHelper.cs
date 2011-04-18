@@ -23,9 +23,9 @@ namespace Monobjc.Tools.Sdp.Generation
     public static class NamingHelper
     {
         /// <summary>
-        /// Converts a enumeration value to an integer.
+        ///   Converts a enumeration value to an integer.
         /// </summary>
-        /// <param name="enumValue">The enum value.</param>
+        /// <param name = "enumValue">The enum value.</param>
         /// <returns>An unsigned integer</returns>
         public static uint ToUInt32(String enumValue)
         {
@@ -38,9 +38,9 @@ namespace Monobjc.Tools.Sdp.Generation
         }
 
         /// <summary>
-        /// Converts a four-char value to an unsigned integer.
+        ///   Converts a four-char value to an unsigned integer.
         /// </summary>
-        /// <param name="fourCharValue">The four char value.</param>
+        /// <param name = "fourCharValue">The four char value.</param>
         /// <returns>An unsigned integer</returns>
         public static uint FourCharToInt(String fourCharValue)
         {
@@ -48,29 +48,30 @@ namespace Monobjc.Tools.Sdp.Generation
             {
                 throw new ArgumentException();
             }
-            return fourCharValue.Aggregate(0u, (i, c) => (i * 256) + c);
+            return fourCharValue.Aggregate(0u, (i, c) => (i*256) + c);
         }
 
         /// <summary>
-        /// Generates a valid DotNet name.
+        ///   Generates a valid DotNet name.
         /// </summary>
-        /// <param name="prefix">The prefix.</param>
-        /// <param name="value">The value.</param>
+        /// <param name = "prefix">The prefix.</param>
+        /// <param name = "value">The value.</param>
         /// <returns>A valid DotNet name.</returns>
         public static String GenerateDotNetName(String prefix, String value)
         {
-            String[] parts = value.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            value = value.Replace('-', ' ');
+            String[] parts = value.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
             return parts.Aggregate(prefix, (s, part) => s += (part.Substring(0, 1).ToUpper() + part.Substring(1)));
         }
 
         /// <summary>
-        /// Generates a valid Objective-C name.
+        ///   Generates a valid Objective-C name.
         /// </summary>
-        /// <param name="value">The value.</param>
+        /// <param name = "value">The value.</param>
         /// <returns>A valid DotNet name.</returns>
         public static String GenerateObjCName(String value)
         {
-            String[] parts = value.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            String[] parts = value.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
             String result = parts[0];
             return parts.Skip(1).Aggregate(result, (s, part) => s += (part.Substring(0, 1).ToUpper() + part.Substring(1)));
         }
