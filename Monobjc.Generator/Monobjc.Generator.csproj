@@ -182,41 +182,111 @@
     <Compile Include="Utilities\TypeManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Xml\AppKit\E\NSTrackingAreaOptions" />
-    <Content Include="Xml\ApplicationServices\E\CGRectEdge" />
-    <Content Include="Xml\ApplicationServices\S\CGAffineTransform" />
-    <Content Include="Xml\ApplicationServices\S\CGFloat" />
-    <Content Include="Xml\ApplicationServices\S\CGPoint" />
-    <Content Include="Xml\ApplicationServices\S\CGRect" />
-    <Content Include="Xml\ApplicationServices\S\CGSize" />
-    <Content Include="Xml\CoreData\E\NSSnapshotEventType" />
-    <Content Include="Xml\CoreFoundation\S\CFHashCode" />
-    <Content Include="Xml\CoreFoundation\S\CFIndex" />
-    <Content Include="Xml\CoreFoundation\S\CFOptionFlags" />
-    <Content Include="Xml\CoreFoundation\S\CFRange" />
-    <Content Include="Xml\CoreFoundation\S\CFTypeID" />
-    <Content Include="Xml\Foundation\E\NSPropertyListReadOptions" />
-    <Content Include="Xml\Foundation\E\NSPropertyListWriteOptions" />
-    <Content Include="Xml\Foundation\S\NSDecimal" />
-    <Content Include="Xml\Foundation\S\NSInteger" />
-    <Content Include="Xml\Foundation\S\NSPoint" />
-    <Content Include="Xml\Foundation\S\NSRange" />
-    <Content Include="Xml\Foundation\S\NSRect" />
-    <Content Include="Xml\Foundation\S\NSSize" />
-    <Content Include="Xml\Foundation\S\NSUInteger" />
-    <Content Include="Xml\InputMethodKit\E\IMKCandidatePanelType" />
-    <Content Include="Xml\InputMethodKit\E\IMKCandidatesLocationHint" />
-    <Content Include="Xml\InputMethodKit\E\IMKLocationToOffsetMappingMode" />
-    <Content Include="Xml\QTKit\E\QTSampleBufferAudioBufferListOptions" />
-    <Content Include="Xml\QTKit\S\QTTime" />
-    <Content Include="Xml\QTKit\S\QTTimeRange" />
-    <Content Include="Xml\Quartz\E\PDFAreaOfInterest" />
-    <Content Include="Xml\Quartz\E\PDFBorderStyle" />
-    <Content Include="Xml\Quartz\E\PDFDisplayBox" />
-    <Content Include="Xml\Quartz\E\PDFDisplayMode" />
-    <Content Include="Xml\Quartz\E\PDFLineStyle" />
-    <Content Include="Xml\Quartz\E\PDFMarkupType" />
-    <Content Include="Xml\Quartz\E\PDFTextAnnotationIconType" />
+    <Content Include="Xml\AppKit\E\NSTrackingAreaOptions">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\ApplicationServices\E\CGRectEdge">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\ApplicationServices\S\CGAffineTransform">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\ApplicationServices\S\CGFloat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\ApplicationServices\S\CGPoint">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\ApplicationServices\S\CGRect">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\ApplicationServices\S\CGSize">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\CoreData\E\NSSnapshotEventType">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\CoreFoundation\S\CFHashCode">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\CoreFoundation\S\CFIndex">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\CoreFoundation\S\CFOptionFlags">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\CoreFoundation\S\CFRange">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\CoreFoundation\S\CFTypeID">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Foundation\E\NSPropertyListReadOptions">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Foundation\E\NSPropertyListWriteOptions">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Foundation\S\NSDecimal">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Foundation\S\NSInteger">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Foundation\S\NSPoint">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Foundation\S\NSRange">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Foundation\S\NSRect">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Foundation\S\NSSize">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Foundation\S\NSUInteger">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\InputMethodKit\E\IMKCandidatePanelType">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\InputMethodKit\E\IMKCandidatesLocationHint">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\InputMethodKit\E\IMKLocationToOffsetMappingMode">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\QTKit\E\QTSampleBufferAudioBufferListOptions">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\QTKit\S\QTTime">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\QTKit\S\QTTimeRange">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Quartz\E\PDFAreaOfInterest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Quartz\E\PDFBorderStyle">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Quartz\E\PDFDisplayBox">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Quartz\E\PDFDisplayMode">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Quartz\E\PDFLineStyle">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Quartz\E\PDFMarkupType">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Quartz\E\PDFTextAnnotationIconType">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
@@ -249,27 +319,69 @@
     <Content Include="Resources\MIT.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Xml\AppKit\P\NSColorPanelDelegate" />
-    <None Include="Xml\AppKit\P\NSFontManagerDelegate" />
-    <None Include="Xml\AppKit\P\NSRulerViewDelegate" />
-    <None Include="Xml\Foundation\P\NSFileManagerDelegate" />
-    <None Include="Xml\Foundation\P\NSURLConnectionDelegate" />
-    <None Include="Xml\Foundation\P\NSURLDownloadDelegate" />
-    <None Include="Xml\QTKit\P\QTCaptureDecompressedAudioOutputDelegate" />
-    <None Include="Xml\QTKit\P\QTCaptureDecompressedVideoOutputDelegate" />
-    <None Include="Xml\QTKit\P\QTCaptureFileOutputDelegate" />
-    <None Include="Xml\QTKit\P\QTCaptureVideoPreviewOutputDelegate" />
-    <None Include="Xml\QTKit\P\QTCaptureViewDelegate" />
-    <None Include="Xml\QTKit\P\QTMovieDelegate" />
-    <None Include="Xml\QuartzCore\P\CAAnimationDelegate" />
-    <None Include="Xml\QuartzCore\P\CALayerDelegate" />
-    <None Include="Xml\Quartz\P\IKSaveOptionsDelegate" />
-    <None Include="Xml\Quartz\P\PDFDocumentDelegate" />
-    <None Include="Xml\Quartz\P\PDFViewDelegate" />
-    <None Include="Xml\SecurityInterface\P\SFAuthorizationViewDelegate" />
-    <None Include="Xml\SecurityInterface\P\SFCertificatePanelDelegate" />
-    <None Include="Xml\SecurityInterface\P\SFChooseIdentityPanelDelegate" />
-    <None Include="Xml\WebKit\P\WebDownloadDelegate" />
+    <Content Include="Xml\AppKit\P\NSColorPanelDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\AppKit\P\NSFontManagerDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\AppKit\P\NSRulerViewDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Foundation\P\NSFileManagerDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Foundation\P\NSURLConnectionDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Foundation\P\NSURLDownloadDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Xml\QTKit\P\QTCaptureDecompressedAudioOutputDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Xml\QTKit\P\QTCaptureDecompressedVideoOutputDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Xml\QTKit\P\QTCaptureFileOutputDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Xml\QTKit\P\QTCaptureVideoPreviewOutputDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Xml\QTKit\P\QTCaptureViewDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Xml\QTKit\P\QTMovieDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="Xml\QuartzCore\P\CAAnimationDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\QuartzCore\P\CALayerDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Quartz\P\IKSaveOptionsDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Quartz\P\PDFDocumentDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\Quartz\P\PDFViewDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\SecurityInterface\P\SFAuthorizationViewDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\SecurityInterface\P\SFCertificatePanelDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\SecurityInterface\P\SFChooseIdentityPanelDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\WebKit\P\WebDownloadDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
