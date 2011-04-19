@@ -1724,6 +1724,11 @@ enum {]]>
         <Patch>Methods[CollectionViewValidateDropProposedIndexDropOperation].Parameters[proposedDropOperation].Type=NSCollectionViewDropOperation</Patch>
         <Patch>Methods[CollectionViewValidateDropProposedIndexDropOperation].Parameters[proposedDropOperation].IsByRef=true</Patch>
       </Protocol>
+      <Protocol name="NSColorPanelDelegate">
+        <Patch>BaseType=NSPanelDelegate</Patch>
+        <Patch>DelegateFor=NSColorPanel</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
       <Protocol name="NSColorPickingCustom">
       </Protocol>
       <Protocol name="NSColorPickingDefault">
@@ -1741,9 +1746,11 @@ enum {]]>
         <Patch>DelegateFor=NSControl</Patch>
         <Patch>Methods[ControlTextViewCompletionsForPartialWordRangeIndexOfSelectedItem].Parameters[index].Type=NSInteger</Patch>
         <Patch>Methods[ControlTextViewCompletionsForPartialWordRangeIndexOfSelectedItem].Parameters[index].IsByRef=true</Patch>
+        <!--
         <Patch>Methods[ControlTextDidBeginEditing]=<![CDATA[<Method Generate="true" Static="false" GenerateConstructor="true"><Summary><Line>Sent when a control with editable text begins an editing session.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>ControlTextDidBeginEditing</Name><Selector>controlTextDidBeginEditing:</Selector><Signature>- (void)controlTextDidBeginEditing:(NSNotification *)aNotification</Signature><ReturnType>void</ReturnType><ReturnsDocumentation /><Parameters><Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The notification object. The name of the notification is always NSControlTextDidBeginEditingNotification.</Line></Summary><Name>aNotification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>]]></Patch>
         <Patch>Methods[ControlTextDidChange]=<![CDATA[<Method Generate="true" Static="false" GenerateConstructor="true"><Summary><Line>Sent when the text in the receiving control changes.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>ControlTextDidChange</Name><Selector>controlTextDidChange:</Selector><Signature>- (void)controlTextDidChange:(NSNotification *)aNotification</Signature><ReturnType>void</ReturnType><ReturnsDocumentation /><Parameters><Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The notification object. The name of the notification is always NSControlTextDidChangeNotification.</Line></Summary><Name>aNotification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>]]></Patch>
         <Patch>Methods[ControlTextDidEndEditing]=<![CDATA[<Method Generate="true" Static="false" GenerateConstructor="true"><Summary><Line>Sent when a control with editable text ends an editing session.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>ControlTextDidEndEditing</Name><Selector>controlTextDidEndEditing:</Selector><Signature>- (void)controlTextDidEndEditing:(NSNotification *)aNotification</Signature><ReturnType>void</ReturnType><ReturnsDocumentation /><Parameters><Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The notification object. The name of the notification is always NSControlTextDidEndEditingNotification.</Line></Summary><Name>aNotification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>]]></Patch>
+        -->
       </Protocol>
       <Protocol name="NSDatePickerCellDelegate">
         <Patch>DelegateFor=NSDatePickerCell</Patch>
@@ -1772,6 +1779,10 @@ enum {]]>
       <Protocol name="NSEditor">
       </Protocol>
       <Protocol name="NSEditorRegistration">
+      </Protocol>
+      <Protocol name="NSFontManagerDelegate">
+        <Patch>DelegateFor=NSFontManager</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
       <Protocol name="NSFontPanelValidation">
         <Patch>Enumerations[Mode_Masks].Name=NSFontPanelModeMask</Patch>
@@ -1847,6 +1858,9 @@ enum {]]>
       <Protocol name="NSRuleEditorDelegate">
         <Patch>DelegateFor=NSRuleEditor</Patch>
         <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
+      <Protocol name="NSRulerViewDelegate">
+        <Patch>DelegateFor=NSRulerView</Patch>
       </Protocol>
       <Protocol name="NSServicesRequests">
       </Protocol>
@@ -4109,6 +4123,10 @@ enum]]>
         <Patch>Methods[CountByEnumeratingWithStateObjectsCount].Parameters[state].Type=IntPtr</Patch>
         <Patch>Methods[CountByEnumeratingWithStateObjectsCount].Parameters[stackbuf].Type=IntPtr</Patch>
       </Protocol>
+      <Protocol name="NSFileManagerDelegate">
+        <Patch>DelegateFor=NSFileManager</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
       <Protocol name="NSKeyedArchiverDelegate">
         <Patch>DelegateFor=NSKeyedArchiver</Patch>
         <Patch>DelegateProperty=Delegate</Patch>
@@ -4183,6 +4201,14 @@ enum]]>
       <Protocol name="NSURLHandleClient">
       </Protocol>
       <Protocol name="NSURLProtocolClient">
+      </Protocol>
+      <Protocol name="NSURLConnectionDelegate">
+        <Patch>DelegateFor=NSURLConnection</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
+      <Protocol name="NSURLDownloadDelegate">
+        <Patch>DelegateFor=NSURLDownload</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
       <Protocol name="NSXMLParserDelegate">
         <Patch>DelegateFor=NSXMLParser</Patch>
@@ -4411,6 +4437,32 @@ enum]]>
       </Class>
 
     </Classes>
+	<Protocols>
+      <Protocol name="QTCaptureDecompressedAudioOutputDelegate">
+        <Patch>DelegateFor=QTCaptureDecompressedAudioOutput</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
+      <Protocol name="QTCaptureDecompressedVideoOutputDelegate">
+        <Patch>DelegateFor=QTCaptureDecompressedVideoOutput</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
+      <Protocol name="QTCaptureFileOutputDelegate">
+        <Patch>DelegateFor=QTCaptureFileOutput</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
+      <Protocol name="QTCaptureVideoPreviewOutputDelegate">
+        <Patch>DelegateFor=QTCaptureVideoPreviewOutput</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
+      <Protocol name="QTCaptureViewDelegate">
+        <Patch>DelegateFor=QTCaptureView</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
+      <Protocol name="QTMovieDelegate">
+        <Patch>DelegateFor=QTMovie</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
+	</Protocols>
     <Enumerations>
       <Enumeration name="QTSampleBufferAudioBufferListOptions">
       </Enumeration>
@@ -4617,7 +4669,19 @@ enum]]>
         <Patch>DelegateFor=IKScannerDeviceView</Patch>
         <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
+      <Protocol name="IKSaveOptionsDelegate">
+        <Patch>DelegateFor=IKSaveOptions</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
       <Protocol name="IKSlideshowDataSource">
+      </Protocol>
+      <Protocol name="PDFDocumentDelegate">
+        <Patch>DelegateFor=PDFDocument</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
+      <Protocol name="PDFViewDelegate">
+        <Patch>DelegateFor=PDFView</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
       <Protocol name="QCCompositionParameterViewDelegate">
         <Patch>DelegateFor=QCCompositionParameterView</Patch>
@@ -5019,7 +5083,15 @@ enum
 
     </Classes>
     <Protocols>
+      <Protocol name="CAAnimationDelegate">
+        <Patch>DelegateFor=CAAnimation</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
       <Protocol name="CAAction">
+      </Protocol>
+      <Protocol name="CALayerDelegate">
+        <Patch>DelegateFor=CALayer</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
       <Protocol name="CALayoutManager">
       </Protocol>
@@ -5149,6 +5221,20 @@ enum
         <Patch>Methods[RunModalForSettingsKeychain].Parameters[settings].Type=IntPtr</Patch>
       </Class>
     </Classes>
+	<Protocols>
+      <Protocol name="SFAuthorizationViewDelegate">
+        <Patch>DelegateFor=SFAuthorizationView</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
+      <Protocol name="SFCertificatePanelDelegate">
+        <Patch>DelegateFor=SFCertificatePanel</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
+      <Protocol name="SFChooseIdentityPanelDelegate">
+        <Patch>DelegateFor=SFChooseIdentityPanel</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
+	</Protocols>
   </Framework>
   <Framework name="WebKit" usings="Foundation,AppKit" assembly="Monobjc.WebKit">
     <Types>
@@ -5222,6 +5308,11 @@ enum
       <Protocol name="WebDocumentText">
       </Protocol>
       <Protocol name="WebDocumentView">
+      </Protocol>
+      <Protocol name="WebDownloadDelegate">
+        <Patch>BaseType=NSURLDownloadDelegate</Patch>
+        <Patch>DelegateFor=WebDownload</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
       <Protocol name="WebEditingDelegate">
         <Patch>DelegateFor=WebView</Patch>

@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -61,6 +61,16 @@ namespace Monobjc.Tools.Generator.Tasks.Output
                 if (classEntity.DelegateMethods.Count > 0)
                 {
                     names.Add(classEntity.Name);
+					
+					ProtocolEntity protocolEntity = new ProtocolEntity();
+					protocolEntity.Name = classEntity.Name + "Delegate";
+					protocolEntity.Namespace = classEntity.Namespace;
+					protocolEntity.MinAvailability = classEntity.MinAvailability;
+					protocolEntity.MaxAvailability = classEntity.MaxAvailability;
+					
+					xmlFile = Path.Combine("Analysis", Path.Combine(protocolEntity.Namespace, protocolEntity.Name));
+					Console.WriteLine("Saving " + xmlFile);
+					protocolEntity.SaveTo(xmlFile);
                 }
             }
 

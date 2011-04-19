@@ -61,71 +61,81 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core">
-    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="ICSharpCode.NRefactory, Version=3.2.0.5777, Culture=neutral, PublicKeyToken=efe927acf176eea2">
       <HintPath>ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
-    <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Generators\BaseGenerator.cs" />
-    <Compile Include="Generators\ClassConstantsGenerator.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Generators\ClassConstructorsGenerator.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Generators\ClassDefinitionGenerator.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Generators\ClassGenerator.cs" />
     <Compile Include="Generators\ClassAdditionsGenerator.cs" />
+    <Compile Include="Generators\ClassConstantsGenerator.cs" />
+    <Compile Include="Generators\ClassConstructorsGenerator.cs" />
+    <Compile Include="Generators\ClassDefinitionGenerator.cs" />
     <Compile Include="Generators\ClassDelegateGenerator.cs" />
-    <Compile Include="Generators\ClassMembersGenerator.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Generators\ClassProtocolsGenerator.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Generators\ClassGenerator.cs" />
+    <Compile Include="Generators\ClassMembersGenerator.cs" />
+    <Compile Include="Generators\ClassProtocolsGenerator.cs" />
     <Compile Include="Generators\ConstantGenerator.cs" />
-    <Compile Include="Generators\FunctionGenerator.cs" />
     <Compile Include="Generators\EnumerationGenerator.cs" />
-    <Compile Include="Generators\GenerationStatistics.cs" />
+    <Compile Include="Generators\FunctionGenerator.cs" />
     <Compile Include="Generators\GenerationHelper.cs" />
+    <Compile Include="Generators\GenerationStatistics.cs" />
+    <Compile Include="Generators\MethodGenerator.cs" />
     <Compile Include="Generators\PropertyGenerator.cs" />
+    <Compile Include="Generators\ProtocolGenerator.cs" />
+    <Compile Include="Generators\TypedGenerator.cs" />
     <Compile Include="Model\Configuration\Entities.cs" />
     <Compile Include="Model\Configuration\Mappings.cs" />
+    <Compile Include="Model\Database\Entries.cs" />
+    <Compile Include="Model\Database\Entry.cs" />
+    <Compile Include="Model\Database\EntryFolderType.cs" />
     <Compile Include="Model\Database\PageStyle.cs" />
+    <Compile Include="Model\Entities\BaseEntity.cs" />
+    <Compile Include="Model\Entities\ClassEntity.cs" />
     <Compile Include="Model\Entities\ConstantEntity.cs" />
+    <Compile Include="Model\Entities\EnumerationEntity.cs" />
+    <Compile Include="Model\Entities\EnumerationValueEntity.cs" />
+    <Compile Include="Model\Entities\FunctionEntity.cs" />
+    <Compile Include="Model\Entities\MethodEntity.cs" />
+    <Compile Include="Model\Entities\MethodParameterEntity.cs" />
+    <Compile Include="Model\Entities\PropertyEntity.cs" />
     <Compile Include="Model\Entities\ProtocolEntity.cs" />
     <Compile Include="Model\Entities\StructureEntity.cs" />
-    <Compile Include="Model\Entities\FunctionEntity.cs" />
-    <Compile Include="Model\Database\EntryFolderType.cs" />
+    <Compile Include="Model\Entities\TypedEntity.cs" />
+    <Compile Include="Options\Options.cs" />
     <Compile Include="Parsers\BaseParser.cs" />
+    <Compile Include="Parsers\CodeDom\CodeDomBaseParser.cs" />
     <Compile Include="Parsers\CodeDom\CodeDomClassParser.cs" />
     <Compile Include="Parsers\CodeDom\CodeDomEnumParser.cs" />
-    <Compile Include="Parsers\CodeDom\CodeDomBaseParser.cs" />
     <Compile Include="Parsers\CodeDom\CodeDomExpressionPrinter.cs" />
-    <Compile Include="Parsers\CodeDom\CodeDomTypeParser.cs" />
     <Compile Include="Parsers\CodeDom\CodeDomProtocolParser.cs" />
-    <Compile Include="Parsers\CodeDom\Utilities\Comment_Extensions.cs" />
+    <Compile Include="Parsers\CodeDom\CodeDomTypeParser.cs" />
     <Compile Include="Parsers\CodeDom\Utilities\CodeDomSpecialParser.cs" />
+    <Compile Include="Parsers\CodeDom\Utilities\Comment_Extensions.cs" />
     <Compile Include="Parsers\IBaseParser.cs" />
+    <Compile Include="Parsers\MethodParametersEnumerator.cs" />
     <Compile Include="Parsers\MethodSelectorExtractor.cs" />
+    <Compile Include="Parsers\MethodSignatureEnumerator.cs" />
     <Compile Include="Parsers\Sgml\SgmlParser.cs" />
     <Compile Include="Parsers\Sgml\SgmlReader.cs" />
-    <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicEnumerationParser.cs" />
     <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicClassParser.cs" />
     <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicConstantParser.cs" />
+    <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicEnumerationParser.cs" />
     <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicFunctionParser.cs" />
     <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicMethodParser.cs" />
     <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicPropertyParser.cs" />
     <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicTypeParser.cs" />
-    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaFunctionParser.cs" />
+    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaClassParser.cs" />
     <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaConstantParser.cs" />
+    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaFunctionParser.cs" />
+    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaMethodParser.cs" />
+    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaNotificationParser.cs" />
+    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaPropertyParser.cs" />
+    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaTypeParser.cs" />
     <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenClassParser.cs" />
     <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenConstantParser.cs" />
     <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenEnumerationParser.cs" />
@@ -134,54 +144,8 @@
     <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenPropertyParser.cs" />
     <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenTypeParser.cs" />
     <Compile Include="Parsers\Xhtml\XhtmlBaseParser.cs" />
-    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaClassParser.cs" />
-    <Compile Include="Parsers\MethodParametersEnumerator.cs" />
-    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaMethodParser.cs" />
-    <Compile Include="Parsers\MethodSignatureEnumerator.cs" />
-    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaNotificationParser.cs" />
-    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaPropertyParser.cs" />
-    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaTypeParser.cs" />
     <Compile Include="Parsers\Xhtml\XhtmlClassParser.cs" />
     <Compile Include="Parsers\Xhtml\XhtmlTypeParser.cs" />
-    <Compile Include="Tasks\BaseTask.cs" />
-    <Compile Include="Tasks\Conversion\CSharp2XmlTask.cs" />
-    <Compile Include="Tasks\Conversion\Xhtml2XmlTask.cs" />
-    <Compile Include="Tasks\Conversion\Html2XhtmlTask.cs" />
-    <Compile Include="Tasks\Generation\GenerateInfoTask.cs" />
-    <Compile Include="Tasks\General\ValidateTask.cs" />
-    <Compile Include="Tasks\General\LoadTask.cs" />
-    <Compile Include="Tasks\Generation\GenerateCodeTask.cs" />
-    <Compile Include="Tasks\General\CopyURLTask.cs" />
-    <Compile Include="Tasks\Output\DumpDelegateMethodsTask.cs" />
-    <Compile Include="Tasks\Output\DumpStaticInitializersTask.cs" />
-    <Compile Include="Tasks\Output\CopyInPlaceTask.cs" />
-    <Compile Include="Tasks\Output\DumpPropertyNamesTask.cs" />
-    <Compile Include="Tasks\Output\DumpInitMethodsTask.cs" />
-    <Compile Include="Tasks\Patching\CleanClassicTask.cs" />
-    <Compile Include="Tasks\Patching\DeprecateTask.cs" />
-    <Compile Include="Tasks\Patching\PatchXmlTask.cs" />
-    <Compile Include="Tasks\Patching\ReplaceTextTask.cs" />
-    <Compile Include="Options\Options.cs" />
-    <Compile Include="Utilities\TypeManager.cs" />
-    <Compile Include="Tasks\TaskManager.cs" />
-    <Compile Include="Tasks\General\RetrieveTask.cs" />
-    <Compile Include="Tasks\TaskContext.cs" />
-    <Compile Include="Tasks\ITask.cs" />
-    <Compile Include="Utilities\Extensions.cs" />
-    <Compile Include="Generators\MethodGenerator.cs" />
-    <Compile Include="Generators\ProtocolGenerator.cs" />
-    <Compile Include="Generators\TypedGenerator.cs" />
-    <Compile Include="Model\Entities\BaseEntity.cs" />
-    <Compile Include="Utilities\HtmlCleaner.cs" />
-    <Compile Include="Utilities\PathExtensions.cs" />
-    <Compile Include="Model\Entities\ClassEntity.cs" />
-    <Compile Include="Model\Entities\EnumerationEntity.cs" />
-    <Compile Include="Model\Entities\EnumerationValueEntity.cs" />
-    <Compile Include="Model\Entities\MethodEntity.cs" />
-    <Compile Include="Model\Entities\MethodParameterEntity.cs" />
-    <Compile Include="Model\Entities\PropertyEntity.cs" />
-    <Compile Include="Model\Entities\TypedEntity.cs" />
-    <Compile Include="Utilities\CommentHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -189,10 +153,70 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Model\Database\Entry.cs" />
-    <Compile Include="Model\Database\Entries.cs" />
+    <Compile Include="Tasks\BaseTask.cs" />
+    <Compile Include="Tasks\Conversion\CSharp2XmlTask.cs" />
+    <Compile Include="Tasks\Conversion\Html2XhtmlTask.cs" />
+    <Compile Include="Tasks\Conversion\Xhtml2XmlTask.cs" />
+    <Compile Include="Tasks\General\CopyURLTask.cs" />
+    <Compile Include="Tasks\General\LoadTask.cs" />
+    <Compile Include="Tasks\General\RetrieveTask.cs" />
+    <Compile Include="Tasks\General\ValidateTask.cs" />
+    <Compile Include="Tasks\Generation\GenerateCodeTask.cs" />
+    <Compile Include="Tasks\Generation\GenerateInfoTask.cs" />
+    <Compile Include="Tasks\ITask.cs" />
+    <Compile Include="Tasks\Output\CopyInPlaceTask.cs" />
+    <Compile Include="Tasks\Output\DumpDelegateMethodsTask.cs" />
+    <Compile Include="Tasks\Output\DumpInitMethodsTask.cs" />
+    <Compile Include="Tasks\Output\DumpPropertyNamesTask.cs" />
+    <Compile Include="Tasks\Output\DumpStaticInitializersTask.cs" />
+    <Compile Include="Tasks\Patching\CleanClassicTask.cs" />
+    <Compile Include="Tasks\Patching\DeprecateTask.cs" />
+    <Compile Include="Tasks\Patching\PatchXmlTask.cs" />
+    <Compile Include="Tasks\Patching\ReplaceTextTask.cs" />
+    <Compile Include="Tasks\TaskContext.cs" />
+    <Compile Include="Tasks\TaskManager.cs" />
+    <Compile Include="Utilities\CommentHelper.cs" />
+    <Compile Include="Utilities\Extensions.cs" />
+    <Compile Include="Utilities\HtmlCleaner.cs" />
+    <Compile Include="Utilities\PathExtensions.cs" />
+    <Compile Include="Utilities\TypeManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Xml\AppKit\E\NSTrackingAreaOptions" />
+    <Content Include="Xml\ApplicationServices\E\CGRectEdge" />
+    <Content Include="Xml\ApplicationServices\S\CGAffineTransform" />
+    <Content Include="Xml\ApplicationServices\S\CGFloat" />
+    <Content Include="Xml\ApplicationServices\S\CGPoint" />
+    <Content Include="Xml\ApplicationServices\S\CGRect" />
+    <Content Include="Xml\ApplicationServices\S\CGSize" />
+    <Content Include="Xml\CoreData\E\NSSnapshotEventType" />
+    <Content Include="Xml\CoreFoundation\S\CFHashCode" />
+    <Content Include="Xml\CoreFoundation\S\CFIndex" />
+    <Content Include="Xml\CoreFoundation\S\CFOptionFlags" />
+    <Content Include="Xml\CoreFoundation\S\CFRange" />
+    <Content Include="Xml\CoreFoundation\S\CFTypeID" />
+    <Content Include="Xml\Foundation\E\NSPropertyListReadOptions" />
+    <Content Include="Xml\Foundation\E\NSPropertyListWriteOptions" />
+    <Content Include="Xml\Foundation\S\NSDecimal" />
+    <Content Include="Xml\Foundation\S\NSInteger" />
+    <Content Include="Xml\Foundation\S\NSPoint" />
+    <Content Include="Xml\Foundation\S\NSRange" />
+    <Content Include="Xml\Foundation\S\NSRect" />
+    <Content Include="Xml\Foundation\S\NSSize" />
+    <Content Include="Xml\Foundation\S\NSUInteger" />
+    <Content Include="Xml\InputMethodKit\E\IMKCandidatePanelType" />
+    <Content Include="Xml\InputMethodKit\E\IMKCandidatesLocationHint" />
+    <Content Include="Xml\InputMethodKit\E\IMKLocationToOffsetMappingMode" />
+    <Content Include="Xml\QTKit\E\QTSampleBufferAudioBufferListOptions" />
+    <Content Include="Xml\QTKit\S\QTTime" />
+    <Content Include="Xml\QTKit\S\QTTimeRange" />
+    <Content Include="Xml\Quartz\E\PDFAreaOfInterest" />
+    <Content Include="Xml\Quartz\E\PDFBorderStyle" />
+    <Content Include="Xml\Quartz\E\PDFDisplayBox" />
+    <Content Include="Xml\Quartz\E\PDFDisplayMode" />
+    <Content Include="Xml\Quartz\E\PDFLineStyle" />
+    <Content Include="Xml\Quartz\E\PDFMarkupType" />
+    <Content Include="Xml\Quartz\E\PDFTextAnnotationIconType" />
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
@@ -225,111 +249,27 @@
     <Content Include="Resources\MIT.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Xml\Foundation\E\NSPropertyListWriteOptions">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\E\NSPropertyListReadOptions">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\S\NSUInteger">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\S\NSInteger">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\S\NSRect">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\S\NSRange">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\S\NSSize">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\S\NSPoint">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\S\NSDecimal">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\InputMethodKit\E\IMKCandidatePanelType">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\InputMethodKit\E\IMKCandidatesLocationHint">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\InputMethodKit\E\IMKLocationToOffsetMappingMode">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\CoreData\E\NSSnapshotEventType">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\QTKit\S\QTTime">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\QTKit\S\QTTimeRange">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\CoreFoundation\S\CFIndex">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\CoreFoundation\S\CFRange">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\CoreFoundation\S\CFHashCode">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\CoreFoundation\S\CFOptionFlags">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\CoreFoundation\S\CFTypeID">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\AppKit\E\NSTrackingAreaOptions">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\QTKit\E\QTSampleBufferAudioBufferListOptions">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\ApplicationServices\E\CGRectEdge">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\ApplicationServices\S\CGFloat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\ApplicationServices\S\CGPoint">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\ApplicationServices\S\CGRect">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\ApplicationServices\S\CGSize">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Quartz\E\PDFAreaOfInterest">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Quartz\E\PDFBorderStyle">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Quartz\E\PDFDisplayBox">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Quartz\E\PDFDisplayMode">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Quartz\E\PDFLineStyle">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Quartz\E\PDFMarkupType">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Quartz\E\PDFTextAnnotationIconType">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\ApplicationServices\S\CGAffineTransform">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <None Include="Xml\AppKit\P\NSColorPanelDelegate" />
+    <None Include="Xml\AppKit\P\NSFontManagerDelegate" />
+    <None Include="Xml\AppKit\P\NSRulerViewDelegate" />
+    <None Include="Xml\Foundation\P\NSFileManagerDelegate" />
+    <None Include="Xml\Foundation\P\NSURLConnectionDelegate" />
+    <None Include="Xml\Foundation\P\NSURLDownloadDelegate" />
+    <None Include="Xml\QTKit\P\QTCaptureDecompressedAudioOutputDelegate" />
+    <None Include="Xml\QTKit\P\QTCaptureDecompressedVideoOutputDelegate" />
+    <None Include="Xml\QTKit\P\QTCaptureFileOutputDelegate" />
+    <None Include="Xml\QTKit\P\QTCaptureVideoPreviewOutputDelegate" />
+    <None Include="Xml\QTKit\P\QTCaptureViewDelegate" />
+    <None Include="Xml\QTKit\P\QTMovieDelegate" />
+    <None Include="Xml\QuartzCore\P\CAAnimationDelegate" />
+    <None Include="Xml\QuartzCore\P\CALayerDelegate" />
+    <None Include="Xml\Quartz\P\IKSaveOptionsDelegate" />
+    <None Include="Xml\Quartz\P\PDFDocumentDelegate" />
+    <None Include="Xml\Quartz\P\PDFViewDelegate" />
+    <None Include="Xml\SecurityInterface\P\SFAuthorizationViewDelegate" />
+    <None Include="Xml\SecurityInterface\P\SFCertificatePanelDelegate" />
+    <None Include="Xml\SecurityInterface\P\SFChooseIdentityPanelDelegate" />
+    <None Include="Xml\WebKit\P\WebDownloadDelegate" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

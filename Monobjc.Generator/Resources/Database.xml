@@ -693,6 +693,9 @@
   <Entry ns="AppKit" nature="P" name="NSCollectionViewDelegate" style="Cocoa" file="NSCollectionViewDelegate">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSCollectionViewDelegate_Protocol/Reference/Reference.html</url>
   </Entry>
+  <Entry ns="AppKit" nature="P" name="NSColorPanelDelegate" style="Cocoa" file="NSColorPanelDelegate">
+    <url>N/A</url>
+  </Entry>
   <Entry ns="AppKit" nature="P" name="NSColorPickingCustom" style="Cocoa" file="NSColorPickingCustom">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSColorPickingCustom_Protocol/Reference/Reference.html</url>
   </Entry>
@@ -740,6 +743,9 @@
   </Entry>
   <Entry ns="AppKit" nature="P" name="NSEditorRegistration" style="Cocoa" file="NSEditorRegistration">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSEditorRegistration_Protocol/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="AppKit" nature="P" name="NSFontManagerDelegate" style="Cocoa" file="NSFontManagerDelegate">
+    <url>N/A</url>
   </Entry>
   <Entry ns="AppKit" nature="P" name="NSFontPanelValidation" style="Cocoa" file="NSFontPanelValidation">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSFontPanelValidation_Protocol/Reference/Reference.html</url>
@@ -800,6 +806,9 @@
   </Entry>
   <Entry ns="AppKit" nature="P" name="NSRuleEditorDelegate" style="Cocoa" file="NSRuleEditorDelegate">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSRuleEditorDelegate_Protocol/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="AppKit" nature="P" name="NSRulerViewDelegate" style="Cocoa" file="NSRulerViewDelegate">
+    <url>N/A</url>
   </Entry>
   <Entry ns="AppKit" nature="P" name="NSServicesRequests" style="Cocoa" file="NSServicesRequests">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSServicesRequests_Protocol/Reference/Reference.html</url>
@@ -2616,6 +2625,9 @@
   <Entry ns="Foundation" nature="P" name="NSFastEnumeration" style="Cocoa" file="NSFastEnumeration">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSFastEnumeration_protocol/Reference/NSFastEnumeration.html</url>
   </Entry>
+  <Entry ns="Foundation" nature="P" name="NSFileManagerDelegate" style="Cocoa" file="NSFileManagerDelegate">
+    <url>N/A</url>
+  </Entry>
   <Entry ns="Foundation" nature="P" name="NSKeyedArchiverDelegate" style="Cocoa" file="NSKeyedArchiverDelegate">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSKeyedArchiverDelegate_Protocol/Reference/Reference.html</url>
   </Entry>
@@ -2684,6 +2696,12 @@
   </Entry>
   <Entry ns="Foundation" nature="P" name="NSURLAuthenticationChallengeSender" style="Cocoa" file="NSURLAuthenticationChallengeSender">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Protocols/NSURLAuthenticationChallengeSender_Protocol/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Foundation" nature="P" name="NSURLConnectionDelegate" style="Cocoa" file="NSURLConnectionDelegate">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="Foundation" nature="P" name="NSURLDownloadDelegate" style="Cocoa" file="NSURLDownloadDelegate">
+    <url>N/A</url>
   </Entry>
   <Entry ns="Foundation" nature="P" name="NSURLHandleClient" style="Cocoa" file="NSURLHandleClient">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Protocols/NSURLHandleClient_Protocol/Reference/Reference.html</url>
@@ -2842,6 +2860,24 @@
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuickTime/Reference/QTKitFramework/Classes/QTTrack_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="QTKit" nature="E" name="QTSampleBufferAudioBufferListOptions" style="Cocoa" file="QTSampleBufferAudioBufferListOptions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="QTKit" nature="P" name="QTCaptureDecompressedAudioOutputDelegate" style="Cocoa" file="QTCaptureDecompressedAudioOutputDelegate">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="QTKit" nature="P" name="QTCaptureDecompressedVideoOutputDelegate" style="Cocoa" file="QTCaptureDecompressedVideoOutputDelegate">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="QTKit" nature="P" name="QTCaptureFileOutputDelegate" style="Cocoa" file="QTCaptureFileOutputDelegate">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="QTKit" nature="P" name="QTCaptureVideoPreviewOutputDelegate" style="Cocoa" file="QTCaptureVideoPreviewOutputDelegate">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="QTKit" nature="P" name="QTCaptureViewDelegate" style="Cocoa" file="QTCaptureViewDelegate">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="QTKit" nature="P" name="QTMovieDelegate" style="Cocoa" file="QTMovieDelegate">
     <url>N/A</url>
   </Entry>
   <Entry ns="QTKit" nature="S" name="QTTime" style="Cocoa" file="QTTime">
@@ -3066,11 +3102,20 @@
   <Entry ns="Quartz" nature="P" name="IKImageEditPanelDataSource" style="Cocoa" file="IKImageEditPanelDataSource">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKImageEditPanelDataSource/IKImageEditPanelDataSource_Ref.html</url>
   </Entry>
+  <Entry ns="Quartz" nature="P" name="IKSaveOptionsDelegate" style="Cocoa" file="IKSaveOptionsDelegate">
+    <url>N/A</url>
+  </Entry>
   <Entry ns="Quartz" nature="P" name="IKScannerDeviceViewDelegate" style="Cocoa" file="IKScannerDeviceViewDelegate">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Quartz/Reference/IKScannerDeviceViewDelegate_Protocol/Reference.html</url>
   </Entry>
   <Entry ns="Quartz" nature="P" name="IKSlideshowDataSource" style="Cocoa" file="IKSlideshowDataSource">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/IKSlideShowDataSource/IKSlideshowDataSource_ref.html</url>
+  </Entry>
+  <Entry ns="Quartz" nature="P" name="PDFDocumentDelegate" style="Cocoa" file="PDFDocumentDelegate">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="Quartz" nature="P" name="PDFViewDelegate" style="Cocoa" file="PDFViewDelegate">
+    <url>N/A</url>
   </Entry>
   <Entry ns="Quartz" nature="P" name="QCCompositionParameterViewDelegate" style="Cocoa" file="QCCompositionParameterViewDelegate">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/QCCompositionParameterViewDelegateProtocolRef/Introduction/Introduction.html</url>
@@ -3213,6 +3258,12 @@
   <Entry ns="QuartzCore" nature="P" name="CAAction" style="Cocoa" file="CAAction">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CAAction_protocol/Introduction/Introduction.html</url>
   </Entry>
+  <Entry ns="QuartzCore" nature="P" name="CAAnimationDelegate" style="Cocoa" file="CAAnimationDelegate">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="QuartzCore" nature="P" name="CALayerDelegate" style="Cocoa" file="CALayerDelegate">
+    <url>N/A</url>
+  </Entry>
   <Entry ns="QuartzCore" nature="P" name="CALayoutManager" style="Cocoa" file="CALayoutManager">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CALayoutManager_protocol/Introduction/Introduction.html</url>
   </Entry>
@@ -3308,6 +3359,15 @@
   </Entry>
   <Entry ns="SecurityInterface" nature="C" name="SFKeychainSettingsPanel" style="Cocoa" file="SFKeychainSettingsPanel">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Security/Reference/SecurityInterfaceFramework/Classes/SFKeychainSettingsPanel_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="SecurityInterface" nature="P" name="SFAuthorizationViewDelegate" style="Cocoa" file="SFAuthorizationViewDelegate">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="SecurityInterface" nature="P" name="SFCertificatePanelDelegate" style="Cocoa" file="SFCertificatePanelDelegate">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="SecurityInterface" nature="P" name="SFChooseIdentityPanelDelegate" style="Cocoa" file="SFChooseIdentityPanelDelegate">
+    <url>N/A</url>
   </Entry>
   <Entry ns="SecurityInterface" nature="T" name="SecurityInterfaceFramework.Constants" style="Cocoa" file="SecurityInterfaceFramework.Constants">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/SecurityInterface/Reference/securityinterfaceconstantsref/Reference/reference.html</url>
@@ -3410,6 +3470,9 @@
   </Entry>
   <Entry ns="WebKit" nature="P" name="WebDocumentView" style="Cocoa" file="WebDocumentView">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/WebKit/Protocols/WebDocumentView_Protocol/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="WebKit" nature="P" name="WebDownloadDelegate" style="Cocoa" file="WebDownloadDelegate">
+    <url>N/A</url>
   </Entry>
   <Entry ns="WebKit" nature="P" name="WebEditingDelegate" style="Cocoa" file="WebEditingDelegate">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/WebKit/Protocols/WebEditingDelegate_Protocol/Reference/Reference.html</url>
