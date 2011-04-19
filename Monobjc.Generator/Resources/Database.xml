@@ -783,6 +783,9 @@
   <Entry ns="AppKit" nature="P" name="NSOutlineViewDelegate" style="Cocoa" file="NSOutlineViewDelegate">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSOutlineViewDelegate_Protocol/Reference/Reference.html</url>
   </Entry>
+  <Entry ns="AppKit" nature="P" name="NSPanelDelegate" style="Cocoa" file="NSPanelDelegate">
+    <url>N/A</url>
+  </Entry>
   <Entry ns="AppKit" nature="P" name="NSPasteboardItemDataProvider" style="Cocoa" file="NSPasteboardItemDataProvider">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/NSPasteboardItemDataProvider_Protocol/Reference/Reference.html</url>
   </Entry>
@@ -2858,6 +2861,9 @@
   </Entry>
   <Entry ns="QTKit" nature="C" name="QTTrack" style="Cocoa" file="QTTrack">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/QuickTime/Reference/QTKitFramework/Classes/QTTrack_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="QTKit" nature="E" name="QTMovieOperationPhase" style="Cocoa" file="QTMovieOperationPhase">
+    <url>N/A</url>
   </Entry>
   <Entry ns="QTKit" nature="E" name="QTSampleBufferAudioBufferListOptions" style="Cocoa" file="QTSampleBufferAudioBufferListOptions">
     <url>N/A</url>

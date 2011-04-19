@@ -337,6 +337,12 @@
     <Content Include="Xml\Foundation\P\NSURLDownloadDelegate">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Xml\QTKit\E\QTMovieOperationPhase">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xml\AppKit\P\NSPanelDelegate">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Xml\QTKit\P\QTCaptureDecompressedAudioOutputDelegate">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

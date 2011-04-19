@@ -1833,6 +1833,11 @@ enum {]]>
         <Patch>DelegateFor=NSOutlineView</Patch>
         <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
+      <Protocol name="NSPanelDelegate">
+        <Patch>BaseType=NSWindowDelegate</Patch>
+        <Patch>DelegateFor=NSPanel</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
       <Protocol name="NSPasteboardItemDataProvider">
       </Protocol>
       <Protocol name="NSPasteboardReading">
@@ -4204,11 +4209,9 @@ enum]]>
       </Protocol>
       <Protocol name="NSURLConnectionDelegate">
         <Patch>DelegateFor=NSURLConnection</Patch>
-        <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
       <Protocol name="NSURLDownloadDelegate">
         <Patch>DelegateFor=NSURLDownload</Patch>
-        <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
       <Protocol name="NSXMLParserDelegate">
         <Patch>DelegateFor=NSXMLParser</Patch>
@@ -4464,6 +4467,8 @@ enum]]>
       </Protocol>
 	</Protocols>
     <Enumerations>
+      <Enumeration name="QTMovieOperationPhase">
+      </Enumeration>
       <Enumeration name="QTSampleBufferAudioBufferListOptions">
       </Enumeration>
     </Enumerations>
@@ -5312,7 +5317,6 @@ enum
       <Protocol name="WebDownloadDelegate">
         <Patch>BaseType=NSURLDownloadDelegate</Patch>
         <Patch>DelegateFor=WebDownload</Patch>
-        <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
       <Protocol name="WebEditingDelegate">
         <Patch>DelegateFor=WebView</Patch>

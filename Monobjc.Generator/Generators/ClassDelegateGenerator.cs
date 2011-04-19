@@ -45,7 +45,8 @@ namespace Monobjc.Tools.Generator.Generators
         {
             ProtocolEntity protocolEntity = (ProtocolEntity) entity;
             ClassEntity delegatorEntity = protocolEntity.DelegatorEntity;
-            String property = protocolEntity.DelegateProperty;
+            //String property = protocolEntity.DelegateProperty;
+            PropertyEntity propertyEntity = delegatorEntity.GetProperties(true, false).FirstOrDefault(p => p.Name == protocolEntity.DelegateProperty);
 
             // Gather methods for delegate
             IEnumerable<MethodEntity> methods = protocolEntity.Methods.Where(e => e.Generate);
@@ -88,35 +89,47 @@ namespace Monobjc.Tools.Generator.Generators
 
                 this.Writer.WriteLineFormat(2, signature.ToString());
 
-                // Append static condition if needed);
+                // Append static condition if needed
                 this.AppendEndCondition(methodEntity);
 
                 this.Writer.WriteLine();
             }
 
-            if (property != null)
+            //if (property != null)
+            if (propertyEntity != null)
             {
+                // Append static condition if needed
+                this.AppendStartCondition(propertyEntity);
+
                 // Emit the delegate assignment
                 this.Writer.WriteLineFormat(2, "/// <summary>");
-                this.Writer.WriteLineFormat(2, "/// Set the {0} property of a <see cref=\"{1}\"/> instance.", property, delegatorEntity.Name);
+                //this.Writer.WriteLineFormat(2, "/// Set the {0} property of a <see cref=\"{1}\"/> instance.", property, delegatorEntity.Name);
+                this.Writer.WriteLineFormat(2, "/// Set the {0} property of a <see cref=\"{1}\"/> instance.", propertyEntity.Name, delegatorEntity.Name);
                 this.Writer.WriteLineFormat(2, "/// </summary>");
                 this.Writer.WriteLineFormat(2, "/// <param name=\"assignment\">The assignment of delegation methods.</param>");
-                this.Writer.WriteLineFormat(2, "public void Set{0}(Action<{1}EventDispatcher> assignment)", property, protocolEntity.Name);
+                //this.Writer.WriteLineFormat(2, "public void Set{0}(Action<{1}EventDispatcher> assignment)", property, protocolEntity.Name);
+                this.Writer.WriteLineFormat(2, "public void Set{0}(Action<{1}EventDispatcher> assignment)", propertyEntity.Name, protocolEntity.Name);
                 this.Writer.WriteLineFormat(2, "{{");
-                this.Writer.WriteLineFormat(3, "{0}EventDispatcher @delegate = this.{1}.SafeCastAs<{0}EventDispatcher>();", protocolEntity.Name, property);
+                //this.Writer.WriteLineFormat(3, "{0}EventDispatcher @delegate = this.{1}.SafeCastAs<{0}EventDispatcher>();", protocolEntity.Name, property);
+                this.Writer.WriteLineFormat(3, "{0}EventDispatcher @delegate = this.{1}.SafeCastAs<{0}EventDispatcher>();", protocolEntity.Name, propertyEntity.Name);
                 this.Writer.WriteLineFormat(3, "if (@delegate != null)");
                 this.Writer.WriteLineFormat(3, "{{");
                 this.Writer.WriteLineFormat(4, "@delegate.Release();");
-                this.Writer.WriteLineFormat(4, "this.{0} = null;", property);
+                //this.Writer.WriteLineFormat(4, "this.{0} = null;", property);
+                this.Writer.WriteLineFormat(4, "this.{0} = null;", propertyEntity.Name);
                 this.Writer.WriteLineFormat(3, "}}");
                 this.Writer.WriteLineFormat(3, "if (assignment != null)");
                 this.Writer.WriteLineFormat(3, "{{");
                 this.Writer.WriteLineFormat(4, "@delegate = new {0}EventDispatcher();", protocolEntity.Name);
                 this.Writer.WriteLineFormat(4, "assignment(@delegate);");
-                this.Writer.WriteLineFormat(4, "this.{0} = @delegate;", property);
+                //this.Writer.WriteLineFormat(4, "this.{0} = @delegate;", property);
+                this.Writer.WriteLineFormat(4, "this.{0} = @delegate;", propertyEntity.Name);
                 this.Writer.WriteLineFormat(3, "}}");
                 this.Writer.WriteLineFormat(2, "}}");
                 this.Writer.WriteLine();
+
+                // Append static condition if needed
+                this.AppendEndCondition(propertyEntity);
             }
 
             // Emit the inner class
