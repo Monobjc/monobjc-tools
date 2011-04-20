@@ -97,6 +97,7 @@
         <include name="Monobjc.Sdp/**/*.resx"/>
       </resources>
     </csc>
+    <copy file="Monobjc.Sdp/monobjc-sdp" todir="${dist.dir}"/> 
 
   </target>
 
