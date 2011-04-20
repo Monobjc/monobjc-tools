@@ -24,6 +24,11 @@ namespace Monobjc.Tools.Sdp
     {
         static void Main(string[] args)
         {
+            if (args.Length != 2)
+            {
+                Console.WriteLine("Usage: monobjc-sdp input_file prefix");
+                return;
+            }
             String file = args[0];
             String prefix = args[1];
             Generator generator = Generator.CreateGenerator("CSharp");
