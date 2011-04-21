@@ -17,6 +17,7 @@
 //
 using System;
 using Monobjc.Tools.Sdp.Generation;
+using NDesk.Options;
 
 namespace Monobjc.Tools.Sdp
 {
@@ -24,15 +25,46 @@ namespace Monobjc.Tools.Sdp
     {
         static void Main(string[] args)
         {
-            if (args.Length != 2)
+            String inputFile = null;
+            String prefix = null;
+            String language = "CSharp";
+
+            // Create an option set
+            OptionSet p = new OptionSet().
+                Add("h|help", v => Usage()).
+                Add("i=|input=", v => inputFile = v).
+                Add("p=|prefix=", v => prefix = v).
+                Add("l=|language=", v => language = v);
+            p.Parse(args);
+
+            if (inputFile == null)
             {
-                Console.WriteLine("Usage: monobjc-sdp input_file prefix");
-                return;
+                Usage();
             }
-            String file = args[0];
-            String prefix = args[1];
-            Generator generator = Generator.CreateGenerator("CSharp");
-            generator.Generate(prefix, file, prefix + ".cs");
+            if (prefix == null)
+            {
+                Usage();
+            }
+
+            Generator generator = Generator.CreateGenerator(language);
+            generator.Generate(prefix, inputFile);
+        }
+
+        static void Usage()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Monobjc Sdp Generator");
+            Console.WriteLine();
+            Console.WriteLine("Usage:");
+            Console.WriteLine("monobjc-sdp [--help] --input=XXX --prefix=XXX [--language=XXX]");
+            Console.WriteLine();
+            Console.WriteLine("\t-h|--help           : Display this help");
+            Console.WriteLine("\t-i|--input=value    : The sdef input file to parse");
+            Console.WriteLine("\t-p|--prefix=value   : The prefix to use for the generation");
+            Console.WriteLine("\t-l|--language=value : The language to use for the generation");
+            Console.WriteLine();
+
+            Environment.Exit(-1);
         }
     }
 }

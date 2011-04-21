@@ -28,6 +28,8 @@ namespace Monobjc.Tools.Sdp.Generation
     /// </summary>
     public class CSharpGenerator : Generator
     {
+        protected override String Extension { get { return ".cs"; } }
+
         protected override string Generate(GenerationContext context)
         {
             StringBuilder builder = new StringBuilder();
@@ -102,33 +104,35 @@ namespace Monobjc.Tools.Sdp.Generation
             builder.AppendLine();
             builder.AppendLine("\t{");
 
-            // TODO: Add doc
             builder.AppendFormat("\t\tpublic {0}() : base() {{}}", className);
             builder.AppendLine();
             builder.AppendLine();
-            // TODO: Add doc
             builder.AppendFormat("\t\tpublic {0}(IntPtr pointer) : base(pointer) {{}}", className);
             builder.AppendLine();
             builder.AppendLine();
 
+            //
             // Output elements
+            //
             builder.AppendLine("#region ----- Elements -----");
             foreach (element element in context.GetElementsFor(cls).OrderBy(e => e.type))
             {
-                // TODO: Add doc
-                String elementName;
-                String elementMessage;
+                String value;
                 @class typeCls = context.Classes.FirstOrDefault(c => String.Equals(c.name, element.type));
                 if (typeCls != null)
                 {
-                    elementName = NamingHelper.GenerateDotNetName(String.Empty, typeCls.plural ?? typeCls.name);
-                    elementMessage = NamingHelper.GenerateObjCName(typeCls.plural ?? typeCls.name);
+                    // Make sure that we use the correct plural
+                     value = typeCls.plural ?? typeCls.name + "s";
                 }
                 else
                 {
-                    elementName = NamingHelper.GenerateDotNetName(String.Empty, element.type);
-                    elementMessage = NamingHelper.GenerateObjCName(element.type);
+                    // Use the default name
+                     value = element.type;
                 }
+                String elementName = NamingHelper.GenerateDotNetName(String.Empty, value);
+                String elementMessage = NamingHelper.GenerateObjCName(value);
+
+                // Output the code
                 builder.AppendFormat("\t\tpublic SBElementArray {0}", elementName);
                 builder.AppendLine();
                 builder.AppendLine("\t\t{");
@@ -140,14 +144,15 @@ namespace Monobjc.Tools.Sdp.Generation
             builder.AppendLine("#endregion");
             builder.AppendLine();
 
+            //
             // Output properties
+            //
             builder.AppendLine("#region ----- Properties -----");
             foreach (property property in context.GetPropertiesFor(cls).OrderBy(p => p.name))
             {
                 String propertyType = context.ConvertType(property.type, true);
                 String propertyName = NamingHelper.GenerateDotNetName(String.Empty, property.name);
 
-                // TODO: Add doc
                 builder.AppendFormat("\t\tpublic {0} {1}", propertyType, propertyName);
                 builder.AppendLine();
                 builder.AppendLine("\t\t{");
@@ -158,8 +163,8 @@ namespace Monobjc.Tools.Sdp.Generation
                     case propertyAccess.r:
                     case propertyAccess.rw:
                         {
-                            String message = NamingHelper.GenerateObjCName(property.name);
-                            builder.AppendFormat("\t\t\tget {{ return ObjectiveCRuntime.SendMessage<{0}>(this, \"{1}\"); }}", propertyType, message);
+                            String selector = NamingHelper.GenerateObjCName(property.name);
+                            builder.AppendFormat("\t\t\tget {{ return ObjectiveCRuntime.SendMessage<{0}>(this, \"{1}\"); }}", propertyType, selector);
                             builder.AppendLine();
                             break;
                         }
@@ -173,8 +178,8 @@ namespace Monobjc.Tools.Sdp.Generation
                     case propertyAccess.rw:
                     case propertyAccess.w:
                         {
-                            String message = "set" + propertyName + ":";
-                            builder.AppendFormat("\t\t\tset {{ ObjectiveCRuntime.SendMessage(this, \"{0}\", value); }}", message);
+                            String selector = "set" + propertyName + ":";
+                            builder.AppendFormat("\t\t\tset {{ ObjectiveCRuntime.SendMessage(this, \"{0}\", value); }}", selector);
                             builder.AppendLine();
                             break;
                         }
@@ -188,19 +193,23 @@ namespace Monobjc.Tools.Sdp.Generation
             builder.AppendLine("#endregion");
             builder.AppendLine();
 
+            //
             // Output methods
+            //
             builder.AppendLine("#region ----- Commands -----");
             IEnumerable<command> commands = context.GetCommandsFor(cls);
             foreach (command command in commands.OrderBy(c => c.name))
             {
                 String returnType = command.result != null ? context.ConvertType(command.result.type1, true) : "void";
 
+                // Builds the method name
                 String methodName = NamingHelper.GenerateDotNetName(String.Empty, command.name);
                 if (command.parameter != null)
                 {
                     methodName = command.parameter.Aggregate(methodName, (name, p) => name += NamingHelper.GenerateDotNetName(String.Empty, p.name));
                 }
-                // TODO: Add doc
+
+                // Builds the signature
                 String signature = String.Format("\t\tpublic {0} {1}(", returnType, methodName);
                 List<String> parameters = new List<String>();
                 if (command.parameter != null)
@@ -218,7 +227,31 @@ namespace Monobjc.Tools.Sdp.Generation
                 builder.AppendLine();
                 builder.AppendLine("\t\t{");
 
-                // TODO: Add invocation
+                // Builds the invocation
+                String invocation = "";
+                if (command.result != null)
+                {
+                    invocation += "return ";
+                }
+                invocation += "ObjectiveCRuntime.SendMessage";
+                if (command.result != null)
+                {
+                    invocation += String.Format("<{0}>", returnType);
+                }
+                invocation += String.Format("(this, \"{0}\"", NamingHelper.GenerateObjCSelector(command));
+                if (command.parameter != null)
+                {
+                    foreach (parameter parameter in command.parameter)
+                    {
+                        String parameterName = NamingHelper.GenerateObjCName(parameter.name);
+                        parameterName = GenerationContext.ConvertParameterName(parameterName);
+                        invocation += String.Format(", {0}", parameterName);
+                    }
+                }
+                invocation += ");";
+
+                builder.AppendFormat("\t\t\t{0}", invocation);
+                builder.AppendLine();
 
                 builder.AppendLine("\t\t}");
                 builder.AppendLine();
@@ -242,11 +275,6 @@ namespace Monobjc.Tools.Sdp.Generation
         {
             String enumerationName = NamingHelper.GenerateDotNetName(context.Prefix, enumeration.name);
 
-            //builder.AppendLine("\t/// <summary>");
-            //builder.AppendFormat("\t/// {0}", enumeration.description);
-            //builder.AppendLine();
-            //builder.AppendLine("\t/// </summary>");
-
             builder.AppendFormat("\tpublic enum {0} : uint", enumerationName);
             builder.AppendLine();
             builder.AppendLine("\t{");
@@ -254,11 +282,6 @@ namespace Monobjc.Tools.Sdp.Generation
             foreach (enumerator value in values)
             {
                 String valueName = NamingHelper.GenerateDotNetName(enumerationName, value.name);
-                //builder.AppendLine("\t\t/// <summary>");
-                //builder.AppendFormat("\t\t/// {0}", value.description);
-                //builder.AppendLine();
-                //builder.AppendLine("\t\t/// </summary>");
-
                 if (!String.IsNullOrEmpty(value.code))
                 {
                     builder.AppendFormat("\t\t{0} = 0x{1}, // '{2}'", valueName, NamingHelper.ToUInt32(value.code).ToString("X8"), value.code);

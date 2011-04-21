@@ -25,16 +25,18 @@ namespace Monobjc.Tools.Sdp.Generation
     public class GenerationContext
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GenerationContext"/> class.
+        ///   Initializes a new instance of the <see cref = "GenerationContext" /> class.
         /// </summary>
-        /// <param name="prefix">The prefix.</param>
-        /// <param name="classes">The classes.</param>
-        /// <param name="commands">The commands.</param>
-        /// <param name="enumerations">The enumerations.</param>
-        public GenerationContext(String prefix, IEnumerable<@class> classes, IEnumerable<command> commands, IEnumerable<enumeration> enumerations)
+        /// <param name = "prefix">The prefix.</param>
+        /// <param name = "classes">The classes.</param>
+        /// <param name = "classExtensions">The class extensions.</param>
+        /// <param name = "commands">The commands.</param>
+        /// <param name = "enumerations">The enumerations.</param>
+        public GenerationContext(String prefix, IEnumerable<@class> classes, IEnumerable<classextension> classExtensions, IEnumerable<command> commands, IEnumerable<enumeration> enumerations)
         {
             this.Prefix = prefix;
             this.Classes = classes;
+            this.ClassExtensions = classExtensions;
             this.Commands = commands;
             this.Enumerations = enumerations;
         }
@@ -52,6 +54,12 @@ namespace Monobjc.Tools.Sdp.Generation
         public IEnumerable<@class> Classes { get; private set; }
 
         /// <summary>
+        ///   Gets or sets the classes' extension.
+        /// </summary>
+        /// <value>The classes.</value>
+        public IEnumerable<classextension> ClassExtensions { get; private set; }
+
+        /// <summary>
         ///   Gets or sets the commands.
         /// </summary>
         /// <value>The commands.</value>
@@ -64,29 +72,67 @@ namespace Monobjc.Tools.Sdp.Generation
         public IEnumerable<enumeration> Enumerations { get; set; }
 
         /// <summary>
-        /// Gets the elements for the given class.
+        ///   Gets the class extension for the given class.
         /// </summary>
-        public IEnumerable<element> GetElementsFor(@class cls)
+        private IEnumerable<classextension> GetClassExtensionFor(@class cls)
         {
-            if (cls.element != null)
-            {
-                foreach (element item in cls.element)
-                {
-                    yield return item;
-                }
-            }
+            return this.ClassExtensions.Where(classExtension => String.Equals(classExtension.extends, cls.name));
         }
 
         /// <summary>
-        /// Gets the properties for the given class.
+        ///   Gets the elements for the given class.
         /// </summary>
-        public IEnumerable<property> GetPropertiesFor(@class cls)
+        public IEnumerable<element> GetElementsFor(@class cls)
         {
-            if (cls.property != null)
+            List<element> items = new List<element>();
+
+            // Add class items if any
+            if (cls.element != null)
             {
-                foreach (property item in cls.property)
+                items.AddRange(cls.element);
+            }
+
+            // Add extension items if any
+            IEnumerable<element> extensionItems = this.GetClassExtensionFor(cls).Where(c => c.element != null).SelectMany(c => c.element);
+            if (extensionItems != null)
+            {
+                items.AddRange(extensionItems);
+            }
+
+            // Retrieve the base class if any
+            @class baseClass = null;
+            String type = cls.inherits;
+            if (type != null)
+            {
+                baseClass = (from c in this.Classes
+                             where (c.id != null && String.Equals(c.id, type))
+                                   || (c.id == null && String.Equals(c.name, type))
+                             select c).FirstOrDefault();
+            }
+
+            // Filter out elements to avoid override
+            if (baseClass != null && baseClass.element != null)
+            {
+                IEnumerable<element> baseElements = this.GetElementsFor(baseClass);
+                foreach (element item in items)
                 {
-                    if ("class".Contains(item.name))
+                    if (item.hiddenSpecified && item.hidden == yorn.yes)
+                    {
+                        continue;
+                    }
+                    element baseItem = baseElements.FirstOrDefault(e => String.Equals(e.type, item.type));
+                    if (baseItem != null)
+                    {
+                        continue;
+                    }
+                    yield return item;
+                }
+            }
+            else
+            {
+                foreach (element item in items)
+                {
+                    if (item.hiddenSpecified && item.hidden == yorn.yes)
                     {
                         continue;
                     }
@@ -96,36 +142,74 @@ namespace Monobjc.Tools.Sdp.Generation
         }
 
         /// <summary>
-        /// Gets the commands for the given class.
+        ///   Gets the properties for the given class.
+        /// </summary>
+        public IEnumerable<property> GetPropertiesFor(@class cls)
+        {
+            List<property> items = new List<property>();
+
+            // Add class items if any
+            if (cls.property != null)
+            {
+                items.AddRange(cls.property);
+            }
+
+            // Add extension items if any
+            IEnumerable<property> extensionItems = this.GetClassExtensionFor(cls).Where(c => c.property != null).SelectMany(c => c.property);
+            if (extensionItems != null)
+            {
+                items.AddRange(extensionItems);
+            }
+
+            foreach (property item in items)
+            {
+                if ("class;description;version".Contains(item.name))
+                {
+                    continue;
+                }
+                if (item.hiddenSpecified && item.hidden == yorn.yes)
+                {
+                    continue;
+                }
+                yield return item;
+            }
+        }
+
+        /// <summary>
+        ///   Gets the commands for the given class.
         /// </summary>
         public IEnumerable<command> GetCommandsFor(@class cls)
         {
             bool isApplication = (cls.name == "application");
             bool isObject = String.IsNullOrEmpty(cls.inherits) && !isApplication;
 
-            foreach (command command in this.Commands)
+            foreach (command item in this.Commands)
             {
-                if (command.parameter != null && command.parameter.Any(p => (p.name == "each" || p.name == "new")))
+                if (item.hiddenSpecified && item.hidden == yorn.yes)
                 {
                     continue;
                 }
-                if (command.parameter != null && command.parameter.Any(p => p.type1 == "any"))
+                if (item.parameter != null && item.parameter.Any(p => (p.name == "each" || p.name == "new")))
                 {
                     continue;
                 }
-                if (command.result != null && command.result.type1 == "any")
+                if (item.parameter != null && item.parameter.Any(p => p.type1 == "any"))
+                {
+                    continue;
+                }
+                if (item.result != null && item.result.type1 == "any")
                 {
                     continue;
                 }
 
                 if (isApplication)
                 {
-                    if (command.directparameter != null)
+                    if (item.directparameter != null)
                     {
-                        String type = command.directparameter.type1 ?? command.directparameter.type[0].type1;
+                        String type = item.directparameter.type1 ?? item.directparameter.type[0].type1;
                         if (type == "specifier")
                         {
-                            if (!command.directparameter.optionalSpecified || command.directparameter.optional != yorn.yes)
+                            if (!item.directparameter.optionalSpecified || item.directparameter.optional != yorn.yes)
                             {
                                 continue;
                             }
@@ -135,30 +219,30 @@ namespace Monobjc.Tools.Sdp.Generation
                             continue;
                         }
                     }
-                    yield return command;
+                    yield return item;
                 }
                 else
                 {
-                    if (command.directparameter == null)
+                    if (item.directparameter == null)
                     {
                         continue;
                     }
 
-                    String type = command.directparameter.type1 ?? command.directparameter.type[0].type1;
+                    String type = item.directparameter.type1 ?? item.directparameter.type[0].type1;
                     if (type == "specifier" && isObject)
                     {
-                        yield return command;
+                        yield return item;
                     }
                     if (type == cls.name)
                     {
-                        yield return command;
+                        yield return item;
                     }
                 }
             }
         }
 
         /// <summary>
-        /// Converts the name of the parameter.
+        ///   Converts the name of the parameter.
         /// </summary>
         public static String ConvertParameterName(String name)
         {
@@ -181,7 +265,7 @@ namespace Monobjc.Tools.Sdp.Generation
         }
 
         /// <summary>
-        /// Converts the type.
+        ///   Converts the type.
         /// </summary>
         public String ConvertType(String type, bool anyType)
         {

@@ -19,8 +19,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 using Monobjc.Tools.Sdp.Model;
+using Mvp.Xml.XInclude;
+using System.Xml;
 
 namespace Monobjc.Tools.Sdp.Generation
 {
@@ -45,21 +48,36 @@ namespace Monobjc.Tools.Sdp.Generation
             }
         }
 
+        protected abstract String Extension { get; }
+
         /// <summary>
         /// Generates a wrapper.
         /// </summary>
         /// <param name="prefix">The prefix.</param>
-        /// <param name="input">The input.</param>
-        /// <param name="output">The output.</param>
-        public void Generate(String prefix, String input, String output)
+        /// <param name="inputFile">The input file.</param>
+        public void Generate(String prefix, String inputFile)
         {
-            if (!File.Exists(input))
+            String workFile = Path.GetTempFileName();
+            String outputFile = prefix + Extension;
+            if (!File.Exists(inputFile))
             {
-                throw new ArgumentException("Input file not found: " + input);
+                throw new ArgumentException("Input file not found: " + inputFile);
             }
-            using (TextReader reader = new StreamReader(input))
+
+            // Use a XInclude compliant parser to load all the inclusions
+            Console.WriteLine("Parsing '" + inputFile + "' ...");
+            using (XIncludingReader reader = new XIncludingReader(inputFile))
             {
-                using (TextWriter writer = new StreamWriter(output))
+                XmlDocument doc = new XmlDocument();
+                doc.Load(reader);
+                doc.Save(workFile);
+            }
+
+            // Process the input file
+            Console.WriteLine("Processing '" + inputFile + "' ...");
+            using (TextReader reader = new StreamReader(workFile))
+            {
+                using (TextWriter writer = new StreamWriter(outputFile))
                 {
                     this.Generate(prefix, reader, writer);
                 }
@@ -74,7 +92,8 @@ namespace Monobjc.Tools.Sdp.Generation
         /// <param name="writer">The writer.</param>
         public void Generate(String prefix, TextReader reader, TextWriter writer)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof (dictionary));
+            //XmlSerializer serializer = new XmlSerializer(typeof(dictionary));
+            XmlSerializer serializer = new dictionarySerializer();
             dictionary dictionary = serializer.Deserialize(reader) as dictionary;
 
             if (dictionary == null)
@@ -83,9 +102,10 @@ namespace Monobjc.Tools.Sdp.Generation
             }
 
             IEnumerable<@class> classes = dictionary.suite.Where(s => s.Items != null).SelectMany(s => s.Items).Where(i => i is @class).Cast<@class>();
+            IEnumerable<classextension> classExtensions = dictionary.suite.Where(s => s.Items != null).SelectMany(s => s.Items).Where(i => i is classextension).Cast<classextension>();
             IEnumerable<command> commands = dictionary.suite.Where(s => s.Items != null).SelectMany(s => s.Items).Where(i => i is command).Cast<command>();
             IEnumerable<enumeration> enumerations = dictionary.suite.Where(s => s.Items != null).SelectMany(s => s.Items).Where(i => i is enumeration).Cast<enumeration>();
-            GenerationContext context = new GenerationContext(prefix, classes, commands, enumerations);
+            GenerationContext context = new GenerationContext(prefix, classes, classExtensions, commands, enumerations);
 
             String contents = this.Generate(context);
             writer.Write(contents);

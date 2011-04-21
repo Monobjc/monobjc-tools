@@ -17,6 +17,8 @@
 //
 using System;
 using System.Linq;
+using Monobjc.Tools.Sdp.Model;
+using System.Collections.Generic;
 
 namespace Monobjc.Tools.Sdp.Generation
 {
@@ -60,7 +62,8 @@ namespace Monobjc.Tools.Sdp.Generation
         public static String GenerateDotNetName(String prefix, String value)
         {
             value = value.Replace('-', ' ');
-            String[] parts = value.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+            value = value.Replace('&', ' ');
+            String[] parts = value.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             return parts.Aggregate(prefix, (s, part) => s += (part.Substring(0, 1).ToUpper() + part.Substring(1)));
         }
 
@@ -71,9 +74,37 @@ namespace Monobjc.Tools.Sdp.Generation
         /// <returns>A valid DotNet name.</returns>
         public static String GenerateObjCName(String value)
         {
-            String[] parts = value.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+            String[] parts = value.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             String result = parts[0];
             return parts.Skip(1).Aggregate(result, (s, part) => s += (part.Substring(0, 1).ToUpper() + part.Substring(1)));
+        }
+
+        /// <summary>
+        ///   Generates a valid Objective-C selector.
+        /// </summary>
+        /// <param name = "value">The value.</param>
+        /// <returns>A valid DotNet name.</returns>
+        public static String GenerateObjCSelector(command command)
+        {
+            List<String> parts = new List<String>();
+            parts.Add(GenerateObjCName(command.name));
+            if (command.parameter != null)
+            {
+                bool first = true;
+                foreach (parameter parameter in command.parameter)
+                {
+                    if (first)
+                    {
+                        first = false;
+                        parts.Add(GenerateDotNetName(String.Empty, parameter.name) + ":");
+                    }
+                    else
+                    {
+                        parts.Add(GenerateObjCName(parameter.name) + ":");
+                    }
+                }
+            }
+            return String.Join(String.Empty, parts.ToArray());
         }
     }
 }
