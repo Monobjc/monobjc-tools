@@ -42,6 +42,10 @@
       <resources prefix="Monobjc.Tools.Properties">
         <include name="Monobjc.Tools/**/*.resx"/>
       </resources>
+      <references>
+        <include name="System.dll"/>
+        <include name="System.Core.dll"/>
+      </references>
     </csc>
 
     <!-- Builds NAnt tasks-->
@@ -60,6 +64,8 @@
         <include name="Monobjc.NAnt/**/*.resx"/>
       </resources>
       <references>
+        <include name="System.dll"/>
+        <include name="System.Core.dll"/>
         <include name="${nant::get-base-directory()}/NAnt.Core.dll"/>
         <include name="${nant::get-base-directory()}/NAnt.DotNetTasks.dll"/>
       </references>
@@ -81,6 +87,8 @@
         <include name="Monobjc.MSBuild/**/*.resx"/>
       </resources>
       <references>
+        <include name="System.dll"/>
+        <include name="System.Core.dll"/>
         <include name="Microsoft.Build.Framework.dll"/>
         <include name="Microsoft.Build.Utilities.dll"/>
       </references>
@@ -96,6 +104,12 @@
       <resources prefix="Monobjc.Sdp.Properties">
         <include name="Monobjc.Sdp/**/*.resx"/>
       </resources>
+      <references>
+        <include name="System.dll"/>
+        <include name="System.Core.dll"/>
+        <include name="System.Xml.dll"/>
+        <include name="System.Xml.Linq.dll"/>
+      </references>
     </csc>
     <copy file="Monobjc.Sdp/monobjc-sdp" todir="${dist.dir}"/> 
 
