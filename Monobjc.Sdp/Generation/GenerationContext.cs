@@ -363,7 +363,7 @@ namespace Monobjc.Tools.Sdp.Generation
                         result = "NSInteger";
                         break;
                     case "double integer":
-                        result = "Long";
+                        result = "Int64";
                         break;
                     case "real":
                         result = "Double";
