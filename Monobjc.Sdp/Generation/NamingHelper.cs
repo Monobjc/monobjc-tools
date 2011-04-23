@@ -80,17 +80,45 @@ namespace Monobjc.Tools.Sdp.Generation
         }
 
         /// <summary>
-        ///   Generates a valid Objective-C selector.
+        /// Generates the name of the DotNet method name.
         /// </summary>
-        /// <param name = "value">The value.</param>
-        /// <returns>A valid DotNet name.</returns>
-        public static String GenerateObjCSelector(command command)
+        /// <param name="command">The command.</param>
+        /// <returns>A method name.</returns>
+        public static String GenerateDotNetMethodsName(command command)
+        {
+            List<String> parts = new List<String>();
+            parts.Add(GenerateDotNetName(String.Empty, command.name));
+
+            if (command.parameter != null)
+            {
+                foreach (parameter parameter in command.parameter)
+                {
+                    parts.Add(GenerateDotNetName(String.Empty, parameter.name));
+                }
+            }
+
+            return String.Join(String.Empty, parts.ToArray());
+        }
+
+        /// <summary>
+        /// Generates a valid Objective-C selector.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <param name="isApplication">if set to <c>true</c>, then the command is for an application class.</param>
+        /// <returns>A valid Objective-C selector.</returns>
+        public static String GenerateObjCSelector(command command, bool isApplication)
         {
             List<String> parts = new List<String>();
             parts.Add(GenerateObjCName(command.name));
+
+            bool first = true;
+            if (isApplication && command.directparameter != null && command.directparameter.type1 != "specifier")
+            {
+                parts.Add(":");
+                first = false;
+            }
             if (command.parameter != null)
             {
-                bool first = true;
                 foreach (parameter parameter in command.parameter)
                 {
                     if (first)
@@ -104,6 +132,7 @@ namespace Monobjc.Tools.Sdp.Generation
                     }
                 }
             }
+
             return String.Join(String.Empty, parts.ToArray());
         }
     }

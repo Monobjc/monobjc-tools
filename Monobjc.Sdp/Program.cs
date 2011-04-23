@@ -61,7 +61,7 @@ namespace Monobjc.Tools.Sdp
             Console.WriteLine("\t-h|--help           : Display this help");
             Console.WriteLine("\t-i|--input=value    : The sdef input file to parse");
             Console.WriteLine("\t-p|--prefix=value   : The prefix to use for the generation");
-            Console.WriteLine("\t-l|--language=value : The language to use for the generation");
+            Console.WriteLine("\t-l|--language=value : The language to use for the generation (CSharp or VBSharp)");
             Console.WriteLine();
 
             Environment.Exit(-1);

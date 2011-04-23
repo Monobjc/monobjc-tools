@@ -242,6 +242,80 @@ namespace Monobjc.Tools.Sdp.Generation
         }
 
         /// <summary>
+        /// Determines whether the specified class is the application class.
+        /// </summary>
+        /// <param name="cls">The CLS.</param>
+        /// <returns>
+        /// 	<c>true</c> if the specified class is the application class; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool IsApplicationClass(@class cls)
+        {
+            return cls.name == "application";
+        }
+
+        /// <summary>
+        /// Gets the type.
+        /// </summary>
+        public static String GetType(directparameter parameter)
+        {
+            if (parameter.type1 != null)
+            {
+                return parameter.type1;
+            }
+            if (parameter.type != null)
+            {
+                type type = parameter.type[0];
+                if (type.listSpecified && type.list == yorn.yes)
+                {
+                    return "list";
+                }
+                return type.type1;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Gets the type.
+        /// </summary>
+        public static String GetType(parameter parameter)
+        {
+            if (parameter.type1 != null)
+            {
+                return parameter.type1;
+            }
+            if (parameter.type != null)
+            {
+                type type = parameter.type[0];
+                if (type.listSpecified && type.list == yorn.yes)
+                {
+                    return "list";
+                }
+                return type.type1;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Gets the type.
+        /// </summary>
+        public static String GetType(result result)
+        {
+            if (result == null)
+            {
+                return null;
+            }
+            if (result.type1 != null)
+            {
+                return result.type1;
+            }
+            if (result.type!=null )
+            {
+                return result.type[0].type1;
+            }
+            return null;
+        }
+
+        /// <summary>
         ///   Converts the name of the parameter.
         /// </summary>
         public static String ConvertParameterName(String name)
@@ -278,18 +352,21 @@ namespace Monobjc.Tools.Sdp.Generation
                 replaced = true;
                 switch (type)
                 {
+                    case "void":
+                        result = "void";
+                        break;
                     case "boolean":
-                        result = "bool";
+                        result = "Boolean";
                         break;
                     case "integer":
                     case "unsigned integer":
                         result = "NSInteger";
                         break;
                     case "double integer":
-                        result = "long";
+                        result = "Long";
                         break;
                     case "real":
-                        result = "double";
+                        result = "Double";
                         break;
                     case "property":
                         result = "IntPtr";

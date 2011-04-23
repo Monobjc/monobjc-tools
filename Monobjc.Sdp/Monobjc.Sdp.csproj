@@ -68,10 +68,9 @@
     <Compile Include="Common\XPath\XPathIteratorReader.cs" />
     <Compile Include="Common\XPath\XPathNavigatorIterator.cs" />
     <Compile Include="Common\XPath\XPathVariable.cs" />
-    <Compile Include="Generation\CSharpGenerator.cs" />
+    <Compile Include="Generation\Generator.cs" />
     <Compile Include="Generation\NamingHelper.cs" />
     <Compile Include="Generation\GenerationContext.cs" />
-    <Compile Include="Generation\Generator.cs" />
     <Compile Include="Model\sdef.cs">
       <DependentUpon>sdef.xsd</DependentUpon>
     </Compile>
