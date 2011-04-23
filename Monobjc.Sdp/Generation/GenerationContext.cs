@@ -180,7 +180,7 @@ namespace Monobjc.Tools.Sdp.Generation
         /// </summary>
         public IEnumerable<command> GetCommandsFor(@class cls)
         {
-            bool isApplication = (cls.name == "application");
+            bool isApplication = IsApplicationClass(cls);
             bool isObject = String.IsNullOrEmpty(cls.inherits) && !isApplication;
 
             foreach (command item in this.Commands)
@@ -206,7 +206,7 @@ namespace Monobjc.Tools.Sdp.Generation
                 {
                     if (item.directparameter != null)
                     {
-                        String type = item.directparameter.type1 ?? item.directparameter.type[0].type1;
+                        String type = GetType(item.directparameter);
                         if (type == "specifier")
                         {
                             if (!item.directparameter.optionalSpecified || item.directparameter.optional != yorn.yes)
