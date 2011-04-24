@@ -70,8 +70,19 @@ namespace Monobjc.Tools.External
             String arguments = String.Format(CultureInfo.InvariantCulture, "--errors --warnings --notices --compile \"{0}\" \"{1}\"", destination, xibFile);
             ProcessHelper helper = new ProcessHelper(Executable, arguments);
             String output = helper.Execute();
-            PListDocument document = PListDocument.LoadFromXml(output);
-            return document;
+			try
+			{
+	            PListDocument document = PListDocument.LoadFromXml(output);
+	            return document;
+			}
+			catch(Exception e)
+			{
+				Console.WriteLine("XibTool cannot parse output:");
+				Console.WriteLine("-----");
+				Console.WriteLine(output);
+				Console.WriteLine("-----");
+				return null;
+			}
         }
 
         private static string Executable
