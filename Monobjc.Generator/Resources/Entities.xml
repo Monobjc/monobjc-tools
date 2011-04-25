@@ -3743,7 +3743,7 @@ enum {]]>
         <Patch>Methods[InitWithObjects].Parameters[firstObj]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary /><Name>firstObj</Name><Type>Id</Type></Parameter>]]></Patch>
         <Patch>Methods[InitWithObjects].Parameters[values]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
         <Patch>Methods[InitWithObjectsCount].Generate=false</Patch>
-        <Patch>Properties[Set]=<![CDATA[<Property Generate="true" Static="false"><Summary><Line>Creates and returns an empty set.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>Set</Name><Type>NSSet</Type><Getter Generate="true" Static="true" GenerateConstructor="true"><Summary><Line>Creates and returns an empty set.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>Set</Name><Selector>set</Selector><Signature>+ (id)set</Signature><ReturnType>NSSet</ReturnType><ReturnsDocumentation>A new empty set.</ReturnsDocumentation><Parameters /></Getter></Property>]]></Patch>
+        <Patch>Properties[Set]=<![CDATA[<Property Generate="true" Static="true"><Summary><Line>Creates and returns an empty set.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>Set</Name><Type>NSSet</Type><Getter Generate="true" Static="true" GenerateConstructor="true"><Summary><Line>Creates and returns an empty set.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>Set</Name><Selector>set</Selector><Signature>+ (id)set</Signature><ReturnType>NSSet</ReturnType><ReturnsDocumentation>A new empty set.</ReturnsDocumentation><Parameters /></Getter></Property>]]></Patch>
         <Patch>Properties[Set].CopyInDescendants=true</Patch>
       </Class>
       <Class name="NSSetCommand">
@@ -5401,7 +5401,9 @@ enum
       </Class>
       <Class name="CPConstrainedPosition" />
       <Class name="CPDarkGradientTheme" />
-      <Class name="CPDecimalNumberValueTransformer" />
+      <Class name="CPDecimalNumberValueTransformer">
+        <Patch>BaseType=NSValueTransformer</Patch>
+      </Class>
       <Class name="CPFill" />
       <Class name="CPGradient">
         <Patch>Constants[colorspace].Generate=false</Patch>
@@ -5418,7 +5420,9 @@ enum
         <Patch>BaseType=CALayer</Patch>
       </Class>
       <Class name="CPLayerAnnotation" />
-      <Class name="CPLayerHostingView" />
+      <Class name="CPLayerHostingView">
+        <Patch>BaseType=NSView</Patch>
+      </Class>
       <Class name="CPLimitBand" />
       <Class name="CPLineStyle" />
       <Class name="CPMutableLineStyle" />
