@@ -4,10 +4,10 @@ DOXYGEN=/Applications/Doxygen.app/Contents/Resources/doxygen
 
 function generate() {
 	name="$1"
-
-    framework="/Library/Frameworks/$name.framework/Headers"
+	location="$2"
+    framework="$location/Headers"
     if [ -d $framework ]; then
-        cat doxygen.cfg | sed -e "s/@FRAMEWORK@/$name/g" > $name.cfg
+        cat doxygen.cfg | sed -e "s|@FRAMEWORK@|$framework|g" > $name.cfg
         $DOXYGEN $name.cfg
     
         rm -Rf $name
@@ -32,10 +32,11 @@ fi
 #
 # Generate the first-pass
 #
-generate "CorePlot"
-generate "Growl"
-generate "SM2DGraphView"
-generate "Sparkle"
+generate "WebKitDOM"		"/System/Library/Frameworks/WebKit.framework"
+generate "CorePlot"			"/Library/Frameworks/CorePlot.framework"
+generate "Growl"	 		"/Library/Frameworks/Growl.framework"
+generate "SM2DGraphView"	"/Library/Frameworks/SM2DGraphView.framework"
+generate "Sparkle"			"/Library/Frameworks/Sparkle.framework"
 
 #
 # Re-order files
