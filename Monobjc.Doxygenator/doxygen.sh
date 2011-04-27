@@ -32,7 +32,7 @@ fi
 #
 # Generate the first-pass
 #
-generate "WebKitDOM"		"/System/Library/Frameworks/WebKit.framework"
+generate "WebKit.DOM"		"/System/Library/Frameworks/WebKit.framework"
 generate "CorePlot"			"/Library/Frameworks/CorePlot.framework"
 generate "Growl"	 		"/Library/Frameworks/Growl.framework"
 generate "SM2DGraphView"	"/Library/Frameworks/SM2DGraphView.framework"

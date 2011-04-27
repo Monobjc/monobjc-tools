@@ -3525,4 +3525,835 @@
   <Entry ns="WebKit" nature="T" name="WebKitFramework.Constants" style="Cocoa" file="WebKitFramework.Constants">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/WebKit/Miscellaneous/WebKit_Constants/Reference/reference.html</url>
   </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOM_Definitions" style="Doxygen" file="DOM_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMAbstractView" style="Doxygen" file="DOMAbstractView">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMAbstractView_Definitions" style="Doxygen" file="DOMAbstractView_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMAttr" style="Doxygen" file="DOMAttr">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMAttr_Definitions" style="Doxygen" file="DOMAttr_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMBlob" style="Doxygen" file="DOMBlob">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMBlob_Definitions" style="Doxygen" file="DOMBlob_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCDATASection" style="Doxygen" file="DOMCDATASection">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCDATASection_Definitions" style="Doxygen" file="DOMCDATASection_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCharacterData" style="Doxygen" file="DOMCharacterData">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCharacterData(DOMCharacterDataDeprecated)" style="Doxygen" file="DOMCharacterData(DOMCharacterDataDeprecated)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCharacterData_Definitions" style="Doxygen" file="DOMCharacterData_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMComment" style="Doxygen" file="DOMComment">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMComment_Definitions" style="Doxygen" file="DOMComment_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCore_Definitions" style="Doxygen" file="DOMCore_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCounter" style="Doxygen" file="DOMCounter">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCounter_Definitions" style="Doxygen" file="DOMCounter_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSS_Definitions" style="Doxygen" file="DOMCSS_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSCharsetRule" style="Doxygen" file="DOMCSSCharsetRule">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSCharsetRule_Definitions" style="Doxygen" file="DOMCSSCharsetRule_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSFontFaceRule" style="Doxygen" file="DOMCSSFontFaceRule">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSFontFaceRule_Definitions" style="Doxygen" file="DOMCSSFontFaceRule_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSImportRule" style="Doxygen" file="DOMCSSImportRule">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSImportRule_Definitions" style="Doxygen" file="DOMCSSImportRule_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSMediaRule" style="Doxygen" file="DOMCSSMediaRule">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSMediaRule(DOMCSSMediaRuleDeprecated)" style="Doxygen" file="DOMCSSMediaRule(DOMCSSMediaRuleDeprecated)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSMediaRule_Definitions" style="Doxygen" file="DOMCSSMediaRule_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSPageRule" style="Doxygen" file="DOMCSSPageRule">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSPageRule_Definitions" style="Doxygen" file="DOMCSSPageRule_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSPrimitiveValue" style="Doxygen" file="DOMCSSPrimitiveValue">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSPrimitiveValue(DOMCSSPrimitiveValueDeprecated)" style="Doxygen" file="DOMCSSPrimitiveValue(DOMCSSPrimitiveValueDeprecated)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSPrimitiveValue_Definitions" style="Doxygen" file="DOMCSSPrimitiveValue_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSRule" style="Doxygen" file="DOMCSSRule">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSRule_Definitions" style="Doxygen" file="DOMCSSRule_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSRuleList" style="Doxygen" file="DOMCSSRuleList">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSRuleList_Definitions" style="Doxygen" file="DOMCSSRuleList_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSStyleDeclaration" style="Doxygen" file="DOMCSSStyleDeclaration">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSStyleDeclaration(DOMCSS2Properties)" style="Doxygen" file="DOMCSSStyleDeclaration(DOMCSS2Properties)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSStyleDeclaration(DOMCSSStyleDeclarationDeprecated)" style="Doxygen" file="DOMCSSStyleDeclaration(DOMCSSStyleDeclarationDeprecated)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSStyleDeclaration_Definitions" style="Doxygen" file="DOMCSSStyleDeclaration_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSStyleRule" style="Doxygen" file="DOMCSSStyleRule">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSStyleRule_Definitions" style="Doxygen" file="DOMCSSStyleRule_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSStyleSheet" style="Doxygen" file="DOMCSSStyleSheet">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSStyleSheet(DOMCSSStyleSheetDeprecated)" style="Doxygen" file="DOMCSSStyleSheet(DOMCSSStyleSheetDeprecated)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSStyleSheet_Definitions" style="Doxygen" file="DOMCSSStyleSheet_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSUnknownRule" style="Doxygen" file="DOMCSSUnknownRule">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSUnknownRule_Definitions" style="Doxygen" file="DOMCSSUnknownRule_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSValue" style="Doxygen" file="DOMCSSValue">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSValue_Definitions" style="Doxygen" file="DOMCSSValue_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSValueList" style="Doxygen" file="DOMCSSValueList">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMCSSValueList_Definitions" style="Doxygen" file="DOMCSSValueList_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMDocument" style="Doxygen" file="DOMDocument">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMDocument(DOMDocumentDeprecated)" style="Doxygen" file="DOMDocument(DOMDocumentDeprecated)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMDocument(WebDOMDocumentOperations)" style="Doxygen" file="DOMDocument(WebDOMDocumentOperations)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMDocument_Definitions" style="Doxygen" file="DOMDocument_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMDocumentFragment" style="Doxygen" file="DOMDocumentFragment">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMDocumentFragment_Definitions" style="Doxygen" file="DOMDocumentFragment_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMDocumentType" style="Doxygen" file="DOMDocumentType">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMDocumentType_Definitions" style="Doxygen" file="DOMDocumentType_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMElement" style="Doxygen" file="DOMElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMElement(DOMElementAppKitExtensions)" style="Doxygen" file="DOMElement(DOMElementAppKitExtensions)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMElement(DOMElementDeprecated)" style="Doxygen" file="DOMElement(DOMElementDeprecated)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMElement_Definitions" style="Doxygen" file="DOMElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMEntity" style="Doxygen" file="DOMEntity">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMEntity_Definitions" style="Doxygen" file="DOMEntity_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMEntityReference" style="Doxygen" file="DOMEntityReference">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMEntityReference_Definitions" style="Doxygen" file="DOMEntityReference_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMEvent" style="Doxygen" file="DOMEvent">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMEvent(DOMEventDeprecated)" style="Doxygen" file="DOMEvent(DOMEventDeprecated)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMEvent_Definitions" style="Doxygen" file="DOMEvent_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMEventException_Definitions" style="Doxygen" file="DOMEventException_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMEventListener_Definitions" style="Doxygen" file="DOMEventListener_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMEvents_Definitions" style="Doxygen" file="DOMEvents_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMEventTarget_Definitions" style="Doxygen" file="DOMEventTarget_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMException_Definitions" style="Doxygen" file="DOMException_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMExtensions_Definitions" style="Doxygen" file="DOMExtensions_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMFile" style="Doxygen" file="DOMFile">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMFile_Definitions" style="Doxygen" file="DOMFile_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMFileList" style="Doxygen" file="DOMFileList">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMFileList_Definitions" style="Doxygen" file="DOMFileList_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTML_Definitions" style="Doxygen" file="DOMHTML_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLAnchorElement" style="Doxygen" file="DOMHTMLAnchorElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLAnchorElement_Definitions" style="Doxygen" file="DOMHTMLAnchorElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLAppletElement" style="Doxygen" file="DOMHTMLAppletElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLAppletElement_Definitions" style="Doxygen" file="DOMHTMLAppletElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLAreaElement" style="Doxygen" file="DOMHTMLAreaElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLAreaElement_Definitions" style="Doxygen" file="DOMHTMLAreaElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLBaseElement" style="Doxygen" file="DOMHTMLBaseElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLBaseElement_Definitions" style="Doxygen" file="DOMHTMLBaseElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLBaseFontElement" style="Doxygen" file="DOMHTMLBaseFontElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLBaseFontElement_Definitions" style="Doxygen" file="DOMHTMLBaseFontElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLBodyElement" style="Doxygen" file="DOMHTMLBodyElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLBodyElement_Definitions" style="Doxygen" file="DOMHTMLBodyElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLBRElement" style="Doxygen" file="DOMHTMLBRElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLBRElement_Definitions" style="Doxygen" file="DOMHTMLBRElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLButtonElement" style="Doxygen" file="DOMHTMLButtonElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLButtonElement_Definitions" style="Doxygen" file="DOMHTMLButtonElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLCollection" style="Doxygen" file="DOMHTMLCollection">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLCollection_Definitions" style="Doxygen" file="DOMHTMLCollection_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLDirectoryElement" style="Doxygen" file="DOMHTMLDirectoryElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLDirectoryElement_Definitions" style="Doxygen" file="DOMHTMLDirectoryElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLDivElement" style="Doxygen" file="DOMHTMLDivElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLDivElement_Definitions" style="Doxygen" file="DOMHTMLDivElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLDListElement" style="Doxygen" file="DOMHTMLDListElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLDListElement_Definitions" style="Doxygen" file="DOMHTMLDListElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLDocument" style="Doxygen" file="DOMHTMLDocument">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLDocument(DOMHTMLDocumentExtensions)" style="Doxygen" file="DOMHTMLDocument(DOMHTMLDocumentExtensions)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLDocument_Definitions" style="Doxygen" file="DOMHTMLDocument_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLElement" style="Doxygen" file="DOMHTMLElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLElement_Definitions" style="Doxygen" file="DOMHTMLElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLEmbedElement" style="Doxygen" file="DOMHTMLEmbedElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLEmbedElement_Definitions" style="Doxygen" file="DOMHTMLEmbedElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLFieldSetElement" style="Doxygen" file="DOMHTMLFieldSetElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLFieldSetElement_Definitions" style="Doxygen" file="DOMHTMLFieldSetElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLFontElement" style="Doxygen" file="DOMHTMLFontElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLFontElement_Definitions" style="Doxygen" file="DOMHTMLFontElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLFormElement" style="Doxygen" file="DOMHTMLFormElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLFormElement_Definitions" style="Doxygen" file="DOMHTMLFormElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLFrameElement" style="Doxygen" file="DOMHTMLFrameElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLFrameElement(WebDOMHTMLFrameElementOperations)" style="Doxygen" file="DOMHTMLFrameElement(WebDOMHTMLFrameElementOperations)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLFrameElement_Definitions" style="Doxygen" file="DOMHTMLFrameElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLFrameSetElement" style="Doxygen" file="DOMHTMLFrameSetElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLFrameSetElement_Definitions" style="Doxygen" file="DOMHTMLFrameSetElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLHeadElement" style="Doxygen" file="DOMHTMLHeadElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLHeadElement_Definitions" style="Doxygen" file="DOMHTMLHeadElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLHeadingElement" style="Doxygen" file="DOMHTMLHeadingElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLHeadingElement_Definitions" style="Doxygen" file="DOMHTMLHeadingElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLHRElement" style="Doxygen" file="DOMHTMLHRElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLHRElement_Definitions" style="Doxygen" file="DOMHTMLHRElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLHtmlElement" style="Doxygen" file="DOMHTMLHtmlElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLHtmlElement_Definitions" style="Doxygen" file="DOMHTMLHtmlElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLIFrameElement" style="Doxygen" file="DOMHTMLIFrameElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLIFrameElement(WebDOMHTMLIFrameElementOperations)" style="Doxygen" file="DOMHTMLIFrameElement(WebDOMHTMLIFrameElementOperations)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLIFrameElement_Definitions" style="Doxygen" file="DOMHTMLIFrameElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLImageElement" style="Doxygen" file="DOMHTMLImageElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLImageElement_Definitions" style="Doxygen" file="DOMHTMLImageElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLInputElement" style="Doxygen" file="DOMHTMLInputElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLInputElement_Definitions" style="Doxygen" file="DOMHTMLInputElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLIsIndexElement" style="Doxygen" file="DOMHTMLIsIndexElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLIsIndexElement_Definitions" style="Doxygen" file="DOMHTMLIsIndexElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLLabelElement" style="Doxygen" file="DOMHTMLLabelElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLLabelElement_Definitions" style="Doxygen" file="DOMHTMLLabelElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLLegendElement" style="Doxygen" file="DOMHTMLLegendElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLLegendElement_Definitions" style="Doxygen" file="DOMHTMLLegendElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLLIElement" style="Doxygen" file="DOMHTMLLIElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLLIElement_Definitions" style="Doxygen" file="DOMHTMLLIElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLLinkElement" style="Doxygen" file="DOMHTMLLinkElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLLinkElement_Definitions" style="Doxygen" file="DOMHTMLLinkElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLMapElement" style="Doxygen" file="DOMHTMLMapElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLMapElement_Definitions" style="Doxygen" file="DOMHTMLMapElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLMarqueeElement" style="Doxygen" file="DOMHTMLMarqueeElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLMarqueeElement_Definitions" style="Doxygen" file="DOMHTMLMarqueeElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLMenuElement" style="Doxygen" file="DOMHTMLMenuElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLMenuElement_Definitions" style="Doxygen" file="DOMHTMLMenuElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLMetaElement" style="Doxygen" file="DOMHTMLMetaElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLMetaElement_Definitions" style="Doxygen" file="DOMHTMLMetaElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLModElement" style="Doxygen" file="DOMHTMLModElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLModElement_Definitions" style="Doxygen" file="DOMHTMLModElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLObjectElement" style="Doxygen" file="DOMHTMLObjectElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLObjectElement(WebDOMHTMLObjectElementOperations)" style="Doxygen" file="DOMHTMLObjectElement(WebDOMHTMLObjectElementOperations)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLObjectElement_Definitions" style="Doxygen" file="DOMHTMLObjectElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLOListElement" style="Doxygen" file="DOMHTMLOListElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLOListElement_Definitions" style="Doxygen" file="DOMHTMLOListElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLOptGroupElement" style="Doxygen" file="DOMHTMLOptGroupElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLOptGroupElement_Definitions" style="Doxygen" file="DOMHTMLOptGroupElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLOptionElement" style="Doxygen" file="DOMHTMLOptionElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLOptionElement_Definitions" style="Doxygen" file="DOMHTMLOptionElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLOptionsCollection" style="Doxygen" file="DOMHTMLOptionsCollection">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLOptionsCollection_Definitions" style="Doxygen" file="DOMHTMLOptionsCollection_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLParagraphElement" style="Doxygen" file="DOMHTMLParagraphElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLParagraphElement_Definitions" style="Doxygen" file="DOMHTMLParagraphElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLParamElement" style="Doxygen" file="DOMHTMLParamElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLParamElement_Definitions" style="Doxygen" file="DOMHTMLParamElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLPreElement" style="Doxygen" file="DOMHTMLPreElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLPreElement_Definitions" style="Doxygen" file="DOMHTMLPreElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLQuoteElement" style="Doxygen" file="DOMHTMLQuoteElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLQuoteElement_Definitions" style="Doxygen" file="DOMHTMLQuoteElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLScriptElement" style="Doxygen" file="DOMHTMLScriptElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLScriptElement_Definitions" style="Doxygen" file="DOMHTMLScriptElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLSelectElement" style="Doxygen" file="DOMHTMLSelectElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLSelectElement(DOMHTMLSelectElementDeprecated)" style="Doxygen" file="DOMHTMLSelectElement(DOMHTMLSelectElementDeprecated)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLSelectElement_Definitions" style="Doxygen" file="DOMHTMLSelectElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLStyleElement" style="Doxygen" file="DOMHTMLStyleElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLStyleElement_Definitions" style="Doxygen" file="DOMHTMLStyleElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLTableCaptionElement" style="Doxygen" file="DOMHTMLTableCaptionElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLTableCaptionElement_Definitions" style="Doxygen" file="DOMHTMLTableCaptionElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLTableCellElement" style="Doxygen" file="DOMHTMLTableCellElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLTableCellElement_Definitions" style="Doxygen" file="DOMHTMLTableCellElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLTableColElement" style="Doxygen" file="DOMHTMLTableColElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLTableColElement_Definitions" style="Doxygen" file="DOMHTMLTableColElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLTableElement" style="Doxygen" file="DOMHTMLTableElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLTableElement_Definitions" style="Doxygen" file="DOMHTMLTableElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLTableRowElement" style="Doxygen" file="DOMHTMLTableRowElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLTableRowElement_Definitions" style="Doxygen" file="DOMHTMLTableRowElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLTableSectionElement" style="Doxygen" file="DOMHTMLTableSectionElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLTableSectionElement_Definitions" style="Doxygen" file="DOMHTMLTableSectionElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLTextAreaElement" style="Doxygen" file="DOMHTMLTextAreaElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLTextAreaElement_Definitions" style="Doxygen" file="DOMHTMLTextAreaElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLTitleElement" style="Doxygen" file="DOMHTMLTitleElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLTitleElement_Definitions" style="Doxygen" file="DOMHTMLTitleElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLUListElement" style="Doxygen" file="DOMHTMLUListElement">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMHTMLUListElement_Definitions" style="Doxygen" file="DOMHTMLUListElement_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMImplementation" style="Doxygen" file="DOMImplementation">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMImplementation(DOMImplementationDeprecated)" style="Doxygen" file="DOMImplementation(DOMImplementationDeprecated)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMImplementation_Definitions" style="Doxygen" file="DOMImplementation_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMKeyboardEvent" style="Doxygen" file="DOMKeyboardEvent">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMKeyboardEvent_Definitions" style="Doxygen" file="DOMKeyboardEvent_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMMediaList" style="Doxygen" file="DOMMediaList">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMMediaList_Definitions" style="Doxygen" file="DOMMediaList_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMMouseEvent" style="Doxygen" file="DOMMouseEvent">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMMouseEvent(DOMMouseEventDeprecated)" style="Doxygen" file="DOMMouseEvent(DOMMouseEventDeprecated)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMMouseEvent_Definitions" style="Doxygen" file="DOMMouseEvent_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMMutationEvent" style="Doxygen" file="DOMMutationEvent">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMMutationEvent(DOMMutationEventDeprecated)" style="Doxygen" file="DOMMutationEvent(DOMMutationEventDeprecated)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMMutationEvent_Definitions" style="Doxygen" file="DOMMutationEvent_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMNamedNodeMap" style="Doxygen" file="DOMNamedNodeMap">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMNamedNodeMap(DOMNamedNodeMapDeprecated)" style="Doxygen" file="DOMNamedNodeMap(DOMNamedNodeMapDeprecated)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMNamedNodeMap_Definitions" style="Doxygen" file="DOMNamedNodeMap_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMNode" style="Doxygen" file="DOMNode">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMNode(DOMNodeDeprecated)" style="Doxygen" file="DOMNode(DOMNodeDeprecated)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMNode(DOMNodeExtensions)" style="Doxygen" file="DOMNode(DOMNodeExtensions)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMNode(WebDOMNodeOperations)" style="Doxygen" file="DOMNode(WebDOMNodeOperations)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMNode_Definitions" style="Doxygen" file="DOMNode_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMNodeFilter_Definitions" style="Doxygen" file="DOMNodeFilter_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMNodeIterator" style="Doxygen" file="DOMNodeIterator">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMNodeIterator_Definitions" style="Doxygen" file="DOMNodeIterator_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMNodeList" style="Doxygen" file="DOMNodeList">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMNodeList_Definitions" style="Doxygen" file="DOMNodeList_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMNotation" style="Doxygen" file="DOMNotation">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMNotation_Definitions" style="Doxygen" file="DOMNotation_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMObject" style="Doxygen" file="DOMObject">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMObject(DOMLinkStyle)" style="Doxygen" file="DOMObject(DOMLinkStyle)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMObject_Definitions" style="Doxygen" file="DOMObject_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMOverflowEvent" style="Doxygen" file="DOMOverflowEvent">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMOverflowEvent_Definitions" style="Doxygen" file="DOMOverflowEvent_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMProcessingInstruction" style="Doxygen" file="DOMProcessingInstruction">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMProcessingInstruction_Definitions" style="Doxygen" file="DOMProcessingInstruction_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMProgressEvent" style="Doxygen" file="DOMProgressEvent">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMProgressEvent_Definitions" style="Doxygen" file="DOMProgressEvent_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMRange" style="Doxygen" file="DOMRange">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMRange(DOMRangeDeprecated)" style="Doxygen" file="DOMRange(DOMRangeDeprecated)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMRange(WebDOMRangeOperations)" style="Doxygen" file="DOMRange(WebDOMRangeOperations)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMRange_Definitions" style="Doxygen" file="DOMRange_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMRangeException_Definitions" style="Doxygen" file="DOMRangeException_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMRanges_Definitions" style="Doxygen" file="DOMRanges_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMRect" style="Doxygen" file="DOMRect">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMRect_Definitions" style="Doxygen" file="DOMRect_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMRGBColor" style="Doxygen" file="DOMRGBColor">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMRGBColor_Definitions" style="Doxygen" file="DOMRGBColor_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMStyleSheet" style="Doxygen" file="DOMStyleSheet">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMStyleSheet_Definitions" style="Doxygen" file="DOMStyleSheet_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMStyleSheetList" style="Doxygen" file="DOMStyleSheetList">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMStyleSheetList_Definitions" style="Doxygen" file="DOMStyleSheetList_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMStylesheets_Definitions" style="Doxygen" file="DOMStylesheets_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMText" style="Doxygen" file="DOMText">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMText_Definitions" style="Doxygen" file="DOMText_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMTraversal_Definitions" style="Doxygen" file="DOMTraversal_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMTreeWalker" style="Doxygen" file="DOMTreeWalker">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMTreeWalker_Definitions" style="Doxygen" file="DOMTreeWalker_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMUIEvent" style="Doxygen" file="DOMUIEvent">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMUIEvent(DOMUIEventDeprecated)" style="Doxygen" file="DOMUIEvent(DOMUIEventDeprecated)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMUIEvent_Definitions" style="Doxygen" file="DOMUIEvent_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMViews_Definitions" style="Doxygen" file="DOMViews_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMWheelEvent" style="Doxygen" file="DOMWheelEvent">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMWheelEvent_Definitions" style="Doxygen" file="DOMWheelEvent_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMXPath_Definitions" style="Doxygen" file="DOMXPath_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMXPathException_Definitions" style="Doxygen" file="DOMXPathException_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMXPathExpression" style="Doxygen" file="DOMXPathExpression">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMXPathExpression(DOMXPathExpressionDeprecated)" style="Doxygen" file="DOMXPathExpression(DOMXPathExpressionDeprecated)">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMXPathExpression_Definitions" style="Doxygen" file="DOMXPathExpression_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMXPathNSResolver_Definitions" style="Doxygen" file="DOMXPathNSResolver_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMXPathResult" style="Doxygen" file="DOMXPathResult">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="DOMXPathResult_Definitions" style="Doxygen" file="DOMXPathResult_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="P" name="DOMEventListener" style="Doxygen" file="DOMEventListener">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="P" name="DOMEventTarget" style="Doxygen" file="DOMEventTarget">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="P" name="DOMNodeFilter" style="Doxygen" file="DOMNodeFilter">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="P" name="DOMXPathNSResolver" style="Doxygen" file="DOMXPathNSResolver">
+    <url>N/A</url>
+  </Entry>
 </Entries>
