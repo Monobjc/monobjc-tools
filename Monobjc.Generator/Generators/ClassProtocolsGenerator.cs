@@ -15,6 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -101,7 +102,7 @@ namespace Monobjc.Tools.Generator.Generators
                 // Append properties
                 foreach (PropertyEntity propertyEntity in protocolEntity.Properties.Where(e => e.Generate))
                 {
-                    if (properties.Contains(propertyEntity))
+                    if (properties.Any(p => String.Equals(p.Name, propertyEntity.Name) && p.Static == propertyEntity.Static))
                     {
                         continue;
                     }

@@ -113,8 +113,8 @@ namespace Monobjc.Tools.Generator
                         manager.AddTask(new GenerateInfoTask("Generate Assembly Info", targetDir));
                         break;
                     case "analyze":
-                        manager.AddTask(new DumpDelegateMethodsTask("Search Delegate Methods"));
-                        //manager.AddTask(new DumpStaticInitializersTask("Search Static Initializers"));
+                        //manager.AddTask(new DumpDelegateMethodsTask("Search Delegate Methods"));
+                        manager.AddTask(new DumpStaticInitializersTask("Search Static Initializers"));
                         break;
 
                     //

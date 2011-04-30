@@ -505,6 +505,7 @@
         <Patch>AdditionFor=CIImage</Patch>
       </Class>
       <Class name="NSActionCell">
+        <Patch>Properties[IntegerValue].Generate=false</Patch>
       </Class>
       <Class name="NSAffineTransform_AppKitAdditions">
         <Patch>AdditionFor=NSAffineTransform</Patch>
@@ -619,6 +620,7 @@
         <Patch>Properties[CellPrototype].Type=NSCell</Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Properties[SelectedCell].Type=NSCell</Patch>
+        <Patch>Properties[CellClass].Generate=false</Patch>
       </Class>
       <Class name="NSBrowserCell">
       </Class>
@@ -647,6 +649,10 @@
         <Patch>Enumerations[Button_Types].Name=NSButtonType</Patch>
         <Patch>Enumerations[NSButtonType].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSGradientType].BaseType=NSUInteger</Patch>
+        <Replace type="Generated">
+          <Source>public virtual NSString KeyEquivalent</Source>
+          <With>public new NSString KeyEquivalent</With>
+        </Replace>
       </Class>
       <Class name="NSCachedImageRep">
       </Class>
@@ -783,6 +789,10 @@
         <Patch>Properties[Cell].Type=NSCell</Patch>
         <Patch>Properties[Formatter].Type=NSFormatter</Patch>
         <Patch>Properties[SelectedCell].Type=NSCell</Patch>
+        <Replace type="Generated">
+          <Source>public virtual NSInteger Tag</Source>
+          <With>public new NSInteger Tag</With>
+        </Replace>
       </Class>
       <Class name="NSController">
       </Class>
@@ -799,6 +809,7 @@
         <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSDictionaryController">
+        <Patch>Properties[ArrangedObjects].Type=NSArray</Patch>
       </Class>
       <Class name="NSDockTile">
       </Class>
@@ -1114,6 +1125,7 @@
         </Replace>
       </Class>
       <Class name="NSMenuItemCell">
+        <Patch>Properties[Tag].Generate=false</Patch>
       </Class>
       <Class name="NSMenuView">
       </Class>
@@ -1157,6 +1169,7 @@
       </Class>
       <Class name="NSOutlineView">
         <Patch>Properties[Delegate].Type=Id</Patch>
+        <Patch>Properties[DataSource].Type=Id</Patch>
         <!-- TODO: Move to constants -->
         <Patch>Enumerations[Drop_on_Item_Index].Generate=false</Patch>
       </Class>
@@ -1184,6 +1197,10 @@
         <Replace type="Xhtml">
           <Source><![CDATA[<a href="#//apple_ref/doc/c_ref/NSHUDWindowMask">NSHUDWindowMask</a>]]></Source>
           <With><![CDATA[<a href="#//apple_ref/doc/c_ref/NSHUDWindowMask">, NSHUDWindowMask</a>]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>public virtual bool WorksWhenModal</Source>
+          <With>public new bool WorksWhenModal</With>
         </Replace>
       </Class>
       <Class name="NSParagraphStyle">
@@ -1415,6 +1432,10 @@ NSString *NSFindPanelCaseInsensitiveSearch
 NSString *NSFindPanelCaseInsensitiveSearch;
 <a]]>
           </With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>public virtual bool IsRulerVisible</Source>
+          <With>public new bool IsRulerVisible</With>
         </Replace>
       </Class>
       <Class name="NSTokenField">
@@ -2000,6 +2021,10 @@ enum {]]>
       </Class>
       <Class name="NSManagedObject">
         <Patch>Methods[ValidateValueForKeyError].Parameters[value].Type=IntPtr</Patch>
+        <Replace type="Generated">
+          <Source>public virtual Id ObservationInfo</Source>
+          <With>public new Id ObservationInfo</With>
+        </Replace>
       </Class>
       <Class name="NSManagedObjectContext">
       </Class>
@@ -2272,18 +2297,21 @@ enum {]]>
     </Types>
     <Classes>
       <Class name="CW8021XProfile">
+        <Patch>Methods[Init].Generate=false</Patch>
         <Replace type="Xhtml">
           <Source><![CDATA[ Not available in iOS.]]></Source>
           <With><![CDATA[]]></With>
         </Replace>
       </Class>
       <Class name="CWConfiguration">
+        <Patch>Methods[Init].Generate=false</Patch>
         <Replace type="Xhtml">
           <Source><![CDATA[ Not available in iOS.]]></Source>
           <With><![CDATA[]]></With>
         </Replace>
       </Class>
       <Class name="CWInterface">
+        <Patch>Methods[Init].Generate=false</Patch>
         <Replace type="Xhtml">
           <Source><![CDATA[<span class="param">network</span>]]></Source>
           <With><![CDATA[<span class="param">network </span>]]></With>
@@ -2316,6 +2344,7 @@ enum {]]>
         </Replace>
       </Class>
       <Class name="CWWirelessProfile">
+        <Patch>Methods[Init].Generate=false</Patch>
         <Replace type="Xhtml">
           <Source><![CDATA[ Not available in iOS.]]></Source>
           <With><![CDATA[]]></With>
@@ -2618,6 +2647,10 @@ enum {]]>
           <Source><![CDATA[<span class="param">layout</span>]]></Source>
           <With><![CDATA[<span class="param">layout </span>]]></With>
         </Replace>
+        <Replace type="Generated">
+          <Source>public virtual NSString Description</Source>
+          <With>public new NSString Description</With>
+        </Replace>
       </Class>
       <Class name="DRBurnProgressPanel_Header">
         <Patch>AdditionFor=DRBurnProgressPanel</Patch>
@@ -2633,6 +2666,10 @@ enum {]]>
         <Replace type="Xhtml">
           <Source><![CDATA[<span class="param">erase</span>]]></Source>
           <With><![CDATA[<span class="param">erase </span>]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>public virtual NSString Description</Source>
+          <With>public new NSString Description</With>
         </Replace>
       </Class>
       <Class name="DREraseProgressPanel_Header">
@@ -3077,6 +3114,7 @@ enum {]]>
         <Patch>Enumerations[NSOpenStepUnicodeReservedBase].Generate=false</Patch>
       </Class>
       <Class name="NSClassDescription">
+        <Patch>Methods[ClassDescriptionForClass].CopyInDescendants=true</Patch>
       </Class>
       <Class name="NSCloneCommand">
       </Class>
@@ -3262,6 +3300,7 @@ enum {]]>
       </Class>
       <Class name="NSDistributedNotificationCenter">
         <Patch>Methods[PostNotificationNameObjectUserInfoOptions].Parameters[notificationOptions].Type=NSNotificationPostingBehavior</Patch>
+        <Patch>Properties[DefaultCenter].Generate=false</Patch>
         <Patch>Enumerations[Notification_Posting_Behavior].Name=NSNotificationPostingBehavior</Patch>
         <Patch>Enumerations[NSNotificationPostingBehavior].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSNotificationSuspensionBehavior].BaseType=NSUInteger</Patch>
@@ -3407,7 +3446,7 @@ enum {]]>
       <Class name="NSMachBootstrapServer">
       </Class>
       <Class name="NSMachPort">
-        <Patch>Properties[Delegate].Type=Id</Patch>
+        <Patch>Properties[Delegate].Generate=false</Patch>
         <Patch>Enumerations[Mach_Port_Rights].Name=NSMachPortRights</Patch>
         <Patch>Enumerations[NSMachPortRights].BaseType=int</Patch>
       </Class>
@@ -3488,6 +3527,7 @@ enum {]]>
       <Class name="NSNotificationCenter">
         <Patch>Properties[DefaultCenter].Type=NSNotificationCenter</Patch>
         <Patch>Properties[DefaultCenter].Getter.ReturnType=NSNotificationCenter</Patch>
+        <Patch>Properties[DefaultCenter].CopyInDescendants=true</Patch>
       </Class>
       <Class name="NSNotificationQueue">
         <Patch>Enumerations[NSNotificationCoalescing].BaseType=NSUInteger</Patch>
@@ -3700,6 +3740,7 @@ enum {]]>
         <Patch>Methods[ScannerWithString].ReturnType=NSScanner</Patch>
       </Class>
       <Class name="NSScriptClassDescription">
+        <Patch>Methods[ClassDescriptionForClass].Generate=false</Patch>
       </Class>
       <Class name="NSScriptCoercionHandler">
       </Class>
@@ -4014,6 +4055,14 @@ enum]]>
           <Source><![CDATA[NSXMLNodeCompactEmptyElement</a> =  1 &amp;lt;&amp;lt; 2, // &amp;lt;a/&gt;]]></Source>
           <With><![CDATA[NSXMLNodeCompactEmptyElement</a> =  1 &amp;lt;&amp;lt; 2,]]></With>
         </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[(&xyz;)]]></Source>
+          <With><![CDATA[(&amp;xyz;)]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[(&#nnn;)]]></Source>
+          <With><![CDATA[(&amp;#nnn;)]]></With>
+        </Replace>
       </Class>
       <Class name="NSXMLParser">
         <Patch>Properties[Delegate].Type=Id</Patch>
@@ -4038,6 +4087,7 @@ enum]]>
       </Class>
       <Class name="NSDateFormatter.Deprecated">
         <Patch>AdditionFor=NSDateFormatter</Patch>
+        <Patch>Methods[Init].Generate=false</Patch>
       </Class>
       <Class name="NSDeserializer.Deprecated">
         <Patch>AdditionFor=NSDeserializer</Patch>
@@ -4645,6 +4695,7 @@ enum]]>
       <Class name="QLPreviewPanel">
         <Patch>Properties[DataSource].Type=Id</Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
+        <Patch>Properties[Delegate].Generate=false</Patch>
       </Class>
     </Classes>
     <Protocols>
@@ -5965,22 +6016,82 @@ enum
       </Class>
       <Class name="CPLayer">
         <Patch>BaseType=CALayer</Patch>
-      </Class>
+        <Patch>Properties[LayoutManager].Generate=false</Patch>
+	  </Class>
       <Class name="CPLayerAnnotation" />
       <Class name="CPLayerHostingView">
         <Patch>BaseType=NSView</Patch>
       </Class>
       <Class name="CPLimitBand" />
-      <Class name="CPLineStyle" />
-      <Class name="CPMutableLineStyle" />
-      <Class name="CPMutableNumericData" />
-      <Class name="CPMutableTextStyle" />
+      <Class name="CPLineStyle">
+        <Patch>Properties[LineStyle].Type=CPLineStyle</Patch>
+        <Patch>Properties[LineStyle].CopyInDescendants=true</Patch>
+      </Class>
+      <Class name="CPMutableLineStyle">
+        <Replace type="Generated">
+          <Source>public virtual CGLineCap LineCap</Source>
+          <With>public new CGLineCap LineCap</With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>public virtual CGLineJoin LineJoin</Source>
+          <With>public new CGLineJoin LineJoin</With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>public virtual CGFloat MiterLimit</Source>
+          <With>public new CGFloat MiterLimit</With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>public virtual CGFloat LineWidth</Source>
+          <With>public new CGFloat LineWidth</With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>public virtual NSArray DashPattern</Source>
+          <With>public new NSArray DashPattern</With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>public virtual CGFloat PatternPhase</Source>
+          <With>public new CGFloat PatternPhase</With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>public virtual CPColor LineColor</Source>
+          <With>public new CPColor LineColor</With>
+        </Replace>
+      </Class>
+      <Class name="CPMutableNumericData">
+        <Replace type="Generated">
+          <Source>public static CPMutableNumericData NumericDataWithDataDataTypeShape</Source>
+          <With>public new static CPMutableNumericData NumericDataWithDataDataTypeShape</With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>public static CPMutableNumericData NumericDataWithDataDataTypeStringShape</Source>
+          <With>public new static CPMutableNumericData NumericDataWithDataDataTypeStringShape</With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>public virtual NSArray Shape</Source>
+          <With>public new NSArray Shape</With>
+        </Replace>
+      </Class>
+      <Class name="CPMutableTextStyle">
+        <Replace type="Generated">
+          <Source>public virtual NSString FontName</Source>
+          <With>public new NSString FontName</With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>public virtual CGFloat FontSize</Source>
+          <With>public new CGFloat FontSize</With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>public virtual CPColor Color</Source>
+          <With>public new CPColor Color</With>
+        </Replace>
+      </Class>
       <Class name="CPNumericData" />
       <Class name="CPPieChart" />
       <Class name="CPPlainBlackTheme" />
       <Class name="CPPlainWhiteTheme" />
       <Class name="CPPlot">
         <Patch>Properties[Identifier].Type=Id</Patch>
+        <Patch>Properties[DataSource].Type=Id</Patch>
       </Class>
       <Class name="CPPlotArea">
         <Patch>Constants[bottomUpLayerOrder].Generate=false</Patch>
@@ -6003,11 +6114,21 @@ enum
       <Class name="CPSlateTheme" />
       <Class name="CPStocksTheme" />
       <Class name="CPTextLayer" />
-      <Class name="CPTextStyle" />
+      <Class name="CPTextStyle">
+        <Patch>Properties[TextStyle].Type=CPTextStyle</Patch>
+        <Patch>Properties[TextStyle].CopyInDescendants=true</Patch>
+      </Class>
       <Class name="CPTheme" />
-      <Class name="CPTimeFormatter" />
+      <Class name="CPTimeFormatter">
+        <Patch>BaseType=NSNumberFormatter</Patch>
+      </Class>
       <Class name="CPTradingRangePlot" />
-      <Class name="CPXYAxis" />
+      <Class name="CPXYAxis">
+        <Replace type="Generated">
+          <Source>public virtual CPConstraints Constraints</Source>
+          <With>public new CPConstraints Constraints</With>
+        </Replace>
+      </Class>
       <Class name="CPXYAxisSet" />
       <Class name="CPXYGraph" />
       <Class name="CPXYPlotSpace" />
@@ -6033,6 +6154,22 @@ enum
       </Class>
       <Class name="CPMutableNumericData_TypeConversion">
         <Patch>AdditionFor=CPMutableNumericData</Patch>
+        <Replace type="Generated">
+          <Source>public virtual CPNumericDataType DataType</Source>
+          <With>public new CPNumericDataType DataType</With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>public virtual CPDataTypeFormat DataTypeFormat</Source>
+          <With>public new CPDataTypeFormat DataTypeFormat</With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>public virtual NSUInteger SampleBytes</Source>
+          <With>public new NSUInteger SampleBytes</With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>public virtual NSInteger ByteOrder</Source>
+          <With>public new NSInteger ByteOrder</With>
+        </Replace>
       </Class>
       <Class name="CPNumericData_TypeConversion">
         <Patch>AdditionFor=CPNumericData</Patch>
@@ -6407,14 +6544,23 @@ enum
         <Patch>Constants[delegate].Generate=false</Patch>
         <Patch>Constants[dataSource].Generate=false</Patch>
         <Patch>Constants[_SM2DGraphView_Private].Generate=false</Patch>
+        <Replace type="Generated">
+          <Source>public virtual NSInteger Tag</Source>
+          <With>public new NSInteger Tag</With>
+        </Replace>
       </Class>
       <Class name="SMPieChartView">
         <Patch>BaseType=NSView</Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Properties[LabelPosition].Type=SMLabelPosition</Patch>
+        <Patch>Properties[Tag].Type=NSInteger</Patch>
         <Patch>Constants[delegate].Generate=false</Patch>
         <Patch>Constants[dataSource].Generate=false</Patch>
         <Patch>Constants[_SMPieChartView_Private].Generate=false</Patch>
+        <Replace type="Generated">
+          <Source>public virtual NSInteger Tag</Source>
+          <With>public new NSInteger Tag</With>
+        </Replace>
       </Class>
       <Class name="SM2DGraphView_Definitions">
         <Patch>AdditionFor=SM2DGraphView</Patch>

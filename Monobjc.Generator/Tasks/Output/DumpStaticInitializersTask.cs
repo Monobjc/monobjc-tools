@@ -70,7 +70,7 @@ namespace Monobjc.Tools.Generator.Tasks.Output
 
         private void FindStaticInitializers(ClassEntity classEntity)
         {
-            string[] prefixes = new[] {"AB", "ABV", "NS", "AE", "AX", "ATSU", "CG", "CT", "LS", "PM", "QD", "UT", "AU", "AUMIDI", "CF", "CL", "CV", "DR", "QT", "QL", "SC", "PDF", "Web", "CA"};
+            string[] prefixes = new[] {"AB", "ABV", "NS", "AE", "AX", "ATSU", "CG", "CT", "LS", "PM", "QD", "UT", "AU", "AUMIDI", "CF", "CL", "CV", "DR", "QT", "QL", "SC", "PDF", "Web", "CA", "CP", "SU", "DOM"};
             foreach (string prefix in prefixes)
             {
                 if (!classEntity.Name.StartsWith(prefix))

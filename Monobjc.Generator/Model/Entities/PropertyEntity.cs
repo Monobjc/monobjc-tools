@@ -94,14 +94,30 @@ namespace Monobjc.Tools.Generator.Model.Entities
             return methodEntity;
         }
 
+        public bool HasGetter
+        {
+            get
+            {
+                return this.Getter != null;
+            }
+        }
+
+        public bool HasSetter
+        {
+            get
+            {
+                return this.Setter != null;
+            }
+        }
+
         /// <summary>
-        ///   Indicates whether the current object is equal to another object of the same type.
+        /// Indicates whether the current object is equal to another object of the same type.
         /// </summary>
         /// <returns>
-        ///   true if the current object is equal to the <paramref name = "other" /> parameter; otherwise, false.
+        /// true if the current object is equal to the <paramref name="other"/> parameter; otherwise, false.
         /// </returns>
-        /// <param name = "other">An object to compare with this object.
-        /// </param>
+        /// <param name="other">An object to compare with this object.
+        ///                 </param>
         public bool Equals(PropertyEntity other)
         {
             if (ReferenceEquals(null, other))
@@ -112,21 +128,7 @@ namespace Monobjc.Tools.Generator.Model.Entities
             {
                 return true;
             }
-            if (other.Static != this.Static)
-            {
-                return false;
-            }
-            /*
-			if (!Equals(other.Getter, this.Getter))
-			{
-				return false;
-			}
-			if (!Equals(other.Setter, this.Setter))
-			{
-				return false;
-			}
-			*/
-            return base.Equals(other);
+            return base.Equals(other) && Equals(other.Type, this.Type) && other.Static.Equals(this.Static) && Equals(other.HasGetter, this.HasGetter) && Equals(other.HasSetter, this.HasSetter);
         }
 
         /// <summary>
@@ -150,7 +152,7 @@ namespace Monobjc.Tools.Generator.Model.Entities
             {
                 return true;
             }
-            return this.Equals(obj as PropertyEntity);
+            return Equals(obj as PropertyEntity);
         }
 
         /// <summary>
@@ -165,8 +167,10 @@ namespace Monobjc.Tools.Generator.Model.Entities
             unchecked
             {
                 int result = base.GetHashCode();
+                result = (result*397) ^ this.Type.GetHashCode();
                 result = (result*397) ^ this.Static.GetHashCode();
-                result = (result*397) ^ (this.Name != null ? this.Name.GetHashCode() : 0);
+                result = (result*397) ^ this.HasGetter.GetHashCode();
+                result = (result*397) ^ this.HasSetter.GetHashCode();
                 return result;
             }
         }

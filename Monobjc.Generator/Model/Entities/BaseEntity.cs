@@ -395,6 +395,17 @@ namespace Monobjc.Tools.Generator.Model.Entities
         }
 
         /// <summary>
+        /// Returns a <see cref="System.String"/> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String"/> that represents this instance.
+        /// </returns>
+        public override string ToString()
+        {
+            return this.Name;
+        }
+
+        /// <summary>
         ///   Indicates whether the current object is equal to another object of the same type.
         /// </summary>
         /// <returns>

@@ -167,21 +167,21 @@ namespace Monobjc.Tools.Generator.Model.Entities
         /// </summary>
         public IEnumerable<PropertyEntity> GetProperties(bool includeSuper, bool includeProtocols)
         {
-            List<PropertyEntity> methods = new List<PropertyEntity>(this.Properties);
+            List<PropertyEntity> properties = new List<PropertyEntity>(this.Properties);
 
             if (this.SuperClass != null && includeSuper)
             {
-                methods.AddRange(this.SuperClass.GetProperties(true, true));
+                properties.AddRange(this.SuperClass.GetProperties(true, true));
             }
 
             if (this.Protocols != null && includeProtocols)
             {
                 foreach (ProtocolEntity protocol in this.Protocols)
                 {
-                    methods.AddRange(protocol.Properties);
+                    properties.AddRange(protocol.Properties);
                 }
             }
-            return methods.Distinct();
+            return properties.Distinct();
         }
 
         /// <summary>

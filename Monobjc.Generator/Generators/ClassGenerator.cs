@@ -60,7 +60,7 @@ namespace Monobjc.Tools.Generator.Generators
             {
                 methods.AddRange(classEntity.Methods);
             }
-            return methods;
+            return methods.Distinct();
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Monobjc.Tools.Generator.Generators
             {
                 properties.AddRange(classEntity.Properties);
             }
-            return properties;
+            return properties.Distinct();
         }
     }
 }

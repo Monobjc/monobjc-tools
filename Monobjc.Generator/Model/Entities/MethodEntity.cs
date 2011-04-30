@@ -167,14 +167,15 @@ namespace Monobjc.Tools.Generator.Model.Entities
             return result;
         }
 
+
         /// <summary>
-        ///   Indicates whether the current object is equal to another object of the same type.
+        /// Indicates whether the current object is equal to another object of the same type.
         /// </summary>
         /// <returns>
-        ///   true if the current object is equal to the <paramref name = "other" /> parameter; otherwise, false.
+        /// true if the current object is equal to the <paramref name="other"/> parameter; otherwise, false.
         /// </returns>
-        /// <param name = "other">An object to compare with this object.
-        /// </param>
+        /// <param name="other">An object to compare with this object.
+        ///                 </param>
         public bool Equals(MethodEntity other)
         {
             if (ReferenceEquals(null, other))
@@ -185,11 +186,18 @@ namespace Monobjc.Tools.Generator.Model.Entities
             {
                 return true;
             }
-            if (other.Static != this.Static)
+            bool result = base.Equals(other) &&
+                          other.Static.Equals(this.Static) &&
+                          Equals(other.ReturnType, this.ReturnType);
+            result &= (other.Parameters.Count == this.Parameters.Count);
+            if (result)
             {
-                return false;
+                for(int i=0;i<this.Parameters.Count;i++)
+                {
+                    result &= Equals(other.Parameters[i], this.Parameters[i]);
+                }
             }
-            return base.Equals(other);
+            return result;
         }
 
         /// <summary>
@@ -213,7 +221,7 @@ namespace Monobjc.Tools.Generator.Model.Entities
             {
                 return true;
             }
-            return this.Equals(obj as MethodEntity);
+            return Equals(obj as MethodEntity);
         }
 
         /// <summary>
@@ -229,6 +237,11 @@ namespace Monobjc.Tools.Generator.Model.Entities
             {
                 int result = base.GetHashCode();
                 result = (result*397) ^ this.Static.GetHashCode();
+                result = (result*397) ^ (this.ReturnType != null ? this.ReturnType.GetHashCode() : 0);
+                foreach (MethodParameterEntity methodParameterEntity in this.Parameters)
+                {
+                    result = (result * 397) ^ methodParameterEntity.GetHashCode();
+                }
                 return result;
             }
         }

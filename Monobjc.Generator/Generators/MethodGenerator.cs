@@ -257,7 +257,7 @@ namespace Monobjc.Tools.Generator.Generators
             {
                 this.Writer.WriteLineFormat(2, "/// <para>{0}</para>", line.EscapeAll());
             }
-            this.Writer.WriteLineFormat(2, "/// <para>Original signature is '{0}'</para>", methodEntity.Signature);
+            this.Writer.WriteLineFormat(2, "/// <para>Original signature is '{0}'</para>", methodEntity.Signature.EscapeAll());
             this.AppendAvailability(2, methodEntity);
             this.Writer.WriteLineFormat(2, "/// </summary>");
 
