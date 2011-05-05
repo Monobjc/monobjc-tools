@@ -2781,7 +2781,7 @@
   <Entry ns="InputMethodKit" nature="P" name="IMKTextInput" style="Cocoa" file="IMKTextInput">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/IMKTextInput_Protocol/Reference/IMKTextInput_Protocol.html</url>
   </Entry>
-  <Entry ns="OpenGL" nature="T" name="OpenGLFramework" style="Cocoa" file="OpenGLFramework">
+  <Entry ns="OpenGL" nature="T" name="CGL" style="Cocoa" file="CGL">
     <url>/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CGL_OpenGL/Reference/reference.html</url>
   </Entry>
   <Entry ns="QTKit" nature="C" name="NSCoder_QTKitAdditions" style="Cocoa" file="NSCoder_QTKitAdditions">

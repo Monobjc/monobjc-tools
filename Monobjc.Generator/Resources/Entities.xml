@@ -4331,9 +4331,9 @@ enum]]>
       </Protocol>
     </Protocols>
   </Framework>
-  <Framework name="OpenGL" usings="Foundation" assembly="Monobjc.OpenGL">
+  <Framework name="OpenGL" usings="Foundation,ApplicationServices" assembly="Monobjc.OpenGL">
     <Types>
-      <Type name="OpenGLFramework">
+      <Type name="CGL">
       </Type>
     </Types>
   </Framework>
@@ -4789,25 +4789,40 @@ enum]]>
       <Type name="CVBuffer">
         <Patch>Functions[CVBufferGetAttachment].Parameters[attachmentMode].Type=CVAttachmentMode</Patch>
         <Patch>Functions[CVBufferGetAttachment].Parameters[attachmentMode].IsOut=true</Patch>
+        <Replace type="Generated">
+        	<Source><![CDATA[ObjectiveCRuntime.GetInstance<CVAttachmentMode>(Marshal.ReadIntPtr(__local1));]]></Source>
+        	<With><![CDATA[(CVAttachmentMode) Marshal.ReadInt32(__local1);]]></With>
+        </Replace>
       </Type>
       <Type name="CVDisplayLink">
         <Patch>Functions[CVDisplayLinkCreateWithActiveCGDisplays].Parameters[displayLinkOut].Type=IntPtr</Patch>
+        <Patch>Functions[CVDisplayLinkCreateWithActiveCGDisplays].Parameters[displayLinkOut].IsByRef=true</Patch>
         <Patch>Functions[CVDisplayLinkCreateWithCGDisplay].Parameters[displayLinkOut].Type=IntPtr</Patch>
+        <Patch>Functions[CVDisplayLinkCreateWithCGDisplay].Parameters[displayLinkOut].IsByRef=true</Patch>
         <Patch>Functions[CVDisplayLinkCreateWithCGDisplays].Parameters[displayArray].Type=IntPtr</Patch>
         <Patch>Functions[CVDisplayLinkCreateWithCGDisplays].Parameters[count].Type=IntPtr</Patch>
         <Patch>Functions[CVDisplayLinkCreateWithCGDisplays].Parameters[displayLinkOut].Type=IntPtr</Patch>
+        <Patch>Functions[CVDisplayLinkCreateWithCGDisplays].Parameters[displayLinkOut].IsByRef=true</Patch>
         <Patch>Functions[CVDisplayLinkCreateWithOpenGLDisplayMask].Parameters[mask].Type=IntPtr</Patch>
         <Patch>Functions[CVDisplayLinkCreateWithOpenGLDisplayMask].Parameters[displayLinkOut].Type=IntPtr</Patch>
+        <Patch>Functions[CVDisplayLinkCreateWithOpenGLDisplayMask].Parameters[displayLinkOut].IsByRef=true</Patch>
         <Patch>Functions[CVDisplayLinkGetCurrentTime].Parameters[outTime].Type=CVTimeStamp</Patch>
         <Patch>Functions[CVDisplayLinkGetCurrentTime].Parameters[outTime].IsByRef=true</Patch>
         <Patch>Functions[CVDisplayLinkGetNominalOutputVideoRefreshPeriod].ReturnType=IntPtr</Patch>
         <Patch>Functions[CVDisplayLinkGetOutputVideoLatency].ReturnType=IntPtr</Patch>
         <Patch>Functions[CVDisplayLinkGetTypeID].Generate=false</Patch>
-        <Patch>Functions[CVDisplayLinkSetOutputCallback].Parameters[callback].Type=IntPtr</Patch>
         <Patch>Functions[CVDisplayLinkTranslateTime].Parameters[inTime].Type=CVTimeStamp</Patch>
         <Patch>Functions[CVDisplayLinkTranslateTime].Parameters[inTime].IsByRef=true</Patch>
         <Patch>Functions[CVDisplayLinkTranslateTime].Parameters[outTime].Type=CVTimeStamp</Patch>
         <Patch>Functions[CVDisplayLinkTranslateTime].Parameters[outTime].IsByRef=true</Patch>
+        <Replace type="Generated">
+        	<Source><![CDATA[ObjectiveCRuntime.GetInstance<CVTimeStamp>(Marshal.ReadIntPtr(__local1));]]></Source>
+        	<With><![CDATA[(CVTimeStamp) Marshal.PtrToStructure(__local1, typeof(CVTimeStamp));]]></With>
+        </Replace>
+        <Replace type="Generated">
+        	<Source><![CDATA[ObjectiveCRuntime.GetInstance<CVTimeStamp>(Marshal.ReadIntPtr(__local2));]]></Source>
+        	<With><![CDATA[(CVTimeStamp) Marshal.PtrToStructure(__local2, typeof(CVTimeStamp));]]></With>
+        </Replace>
       </Type>
       <Type name="CVImageBuffer"></Type>
       <Type name="CVOpenGLBuffer">
