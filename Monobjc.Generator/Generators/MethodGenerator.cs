@@ -427,9 +427,13 @@ namespace Monobjc.Tools.Generator.Generators
 
                 if (methodParameterEntity.IsOut || methodParameterEntity.IsByRef)
                 {
-                    if ("bool,char,byte,short,ushort,int,uint,long,ulong".Contains(methodParameterEntity.Type)) // Boolean
+                    if ("bool,char,byte,short,ushort,int,uint,long,ulong".Contains(methodParameterEntity.Type))
                     {
                         this.Writer.WriteLineFormat(indent, "IntPtr __local{0} = Marshal.AllocHGlobal(Marshal.SizeOf(typeof ({1})));", index++, methodParameterEntity.Type);
+                    }
+                    else if ("IntPtr".Contains(methodParameterEntity.Type))
+                    {
+                        this.Writer.WriteLineFormat(indent, "IntPtr __local{0} = Marshal.AllocHGlobal(IntPtr.Size);", index++);
                     }
                     else if ("float,double".Contains(methodParameterEntity.Type))
                     {
@@ -532,6 +536,9 @@ namespace Monobjc.Tools.Generator.Generators
                             break;
                         case "ulong":
                             this.Writer.WriteLineFormat(indent, "{0} = (ulong) Marshal.ReadInt64(__local{1});", methodParameterEntity.Name, index++);
+                            break;
+                        case "IntPtr":
+                            this.Writer.WriteLineFormat(indent, "{0} = Marshal.ReadIntPtr(__local{1});", methodParameterEntity.Name, index++);
                             break;
                         case "float":
                         case "double":
