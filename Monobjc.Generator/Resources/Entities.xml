@@ -4331,9 +4331,55 @@ enum]]>
       </Protocol>
     </Protocols>
   </Framework>
-  <Framework name="OpenGL" usings="Foundation,ApplicationServices" assembly="Monobjc.OpenGL">
+  <Framework name="OpenGL" assembly="Monobjc.OpenGL">
     <Types>
       <Type name="CGL">
+        <Patch>Functions[CGLChoosePixelFormat].Parameters[attribs].Type=IntPtr</Patch>
+        <Patch>Functions[CGLChoosePixelFormat].Parameters[pix].Type=IntPtr</Patch>
+        <Patch>Functions[CGLChoosePixelFormat].Parameters[npix].Type=IntPtr</Patch>
+        <Patch>Functions[CGLCreateContext].Parameters[ctx].Type=IntPtr</Patch>
+        <Patch>Functions[CGLCreatePBuffer].Parameters[pbuffer].Type=IntPtr</Patch>
+        <Patch>Functions[CGLDescribePBuffer].Parameters[width].Type=IntPtr</Patch>
+        <Patch>Functions[CGLDescribePBuffer].Parameters[height].Type=IntPtr</Patch>
+        <Patch>Functions[CGLDescribePBuffer].Parameters[target].Type=IntPtr</Patch>
+        <Patch>Functions[CGLDescribePBuffer].Parameters[internalFormat].Type=IntPtr</Patch>
+        <Patch>Functions[CGLDescribePBuffer].Parameters[mipmap].Type=IntPtr</Patch>
+        <Patch>Functions[CGLDescribePixelFormat].Parameters[value].Type=IntPtr</Patch>
+        <Patch>Functions[CGLDescribeRenderer].Parameters[value].Type=IntPtr</Patch>
+        <Patch>Functions[CGLErrorString].ReturnType=IntPtr</Patch>
+        <Patch>Functions[CGLGetCurrentContext].Parameters[d].Generate=false</Patch>
+        <Patch>Functions[CGLGetGlobalOption].Parameters[params].Name=@params</Patch>
+        <Patch>Functions[CGLGetGlobalOption].Parameters[@params].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetOffScreen].Parameters[width].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetOffScreen].Parameters[height].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetOffScreen].Parameters[rowbytes].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetOffScreen].Parameters[baseaddr].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetOption].Parameters[param].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetParameter].Parameters[params].Name=@params</Patch>
+        <Patch>Functions[CGLGetParameter].Parameters[@params].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetPBuffer].Parameters[pbuffer].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetPBuffer].Parameters[face].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetPBuffer].Parameters[level].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetPBuffer].Parameters[screen].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetVersion].Parameters[majorvers].Type=int</Patch>
+        <Patch>Functions[CGLGetVersion].Parameters[majorvers].IsByRef=true</Patch>
+        <Patch>Functions[CGLGetVersion].Parameters[minorvers].Type=int</Patch>
+        <Patch>Functions[CGLGetVersion].Parameters[minorvers].IsByRef=true</Patch>
+        <Patch>Functions[CGLGetVirtualScreen].Parameters[screen].Type=int</Patch>
+        <Patch>Functions[CGLGetVirtualScreen].Parameters[screen].IsByRef=true</Patch>
+        <Patch>Functions[CGLIsEnabled].Parameters[enable].Type=int</Patch>
+        <Patch>Functions[CGLIsEnabled].Parameters[enable].IsByRef=true</Patch>
+        <Patch>Functions[CGLQueryRendererInfo].Parameters[rend].Type=IntPtr</Patch>
+        <Patch>Functions[CGLQueryRendererInfo].Parameters[nrend].Type=IntPtr</Patch>
+        <Patch>Functions[CGLSetGlobalOption].Parameters[params].Name=@params</Patch>
+        <Patch>Functions[CGLSetGlobalOption].Parameters[@params].Type=IntPtr</Patch>
+        <Patch>Functions[CGLSetParameter].Parameters[params].Name=@params</Patch>
+        <Patch>Functions[CGLSetParameter].Parameters[@params].Type=IntPtr</Patch>
+        <Patch>Enumerations[CGLPixelFormatAttribute].BaseType=int</Patch>
+        <Patch>Enumerations[CGLContextEnable].BaseType=int</Patch>
+        <Patch>Enumerations[CGLContextParameter].BaseType=int</Patch>
+        <Patch>Enumerations[CGLGlobalOption].BaseType=int</Patch>
+        <Patch>Enumerations[CGLRendererProperty].BaseType=int</Patch>
       </Type>
     </Types>
   </Framework>
