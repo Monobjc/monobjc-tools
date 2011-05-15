@@ -5491,7 +5491,7 @@ enum
     </Protocols>
   </Framework>
   <Framework name="WebKit.DOM" usings="Foundation,AppKit,WebKit" assembly="Monobjc.WebKit">
-  	<Classes>
+  <Classes>
     <Class name="DOMAbstractView" />
     <Class name="DOMAttr" />
     <Class name="DOMBlob" />
@@ -5633,6 +5633,33 @@ enum
     <Class name="DOMXPathExpression" />
     <Class name="DOMXPathExpression(DOMXPathExpressionDeprecated)" />
     <Class name="DOMXPathResult" />
+    <Class name="JavaScript_Definitions">
+      <Patch>AdditionFor=JavaScript</Patch>
+    </Class>
+    <Class name="JavaScriptCore_Definitions">
+      <Patch>AdditionFor=JavaScriptCore</Patch>
+    </Class>
+    <Class name="JSBase_Definitions">
+      <Patch>AdditionFor=JSBase</Patch>
+    </Class>
+    <Class name="JSContextRef_Definitions">
+      <Patch>AdditionFor=JSContextRef</Patch>
+    </Class>
+    <Class name="JSObjectRef_Definitions">
+      <Patch>AdditionFor=JSObjectRef</Patch>
+    </Class>
+    <Class name="JSStringRef_Definitions">
+      <Patch>AdditionFor=JSStringRef</Patch>
+    </Class>
+    <Class name="JSStringRefCF_Definitions">
+      <Patch>AdditionFor=JSStringRefCF</Patch>
+    </Class>
+    <Class name="JSValueRef_Definitions">
+      <Patch>AdditionFor=JSValueRef</Patch>
+    </Class>
+    <Class name="WebKitAvailability_Definitions">
+      <Patch>AdditionFor=WebKitAvailability</Patch>
+    </Class>
     <Class name="DOM_Definitions">
       <Patch>AdditionFor=DOM</Patch>
     </Class>
@@ -6029,7 +6056,7 @@ enum
     <Class name="DOMXPathResult_Definitions">
       <Patch>AdditionFor=DOMXPathResult</Patch>
     </Class>
-  	</Classes>
+  </Classes>
   <Protocols>
     <Protocol name="DOMEventListener" />
     <Protocol name="DOMEventTarget" />

@@ -4344,6 +4344,30 @@
   <Entry ns="WebKit.DOM" nature="C" name="DOMXPathResult_Definitions" style="Doxygen" file="DOMXPathResult_Definitions">
     <url>N/A</url>
   </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="JavaScript_Definitions" style="Doxygen" file="JavaScript_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="JavaScriptCore_Definitions" style="Doxygen" file="JavaScriptCore_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="JSBase_Definitions" style="Doxygen" file="JSBase_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="JSContextRef_Definitions" style="Doxygen" file="JSContextRef_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="JSObjectRef_Definitions" style="Doxygen" file="JSObjectRef_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="JSStringRef_Definitions" style="Doxygen" file="JSStringRef_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="JSStringRefCF_Definitions" style="Doxygen" file="JSStringRefCF_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="WebKit.DOM" nature="C" name="JSValueRef_Definitions" style="Doxygen" file="JSValueRef_Definitions">
+    <url>N/A</url>
+  </Entry>
   <Entry ns="WebKit.DOM" nature="P" name="DOMEventListener" style="Doxygen" file="DOMEventListener">
     <url>N/A</url>
   </Entry>

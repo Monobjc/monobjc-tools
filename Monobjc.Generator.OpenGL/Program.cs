@@ -19,6 +19,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 
 namespace Monobjc.Tools.Generator.OpenGL
@@ -38,7 +39,7 @@ namespace Monobjc.Tools.Generator.OpenGL
         {
             // Parse the input file line by line
             String input = args.Length > 0 ? args[0] : "glu.h";
-			
+
             String outputConstants = Path.ChangeExtension(input, ".Constants.cs");
             String outputMethods = Path.ChangeExtension(input, "Methods.cs");
 
@@ -46,7 +47,7 @@ namespace Monobjc.Tools.Generator.OpenGL
             {
                 using (StreamWriter writerMethods = new StreamWriter(outputMethods))
                 {
-                    StreamWriter[] writers = new[] {writerConstants, writerMethods};
+                    StreamWriter[] writers = new[] { writerConstants, writerMethods };
                     foreach (StreamWriter writer in writers)
                     {
                         writer.WriteLine("using System;");
@@ -177,7 +178,7 @@ namespace Monobjc.Tools.Generator.OpenGL
 
                     // Gather the parameters
                     ParsedParameterTuples parameterTuples = new ParsedParameterTuples();
-                    foreach (String parameter in parameters.Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries))
+                    foreach (String parameter in parameters.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                     {
                         m = REGEX_PARAMETER.Match(parameter);
                         if (m.Success)
@@ -196,15 +197,15 @@ namespace Monobjc.Tools.Generator.OpenGL
                         }
                         else
                         {
-							Console.WriteLine("[WARN] Cannot parse " + line);
-							return;
+                            Console.WriteLine("[WARN] Cannot parse " + line);
+                            return;
                             //throw new NotSupportedException("Unable to parse: '" + parameter + "'");
                         }
                     }
 
                     // Change return type if needed
                     if (returnType == "const GLubyte *" ||
-                        returnType == "GLvoid*" || 
+                        returnType == "GLvoid*" ||
                         returnType == "GLvoid *")
                     {
                         returnType = "IntPtr";
@@ -249,13 +250,16 @@ namespace Monobjc.Tools.Generator.OpenGL
                     return;
                 }
             }
-                writer.WriteLine(line);
+            writer.WriteLine(line);
         }
 
         private static RealParameterTuples GetTuples(ParsedParameterTuple parameter)
         {
             RealParameterTuples tuples = new RealParameterTuples();
-            if (parameter.Type == "GLvoid")
+            if (parameter.Type == "GLvoid" ||
+                parameter.Type == "GLUnurbs" ||
+                parameter.Type == "GLUquadric" ||
+                parameter.Type == "GLUtesselator")
             {
                 tuples.Add(new RealParameterTuple(parameter.Name, "IntPtr", false, false));
             }
@@ -270,6 +274,7 @@ namespace Monobjc.Tools.Generator.OpenGL
                 else
                 {
                     tuples.Add(new RealParameterTuple(parameter.Name, "IntPtr", false, false));
+                    tuples.Add(new RealParameterTuple(parameter.Name, "out " + parameter.Type, false, true));
                 }
             }
             else
@@ -328,6 +333,7 @@ namespace Monobjc.Tools.Generator.OpenGL
                 // Marshal the parameters
                 for (int i = 0; i < parameters.Count(); i++)
                 {
+                    OutputAllocation(writer, parameters.ElementAt(i), i);
                     OutputMarshalling(writer, parameters.ElementAt(i), i);
                 }
 
@@ -359,6 +365,7 @@ namespace Monobjc.Tools.Generator.OpenGL
                 for (int i = 0; i < parameters.Count(); i++)
                 {
                     OutputUnmarshalling(writer, parameters.ElementAt(i), i);
+                    OutputDeallocation(writer, parameters.ElementAt(i), i);
                 }
 
                 if (hasReturn)
@@ -369,6 +376,45 @@ namespace Monobjc.Tools.Generator.OpenGL
                 writer.WriteLine("}");
             }
             writer.WriteLine();
+        }
+
+        private static void OutputAllocation(StreamWriter writer, RealParameterTuple parameter, int index)
+        {
+            if (!parameter.Item3 && !parameter.Item4)
+            {
+                return;
+            }
+
+            // Get the type
+            int position = index + 1;
+            String type = parameter.Item2;
+            bool isRef = type.StartsWith("ref ");
+            bool isOut = type.StartsWith("out ");
+            bool isArray = type.EndsWith("[]");
+
+            if (isRef)
+            {
+                type = type.Replace("ref ", String.Empty);
+            }
+            if (isOut)
+            {
+                type = type.Replace("out ", String.Empty);
+            }
+            if (isArray)
+            {
+                type = type.Replace("[]", String.Empty);
+            }
+
+            if (isRef || isOut)
+            {
+                writer.Write("IntPtr __local{0} = Marshal.AllocHGlobal(Marshal.SizeOf(typeof({1})));", position, type);
+                writer.WriteLine();
+            }
+            if (isArray)
+            {
+                writer.Write("IntPtr __local{0} = Marshal.AllocHGlobal(Marshal.SizeOf(typeof({1})) * {2}.Length);", position, type, parameter.Item1);
+                writer.WriteLine();
+            }
         }
 
         private static void OutputMarshalling(StreamWriter writer, RealParameterTuple parameter, int index)
@@ -395,9 +441,6 @@ namespace Monobjc.Tools.Generator.OpenGL
 
             if (isRef)
             {
-                writer.Write("IntPtr __local{0} = Marshal.AllocHGlobal(Marshal.SizeOf(typeof({1})));", position, type);
-                writer.WriteLine();
-
                 switch (type)
                 {
                     case "GLboolean":
@@ -446,9 +489,6 @@ namespace Monobjc.Tools.Generator.OpenGL
             }
             if (isArray)
             {
-                writer.Write("IntPtr __local{0} = Marshal.AllocHGlobal(Marshal.SizeOf(typeof({1})) * {2}.Length);", position, type, parameter.Item1);
-                writer.WriteLine();
-
                 switch (type)
                 {
                     case "GLchar":
@@ -482,7 +522,83 @@ namespace Monobjc.Tools.Generator.OpenGL
 
         private static void OutputUnmarshalling(StreamWriter writer, RealParameterTuple parameter, int index)
         {
-            if (!parameter.Item3)
+            if (!parameter.Item4)
+            {
+                return;
+            }
+
+            // Get the type
+            int position = index + 1;
+            String type = parameter.Item2;
+            bool isOut = type.StartsWith("out ");
+            bool isArray = type.EndsWith("[]");
+
+            if (isOut)
+            {
+                type = type.Replace("out ", String.Empty);
+            }
+            if (isArray)
+            {
+                type = type.Replace("[]", String.Empty);
+            }
+
+            if (isOut)
+            {
+                switch (type)
+                {
+                    case "GLubyte":
+                        writer.Write("{1} = Marshal.ReadByte(__local{0});", position, parameter.Item1);
+                        break;
+                    case "GLboolean":
+                    case "GLchar":
+                    case "GLbyte":
+                    case "GLcharARB":
+                        writer.Write("{1} = ({2}) Marshal.ReadByte(__local{0});", position, parameter.Item1, type);
+                        break;
+                    case "GLshort":
+                        writer.Write("{1} = Marshal.ReadInt16(__local{0});", position, parameter.Item1);
+                        break;
+                    case "GLushort":
+                    case "GLhalfARB":
+                    case "GLhalf":
+                        writer.Write("{1} = ({2}) Marshal.ReadInt16(__local{0});", position, parameter.Item1, type);
+                        break;
+                    case "GLsizei":
+                    case "GLint":
+                        writer.Write("{1} = ({2}) Marshal.ReadInt32(__local{0});", position, parameter.Item1, type);
+                        break;
+                    case "GLuint":
+                    case "GLenum":
+                        writer.Write("{1} = ({2}) Marshal.ReadInt32(__local{0});", position, parameter.Item1, type);
+                        break;
+                    case "GLintptr":
+                    case "GLsizeiptr":
+                    case "GLhandleARB":
+                    case "GLintptrARB":
+                    case "GLsizeiptrARB":
+                        writer.Write("{1} = ({2}) Marshal.ReadIntPtr(__local{0});", position, parameter.Item1, type);
+                        break;
+                    case "GLfloat":
+                    case "GLclampf":
+                    case "GLdouble":
+                    case "GLclampd":
+                        writer.Write("{1} = ({2}) Marshal.PtrToStructure(__local{0}, typeof({2}));", position, parameter.Item1, type);
+                        break;
+                    default:
+                        writer.Write("Not Supported: {0}", parameter.Type);
+                        break;
+                }
+                writer.WriteLine();
+            }
+            if (isArray)
+            {
+                // TODO
+            }
+        }
+
+        private static void OutputDeallocation(StreamWriter writer, RealParameterTuple parameter, int index)
+        {
+            if (!parameter.Item3 && !parameter.Item4)
             {
                 return;
             }
