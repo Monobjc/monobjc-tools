@@ -80,11 +80,20 @@ namespace Monobjc.Tools.Doxygenator
             {
                 XElement element = new XElement("Class");
                 String name = compound.name;
-                element.Add(new XAttribute("name", name));
+                String categoryName = name.Replace('(', '_').Trim(')');
+                var pos = name.IndexOf("(");
+                String className = (pos != -1) ? name.Substring(0, pos) : name;
+                element.Add(new XAttribute("name", categoryName));
+                if (className != categoryName)
+                {
+                    XElement additionElement = new XElement("Patch");
+                    additionElement.SetValue("AdditionFor=" + className);
+                    element.Add(additionElement);
+                }
                 classesElement.Add(element);
 
                 String inputFile = Path.Combine(inputFolder, compound.refid + ".xml");
-                String outputFile = Path.Combine(classOutput, name);
+                String outputFile = Path.Combine(classOutput, categoryName);
                 File.Copy(inputFile, outputFile, true);
             }
             foreach (CompoundType compound in index.compound.Where(c => c.kind == CompoundKind.category))

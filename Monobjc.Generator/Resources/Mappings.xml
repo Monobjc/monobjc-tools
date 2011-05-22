@@ -87,6 +87,7 @@
   <Mapping type="const void *">IntPtr</Mapping>
   <Mapping type="const void*">IntPtr</Mapping>
   <Mapping type="DescType">uint</Mapping>
+  <Mapping type="DOMTimeStamp">ulong</Mapping>
   <Mapping type="FourCharCode">uint</Mapping>
   <Mapping type="GLenum">int</Mapping>
   <Mapping type="GLboolean">byte</Mapping>

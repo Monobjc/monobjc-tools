@@ -782,7 +782,7 @@
         <Patch>Properties[DataSource].Type=Id</Patch>
       </Class>
       <Class name="NSControl">
-		<!--
+        <!--
         <Patch>Methods[SendActionOn].Parameters[mask].Type=NSEventMask</Patch>
 		-->
         <Patch>Properties[Delegate]=<![CDATA[<Property Generate="true" CopyInDescendants="false" Static="false"><Summary><Line>Returns the delegate used by the receiver.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>Delegate</Name><Type>Id</Type><Getter Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true"><Summary/><MinAvailability>Mac OS X v10.0</MinAvailability><Name>Delegate</Name><Selector>delegate</Selector><Signature>- (id)delegate</Signature><ReturnType>Id</ReturnType><ReturnsDocumentation>The delegate used by the receiver and all other text views sharing the receiver’s layout manager, or nil if there is none.</ReturnsDocumentation><Parameters /></Getter><Setter Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true"><Summary/><MinAvailability>Mac OS X v10.0</MinAvailability><Name>SetDelegate</Name><Selector>setDelegate:</Selector><Signature>- (void)setDelegate:(id)anObject</Signature><ReturnType>void</ReturnType><Parameters><Parameter Generate="true" CopyInDescendants="false" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The new delegate object.</Line></Summary><Name>anObject</Name><Type>Id</Type></Parameter></Parameters></Setter></Property>]]></Patch>
@@ -4536,7 +4536,7 @@ enum]]>
       </Class>
 
     </Classes>
-	<Protocols>
+    <Protocols>
       <Protocol name="QTCaptureDecompressedAudioOutputDelegate">
         <Patch>DelegateFor=QTCaptureDecompressedAudioOutput</Patch>
         <Patch>DelegateProperty=Delegate</Patch>
@@ -4561,7 +4561,7 @@ enum]]>
         <Patch>DelegateFor=QTMovie</Patch>
         <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
-	</Protocols>
+    </Protocols>
     <Enumerations>
       <Enumeration name="QTMovieOperationPhase">
       </Enumeration>
@@ -4836,8 +4836,8 @@ enum]]>
         <Patch>Functions[CVBufferGetAttachment].Parameters[attachmentMode].Type=CVAttachmentMode</Patch>
         <Patch>Functions[CVBufferGetAttachment].Parameters[attachmentMode].IsOut=true</Patch>
         <Replace type="Generated">
-        	<Source><![CDATA[ObjectiveCRuntime.GetInstance<CVAttachmentMode>(Marshal.ReadIntPtr(__local1));]]></Source>
-        	<With><![CDATA[(CVAttachmentMode) Marshal.ReadInt32(__local1);]]></With>
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<CVAttachmentMode>(Marshal.ReadIntPtr(__local1));]]></Source>
+          <With><![CDATA[(CVAttachmentMode) Marshal.ReadInt32(__local1);]]></With>
         </Replace>
       </Type>
       <Type name="CVDisplayLink">
@@ -4862,12 +4862,12 @@ enum]]>
         <Patch>Functions[CVDisplayLinkTranslateTime].Parameters[outTime].Type=CVTimeStamp</Patch>
         <Patch>Functions[CVDisplayLinkTranslateTime].Parameters[outTime].IsByRef=true</Patch>
         <Replace type="Generated">
-        	<Source><![CDATA[ObjectiveCRuntime.GetInstance<CVTimeStamp>(Marshal.ReadIntPtr(__local1));]]></Source>
-        	<With><![CDATA[(CVTimeStamp) Marshal.PtrToStructure(__local1, typeof(CVTimeStamp));]]></With>
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<CVTimeStamp>(Marshal.ReadIntPtr(__local1));]]></Source>
+          <With><![CDATA[(CVTimeStamp) Marshal.PtrToStructure(__local1, typeof(CVTimeStamp));]]></With>
         </Replace>
         <Replace type="Generated">
-        	<Source><![CDATA[ObjectiveCRuntime.GetInstance<CVTimeStamp>(Marshal.ReadIntPtr(__local2));]]></Source>
-        	<With><![CDATA[(CVTimeStamp) Marshal.PtrToStructure(__local2, typeof(CVTimeStamp));]]></With>
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<CVTimeStamp>(Marshal.ReadIntPtr(__local2));]]></Source>
+          <With><![CDATA[(CVTimeStamp) Marshal.PtrToStructure(__local2, typeof(CVTimeStamp));]]></With>
         </Replace>
       </Type>
       <Type name="CVImageBuffer"></Type>
@@ -5338,7 +5338,7 @@ enum
         <Patch>Methods[RunModalForSettingsKeychain].Parameters[settings].Type=IntPtr</Patch>
       </Class>
     </Classes>
-	<Protocols>
+    <Protocols>
       <Protocol name="SFAuthorizationViewDelegate">
         <Patch>DelegateFor=SFAuthorizationView</Patch>
         <Patch>DelegateProperty=Delegate</Patch>
@@ -5351,7 +5351,7 @@ enum
         <Patch>DelegateFor=SFChooseIdentityPanel</Patch>
         <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
-	</Protocols>
+    </Protocols>
   </Framework>
   <Framework name="WebKit" usings="Foundation,AppKit" assembly="Monobjc.WebKit">
     <Types>
@@ -5491,578 +5491,658 @@ enum
     </Protocols>
   </Framework>
   <Framework name="WebKit.DOM" usings="Foundation,AppKit,WebKit" assembly="Monobjc.WebKit">
-  <Classes>
-    <Class name="DOMAbstractView" />
-    <Class name="DOMAttr" />
-    <Class name="DOMBlob" />
-    <Class name="DOMCDATASection" />
-    <Class name="DOMCharacterData" />
-    <Class name="DOMCharacterData(DOMCharacterDataDeprecated)" />
-    <Class name="DOMComment" />
-    <Class name="DOMCounter" />
-    <Class name="DOMCSSCharsetRule" />
-    <Class name="DOMCSSFontFaceRule" />
-    <Class name="DOMCSSImportRule" />
-    <Class name="DOMCSSMediaRule" />
-    <Class name="DOMCSSMediaRule(DOMCSSMediaRuleDeprecated)" />
-    <Class name="DOMCSSPageRule" />
-    <Class name="DOMCSSPrimitiveValue" />
-    <Class name="DOMCSSPrimitiveValue(DOMCSSPrimitiveValueDeprecated)" />
-    <Class name="DOMCSSRule" />
-    <Class name="DOMCSSRuleList" />
-    <Class name="DOMCSSStyleDeclaration" />
-    <Class name="DOMCSSStyleDeclaration(DOMCSS2Properties)" />
-    <Class name="DOMCSSStyleDeclaration(DOMCSSStyleDeclarationDeprecated)" />
-    <Class name="DOMCSSStyleRule" />
-    <Class name="DOMCSSStyleSheet" />
-    <Class name="DOMCSSStyleSheet(DOMCSSStyleSheetDeprecated)" />
-    <Class name="DOMCSSUnknownRule" />
-    <Class name="DOMCSSValue" />
-    <Class name="DOMCSSValueList" />
-    <Class name="DOMDocument" />
-    <Class name="DOMDocument(DOMDocumentDeprecated)" />
-    <Class name="DOMDocument(WebDOMDocumentOperations)" />
-    <Class name="DOMDocumentFragment" />
-    <Class name="DOMDocumentType" />
-    <Class name="DOMElement" />
-    <Class name="DOMElement(DOMElementAppKitExtensions)" />
-    <Class name="DOMElement(DOMElementDeprecated)" />
-    <Class name="DOMEntity" />
-    <Class name="DOMEntityReference" />
-    <Class name="DOMEvent" />
-    <Class name="DOMEvent(DOMEventDeprecated)" />
-    <Class name="DOMFile" />
-    <Class name="DOMFileList" />
-    <Class name="DOMHTMLAnchorElement" />
-    <Class name="DOMHTMLAppletElement" />
-    <Class name="DOMHTMLAreaElement" />
-    <Class name="DOMHTMLBaseElement" />
-    <Class name="DOMHTMLBaseFontElement" />
-    <Class name="DOMHTMLBodyElement" />
-    <Class name="DOMHTMLBRElement" />
-    <Class name="DOMHTMLButtonElement" />
-    <Class name="DOMHTMLCollection" />
-    <Class name="DOMHTMLDirectoryElement" />
-    <Class name="DOMHTMLDivElement" />
-    <Class name="DOMHTMLDListElement" />
-    <Class name="DOMHTMLDocument" />
-    <Class name="DOMHTMLDocument(DOMHTMLDocumentExtensions)" />
-    <Class name="DOMHTMLElement" />
-    <Class name="DOMHTMLEmbedElement" />
-    <Class name="DOMHTMLFieldSetElement" />
-    <Class name="DOMHTMLFontElement" />
-    <Class name="DOMHTMLFormElement" />
-    <Class name="DOMHTMLFrameElement" />
-    <Class name="DOMHTMLFrameElement(WebDOMHTMLFrameElementOperations)" />
-    <Class name="DOMHTMLFrameSetElement" />
-    <Class name="DOMHTMLHeadElement" />
-    <Class name="DOMHTMLHeadingElement" />
-    <Class name="DOMHTMLHRElement" />
-    <Class name="DOMHTMLHtmlElement" />
-    <Class name="DOMHTMLIFrameElement" />
-    <Class name="DOMHTMLIFrameElement(WebDOMHTMLIFrameElementOperations)" />
-    <Class name="DOMHTMLImageElement" />
-    <Class name="DOMHTMLInputElement" />
-    <Class name="DOMHTMLIsIndexElement" />
-    <Class name="DOMHTMLLabelElement" />
-    <Class name="DOMHTMLLegendElement" />
-    <Class name="DOMHTMLLIElement" />
-    <Class name="DOMHTMLLinkElement" />
-    <Class name="DOMHTMLMapElement" />
-    <Class name="DOMHTMLMarqueeElement" />
-    <Class name="DOMHTMLMenuElement" />
-    <Class name="DOMHTMLMetaElement" />
-    <Class name="DOMHTMLModElement" />
-    <Class name="DOMHTMLObjectElement" />
-    <Class name="DOMHTMLObjectElement(WebDOMHTMLObjectElementOperations)" />
-    <Class name="DOMHTMLOListElement" />
-    <Class name="DOMHTMLOptGroupElement" />
-    <Class name="DOMHTMLOptionElement" />
-    <Class name="DOMHTMLOptionsCollection" />
-    <Class name="DOMHTMLParagraphElement" />
-    <Class name="DOMHTMLParamElement" />
-    <Class name="DOMHTMLPreElement" />
-    <Class name="DOMHTMLQuoteElement" />
-    <Class name="DOMHTMLScriptElement" />
-    <Class name="DOMHTMLSelectElement" />
-    <Class name="DOMHTMLSelectElement(DOMHTMLSelectElementDeprecated)" />
-    <Class name="DOMHTMLStyleElement" />
-    <Class name="DOMHTMLTableCaptionElement" />
-    <Class name="DOMHTMLTableCellElement" />
-    <Class name="DOMHTMLTableColElement" />
-    <Class name="DOMHTMLTableElement" />
-    <Class name="DOMHTMLTableRowElement" />
-    <Class name="DOMHTMLTableSectionElement" />
-    <Class name="DOMHTMLTextAreaElement" />
-    <Class name="DOMHTMLTitleElement" />
-    <Class name="DOMHTMLUListElement" />
-    <Class name="DOMImplementation" />
-    <Class name="DOMImplementation(DOMImplementationDeprecated)" />
-    <Class name="DOMKeyboardEvent" />
-    <Class name="DOMMediaList" />
-    <Class name="DOMMouseEvent" />
-    <Class name="DOMMouseEvent(DOMMouseEventDeprecated)" />
-    <Class name="DOMMutationEvent" />
-    <Class name="DOMMutationEvent(DOMMutationEventDeprecated)" />
-    <Class name="DOMNamedNodeMap" />
-    <Class name="DOMNamedNodeMap(DOMNamedNodeMapDeprecated)" />
-    <Class name="DOMNode" />
-    <Class name="DOMNode(DOMNodeDeprecated)" />
-    <Class name="DOMNode(DOMNodeExtensions)" />
-    <Class name="DOMNode(WebDOMNodeOperations)" />
-    <Class name="DOMNodeIterator" />
-    <Class name="DOMNodeList" />
-    <Class name="DOMNotation" />
-    <Class name="DOMObject" />
-    <Class name="DOMObject(DOMLinkStyle)" />
-    <Class name="DOMOverflowEvent" />
-    <Class name="DOMProcessingInstruction" />
-    <Class name="DOMProgressEvent" />
-    <Class name="DOMRange" />
-    <Class name="DOMRange(DOMRangeDeprecated)" />
-    <Class name="DOMRange(WebDOMRangeOperations)" />
-    <Class name="DOMRect" />
-    <Class name="DOMRGBColor" />
-    <Class name="DOMStyleSheet" />
-    <Class name="DOMStyleSheetList" />
-    <Class name="DOMText" />
-    <Class name="DOMTreeWalker" />
-    <Class name="DOMUIEvent" />
-    <Class name="DOMUIEvent(DOMUIEventDeprecated)" />
-    <Class name="DOMWheelEvent" />
-    <Class name="DOMXPathExpression" />
-    <Class name="DOMXPathExpression(DOMXPathExpressionDeprecated)" />
-    <Class name="DOMXPathResult" />
-    <Class name="JavaScript_Definitions">
-      <Patch>AdditionFor=JavaScript</Patch>
-    </Class>
-    <Class name="JavaScriptCore_Definitions">
-      <Patch>AdditionFor=JavaScriptCore</Patch>
-    </Class>
-    <Class name="JSBase_Definitions">
-      <Patch>AdditionFor=JSBase</Patch>
-    </Class>
-    <Class name="JSContextRef_Definitions">
-      <Patch>AdditionFor=JSContextRef</Patch>
-    </Class>
-    <Class name="JSObjectRef_Definitions">
-      <Patch>AdditionFor=JSObjectRef</Patch>
-    </Class>
-    <Class name="JSStringRef_Definitions">
-      <Patch>AdditionFor=JSStringRef</Patch>
-    </Class>
-    <Class name="JSStringRefCF_Definitions">
-      <Patch>AdditionFor=JSStringRefCF</Patch>
-    </Class>
-    <Class name="JSValueRef_Definitions">
-      <Patch>AdditionFor=JSValueRef</Patch>
-    </Class>
-    <Class name="WebKitAvailability_Definitions">
-      <Patch>AdditionFor=WebKitAvailability</Patch>
-    </Class>
-    <Class name="DOM_Definitions">
-      <Patch>AdditionFor=DOM</Patch>
-    </Class>
-    <Class name="DOMAbstractView_Definitions">
-      <Patch>AdditionFor=DOMAbstractView</Patch>
-    </Class>
-    <Class name="DOMAttr_Definitions">
-      <Patch>AdditionFor=DOMAttr</Patch>
-    </Class>
-    <Class name="DOMBlob_Definitions">
-      <Patch>AdditionFor=DOMBlob</Patch>
-    </Class>
-    <Class name="DOMCDATASection_Definitions">
-      <Patch>AdditionFor=DOMCDATASection</Patch>
-    </Class>
-    <Class name="DOMCharacterData_Definitions">
-      <Patch>AdditionFor=DOMCharacterData</Patch>
-    </Class>
-    <Class name="DOMComment_Definitions">
-      <Patch>AdditionFor=DOMComment</Patch>
-    </Class>
-    <Class name="DOMCore_Definitions">
-      <Patch>AdditionFor=DOMCore</Patch>
-    </Class>
-    <Class name="DOMCounter_Definitions">
-      <Patch>AdditionFor=DOMCounter</Patch>
-    </Class>
-    <Class name="DOMCSS_Definitions">
-      <Patch>AdditionFor=DOMCSS</Patch>
-    </Class>
-    <Class name="DOMCSSCharsetRule_Definitions">
-      <Patch>AdditionFor=DOMCSSCharsetRule</Patch>
-    </Class>
-    <Class name="DOMCSSFontFaceRule_Definitions">
-      <Patch>AdditionFor=DOMCSSFontFaceRule</Patch>
-    </Class>
-    <Class name="DOMCSSImportRule_Definitions">
-      <Patch>AdditionFor=DOMCSSImportRule</Patch>
-    </Class>
-    <Class name="DOMCSSMediaRule_Definitions">
-      <Patch>AdditionFor=DOMCSSMediaRule</Patch>
-    </Class>
-    <Class name="DOMCSSPageRule_Definitions">
-      <Patch>AdditionFor=DOMCSSPageRule</Patch>
-    </Class>
-    <Class name="DOMCSSPrimitiveValue_Definitions">
-      <Patch>AdditionFor=DOMCSSPrimitiveValue</Patch>
-    </Class>
-    <Class name="DOMCSSRule_Definitions">
-      <Patch>AdditionFor=DOMCSSRule</Patch>
-    </Class>
-    <Class name="DOMCSSRuleList_Definitions">
-      <Patch>AdditionFor=DOMCSSRuleList</Patch>
-    </Class>
-    <Class name="DOMCSSStyleDeclaration_Definitions">
-      <Patch>AdditionFor=DOMCSSStyleDeclaration</Patch>
-    </Class>
-    <Class name="DOMCSSStyleRule_Definitions">
-      <Patch>AdditionFor=DOMCSSStyleRule</Patch>
-    </Class>
-    <Class name="DOMCSSStyleSheet_Definitions">
-      <Patch>AdditionFor=DOMCSSStyleSheet</Patch>
-    </Class>
-    <Class name="DOMCSSUnknownRule_Definitions">
-      <Patch>AdditionFor=DOMCSSUnknownRule</Patch>
-    </Class>
-    <Class name="DOMCSSValue_Definitions">
-      <Patch>AdditionFor=DOMCSSValue</Patch>
-    </Class>
-    <Class name="DOMCSSValueList_Definitions">
-      <Patch>AdditionFor=DOMCSSValueList</Patch>
-    </Class>
-    <Class name="DOMDocument_Definitions">
-      <Patch>AdditionFor=DOMDocument</Patch>
-    </Class>
-    <Class name="DOMDocumentFragment_Definitions">
-      <Patch>AdditionFor=DOMDocumentFragment</Patch>
-    </Class>
-    <Class name="DOMDocumentType_Definitions">
-      <Patch>AdditionFor=DOMDocumentType</Patch>
-    </Class>
-    <Class name="DOMElement_Definitions">
-      <Patch>AdditionFor=DOMElement</Patch>
-    </Class>
-    <Class name="DOMEntity_Definitions">
-      <Patch>AdditionFor=DOMEntity</Patch>
-    </Class>
-    <Class name="DOMEntityReference_Definitions">
-      <Patch>AdditionFor=DOMEntityReference</Patch>
-    </Class>
-    <Class name="DOMEvent_Definitions">
-      <Patch>AdditionFor=DOMEvent</Patch>
-    </Class>
-    <Class name="DOMEventException_Definitions">
-      <Patch>AdditionFor=DOMEventException</Patch>
-    </Class>
-    <Class name="DOMEventListener_Definitions">
-      <Patch>AdditionFor=DOMEventListener</Patch>
-    </Class>
-    <Class name="DOMEvents_Definitions">
-      <Patch>AdditionFor=DOMEvents</Patch>
-    </Class>
-    <Class name="DOMEventTarget_Definitions">
-      <Patch>AdditionFor=DOMEventTarget</Patch>
-    </Class>
-    <Class name="DOMException_Definitions">
-      <Patch>AdditionFor=DOMException</Patch>
-    </Class>
-    <Class name="DOMExtensions_Definitions">
-      <Patch>AdditionFor=DOMExtensions</Patch>
-    </Class>
-    <Class name="DOMFile_Definitions">
-      <Patch>AdditionFor=DOMFile</Patch>
-    </Class>
-    <Class name="DOMFileList_Definitions">
-      <Patch>AdditionFor=DOMFileList</Patch>
-    </Class>
-    <Class name="DOMHTML_Definitions">
-      <Patch>AdditionFor=DOMHTML</Patch>
-    </Class>
-    <Class name="DOMHTMLAnchorElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLAnchorElement</Patch>
-    </Class>
-    <Class name="DOMHTMLAppletElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLAppletElement</Patch>
-    </Class>
-    <Class name="DOMHTMLAreaElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLAreaElement</Patch>
-    </Class>
-    <Class name="DOMHTMLBaseElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLBaseElement</Patch>
-    </Class>
-    <Class name="DOMHTMLBaseFontElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLBaseFontElement</Patch>
-    </Class>
-    <Class name="DOMHTMLBodyElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLBodyElement</Patch>
-    </Class>
-    <Class name="DOMHTMLBRElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLBRElement</Patch>
-    </Class>
-    <Class name="DOMHTMLButtonElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLButtonElement</Patch>
-    </Class>
-    <Class name="DOMHTMLCollection_Definitions">
-      <Patch>AdditionFor=DOMHTMLCollection</Patch>
-    </Class>
-    <Class name="DOMHTMLDirectoryElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLDirectoryElement</Patch>
-    </Class>
-    <Class name="DOMHTMLDivElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLDivElement</Patch>
-    </Class>
-    <Class name="DOMHTMLDListElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLDListElement</Patch>
-    </Class>
-    <Class name="DOMHTMLDocument_Definitions">
-      <Patch>AdditionFor=DOMHTMLDocument</Patch>
-    </Class>
-    <Class name="DOMHTMLElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLElement</Patch>
-    </Class>
-    <Class name="DOMHTMLEmbedElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLEmbedElement</Patch>
-    </Class>
-    <Class name="DOMHTMLFieldSetElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLFieldSetElement</Patch>
-    </Class>
-    <Class name="DOMHTMLFontElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLFontElement</Patch>
-    </Class>
-    <Class name="DOMHTMLFormElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLFormElement</Patch>
-    </Class>
-    <Class name="DOMHTMLFrameElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLFrameElement</Patch>
-    </Class>
-    <Class name="DOMHTMLFrameSetElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLFrameSetElement</Patch>
-    </Class>
-    <Class name="DOMHTMLHeadElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLHeadElement</Patch>
-    </Class>
-    <Class name="DOMHTMLHeadingElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLHeadingElement</Patch>
-    </Class>
-    <Class name="DOMHTMLHRElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLHRElement</Patch>
-    </Class>
-    <Class name="DOMHTMLHtmlElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLHtmlElement</Patch>
-    </Class>
-    <Class name="DOMHTMLIFrameElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLIFrameElement</Patch>
-    </Class>
-    <Class name="DOMHTMLImageElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLImageElement</Patch>
-    </Class>
-    <Class name="DOMHTMLInputElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLInputElement</Patch>
-    </Class>
-    <Class name="DOMHTMLIsIndexElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLIsIndexElement</Patch>
-    </Class>
-    <Class name="DOMHTMLLabelElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLLabelElement</Patch>
-    </Class>
-    <Class name="DOMHTMLLegendElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLLegendElement</Patch>
-    </Class>
-    <Class name="DOMHTMLLIElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLLIElement</Patch>
-    </Class>
-    <Class name="DOMHTMLLinkElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLLinkElement</Patch>
-    </Class>
-    <Class name="DOMHTMLMapElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLMapElement</Patch>
-    </Class>
-    <Class name="DOMHTMLMarqueeElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLMarqueeElement</Patch>
-    </Class>
-    <Class name="DOMHTMLMenuElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLMenuElement</Patch>
-    </Class>
-    <Class name="DOMHTMLMetaElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLMetaElement</Patch>
-    </Class>
-    <Class name="DOMHTMLModElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLModElement</Patch>
-    </Class>
-    <Class name="DOMHTMLObjectElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLObjectElement</Patch>
-    </Class>
-    <Class name="DOMHTMLOListElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLOListElement</Patch>
-    </Class>
-    <Class name="DOMHTMLOptGroupElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLOptGroupElement</Patch>
-    </Class>
-    <Class name="DOMHTMLOptionElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLOptionElement</Patch>
-    </Class>
-    <Class name="DOMHTMLOptionsCollection_Definitions">
-      <Patch>AdditionFor=DOMHTMLOptionsCollection</Patch>
-    </Class>
-    <Class name="DOMHTMLParagraphElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLParagraphElement</Patch>
-    </Class>
-    <Class name="DOMHTMLParamElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLParamElement</Patch>
-    </Class>
-    <Class name="DOMHTMLPreElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLPreElement</Patch>
-    </Class>
-    <Class name="DOMHTMLQuoteElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLQuoteElement</Patch>
-    </Class>
-    <Class name="DOMHTMLScriptElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLScriptElement</Patch>
-    </Class>
-    <Class name="DOMHTMLSelectElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLSelectElement</Patch>
-    </Class>
-    <Class name="DOMHTMLStyleElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLStyleElement</Patch>
-    </Class>
-    <Class name="DOMHTMLTableCaptionElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLTableCaptionElement</Patch>
-    </Class>
-    <Class name="DOMHTMLTableCellElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLTableCellElement</Patch>
-    </Class>
-    <Class name="DOMHTMLTableColElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLTableColElement</Patch>
-    </Class>
-    <Class name="DOMHTMLTableElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLTableElement</Patch>
-    </Class>
-    <Class name="DOMHTMLTableRowElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLTableRowElement</Patch>
-    </Class>
-    <Class name="DOMHTMLTableSectionElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLTableSectionElement</Patch>
-    </Class>
-    <Class name="DOMHTMLTextAreaElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLTextAreaElement</Patch>
-    </Class>
-    <Class name="DOMHTMLTitleElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLTitleElement</Patch>
-    </Class>
-    <Class name="DOMHTMLUListElement_Definitions">
-      <Patch>AdditionFor=DOMHTMLUListElement</Patch>
-    </Class>
-    <Class name="DOMImplementation_Definitions">
-      <Patch>AdditionFor=DOMImplementation</Patch>
-    </Class>
-    <Class name="DOMKeyboardEvent_Definitions">
-      <Patch>AdditionFor=DOMKeyboardEvent</Patch>
-    </Class>
-    <Class name="DOMMediaList_Definitions">
-      <Patch>AdditionFor=DOMMediaList</Patch>
-    </Class>
-    <Class name="DOMMouseEvent_Definitions">
-      <Patch>AdditionFor=DOMMouseEvent</Patch>
-    </Class>
-    <Class name="DOMMutationEvent_Definitions">
-      <Patch>AdditionFor=DOMMutationEvent</Patch>
-    </Class>
-    <Class name="DOMNamedNodeMap_Definitions">
-      <Patch>AdditionFor=DOMNamedNodeMap</Patch>
-    </Class>
-    <Class name="DOMNode_Definitions">
-      <Patch>AdditionFor=DOMNode</Patch>
-    </Class>
-    <Class name="DOMNodeFilter_Definitions">
-      <Patch>AdditionFor=DOMNodeFilter</Patch>
-    </Class>
-    <Class name="DOMNodeIterator_Definitions">
-      <Patch>AdditionFor=DOMNodeIterator</Patch>
-    </Class>
-    <Class name="DOMNodeList_Definitions">
-      <Patch>AdditionFor=DOMNodeList</Patch>
-    </Class>
-    <Class name="DOMNotation_Definitions">
-      <Patch>AdditionFor=DOMNotation</Patch>
-    </Class>
-    <Class name="DOMObject_Definitions">
-      <Patch>AdditionFor=DOMObject</Patch>
-    </Class>
-    <Class name="DOMOverflowEvent_Definitions">
-      <Patch>AdditionFor=DOMOverflowEvent</Patch>
-    </Class>
-    <Class name="DOMProcessingInstruction_Definitions">
-      <Patch>AdditionFor=DOMProcessingInstruction</Patch>
-    </Class>
-    <Class name="DOMProgressEvent_Definitions">
-      <Patch>AdditionFor=DOMProgressEvent</Patch>
-    </Class>
-    <Class name="DOMRange_Definitions">
-      <Patch>AdditionFor=DOMRange</Patch>
-    </Class>
-    <Class name="DOMRangeException_Definitions">
-      <Patch>AdditionFor=DOMRangeException</Patch>
-    </Class>
-    <Class name="DOMRanges_Definitions">
-      <Patch>AdditionFor=DOMRanges</Patch>
-    </Class>
-    <Class name="DOMRect_Definitions">
-      <Patch>AdditionFor=DOMRect</Patch>
-    </Class>
-    <Class name="DOMRGBColor_Definitions">
-      <Patch>AdditionFor=DOMRGBColor</Patch>
-    </Class>
-    <Class name="DOMStyleSheet_Definitions">
-      <Patch>AdditionFor=DOMStyleSheet</Patch>
-    </Class>
-    <Class name="DOMStyleSheetList_Definitions">
-      <Patch>AdditionFor=DOMStyleSheetList</Patch>
-    </Class>
-    <Class name="DOMStylesheets_Definitions">
-      <Patch>AdditionFor=DOMStylesheets</Patch>
-    </Class>
-    <Class name="DOMText_Definitions">
-      <Patch>AdditionFor=DOMText</Patch>
-    </Class>
-    <Class name="DOMTraversal_Definitions">
-      <Patch>AdditionFor=DOMTraversal</Patch>
-    </Class>
-    <Class name="DOMTreeWalker_Definitions">
-      <Patch>AdditionFor=DOMTreeWalker</Patch>
-    </Class>
-    <Class name="DOMUIEvent_Definitions">
-      <Patch>AdditionFor=DOMUIEvent</Patch>
-    </Class>
-    <Class name="DOMViews_Definitions">
-      <Patch>AdditionFor=DOMViews</Patch>
-    </Class>
-    <Class name="DOMWheelEvent_Definitions">
-      <Patch>AdditionFor=DOMWheelEvent</Patch>
-    </Class>
-    <Class name="DOMXPath_Definitions">
-      <Patch>AdditionFor=DOMXPath</Patch>
-    </Class>
-    <Class name="DOMXPathException_Definitions">
-      <Patch>AdditionFor=DOMXPathException</Patch>
-    </Class>
-    <Class name="DOMXPathExpression_Definitions">
-      <Patch>AdditionFor=DOMXPathExpression</Patch>
-    </Class>
-    <Class name="DOMXPathNSResolver_Definitions">
-      <Patch>AdditionFor=DOMXPathNSResolver</Patch>
-    </Class>
-    <Class name="DOMXPathResult_Definitions">
-      <Patch>AdditionFor=DOMXPathResult</Patch>
-    </Class>
-  </Classes>
-  <Protocols>
-    <Protocol name="DOMEventListener" />
-    <Protocol name="DOMEventTarget" />
-    <Protocol name="DOMNodeFilter" />
-    <Protocol name="DOMXPathNSResolver" />
-  </Protocols>
+    <Classes>
+      <Class name="DOMAbstractView" />
+      <Class name="DOMAttr" />
+      <Class name="DOMBlob" />
+      <Class name="DOMCDATASection" />
+      <Class name="DOMCharacterData" />
+      <Class name="DOMCharacterData_DOMCharacterDataDeprecated">
+        <Patch>AdditionFor=DOMCharacterData</Patch>
+      </Class>
+      <Class name="DOMComment" />
+      <Class name="DOMCounter" />
+      <Class name="DOMCSSCharsetRule" />
+      <Class name="DOMCSSFontFaceRule" />
+      <Class name="DOMCSSImportRule" />
+      <Class name="DOMCSSMediaRule" />
+      <Class name="DOMCSSMediaRule_DOMCSSMediaRuleDeprecated">
+        <Patch>AdditionFor=DOMCSSMediaRule</Patch>
+      </Class>
+      <Class name="DOMCSSPageRule" />
+      <Class name="DOMCSSPrimitiveValue" />
+      <Class name="DOMCSSPrimitiveValue_DOMCSSPrimitiveValueDeprecated">
+        <Patch>AdditionFor=DOMCSSPrimitiveValue</Patch>
+      </Class>
+      <Class name="DOMCSSRule" />
+      <Class name="DOMCSSRuleList" />
+      <Class name="DOMCSSStyleDeclaration" />
+      <Class name="DOMCSSStyleDeclaration_DOMCSS2Properties">
+        <Patch>AdditionFor=DOMCSSStyleDeclaration</Patch>
+      </Class>
+      <Class name="DOMCSSStyleDeclaration_DOMCSSStyleDeclarationDeprecated">
+        <Patch>AdditionFor=DOMCSSStyleDeclaration</Patch>
+      </Class>
+      <Class name="DOMCSSStyleRule" />
+      <Class name="DOMCSSStyleSheet" />
+      <Class name="DOMCSSStyleSheet_DOMCSSStyleSheetDeprecated">
+        <Patch>AdditionFor=DOMCSSStyleSheet</Patch>
+      </Class>
+      <Class name="DOMCSSUnknownRule" />
+      <Class name="DOMCSSValue" />
+      <Class name="DOMCSSValueList" />
+      <Class name="DOMDocument" />
+      <Class name="DOMDocument_DOMDocumentDeprecated">
+        <Patch>AdditionFor=DOMDocument</Patch>
+      </Class>
+      <Class name="DOMDocument_WebDOMDocumentOperations">
+        <Patch>AdditionFor=DOMDocument</Patch>
+      </Class>
+      <Class name="DOMDocumentFragment" />
+      <Class name="DOMDocumentType" />
+      <Class name="DOMElement" />
+      <Class name="DOMElement_DOMElementAppKitExtensions">
+        <Patch>AdditionFor=DOMElement</Patch>
+      </Class>
+      <Class name="DOMElement_DOMElementDeprecated">
+        <Patch>AdditionFor=DOMElement</Patch>
+      </Class>
+      <Class name="DOMEntity" />
+      <Class name="DOMEntityReference" />
+      <Class name="DOMEvent" />
+      <Class name="DOMEvent_DOMEventDeprecated">
+        <Patch>AdditionFor=DOMEvent</Patch>
+      </Class>
+      <Class name="DOMFile" />
+      <Class name="DOMFileList" />
+      <Class name="DOMHTMLAnchorElement" />
+      <Class name="DOMHTMLAppletElement" />
+      <Class name="DOMHTMLAreaElement" />
+      <Class name="DOMHTMLBaseElement" />
+      <Class name="DOMHTMLBaseFontElement" />
+      <Class name="DOMHTMLBodyElement" />
+      <Class name="DOMHTMLBRElement" />
+      <Class name="DOMHTMLButtonElement" />
+      <Class name="DOMHTMLCollection" />
+      <Class name="DOMHTMLDirectoryElement" />
+      <Class name="DOMHTMLDivElement" />
+      <Class name="DOMHTMLDListElement" />
+      <Class name="DOMHTMLDocument" />
+      <Class name="DOMHTMLDocument_DOMHTMLDocumentExtensions">
+        <Patch>AdditionFor=DOMHTMLDocument</Patch>
+      </Class>
+      <Class name="DOMHTMLElement">
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual NSString ClassName]]></Source>
+          <With><![CDATA[public new NSString ClassName]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual NSString InnerText]]></Source>
+          <With><![CDATA[public new NSString InnerText]]></With>
+        </Replace>
+      </Class>
+      <Class name="DOMHTMLEmbedElement" />
+      <Class name="DOMHTMLFieldSetElement" />
+      <Class name="DOMHTMLFontElement" />
+      <Class name="DOMHTMLFormElement" />
+      <Class name="DOMHTMLFrameElement" />
+      <Class name="DOMHTMLFrameElement_WebDOMHTMLFrameElementOperations">
+        <Patch>AdditionFor=DOMHTMLFrameElement</Patch>
+      </Class>
+      <Class name="DOMHTMLFrameSetElement" />
+      <Class name="DOMHTMLHeadElement" />
+      <Class name="DOMHTMLHeadingElement" />
+      <Class name="DOMHTMLHRElement" />
+      <Class name="DOMHTMLHtmlElement">
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual NSString Version]]></Source>
+          <With><![CDATA[public new NSString Version]]></With>
+        </Replace>
+      </Class>
+      <Class name="DOMHTMLIFrameElement" />
+      <Class name="DOMHTMLIFrameElement_WebDOMHTMLIFrameElementOperations">
+        <Patch>AdditionFor=DOMHTMLIFrameElement</Patch>
+      </Class>
+      <Class name="DOMHTMLImageElement" />
+      <Class name="DOMHTMLInputElement" />
+      <Class name="DOMHTMLIsIndexElement" />
+      <Class name="DOMHTMLLabelElement" />
+      <Class name="DOMHTMLLegendElement" />
+      <Class name="DOMHTMLLIElement" />
+      <Class name="DOMHTMLLinkElement">
+        <Patch>Properties[Sheet].Generate=false</Patch>
+      </Class>
+      <Class name="DOMHTMLMapElement" />
+      <Class name="DOMHTMLMarqueeElement" />
+      <Class name="DOMHTMLMenuElement" />
+      <Class name="DOMHTMLMetaElement" />
+      <Class name="DOMHTMLModElement" />
+      <Class name="DOMHTMLObjectElement" />
+      <Class name="DOMHTMLObjectElement_WebDOMHTMLObjectElementOperations">
+        <Patch>AdditionFor=DOMHTMLObjectElement</Patch>
+      </Class>
+      <Class name="DOMHTMLOListElement" />
+      <Class name="DOMHTMLOptGroupElement" />
+      <Class name="DOMHTMLOptionElement" />
+      <Class name="DOMHTMLOptionsCollection" />
+      <Class name="DOMHTMLParagraphElement" />
+      <Class name="DOMHTMLParamElement" />
+      <Class name="DOMHTMLPreElement" />
+      <Class name="DOMHTMLQuoteElement" />
+      <Class name="DOMHTMLScriptElement" />
+      <Class name="DOMHTMLSelectElement" />
+      <Class name="DOMHTMLSelectElement_DOMHTMLSelectElementDeprecated">
+        <Patch>AdditionFor=DOMHTMLSelectElement</Patch>
+      </Class>
+      <Class name="DOMHTMLStyleElement">
+        <Patch>Properties[Sheet].Generate=false</Patch>
+      </Class>
+      <Class name="DOMHTMLTableCaptionElement" />
+      <Class name="DOMHTMLTableCellElement" />
+      <Class name="DOMHTMLTableColElement" />
+      <Class name="DOMHTMLTableElement" />
+      <Class name="DOMHTMLTableRowElement" />
+      <Class name="DOMHTMLTableSectionElement" />
+      <Class name="DOMHTMLTextAreaElement" />
+      <Class name="DOMHTMLTitleElement" />
+      <Class name="DOMHTMLUListElement" />
+      <Class name="DOMImplementation" />
+      <Class name="DOMImplementation_DOMImplementationDeprecated">
+        <Patch>AdditionFor=DOMImplementation</Patch>
+      </Class>
+      <Class name="DOMKeyboardEvent" />
+      <Class name="DOMMediaList" />
+      <Class name="DOMMouseEvent" />
+      <Class name="DOMMouseEvent_DOMMouseEventDeprecated">
+        <Patch>AdditionFor=DOMMouseEvent</Patch>
+      </Class>
+      <Class name="DOMMutationEvent" />
+      <Class name="DOMMutationEvent_DOMMutationEventDeprecated">
+        <Patch>AdditionFor=DOMMutationEvent</Patch>
+      </Class>
+      <Class name="DOMNamedNodeMap" />
+      <Class name="DOMNamedNodeMap_DOMNamedNodeMapDeprecated">
+        <Patch>AdditionFor=DOMNamedNodeMap</Patch>
+      </Class>
+      <Class name="DOMNode" />
+      <Class name="DOMNode_DOMNodeDeprecated">
+        <Patch>AdditionFor=DOMNode</Patch>
+      </Class>
+      <Class name="DOMNode_DOMNodeExtensions">
+        <Patch>AdditionFor=DOMNode</Patch>
+      </Class>
+      <Class name="DOMNode_WebDOMNodeOperations">
+        <Patch>AdditionFor=DOMNode</Patch>
+      </Class>
+      <Class name="DOMNodeIterator" />
+      <Class name="DOMNodeList" />
+      <Class name="DOMNotation" />
+      <Class name="DOMObject">
+        <Patch>Constants[_internal].Generate=false</Patch>
+      </Class>
+      <Class name="DOMObject_DOMLinkStyle">
+        <Patch>AdditionFor=DOMObject</Patch>
+      </Class>
+      <Class name="DOMOverflowEvent" />
+      <Class name="DOMProcessingInstruction">
+        <Patch>Properties[Sheet].Generate=false</Patch>
+      </Class>
+      <Class name="DOMProgressEvent" />
+      <Class name="DOMRange">
+        <Patch>Properties[ToString].Name=AsString</Patch>
+      </Class>
+      <Class name="DOMRange_DOMRangeDeprecated">
+        <Patch>AdditionFor=DOMRange</Patch>
+      </Class>
+      <Class name="DOMRange_WebDOMRangeOperations">
+        <Patch>AdditionFor=DOMRange</Patch>
+      </Class>
+      <Class name="DOMRect" />
+      <Class name="DOMRGBColor" />
+      <Class name="DOMStyleSheet" />
+      <Class name="DOMStyleSheetList" />
+      <Class name="DOMText" />
+      <Class name="DOMTreeWalker" />
+      <Class name="DOMUIEvent" />
+      <Class name="DOMUIEvent_DOMUIEventDeprecated">
+        <Patch>AdditionFor=DOMUIEvent</Patch>
+      </Class>
+      <Class name="DOMWheelEvent" />
+      <Class name="DOMXPathExpression" />
+      <Class name="DOMXPathExpression_DOMXPathExpressionDeprecated">
+        <Patch>AdditionFor=DOMXPathExpression</Patch>
+      </Class>
+      <Class name="DOMXPathResult" />
+      <Class name="DOM_Definitions">
+        <Patch>AdditionFor=DOM</Patch>
+      </Class>
+      <Class name="DOMAbstractView_Definitions">
+        <Patch>AdditionFor=DOMAbstractView</Patch>
+      </Class>
+      <Class name="DOMAttr_Definitions">
+        <Patch>AdditionFor=DOMAttr</Patch>
+      </Class>
+      <Class name="DOMBlob_Definitions">
+        <Patch>AdditionFor=DOMBlob</Patch>
+      </Class>
+      <Class name="DOMCDATASection_Definitions">
+        <Patch>AdditionFor=DOMCDATASection</Patch>
+      </Class>
+      <Class name="DOMCharacterData_Definitions">
+        <Patch>AdditionFor=DOMCharacterData</Patch>
+      </Class>
+      <Class name="DOMComment_Definitions">
+        <Patch>AdditionFor=DOMComment</Patch>
+      </Class>
+      <Class name="DOMCore_Definitions">
+        <Patch>AdditionFor=DOMCore</Patch>
+      </Class>
+      <Class name="DOMCounter_Definitions">
+        <Patch>AdditionFor=DOMCounter</Patch>
+      </Class>
+      <Class name="DOMCSS_Definitions">
+        <Patch>AdditionFor=DOMCSS</Patch>
+      </Class>
+      <Class name="DOMCSSCharsetRule_Definitions">
+        <Patch>AdditionFor=DOMCSSCharsetRule</Patch>
+      </Class>
+      <Class name="DOMCSSFontFaceRule_Definitions">
+        <Patch>AdditionFor=DOMCSSFontFaceRule</Patch>
+      </Class>
+      <Class name="DOMCSSImportRule_Definitions">
+        <Patch>AdditionFor=DOMCSSImportRule</Patch>
+      </Class>
+      <Class name="DOMCSSMediaRule_Definitions">
+        <Patch>AdditionFor=DOMCSSMediaRule</Patch>
+      </Class>
+      <Class name="DOMCSSPageRule_Definitions">
+        <Patch>AdditionFor=DOMCSSPageRule</Patch>
+      </Class>
+      <Class name="DOMCSSPrimitiveValue_Definitions">
+        <Patch>AdditionFor=DOMCSSPrimitiveValue</Patch>
+        <Patch>Enumerations[@0].Name=DOMCSSUnitType</Patch>
+        <Patch>Enumerations[DOMCSSUnitType].BaseType=ushort</Patch>
+      </Class>
+      <Class name="DOMCSSRule_Definitions">
+        <Patch>AdditionFor=DOMCSSRule</Patch>
+        <Patch>Enumerations[@1].Name=DOMCSSRuleType</Patch>
+        <Patch>Enumerations[DOMCSSRuleType].BaseType=ushort</Patch>
+      </Class>
+      <Class name="DOMCSSRuleList_Definitions">
+        <Patch>AdditionFor=DOMCSSRuleList</Patch>
+      </Class>
+      <Class name="DOMCSSStyleDeclaration_Definitions">
+        <Patch>AdditionFor=DOMCSSStyleDeclaration</Patch>
+      </Class>
+      <Class name="DOMCSSStyleRule_Definitions">
+        <Patch>AdditionFor=DOMCSSStyleRule</Patch>
+      </Class>
+      <Class name="DOMCSSStyleSheet_Definitions">
+        <Patch>AdditionFor=DOMCSSStyleSheet</Patch>
+      </Class>
+      <Class name="DOMCSSUnknownRule_Definitions">
+        <Patch>AdditionFor=DOMCSSUnknownRule</Patch>
+      </Class>
+      <Class name="DOMCSSValue_Definitions">
+        <Patch>AdditionFor=DOMCSSValue</Patch>
+        <Patch>Enumerations[@2].Name=DOMCSSValueType</Patch>
+        <Patch>Enumerations[DOMCSSValueType].BaseType=ushort</Patch>
+      </Class>
+      <Class name="DOMCSSValueList_Definitions">
+        <Patch>AdditionFor=DOMCSSValueList</Patch>
+      </Class>
+      <Class name="DOMDocument_Definitions">
+        <Patch>AdditionFor=DOMDocument</Patch>
+      </Class>
+      <Class name="DOMDocumentFragment_Definitions">
+        <Patch>AdditionFor=DOMDocumentFragment</Patch>
+      </Class>
+      <Class name="DOMDocumentType_Definitions">
+        <Patch>AdditionFor=DOMDocumentType</Patch>
+      </Class>
+      <Class name="DOMElement_Definitions">
+        <Patch>AdditionFor=DOMElement</Patch>
+      </Class>
+      <Class name="DOMEntity_Definitions">
+        <Patch>AdditionFor=DOMEntity</Patch>
+      </Class>
+      <Class name="DOMEntityReference_Definitions">
+        <Patch>AdditionFor=DOMEntityReference</Patch>
+      </Class>
+      <Class name="DOMEvent_Definitions">
+        <Patch>AdditionFor=DOMEvent</Patch>
+        <Patch>Enumerations[@3].Name=DOMEventPhase</Patch>
+        <Patch>Enumerations[DOMEventPhase].BaseType=ushort</Patch>
+      </Class>
+      <Class name="DOMEventException_Definitions">
+        <Patch>AdditionFor=DOMEventException</Patch>
+        <Patch>Enumerations[DOMEventExceptionCode].BaseType=int</Patch>
+      </Class>
+      <Class name="DOMEventListener_Definitions">
+        <Patch>AdditionFor=DOMEventListener</Patch>
+      </Class>
+      <Class name="DOMEvents_Definitions">
+        <Patch>AdditionFor=DOMEvents</Patch>
+      </Class>
+      <Class name="DOMEventTarget_Definitions">
+        <Patch>AdditionFor=DOMEventTarget</Patch>
+      </Class>
+      <Class name="DOMException_Definitions">
+        <Patch>AdditionFor=DOMException</Patch>
+        <Patch>Enumerations[DOMExceptionCode].BaseType=int</Patch>
+      </Class>
+      <Class name="DOMExtensions_Definitions">
+        <Patch>AdditionFor=DOMExtensions</Patch>
+      </Class>
+      <Class name="DOMFile_Definitions">
+        <Patch>AdditionFor=DOMFile</Patch>
+      </Class>
+      <Class name="DOMFileList_Definitions">
+        <Patch>AdditionFor=DOMFileList</Patch>
+      </Class>
+      <Class name="DOMHTML_Definitions">
+        <Patch>AdditionFor=DOMHTML</Patch>
+      </Class>
+      <Class name="DOMHTMLAnchorElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLAnchorElement</Patch>
+      </Class>
+      <Class name="DOMHTMLAppletElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLAppletElement</Patch>
+      </Class>
+      <Class name="DOMHTMLAreaElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLAreaElement</Patch>
+      </Class>
+      <Class name="DOMHTMLBaseElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLBaseElement</Patch>
+      </Class>
+      <Class name="DOMHTMLBaseFontElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLBaseFontElement</Patch>
+      </Class>
+      <Class name="DOMHTMLBodyElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLBodyElement</Patch>
+      </Class>
+      <Class name="DOMHTMLBRElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLBRElement</Patch>
+      </Class>
+      <Class name="DOMHTMLButtonElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLButtonElement</Patch>
+      </Class>
+      <Class name="DOMHTMLCollection_Definitions">
+        <Patch>AdditionFor=DOMHTMLCollection</Patch>
+      </Class>
+      <Class name="DOMHTMLDirectoryElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLDirectoryElement</Patch>
+      </Class>
+      <Class name="DOMHTMLDivElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLDivElement</Patch>
+      </Class>
+      <Class name="DOMHTMLDListElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLDListElement</Patch>
+      </Class>
+      <Class name="DOMHTMLDocument_Definitions">
+        <Patch>AdditionFor=DOMHTMLDocument</Patch>
+      </Class>
+      <Class name="DOMHTMLElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLElement</Patch>
+      </Class>
+      <Class name="DOMHTMLEmbedElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLEmbedElement</Patch>
+      </Class>
+      <Class name="DOMHTMLFieldSetElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLFieldSetElement</Patch>
+      </Class>
+      <Class name="DOMHTMLFontElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLFontElement</Patch>
+      </Class>
+      <Class name="DOMHTMLFormElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLFormElement</Patch>
+      </Class>
+      <Class name="DOMHTMLFrameElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLFrameElement</Patch>
+      </Class>
+      <Class name="DOMHTMLFrameSetElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLFrameSetElement</Patch>
+      </Class>
+      <Class name="DOMHTMLHeadElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLHeadElement</Patch>
+      </Class>
+      <Class name="DOMHTMLHeadingElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLHeadingElement</Patch>
+      </Class>
+      <Class name="DOMHTMLHRElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLHRElement</Patch>
+      </Class>
+      <Class name="DOMHTMLHtmlElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLHtmlElement</Patch>
+      </Class>
+      <Class name="DOMHTMLIFrameElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLIFrameElement</Patch>
+      </Class>
+      <Class name="DOMHTMLImageElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLImageElement</Patch>
+      </Class>
+      <Class name="DOMHTMLInputElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLInputElement</Patch>
+      </Class>
+      <Class name="DOMHTMLIsIndexElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLIsIndexElement</Patch>
+      </Class>
+      <Class name="DOMHTMLLabelElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLLabelElement</Patch>
+      </Class>
+      <Class name="DOMHTMLLegendElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLLegendElement</Patch>
+      </Class>
+      <Class name="DOMHTMLLIElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLLIElement</Patch>
+      </Class>
+      <Class name="DOMHTMLLinkElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLLinkElement</Patch>
+      </Class>
+      <Class name="DOMHTMLMapElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLMapElement</Patch>
+      </Class>
+      <Class name="DOMHTMLMarqueeElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLMarqueeElement</Patch>
+      </Class>
+      <Class name="DOMHTMLMenuElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLMenuElement</Patch>
+      </Class>
+      <Class name="DOMHTMLMetaElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLMetaElement</Patch>
+      </Class>
+      <Class name="DOMHTMLModElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLModElement</Patch>
+      </Class>
+      <Class name="DOMHTMLObjectElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLObjectElement</Patch>
+      </Class>
+      <Class name="DOMHTMLOListElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLOListElement</Patch>
+      </Class>
+      <Class name="DOMHTMLOptGroupElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLOptGroupElement</Patch>
+      </Class>
+      <Class name="DOMHTMLOptionElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLOptionElement</Patch>
+      </Class>
+      <Class name="DOMHTMLOptionsCollection_Definitions">
+        <Patch>AdditionFor=DOMHTMLOptionsCollection</Patch>
+      </Class>
+      <Class name="DOMHTMLParagraphElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLParagraphElement</Patch>
+      </Class>
+      <Class name="DOMHTMLParamElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLParamElement</Patch>
+      </Class>
+      <Class name="DOMHTMLPreElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLPreElement</Patch>
+      </Class>
+      <Class name="DOMHTMLQuoteElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLQuoteElement</Patch>
+      </Class>
+      <Class name="DOMHTMLScriptElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLScriptElement</Patch>
+      </Class>
+      <Class name="DOMHTMLSelectElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLSelectElement</Patch>
+      </Class>
+      <Class name="DOMHTMLStyleElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLStyleElement</Patch>
+      </Class>
+      <Class name="DOMHTMLTableCaptionElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLTableCaptionElement</Patch>
+      </Class>
+      <Class name="DOMHTMLTableCellElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLTableCellElement</Patch>
+      </Class>
+      <Class name="DOMHTMLTableColElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLTableColElement</Patch>
+      </Class>
+      <Class name="DOMHTMLTableElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLTableElement</Patch>
+      </Class>
+      <Class name="DOMHTMLTableRowElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLTableRowElement</Patch>
+      </Class>
+      <Class name="DOMHTMLTableSectionElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLTableSectionElement</Patch>
+      </Class>
+      <Class name="DOMHTMLTextAreaElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLTextAreaElement</Patch>
+      </Class>
+      <Class name="DOMHTMLTitleElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLTitleElement</Patch>
+      </Class>
+      <Class name="DOMHTMLUListElement_Definitions">
+        <Patch>AdditionFor=DOMHTMLUListElement</Patch>
+      </Class>
+      <Class name="DOMImplementation_Definitions">
+        <Patch>AdditionFor=DOMImplementation</Patch>
+      </Class>
+      <Class name="DOMKeyboardEvent_Definitions">
+        <Patch>AdditionFor=DOMKeyboardEvent</Patch>
+        <Patch>Enumerations[@4].Name=DOMKeyLocation</Patch>
+        <Patch>Enumerations[DOMKeyLocation].BaseType=uint</Patch>
+      </Class>
+      <Class name="DOMMediaList_Definitions">
+        <Patch>AdditionFor=DOMMediaList</Patch>
+      </Class>
+      <Class name="DOMMouseEvent_Definitions">
+        <Patch>AdditionFor=DOMMouseEvent</Patch>
+      </Class>
+      <Class name="DOMMutationEvent_Definitions">
+        <Patch>AdditionFor=DOMMutationEvent</Patch>
+        <Patch>Enumerations[@5].Name=DOMAttributeChange</Patch>
+        <Patch>Enumerations[DOMAttributeChange].BaseType=ushort</Patch>
+      </Class>
+      <Class name="DOMNamedNodeMap_Definitions">
+        <Patch>AdditionFor=DOMNamedNodeMap</Patch>
+      </Class>
+      <Class name="DOMNode_Definitions">
+        <Patch>AdditionFor=DOMNode</Patch>
+        <Patch>Enumerations[@6].Name=DOMNodeType</Patch>
+        <Patch>Enumerations[DOMNodeType].BaseType=ushort</Patch>
+      </Class>
+      <Class name="DOMNodeFilter_Definitions">
+        <Patch>AdditionFor=DOMNodeFilter</Patch>
+        <Patch>Enumerations[@7].Name=DOMNodeFilterResult</Patch>
+        <Patch>Enumerations[DOMNodeFilterResult].BaseType=short</Patch>
+        <Patch>Enumerations[DOMNodeFilterResult].Values[DOM_SHOW_ALL].Value=-1</Patch>
+      </Class>
+      <Class name="DOMNodeIterator_Definitions">
+        <Patch>AdditionFor=DOMNodeIterator</Patch>
+      </Class>
+      <Class name="DOMNodeList_Definitions">
+        <Patch>AdditionFor=DOMNodeList</Patch>
+      </Class>
+      <Class name="DOMNotation_Definitions">
+        <Patch>AdditionFor=DOMNotation</Patch>
+      </Class>
+      <Class name="DOMObject_Definitions">
+        <Patch>AdditionFor=DOMObject</Patch>
+      </Class>
+      <Class name="DOMOverflowEvent_Definitions">
+        <Patch>AdditionFor=DOMOverflowEvent</Patch>
+        <Patch>Enumerations[@8].Name=DOMOverflowOrientation</Patch>
+        <Patch>Enumerations[DOMOverflowOrientation].BaseType=ushort</Patch>
+      </Class>
+      <Class name="DOMProcessingInstruction_Definitions">
+        <Patch>AdditionFor=DOMProcessingInstruction</Patch>
+      </Class>
+      <Class name="DOMProgressEvent_Definitions">
+        <Patch>AdditionFor=DOMProgressEvent</Patch>
+      </Class>
+      <Class name="DOMRange_Definitions">
+        <Patch>AdditionFor=DOMRange</Patch>
+        <Patch>Enumerations[@9].Name=DOMRangeOffset</Patch>
+        <Patch>Enumerations[DOMRangeOffset].BaseType=int</Patch>
+      </Class>
+      <Class name="DOMRangeException_Definitions">
+        <Patch>AdditionFor=DOMRangeException</Patch>
+        <Patch>Enumerations[DOMRangeExceptionCode].BaseType=int</Patch>
+      </Class>
+      <Class name="DOMRanges_Definitions">
+        <Patch>AdditionFor=DOMRanges</Patch>
+      </Class>
+      <Class name="DOMRect_Definitions">
+        <Patch>AdditionFor=DOMRect</Patch>
+      </Class>
+      <Class name="DOMRGBColor_Definitions">
+        <Patch>AdditionFor=DOMRGBColor</Patch>
+      </Class>
+      <Class name="DOMStyleSheet_Definitions">
+        <Patch>AdditionFor=DOMStyleSheet</Patch>
+      </Class>
+      <Class name="DOMStyleSheetList_Definitions">
+        <Patch>AdditionFor=DOMStyleSheetList</Patch>
+      </Class>
+      <Class name="DOMStylesheets_Definitions">
+        <Patch>AdditionFor=DOMStylesheets</Patch>
+      </Class>
+      <Class name="DOMText_Definitions">
+        <Patch>AdditionFor=DOMText</Patch>
+      </Class>
+      <Class name="DOMTraversal_Definitions">
+        <Patch>AdditionFor=DOMTraversal</Patch>
+      </Class>
+      <Class name="DOMTreeWalker_Definitions">
+        <Patch>AdditionFor=DOMTreeWalker</Patch>
+      </Class>
+      <Class name="DOMUIEvent_Definitions">
+        <Patch>AdditionFor=DOMUIEvent</Patch>
+      </Class>
+      <Class name="DOMViews_Definitions">
+        <Patch>AdditionFor=DOMViews</Patch>
+      </Class>
+      <Class name="DOMWheelEvent_Definitions">
+        <Patch>AdditionFor=DOMWheelEvent</Patch>
+      </Class>
+      <Class name="DOMXPath_Definitions">
+        <Patch>AdditionFor=DOMXPath</Patch>
+      </Class>
+      <Class name="DOMXPathException_Definitions">
+        <Patch>AdditionFor=DOMXPathException</Patch>
+        <Patch>Enumerations[DOMXPathExceptionCode].BaseType=int</Patch>
+      </Class>
+      <Class name="DOMXPathExpression_Definitions">
+        <Patch>AdditionFor=DOMXPathExpression</Patch>
+      </Class>
+      <Class name="DOMXPathNSResolver_Definitions">
+        <Patch>AdditionFor=DOMXPathNSResolver</Patch>
+      </Class>
+      <Class name="DOMXPathResult_Definitions">
+        <Patch>AdditionFor=DOMXPathResult</Patch>
+        <Patch>Enumerations[@10].Name=DOMXPathResultType</Patch>
+        <Patch>Enumerations[DOMXPathResultType].BaseType=ushort</Patch>
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="DOMEventListener" />
+      <Protocol name="DOMEventTarget" />
+      <Protocol name="DOMNodeFilter" />
+      <Protocol name="DOMXPathNSResolver" />
+    </Protocols>
   </Framework>
 
   <!--
@@ -6105,7 +6185,7 @@ enum
       <Class name="CPLayer">
         <Patch>BaseType=CALayer</Patch>
         <Patch>Properties[LayoutManager].Generate=false</Patch>
-	  </Class>
+      </Class>
       <Class name="CPLayerAnnotation" />
       <Class name="CPLayerHostingView">
         <Patch>BaseType=NSView</Patch>
