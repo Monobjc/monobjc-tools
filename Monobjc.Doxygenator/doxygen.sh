@@ -52,6 +52,7 @@ fi
 # Generate the first-pass
 #
 generate "WebKit.DOM"		"/System/Library/Frameworks/WebKit.framework/Headers"
+generate "JavaScriptCore"	"/System/Library/Frameworks/JavaScriptCore.framework/Headers"
 generate "CorePlot"			"/Library/Frameworks/CorePlot.framework/Headers"
 generate "Growl"	 		"/Library/Frameworks/Growl.framework/Headers"
 generate "SM2DGraphView"	"/Library/Frameworks/SM2DGraphView.framework/Headers"

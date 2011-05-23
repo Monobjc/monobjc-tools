@@ -5353,7 +5353,7 @@ enum
       </Protocol>
     </Protocols>
   </Framework>
-  <Framework name="WebKit" usings="Foundation,AppKit" assembly="Monobjc.WebKit">
+  <Framework name="WebKit" usings="Foundation,AppKit,WebKit.DOM" assembly="Monobjc.WebKit">
     <Types>
       <Type name="WebKitFramework.Constants">
         <Patch>Enumerations[WebKit_Policy_Errors].Name=WebKitPolicyError</Patch>
@@ -5372,10 +5372,6 @@ enum
       <Class name="WebDownload">
       </Class>
       <Class name="WebFrame">
-        <Patch>Properties[DOMDocument].Type=IntPtr</Patch>
-        <Patch>Properties[DOMDocument].Getter.ReturnType=IntPtr</Patch>
-        <Patch>Properties[FrameElement].Type=IntPtr</Patch>
-        <Patch>Properties[FrameElement].Getter.ReturnType=IntPtr</Patch>
         <Patch>Properties[GlobalContext].Generate=false</Patch>
       </Class>
       <Class name="WebFrameView">
@@ -5397,7 +5393,7 @@ enum
       <Class name="WebUndefined">
       </Class>
       <Class name="WebView">
-        <Patch>Methods[ApplyStyle].Parameters[style].Type=IntPtr</Patch>
+        <!--<Patch>Methods[ApplyStyle].Parameters[style].Type=IntPtr</Patch>
         <Patch>Methods[ComputedStyleForElementPseudoElement].Parameters[element].Type=IntPtr</Patch>
         <Patch>Methods[ComputedStyleForElementPseudoElement].ReturnType=IntPtr</Patch>
         <Patch>Methods[EditableDOMRangeForPoint].ReturnType=IntPtr</Patch>
@@ -5409,7 +5405,7 @@ enum
         <Patch>Properties[SelectedDOMRange].Type=IntPtr</Patch>
         <Patch>Properties[SelectedDOMRange].Getter.ReturnType=IntPtr</Patch>
         <Patch>Properties[TypingStyle].Type=IntPtr</Patch>
-        <Patch>Properties[TypingStyle].Getter.ReturnType=IntPtr</Patch>
+        <Patch>Properties[TypingStyle].Getter.ReturnType=IntPtr</Patch>-->
       </Class>
 
       <Class name="WebBackForwardList.Deprecated">
@@ -5433,7 +5429,7 @@ enum
       <Protocol name="WebEditingDelegate">
         <Patch>DelegateFor=WebView</Patch>
         <Patch>DelegateProperty=EditingDelegate</Patch>
-        <Patch>Methods[WebViewShouldApplyStyleToElementsInDOMRange].Parameters[style].Type=IntPtr</Patch>
+        <!--<Patch>Methods[WebViewShouldApplyStyleToElementsInDOMRange].Parameters[style].Type=IntPtr</Patch>
         <Patch>Methods[WebViewShouldApplyStyleToElementsInDOMRange].Parameters[range].Type=IntPtr</Patch>
         <Patch>Methods[WebViewShouldBeginEditingInDOMRange].Parameters[range].Type=IntPtr</Patch>
         <Patch>Methods[WebViewShouldChangeSelectedDOMRangeToDOMRangeAffinityStillSelecting].Parameters[currentRange].Type=IntPtr</Patch>
@@ -5444,7 +5440,7 @@ enum
         <Patch>Methods[WebViewShouldEndEditingInDOMRange].Parameters[range].Type=IntPtr</Patch>
         <Patch>Methods[WebViewShouldInsertNodeReplacingDOMRangeGivenAction].Parameters[node].Type=IntPtr</Patch>
         <Patch>Methods[WebViewShouldInsertNodeReplacingDOMRangeGivenAction].Parameters[range].Type=IntPtr</Patch>
-        <Patch>Methods[WebViewShouldInsertTextReplacingDOMRangeGivenAction].Parameters[range].Type=IntPtr</Patch>
+        <Patch>Methods[WebViewShouldInsertTextReplacingDOMRangeGivenAction].Parameters[range].Type=IntPtr</Patch>-->
         <Patch>Enumerations[WebViewInsertAction].BaseType=int</Patch>
       </Protocol>
       <Protocol name="WebFrameLoadDelegate">
@@ -5490,6 +5486,36 @@ enum
 
     </Protocols>
   </Framework>
+  
+  <Framework name="JavaScriptCore" usings="Foundation,AppKit,WebKit" assembly="Monobjc.WebKit">
+  <Classes>
+    <Class name="JavaScript_Definitions">
+      <Patch>AdditionFor=JavaScript</Patch>
+    </Class>
+    <Class name="JavaScriptCore_Definitions">
+      <Patch>AdditionFor=JavaScriptCore</Patch>
+    </Class>
+    <Class name="JSBase_Definitions">
+      <Patch>AdditionFor=JSBase</Patch>
+    </Class>
+    <Class name="JSContextRef_Definitions">
+      <Patch>AdditionFor=JSContextRef</Patch>
+    </Class>
+    <Class name="JSObjectRef_Definitions">
+      <Patch>AdditionFor=JSObjectRef</Patch>
+    </Class>
+    <Class name="JSStringRef_Definitions">
+      <Patch>AdditionFor=JSStringRef</Patch>
+    </Class>
+    <Class name="JSStringRefCF_Definitions">
+      <Patch>AdditionFor=JSStringRefCF</Patch>
+    </Class>
+    <Class name="JSValueRef_Definitions">
+      <Patch>AdditionFor=JSValueRef</Patch>
+    </Class>
+  </Classes>
+  </Framework>
+  
   <Framework name="WebKit.DOM" usings="Foundation,AppKit,WebKit" assembly="Monobjc.WebKit">
     <Classes>
       <Class name="DOMAbstractView" />
