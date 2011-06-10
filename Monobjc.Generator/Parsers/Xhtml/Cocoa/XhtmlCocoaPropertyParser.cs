@@ -87,7 +87,11 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
             XElement availabilityElement = (from el in propertyElement.Elements("div")
                                             where (String) el.Attribute("class") == "api availability"
                                             select el).FirstOrDefault();
-            String minAvailability = availabilityElement.Elements("ul").Elements("li").FirstOrDefault().TrimAll();
+            String minAvailability = null;
+            if (availabilityElement != null)
+            {
+                minAvailability = availabilityElement.Elements("ul").Elements("li").FirstOrDefault().TrimAll();
+            }
             minAvailability = CommentHelper.ExtractAvailability(minAvailability);
 
             // Extract property's attribute

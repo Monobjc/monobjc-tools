@@ -27,10 +27,10 @@ namespace Monobjc.Tools.Generator.Tasks.Output
     public class DumpDelegateMethodsTask : BaseTask
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DumpDelegateMethodsTask"/> class.
+        ///   Initializes a new instance of the <see cref = "DumpDelegateMethodsTask" /> class.
         /// </summary>
-        /// <param name="name">The name.</param>
-        public DumpDelegateMethodsTask(String name) : base(name) { }
+        /// <param name = "name">The name.</param>
+        public DumpDelegateMethodsTask(String name) : base(name) {}
 
         /// <summary>
         ///   Executes this instance.
@@ -61,16 +61,16 @@ namespace Monobjc.Tools.Generator.Tasks.Output
                 if (classEntity.DelegateMethods.Count > 0)
                 {
                     names.Add(classEntity.Name);
-					
-					ProtocolEntity protocolEntity = new ProtocolEntity();
-					protocolEntity.Name = classEntity.Name + "Delegate";
-					protocolEntity.Namespace = classEntity.Namespace;
-					protocolEntity.MinAvailability = classEntity.MinAvailability;
-					protocolEntity.MaxAvailability = classEntity.MaxAvailability;
-					
-					xmlFile = Path.Combine("Analysis", Path.Combine(protocolEntity.Namespace, protocolEntity.Name));
-					Console.WriteLine("Saving " + xmlFile);
-					protocolEntity.SaveTo(xmlFile);
+
+                    ProtocolEntity protocolEntity = new ProtocolEntity();
+                    protocolEntity.Name = classEntity.Name + "Delegate";
+                    protocolEntity.Namespace = classEntity.Namespace;
+                    protocolEntity.MinAvailability = classEntity.MinAvailability;
+                    protocolEntity.MaxAvailability = classEntity.MaxAvailability;
+
+                    xmlFile = Path.Combine("Analysis", Path.Combine(protocolEntity.Namespace, protocolEntity.Name));
+                    Console.WriteLine("Saving " + xmlFile);
+                    protocolEntity.SaveTo(xmlFile);
                 }
             }
 

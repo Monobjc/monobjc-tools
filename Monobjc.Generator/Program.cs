@@ -74,7 +74,7 @@ namespace Monobjc.Tools.Generator
 
             // Prepare each task
             tasks = tasks ?? String.Empty;
-            foreach (String task in tasks.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Distinct())
+            foreach (String task in tasks.Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries).Distinct())
             {
                 switch (task)
                 {
@@ -117,15 +117,15 @@ namespace Monobjc.Tools.Generator
                         manager.AddTask(new DumpStaticInitializersTask("Search Static Initializers"));
                         break;
 
-                    //
-                    // This code is reserved when developing new task
-                    //
+                        //
+                        // This code is reserved when developing new task
+                        //
                     case "dev":
                         // ...
                         break;
-                    //
-                    // This code is reserved when developing new task
-                    //
+                        //
+                        // This code is reserved when developing new task
+                        //
 
                     default:
                         Help();

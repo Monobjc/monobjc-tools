@@ -132,7 +132,13 @@ namespace Monobjc.Tools.Generator.Utilities
                 return "VERSION";
             }
 
-            int index1 = "Available in ".Length;
+            String pattern = "Available in ";
+            if (comment.IndexOf(pattern) == -1)
+            {
+                return "VERSION";
+            }
+
+            int index1 = pattern.Length;
             String result = comment.Substring(index1);
             int index2 = result.IndexOf(" and later");
             if (index2 > 0)

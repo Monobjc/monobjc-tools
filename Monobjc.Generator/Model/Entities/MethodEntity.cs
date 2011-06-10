@@ -169,13 +169,13 @@ namespace Monobjc.Tools.Generator.Model.Entities
 
 
         /// <summary>
-        /// Indicates whether the current object is equal to another object of the same type.
+        ///   Indicates whether the current object is equal to another object of the same type.
         /// </summary>
         /// <returns>
-        /// true if the current object is equal to the <paramref name="other"/> parameter; otherwise, false.
+        ///   true if the current object is equal to the <paramref name = "other" /> parameter; otherwise, false.
         /// </returns>
-        /// <param name="other">An object to compare with this object.
-        ///                 </param>
+        /// <param name = "other">An object to compare with this object.
+        /// </param>
         public bool Equals(MethodEntity other)
         {
             if (ReferenceEquals(null, other))
@@ -192,7 +192,7 @@ namespace Monobjc.Tools.Generator.Model.Entities
             result &= (other.Parameters.Count == this.Parameters.Count);
             if (result)
             {
-                for(int i=0;i<this.Parameters.Count;i++)
+                for (int i = 0; i < this.Parameters.Count; i++)
                 {
                     result &= Equals(other.Parameters[i], this.Parameters[i]);
                 }
@@ -221,7 +221,7 @@ namespace Monobjc.Tools.Generator.Model.Entities
             {
                 return true;
             }
-            return Equals(obj as MethodEntity);
+            return this.Equals(obj as MethodEntity);
         }
 
         /// <summary>
@@ -240,7 +240,7 @@ namespace Monobjc.Tools.Generator.Model.Entities
                 result = (result*397) ^ (this.ReturnType != null ? this.ReturnType.GetHashCode() : 0);
                 foreach (MethodParameterEntity methodParameterEntity in this.Parameters)
                 {
-                    result = (result * 397) ^ methodParameterEntity.GetHashCode();
+                    result = (result*397) ^ methodParameterEntity.GetHashCode();
                 }
                 return result;
             }

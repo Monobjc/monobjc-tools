@@ -30,7 +30,7 @@ namespace Monobjc.Tools.Generator.Tasks.Output
         ///   Initializes a new instance of the <see cref = "DumpPropertyNamesTask" /> class.
         /// </summary>
         /// <param name = "name">The name.</param>
-        public DumpPropertyNamesTask(String name) : base(name) { }
+        public DumpPropertyNamesTask(String name) : base(name) {}
 
         /// <summary>
         ///   Executes this instance.

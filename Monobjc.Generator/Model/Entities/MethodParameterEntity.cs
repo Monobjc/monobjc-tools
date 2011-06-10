@@ -78,13 +78,13 @@ namespace Monobjc.Tools.Generator.Model.Entities
         public bool IsBlock { get; set; }
 
         /// <summary>
-        /// Indicates whether the current object is equal to another object of the same type.
+        ///   Indicates whether the current object is equal to another object of the same type.
         /// </summary>
         /// <returns>
-        /// true if the current object is equal to the <paramref name="other"/> parameter; otherwise, false.
+        ///   true if the current object is equal to the <paramref name = "other" /> parameter; otherwise, false.
         /// </returns>
-        /// <param name="other">An object to compare with this object.
-        ///                 </param>
+        /// <param name = "other">An object to compare with this object.
+        /// </param>
         public bool Equals(MethodParameterEntity other)
         {
             if (ReferenceEquals(null, other))
@@ -95,10 +95,10 @@ namespace Monobjc.Tools.Generator.Model.Entities
             {
                 return true;
             }
-            return Equals(other.Type, this.Type) && 
-                other.IsOut.Equals(this.IsOut) && 
-                other.IsByRef.Equals(this.IsByRef) && 
-                other.IsBlock.Equals(this.IsBlock);
+            return Equals(other.Type, this.Type) &&
+                   other.IsOut.Equals(this.IsOut) &&
+                   other.IsByRef.Equals(this.IsByRef) &&
+                   other.IsBlock.Equals(this.IsBlock);
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Monobjc.Tools.Generator.Model.Entities
             {
                 return true;
             }
-            return Equals(obj as MethodParameterEntity);
+            return this.Equals(obj as MethodParameterEntity);
         }
 
         /// <summary>

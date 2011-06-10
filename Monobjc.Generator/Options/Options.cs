@@ -130,13 +130,13 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
 using System.Text;
 using System.Text.RegularExpressions;
-
 #if LINQ
-using System.Linq;
+
 #endif
 
 #if TEST
@@ -900,33 +900,35 @@ namespace NDesk.Options
         }
 
 #if LINQ
-		public List<string> Parse (IEnumerable<string> arguments)
-		{
-			bool process = true;
-			OptionContext c = CreateOptionContext ();
-			c.OptionIndex = -1;
-			var def = GetOptionForName ("<>");
-			var unprocessed = 
-				from argument in arguments
-				where ++c.OptionIndex >= 0 && (process || def != null)
-					? process
-						? argument == "--" 
-							? (process = false)
-							: !Parse (argument, c)
-								? def != null 
-									? Unprocessed (null, def, c, argument) 
-									: true
-								: false
-						: def != null 
-							? Unprocessed (null, def, c, argument)
-							: true
-					: true
-				select argument;
-			List<string> r = unprocessed.ToList ();
-			if (c.Option != null)
-				c.Option.Invoke (c);
-			return r;
-		}
+        public List<string> Parse(IEnumerable<string> arguments)
+        {
+            bool process = true;
+            OptionContext c = this.CreateOptionContext();
+            c.OptionIndex = -1;
+            Option def = this.GetOptionForName("<>");
+            IEnumerable<string> unprocessed =
+                from argument in arguments
+                where ++c.OptionIndex >= 0 && (process || def != null)
+                          ? process
+                                ? argument == "--"
+                                      ? (process = false)
+                                      : !this.Parse(argument, c)
+                                            ? def != null
+                                                  ? Unprocessed(null, def, c, argument)
+                                                  : true
+                                            : false
+                                : def != null
+                                      ? Unprocessed(null, def, c, argument)
+                                      : true
+                          : true
+                select argument;
+            List<string> r = unprocessed.ToList();
+            if (c.Option != null)
+            {
+                c.Option.Invoke(c);
+            }
+            return r;
+        }
 #else
         public List<string> Parse(IEnumerable<string> arguments)
         {

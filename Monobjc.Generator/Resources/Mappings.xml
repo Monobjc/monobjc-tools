@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Mappings>
   <Mapping type="AEEventClass">uint</Mapping>
   <Mapping type="AEEventID">uint</Mapping>

@@ -5247,6 +5247,22 @@ enum
       </Protocol>
     </Protocols>
   </Framework>
+  <Framework name="Security" usings="Foundation" assembly="Monobjc.Security">
+    <Types>
+      <Type name="Authorization">
+        
+      </Type>
+      <Type name="CertServices">
+        
+      </Type>
+      <Type name="KeyChain">	
+        
+      </Type>
+      <Type name="CodeSigning">
+        
+      </Type>
+	</Types>
+  </Framework>
   <Framework name="SecurityFoundation" usings="Foundation" assembly="Monobjc.SecurityFoundation">
     <Types>
       <Type name="SecurityFoundationFramework.Functions">

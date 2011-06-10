@@ -161,11 +161,11 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
                 classEntity.Methods.Remove(methodModel);
                 MethodEntity getter = methodModel;
 
-				// TODO: Refactor to use the IsSetterFor with an optional parameter to strip the prefix
-                MethodEntity setter = classEntity.Methods.Find(m => String.Equals("Set" + getter.Name, m.Name) && 
-				                                                    String.Equals(m.ReturnType, "void") &&
-																	m.Parameters.Count == 1 &&
-																	m.Static == getter.Static);
+                // TODO: Refactor to use the IsSetterFor with an optional parameter to strip the prefix
+                MethodEntity setter = classEntity.Methods.Find(m => String.Equals("Set" + getter.Name, m.Name) &&
+                                                                    String.Equals(m.ReturnType, "void") &&
+                                                                    m.Parameters.Count == 1 &&
+                                                                    m.Static == getter.Static);
                 if (setter == null)
                 {
                     setter = classEntity.Methods.Find(m => m.IsSetterFor(getter));

@@ -18,20 +18,20 @@
 namespace Monobjc.Tools.Generator.Model.Database
 {
     /// <summary>
-    /// Documentation styles.
+    ///   Documentation styles.
     /// </summary>
     public enum PageStyle
     {
         /// <summary>
-        /// The Cocoa style documentation.
+        ///   The Cocoa style documentation.
         /// </summary>
         Cocoa = 0,
         /// <summary>
-        /// The Classic style documentation.
+        ///   The Classic style documentation.
         /// </summary>
         Classic,
         /// <summary>
-        /// The Doxygen style documentation.
+        ///   The Doxygen style documentation.
         /// </summary>
         Doxygen,
     }

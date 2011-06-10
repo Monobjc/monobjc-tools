@@ -96,28 +96,22 @@ namespace Monobjc.Tools.Generator.Model.Entities
 
         public bool HasGetter
         {
-            get
-            {
-                return this.Getter != null;
-            }
+            get { return this.Getter != null; }
         }
 
         public bool HasSetter
         {
-            get
-            {
-                return this.Setter != null;
-            }
+            get { return this.Setter != null; }
         }
 
         /// <summary>
-        /// Indicates whether the current object is equal to another object of the same type.
+        ///   Indicates whether the current object is equal to another object of the same type.
         /// </summary>
         /// <returns>
-        /// true if the current object is equal to the <paramref name="other"/> parameter; otherwise, false.
+        ///   true if the current object is equal to the <paramref name = "other" /> parameter; otherwise, false.
         /// </returns>
-        /// <param name="other">An object to compare with this object.
-        ///                 </param>
+        /// <param name = "other">An object to compare with this object.
+        /// </param>
         public bool Equals(PropertyEntity other)
         {
             if (ReferenceEquals(null, other))
@@ -152,7 +146,7 @@ namespace Monobjc.Tools.Generator.Model.Entities
             {
                 return true;
             }
-            return Equals(obj as PropertyEntity);
+            return this.Equals(obj as PropertyEntity);
         }
 
         /// <summary>
