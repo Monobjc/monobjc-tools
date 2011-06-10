@@ -77,7 +77,7 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Gets or sets the script.
+        ///   Gets or sets the script.
         /// </summary>
         /// <value>The script.</value>
         public String Script { get; set; }

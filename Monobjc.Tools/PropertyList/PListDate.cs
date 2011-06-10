@@ -62,9 +62,9 @@ namespace Monobjc.Tools.PropertyList
         }
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="Monobjc.Tools.PropertyList.PListDate"/> to <see cref="System.DateTime"/>.
+        ///   Performs an implicit conversion from <see cref = "Monobjc.Tools.PropertyList.PListDate" /> to <see cref = "System.DateTime" />.
         /// </summary>
-        /// <param name="value">The value.</param>
+        /// <param name = "value">The value.</param>
         /// <returns>The result of the conversion.</returns>
         public static implicit operator DateTime(PListDate value)
         {

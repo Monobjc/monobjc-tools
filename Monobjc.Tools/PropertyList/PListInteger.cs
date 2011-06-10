@@ -60,9 +60,9 @@ namespace Monobjc.Tools.PropertyList
         }
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="Monobjc.Tools.PropertyList.PListInteger"/> to <see cref="System.Int32"/>.
+        ///   Performs an implicit conversion from <see cref = "Monobjc.Tools.PropertyList.PListInteger" /> to <see cref = "System.Int32" />.
         /// </summary>
-        /// <param name="value">The value.</param>
+        /// <param name = "value">The value.</param>
         /// <returns>The result of the conversion.</returns>
         public static implicit operator Int32(PListInteger value)
         {

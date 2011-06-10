@@ -161,6 +161,9 @@ namespace Monobjc.Tools.InterfaceBuilder
                 case "archive":
                     return new IBArchive(attributes);
 
+                case "array":
+                    return new IBArray(attributes);
+
                 case "bool":
                 case "boolean":
                     return new IBBoolean(attributes);

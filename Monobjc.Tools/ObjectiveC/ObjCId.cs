@@ -36,7 +36,7 @@ namespace Monobjc.Tools.ObjectiveC
         }
 
         /// <summary>
-        /// Gets the pointer.
+        ///   Gets the pointer.
         /// </summary>
         /// <value>The pointer.</value>
         public IntPtr Pointer
@@ -80,10 +80,10 @@ namespace Monobjc.Tools.ObjectiveC
         }
 
         /// <summary>
-        /// Sends the message.
+        ///   Sends the message.
         /// </summary>
-        /// <param name="selector">The selector.</param>
-        /// <param name="parameter1">The first parameter.</param>
+        /// <param name = "selector">The selector.</param>
+        /// <param name = "parameter1">The first parameter.</param>
         /// <returns></returns>
         public IntPtr SendMessage(String selector, IntPtr parameter1)
         {
@@ -91,10 +91,10 @@ namespace Monobjc.Tools.ObjectiveC
         }
 
         /// <summary>
-        /// Sends the message.
+        ///   Sends the message.
         /// </summary>
-        /// <param name="selector">The selector.</param>
-        /// <param name="parameter1">The first parameter.</param>
+        /// <param name = "selector">The selector.</param>
+        /// <param name = "parameter1">The first parameter.</param>
         /// <returns></returns>
         public IntPtr SendMessage(String selector, String parameter1)
         {

@@ -96,14 +96,6 @@ namespace Monobjc.Tools
         }
 
         [Test]
-        public void TestMyDocumentReading005()
-        {
-            String content = ReadResource(Resources.MyDocument_005);
-            IBDocument document = IBDocument.LoadFromXml(content);
-            CheckDocument(document);
-        }
-
-        [Test]
         public void TestMainMenuReading010()
         {
             String content = ReadResource(Resources.MainMenu_010);
@@ -116,9 +108,35 @@ namespace Monobjc.Tools
             Assert.IsTrue(collector.ClassNames.Contains("TestCocoa41AppDelegate"));
             IEnumerable<IBPartialClassDescription> classDescriptions = collector["TestCocoa41AppDelegate"];
             IEnumerable<IBOutletDescriptor> outlets = classDescriptions.SelectMany(d => d.Outlets);
-            Assert.AreEqual(2, outlets.Count());
             IEnumerable<IBActionDescriptor> actions = classDescriptions.SelectMany(d => d.Actions);
+            Assert.AreEqual(2, outlets.Count());
             Assert.AreEqual(1, actions.Count());
+        }
+
+        [Test]
+        public void TestMainMenuReading011()
+        {
+            String content = ReadResource(Resources.MainMenu_011);
+            IBDocument document = IBDocument.LoadFromXml(content);
+            CheckDocument(document);
+
+            ClassDescriptionCollector collector = new ClassDescriptionCollector();
+            document.Root.Accept(collector);
+            Assert.AreEqual(2, collector.ClassNames.Count());
+            Assert.IsTrue(collector.ClassNames.Contains("MainController"));
+            IEnumerable<IBPartialClassDescription> classDescriptions = collector["MainController"];
+            IEnumerable<IBOutletDescriptor> outlets = classDescriptions.SelectMany(d => d.Outlets);
+            IEnumerable<IBActionDescriptor> actions = classDescriptions.SelectMany(d => d.Actions);
+            Assert.AreEqual(3, outlets.Count());
+            Assert.AreEqual(2, actions.Count());
+        }
+
+        [Test]
+        public void TestMyDocumentReading005()
+        {
+            String content = ReadResource(Resources.MyDocument_005);
+            IBDocument document = IBDocument.LoadFromXml(content);
+            CheckDocument(document);
         }
 
         private static String ReadResource(byte[] resource)

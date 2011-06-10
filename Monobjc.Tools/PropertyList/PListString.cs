@@ -55,9 +55,9 @@ namespace Monobjc.Tools.PropertyList
         }
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="Monobjc.Tools.PropertyList.PListString"/> to <see cref="System.String"/>.
+        ///   Performs an implicit conversion from <see cref = "Monobjc.Tools.PropertyList.PListString" /> to <see cref = "System.String" />.
         /// </summary>
-        /// <param name="value">The value.</param>
+        /// <param name = "value">The value.</param>
         /// <returns>The result of the conversion.</returns>
         public static implicit operator String(PListString value)
         {

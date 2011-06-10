@@ -160,6 +160,9 @@
   <data name="MainMenu_010" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Embedded\MainMenu-010.xib;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="MainMenu_011" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Embedded\MainMenu-011.xib;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="MyDocument_005" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Embedded\MyDocument-005.xib;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

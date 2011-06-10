@@ -25,9 +25,9 @@ namespace Monobjc.Tools.Utilities
     public static class NativeVersionExtractor
     {
         /// <summary>
-        /// Gets the version of the native application.
+        ///   Gets the version of the native application.
         /// </summary>
-        /// <param name="applicationPath">The application path with or without the ".app" extension.</param>
+        /// <param name = "applicationPath">The application path with or without the ".app" extension.</param>
         /// <returns></returns>
         public static Version GetVersion(String applicationPath)
         {

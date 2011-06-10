@@ -286,13 +286,30 @@ namespace Monobjc.Tools.InterfaceBuilder
                     throw new Exception("It seems that the parsing has really gone wrong. Can't find either keys or values...");
                 }
             }
-            else
+            else if (this.Value.Count > 0)
             {
-                for (int i = 0; i < this.Value.Count;)
+                bool useKeyValuePair;
+
+                // Probe for the keys used.
+                IIBItem item = this[0];
+                useKeyValuePair = item.Key.StartsWith("NS.key.");
+
+                if (useKeyValuePair)
                 {
-                    IIBItem keyItem = this[i++];
-                    IIBItem valueItem = this[i++];
-                    this.Add(keyItem.ToString(), valueItem);
+                    for (int i = 0; i < this.Value.Count;)
+                    {
+                        IIBItem keyItem = this[i++];
+                        IIBItem valueItem = this[i++];
+                        this.Add(keyItem.ToString(), valueItem);
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < this.Value.Count; i++)
+                    {
+                        item = this[i];
+                        this.Add(item.Key, item);
+                    }
                 }
             }
         }

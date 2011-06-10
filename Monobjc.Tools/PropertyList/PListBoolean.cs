@@ -46,9 +46,9 @@ namespace Monobjc.Tools.PropertyList
         }
 
         /// <summary>
-        /// Performs an implicit conversion from <see cref="Monobjc.Tools.PropertyList.PListBoolean"/> to <see cref="System.Boolean"/>.
+        ///   Performs an implicit conversion from <see cref = "Monobjc.Tools.PropertyList.PListBoolean" /> to <see cref = "System.Boolean" />.
         /// </summary>
-        /// <param name="value">The value.</param>
+        /// <param name = "value">The value.</param>
         /// <returns>The result of the conversion.</returns>
         public static implicit operator bool(PListBoolean value)
         {

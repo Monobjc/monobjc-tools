@@ -29,11 +29,11 @@ namespace Monobjc.Tools.Xcode
     public partial class XcodeProject
     {
         /// <summary>
-        /// Adds the file.
+        ///   Adds the file.
         /// </summary>
-        /// <param name="groups">The groups.</param>
-        /// <param name="file">The file.</param>
-        /// <param name="targetName">Name of the target.</param>
+        /// <param name = "groups">The groups.</param>
+        /// <param name = "file">The file.</param>
+        /// <param name = "targetName">Name of the target.</param>
         /// <returns></returns>
         public PBXBuildFile AddFile(String groups, String file, String targetName)
         {
@@ -62,11 +62,11 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Removes the file.
+        ///   Removes the file.
         /// </summary>
-        /// <param name="groups">The groups.</param>
-        /// <param name="file">The file.</param>
-        /// <param name="targetName">Name of the target.</param>
+        /// <param name = "groups">The groups.</param>
+        /// <param name = "file">The file.</param>
+        /// <param name = "targetName">Name of the target.</param>
         /// <returns></returns>
         public PBXBuildFile RemoveFile(String groups, String file, String targetName)
         {
@@ -97,11 +97,11 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Adds the framework.
+        ///   Adds the framework.
         /// </summary>
-        /// <param name="groups">The groups.</param>
-        /// <param name="framework">The framework.</param>
-        /// <param name="targetName">Name of the target.</param>
+        /// <param name = "groups">The groups.</param>
+        /// <param name = "framework">The framework.</param>
+        /// <param name = "targetName">Name of the target.</param>
         /// <returns></returns>
         public PBXBuildFile AddFramework(String groups, String framework, String targetName)
         {
@@ -137,11 +137,11 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Removes the framework.
+        ///   Removes the framework.
         /// </summary>
-        /// <param name="groups">The groups.</param>
-        /// <param name="framework">The framework.</param>
-        /// <param name="targetName">Name of the target.</param>
+        /// <param name = "groups">The groups.</param>
+        /// <param name = "framework">The framework.</param>
+        /// <param name = "targetName">Name of the target.</param>
         /// <returns></returns>
         public PBXBuildFile RemoveFramework(String groups, String framework, String targetName)
         {
@@ -149,10 +149,10 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Adds the target.
+        ///   Adds the target.
         /// </summary>
-        /// <param name="targetName">Name of the target.</param>
-        /// <param name="type">The type.</param>
+        /// <param name = "targetName">Name of the target.</param>
+        /// <param name = "type">The type.</param>
         /// <returns></returns>
         public PBXTarget AddTarget(String targetName, PBXProductType type)
         {
@@ -218,9 +218,9 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Removes the target.
+        ///   Removes the target.
         /// </summary>
-        /// <param name="targetName">Name of the target.</param>
+        /// <param name = "targetName">Name of the target.</param>
         public void RemoveTarget(String targetName)
         {
             PBXTarget target = this.GetTarget(targetName);
@@ -246,12 +246,12 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Adds the build configuration settings.
+        ///   Adds the build configuration settings.
         /// </summary>
-        /// <param name="configurationName">Name of the configuration.</param>
-        /// <param name="targetName">Name of the target.</param>
-        /// <param name="key">The key.</param>
-        /// <param name="value">The value.</param>
+        /// <param name = "configurationName">Name of the configuration.</param>
+        /// <param name = "targetName">Name of the target.</param>
+        /// <param name = "key">The key.</param>
+        /// <param name = "value">The value.</param>
         public void AddBuildConfigurationSettings(String configurationName, String targetName, String key, Object value)
         {
             PBXTarget target = this.GetTarget(targetName);
@@ -260,11 +260,11 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Removes the build configuration settings.
+        ///   Removes the build configuration settings.
         /// </summary>
-        /// <param name="configurationName">Name of the configuration.</param>
-        /// <param name="targetName">Name of the target.</param>
-        /// <param name="key">The key.</param>
+        /// <param name = "configurationName">Name of the configuration.</param>
+        /// <param name = "targetName">Name of the target.</param>
+        /// <param name = "key">The key.</param>
         public void RemoveBuildConfigurationSettings(String configurationName, String targetName, String key)
         {
             PBXTarget target = this.GetTarget(targetName);
@@ -273,10 +273,10 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Adds the dependant project.
+        ///   Adds the dependant project.
         /// </summary>
-        /// <param name="project">The project.</param>
-        /// <param name="targetName">Name of the target.</param>
+        /// <param name = "project">The project.</param>
+        /// <param name = "targetName">Name of the target.</param>
         public void AddDependantProject(XcodeProject project, String targetName)
         {
             PBXGroup group = this.AddGroup("Products");
@@ -286,10 +286,10 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Removes the dependant project.
+        ///   Removes the dependant project.
         /// </summary>
-        /// <param name="project">The project.</param>
-        /// <param name="targetName">Name of the target.</param>
+        /// <param name = "project">The project.</param>
+        /// <param name = "targetName">Name of the target.</param>
         public void RemoveDependantProject(XcodeProject project, String targetName)
         {
             PBXFileReference fileReference = this.Project.MainGroup.FindFileReference(project.ProjectFolder);
@@ -303,7 +303,7 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Gets the target.
+        ///   Gets the target.
         /// </summary>
         private PBXTarget GetTarget(String targetName)
         {
@@ -315,7 +315,7 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Gets the target phase.
+        ///   Gets the target phase.
         /// </summary>
         private static T GetTargetPhase<T>(PBXTarget target) where T : PBXBuildPhase
         {
@@ -324,7 +324,7 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Gets the target phase.
+        ///   Gets the target phase.
         /// </summary>
         private static PBXBuildPhase GetTargetPhase(PBXTarget target, String file)
         {

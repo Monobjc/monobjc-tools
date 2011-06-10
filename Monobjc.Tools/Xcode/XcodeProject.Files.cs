@@ -28,9 +28,9 @@ namespace Monobjc.Tools.Xcode
     public partial class XcodeProject
     {
         /// <summary>
-        /// Adds the group.
+        ///   Adds the group.
         /// </summary>
-        /// <param name="groups">The group path.</param>
+        /// <param name = "groups">The group path.</param>
         /// <returns></returns>
         public PBXGroup AddGroup(String groups)
         {
@@ -52,9 +52,9 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Removes the group.
+        ///   Removes the group.
         /// </summary>
-        /// <param name="groups">The groups.</param>
+        /// <param name = "groups">The groups.</param>
         /// <returns></returns>
         public PBXGroup RemoveGroup(String groups)
         {
@@ -88,10 +88,10 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Adds the file.
+        ///   Adds the file.
         /// </summary>
-        /// <param name="groups">The groups.</param>
-        /// <param name="file">The file.</param>
+        /// <param name = "groups">The groups.</param>
+        /// <param name = "file">The file.</param>
         /// <returns></returns>
         public PBXFileElement AddFile(String groups, String file)
         {
@@ -99,11 +99,11 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Adds the file.
+        ///   Adds the file.
         /// </summary>
-        /// <param name="groups">The groups.</param>
-        /// <param name="file">The file.</param>
-        /// <param name="sourceTree">The source tree.</param>
+        /// <param name = "groups">The groups.</param>
+        /// <param name = "file">The file.</param>
+        /// <param name = "sourceTree">The source tree.</param>
         /// <returns></returns>
         public PBXFileElement AddFile(String groups, String file, PBXSourceTree sourceTree)
         {
@@ -170,10 +170,10 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Removes the file.
+        ///   Removes the file.
         /// </summary>
-        /// <param name="groups">The groups.</param>
-        /// <param name="file">The file.</param>
+        /// <param name = "groups">The groups.</param>
+        /// <param name = "file">The file.</param>
         /// <returns></returns>
         public PBXFileReference RemoveFile(String groups, String file)
         {
@@ -217,7 +217,7 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Gets the type of the file.
+        ///   Gets the type of the file.
         /// </summary>
         private static PBXFileType GetFileType(String file)
         {

@@ -54,7 +54,7 @@ namespace Monobjc.Tools.Xcode
         public PBXFileType ExplicitFileType { get; set; }
 
         /// <summary>
-        /// Gets or sets if the file is included in the index.
+        ///   Gets or sets if the file is included in the index.
         /// </summary>
         /// <value>If the file is included in the index.</value>
         public int IncludeInIndex { get; set; }
@@ -93,7 +93,7 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
-        /// Gets the description.
+        ///   Gets the description.
         /// </summary>
         /// <value>The description.</value>
         public override string Description

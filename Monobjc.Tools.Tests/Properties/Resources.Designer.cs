@@ -158,6 +158,13 @@ namespace Monobjc.Tools.Properties {
             }
         }
         
+        internal static byte[] MainMenu_011 {
+            get {
+                object obj = ResourceManager.GetObject("MainMenu_011", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static byte[] MyDocument_005 {
             get {
                 object obj = ResourceManager.GetObject("MyDocument_005", resourceCulture);
