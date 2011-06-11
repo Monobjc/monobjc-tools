@@ -132,7 +132,7 @@
         <Patch>Functions[CGContextShowGlyphsAtPositions].Parameters[positions].Type=IntPtr</Patch>
         <Patch>Functions[CGContextShowGlyphsWithAdvances].Parameters[glyphs[]].Name=glyphs</Patch>
         <Patch>Functions[CGContextShowGlyphsWithAdvances].Parameters[glyphs].Type=IntPtr</Patch>
-        <Patch>Functions[CGContextShowGlyphsWithAdvances].Parameters[advances[]].Name=positions</Patch>
+        <Patch>Functions[CGContextShowGlyphsWithAdvances].Parameters[advances[]].Name=advances</Patch>
         <Patch>Functions[CGContextShowGlyphsWithAdvances].Parameters[advances].Type=IntPtr</Patch>
         <Patch>Functions[CGContextShowText].Parameters[@string].Type=String</Patch>
         <Patch>Functions[CGContextShowTextAtPoint].Parameters[@string].Type=String</Patch>
@@ -159,7 +159,7 @@
       <Type name="CGFont">
         <Patch>Enumerations[CGFontPostScriptFormat].BaseType=int</Patch>
         <Patch>Enumerations[Font_Table_Index_Values].Generate=false</Patch>
-        <Patch>Enumerations[Obsolete_Font_Table_Index_Values].Generate=false</Patch>
+        <!--<Patch>Enumerations[Obsolete_Font_Table_Index_Values].Generate=false</Patch>-->
         <Patch>Functions[CGFontCreatePostScriptEncoding].Parameters[encoding[256]].Name=encoding</Patch>
         <Patch>Functions[CGFontCreatePostScriptEncoding].Parameters[encoding].Type=IntPtr</Patch>
         <Patch>Functions[CGFontCreatePostScriptSubset].Parameters[glyphs[]].Name=glyphs</Patch>
@@ -211,7 +211,7 @@
         <Patch>Functions[CGImageCreate].Parameters[decode].Type=IntPtr</Patch>
         <Patch>Functions[CGImageCreateWithJPEGDataProvider].Parameters[decode[]].Name=decode</Patch>
         <Patch>Functions[CGImageCreateWithJPEGDataProvider].Parameters[decode].Type=IntPtr</Patch>
-        <Patch>Functions[CGImageCreateWithMaskingColors].Parameters[components[]].Name=decode</Patch>
+        <Patch>Functions[CGImageCreateWithMaskingColors].Parameters[components[]].Name=components</Patch>
         <Patch>Functions[CGImageCreateWithMaskingColors].Parameters[components].Type=IntPtr</Patch>
         <Patch>Functions[CGImageCreateWithPNGDataProvider].Parameters[decode[]].Name=decode</Patch>
         <Patch>Functions[CGImageCreateWithPNGDataProvider].Parameters[decode].Type=IntPtr</Patch>
@@ -460,8 +460,8 @@
         <Patch>Functions[NSConvertGlyphsToPackedGlyphs].Generate=false</Patch>
         <Patch>Functions[NSCopyBits].Generate=false</Patch>
         <Patch>Functions[NSCountWindowsForContext].Generate=false</Patch>
-        <Patch>Functions[NSCreateFileContentsPboardType].Generate=false</Patch>
-        <Patch>Functions[NSCreateFilenamePboardType].Generate=false</Patch>
+        <!--<Patch>Functions[NSCreateFileContentsPboardType].Generate=false</Patch>-->
+        <!--<Patch>Functions[NSCreateFilenamePboardType].Generate=false</Patch>-->
         <Patch>Functions[NSDottedFrameRect].Generate=false</Patch>
         <Patch>Functions[NSDrawBitmap].Generate=false</Patch>
         <Patch>Functions[NSDrawButton].Generate=false</Patch>
@@ -471,8 +471,8 @@
         <Patch>Functions[NSDrawGroove].Generate=false</Patch>
         <Patch>Functions[NSDrawLightBezel].Generate=false</Patch>
         <Patch>Functions[NSDrawTiledRects].Generate=false</Patch>
-        <Patch>Functions[NSGetFileType].Generate=false</Patch>
-        <Patch>Functions[NSGetFileTypes].Generate=false</Patch>
+        <!--<Patch>Functions[NSGetFileType].Generate=false</Patch>-->
+        <!--<Patch>Functions[NSGetFileTypes].Generate=false</Patch>-->
         <Patch>Functions[NSGetWindowServerMemory].Generate=false</Patch>
         <Patch>Functions[NSInterfaceStyleForKey].Generate=false</Patch>
         <Patch>Functions[NSIsControllerMarker].Generate=false</Patch>
@@ -628,7 +628,7 @@
         <Patch>AdditionFor=NSBundle</Patch>
         <!--<Patch>Methods[LoadNibFileExternalNameTableWithZone][Static=True].Generate=false</Patch>-->
         <Patch>Methods[LoadNibNamedOwner].Generate=false</Patch>
-        <Patch>Methods[LoadNibFileExternalNameTableWithZone].Generate=false</Patch>
+        <Patch>Methods[LoadNibFileExternalNameTableWithZone][Static=False].Generate=false</Patch>
       </Class>
       <Class name="NSButton">
         <Patch>Methods[GetPeriodicDelayInterval].Parameters[delay].Type=float</Patch>
@@ -670,7 +670,7 @@
         <Patch>Enumerations[Hit_Testing].Name=NSHitTesting</Patch>
         <Patch>Enumerations[NSHitTesting].BaseType=NSUInteger</Patch>
         <!-- TODO: Deprecated -->
-        <Patch>Enumerations[Deprecated_Scaling_Constants].Generate=false</Patch>
+        <!--<Patch>Enumerations[Deprecated_Scaling_Constants].Generate=false</Patch>-->
         <Patch>Enumerations[Data_Entry_Types].Generate=false</Patch>
       </Class>
       <Class name="NSCIImageRep">
@@ -961,7 +961,7 @@
       </Class>
       <Class name="NSFontPanel">
         <!-- TODO: Deprecated -->
-        <Patch>Enumerations[Tags_of_Views_in_the_FontPanel].Generate=false</Patch>
+        <!--<Patch>Enumerations[Tags_of_Views_in_the_FontPanel].Generate=false</Patch>-->
       </Class>
       <Class name="NSForm">
         <Patch>Methods[CellAtIndex].ReturnType=NSCell</Patch>
@@ -1557,8 +1557,8 @@ enum {]]>
       </Class>
       <Class name="NSWindowController">
         <Patch>Methods[InitWithWindowNibPathOwner].GenerateConstructor=false</Patch>
-        <Patch>Properties[WindowController].Type=NSWindow</Patch>
-        <Patch>Properties[WindowController].Getter.ReturnType=NSWindow</Patch>
+        <!--<Patch>Properties[WindowController].Type=NSWindow</Patch>-->
+        <!--<Patch>Properties[WindowController].Getter.ReturnType=NSWindow</Patch>-->
       </Class>
       <Class name="NSWorkspace">
         <Patch>Methods[GetFileSystemInfoForPathIsRemovableIsWritableIsUnmountableDescriptionType].Parameters[removableFlag].Type=bool</Patch>
@@ -1862,8 +1862,8 @@ enum {]]>
       <Protocol name="NSPasteboardItemDataProvider">
       </Protocol>
       <Protocol name="NSPasteboardReading">
-        <Patch>Enumerations[Pasteboard_Reading_Options].Name=NSPasteboardReadingOptions</Patch>
-        <Patch>Enumerations[NSPasteboardReadingOptions].BaseType=NSUInteger</Patch>
+        <!--<Patch>Enumerations[Pasteboard_Reading_Options].Name=NSPasteboardReadingOptions</Patch>-->
+        <!--<Patch>Enumerations[NSPasteboardReadingOptions].BaseType=NSUInteger</Patch>-->
       </Protocol>
       <Protocol name="NSPasteboardWriting">
         <Patch>Enumerations[Pasteboard_Writing_Options].Name=NSPasteboardWritingOptions</Patch>
@@ -2240,6 +2240,14 @@ enum {]]>
       <Class name="CLLocation">
         <Patch>Methods[DistanceFromLocation].Parameters[location].Type=CLLocation</Patch>
         <Patch>Methods[GetDistanceFrom].Parameters[location].Type=CLLocation</Patch>
+        <Replace type="Xhtml">
+          <Source><![CDATA[method instead.)<div class="declaration">]]></Source>
+          <With><![CDATA[method instead.)</p><div class="declaration">]]></With>
+        </Replace>
+        <Replace type="Xhtml">
+          <Source><![CDATA[CLLocation.h</code></div></p>]]></Source>
+          <With><![CDATA[CLLocation.h</code></div>]]></With>
+        </Replace>
       </Class>
       <Class name="CLLocationManager">
         <Patch>MinAvailability=Mac OS X v10.6</Patch>
@@ -5250,22 +5258,6 @@ enum
   <Framework name="Security" usings="Foundation" assembly="Monobjc.Security">
     <Types>
       <Type name="Authorization">
-        
-      </Type>
-      <Type name="CertServices">
-        
-      </Type>
-      <Type name="KeyChain">	
-        
-      </Type>
-      <Type name="CodeSigning">
-        
-      </Type>
-	</Types>
-  </Framework>
-  <Framework name="SecurityFoundation" usings="Foundation" assembly="Monobjc.SecurityFoundation">
-    <Types>
-      <Type name="SecurityFoundationFramework.Functions">
         <Patch>Functions[AuthorizationCopyInfo].Parameters[info].Type=IntPtr</Patch>
         <Patch>Functions[AuthorizationCopyPrivilegedReference].Parameters[authorization].Type=IntPtr</Patch>
         <Patch>Functions[AuthorizationCopyRights].Parameters[rights].Type=IntPtr</Patch>
@@ -5293,9 +5285,34 @@ enum
         <Patch>Enumerations[Authorization_Rights_Mask].Generate=false</Patch>
         <Patch>Enumerations[External_Authorization_Reference_Length].Generate=false</Patch>
       </Type>
-      <Type name="KeychainServices">
+      <Type name="CertServices">
+        <Patch>Functions[SecCertificateGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecIdentityGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecIdentitySearchGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecKeyGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecPolicyGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecPolicySearchGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecTrustGetTypeID].Generate=false</Patch>
       </Type>
-    </Types>
+      <Type name="CodeSigning">
+      </Type>
+      <Type name="KeyChain">
+        <Patch>Functions[SecAccessCopyACLList].Parameters[aclList].Type=IntPtr</Patch>
+        <Patch>Functions[SecAccessCopySelectedACLList].Parameters[aclList].Type=IntPtr</Patch>
+        <Patch>Functions[SecAccessCreate].Parameters[accessRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecAccessCreate].Parameters[accessRef].IsOut=true</Patch>
+        <Patch>Functions[SecAccessCreateFromOwnerAndACL].Parameters[accessRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecAccessCreateFromOwnerAndACL].Parameters[accessRef].IsOut=true</Patch>
+        <Patch>Functions[SecAccessGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecACLGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecKeychainGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecKeychainItemGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecKeychainSearchGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecTrustedApplicationGetTypeID].Generate=false</Patch>
+      </Type>
+	</Types>
+  </Framework>
+  <Framework name="SecurityFoundation" usings="Foundation,Security" assembly="Monobjc.SecurityFoundation">
     <Classes>
       <Class name="SFAuthorization">
         <Patch>Methods[AuthorizationWithFlagsRightsEnvironment].ReturnType=SFAuthorization</Patch>
@@ -5309,7 +5326,6 @@ enum
         <Patch>Properties[Authorization].Type=SFAuthorization</Patch>
         <Patch>Properties[Authorization].Getter.ReturnType=SFAuthorization</Patch>
       </Class>
-
       <Class name="SFAuthorization.Deprecated">
         <Patch>AdditionFor=SFAuthorization</Patch>
         <Patch>Methods[PermitWithRightsFlagsEnvironmentAuthorizedRights].Parameters[rights].Type=IntPtr</Patch>
@@ -5318,7 +5334,7 @@ enum
       </Class>
     </Classes>
   </Framework>
-  <Framework name="SecurityInterface" usings="Foundation,AppKit,SecurityFoundation" assembly="Monobjc.SecurityInterface">
+  <Framework name="SecurityInterface" usings="Foundation,AppKit,Security,SecurityFoundation" assembly="Monobjc.SecurityInterface">
     <Types>
       <Type name="SecurityInterfaceFramework.Constants">
       </Type>
