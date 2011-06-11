@@ -4,6 +4,7 @@ dist/
 obj/
 _ReSharper*
 *.Cache
+*.docstates
 *.pidb
 *.resources
 *.suo
