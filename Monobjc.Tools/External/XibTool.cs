@@ -75,7 +75,7 @@ namespace Monobjc.Tools.External
                 PListDocument document = PListDocument.LoadFromXml(output);
                 return document;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Console.WriteLine("XibTool cannot parse output:");
                 Console.WriteLine("-----");

@@ -26,6 +26,14 @@ namespace Monobjc.Tools.Xcode
         private readonly IList<string> outputFiles;
 
         /// <summary>
+        ///   Initializes a new instance of the <see cref = "PBXBuildRule" /> class.
+        /// </summary>
+        public PBXBuildRule()
+        {
+            this.outputFiles = new List<String>();
+        }
+
+        /// <summary>
         ///   Gets or sets the compiler spec.
         /// </summary>
         /// <value>The compiler spec.</value>

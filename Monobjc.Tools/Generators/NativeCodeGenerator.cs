@@ -72,13 +72,19 @@ namespace Monobjc.Tools.Generators
         public MacOSArchitecture TargetArchitecture { get; set; }
 
         /// <summary>
+        ///   Gets or sets the folder for developer tools.
+        /// </summary>
+        /// <value>The folder for developer tools.</value>
+        public String DeveloperToolsFolder { get; set; }
+
+        /// <summary>
         ///   Generates the native executable.
         /// </summary>
         /// <param name = "directory">The directory.</param>
         /// <returns></returns>
         public String Generate(String directory)
         {
-            NativeContext nativeContext = new NativeContext(this.TargetOSVersion, this.TargetArchitecture);
+            NativeContext nativeContext = new NativeContext(this.DeveloperToolsFolder, this.TargetOSVersion, this.TargetArchitecture);
 
             // We embed:
             // - the assemblies (with their configuration)
@@ -152,10 +158,10 @@ namespace Monobjc.Tools.Generators
 
             // Build the compilation command line
             StringBuilder builder = new StringBuilder();
-            builder.AppendFormat("-g -O -I{0} -L{0}", directory);
+            builder.AppendFormat("-g -O -I\"{0}\" -L\"{0}\"", directory);
             builder.AppendFormat(" {0}", nativeContext.ArchitectureFlags);
             builder.AppendFormat(" {0}", nativeContext.SDKFlags);
-            builder.AppendFormat(" -o {0} ", executableFile);
+            builder.AppendFormat(" -o \"{0}\" ", executableFile);
 
             this.Logger.LogInfo("Querying for Mono flags...");
 
@@ -185,7 +191,7 @@ namespace Monobjc.Tools.Generators
                 builder.AppendFormat(" -l{0}", machineConfig[KEY_SYMBOL]);
             }
 
-            builder.AppendFormat(" {0}", Path.Combine(directory, "main.c"));
+            builder.AppendFormat(" \"{0}\"", Path.Combine(directory, "main.c"));
 
             this.Logger.LogInfo("Compiling...");
             using (ProcessHelper helper = new ProcessHelper(nativeContext.Compiler, builder.ToString()))
