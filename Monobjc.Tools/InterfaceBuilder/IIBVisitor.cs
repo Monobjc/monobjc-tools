@@ -104,6 +104,12 @@ namespace Monobjc.Tools.InterfaceBuilder
         ///   Visits the specified item.
         /// </summary>
         /// <param name = "item">The item.</param>
+        void Visit(IBSet item);
+
+        /// <summary>
+        ///   Visits the specified item.
+        /// </summary>
+        /// <param name = "item">The item.</param>
         void Visit(IBString item);
     }
 }

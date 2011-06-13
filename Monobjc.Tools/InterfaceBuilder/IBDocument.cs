@@ -194,6 +194,9 @@ namespace Monobjc.Tools.InterfaceBuilder
                 case "reference":
                     return new IBReference(attributes);
 
+                case "set":
+                    return new IBSet(attributes);
+
                 case "string":
                     return new IBString(attributes);
 
@@ -224,6 +227,10 @@ namespace Monobjc.Tools.InterfaceBuilder
                     break;
                 case "IBPartialClassDescription":
                     obj = new IBPartialClassDescription(attributes);
+                    break;
+                case "NSSet":
+                case "NSMutableSet":
+                    obj = new IBSet(attributes);
                     break;
                 default:
                     obj = new IBObject(attributes);

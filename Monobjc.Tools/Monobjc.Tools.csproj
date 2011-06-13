@@ -52,6 +52,7 @@
     <Compile Include="Generators\NativeCodeGenerator.cs" />
     <Compile Include="Generators\NativeCodeRelocator.cs" />
     <Compile Include="Generators\XibCompiler.cs" />
+    <Compile Include="InterfaceBuilder\IBSet.cs" />
     <Compile Include="InterfaceBuilder\IBActionDescriptor.cs" />
     <Compile Include="InterfaceBuilder\IBDocument.cs" />
     <Compile Include="InterfaceBuilder\IBNil.cs" />

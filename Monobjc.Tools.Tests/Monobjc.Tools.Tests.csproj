@@ -85,6 +85,7 @@
     <None Include="Embedded\MainMenu-008.xib" />
     <None Include="Embedded\MainMenu-010.xib" />
     <None Include="Embedded\MainMenu-011.xib" />
+    <None Include="Embedded\MainMenu-012.xib" />
     <None Include="Embedded\MyDocument-005.xib" />
     <None Include="Embedded\project-003.pbxproj" />
     <None Include="Embedded\project-004.pbxproj" />

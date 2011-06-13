@@ -132,6 +132,24 @@ namespace Monobjc.Tools
         }
 
         [Test]
+        public void TestMainMenuReading012()
+        {
+            String content = ReadResource(Resources.MainMenu_012);
+            IBDocument document = IBDocument.LoadFromXml(content);
+            CheckDocument(document);
+
+            ClassDescriptionCollector collector = new ClassDescriptionCollector();
+            document.Root.Accept(collector);
+            Assert.AreEqual(3, collector.ClassNames.Count());
+            Assert.IsTrue(collector.ClassNames.Contains("MainController"));
+            IEnumerable<IBPartialClassDescription> classDescriptions = collector["MainController"];
+            IEnumerable<IBOutletDescriptor> outlets = classDescriptions.SelectMany(d => d.Outlets);
+            IEnumerable<IBActionDescriptor> actions = classDescriptions.SelectMany(d => d.Actions);
+            Assert.AreEqual(3, outlets.Count());
+            Assert.AreEqual(2, actions.Count());
+        }
+
+        [Test]
         public void TestMyDocumentReading005()
         {
             String content = ReadResource(Resources.MyDocument_005);

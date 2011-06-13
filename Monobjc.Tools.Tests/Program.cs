@@ -46,6 +46,7 @@ namespace Monobjc.Tools
             xibLoadTests.TestMainMenuReading008();
             xibLoadTests.TestMainMenuReading010();
             xibLoadTests.TestMainMenuReading011();
+            xibLoadTests.TestMainMenuReading012();
             //xibLoadTests.TestMyDocumentReading005();
 
             //PListLoadTests pListLoadTests = new PListLoadTests();
