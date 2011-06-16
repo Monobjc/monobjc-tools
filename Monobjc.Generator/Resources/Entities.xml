@@ -936,11 +936,18 @@
         <Patch>Properties[Matrix].Type=IntPtr</Patch>
         <Patch>Properties[Matrix].Getter.ReturnType=IntPtr</Patch>
         <Patch>Enumerations[NSFontRenderingMode].BaseType=NSUInteger</Patch>
-        <Patch>Enumerations[NSMultibyteGlyphPacking][0].BaseType=NSUInteger</Patch>
-        <Patch>Enumerations[NSMultibyteGlyphPacking][1].Generate=false</Patch>
+        <Patch>Enumerations[NSMultibyteGlyphPacking].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSGlyphRelation].BaseType=NSUInteger</Patch>
         <!-- TODO: Move to constants -->
         <Patch>Enumerations[Reserved_Glyph_Codes].Generate=false</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[<dd><p><p class="abstract">]]></Source>
+          <With><![CDATA[<dd><p class="abstract">]]></With>
+        </Replace>
+        <Replace type="Html">
+          <Source><![CDATA[typesetting stage)<pre class="declaration">]]></Source>
+          <With><![CDATA[typesetting stage)</p><pre class="declaration">]]></With>
+        </Replace>
       </Class>
       <Class name="NSFontDescriptor">
         <Patch>Enumerations[Typeface_Information].Name=NSTypefaceInformation</Patch>
@@ -1003,6 +1010,14 @@
         <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSImageCell">
+        <Replace type="Xhtml">
+          <Source><![CDATA[Guidelines</a></em>.)<pre]]></Source>
+          <With><![CDATA[Guidelines</a></em>.)</p><pre]]></With>
+        </Replace>
+        <Replace type="Xhtml">
+          <Source><![CDATA[NSImageCell.h</code></div></p>]]></Source>
+          <With><![CDATA[NSImageCell.h</code></div>]]></With>
+        </Replace>
       </Class>
       <Class name="NSImageRep">
         <Patch>Methods[CGImageForProposedRectContextHints].Parameters[proposedDestRect].Type=NSRect</Patch>
@@ -3187,6 +3202,10 @@ enum {]]>
         <Patch>Properties[Data].Type=NSData</Patch>
         <Patch>Properties[Data].Getter.ReturnType=NSData</Patch>
         <Patch>Properties[Data].CopyInDescendants=true</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[<dd><p><p class="abstract">]]></Source>
+          <With><![CDATA[<dd><p class="abstract">]]></With>
+        </Replace>
         <Replace type="Xhtml">
           <Source>
             <![CDATA[&amp;lt;&amp;lt; 1
@@ -5259,15 +5278,20 @@ enum
     <Types>
       <Type name="Authorization">
         <Patch>Functions[AuthorizationCopyInfo].Parameters[info].Type=IntPtr</Patch>
+        <Patch>Functions[AuthorizationCopyInfo].Parameters[info].IsOut=true</Patch>
         <Patch>Functions[AuthorizationCopyPrivilegedReference].Parameters[authorization].Type=IntPtr</Patch>
+        <Patch>Functions[AuthorizationCopyPrivilegedReference].Parameters[authorization].IsOut=true</Patch>
         <Patch>Functions[AuthorizationCopyRights].Parameters[rights].Type=IntPtr</Patch>
         <Patch>Functions[AuthorizationCopyRights].Parameters[environment].Type=IntPtr</Patch>
         <Patch>Functions[AuthorizationCopyRights].Parameters[authorizedRights].Type=IntPtr</Patch>
+        <Patch>Functions[AuthorizationCopyRights].Parameters[authorizedRights].IsOut=true</Patch>
         <Patch>Functions[AuthorizationCreate].Parameters[rights].Type=IntPtr</Patch>
         <Patch>Functions[AuthorizationCreate].Parameters[environment].Type=IntPtr</Patch>
         <Patch>Functions[AuthorizationCreate].Parameters[authorization].Type=IntPtr</Patch>
+        <Patch>Functions[AuthorizationCreate].Parameters[authorization].IsOut=true</Patch>
         <Patch>Functions[AuthorizationCreateFromExternalForm].Parameters[extForm].Type=IntPtr</Patch>
         <Patch>Functions[AuthorizationCreateFromExternalForm].Parameters[authorization].Type=IntPtr</Patch>
+        <Patch>Functions[AuthorizationCreateFromExternalForm].Parameters[authorization].IsOut=true</Patch>
         <Patch>Functions[AuthorizationExecuteWithPrivileges].Parameters[pathToTool].Type=String</Patch>
         <Patch>Functions[AuthorizationExecuteWithPrivileges].Parameters[const].Name=arguments</Patch>
         <Patch>Functions[AuthorizationExecuteWithPrivileges].Parameters[arguments].Type=IntPtr</Patch>
@@ -5275,42 +5299,469 @@ enum
         <Patch>Functions[AuthorizationFreeItemSet].Parameters[set].Type=IntPtr</Patch>
         <Patch>Functions[AuthorizationMakeExternalForm].Parameters[extForm].Type=IntPtr</Patch>
         <Patch>Functions[AuthorizationRightGet].Parameters[rightName].Type=String</Patch>
-        <Patch>Functions[AuthorizationRightGet].Parameters[rightDefinition].Type=IntPtr</Patch>
+        <Patch>Functions[AuthorizationRightGet].Parameters[rightDefinition].Type=NSDictionary</Patch>
+        <Patch>Functions[AuthorizationRightGet].Parameters[rightDefinition].IsOut=true</Patch>
         <Patch>Functions[AuthorizationRightRemove].Parameters[rightName].Type=String</Patch>
         <Patch>Functions[AuthorizationRightSet].Parameters[rightName].Type=String</Patch>
         <Patch>Functions[AuthorizationRightSet].Parameters[bundle].Type=IntPtr</Patch>
         <Patch>Enumerations[Authorization_Options].Name=AuthorizationFlags</Patch>
         <Patch>Enumerations[AuthorizationFlags].BaseType=uint</Patch>
         <!-- TODO: Move to constants -->
-        <Patch>Enumerations[Authorization_Rights_Mask].Generate=false</Patch>
+        <Patch>Enumerations[Authorization_Rights_Mask].Name=AuthorizationRightsMask</Patch>
+        <Patch>Enumerations[AuthorizationRightsMask].BaseType=uint</Patch>
+        <Patch>Enumerations[AuthorizationRightsMask].Flags=true</Patch>
         <Patch>Enumerations[External_Authorization_Reference_Length].Generate=false</Patch>
       </Type>
       <Type name="CertServices">
+        <Patch>Functions[SecCertificateCopyCommonName].Parameters[commonName].Type=NSString</Patch>
+        <Patch>Functions[SecCertificateCopyCommonName].Parameters[commonName].IsOut=true</Patch>
+        <Patch>Functions[SecCertificateCopyEmailAddresses].Parameters[emailAddresses].Type=NSArray</Patch>
+        <Patch>Functions[SecCertificateCopyEmailAddresses].Parameters[emailAddresses].IsOut=true</Patch>
+        <Patch>Functions[SecCertificateCopyPreference].Parameters[certificate].Type=IntPtr</Patch>
+        <Patch>Functions[SecCertificateCopyPreference].Parameters[certificate].IsOut=true</Patch>
+        <Patch>Functions[SecCertificateCopyPublicKey].Parameters[key].Type=IntPtr</Patch>
+        <Patch>Functions[SecCertificateCopyPublicKey].Parameters[key].IsOut=true</Patch>
+        <Patch>Functions[SecCertificateCreateFromData].Parameters[data].Type=CSSM_DATA</Patch>
+        <Patch>Functions[SecCertificateCreateFromData].Parameters[data].IsByRef=true</Patch>
+        <Patch>Functions[SecCertificateCreateFromData].Parameters[certificate].Type=IntPtr</Patch>
+        <Patch>Functions[SecCertificateCreateFromData].Parameters[certificate].IsOut=true</Patch>
+        <Patch>Functions[SecCertificateGetAlgorithmID].Parameters[algid].Type=IntPtr</Patch>
+        <Patch>Functions[SecCertificateGetAlgorithmID].Parameters[algid].IsOut=true</Patch>
+        <Patch>Functions[SecCertificateGetCLHandle].Parameters[clHandle].Type=IntPtr</Patch>
+        <Patch>Functions[SecCertificateGetCLHandle].Parameters[clHandle].IsOut=true</Patch>
+        <Patch>Functions[SecCertificateGetData].Parameters[data].Type=CSSM_DATA</Patch>
+        <Patch>Functions[SecCertificateGetData].Parameters[data].IsOut=true</Patch>
+        <Patch>Functions[SecCertificateGetIssuer].Parameters[issuer].Type=CSSM_X509_NAME</Patch>
+        <Patch>Functions[SecCertificateGetIssuer].Parameters[issuer].IsOut=true</Patch>
+        <Patch>Functions[SecCertificateGetItem].Parameters[item].Type=IntPtr</Patch>
+        <Patch>Functions[SecCertificateGetItem].Parameters[item].IsOut=true</Patch>
+        <Patch>Functions[SecCertificateGetSubject].Parameters[subject].Type=CSSM_X509_NAME</Patch>
+        <Patch>Functions[SecCertificateGetSubject].Parameters[subject].IsOut=true</Patch>
+        <Patch>Functions[SecCertificateGetType].Parameters[certificateType].Type=CSSM_CERT_TYPE</Patch>
+        <Patch>Functions[SecCertificateGetType].Parameters[certificateType].IsOut=true</Patch>
         <Patch>Functions[SecCertificateGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecIdentityCopyCertificate].Parameters[certificateRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecIdentityCopyCertificate].Parameters[certificateRef].IsOut=true</Patch>
+        <Patch>Functions[SecIdentityCopyPreference].Parameters[identity].Type=IntPtr</Patch>
+        <Patch>Functions[SecIdentityCopyPreference].Parameters[identity].IsOut=true</Patch>
+        <Patch>Functions[SecIdentityCopyPrivateKey].Parameters[privateKeyRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecIdentityCopyPrivateKey].Parameters[privateKeyRef].IsOut=true</Patch>
+        <Patch>Functions[SecIdentityCopySystemIdentity].Parameters[idRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecIdentityCopySystemIdentity].Parameters[idRef].IsOut=true</Patch>
+        <Patch>Functions[SecIdentityCopySystemIdentity].Parameters[actualDomain].Type=NSString</Patch>
+        <Patch>Functions[SecIdentityCopySystemIdentity].Parameters[actualDomain].IsOut=true</Patch>
+        <Patch>Functions[SecIdentityCreateWithCertificate].Parameters[identityRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecIdentityCreateWithCertificate].Parameters[identityRef].IsOut=true</Patch>
+        <Patch>Functions[SecIdentitySearchCopyNext].Parameters[identity].Type=IntPtr</Patch>
+        <Patch>Functions[SecIdentitySearchCopyNext].Parameters[identity].IsOut=true</Patch>
+        <Patch>Functions[SecIdentitySearchCreate].Parameters[searchRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecIdentitySearchCreate].Parameters[searchRef].IsOut=true</Patch>
         <Patch>Functions[SecIdentityGetTypeID].Generate=false</Patch>
         <Patch>Functions[SecIdentitySearchGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecKeyCreatePair].Parameters[publicKey].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeyCreatePair].Parameters[publicKey].IsOut=true</Patch>
+        <Patch>Functions[SecKeyCreatePair].Parameters[privateKey].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeyCreatePair].Parameters[privateKey].IsOut=true</Patch>
+        <Patch>Functions[SecKeyGenerate].Parameters[keyRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeyGenerate].Parameters[keyRef].IsOut=true</Patch>
+        <Patch>Functions[SecKeyGetCredentials].Parameters[outCredentials].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeyGetCredentials].Parameters[outCredentials].IsOut=true</Patch>
+        <Patch>Functions[SecKeyGetCSPHandle].Parameters[cspHandle].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeyGetCSPHandle].Parameters[cspHandle].IsOut=true</Patch>
+        <Patch>Functions[SecKeyGetCSSMKey].Parameters[cssmKey].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeyGetCSSMKey].Parameters[cssmKey].IsOut=true</Patch>
         <Patch>Functions[SecKeyGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecPKCS12Import].Parameters[items].Type=NSArray</Patch>
+        <Patch>Functions[SecPKCS12Import].Parameters[items].IsOut=true</Patch>
+        <Patch>Functions[SecPolicyCreateBasicX509].Parameters[d].Generate=false</Patch>
+        <Patch>Functions[SecPolicyGetOID].Parameters[oid].Type=CSSM_DATA</Patch>
+        <Patch>Functions[SecPolicyGetOID].Parameters[oid].IsOut=true</Patch>
+        <Patch>Functions[SecPolicyGetTPHandle].Parameters[tpHandle].Type=IntPtr</Patch>
+        <Patch>Functions[SecPolicyGetTPHandle].Parameters[tpHandle].IsOut=true</Patch>
+        <Patch>Functions[SecPolicyGetValue].Parameters[value].Type=CSSM_DATA</Patch>
+        <Patch>Functions[SecPolicyGetValue].Parameters[value].IsOut=true</Patch>
         <Patch>Functions[SecPolicyGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecPolicySearchCopyNext].Parameters[policyRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecPolicySearchCopyNext].Parameters[policyRef].IsOut=true</Patch>
+        <Patch>Functions[SecPolicySearchCreate].Parameters[policyOID].Type=CSSM_DATA</Patch>
+        <Patch>Functions[SecPolicySearchCreate].Parameters[policyOID].IsByRef=true</Patch>
+        <Patch>Functions[SecPolicySearchCreate].Parameters[value].Type=CSSM_DATA</Patch>
+        <Patch>Functions[SecPolicySearchCreate].Parameters[value].IsByRef=true</Patch>
+        <Patch>Functions[SecPolicySearchCreate].Parameters[searchRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecPolicySearchCreate].Parameters[searchRef].IsOut=true</Patch>
+        <Patch>Functions[SecPolicySetValue].Parameters[value].Type=CSSM_DATA</Patch>
+        <Patch>Functions[SecPolicySetValue].Parameters[value].IsByRef=true</Patch>
         <Patch>Functions[SecPolicySearchGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecTrustCopyAnchorCertificates].Parameters[anchors].Type=NSArray</Patch>
+        <Patch>Functions[SecTrustCopyAnchorCertificates].Parameters[anchors].IsOut=true</Patch>
+        <Patch>Functions[SecTrustCopyAnchorCertificates].Generate=false</Patch>
+        <Patch>Functions[SecTrustCopyCustomAnchorCertificates].Parameters[anchors].Type=NSArray</Patch>
+        <Patch>Functions[SecTrustCopyCustomAnchorCertificates].Parameters[anchors].IsOut=true</Patch>
+        <Patch>Functions[SecTrustCopyCustomAnchorCertificates].Generate=false</Patch>
+        <Patch>Functions[SecTrustCopyPolicies].Parameters[policies].Type=NSArray</Patch>
+        <Patch>Functions[SecTrustCopyPolicies].Parameters[policies].IsOut=true</Patch>
+        <Patch>Functions[SecTrustCopyPolicies].Generate=false</Patch>
+        <Patch>Functions[SecTrustCreateWithCertificates].Parameters[trustRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecTrustCreateWithCertificates].Parameters[trustRef].IsOut=true</Patch>
+        <Patch>Functions[SecTrustCreateWithCertificates].Generate=false</Patch>
+        <Patch>Functions[SecTrustEvaluate].Parameters[result].Type=SecTrustResultType</Patch>
+        <Patch>Functions[SecTrustEvaluate].Parameters[result].IsOut=true</Patch>
+        <Patch>Functions[SecTrustEvaluate].Generate=false</Patch>
+        <Patch>Functions[SecTrustGetCssmResult].Parameters[result].Type=IntPtr</Patch>
+        <Patch>Functions[SecTrustGetCssmResult].Parameters[result].IsOut=true</Patch>
+        <Patch>Functions[SecTrustGetCssmResult].Generate=false</Patch>
+        <Patch>Functions[SecTrustGetCssmResultCode].Parameters[resultCode].Type=int</Patch>
+        <Patch>Functions[SecTrustGetCssmResultCode].Parameters[resultCode].IsOut=true</Patch>
+        <Patch>Functions[SecTrustGetCssmResultCode].Generate=false</Patch>
+        <Patch>Functions[SecTrustGetResult].Generate=false</Patch>
+        <Patch>Functions[SecTrustGetTPHandle].Generate=false</Patch>
         <Patch>Functions[SecTrustGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecTrustGetVerifyTime].Generate=false</Patch>
+        <Patch>Functions[SecTrustSetAnchorCertificates].Generate=false</Patch>
+        <Patch>Functions[SecTrustSetAnchorCertificatesOnly].Generate=false</Patch>
+        <Patch>Functions[SecTrustSetKeychains].Generate=false</Patch>
+        <Patch>Functions[SecTrustSetParameters].Generate=false</Patch>
+        <Patch>Functions[SecTrustSetPolicies].Generate=false</Patch>
+        <Patch>Functions[SecTrustSettingsCopyCertificates].Generate=false</Patch>
+        <Patch>Functions[SecTrustSettingsCopyModificationDate].Generate=false</Patch>
+        <Patch>Functions[SecTrustSettingsCopyTrustSettings].Generate=false</Patch>
+        <Patch>Functions[SecTrustSettingsCreateExternalRepresentation].Generate=false</Patch>
+        <Patch>Functions[SecTrustSettingsImportExternalRepresentation].Generate=false</Patch>
+        <Patch>Functions[SecTrustSettingsRemoveTrustSettings].Generate=false</Patch>
+        <Patch>Functions[SecTrustSettingsSetTrustSettings].Generate=false</Patch>
+        <Patch>Functions[SecTrustSetVerifyDate].Generate=false</Patch>
+        <Patch>Enumerations[Certificate_Item_Attribute_Constants].Name=CertificateItemAttributes</Patch>
+        <Patch>Enumerations[CertificateItemAttributes].BaseType=uint</Patch>
+        <!--
+        <Patch>Enumerations[CertificateItemAttributes].Values[kSecSubjectItemAttr].Value=0x7375626A</Patch>
+        <Patch>Enumerations[CertificateItemAttributes].Values[kSecIssuerItemAttr].Value=0x69737375</Patch>
+        <Patch>Enumerations[CertificateItemAttributes].Values[kSecSerialNumberItemAttr].Value=0x736E6272</Patch>
+        <Patch>Enumerations[CertificateItemAttributes].Values[kSecPublicKeyHashItemAttr].Value=0x68706B79</Patch>
+        <Patch>Enumerations[CertificateItemAttributes].Values[kSecSubjectKeyIdentifierItemAttr].Value=0x736B6964</Patch>
+        <Patch>Enumerations[CertificateItemAttributes].Values[kSecCertTypeItemAttr].Value=0x63747970</Patch>
+        <Patch>Enumerations[CertificateItemAttributes].Values[kSecCertEncodingItemAttr].Value=0x63656E63</Patch>
+        -->
+        <Patch>Enumerations[Certificate_Status_Constants].Name=CSSM_TP_APPLE_CERT_STATUS</Patch>
+        <Patch>Enumerations[CSSM_TP_APPLE_CERT_STATUS].BaseType=uint</Patch>
+        <Patch>Enumerations[Digital_Signature_Padding_Types].Name=SecPadding</Patch>
+        <Patch>Enumerations[SecPadding].BaseType=uint</Patch>
+        <Patch>Enumerations[Trust_Result_Type_Constants].Name=SecTrustResultType</Patch>
+        <Patch>Enumerations[SecTrustResultType].BaseType=uint</Patch>
+        <Patch>Enumerations[Action_Data_Flags].Name=CSSM_APPLE_TP_ACTION_FLAGS</Patch>
+        <Patch>Enumerations[CSSM_APPLE_TP_ACTION_FLAGS].BaseType=uint</Patch>
+        <Patch>Enumerations[Key_Credential_Type_Constants].Name=SecCredentialType</Patch>
+        <Patch>Enumerations[SecCredentialType].BaseType=uint</Patch>
+        <Patch>Enumerations[Key_Credential_Type_Constants].Name=SecCredentialType</Patch>
+        <Patch>Enumerations[SecCredentialType].BaseType=uint</Patch>
+        <Patch>Enumerations[SecTrustSettingsDomain].BaseType=uint</Patch>
+        <Patch>Enumerations[SecTrustSettingsKeyUsage].BaseType=uint</Patch>
+        <Patch>Enumerations[SecTrustSettingsResult].BaseType=uint</Patch>
+
+        <Replace type="Generated">
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<CSSM_CERT_TYPE>(Marshal.ReadIntPtr(__local1));]]></Source>
+          <With><![CDATA[(CSSM_CERT_TYPE) Marshal.ReadInt32(__local1);]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<CSSM_DATA>(Marshal.ReadIntPtr(__local1));]]></Source>
+          <With><![CDATA[(CSSM_DATA) Marshal.PtrToStructure(__local1, typeof(CSSM_DATA));]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<CSSM_DATA>(Marshal.ReadIntPtr(__local2));]]></Source>
+          <With><![CDATA[(CSSM_DATA) Marshal.PtrToStructure(__local2, typeof(CSSM_DATA));]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<CSSM_X509_NAME>(Marshal.ReadIntPtr(__local1));]]></Source>
+          <With><![CDATA[(CSSM_X509_NAME) Marshal.PtrToStructure(__local1, typeof(CSSM_X509_NAME));]]></With>
+        </Replace>
       </Type>
       <Type name="CodeSigning">
+        <Patch>Functions[SecCodeCheckValidityWithErrors].Parameters[errors].Type=NSError</Patch>
+        <Patch>Functions[SecCodeCheckValidityWithErrors].Parameters[errors].IsOut=true</Patch>
+        <Patch>Functions[SecCodeCopyDesignatedRequirement].Parameters[requirement].Type=IntPtr</Patch>
+        <Patch>Functions[SecCodeCopyDesignatedRequirement].Parameters[requirement].IsOut=true</Patch>
+        <Patch>Functions[SecCodeCopyGuestWithAttributes].Parameters[guest].Type=IntPtr</Patch>
+        <Patch>Functions[SecCodeCopyGuestWithAttributes].Parameters[guest].IsOut=true</Patch>
+        <Patch>Functions[SecCodeCopyHost].Parameters[host].Type=IntPtr</Patch>
+        <Patch>Functions[SecCodeCopyHost].Parameters[host].IsOut=true</Patch>
+        <Patch>Functions[SecCodeCopyPath].Parameters[path].Type=NSURL</Patch>
+        <Patch>Functions[SecCodeCopyPath].Parameters[path].IsOut=true</Patch>
+        <Patch>Functions[SecCodeCopySelf].Parameters[self].Type=IntPtr</Patch>
+        <Patch>Functions[SecCodeCopySelf].Parameters[self].IsOut=true</Patch>
+        <Patch>Functions[SecCodeCopySigningInformation].Parameters[information].Type=NSDictionary</Patch>
+        <Patch>Functions[SecCodeCopySigningInformation].Parameters[information].IsOut=true</Patch>
+        <Patch>Functions[SecCodeCopyStaticCode].Parameters[staticCode].Type=IntPtr</Patch>
+        <Patch>Functions[SecCodeCopyStaticCode].Parameters[staticCode].IsOut=true</Patch>
+        <Patch>Functions[SecCodeGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecHostCreateGuest].Parameters[newGuest].Type=IntPtr</Patch>
+        <Patch>Functions[SecHostCreateGuest].Parameters[newGuest].IsOut=true</Patch>
+        <Patch>Functions[SecHostSelectedGuest].Parameters[guestRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecHostSelectedGuest].Parameters[guestRef].IsOut=true</Patch>
+        <Patch>Functions[SecHostSetHostingPort].Parameters[hostingPort].Type=uint</Patch>
+        <Patch>Functions[SecRequirementCopyData].Parameters[data].Type=NSData</Patch>
+        <Patch>Functions[SecRequirementCopyData].Parameters[data].IsOut=true</Patch>
+        <Patch>Functions[SecRequirementCopyString].Parameters[text].Type=NSString</Patch>
+        <Patch>Functions[SecRequirementCopyString].Parameters[text].IsOut=true</Patch>
+        <Patch>Functions[SecRequirementCreateWithData].Parameters[requirement].Type=IntPtr</Patch>
+        <Patch>Functions[SecRequirementCreateWithData].Parameters[requirement].IsOut=true</Patch>
+        <Patch>Functions[SecRequirementCreateWithString].Parameters[requirement].Type=IntPtr</Patch>
+        <Patch>Functions[SecRequirementCreateWithString].Parameters[requirement].IsOut=true</Patch>
+        <Patch>Functions[SecRequirementCreateWithStringAndErrors].Parameters[errors].Type=NSError</Patch>
+        <Patch>Functions[SecRequirementCreateWithStringAndErrors].Parameters[errors].IsOut=true</Patch>
+        <Patch>Functions[SecRequirementCreateWithStringAndErrors].Parameters[requirement].Type=IntPtr</Patch>
+        <Patch>Functions[SecRequirementCreateWithStringAndErrors].Parameters[requirement].IsOut=true</Patch>
+        <Patch>Functions[SecRequirementGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecStaticCodeCheckValidityWithErrors].Parameters[errors].Type=NSError</Patch>
+        <Patch>Functions[SecStaticCodeCheckValidityWithErrors].Parameters[errors].IsOut=true</Patch>
+        <Patch>Functions[SecStaticCodeCreateWithPath].Parameters[staticCode].Type=IntPtr</Patch>
+        <Patch>Functions[SecStaticCodeCreateWithPath].Parameters[staticCode].IsOut=true</Patch>
+        <Patch>Functions[SecStaticCodeGetTypeID].Generate=false</Patch>
+        <Patch>Enumerations[Signing_Information_Flags].Generate=false</Patch>
+        <Patch>Enumerations[Guest_Creation_Flags].Generate=false</Patch>
+        <Patch>Enumerations[Code_Signing_Function_Flags].Generate=false</Patch>
+        <Patch>Enumerations[Code_Signature_Flags].Generate=false</Patch>
+        <Patch>Enumerations[Internal_Requirement_Types].Generate=false</Patch>
+        <Patch>Enumerations[Static_Code_Validation_Flags].Generate=false</Patch>
       </Type>
       <Type name="KeyChain">
-        <Patch>Functions[SecAccessCopyACLList].Parameters[aclList].Type=IntPtr</Patch>
-        <Patch>Functions[SecAccessCopySelectedACLList].Parameters[aclList].Type=IntPtr</Patch>
-        <Patch>Functions[SecAccessCreate].Parameters[accessRef].Type=IntPtr</Patch>
-        <Patch>Functions[SecAccessCreate].Parameters[accessRef].IsOut=true</Patch>
-        <Patch>Functions[SecAccessCreateFromOwnerAndACL].Parameters[accessRef].Type=IntPtr</Patch>
-        <Patch>Functions[SecAccessCreateFromOwnerAndACL].Parameters[accessRef].IsOut=true</Patch>
+        <Patch>Functions[SecAccessCopyACLList].Generate=false</Patch>
+        <Patch>Functions[SecAccessCopySelectedACLList].Generate=false</Patch>
+        <Patch>Functions[SecAccessCreate].Generate=false</Patch>
+        <Patch>Functions[SecAccessCreateFromOwnerAndACL].Generate=false</Patch>
+        <Patch>Functions[SecAccessGetOwnerAndACL].Generate=false</Patch>
         <Patch>Functions[SecAccessGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecACLCopySimpleContents].Generate=false</Patch>
+        <Patch>Functions[SecACLCreateFromSimpleContents].Generate=false</Patch>
+        <Patch>Functions[SecACLGetAuthorizations].Generate=false</Patch>
         <Patch>Functions[SecACLGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecACLRemove].Generate=false</Patch>
+        <Patch>Functions[SecACLSetAuthorizations].Generate=false</Patch>
+        <Patch>Functions[SecACLSetSimpleContents].Generate=false</Patch>
+        <Patch>Functions[SecItemAdd].Parameters[result].Type=IntPtr</Patch>
+        <Patch>Functions[SecItemAdd].Parameters[result].IsOut=true</Patch>
+        <Patch>Functions[SecItemCopyMatching].Parameters[result].Type=IntPtr</Patch>
+        <Patch>Functions[SecItemCopyMatching].Parameters[result].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainAddGenericPassword].Parameters[serviceName].Type=String</Patch>
+        <Patch>Functions[SecKeychainAddGenericPassword].Parameters[accountName].Type=String</Patch>
+        <Patch>Functions[SecKeychainAddGenericPassword].Parameters[passwordData].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainAddGenericPassword].Parameters[itemRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainAddGenericPassword].Parameters[itemRef].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainAddInternetPassword].Parameters[serverName].Type=String</Patch>
+        <Patch>Functions[SecKeychainAddInternetPassword].Parameters[securityDomain].Type=String</Patch>
+        <Patch>Functions[SecKeychainAddInternetPassword].Parameters[accountName].Type=String</Patch>
+        <Patch>Functions[SecKeychainAddInternetPassword].Parameters[path].Type=String</Patch>
+        <Patch>Functions[SecKeychainAddInternetPassword].Parameters[passwordData].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainAddInternetPassword].Parameters[itemRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainAddInternetPassword].Parameters[itemRef].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainAttributeInfoForItemID].Parameters[info].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainCopyAccess].Parameters[access].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainCopyAccess].Parameters[access].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainCopyDefault].Parameters[keychain].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainCopyDefault].Parameters[keychain].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainCopyDomainDefault].Parameters[keychain].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainCopyDomainDefault].Parameters[keychain].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainCopyDomainSearchList].Parameters[searchList].Type=NSArray</Patch>
+        <Patch>Functions[SecKeychainCopyDomainSearchList].Parameters[searchList].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainCopySearchList].Parameters[searchList].Type=NSArray</Patch>
+        <Patch>Functions[SecKeychainCopySearchList].Parameters[searchList].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainCopySettings].Parameters[outSettings].Type=SecKeychainSettings</Patch>
+        <Patch>Functions[SecKeychainCopySettings].Parameters[outSettings].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainCreate].Parameters[pathName].Type=String</Patch>
+        <Patch>Functions[SecKeychainCreate].Parameters[keychain].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainCreate].Parameters[keychain].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainFindGenericPassword].Parameters[serviceName].Type=String</Patch>
+        <Patch>Functions[SecKeychainFindGenericPassword].Parameters[accountName].Type=String</Patch>
+        <Patch>Functions[SecKeychainFindGenericPassword].Parameters[passwordLength].Type=uint</Patch>
+        <Patch>Functions[SecKeychainFindGenericPassword].Parameters[passwordLength].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainFindGenericPassword].Parameters[passwordData].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainFindGenericPassword].Parameters[passwordData].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainFindGenericPassword].Parameters[itemRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainFindGenericPassword].Parameters[itemRef].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainFindInternetPassword].Parameters[serverName].Type=String</Patch>
+        <Patch>Functions[SecKeychainFindInternetPassword].Parameters[securityDomain].Type=String</Patch>
+        <Patch>Functions[SecKeychainFindInternetPassword].Parameters[accountName].Type=String</Patch>
+        <Patch>Functions[SecKeychainFindInternetPassword].Parameters[path].Type=String</Patch>
+        <Patch>Functions[SecKeychainFindInternetPassword].Parameters[passwordLength].Type=uint</Patch>
+        <Patch>Functions[SecKeychainFindInternetPassword].Parameters[passwordLength].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainFindInternetPassword].Parameters[passwordData].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainFindInternetPassword].Parameters[passwordData].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainFindInternetPassword].Parameters[itemRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainFindInternetPassword].Parameters[itemRef].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainFreeAttributeInfo].Parameters[info].Type=SecKeychainAttributeInfo</Patch>
+        <Patch>Functions[SecKeychainFreeAttributeInfo].Parameters[info].IsByRef=true</Patch>
+        <Patch>Functions[SecKeychainGetCSPHandle].Generate=false</Patch>
+        <Patch>Functions[SecKeychainGetDLDBHandle].Generate=false</Patch>
+        <Patch>Functions[SecKeychainGetPath].Parameters[ioPathLength].Type=uint</Patch>
+        <Patch>Functions[SecKeychainGetPath].Parameters[ioPathLength].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainGetPath].Parameters[pathName].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainGetPath].Parameters[pathName].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainGetPreferenceDomain].Parameters[domain].Type=SecPreferencesDomain</Patch>
+        <Patch>Functions[SecKeychainGetPreferenceDomain].Parameters[domain].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainGetStatus].Parameters[keychainStatus].Type=SecKeychainStatus</Patch>
+        <Patch>Functions[SecKeychainGetStatus].Parameters[keychainStatus].IsOut=true</Patch>
         <Patch>Functions[SecKeychainGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecKeychainGetUserInteractionAllowed].Parameters[state].Type=bool</Patch>
+        <Patch>Functions[SecKeychainGetUserInteractionAllowed].Parameters[state].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainGetVersion].Parameters[returnVers].Type=uint</Patch>
+        <Patch>Functions[SecKeychainGetVersion].Parameters[returnVers].IsOut=true</Patch>
+
+        <Patch>Functions[SecKeychainItemCopyAccess].Generate=false</Patch>
+        <Patch>Functions[SecKeychainItemCopyAccess].Parameters[access].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainItemCopyAttributesAndData].Parameters[info].Type=SecKeychainAttributeInfo</Patch>
+        <Patch>Functions[SecKeychainItemCopyAttributesAndData].Parameters[info].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainItemCopyAttributesAndData].Parameters[itemClass].Type=SecItemClass</Patch>
+        <Patch>Functions[SecKeychainItemCopyAttributesAndData].Parameters[itemClass].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainItemCopyAttributesAndData].Parameters[attrList].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainItemCopyAttributesAndData].Parameters[attrList].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainItemCopyAttributesAndData].Parameters[length].Type=uint</Patch>
+        <Patch>Functions[SecKeychainItemCopyAttributesAndData].Parameters[length].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainItemCopyAttributesAndData].Parameters[outData].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainItemCopyAttributesAndData].Parameters[outData].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainItemCopyContent].Parameters[itemClass].Type=SecItemClass</Patch>
+        <Patch>Functions[SecKeychainItemCopyContent].Parameters[itemClass].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainItemCopyContent].Parameters[attrList].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainItemCopyContent].Parameters[attrList].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainItemCopyContent].Parameters[length].Type=uint</Patch>
+        <Patch>Functions[SecKeychainItemCopyContent].Parameters[length].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainItemCopyContent].Parameters[outData].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainItemCopyContent].Parameters[outData].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainItemCopyFromPersistentReference].Parameters[itemRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainItemCopyFromPersistentReference].Parameters[itemRef].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainItemCopyKeychain].Parameters[keychainRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainItemCopyKeychain].Parameters[keychainRef].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainItemCreateCopy].Parameters[itemCopy].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainItemCreateCopy].Parameters[itemCopy].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainItemCreateFromContent].Parameters[attrList].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainItemCreateFromContent].Parameters[attrList].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainItemCreateFromContent].Parameters[itemRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainItemCreateFromContent].Parameters[itemRef].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainItemCreatePersistentReference].Parameters[persistentItemRef].Type=NSData</Patch>
+        <Patch>Functions[SecKeychainItemCreatePersistentReference].Parameters[persistentItemRef].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainItemExport].Parameters[keyParams].Type=SecKeyImportExportParameters</Patch>
+        <Patch>Functions[SecKeychainItemExport].Parameters[keyParams].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainItemExport].Parameters[exportedData].Type=NSData</Patch>
+        <Patch>Functions[SecKeychainItemExport].Parameters[exportedData].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainItemExport].Generate=false</Patch>
+        <Patch>Functions[SecKeychainItemFreeAttributesAndData].Parameters[attrList].Type=SecKeychainAttributeList</Patch>
+        <Patch>Functions[SecKeychainItemFreeAttributesAndData].Parameters[attrList].IsByRef=true</Patch>
+        <Patch>Functions[SecKeychainItemFreeContent].Parameters[attrList].Type=SecKeychainAttributeList</Patch>
+        <Patch>Functions[SecKeychainItemFreeContent].Parameters[attrList].IsByRef=true</Patch>
+        <Patch>Functions[SecKeychainItemGetDLDBHandle].Generate=false</Patch>
         <Patch>Functions[SecKeychainItemGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecKeychainItemGetUniqueRecordID].Generate=false</Patch>
+        <Patch>Functions[SecKeychainItemImport].Generate=false</Patch>
+        <Patch>Functions[SecKeychainItemModifyAttributesAndData].Generate=false</Patch>
+        <Patch>Functions[SecKeychainItemModifyContent].Generate=false</Patch>
+        <Patch>Functions[SecKeychainItemSetAccess].Generate=false</Patch>
+        <Patch>Functions[SecKeychainLockAll].Parameters[d].Generate=false</Patch>
+        <Patch>Functions[SecKeychainOpen].Parameters[pathName].Type=String</Patch>
+        <Patch>Functions[SecKeychainOpen].Parameters[keychain].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainOpen].Parameters[keychain].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainSearchCopyNext].Parameters[itemRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainSearchCopyNext].Parameters[itemRef].IsOut=true</Patch>
+        <Patch>Functions[SecKeychainSearchCreateFromAttributes].Parameters[attrList].Type=SecKeychainAttributeList</Patch>
+        <Patch>Functions[SecKeychainSearchCreateFromAttributes].Parameters[attrList].IsByRef=true</Patch>
+        <Patch>Functions[SecKeychainSearchCreateFromAttributes].Parameters[searchRef].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeychainSearchCreateFromAttributes].Parameters[searchRef].IsOut=true</Patch>
         <Patch>Functions[SecKeychainSearchGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecKeychainSetSettings].Parameters[newSettings].Type=SecKeychainSettings</Patch>
+        <Patch>Functions[SecKeychainSetSettings].Parameters[newSettings].IsByRef=true</Patch>
+        <Patch>Functions[SecTrustedApplicationCopyData].Generate=false</Patch>
+        <Patch>Functions[SecTrustedApplicationCreateFromPath].Generate=false</Patch>
         <Patch>Functions[SecTrustedApplicationGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecTrustedApplicationSetData].Generate=false</Patch>
+
+        <Patch>Enumerations[Authorization_Tag_Type_Constants].Name=CSSM_ACL_AUTHORIZATION_TAG</Patch>
+        <Patch>Enumerations[CSSM_ACL_AUTHORIZATION_TAG].BaseType=int</Patch>
+        <Patch>Enumerations[CSSM_ACL_AUTHORIZATION_TAG].Generate=false</Patch>
+        <Patch>Enumerations[Keychain_Authentication_Type_Constants].Name=SecAuthenticationType</Patch>
+        <Patch>Enumerations[SecAuthenticationType].BaseType=uint</Patch>
+        <Patch>Enumerations[Keychain_Event_Constants].Name=SecKeychainEvent</Patch>
+        <Patch>Enumerations[SecKeychainEvent].BaseType=uint</Patch>
+        <Patch>Enumerations[Keychain_Event_Mask_Constants].Name=SecKeychainEventMask</Patch>
+        <Patch>Enumerations[SecKeychainEventMask].BaseType=uint</Patch>
+        <Patch>Enumerations[Keychain_Item_Attribute_Constants].Name=SecItemAttr</Patch>
+        <Patch>Enumerations[SecItemAttr].BaseType=uint</Patch>
+        <Patch>Enumerations[Keychain_Item_Attribute_Constants_For_Keys].Name=SecKeyItemAttr</Patch>
+        <Patch>Enumerations[SecKeyItemAttr].BaseType=uint</Patch>
+        <Patch>Enumerations[Keychain_Item_Class_Constants].Name=SecItemClass</Patch>
+        <Patch>Enumerations[SecItemClass].BaseType=uint</Patch>
+        <Patch>Enumerations[SecItemClass].Values[kSecCertificateItemClass].Value=0x80000000 + 0x1000</Patch>
+        <Patch>Enumerations[SecItemClass].Values[kSecPublicKeyItemClass].Value=0x80000000 + 0x0005</Patch>
+        <Patch>Enumerations[SecItemClass].Values[kSecPrivateKeyItemClass].Value=0x80000000 + 0x0006</Patch>
+        <Patch>Enumerations[SecItemClass].Values[kSecSymmetricKeyItemClass].Value=0x80000000 + 0x0007</Patch>
+        <Patch>Enumerations[SecPreferencesDomain].BaseType=int</Patch>
+        <Patch>Enumerations[Keychain_Protocol_Type_Constants].Name=SecProtocolType</Patch>
+        <Patch>Enumerations[SecProtocolType].BaseType=uint</Patch>
+        <Patch>Enumerations[Keychain_Status_Masks].Name=SecKeychainStatus</Patch>
+        <Patch>Enumerations[SecKeychainStatus].BaseType=uint</Patch>
+
+        <Replace type="Xhtml">
+          <Source><![CDATA[//<!--a-->not<!--/a--><!--a-->supported<!--/a-->]]></Source>
+          <With><![CDATA[<!-- -->]]></With>
+        </Replace>
+        <Replace type="Xhtml">
+          <Source><![CDATA[/* Apple-<!--a-->defined<!--/a--><!--a-->ACL<!--/a--><!--a-->authorization<!--/a--><!--a-->tags<!--/a--> */]]></Source>
+          <With><![CDATA[<!-- -->]]></With>
+        </Replace>
+        <Replace type="Xhtml">
+          <Source><![CDATA[/* <!--a-->Record<!--/a--><!--a-->Type<!--/a--><!--a-->defined<!--/a--><!--a-->in<!--/a--><!--a-->The<!--/a--><!--a-->Open<!--/a--><!--a-->Group<!--/a--><!--a-->Application<!--/a--><!--a-->Name<!--/a--><!--a-->Space<!--/a-->  */]]></Source>
+          <With><![CDATA[<!-- -->]]></With>
+        </Replace>
+        <Replace type="Xhtml">
+          <Source><![CDATA[/* cssmtype.<!--a-->h<!--/a--> */]]></Source>
+          <With><![CDATA[<!-- -->]]></With>
+        </Replace>
+        <Replace type="Xhtml">
+          <Source><![CDATA[<!--a-->AUTH_TYPE_FIX_<!--/a--> (]]></Source>
+          <With><![CDATA[<!-- -->]]></With>
+        </Replace>
+        <Replace type="Xhtml">
+          <Source><![CDATA['),]]></Source>
+          <With><![CDATA[',]]></With>
+        </Replace>
+        <Replace type="Xhtml">
+          <Source><![CDATA[ 0 )]]></Source>
+          <With><![CDATA[0]]></With>
+        </Replace>
+
+        <Replace type="Generated">
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<SecKeychainAttributeInfo>(Marshal.ReadIntPtr(__local1));]]></Source>
+          <With><![CDATA[(SecKeychainAttributeInfo) Marshal.PtrToStructure(__local1, typeof(SecKeychainAttributeInfo));]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<SecPreferencesDomain>(Marshal.ReadIntPtr(__local1));]]></Source>
+          <With><![CDATA[(SecPreferencesDomain) Marshal.ReadInt32(__local1);]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<SecKeychainStatus>(Marshal.ReadIntPtr(__local1));]]></Source>
+          <With><![CDATA[(SecKeychainStatus) Marshal.ReadInt32(__local1);]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<SecItemClass>(Marshal.ReadIntPtr(__local1));]]></Source>
+          <With><![CDATA[(SecItemClass) Marshal.ReadInt32(__local1);]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<SecItemClass>(Marshal.ReadIntPtr(__local2));]]></Source>
+          <With><![CDATA[(SecItemClass) Marshal.ReadInt32(__local2);]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<SecKeychainAttributeList>(Marshal.ReadIntPtr(__local1));]]></Source>
+          <With><![CDATA[(SecKeychainAttributeList) Marshal.PtrToStructure(__local1, typeof(SecKeychainAttributeList));]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<SecKeychainSettings>(Marshal.ReadIntPtr(__local1));]]></Source>
+          <With><![CDATA[(SecKeychainSettings) Marshal.PtrToStructure(__local1, typeof(SecKeychainSettings));]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[ = 1 << kSec]]></Source>
+          <With><![CDATA[ = 1U << (int) SecKeychainEvent.kSec]]></With>
+        </Replace>
       </Type>
-	</Types>
+    </Types>
+    <Enumerations>
+      <Enumeration name="SecCSFlags">
+      </Enumeration>
+    </Enumerations>
   </Framework>
   <Framework name="SecurityFoundation" usings="Foundation,Security" assembly="Monobjc.SecurityFoundation">
     <Classes>

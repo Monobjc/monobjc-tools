@@ -107,5 +107,19 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml
             Console.WriteLine("FAILED to parse enum '{0}'", declaration);
             return false;
         }
+
+        /// <summary>
+        ///   Converts a four-char value to an unsigned integer.
+        /// </summary>
+        /// <param name = "fourCharValue">The four char value.</param>
+        /// <returns>An unsigned integer</returns>
+        protected static uint FourCharToInt(String fourCharValue)
+        {
+            if (fourCharValue.Length != 4)
+            {
+                throw new ArgumentException();
+            }
+            return fourCharValue.Aggregate(0u, (i, c) => (i * 256) + c);
+        }
     }
 }

@@ -140,7 +140,17 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
                 // Add a new value
                 EnumerationValueEntity enumerationValueEntity = new EnumerationValueEntity();
                 enumerationValueEntity.Name = key;
-                enumerationValueEntity.Value = value;
+
+                if (value.Length == 6 && value.StartsWith("'") && value.EndsWith("'"))
+                {
+                    String v = value.Trim('\'');
+                    enumerationValueEntity.Value = "0x" + FourCharToInt(v).ToString("X8");
+                }
+                else
+                {
+                    enumerationValueEntity.Value = value;
+                }
+
                 enumerationEntity.Values.Add(enumerationValueEntity);
             }
 
