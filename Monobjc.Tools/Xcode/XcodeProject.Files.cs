@@ -34,21 +34,24 @@ namespace Monobjc.Tools.Xcode
         /// <returns></returns>
         public PBXGroup AddGroup(String groups)
         {
-            // Split the group paths
-            List<string> parts = groups.Split(new[] {'/'}, StringSplitOptions.RemoveEmptyEntries).ToList();
-            PBXGroup group = this.Document.Project.MainGroup;
-            foreach (String part in parts)
+            lock (this.syncRoot)
             {
-                PBXGroup g = group.FindGroup(part);
-                if (g == null)
+                // Split the group paths
+                List<string> parts = groups.Split(new[] {'/'}, StringSplitOptions.RemoveEmptyEntries).ToList();
+                PBXGroup group = this.Document.Project.MainGroup;
+                foreach (String part in parts)
                 {
-                    // For each group not found, create it
-                    g = new PBXGroup(part);
-                    group.AddChild(g);
+                    PBXGroup g = group.FindGroup(part);
+                    if (g == null)
+                    {
+                        // For each group not found, create it
+                        g = new PBXGroup(part);
+                        group.AddChild(g);
+                    }
+                    group = g;
                 }
-                group = g;
+                return group;
             }
-            return group;
         }
 
         /// <summary>
@@ -58,33 +61,36 @@ namespace Monobjc.Tools.Xcode
         /// <returns></returns>
         public PBXGroup RemoveGroup(String groups)
         {
-            // Only keep the n-1 groups
-            List<String> parts = groups.Split(new[] {'/'}, StringSplitOptions.RemoveEmptyEntries).ToList();
-            String last = parts.Last();
-            parts.RemoveAt(parts.Count - 1);
-
-            // Go to the parent group
-            PBXGroup g, group = this.Document.Project.MainGroup;
-            foreach (String part in parts)
+            lock (this.syncRoot)
             {
-                g = group.FindGroup(part);
-                if (g == null)
+                // Only keep the n-1 groups
+                List<String> parts = groups.Split(new[] {'/'}, StringSplitOptions.RemoveEmptyEntries).ToList();
+                String last = parts.Last();
+                parts.RemoveAt(parts.Count - 1);
+
+                // Go to the parent group
+                PBXGroup g, group = this.Document.Project.MainGroup;
+                foreach (String part in parts)
                 {
-                    // For each group not found, create it
-                    g = new PBXGroup(part);
-                    group.AddChild(g);
+                    g = group.FindGroup(part);
+                    if (g == null)
+                    {
+                        // For each group not found, create it
+                        g = new PBXGroup(part);
+                        group.AddChild(g);
+                    }
+                    group = g;
                 }
-                group = g;
-            }
 
-            // If the group to delete exists, remove it
-            g = group.FindGroup(last);
-            if (g != null)
-            {
-                group.RemoveChild(g);
-            }
+                // If the group to delete exists, remove it
+                g = group.FindGroup(last);
+                if (g != null)
+                {
+                    group.RemoveChild(g);
+                }
 
-            return g;
+                return g;
+            }
         }
 
         /// <summary>
@@ -107,66 +113,69 @@ namespace Monobjc.Tools.Xcode
         /// <returns></returns>
         public PBXFileElement AddFile(String groups, String file, PBXSourceTree sourceTree)
         {
-            // Prepare the group that will contain the file
-            PBXGroup group = this.AddGroup(groups);
-            PBXFileReference fileReference = null;
-            PBXFileElement result = null;
-
-            // Extract information
-            String name = Path.GetFileName(file);
-            String path = Path.GetFullPath(file);
-            String baseDir = Path.GetFullPath(String.IsNullOrEmpty(this.Project.ProjectDirPath) ? this.Dir : this.Project.ProjectDirPath);
-            String parentDir = Path.GetDirectoryName(file);
-
-            // If the file is localized, then add it to a variant group
-            if (Path.GetExtension(parentDir).Equals(".lproj"))
+            lock (this.syncRoot)
             {
-                // The variant group may exists to search for it
-                PBXVariantGroup variantGroup = group.FindVariantGroup(name);
-                if (variantGroup == null)
-                {
-                    variantGroup = new PBXVariantGroup(name);
-                    group.AddChild(variantGroup);
-                }
+                // Prepare the group that will contain the file
+                PBXGroup group = this.AddGroup(groups);
+                PBXFileReference fileReference = null;
+                PBXFileElement result = null;
 
-                // The file is named like the language
-                name = Path.GetFileNameWithoutExtension(parentDir);
-                group = variantGroup;
-                result = variantGroup;
-            }
+                // Extract information
+                String name = Path.GetFileName(file);
+                String path = Path.GetFullPath(file);
+                String baseDir = Path.GetFullPath(String.IsNullOrEmpty(this.Project.ProjectDirPath) ? this.Dir : this.Project.ProjectDirPath);
+                String parentDir = Path.GetDirectoryName(file);
 
-            // Check if the file already exists
-            fileReference = group.FindFileReference(name);
-            if (fileReference == null)
-            {
-                // Create a file reference
-                fileReference = new PBXFileReference(name);
-
-                // Set the source tree if none specified
-                if (sourceTree != PBXSourceTree.None)
+                // If the file is localized, then add it to a variant group
+                if (Path.GetExtension(parentDir).Equals(".lproj"))
                 {
-                    fileReference.SourceTree = sourceTree;
-                }
-                else
-                {
-                    if (path.StartsWith(baseDir))
+                    // The variant group may exists to search for it
+                    PBXVariantGroup variantGroup = group.FindVariantGroup(name);
+                    if (variantGroup == null)
                     {
-                        path = path.Substring(baseDir.Length + 1);
-                        fileReference.SourceTree = PBXSourceTree.Group;
+                        variantGroup = new PBXVariantGroup(name);
+                        group.AddChild(variantGroup);
+                    }
+
+                    // The file is named like the language
+                    name = Path.GetFileNameWithoutExtension(parentDir);
+                    group = variantGroup;
+                    result = variantGroup;
+                }
+
+                // Check if the file already exists
+                fileReference = group.FindFileReference(name);
+                if (fileReference == null)
+                {
+                    // Create a file reference
+                    fileReference = new PBXFileReference(name);
+
+                    // Set the source tree if none specified
+                    if (sourceTree != PBXSourceTree.None)
+                    {
+                        fileReference.SourceTree = sourceTree;
                     }
                     else
                     {
-                        fileReference.SourceTree = PBXSourceTree.Absolute;
+                        if (path.StartsWith(baseDir))
+                        {
+                            path = path.Substring(baseDir.Length + 1);
+                            fileReference.SourceTree = PBXSourceTree.Group;
+                        }
+                        else
+                        {
+                            fileReference.SourceTree = PBXSourceTree.Absolute;
+                        }
                     }
+                    fileReference.Path = path;
+                    fileReference.LastKnownFileType = GetFileType(file);
+
+                    // Add it to the group
+                    group.AddChild(fileReference);
                 }
-                fileReference.Path = path;
-                fileReference.LastKnownFileType = GetFileType(file);
 
-                // Add it to the group
-                group.AddChild(fileReference);
+                return result ?? fileReference;
             }
-
-            return result ?? fileReference;
         }
 
         /// <summary>
@@ -177,43 +186,46 @@ namespace Monobjc.Tools.Xcode
         /// <returns></returns>
         public PBXFileReference RemoveFile(String groups, String file)
         {
-            // Prepare the group that contains the file
-            PBXGroup group = this.AddGroup(groups);
-            PBXFileReference fileReference = null;
-            PBXFileElement result = null;
-
-            // Extract information
-            String name = Path.GetFileName(file);
-            String parentDir = Path.GetDirectoryName(file);
-
-            // If the file is localized, search for the variant group
-            if (Path.GetExtension(parentDir).Equals(".lproj"))
+            lock (this.syncRoot)
             {
-                PBXVariantGroup variantGroup = group.FindVariantGroup(name);
-                if (variantGroup != null)
+                // Prepare the group that contains the file
+                PBXGroup group = this.AddGroup(groups);
+                PBXFileReference fileReference = null;
+                PBXFileElement result = null;
+
+                // Extract information
+                String name = Path.GetFileName(file);
+                String parentDir = Path.GetDirectoryName(file);
+
+                // If the file is localized, search for the variant group
+                if (Path.GetExtension(parentDir).Equals(".lproj"))
                 {
-                    // The file is named like the language
-                    name = Path.GetFileNameWithoutExtension(parentDir);
+                    PBXVariantGroup variantGroup = group.FindVariantGroup(name);
+                    if (variantGroup != null)
+                    {
+                        // The file is named like the language
+                        name = Path.GetFileNameWithoutExtension(parentDir);
+                    }
+                    group = variantGroup;
+                    result = variantGroup;
                 }
-                group = variantGroup;
-                result = variantGroup;
-            }
 
-            if (group != null)
-            {
-                // Search for the file and remove it
-                fileReference = group.FindFileReference(name);
-                if (fileReference != null)
+                if (group != null)
                 {
-                    group.RemoveChild(fileReference);
+                    // Search for the file and remove it
+                    fileReference = group.FindFileReference(name);
+                    if (fileReference != null)
+                    {
+                        group.RemoveChild(fileReference);
+                    }
                 }
-            }
 
-            if (result == null)
-            {
-                result = fileReference;
+                if (result == null)
+                {
+                    result = fileReference;
+                }
+                return fileReference;
             }
-            return fileReference;
         }
 
         /// <summary>

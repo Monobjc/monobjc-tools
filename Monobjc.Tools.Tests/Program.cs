@@ -32,21 +32,21 @@ namespace Monobjc.Tools
             //PBXProjectGenerationTests pBXProjectGenerationTests = new PBXProjectGenerationTests();
             //pBXProjectGenerationTests.TestProjectGeneration001();
 
-            //XcodeProjectGenerationTests xcodeProjectGenerationTests = new XcodeProjectGenerationTests();
-            //xcodeProjectGenerationTests.TestProjectGeneration001();
+            XcodeProjectGenerationTests xcodeProjectGenerationTests = new XcodeProjectGenerationTests();
+            xcodeProjectGenerationTests.TestProjectGeneration001();
 
-            XIBLoadTests xibLoadTests = new XIBLoadTests();
-            xibLoadTests.TestMainMenuReading001();
-            xibLoadTests.TestMainMenuReading002();
-            xibLoadTests.TestMainMenuReading003();
-            xibLoadTests.TestMainMenuReading004();
-            xibLoadTests.TestMainMenuReading005();
-            xibLoadTests.TestMainMenuReading006();
-            xibLoadTests.TestMainMenuReading007();
-            xibLoadTests.TestMainMenuReading008();
-            xibLoadTests.TestMainMenuReading010();
-            xibLoadTests.TestMainMenuReading011();
-            xibLoadTests.TestMainMenuReading012();
+            //XIBLoadTests xibLoadTests = new XIBLoadTests();
+            //xibLoadTests.TestMainMenuReading001();
+            //xibLoadTests.TestMainMenuReading002();
+            //xibLoadTests.TestMainMenuReading003();
+            //xibLoadTests.TestMainMenuReading004();
+            //xibLoadTests.TestMainMenuReading005();
+            //xibLoadTests.TestMainMenuReading006();
+            //xibLoadTests.TestMainMenuReading007();
+            //xibLoadTests.TestMainMenuReading008();
+            //xibLoadTests.TestMainMenuReading010();
+            //xibLoadTests.TestMainMenuReading011();
+            //xibLoadTests.TestMainMenuReading012();
             //xibLoadTests.TestMyDocumentReading005();
 
             //PListLoadTests pListLoadTests = new PListLoadTests();

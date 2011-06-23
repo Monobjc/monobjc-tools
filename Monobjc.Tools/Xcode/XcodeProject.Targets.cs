@@ -29,6 +29,32 @@ namespace Monobjc.Tools.Xcode
     public partial class XcodeProject
     {
         /// <summary>
+        /// Gets the files.
+        /// </summary>
+        /// <param name="pattern">The pattern.</param>
+        /// <param name="targetName">Name of the target.</param>
+        /// <returns>A list of files.</returns>
+        public IEnumerable<PBXBuildFile> GetFiles(String pattern, String targetName)
+        {
+            PBXTarget target = this.GetTarget(targetName);
+            if (target == null)
+            {
+                yield break;
+            }
+
+            PBXBuildPhase phase = GetTargetPhase(target, pattern);
+            if (phase == null)
+            {
+                yield break;
+            }
+
+            foreach (PBXBuildFile buildFile in phase.Files)
+            {
+                yield return buildFile;
+            }
+        }
+
+        /// <summary>
         ///   Adds the file.
         /// </summary>
         /// <param name = "groups">The groups.</param>
@@ -37,28 +63,31 @@ namespace Monobjc.Tools.Xcode
         /// <returns></returns>
         public PBXBuildFile AddFile(String groups, String file, String targetName)
         {
-            PBXFileElement fileElement = this.AddFile(groups, file);
-
-            PBXTarget target = this.GetTarget(targetName);
-            if (target == null)
+            lock (this.syncRoot)
             {
-                return null;
-            }
+                PBXFileElement fileElement = this.AddFile(groups, file);
 
-            PBXBuildPhase phase = GetTargetPhase(target, file);
-            if (phase == null)
-            {
-                return null;
-            }
+                PBXTarget target = this.GetTarget(targetName);
+                if (target == null)
+                {
+                    return null;
+                }
 
-            PBXBuildFile buildFile = phase.FindFile(fileElement);
-            if (buildFile == null)
-            {
-                buildFile = new PBXBuildFile(fileElement);
-                phase.AddFile(buildFile);
-            }
+                PBXBuildPhase phase = GetTargetPhase(target, file);
+                if (phase == null)
+                {
+                    return null;
+                }
 
-            return buildFile;
+                PBXBuildFile buildFile = phase.FindFile(fileElement);
+                if (buildFile == null)
+                {
+                    buildFile = new PBXBuildFile(fileElement);
+                    phase.AddFile(buildFile);
+                }
+
+                return buildFile;
+            }
         }
 
         /// <summary>
@@ -70,30 +99,58 @@ namespace Monobjc.Tools.Xcode
         /// <returns></returns>
         public PBXBuildFile RemoveFile(String groups, String file, String targetName)
         {
-            PBXFileElement fileElement = this.RemoveFile(groups, file);
-            if (fileElement == null)
+            lock (this.syncRoot)
             {
-                return null;
-            }
+                PBXFileElement fileElement = this.RemoveFile(groups, file);
+                if (fileElement == null)
+                {
+                    return null;
+                }
 
+                PBXTarget target = this.GetTarget(targetName);
+                if (target == null)
+                {
+                    return null;
+                }
+
+                PBXBuildPhase phase = GetTargetPhase(target, file);
+                if (phase == null)
+                {
+                    return null;
+                }
+
+                PBXBuildFile buildFile = phase.FindFile(fileElement);
+                if (buildFile != null)
+                {
+                    phase.RemoveFile(buildFile);
+                }
+                return buildFile;
+            }
+        }
+
+        /// <summary>
+        /// Gets the frameworks.
+        /// </summary>
+        /// <param name="targetName">Name of the target.</param>
+        /// <returns>A list of frameworks.</returns>
+        public IEnumerable<String> GetFrameworks(String targetName)
+        {
             PBXTarget target = this.GetTarget(targetName);
             if (target == null)
             {
-                return null;
+                yield break;
             }
 
-            PBXBuildPhase phase = GetTargetPhase(target, file);
+            PBXBuildPhase phase = GetTargetPhase<PBXFrameworksBuildPhase>(target);
             if (phase == null)
             {
-                return null;
+                yield break;
             }
 
-            PBXBuildFile buildFile = phase.FindFile(fileElement);
-            if (buildFile != null)
+            foreach (PBXBuildFile buildFile in phase.Files)
             {
-                phase.RemoveFile(buildFile);
+                yield return Path.GetFileNameWithoutExtension(buildFile.FileRef.Name);
             }
-            return buildFile;
         }
 
         /// <summary>
@@ -105,35 +162,38 @@ namespace Monobjc.Tools.Xcode
         /// <returns></returns>
         public PBXBuildFile AddFramework(String groups, String framework, String targetName)
         {
-            // Test for presence in System
-            String path = String.Format(CultureInfo.CurrentCulture, "/System/Library/Frameworks/{0}.framework/{0}", framework);
-            if (File.Exists(path))
+            lock (this.syncRoot)
             {
-                goto bail;
-            }
+                // Test for presence in System
+                String path = String.Format(CultureInfo.CurrentCulture, "/System/Library/Frameworks/{0}.framework/{0}", framework);
+                if (File.Exists(path))
+                {
+                    goto bail;
+                }
 
-            // Test for presence in Library
-            path = String.Format(CultureInfo.CurrentCulture, "/Library/Frameworks/{0}.framework/{0}", framework);
-            if (File.Exists(path))
-            {
-                goto bail;
-            }
+                // Test for presence in Library
+                path = String.Format(CultureInfo.CurrentCulture, "/Library/Frameworks/{0}.framework/{0}", framework);
+                if (File.Exists(path))
+                {
+                    goto bail;
+                }
 
-            // Fallback: Assume it is a system framework
-            path = String.Format(CultureInfo.CurrentCulture, "/System/Library/Frameworks/{0}.framework/{0}", framework);
+                // Fallback: Assume it is a system framework
+                path = String.Format(CultureInfo.CurrentCulture, "/System/Library/Frameworks/{0}.framework/{0}", framework);
 
-            bail:
-            String file = Path.GetDirectoryName(path);
-            PBXTarget target = this.GetTarget(targetName);
-            PBXBuildPhase phase = GetTargetPhase<PBXFrameworksBuildPhase>(target);
-            PBXFileElement fileElement = this.AddFile(groups, file, PBXSourceTree.Absolute);
-            PBXBuildFile buildFile = phase.FindFile(fileElement);
-            if (buildFile == null)
-            {
-                buildFile = new PBXBuildFile(fileElement);
-                phase.AddFile(buildFile);
+                bail:
+                String file = Path.GetDirectoryName(path);
+                PBXTarget target = this.GetTarget(targetName);
+                PBXBuildPhase phase = GetTargetPhase<PBXFrameworksBuildPhase>(target);
+                PBXFileElement fileElement = this.AddFile(groups, file, PBXSourceTree.Absolute);
+                PBXBuildFile buildFile = phase.FindFile(fileElement);
+                if (buildFile == null)
+                {
+                    buildFile = new PBXBuildFile(fileElement);
+                    phase.AddFile(buildFile);
+                }
+                return buildFile;
             }
-            return buildFile;
         }
 
         /// <summary>
@@ -156,65 +216,68 @@ namespace Monobjc.Tools.Xcode
         /// <returns></returns>
         public PBXTarget AddTarget(String targetName, PBXProductType type)
         {
-            PBXTarget target = this.GetTarget(targetName);
-            if (target == null)
+            lock (this.syncRoot)
             {
-                switch (type)
+                PBXTarget target = this.GetTarget(targetName);
+                if (target == null)
                 {
-                    case PBXProductType.Application:
-                        {
-                            this.Project.ProductRefGroup = this.AddGroup("Products");
+                    switch (type)
+                    {
+                        case PBXProductType.Application:
+                            {
+                                this.Project.ProductRefGroup = this.AddGroup("Products");
 
-                            PBXFileReference fileReference = new PBXFileReference();
-                            fileReference.ExplicitFileType = PBXFileType.WrapperApplication;
-                            fileReference.IncludeInIndex = 0;
-                            fileReference.Path = targetName + ".app";
-                            fileReference.SourceTree = PBXSourceTree.BuildProductDir;
-                            this.Project.ProductRefGroup.AddChild(fileReference);
+                                PBXFileReference fileReference = new PBXFileReference();
+                                fileReference.ExplicitFileType = PBXFileType.WrapperApplication;
+                                fileReference.IncludeInIndex = 0;
+                                fileReference.Path = targetName + ".app";
+                                fileReference.SourceTree = PBXSourceTree.BuildProductDir;
+                                this.Project.ProductRefGroup.AddChild(fileReference);
 
-                            PBXNativeTarget nativeTarget = new PBXNativeTarget();
-                            nativeTarget.AddBuildPhase(new PBXResourcesBuildPhase());
-                            nativeTarget.AddBuildPhase(new PBXSourcesBuildPhase());
-                            nativeTarget.AddBuildPhase(new PBXFrameworksBuildPhase());
-                            nativeTarget.Name = targetName;
-                            nativeTarget.ProductInstallPath = "$(HOME)/Applications";
-                            nativeTarget.ProductName = targetName;
-                            nativeTarget.ProductReference = fileReference;
-                            nativeTarget.ProductType = type;
-                            target = nativeTarget;
+                                PBXNativeTarget nativeTarget = new PBXNativeTarget();
+                                nativeTarget.AddBuildPhase(new PBXResourcesBuildPhase());
+                                nativeTarget.AddBuildPhase(new PBXSourcesBuildPhase());
+                                nativeTarget.AddBuildPhase(new PBXFrameworksBuildPhase());
+                                nativeTarget.Name = targetName;
+                                nativeTarget.ProductInstallPath = "$(HOME)/Applications";
+                                nativeTarget.ProductName = targetName;
+                                nativeTarget.ProductReference = fileReference;
+                                nativeTarget.ProductType = type;
+                                target = nativeTarget;
 
-                            break;
-                        }
-                    case PBXProductType.LibraryDynamic:
-                        {
-                            this.Project.ProductRefGroup = this.AddGroup("Products");
+                                break;
+                            }
+                        case PBXProductType.LibraryDynamic:
+                            {
+                                this.Project.ProductRefGroup = this.AddGroup("Products");
 
-                            PBXFileReference fileReference = new PBXFileReference();
-                            fileReference.ExplicitFileType = PBXFileType.CompiledMachODylib;
-                            fileReference.IncludeInIndex = 0;
-                            fileReference.Path = targetName + ".dylib";
-                            fileReference.SourceTree = PBXSourceTree.BuildProductDir;
-                            this.Project.ProductRefGroup.AddChild(fileReference);
+                                PBXFileReference fileReference = new PBXFileReference();
+                                fileReference.ExplicitFileType = PBXFileType.CompiledMachODylib;
+                                fileReference.IncludeInIndex = 0;
+                                fileReference.Path = targetName + ".dylib";
+                                fileReference.SourceTree = PBXSourceTree.BuildProductDir;
+                                this.Project.ProductRefGroup.AddChild(fileReference);
 
-                            PBXNativeTarget nativeTarget = new PBXNativeTarget();
-                            nativeTarget.AddBuildPhase(new PBXHeadersBuildPhase());
-                            nativeTarget.AddBuildPhase(new PBXResourcesBuildPhase());
-                            nativeTarget.AddBuildPhase(new PBXSourcesBuildPhase());
-                            nativeTarget.AddBuildPhase(new PBXFrameworksBuildPhase());
-                            nativeTarget.Name = targetName;
-                            nativeTarget.ProductInstallPath = "/usr/lib";
-                            nativeTarget.ProductName = targetName;
-                            nativeTarget.ProductReference = fileReference;
-                            nativeTarget.ProductType = type;
-                            target = nativeTarget;
-                            break;
-                        }
-                    default:
-                        throw new NotSupportedException();
+                                PBXNativeTarget nativeTarget = new PBXNativeTarget();
+                                nativeTarget.AddBuildPhase(new PBXHeadersBuildPhase());
+                                nativeTarget.AddBuildPhase(new PBXResourcesBuildPhase());
+                                nativeTarget.AddBuildPhase(new PBXSourcesBuildPhase());
+                                nativeTarget.AddBuildPhase(new PBXFrameworksBuildPhase());
+                                nativeTarget.Name = targetName;
+                                nativeTarget.ProductInstallPath = "/usr/lib";
+                                nativeTarget.ProductName = targetName;
+                                nativeTarget.ProductReference = fileReference;
+                                nativeTarget.ProductType = type;
+                                target = nativeTarget;
+                                break;
+                            }
+                        default:
+                            throw new NotSupportedException();
+                    }
+                    this.Project.AddTarget(target);
                 }
-                this.Project.AddTarget(target);
+                return target;
             }
-            return target;
         }
 
         /// <summary>
@@ -223,23 +286,26 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "targetName">Name of the target.</param>
         public void RemoveTarget(String targetName)
         {
-            PBXTarget target = this.GetTarget(targetName);
-            if (target != null)
+            lock (this.syncRoot)
             {
-                this.Project.RemoveTarget(target);
-                PBXNativeTarget nativeTarget = target as PBXNativeTarget;
-                if (nativeTarget != null)
+                PBXTarget target = this.GetTarget(targetName);
+                if (target != null)
                 {
-                    switch (nativeTarget.ProductType)
+                    this.Project.RemoveTarget(target);
+                    PBXNativeTarget nativeTarget = target as PBXNativeTarget;
+                    if (nativeTarget != null)
                     {
-                        case PBXProductType.Application:
-                            this.RemoveFile("Products", targetName + ".app");
-                            break;
-                        case PBXProductType.LibraryDynamic:
-                            this.RemoveFile("Products", targetName + ".dylib");
-                            break;
-                        default:
-                            throw new NotSupportedException();
+                        switch (nativeTarget.ProductType)
+                        {
+                            case PBXProductType.Application:
+                                this.RemoveFile("Products", targetName + ".app");
+                                break;
+                            case PBXProductType.LibraryDynamic:
+                                this.RemoveFile("Products", targetName + ".dylib");
+                                break;
+                            default:
+                                throw new NotSupportedException();
+                        }
                     }
                 }
             }
@@ -254,9 +320,12 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "value">The value.</param>
         public void AddBuildConfigurationSettings(String configurationName, String targetName, String key, Object value)
         {
-            PBXTarget target = this.GetTarget(targetName);
-            XCBuildConfiguration buildConfiguration = this.GetBuildConfiguration(configurationName, target);
-            buildConfiguration.BuildSettings.Add(new KeyValuePair<String, Object>(key, value));
+            lock (this.syncRoot)
+            {
+                PBXTarget target = this.GetTarget(targetName);
+                XCBuildConfiguration buildConfiguration = this.GetBuildConfiguration(configurationName, target);
+                buildConfiguration.BuildSettings.Add(new KeyValuePair<String, Object>(key, value));
+            }
         }
 
         /// <summary>
@@ -267,9 +336,12 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "key">The key.</param>
         public void RemoveBuildConfigurationSettings(String configurationName, String targetName, String key)
         {
-            PBXTarget target = this.GetTarget(targetName);
-            XCBuildConfiguration buildConfiguration = this.GetBuildConfiguration(configurationName, target);
-            buildConfiguration.BuildSettings.Remove(key);
+            lock (this.syncRoot)
+            {
+                PBXTarget target = this.GetTarget(targetName);
+                XCBuildConfiguration buildConfiguration = this.GetBuildConfiguration(configurationName, target);
+                buildConfiguration.BuildSettings.Remove(key);
+            }
         }
 
         /// <summary>
@@ -279,10 +351,13 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "targetName">Name of the target.</param>
         public void AddDependantProject(XcodeProject project, String targetName)
         {
-            PBXGroup group = this.AddGroup("Products");
-            PBXFileReference fileReference = this.AddFile(String.Empty, project.ProjectFolder) as PBXFileReference;
-            this.Project.AddProjectReference(group, fileReference);
-            // TODO: Add project output to target
+            lock (this.syncRoot)
+            {
+                PBXGroup group = this.AddGroup("Products");
+                PBXFileReference fileReference = this.AddFile(String.Empty, project.ProjectFolder) as PBXFileReference;
+                this.Project.AddProjectReference(group, fileReference);
+                // TODO: Add project output to target
+            }
         }
 
         /// <summary>
@@ -292,14 +367,17 @@ namespace Monobjc.Tools.Xcode
         /// <param name = "targetName">Name of the target.</param>
         public void RemoveDependantProject(XcodeProject project, String targetName)
         {
-            PBXFileReference fileReference = this.Project.MainGroup.FindFileReference(project.ProjectFolder);
-            if (fileReference == null)
+            lock (this.syncRoot)
             {
-                return;
+                PBXFileReference fileReference = this.Project.MainGroup.FindFileReference(project.ProjectFolder);
+                if (fileReference == null)
+                {
+                    return;
+                }
+                this.Project.MainGroup.RemoveChild(fileReference);
+                this.Project.RemoveProjectReference(fileReference);
+                // TODO: Remove project output from target
             }
-            this.Project.MainGroup.RemoveChild(fileReference);
-            this.Project.RemoveProjectReference(fileReference);
-            // TODO: Remove project output from target
         }
 
         /// <summary>

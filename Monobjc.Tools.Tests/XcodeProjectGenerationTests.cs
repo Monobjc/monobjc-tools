@@ -31,23 +31,27 @@ namespace Monobjc.Tools
             // Create the main project
             XcodeProject project = new XcodeProject(".", "MyApplication");
 
-            project.AddTarget("MyApplication", PBXProductType.Application);
+            string targetName = "MyApplication";
 
-            project.AddFile("Files", "MyApplicationAppDelegate.h", "MyApplication");
-            project.AddFile("Files", "MyApplicationAppDelegate.m", "MyApplication");
-            project.AddFile("Files", "Wrong.h", "MyApplication");
-            project.RemoveFile("Files", "Wrong.h", "MyApplication");
+            project.AddTarget(targetName, PBXProductType.Application);
 
-            project.AddFile("Files", "main.m", "MyApplication");
-            project.AddFile("Files", "MyApplication-Info.plist", "MyApplication");
+            project.AddFile("Files", "MyApplicationAppDelegate.h", targetName);
+            project.AddFile("Files", "MyApplicationAppDelegate.m", targetName);
+            project.AddFile("Files", "Wrong.h", targetName);
+            project.RemoveFile("Files", "Wrong.h", targetName);
 
-            project.AddFile("Files", "en.lproj/MainMenu.xib", "MyApplication");
-            project.AddFile("Files", "fr.lproj/MainMenu.xib", "MyApplication");
-            project.RemoveFile("Files", "fr.lproj/MainMenu.xib", "MyApplication");
+            project.AddFile("Files", "main.m", targetName);
+            project.AddFile("Files", "MyApplication-Info.plist", targetName);
 
-            project.AddFramework("Frameworks", "Cocoa", "MyApplication");
-            project.AddFramework("Frameworks", "AddressBook", "MyApplication");
-            project.RemoveFramework("Frameworks", "AddressBook", "MyApplication");
+            project.AddFile("Files", "en.lproj/MainMenu.xib", targetName);
+            project.AddFile("Files", "fr.lproj/MainMenu.xib", targetName);
+            project.RemoveFile("Files", "fr.lproj/MainMenu.xib", targetName);
+
+            project.AddFramework("Frameworks", "Cocoa", targetName);
+            project.AddFramework("Frameworks", "AddressBook", targetName);
+            project.RemoveFramework("Frameworks", "AddressBook", targetName);
+
+            var frameworks = project.GetFrameworks(targetName);
 
             project.AddBuildConfigurationSettings("Release", null, "ARCHS", "$(ARCHS_STANDARD_32_64_BIT)");
             project.AddBuildConfigurationSettings("Release", null, "SDKROOT", "macosx");
@@ -58,13 +62,13 @@ namespace Monobjc.Tools
             project.AddBuildConfigurationSettings("Release", null, "GCC_WARN_ABOUT_RETURN_TYPE", "YES");
             project.AddBuildConfigurationSettings("Release", null, "GCC_WARN_UNUSED_VARIABLE", "YES");
 
-            project.AddBuildConfigurationSettings("Release", "MyApplication", "DEBUG_INFORMATION_FORMAT", "dwarf-with-dsym");
-            project.AddBuildConfigurationSettings("Release", "MyApplication", "COPY_PHASE_STRIP", "YES");
-            project.AddBuildConfigurationSettings("Release", "MyApplication", "INFOPLIST_FILE", "MyApplication-Info.plist");
-            project.AddBuildConfigurationSettings("Release", "MyApplication", "PRODUCT_NAME", "$(TARGET_NAME)");
-            project.AddBuildConfigurationSettings("Release", "MyApplication", "WRAPPER_EXTENSION", "app");
-            project.AddBuildConfigurationSettings("Release", "MyApplication", "ALWAYS_SEARCH_USER_PATHS", "NO");
-            project.AddBuildConfigurationSettings("Release", "MyApplication", "GCC_ENABLE_OBJC_EXCEPTIONS", "YES");
+            project.AddBuildConfigurationSettings("Release", targetName, "DEBUG_INFORMATION_FORMAT", "dwarf-with-dsym");
+            project.AddBuildConfigurationSettings("Release", targetName, "COPY_PHASE_STRIP", "YES");
+            project.AddBuildConfigurationSettings("Release", targetName, "INFOPLIST_FILE", "MyApplication-Info.plist");
+            project.AddBuildConfigurationSettings("Release", targetName, "PRODUCT_NAME", "$(TARGET_NAME)");
+            project.AddBuildConfigurationSettings("Release", targetName, "WRAPPER_EXTENSION", "app");
+            project.AddBuildConfigurationSettings("Release", targetName, "ALWAYS_SEARCH_USER_PATHS", "NO");
+            project.AddBuildConfigurationSettings("Release", targetName, "GCC_ENABLE_OBJC_EXCEPTIONS", "YES");
 
             project.Save();
         }
@@ -98,7 +102,7 @@ namespace Monobjc.Tools
         //    project1.Save();
 
         //    // Create the main project
-        //    XcodeProject project2 = new XcodeProject(".", "MyApplication");
+        //    XcodeProject project2 = new XcodeProject(".", targetName);
 
         //    project2.AddFile("Classes", "Classes/AppDelegate.h");
         //    project2.AddFile("Classes", "Classes/Wrong.h");

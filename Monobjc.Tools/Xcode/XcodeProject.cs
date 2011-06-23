@@ -25,6 +25,8 @@ namespace Monobjc.Tools.Xcode
     /// </summary>
     public partial class XcodeProject
     {
+        private Object syncRoot = new Object();
+
         /// <summary>
         ///   Initializes a new instance of the <see cref = "XcodeProject" /> class.
         /// </summary>
@@ -41,13 +43,13 @@ namespace Monobjc.Tools.Xcode
         ///   Gets or sets the dir.
         /// </summary>
         /// <value>The dir.</value>
-        public String Dir { get; private set; }
+        public String Dir { get; set; }
 
         /// <summary>
         ///   Gets or sets the name.
         /// </summary>
         /// <value>The name.</value>
-        public String Name { get; private set; }
+        public String Name { get; set; }
 
         /// <summary>
         ///   Gets or sets the document.
@@ -89,7 +91,21 @@ namespace Monobjc.Tools.Xcode
         /// </summary>
         public void Save()
         {
-            this.Document.WriteToFile(this.ProjectFile);
+            lock (this.syncRoot)
+            {
+                this.Document.WriteToFile(this.ProjectFile);
+            }
+        }
+
+        /// <summary>
+        ///   Delete the xcodeproj bundle and project file.
+        /// </summary>
+        public void Delete()
+        {
+            lock (this.syncRoot)
+            {
+                Directory.Delete(this.ProjectFolder, true);
+            }
         }
 
         /// <summary>
