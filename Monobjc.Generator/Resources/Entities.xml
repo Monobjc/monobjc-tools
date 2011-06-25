@@ -2303,7 +2303,7 @@ enum {]]>
       </Type>
     </Types>
   </Framework>
-  <Framework name="CoreWLAN" usings="Foundation,SecurityFoundation" assembly="Monobjc.CoreWLAN">
+  <Framework name="CoreWLAN" usings="Foundation,Security,SecurityFoundation" assembly="Monobjc.CoreWLAN">
     <Types>
       <Type name="CoreWLANFramework.Constants">
         <Patch>Enumerations[CWErr].BaseType=int</Patch>
