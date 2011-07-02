@@ -216,7 +216,7 @@ namespace Monobjc.Tools.Generator.Model.Entities
                     PropertyInfo property = target.GetType().GetProperty(propertyName);
                     if (property == null)
                     {
-                        Console.WriteLine("<NOT FOUND> Cannot find property '{0}' in '{1}'", propertyName, query);
+                        Console.WriteLine("[NOT FOUND> Cannot find property '{0}::{1}' with '{2}'", this.Name, propertyName, query);
                         return false;
                     }
 
@@ -225,7 +225,7 @@ namespace Monobjc.Tools.Generator.Model.Entities
                     IEnumerable<BaseEntity> entities = result.Cast<BaseEntity>();
                     if (entities == null)
                     {
-                        Console.WriteLine("<NOT LOADED> Cannot load collection '{0}' in '{1}'", propertyName, query);
+                        Console.WriteLine("[NOT LOADED> Cannot load collection '{0}::{1}' with '{2}'", this.Name, propertyName, query);
                         return false;
                     }
 
@@ -266,7 +266,7 @@ namespace Monobjc.Tools.Generator.Model.Entities
                                     }
                                 }
 
-                                Console.WriteLine("<ALONE> Target has selector but it does not match the only one result for '{0}' in '{1}'", propertyName, query);
+                                Console.WriteLine("[ALONE> Target has selector but it does not match the only one result for '{0}::{1}' with '{2}'", this.Name, propertyName, query);
 
                                 target = null;
                             }
@@ -315,7 +315,7 @@ namespace Monobjc.Tools.Generator.Model.Entities
                                 }
                                 else
                                 {
-                                    Console.WriteLine("<DUPLICATE> Target has no selector but it does match multiple values for '{0}' in '{1}'", propertyName, query);
+                                    Console.WriteLine("[DUPLICATE> Target has no selector but it does match multiple values for '{0}::{1}' with '{2}'", this.Name, propertyName, query);
 
                                     target = null;
                                 }
@@ -338,11 +338,14 @@ namespace Monobjc.Tools.Generator.Model.Entities
 
                             return true;
                         }
-                        else
+
+                        if ("Name".Equals(propertyName))
                         {
-                            Console.WriteLine("<NO TARGET> Cannot process '{0}' in '{1}'", name, query);
                             return false;
                         }
+
+                        Console.WriteLine("[NO TARGET> Cannot process '{0}::{1}' with '{2}'", this.Name, name, query);
+                        return false;
                     }
                 }
                 else
@@ -350,7 +353,7 @@ namespace Monobjc.Tools.Generator.Model.Entities
                     PropertyInfo property = target.GetType().GetProperty(part);
                     if (property == null)
                     {
-                        Console.WriteLine("<NOT FOUND> Cannot find property '{0}' in '{1}'", part, query);
+                        Console.WriteLine("[NOT FOUND> Cannot find property '{0}::{1}' with '{2}'", this.Name, part, query);
                         return false;
                     }
 

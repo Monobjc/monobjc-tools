@@ -897,6 +897,9 @@
   <Entry ns="AppKit" nature="T" name="AppKitFramework.Functions" style="Cocoa" file="AppKitFramework.Functions">
     <url>/Library/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Miscellaneous/AppKit_Functions/Reference/reference.html</url>
   </Entry>
+  <Entry ns="ApplicationServices" nature="E" name="CGFontManagerError" style="Cocoa" file="CGFontManagerError">
+    <url>N/A</url>
+  </Entry>
   <Entry ns="ApplicationServices" nature="E" name="CGRectEdge" style="Cocoa" file="CGRectEdge">
     <url>N/A</url>
   </Entry>
@@ -3354,20 +3357,21 @@
   <Entry ns="ScriptingBridge" nature="P" name="SBApplicationDelegate" style="Cocoa" file="SBApplicationDelegate">
     <url>/Library/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Cocoa/Reference/SBApplicationDelegate_Protocol/SBApplicationDelegate/SBApplicationDelegate.html</url>
   </Entry>
-
-   <Entry ns="Security" nature="T" name="Authorization" style="Cocoa" file="Authorization">
+  <Entry ns="Security" nature="E" name="SecCSFlags" style="Cocoa" file="SecCSFlags">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="Security" nature="T" name="Authorization" style="Cocoa" file="Authorization">
     <url>/Library/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Security/Reference/authorization_ref/Reference/reference.html</url>
   </Entry>
-   <Entry ns="Security" nature="T" name="CertServices" style="Cocoa" file="CertServices">
+  <Entry ns="Security" nature="T" name="CertServices" style="Cocoa" file="CertServices">
     <url>/Library/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Security/Reference/certifkeytrustservices/Reference/reference.html</url>
   </Entry>
-   <Entry ns="Security" nature="T" name="KeyChain" style="Cocoa" file="KeyChain">
-    <url>/Library/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Security/Reference/keychainservices/Reference/reference.html</url>
-  </Entry>
-   <Entry ns="Security" nature="T" name="CodeSigning" style="Cocoa" file="CodeSigning">
+  <Entry ns="Security" nature="T" name="CodeSigning" style="Cocoa" file="CodeSigning">
     <url>/Library/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Security/Reference/CodeSigningRef/Reference/reference.html</url>
   </Entry>
- 
+  <Entry ns="Security" nature="T" name="KeyChain" style="Cocoa" file="KeyChain">
+    <url>/Library/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Security/Reference/keychainservices/Reference/reference.html</url>
+  </Entry>
   <Entry ns="SecurityFoundation" nature="C" name="SFAuthorization" style="Cocoa" file="SFAuthorization">
     <url>/Library/Developer/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/documentation/Security/Reference/SecurityFoundationFramework/Classes/SFAuthorization_Class/Reference/Reference.html</url>
   </Entry>

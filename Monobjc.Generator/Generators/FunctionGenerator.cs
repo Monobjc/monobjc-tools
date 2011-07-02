@@ -246,7 +246,11 @@ namespace Monobjc.Tools.Generator.Generators
                     String parameter = GetTypeSignature(methodParameterEntity);
                     if (TypeManager.HasClass(methodParameterEntity.Type))
                     {
-                        parameter = String.Format("[MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof (IdMarshaler<{0}>))]", methodParameterEntity.Type) + " " + parameter;
+                        parameter = String.Format("[MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof (IdMarshaler<{0}>))] {1}", methodParameterEntity.Type, parameter);
+                    }
+                    else if (methodParameterEntity.IsBlock)
+                    {
+                        parameter = String.Format("[MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof (BlockMarshaler))] {0}", parameter);
                     }
                     parameters.Add(parameter);
                 }

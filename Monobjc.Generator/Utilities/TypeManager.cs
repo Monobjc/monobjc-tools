@@ -157,6 +157,8 @@ namespace Monobjc.Tools.Generator.Utilities
                 }
             }
 
+            Console.WriteLine("[DIRECT> '{0}' has no mapping", type);
+
             return type;
         }
 
@@ -177,7 +179,15 @@ namespace Monobjc.Tools.Generator.Utilities
                 {
                     String type = m.type;
                     String mapping = m.Value;
-                    this.Mappings.Add(type, mapping);
+                    try
+                    {
+                        this.Mappings.Add(type, mapping);
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Error while adding " + type);
+                        throw;
+                    }
                 }
             }
         }

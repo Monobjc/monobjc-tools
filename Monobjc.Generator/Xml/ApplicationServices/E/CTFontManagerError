@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" CopyInDescendants="false" Flags="false">
+	<Summary>
+		<Line>Errors that would prevent registration of fonts for a specified font file URL.</Line>
+		<Line>Errors that would prevent unregistration of fonts for a specified font file URL.</Line>
+	</Summary>
+	<MinAvailability>Mac OS X v10.6</MinAvailability>
+	<MaxAvailability>VERSION</MaxAvailability>
+	<Obsolete xsi:nil="true" />
+	<Name>CTFontManagerError</Name>
+	<Namespace>MISSING</Namespace>
+	<BaseType>NSInteger</BaseType>
+	<MixedType>int,long</MixedType>
+	<Enumerations />
+	<Constants />
+	<Functions />
+	<Values>
+		<EnumerationValue Generate="true" CopyInDescendants="false">
+			<Summary>
+				<Line>The file does not exist at the specified URL.</Line>
+			</Summary>
+			<MinAvailability>Mac OS X v10.6</MinAvailability>
+			<Obsolete xsi:nil="true" />
+			<Name>kCTFontManagerErrorFileNotFound</Name>
+			<Value>101</Value>
+		</EnumerationValue>
+		<EnumerationValue Generate="true" CopyInDescendants="false">
+			<Summary>
+				<Line>Cannot access the file due to insufficient permissions.</Line>
+			</Summary>
+			<MinAvailability>Mac OS X v10.6</MinAvailability>
+			<Obsolete xsi:nil="true" />
+			<Name>kCTFontManagerErrorInsufficientPermissions</Name>
+			<Value>102</Value>
+		</EnumerationValue>
+		<EnumerationValue Generate="true" CopyInDescendants="false">
+			<Summary>
+				<Line>The file is not a recognized or supported font file format.</Line>
+			</Summary>
+			<MinAvailability>Mac OS X v10.6</MinAvailability>
+			<Obsolete xsi:nil="true" />
+			<Name>kCTFontManagerErrorUnrecognizedFormat</Name>
+			<Value>103</Value>
+		</EnumerationValue>
+		<EnumerationValue Generate="true" CopyInDescendants="false">
+			<Summary>
+				<Line>The file contains invalid font data that could cause system problems.</Line>
+			</Summary>
+			<MinAvailability>Mac OS X v10.6</MinAvailability>
+			<Obsolete xsi:nil="true" />
+			<Name>kCTFontManagerErrorInvalidFontData</Name>
+			<Value>104</Value>
+		</EnumerationValue>
+		<EnumerationValue Generate="true" CopyInDescendants="false">
+			<Summary>
+				<Line>The file has already been registered in the specified scope.</Line>
+			</Summary>
+			<MinAvailability>Mac OS X v10.6</MinAvailability>
+			<Obsolete xsi:nil="true" />
+			<Name>kCTFontManagerErrorAlreadyRegistered</Name>
+			<Value>105</Value>
+		</EnumerationValue>
+		<EnumerationValue Generate="true" CopyInDescendants="false">
+			<Summary>
+				<Line>The file is not registered in the specified scope.</Line>
+			</Summary>
+			<MinAvailability>Mac OS X v10.6</MinAvailability>
+			<Obsolete xsi:nil="true" />
+			<Name>kCTFontManagerErrorNotRegistered</Name>
+			<Value>201</Value>
+		</EnumerationValue>
+		<EnumerationValue Generate="true" CopyInDescendants="false">
+			<Summary>
+				<Line>The font file is actively in use and cannot be unregistered.</Line>
+			</Summary>
+			<MinAvailability>Mac OS X v10.6</MinAvailability>
+			<Obsolete xsi:nil="true" />
+			<Name>kCTFontManagerErrorInUse</Name>
+			<Value>202</Value>
+		</EnumerationValue>
+		<EnumerationValue Generate="true" CopyInDescendants="false">
+			<Summary>
+				<Line>The file is required by the system and cannot be unregistered.</Line>
+			</Summary>
+			<MinAvailability>Mac OS X v10.6</MinAvailability>
+			<Obsolete xsi:nil="true" />
+			<Name>kCTFontManagerErrorSystemRequired</Name>
+			<Value>202</Value>
+		</EnumerationValue>
+	</Values>
+</Enumeration>

@@ -159,7 +159,7 @@
       <Type name="CGFont">
         <Patch>Enumerations[CGFontPostScriptFormat].BaseType=int</Patch>
         <Patch>Enumerations[Font_Table_Index_Values].Generate=false</Patch>
-        <!--<Patch>Enumerations[Obsolete_Font_Table_Index_Values].Generate=false</Patch>-->
+        <Patch>Enumerations[Obsolete_Font_Table_Index_Values].Generate=false</Patch>
         <Patch>Functions[CGFontCreatePostScriptEncoding].Parameters[encoding[256]].Name=encoding</Patch>
         <Patch>Functions[CGFontCreatePostScriptEncoding].Parameters[encoding].Type=IntPtr</Patch>
         <Patch>Functions[CGFontCreatePostScriptSubset].Parameters[glyphs[]].Name=glyphs</Patch>
@@ -352,61 +352,169 @@
         <Patch>Functions[CGShadingGetTypeID].Generate=false</Patch>
       </Type>
       <Type name="CTFont">
-
-      </Type>
-      <Type name="CTFontManager">
-
+        <Patch>Functions[CTFontCopyGraphicsFont].Parameters[attributes].Type=IntPtr</Patch>
+        <Patch>Functions[CTFontCopyGraphicsFont].Parameters[attributes].IsOut=true</Patch>
+        <Patch>Functions[CTFontCopyLocalizedName].Parameters[language].Type=NSString</Patch>
+        <Patch>Functions[CTFontCopyLocalizedName].Parameters[language].IsOut=true</Patch>
+        <Patch>Functions[CTFontCreateCopyWithAttributes].Parameters[matrix].Type=CGAffineTransform</Patch>
+        <Patch>Functions[CTFontCreateCopyWithAttributes].Parameters[matrix].IsOut=true</Patch>
+        <Patch>Functions[CTFontCreateCopyWithFamily].Parameters[matrix].Type=CGAffineTransform</Patch>
+        <Patch>Functions[CTFontCreateCopyWithFamily].Parameters[matrix].IsOut=true</Patch>
+        <Patch>Functions[CTFontCreateCopyWithSymbolicTraits].Parameters[matrix].Type=CGAffineTransform</Patch>
+        <Patch>Functions[CTFontCreateCopyWithSymbolicTraits].Parameters[matrix].IsOut=true</Patch>
+        <Patch>Functions[CTFontCreatePathForGlyph].Parameters[transform].Type=CGAffineTransform</Patch>
+        <Patch>Functions[CTFontCreatePathForGlyph].Parameters[transform].IsOut=true</Patch>
+        <Patch>Functions[CTFontCreateWithFontDescriptor].Parameters[matrix].Type=CGAffineTransform</Patch>
+        <Patch>Functions[CTFontCreateWithFontDescriptor].Parameters[matrix].IsOut=true</Patch>
+        <Patch>Functions[CTFontCreateWithFontDescriptorAndOptions].Parameters[matrix].Type=CGAffineTransform</Patch>
+        <Patch>Functions[CTFontCreateWithFontDescriptorAndOptions].Parameters[matrix].IsOut=true</Patch>
+        <Patch>Functions[CTFontCreateWithGraphicsFont].Parameters[matrix].Type=CGAffineTransform</Patch>
+        <Patch>Functions[CTFontCreateWithGraphicsFont].Parameters[matrix].IsOut=true</Patch>
+        <Patch>Functions[CTFontCreateWithName].Parameters[matrix].Type=CGAffineTransform</Patch>
+        <Patch>Functions[CTFontCreateWithName].Parameters[matrix].IsOut=true</Patch>
+        <Patch>Functions[CTFontCreateWithNameAndOptions].Parameters[matrix].Type=CGAffineTransform</Patch>
+        <Patch>Functions[CTFontCreateWithNameAndOptions].Parameters[matrix].IsOut=true</Patch>
+        <Patch>Functions[CTFontCreateWithPlatformFont].Parameters[matrix].Type=CGAffineTransform</Patch>
+        <Patch>Functions[CTFontCreateWithPlatformFont].Parameters[matrix].IsOut=true</Patch>
+        <Patch>Functions[CTFontCreateWithQuickdrawInstance].Generate=false</Patch>
+        <Patch>Functions[CTFontGetAdvancesForGlyphs].Parameters[glyphs[]].Name=glyphs</Patch>
+        <Patch>Functions[CTFontGetAdvancesForGlyphs].Parameters[glyphs].Type=IntPtr</Patch>
+        <Patch>Functions[CTFontGetAdvancesForGlyphs].Parameters[advances[]].Name=advances</Patch>
+        <Patch>Functions[CTFontGetAdvancesForGlyphs].Parameters[advances].Type=IntPtr</Patch>
+        <Patch>Functions[CTFontGetBoundingRectsForGlyphs].Parameters[glyphs[]].Name=glyphs</Patch>
+        <Patch>Functions[CTFontGetBoundingRectsForGlyphs].Parameters[glyphs].Type=IntPtr</Patch>
+        <Patch>Functions[CTFontGetBoundingRectsForGlyphs].Parameters[boundingRects[]].Name=boundingRects</Patch>
+        <Patch>Functions[CTFontGetBoundingRectsForGlyphs].Parameters[boundingRects].Type=IntPtr</Patch>
+        <Patch>Functions[CTFontGetGlyphsForCharacters].Parameters[characters[]].Name=characters</Patch>
+        <Patch>Functions[CTFontGetGlyphsForCharacters].Parameters[characters].Type=IntPtr</Patch>
+        <Patch>Functions[CTFontGetGlyphsForCharacters].Parameters[glyphs[]].Name=glyphs</Patch>
+        <Patch>Functions[CTFontGetGlyphsForCharacters].Parameters[glyphs].Type=IntPtr</Patch>
+        <Patch>Functions[CTFontGetPlatformFont].Parameters[attributes].Type=IntPtr</Patch>
+        <Patch>Functions[CTFontGetPlatformFont].Parameters[attributes].IsOut=true</Patch>
+        <Patch>Functions[CTFontGetStringEncoding].ReturnType=NSStringEncoding</Patch>
+        <Patch>Functions[CTFontGetTypeID].Generate=false</Patch>
+        <Patch>Functions[CTFontGetVerticalTranslationsForGlyphs].Parameters[glyphs[]].Name=glyphs</Patch>
+        <Patch>Functions[CTFontGetVerticalTranslationsForGlyphs].Parameters[glyphs].Type=IntPtr</Patch>
+        <Patch>Functions[CTFontGetVerticalTranslationsForGlyphs].Parameters[translations[]].Name=translations</Patch>
+        <Patch>Functions[CTFontGetVerticalTranslationsForGlyphs].Parameters[translations].Type=IntPtr</Patch>
+        <Patch>Enumerations[CTFontUIFontType].Values[kCTFontNoFontType].Value=0xFFFFFFFF</Patch>
       </Type>
       <Type name="CTFontCollection">
-
+        <Patch>Functions[CTFontCollectionGetTypeID].Generate=false</Patch>
       </Type>
       <Type name="CTFontDescriptor">
-
+        <Patch>Functions[CTFontDescriptorCopyLocalizedAttribute].Parameters[language].Type=NSString</Patch>
+        <Patch>Functions[CTFontDescriptorCopyLocalizedAttribute].Parameters[language].IsOut=true</Patch>
+        <Patch>Functions[CTFontDescriptorGetTypeID].Generate=false</Patch>
+        <Patch>Enumerations[Font_Class_Mask_Shift_Constants].Generate=false</Patch>
+        <Patch><![CDATA[Enumerations[CTFontSymbolicTraits].Values[kCTFontClassMaskTrait].Value=15U << 28]]></Patch>
+        <Patch><![CDATA[Enumerations[CTFontStylisticClass].Values[kCTFontSansSerifClass].Value=8U << 28]]></Patch>
+        <Patch><![CDATA[Enumerations[CTFontStylisticClass].Values[kCTFontOrnamentalsClass].Value=9U << 28]]></Patch>
+        <Patch><![CDATA[Enumerations[CTFontStylisticClass].Values[kCTFontScriptsClass].Value=10U << 28]]></Patch>
+        <Patch><![CDATA[Enumerations[CTFontStylisticClass].Values[kCTFontSymbolicClass].Value=12U << 28]]></Patch>
+        <Replace type="Generated">
+          <Source><![CDATA[<< kCTFontClassMaskShift]]></Source>
+          <With><![CDATA[<< 28]]></With>
+        </Replace>
+      </Type>
+      <Type name="CTFontManager">
+        <Patch>Functions[CTFontManagerCopyAvailableFontFamilyNames].Parameters[d].Generate=false</Patch>
+        <Patch>Functions[CTFontManagerCopyAvailableFontURLs].Parameters[d].Generate=false</Patch>
+        <Patch>Functions[CTFontManagerCopyAvailablePostScriptNames].Parameters[d].Generate=false</Patch>
+        <Patch>Functions[CTFontManagerRegisterFontsForURL].Parameters[error].Type=NSError</Patch>
+        <Patch>Functions[CTFontManagerRegisterFontsForURL].Parameters[error].IsOut=true</Patch>
+        <Patch>Functions[CTFontManagerRegisterFontsForURLs].Parameters[errors].Type=NSArray</Patch>
+        <Patch>Functions[CTFontManagerRegisterFontsForURLs].Parameters[errors].IsOut=true</Patch>
+        <Patch>Functions[CTFontManagerUnregisterFontsForURL].Parameters[error].Type=NSError</Patch>
+        <Patch>Functions[CTFontManagerUnregisterFontsForURL].Parameters[error].IsOut=true</Patch>
+        <Patch>Functions[CTFontManagerUnregisterFontsForURLs].Parameters[errors].Type=NSArray</Patch>
+        <Patch>Functions[CTFontManagerUnregisterFontsForURLs].Parameters[errors].IsOut=true</Patch>
+        <Patch>Functions[CTFontManagerCreateFontRequestRunLoopSource].Generate=false</Patch>
+        <Patch>Enumerations[Font_Registration_Errors].Generate=false</Patch>
+        <Patch>Enumerations[CTFontManagerError].Generate=false</Patch>
+        <Replace type="Xhtml">
+          <Source><![CDATA[<h3 class="tight jump function">CTFontManagerIsSupportedFontFile</h3>]]></Source>
+          <With><![CDATA[<h3 class="tight jump function">CTFontManagerIsSupportedFont</h3>]]></With>
+        </Replace>
       </Type>
       <Type name="CTFrame">
-
+        <Patch>Functions[CTFrameGetLineOrigins].Parameters[origins[]].Name=origins</Patch>
+        <Patch>Functions[CTFrameGetLineOrigins].Parameters[origins].Type=IntPtr</Patch>
+        <Patch>Functions[CTFrameGetTypeID].Generate=false</Patch>
       </Type>
       <Type name="CTFramesetter">
-
+        <Patch>Functions[CTFramesetterGetTypeID].Generate=false</Patch>
+        <Patch>Functions[CTFramesetterSuggestFrameSizeWithConstraints].Parameters[fitRange].Type=NSRange</Patch>
+        <Patch>Functions[CTFramesetterSuggestFrameSizeWithConstraints].Parameters[fitRange].IsOut=true</Patch>
       </Type>
       <Type name="CTGlyphInfo">
-
+        <Patch>Functions[CTGlyphInfoGetTypeID].Generate=false</Patch>
       </Type>
       <Type name="CTLine">
-
+        <Patch>Functions[CTLineGetOffsetForStringIndex].Parameters[secondaryOffset].Type=CGFloat</Patch>
+        <Patch>Functions[CTLineGetOffsetForStringIndex].Parameters[secondaryOffset].IsOut=true</Patch>
+        <Patch>Functions[CTLineGetTypeID].Generate=false</Patch>
+        <Patch>Functions[CTLineGetTypographicBounds].Parameters[ascent].Type=CGFloat</Patch>
+        <Patch>Functions[CTLineGetTypographicBounds].Parameters[ascent].IsOut=true</Patch>
+        <Patch>Functions[CTLineGetTypographicBounds].Parameters[descent].Type=CGFloat</Patch>
+        <Patch>Functions[CTLineGetTypographicBounds].Parameters[descent].IsOut=true</Patch>
+        <Patch>Functions[CTLineGetTypographicBounds].Parameters[leading].Type=CGFloat</Patch>
+        <Patch>Functions[CTLineGetTypographicBounds].Parameters[leading].IsOut=true</Patch>
       </Type>
       <Type name="CTParagraphStyle">
-
+        <Patch>Functions[CTParagraphStyleCreate].Parameters[settings].Type=CTParagraphStyleSetting</Patch>
+        <Patch>Functions[CTParagraphStyleCreate].Parameters[settings].IsByRef=true</Patch>
+        <Patch>Functions[CTParagraphStyleGetTypeID].Generate=false</Patch>
+        <Patch>Enumerations[CTWritingDirection].BaseType=sbyte</Patch>
+        <Replace type="Generated">
+          <Source><![CDATA[settings = ObjectiveCRuntime.GetInstance<CTParagraphStyleSetting>(Marshal.ReadIntPtr(__local1));]]></Source>
+          <With><![CDATA[settings = (CTParagraphStyleSetting) Marshal.PtrToStructure(__local1, typeof(CTParagraphStyleSetting));]]></With>
+        </Replace>
       </Type>
       <Type name="CTRun">
-
+        <Patch>Functions[CTRunGetAdvances].Parameters[buffer[]].Name=buffer</Patch>
+        <Patch>Functions[CTRunGetAdvances].Parameters[buffer].Type=IntPtr</Patch>
+        <Patch>Functions[CTRunGetAdvancesPtr].ReturnType=IntPtr</Patch>
+        <Patch>Functions[CTRunGetGlyphs].Parameters[buffer[]].Name=buffer</Patch>
+        <Patch>Functions[CTRunGetGlyphs].Parameters[buffer].Type=IntPtr</Patch>
+        <Patch>Functions[CTRunGetGlyphsPtr].ReturnType=IntPtr</Patch>
+        <Patch>Functions[CTRunGetPositions].Parameters[buffer[]].Name=buffer</Patch>
+        <Patch>Functions[CTRunGetPositions].Parameters[buffer].Type=IntPtr</Patch>
+        <Patch>Functions[CTRunGetPositionsPtr].ReturnType=IntPtr</Patch>
+        <Patch>Functions[CTRunGetStringIndices].Parameters[buffer[]].Name=buffer</Patch>
+        <Patch>Functions[CTRunGetStringIndices].Parameters[buffer].Type=IntPtr</Patch>
+        <Patch>Functions[CTRunGetStringIndicesPtr].ReturnType=IntPtr</Patch>
+        <Patch>Functions[CTRunGetTypeID].Generate=false</Patch>
+        <Patch>Functions[CTRunGetTypographicBounds].Parameters[ascent].Type=CGFloat</Patch>
+        <Patch>Functions[CTRunGetTypographicBounds].Parameters[ascent].IsOut=true</Patch>
+        <Patch>Functions[CTRunGetTypographicBounds].Parameters[descent].Type=CGFloat</Patch>
+        <Patch>Functions[CTRunGetTypographicBounds].Parameters[descent].IsOut=true</Patch>
+        <Patch>Functions[CTRunGetTypographicBounds].Parameters[leading].Type=CGFloat</Patch>
+        <Patch>Functions[CTRunGetTypographicBounds].Parameters[leading].IsOut=true</Patch>
       </Type>
       <Type name="CTTextTab">
-
+        <Patch>Functions[CTTextTabGetTypeID].Generate=false</Patch>
       </Type>
       <Type name="CTTypesetter">
-
+        <Patch>Functions[CTTypesetterGetTypeID].Generate=false</Patch>
       </Type>
 
       <Type name="CGContext.Deprecated">
-
       </Type>
       <Type name="CGDataProvider.Deprecated">
-
       </Type>
       <Type name="CGFont.Deprecated">
-
       </Type>
       <Type name="CGGLContext.Deprecated">
-
       </Type>
       <Type name="CGPDFDocument.Deprecated">
-
       </Type>
 
     </Types>
     <Enumerations>
       <Enumeration name="CGRectEdge">
+      </Enumeration>
+      <Enumeration name="CGFontManagerError">
       </Enumeration>
     </Enumerations>
     <Structures>
@@ -460,8 +568,8 @@
         <Patch>Functions[NSConvertGlyphsToPackedGlyphs].Generate=false</Patch>
         <Patch>Functions[NSCopyBits].Generate=false</Patch>
         <Patch>Functions[NSCountWindowsForContext].Generate=false</Patch>
-        <!--<Patch>Functions[NSCreateFileContentsPboardType].Generate=false</Patch>-->
-        <!--<Patch>Functions[NSCreateFilenamePboardType].Generate=false</Patch>-->
+        <Patch>Functions[NSCreateFileContentsPboardType].Generate=false</Patch>
+        <Patch>Functions[NSCreateFilenamePboardType].Generate=false</Patch>
         <Patch>Functions[NSDottedFrameRect].Generate=false</Patch>
         <Patch>Functions[NSDrawBitmap].Generate=false</Patch>
         <Patch>Functions[NSDrawButton].Generate=false</Patch>
@@ -471,8 +579,8 @@
         <Patch>Functions[NSDrawGroove].Generate=false</Patch>
         <Patch>Functions[NSDrawLightBezel].Generate=false</Patch>
         <Patch>Functions[NSDrawTiledRects].Generate=false</Patch>
-        <!--<Patch>Functions[NSGetFileType].Generate=false</Patch>-->
-        <!--<Patch>Functions[NSGetFileTypes].Generate=false</Patch>-->
+        <Patch>Functions[NSGetFileType].Generate=false</Patch>
+        <Patch>Functions[NSGetFileTypes].Generate=false</Patch>
         <Patch>Functions[NSGetWindowServerMemory].Generate=false</Patch>
         <Patch>Functions[NSInterfaceStyleForKey].Generate=false</Patch>
         <Patch>Functions[NSIsControllerMarker].Generate=false</Patch>
@@ -628,7 +736,7 @@
         <Patch>AdditionFor=NSBundle</Patch>
         <!--<Patch>Methods[LoadNibFileExternalNameTableWithZone][Static=True].Generate=false</Patch>-->
         <Patch>Methods[LoadNibNamedOwner].Generate=false</Patch>
-        <Patch>Methods[LoadNibFileExternalNameTableWithZone][Static=False].Generate=false</Patch>
+        <Patch>Methods[LoadNibFileExternalNameTableWithZone].Generate=false</Patch>
       </Class>
       <Class name="NSButton">
         <Patch>Methods[GetPeriodicDelayInterval].Parameters[delay].Type=float</Patch>
@@ -670,7 +778,7 @@
         <Patch>Enumerations[Hit_Testing].Name=NSHitTesting</Patch>
         <Patch>Enumerations[NSHitTesting].BaseType=NSUInteger</Patch>
         <!-- TODO: Deprecated -->
-        <!--<Patch>Enumerations[Deprecated_Scaling_Constants].Generate=false</Patch>-->
+        <Patch>Enumerations[Deprecated_Scaling_Constants].Generate=false</Patch>
         <Patch>Enumerations[Data_Entry_Types].Generate=false</Patch>
       </Class>
       <Class name="NSCIImageRep">
@@ -784,7 +892,7 @@
       <Class name="NSControl">
         <!--
         <Patch>Methods[SendActionOn].Parameters[mask].Type=NSEventMask</Patch>
-		-->
+    -->
         <Patch>Properties[Delegate]=<![CDATA[<Property Generate="true" CopyInDescendants="false" Static="false"><Summary><Line>Returns the delegate used by the receiver.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>Delegate</Name><Type>Id</Type><Getter Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true"><Summary/><MinAvailability>Mac OS X v10.0</MinAvailability><Name>Delegate</Name><Selector>delegate</Selector><Signature>- (id)delegate</Signature><ReturnType>Id</ReturnType><ReturnsDocumentation>The delegate used by the receiver and all other text views sharing the receiver’s layout manager, or nil if there is none.</ReturnsDocumentation><Parameters /></Getter><Setter Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true"><Summary/><MinAvailability>Mac OS X v10.0</MinAvailability><Name>SetDelegate</Name><Selector>setDelegate:</Selector><Signature>- (void)setDelegate:(id)anObject</Signature><ReturnType>void</ReturnType><Parameters><Parameter Generate="true" CopyInDescendants="false" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The new delegate object.</Line></Summary><Name>anObject</Name><Type>Id</Type></Parameter></Parameters></Setter></Property>]]></Patch>
         <Patch>Properties[Cell].Type=NSCell</Patch>
         <Patch>Properties[Formatter].Type=NSFormatter</Patch>
@@ -968,7 +1076,7 @@
       </Class>
       <Class name="NSFontPanel">
         <!-- TODO: Deprecated -->
-        <!--<Patch>Enumerations[Tags_of_Views_in_the_FontPanel].Generate=false</Patch>-->
+        <Patch>Enumerations[Tags_of_Views_in_the_FontPanel].Generate=false</Patch>
       </Class>
       <Class name="NSForm">
         <Patch>Methods[CellAtIndex].ReturnType=NSCell</Patch>
@@ -1572,8 +1680,8 @@ enum {]]>
       </Class>
       <Class name="NSWindowController">
         <Patch>Methods[InitWithWindowNibPathOwner].GenerateConstructor=false</Patch>
-        <!--<Patch>Properties[WindowController].Type=NSWindow</Patch>-->
-        <!--<Patch>Properties[WindowController].Getter.ReturnType=NSWindow</Patch>-->
+        <Patch>Properties[WindowController].Type=NSWindow</Patch>
+        <Patch>Properties[WindowController].Getter.ReturnType=NSWindow</Patch>
       </Class>
       <Class name="NSWorkspace">
         <Patch>Methods[GetFileSystemInfoForPathIsRemovableIsWritableIsUnmountableDescriptionType].Parameters[removableFlag].Type=bool</Patch>
@@ -1877,8 +1985,8 @@ enum {]]>
       <Protocol name="NSPasteboardItemDataProvider">
       </Protocol>
       <Protocol name="NSPasteboardReading">
-        <!--<Patch>Enumerations[Pasteboard_Reading_Options].Name=NSPasteboardReadingOptions</Patch>-->
-        <!--<Patch>Enumerations[NSPasteboardReadingOptions].BaseType=NSUInteger</Patch>-->
+        <Patch>Enumerations[Pasteboard_Reading_Options].Name=NSPasteboardReadingOptions</Patch>
+        <Patch>Enumerations[NSPasteboardReadingOptions].BaseType=NSUInteger</Patch>
       </Protocol>
       <Protocol name="NSPasteboardWriting">
         <Patch>Enumerations[Pasteboard_Writing_Options].Name=NSPasteboardWritingOptions</Patch>
