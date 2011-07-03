@@ -14,7 +14,7 @@
   <Mapping type="BOOL (^)(id evaluatedObject, NSDictionary *bindings)"><![CDATA[block:Func<Id, NSDictionary, bool>]]></Mapping>
   <Mapping type="BOOL (^)(id key, id obj, BOOL *stop)"><![CDATA[block:Func<Id, Id, IntPtr, bool>]]></Mapping>
   <Mapping type="BOOL (^)(id obj, BOOL *stop)"><![CDATA[block:Func<Id, IntPtr, bool>]]></Mapping>
-  <Mapping type="BOOL (^)(id obj, NSUInteger idx, BOOL *stop)"><![CDATA[block:Func<Id, NSUInteger, IntPtr>]]></Mapping>
+  <Mapping type="BOOL (^)(id obj, NSUInteger idx, BOOL *stop)"><![CDATA[block:Func<Id, NSUInteger, IntPtr, bool>]]></Mapping>
   <Mapping type="BOOL">bool</Mapping>
   <Mapping type="Boolean">bool</Mapping>
   <Mapping type="CFAllocatorContext *">IntPtr</Mapping>
