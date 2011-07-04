@@ -1844,7 +1844,6 @@ enum {]]>
       <Class name="NSWorkspace.Deprecated">
         <Patch>AdditionFor=NSWorkspace</Patch>
       </Class>
-
     </Classes>
     <Protocols>
       <Protocol name="NSAccessibility">
@@ -4416,10 +4415,6 @@ enum]]>
       <Class name="NSDate.Deprecated">
         <Patch>AdditionFor=NSDate</Patch>
       </Class>
-      <Class name="NSDateFormatter.Deprecated">
-        <Patch>AdditionFor=NSDateFormatter</Patch>
-        <Patch>Methods[Init].Generate=false</Patch>
-      </Class>
       <Class name="NSDeserializer.Deprecated">
         <Patch>AdditionFor=NSDeserializer</Patch>
         <Patch>Methods[DeserializePropertyListFromDataAtCursorMutableContainers].Parameters[cursor].Type=IntPtr</Patch>
@@ -4468,13 +4463,6 @@ enum]]>
         <Patch>Properties[CString].Getter.ReturnType=IntPtr</Patch>
         <Patch>Properties[LossyCString].Type=IntPtr</Patch>
         <Patch>Properties[LossyCString].Getter.ReturnType=IntPtr</Patch>
-      </Class>
-      <Class name="NSUndoManager.Deprecated">
-        <Patch>AdditionFor=NSUndoManager</Patch>
-        <Replace type="Generated">
-          <Source>public virtual void ForwardInvocation</Source>
-          <With>public new void ForwardInvocation</With>
-        </Replace>
       </Class>
       <Class name="NSURL.Deprecated">
         <Patch>AdditionFor=NSURL</Patch>
@@ -6083,6 +6071,7 @@ enum
         <Patch>Properties[Authorization].Type=SFAuthorization</Patch>
         <Patch>Properties[Authorization].Getter.ReturnType=SFAuthorization</Patch>
       </Class>
+      
       <Class name="SFAuthorization.Deprecated">
         <Patch>AdditionFor=SFAuthorization</Patch>
         <Patch>Methods[PermitWithRightsFlagsEnvironmentAuthorizedRights].Parameters[rights].Type=IntPtr</Patch>
@@ -6200,7 +6189,6 @@ enum
       <Class name="WebBackForwardList.Deprecated">
         <Patch>AdditionFor=WebBackForwardList</Patch>
       </Class>
-
     </Classes>
     <Protocols>
       <Protocol name="WebDocumentRepresentation">

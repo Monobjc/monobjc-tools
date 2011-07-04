@@ -2505,9 +2505,6 @@
   <Entry ns="Foundation" nature="C" name="NSDateFormatter" style="Cocoa" file="NSDateFormatter">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSDateFormatter_Class/Reference/Reference.html</url>
   </Entry>
-  <Entry ns="Foundation" nature="C" name="NSDateFormatter.Deprecated" style="Cocoa" file="NSDateFormatter.Deprecated">
-    <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSDateFormatter_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</url>
-  </Entry>
   <Entry ns="Foundation" nature="C" name="NSDecimalNumber" style="Cocoa" file="NSDecimalNumber">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSDecimalNumber_Class/Reference/Reference.html</url>
   </Entry>
@@ -2921,9 +2918,6 @@
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSUndoManager" style="Cocoa" file="NSUndoManager">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="Foundation" nature="C" name="NSUndoManager.Deprecated" style="Cocoa" file="NSUndoManager.Deprecated">
-    <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSUndoManager_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSUniqueIDSpecifier" style="Cocoa" file="NSUniqueIDSpecifier">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSUniqueIDSpecifier_Class/Reference/Reference.html</url>
