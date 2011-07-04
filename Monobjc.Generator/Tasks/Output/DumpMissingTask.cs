@@ -102,7 +102,19 @@ namespace Monobjc.Tools.Generator.Tasks.Output
             IEnumerable<String> notEntries = output.Except(input);
             foreach (String notEntry in notEntries)
             {
-                Console.WriteLine(notEntry);
+                string[] parts = notEntry.Split(';');
+                if (notEntry.Contains(";C;"))
+                {
+                    Console.WriteLine("<Class name=\"{0}\"></Class>", parts[2]);
+                }
+                else if (notEntry.Contains(";P;"))
+                {
+                    Console.WriteLine("<Protocol name=\"{0}\"></Protocol>", parts[2]);
+                }
+                else
+                {
+                    Console.WriteLine(notEntry);
+                }
             }
         }
     }

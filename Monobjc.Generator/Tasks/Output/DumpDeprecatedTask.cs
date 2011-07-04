@@ -54,7 +54,15 @@ namespace Monobjc.Tools.Generator.Tasks.Output
                 String content = File.ReadAllText(xhtmlFile);
                 if (content.Contains("DeprecationAppendix"))
                 {
-                    Console.WriteLine("{0}.Deprecated", entry.Name);
+                    switch (entry.Nature)
+                    {
+                        case TypedEntity.CLASS_NATURE:
+                            Console.WriteLine("<Class name=\"{0}.Deprecated\"><Patch>AdditionFor={0}</Patch></Class>", entry.Name);
+                            break;
+                        default:
+                            Console.WriteLine("{0} has deprecated API", entry.Name);
+                            break;
+                    }
                 }
             }
         }

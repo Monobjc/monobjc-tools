@@ -2490,6 +2490,9 @@
   <Entry ns="Foundation" nature="C" name="NSData.Deprecated" style="Cocoa" file="NSData.Deprecated">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSData_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</url>
   </Entry>
+  <Entry ns="Foundation" nature="C" name="NSDataDetector" style="Cocoa" file="NSDataDetector">
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/Foundation/Reference/NSDataDetector_Class/Reference/Reference.html</url>
+  </Entry>
   <Entry ns="Foundation" nature="C" name="NSDate" style="Cocoa" file="NSDate">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSDate_Class/Reference/Reference.html</url>
   </Entry>
@@ -2554,7 +2557,7 @@
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSExpression_Class/Reference/NSExpression.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSFileCoordinator" style="Cocoa" file="NSFileCoordinator">
-    <url>${DOCSET}/Contents/Resources/Documents/documentation/</url>
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/Foundation/Reference/NSFileCoordinator_class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSFileHandle" style="Cocoa" file="NSFileHandle">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSFileHandle_Class/Reference/Reference.html</url>
@@ -2566,10 +2569,10 @@
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSFileManager_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSFileSecurity" style="Cocoa" file="NSFileSecurity">
-    <url>${DOCSET}/Contents/Resources/Documents/documentation/</url>
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/Foundation/Reference/NSFileSecurity_class/Intro/Intro.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSFileVersion" style="Cocoa" file="NSFileVersion">
-    <url>${DOCSET}/Contents/Resources/Documents/documentation/</url>
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/Foundation/Reference/NSFileVersion_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSFormatter" style="Cocoa" file="NSFormatter">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSFormatter_Class/Reference/Reference.html</url>
@@ -2617,7 +2620,7 @@
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/NSInvocationOperation_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSJSONSerialization" style="Cocoa" file="NSJSONSerialization">
-    <url>${DOCSET}/Contents/Resources/Documents/documentation/</url>
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/Foundation/Reference/NSJSONSerialization_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSKeyedArchiver" style="Cocoa" file="NSKeyedArchiver">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/Reference/Reference.html</url>
@@ -2626,7 +2629,7 @@
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSKeyedUnarchiver_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSLinguisticTagger" style="Cocoa" file="NSLinguisticTagger">
-    <url>${DOCSET}/Contents/Resources/Documents/documentation/</url>
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/NSLinguisticTagger_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSLocale" style="Cocoa" file="NSLocale">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/Reference/Reference.html</url>
@@ -2695,7 +2698,7 @@
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSMutableIndexSet_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSMutableOrderedSet" style="Cocoa" file="NSMutableOrderedSet">
-    <url>${DOCSET}/Contents/Resources/Documents/documentation/</url>
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/Foundation/Reference/NSMutableOrderedSet_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSMutableSet" style="Cocoa" file="NSMutableSet">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSMutableSet_Class/Reference/NSMutableSet.html</url>
@@ -2752,7 +2755,7 @@
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/NSOperationQueue_class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSOrderedSet" style="Cocoa" file="NSOrderedSet">
-    <url>${DOCSET}/Contents/Resources/Documents/documentation/</url>
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/Foundation/Reference/NSOrderedSet_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSOrthography" style="Cocoa" file="NSOrthography">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/NSOrthography_Class/Reference/Reference.html</url>
@@ -2816,6 +2819,9 @@
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSRecursiveLock" style="Cocoa" file="NSRecursiveLock">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSRecursiveLock_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Foundation" nature="C" name="NSRegularExpression" style="Cocoa" file="NSRegularExpression">
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/Foundation/Reference/NSRegularExpression_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSRelativeSpecifier" style="Cocoa" file="NSRelativeSpecifier">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSRelativeSpecifier_Class/Reference/Reference.html</url>
@@ -2908,7 +2914,7 @@
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSUbiquitousKeyValueStore" style="Cocoa" file="NSUbiquitousKeyValueStore">
-    <url>${DOCSET}/Contents/Resources/Documents/documentation/</url>
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/Miscellaneous/Reference/NSUbiquitousKeyValueStore_class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSUnarchiver" style="Cocoa" file="NSUnarchiver">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSUnarchiver_Class/Reference/Reference.html</url>
@@ -3025,7 +3031,7 @@
     <url>N/A</url>
   </Entry>
   <Entry ns="Foundation" nature="P" name="NSFilePresenter" style="Cocoa" file="NSFilePresenter">
-    <url>${DOCSET}/Contents/Resources/Documents/documentation/</url>
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/Foundation/Reference/NSFilePresenter_protocol/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="P" name="NSKeyedArchiverDelegate" style="Cocoa" file="NSKeyedArchiverDelegate">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/NSKeyedArchiverDelegate_Protocol/Reference/Reference.html</url>
@@ -3097,10 +3103,10 @@
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Protocols/NSURLAuthenticationChallengeSender_Protocol/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="P" name="NSURLConnectionDelegate" style="Cocoa" file="NSURLConnectionDelegate">
-    <url>N/A</url>
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/Foundation/Reference/NSURLConnectionDelegate_Protocol/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="P" name="NSURLDownloadDelegate" style="Cocoa" file="NSURLDownloadDelegate">
-    <url>N/A</url>
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/Foundation/Reference/NSURLDownloadDelegate_Protocol/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="P" name="NSURLHandleClient" style="Cocoa" file="NSURLHandleClient">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Protocols/NSURLHandleClient_Protocol/Reference/Reference.html</url>

@@ -39,12 +39,12 @@ namespace Monobjc.Tools.Generator.Tasks.General
             foreach (Entry entry in this.Entries)
             {
                 Entry deprecatedEntry = this.Find(entry.Namespace, entry.Nature, entry.Name + ".Deprecated");
-                if (deprecatedEntry != null)
+                if (deprecatedEntry != null && String.IsNullOrEmpty(deprecatedEntry.RemoteUrl))
                 {
                     const string suffix = "DeprecationAppendix/AppendixADeprecatedAPI.html";
                     String url = entry.RemoteUrl;
                     String parent = Path.GetDirectoryName(url);
-                    while (true)
+                    while (!String.IsNullOrEmpty(parent))
                     {
                         parent = Path.GetDirectoryName(url);
                         if (Path.GetFileName(parent).Contains(entry.Name))
