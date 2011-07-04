@@ -358,6 +358,11 @@ namespace Monobjc.Tools.Generator.Tasks.Generation
 
         private void LoadDependentEntitiesForClass(ClassEntity classEntity)
         {
+            if (classEntity == null)
+            {
+                return;
+            }
+
             // Retrieve super class
             Entry entry = this.Find(null, TypedEntity.CLASS_NATURE, classEntity.BaseType);
             if (entry != null)
@@ -372,7 +377,7 @@ namespace Monobjc.Tools.Generator.Tasks.Generation
             {
                 String[] parts = classEntity.ConformsTo.Split(',');
                 List<Entry> results = parts.Select(p => this.Find(null, TypedEntity.PROTOCOL_NATURE, p)).ToList();
-                classEntity.Protocols = results.Where(r => r != null).Select(r => BaseEntity.LoadFrom<ProtocolEntity>(r[EntryFolderType.Xml])).ToList();
+                classEntity.Protocols = results.Where(r => r != null).Select(r => BaseEntity.LoadFrom<ProtocolEntity>(r[EntryFolderType.Xml])).Where(r => r != null).ToList();
             }
 
             // Retrieve extended class
@@ -390,6 +395,11 @@ namespace Monobjc.Tools.Generator.Tasks.Generation
 
         private void LoadDependentEntitiesForProtocol(ProtocolEntity protocolEntity)
         {
+            if (protocolEntity == null)
+            {
+                return;
+            }
+
             this.LoadDependentEntitiesForClass(protocolEntity);
 
             // Retrieve delegator class

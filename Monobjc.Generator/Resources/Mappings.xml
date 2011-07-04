@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Mappings>
   <Mapping type="AEEventClass">uint</Mapping>
   <Mapping type="AEEventID">uint</Mapping>
@@ -85,6 +85,9 @@
   <Mapping type="CLLocationDirection">double</Mapping>
   <Mapping type="CLLocationDistance">double</Mapping>
   <Mapping type="CLLocationSpeed">double</Mapping>
+  <Mapping type="CMItemCount">NSInteger</Mapping>
+  <Mapping type="CMItemIndex">NSInteger</Mapping>
+  <Mapping type="CMPersistentTrackID">int</Mapping>
   <Mapping type="CSSM_AC_HANDLE">IntPtr</Mapping>
   <Mapping type="CSSM_CC_HANDLE">ulong</Mapping>
   <Mapping type="CSSM_CL_HANDLE">IntPtr</Mapping>

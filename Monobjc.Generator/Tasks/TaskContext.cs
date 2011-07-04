@@ -29,6 +29,8 @@ namespace Monobjc.Tools.Generator.Tasks
     /// </summary>
     public class TaskContext
     {
+        private String docSet;
+
         /// <summary>
         ///   Gets or sets a value indicating whether the context will force the execution.
         /// </summary>
@@ -66,6 +68,10 @@ namespace Monobjc.Tools.Generator.Tasks
                     XmlSerializer serializer = new XmlSerializer(typeof (Entries));
                     this.Entries = (Entries) serializer.Deserialize(reader);
                 }
+                foreach (Entry entry in this.Entries)
+                {
+                    entry.DocSet = this.DocSet;
+                }
             }
             else
             {
@@ -89,6 +95,12 @@ namespace Monobjc.Tools.Generator.Tasks
                     serializer.Serialize(writer, this.Entries);
                 }
             }
+        }
+
+        public String DocSet
+        {
+            get { return this.docSet ?? this.Settings["DocSet"]; }
+            set { this.docSet = value; }
         }
 
         private String Storage

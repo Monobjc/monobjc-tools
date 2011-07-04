@@ -34,6 +34,7 @@ namespace Monobjc.Tools.Generator.Model.Database
         private const String XML_FOLDER = "Xml";
         private const String CSHARP_FOLDER = "CSharp";
         private const String GENERATED_FOLDER = "Generated";
+        private const String MARKER = "${DOCSET}";
 
         /// <summary>
         ///   Gets or sets the namespace.
@@ -75,7 +76,27 @@ namespace Monobjc.Tools.Generator.Model.Database
         /// </summary>
         /// <value>The URL.</value>
         [XmlElement("url")]
-        public String RemoteUrl { get; set; }
+        public string RemoteUrl { get; set; }
+
+        /// <summary>
+        /// Gets or sets the doc set.
+        /// </summary>
+        /// <value>The doc set.</value>
+        [XmlIgnore]
+        public String DocSet { get; set; }
+
+        /// <summary>
+        /// Gets the remote URL.
+        /// </summary>
+        /// <returns></returns>
+        public String GetRemoteUrl()
+        {
+            if (this.RemoteUrl != null && this.RemoteUrl.Contains(MARKER))
+            {
+                return this.RemoteUrl.Replace(MARKER, this.DocSet);
+            }
+            return this.RemoteUrl;
+        }
 
         /// <summary>
         ///   Gets the folder of the specified type for this entry.

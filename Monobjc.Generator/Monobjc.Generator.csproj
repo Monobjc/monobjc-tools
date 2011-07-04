@@ -135,9 +135,11 @@
     <Compile Include="Tasks\Generation\GenerateCodeTask.cs" />
     <Compile Include="Tasks\Generation\GenerateInfoTask.cs" />
     <Compile Include="Tasks\ITask.cs" />
+    <Compile Include="Tasks\Output\DumpDeprecatedTask.cs" />
     <Compile Include="Tasks\Output\CopyInPlaceTask.cs" />
     <Compile Include="Tasks\Output\DumpDelegateMethodsTask.cs" />
     <Compile Include="Tasks\Output\DumpInitMethodsTask.cs" />
+    <Compile Include="Tasks\Output\DumpMissingTask.cs" />
     <Compile Include="Tasks\Output\DumpPropertyNamesTask.cs" />
     <Compile Include="Tasks\Output\DumpStaticInitializersTask.cs" />
     <Compile Include="Tasks\Patching\CleanClassicTask.cs" />

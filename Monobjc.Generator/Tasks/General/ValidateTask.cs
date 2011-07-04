@@ -51,7 +51,13 @@ namespace Monobjc.Tools.Generator.Tasks.General
                 {
                     continue;
                 }
-                if (File.Exists(entry.RemoteUrl))
+                String path = entry.GetRemoteUrl();
+                if (File.Exists(path))
+                {
+                    continue;
+                }
+                path = Path.ChangeExtension(path, ".htm");
+                if (File.Exists(path))
                 {
                     continue;
                 }

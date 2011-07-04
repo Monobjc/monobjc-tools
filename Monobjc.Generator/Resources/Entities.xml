@@ -40,6 +40,8 @@
       </Class>
       <Class name="ABPerson">
       </Class>
+      <Class name="ABPersonView">
+      </Class>
       <Class name="ABRecord">
       </Class>
       <Class name="ABSearchElement">
@@ -929,6 +931,12 @@
       </Class>
       <Class name="NSDocumentController">
       </Class>
+      <Class name="NSDraggingSession">
+      </Class>
+      <Class name="NSDraggingItem">
+      </Class>
+      <Class name="NSDraggingImageComponent">
+      </Class>
       <Class name="NSDrawer">
         <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Enumerations[NSDrawerState].BaseType=NSUInteger</Patch>
@@ -1033,6 +1041,9 @@
         </Replace>
       </Class>
       <Class name="NSFileWrapper">
+      </Class>
+      <Class name="NSFileWrapper_AppKitAdditions">
+        <Patch>AdditionFor=NSFileWrapper</Patch>
       </Class>
       <Class name="NSFont">
         <Patch>Methods[FontWithNameMatrix].Parameters[fontMatrix].Type=IntPtr</Patch>
@@ -1141,6 +1152,8 @@
         <Patch>Enumerations[NSDisplayDeviceMatching].Generate=false</Patch>
       </Class>
       <Class name="NSImageView">
+      </Class>
+      <Class name="NSLayoutConstraint">
       </Class>
       <Class name="NSLayoutManager">
         <Patch>Methods[CharacterIndexForPointInTextContainerFractionOfDistanceBetweenInsertionPoints].Parameters[partialFraction].Type=CGFloat</Patch>
@@ -1350,6 +1363,8 @@
       </Class>
       <Class name="NSPICTImageRep">
       </Class>
+      <Class name="NSPopover">
+      </Class>
       <Class name="NSPopUpButton">
       </Class>
       <Class name="NSPopUpButtonCell">
@@ -1465,6 +1480,8 @@
       <Class name="NSString_AppKitAdditions">
         <Patch>AdditionFor=NSString</Patch>
       </Class>
+      <Class name="NSTableCellView">
+      </Class>
       <Class name="NSTableColumn">
         <Patch>Methods[DataCellForRow].ReturnType=NSCell</Patch>
         <Patch>Properties[DataCell].Type=NSCell</Patch>
@@ -1475,6 +1492,8 @@
       <Class name="NSTableHeaderCell">
       </Class>
       <Class name="NSTableHeaderView">
+      </Class>
+      <Class name="NSTableRowView">
       </Class>
       <Class name="NSTableView">
         <Patch>Methods[DragImageForRowsWithIndexesTableColumnsEventOffset].Parameters[dragImageOffset].Type=NSPoint</Patch>
@@ -1519,6 +1538,8 @@
         <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSTextFieldCell">
+      </Class>
+      <Class name="NSTextFinder">
       </Class>
       <Class name="NSTextInputContext">
       </Class>
@@ -2002,6 +2023,10 @@ enum {]]>
       </Protocol>
       <Protocol name="NSPlaceholders">
       </Protocol>
+      <Protocol name="NSPopoverDelegate">
+        <Patch>DelegateFor=NSPopover</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
       <Protocol name="NSPrintPanelAccessorizing">
       </Protocol>
       <Protocol name="NSRuleEditorDelegate">
@@ -2051,9 +2076,15 @@ enum {]]>
         <Patch>DelegateFor=NSTextField</Patch>
         <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
+      <Protocol name="NSTextFinderClient">
+      </Protocol>
+      <Protocol name="NSTextFinderBarContainer">
+      </Protocol>
       <Protocol name="NSTextInput">
       </Protocol>
       <Protocol name="NSTextInputClient">
+      </Protocol>
+      <Protocol name="NSTextLayoutOrientationProvider">
       </Protocol>
       <Protocol name="NSTextStorageDelegate">
         <Patch>DelegateFor=NSTextStorage</Patch>
@@ -2089,6 +2120,8 @@ enum {]]>
       </Protocol>
       <Protocol name="NSUserInterfaceValidations">
       </Protocol>
+      <Protocol name="NSUserInterfaceItemIdentification">
+      </Protocol>
       <Protocol name="NSUserInterfaceItemSearching">
       </Protocol>
       <Protocol name="NSValidatedUserInterfaceItem">
@@ -2096,6 +2129,8 @@ enum {]]>
       <Protocol name="NSWindowDelegate">
         <Patch>DelegateFor=NSWindow</Patch>
         <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
+      <Protocol name="NSWindowRestoration">
       </Protocol>
       <Protocol name="NSWindowScripting">
       </Protocol>
@@ -2111,6 +2146,107 @@ enum {]]>
         <Patch>BaseType=NSUInteger</Patch>
       </Enumeration>
     </Enumerations>
+  </Framework>
+  <Framework name="AVFoundation" usings="Foundation,AppKit,ApplicationServices" assembly="Monobjc.AVFoundation">
+    <Types>
+      <Type name="AVFoundationFramework.Functions">
+      </Type>
+      <Type name="AVFoundationFramework.AudioSettings.Constants">
+      </Type>
+      <Type name="AVFoundationFramework.Constants">
+      </Type>
+      <Type name="AVFoundationFramework.Error.Constants">
+      </Type>
+      <Type name="AVFoundationFramework.ID3.Constants">
+      </Type>
+      <Type name="AVFoundationFramework.iTunes.Constants">
+      </Type>
+      <Type name="AVFoundationFramework.QuickTime.Constants">
+      </Type>
+    </Types>
+    <Classes>
+      <Class name="AVAsset"></Class>
+      <Class name="AVAssetExportSession"></Class>
+      <Class name="AVAssetImageGenerator"></Class>
+      <Class name="AVAssetReader"></Class>
+      <Class name="AVAssetReaderAudioMixOutput"></Class>
+      <Class name="AVAssetReaderOutput"></Class>
+      <Class name="AVAssetReaderTrackOutput"></Class>
+      <Class name="AVAssetReaderVideoCompositionOutput"></Class>
+      <Class name="AVAssetTrack"></Class>
+      <Class name="AVAssetTrackSegment"></Class>
+      <Class name="AVAssetWriter"></Class>
+      <Class name="AVAssetWriterInput"></Class>
+      <Class name="AVAssetWriterInputPixelBufferAdaptor"></Class>
+      <Class name="AVAudioMix"></Class>
+      <Class name="AVAudioMixInputParameters"></Class>
+      <Class name="AVAudioPlayer"></Class>
+      <Class name="AVAudioRecorder"></Class>
+      <Class name="AVCaptureAudioChannel"></Class>
+      <Class name="AVCaptureAudioDataOutput"></Class>
+      <Class name="AVCaptureAudioFileOutput"></Class>
+      <Class name="AVCaptureAudioPreviewOutput"></Class>
+      <Class name="AVCaptureConnection"></Class>
+      <Class name="AVCaptureDevice"></Class>
+      <Class name="AVCaptureDeviceFormat"></Class>
+      <Class name="AVCaptureDeviceInput"></Class>
+      <Class name="AVCaptureDeviceInputSource"></Class>
+      <Class name="AVCaptureFileOutput"></Class>
+      <Class name="AVCaptureInput"></Class>
+      <Class name="AVCaptureInputPort"></Class>
+      <Class name="AVCaptureMovieFileOutput"></Class>
+      <Class name="AVCaptureOutput"></Class>
+      <Class name="AVCaptureScreenInput"></Class>
+      <Class name="AVCaptureSession"></Class>
+      <Class name="AVCaptureStillImageOutput"></Class>
+      <Class name="AVCaptureVideoDataOutput"></Class>
+      <Class name="AVCaptureVideoPreviewLayer"></Class>
+      <Class name="AVComposition"></Class>
+      <Class name="AVCompositionTrack"></Class>
+      <Class name="AVCompositionTrackSegment"></Class>
+      <Class name="AVFrameRateRange"></Class>
+      <Class name="AVMetadataItem"></Class>
+      <Class name="AVMutableAudioMix"></Class>
+      <Class name="AVMutableAudioMixInputParameters"></Class>
+      <Class name="AVMutableComposition"></Class>
+      <Class name="AVMutableCompositionTrack"></Class>
+      <Class name="AVMutableMetadataItem"></Class>
+      <Class name="AVMutableTimedMetadataGroup"></Class>
+      <Class name="AVMutableVideoComposition"></Class>
+      <Class name="AVMutableVideoCompositionInstruction"></Class>
+      <Class name="AVMutableVideoCompositionLayerInstruction"></Class>
+      <Class name="AVPlayer"></Class>
+      <Class name="AVPlayerItem"></Class>
+      <Class name="AVPlayerItemAccessLog"></Class>
+      <Class name="AVPlayerItemAccessLogEvent"></Class>
+      <Class name="AVPlayerItemErrorLog"></Class>
+      <Class name="AVPlayerItemErrorLogEvent"></Class>
+      <Class name="AVPlayerItemTrack"></Class>
+      <Class name="AVPlayerLayer"></Class>
+      <Class name="AVQueuePlayer"></Class>
+      <Class name="AVSynchronizedLayer"></Class>
+      <Class name="AVTimedMetadataGroup"></Class>
+      <Class name="AVURLAsset"></Class>
+      <Class name="AVVideoComposition"></Class>
+      <Class name="AVVideoCompositionCoreAnimationTool"></Class>
+      <Class name="AVVideoCompositionInstruction"></Class>
+      <Class name="AVVideoCompositionLayerInstruction"></Class>
+      <Class name="NSCoder_AVFoundationAdditions">
+        <Patch>AdditionFor=NSCoder</Patch>
+      </Class>
+      <Class name="NSValue AVFoundationAdditions">
+        <Patch>AdditionFor=NSValue</Patch>
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="AVAsynchronousKeyValueLoading"></Protocol>
+      <Protocol name="AVAudioPlayerDelegate"></Protocol>
+      <Protocol name="AVAudioRecorderDelegate"></Protocol>
+      <Protocol name="AVCaptureAudioDataOutputSampleBufferDelegate"></Protocol>
+      <Protocol name="AVCaptureFileOutputDelegate"></Protocol>
+      <Protocol name="AVCaptureFileOutputRecordingDelegate"></Protocol>
+      <Protocol name="AVCaptureVideoDataOutputSampleBufferDelegate"></Protocol>
+    </Protocols>
   </Framework>
   <Framework name="CoreData" usings="Foundation,AppKit,QuartzCore" assembly="Monobjc.AppKit">
     <Types>
@@ -2142,6 +2278,10 @@ enum {]]>
         <!-- TODO: Move to constant -->
         <Patch>Enumerations[Fetch_request_expression_type].Generate=false</Patch>
       </Class>
+      <Class name="NSIncrementalStore">
+      </Class>
+      <Class name="NSIncrementalStoreNode">
+      </Class>
       <Class name="NSManagedObject">
         <Patch>Methods[ValidateValueForKeyError].Parameters[value].Type=IntPtr</Patch>
         <Replace type="Generated">
@@ -2157,11 +2297,17 @@ enum {]]>
       </Class>
       <Class name="NSMappingModel">
       </Class>
+      <Class name="NSMergeConflict">
+      </Class>
+      <Class name="NSMergePolicy">
+      </Class>
       <Class name="NSMigrationManager">
       </Class>
       <Class name="NSPersistentStore">
       </Class>
       <Class name="NSPersistentStoreCoordinator">
+      </Class>
+      <Class name="NSPersistentStoreRequest">
       </Class>
       <Class name="NSPropertyDescription">
       </Class>
@@ -2169,6 +2315,8 @@ enum {]]>
       </Class>
       <Class name="NSRelationshipDescription">
         <Patch>Enumerations[NSDeleteRule].BaseType=NSUInteger</Patch>
+      </Class>
+      <Class name="NSSaveChangesRequest">
       </Class>
 
       <Class name="NSPersistentStoreCoordinator.Deprecated">
@@ -2387,6 +2535,23 @@ enum {]]>
       </Protocol>
     </Protocols>
   </Framework>
+  <Framework name="CoreMedia" usings="Foundation,AppKit,ApplicationServices" assembly="Monobjc.CoreMedia">
+    <Types>
+      <Type name="CoreMedia.Constants">
+      </Type>
+      <Type name="CoreMedia.DataTypes">
+      </Type>
+    </Types>
+    <Classes>
+      <Class name="CMAttachment"></Class>
+      <Class name="CMBlockBuffer"></Class>
+      <Class name="CMBufferQueue"></Class>
+      <Class name="CMFormatDescription"></Class>
+      <Class name="CMSampleBuffer"></Class>
+      <Class name="CMTime"></Class>
+      <Class name="CMTimeRange"></Class>
+    </Classes>
+  </Framework>
   <Framework name="CoreMIDI" usings="Foundation" assembly="Monobjc.CoreMIDI">
     <Types>
       <Type name="MIDIServices">
@@ -2414,16 +2579,10 @@ enum {]]>
   <Framework name="CoreWLAN" usings="Foundation,Security,SecurityFoundation" assembly="Monobjc.CoreWLAN">
     <Types>
       <Type name="CoreWLANFramework.Constants">
-        <Patch>Enumerations[CWErr].BaseType=int</Patch>
-        <Patch>Enumerations[CWInterfaceState].BaseType=int</Patch>
-        <Patch>Enumerations[CWOpMode].BaseType=int</Patch>
-        <Patch>Enumerations[CWPHYMode].BaseType=int</Patch>
-        <Patch>Enumerations[CWScanType].BaseType=int</Patch>
-        <Patch>Enumerations[CWSecurityMode].BaseType=int</Patch>
-        <Replace type="Xhtml">
-          <Source><![CDATA[ Not available in iOS.]]></Source>
-          <With><![CDATA[]]></With>
-        </Replace>
+      </Type>
+      <Type name="CoreWLANFramework.Types">
+      </Type>
+      <Type name="CoreWLANFramework.Util">
       </Type>
     </Types>
     <Classes>
@@ -2434,12 +2593,20 @@ enum {]]>
           <With><![CDATA[]]></With>
         </Replace>
       </Class>
+      <Class name="CW8021XProfile.Deprecated">
+        <Patch>AdditionFor=CW8021XProfile</Patch>
+      </Class>
+      <Class name="CWChannel">
+      </Class>
       <Class name="CWConfiguration">
         <Patch>Methods[Init].Generate=false</Patch>
         <Replace type="Xhtml">
           <Source><![CDATA[ Not available in iOS.]]></Source>
           <With><![CDATA[]]></With>
         </Replace>
+      </Class>
+      <Class name="CWConfiguration.Deprecated">
+        <Patch>AdditionFor=CWConfiguration</Patch>
       </Class>
       <Class name="CWInterface">
         <Patch>Methods[Init].Generate=false</Patch>
@@ -2468,11 +2635,17 @@ enum {]]>
           <With><![CDATA[]]></With>
         </Replace>
       </Class>
+      <Class name="CWMutableConfiguration">
+      </Class>
+      <Class name="CWMutableNetworkProfile">
+      </Class>
       <Class name="CWNetwork">
         <Replace type="Xhtml">
           <Source><![CDATA[ Not available in iOS.]]></Source>
           <With><![CDATA[]]></With>
         </Replace>
+      </Class>
+      <Class name="CWNetworkProfile">
       </Class>
       <Class name="CWWirelessProfile">
         <Patch>Methods[Init].Generate=false</Patch>
@@ -2480,6 +2653,9 @@ enum {]]>
           <Source><![CDATA[ Not available in iOS.]]></Source>
           <With><![CDATA[]]></With>
         </Replace>
+      </Class>
+      <Class name="CWWirelessProfile.Deprecated">
+        <Patch>AdditionFor=CWWirelessProfile</Patch>
       </Class>
     </Classes>
   </Framework>
@@ -3349,6 +3525,8 @@ enum {]]>
           <With><![CDATA[1U << 0,]]></With>
         </Replace>
       </Class>
+      <Class name="NSDataDetector">
+      </Class>
       <Class name="NSDate">
         <Patch>Methods[DateWithNaturalLanguageString].ReturnType=NSDate</Patch>
         <Patch>Methods[DateWithNaturalLanguageStringLocale].ReturnType=NSDate</Patch>
@@ -3489,6 +3667,12 @@ enum {]]>
           <With><![CDATA[1 <<]]></With>
         </Replace>
       </Class>
+      <Class name="NSFileCoordinator">
+      </Class>
+      <Class name="NSFileSecurity">
+      </Class>
+      <Class name="NSFileVersion">
+      </Class>
       <Class name="NSFormatter">
         <Patch>Methods[GetObjectValueForStringErrorDescription].Parameters[anObject].Type=Id</Patch>
         <Patch>Methods[GetObjectValueForStringErrorDescription].Parameters[anObject].IsOut=true</Patch>
@@ -3553,6 +3737,8 @@ enum {]]>
       </Class>
       <Class name="NSInvocationOperation">
       </Class>
+      <Class name="NSJSONSerialization">
+      </Class>
       <Class name="NSKeyedArchiver">
         <Patch>Methods[EncodeBytesLengthForKey].Parameters[bytesp].Type=IntPtr</Patch>
         <Patch>Methods[ClassNameForClass][Static=True].Generate=false</Patch>
@@ -3566,6 +3752,8 @@ enum {]]>
         <Patch>Methods[ClassForClassName][Static=True].Generate=false</Patch>
         <Patch>Methods[SetClassForClassName][Static=True].Generate=false</Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
+      </Class>
+      <Class name="NSLinguisticTagger">
       </Class>
       <Class name="NSLocale">
         <Patch>Enumerations[NSLocaleLanguageDirection].Values[NSLocaleLanguageDirectionUnknown].Value=0</Patch>
@@ -3636,6 +3824,8 @@ enum {]]>
       <Class name="NSMutableDictionary">
       </Class>
       <Class name="NSMutableIndexSet">
+      </Class>
+      <Class name="NSMutableOrderedSet">
       </Class>
       <Class name="NSMutableSet">
       </Class>
@@ -3732,6 +3922,8 @@ enum {]]>
       <Class name="NSOperationQueue">
         <!-- TODO: Move to constants -->
         <Patch>Enumerations[Concurrent_Operation_Constants].Generate=false</Patch>
+      </Class>
+      <Class name="NSOrderedSet">
       </Class>
       <Class name="NSOrthography">
         <Patch>Methods[OrthographyWithDominantScriptLanguageMap].ReturnType=NSOrthography</Patch>
@@ -3845,6 +4037,8 @@ enum {]]>
       <Class name="NSRangeSpecifier">
       </Class>
       <Class name="NSRecursiveLock">
+      </Class>
+      <Class name="NSRegularExpression">
       </Class>
       <Class name="NSRelativeSpecifier">
         <Patch>Enumerations[NSRelativePosition].BaseType=NSUInteger</Patch>
@@ -4084,6 +4278,8 @@ enum]]>
         <Patch>Methods[TimeZoneWithName].ReturnType=NSTimeZone</Patch>
         <Patch>Methods[TimeZoneWithNameData].ReturnType=NSTimeZone</Patch>
       </Class>
+      <Class name="NSUbiquitousKeyValueStore">
+      </Class>
       <Class name="NSUnarchiver">
         <Patch>Methods[ClassNameDecodedForArchiveClassName][Static=True].Generate=false</Patch>
         <Patch>Methods[DecodeClassNameAsClassName][Static=True].Generate=false</Patch>
@@ -4316,6 +4512,8 @@ enum]]>
       <Protocol name="NSFileManagerDelegate">
         <Patch>DelegateFor=NSFileManager</Patch>
         <Patch>DelegateProperty=Delegate</Patch>
+      </Protocol>
+      <Protocol name="NSFilePresenter">
       </Protocol>
       <Protocol name="NSKeyedArchiverDelegate">
         <Patch>DelegateFor=NSKeyedArchiver</Patch>
@@ -6077,36 +6275,36 @@ enum
 
     </Protocols>
   </Framework>
-  
+
   <Framework name="JavaScriptCore" usings="Foundation,AppKit,WebKit" assembly="Monobjc.WebKit">
-  <Classes>
-    <Class name="JavaScript_Definitions">
-      <Patch>AdditionFor=JavaScript</Patch>
-    </Class>
-    <Class name="JavaScriptCore_Definitions">
-      <Patch>AdditionFor=JavaScriptCore</Patch>
-    </Class>
-    <Class name="JSBase_Definitions">
-      <Patch>AdditionFor=JSBase</Patch>
-    </Class>
-    <Class name="JSContextRef_Definitions">
-      <Patch>AdditionFor=JSContextRef</Patch>
-    </Class>
-    <Class name="JSObjectRef_Definitions">
-      <Patch>AdditionFor=JSObjectRef</Patch>
-    </Class>
-    <Class name="JSStringRef_Definitions">
-      <Patch>AdditionFor=JSStringRef</Patch>
-    </Class>
-    <Class name="JSStringRefCF_Definitions">
-      <Patch>AdditionFor=JSStringRefCF</Patch>
-    </Class>
-    <Class name="JSValueRef_Definitions">
-      <Patch>AdditionFor=JSValueRef</Patch>
-    </Class>
-  </Classes>
+    <Classes>
+      <Class name="JavaScript_Definitions">
+        <Patch>AdditionFor=JavaScript</Patch>
+      </Class>
+      <Class name="JavaScriptCore_Definitions">
+        <Patch>AdditionFor=JavaScriptCore</Patch>
+      </Class>
+      <Class name="JSBase_Definitions">
+        <Patch>AdditionFor=JSBase</Patch>
+      </Class>
+      <Class name="JSContextRef_Definitions">
+        <Patch>AdditionFor=JSContextRef</Patch>
+      </Class>
+      <Class name="JSObjectRef_Definitions">
+        <Patch>AdditionFor=JSObjectRef</Patch>
+      </Class>
+      <Class name="JSStringRef_Definitions">
+        <Patch>AdditionFor=JSStringRef</Patch>
+      </Class>
+      <Class name="JSStringRefCF_Definitions">
+        <Patch>AdditionFor=JSStringRefCF</Patch>
+      </Class>
+      <Class name="JSValueRef_Definitions">
+        <Patch>AdditionFor=JSValueRef</Patch>
+      </Class>
+    </Classes>
   </Framework>
-  
+
   <Framework name="WebKit.DOM" usings="Foundation,AppKit,WebKit" assembly="Monobjc.WebKit">
     <Classes>
       <Class name="DOMAbstractView" />

@@ -53,18 +53,21 @@ namespace Monobjc.Tools.Generator
             int verbose = 0;
             String tasks = null;
             String targetDir = null;
+            String docSet = null;
 
             // Create an option set
             OptionSet p = new OptionSet().
                 Add("h|help", v => tasks = "help").
                 Add("v", v => ++verbose).
                 Add("t=|tasks=", v => tasks = v).
-                Add("d=|dir=", v => targetDir = v);
+                Add("d=|dir=", v => targetDir = v).
+                Add("s=|set=", v => docSet = v);
             p.Parse(args);
 
             // Create an execution context
             TaskContext context = new TaskContext();
             context.Settings = new NameValueCollection(ConfigurationManager.AppSettings);
+            context.DocSet = docSet;
             context.TypeManager = new TypeManager();
 
             // Create the execution manager
@@ -114,7 +117,10 @@ namespace Monobjc.Tools.Generator
                         break;
                     case "analyze":
                         //manager.AddTask(new DumpDelegateMethodsTask("Search Delegate Methods"));
-                        manager.AddTask(new DumpStaticInitializersTask("Search Static Initializers"));
+                        //manager.AddTask(new DumpStaticInitializersTask("Search Static Initializers"));
+                        //manager.AddTask(new DumpDeprecatedTask("Search for Deprected API"));
+                        //manager.AddTask(new DumpMissingTask("Search for missing entities"));
+                        manager.AddTask(new ValidateTask("Validate URLs"));
                         break;
 
                         //

@@ -234,6 +234,7 @@ namespace Monobjc.Tools.Generator.Generators
             result.Add("Mac OS X v10.4", "");
             result.Add("Mac OS X v10.5", "MACOSX_10_5");
             result.Add("Mac OS X v10.6", "MACOSX_10_6");
+            result.Add("Mac OS X v10.7", "MACOSX_10_7");
             result.Add("Sparkle 1.5", "");
             return result;
         }

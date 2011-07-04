@@ -160,6 +160,10 @@ namespace Monobjc.Tools.Generator.Model.Entities
         /// <returns></returns>
         public static BaseEntity LoadFrom(String path, Type type)
         {
+            if (!File.Exists(path))
+            {
+                return null;
+            }
             XmlSerializer serializer = new XmlSerializer(type);
             using (StreamReader reader = new StreamReader(path))
             {

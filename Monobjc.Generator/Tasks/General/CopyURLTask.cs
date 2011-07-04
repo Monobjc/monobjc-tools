@@ -16,6 +16,7 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System;
+using System.IO;
 using Monobjc.Tools.Generator.Model.Database;
 
 namespace Monobjc.Tools.Generator.Tasks.General
@@ -42,6 +43,16 @@ namespace Monobjc.Tools.Generator.Tasks.General
                 {
                     const string suffix = "DeprecationAppendix/AppendixADeprecatedAPI.html";
                     String url = entry.RemoteUrl;
+                    String parent = Path.GetDirectoryName(url);
+                    while (true)
+                    {
+                        parent = Path.GetDirectoryName(url);
+                        if (Path.GetFileName(parent).Contains(entry.Name))
+                        {
+                            break;
+                        }
+                    }
+                    /*
                     url = url.Replace("Reference/Reference.html", suffix);
                     url = url.Replace("Introduction/Introduction.html", suffix);
                     url = url.Replace("Reference/NSCell.html", suffix);
@@ -49,6 +60,8 @@ namespace Monobjc.Tools.Generator.Tasks.General
                     url = url.Replace("Reference/NSString.html", suffix);
                     url = url.Replace("NSArray.html", suffix);
                     url = url.Replace("NSPersistentStoreCoordinator.html", suffix);
+                     */
+                    url = Path.Combine(parent, suffix);
                     deprecatedEntry.RemoteUrl = url;
                 }
             }

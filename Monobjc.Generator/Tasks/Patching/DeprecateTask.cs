@@ -165,6 +165,9 @@ namespace Monobjc.Tools.Generator.Tasks.Patching
                     case "Mac OS X v10.5":
                         v2 = "Mac OS X v10.6";
                         break;
+                    case "Mac OS X v10.6":
+                        v2 = "Mac OS X v10.7";
+                        break;
                     default:
                         break;
                 }

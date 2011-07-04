@@ -85,7 +85,7 @@ namespace Monobjc.Tools.Generator.Tasks
         /// <value>The entries with urls.</value>
         protected IEnumerable<Entry> EntriesWithUrls
         {
-            get { return this.Entries.Where(entry => !String.IsNullOrEmpty(entry.RemoteUrl)); }
+            get { return this.Entries.Where(entry => !String.IsNullOrEmpty(entry.GetRemoteUrl())); }
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Monobjc.Tools.Generator.Tasks
         /// <value>The entries with empty urls.</value>
         protected IEnumerable<Entry> EntriesWithEmptyUrls
         {
-            get { return this.Entries.Where(entry => String.IsNullOrEmpty(entry.RemoteUrl)); }
+            get { return this.Entries.Where(entry => String.IsNullOrEmpty(entry.GetRemoteUrl())); }
         }
 
         /// <summary>
