@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -138,6 +138,10 @@ namespace Monobjc.Tools.Generator.Tasks.Patching
                     Console.WriteLine("Patching '{0}'...", entry.Name);
                     baseEntity.SaveTo(xmlFile);
                 }
+				else
+				{
+                    Console.WriteLine("[NOT PATCHED] '{0}'...", entry.Name);
+				}
             }
         }
     }

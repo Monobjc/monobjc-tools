@@ -3204,6 +3204,9 @@
   <Entry ns="OpenGL" nature="T" name="CGL" style="Cocoa" file="CGL">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CGL_OpenGL/Reference/reference.html</url>
   </Entry>
+  <Entry ns="OpenGL" nature="T" name="CGL.Deprecated" style="Cocoa" file="CGL.Deprecated">
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CGL_OpenGL/DeprecationAppendix/AppendixADeprecatedAPI.html</url>
+  </Entry>
   <Entry ns="QTKit" nature="C" name="NSCoder_QTKitAdditions" style="Cocoa" file="NSCoder_QTKitAdditions">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/QuickTime/Reference/QTKitFramework/Classes/NSCoder_QTKitAdditions/Reference/Reference.html</url>
   </Entry>

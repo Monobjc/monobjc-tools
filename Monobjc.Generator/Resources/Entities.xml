@@ -8,6 +8,10 @@
       <Type name="AddressBookFramework.Constants">
         <Patch>Enumerations[_ABPropertyType].Name=ABPropertyType</Patch>
         <Patch>Enumerations[ABPropertyType].BaseType=CFIndex</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[<dd><p><p class=]]></Source>
+          <With><![CDATA[<dd><p class=]]></With>
+        </Replace>
         <Replace type="Generated">
           <Source><![CDATA[kABMultiValueMask]]></Source>
           <With><![CDATA[0x100]]></With>
@@ -177,6 +181,10 @@
         <Patch>Functions[CGFontGetGlyphBBoxes].Parameters[bboxes[]].Name=bboxes</Patch>
         <Patch>Functions[CGFontGetGlyphBBoxes].Parameters[bboxes].Type=IntPtr</Patch>
         <Patch>Functions[CGFontGetTypeID].Generate=false</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[)<pre class=]]></Source>
+          <With><![CDATA[)</p><pre class=]]></With>
+        </Replace>
       </Type>
       <Type name="CGFunction">
         <Patch>Functions[CGFunctionCreate].Parameters[domain].Type=IntPtr</Patch>
@@ -506,7 +514,11 @@
       <Type name="CGDataProvider.Deprecated">
       </Type>
       <Type name="CGFont.Deprecated">
-      </Type>
+         <Replace type="Html">
+          <Source><![CDATA[)<pre class=]]></Source>
+          <With><![CDATA[)</p><pre class=]]></With>
+        </Replace>
+     </Type>
       <Type name="CGGLContext.Deprecated">
       </Type>
       <Type name="CGPDFDocument.Deprecated">
@@ -605,6 +617,13 @@
         <Patch>Functions[NSUpdateDynamicServices].Generate=false</Patch>
         <Patch>Functions[NSWindowList].Generate=false</Patch>
         <Patch>Functions[NSWindowListForContext].Generate=false</Patch>
+		
+        <Replace type="Html">
+          <Source><![CDATA[)
+<pre class=]]></Source>
+          <With><![CDATA[)</p>
+<pre class=]]></With>
+        </Replace>
       </Type>
     </Types>
     <Classes>
@@ -688,6 +707,10 @@
         <Patch>Enumerations[NSSpellingStateAttributeNameFlags].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSSpellingStateAttributeNameFlags].Flags=true</Patch>
         <Patch>Constants[NSUnderlineByWordMask].Type=NSUInteger</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[)<pre class=]]></Source>
+          <With><![CDATA[)</p><pre class=]]></With>
+        </Replace>
       </Class>
       <Class name="NSBezierPath">
         <Patch>Methods[AppendBezierPathWithGlyphsCountInFont].Parameters[glyphs].Type=IntPtr</Patch>
@@ -759,6 +782,10 @@
         <Patch>Enumerations[Button_Types].Name=NSButtonType</Patch>
         <Patch>Enumerations[NSButtonType].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSGradientType].BaseType=NSUInteger</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[<dd><p><p class=]]></Source>
+          <With><![CDATA[<dd><p class=]]></With>
+        </Replace>
         <Replace type="Generated">
           <Source>public virtual NSString KeyEquivalent</Source>
           <With>public new NSString KeyEquivalent</With>
@@ -782,6 +809,14 @@
         <!-- TODO: Deprecated -->
         <Patch>Enumerations[Deprecated_Scaling_Constants].Generate=false</Patch>
         <Patch>Enumerations[Data_Entry_Types].Generate=false</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[)<pre class=]]></Source>
+          <With><![CDATA[)</p><pre class=]]></With>
+        </Replace>
+        <Replace type="Html">
+          <Source><![CDATA[<dd><p><p class=]]></Source>
+          <With><![CDATA[<dd><p class=]]></With>
+        </Replace>
       </Class>
       <Class name="NSCIImageRep">
         <Patch>Methods[ImageRepWithCIImage].ReturnType=NSCIImageRep</Patch>
@@ -1064,8 +1099,8 @@
           <With><![CDATA[<dd><p class="abstract">]]></With>
         </Replace>
         <Replace type="Html">
-          <Source><![CDATA[typesetting stage)<pre class="declaration">]]></Source>
-          <With><![CDATA[typesetting stage)</p><pre class="declaration">]]></With>
+          <Source><![CDATA[)<pre class=]]></Source>
+          <With><![CDATA[)</p><pre class=]]></With>
         </Replace>
       </Class>
       <Class name="NSFontDescriptor">
@@ -1074,6 +1109,10 @@
         <Patch>Enumerations[NSFontFamilyClass].Generate=false</Patch>
         <Patch>Enumerations[NSFontFamilyClassMask].Generate=false</Patch>
         <Patch>Enumerations[NSTypefaceInformation].BaseType=uint</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[<dd><p><p class=]]></Source>
+          <With><![CDATA[<dd><p class=]]></With>
+        </Replace>
       </Class>
       <Class name="NSFontManager">
         <Patch>Properties[Delegate].Type=Id</Patch>
@@ -1088,6 +1127,10 @@
       <Class name="NSFontPanel">
         <!-- TODO: Deprecated -->
         <Patch>Enumerations[Tags_of_Views_in_the_FontPanel].Generate=false</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[)<pre class=]]></Source>
+          <With><![CDATA[)</p><pre class=]]></With>
+        </Replace>
       </Class>
       <Class name="NSForm">
         <Patch>Methods[CellAtIndex].ReturnType=NSCell</Patch>
@@ -1127,11 +1170,15 @@
         <Patch>Methods[InitWithDataIgnoringOrientation].GenerateConstructor=false</Patch>
         <Patch>Methods[InitWithIconRef].GenerateConstructor=false</Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[<dd><p><p class=]]></Source>
+          <With><![CDATA[<dd><p class=]]></With>
+        </Replace>
       </Class>
       <Class name="NSImageCell">
-        <Replace type="Xhtml">
-          <Source><![CDATA[Guidelines</a></em>.)<pre]]></Source>
-          <With><![CDATA[Guidelines</a></em>.)</p><pre]]></With>
+        <Replace type="Html">
+          <Source><![CDATA[)<pre class=]]></Source>
+          <With><![CDATA[)</p><pre class=]]></With>
         </Replace>
         <Replace type="Xhtml">
           <Source><![CDATA[NSImageCell.h</code></div></p>]]></Source>
@@ -1346,6 +1393,10 @@
         </Replace>
       </Class>
       <Class name="NSPasteboard">
+         <Replace type="Html">
+          <Source><![CDATA[<dd><p><p class=]]></Source>
+          <With><![CDATA[<dd><p class=]]></With>
+        </Replace>
       </Class>
       <Class name="NSPasteboardItem">
       </Class>
@@ -1378,6 +1429,10 @@
         <Patch>Enumerations[NSPrinterTableStatus].BaseType=NSUInteger</Patch>
       </Class>
       <Class name="NSPrintInfo">
+        <Replace type="Html">
+          <Source><![CDATA[)<pre class=]]></Source>
+          <With><![CDATA[)</p><pre class=]]></With>
+        </Replace>
         <Replace type="Xhtml">
           <Source><![CDATA[NSPrintJobSavingFileNameExtensionHidden']]></Source>
           <With><![CDATA[NSPrintJobSavingFileNameExtensionHidden]]></With>
@@ -1424,6 +1479,10 @@
         <Patch>Enumerations[NSScrollerArrow].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSScrollerPart].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSUsableScrollerParts].BaseType=NSUInteger</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[)<pre class=]]></Source>
+          <With><![CDATA[)</p><pre class=]]></With>
+        </Replace>
       </Class>
       <Class name="NSScrollView">
       </Class>
@@ -1565,6 +1624,10 @@
         <Patch>Enumerations[NSSelectionGranularity].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSSelectionAffinity].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSFindPanelAction].BaseType=NSUInteger</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[)<pre class=]]></Source>
+          <With><![CDATA[)</p><pre class=]]></With>
+        </Replace>
         <Replace type="Xhtml">
           <Source>
             <![CDATA[</a>
@@ -1594,6 +1657,10 @@ NSString *NSFindPanelCaseInsensitiveSearch;
       <Class name="NSToolbarItem">
         <Patch>Enumerations[Item_Priority].Name=NSItemPriority</Patch>
         <Patch>Enumerations[NSItemPriority].BaseType=NSInteger</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[<dd><p><p class=]]></Source>
+          <With><![CDATA[<dd><p class=]]></With>
+        </Replace>
       </Class>
       <Class name="NSToolbarItemGroup">
       </Class>
@@ -1691,6 +1758,10 @@ NSString *NSFindPanelCaseInsensitiveSearch;
         <Patch>Enumerations[NSWindowRunLoopOrderingMode].BaseType=NSInteger</Patch>
         <Patch>Enumerations[Explicit_Window_Depth_Limits].Name=NSWindowDepthLimit</Patch>
         <Patch>Enumerations[NSWindowDepthLimit].BaseType=int</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[<dd><p><p class=]]></Source>
+          <With><![CDATA[<dd><p class=]]></With>
+        </Replace>
         <Replace type="Xhtml">
           <Source>
             <![CDATA[};
@@ -1929,7 +2000,11 @@ enum {]]>
       <Protocol name="NSDraggingDestination">
       </Protocol>
       <Protocol name="NSDraggingInfo">
-        <Replace type="Generated">
+         <Replace type="Html">
+          <Source><![CDATA[)<pre class=]]></Source>
+          <With><![CDATA[)</p><pre class=]]></With>
+        </Replace>
+       <Replace type="Generated">
           <Source>NSUIntegerMax</Source>
           <With>UInt32.MaxValue</With>
         </Replace>
@@ -2453,7 +2528,10 @@ enum {]]>
 
       </Type>
       <Type name="CFString">
-
+        <Replace type="Html">
+          <Source><![CDATA[<dd><p><p class=]]></Source>
+          <With><![CDATA[<dd><p class=]]></With>
+        </Replace>
       </Type>
       <Type name="CFStringTokenizer">
 
@@ -2510,14 +2588,6 @@ enum {]]>
       <Class name="CLLocation">
         <Patch>Methods[DistanceFromLocation].Parameters[location].Type=CLLocation</Patch>
         <Patch>Methods[GetDistanceFrom].Parameters[location].Type=CLLocation</Patch>
-        <Replace type="Xhtml">
-          <Source><![CDATA[method instead.)<div class="declaration">]]></Source>
-          <With><![CDATA[method instead.)</p><div class="declaration">]]></With>
-        </Replace>
-        <Replace type="Xhtml">
-          <Source><![CDATA[CLLocation.h</code></div></p>]]></Source>
-          <With><![CDATA[CLLocation.h</code></div>]]></With>
-        </Replace>
       </Class>
       <Class name="CLLocationManager">
         <Patch>MinAvailability=Mac OS X v10.6</Patch>
@@ -2587,10 +2657,6 @@ enum {]]>
     <Classes>
       <Class name="CW8021XProfile">
         <Patch>Methods[Init].Generate=false</Patch>
-        <Replace type="Xhtml">
-          <Source><![CDATA[ Not available in iOS.]]></Source>
-          <With><![CDATA[]]></With>
-        </Replace>
       </Class>
       <Class name="CW8021XProfile.Deprecated">
         <Patch>AdditionFor=CW8021XProfile</Patch>
@@ -2599,59 +2665,23 @@ enum {]]>
       </Class>
       <Class name="CWConfiguration">
         <Patch>Methods[Init].Generate=false</Patch>
-        <Replace type="Xhtml">
-          <Source><![CDATA[ Not available in iOS.]]></Source>
-          <With><![CDATA[]]></With>
-        </Replace>
       </Class>
       <Class name="CWConfiguration.Deprecated">
         <Patch>AdditionFor=CWConfiguration</Patch>
       </Class>
       <Class name="CWInterface">
         <Patch>Methods[Init].Generate=false</Patch>
-        <Replace type="Xhtml">
-          <Source><![CDATA[<span class="param">network</span>]]></Source>
-          <With><![CDATA[<span class="param">network </span>]]></With>
-        </Replace>
-        <Replace type="Xhtml">
-          <Source><![CDATA[<span class="param">parameters</span>]]></Source>
-          <With><![CDATA[<span class="param">parameters </span>]]></With>
-        </Replace>
-        <Replace type="Xhtml">
-          <Source><![CDATA[<span class="param">config</span>]]></Source>
-          <With><![CDATA[<span class="param">config </span>]]></With>
-        </Replace>
-        <Replace type="Xhtml">
-          <Source><![CDATA[<span class="param">channel</span>]]></Source>
-          <With><![CDATA[<span class="param">channel </span>]]></With>
-        </Replace>
-        <Replace type="Xhtml">
-          <Source><![CDATA[<span class="param">power</span>]]></Source>
-          <With><![CDATA[<span class="param">power </span>]]></With>
-        </Replace>
-        <Replace type="Xhtml">
-          <Source><![CDATA[ Not available in iOS.]]></Source>
-          <With><![CDATA[]]></With>
-        </Replace>
       </Class>
       <Class name="CWMutableConfiguration">
       </Class>
       <Class name="CWMutableNetworkProfile">
       </Class>
       <Class name="CWNetwork">
-        <Replace type="Xhtml">
-          <Source><![CDATA[ Not available in iOS.]]></Source>
-          <With><![CDATA[]]></With>
-        </Replace>
       </Class>
       <Class name="CWNetworkProfile">
       </Class>
       <Class name="CWWirelessProfile">
         <Patch>Methods[Init].Generate=false</Patch>
-        <Replace type="Xhtml">
-          <Source><![CDATA[ Not available in iOS.]]></Source>
-          <With><![CDATA[]]></With>
-        </Replace>
       </Class>
       <Class name="CWWirelessProfile.Deprecated">
         <Patch>AdditionFor=CWWirelessProfile</Patch>
@@ -3052,6 +3082,10 @@ enum {]]>
         <Patch>Enumerations[NSErrorCode].BaseType=NSInteger</Patch>
         <Patch>Enumerations[URL_Loading_System_Error_Codes].Name=NSURLLoadingSystemErrorCode</Patch>
         <Patch>Enumerations[NSURLLoadingSystemErrorCode].BaseType=NSInteger</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[<dd><p><p class=]]></Source>
+          <With><![CDATA[<dd><p class=]]></With>
+        </Replace>
         <Replace type="Xhtml">
           <Source><![CDATA[642<!--a-->m<!--/a-->]]></Source>
           <With><![CDATA[642, ]]></With>
@@ -3485,10 +3519,6 @@ enum {]]>
         <Patch>Properties[Data].Type=NSData</Patch>
         <Patch>Properties[Data].Getter.ReturnType=NSData</Patch>
         <Patch>Properties[Data].CopyInDescendants=true</Patch>
-        <Replace type="Html">
-          <Source><![CDATA[<dd><p><p class="abstract">]]></Source>
-          <With><![CDATA[<dd><p class="abstract">]]></With>
-        </Replace>
         <Replace type="Xhtml">
           <Source>
             <![CDATA[&amp;lt;&amp;lt; 1
@@ -3621,6 +3651,10 @@ enum {]]>
       </Class>
       <Class name="NSError">
         <Patch>Methods[ErrorWithDomainCodeUserInfo].ReturnType=NSError</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[<dd><p><p class=]]></Source>
+          <With><![CDATA[<dd><p class=]]></With>
+        </Replace>
       </Class>
       <Class name="NSException">
         <Patch>Methods[RaiseFormat].Parameters[format,...].Generate=false</Patch>
@@ -4221,6 +4255,14 @@ enum {]]>
         <Patch>Enumerations[NSStringEncodingConversionOptions].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[String_Encodings].Name=NSStringEncoding</Patch>
         <Patch>Enumerations[NSStringEncoding].BaseType=NSUInteger</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[)<pre class=]]></Source>
+          <With><![CDATA[)</p><pre class=]]></With>
+        </Replace>
+        <Replace type="Html">
+          <Source><![CDATA[<dd><p><p class=]]></Source>
+          <With><![CDATA[<dd><p class=]]></With>
+        </Replace>
         <Replace type="Xhtml">
           <Source>
             <![CDATA[typedef <!--a-->NSUInteger<!--/a--> NSStringEnumerationOptions;
@@ -4324,15 +4366,15 @@ enum]]>
       </Class>
       <Class name="NSURLHandle">
         <Patch>Enumerations[NSURLHandleStatus].BaseType=NSUInteger</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[<dd><p><p class=]]></Source>
+          <With><![CDATA[<dd><p class=]]></With>
+        </Replace>
       </Class>
       <Class name="NSURLProtectionSpace">
         <Patch>Methods[InitWithProxyHostPortTypeRealmAuthenticationMethod].GenerateConstructor=false</Patch>
       </Class>
       <Class name="NSURLProtocol">
-        <Replace type="Html">
-          <Source>:((</Source>
-          <With>:(</With>
-        </Replace>
       </Class>
       <Class name="NSURLRequest">
         <Patch>Methods[RequestWithURL].ReturnType=NSURLRequest</Patch>
@@ -4343,7 +4385,15 @@ enum]]>
       <Class name="NSURLResponse">
       </Class>
       <Class name="NSUserDefaults">
-      </Class>
+         <Replace type="Html">
+          <Source><![CDATA[)<pre class=]]></Source>
+          <With><![CDATA[)</p><pre class=]]></With>
+        </Replace>
+        <Replace type="Html">
+          <Source><![CDATA[<dd><p><p class=]]></Source>
+          <With><![CDATA[<dd><p class=]]></With>
+        </Replace>
+     </Class>
       <Class name="NSValue">
         <Patch>Methods[ValueWithObjCType].Parameters[type].Type=String</Patch>
         <Patch>Methods[ValueWithBytesObjCType].Parameters[type].Type=String</Patch>
@@ -4701,6 +4751,16 @@ enum]]>
         <Patch>Enumerations[CGLContextParameter].BaseType=int</Patch>
         <Patch>Enumerations[CGLGlobalOption].BaseType=int</Patch>
         <Patch>Enumerations[CGLRendererProperty].BaseType=int</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[)<pre class=]]></Source>
+          <With><![CDATA[)</p><pre class=]]></With>
+        </Replace>
+        <Replace type="Html">
+          <Source><![CDATA[<dd><p><p class=]]></Source>
+          <With><![CDATA[<dd><p class=]]></With>
+        </Replace>
+      </Type>
+	  <Type name="CGL.Deprecated">
       </Type>
     </Types>
   </Framework>
@@ -5191,7 +5251,12 @@ enum]]>
           <With><![CDATA[(CVTimeStamp) Marshal.PtrToStructure(__local2, typeof(CVTimeStamp));]]></With>
         </Replace>
       </Type>
-      <Type name="CVImageBuffer"></Type>
+      <Type name="CVImageBuffer">
+        <Replace type="Html">
+          <Source><![CDATA[<dd><p><p class=]]></Source>
+          <With><![CDATA[<dd><p class=]]></With>
+        </Replace>
+	  </Type>
       <Type name="CVOpenGLBuffer">
         <Patch>Functions[CVOpenGLBufferCreate].Parameters[bufferOut].Type=IntPtr</Patch>
         <Patch>Functions[CVOpenGLBufferGetTypeID].Generate=false</Patch>

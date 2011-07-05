@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Mappings>
   <Mapping type="AEEventClass">uint</Mapping>
   <Mapping type="AEEventID">uint</Mapping>
@@ -240,19 +240,35 @@
   <Mapping type="unsigned long">NSUInteger</Mapping>
   <Mapping type="unsigned short">ushort</Mapping>
   <Mapping type="unsigned">uint</Mapping>
+  <Mapping type="void (^)()"><![CDATA[Action]]></Mapping>
+  <Mapping type="void (^)(BOOL finished)"><![CDATA[Action<bool>]]></Mapping>
+  <Mapping type="void (^)(CGFloat gestureAmount, NSEventPhase phase, BOOL isComplete, BOOL *stop)"><![CDATA[Action<CGFloat, NSEventPhase, bool, IntPtr>]]></Mapping>
+  <Mapping type="void (^)(CMSampleBufferRef imageDataSampleBuffer, NSError *error)"><![CDATA[Action<IntPtr, NSError>]]></Mapping>
+  <Mapping type="void (^)(CMTime time)"><![CDATA[Action<CMTime>]]></Mapping>
   <Mapping type="void (^)(NSArray *items)"><![CDATA[block:Action<NSArray>]]></Mapping>
   <Mapping type="void (^)(NSDictionary *attrs, NSRange range,  BOOL *stop)"><![CDATA[block:Action<NSDictionary, NSRange, IntPtr>]]></Mapping>
   <Mapping type="void (^)(NSDictionary *attrs, NSRange range, BOOL *stop)"><![CDATA[block:Action<NSDictionary, NSRange, IntPtr>]]></Mapping>
   <Mapping type="void (^)(NSDictionary *newURLs, NSError *error)"><![CDATA[block:Action<NSDictionary, NSError>]]></Mapping>
+  <Mapping type="void (^)(NSDraggingItem *draggingItem, NSInteger idx, BOOL *stop)"><![CDATA[Action<NSDraggingItem, NSInteger, IntPtr>]]></Mapping>
+  <Mapping type="void (^)(NSError *errorOrNil)"><![CDATA[Action<NSError>]]></Mapping>
   <Mapping type="void (^)(NSEvent*)"><![CDATA[block:Action<NSEvent>]]></Mapping>
   <Mapping type="void (^)(NSInteger result)"><![CDATA[block:Action<NSInteger>]]></Mapping>
   <Mapping type="void (^)(NSInteger sequenceNumber,  NSArray *results, NSOrthography *orthography, NSInteger wordCount)"><![CDATA[block:Action<NSInteger, NSArray, NSOrthography, int>]]></Mapping>
   <Mapping type="void (^)(NSInteger sequenceNumber, NSArray *results, NSOrthography *orthography, NSInteger wordCount)"><![CDATA[block:Action<NSInteger, NSArray, NSOrthography, int>]]></Mapping>
   <Mapping type="void (^)(NSNotification *)"><![CDATA[block:Action<NSNotification>]]></Mapping>
+  <Mapping type="void (^)(NSString *acceptedString)"><![CDATA[Action<NSString>]]></Mapping>
   <Mapping type="void (^)(NSString *line, BOOL *stop)"><![CDATA[block:Action<NSString, IntPtr>]]></Mapping>
   <Mapping type="void (^)(NSString *substring, NSRange  substringRange, NSRange enclosingRange, BOOL *stop)"><![CDATA[block:Action<NSString, NSRange, NSRange, IntPtr>]]></Mapping>
   <Mapping type="void (^)(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop)"><![CDATA[block:Action<NSString, NSRange, NSRange, IntPtr>]]></Mapping>
+  <Mapping type="void (^)(NSString *tag, NSRange tokenRange, NSRange sentenceRange, BOOL *stop)"><![CDATA[Action<NSString, NSRange, NSRange, IntPtr>]]></Mapping>
+  <Mapping type="void (^)(NSTableRowView *rowView, NSInteger row)"><![CDATA[Action<NSTableRowView, NSInteger>]]></Mapping>
+  <Mapping type="void (^)(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop)"><![CDATA[Action<NSTextCheckingResult, NSMatchingFlags, IntPtr>]]></Mapping>
   <Mapping type="void (^)(NSUInteger idx, BOOL *stop)"><![CDATA[block:Action<NSUInteger, IntPtr>]]></Mapping>
+  <Mapping type="void (^)(NSURL *newReadingURL, NSURL *newWritingURL)"><![CDATA[Action<NSURL, NSURL>]]></Mapping>
+  <Mapping type="void (^)(NSURL *newURL)"><![CDATA[Action<NSURL>]]></Mapping>
+  <Mapping type="void (^)(NSURL *newURL1, NSURL *newURL2)"><![CDATA[Action<NSURL, NSURL>]]></Mapping>
+  <Mapping type="void (^)(NSURLResponse*, NSData*, NSError*)"><![CDATA[Action<NSURLResponse, NSData, NSError>]]></Mapping>
+  <Mapping type="void (^)(NSWindow *, NSError *)"><![CDATA[Action<NSWindow, NSError>]]></Mapping>
   <Mapping type="void (^)(id key, id obj, BOOL *stop)"><![CDATA[block:Action<Id, Id, IntPtr>]]></Mapping>
   <Mapping type="void (^)(id obj, BOOL *stop)"><![CDATA[block:Action<Id, IntPtr>]]></Mapping>
   <Mapping type="void (^)(id obj, NSUInteger idx, BOOL *stop)"><![CDATA[block:Action<Id, NSUInteger, IntPtr>]]></Mapping>
