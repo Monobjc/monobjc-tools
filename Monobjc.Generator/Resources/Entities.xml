@@ -617,7 +617,7 @@
         <Patch>Functions[NSUpdateDynamicServices].Generate=false</Patch>
         <Patch>Functions[NSWindowList].Generate=false</Patch>
         <Patch>Functions[NSWindowListForContext].Generate=false</Patch>
-		
+    
         <Replace type="Html">
           <Source><![CDATA[)
 <pre class=]]></Source>
@@ -3330,8 +3330,8 @@ enum {]]>
         <Patch>Methods[ArrayWithObject].ReturnType=NSArray</Patch>
         <Patch>Methods[ArrayWithObject].CopyInDescendants=true</Patch>
         <Patch>Methods[ArrayWithObjects].Parameters[firstObj,...].Generate=false</Patch>
-        <Patch>Methods[ArrayWithObjects].Parameters[firstObj]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>firstObj</Name><Type>Id</Type></Parameter>]]></Patch>
-        <Patch>Methods[ArrayWithObjects].Parameters[values]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
+        <Patch>Methods[ArrayWithObjects].Parameters[firstObj]=<![CDATA[<Parameter Generate="true"><Summary><Line>MISSING</Line></Summary><Name>firstObj</Name><Type>Id</Type></Parameter>]]></Patch>
+        <Patch>Methods[ArrayWithObjects].Parameters[values]=<![CDATA[<Parameter Generate="true"><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
         <Patch>Methods[ArrayWithObjects].ReturnType=NSArray</Patch>
         <Patch>Methods[ArrayWithObjects].CopyInDescendants=true</Patch>
         <Patch>Methods[ArrayWithObjectsCount].ReturnType=NSArray</Patch>
@@ -3341,7 +3341,7 @@ enum {]]>
         <Patch>Methods[InitWithObjects].Parameters[firstObj]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>firstObj</Name><Type>Id</Type></Parameter>]]></Patch>
         <Patch>Methods[InitWithObjects].Parameters[values]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
         <Patch>Methods[InitWithObjectsCount].Generate=false</Patch>
-        <Patch>Methods[GetObjectsRange].Parameters[aBuffer].Type=IntPtr</Patch>
+        <Patch>Methods[GetObjectsRange].Generate=false</Patch>
         <Patch>Properties[Array].Type=NSArray</Patch>
         <Patch>Properties[Array].Getter.ReturnType=NSArray</Patch>
         <Patch>Properties[Array].CopyInDescendants=true</Patch>
@@ -3393,8 +3393,20 @@ enum {]]>
         <!-- TODO: Move to constant -->
         <Patch>Enumerations[NSDateComponents_wrapping_behavior].Generate=false</Patch>
         <Replace type="Xhtml">
-          <Source><![CDATA[<a href="#//apple_ref/doc/c_ref/NSQuarterCalendarUnit">NSQuarterCalendarUnit</a>]]></Source>
-          <With><![CDATA[<a href="#//apple_ref/doc/c_ref/NSQuarterCalendarUnit">, NSQuarterCalendarUnit</a>]]></With>
+          <Source><![CDATA[<a href="#//apple_ref/doc/c_ref/NSCalendarCalendarUnit">NSCalendarCalendarUnit</a>]]></Source>
+          <With><![CDATA[<a href="#//apple_ref/doc/c_ref/NSCalendarCalendarUnit">, NSCalendarCalendarUnit</a>]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>= kCFCalendarUnitYearForWeekOfYear</Source>
+          <With><![CDATA[= (1U << 14)]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>= kCFCalendarUnitWeekOfYear</Source>
+          <With><![CDATA[= (1U << 13)]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>= kCFCalendarUnitWeekOfMonth</Source>
+          <With><![CDATA[= (1U << 12)]]></With>
         </Replace>
         <Replace type="Generated">
           <Source>= kCFCalendarUnitQuarter</Source>
@@ -3519,39 +3531,15 @@ enum {]]>
         <Patch>Properties[Data].Type=NSData</Patch>
         <Patch>Properties[Data].Getter.ReturnType=NSData</Patch>
         <Patch>Properties[Data].CopyInDescendants=true</Patch>
-        <Replace type="Xhtml">
-          <Source>
-            <![CDATA[&amp;lt;&amp;lt; 1
-   <a href="#//apple_ref/doc/c_ref/NSMappedRead">NSMappedRead</a>]]>
-          </Source>
-          <With>
-            <![CDATA[&amp;lt;&amp;lt; 1
-   <a href="#//apple_ref/doc/c_ref/NSMappedRead">, NSMappedRead</a>]]>
-          </With>
-        </Replace>
-        <Replace type="Xhtml">
-          <Source>
-            <![CDATA[<a href="#//apple_ref/doc/c_ref/NSAtomicWrite">NSAtomicWrite</a> = <a href="#//apple_ref/doc/c_ref/NSDataWritingAtomic">NSDataWritingAtomic</a>]]>
-          </Source>
-          <With>
-            <![CDATA[<a href="#//apple_ref/doc/c_ref/NSAtomicWrite">, NSAtomicWrite</a> = <a href="#//apple_ref/doc/c_ref/NSDataWritingAtomic">NSDataWritingAtomic</a>]]>
-          </With>
-        </Replace>
+        <Patch>Enumerations[NSDataReadingOptions].Values[NSDataReadingMapped]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Deprecated name for NSDataReadingMappedIfSafe.</Line></Summary><MinAvailability>Mac OS X v10.6</MinAvailability><Name>NSDataReadingMapped</Name><Value>1U &lt;&lt; 0</Value></EnumerationValue>]]></Patch>
+        <Patch>Enumerations[NSDataReadingOptions].Values[NSMappedRead]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Deprecated name for NSDataReadingMapped.</Line></Summary><MinAvailability>Mac OS X v10.4</MinAvailability><Name>NSMappedRead</Name><Value>1U &lt;&lt; 0</Value></EnumerationValue>]]></Patch>
+        <Patch>Enumerations[NSDataReadingOptions].Values[NSUncachedRead]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Deprecated name for NSDataReadingUncached.</Line></Summary><MinAvailability>Mac OS X v10.4</MinAvailability><Name>NSUncachedRead</Name><Value>1U &lt;&lt; 1</Value></EnumerationValue>]]></Patch>
+        <Patch>Enumerations[Legacy_Reading_Options].Generate=false</Patch>
+        <Patch>Enumerations[NSDataReadingOptions].Values[NSUncachedRead]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Deprecated name for NSDataWritingAtomic.</Line></Summary><MinAvailability>Mac OS X v10.4</MinAvailability><Name>NSAtomicWrite</Name><Value>1U &lt;&lt; 0</Value></EnumerationValue>]]></Patch>
+        <Patch>Enumerations[Legacy_Writing_Options].Generate=false</Patch>
         <Replace type="Generated">
           <Source><![CDATA[1UL <<]]></Source>
           <With><![CDATA[1U <<]]></With>
-        </Replace>
-        <Replace type="Generated">
-          <Source><![CDATA[NSDataReadingMapped,]]></Source>
-          <With><![CDATA[1U << 0,]]></With>
-        </Replace>
-        <Replace type="Generated">
-          <Source><![CDATA[NSDataReadingUncached,]]></Source>
-          <With><![CDATA[1U << 1,]]></With>
-        </Replace>
-        <Replace type="Generated">
-          <Source><![CDATA[NSDataWritingAtomic,]]></Source>
-          <With><![CDATA[1U << 0,]]></With>
         </Replace>
       </Class>
       <Class name="NSDataDetector">
@@ -3684,6 +3672,8 @@ enum {]]>
         <Patch>Properties[FileHandleWithStandardInput].Getter.ReturnType=NSFileHandle</Patch>
         <Patch>Properties[FileHandleWithStandardOutput].Type=NSFileHandle</Patch>
         <Patch>Properties[FileHandleWithStandardOutput].Getter.ReturnType=NSFileHandle</Patch>
+        <Patch>Properties[ReadabilityHandler].Type=IntPtr</Patch>
+        <Patch>Properties[WriteabilityHandler].Type=IntPtr</Patch>
       </Class>
       <Class name="NSFileManager">
         <Patch>Methods[FileExistsAtPathIsDirectory].Parameters[isDirectory].Type=bool</Patch>
@@ -3701,6 +3691,8 @@ enum {]]>
         </Replace>
       </Class>
       <Class name="NSFileCoordinator">
+        <Patch>Methods[PrepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor].Parameters[batchAccessor].Type=Action</Patch>
+        <Patch>Methods[PrepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor].Parameters[batchAccessor].IsBlock=true</Patch>
       </Class>
       <Class name="NSFileSecurity">
       </Class>
@@ -3771,6 +3763,10 @@ enum {]]>
       <Class name="NSInvocationOperation">
       </Class>
       <Class name="NSJSONSerialization">
+        <Replace type="Generated">
+          <Source><![CDATA[1UL <<]]></Source>
+          <With><![CDATA[1U <<]]></With>
+        </Replace>
       </Class>
       <Class name="NSKeyedArchiver">
         <Patch>Methods[EncodeBytesLengthForKey].Parameters[bytesp].Type=IntPtr</Patch>
@@ -3859,13 +3855,15 @@ enum {]]>
       <Class name="NSMutableIndexSet">
       </Class>
       <Class name="NSMutableOrderedSet">
+        <Patch>Methods[AddObjectsCount].Generate=false</Patch>
+        <Patch>Methods[ReplaceObjectsInRangeWithObjectsCount].Generate=false</Patch>
       </Class>
       <Class name="NSMutableSet">
       </Class>
       <Class name="NSMutableString">
         <Patch>Methods[AppendFormat].Parameters[format...].Generate=false</Patch>
-        <Patch>Methods[AppendFormat].Parameters[format]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary /><Name>format</Name><Type>NSString</Type></Parameter>]]></Patch>
-        <Patch>Methods[AppendFormat].Parameters[values]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
+        <Patch>Methods[AppendFormat].Parameters[format]=<![CDATA[<Parameter Generate="true"><Summary /><Name>format</Name><Type>NSString</Type></Parameter>]]></Patch>
+        <Patch>Methods[AppendFormat].Parameters[values]=<![CDATA[<Parameter Generate="true"><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
       </Class>
       <Class name="NSMutableURLRequest">
       </Class>
@@ -3957,6 +3955,19 @@ enum {]]>
         <Patch>Enumerations[Concurrent_Operation_Constants].Generate=false</Patch>
       </Class>
       <Class name="NSOrderedSet">
+        <Patch>Methods[GetObjectsRange].Generate=false</Patch>
+        <Patch>Methods[InitWithObjects].Parameters[firstObj,...].Generate=false</Patch>
+        <Patch>Methods[InitWithObjects].Parameters[firstObj]=<![CDATA[<Parameter Generate="true"><Summary /><Name>firstObj</Name><Type>Id</Type></Parameter>]]></Patch>
+        <Patch>Methods[InitWithObjects].Parameters[values]=<![CDATA[<Parameter Generate="true"><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
+        <Patch>Methods[InitWithObjectsCount].Generate=false</Patch>
+        <Patch>Methods[OrderedSetWithObjects].Parameters[firstObj,...].Generate=false</Patch>
+        <Patch>Methods[OrderedSetWithObjects].Parameters[firstObj]=<![CDATA[<Parameter Generate="true"><Summary><Line>MISSING</Line></Summary><Name>firstObj</Name><Type>Id</Type></Parameter>]]></Patch>
+        <Patch>Methods[OrderedSetWithObjects].Parameters[values]=<![CDATA[<Parameter Generate="true"><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
+        <Patch>Methods[OrderedSetWithObjects].ReturnType=NSOrderedSet</Patch>
+        <Patch>Methods[OrderedSetWithObjects].CopyInDescendants=true</Patch>
+        <Patch>Methods[OrderedSetWithObjectsCount].ReturnType=NSOrderedSet</Patch>
+        <Patch>Methods[OrderedSetWithObjectsCount].Generate=false</Patch>
+        <Patch>Methods[OrderedSetWithObjectsCount].CopyInDescendants=true</Patch>
       </Class>
       <Class name="NSOrthography">
         <Patch>Methods[OrthographyWithDominantScriptLanguageMap].ReturnType=NSOrthography</Patch>
@@ -4135,16 +4146,16 @@ enum {]]>
         <Patch>Methods[SetWithObject].CopyInDescendants=true</Patch>
         <Patch>Methods[SetWithObjects].ReturnType=NSSet</Patch>
         <Patch>Methods[SetWithObjects].Parameters[firstObj...].Generate=false</Patch>
-        <Patch>Methods[SetWithObjects].Parameters[firstObj]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary /><Name>firstObj</Name><Type>Id</Type></Parameter>]]></Patch>
-        <Patch>Methods[SetWithObjects].Parameters[values]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
+        <Patch>Methods[SetWithObjects].Parameters[firstObj]=<![CDATA[<Parameter Generate="true"><Summary /><Name>firstObj</Name><Type>Id</Type></Parameter>]]></Patch>
+        <Patch>Methods[SetWithObjects].Parameters[values]=<![CDATA[<Parameter Generate="true"><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
         <Patch>Methods[SetWithObjects].CopyInDescendants=true</Patch>
         <Patch>Methods[SetWithObjectsCount].ReturnType=NSSet</Patch>
         <Patch>Methods[SetWithObjectsCount].Generate=false</Patch>
         <Patch>Methods[SetWithSet].ReturnType=NSSet</Patch>
         <Patch>Methods[SetWithSet].CopyInDescendants=true</Patch>
         <Patch>Methods[InitWithObjects].Parameters[firstObj...].Generate=false</Patch>
-        <Patch>Methods[InitWithObjects].Parameters[firstObj]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary /><Name>firstObj</Name><Type>Id</Type></Parameter>]]></Patch>
-        <Patch>Methods[InitWithObjects].Parameters[values]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
+        <Patch>Methods[InitWithObjects].Parameters[firstObj]=<![CDATA[<Parameter Generate="true"><Summary /><Name>firstObj</Name><Type>Id</Type></Parameter>]]></Patch>
+        <Patch>Methods[InitWithObjects].Parameters[values]=<![CDATA[<Parameter Generate="true"><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
         <Patch>Methods[InitWithObjectsCount].Generate=false</Patch>
         <Patch>Properties[Set]=<![CDATA[<Property Generate="true" Static="true"><Summary><Line>Creates and returns an empty set.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>Set</Name><Type>NSSet</Type><Getter Generate="true" Static="true" GenerateConstructor="true"><Summary><Line>Creates and returns an empty set.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>Set</Name><Selector>set</Selector><Signature>+ (id)set</Signature><ReturnType>NSSet</ReturnType><ReturnsDocumentation>A new empty set.</ReturnsDocumentation><Parameters /></Getter></Property>]]></Patch>
         <Patch>Properties[Set].CopyInDescendants=true</Patch>
@@ -4320,6 +4331,8 @@ enum]]>
         <Patch>Methods[TimeZoneWithNameData].ReturnType=NSTimeZone</Patch>
       </Class>
       <Class name="NSUbiquitousKeyValueStore">
+        <Patch>Enumerations[Change_Reason_Values].Name=NSUbiquitousKeyValueStoreChange</Patch>
+        <Patch>Enumerations[NSUbiquitousKeyValueStoreChange].BaseType=int</Patch>
       </Class>
       <Class name="NSUnarchiver">
         <Patch>Methods[ClassNameDecodedForArchiveClassName][Static=True].Generate=false</Patch>
@@ -4442,6 +4455,10 @@ enum]]>
         <Replace type="Generated">
           <Source><![CDATA[(&#nnn;)]]></Source>
           <With><![CDATA[(&amp;#nnn;)]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[1UL <<]]></Source>
+          <With><![CDATA[1U <<]]></With>
         </Replace>
       </Class>
       <Class name="NSXMLParser">
@@ -4760,7 +4777,7 @@ enum]]>
           <With><![CDATA[<dd><p class=]]></With>
         </Replace>
       </Type>
-	  <Type name="CGL.Deprecated">
+    <Type name="CGL.Deprecated">
       </Type>
     </Types>
   </Framework>
@@ -5256,7 +5273,7 @@ enum]]>
           <Source><![CDATA[<dd><p><p class=]]></Source>
           <With><![CDATA[<dd><p class=]]></With>
         </Replace>
-	  </Type>
+    </Type>
       <Type name="CVOpenGLBuffer">
         <Patch>Functions[CVOpenGLBufferCreate].Parameters[bufferOut].Type=IntPtr</Patch>
         <Patch>Functions[CVOpenGLBufferGetTypeID].Generate=false</Patch>
@@ -5699,6 +5716,10 @@ enum
         <Patch>Functions[SecCertificateGetType].Parameters[certificateType].Type=CSSM_CERT_TYPE</Patch>
         <Patch>Functions[SecCertificateGetType].Parameters[certificateType].IsOut=true</Patch>
         <Patch>Functions[SecCertificateGetTypeID].Generate=false</Patch>
+        <Patch>Functions[SecKeyGeneratePair].Parameters[publicKey].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeyGeneratePair].Parameters[publicKey].IsOut=true</Patch>
+        <Patch>Functions[SecKeyGeneratePair].Parameters[privateKey].Type=IntPtr</Patch>
+        <Patch>Functions[SecKeyGeneratePair].Parameters[privateKey].IsOut=true</Patch>
         <Patch>Functions[SecIdentityCopyCertificate].Parameters[certificateRef].Type=IntPtr</Patch>
         <Patch>Functions[SecIdentityCopyCertificate].Parameters[certificateRef].IsOut=true</Patch>
         <Patch>Functions[SecIdentityCopyPreference].Parameters[identity].Type=IntPtr</Patch>

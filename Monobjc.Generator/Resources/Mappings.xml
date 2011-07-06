@@ -277,4 +277,5 @@
   <Mapping type="void *">IntPtr</Mapping>
   <Mapping type="void">void</Mapping>
   <Mapping type="void*">IntPtr</Mapping>
+  <Mapping type="(void (^)(void (^reacquirer)(void)))"><![CDATA[Action<Action>]]></Mapping>
 </Mappings>
