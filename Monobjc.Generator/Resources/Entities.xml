@@ -759,9 +759,9 @@
       </Class>
       <Class name="NSBundle_AppKitAdditions">
         <Patch>AdditionFor=NSBundle</Patch>
-        <!--<Patch>Methods[LoadNibFileExternalNameTableWithZone][Static=True].Generate=false</Patch>-->
+        <Patch>Methods[LoadNibFileExternalNameTableWithZone][Static=True].Generate=false</Patch>
+        <Patch>Methods[LoadNibFileExternalNameTableWithZone][Static=False].Generate=false</Patch>
         <Patch>Methods[LoadNibNamedOwner].Generate=false</Patch>
-        <Patch>Methods[LoadNibFileExternalNameTableWithZone].Generate=false</Patch>
       </Class>
       <Class name="NSButton">
         <Patch>Methods[GetPeriodicDelayInterval].Parameters[delay].Type=float</Patch>
@@ -989,7 +989,7 @@
         <Patch>Properties[GlobalModifierFlags].Type=NSModifierFlag</Patch>
 
         <Patch>Enumerations[NSEventType].BaseType=NSUInteger</Patch>
-        <Patch>Enumerations[Masks_for_event_types].Name=NSEventMask</Patch>
+        <Patch>Enumerations[NSEventMaskFromType].Name=NSEventMask</Patch>
         <Patch>Enumerations[NSEventMask].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSEventMask].Flags=true</Patch>
         <Patch>Enumerations[Modifier_Flags].Name=NSModifierFlag</Patch>
@@ -1735,6 +1735,9 @@ NSString *NSFindPanelCaseInsensitiveSearch;
         <Patch>Methods[NextEventMatchingMask].Parameters[eventMask].Type=NSEventMask</Patch>
         <Patch>Methods[NextEventMatchingMaskUntilDateInModeDequeue].Parameters[eventMask].Type=NSEventMask</Patch>
 
+        <Patch>DelegateMethods[WindowDidDecodeRestorableState].Generate=false</Patch>
+        <Patch>DelegateMethods[WindowWillEncodeRestorableState].Generate=false</Patch>
+
         <Patch>Properties[Animator]=<![CDATA[<Property Generate="true" Static="false"><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>Mac OS X v10.5</MinAvailability><Name>Animator</Name><Type>Id</Type><Getter Generate="true" Static="false" GenerateConstructor="true"><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>Mac OS X v10.5</MinAvailability><Name>Animator</Name><Selector>animator</Selector><Signature>- (id)animator</Signature><ReturnType>Id</ReturnType><ReturnsDocumentation>Returns a proxy object for the receiver that can initiate implied animations in response to property changes.</ReturnsDocumentation><Parameters /></Getter></Property>]]></Patch>
         <Patch>Properties[Animator].Type=NSWindow</Patch>
         <Patch>Properties[Animator].Getter.ReturnType=NSWindow</Patch>
@@ -1772,8 +1775,6 @@ enum {]]>
       </Class>
       <Class name="NSWindowController">
         <Patch>Methods[InitWithWindowNibPathOwner].GenerateConstructor=false</Patch>
-        <Patch>Properties[WindowController].Type=NSWindow</Patch>
-        <Patch>Properties[WindowController].Getter.ReturnType=NSWindow</Patch>
       </Class>
       <Class name="NSWorkspace">
         <Patch>Methods[GetFileSystemInfoForPathIsRemovableIsWritableIsUnmountableDescriptionType].Parameters[removableFlag].Type=bool</Patch>
@@ -2000,11 +2001,12 @@ enum {]]>
       <Protocol name="NSDraggingDestination">
       </Protocol>
       <Protocol name="NSDraggingInfo">
-         <Replace type="Html">
+        <Patch>Enumerations[NSDraggingItemEnumerationOptions].Generate=false</Patch>
+        <Replace type="Html">
           <Source><![CDATA[)<pre class=]]></Source>
           <With><![CDATA[)</p><pre class=]]></With>
         </Replace>
-       <Replace type="Generated">
+        <Replace type="Generated">
           <Source>NSUIntegerMax</Source>
           <With>UInt32.MaxValue</With>
         </Replace>
@@ -2151,6 +2153,8 @@ enum {]]>
         <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
       <Protocol name="NSTextFinderClient">
+        <Patch>Enumerations[StringAtIndexEffectiveRangeEndsWithSearchBoundary].Parameters[outFlag].Type=bool</Patch>
+        <Patch>Enumerations[StringAtIndexEffectiveRangeEndsWithSearchBoundary].Parameters[outFlag].IsOut=true</Patch>
       </Protocol>
       <Protocol name="NSTextFinderBarContainer">
       </Protocol>
@@ -2582,6 +2586,7 @@ enum {]]>
     <Types>
       <Type name="CoreLocationFramework.Constants">
         <Patch>Enumerations[CLError].Generate=false</Patch>
+        <Patch>Enumerations[CLDeviceOrientation].BaseType=int</Patch>
       </Type>
     </Types>
     <Classes>
@@ -2596,6 +2601,8 @@ enum {]]>
         <Patch>Enumerations[CLError].BaseType=int</Patch>
         <Patch>Constants[CLLocationDistance].Generate=false</Patch>
       </Class>
+      <Class name="CLRegion">
+      </Class>
     </Classes>
     <Protocols>
       <Protocol name="CLLocationManagerDelegate">
@@ -2603,6 +2610,10 @@ enum {]]>
         <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
     </Protocols>
+  <Enumerations>
+    <Enumeration name="CLAuthorizationStatus">
+    </Enumeration>
+  </Enumerations>
   </Framework>
   <Framework name="CoreMedia" usings="Foundation,AppKit,ApplicationServices" assembly="Monobjc.CoreMedia">
     <Types>
@@ -2650,16 +2661,38 @@ enum {]]>
       <Type name="CoreWLANFramework.Constants">
       </Type>
       <Type name="CoreWLANFramework.Types">
+        <Patch>Enumerations[CWChannelBand].BaseType=NSInteger</Patch>
+        <Patch>Enumerations[CWChannelWidth].BaseType=NSInteger</Patch>
+        <Patch>Enumerations[CWCipherKeyFlags].BaseType=NSUInteger</Patch>
+        <Patch>Enumerations[CWErr].BaseType=NSInteger</Patch>
+        <Patch>Enumerations[CWIBSSModeSecurity].BaseType=NSInteger</Patch>
+        <Patch>Enumerations[CWInterfaceMode].BaseType=NSInteger</Patch>
+        <Patch>Enumerations[CWPHYMode].BaseType=NSInteger</Patch>
+        <Patch>Enumerations[CWSecurity].BaseType=NSInteger</Patch>
+        <Replace type="Generated">
+          <Source><![CDATA[1UL <<]]></Source>
+          <With><![CDATA[1U <<]]></With>
+        </Replace>
       </Type>
       <Type name="CoreWLANFramework.Util">
+        <Patch>Functions[CWKeychainCopyEAPIdentity].Parameters[identity].Type=IntPtr</Patch>
+        <Patch>Functions[CWKeychainCopyEAPIdentity].Parameters[identity].IsOut=true</Patch>
+        <Patch>Functions[CWKeychainCopyEAPIdentityList].Parameters[list].Type=NSArray</Patch>
+        <Patch>Functions[CWKeychainCopyEAPIdentityList].Parameters[list].IsOut=true</Patch>
+        <Patch>Functions[CWKeychainCopyEAPUsernameAndPassword].Parameters[username].Type=NSString</Patch>
+        <Patch>Functions[CWKeychainCopyEAPUsernameAndPassword].Parameters[username].IsOut=true</Patch>
+        <Patch>Functions[CWKeychainCopyEAPUsernameAndPassword].Parameters[password].Type=NSString</Patch>
+        <Patch>Functions[CWKeychainCopyEAPUsernameAndPassword].Parameters[password].IsOut=true</Patch>
+        <Patch>Functions[CWKeychainCopyPassword].Parameters[password].Type=NSString</Patch>
+        <Patch>Functions[CWKeychainCopyPassword].Parameters[password].IsOut=true</Patch>
       </Type>
     </Types>
     <Classes>
       <Class name="CW8021XProfile">
-        <Patch>Methods[Init].Generate=false</Patch>
       </Class>
       <Class name="CW8021XProfile.Deprecated">
         <Patch>AdditionFor=CW8021XProfile</Patch>
+        <Patch>Methods[Init].Generate=false</Patch>
       </Class>
       <Class name="CWChannel">
       </Class>
@@ -2685,6 +2718,7 @@ enum {]]>
       </Class>
       <Class name="CWWirelessProfile.Deprecated">
         <Patch>AdditionFor=CWWirelessProfile</Patch>
+        <Patch>Properties[AlwaysPromptForPassword].Type=bool</Patch>
       </Class>
     </Classes>
   </Framework>
@@ -4768,6 +4802,7 @@ enum]]>
         <Patch>Enumerations[CGLContextParameter].BaseType=int</Patch>
         <Patch>Enumerations[CGLGlobalOption].BaseType=int</Patch>
         <Patch>Enumerations[CGLRendererProperty].BaseType=int</Patch>
+        <Patch>Enumerations[CGLOpenGLProfile].BaseType=int</Patch>
         <Replace type="Html">
           <Source><![CDATA[)<pre class=]]></Source>
           <With><![CDATA[)</p><pre class=]]></With>
@@ -4777,7 +4812,21 @@ enum]]>
           <With><![CDATA[<dd><p class=]]></With>
         </Replace>
       </Type>
-    <Type name="CGL.Deprecated">
+      <Type name="CGL.Deprecated">
+        <Patch>Functions[CGLCreatePBuffer].Parameters[pbuffer].Type=IntPtr</Patch>
+        <Patch>Functions[CGLDescribePBuffer].Parameters[width].Type=IntPtr</Patch>
+        <Patch>Functions[CGLDescribePBuffer].Parameters[height].Type=IntPtr</Patch>
+        <Patch>Functions[CGLDescribePBuffer].Parameters[target].Type=IntPtr</Patch>
+        <Patch>Functions[CGLDescribePBuffer].Parameters[internalFormat].Type=IntPtr</Patch>
+        <Patch>Functions[CGLDescribePBuffer].Parameters[mipmap].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetOffScreen].Parameters[width].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetOffScreen].Parameters[height].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetOffScreen].Parameters[rowbytes].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetOffScreen].Parameters[baseaddr].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetPBuffer].Parameters[pbuffer].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetPBuffer].Parameters[face].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetPBuffer].Parameters[level].Type=IntPtr</Patch>
+        <Patch>Functions[CGLGetPBuffer].Parameters[screen].Type=IntPtr</Patch>
       </Type>
     </Types>
   </Framework>
@@ -5630,7 +5679,7 @@ enum
       </Protocol>
     </Protocols>
   </Framework>
-  <Framework name="ScriptingBridge" usings="Foundation,AppKit,ApplicationServices" assembly="Monobjc.ScriptingBridge">
+  <Framework name="ScriptingBridge" usings="Foundation,ApplicationServices" assembly="Monobjc.ScriptingBridge">
     <Classes>
       <Class name="SBApplication">
         <Patch>Methods[ApplicationWithBundleIdentifier].ReturnType=SBApplication</Patch>

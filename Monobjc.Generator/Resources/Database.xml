@@ -1629,6 +1629,12 @@
   <Entry ns="CoreLocation" nature="C" name="CLLocationManager" style="Cocoa" file="CLLocationManager">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html</url>
   </Entry>
+  <Entry ns="CoreLocation" nature="C" name="CLRegion" style="Cocoa" file="CLRegion">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="CoreLocation" nature="E" name="CLAuthorizationStatus" style="Cocoa" file="CLAuthorizationStatus">
+    <url>N/A</url>
+  </Entry>
   <Entry ns="CoreLocation" nature="P" name="CLLocationManagerDelegate" style="Cocoa" file="CLLocationManagerDelegate">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/CLLocationManagerDelegate/CLLocationManagerDelegate.html</url>
   </Entry>
