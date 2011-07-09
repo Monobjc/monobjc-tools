@@ -8,6 +8,8 @@
       <Type name="AddressBookFramework.Constants">
         <Patch>Enumerations[_ABPropertyType].Name=ABPropertyType</Patch>
         <Patch>Enumerations[ABPropertyType].BaseType=CFIndex</Patch>
+        <Patch>Enumerations[Error_Constants].Name=ABErrorCodes</Patch>
+        <Patch>Enumerations[ABErrorCodes].BaseType=int</Patch>
         <Replace type="Html">
           <Source><![CDATA[<dd><p><p class=]]></Source>
           <With><![CDATA[<dd><p class=]]></With>
@@ -15,6 +17,10 @@
         <Replace type="Generated">
           <Source><![CDATA[kABMultiValueMask]]></Source>
           <With><![CDATA[0x100]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[<a href="#//apple_ref/doc/c_ref/kABMultiDateComponentsProperty">kABMultiDateComponentsProperty</a>]]></Source>
+          <With><![CDATA[<a href="#//apple_ref/doc/c_ref/kABMultiDateComponentsProperty">,kABMultiDateComponentsProperty</a>]]></With>
         </Replace>
       </Type>
       <Type name="AddressBookFramework.Functions">
@@ -387,6 +393,10 @@
         <Patch>Functions[CTFontCreateWithPlatformFont].Parameters[matrix].Type=CGAffineTransform</Patch>
         <Patch>Functions[CTFontCreateWithPlatformFont].Parameters[matrix].IsOut=true</Patch>
         <Patch>Functions[CTFontCreateWithQuickdrawInstance].Generate=false</Patch>
+        <Patch>Functions[CTFontDrawGlyphs].Parameters[glyphs[]].Name=glyphs</Patch>
+        <Patch>Functions[CTFontDrawGlyphs].Parameters[glyphs].Type=IntPtr</Patch>
+        <Patch>Functions[CTFontDrawGlyphs].Parameters[positions[]].Name=positions</Patch>
+        <Patch>Functions[CTFontDrawGlyphs].Parameters[positions].Type=IntPtr</Patch>
         <Patch>Functions[CTFontGetAdvancesForGlyphs].Parameters[glyphs[]].Name=glyphs</Patch>
         <Patch>Functions[CTFontGetAdvancesForGlyphs].Parameters[glyphs].Type=IntPtr</Patch>
         <Patch>Functions[CTFontGetAdvancesForGlyphs].Parameters[advances[]].Name=advances</Patch>
@@ -399,6 +409,7 @@
         <Patch>Functions[CTFontGetGlyphsForCharacters].Parameters[characters].Type=IntPtr</Patch>
         <Patch>Functions[CTFontGetGlyphsForCharacters].Parameters[glyphs[]].Name=glyphs</Patch>
         <Patch>Functions[CTFontGetGlyphsForCharacters].Parameters[glyphs].Type=IntPtr</Patch>
+        <Patch>Functions[CTFontGetLigatureCaretPositions].Generate=false</Patch>
         <Patch>Functions[CTFontGetPlatformFont].Parameters[attributes].Type=IntPtr</Patch>
         <Patch>Functions[CTFontGetPlatformFont].Parameters[attributes].IsOut=true</Patch>
         <Patch>Functions[CTFontGetStringEncoding].ReturnType=NSStringEncoding</Patch>
@@ -451,6 +462,8 @@
         <Patch>Functions[CTFrameGetLineOrigins].Parameters[origins[]].Name=origins</Patch>
         <Patch>Functions[CTFrameGetLineOrigins].Parameters[origins].Type=IntPtr</Patch>
         <Patch>Functions[CTFrameGetTypeID].Generate=false</Patch>
+        <Patch>Enumerations[CTFramePathFillRule](0).Generate=false</Patch>
+    
       </Type>
       <Type name="CTFramesetter">
         <Patch>Functions[CTFramesetterGetTypeID].Generate=false</Patch>
@@ -664,6 +677,8 @@
         <Patch>Constants[NSApp].Generate=false</Patch>
         <Patch>Enumerations[Return_values_for_modal_operations].Name=NSRunResponse</Patch>
         <Patch>Enumerations[NSRunResponse].BaseType=NSInteger</Patch>
+        <Patch>Enumerations[Notification_Type_Constants].Name=NSRemoteNotificationType</Patch>
+        <Patch>Enumerations[NSRemoteNotificationType].BaseType=NSUInteger</Patch>
         <!-- TODO: Move to a NSUInteger constant -->
         <Patch>Enumerations[NSUpdateWindowsRunLoopOrdering].Generate=false</Patch>
       </Class>
@@ -759,8 +774,8 @@
       </Class>
       <Class name="NSBundle_AppKitAdditions">
         <Patch>AdditionFor=NSBundle</Patch>
-        <Patch>Methods[LoadNibFileExternalNameTableWithZone][Static=True].Generate=false</Patch>
-        <Patch>Methods[LoadNibFileExternalNameTableWithZone][Static=False].Generate=false</Patch>
+        <Patch>Methods[LoadNibFileExternalNameTableWithZone]{Static=True}.Generate=false</Patch>
+        <Patch>Methods[LoadNibFileExternalNameTableWithZone]{Static=False}.Generate=false</Patch>
         <Patch>Methods[LoadNibNamedOwner].Generate=false</Patch>
       </Class>
       <Class name="NSButton">
@@ -776,7 +791,7 @@
         <Patch>Methods[GetPeriodicDelayInterval].Parameters[interval].Type=float</Patch>
         <Patch>Methods[GetPeriodicDelayInterval].Parameters[interval].IsOut=true</Patch>
         <Patch>Properties[HighlightsBy].Type=NSCellAttribute</Patch>
-        <Patch>Properties[KeyEquivalentModifierMask].Type=NSModifierFlag</Patch>
+        <Patch>Properties[KeyEquivalentModifierMask].Type=NSModifierFlags</Patch>
         <Patch>Enumerations[Bezel_Styles].Name=NSBezelStyle</Patch>
         <Patch>Enumerations[NSBezelStyle].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[Button_Types].Name=NSButtonType</Patch>
@@ -942,7 +957,7 @@
       <Class name="NSController">
       </Class>
       <Class name="NSCursor">
-        <Patch>Methods[Pop][Static=True].Generate=false</Patch>
+        <Patch>Methods[Pop]{Static=True}.Generate=false</Patch>
       </Class>
       <Class name="NSCustomImageRep">
         <Patch>Properties[Delegate].Type=Id</Patch>
@@ -967,8 +982,15 @@
       <Class name="NSDocumentController">
       </Class>
       <Class name="NSDraggingSession">
+        <Patch>Enumerations[NSDraggingItemEnumerationOptions].Values[NSDraggingItemEnumerationConcurrent].Value=<![CDATA[1U << 0]]></Patch>
+        <Replace type="Generated">
+          <Source><![CDATA[1UL <<]]></Source>
+          <With><![CDATA[1U <<]]></With>
+        </Replace>
       </Class>
       <Class name="NSDraggingItem">
+      <!-- Replace by a block -->
+        <Patch>Properties[ImageComponentsProvider].Type=IntPtr</Patch>
       </Class>
       <Class name="NSDraggingImageComponent">
       </Class>
@@ -984,17 +1006,17 @@
 
         <Patch>Properties[EventRef].Type=IntPtr</Patch>
         <Patch>Properties[EventRef].Getter.ReturnType=IntPtr</Patch>
-        <Patch>Properties[ModifierFlags][Static=True].Name=GlobalModifierFlags</Patch>
-        <Patch>Properties[ModifierFlags].Type=NSModifierFlag</Patch>
-        <Patch>Properties[GlobalModifierFlags].Type=NSModifierFlag</Patch>
+        <Patch>Properties[ModifierFlags]{Static=True}.Name=GlobalModifierFlags</Patch>
+        <Patch>Properties[ModifierFlags].Type=NSModifierFlags</Patch>
+        <Patch>Properties[GlobalModifierFlags].Type=NSModifierFlags</Patch>
 
         <Patch>Enumerations[NSEventType].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSEventMaskFromType].Name=NSEventMask</Patch>
         <Patch>Enumerations[NSEventMask].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSEventMask].Flags=true</Patch>
-        <Patch>Enumerations[Modifier_Flags].Name=NSModifierFlag</Patch>
-        <Patch>Enumerations[NSModifierFlag].BaseType=NSUInteger</Patch>
-        <Patch>Enumerations[NSModifierFlag].Flags=true</Patch>
+        <Patch>Enumerations[Modifier_Flags].Name=NSModifierFlags</Patch>
+        <Patch>Enumerations[NSModifierFlags].BaseType=NSUInteger</Patch>
+        <Patch>Enumerations[NSModifierFlags].Flags=true</Patch>
         <Patch>Enumerations[Mouse_event_subtypes].Name=NSMouseEventSubType</Patch>
         <Patch>Enumerations[NSMouseEventSubType].BaseType=short</Patch>
         <Patch>Enumerations[Tablet_event_masks].Name=TabletEventMask</Patch>
@@ -1010,6 +1032,10 @@
         <!-- Duplicate definition in NSTouch -->
         <Patch>Enumerations[NSTouchPhase].Generate=false</Patch>
 
+        <Patch>Enumerations[NSEventSwipeTrackingOptions].BaseType=NSUInteger</Patch>
+        <Patch>Enumerations[NSEventGestureAxis].BaseType=NSInteger</Patch>
+        <Patch>Enumerations[NSEventPhase].BaseType=NSUInteger</Patch>
+    
         <Replace type="Xhtml">
           <Source><![CDATA[<a href="#//apple_ref/doc/c_ref/NSEventTypeGesture">NSEventTypeGesture</a>   = 29,]]></Source>
           <With><![CDATA[<a href="#//apple_ref/doc/c_ref/NSEventTypeGesture">, NSEventTypeGesture</a>   = 29,]]></With>
@@ -1084,14 +1110,18 @@
         <Patch>Methods[FontWithNameMatrix].Parameters[fontMatrix].Type=IntPtr</Patch>
         <Patch>Methods[GetAdvancementsForGlyphsCount].Parameters[glyphs].Type=IntPtr</Patch>
         <Patch>Methods[GetAdvancementsForPackedGlyphsLength].Parameters[length-].Generate=false</Patch>
-        <Patch><![CDATA[Methods[GetAdvancementsForPackedGlyphsLength].Parameters[length]=<Parameter Generate="true" Override="false" IsOut="false" IsByRef="false" IsBlock="false"><Summary /><Name>length</Name><Type>NSUInteger</Type></Parameter>]]></Patch>
+        <Patch>Methods[GetAdvancementsForPackedGlyphsLength].Parameters[length]=<![CDATA[<Parameter Generate="true" Override="false" IsOut="false" IsByRef="false" IsBlock="false"><Summary /><Name>length</Name><Type>NSUInteger</Type></Parameter>]]></Patch>
         <Patch>Methods[GetAdvancementsForPackedGlyphsLength].Parameters[getAdvancements].Generate=false</Patch>
         <Patch>Methods[GetBoundingRectsForGlyphsCount].Parameters[glyphs].Type=IntPtr</Patch>
         <Patch>Properties[Matrix].Type=IntPtr</Patch>
         <Patch>Properties[Matrix].Getter.ReturnType=IntPtr</Patch>
         <Patch>Enumerations[NSFontRenderingMode].BaseType=NSUInteger</Patch>
-        <Patch>Enumerations[NSMultibyteGlyphPacking].BaseType=NSUInteger</Patch>
+        <Patch>Enumerations[NSMultibyteGlyphPacking](0).Generate=false</Patch>
+        <Patch>Enumerations[NSMultibyteGlyphPacking](1).BaseType=NSUInteger</Patch>
+        <Patch>Enumerations[NSMultibyteGlyphPacking](1).Values[NSNativeShortGlyphPacking]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>The native format for Mac OS X.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>NSNativeShortGlyphPacking</Name><Value>5</Value></EnumerationValue>]]></Patch>
+        
         <Patch>Enumerations[NSGlyphRelation].BaseType=NSUInteger</Patch>
+
         <!-- TODO: Move to constants -->
         <Patch>Enumerations[Reserved_Glyph_Codes].Generate=false</Patch>
         <Replace type="Html">
@@ -1158,8 +1188,8 @@
         <Patch>Enumerations[NSGradientDrawingOptions].BaseType=NSUInteger</Patch>
       </Class>
       <Class name="NSGraphicsContext">
-        <Patch>Methods[RestoreGraphicsState][Static=True].Generate=false</Patch>
-        <Patch>Methods[SaveGraphicsState][Static=True].Generate=false</Patch>
+        <Patch>Methods[RestoreGraphicsState]{Static=True}.Generate=false</Patch>
+        <Patch>Methods[SaveGraphicsState]{Static=True}.Generate=false</Patch>
       </Class>
       <Class name="NSHelpManager">
       </Class>
@@ -1201,6 +1231,41 @@
       <Class name="NSImageView">
       </Class>
       <Class name="NSLayoutConstraint">
+        <Patch>Enumerations[NSLayoutPriority].BaseType=int</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[/* <!--a-->choose<!--/a--> <!--a-->only<!--/a--> <!--a-->one<!--/a--> <!--a-->of<!--/a--> <!--a-->these<!--/a--> */]]></Source>
+          <With><![CDATA[<!-- -->]]></With>
+        </Replace>
+        <Replace type="Html">
+          <Source><![CDATA[/* <!--a-->choose<!--/a--> <!--a-->only<!--/a--> <!--a-->one<!--/a--> <!--a-->of<!--/a--> <!--a-->these<!--/a--> <!--a-->three<!--/a--> */]]></Source>
+          <With><![CDATA[<!-- -->]]></With>
+        </Replace>
+        <Replace type="Html">
+          <Source><![CDATA[// <!--a-->default<!--/a-->]]></Source>
+          <With><![CDATA[<!-- -->]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[return ObjectiveCRuntime.SendMessage<NSLayoutPriority>(this, "priority");]]></Source>
+          <With><![CDATA[return (NSLayoutPriority) (int) ObjectiveCRuntime.SendMessage<float>(this, "priority");]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[ObjectiveCRuntime.SendMessage(this, "setPriority:", value);]]></Source>
+          <With><![CDATA[ObjectiveCRuntime.SendMessage(this, "setPriority:", (float) value);]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source>
+            <![CDATA[[GeneratedCodeAttribute("MonobjcGenerator", "0.0.0.0")]
+    public enum NSLayoutPriority]]></Source>
+          <With>
+            <![CDATA[[GeneratedCodeAttribute("MonobjcGenerator", "0.0.0.0")]
+    [ObjectiveCUnderlyingTypeAttribute(typeof(float), Is64Bits = false)]
+    [ObjectiveCUnderlyingTypeAttribute(typeof(float), Is64Bits = true)]
+    public enum NSLayoutPriority]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[= NSLayoutAttribute]]></Source>
+          <With><![CDATA[=  NSLayoutAttribute.NSLayoutAttribute]]></With>
+        </Replace>
       </Class>
       <Class name="NSLayoutManager">
         <Patch>Methods[CharacterIndexForPointInTextContainerFractionOfDistanceBetweenInsertionPoints].Parameters[partialFraction].Type=CGFloat</Patch>
@@ -1236,6 +1301,9 @@
         <Patch>Methods[RectArrayForGlyphRangeWithinSelectedGlyphRangeInTextContainerRectCount].Parameters[rectCount].IsOut=true</Patch>
         <Patch>Methods[SetLocationsStartingGlyphIndexesCountForGlyphRange].Parameters[glyphIndexes].Type=IntPtr</Patch>
         <Patch>Methods[ShowPackedGlyphsLengthGlyphRangeAtPointFontColorPrintingAdjustment].Parameters[glyphs].Type=IntPtr</Patch>
+        <Patch>Methods[ShowCGGlyphsPositionsCountFontMatrixAttributesInContext].Parameters[glyphs].Type=IntPtr</Patch>
+        <Patch>Methods[ShowCGGlyphsPositionsCountFontMatrixAttributesInContext].Parameters[positions].Type=IntPtr</Patch>
+    
         <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Enumerations[Glyph_Attributes].Name=NSGlyphAttributes</Patch>
         <Patch>Enumerations[NSGlyphAttributes].BaseType=NSInteger</Patch>
@@ -1415,6 +1483,9 @@
       <Class name="NSPICTImageRep">
       </Class>
       <Class name="NSPopover">
+        <Patch>Properties[Appearance].Type=NSPopoverAppearance</Patch>
+        <Patch>Properties[Behavior].Type=NSPopoverBehavior</Patch>
+        <Patch>Properties[ContentViewController].Type=NSViewController</Patch>
       </Class>
       <Class name="NSPopUpButton">
       </Class>
@@ -1485,6 +1556,7 @@
         </Replace>
       </Class>
       <Class name="NSScrollView">
+        <Patch>Properties[ContentView].Type=NSView</Patch>
       </Class>
       <Class name="NSSearchField">
       </Class>
@@ -1545,6 +1617,7 @@
         <Patch>Methods[DataCellForRow].ReturnType=NSCell</Patch>
         <Patch>Properties[DataCell].Type=NSCell</Patch>
         <Patch>Properties[HeaderCell].Type=NSCell</Patch>
+        <Patch>Properties[Identifier].Type=NSString</Patch>
         <Patch>Enumerations[Resizing_Modes].Name=NSResizingMode</Patch>
         <Patch>Enumerations[NSResizingMode].BaseType=NSUInteger</Patch>
       </Class>
@@ -1560,9 +1633,14 @@
         <Patch>Properties[DataSource].Type=Id</Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Enumerations[NSTableViewDraggingDestinationFeedbackStyle].BaseType=NSInteger</Patch>
-        <Patch>Enumerations[Grid_styles].Name=NSGridStyleMask</Patch>
-        <Patch>Enumerations[NSGridStyleMask].BaseType=NSUInteger</Patch>
-        <Patch>Enumerations[NSGridStyleMask].Flags=true</Patch>
+        <Patch>Enumerations[Grid_styles].Name=NSTableViewGridLineStyle</Patch>
+        <Patch>Enumerations[NSTableViewGridLineStyle].BaseType=NSUInteger</Patch>
+        <Patch>Enumerations[NSTableViewGridLineStyle].Flags=true</Patch>
+        <Patch>Enumerations[No_Animation_Effects].Generate=false</Patch>
+        <Patch>Enumerations[Row_Animation_Effects].Generate=false</Patch>
+        <Patch>Enumerations[NSTableViewAnimation].Values[NSTableViewAnimationEffectNone]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Specifies no animation effect should be used. Specifying any animation negates this effect.</Line></Summary><MinAvailability>Mac OS X v10.7</MinAvailability><Name>NSTableViewAnimationEffectNone</Name><Value>0x0</Value></EnumerationValue>]]></Patch>
+        <Patch>Enumerations[NSTableViewAnimation].Values[NSTableViewAnimationEffectFade]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Specifies that the tableview will use a fade for row or column removal. The effect can be combined with any NSTableViewAnimationOptions constant.</Line></Summary><MinAvailability>Mac OS X v10.7</MinAvailability><Name>NSTableViewAnimationEffectFade</Name><Value>0x1</Value></EnumerationValue>]]></Patch>
+        <Patch>Enumerations[NSTableViewAnimation].Values[NSTableViewAnimationEffectGap]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Creates a gap for newly inserted rows. This is useful for drag and drop animations that animate to a newly opened gap and should be used in the delegate method tableView:acceptDrop:row:dropOperation:.</Line></Summary><MinAvailability>Mac OS X v10.7</MinAvailability><Name>NSTableViewAnimationEffectGap</Name><Value>0x2</Value></EnumerationValue>]]></Patch>
       </Class>
       <Class name="NSTabView">
         <Patch>Properties[Delegate].Type=Id</Patch>
@@ -1599,6 +1677,8 @@
       <Class name="NSTextFieldCell">
       </Class>
       <Class name="NSTextFinder">
+        <Patch>Properties[Client].Type=Id</Patch>
+        <Patch>Properties[FindBarContainer].Type=Id</Patch>
       </Class>
       <Class name="NSTextInputContext">
       </Class>
@@ -1745,6 +1825,7 @@ NSString *NSFindPanelCaseInsensitiveSearch;
         <Patch>Properties[ContentView].Getter.ReturnType=NSView</Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Properties[StyleMask].Type=NSWindowStyleMask</Patch>
+        <Patch>Properties[RestorationClass].Type=Class</Patch>
 
         <Patch>Enumerations[Window_Style_Masks].Name=NSWindowStyleMask</Patch>
         <Patch>Enumerations[NSWindowStyleMask].BaseType=NSUInteger</Patch>
@@ -1753,8 +1834,10 @@ NSString *NSFindPanelCaseInsensitiveSearch;
         <Patch>Enumerations[NSWindowStyleMask].Values[NSNonactivatingPanelMask]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>The panel can receive keyboard input without activating the owning application.</Line><Line>Valid only for an instance of NSPanel or its subclasses; not valid for a window.</Line></Summary><MinAvailability>Mac OS X v10.2</MinAvailability><Name>NSNonactivatingPanelMask</Name><Value>1 &amp;lt;&amp;lt; 7</Value></EnumerationValue>]]></Patch>
         <Patch>Enumerations[NSWindowStyleMask].Values[NSHUDWindowMask]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>The panel is created as a transparent panel (sometimes called a “heads-up display”).</Line><Line>Valid only for an instance of NSPanel or its subclasses; not valid for a window.</Line><Line>Using the C bitwise OR operator, , NSHUDWindowMask can be combined with other style masks (some of which are documented in Window_Style_Masks) with the following results:</Line><Line>The following constants cannot be combined with , NSHUDWindowMask: NSMiniaturizableWindowMask, NSTexturedBackgroundWindowMask, NSDocModalWindowMask, and NSUnifiedTitleAndToolbarWindowMask.</Line></Summary><MinAvailability>Mac OS X v10.5</MinAvailability><Name>NSHUDWindowMask</Name><Value>1 &amp;lt;&amp;lt; 13</Value></EnumerationValue>]]></Patch>
         <Patch>Enumerations[NSWindowStyleMask].Values[NSUnifiedTitleAndToolbarWindowMask]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Specifies a window whose toolbar and title bar are rendered on a single continuous background.</Line></Summary><MinAvailability>Mac OS X v10.4</MinAvailability><Name>NSUnifiedTitleAndToolbarWindowMask</Name><Value>1 &amp;lt;&amp;lt; 12</Value></EnumerationValue>]]></Patch>
-
+        <Patch>Enumerations[NSWindowStyleMask].Values[NSFullScreenWindowMask]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Indicates that a window has fullscreen appearance.</Line><Line>A fullscreen window does not draw its titlebar, and may have special handling for its toolbar.</Line></Summary><MinAvailability>Mac OS X v10.7</MinAvailability><Name>NSFullScreenWindowMask</Name><Value>1 &amp;lt;&amp;lt; 14</Value></EnumerationValue>]]></Patch>
+    
         <Patch>Enumerations[Controlling_the_Look_of_a_Window_and_Its_Toolbar].Generate=false</Patch>
+        <Patch>Enumerations[Supporting_Full_Screen_Appearance.].Generate=false</Patch>
         <Patch>Enumerations[Managing_Scaling_Factors].Generate=false</Patch>
         <!-- TODO: Merge with other ordering -->
         <Patch>Enumerations[NSRunLoop_Ordering_Modes_for_NSWindow].Name=NSWindowRunLoopOrderingMode</Patch>
@@ -2153,8 +2236,8 @@ enum {]]>
         <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
       <Protocol name="NSTextFinderClient">
-        <Patch>Enumerations[StringAtIndexEffectiveRangeEndsWithSearchBoundary].Parameters[outFlag].Type=bool</Patch>
-        <Patch>Enumerations[StringAtIndexEffectiveRangeEndsWithSearchBoundary].Parameters[outFlag].IsOut=true</Patch>
+        <Patch>Methods[StringAtIndexEffectiveRangeEndsWithSearchBoundary].Parameters[outFlag].Type=bool</Patch>
+        <Patch>Methods[StringAtIndexEffectiveRangeEndsWithSearchBoundary].Parameters[outFlag].IsOut=true</Patch>
       </Protocol>
       <Protocol name="NSTextFinderBarContainer">
       </Protocol>
@@ -2217,6 +2300,9 @@ enum {]]>
 
     </Protocols>
     <Enumerations>
+      <Enumeration name="NSTableViewGridLineStyle">
+        <Patch>BaseType=NSUInteger</Patch>
+      </Enumeration>
       <Enumeration name="NSTrackingAreaOptions">
         <Patch>BaseType=NSUInteger</Patch>
       </Enumeration>
@@ -2351,6 +2437,10 @@ enum {]]>
       <Class name="NSFetchedPropertyDescription">
       </Class>
       <Class name="NSFetchRequest">
+        <Replace type="Html">
+          <Source><![CDATA[<a href="#//apple_ref/doc/c_ref/NSCountResultType">NSCountResultType</a>]]></Source>
+          <With><![CDATA[<a href="#//apple_ref/doc/c_ref/NSCountResultType">, NSCountResultType</a>]]></With>
+        </Replace>
       </Class>
       <Class name="NSFetchRequestExpression">
         <!-- TODO: Move to constant -->
@@ -2359,6 +2449,10 @@ enum {]]>
       <Class name="NSIncrementalStore">
       </Class>
       <Class name="NSIncrementalStoreNode">
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual ulong Version]]></Source>
+          <With><![CDATA[public new ulong Version]]></With>
+        </Replace>
       </Class>
       <Class name="NSManagedObject">
         <Patch>Methods[ValidateValueForKeyError].Parameters[value].Type=IntPtr</Patch>
@@ -2597,7 +2691,7 @@ enum {]]>
       <Class name="CLLocationManager">
         <Patch>MinAvailability=Mac OS X v10.6</Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
-        <Patch>Properties[LocationServicesEnabled][Static=true].Generate=false</Patch>
+        <Patch>Properties[LocationServicesEnabled]{Static=True}.Generate=false</Patch>
         <Patch>Enumerations[CLError].BaseType=int</Patch>
         <Patch>Constants[CLLocationDistance].Generate=false</Patch>
       </Class>
@@ -2621,16 +2715,84 @@ enum {]]>
       </Type>
       <Type name="CoreMedia.DataTypes">
       </Type>
+      <Type name="CMAttachment">
+        <Patch>Enumerations[Attachment_Propagation].Name=CMAttachmentMode</Patch>
+        <Patch>Enumerations[CMAttachmentMode].BaseType=uint</Patch>
+        <Patch>Functions[CMGetAttachment].Parameters[attachmentModeOut].Type=CMAttachmentMode</Patch>
+        <Patch>Functions[CMGetAttachment].Parameters[attachmentModeOut].IsOut=true</Patch>
+        <Replace type="Generated">
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<CMAttachmentMode>(Marshal.ReadIntPtr(__local1));]]></Source>
+          <With><![CDATA[(CMAttachmentMode) Marshal.ReadInt32(__local1);]]></With>
+        </Replace>
+      </Type>
+      <Type name="CMBlockBuffer">
+        <Patch>Enumerations[Custom_Block_Source_Version].Generate=false</Patch>
+        <Patch>Enumerations[CMBlockBuffer_Flags].Name=CMBlockBufferFlags</Patch>
+        <Patch>Enumerations[CMBlockBufferFlags].BaseType=uint</Patch>
+        <Patch>Enumerations[Error_Flags].Name=CMBlockBufferErrors</Patch>
+        <Patch>Enumerations[CMBlockBufferErrors].BaseType=int</Patch>
+        <Patch>Functions[CMBlockBufferAccessDataBytes].Parameters[returnedPointer].Type=IntPtr</Patch>
+        <Patch>Functions[CMBlockBufferAccessDataBytes].Parameters[returnedPointer].IsOut=true</Patch>
+        <Patch>Functions[CMBlockBufferAppendMemoryBlock].Parameters[customBlockSource].Type=CMBlockBufferCustomBlockSource</Patch>
+        <Patch>Functions[CMBlockBufferAppendMemoryBlock].Parameters[customBlockSource].IsByRef=true</Patch>
+        <Patch>Functions[CMBlockBufferCreateContiguous].Parameters[customBlockSource].Type=CMBlockBufferCustomBlockSource</Patch>
+        <Patch>Functions[CMBlockBufferCreateContiguous].Parameters[customBlockSource].IsByRef=true</Patch>
+        <Patch>Functions[CMBlockBufferCreateContiguous].Parameters[newBBufOut].Type=IntPtr</Patch>
+        <Patch>Functions[CMBlockBufferCreateContiguous].Parameters[newBBufOut].IsOut=true</Patch>
+        <Patch>Functions[CMBlockBufferCreateEmpty].Parameters[newBBufOut].Type=IntPtr</Patch>
+        <Patch>Functions[CMBlockBufferCreateEmpty].Parameters[newBBufOut].IsOut=true</Patch>
+        <Patch>Functions[CMBlockBufferCreateWithBufferReference].Parameters[newBBufOut].Type=IntPtr</Patch>
+        <Patch>Functions[CMBlockBufferCreateWithBufferReference].Parameters[newBBufOut].IsOut=true</Patch>
+        <Patch>Functions[CMBlockBufferCreateWithMemoryBlock].Parameters[customBlockSource].Type=CMBlockBufferCustomBlockSource</Patch>
+        <Patch>Functions[CMBlockBufferCreateWithMemoryBlock].Parameters[customBlockSource].IsByRef=true</Patch>
+        <Patch>Functions[CMBlockBufferCreateWithMemoryBlock].Parameters[newBBufOut].Type=IntPtr</Patch>
+        <Patch>Functions[CMBlockBufferCreateWithMemoryBlock].Parameters[newBBufOut].IsOut=true</Patch>
+        <Patch>Functions[CMBlockBufferGetDataPointer].Parameters[lengthAtOffset].Type=IntPtr</Patch>
+        <Patch>Functions[CMBlockBufferGetDataPointer].Parameters[lengthAtOffset].IsOut=true</Patch>
+        <Patch>Functions[CMBlockBufferGetDataPointer].Parameters[totalLength].Type=IntPtr</Patch>
+        <Patch>Functions[CMBlockBufferGetDataPointer].Parameters[totalLength].IsOut=true</Patch>
+        <Patch>Functions[CMBlockBufferGetDataPointer].Parameters[dataPointer].Type=IntPtr</Patch>
+        <Patch>Functions[CMBlockBufferGetDataPointer].Parameters[dataPointer].IsOut=true</Patch>
+        <Patch>Functions[CMBlockBufferGetTypeID].Generate=false</Patch>
+        <Replace type="Generated">
+          <Source><![CDATA[= (1L<<]]></Source>
+          <With><![CDATA[= (1 <<]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<CMBlockBufferCustomBlockSource>(Marshal.ReadIntPtr(__local1));]]></Source>
+          <With><![CDATA[(CMBlockBufferCustomBlockSource) Marshal.PtrToStructure(__local1, typeof(CMBlockBufferCustomBlockSource));]]></With>
+        </Replace>
+      </Type>
+      <Type name="CMBufferQueue">
+        <Patch>Functions[CMBufferQueueGetTypeID].Generate=false</Patch>
+      </Type>
+      <Type name="CMFormatDescription">
+        <Patch>Functions[CMFormatDescriptionGetTypeID].Generate=false</Patch>
+      </Type>
+      <Type name="CMSampleBuffer">
+        <Patch>Functions[CMSampleBufferGetTypeID].Generate=false</Patch>
+      </Type>
+      <Type name="CMTime">
+        <Patch>Enumerations[CMTime_Flags].Name=CMTimeFlags</Patch>
+        <Patch>Enumerations[CMTimeFlags].BaseType=uint</Patch>
+        <Patch>Enumerations[Rounding_Methods].Name=CMTimeRoundingMethod</Patch>
+        <Patch>Enumerations[CMTimeRoundingMethod].BaseType=uint</Patch>
+        <Replace type="Generated">
+          <Source><![CDATA[= 1UL<<]]></Source>
+          <With><![CDATA[= 1U <<]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public static partial class CMTime]]></Source>
+          <With><![CDATA[public partial struct CMTime]]></With>
+        </Replace>
+      </Type>
+      <Type name="CMTimeRange">
+        <Replace type="Generated">
+          <Source><![CDATA[public static partial class CMTimeRange]]></Source>
+          <With><![CDATA[public partial struct CMTimeRange]]></With>
+        </Replace>
+      </Type>
     </Types>
-    <Classes>
-      <Class name="CMAttachment"></Class>
-      <Class name="CMBlockBuffer"></Class>
-      <Class name="CMBufferQueue"></Class>
-      <Class name="CMFormatDescription"></Class>
-      <Class name="CMSampleBuffer"></Class>
-      <Class name="CMTime"></Class>
-      <Class name="CMTimeRange"></Class>
-    </Classes>
   </Framework>
   <Framework name="CoreMIDI" usings="Foundation" assembly="Monobjc.CoreMIDI">
     <Types>
@@ -2693,6 +2855,7 @@ enum {]]>
       <Class name="CW8021XProfile.Deprecated">
         <Patch>AdditionFor=CW8021XProfile</Patch>
         <Patch>Methods[Init].Generate=false</Patch>
+        <Patch>Properties[AlwaysPromptForPassword].Type=bool</Patch>
       </Class>
       <Class name="CWChannel">
       </Class>
@@ -2706,6 +2869,26 @@ enum {]]>
         <Patch>Methods[Init].Generate=false</Patch>
       </Class>
       <Class name="CWMutableConfiguration">
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual NSOrderedSet NetworkProfiles]]></Source>
+          <With><![CDATA[public new NSOrderedSet NetworkProfiles]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual bool RememberJoinedNetworks]]></Source>
+          <With><![CDATA[public new bool RememberJoinedNetworks]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual bool RequireAdministratorForAssociation]]></Source>
+          <With><![CDATA[public new bool RequireAdministratorForAssociation]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual bool RequireAdministratorForIBSSMode]]></Source>
+          <With><![CDATA[public new bool RequireAdministratorForIBSSMode]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual bool RequireAdministratorForPower]]></Source>
+          <With><![CDATA[public new bool RequireAdministratorForPower]]></With>
+        </Replace>
       </Class>
       <Class name="CWMutableNetworkProfile">
       </Class>
@@ -2714,10 +2897,10 @@ enum {]]>
       <Class name="CWNetworkProfile">
       </Class>
       <Class name="CWWirelessProfile">
-        <Patch>Methods[Init].Generate=false</Patch>
       </Class>
       <Class name="CWWirelessProfile.Deprecated">
         <Patch>AdditionFor=CWWirelessProfile</Patch>
+        <Patch>Methods[Init].Generate=false</Patch>
         <Patch>Properties[AlwaysPromptForPassword].Type=bool</Patch>
       </Class>
     </Classes>
@@ -3389,22 +3572,22 @@ enum {]]>
         <Patch><![CDATA[Methods[HandleFailureInMethodObjectFileLineNumberDescription].Parameters[values]=<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
       </Class>
       <Class name="NSAttributedString">
-        <Patch>Enumerations[NSAttributedStringEnumerationOptions].Values[NSAttributedStringEnumerationReverse]=<![CDATA[1U << 1]]></Patch>
-        <Patch>Enumerations[NSAttributedStringEnumerationOptions].Values[NSAttributedStringEnumerationLongestEffectiveRangeNotRequired]=<![CDATA[1U << 20]]></Patch>
+        <Patch>Enumerations[NSAttributedStringEnumerationOptions].Values[NSAttributedStringEnumerationReverse].Value=<![CDATA[1U << 1]]></Patch>
+        <Patch>Enumerations[NSAttributedStringEnumerationOptions].Values[NSAttributedStringEnumerationLongestEffectiveRangeNotRequired].Value=<![CDATA[1U << 20]]></Patch>
         <Replace type="Generated">
           <Source><![CDATA[1UL <<]]></Source>
           <With><![CDATA[1U <<]]></With>
         </Replace>
       </Class>
       <Class name="NSAutoreleasePool">
-        <Patch>Methods[AddObject][Static=True].Generate=false</Patch>
+        <Patch>Methods[AddObject]{Static=True}.Generate=false</Patch>
       </Class>
       <Class name="NSBlockOperation">
         <Patch>Methods[BlockOperationWithBlock].ReturnType=NSBlockOperation</Patch>
       </Class>
       <Class name="NSBundle">
-        <Patch>Methods[PathForResourceOfTypeInDirectory][Static=True].Generate=false</Patch>
-        <Patch>Methods[PathsForResourcesOfTypeInDirectory][Static=True].Generate=false</Patch>
+        <Patch>Methods[PathForResourceOfTypeInDirectory]{Static=True}.Generate=false</Patch>
+        <Patch>Methods[PathsForResourcesOfTypeInDirectory]{Static=True}.Generate=false</Patch>
         <Patch>Methods[LoadNibNamedOwner]=<![CDATA[<Method Generate="true" Static="true" GenerateConstructor="true"><Summary><Line>Unarchives the contents of the nib file and links them to a specific owner object.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>LoadNibNamedOwner</Name><Selector>loadNibNamed:owner:</Selector><Signature>+ (BOOL)loadNibNamed:(NSString *)aNibName owner:(id)owner</Signature><ReturnType>bool</ReturnType><ReturnsDocumentation>YES if the nib file was loaded successfully; otherwise, NO.</ReturnsDocumentation><Parameters><Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The name of the nib file, which need not include the .nib extension. The file name should not include path information. The object in the owner parameter determines the location in which to look for the nib file.</Line></Summary><Name>aNibName</Name><Type>NSString</Type></Parameter><Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false"><Summary /><Name>owner</Name><Type>Id</Type></Parameter></Parameters></Method>]]></Patch>
         <Patch>Methods[LoadNibFileExternalNameTableWithZone]=<![CDATA[<Method Generate="true" Static="false" GenerateConstructor="true"><Summary><Line>Unarchives the contents of a nib file located in the receiver's bundle.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>LoadNibFileExternalNameTableWithZone</Name><Selector>loadNibFile:externalNameTable:withZone:</Selector><Signature>- (BOOL)loadNibFile:(NSString *)fileName externalNameTable:(NSDictionary *)context withZone:(NSZone *)zone</Signature><ReturnType>bool</ReturnType><ReturnsDocumentation>YES if the nib file was loaded successfully; otherwise, NO.</ReturnsDocumentation><Parameters><Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The name of the nib file, which need not include the .nib extension.</Line></Summary><Name>fileName</Name><Type>NSString</Type></Parameter><Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false"><Summary /><Name>context</Name><Type>NSDictionary</Type></Parameter><Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false"><Summary /><Name>zone</Name><Type>IntPtr</Type></Parameter></Parameters></Method>]]></Patch>
         <Patch>Enumerations[Mach_O_Architecture].Name=NSMachOArchitecture</Patch>
@@ -3593,7 +3776,7 @@ enum {]]>
         <Patch>Properties[Date].Getter.ReturnType=NSDate</Patch>
         <Patch>Properties[DistantFuture].Type=NSDate</Patch>
         <Patch>Properties[DistantPast].Type=NSDate</Patch>
-        <Patch>Properties[TimeIntervalSinceReferenceDate][Static=True].Generate=false</Patch>
+        <Patch>Properties[TimeIntervalSinceReferenceDate]{Static=True}.Generate=false</Patch>
         <Patch>Methods[DateWithCalendarFormatTimeZone].ReturnType=IntPtr</Patch>
       </Class>
       <Class name="NSDateComponents">
@@ -3804,16 +3987,16 @@ enum {]]>
       </Class>
       <Class name="NSKeyedArchiver">
         <Patch>Methods[EncodeBytesLengthForKey].Parameters[bytesp].Type=IntPtr</Patch>
-        <Patch>Methods[ClassNameForClass][Static=True].Generate=false</Patch>
-        <Patch>Methods[SetClassNameForClass][Static=True].Generate=false</Patch>
+        <Patch>Methods[ClassNameForClass]{Static=True}.Generate=false</Patch>
+        <Patch>Methods[SetClassNameForClass]{Static=True}.Generate=false</Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSKeyedUnarchiver">
         <Patch>Methods[DecodeBytesForKeyReturnedLength].Parameters[lengthp].Type=NSUInteger</Patch>
         <Patch>Methods[DecodeBytesForKeyReturnedLength].Parameters[lengthp].IsOut=true</Patch>
         <Patch>Methods[DecodeBytesForKeyReturnedLength].ReturnType=IntPtr</Patch>
-        <Patch>Methods[ClassForClassName][Static=True].Generate=false</Patch>
-        <Patch>Methods[SetClassForClassName][Static=True].Generate=false</Patch>
+        <Patch>Methods[ClassForClassName]{Static=True}.Generate=false</Patch>
+        <Patch>Methods[SetClassForClassName]{Static=True}.Generate=false</Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSLinguisticTagger">
@@ -3970,9 +4153,9 @@ enum {]]>
         <Patch>Methods[Retain].Generate=false</Patch>
         <Patch>Methods[Release].Generate=false</Patch>
         <Patch>Properties[Class][Static=False].Generate=false</Patch>
-        <Patch>Properties[Class][Static=True].Generate=false</Patch>
-        <Patch>Properties[Description][Static=True].Generate=false</Patch>
-        <Patch>Properties[Superclass][Static=True].Generate=false</Patch>
+        <Patch>Properties[Class]{Static=True}.Generate=false</Patch>
+        <Patch>Properties[Description]{Static=True}.Generate=false</Patch>
+        <Patch>Properties[Superclass]{Static=True}.Generate=false</Patch>
         <Replace type="Generated">
           <Source><![CDATA[[ObjectiveCClass("NSObject")]]]></Source>
           <With><![CDATA[[ObjectiveCClass("NSObject", InterceptDealloc = true)]]]></With>
@@ -4100,7 +4283,7 @@ enum {]]>
         <Patch>Methods[Retain].Generate=false</Patch>
         <Patch>Methods[Release].Generate=false</Patch>
         <Patch>Properties[Class][Static=False].Generate=false</Patch>
-        <Patch>Properties[Class][Static=True].Generate=false</Patch>
+        <Patch>Properties[Class]{Static=True}.Generate=false</Patch>
         <Replace type="Generated">
           <Source><![CDATA[[ObjectiveCClass("NSProxy")]]]></Source>
           <With><![CDATA[[ObjectiveCClass("NSProxy", InterceptDealloc = true)]]]></With>
@@ -4353,8 +4536,8 @@ enum]]>
         </Replace>
       </Class>
       <Class name="NSThread">
-        <Patch>Properties[IsMainThread][Static=True].Generate=false</Patch>
-        <Patch>Properties[ThreadPriority][Static=True].MaxAvailability=Mac OS X v10.6</Patch>
+        <Patch>Properties[IsMainThread]{Static=True}.Generate=false</Patch>
+        <Patch>Properties[ThreadPriority]{Static=True}.MaxAvailability=Mac OS X v10.6</Patch>
       </Class>
       <Class name="NSTimer">
       </Class>
@@ -4369,8 +4552,8 @@ enum]]>
         <Patch>Enumerations[NSUbiquitousKeyValueStoreChange].BaseType=int</Patch>
       </Class>
       <Class name="NSUnarchiver">
-        <Patch>Methods[ClassNameDecodedForArchiveClassName][Static=True].Generate=false</Patch>
-        <Patch>Methods[DecodeClassNameAsClassName][Static=True].Generate=false</Patch>
+        <Patch>Methods[ClassNameDecodedForArchiveClassName]{Static=True}.Generate=false</Patch>
+        <Patch>Methods[DecodeClassNameAsClassName]{Static=True}.Generate=false</Patch>
       </Class>
       <Class name="NSUndoManager">
         <!-- TODO: Move with other ordering -->
@@ -5373,6 +5556,7 @@ enum]]>
       <Type name="CVPixelFormatDescription">
         <Patch>Enumerations[Pixel_Format_Types].Name=PixelFormatTypes</Patch>
         <Patch>Enumerations[PixelFormatTypes].BaseType=uint</Patch>
+        <!--
         <Replace type="Generated">
           <Source><![CDATA[= 'L555']]></Source>
           <With><![CDATA[= 0x4C353535]]></With>
@@ -5457,6 +5641,7 @@ enum]]>
           <Source><![CDATA[= 'a2vy']]></Source>
           <With><![CDATA[= 0x61327679]]></With>
         </Replace>
+        -->
       </Type>
       <Type name="CVTime">
         <Patch>Functions[CVGetCurrentHostTime].Parameters[d].Generate=false</Patch>

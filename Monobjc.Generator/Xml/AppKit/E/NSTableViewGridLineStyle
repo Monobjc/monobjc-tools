@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Flags="true">
+  <Summary>
+    <Line>NSTableView defines these constants to specify grid styles. These constants are used by gridStyleMask and setGridStyleMask:. The mask can be either NSTableViewGridNone or it can contain either or both of the other options combined using the C bitwise OR operator.</Line>
+  </Summary>
+  <MinAvailability>Mac OS X v10.3</MinAvailability>
+  <Name>NSTableViewGridLineStyle</Name>
+  <Namespace>AppKit</Namespace>
+  <BaseType>NSUInteger</BaseType>
+  <MixedType>uint,ulong</MixedType>
+  <Enumerations />
+  <Constants />
+  <Functions />
+  <Values>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Specifies that no grid lines should be displayed.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.3</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>NSTableViewGridNone</Name>
+      <Value>0</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Specifies that vertical grid lines should be displayed.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.3</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>NSTableViewSolidVerticalGridLineMask</Name>
+      <Value>1 &amp;lt;&amp;lt; 0</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Specifies that horizontal grid lines should be displayed.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.3</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>NSTableViewSolidHorizontalGridLineMask</Name>
+      <Value>1 &amp;lt;&amp;lt; 1</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Draw the horizontal grid as a dashed line</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.7</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>NSTableViewDashedHorizontalGridLineMask</Name>
+      <Value>1 &amp;lt;&amp;lt; 3</Value>
+    </EnumerationValue>
+  </Values> 
+</Enumeration>

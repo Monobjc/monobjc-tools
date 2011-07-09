@@ -85,6 +85,16 @@
   <Mapping type="CLLocationDirection">double</Mapping>
   <Mapping type="CLLocationDistance">double</Mapping>
   <Mapping type="CLLocationSpeed">double</Mapping>
+  <Mapping type="CMAttachmentBearerRef">IntPtr</Mapping>
+  <Mapping type="CMAudioFormatDescriptionRef">IntPtr</Mapping>
+  <Mapping type="CMBlockBufferRef">IntPtr</Mapping>
+  <Mapping type="CMBufferRef">IntPtr</Mapping>
+  <Mapping type="CMBufferQueueRef">IntPtr</Mapping>
+  <Mapping type="CMFormatDescriptionRef">IntPtr</Mapping>
+  <Mapping type="CMSampleBufferRef">IntPtr</Mapping>
+  <Mapping type="CMTimeScale">int</Mapping>
+  <Mapping type="CMTimeValue">long</Mapping>
+  <Mapping type="CMTimeEpoch">long</Mapping>
   <Mapping type="CMItemCount">NSInteger</Mapping>
   <Mapping type="CMItemIndex">NSInteger</Mapping>
   <Mapping type="CMPersistentTrackID">int</Mapping>
@@ -121,6 +131,7 @@
   <Mapping type="DOMTimeStamp">ulong</Mapping>
   <Mapping type="DescType">uint</Mapping>
   <Mapping type="FourCharCode">uint</Mapping>
+  <Mapping type="Float64">double</Mapping>
   <Mapping type="GLbitfield">int</Mapping>
   <Mapping type="GLboolean">byte</Mapping>
   <Mapping type="GLbyte">byte</Mapping>

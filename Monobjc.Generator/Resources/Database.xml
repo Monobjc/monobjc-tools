@@ -693,6 +693,9 @@
   <Entry ns="AppKit" nature="C" name="NSWorkspace.Deprecated" style="Cocoa" file="NSWorkspace.Deprecated">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Classes/NSWorkspace_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</url>
   </Entry>
+  <Entry ns="AppKit" nature="E" name="NSTableViewGridLineStyle" style="Cocoa" file="NSTableViewGridLineStyle">
+    <url>N/A</url>
+  </Entry>
   <Entry ns="AppKit" nature="E" name="NSTrackingAreaOptions" style="Cocoa" file="NSTrackingAreaOptions">
     <url>N/A</url>
   </Entry>
@@ -1641,25 +1644,25 @@
   <Entry ns="CoreLocation" nature="T" name="CoreLocationFramework.Constants" style="Cocoa" file="CoreLocationFramework.Constants">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/CoreLocation/Reference/CoreLocationConstantsRef/Reference/reference.html</url>
   </Entry>
-  <Entry ns="CoreMedia" nature="C" name="CMAttachment" style="Cocoa" file="CMAttachment">
+  <Entry ns="CoreMedia" nature="T" name="CMAttachment" style="Cocoa" file="CMAttachment">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/CoreMedia/Reference/CMAttachment/Reference/reference.html</url>
   </Entry>
-  <Entry ns="CoreMedia" nature="C" name="CMBlockBuffer" style="Cocoa" file="CMBlockBuffer">
+  <Entry ns="CoreMedia" nature="T" name="CMBlockBuffer" style="Cocoa" file="CMBlockBuffer">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/CoreMedia/Reference/CMBlockBuffer/Reference/reference.html</url>
   </Entry>
-  <Entry ns="CoreMedia" nature="C" name="CMBufferQueue" style="Cocoa" file="CMBufferQueue">
+  <Entry ns="CoreMedia" nature="T" name="CMBufferQueue" style="Cocoa" file="CMBufferQueue">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/CoreMedia/Reference/CMBufferQueue/Reference/reference.html</url>
   </Entry>
-  <Entry ns="CoreMedia" nature="C" name="CMFormatDescription" style="Cocoa" file="CMFormatDescription">
+  <Entry ns="CoreMedia" nature="T" name="CMFormatDescription" style="Cocoa" file="CMFormatDescription">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/CoreMedia/Reference/CMFormatDescription/Reference/reference.html</url>
   </Entry>
-  <Entry ns="CoreMedia" nature="C" name="CMSampleBuffer" style="Cocoa" file="CMSampleBuffer">
+  <Entry ns="CoreMedia" nature="T" name="CMSampleBuffer" style="Cocoa" file="CMSampleBuffer">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/CoreMedia/Reference/CMSampleBuffer/Reference/reference.html</url>
   </Entry>
-  <Entry ns="CoreMedia" nature="C" name="CMTime" style="Cocoa" file="CMTime">
+  <Entry ns="CoreMedia" nature="T" name="CMTime" style="Cocoa" file="CMTime">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/CoreMedia/Reference/CMTime/Reference/reference.html</url>
   </Entry>
-  <Entry ns="CoreMedia" nature="C" name="CMTimeRange" style="Cocoa" file="CMTimeRange">
+  <Entry ns="CoreMedia" nature="T" name="CMTimeRange" style="Cocoa" file="CMTimeRange">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/CoreMedia/Reference/CMTimeRange/Reference/reference.html</url>
   </Entry>
   <Entry ns="CoreMedia" nature="T" name="CoreMedia.Constants" style="Cocoa" file="CoreMedia.Constants">
