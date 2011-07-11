@@ -2709,7 +2709,7 @@ enum {]]>
   <Framework name="CoreMedia" usings="Foundation,AppKit,ApplicationServices" assembly="Monobjc.CoreMedia">
     <Types>
       <Type name="CoreMedia.Constants">
-        <Patch>Enumerations[kCMPersistentTrackID_Invalid].Generate=false</Patch>
+        <Patch>Enumerations[Invalid_Track_ID_Specifier].Generate=false</Patch>
       </Type>
       <Type name="CoreMedia.DataTypes">
       </Type>
@@ -2762,13 +2762,72 @@ enum {]]>
         </Replace>
       </Type>
       <Type name="CMBufferQueue">
+        <Patch>Functions[CMBufferQueueGetCallbacksForUnsortedSampleBuffers].ReturnType=IntPtr</Patch>
+        <Patch>Functions[CMBufferQueueGetCallbacksForUnsortedSampleBuffers].Parameters[d].Generate=false</Patch>
         <Patch>Functions[CMBufferQueueGetTypeID].Generate=false</Patch>
+        <Patch>Enumerations[Error_Codes].Name=CMBufferQueueErrorCodes</Patch>
+        <Patch>Enumerations[CMBufferQueueErrorCodes].BaseType=int</Patch>
+        <Patch>Enumerations[Trigger_Conditions].Name=CMBufferQueueTriggerConditions</Patch>
+        <Patch>Enumerations[CMBufferQueueTriggerConditions].BaseType=int</Patch>
       </Type>
       <Type name="CMFormatDescription">
+        <Patch>Constants[eoFormatDescriptionRef].Generate=false</Patch>
         <Patch>Functions[CMFormatDescriptionGetTypeID].Generate=false</Patch>
+        <Patch>Functions[CMAudioFormatDescriptionCreate].Parameters[asbd].Type=AudioStreamBasicDescription</Patch>
+        <Patch>Functions[CMAudioFormatDescriptionCreate].Parameters[asbd].IsByRef=true</Patch>
+        <Patch>Functions[CMAudioFormatDescriptionCreate].Parameters[layout].Type=AudioChannelLayout</Patch>
+        <Patch>Functions[CMAudioFormatDescriptionCreate].Parameters[layout].IsByRef=true</Patch>
+        <Patch>Functions[CMAudioFormatDescriptionCreate].Parameters[outDesc].Type=IntPtr</Patch>
+        <Patch>Functions[CMAudioFormatDescriptionCreate].Parameters[outDesc].IsOut=true</Patch>
+        <Patch>Functions[CMAudioFormatDescriptionEqual].Parameters[equalityMaskOut].Type=CMAudioFormatDescriptionMask</Patch>
+        <Patch>Functions[CMAudioFormatDescriptionEqual].Parameters[equalityMaskOut].IsOut=true</Patch>				
+        <Patch>Functions[CMAudioFormatDescriptionGetChannelLayout].ReturnType=IntPtr</Patch>
+        <Patch>Functions[CMAudioFormatDescriptionGetChannelLayout].Parameters[layoutSize].Type=NSUInteger</Patch>
+        <Patch>Functions[CMAudioFormatDescriptionGetChannelLayout].Parameters[layoutSize].IsOut=true</Patch>
+        <Patch>Functions[CMAudioFormatDescriptionGetFormatList].ReturnType=IntPtr</Patch>
+        <Patch>Functions[CMAudioFormatDescriptionGetFormatList].Parameters[formatListSize].Type=NSUInteger</Patch>
+        <Patch>Functions[CMAudioFormatDescriptionGetFormatList].Parameters[formatListSize].IsOut=true</Patch>
+        <Patch>Functions[CMAudioFormatDescriptionGetMostCompatibleFormat].ReturnType=IntPtr</Patch>
+        <Patch>Functions[CMAudioFormatDescriptionGetRichestDecodableFormat].ReturnType=IntPtr</Patch>
+        <Patch>Functions[CMAudioFormatDescriptionGetStreamBasicDescription].ReturnType=IntPtr</Patch>
+        <Patch>Functions[CMTextFormatDescriptionGetDefaultStyle].Parameters[descOut].Type=IntPtr</Patch>
+        <Patch>Functions[CMTextFormatDescriptionGetDefaultStyle].Parameters[descOut].IsOut=true</Patch>
+        <Patch>Functions[CMTextFormatDescriptionGetDefaultStyle].Parameters[outLocalFontID].Type=ushort</Patch>
+        <Patch>Functions[CMTextFormatDescriptionGetDefaultStyle].Parameters[outLocalFontID].IsOut=true</Patch>
+        <Patch>Functions[CMTextFormatDescriptionGetDefaultStyle].Parameters[outBold].Type=bool</Patch>
+        <Patch>Functions[CMTextFormatDescriptionGetDefaultStyle].Parameters[outBold].IsOut=true</Patch>
+        <Patch>Functions[CMTextFormatDescriptionGetDefaultStyle].Parameters[outItalic].Type=bool</Patch>
+        <Patch>Functions[CMTextFormatDescriptionGetDefaultStyle].Parameters[outItalic].IsOut=true</Patch>
+        <Patch>Functions[CMTextFormatDescriptionGetDefaultStyle].Parameters[outUnderline].Type=bool</Patch>
+        <Patch>Functions[CMTextFormatDescriptionGetDefaultStyle].Parameters[outUnderline].IsOut=true</Patch>
+        <Patch>Functions[CMTextFormatDescriptionGetDefaultStyle].Parameters[outFontSize].Type=CGFloat</Patch>
+        <Patch>Functions[CMTextFormatDescriptionGetDefaultStyle].Parameters[outFontSize].IsOut=true</Patch>
+        <Patch>Functions[CMTextFormatDescriptionGetDefaultStyle].Parameters[outColorComponents[4]].Name=outColorComponents</Patch>
+        <Patch>Functions[CMTextFormatDescriptionGetDefaultStyle].Parameters[outColorComponents].Type=IntPtr</Patch>			
+        <Patch>Enumerations[CMMediaType].BaseType=uint</Patch>
+        <Patch>Enumerations[Error_Codes].Name=CMFormatDescriptionErrorCodes</Patch>
+        <Patch>Enumerations[CMFormatDescriptionErrorCodes].BaseType=int</Patch>
+        <Patch>Enumerations[CMTimeCodeFormatType].BaseType=int</Patch>
+        <Patch>Enumerations[Time_Code_Flags].Name=CMFormatDescriptionTimeCodeFlags</Patch>
+        <Patch>Enumerations[CMFormatDescriptionTimeCodeFlags].BaseType=int</Patch>
+        <Patch>Enumerations[CMTextDisplayFlags].BaseType=int</Patch>
+        <Patch>Enumerations[CMTextFormatType].BaseType=int</Patch>
+        <Patch>Enumerations[CMTextJustificationValue].BaseType=byte</Patch>
+        <Patch>Enumerations[Audio_Format_Description_Masks].Name=CMAudioFormatDescriptionMask</Patch>
+        <Patch>Enumerations[CMAudioFormatDescriptionMask].BaseType=uint</Patch>
+        <Patch>Enumerations[CMMuxedStreamType].Values[kCMMuxedStreamType_DV].Value=0x65762020</Patch>
+        <Patch>Enumerations[CMClosedCaptionFormatType].BaseType=uint</Patch>
+        <Patch>Enumerations[Video_Profiles].Name=CMFormatDescriptionVideoProfiles</Patch>
+        <Patch>Enumerations[CMFormatDescriptionVideoProfiles].BaseType=uint</Patch>
       </Type>
       <Type name="CMSampleBuffer">
         <Patch>Functions[CMSampleBufferGetTypeID].Generate=false</Patch>
+        <Patch>Functions[CMSampleBufferCallForEachSample].Parameters[s].Name=callback</Patch>
+        <Patch>Functions[CMSampleBufferCallForEachSample].Parameters[callback].Type=CMSampleBufferCallForEachSampleCallback</Patch>
+        <Patch>Functions[CMSampleBufferCallForEachSample].Parameters[index].Generate=false</Patch>
+        <Patch>Functions[CMSampleBufferCallForEachSample].Parameters[refcon](0).Generate=false</Patch>
+        <Patch>Enumerations[Error_Codes].Name=CMSampleBufferErrorCodes</Patch>
+        <Patch>Enumerations[CMSampleBufferErrorCodes].BaseType=int</Patch>
       </Type>
       <Type name="CMTime">
         <Patch>Enumerations[CMTime_Flags].Name=CMTimeFlags</Patch>

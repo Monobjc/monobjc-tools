@@ -90,6 +90,8 @@
   <Mapping type="CMBlockBufferRef">IntPtr</Mapping>
   <Mapping type="CMBufferRef">IntPtr</Mapping>
   <Mapping type="CMBufferQueueRef">IntPtr</Mapping>
+  <Mapping type="CMBufferQueueTriggerToken">IntPtr</Mapping>
+  <Mapping type="CMBufferQueueTriggerCondition">int</Mapping>
   <Mapping type="CMFormatDescriptionRef">IntPtr</Mapping>
   <Mapping type="CMSampleBufferRef">IntPtr</Mapping>
   <Mapping type="CMTimeScale">int</Mapping>
