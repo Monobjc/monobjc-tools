@@ -18,16 +18,17 @@
 using System;
 using System.IO;
 using Monobjc.Tools.Generator.Model.Database;
+using Monobjc.Tools.Generator.Model.Entities;
 
-namespace Monobjc.Tools.Generator.Tasks.General
+namespace Monobjc.Tools.Generator.Tasks.Output
 {
-    public class ValidateTask : BaseTask
+    public class DumpDeprecatedTask : BaseTask
     {
         /// <summary>
-        ///   Initializes a new instance of the <see cref = "ValidateTask" /> class.
+        ///   Initializes a new instance of the <see cref = "DumpDeprecatedTask" /> class.
         /// </summary>
         /// <param name = "name">The name.</param>
-        public ValidateTask(String name) : base(name) {}
+        public DumpDeprecatedTask(String name) : base(name) {}
 
         /// <summary>
         ///   Executes this instance.
@@ -36,33 +37,32 @@ namespace Monobjc.Tools.Generator.Tasks.General
         {
             this.DisplayBanner();
 
-            // Print entry with no URL
-            foreach (Entry entry in this.EntriesWithEmptyUrls)
+            foreach (Entry entry in this.Entries)
             {
-                Console.WriteLine("No URL for '{0}'", entry.Name);
-            }
-
-            // Print entry with invalid URL
-            foreach (Entry entry in this.EntriesWithUrls)
-            {
-                //Console.WriteLine("Validating '{0}'...", entry.Name);
-
-                if (String.Equals(entry.RemoteUrl, "N/A"))
-                {
-                    continue;
-                }
-                String path = entry.GetRemoteUrl();
-                if (File.Exists(path))
-                {
-                    continue;
-                }
-                path = Path.ChangeExtension(path, ".htm");
-                if (File.Exists(path))
+                if (entry.Name.EndsWith(".Deprecated"))
                 {
                     continue;
                 }
 
-                Console.WriteLine("Invalid URL for '{0}'", entry.Name);
+                String xhtmlFile = entry[EntryFolderType.Xhtml];
+                if (!File.Exists(xhtmlFile))
+                {
+                    continue;
+                }
+
+                String content = File.ReadAllText(xhtmlFile);
+                if (content.Contains("DeprecationAppendix"))
+                {
+                    switch (entry.Nature)
+                    {
+                        case TypedEntity.CLASS_NATURE:
+                            Console.WriteLine("<Class name=\"{0}.Deprecated\"><Patch>AdditionFor={0}</Patch></Class>", entry.Name);
+                            break;
+                        default:
+                            Console.WriteLine("{0} has deprecated API", entry.Name);
+                            break;
+                    }
+                }
             }
         }
     }

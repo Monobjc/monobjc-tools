@@ -50,10 +50,17 @@ namespace Monobjc.Tools.Generator.Tasks.General
                     continue;
                 }
 
-                if (File.Exists(entry.RemoteUrl))
+                String path = entry.GetRemoteUrl();
+                if (File.Exists(path))
                 {
                     Console.WriteLine("Retrieving '{0}'...", entry.Name);
-                    File.Copy(entry.RemoteUrl, htmlFile);
+                    File.Copy(path, htmlFile);
+                }
+                path = Path.ChangeExtension(path, ".htm");
+                if (File.Exists(path))
+                {
+                    Console.WriteLine("Retrieving '{0}'...", entry.Name);
+                    File.Copy(path, htmlFile);
                 }
             }
         }

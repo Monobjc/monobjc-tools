@@ -94,23 +94,28 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
             {
                 foreach (string parameter in parameters.Split(','))
                 {
-                    String parameterType = "NOTYPE";
-                    String parameterName = "NONAME";
+                    String parameterType;
+                    String parameterName;
 
-                    Match r = PARAMETER_REGEX.Match(parameter);
+                    String param = parameter;
+                    while (param.IndexOf("  ") != -1)
+                    {
+                        param = param.Replace("  ", " ");
+                    }
+                    Match r = PARAMETER_REGEX.Match(param);
                     if (r.Success)
                     {
                         parameterType = r.Groups[2].Value.Trim();
                         parameterName = r.Groups[3].Value.Trim();
                     }
-                    else if (parameter.Trim() == "...")
+                    else if (param.Trim() == "...")
                     {
                         parameterType = "params Object[]";
                         parameterName = "values";
                     }
                     else
                     {
-                        Console.WriteLine("FAILED to parse parameter: " + parameter);
+                        Console.WriteLine("FAILED to parse parameter: " + param);
                         return null;
                     }
 

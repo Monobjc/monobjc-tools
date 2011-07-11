@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -142,7 +142,8 @@ namespace Monobjc.Tools.Generator.Utilities
             }
 
             // Classes
-            String klass = type.Trim(' ', '*', ' ');
+            String klass = type.Trim(' ', '*', '\u00a0');
+            klass = klass.Trim(' ', '*');
             klass = this.Classes.Find(klass.Equals);
             if (klass != null)
             {

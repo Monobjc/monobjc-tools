@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" CopyInDescendants="false" nature="C">
+  <Summary />
+  <MinAvailability>Mac OS X v10.7</MinAvailability>
+  <MaxAvailability>VERSION</MaxAvailability>
+  <Obsolete xsi:nil="true" />
+  <Name>CLRegion</Name>
+  <Namespace>CoreLocation</Namespace>
+  <BaseType>NSObject</BaseType>
+  <Enumerations />
+  <Constants />
+  <Functions />
+  <Methods>
+    <Method Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true">
+      <Summary>
+        <Line>Initialize a region.  center gives the coordinates of center of the region, while radius gives the distance in meters between the center and the region's boundary. identifier is a description for the region that could be displayed to the user, and ideally should be chosen by the user.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.7</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>InitCircularRegionWithCenterRadiusIdentifier</Name>
+      <Selector>initCircularRegionWithCenter:radius:identifier:</Selector>
+      <Signature>- (id)initCircularRegionWithCenter:(CLLocationCoordinate2D)center radius:(CLLocationDistance)radius identifier:(NSString *)identifier</Signature>
+      <ReturnType>Id</ReturnType>
+      <ReturnsDocumentation/>
+      <Parameters>
+        <Parameter Generate="true" CopyInDescendants="false" IsOut="false" IsByRef="false" IsBlock="false">
+          <Summary/>
+          <Obsolete xsi:nil="true" />
+          <Name>center</Name>
+          <Type>CLLocationCoordinate2D</Type>
+        </Parameter>
+        <Parameter Generate="true" CopyInDescendants="false" IsOut="false" IsByRef="false" IsBlock="false">
+          <Summary/>
+          <Obsolete xsi:nil="true" />
+          <Name>radius</Name>
+          <Type>double</Type>
+        </Parameter>
+        <Parameter Generate="true" CopyInDescendants="false" IsOut="false" IsByRef="false" IsBlock="false">
+          <Summary/>
+          <Obsolete xsi:nil="true" />
+          <Name>identifier</Name>
+          <Type>NSString</Type>
+        </Parameter>
+      </Parameters>
+    </Method>
+    <Method Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true">
+      <Summary>
+        <Line>Returns YES if the coordinate lies inside the region, and NO otherwise.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.7</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>ContainsCoordinate</Name>
+      <Selector>containsCoordinate:</Selector>
+      <Signature>- (BOOL)containsCoordinate:(CLLocationCoordinate2D)coordinate</Signature>
+      <ReturnType>bool</ReturnType>
+      <ReturnsDocumentation/>
+      <Parameters>
+        <Parameter Generate="true" CopyInDescendants="false" IsOut="false" IsByRef="false" IsBlock="false">
+          <Summary/>
+          <Obsolete xsi:nil="true" />
+          <Name>coordinate</Name>
+          <Type>CLLocationCoordinate2D</Type>
+        </Parameter>
+      </Parameters>
+    </Method>
+  </Methods>
+  <Properties>
+    <Property Generate="true" CopyInDescendants="false" Static="false">
+      <Summary>
+        <Line>Returns the coordinate of the center of the region.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.7</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>Center</Name>
+      <Type>CLLocationCoordinate2D</Type>
+      <Getter Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true">
+        <Summary />
+        <Obsolete xsi:nil="true" />
+        <Selector>center</Selector>
+        <Signature>@property (readonly, nonatomic) CLLocationCoordinate2D center</Signature>
+        <Parameters />
+      </Getter>
+    </Property>
+    <Property Generate="true" CopyInDescendants="false" Static="false">
+      <Summary>
+        <Line>Returns the radius of the region.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.7</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>Radius</Name>
+      <Type>double</Type>
+      <Getter Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true">
+        <Summary />
+        <Obsolete xsi:nil="true" />
+        <Selector>radius</Selector>
+        <Signature>@property (readonly, nonatomic) CLLocationDistance radius</Signature>
+        <Parameters />
+      </Getter>
+    </Property>
+    <Property Generate="true" CopyInDescendants="false" Static="false">
+      <Summary>
+        <Line>Returns the region's identifier.</Line>
+      </Summary>
+      <MinAvailability>Mac OS X v10.7</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>Identifier</Name>
+      <Type>NSString</Type>
+      <Getter Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true">
+        <Summary />
+        <Obsolete xsi:nil="true" />
+        <Selector>identifier</Selector>
+        <Signature>@property (readonly, nonatomic) NSString *identifier</Signature>
+        <Parameters />
+      </Getter>
+    </Property>
+  </Properties>
+  <DelegateMethods />
+  <Protocols>NSCoding,NSCopying</Protocols>
+</Class>

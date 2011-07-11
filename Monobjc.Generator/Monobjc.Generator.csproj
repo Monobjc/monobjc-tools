@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE;GENERATED_ATTRIBUTE;MIXED_MODE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Commandlineparameters>-t=extract</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -135,9 +136,11 @@
     <Compile Include="Tasks\Generation\GenerateCodeTask.cs" />
     <Compile Include="Tasks\Generation\GenerateInfoTask.cs" />
     <Compile Include="Tasks\ITask.cs" />
+    <Compile Include="Tasks\Output\DumpDeprecatedTask.cs" />
     <Compile Include="Tasks\Output\CopyInPlaceTask.cs" />
     <Compile Include="Tasks\Output\DumpDelegateMethodsTask.cs" />
     <Compile Include="Tasks\Output\DumpInitMethodsTask.cs" />
+    <Compile Include="Tasks\Output\DumpMissingTask.cs" />
     <Compile Include="Tasks\Output\DumpPropertyNamesTask.cs" />
     <Compile Include="Tasks\Output\DumpStaticInitializersTask.cs" />
     <Compile Include="Tasks\Patching\CleanClassicTask.cs" />
@@ -153,13 +156,13 @@
     <Compile Include="Utilities\TypeManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Database.xml">
+    <Content Include="Resources\Lion.Database.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Entities.xml">
+    <Content Include="Resources\Lion.Entities.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mappings.xml">
+    <Content Include="Resources\Lion.Mappings.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Xml\AppKit\E\NSTrackingAreaOptions">
@@ -267,9 +270,6 @@
     <Content Include="Xml\Quartz\E\PDFTextAnnotationIconType">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="DTD\xhtml-lat1.ent">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -327,6 +327,20 @@
     <Content Include="Xml\ApplicationServices\E\CTFontManagerError">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Xml\CoreLocation\C\CLRegion">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SnowLeopard.properties">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Lion.properties">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Xml\CoreLocation\E\CLAuthorizationStatus">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Xml\QTKit\P\QTCaptureDecompressedAudioOutputDelegate">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

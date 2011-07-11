@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
 namespace Monobjc.Tools.Generator.Model.Entities
@@ -32,6 +33,8 @@ namespace Monobjc.Tools.Generator.Model.Entities
     [XmlRoot("Base")]
     public class BaseEntity : IEquatable<BaseEntity>
     {
+        private static Regex PART_EXPRESSION = new Regex(@"^(\w+)(\[(.+)\])?(\{(.+)\})?(\((\d+)\))?$");
+
         /// <summary>
         ///   Initializes a new instance of the <see cref = "BaseEntity" /> class.
         /// </summary>
@@ -160,6 +163,10 @@ namespace Monobjc.Tools.Generator.Model.Entities
         /// <returns></returns>
         public static BaseEntity LoadFrom(String path, Type type)
         {
+            if (!File.Exists(path))
+            {
+                return null;
+            }
             XmlSerializer serializer = new XmlSerializer(type);
             using (StreamReader reader = new StreamReader(path))
             {
@@ -199,199 +206,156 @@ namespace Monobjc.Tools.Generator.Model.Entities
         /// <param name = "query">The query.</param>
         public bool SetValue(String query)
         {
-            int index = this.Next(query, '=');
-            String predicate = query.Substring(0, index);
-            String stringValue = query.Substring(index + 1);
+            int equalSign = this.Next(query, '=');
+            String predicate = query.Substring(0, equalSign);
+            String stringValue = query.Substring(equalSign + 1);
 
-            Object target = this;
+            // Split the predicate
+            IList<String> parts = new List<String>();
             while (true)
             {
-                index = this.Next(predicate, '.');
-                bool lastPart = (index == -1);
-                String part = lastPart ? predicate : predicate.Substring(0, index);
-
-                if (part.Contains("["))
+                int dot = this.Next(predicate, '.');
+                if (dot == -1)
                 {
-                    String propertyName = part.Substring(0, part.IndexOf("["));
-                    PropertyInfo property = target.GetType().GetProperty(propertyName);
-                    if (property == null)
+                    parts.Add(predicate);
+                    break;
+                }
+
+                String part = predicate.Substring(0, dot);
+                parts.Add(part);
+
+                predicate = predicate.Substring(dot + 1);
+            }
+
+            Object target = this;
+            for (int i = 0; i < parts.Count; i++)
+            {
+                String part = parts[i];
+                bool lastPart = (i == parts.Count - 1);
+
+                Match m = PART_EXPRESSION.Match(part);
+                if (!m.Success)
+                {
+                    Console.WriteLine("Error while parsing '{0}'", predicate);
+                    return false;
+                }
+
+                String propertyName = m.Groups[1].Value;
+                String nameSelector = m.Groups[3].Value;
+                String otherSelector = m.Groups[5].Value;
+                String indexSelector = m.Groups[7].Value;
+
+                if (String.IsNullOrEmpty(propertyName))
+                {
+                    Console.WriteLine("Error while parsing '{0}': No property found", predicate);
+                    return false;
+                }
+
+                PropertyInfo propertyInfo = target.GetType().GetProperty(propertyName);
+                if (propertyInfo == null)
+                {
+                    Console.WriteLine("Cannot found property {0} on {1}", propertyName, target);
+                    return false;
+                }
+
+                Type propertyType = propertyInfo.PropertyType;
+                Object propertyValue = propertyInfo.GetValue(target, null);
+                IEnumerable collection = propertyValue as IList;
+
+                bool hasNameSelector = !String.IsNullOrEmpty(nameSelector);
+                bool hasOtherSelector = !String.IsNullOrEmpty(otherSelector);
+                bool hasIndexSelector = !String.IsNullOrEmpty(indexSelector);
+
+                // Check if a name selector is present
+                if (collection != null)
+                {
+                    // This is a collection
+                    IEnumerable<BaseEntity> enumerable = collection.Cast<BaseEntity>();
+                    if (enumerable == null)
                     {
-                        Console.WriteLine("[NOT FOUND> Cannot find property '{0}::{1}' with '{2}'", this.Name, propertyName, query);
+                        Console.WriteLine("Cannot load collection '{0}' on '{1}'", propertyName, target);
                         return false;
                     }
+                    Type collectionType = enumerable.GetType();
+                    Type elementType = collectionType.GetGenericArguments()[0];
 
-                    Object collection = property.GetValue(target, null);
-                    IEnumerable result = (IEnumerable) collection;
-                    IEnumerable<BaseEntity> entities = result.Cast<BaseEntity>();
-                    if (entities == null)
+                    // Apply name selector
+                    if (hasNameSelector)
                     {
-                        Console.WriteLine("[NOT LOADED> Cannot load collection '{0}::{1}' with '{2}'", this.Name, propertyName, query);
-                        return false;
+                        enumerable = enumerable.Where(e => String.Equals(e.Name, nameSelector));
                     }
 
-                    int pos1 = part.IndexOf("[");
-                    int pos2 = this.Next(part, ']', pos1 + 1);
-                    String name = part.Substring(pos1 + 1, pos2 - pos1 - 1);
-                    bool hasSelector = part.IndexOf('[', pos2) != -1;
+                    // Apply other selector
+                    if (hasOtherSelector)
+                    {
+                        String[] selectorParts = otherSelector.Split('=');
+                        String property = selectorParts[0];
+                        String value = selectorParts[1];
+                        PropertyInfo otherPropertyInfo = elementType.GetProperty(property);
 
-                    // If there are multiple result, then another selector must be present
-                    IEnumerable<BaseEntity> targets = entities.Where(e => e.Name.Equals(name));
-                    switch (targets.Count())
+                        enumerable = enumerable.Where(e => String.Equals("" + otherPropertyInfo.GetValue(e, null), value));
+                    }
+
+                    // Apply index selector
+                    if (hasIndexSelector)
+                    {
+                        int index = Int32.Parse(indexSelector);
+                        if (index < enumerable.Count())
+                        {
+                            enumerable = new[] {enumerable.ElementAt(index)};
+                        }
+                    }
+
+                    int count = enumerable.Count();
+                    switch (count)
                     {
                         case 0:
-                            target = null;
-                            break;
+                            if (lastPart)
+                            {
+                                MethodInfo addMethod = collectionType.GetMethod("Add");
+                                BaseEntity newEntity = CreateFrom(stringValue, elementType);
+                                addMethod.Invoke(collection, new object[] {newEntity});
+                                return true;
+                            }
+                            Console.WriteLine("No result for property '{0}' on '{1}'", propertyName, target);
+                            return false;
                         case 1:
-                            if (!hasSelector)
-                            {
-                                target = targets.First();
-                            }
-                            else
-                            {
-                                // Check for selector 
-                                pos1 = part.IndexOf("[", pos2);
-                                pos2 = part.IndexOf("]", pos1);
-                                String differentiator = part.Substring(pos1 + 1, pos2 - pos1 - 1);
-                                String[] diffparts = differentiator.Split('=');
-
-                                BaseEntity entity = targets.First();
-                                property = entity.GetType().GetProperty(diffparts[0]);
-                                if (property != null)
-                                {
-                                    String value = "" + property.GetValue(entity, null);
-                                    if (String.Equals(value, diffparts[1], StringComparison.OrdinalIgnoreCase))
-                                    {
-                                        target = entity;
-                                        break;
-                                    }
-                                }
-
-                                Console.WriteLine("[ALONE> Target has selector but it does not match the only one result for '{0}::{1}' with '{2}'", this.Name, propertyName, query);
-
-                                target = null;
-                            }
+                            target = enumerable.First();
                             break;
                         default:
-                            {
-                                pos1 = part.IndexOf("[", pos2);
-                                if (pos1 != -1)
-                                {
-                                    pos2 = part.IndexOf("]", pos1);
-                                    String differentiator = part.Substring(pos1 + 1, pos2 - pos1 - 1);
-
-                                    String[] diffparts = differentiator.Split('=');
-                                    switch (diffparts.Length)
-                                    {
-                                        case 1:
-                                            int position = Int32.Parse(diffparts[0]);
-                                            if (position < targets.Count())
-                                            {
-                                                target = targets.ElementAt(position);
-                                            }
-                                            else
-                                            {
-                                                target = null;
-                                            }
-                                            break;
-                                        case 2:
-                                            foreach (BaseEntity entity in targets)
-                                            {
-                                                property = entity.GetType().GetProperty(diffparts[0]);
-                                                if (property != null)
-                                                {
-                                                    String value = "" + property.GetValue(entity, null);
-                                                    if (String.Equals(value, diffparts[1], StringComparison.OrdinalIgnoreCase))
-                                                    {
-                                                        target = entity;
-                                                        break;
-                                                    }
-                                                }
-                                            }
-                                            break;
-                                        default:
-                                            target = null;
-                                            break;
-                                    }
-                                }
-                                else
-                                {
-                                    Console.WriteLine("[DUPLICATE> Target has no selector but it does match multiple values for '{0}::{1}' with '{2}'", this.Name, propertyName, query);
-
-                                    target = null;
-                                }
-                            }
-                            break;
-                    }
-
-                    if (target == null)
-                    {
-                        // If this is the last, then add it
-                        if (lastPart)
-                        {
-                            Type collectionType = property.PropertyType;
-                            Type elementType = collectionType.GetGenericArguments()[0];
-                            MethodInfo adder = collectionType.GetMethod("Add");
-
-                            BaseEntity entity = CreateFrom(stringValue, elementType);
-                            adder.Invoke(collection, new object[] {entity});
-                            target = entity;
-
-                            return true;
-                        }
-
-                        if ("Name".Equals(propertyName))
-                        {
+                            Console.WriteLine("Too much result for property '{0}' on '{1}'", propertyName, target);
                             return false;
-                        }
-
-                        Console.WriteLine("[NO TARGET> Cannot process '{0}::{1}' with '{2}'", this.Name, name, query);
-                        return false;
                     }
                 }
                 else
                 {
-                    PropertyInfo property = target.GetType().GetProperty(part);
-                    if (property == null)
-                    {
-                        Console.WriteLine("[NOT FOUND> Cannot find property '{0}::{1}' with '{2}'", this.Name, part, query);
-                        return false;
-                    }
-
-                    // If this is the last part
+                    // This is a property
                     if (lastPart)
                     {
-                        String currentValue = "" + property.GetValue(target, null);
-                        if (property.PropertyType.Equals(typeof (String)))
+                        String currentValue = "" + propertyValue;
+                        if (propertyType.Equals(typeof (String)))
                         {
                             if (String.Equals(currentValue, stringValue))
                             {
                                 return false;
                             }
-                            property.SetValue(target, stringValue, null);
+                            propertyInfo.SetValue(target, stringValue, null);
                             return true;
                         }
-                        if (property.PropertyType.Equals(typeof (Boolean)))
+                        if (propertyType.Equals(typeof (Boolean)))
                         {
                             if (String.Equals(currentValue, stringValue, StringComparison.OrdinalIgnoreCase))
                             {
                                 return false;
                             }
-                            property.SetValue(target, Boolean.Parse(stringValue), null);
+                            propertyInfo.SetValue(target, Boolean.Parse(stringValue), null);
                             return true;
                         }
+                        Console.WriteLine("Unhandled type for property '{0}' on '{1}'", propertyName, target);
+                        return false;
                     }
-                    else
-                    {
-                        target = property.GetValue(target, null);
-                    }
+                    target = propertyValue;
                 }
-
-                if (lastPart)
-                {
-                    break;
-                }
-
-                predicate = predicate.Substring(index + 1);
             }
 
             return false;
@@ -496,6 +460,7 @@ namespace Monobjc.Tools.Generator.Model.Entities
         /// </summary>
         /// <param name = "predicate">The predicate.</param>
         /// <param name = "termination">The termination.</param>
+        /// <param name="startPos">The starting position.</param>
         /// <returns></returns>
         private int Next(String predicate, char termination, int startPos = 0)
         {
@@ -508,11 +473,11 @@ namespace Monobjc.Tools.Generator.Model.Entities
                 {
                     return i;
                 }
-                if (c == '[')
+                if (c == '[' || c == '{' || c == '(')
                 {
                     nested++;
                 }
-                else if (c == ']')
+                else if (c == ']' || c == '}' || c == ')')
                 {
                     nested--;
                 }

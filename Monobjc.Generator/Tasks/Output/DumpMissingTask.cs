@@ -1,4 +1,4 @@
-//
+﻿//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -18,20 +18,21 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml.Serialization;
 using Monobjc.Tools.Generator.Model.Configuration;
 using Monobjc.Tools.Generator.Model.Database;
 using Monobjc.Tools.Generator.Model.Entities;
 
-namespace Monobjc.Tools.Generator.Tasks.Patching
+namespace Monobjc.Tools.Generator.Tasks.Output
 {
-    public class PatchXmlTask : BaseTask
+    public class DumpMissingTask : BaseTask
     {
         /// <summary>
-        ///   Initializes a new instance of the <see cref = "PatchXmlTask" /> class.
+        ///   Initializes a new instance of the <see cref = "DumpMissingTask" /> class.
         /// </summary>
         /// <param name = "name">The name.</param>
-        public PatchXmlTask(String name) : base(name) {}
+        public DumpMissingTask(String name) : base(name) {}
 
         /// <summary>
         ///   Executes this instance.
@@ -40,6 +41,9 @@ namespace Monobjc.Tools.Generator.Tasks.Patching
         {
             this.DisplayBanner();
 
+            IList<String> input = new List<String>();
+            IList<String> output = new List<String>();
+
             using (StreamReader reader = new StreamReader(this.Settings["Entities"]))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof (Entities));
@@ -47,17 +51,12 @@ namespace Monobjc.Tools.Generator.Tasks.Patching
 
                 foreach (EntitiesFramework f in entities.Items)
                 {
-                    Entry entry;
-                    Patch[] patch;
-
                     if (f.Types != null)
                     {
                         foreach (EntitiesFrameworkType e in f.Types)
                         {
                             string[] parts = e.name.Split(';');
-                            entry = this.Find(f.name, TypedEntity.TYPE_NATURE, parts[0]);
-                            patch = e.Patch;
-                            Patch(entry, patch);
+                            input.Add(String.Format("{0}:{1}:{2}", f.name, TypedEntity.TYPE_NATURE, parts[0]));
                         }
                     }
                     if (f.Classes != null)
@@ -65,9 +64,7 @@ namespace Monobjc.Tools.Generator.Tasks.Patching
                         foreach (EntitiesFrameworkClass e in f.Classes)
                         {
                             string[] parts = e.name.Split(';');
-                            entry = this.Find(f.name, TypedEntity.CLASS_NATURE, parts[0]);
-                            patch = e.Patch;
-                            Patch(entry, patch);
+                            input.Add(String.Format("{0}:{1}:{2}", f.name, TypedEntity.CLASS_NATURE, parts[0]));
                         }
                     }
                     if (f.Protocols != null)
@@ -75,9 +72,7 @@ namespace Monobjc.Tools.Generator.Tasks.Patching
                         foreach (EntitiesFrameworkProtocol e in f.Protocols)
                         {
                             string[] parts = e.name.Split(';');
-                            entry = this.Find(f.name, TypedEntity.PROTOCOL_NATURE, parts[0]);
-                            patch = e.Patch;
-                            Patch(entry, patch);
+                            input.Add(String.Format("{0}:{1}:{2}", f.name, TypedEntity.PROTOCOL_NATURE, parts[0]));
                         }
                     }
                     if (f.Enumerations != null)
@@ -85,63 +80,40 @@ namespace Monobjc.Tools.Generator.Tasks.Patching
                         foreach (EntitiesFrameworkEnumeration e in f.Enumerations)
                         {
                             string[] parts = e.name.Split(';');
-                            entry = this.Find(f.name, TypedEntity.ENUMERATION_NATURE, parts[0]);
-                            patch = e.Patch;
-                            Patch(entry, patch);
+                            input.Add(String.Format("{0}:{1}:{2}", f.name, TypedEntity.ENUMERATION_NATURE, parts[0]));
+                        }
+                    }
+                    if (f.Structures != null)
+                    {
+                        foreach (EntitiesFrameworkStructure e in f.Structures)
+                        {
+                            string[] parts = e.name.Split(';');
+                            input.Add(String.Format("{0}:{1}:{2}", f.name, TypedEntity.STRUCTURE_NATURE, parts[0]));
                         }
                     }
                 }
             }
-        }
 
-        private static void Patch(Entry entry, IEnumerable<Patch> patch)
-        {
-            if (entry != null && patch != null)
+            foreach (Entry entry in this.Entries)
             {
-                String xmlFile = entry[EntryFolderType.Xml];
-                if (!File.Exists(xmlFile))
-                {
-                    return;
-                }
+                output.Add(String.Format("{0}:{1}:{2}", entry.Namespace, entry.Nature, entry.Name));
+            }
 
-                BaseEntity baseEntity = null;
-                switch (entry.Nature)
+            IEnumerable<String> notEntries = output.Except(input);
+            foreach (String notEntry in notEntries)
+            {
+                string[] parts = notEntry.Split(';');
+                if (notEntry.Contains(";C;"))
                 {
-                    case TypedEntity.TYPE_NATURE:
-                        baseEntity = BaseEntity.LoadFrom<TypedEntity>(xmlFile);
-                        break;
-                    case TypedEntity.CLASS_NATURE:
-                    case TypedEntity.PROTOCOL_NATURE:
-                        if (entry.Nature == TypedEntity.CLASS_NATURE)
-                        {
-                            baseEntity = BaseEntity.LoadFrom<ClassEntity>(xmlFile);
-                        }
-                        else
-                        {
-                            baseEntity = BaseEntity.LoadFrom<ProtocolEntity>(xmlFile);
-                        }
-                        break;
-                    case TypedEntity.ENUMERATION_NATURE:
-                        baseEntity = BaseEntity.LoadFrom<EnumerationEntity>(xmlFile);
-                        break;
-                    default:
-                        return;
+                    Console.WriteLine("<Class name=\"{0}\"></Class>", parts[2]);
                 }
-
-                bool modified = false;
-                foreach (Patch query in patch)
+                else if (notEntry.Contains(";P;"))
                 {
-                    modified |= baseEntity.SetValue(query.Value);
-                }
-
-                if (modified)
-                {
-                    Console.WriteLine("Patching '{0}'...", entry.Name);
-                    baseEntity.SaveTo(xmlFile);
+                    Console.WriteLine("<Protocol name=\"{0}\"></Protocol>", parts[2]);
                 }
                 else
                 {
-                    Console.WriteLine("[NOT PATCHED] '{0}'...", entry.Name);
+                    Console.WriteLine(notEntry);
                 }
             }
         }

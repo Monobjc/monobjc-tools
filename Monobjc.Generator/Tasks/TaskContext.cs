@@ -66,6 +66,10 @@ namespace Monobjc.Tools.Generator.Tasks
                     XmlSerializer serializer = new XmlSerializer(typeof (Entries));
                     this.Entries = (Entries) serializer.Deserialize(reader);
                 }
+                foreach (Entry entry in this.Entries)
+                {
+                    entry.DocSet = this.DocSet;
+                }
             }
             else
             {
@@ -89,6 +93,11 @@ namespace Monobjc.Tools.Generator.Tasks
                     serializer.Serialize(writer, this.Entries);
                 }
             }
+        }
+
+        public String DocSet
+        {
+            get { return this.Settings["DocSet"]; }
         }
 
         private String Storage

@@ -18,6 +18,7 @@
 using System;
 using System.Collections.Specialized;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using Monobjc.Tools.Generator.Model.Database;
 using Monobjc.Tools.Generator.Tasks;
@@ -31,7 +32,7 @@ using NDesk.Options;
 
 namespace Monobjc.Tools.Generator
 {
-    internal class Program
+    public static class Program
     {
         public static void Help()
         {
@@ -39,12 +40,12 @@ namespace Monobjc.Tools.Generator
             Console.WriteLine("Monobjc Code Generator");
             Console.WriteLine();
             Console.WriteLine("Usage:");
-            Console.WriteLine("MonobjcGenerate [--help] [--tasks=XXX] [--dir=YYY]");
+            Console.WriteLine("MonobjcGenerate [--help] [-t|--tasks=XXX] [-d|--dir=YYY] -s|--set=ZZZ");
             Console.WriteLine();
-            Console.WriteLine("\t--help        : Display this help");
-            Console.WriteLine("\t--tasks=value : A comma separated list of task to execute");
-            Console.WriteLine("\t                The available tasks are: 'retrieve', 'extract', 'generate'");
-            Console.WriteLine("\t--dir=value   : The directory where to copy generated code");
+            Console.WriteLine("\t-h|--help           : Display this help");
+            Console.WriteLine("\t-t|--tasks=value    : A comma separated list of task to execute ('retrieve', 'extract', 'generate', 'copy'");
+            Console.WriteLine("\t-d|--dir=value      : The directory where to copy generated code");
+            Console.WriteLine("\t-s|--set=value      : The documentation set to use ('SnowLeopard', 'Lion')");
             Console.WriteLine();
         }
 
@@ -53,18 +54,31 @@ namespace Monobjc.Tools.Generator
             int verbose = 0;
             String tasks = null;
             String targetDir = null;
+            String docSet = null;
 
             // Create an option set
             OptionSet p = new OptionSet().
                 Add("h|help", v => tasks = "help").
                 Add("v", v => ++verbose).
                 Add("t=|tasks=", v => tasks = v).
-                Add("d=|dir=", v => targetDir = v);
+                Add("d=|dir=", v => targetDir = v).
+                Add("s=|set=", v => docSet = v);
             p.Parse(args);
+
+            // A DocSet is mandatory
+            if (String.IsNullOrEmpty(docSet))
+            {
+                Help();
+                return;
+            }
+
+            // Load DocSet properties
+            NameValueCollection settings = new NameValueCollection();
+            settings.Load(docSet + ".properties");
 
             // Create an execution context
             TaskContext context = new TaskContext();
-            context.Settings = new NameValueCollection(ConfigurationManager.AppSettings);
+            context.Settings = settings;
             context.TypeManager = new TypeManager();
 
             // Create the execution manager
@@ -114,7 +128,11 @@ namespace Monobjc.Tools.Generator
                         break;
                     case "analyze":
                         //manager.AddTask(new DumpDelegateMethodsTask("Search Delegate Methods"));
-                        manager.AddTask(new DumpStaticInitializersTask("Search Static Initializers"));
+                        //manager.AddTask(new DumpStaticInitializersTask("Search Static Initializers"));
+                        manager.AddTask(new ValidateTask("Validate URLs"));
+                        //manager.AddTask(new DumpDeprecatedTask("Search for Deprecated API"));
+                        manager.AddTask(new CopyURLTask("Copy Deprecated URLs"));
+                        manager.AddTask(new DumpMissingTask("Search for missing entities"));
                         break;
 
                         //
@@ -135,6 +153,27 @@ namespace Monobjc.Tools.Generator
             }
 
             manager.Execute();
+        }
+
+        public static void Load(this NameValueCollection collection, String filename)
+        {
+            foreach (String line in File.ReadLines(filename))
+            {
+                if (String.IsNullOrEmpty(line) || line.StartsWith(";") || line.StartsWith("#") || line.StartsWith("'"))
+                {
+                    continue;
+                }
+                if (!line.Contains("="))
+                {
+                    continue;
+                }
+                String[] parts = line.Split(new string[] { "=" }, 2, StringSplitOptions.RemoveEmptyEntries);
+                if (parts.Length != 2)
+                {
+                    continue;
+                }
+                collection.Add(parts[0], parts[1]);
+            }
         }
     }
 }

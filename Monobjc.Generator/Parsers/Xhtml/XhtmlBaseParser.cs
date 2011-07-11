@@ -119,7 +119,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml
             {
                 throw new ArgumentException();
             }
-            return fourCharValue.Aggregate(0u, (i, c) => (i * 256) + c);
+            return fourCharValue.Aggregate(0u, (i, c) => (i*256) + c);
         }
     }
 }
