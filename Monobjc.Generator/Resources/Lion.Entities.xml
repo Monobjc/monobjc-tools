@@ -14,13 +14,13 @@
           <Source><![CDATA[<dd><p><p class=]]></Source>
           <With><![CDATA[<dd><p class=]]></With>
         </Replace>
+        <Replace type="Html">
+          <Source><![CDATA[<a href="#//apple_ref/doc/c_ref/kABMultiDateComponentsProperty">kABMultiDateComponentsProperty</a>]]></Source>
+          <With><![CDATA[<a href="#//apple_ref/doc/c_ref/kABMultiDateComponentsProperty">,kABMultiDateComponentsProperty</a>]]></With>
+        </Replace>
         <Replace type="Generated">
           <Source><![CDATA[kABMultiValueMask]]></Source>
           <With><![CDATA[0x100]]></With>
-        </Replace>
-        <Replace type="Generated">
-          <Source><![CDATA[<a href="#//apple_ref/doc/c_ref/kABMultiDateComponentsProperty">kABMultiDateComponentsProperty</a>]]></Source>
-          <With><![CDATA[<a href="#//apple_ref/doc/c_ref/kABMultiDateComponentsProperty">,kABMultiDateComponentsProperty</a>]]></With>
         </Replace>
       </Type>
       <Type name="AddressBookFramework.Functions">
@@ -2300,9 +2300,6 @@ enum {]]>
 
     </Protocols>
     <Enumerations>
-      <Enumeration name="NSTableViewGridLineStyle">
-        <Patch>BaseType=NSUInteger</Patch>
-      </Enumeration>
       <Enumeration name="NSTrackingAreaOptions">
         <Patch>BaseType=NSUInteger</Patch>
       </Enumeration>
@@ -2712,6 +2709,7 @@ enum {]]>
   <Framework name="CoreMedia" usings="Foundation,AppKit,ApplicationServices" assembly="Monobjc.CoreMedia">
     <Types>
       <Type name="CoreMedia.Constants">
+        <Patch>Enumerations[kCMPersistentTrackID_Invalid].Generate=false</Patch>
       </Type>
       <Type name="CoreMedia.DataTypes">
       </Type>
