@@ -1335,472 +1335,487 @@
   <Entry ns="CorePlot" nature="C" name="CorePlot_Definitions" style="Doxygen" file="CorePlot_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPAnnotation" style="Doxygen" file="CPAnnotation">
+  <Entry ns="CorePlot" nature="C" name="CPTAnnotation" style="Doxygen" file="CPTAnnotation">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPAnnotation_AbstractMethods" style="Doxygen" file="CPAnnotation_AbstractMethods">
+  <Entry ns="CorePlot" nature="C" name="CPTAnnotation_AbstractMethods" style="Doxygen" file="CPTAnnotation_AbstractMethods">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPAnnotation_Definitions" style="Doxygen" file="CPAnnotation_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTAnnotation_Definitions" style="Doxygen" file="CPTAnnotation_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPAnnotationHostLayer" style="Doxygen" file="CPAnnotationHostLayer">
+  <Entry ns="CorePlot" nature="C" name="CPTAnnotationHostLayer" style="Doxygen" file="CPTAnnotationHostLayer">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPAnnotationHostLayer_Definitions" style="Doxygen" file="CPAnnotationHostLayer_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTAnnotationHostLayer_Definitions" style="Doxygen" file="CPTAnnotationHostLayer_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPAxis" style="Doxygen" file="CPAxis">
+  <Entry ns="CorePlot" nature="C" name="CPTAxis" style="Doxygen" file="CPTAxis">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPAxis_AbstractMethods" style="Doxygen" file="CPAxis_AbstractMethods">
+  <Entry ns="CorePlot" nature="C" name="CPTAxis_AbstractMethods" style="Doxygen" file="CPTAxis_AbstractMethods">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPAxis_Definitions" style="Doxygen" file="CPAxis_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTAxis_Definitions" style="Doxygen" file="CPTAxis_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPAxisLabel" style="Doxygen" file="CPAxisLabel">
+  <Entry ns="CorePlot" nature="C" name="CPTAxisLabel" style="Doxygen" file="CPTAxisLabel">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPAxisLabel_Definitions" style="Doxygen" file="CPAxisLabel_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTAxisLabel_Definitions" style="Doxygen" file="CPTAxisLabel_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPAxisLabelGroup" style="Doxygen" file="CPAxisLabelGroup">
+  <Entry ns="CorePlot" nature="C" name="CPTAxisLabelGroup" style="Doxygen" file="CPTAxisLabelGroup">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPAxisLabelGroup_Definitions" style="Doxygen" file="CPAxisLabelGroup_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTAxisLabelGroup_Definitions" style="Doxygen" file="CPTAxisLabelGroup_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPAxisSet" style="Doxygen" file="CPAxisSet">
+  <Entry ns="CorePlot" nature="C" name="CPTAxisSet" style="Doxygen" file="CPTAxisSet">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPAxisSet_Definitions" style="Doxygen" file="CPAxisSet_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTAxisSet_Definitions" style="Doxygen" file="CPTAxisSet_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPAxisTitle" style="Doxygen" file="CPAxisTitle">
+  <Entry ns="CorePlot" nature="C" name="CPTAxisTitle" style="Doxygen" file="CPTAxisTitle">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPAxisTitle_Definitions" style="Doxygen" file="CPAxisTitle_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTAxisTitle_Definitions" style="Doxygen" file="CPTAxisTitle_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPBarPlot" style="Doxygen" file="CPBarPlot">
+  <Entry ns="CorePlot" nature="C" name="CPTBarPlot" style="Doxygen" file="CPTBarPlot">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPBarPlot_Definitions" style="Doxygen" file="CPBarPlot_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTBarPlot_Definitions" style="Doxygen" file="CPTBarPlot_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPBorderedLayer" style="Doxygen" file="CPBorderedLayer">
+  <Entry ns="CorePlot" nature="C" name="CPTBorderedLayer" style="Doxygen" file="CPTBorderedLayer">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPBorderedLayer_Definitions" style="Doxygen" file="CPBorderedLayer_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTBorderedLayer_Definitions" style="Doxygen" file="CPTBorderedLayer_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPColor" style="Doxygen" file="CPColor">
+  <Entry ns="CorePlot" nature="C" name="CPTColor" style="Doxygen" file="CPTColor">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPColor_CPPlatformSpecificColorExtensions" style="Doxygen" file="CPColor_CPPlatformSpecificColorExtensions">
+  <Entry ns="CorePlot" nature="C" name="CPTColor_CPTPlatformSpecificColorExtensions" style="Doxygen" file="CPTColor_CPTPlatformSpecificColorExtensions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPColor_Definitions" style="Doxygen" file="CPColor_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTColor_Definitions" style="Doxygen" file="CPTColor_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPColorSpace" style="Doxygen" file="CPColorSpace">
+  <Entry ns="CorePlot" nature="C" name="CPTColorSpace" style="Doxygen" file="CPTColorSpace">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPColorSpace_Definitions" style="Doxygen" file="CPColorSpace_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTColorSpace_Definitions" style="Doxygen" file="CPTColorSpace_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPConstrainedPosition" style="Doxygen" file="CPConstrainedPosition">
+  <Entry ns="CorePlot" nature="C" name="CPTConstrainedPosition" style="Doxygen" file="CPTConstrainedPosition">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPConstrainedPosition_Definitions" style="Doxygen" file="CPConstrainedPosition_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTConstrainedPosition_Definitions" style="Doxygen" file="CPTConstrainedPosition_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPDarkGradientTheme" style="Doxygen" file="CPDarkGradientTheme">
+  <Entry ns="CorePlot" nature="C" name="CPTDarkGradientTheme" style="Doxygen" file="CPTDarkGradientTheme">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPDarkGradientTheme_Definitions" style="Doxygen" file="CPDarkGradientTheme_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTDarkGradientTheme_Definitions" style="Doxygen" file="CPTDarkGradientTheme_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPDecimalNumberValueTransformer" style="Doxygen" file="CPDecimalNumberValueTransformer">
+  <Entry ns="CorePlot" nature="C" name="CPTDecimalNumberValueTransformer" style="Doxygen" file="CPTDecimalNumberValueTransformer">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPDecimalNumberValueTransformer_Definitions" style="Doxygen" file="CPDecimalNumberValueTransformer_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTDecimalNumberValueTransformer_Definitions" style="Doxygen" file="CPTDecimalNumberValueTransformer_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPDefinitions_Definitions" style="Doxygen" file="CPDefinitions_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTDefinitions_Definitions" style="Doxygen" file="CPTDefinitions_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPExceptions_Definitions" style="Doxygen" file="CPExceptions_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTExceptions_Definitions" style="Doxygen" file="CPTExceptions_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPFill" style="Doxygen" file="CPFill">
+  <Entry ns="CorePlot" nature="C" name="CPTFill" style="Doxygen" file="CPTFill">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPFill_AbstractMethods" style="Doxygen" file="CPFill_AbstractMethods">
+  <Entry ns="CorePlot" nature="C" name="CPTFill_AbstractMethods" style="Doxygen" file="CPTFill_AbstractMethods">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPFill_Definitions" style="Doxygen" file="CPFill_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTFill_Definitions" style="Doxygen" file="CPTFill_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPGradient" style="Doxygen" file="CPGradient">
+  <Entry ns="CorePlot" nature="C" name="CPTGradient" style="Doxygen" file="CPTGradient">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPGradient_Definitions" style="Doxygen" file="CPGradient_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTGradient_Definitions" style="Doxygen" file="CPTGradient_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPGraph" style="Doxygen" file="CPGraph">
+  <Entry ns="CorePlot" nature="C" name="CPTGraph" style="Doxygen" file="CPTGraph">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPGraph_AbstractFactoryMethods" style="Doxygen" file="CPGraph_AbstractFactoryMethods">
+  <Entry ns="CorePlot" nature="C" name="CPTGraph_AbstractFactoryMethods" style="Doxygen" file="CPTGraph_AbstractFactoryMethods">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPGraph_Definitions" style="Doxygen" file="CPGraph_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTGraph_Definitions" style="Doxygen" file="CPTGraph_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPGridLineGroup" style="Doxygen" file="CPGridLineGroup">
+  <Entry ns="CorePlot" nature="C" name="CPTGridLineGroup" style="Doxygen" file="CPTGridLineGroup">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPGridLineGroup_Definitions" style="Doxygen" file="CPGridLineGroup_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTGridLineGroup_Definitions" style="Doxygen" file="CPTGridLineGroup_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPGridLines" style="Doxygen" file="CPGridLines">
+  <Entry ns="CorePlot" nature="C" name="CPTGridLines" style="Doxygen" file="CPTGridLines">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPGridLines_Definitions" style="Doxygen" file="CPGridLines_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTGridLines_Definitions" style="Doxygen" file="CPTGridLines_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPImage" style="Doxygen" file="CPImage">
+  <Entry ns="CorePlot" nature="C" name="CPTImage" style="Doxygen" file="CPTImage">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPImage_Definitions" style="Doxygen" file="CPImage_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTImage_Definitions" style="Doxygen" file="CPTImage_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPLayer" style="Doxygen" file="CPLayer">
+  <Entry ns="CorePlot" nature="C" name="CPTLayer" style="Doxygen" file="CPTLayer">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPLayer_CPPlatformSpecificLayerExtensions" style="Doxygen" file="CPLayer_CPPlatformSpecificLayerExtensions">
+  <Entry ns="CorePlot" nature="C" name="CPTLayer_CPTPlatformSpecificLayerExtensions" style="Doxygen" file="CPTLayer_CPTPlatformSpecificLayerExtensions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPLayer_Definitions" style="Doxygen" file="CPLayer_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTLayer_Definitions" style="Doxygen" file="CPTLayer_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPLayerAnnotation" style="Doxygen" file="CPLayerAnnotation">
+  <Entry ns="CorePlot" nature="C" name="CPTLayerAnnotation" style="Doxygen" file="CPTLayerAnnotation">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPLayerAnnotation_Definitions" style="Doxygen" file="CPLayerAnnotation_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTLayerAnnotation_Definitions" style="Doxygen" file="CPTLayerAnnotation_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPLayerHostingView" style="Doxygen" file="CPLayerHostingView">
+  <Entry ns="CorePlot" nature="C" name="CPTLayerHostingView" style="Doxygen" file="CPTLayerHostingView">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPLayerHostingView_Definitions" style="Doxygen" file="CPLayerHostingView_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTLayerHostingView_Definitions" style="Doxygen" file="CPTLayerHostingView_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPLayoutManager_Definitions" style="Doxygen" file="CPLayoutManager_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTLayoutManager_Definitions" style="Doxygen" file="CPTLayoutManager_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPLimitBand" style="Doxygen" file="CPLimitBand">
+  <Entry ns="CorePlot" nature="C" name="CPTLegend" style="Doxygen" file="CPTLegend">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPLimitBand_Definitions" style="Doxygen" file="CPLimitBand_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTLegend_Definitions" style="Doxygen" file="CPTLegend_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPLineStyle" style="Doxygen" file="CPLineStyle">
+  <Entry ns="CorePlot" nature="C" name="CPTLegendEntry" style="Doxygen" file="CPTLegendEntry">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPLineStyle_Definitions" style="Doxygen" file="CPLineStyle_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTLegendEntry_Definitions" style="Doxygen" file="CPTLegendEntry_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPMutableLineStyle" style="Doxygen" file="CPMutableLineStyle">
+  <Entry ns="CorePlot" nature="C" name="CPTLimitBand" style="Doxygen" file="CPTLimitBand">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPMutableLineStyle_Definitions" style="Doxygen" file="CPMutableLineStyle_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTLimitBand_Definitions" style="Doxygen" file="CPTLimitBand_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPMutableNumericData" style="Doxygen" file="CPMutableNumericData">
+  <Entry ns="CorePlot" nature="C" name="CPTLineStyle" style="Doxygen" file="CPTLineStyle">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPMutableNumericData_Definitions" style="Doxygen" file="CPMutableNumericData_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTLineStyle_Definitions" style="Doxygen" file="CPTLineStyle_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPMutableNumericData_TypeConversion" style="Doxygen" file="CPMutableNumericData_TypeConversion">
+  <Entry ns="CorePlot" nature="C" name="CPTMutableLineStyle" style="Doxygen" file="CPTMutableLineStyle">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPMutableNumericData_TypeConversion_Definitions" style="Cocoa" file="CPMutableNumericData_TypeConversion_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTMutableLineStyle_Definitions" style="Doxygen" file="CPTMutableLineStyle_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPMutableTextStyle" style="Doxygen" file="CPMutableTextStyle">
+  <Entry ns="CorePlot" nature="C" name="CPTMutableNumericData" style="Doxygen" file="CPTMutableNumericData">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPMutableTextStyle_Definitions" style="Doxygen" file="CPMutableTextStyle_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTMutableNumericData_Definitions" style="Doxygen" file="CPTMutableNumericData_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPNumericData" style="Doxygen" file="CPNumericData">
+  <Entry ns="CorePlot" nature="C" name="CPTMutableNumericData_TypeConversion" style="Doxygen" file="CPTMutableNumericData_TypeConversion">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPNumericData_Definitions" style="Doxygen" file="CPNumericData_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTMutableNumericData_TypeConversion_Definitions" style="Doxygen" file="CPTMutableNumericData_TypeConversion_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPNumericData_TypeConversion" style="Doxygen" file="CPNumericData_TypeConversion">
+  <Entry ns="CorePlot" nature="C" name="CPTMutableTextStyle" style="Doxygen" file="CPTMutableTextStyle">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPNumericData_TypeConversion_Definitions" style="Cocoa" file="CPNumericData_TypeConversion_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTMutableTextStyle_Definitions" style="Doxygen" file="CPTMutableTextStyle_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPNumericDataType_Definitions" style="Doxygen" file="CPNumericDataType_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTNumericData" style="Doxygen" file="CPTNumericData">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPathExtensions_Definitions" style="Doxygen" file="CPPathExtensions_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTNumericData_Definitions" style="Doxygen" file="CPTNumericData_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPieChart" style="Doxygen" file="CPPieChart">
+  <Entry ns="CorePlot" nature="C" name="CPTNumericData_TypeConversion" style="Doxygen" file="CPTNumericData_TypeConversion">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPieChart_Definitions" style="Doxygen" file="CPPieChart_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTNumericData_TypeConversion_Definitions" style="Doxygen" file="CPTNumericData_TypeConversion_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlainBlackTheme" style="Doxygen" file="CPPlainBlackTheme">
+  <Entry ns="CorePlot" nature="C" name="CPTNumericDataType_Definitions" style="Doxygen" file="CPTNumericDataType_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlainBlackTheme_Definitions" style="Doxygen" file="CPPlainBlackTheme_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTPathExtensions_Definitions" style="Doxygen" file="CPTPathExtensions_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlainWhiteTheme" style="Doxygen" file="CPPlainWhiteTheme">
+  <Entry ns="CorePlot" nature="C" name="CPTPieChart" style="Doxygen" file="CPTPieChart">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlainWhiteTheme_Definitions" style="Doxygen" file="CPPlainWhiteTheme_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTPieChart_Definitions" style="Doxygen" file="CPTPieChart_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlatformSpecificCategories_Definitions" style="Doxygen" file="CPPlatformSpecificCategories_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTPlainBlackTheme" style="Doxygen" file="CPTPlainBlackTheme">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlatformSpecificDefines_Definitions" style="Doxygen" file="CPPlatformSpecificDefines_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTPlainBlackTheme_Definitions" style="Doxygen" file="CPTPlainBlackTheme_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlatformSpecificFunctions_Definitions" style="Doxygen" file="CPPlatformSpecificFunctions_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTPlainWhiteTheme" style="Doxygen" file="CPTPlainWhiteTheme">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlot" style="Doxygen" file="CPPlot">
+  <Entry ns="CorePlot" nature="C" name="CPTPlainWhiteTheme_Definitions" style="Doxygen" file="CPTPlainWhiteTheme_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlot_AbstractMethods" style="Doxygen" file="CPPlot_AbstractMethods">
+  <Entry ns="CorePlot" nature="C" name="CPTPlatformSpecificCategories_Definitions" style="Doxygen" file="CPTPlatformSpecificCategories_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlot_Definitions" style="Doxygen" file="CPPlot_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTPlatformSpecificDefines_Definitions" style="Doxygen" file="CPTPlatformSpecificDefines_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlotArea" style="Doxygen" file="CPPlotArea">
+  <Entry ns="CorePlot" nature="C" name="CPTPlatformSpecificFunctions_Definitions" style="Doxygen" file="CPTPlatformSpecificFunctions_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlotArea_Definitions" style="Doxygen" file="CPPlotArea_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTPlot" style="Doxygen" file="CPTPlot">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlotAreaFrame" style="Doxygen" file="CPPlotAreaFrame">
+  <Entry ns="CorePlot" nature="C" name="CPTPlot_AbstractMethods" style="Doxygen" file="CPTPlot_AbstractMethods">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlotAreaFrame_Definitions" style="Doxygen" file="CPPlotAreaFrame_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTPlot_Definitions" style="Doxygen" file="CPTPlot_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlotGroup" style="Doxygen" file="CPPlotGroup">
+  <Entry ns="CorePlot" nature="C" name="CPTPlotArea" style="Doxygen" file="CPTPlotArea">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlotGroup_Definitions" style="Doxygen" file="CPPlotGroup_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTPlotArea_Definitions" style="Doxygen" file="CPTPlotArea_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlotRange" style="Doxygen" file="CPPlotRange">
+  <Entry ns="CorePlot" nature="C" name="CPTPlotAreaFrame" style="Doxygen" file="CPTPlotAreaFrame">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlotRange_Definitions" style="Doxygen" file="CPPlotRange_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTPlotAreaFrame_Definitions" style="Doxygen" file="CPTPlotAreaFrame_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlotSpace" style="Doxygen" file="CPPlotSpace">
+  <Entry ns="CorePlot" nature="C" name="CPTPlotGroup" style="Doxygen" file="CPTPlotGroup">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlotSpace_AbstractMethods" style="Doxygen" file="CPPlotSpace_AbstractMethods">
+  <Entry ns="CorePlot" nature="C" name="CPTPlotGroup_Definitions" style="Doxygen" file="CPTPlotGroup_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlotSpace_Definitions" style="Doxygen" file="CPPlotSpace_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTPlotRange" style="Doxygen" file="CPTPlotRange">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlotSpaceAnnotation" style="Doxygen" file="CPPlotSpaceAnnotation">
+  <Entry ns="CorePlot" nature="C" name="CPTPlotRange_Definitions" style="Doxygen" file="CPTPlotRange_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlotSpaceAnnotation_Definitions" style="Doxygen" file="CPPlotSpaceAnnotation_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTPlotSpace" style="Doxygen" file="CPTPlotSpace">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlotSymbol" style="Doxygen" file="CPPlotSymbol">
+  <Entry ns="CorePlot" nature="C" name="CPTPlotSpace_AbstractMethods" style="Doxygen" file="CPTPlotSpace_AbstractMethods">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPlotSymbol_Definitions" style="Doxygen" file="CPPlotSymbol_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTPlotSpace_Definitions" style="Doxygen" file="CPTPlotSpace_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPolarPlotSpace" style="Doxygen" file="CPPolarPlotSpace">
+  <Entry ns="CorePlot" nature="C" name="CPTPlotSpaceAnnotation" style="Doxygen" file="CPTPlotSpaceAnnotation">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPPolarPlotSpace_Definitions" style="Doxygen" file="CPPolarPlotSpace_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTPlotSpaceAnnotation_Definitions" style="Doxygen" file="CPTPlotSpaceAnnotation_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPRangePlot" style="Doxygen" file="CPRangePlot">
+  <Entry ns="CorePlot" nature="C" name="CPTPlotSymbol" style="Doxygen" file="CPTPlotSymbol">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPRangePlot_Definitions" style="Doxygen" file="CPRangePlot_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTPlotSymbol_Definitions" style="Doxygen" file="CPTPlotSymbol_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPResponder_Definitions" style="Doxygen" file="CPResponder_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTPolarPlotSpace" style="Doxygen" file="CPTPolarPlotSpace">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPScatterPlot" style="Doxygen" file="CPScatterPlot">
+  <Entry ns="CorePlot" nature="C" name="CPTPolarPlotSpace_Definitions" style="Doxygen" file="CPTPolarPlotSpace_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPScatterPlot_Definitions" style="Doxygen" file="CPScatterPlot_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTRangePlot" style="Doxygen" file="CPTRangePlot">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPSlateTheme" style="Doxygen" file="CPSlateTheme">
+  <Entry ns="CorePlot" nature="C" name="CPTRangePlot_Definitions" style="Doxygen" file="CPTRangePlot_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPSlateTheme_Definitions" style="Doxygen" file="CPSlateTheme_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTResponder_Definitions" style="Doxygen" file="CPTResponder_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPStocksTheme" style="Doxygen" file="CPStocksTheme">
+  <Entry ns="CorePlot" nature="C" name="CPTScatterPlot" style="Doxygen" file="CPTScatterPlot">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPStocksTheme_Definitions" style="Doxygen" file="CPStocksTheme_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTScatterPlot_Definitions" style="Doxygen" file="CPTScatterPlot_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPTextLayer" style="Doxygen" file="CPTextLayer">
+  <Entry ns="CorePlot" nature="C" name="CPTSlateTheme" style="Doxygen" file="CPTSlateTheme">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPTextLayer_Definitions" style="Doxygen" file="CPTextLayer_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTSlateTheme_Definitions" style="Doxygen" file="CPTSlateTheme_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPTextStyle" style="Doxygen" file="CPTextStyle">
+  <Entry ns="CorePlot" nature="C" name="CPTStocksTheme" style="Doxygen" file="CPTStocksTheme">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPTextStyle_Definitions" style="Doxygen" file="CPTextStyle_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTStocksTheme_Definitions" style="Doxygen" file="CPTStocksTheme_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPTheme" style="Doxygen" file="CPTheme">
+  <Entry ns="CorePlot" nature="C" name="CPTTextLayer" style="Doxygen" file="CPTTextLayer">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPTheme_AbstractMethods" style="Doxygen" file="CPTheme_AbstractMethods">
+  <Entry ns="CorePlot" nature="C" name="CPTTextLayer_Definitions" style="Doxygen" file="CPTTextLayer_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPTheme_Definitions" style="Doxygen" file="CPTheme_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTTextStyle" style="Doxygen" file="CPTTextStyle">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPTimeFormatter" style="Doxygen" file="CPTimeFormatter">
+  <Entry ns="CorePlot" nature="C" name="CPTTextStyle_Definitions" style="Doxygen" file="CPTTextStyle_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPTimeFormatter_Definitions" style="Doxygen" file="CPTimeFormatter_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTTheme" style="Doxygen" file="CPTTheme">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPTradingRangePlot" style="Doxygen" file="CPTradingRangePlot">
+  <Entry ns="CorePlot" nature="C" name="CPTTheme_AbstractMethods" style="Doxygen" file="CPTTheme_AbstractMethods">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPTradingRangePlot_Definitions" style="Doxygen" file="CPTradingRangePlot_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTTheme_Definitions" style="Doxygen" file="CPTTheme_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPUtilities_Definitions" style="Doxygen" file="CPUtilities_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTTimeFormatter" style="Doxygen" file="CPTTimeFormatter">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPXYAxis" style="Doxygen" file="CPXYAxis">
+  <Entry ns="CorePlot" nature="C" name="CPTTimeFormatter_Definitions" style="Doxygen" file="CPTTimeFormatter_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPXYAxis_Definitions" style="Doxygen" file="CPXYAxis_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTTradingRangePlot" style="Doxygen" file="CPTTradingRangePlot">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPXYAxisSet" style="Doxygen" file="CPXYAxisSet">
+  <Entry ns="CorePlot" nature="C" name="CPTTradingRangePlot_Definitions" style="Doxygen" file="CPTTradingRangePlot_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPXYAxisSet_Definitions" style="Doxygen" file="CPXYAxisSet_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTUtilities_Definitions" style="Doxygen" file="CPTUtilities_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPXYGraph" style="Doxygen" file="CPXYGraph">
+  <Entry ns="CorePlot" nature="C" name="CPTXYAxis" style="Doxygen" file="CPTXYAxis">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPXYGraph_Definitions" style="Doxygen" file="CPXYGraph_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTXYAxis_Definitions" style="Doxygen" file="CPTXYAxis_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPXYPlotSpace" style="Doxygen" file="CPXYPlotSpace">
+  <Entry ns="CorePlot" nature="C" name="CPTXYAxisSet" style="Doxygen" file="CPTXYAxisSet">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPXYPlotSpace_Definitions" style="Doxygen" file="CPXYPlotSpace_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTXYAxisSet_Definitions" style="Doxygen" file="CPTXYAxisSet_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPXYTheme" style="Doxygen" file="CPXYTheme">
+  <Entry ns="CorePlot" nature="C" name="CPTXYGraph" style="Doxygen" file="CPTXYGraph">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="CPXYTheme_Definitions" style="Doxygen" file="CPXYTheme_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTXYGraph_Definitions" style="Doxygen" file="CPTXYGraph_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="NSDecimalNumber_CPExtensions" style="Doxygen" file="NSDecimalNumber_CPExtensions">
+  <Entry ns="CorePlot" nature="C" name="CPTXYPlotSpace" style="Doxygen" file="CPTXYPlotSpace">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="NSDecimalNumberExtensions_Definitions" style="Doxygen" file="NSDecimalNumberExtensions_Definitions">
+  <Entry ns="CorePlot" nature="C" name="CPTXYPlotSpace_Definitions" style="Doxygen" file="CPTXYPlotSpace_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="NSException_CPExtensions" style="Doxygen" file="NSException_CPExtensions">
+  <Entry ns="CorePlot" nature="C" name="CPTXYTheme" style="Doxygen" file="CPTXYTheme">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="CorePlot" nature="C" name="CPTXYTheme_Definitions" style="Doxygen" file="CPTXYTheme_Definitions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="CorePlot" nature="C" name="NSDecimalNumber_CPTExtensions" style="Doxygen" file="NSDecimalNumber_CPTExtensions">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="CorePlot" nature="C" name="NSDecimalNumberExtensions_Definitions" style="Doxygen" file="NSDecimalNumberExtensions_Definitions"> 
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="CorePlot" nature="C" name="NSException_CPTExtensions" style="Doxygen" file="NSException_CPTExtensions">
     <url>N/A</url>
   </Entry>
   <Entry ns="CorePlot" nature="C" name="NSExceptionExtensions_Definitions" style="Doxygen" file="NSExceptionExtensions_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="NSNumber_CPExtensions" style="Doxygen" file="NSNumber_CPExtensions">
+  <Entry ns="CorePlot" nature="C" name="NSNumber_CPTExtensions" style="Doxygen" file="NSNumber_CPTExtensions">
     <url>N/A</url>
   </Entry>
   <Entry ns="CorePlot" nature="C" name="NSNumberExtensions_Definitions" style="Doxygen" file="NSNumberExtensions_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="C" name="NSString_CPTextStyleExtensions" style="Doxygen" file="NSString_CPTextStyleExtensions">
+  <Entry ns="CorePlot" nature="C" name="NSString_CPTTextStyleExtensions" style="Doxygen" file="NSString_CPTTextStyleExtensions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="P" name="CPAxisDelegate" style="Doxygen" file="CPAxisDelegate">
+  <Entry ns="CorePlot" nature="P" name="CPTAxisDelegate" style="Doxygen" file="CPTAxisDelegate">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="P" name="CPBarPlotDataSource" style="Doxygen" file="CPBarPlotDataSource">
+  <Entry ns="CorePlot" nature="P" name="CPTBarPlotDataSource" style="Doxygen" file="CPTBarPlotDataSource">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="P" name="CPBarPlotDelegate" style="Doxygen" file="CPBarPlotDelegate">
+  <Entry ns="CorePlot" nature="P" name="CPTBarPlotDelegate" style="Doxygen" file="CPTBarPlotDelegate">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="P" name="CPLayoutManager" style="Doxygen" file="CPLayoutManager">
+  <Entry ns="CorePlot" nature="P" name="CPTLayoutManager" style="Doxygen" file="CPTLayoutManager">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="P" name="CPPieChartDataSource" style="Doxygen" file="CPPieChartDataSource">
+  <Entry ns="CorePlot" nature="P" name="CPTLegendDelegate" style="Doxygen" file="CPTLegendDelegate">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="P" name="CPPieChartDelegate" style="Doxygen" file="CPPieChartDelegate">
+  <Entry ns="CorePlot" nature="P" name="CPTPieChartDataSource" style="Doxygen" file="CPTPieChartDataSource">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="P" name="CPPlotDataSource" style="Doxygen" file="CPPlotDataSource">
+  <Entry ns="CorePlot" nature="P" name="CPTPieChartDelegate" style="Doxygen" file="CPTPieChartDelegate">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="P" name="CPPlotSpaceDelegate" style="Doxygen" file="CPPlotSpaceDelegate">
+  <Entry ns="CorePlot" nature="P" name="CPTPlotDataSource" style="Doxygen" file="CPTPlotDataSource">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="P" name="CPResponder" style="Doxygen" file="CPResponder">
+  <Entry ns="CorePlot" nature="P" name="CPTPlotSpaceDelegate" style="Doxygen" file="CPTPlotSpaceDelegate">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="P" name="CPScatterPlotDataSource" style="Doxygen" file="CPScatterPlotDataSource">
+  <Entry ns="CorePlot" nature="P" name="CPTResponder" style="Doxygen" file="CPTResponder">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="P" name="CPScatterPlotDelegate" style="Doxygen" file="CPScatterPlotDelegate">
+  <Entry ns="CorePlot" nature="P" name="CPTScatterPlotDataSource" style="Doxygen" file="CPTScatterPlotDataSource">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="S" name="CPConstraints" style="Doxygen" file="CPConstraints">
+  <Entry ns="CorePlot" nature="P" name="CPTScatterPlotDelegate" style="Doxygen" file="CPTScatterPlotDelegate">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="S" name="CPContextNode" style="Doxygen" file="CPContextNode">
+  <Entry ns="CorePlot" nature="S" name="CPTConstraints" style="Doxygen" file="CPTConstraints">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="S" name="CPGradientElement" style="Doxygen" file="CPGradientElement">
+  <Entry ns="CorePlot" nature="S" name="CPTContextNode" style="Doxygen" file="CPTContextNode">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="S" name="CPNumericDataType" style="Doxygen" file="CPNumericDataType">
+  <Entry ns="CorePlot" nature="S" name="CPTGradientElement" style="Doxygen" file="CPTGradientElement">
     <url>N/A</url>
   </Entry>
-  <Entry ns="CorePlot" nature="S" name="CPRGBAColor" style="Doxygen" file="CPRGBAColor">
+  <Entry ns="CorePlot" nature="S" name="CPTNumericDataType" style="Doxygen" file="CPTNumericDataType">
+    <url>N/A</url>
+  </Entry>
+  <Entry ns="CorePlot" nature="S" name="CPTRGBAColor" style="Doxygen" file="CPTRGBAColor">
     <url>N/A</url>
   </Entry>
   <Entry ns="CoreServices" nature="T" name="UTType" style="Cocoa" file="UTType">
