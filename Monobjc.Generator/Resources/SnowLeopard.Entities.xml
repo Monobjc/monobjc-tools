@@ -734,7 +734,7 @@
       </Class>
       <Class name="NSBundle_AppKitAdditions">
         <Patch>AdditionFor=NSBundle</Patch>
-        <!--<Patch>Methods[LoadNibFileExternalNameTableWithZone][Static=True].Generate=false</Patch>-->
+        <!--<Patch>Methods[LoadNibFileExternalNameTableWithZone]{Static=True}.Generate=false</Patch>-->
         <Patch>Methods[LoadNibNamedOwner].Generate=false</Patch>
         <Patch>Methods[LoadNibFileExternalNameTableWithZone].Generate=false</Patch>
       </Class>
@@ -905,7 +905,7 @@
       <Class name="NSController">
       </Class>
       <Class name="NSCursor">
-        <Patch>Methods[Pop][Static=True].Generate=false</Patch>
+        <Patch>Methods[Pop]{Static=True}.Generate=false</Patch>
       </Class>
       <Class name="NSCustomImageRep">
         <Patch>Properties[Delegate].Type=Id</Patch>
@@ -941,7 +941,7 @@
 
         <Patch>Properties[EventRef].Type=IntPtr</Patch>
         <Patch>Properties[EventRef].Getter.ReturnType=IntPtr</Patch>
-        <Patch>Properties[ModifierFlags][Static=True].Name=GlobalModifierFlags</Patch>
+        <Patch>Properties[ModifierFlags]{Static=True}.Name=GlobalModifierFlags</Patch>
         <Patch>Properties[ModifierFlags].Type=NSModifierFlag</Patch>
         <Patch>Properties[GlobalModifierFlags].Type=NSModifierFlag</Patch>
 
@@ -1104,8 +1104,8 @@
         <Patch>Enumerations[NSGradientDrawingOptions].BaseType=NSUInteger</Patch>
       </Class>
       <Class name="NSGraphicsContext">
-        <Patch>Methods[RestoreGraphicsState][Static=True].Generate=false</Patch>
-        <Patch>Methods[SaveGraphicsState][Static=True].Generate=false</Patch>
+        <Patch>Methods[RestoreGraphicsState]{Static=True}.Generate=false</Patch>
+        <Patch>Methods[SaveGraphicsState]{Static=True}.Generate=false</Patch>
       </Class>
       <Class name="NSHelpManager">
       </Class>
@@ -2375,7 +2375,7 @@ enum {]]>
       <Class name="CLLocationManager">
         <Patch>MinAvailability=Mac OS X v10.6</Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
-        <Patch>Properties[LocationServicesEnabled][Static=true].Generate=false</Patch>
+        <Patch>Properties[LocationServicesEnabled]{Static=True}.Generate=false</Patch>
         <Patch>Enumerations[CLError].BaseType=int</Patch>
         <Patch>Constants[CLLocationDistance].Generate=false</Patch>
       </Class>
@@ -3154,14 +3154,14 @@ enum {]]>
         </Replace>
       </Class>
       <Class name="NSAutoreleasePool">
-        <Patch>Methods[AddObject][Static=True].Generate=false</Patch>
+        <Patch>Methods[AddObject]{Static=True}.Generate=false</Patch>
       </Class>
       <Class name="NSBlockOperation">
         <Patch>Methods[BlockOperationWithBlock].ReturnType=NSBlockOperation</Patch>
       </Class>
       <Class name="NSBundle">
-        <Patch>Methods[PathForResourceOfTypeInDirectory][Static=True].Generate=false</Patch>
-        <Patch>Methods[PathsForResourcesOfTypeInDirectory][Static=True].Generate=false</Patch>
+        <Patch>Methods[PathForResourceOfTypeInDirectory]{Static=True}.Generate=false</Patch>
+        <Patch>Methods[PathsForResourcesOfTypeInDirectory]{Static=True}.Generate=false</Patch>
         <Patch>Methods[LoadNibNamedOwner]=<![CDATA[<Method Generate="true" Static="true" GenerateConstructor="true"><Summary><Line>Unarchives the contents of the nib file and links them to a specific owner object.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>LoadNibNamedOwner</Name><Selector>loadNibNamed:owner:</Selector><Signature>+ (BOOL)loadNibNamed:(NSString *)aNibName owner:(id)owner</Signature><ReturnType>bool</ReturnType><ReturnsDocumentation>YES if the nib file was loaded successfully; otherwise, NO.</ReturnsDocumentation><Parameters><Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The name of the nib file, which need not include the .nib extension. The file name should not include path information. The object in the owner parameter determines the location in which to look for the nib file.</Line></Summary><Name>aNibName</Name><Type>NSString</Type></Parameter><Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false"><Summary /><Name>owner</Name><Type>Id</Type></Parameter></Parameters></Method>]]></Patch>
         <Patch>Methods[LoadNibFileExternalNameTableWithZone]=<![CDATA[<Method Generate="true" Static="false" GenerateConstructor="true"><Summary><Line>Unarchives the contents of a nib file located in the receiver's bundle.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>LoadNibFileExternalNameTableWithZone</Name><Selector>loadNibFile:externalNameTable:withZone:</Selector><Signature>- (BOOL)loadNibFile:(NSString *)fileName externalNameTable:(NSDictionary *)context withZone:(NSZone *)zone</Signature><ReturnType>bool</ReturnType><ReturnsDocumentation>YES if the nib file was loaded successfully; otherwise, NO.</ReturnsDocumentation><Parameters><Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The name of the nib file, which need not include the .nib extension.</Line></Summary><Name>fileName</Name><Type>NSString</Type></Parameter><Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false"><Summary /><Name>context</Name><Type>NSDictionary</Type></Parameter><Parameter Generate="true" IsOut="false" IsByRef="false" IsBlock="false"><Summary /><Name>zone</Name><Type>IntPtr</Type></Parameter></Parameters></Method>]]></Patch>
         <Patch>Enumerations[Mach_O_Architecture].Name=NSMachOArchitecture</Patch>
@@ -3364,7 +3364,7 @@ enum {]]>
         <Patch>Properties[Date].Getter.ReturnType=NSDate</Patch>
         <Patch>Properties[DistantFuture].Type=NSDate</Patch>
         <Patch>Properties[DistantPast].Type=NSDate</Patch>
-        <Patch>Properties[TimeIntervalSinceReferenceDate][Static=True].Generate=false</Patch>
+        <Patch>Properties[TimeIntervalSinceReferenceDate]{Static=True}.Generate=false</Patch>
         <Patch>Methods[DateWithCalendarFormatTimeZone].ReturnType=IntPtr</Patch>
       </Class>
       <Class name="NSDateComponents">
@@ -3555,16 +3555,16 @@ enum {]]>
       </Class>
       <Class name="NSKeyedArchiver">
         <Patch>Methods[EncodeBytesLengthForKey].Parameters[bytesp].Type=IntPtr</Patch>
-        <Patch>Methods[ClassNameForClass][Static=True].Generate=false</Patch>
-        <Patch>Methods[SetClassNameForClass][Static=True].Generate=false</Patch>
+        <Patch>Methods[ClassNameForClass]{Static=True}.Generate=false</Patch>
+        <Patch>Methods[SetClassNameForClass]{Static=True}.Generate=false</Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSKeyedUnarchiver">
         <Patch>Methods[DecodeBytesForKeyReturnedLength].Parameters[lengthp].Type=NSUInteger</Patch>
         <Patch>Methods[DecodeBytesForKeyReturnedLength].Parameters[lengthp].IsOut=true</Patch>
         <Patch>Methods[DecodeBytesForKeyReturnedLength].ReturnType=IntPtr</Patch>
-        <Patch>Methods[ClassForClassName][Static=True].Generate=false</Patch>
-        <Patch>Methods[SetClassForClassName][Static=True].Generate=false</Patch>
+        <Patch>Methods[ClassForClassName]{Static=True}.Generate=false</Patch>
+        <Patch>Methods[SetClassForClassName]{Static=True}.Generate=false</Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSLocale">
@@ -3714,10 +3714,10 @@ enum {]]>
         <Patch>Methods[MutableCopyWithZone].Generate=false</Patch>
         <Patch>Methods[Retain].Generate=false</Patch>
         <Patch>Methods[Release].Generate=false</Patch>
-        <Patch>Properties[Class][Static=False].Generate=false</Patch>
-        <Patch>Properties[Class][Static=True].Generate=false</Patch>
-        <Patch>Properties[Description][Static=True].Generate=false</Patch>
-        <Patch>Properties[Superclass][Static=True].Generate=false</Patch>
+        <Patch>Properties[Class]{Static=False}.Generate=false</Patch>
+        <Patch>Properties[Class]{Static=True}.Generate=false</Patch>
+        <Patch>Properties[Description]{Static=True}.Generate=false</Patch>
+        <Patch>Properties[Superclass]{Static=True}.Generate=false</Patch>
         <Replace type="Generated">
           <Source><![CDATA[[ObjectiveCClass("NSObject")]]]></Source>
           <With><![CDATA[[ObjectiveCClass("NSObject", InterceptDealloc = true)]]]></With>
@@ -3829,8 +3829,8 @@ enum {]]>
         <Patch>Methods[RespondsToSelector].Generate=false</Patch>
         <Patch>Methods[Retain].Generate=false</Patch>
         <Patch>Methods[Release].Generate=false</Patch>
-        <Patch>Properties[Class][Static=False].Generate=false</Patch>
-        <Patch>Properties[Class][Static=True].Generate=false</Patch>
+        <Patch>Properties[Class]{Static=False}.Generate=false</Patch>
+        <Patch>Properties[Class]{Static=True}.Generate=false</Patch>
         <Replace type="Generated">
           <Source><![CDATA[[ObjectiveCClass("NSProxy")]]]></Source>
           <With><![CDATA[[ObjectiveCClass("NSProxy", InterceptDealloc = true)]]]></With>
@@ -4073,8 +4073,8 @@ enum]]>
         </Replace>
       </Class>
       <Class name="NSThread">
-        <Patch>Properties[IsMainThread][Static=True].Generate=false</Patch>
-        <Patch>Properties[ThreadPriority][Static=True].MaxAvailability=Mac OS X v10.6</Patch>
+        <Patch>Properties[IsMainThread]{Static=True}.Generate=false</Patch>
+        <Patch>Properties[ThreadPriority]{Static=True}.MaxAvailability=Mac OS X v10.6</Patch>
       </Class>
       <Class name="NSTimer">
       </Class>
@@ -4085,8 +4085,8 @@ enum]]>
         <Patch>Methods[TimeZoneWithNameData].ReturnType=NSTimeZone</Patch>
       </Class>
       <Class name="NSUnarchiver">
-        <Patch>Methods[ClassNameDecodedForArchiveClassName][Static=True].Generate=false</Patch>
-        <Patch>Methods[DecodeClassNameAsClassName][Static=True].Generate=false</Patch>
+        <Patch>Methods[ClassNameDecodedForArchiveClassName]{Static=True}.Generate=false</Patch>
+        <Patch>Methods[DecodeClassNameAsClassName]{Static=True}.Generate=false</Patch>
       </Class>
       <Class name="NSUndoManager">
         <!-- TODO: Move with other ordering -->

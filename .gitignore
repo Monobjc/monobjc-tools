@@ -2,6 +2,7 @@ bin/
 build/
 dist/
 obj/
+.DS_Store
 _ReSharper*
 *.Cache
 *.docstates
