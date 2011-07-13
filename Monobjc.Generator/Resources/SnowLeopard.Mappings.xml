@@ -210,6 +210,13 @@
   <Mapping type="UTF32Char">uint</Mapping>
   <Mapping type="const void *">IntPtr</Mapping>
   <Mapping type="const void*">IntPtr</Mapping>
+  <Mapping type="dispatch_block_t"><![CDATA[block:Action]]></Mapping>
+  <Mapping type="dispatch_group_t">IntPtr</Mapping>
+  <Mapping type="dispatch_object_t">IntPtr</Mapping>
+  <Mapping type="dispatch_once_t">NSInteger</Mapping>
+  <Mapping type="dispatch_queue_t">IntPtr</Mapping>
+  <Mapping type="dispatch_time_t">long</Mapping>
+  <Mapping type="dispatch_source_type_t">IntPtr</Mapping>
   <Mapping type="float">float</Mapping>
   <Mapping type="id (^)(id evaluatedObject, NSArray *expressions, NSMutableDictionary *context)"><![CDATA[block:Func<Id, NSArray, NSMutableDictionary, Id>]]></Mapping>
   <Mapping type="id">Id</Mapping>

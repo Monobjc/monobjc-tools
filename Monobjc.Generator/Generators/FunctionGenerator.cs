@@ -237,20 +237,20 @@ namespace Monobjc.Tools.Generator.Generators
             List<String> parameters = new List<String>();
             foreach (MethodParameterEntity methodParameterEntity in functionEntity.Parameters.Where(p => p.Generate))
             {
-                if (methodParameterEntity.IsOut || methodParameterEntity.IsByRef || methodParameterEntity.IsBlock)
+                if (methodParameterEntity.IsOut || methodParameterEntity.IsByRef)
                 {
                     parameters.Add("IntPtr " + methodParameterEntity.Name);
                 }
-                else
+                else if (methodParameterEntity.IsBlock)
+				{
+					parameters.Add(String.Format("[MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof (BlockMarshaler))] Block {0}", methodParameterEntity.Name));
+				}
+				else
                 {
                     String parameter = GetTypeSignature(methodParameterEntity);
                     if (TypeManager.HasClass(methodParameterEntity.Type))
                     {
                         parameter = String.Format("[MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof (IdMarshaler<{0}>))] {1}", methodParameterEntity.Type, parameter);
-                    }
-                    else if (methodParameterEntity.IsBlock)
-                    {
-                        parameter = String.Format("[MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof (BlockMarshaler))] {0}", parameter);
                     }
                     parameters.Add(parameter);
                 }

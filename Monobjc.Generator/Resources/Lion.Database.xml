@@ -3225,6 +3225,9 @@
   <Entry ns="JavaScriptCore" nature="C" name="JSValueRef_Definitions" style="Doxygen" file="JSValueRef_Definitions">
     <url>N/A</url>
   </Entry>
+  <Entry ns="Kernel" nature="T" name="GCD" style="Cocoa" file="GCD">
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html</url>
+  </Entry>
   <Entry ns="OpenGL" nature="T" name="CGL" style="Cocoa" file="CGL">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/GraphicsImaging/Reference/CGL_OpenGL/Reference/reference.html</url>
   </Entry>

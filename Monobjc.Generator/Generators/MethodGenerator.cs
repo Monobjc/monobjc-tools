@@ -523,7 +523,7 @@ namespace Monobjc.Tools.Generator.Generators
                             this.Writer.WriteLineFormat(indent, "{0} = Marshal.ReadInt16(__local{1});", methodParameterEntity.Name, index++);
                             break;
                         case "ushort":
-                            this.Writer.WriteLineFormat(indent, "{0} = (short) Marshal.ReadInt16(__local{1});", methodParameterEntity.Name, index++);
+                            this.Writer.WriteLineFormat(indent, "{0} = (ushort) Marshal.ReadInt16(__local{1});", methodParameterEntity.Name, index++);
                             break;
                         case "int":
                             this.Writer.WriteLineFormat(indent, "{0} = Marshal.ReadInt32(__local{1});", methodParameterEntity.Name, index++);
