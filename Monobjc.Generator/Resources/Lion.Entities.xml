@@ -2308,7 +2308,7 @@ enum {]]>
       </Enumeration>
     </Enumerations>
   </Framework>
-  <Framework name="AVFoundation" usings="Foundation,AppKit,ApplicationServices,CoreMedia,QuartzCore" assembly="Monobjc.AVFoundation">
+  <Framework name="AVFoundation" usings="Foundation,AppKit,ApplicationServices,CoreMedia,QuartzCore,Kernel" assembly="Monobjc.AVFoundation">
     <Types>
       <Type name="AVFoundationFramework.Functions">
       </Type>
@@ -2330,11 +2330,24 @@ enum {]]>
     <Classes>
       <Class name="AVAsset"></Class>
       <Class name="AVAssetExportSession"></Class>
-      <Class name="AVAssetImageGenerator"></Class>
+      <Class name="AVAssetImageGenerator">
+        <Patch>Methods[CopyCGImageAtTimeActualTimeError].Parameters[actualTime].Type=CMTime</Patch>
+        <Patch>Methods[CopyCGImageAtTimeActualTimeError].Parameters[actualTime].IsOut=true</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[<h3 class="constantGroup">AVAssetImageGeneratorResult</h3><p class="abstract">Constants to indicate the outcome of image generation.</p><pre class="declaration">
+{]]></Source>
+          <With><![CDATA[<h3 class="constantGroup">AVAssetImageGeneratorResult</h3><p class="abstract">Constants to indicate the outcome of image generation.</p><pre class="declaration">
+enum {]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<CMTime>(Marshal.ReadIntPtr(__local1));]]></Source>
+          <With><![CDATA[(CMTime) Marshal.PtrToStructure(__local1, typeof(CMTime));]]></With>
+        </Replace>
+      </Class>
       <Class name="AVAssetReader">
         <Patch>Enumerations[Reader_Status_Constants].Name=AVAssetReaderStatus</Patch>
         <Patch>Enumerations[AVAssetReaderStatus].BaseType=NSInteger</Patch>
-	  </Class>
+      </Class>
       <Class name="AVAssetReaderAudioMixOutput"></Class>
       <Class name="AVAssetReaderOutput"></Class>
       <Class name="AVAssetReaderTrackOutput"></Class>
@@ -2344,11 +2357,22 @@ enum {]]>
       <Class name="AVAssetWriter">
         <Patch>Enumerations[Status_Constants].Name=AVAssetWriterStatus</Patch>
         <Patch>Enumerations[AVAssetWriterStatus].BaseType=NSInteger</Patch>
-	  </Class>
+      </Class>
       <Class name="AVAssetWriterInput"></Class>
       <Class name="AVAssetWriterInputPixelBufferAdaptor"></Class>
       <Class name="AVAudioMix"></Class>
-      <Class name="AVAudioMixInputParameters"></Class>
+      <Class name="AVAudioMixInputParameters">
+        <Patch>Methods[GetVolumeRampForTimeStartVolumeEndVolumeTimeRange].Parameters[startVolume].Type=float</Patch>
+        <Patch>Methods[GetVolumeRampForTimeStartVolumeEndVolumeTimeRange].Parameters[startVolume].IsOut=true</Patch>
+        <Patch>Methods[GetVolumeRampForTimeStartVolumeEndVolumeTimeRange].Parameters[endVolume].Type=float</Patch>
+        <Patch>Methods[GetVolumeRampForTimeStartVolumeEndVolumeTimeRange].Parameters[endVolume].IsOut=true</Patch>
+        <Patch>Methods[GetVolumeRampForTimeStartVolumeEndVolumeTimeRange].Parameters[timeRange].Type=CMTimeRange</Patch>
+        <Patch>Methods[GetVolumeRampForTimeStartVolumeEndVolumeTimeRange].Parameters[timeRange].IsOut=true</Patch>
+        <Replace type="Generated">
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<CMTimeRange>(Marshal.ReadIntPtr(__local3));]]></Source>
+          <With><![CDATA[(CMTimeRange) Marshal.PtrToStructure(__local3, typeof(CMTimeRange));]]></With>
+        </Replace>
+      </Class>
       <Class name="AVAudioPlayer"></Class>
       <Class name="AVAudioRecorder"></Class>
       <Class name="AVCaptureAudioChannel"></Class>
@@ -2357,7 +2381,7 @@ enum {]]>
       <Class name="AVCaptureAudioPreviewOutput"></Class>
       <Class name="AVCaptureConnection">
         <Patch>Enumerations[AVCaptureVideoOrientation].Generate=false</Patch>
-	  </Class>
+      </Class>
       <Class name="AVCaptureDevice"></Class>
       <Class name="AVCaptureDeviceFormat"></Class>
       <Class name="AVCaptureDeviceInput"></Class>
@@ -2371,7 +2395,9 @@ enum {]]>
       <Class name="AVCaptureSession"></Class>
       <Class name="AVCaptureStillImageOutput"></Class>
       <Class name="AVCaptureVideoDataOutput"></Class>
-      <Class name="AVCaptureVideoPreviewLayer"></Class>
+      <Class name="AVCaptureVideoPreviewLayer">
+        <Patch>Methods[InitWithSessionWithNoConnection].GenerateConstructor=false</Patch>
+      </Class>
       <Class name="AVComposition"></Class>
       <Class name="AVCompositionTrack"></Class>
       <Class name="AVCompositionTrackSegment"></Class>
@@ -2379,7 +2405,7 @@ enum {]]>
       <Class name="AVMetadataItem">
         <Patch>Properties[Key].Type=Id</Patch>
         <Patch>Properties[Value].Type=Id</Patch>
-	  </Class>
+      </Class>
       <Class name="AVMutableAudioMix"></Class>
       <Class name="AVMutableAudioMixInputParameters"></Class>
       <Class name="AVMutableComposition"></Class>
@@ -2403,11 +2429,41 @@ enum {]]>
       <Class name="AVQueuePlayer"></Class>
       <Class name="AVSynchronizedLayer"></Class>
       <Class name="AVTimedMetadataGroup"></Class>
-      <Class name="AVURLAsset"></Class>
+      <Class name="AVURLAsset">
+        <Replace type="Generated">
+          <Source><![CDATA[0UL]]></Source>
+          <With><![CDATA[0]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[1UL <<]]></Source>
+          <With><![CDATA[1U <<]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[0xFFFFUL]]></Source>
+          <With><![CDATA[0xFFFFU]]></With>
+        </Replace>
+      </Class>
       <Class name="AVVideoComposition"></Class>
       <Class name="AVVideoCompositionCoreAnimationTool"></Class>
       <Class name="AVVideoCompositionInstruction"></Class>
-      <Class name="AVVideoCompositionLayerInstruction"></Class>
+      <Class name="AVVideoCompositionLayerInstruction">
+        <Patch>Methods[GetOpacityRampForTimeStartOpacityEndOpacityTimeRange].Parameters[startOpacity].Type=float</Patch>
+        <Patch>Methods[GetOpacityRampForTimeStartOpacityEndOpacityTimeRange].Parameters[startOpacity].IsOut=true</Patch>
+        <Patch>Methods[GetOpacityRampForTimeStartOpacityEndOpacityTimeRange].Parameters[endOpacity].Type=float</Patch>
+        <Patch>Methods[GetOpacityRampForTimeStartOpacityEndOpacityTimeRange].Parameters[endOpacity].IsOut=true</Patch>
+        <Patch>Methods[GetOpacityRampForTimeStartOpacityEndOpacityTimeRange].Parameters[timeRange].Type=CMTimeRange</Patch>
+        <Patch>Methods[GetOpacityRampForTimeStartOpacityEndOpacityTimeRange].Parameters[timeRange].IsOut=true</Patch>
+        <Patch>Methods[GetTransformRampForTimeStartTransformEndTransformTimeRange].Parameters[startTransform].Type=CGAffineTransform</Patch>
+        <Patch>Methods[GetTransformRampForTimeStartTransformEndTransformTimeRange].Parameters[startTransform].IsOut=true</Patch>
+        <Patch>Methods[GetTransformRampForTimeStartTransformEndTransformTimeRange].Parameters[endTransform].Type=CGAffineTransform</Patch>
+        <Patch>Methods[GetTransformRampForTimeStartTransformEndTransformTimeRange].Parameters[endTransform].IsOut=true</Patch>
+        <Patch>Methods[GetTransformRampForTimeStartTransformEndTransformTimeRange].Parameters[timeRange].Type=CMTimeRange</Patch>
+        <Patch>Methods[GetTransformRampForTimeStartTransformEndTransformTimeRange].Parameters[timeRange].IsOut=true</Patch>
+        <Replace type="Generated">
+          <Source><![CDATA[ObjectiveCRuntime.GetInstance<CMTimeRange>(Marshal.ReadIntPtr(__local3));]]></Source>
+          <With><![CDATA[(CMTimeRange) Marshal.PtrToStructure(__local3, typeof(CMTimeRange));]]></With>
+        </Replace>
+      </Class>
       <Class name="NSCoder_AVFoundationAdditions">
         <Patch>AdditionFor=NSCoder</Patch>
       </Class>
@@ -2456,6 +2512,18 @@ enum {]]>
         <Replace type="Html">
           <Source><![CDATA[<a href="#//apple_ref/doc/c_ref/NSCountResultType">NSCountResultType</a>]]></Source>
           <With><![CDATA[<a href="#//apple_ref/doc/c_ref/NSCountResultType">, NSCountResultType</a>]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public partial class NSFetchRequest : NSPersistentStoreRequest]]></Source>
+          <With>
+            <![CDATA[public partial class NSFetchRequest :
+#if MACOSX_10_7
+        NSPersistentStoreRequest
+#else
+        NSObject
+#endif
+]]>
+          </With>
         </Replace>
       </Class>
       <Class name="NSFetchRequestExpression">

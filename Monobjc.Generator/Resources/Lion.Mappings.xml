@@ -9,7 +9,8 @@
   <Mapping type="AuthorizationEngineRef">IntPtr</Mapping>
   <Mapping type="AuthorizationRef">IntPtr</Mapping>
   <Mapping type="AuthorizationString">String</Mapping>
-  <Mapping type="AVCaptureDeviceTransportControlsSpeed">float</Mapping>	
+  <Mapping type="AVCaptureDeviceTransportControlsSpeed">float</Mapping>
+  <Mapping type="AVAssetImageGeneratorCompletionHandler"><![CDATA[Action<CMTime, IntPtr, CMTime, AVAssetImageGeneratorResult, NSError>]]></Mapping>
   <Mapping type="BOOL (^)(NSUInteger idx, BOOL *stop)"><![CDATA[block:Func<NSUInteger, IntPtr, bool>]]></Mapping>
   <Mapping type="BOOL (^)(NSURL *url, NSError *error)"><![CDATA[block:Func<NSURL, NSError, bool>]]></Mapping>
   <Mapping type="BOOL (^)(id evaluatedObject, NSDictionary *bindings)"><![CDATA[block:Func<Id, NSDictionary, bool>]]></Mapping>
