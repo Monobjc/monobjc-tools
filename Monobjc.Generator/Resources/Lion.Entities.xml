@@ -3012,6 +3012,7 @@ enum {]]>
     </Types>
     <Classes>
       <Class name="CW8021XProfile">
+        <Patch>MinAvailability=Mac OS X v10.6</Patch>
       </Class>
       <Class name="CW8021XProfile.Deprecated">
         <Patch>AdditionFor=CW8021XProfile</Patch>
@@ -3052,12 +3053,14 @@ enum {]]>
         </Replace>
       </Class>
       <Class name="CWMutableNetworkProfile">
+        <Patch>MinAvailability=Mac OS X v10.7</Patch>
       </Class>
       <Class name="CWNetwork">
       </Class>
       <Class name="CWNetworkProfile">
       </Class>
       <Class name="CWWirelessProfile">
+        <Patch>MinAvailability=Mac OS X v10.6</Patch>
       </Class>
       <Class name="CWWirelessProfile.Deprecated">
         <Patch>AdditionFor=CWWirelessProfile</Patch>
