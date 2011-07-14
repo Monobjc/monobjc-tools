@@ -8121,7 +8121,7 @@ enum
     </Classes>
     <Protocols>
       <Protocol name="GrowlApplicationBridgeDelegate">
-        <Patch>DelegateFor=GrowlApplication</Patch>
+        <Patch>DelegateFor=GrowlApplicationBridge</Patch>
         <Patch>DelegateProperty=GrowlDelegate</Patch>
       </Protocol>
       <Protocol name="GrowlApplicationBridgeInstallationDelegate">
