@@ -5186,6 +5186,7 @@ enum]]>
         <Patch>Functions[dispatch_get_current_queue].Parameters[d].Generate=false</Patch>
         <Patch>Functions[dispatch_get_global_queue].Parameters[long].Name=flags</Patch>
         <Patch>Functions[dispatch_get_global_queue].Parameters[flags].Type=NSUInteger</Patch>
+        <Patch>Functions[dispatch_get_specific].MinAvailability=Mac OS X v10.7</Patch>
         <Patch>Functions[dispatch_queue_get_label].ReturnType=IntPtr</Patch>
         <Patch>Functions[dispatch_group_create].Parameters[d].Generate=false</Patch>
         <Patch>Functions[dispatch_io_create].Parameters[d].Name=cleanup_handler</Patch>
@@ -5216,6 +5217,10 @@ enum]]>
         <Patch>Enumerations[dispatch_source_mach_send_flags_t].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[dispatch_source_proc_flags_t].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[dispatch_source_vnode_flags_t].BaseType=NSUInteger</Patch>
+        <Replace type="Generated">
+          <Source><![CDATA["/System/Library/Frameworks/Kernel.framework/Kernel"]]></Source>
+          <With><![CDATA["/usr/lib/libSystem"]]></With>
+        </Replace>
 	  </Type>
 	</Types>
   </Framework>
@@ -5614,6 +5619,10 @@ enum]]>
         <Patch>Enumerations[PDFPrintScalingMode].BaseType=NSInteger</Patch>
       </Class>
       <Class name="PDFOutline">
+        <Replace type="Html">
+          <Source><![CDATA[method instead.)<div class]]></Source>
+          <With><![CDATA[method instead.)</p><div class]]></With>
+        </Replace>
       </Class>
       <Class name="PDFPage">
       </Class>
@@ -8110,6 +8119,8 @@ enum
     </Classes>
     <Protocols>
       <Protocol name="GrowlApplicationBridgeDelegate">
+        <Patch>DelegateFor=GrowlApplication</Patch>
+        <Patch>DelegateProperty=GrowlDelegate</Patch>
       </Protocol>
       <Protocol name="GrowlApplicationBridgeInstallationDelegate">
       </Protocol>
@@ -8226,8 +8237,12 @@ enum
       <Protocol name="SUVersionComparison">
       </Protocol>
       <Protocol name="SUAppcastDelegate">
+        <Patch>DelegateFor=SUAppcast</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
       <Protocol name="SUUpdaterDelegate">
+        <Patch>DelegateFor=SUUpdater</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
     </Protocols>
     <Structures />

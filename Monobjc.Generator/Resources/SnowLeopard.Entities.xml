@@ -7321,6 +7321,8 @@ enum
     </Classes>
     <Protocols>
       <Protocol name="GrowlApplicationBridgeDelegate">
+        <Patch>DelegateFor=GrowlApplication</Patch>
+        <Patch>DelegateProperty=GrowlDelegate</Patch>
       </Protocol>
       <Protocol name="GrowlApplicationBridgeInstallationDelegate">
       </Protocol>
@@ -7437,8 +7439,12 @@ enum
       <Protocol name="SUVersionComparison">
       </Protocol>
       <Protocol name="SUAppcastDelegate">
+        <Patch>DelegateFor=SUAppcast</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
       <Protocol name="SUUpdaterDelegate">
+        <Patch>DelegateFor=SUUpdater</Patch>
+        <Patch>DelegateProperty=Delegate</Patch>
       </Protocol>
     </Protocols>
     <Structures />

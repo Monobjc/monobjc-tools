@@ -84,7 +84,7 @@ fi
 
 if [ -d "Sparkle" ]; then
     cd "Sparkle"
-    mv "C/NSObject(SUAppcastDelegate)"					"P/SUAppcastDelegate"
-    mv "C/NSObject(SUUpdaterDelegateInformalProtocol)"	"P/SUUpdaterDelegateInformalProtocol"
+    mv "C/NSObject_SUAppcastDelegate"					"P/SUAppcastDelegate"
+    mv "C/NSObject_SUUpdaterDelegateInformalProtocol"	"P/SUUpdaterDelegate"
     cd -
 fi
