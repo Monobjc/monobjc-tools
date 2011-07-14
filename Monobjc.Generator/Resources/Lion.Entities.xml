@@ -5207,6 +5207,8 @@ enum]]>
         <Patch>Functions[dispatch_source_create].Parameters[mask].Type=NSUInteger</Patch>
         <Patch>Functions[dispatch_source_merge_data].Parameters[long].Name=value</Patch>
         <Patch>Functions[dispatch_source_merge_data].Parameters[value].Type=NSUInteger</Patch>
+        <Patch>Functions[dispatch_source_set_registration_handler].MinAvailability=Mac OS X v10.7</Patch>
+        <Patch>Functions[dispatch_source_set_registration_handler_f].MinAvailability=Mac OS X v10.7</Patch>
         <Patch>Functions[dispatch_time].Generate=false</Patch>
         <Patch>Functions[dispatch_walltime].Generate=false</Patch>
         <Patch>Functions[dispatch_write].Parameters[d].Name=handler</Patch>
