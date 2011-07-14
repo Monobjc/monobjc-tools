@@ -74,7 +74,7 @@ namespace Monobjc.Tools.InterfaceBuilder
 
             if (absoluteUri.Scheme == Uri.UriSchemeFile)
             {
-                return new FileStream(absoluteUri.AbsolutePath, FileMode.Open, FileAccess.Read);
+                return new FileStream(absoluteUri.LocalPath, FileMode.Open, FileAccess.Read);
             }
 
             return null;
