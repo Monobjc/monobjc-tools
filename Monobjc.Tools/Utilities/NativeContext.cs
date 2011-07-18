@@ -72,6 +72,7 @@ namespace Monobjc.Tools.Utilities
                 {
                     case MacOSVersion.MacOS105:
                     case MacOSVersion.MacOS106:
+                    case MacOSVersion.MacOS107:
                         return "gcc-4.2";
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -93,6 +94,8 @@ namespace Monobjc.Tools.Utilities
                         return String.Format(CultureInfo.CurrentCulture, SDK_PATTERN, this.developerRoot, "/SDKs/MacOSX10.5.sdk", "10.5");
                     case MacOSVersion.MacOS106:
                         return String.Format(CultureInfo.CurrentCulture, SDK_PATTERN, this.developerRoot, "/SDKs/MacOSX10.6.sdk", "10.6");
+                    case MacOSVersion.MacOS107:
+                        return String.Format(CultureInfo.CurrentCulture, SDK_PATTERN, this.developerRoot, "/SDKs/MacOSX10.7.sdk", "10.7");
                     default:
                         throw new ArgumentOutOfRangeException();
                 }

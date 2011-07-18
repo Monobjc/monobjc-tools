@@ -119,6 +119,9 @@ namespace Monobjc.Tools.Generators
                 case MacOSVersion.MacOS106:
                     Replace(dict, "LSMinimumSystemVersion", "10.6");
                     break;
+                case MacOSVersion.MacOS107:
+                    Replace(dict, "LSMinimumSystemVersion", "10.7");
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
