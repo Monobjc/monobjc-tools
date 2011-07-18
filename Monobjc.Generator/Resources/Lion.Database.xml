@@ -693,9 +693,6 @@
   <Entry ns="AppKit" nature="C" name="NSWorkspace.Deprecated" style="Cocoa" file="NSWorkspace.Deprecated">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Classes/NSWorkspace_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</url>
   </Entry>
-  <Entry ns="AppKit" nature="E" name="NSTableViewGridLineStyle" style="Cocoa" file="NSTableViewGridLineStyle">
-    <url>N/A</url>
-  </Entry>
   <Entry ns="AppKit" nature="E" name="NSTrackingAreaOptions" style="Cocoa" file="NSTrackingAreaOptions">
     <url>N/A</url>
   </Entry>
@@ -3225,7 +3222,7 @@
   <Entry ns="JavaScriptCore" nature="C" name="JSValueRef_Definitions" style="Doxygen" file="JSValueRef_Definitions">
     <url>N/A</url>
   </Entry>
-  <Entry ns="Kernel" nature="T" name="GCD" style="Cocoa" file="GCD">
+  <Entry ns="Kernel" nature="T" name="Dispatch" style="Cocoa" file="Dispatch">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html</url>
   </Entry>
   <Entry ns="OpenGL" nature="T" name="CGL" style="Cocoa" file="CGL">

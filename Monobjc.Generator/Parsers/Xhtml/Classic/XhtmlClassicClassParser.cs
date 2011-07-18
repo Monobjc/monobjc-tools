@@ -195,8 +195,8 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
                                        select el).FirstOrDefault();
                     if (marker != null)
                     {
-                        XElement startElement = marker.ElementsAfterSelf("table").First();
-                        IEnumerable<XElement> elements = startElement.ElementsAfterSelf().TakeWhile(el => el.Name != "a");
+                        XElement startElement = marker.ElementsAfterSelf("table").FirstOrDefault();
+                        IEnumerable<XElement> elements = marker.ElementsAfterSelf().TakeWhile(el => el.Name != "a");
 
                         PropertyEntity propertyEntity = this.PropertyParser.Parse(name, elements);
                         classEntity.Properties.Add(propertyEntity);
@@ -234,8 +234,8 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
                                        select el).FirstOrDefault();
                     if (marker != null)
                     {
-                        XElement startElement = marker.ElementsAfterSelf("table").First();
-                        IEnumerable<XElement> elements = startElement.ElementsAfterSelf().TakeWhile(el => el.Name != "a");
+                        XElement startElement = marker.ElementsAfterSelf("table").FirstOrDefault();
+                        IEnumerable<XElement> elements = marker.ElementsAfterSelf().TakeWhile(el => el.Name != "a");
 
                         MethodEntity methodEntity = this.MethodParser.Parse(name, elements);
                         classEntity.Methods.Add(methodEntity);

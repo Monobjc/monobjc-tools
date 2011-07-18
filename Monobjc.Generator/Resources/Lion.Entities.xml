@@ -993,6 +993,7 @@
         <Patch>Properties[ImageComponentsProvider].Type=IntPtr</Patch>
       </Class>
       <Class name="NSDraggingImageComponent">
+        <Patch>Methods[DraggingImageComponentWithKey].ReturnType=NSDraggingImageComponent</Patch>
       </Class>
       <Class name="NSDrawer">
         <Patch>Properties[Delegate].Type=Id</Patch>
@@ -1231,6 +1232,7 @@
       <Class name="NSImageView">
       </Class>
       <Class name="NSLayoutConstraint">
+        <Patch>Methods[ConstraintWithItemAttributeRelatedByToItemAttributeMultiplierConstant].ReturnType=NSLayoutConstraint</Patch>
         <Patch>Enumerations[NSLayoutPriority].BaseType=int</Patch>
         <Replace type="Html">
           <Source><![CDATA[/* <!--a-->choose<!--/a--> <!--a-->only<!--/a--> <!--a-->one<!--/a--> <!--a-->of<!--/a--> <!--a-->these<!--/a--> */]]></Source>
@@ -1244,14 +1246,18 @@
           <Source><![CDATA[// <!--a-->default<!--/a-->]]></Source>
           <With><![CDATA[<!-- -->]]></With>
         </Replace>
+        <!--
         <Replace type="Generated">
           <Source><![CDATA[return ObjectiveCRuntime.SendMessage<NSLayoutPriority>(this, "priority");]]></Source>
           <With><![CDATA[return (NSLayoutPriority) (int) ObjectiveCRuntime.SendMessage<float>(this, "priority");]]></With>
         </Replace>
+        -->
+        <!--
         <Replace type="Generated">
           <Source><![CDATA[ObjectiveCRuntime.SendMessage(this, "setPriority:", value);]]></Source>
-          <With><![CDATA[ObjectiveCRuntime.SendMessage(this, "setPriority:", (float) value);]]></With>
+          <With><![CDATA[ObjectiveCRuntime.SendMessage(this, "setPriority:", value);]]></With>
         </Replace>
+        -->
         <Replace type="Generated">
           <Source>
             <![CDATA[[GeneratedCodeAttribute("MonobjcGenerator", "0.0.0.0")]
@@ -1264,7 +1270,7 @@
         </Replace>
         <Replace type="Generated">
           <Source><![CDATA[= NSLayoutAttribute]]></Source>
-          <With><![CDATA[=  NSLayoutAttribute.NSLayoutAttribute]]></With>
+          <With><![CDATA[= 1 << NSLayoutAttribute.NSLayoutAttribute]]></With>
         </Replace>
       </Class>
       <Class name="NSLayoutManager">
@@ -3332,6 +3338,9 @@ enum {]]></With>
       </Class>
       <Class name="DRTrack_Header">
         <Patch>AdditionFor=DRTrack</Patch>
+        <Patch>Enumerations[Track_Flags].Name=DRTrackFlags</Patch>
+        <Patch>Enumerations[DRTrackFlags].BaseType=int</Patch>
+        <Patch>Enumerations[DRTrackFlags].Flags=true</Patch>
       </Class>
       <Class name="DRTrack_AudioContentCreation">
         <Patch>AdditionFor=DRTrack</Patch>
@@ -4029,6 +4038,7 @@ enum {]]></With>
         <Patch>Properties[ObjCType].Getter.ReturnType=IntPtr</Patch>
       </Class>
       <Class name="NSDecimalNumberHandler">
+        <Patch>Methods[DecimalNumberHandlerWithRoundingModeScaleRaiseOnExactnessRaiseOnOverflowRaiseOnUnderflowRaiseOnDivideByZero].ReturnType=NSDecimalNumberHandler</Patch>
       </Class>
       <Class name="NSDeleteCommand">
       </Class>
@@ -4409,14 +4419,30 @@ enum {]]></With>
         <Patch>Methods[InitWithObjects].Parameters[firstObj]=<![CDATA[<Parameter Generate="true"><Summary /><Name>firstObj</Name><Type>Id</Type></Parameter>]]></Patch>
         <Patch>Methods[InitWithObjects].Parameters[values]=<![CDATA[<Parameter Generate="true"><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
         <Patch>Methods[InitWithObjectsCount].Generate=false</Patch>
+        <Patch>Methods[OrderedSetWithArray].ReturnType=NSOrderedSet</Patch>
+        <Patch>Methods[OrderedSetWithArray].CopyInDescendants=true</Patch>
+        <Patch>Methods[OrderedSetWithArrayRangeCopyItems].ReturnType=NSOrderedSet</Patch>
+        <Patch>Methods[OrderedSetWithArrayRangeCopyItems].CopyInDescendants=true</Patch>
+        <Patch>Methods[OrderedSetWithObject].ReturnType=NSOrderedSet</Patch>
+        <Patch>Methods[OrderedSetWithObject].CopyInDescendants=true</Patch>
         <Patch>Methods[OrderedSetWithObjects].Parameters[firstObj,...].Generate=false</Patch>
         <Patch>Methods[OrderedSetWithObjects].Parameters[firstObj]=<![CDATA[<Parameter Generate="true"><Summary><Line>MISSING</Line></Summary><Name>firstObj</Name><Type>Id</Type></Parameter>]]></Patch>
         <Patch>Methods[OrderedSetWithObjects].Parameters[values]=<![CDATA[<Parameter Generate="true"><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
         <Patch>Methods[OrderedSetWithObjects].ReturnType=NSOrderedSet</Patch>
         <Patch>Methods[OrderedSetWithObjects].CopyInDescendants=true</Patch>
         <Patch>Methods[OrderedSetWithObjectsCount].ReturnType=NSOrderedSet</Patch>
-        <Patch>Methods[OrderedSetWithObjectsCount].Generate=false</Patch>
         <Patch>Methods[OrderedSetWithObjectsCount].CopyInDescendants=true</Patch>
+        <Patch>Methods[OrderedSetWithObjectsCount].Generate=false</Patch>
+        <Patch>Methods[OrderedSetWithOrderedSet].ReturnType=NSOrderedSet</Patch>
+        <Patch>Methods[OrderedSetWithOrderedSet].CopyInDescendants=true</Patch>
+        <Patch>Methods[OrderedSetWithOrderedSetRangeCopyItems].ReturnType=NSOrderedSet</Patch>
+        <Patch>Methods[OrderedSetWithOrderedSetRangeCopyItems].CopyInDescendants=true</Patch>
+        <Patch>Methods[OrderedSetWithSet].ReturnType=NSOrderedSet</Patch>
+        <Patch>Methods[OrderedSetWithSet].CopyInDescendants=true</Patch>
+        <Patch>Methods[OrderedSetWithSetCopyItems].ReturnType=NSOrderedSet</Patch>
+        <Patch>Methods[OrderedSetWithSetCopyItems].CopyInDescendants=true</Patch>
+        <Patch>Properties[OrderedSet].Type=NSOrderedSet</Patch>
+        <Patch>Properties[OrderedSet].CopyInDescendants=true</Patch>
       </Class>
       <Class name="NSOrthography">
         <Patch>Methods[OrthographyWithDominantScriptLanguageMap].ReturnType=NSOrthography</Patch>
@@ -5170,7 +5196,7 @@ enum]]>
   </Framework>
   <Framework name="Kernel" usings="Foundation" assembly="Monobjc.Foundation">
     <Types>
-      <Type name="GCD">
+      <Type name="Dispatch">
         <Patch>Functions[dispatch_apply].Parameters[d].Name=block</Patch>
         <Patch>Functions[dispatch_apply].Parameters[block].Type=<![CDATA[Action<NSUInteger>]]></Patch>
         <Patch>Functions[dispatch_apply].Parameters[block].IsBlock=true</Patch>
@@ -5221,7 +5247,13 @@ enum]]>
         <Patch>Enumerations[dispatch_source_vnode_flags_t].BaseType=NSUInteger</Patch>
         <Replace type="Generated">
           <Source><![CDATA["/System/Library/Frameworks/Kernel.framework/Kernel"]]></Source>
-          <With><![CDATA["/usr/lib/libSystem"]]></With>
+          <With><![CDATA[
+#if MACOSX_10_7
+"/usr/lib/system/libdispatch"
+#elif MACOSX_10_6
+"/usr/lib/libSystem"
+#endif
+]]></With>
         </Replace>
 	  </Type>
 	</Types>

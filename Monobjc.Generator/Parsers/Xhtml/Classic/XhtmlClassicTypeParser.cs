@@ -124,8 +124,8 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
                                        select el).FirstOrDefault();
                     if (marker != null)
                     {
-                        XElement startElement = marker.ElementsAfterSelf("table").First();
-                        IEnumerable<XElement> elements = startElement.ElementsAfterSelf().TakeWhile(el => el.Name != "a");
+                        XElement startElement = marker.ElementsAfterSelf("table").FirstOrDefault();
+                        IEnumerable<XElement> elements = marker.ElementsAfterSelf().TakeWhile(el => el.Name != "a");
 
                         FunctionEntity entity = this.FunctionParser.Parse(name, elements);
                         if (entity != null)
@@ -171,8 +171,8 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
                                        select el).FirstOrDefault();
                     if (marker != null)
                     {
-                        XElement startElement = marker.ElementsAfterSelf("table").First();
-                        IEnumerable<XElement> elements = startElement.ElementsAfterSelf().TakeWhile(el => el.Name != "a");
+                        XElement startElement = marker.ElementsAfterSelf("table").FirstOrDefault();
+                        IEnumerable<XElement> elements = marker.ElementsAfterSelf().TakeWhile(el => el.Name != "a");
 
                         ConstantEntity entity = this.ConstantParser.Parse(name, elements);
                         if (entity != null)
@@ -222,8 +222,8 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
                                            select el).FirstOrDefault();
                         if (marker != null)
                         {
-                            XElement startElement = marker.ElementsAfterSelf("table").First();
-                            IEnumerable<XElement> elements = startElement.ElementsAfterSelf().TakeWhile(el => el.Name != "a");
+                            XElement startElement = marker.ElementsAfterSelf("table").FirstOrDefault();
+                            IEnumerable<XElement> elements = marker.ElementsAfterSelf().TakeWhile(el => el.Name != "a");
 
                             EnumerationEntity entity = this.EnumerationParser.Parse(name, elements);
                             if (entity != null)

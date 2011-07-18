@@ -128,10 +128,10 @@ namespace Monobjc.Tools.Generator
                         break;
                     case "analyze":
                         //manager.AddTask(new DumpDelegateMethodsTask("Search Delegate Methods"));
-                        //manager.AddTask(new DumpStaticInitializersTask("Search Static Initializers"));
+                        manager.AddTask(new DumpStaticInitializersTask("Search Static Initializers"));
                         manager.AddTask(new ValidateTask("Validate URLs"));
-                        //manager.AddTask(new DumpDeprecatedTask("Search for Deprecated API"));
-                        manager.AddTask(new CopyURLTask("Copy Deprecated URLs"));
+                        manager.AddTask(new DumpDeprecatedTask("Search for Deprecated API"));
+                        //manager.AddTask(new CopyURLTask("Copy Deprecated URLs"));
                         manager.AddTask(new DumpMissingTask("Search for missing entities"));
                         break;
 

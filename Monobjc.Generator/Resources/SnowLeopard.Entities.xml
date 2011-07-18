@@ -3385,6 +3385,7 @@ enum {]]>
         <Patch>Properties[ObjCType].Getter.ReturnType=IntPtr</Patch>
       </Class>
       <Class name="NSDecimalNumberHandler">
+        <Patch>Methods[DecimalNumberHandlerWithRoundingModeScaleRaiseOnExactnessRaiseOnOverflowRaiseOnUnderflowRaiseOnDivideByZero].ReturnType=NSDecimalNumberHandler</Patch>
       </Class>
       <Class name="NSDeleteCommand">
       </Class>

@@ -48,6 +48,8 @@ namespace Monobjc.Tools.Generator.Tasks.Patching
                                              new Replace {Source = "<br>", With = "<br/>"},
                                              new Replace {Source = "<p><!-- begin abstract --><p>", With = "<p>"},
                                              new Replace {Source = "</p>\n<!-- end abstract --></p>", With = "</p>"},
+                                             new Replace {Source = "<hr class=\"betweenAPIEntries\">", With = "<hr class=\"betweenAPIEntries\"/>"},
+                                             new Replace {Source = "<hr class=\"afterName\">", With = "<hr class=\"afterName\"/>"},
                                          };
 
             foreach (Entry entry in this.Entries)
