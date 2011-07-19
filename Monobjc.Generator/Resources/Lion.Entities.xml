@@ -5212,6 +5212,7 @@ enum]]>
         <Patch>Functions[dispatch_get_current_queue].Parameters[d].Generate=false</Patch>
         <Patch>Functions[dispatch_get_global_queue].Parameters[long].Name=flags</Patch>
         <Patch>Functions[dispatch_get_global_queue].Parameters[flags].Type=NSUInteger</Patch>
+        <Patch>Functions[dispatch_get_main_queue].Generate=false</Patch>
         <Patch>Functions[dispatch_get_specific].MinAvailability=Mac OS X v10.7</Patch>
         <Patch>Functions[dispatch_queue_get_label].ReturnType=IntPtr</Patch>
         <Patch>Functions[dispatch_group_create].Parameters[d].Generate=false</Patch>
@@ -7251,6 +7252,8 @@ enum
       </Class>
       <Class name="DOMElement_Definitions">
         <Patch>AdditionFor=DOMElement</Patch>
+        <Patch>Enumerations[@3].Name=DOMElementInput</Patch>
+        <Patch>Enumerations[DOMElementInput].BaseType=int</Patch>
       </Class>
       <Class name="DOMEntity_Definitions">
         <Patch>AdditionFor=DOMEntity</Patch>
@@ -7260,7 +7263,7 @@ enum
       </Class>
       <Class name="DOMEvent_Definitions">
         <Patch>AdditionFor=DOMEvent</Patch>
-        <Patch>Enumerations[@3].Name=DOMEventPhase</Patch>
+        <Patch>Enumerations[@4].Name=DOMEventPhase</Patch>
         <Patch>Enumerations[DOMEventPhase].BaseType=ushort</Patch>
       </Class>
       <Class name="DOMEventException_Definitions">
@@ -7471,7 +7474,7 @@ enum
       </Class>
       <Class name="DOMKeyboardEvent_Definitions">
         <Patch>AdditionFor=DOMKeyboardEvent</Patch>
-        <Patch>Enumerations[@4].Name=DOMKeyLocation</Patch>
+        <Patch>Enumerations[@5].Name=DOMKeyLocation</Patch>
         <Patch>Enumerations[DOMKeyLocation].BaseType=uint</Patch>
       </Class>
       <Class name="DOMMediaList_Definitions">
@@ -7482,7 +7485,7 @@ enum
       </Class>
       <Class name="DOMMutationEvent_Definitions">
         <Patch>AdditionFor=DOMMutationEvent</Patch>
-        <Patch>Enumerations[@5].Name=DOMAttributeChange</Patch>
+        <Patch>Enumerations[@6].Name=DOMAttributeChange</Patch>
         <Patch>Enumerations[DOMAttributeChange].BaseType=ushort</Patch>
       </Class>
       <Class name="DOMNamedNodeMap_Definitions">
@@ -7490,12 +7493,12 @@ enum
       </Class>
       <Class name="DOMNode_Definitions">
         <Patch>AdditionFor=DOMNode</Patch>
-        <Patch>Enumerations[@6].Name=DOMNodeType</Patch>
+        <Patch>Enumerations[@7].Name=DOMNodeType</Patch>
         <Patch>Enumerations[DOMNodeType].BaseType=ushort</Patch>
       </Class>
       <Class name="DOMNodeFilter_Definitions">
         <Patch>AdditionFor=DOMNodeFilter</Patch>
-        <Patch>Enumerations[@7].Name=DOMNodeFilterResult</Patch>
+        <Patch>Enumerations[@8].Name=DOMNodeFilterResult</Patch>
         <Patch>Enumerations[DOMNodeFilterResult].BaseType=short</Patch>
         <Patch>Enumerations[DOMNodeFilterResult].Values[DOM_SHOW_ALL].Value=-1</Patch>
       </Class>
@@ -7513,7 +7516,7 @@ enum
       </Class>
       <Class name="DOMOverflowEvent_Definitions">
         <Patch>AdditionFor=DOMOverflowEvent</Patch>
-        <Patch>Enumerations[@8].Name=DOMOverflowOrientation</Patch>
+        <Patch>Enumerations[@9].Name=DOMOverflowOrientation</Patch>
         <Patch>Enumerations[DOMOverflowOrientation].BaseType=ushort</Patch>
       </Class>
       <Class name="DOMProcessingInstruction_Definitions">
@@ -7524,7 +7527,7 @@ enum
       </Class>
       <Class name="DOMRange_Definitions">
         <Patch>AdditionFor=DOMRange</Patch>
-        <Patch>Enumerations[@9].Name=DOMRangeOffset</Patch>
+        <Patch>Enumerations[@10].Name=DOMRangeOffset</Patch>
         <Patch>Enumerations[DOMRangeOffset].BaseType=int</Patch>
       </Class>
       <Class name="DOMRangeException_Definitions">
@@ -7582,7 +7585,7 @@ enum
       </Class>
       <Class name="DOMXPathResult_Definitions">
         <Patch>AdditionFor=DOMXPathResult</Patch>
-        <Patch>Enumerations[@10].Name=DOMXPathResultType</Patch>
+        <Patch>Enumerations[@11].Name=DOMXPathResultType</Patch>
         <Patch>Enumerations[DOMXPathResultType].BaseType=ushort</Patch>
       </Class>
     </Classes>
