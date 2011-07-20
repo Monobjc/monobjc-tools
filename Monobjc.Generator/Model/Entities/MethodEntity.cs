@@ -121,7 +121,9 @@ namespace Monobjc.Tools.Generator.Model.Entities
             get
             {
                 bool result = this.GenerateConstructor;
-                result &= this.Name.StartsWith("InitWith", StringComparison.OrdinalIgnoreCase);
+				result &= !this.Static;
+				result &= (this.Name.Length > 4);
+                result &= this.Name.StartsWith("Init", StringComparison.OrdinalIgnoreCase);
                 return result;
             }
         }

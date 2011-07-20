@@ -1103,6 +1103,7 @@
         </Replace>
       </Class>
       <Class name="NSFileWrapper">
+        <Patch>Methods[InitWithSerializedRepresentation].GenerateConstructor=false</Patch>
       </Class>
       <Class name="NSFileWrapper_AppKitAdditions">
         <Patch>AdditionFor=NSFileWrapper</Patch>
@@ -1198,6 +1199,8 @@
         <Patch>Methods[CGImageForProposedRectContextHints].Parameters[proposedDestRect].Type=NSRect</Patch>
         <Patch>Methods[CGImageForProposedRectContextHints].Parameters[proposedDestRect].IsByRef=true</Patch>
         <Patch>Methods[ImageNamed].ReturnType=NSImage</Patch>
+        <Patch>Methods[InitByReferencingFile].GenerateConstructor=false</Patch>
+        <Patch>Methods[InitByReferencingURL].GenerateConstructor=false</Patch>
         <Patch>Methods[InitWithDataIgnoringOrientation].GenerateConstructor=false</Patch>
         <Patch>Methods[InitWithIconRef].GenerateConstructor=false</Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
@@ -4253,6 +4256,7 @@ enum {]]></With>
       <Class name="NSLock">
       </Class>
       <Class name="NSLogicalTest">
+        <Patch>Methods[InitOrTestWithTests].GenerateConstructor=false</Patch>
       </Class>
       <Class name="NSMachBootstrapServer">
       </Class>
@@ -4638,6 +4642,7 @@ enum {]]></With>
       <Class name="NSSetCommand">
       </Class>
       <Class name="NSSocketPort">
+        <Patch>Methods[InitRemoteWithProtocolFamilySocketTypeProtocolAddress].GenerateConstructor=false</Patch>
       </Class>
       <Class name="NSSocketPortNameServer">
       </Class>
@@ -4832,6 +4837,7 @@ enum]]>
         <Patch>Methods[FileURLWithPathComponents].ReturnType=NSURL</Patch>
         <Patch>Methods[InitByResolvingBookmarkDataOptionsRelativeToURLBookmarkDataIsStaleError].Parameters[isStale].Type=bool</Patch>
         <Patch>Methods[InitByResolvingBookmarkDataOptionsRelativeToURLBookmarkDataIsStaleError].Parameters[isStale].IsOut=true</Patch>
+        <Patch>Methods[InitFileURLWithPath].GenerateConstructor=false</Patch>
         <Patch>Methods[WriteBookmarkDataToURLOptionsError].Parameters[options].Type=NSURLBookmarkCreationOptions</Patch>
         <Replace type="Generated">
           <Source><![CDATA[1UL <<]]></Source>
@@ -5451,6 +5457,8 @@ enum]]>
         <Patch>Methods[MediaWithQuickTimeMediaError].ReturnType=QTMedia</Patch>
       </Class>
       <Class name="QTMovie">
+        <Patch>Methods[InitToWritableDataReferenceError].GenerateConstructor=false</Patch>
+        <Patch>Methods[InitToWritableFileError].GenerateConstructor=false</Patch>
         <Patch>Methods[MovieFileTypes].Parameters[types].Type=QTMovieFileTypeOptions</Patch>
         <Patch>Methods[MovieNamedError].ReturnType=QTMovie</Patch>
         <Patch>Methods[MovieWithAttributesError].ReturnType=QTMovie</Patch>
