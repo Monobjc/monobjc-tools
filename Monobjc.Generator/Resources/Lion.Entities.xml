@@ -1422,6 +1422,14 @@
         <Patch>Methods[InitWithAttributes].Parameters[attribs].Type=IntPtr</Patch>
         <Patch>Methods[InitWithAttributes].GenerateConstructor=false</Patch>
         <Patch>Methods[InitWithCGLPixelFormatObj].GenerateConstructor=false</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[instead.)<div class="declaration">]]></Source>
+          <With><![CDATA[instead.)</p><div class="declaration">]]></With>
+        </Replace>
+        <Replace type="Html">
+          <Source><![CDATA[(<strong class="deprecated">Deprecated.</strong>&#032;)<div class="declarati]]></Source>
+          <With><![CDATA[(<strong class="deprecated">Deprecated.</strong>&#032;)</p><div class="declaration">]]></With>
+        </Replace>
       </Class>
       <Class name="NSOpenGLView">
       </Class>
@@ -1563,9 +1571,17 @@
           <Source><![CDATA[)<pre class=]]></Source>
           <With><![CDATA[)</p><pre class=]]></With>
         </Replace>
+        <Replace type="Html">
+          <Source><![CDATA[instead.)<div class="declaration">]]></Source>
+          <With><![CDATA[instead.)</p><div class="declaration">]]></With>
+        </Replace>
       </Class>
       <Class name="NSScrollView">
         <Patch>Properties[ContentView].Type=NSView</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[instead.)<div class="declaration">]]></Source>
+          <With><![CDATA[instead.)</p><div class="declaration">]]></With>
+        </Replace>
       </Class>
       <Class name="NSSearchField">
       </Class>
@@ -5649,6 +5665,10 @@ enum]]>
       <Class name="PDFAnnotationStamp">
       </Class>
       <Class name="PDFAnnotationText">
+        <Replace type="Html">
+          <Source><![CDATA[instead.)<div class="declaration">]]></Source>
+          <With><![CDATA[instead.)</p><div class="declaration">]]></With>
+        </Replace>
       </Class>
       <Class name="PDFAnnotationTextWidget">
       </Class>
@@ -5668,6 +5688,10 @@ enum]]>
         </Replace>
       </Class>
       <Class name="PDFPage">
+        <Replace type="Html">
+          <Source><![CDATA[instead.)<div class="declaration">]]></Source>
+          <With><![CDATA[instead.)</p><div class="declaration">]]></With>
+        </Replace>
       </Class>
       <Class name="PDFSelection">
       </Class>
