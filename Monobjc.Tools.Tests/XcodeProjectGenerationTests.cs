@@ -35,6 +35,23 @@ namespace Monobjc.Tools
 
             project.AddTarget(targetName, PBXProductType.Application);
 
+            project.AddBuildConfigurationSettings("Release", null, "ARCHS", "$(ARCHS_STANDARD_32_64_BIT)");
+            project.AddBuildConfigurationSettings("Release", null, "SDKROOT", "macosx");
+            project.AddBuildConfigurationSettings("Release", null, "GCC_VERSION", "com.apple.compilers.llvm.clang.1_0");
+            project.AddBuildConfigurationSettings("Release", null, "MACOSX_DEPLOYMENT_TARGET", "10.6");
+            project.AddBuildConfigurationSettings("Release", null, "GCC_C_LANGUAGE_STANDARD", "gnu99");
+            project.AddBuildConfigurationSettings("Release", null, "GCC_WARN_64_TO_32_BIT_CONVERSION", "YES");
+            project.AddBuildConfigurationSettings("Release", null, "GCC_WARN_ABOUT_RETURN_TYPE", "YES");
+            project.AddBuildConfigurationSettings("Release", null, "GCC_WARN_UNUSED_VARIABLE", "YES");
+
+            project.AddBuildConfigurationSettings("Release", targetName, "DEBUG_INFORMATION_FORMAT", "dwarf-with-dsym");
+            project.AddBuildConfigurationSettings("Release", targetName, "COPY_PHASE_STRIP", "YES");
+            project.AddBuildConfigurationSettings("Release", targetName, "INFOPLIST_FILE", "MyApplication-Info.plist");
+            project.AddBuildConfigurationSettings("Release", targetName, "PRODUCT_NAME", "$(TARGET_NAME)");
+            project.AddBuildConfigurationSettings("Release", targetName, "WRAPPER_EXTENSION", "app");
+            project.AddBuildConfigurationSettings("Release", targetName, "ALWAYS_SEARCH_USER_PATHS", "NO");
+            project.AddBuildConfigurationSettings("Release", targetName, "GCC_ENABLE_OBJC_EXCEPTIONS", "YES");
+
             project.AddFile("Files", "MyApplicationAppDelegate.h", targetName);
             project.AddFile("Files", "MyApplicationAppDelegate.m", targetName);
             project.AddFile("Files", "Wrong.h", targetName);
@@ -53,80 +70,87 @@ namespace Monobjc.Tools
 
             var frameworks = project.GetFrameworks(targetName);
 
-            project.AddBuildConfigurationSettings("Release", null, "ARCHS", "$(ARCHS_STANDARD_32_64_BIT)");
-            project.AddBuildConfigurationSettings("Release", null, "SDKROOT", "macosx");
-            project.AddBuildConfigurationSettings("Release", null, "GCC_VERSION", "com.apple.compilers.llvm.clang.1_0");
-            project.AddBuildConfigurationSettings("Release", null, "MACOSX_DEPLOYMENT_TARGET", "10.6");
-            project.AddBuildConfigurationSettings("Release", null, "GCC_C_LANGUAGE_STANDARD", "gnu99");
-            project.AddBuildConfigurationSettings("Release", null, "GCC_WARN_64_TO_32_BIT_CONVERSION", "YES");
-            project.AddBuildConfigurationSettings("Release", null, "GCC_WARN_ABOUT_RETURN_TYPE", "YES");
-            project.AddBuildConfigurationSettings("Release", null, "GCC_WARN_UNUSED_VARIABLE", "YES");
-
-            project.AddBuildConfigurationSettings("Release", targetName, "DEBUG_INFORMATION_FORMAT", "dwarf-with-dsym");
-            project.AddBuildConfigurationSettings("Release", targetName, "COPY_PHASE_STRIP", "YES");
-            project.AddBuildConfigurationSettings("Release", targetName, "INFOPLIST_FILE", "MyApplication-Info.plist");
-            project.AddBuildConfigurationSettings("Release", targetName, "PRODUCT_NAME", "$(TARGET_NAME)");
-            project.AddBuildConfigurationSettings("Release", targetName, "WRAPPER_EXTENSION", "app");
-            project.AddBuildConfigurationSettings("Release", targetName, "ALWAYS_SEARCH_USER_PATHS", "NO");
-            project.AddBuildConfigurationSettings("Release", targetName, "GCC_ENABLE_OBJC_EXCEPTIONS", "YES");
-
             project.Save();
         }
 
-        //[Test]
-        //public void TestProjectGeneration002()
-        //{
-        //    // Create the dependant project
-        //    XcodeProject project1 = new XcodeProject(".", "MyLibrary");
-
-        //    project1.AddFile("Classes", "Classes/AppDelegate.h");
-        //    project1.AddFile("Classes", "Classes/Wrong.h");
-        //    project1.RemoveFile("Classes", "Classes/Wrong.h");
-
-        //    project1.AddFile("Resources", "en.lproj/MainMenu.xib");
-        //    project1.AddFile("Resources", "fr.lproj/MainMenu.xib");
-        //    project1.RemoveFile("Resources", "fr.lproj/MainMenu.xib");
-
-        //    project1.AddFramework("Frameworks", "Cocoa");
-        //    project1.AddFramework("Frameworks", "AddressBook");
-        //    project1.RemoveFramework("Frameworks", "AddressBook");
-
-        //    project1.AddGroup("Products");
-
-        //    XCBuildConfiguration buildConfiguration1 = new XCBuildConfiguration("Release");
-        //    buildConfiguration1.BuildSettings.Add("ARCHS", "$(ARCHS_STANDARD_32_64_BIT)");
-        //    buildConfiguration1.BuildSettings.Add("MACOSX_DEPLOYMENT_TARGET", "10.6");
-        //    buildConfiguration1.BuildSettings.Add("SDKROOT", "macosx");
-        //    project1.AddBuildConfiguration(buildConfiguration1, null);
-
-        //    project1.Save();
-
-        //    // Create the main project
-        //    XcodeProject project2 = new XcodeProject(".", targetName);
-
-        //    project2.AddFile("Classes", "Classes/AppDelegate.h");
-        //    project2.AddFile("Classes", "Classes/Wrong.h");
-        //    project2.RemoveFile("Classes", "Classes/Wrong.h");
-
-        //    project2.AddFile("Resources", "en.lproj/MainMenu.xib");
-        //    project2.AddFile("Resources", "fr.lproj/MainMenu.xib");
-        //    project2.RemoveFile("Resources", "fr.lproj/MainMenu.xib");
-
-        //    project2.AddFramework("Frameworks", "Cocoa");
-        //    project2.AddFramework("Frameworks", "AddressBook");
-        //    project2.RemoveFramework("Frameworks", "AddressBook");
-
-        //    project2.AddGroup("Products");
-
-        //    XCBuildConfiguration buildConfiguration2 = new XCBuildConfiguration("Release");
-        //    buildConfiguration2.BuildSettings.Add("ARCHS", "$(ARCHS_STANDARD_32_64_BIT)");
-        //    buildConfiguration2.BuildSettings.Add("MACOSX_DEPLOYMENT_TARGET", "10.6");
-        //    buildConfiguration2.BuildSettings.Add("SDKROOT", "macosx");
-        //    project2.AddBuildConfiguration(buildConfiguration2, null);
-
-        //    project2.AddDependantProject(project1);
-
-        //    project2.Save();
-        //}
+		[Test]
+		public void TestProjectGeneration002()
+		{
+		    // Create the dependant project
+            string targetName = "MyLibrary";
+		    XcodeProject project1 = new XcodeProject(".", targetName);		
+			
+			project1.AddTarget (targetName, PBXProductType.LibraryDynamic);
+			
+		    project1.AddFile("Classes", "Classes/AppDelegate.h", targetName);
+		    project1.AddFile("Classes", "Classes/Wrong.h", targetName);
+		    project1.RemoveFile("Classes", "Classes/Wrong.h", targetName);
+		
+		    project1.AddFile("Resources", "en.lproj/MainMenu.xib", targetName);
+		    project1.AddFile("Resources", "fr.lproj/MainMenu.xib", targetName);
+		    project1.RemoveFile("Resources", "fr.lproj/MainMenu.xib", targetName);
+		
+            project1.AddFramework("Frameworks", "Cocoa", targetName);
+            project1.AddFramework("Frameworks", "AddressBook", targetName);
+            project1.RemoveFramework("Frameworks", "AddressBook", targetName);
+		
+            project1.AddBuildConfigurationSettings("Release", null, "ARCHS", "$(ARCHS_STANDARD_32_64_BIT)");
+            project1.AddBuildConfigurationSettings("Release", null, "SDKROOT", "macosx");
+            project1.AddBuildConfigurationSettings("Release", null, "GCC_VERSION", "com.apple.compilers.llvm.clang.1_0");
+            project1.AddBuildConfigurationSettings("Release", null, "MACOSX_DEPLOYMENT_TARGET", "10.6");
+            project1.AddBuildConfigurationSettings("Release", null, "GCC_C_LANGUAGE_STANDARD", "gnu99");
+            project1.AddBuildConfigurationSettings("Release", null, "GCC_WARN_64_TO_32_BIT_CONVERSION", "YES");
+            project1.AddBuildConfigurationSettings("Release", null, "GCC_WARN_ABOUT_RETURN_TYPE", "YES");
+            project1.AddBuildConfigurationSettings("Release", null, "GCC_WARN_UNUSED_VARIABLE", "YES");
+			
+			project1.AddBuildConfigurationSettings ("Release", targetName, "ALWAYS_SEARCH_USER_PATHS", "NO");
+			project1.AddBuildConfigurationSettings ("Release", targetName, "COPY_PHASE_STRIP", "YES");
+			project1.AddBuildConfigurationSettings ("Release", targetName, "DEBUG_INFORMATION_FORMAT", "dwarf-with-dsym");
+			project1.AddBuildConfigurationSettings ("Release", targetName, "DYLIB_COMPATIBILITY_VERSION", "1");
+			project1.AddBuildConfigurationSettings ("Release", targetName, "DYLIB_CURRENT_VERSION", "1");
+			project1.AddBuildConfigurationSettings ("Release", targetName, "GCC_ENABLE_OBJC_EXCEPTIONS", "YES");
+			project1.AddBuildConfigurationSettings ("Release", targetName, "PRODUCT_NAME", "$(TARGET_NAME)");
+			
+		    project1.Save();
+		
+		    // Create the main project
+			targetName = "MyApplication";
+		    XcodeProject project2 = new XcodeProject(".", targetName);
+		
+			project2.AddTarget (targetName, PBXProductType.Application);
+			
+		    project2.AddFile("Classes", "Classes/AppDelegate.h", targetName);
+		    project2.AddFile("Classes", "Classes/Wrong.h", targetName);
+		    project2.RemoveFile("Classes", "Classes/Wrong.h", targetName);
+		
+		    project2.AddFile("Resources", "en.lproj/MainMenu.xib", targetName);
+		    project2.AddFile("Resources", "fr.lproj/MainMenu.xib", targetName);
+		    project2.RemoveFile("Resources", "fr.lproj/MainMenu.xib", targetName);
+		
+            project2.AddFramework("Frameworks", "Cocoa", targetName);
+            project2.AddFramework("Frameworks", "AddressBook", targetName);
+            project2.RemoveFramework("Frameworks", "AddressBook", targetName);
+		
+            project2.AddBuildConfigurationSettings("Release", null, "ARCHS", "$(ARCHS_STANDARD_32_64_BIT)");
+            project2.AddBuildConfigurationSettings("Release", null, "SDKROOT", "macosx");
+            project2.AddBuildConfigurationSettings("Release", null, "GCC_VERSION", "com.apple.compilers.llvm.clang.1_0");
+            project2.AddBuildConfigurationSettings("Release", null, "MACOSX_DEPLOYMENT_TARGET", "10.6");
+            project2.AddBuildConfigurationSettings("Release", null, "GCC_C_LANGUAGE_STANDARD", "gnu99");
+            project2.AddBuildConfigurationSettings("Release", null, "GCC_WARN_64_TO_32_BIT_CONVERSION", "YES");
+            project2.AddBuildConfigurationSettings("Release", null, "GCC_WARN_ABOUT_RETURN_TYPE", "YES");
+            project2.AddBuildConfigurationSettings("Release", null, "GCC_WARN_UNUSED_VARIABLE", "YES");
+			
+			project2.AddBuildConfigurationSettings ("Release", targetName, "DEBUG_INFORMATION_FORMAT", "dwarf-with-dsym");
+			project2.AddBuildConfigurationSettings ("Release", targetName, "COPY_PHASE_STRIP", "YES");
+			project2.AddBuildConfigurationSettings ("Release", targetName, "INFOPLIST_FILE", "../../Info.plist");
+			project2.AddBuildConfigurationSettings ("Release", targetName, "PRODUCT_NAME", "$(TARGET_NAME)");
+			project2.AddBuildConfigurationSettings ("Release", targetName, "WRAPPER_EXTENSION", "app");
+			project2.AddBuildConfigurationSettings ("Release", targetName, "ALWAYS_SEARCH_USER_PATHS", "NO");
+			project2.AddBuildConfigurationSettings ("Release", targetName, "GCC_ENABLE_OBJC_EXCEPTIONS", "YES");
+			
+		    project2.AddDependantProject(project1, targetName);
+		
+		    project2.Save();
+		}
     }
 }

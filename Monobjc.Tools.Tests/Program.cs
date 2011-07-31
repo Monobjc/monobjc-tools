@@ -33,7 +33,8 @@ namespace Monobjc.Tools
             //pBXProjectGenerationTests.TestProjectGeneration001();
 
             XcodeProjectGenerationTests xcodeProjectGenerationTests = new XcodeProjectGenerationTests();
-            xcodeProjectGenerationTests.TestProjectGeneration001();
+            //xcodeProjectGenerationTests.TestProjectGeneration001();
+            xcodeProjectGenerationTests.TestProjectGeneration002();
 
             //XIBLoadTests xibLoadTests = new XIBLoadTests();
             //xibLoadTests.TestMainMenuReading001();

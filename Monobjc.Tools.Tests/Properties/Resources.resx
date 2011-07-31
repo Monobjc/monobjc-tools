@@ -165,7 +165,7 @@
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="MainMenu_012" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\embedded\mainmenu-012.xib;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Embedded\MainMenu-012.xib;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="MyDocument_005" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Embedded\MyDocument-005.xib;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

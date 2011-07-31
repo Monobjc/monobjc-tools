@@ -343,7 +343,23 @@ namespace Monobjc.Tools.Xcode
                 buildConfiguration.BuildSettings.Remove(key);
             }
         }
-
+		
+        /// <summary>
+        /// Clears the dependant projects.
+        /// </summary>
+        /// <param name="targetName">Name of the target.</param>
+        /// <returns>A list of files.</returns>
+        public void ClearDependantProjects(String targetName)
+        {
+			IEnumerable<PBXFileReference> fileReferences = this.Project.MainGroup.Children.OfType<PBXFileReference>().Where(e => e.LastKnownFileType == PBXFileType.WrapperPBProject);
+			foreach(PBXFileReference fileReference in fileReferences) {
+				// TODO: Refactor
+                this.Project.MainGroup.RemoveChild(fileReference);
+                this.Project.RemoveProjectReference(fileReference);
+                // TODO: Remove project output from target
+			}
+        }
+		
         /// <summary>
         ///   Adds the dependant project.
         /// </summary>
@@ -374,6 +390,7 @@ namespace Monobjc.Tools.Xcode
                 {
                     return;
                 }
+				// TODO: Refactor
                 this.Project.MainGroup.RemoveChild(fileReference);
                 this.Project.RemoveProjectReference(fileReference);
                 // TODO: Remove project output from target

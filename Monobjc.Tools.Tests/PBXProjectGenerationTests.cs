@@ -97,5 +97,5 @@ namespace Monobjc.Tools
 
             document.WriteToFile("project-001.pbxproj");
         }
-    }
+	}
 }
