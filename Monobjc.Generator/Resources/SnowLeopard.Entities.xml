@@ -1484,6 +1484,7 @@
         <Patch>Methods[DragImageForRowsWithIndexesTableColumnsEventOffset].Parameters[dragImageOffset].IsByRef=true</Patch>
         <Patch>Properties[DataSource].Type=Id</Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
+        <Patch>Properties[GridStyleMask].Type=NSGridStyleMask</Patch>
         <Patch>Enumerations[NSTableViewDraggingDestinationFeedbackStyle].BaseType=NSInteger</Patch>
         <Patch>Enumerations[Grid_styles].Name=NSGridStyleMask</Patch>
         <Patch>Enumerations[NSGridStyleMask].BaseType=NSUInteger</Patch>
@@ -4337,9 +4338,13 @@ enum]]>
       </Protocol>
       <Protocol name="NSKeyValueCoding">
         <Patch>Methods[ValidateValueForKeyError].Parameters[ioValue].Type=Id</Patch>
-        <Patch>Methods[ValidateValueForKeyError].Parameters[ioValue].IsOut=true</Patch>
+        <Patch>Methods[ValidateValueForKeyError].Parameters[ioValue].IsByRef=true</Patch>
+        <Patch>Methods[ValidateValueForKeyError].Parameters[error].Type=NSError</Patch>
+        <Patch>Methods[ValidateValueForKeyError].Parameters[error].IsByRef=true</Patch>
         <Patch>Methods[ValidateValueForKeyPathError].Parameters[ioValue].Type=Id</Patch>
-        <Patch>Methods[ValidateValueForKeyPathError].Parameters[ioValue].IsOut=true</Patch>
+        <Patch>Methods[ValidateValueForKeyPathError].Parameters[ioValue].IsByRef=true</Patch>
+        <Patch>Methods[ValidateValueForKeyPathError].Parameters[error].Type=NSError</Patch>
+        <Patch>Methods[ValidateValueForKeyPathError].Parameters[error].IsByRef=true</Patch>
       </Protocol>
       <Protocol name="NSKeyValueObserving">
       </Protocol>
