@@ -547,7 +547,7 @@ namespace Monobjc.Tools.Generator.Generators
                         default:
                             if (IsMixedType(methodParameterEntity.Type))
                             {
-                                this.Writer.WriteLineFormat(indent, "{0} = ({1}) Marshal.PtrToStructure(__local{2}, typeof({3}));", methodParameterEntity.Name, methodParameterEntity.Type, index++, innerMethodParameterEntity.Type);
+                                this.Writer.WriteLineFormat(indent, "{0} = ({1}) ({3}) Marshal.PtrToStructure(__local{2}, typeof({3}));", methodParameterEntity.Name, methodParameterEntity.Type, index++, innerMethodParameterEntity.Type);
                             }
                             else
                             {
