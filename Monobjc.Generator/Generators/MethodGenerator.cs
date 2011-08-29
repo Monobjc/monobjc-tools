@@ -106,7 +106,7 @@ namespace Monobjc.Tools.Generator.Generators
                 // Collect information on 32/64 bits invocations to check if they differ
                 MethodEntity methodEntity32 = DeriveMethodEntity(methodEntity, false);
                 MethodEntity methodEntity64 = DeriveMethodEntity(methodEntity, true);
-                bool useMixedInvocation = false; // !AreMethodTypesEqual(methodEntity32, methodEntity64);
+                bool useMixedInvocation = !AreMethodTypesEqual(methodEntity32, methodEntity64);
 
                 this.Writer.WriteLineFormat(2, "{{");
 
@@ -114,20 +114,20 @@ namespace Monobjc.Tools.Generator.Generators
 
                 if (useMixedInvocation)
                 {
-//#if MIXED_MODE
-//                    this.Writer.WriteLineFormat(3, "if (ObjectiveCRuntime.Is64Bits)");
-//                    this.Writer.WriteLineFormat(3, "{{");
-//
-//                    this.GenerateMethodBody(4, target, methodEntity, methodEntity64, needStorage, varargs);
-//
-//                    this.Writer.WriteLineFormat(3, "}}");
-//                    this.Writer.WriteLineFormat(3, "else");
-//                    this.Writer.WriteLineFormat(3, "{{");
-//#endif
-//                    this.GenerateMethodBody(4, target, methodEntity, methodEntity32, needStorage, varargs);
-//#if MIXED_MODE
-//                    this.Writer.WriteLineFormat(3, "}}");
-//#endif
+#if MIXED_MODE
+                    this.Writer.WriteLineFormat(3, "if (ObjectiveCRuntime.Is64Bits)");
+                    this.Writer.WriteLineFormat(3, "{{");
+
+                    this.GenerateMethodBody(4, target, methodEntity, methodEntity64, needStorage, varargs);
+
+                    this.Writer.WriteLineFormat(3, "}}");
+                    this.Writer.WriteLineFormat(3, "else");
+                    this.Writer.WriteLineFormat(3, "{{");
+#endif
+                    this.GenerateMethodBody(4, target, methodEntity, methodEntity32, needStorage, varargs);
+#if MIXED_MODE
+                    this.Writer.WriteLineFormat(3, "}}");
+#endif
                 }
                 else
                 {
@@ -220,20 +220,20 @@ namespace Monobjc.Tools.Generator.Generators
             String target = "this";
             if (useMixedInvocation)
             {
-//#if MIXED_MODE
-//                this.Writer.WriteLineFormat(3, "if (ObjectiveCRuntime.Is64Bits)");
-//                this.Writer.WriteLineFormat(3, "{{");
-//
-//                this.GenerateConstructorBody(4, target, methodEntity, methodEntity64, needStorage, varargs);
-//
-//                this.Writer.WriteLineFormat(3, "}}");
-//                this.Writer.WriteLineFormat(3, "else");
-//                this.Writer.WriteLineFormat(3, "{{");
-//#endif
-//                this.GenerateConstructorBody(4, target, methodEntity, methodEntity32, needStorage, varargs);
-//#if MIXED_MODE
-//                this.Writer.WriteLineFormat(3, "}}");
-//#endif
+#if MIXED_MODE
+                this.Writer.WriteLineFormat(3, "if (ObjectiveCRuntime.Is64Bits)");
+                this.Writer.WriteLineFormat(3, "{{");
+
+                this.GenerateConstructorBody(4, target, methodEntity, methodEntity64, needStorage, varargs);
+
+                this.Writer.WriteLineFormat(3, "}}");
+                this.Writer.WriteLineFormat(3, "else");
+                this.Writer.WriteLineFormat(3, "{{");
+#endif
+                this.GenerateConstructorBody(4, target, methodEntity, methodEntity32, needStorage, varargs);
+#if MIXED_MODE
+                this.Writer.WriteLineFormat(3, "}}");
+#endif
             }
             else if (hasReturnParameters)
             {
@@ -547,7 +547,14 @@ namespace Monobjc.Tools.Generator.Generators
                         default:
                             if (IsMixedType(methodParameterEntity.Type))
                             {
-                                this.Writer.WriteLineFormat(indent, "{0} = ({1}) ({3}) Marshal.PtrToStructure(__local{2}, typeof({3}));", methodParameterEntity.Name, methodParameterEntity.Type, index++, innerMethodParameterEntity.Type);
+								if (methodParameterEntity.Type.Equals(innerMethodParameterEntity.Type))
+								{
+                                	this.Writer.WriteLineFormat(indent, "{0} = ({1}) Marshal.PtrToStructure(__local{2}, typeof({1}));", methodParameterEntity.Name, methodParameterEntity.Type, index++, innerMethodParameterEntity.Type);
+								}
+								else
+								{
+	                                this.Writer.WriteLineFormat(indent, "{0} = ({1}) ({3}) Marshal.PtrToStructure(__local{2}, typeof({3}));", methodParameterEntity.Name, methodParameterEntity.Type, index++, innerMethodParameterEntity.Type);
+								}
                             }
                             else
                             {
