@@ -1657,16 +1657,16 @@
         <Patch>Methods[DragImageForRowsWithIndexesTableColumnsEventOffset].Parameters[dragImageOffset].IsByRef=true</Patch>
         <Patch>Properties[DataSource].Type=Id</Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
-        <Patch>Properties[GridStyleMask].Type=NSGridStyleMask</Patch>
+        <Patch>Properties[GridStyleMask].Type=NSTableViewGridLineStyle</Patch>
         <Patch>Enumerations[NSTableViewDraggingDestinationFeedbackStyle].BaseType=NSInteger</Patch>
         <Patch>Enumerations[Grid_styles].Name=NSTableViewGridLineStyle</Patch>
         <Patch>Enumerations[NSTableViewGridLineStyle].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSTableViewGridLineStyle].Flags=true</Patch>
         <Patch>Enumerations[No_Animation_Effects].Generate=false</Patch>
         <Patch>Enumerations[Row_Animation_Effects].Generate=false</Patch>
-        <Patch>Enumerations[NSTableViewAnimation].Values[NSTableViewAnimationEffectNone]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Specifies no animation effect should be used. Specifying any animation negates this effect.</Line></Summary><MinAvailability>Mac OS X v10.7</MinAvailability><Name>NSTableViewAnimationEffectNone</Name><Value>0x0</Value></EnumerationValue>]]></Patch>
-        <Patch>Enumerations[NSTableViewAnimation].Values[NSTableViewAnimationEffectFade]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Specifies that the tableview will use a fade for row or column removal. The effect can be combined with any NSTableViewAnimationOptions constant.</Line></Summary><MinAvailability>Mac OS X v10.7</MinAvailability><Name>NSTableViewAnimationEffectFade</Name><Value>0x1</Value></EnumerationValue>]]></Patch>
-        <Patch>Enumerations[NSTableViewAnimation].Values[NSTableViewAnimationEffectGap]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Creates a gap for newly inserted rows. This is useful for drag and drop animations that animate to a newly opened gap and should be used in the delegate method tableView:acceptDrop:row:dropOperation:.</Line></Summary><MinAvailability>Mac OS X v10.7</MinAvailability><Name>NSTableViewAnimationEffectGap</Name><Value>0x2</Value></EnumerationValue>]]></Patch>
+        <Patch>Enumerations[NSTableViewAnimationOptions].Values[NSTableViewAnimationEffectNone]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Specifies no animation effect should be used. Specifying any animation negates this effect.</Line></Summary><MinAvailability>Mac OS X v10.7</MinAvailability><Name>NSTableViewAnimationEffectNone</Name><Value>0x0</Value></EnumerationValue>]]></Patch>
+        <Patch>Enumerations[NSTableViewAnimationOptions].Values[NSTableViewAnimationEffectFade]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Specifies that the tableview will use a fade for row or column removal. The effect can be combined with any NSTableViewAnimationOptions constant.</Line></Summary><MinAvailability>Mac OS X v10.7</MinAvailability><Name>NSTableViewAnimationEffectFade</Name><Value>0x1</Value></EnumerationValue>]]></Patch>
+        <Patch>Enumerations[NSTableViewAnimationOptions].Values[NSTableViewAnimationEffectGap]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Creates a gap for newly inserted rows. This is useful for drag and drop animations that animate to a newly opened gap and should be used in the delegate method tableView:acceptDrop:row:dropOperation:.</Line></Summary><MinAvailability>Mac OS X v10.7</MinAvailability><Name>NSTableViewAnimationEffectGap</Name><Value>0x2</Value></EnumerationValue>]]></Patch>
       </Class>
       <Class name="NSTabView">
         <Patch>Properties[Delegate].Type=Id</Patch>
