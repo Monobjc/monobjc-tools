@@ -16,7 +16,7 @@
     <echo message="------------------------"/>
 
     <!-- Create the assembly info -->
-    <property name="version" value="3.0"/>
+    <property name="version" value="4.0"/>
     <property name="version.info" value="${build.dir}/GeneratedAssemblyInfo.${version}.${revision}.0.cs"/>
     <asminfo output="${version.info}" language="CSharp" unless="${file::exists(version.info)}">
       <imports>
