@@ -4569,6 +4569,7 @@ enum {]]></With>
         </Replace>
       </Class>
       <Class name="NSPurgeableData">
+        <Patch>MinAvailability=Mac OS X v10.6</Patch>
       </Class>
       <Class name="NSQuitCommand">
       </Class>
