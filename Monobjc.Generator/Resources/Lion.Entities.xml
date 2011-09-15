@@ -352,6 +352,7 @@
         <Patch>Functions[CGPDFScannerPopObject].Parameters[value].Type=IntPtr</Patch>
         <Patch>Functions[CGPDFScannerPopStream].Parameters[value].Type=IntPtr</Patch>
         <Patch>Functions[CGPDFScannerPopString].Parameters[value].Type=IntPtr</Patch>
+        <Patch>Functions[CGPDFScannerRetain].Generate=false</Patch>
       </Type>
       <Type name="CGPDFStream">
         <Patch>Functions[CGPDFStreamCopyData].Parameters[format].Type=IntPtr</Patch>
@@ -5276,13 +5277,7 @@ enum]]>
         <Patch>Enumerations[dispatch_source_vnode_flags_t].BaseType=NSUInteger</Patch>
         <Replace type="Generated">
           <Source><![CDATA["/System/Library/Frameworks/Kernel.framework/Kernel"]]></Source>
-          <With><![CDATA[
-#if MACOSX_10_7
-"/usr/lib/system/libdispatch"
-#elif MACOSX_10_6
-"/usr/lib/libSystem"
-#endif
-]]></With>
+          <With><![CDATA[DISPATCH_LIBRARY]]></With>
         </Replace>
 	  </Type>
 	</Types>
