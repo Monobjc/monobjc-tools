@@ -1314,7 +1314,7 @@
   <Entry ns="AVFoundation" nature="C" name="NSCoder_AVFoundationAdditions" style="Cocoa" file="NSCoder_AVFoundationAdditions">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/AVFoundation/Reference/NSCoder_AVFoundation_Additions/Reference/Reference.html</url>
   </Entry>
-  <Entry ns="AVFoundation" nature="C" name="NSValue AVFoundationAdditions" style="Cocoa" file="NSValue AVFoundationAdditions">
+  <Entry ns="AVFoundation" nature="C" name="NSValue_AVFoundationAdditions" style="Cocoa" file="NSValue_AVFoundationAdditions">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/AVFoundation/Reference/NSValue_AVFoundation_Additions/Reference/Reference.html</url>
   </Entry>
   <Entry ns="AVFoundation" nature="P" name="AVAsynchronousKeyValueLoading" style="Cocoa" file="AVAsynchronousKeyValueLoading">

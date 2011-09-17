@@ -2433,18 +2433,130 @@ enum {]]></With>
         <Patch>Properties[Key].Type=Id</Patch>
         <Patch>Properties[Value].Type=Id</Patch>
       </Class>
-      <Class name="AVMutableAudioMix"></Class>
-      <Class name="AVMutableAudioMixInputParameters"></Class>
-      <Class name="AVMutableComposition"></Class>
-      <Class name="AVMutableCompositionTrack"></Class>
+      <Class name="AVMutableAudioMix">
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual NSArray InputParameters]]></Source>
+          <With><![CDATA[public new NSArray InputParameters]]></With>
+        </Replace>
+      </Class>
+      <Class name="AVMutableAudioMixInputParameters">
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual int TrackID]]></Source>
+          <With><![CDATA[public new int TrackID]]></With>
+        </Replace>
+      </Class>
+      <Class name="AVMutableComposition">
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual CGSize NaturalSize]]></Source>
+          <With><![CDATA[public new CGSize NaturalSize]]></With>
+        </Replace>
+      </Class>
+      <Class name="AVMutableCompositionTrack">
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual NSString ExtendedLanguageTag]]></Source>
+          <With><![CDATA[public new NSString ExtendedLanguageTag]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual NSString LanguageCode]]></Source>
+          <With><![CDATA[public new NSString LanguageCode]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual int NaturalTimeScale]]></Source>
+          <With><![CDATA[public new int NaturalTimeScale]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual CGAffineTransform PreferredTransform]]></Source>
+          <With><![CDATA[public new CGAffineTransform PreferredTransform]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual float PreferredVolume]]></Source>
+          <With><![CDATA[public new float PreferredVolume]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual NSArray Segments]]></Source>
+          <With><![CDATA[public new NSArray Segments]]></With>
+        </Replace>
+      </Class>
       <Class name="AVMutableMetadataItem">
         <Patch>Properties[Key].Type=Id</Patch>
         <Patch>Properties[Value].Type=Id</Patch>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual CMTime Duration]]></Source>
+          <With><![CDATA[ public new CMTime Duration]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual NSDictionary ExtraAttributes]]></Source>
+          <With><![CDATA[public new NSDictionary ExtraAttributes]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual Id Key]]></Source>
+          <With><![CDATA[public new Id Key]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual NSString KeySpace]]></Source>
+          <With><![CDATA[public new NSString KeySpace]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual NSLocale Locale]]></Source>
+          <With><![CDATA[public new NSLocale Locale]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual CMTime Time]]></Source>
+          <With><![CDATA[public new CMTime Time]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual Id Value]]></Source>
+          <With><![CDATA[public new Id Value]]></With>
+        </Replace>
 	  </Class>
-      <Class name="AVMutableTimedMetadataGroup"></Class>
-      <Class name="AVMutableVideoComposition"></Class>
-      <Class name="AVMutableVideoCompositionInstruction"></Class>
-      <Class name="AVMutableVideoCompositionLayerInstruction"></Class>
+      <Class name="AVMutableTimedMetadataGroup">
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual NSArray Items]]></Source>
+          <With><![CDATA[public new NSArray Items]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual CMTimeRange TimeRange]]></Source>
+          <With><![CDATA[public new CMTimeRange TimeRange]]></With>
+        </Replace>
+      </Class>
+      <Class name="AVMutableVideoComposition">
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual AVVideoCompositionCoreAnimationTool AnimationTool]]></Source>
+          <With><![CDATA[public new AVVideoCompositionCoreAnimationTool AnimationTool]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual CMTime FrameDuration]]></Source>
+          <With><![CDATA[public new CMTime FrameDuration]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual NSArray Instructions]]></Source>
+          <With><![CDATA[public new NSArray Instructions]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual CGSize RenderSize]]></Source>
+          <With><![CDATA[public new CGSize RenderSize]]></With>
+        </Replace>
+      </Class>
+      <Class name="AVMutableVideoCompositionInstruction">
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual bool EnablePostProcessing]]></Source>
+          <With><![CDATA[public new bool EnablePostProcessing]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual NSArray LayerInstructions]]></Source>
+          <With><![CDATA[public new NSArray LayerInstructions]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual CMTimeRange TimeRange]]></Source>
+          <With><![CDATA[public new CMTimeRange TimeRange]]></With>
+        </Replace>
+      </Class>
+      <Class name="AVMutableVideoCompositionLayerInstruction">
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual int TrackID]]></Source>
+          <With><![CDATA[public new int TrackID]]></With>
+        </Replace>
+      </Class>
       <Class name="AVPlayer"></Class>
       <Class name="AVPlayerItem"></Class>
       <Class name="AVPlayerItemAccessLog"></Class>
@@ -2494,7 +2606,7 @@ enum {]]></With>
       <Class name="NSCoder_AVFoundationAdditions">
         <Patch>AdditionFor=NSCoder</Patch>
       </Class>
-      <Class name="NSValue AVFoundationAdditions">
+      <Class name="NSValue_AVFoundationAdditions">
         <Patch>AdditionFor=NSValue</Patch>
       </Class>
     </Classes>
