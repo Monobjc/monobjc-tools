@@ -12,7 +12,6 @@
     <AssemblyName>Monobjc.MSBuild</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,7 +52,6 @@
     <Compile Include="Tasks\CompileXib.cs" />
     <Compile Include="Tasks\EmbedApplication.cs" />
     <Compile Include="Tasks\GenerateInfoPList.cs" />
-    <Compile Include="Tasks\ParseXib.cs" />
     <Compile Include="Utilities\ExecutionLogger.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -24,24 +24,39 @@ using Monobjc.Tools.Properties;
 
 namespace Monobjc.MSBuild.Tasks
 {
-    public class CompileXib : Task
-    {
-        [Required]
-        public String XibFile { get; set; }
+	public class CompileXib : Task
+	{
+		public ITaskItem XibFile { get; set; }
+
+		public ITaskItem[] XibFiles { get; set; }
 
         [Required]
-        public String ToDirectory { get; set; }
+		public ITaskItem ToDirectory { get; set; }
 
-        public override bool Execute()
-        {
-            XibCompiler compiler = new XibCompiler();
-            compiler.Logger = new ExecutionLogger(this);
-            if (!compiler.Compile(this.XibFile, this.ToDirectory))
-            {
-                this.Log.LogError(Resources.XibCompilationFailed);
-                return false;
-            }
-            return true;
-        }
-    }
+		public override bool Execute ()
+		{
+			if (this.XibFile != null) {
+				XibCompiler compiler = new XibCompiler ();
+				compiler.Logger = new ExecutionLogger (this);
+				if (!compiler.Compile (this.XibFile.ItemSpec, this.ToDirectory.ItemSpec)) {
+					this.Log.LogError (Resources.XibCompilationFailed);
+					return false;
+				}
+				return true;
+			} else if (this.XibFiles != null) {
+				XibCompiler compiler = new XibCompiler ();
+				compiler.Logger = new ExecutionLogger (this);
+				foreach (ITaskItem item in this.XibFiles) {
+					if (!compiler.Compile (item.ItemSpec, this.ToDirectory.ItemSpec)) {
+						this.Log.LogError (Resources.XibCompilationFailed);
+						return false;
+					}
+				}
+				return true;
+			} else {
+				this.Log.LogError(Resources.XibCompilationFailed);
+				return false;
+			}
+		}
+	}
 }

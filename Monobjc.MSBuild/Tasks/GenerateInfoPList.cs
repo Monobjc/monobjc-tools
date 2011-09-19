@@ -19,6 +19,7 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using Microsoft.Build.Framework;
 using Microsoft.Build.Utilities;
 using Monobjc.MSBuild.Properties;
 using Monobjc.Tools.Generators;
@@ -42,19 +43,19 @@ namespace Monobjc.MSBuild.Tasks
         /// Gets or sets the main assembly.
         /// </summary>
         /// <value>The main assembly.</value>
-        public FileInfo MainAssembly { get; set; }
+        public ITaskItem MainAssembly { get; set; }
 
         /// <summary>
         /// Gets or sets the template.
         /// </summary>
         /// <value>The template.</value>
-        public FileInfo Template { get; set; }
+        public ITaskItem Template { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the application.
         /// </summary>
         /// <value>The name of the application.</value>
-        public string ApplicationName { get; set; }
+        public String ApplicationName { get; set; }
 
         /// <summary>
         /// Gets or sets the icon.
@@ -96,7 +97,7 @@ namespace Monobjc.MSBuild.Tasks
         /// Gets or sets the output dir.
         /// </summary>
         /// <value>The output dir.</value>
-        public DirectoryInfo ToDirectory { get; set; }
+        public ITaskItem ToDirectory { get; set; }
 
         /// <summary>
         /// Executes the task.
@@ -113,7 +114,8 @@ namespace Monobjc.MSBuild.Tasks
             // Use the given template if any
             if (this.Template != null)
             {
-                using (StreamReader reader = this.Template.OpenText())
+				FileInfo fileInfo = new FileInfo(this.Template.ItemSpec);
+                using (StreamReader reader = fileInfo.OpenText())
                 {
                     this.generator.Content = reader.ReadToEnd();
                 }
@@ -122,7 +124,7 @@ namespace Monobjc.MSBuild.Tasks
             // Extract information from the assembly if set
             if (this.MainAssembly != null)
             {
-                Assembly assembly = Assembly.ReflectionOnlyLoadFrom(this.MainAssembly.ToString());
+                Assembly assembly = Assembly.ReflectionOnlyLoadFrom(this.MainAssembly.ItemSpec);
                 AssemblyName assemblyName = assembly.GetName();
                 this.ApplicationName = assemblyName.Name;
                 this.Identifier = assembly.EntryPoint.DeclaringType.Namespace;

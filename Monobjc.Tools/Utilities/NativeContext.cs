@@ -27,15 +27,13 @@ namespace Monobjc.Tools.Utilities
         private const string PPC64 = "-arch ppc64";
         private const string X86 = "-arch i386";
         private const string X8664 = "-arch x86_64";
-        private const String SDK_PATTERN = "-isysroot {0}{1} -mmacosx-version-min={2}";
+        private const String SDK_PATTERN = "-mmacosx-version-min={0}";
 
-        private readonly String developerRoot;
         private readonly MacOSVersion version;
         private readonly MacOSArchitecture architecture;
 
-        public NativeContext(String developerRoot, MacOSVersion version, MacOSArchitecture architecture)
+        public NativeContext(MacOSVersion version, MacOSArchitecture architecture)
         {
-            this.developerRoot = developerRoot ?? "/Developer";
             this.version = version;
             this.architecture = architecture;
         }
@@ -73,7 +71,7 @@ namespace Monobjc.Tools.Utilities
                     case MacOSVersion.MacOS105:
                     case MacOSVersion.MacOS106:
                     case MacOSVersion.MacOS107:
-                        return "gcc-4.2";
+                        return "cc";
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
@@ -91,11 +89,11 @@ namespace Monobjc.Tools.Utilities
                 switch (this.version)
                 {
                     case MacOSVersion.MacOS105:
-                        return String.Format(CultureInfo.CurrentCulture, SDK_PATTERN, this.developerRoot, "/SDKs/MacOSX10.5.sdk", "10.5");
+                        return String.Format(CultureInfo.CurrentCulture, SDK_PATTERN, "10.5");
                     case MacOSVersion.MacOS106:
-                        return String.Format(CultureInfo.CurrentCulture, SDK_PATTERN, this.developerRoot, "/SDKs/MacOSX10.6.sdk", "10.6");
+                        return String.Format(CultureInfo.CurrentCulture, SDK_PATTERN, "10.6");
                     case MacOSVersion.MacOS107:
-                        return String.Format(CultureInfo.CurrentCulture, SDK_PATTERN, this.developerRoot, "/SDKs/MacOSX10.7.sdk", "10.7");
+                        return String.Format(CultureInfo.CurrentCulture, SDK_PATTERN, "10.7");
                     default:
                         throw new ArgumentOutOfRangeException();
                 }

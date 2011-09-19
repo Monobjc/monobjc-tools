@@ -23,24 +23,39 @@ using Monobjc.Tools.Properties;
 
 namespace Monobjc.MSBuild.Tasks
 {
-    public class CompileMomc : Task
-    {
-        [Required]
-        public String Model { get; set; }
+	public class CompileMomc : Task
+	{
+		public ITaskItem Model { get; set; }
+
+		public ITaskItem[] Models { get; set; }
 
         [Required]
-        public String ToDirectory { get; set; }
+		public ITaskItem ToDirectory { get; set; }
 
-        public override bool Execute()
-        {
-            String output = Momc.Compile(this.Model, this.ToDirectory);
-            if (output == null)
-            {
-                this.Log.LogMessage(Resources.MomcModelUpToDate, this.Model);
-                return true;
-            }
-            this.Log.LogMessage(Resources.CommandReturned, output);
-            return true;
-        }
-    }
+		public override bool Execute ()
+		{
+			if (this.Model != null) {
+				String output = Momc.Compile (this.Model.ItemSpec, this.ToDirectory.ItemSpec);
+				if (output == null) {
+					this.Log.LogMessage (Resources.MomcModelUpToDate, this.Model);
+					return true;
+				}
+				this.Log.LogMessage (Resources.CommandReturned, output);
+				return true;
+			} else if (this.Models != null) {
+				String output;
+				foreach (ITaskItem item in this.Models) {
+					output = Momc.Compile (item.ItemSpec, this.ToDirectory.ItemSpec);
+					if (output == null) {
+						this.Log.LogMessage (Resources.MomcModelUpToDate, this.Model);
+						return true;
+					}
+					this.Log.LogMessage (Resources.CommandReturned, output);
+				}
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
 }

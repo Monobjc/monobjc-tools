@@ -84,7 +84,7 @@ namespace Monobjc.Tools.Generators
         /// <returns></returns>
         public String Generate(String directory)
         {
-            NativeContext nativeContext = new NativeContext(this.DeveloperToolsFolder, this.TargetOSVersion, this.TargetArchitecture);
+            NativeContext nativeContext = new NativeContext(this.TargetOSVersion, this.TargetArchitecture);
 
             // We embed:
             // - the assemblies (with their configuration)
