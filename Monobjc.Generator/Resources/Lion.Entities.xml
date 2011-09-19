@@ -1578,7 +1578,7 @@
         </Replace>
       </Class>
       <Class name="NSScrollView">
-        <Patch>Properties[ContentView].Type=NSView</Patch>
+        <Patch>Properties[ContentView].Generate=false</Patch>
         <Replace type="Html">
           <Source><![CDATA[instead.)<div class="declaration">]]></Source>
           <With><![CDATA[instead.)</p><div class="declaration">]]></With>
