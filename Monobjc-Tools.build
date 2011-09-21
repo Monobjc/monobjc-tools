@@ -3,6 +3,7 @@
   <description>Monobjc Tools Build File</description>
 
   <!-- Define some properties if they are missing -->
+  <property name="monobjc.version" value="4.0" unless="${property::exists('monobjc.version')}"/>
   <property name="build.dir" value="${path::get-full-path('./build')}" unless="${property::exists('build.dir')}"/>
   <property name="dist.dir" value="${path::get-full-path('./dist')}" unless="${property::exists('dist.dir')}"/>
   <property name="testing" value="false" unless="${property::exists('testing')}"/>
@@ -16,8 +17,7 @@
     <echo message="------------------------"/>
 
     <!-- Create the assembly info -->
-    <property name="version" value="4.0"/>
-    <property name="version.info" value="${build.dir}/GeneratedAssemblyInfo.${version}.0.0.cs"/>
+    <property name="version.info" value="${build.dir}/GeneratedAssemblyInfo.${monobjc.version}.0.0.cs"/>
     <asminfo output="${version.info}" language="CSharp" unless="${file::exists(version.info)}">
       <imports>
         <import namespace="System" />
@@ -25,8 +25,8 @@
         <import namespace="System.Runtime.InteropServices" />
       </imports>
       <attributes>
-        <attribute type="AssemblyVersionAttribute" value="${version}.0.0" />
-        <attribute type="AssemblyFileVersionAttribute" value="${version}.0.0" />
+        <attribute type="AssemblyVersionAttribute" value="${monobjc.version}.0.0" />
+        <attribute type="AssemblyFileVersionAttribute" value="${monobjc.version}.0.0" />
         <attribute type="AssemblyConfigurationAttribute" value="Release Configuration" unless="${testing}"/>
         <attribute type="AssemblyConfigurationAttribute" value="Testing Configuration" if="${testing}"/>
       </attributes>
@@ -96,6 +96,13 @@
         <include name="Microsoft.Build.Utilities.v4.0.dll"/>
       </references>
     </csc>
+
+    <copy todir="${dist.dir}">
+      <fileset basedir="Monobjc.MSBuild">
+        <include name="**/*.tasks"/>
+        <include name="**/*.targets"/>
+      </fileset>
+    </copy>
 
     <!-- Builds SDP tool -->
     <csc target="exe"

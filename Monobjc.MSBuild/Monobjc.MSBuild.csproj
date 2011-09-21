@@ -82,8 +82,8 @@
   </Target>
   -->
   <ItemGroup>
-    <Content Include="Monobjc.MSBuild.targets">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <None Include="Monobjc.CocoaApplication.targets" />
+    <None Include="Monobjc.ConsoleApplication.targets" />
+    <None Include="Monobjc.MSBuild.tasks" />
   </ItemGroup>
 </Project>
