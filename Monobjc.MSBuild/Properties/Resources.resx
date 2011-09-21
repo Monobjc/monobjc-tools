@@ -120,4 +120,10 @@
   <data name="CannotComputeApplicationName" xml:space="preserve">
     <value>Cannot compute application's name. Specify either the 'assembly' or the 'name' attribute.</value>
   </data>
+  <data name="NoProductDefinition" xml:space="preserve">
+    <value>You must provide a product definition while archiving the application bundle.</value>
+  </data>
+  <data name="NoValidSigningIdentity" xml:space="preserve">
+    <value>No valid signing identity found in you KeyChain. Be sure that you have correctly installed your developer certificate.</value>
+  </data>
 </root>

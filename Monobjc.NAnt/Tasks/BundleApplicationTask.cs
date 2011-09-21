@@ -140,7 +140,7 @@ namespace Monobjc.NAnt.Tasks
             Directory.CreateDirectory(bundleResources);
 
             // Copy or create the Info.plist file
-            this.Log(Level.Error, "Copying Info.plist...");
+            this.Log(Level.Info, "Copying Info.plist...");
             this.CopyFile(this.InfoPList, bundleContents);
 
             // Create the launcher

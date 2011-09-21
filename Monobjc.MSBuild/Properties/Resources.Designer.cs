@@ -39,7 +39,7 @@ namespace Monobjc.MSBuild.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Monobjc.MSBuild.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Monobjc.NAnt.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -66,6 +66,24 @@ namespace Monobjc.MSBuild.Properties {
         internal static string CannotComputeApplicationName {
             get {
                 return ResourceManager.GetString("CannotComputeApplicationName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must provide a product definition while archiving the application bundle..
+        /// </summary>
+        internal static string NoProductDefinition {
+            get {
+                return ResourceManager.GetString("NoProductDefinition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No valid signing identity found in you KeyChain. Be sure that you have correctly installed your developer certificate..
+        /// </summary>
+        internal static string NoValidSigningIdentity {
+            get {
+                return ResourceManager.GetString("NoValidSigningIdentity", resourceCulture);
             }
         }
     }

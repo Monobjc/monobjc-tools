@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -27,16 +27,19 @@ using Monobjc.Tools.Utilities;
 
 namespace Monobjc.MSBuild.Tasks
 {
-    public class GenerateInfoPListTask : Task
+    public class GenerateInfoPList : Task
     {
+		private MacOSVersion minRequiredOSVersion;
+		
         private readonly InfoPListGenerator generator;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateInfoPListTask"/> class.
         /// </summary>
-        public GenerateInfoPListTask()
+        public GenerateInfoPList()
         {
             this.generator = new InfoPListGenerator();
+			this.minRequiredOSVersion = MacOSVersion.MacOS105;
         }
 
         /// <summary>
@@ -79,7 +82,11 @@ namespace Monobjc.MSBuild.Tasks
         /// Gets or sets the mininum required OS version.
         /// </summary>
         /// <value>The mininum required OS version.</value>
-        public MacOSVersion MinRequiredOSVersion { get; set; }
+        public String MinRequiredOSVersion
+		{
+			get { return this.minRequiredOSVersion.ToString(); }
+			set { this.minRequiredOSVersion = (MacOSVersion) Enum.Parse(typeof(MacOSVersion), value); }
+		}
 
         /// <summary>
         /// Gets or sets the main nib file.
@@ -97,6 +104,7 @@ namespace Monobjc.MSBuild.Tasks
         /// Gets or sets the output dir.
         /// </summary>
         /// <value>The output dir.</value>
+        [Required]
         public ITaskItem ToDirectory { get; set; }
 
         /// <summary>

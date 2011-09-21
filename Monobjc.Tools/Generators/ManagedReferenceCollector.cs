@@ -81,7 +81,12 @@ namespace Monobjc.Tools.Generators
             {
                 directories.AddRange(this.SearchDirectories);
             }
-
+			
+			this.Logger.LogInfo("Search Directories");
+			foreach(String path in directories) {
+				this.Logger.LogInfo("-> " + path);
+			}
+			
             // First add the main assembly directory
             String folder = Path.GetDirectoryName(assembly);
             if (!directories.Contains(folder))

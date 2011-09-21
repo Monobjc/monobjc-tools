@@ -51,6 +51,9 @@ namespace Monobjc.Tools.Generators
         /// <returns><code>true</code> if the compilation is successful, <code>false</code> otherwise.</returns>
         public bool Compile(String xibFile, String directory)
         {
+			// TODO: I18N
+            this.Logger.LogDebug(String.Format(CultureInfo.CurrentCulture, "Compiling {0} into {1}", xibFile, directory));
+			
             PListDocument result = XibTool.Compile(xibFile, directory);
             if (result == null)
             {

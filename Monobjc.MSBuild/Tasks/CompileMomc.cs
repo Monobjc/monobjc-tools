@@ -32,6 +32,9 @@ namespace Monobjc.MSBuild.Tasks
         [Required]
 		public ITaskItem ToDirectory { get; set; }
 
+        /// <summary>
+        ///   Executes the task.
+        /// </summary>
 		public override bool Execute ()
 		{
 			if (this.Model != null) {

@@ -23,10 +23,10 @@ namespace Monobjc.Tools.Utilities
 {
     public static class FileProvider
     {
-        public static String GetPath(MacOSVersion version, String name)
+        public static String GetPath(MacOSVersion version)
         {
             // Set the base path
-            String basedir = "/Library/Frameworks/Mono.framework/Versions/Current/lib/mono";
+            String basedir = "/Library/Frameworks/Mono.framework/Libraries/mono";
             String dir = null;
 
             switch (version)
@@ -44,7 +44,12 @@ namespace Monobjc.Tools.Utilities
                     throw new NotSupportedException("Unsupported version of Mac OS X");
             }
 
-            return Path.Combine(dir, name);
+            return dir;
+        }
+
+        public static String GetPath(MacOSVersion version, String name)
+        {
+            return Path.Combine(GetPath(version), name);
         }
 
         public static void CopyFile(MacOSVersion version, String name, String destination)

@@ -17,7 +17,7 @@
 
     <!-- Create the assembly info -->
     <property name="version" value="4.0"/>
-    <property name="version.info" value="${build.dir}/GeneratedAssemblyInfo.${version}.${revision}.0.cs"/>
+    <property name="version.info" value="${build.dir}/GeneratedAssemblyInfo.${version}.0.0.cs"/>
     <asminfo output="${version.info}" language="CSharp" unless="${file::exists(version.info)}">
       <imports>
         <import namespace="System" />
@@ -25,8 +25,8 @@
         <import namespace="System.Runtime.InteropServices" />
       </imports>
       <attributes>
-        <attribute type="AssemblyVersionAttribute" value="${version}.${revision}.0" />
-        <attribute type="AssemblyFileVersionAttribute" value="${version}.${revision}.0" />
+        <attribute type="AssemblyVersionAttribute" value="${version}.0.0" />
+        <attribute type="AssemblyFileVersionAttribute" value="${version}.0.0" />
         <attribute type="AssemblyConfigurationAttribute" value="Release Configuration" unless="${testing}"/>
         <attribute type="AssemblyConfigurationAttribute" value="Testing Configuration" if="${testing}"/>
       </attributes>
@@ -34,6 +34,7 @@
 
     <!-- Builds tools library -->
     <csc target="library"
+       keyfile="Monobjc.snk"
        output="${dist.dir}/Monobjc.Tools.dll">
       <sources>
         <include name="${version.info}"/>
@@ -73,6 +74,7 @@
 
     <!-- Builds MSBuild tasks-->
     <csc target="library"
+       keyfile="Monobjc.snk"
        output="${dist.dir}/Monobjc.MSBuild.dll">
       <sources>
         <include name="${version.info}"/>
@@ -90,12 +92,14 @@
         <include name="System.dll"/>
         <include name="System.Core.dll"/>
         <include name="Microsoft.Build.Framework.dll"/>
-        <include name="Microsoft.Build.Utilities.dll"/>
+        <include name="Microsoft.Build.Tasks.v4.0.dll"/>
+        <include name="Microsoft.Build.Utilities.v4.0.dll"/>
       </references>
     </csc>
 
     <!-- Builds SDP tool -->
     <csc target="exe"
+       keyfile="Monobjc.snk"
        output="${dist.dir}/Monobjc.Sdp.exe">
       <sources>
         <include name="${version.info}"/>
@@ -119,9 +123,6 @@
   <target name="prepare">
     <mkdir dir="${build.dir}"/>
     <mkdir dir="${dist.dir}"/>
-
-    <!-- Compute the revision -->
-    <property name="revision" value="${timespan::get-days(datetime::now() - datetime::parse('2007-07-01'))}"/>
   </target>
 
   <!-- Clean the directories -->

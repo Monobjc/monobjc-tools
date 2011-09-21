@@ -194,6 +194,8 @@ namespace Monobjc.Tools.Generators
             builder.AppendFormat(" \"{0}\"", Path.Combine(directory, "main.c"));
 
             this.Logger.LogInfo("Compiling...");
+			// TODO: I18N
+            this.Logger.LogDebug(String.Format("Arguments: '{0}'", builder.ToString()));
             using (ProcessHelper helper = new ProcessHelper(nativeContext.Compiler, builder.ToString()))
             {
                 helper.Logger = this.Logger;

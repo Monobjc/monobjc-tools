@@ -72,6 +72,7 @@ namespace Monobjc.Tools.External
             String output = helper.Execute();
             try
             {
+				output = output.Trim();
                 PListDocument document = PListDocument.LoadFromXml(output);
                 return document;
             }

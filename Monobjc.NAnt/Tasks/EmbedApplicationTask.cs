@@ -136,6 +136,7 @@ namespace Monobjc.NAnt.Tasks
 
             // Set the output directory for the build
             String directory = this.ToDirectory.ToString();
+			Directory.CreateDirectory(directory);
 
             // Collect all the assemblies
             List<string> assemblies = this.GetAssemblies();
