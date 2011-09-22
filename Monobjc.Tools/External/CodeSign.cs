@@ -16,7 +16,7 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System;
-using System.Globalization;
+using System.Text;
 using Monobjc.Tools.Utilities;
 
 namespace Monobjc.Tools.External
@@ -31,13 +31,35 @@ namespace Monobjc.Tools.External
         /// </summary>
         /// <param name = "bundle">The path to the application bundle.</param>
         /// <param name = "identity">The signing identity.</param>
+        /// <param name = "identity">The entitlements.</param>
+        /// <returns>The result of the command.</returns>
+        public static String SignApplication(String bundle, String identity, String entitlements)
+        {
+            StringBuilder arguments = new StringBuilder(" -v ");
+            if (identity != null)
+            {
+                arguments.AppendFormat(" --sign \"{0}\" ", identity);
+            }
+            if (entitlements != null)
+            {
+                arguments.AppendFormat(" --entitlements \"{0}\" ", entitlements);
+            }
+            arguments.AppendFormat(" \"{0}\" ", bundle);
+
+            ProcessHelper helper = new ProcessHelper(Executable, arguments.ToString());
+            String output = helper.Execute();
+            return output;
+        }
+
+        /// <summary>
+        ///   Sign the application bundle with the following identity.
+        /// </summary>
+        /// <param name = "bundle">The path to the application bundle.</param>
+        /// <param name = "identity">The signing identity.</param>
         /// <returns>The result of the command.</returns>
         public static String SignApplication(String bundle, String identity)
         {
-            String arguments = String.Format(CultureInfo.InvariantCulture, "-s \"{0}\" -v \"{1}\"", identity, bundle);
-            ProcessHelper helper = new ProcessHelper(Executable, arguments);
-            String output = helper.Execute();
-            return output;
+			return SignApplication(bundle, identity, null);
         }
 
         private static string Executable

@@ -37,12 +37,12 @@ namespace Monobjc.MSBuild.Tasks
 		
         public override bool Execute()
         {
+			if (this.Frameworks == null) {
+				return true;
+			}
+			
 			// TODO: I18N
             this.Log.LogMessage("Copying frameworks");
-			
-			if (this.Frameworks != null && this.Frameworks.Length > 0) {
-				Directory.CreateDirectory(this.ToDirectory.ItemSpec);
-			}
 			
 			foreach(ITaskItem item in this.Frameworks) {
 				String name = item.ItemSpec;

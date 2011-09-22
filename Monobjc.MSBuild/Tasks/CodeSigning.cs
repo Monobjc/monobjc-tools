@@ -16,7 +16,9 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System;
+using System.IO;
 using Monobjc.Tools.External;
+using Microsoft.Build.Framework;
 
 namespace Monobjc.MSBuild.Tasks
 {
@@ -26,12 +28,18 @@ namespace Monobjc.MSBuild.Tasks
     public class CodeSigning : Signing
     {
         /// <summary>
+        ///   Gets or sets the entitlements.
+        /// </summary>
+        /// <value>The entitlements.</value>
+        public ITaskItem Entitlements { get; set; }
+		
+        /// <summary>
         ///   Performs the signing.
         /// </summary>
         /// <param name = "identity">The identity.</param>
         protected override bool PerformSigning(String identity)
         {
-            String output = CodeSign.SignApplication(this.Bundle.ItemSpec, identity);
+            String output = CodeSign.SignApplication(this.Bundle.ItemSpec, identity, (this.Entitlements != null && File.Exists(this.Entitlements.ItemSpec)) ? this.Entitlements.ItemSpec : null);
             this.Log.LogMessage(output);
 			return true;
         }

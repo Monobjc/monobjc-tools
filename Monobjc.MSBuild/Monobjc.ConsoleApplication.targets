@@ -1,3 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Import the Monobcj MSBuild tasks -->
+  <Import Project="$(MSBuildBinPath)\Monobjc.MSBuild.tasks" />
+
+  <PropertyGroup>
+    <!-- Define private properties -->  
+	<_MainAssembly>$(OutputPath)\$(AssemblyName).exe</_MainAssembly>
+	<_NativeWorkingPath>$(OutputPath)\embed</_NativeWorkingPath>
+  </PropertyGroup>
 
 </Project>

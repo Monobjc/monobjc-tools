@@ -1,3 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
+  <!-- Import the Monobcj MSBuild tasks -->
+  <Import Project="$(MSBuildBinPath)\Monobjc.MSBuild.tasks" />
+
+  <PropertyGroup>
+    <!-- Define public properties -->  
+    <AppBundlePath>$(OutputPath)\$(AssemblyName).app</AppBundlePath>
+    <ContentsPath>$(AppBundlePath)\Contents</ContentsPath>
+    <MacOSPath>$(ContentsPath)\MacOS</MacOSPath>
+    <ResourcesPath>$(ContentsPath)\Resources</ResourcesPath>
+    <FrameworksPath>$(ContentsPath)\Frameworks</FrameworksPath>
+    
+    <!-- Important files -->
+    <InfoPListPath>Info.plist</InfoPListPath>
+    <Entitlements>Entitlements.plist</Entitlements>
+    <ProductDefinition>Product.plist</ProductDefinition>
+	
+    <!-- Define private properties -->  
+	<_MainAssembly>$(OutputPath)\$(AssemblyName).exe</_MainAssembly>
+	<_NativeWorkingPath>$(OutputPath)\embed</_NativeWorkingPath>
+  </PropertyGroup>
+
+  <!-- 
+  Create the Cocoa application bundle structure
+  -->
+  <Target Name="_CreateCocoaBundleStructure" DependsOnTargets="Build">
+    <MakeDir Directories="$(MacOSPath)" />
+    <MakeDir Directories="$(ResourcesPath)" />
+    <MakeDir Directories="$(FrameworksPath)" Condition=" '$(EmbeddedFrameworks)' != '' " />
+	
+    <GenerateInfoPList MainAssembly="$(_MainAssembly)" ToDirectory="$(ContentsPath)" MinRequiredOSVersion="$(MacOSVersion)" Condition=" Exists('$(InfoPListPath)') " Template="$(InfoPListPath)" />
+    <GenerateInfoPList MainAssembly="$(_MainAssembly)" ToDirectory="$(ContentsPath)" MinRequiredOSVersion="$(MacOSVersion)" Condition=" !Exists('$(InfoPListPath)') " />
+  </Target>
+  
+  <!--
+  Create a managed application that needs the .NET runtime to run
+  -->
+  <Target Name="Package" DependsOnTargets="_CreateCocoaBundleStructure">
+    <CopyRuntime ApplicationName="$(AssemblyName)" ToDirectory="$(MacOSPath)" />
+    
+    <CompileXib XibFiles="@(Page)" ToDirectory="$(ResourcesPath)" />
+    
+    <Copy SkipUnchangedFiles="true" SourceFiles="$(_MainAssembly)" DestinationFolder="$(ResourcesPath)" />
+    <Copy SkipUnchangedFiles="true" SourceFiles="$(_MainAssembly).mdb" DestinationFolder="$(ResourcesPath)" Condition=" Exists('$(_MainAssembly).mdb') " />
+    <Copy SkipUnchangedFiles="true" SourceFiles="@(ReferenceCopyLocalPaths)" DestinationFolder="$(ResourcesPath)" />
+    <Copy SkipUnchangedFiles="true" SourceFiles="@(Content)" DestinationFolder="$(ResourcesPath)" />
+	
+	<CodeSigning Bundle="$(AppBundlePath)" Identity="$(SigningIdentity)" Entitlements="$(Entitlements)" Condition=" '$(SigningIdentity)' != '' " />
+	<ProductBuilding Bundle="$(AppBundlePath)" Identity="$(ArchiveIdentity)" ProductDefinition="$(ProductDefinition)" Condition=" '$(Archive)' == 'True' " />
+  </Target>
+  
+  <!--
+  Create a self-contained application for redistribution
+  -->
+  <Target Name="Embed" DependsOnTargets="_CreateCocoaBundleStructure">
+    <EmbedApplication
+    	ApplicationName="$(AssemblyName)"
+    	ExcludedAssemblies="@(ExcludedAssemblies)"
+    	IncludedAssemblies="@(AdditionalAssemblies)"
+    	IncludedLibraries="@(AdditionalLibraries)"
+    	MainAssembly="$(_MainAssembly)"
+    	SearchDirectories="@(ReferencePath->'%(RootDir)\%(Directory)')"
+    	TargetArchitecture="$(MacOSArch)"
+    	TargetOSVersion="$(MacOSVersion)"
+    	ToDirectory="$(MacOSPath)"
+    	WorkingDirectory="$(_NativeWorkingPath)" />
+
+	<CompileXib XibFiles="@(Page)" ToDirectory="$(ResourcesPath)" />
+
+    <Copy SkipUnchangedFiles="true" SourceFiles="@(Content)" DestinationFolder="$(ResourcesPath)" />
+    <CopyFrameworks Frameworks="@(EmbeddedFrameworks)" ToDirectory="$(FrameworksPath)" />
+
+	<CodeSigning Bundle="$(AppBundlePath)" Identity="$(SigningIdentity)" Entitlements="$(Entitlements)" Condition=" '$(SigningIdentity)' != '' " />
+	<ProductBuilding Bundle="$(AppBundlePath)" Identity="$(ArchiveIdentity)" ProductDefinition="$(ProductDefinition)" Condition=" '$(Archive)' == 'True' " />
+  </Target>
+  
 </Project>

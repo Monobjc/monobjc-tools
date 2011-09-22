@@ -31,7 +31,6 @@ namespace Monobjc.MSBuild.Tasks
         ///   Gets or sets the product definition.
         /// </summary>
         /// <value>The product definition.</value>
-        [Required]
         public ITaskItem ProductDefinition { get; set; }
 
         /// <summary>
