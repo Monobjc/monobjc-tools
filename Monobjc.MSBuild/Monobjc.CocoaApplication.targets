@@ -37,7 +37,7 @@
   <!--
   Create a managed application that needs the .NET runtime to run
   -->
-  <Target Name="Package" DependsOnTargets="_CreateCocoaBundleStructure">
+  <Target Name="PackageManaged" DependsOnTargets="_CreateCocoaBundleStructure">
     <CopyRuntime ApplicationName="$(AssemblyName)" ToDirectory="$(MacOSPath)" />
     
     <CompileXib XibFiles="@(Page)" ToDirectory="$(ResourcesPath)" />
@@ -54,7 +54,7 @@
   <!--
   Create a self-contained application for redistribution
   -->
-  <Target Name="Embed" DependsOnTargets="_CreateCocoaBundleStructure">
+  <Target Name="PackageNative" DependsOnTargets="_CreateCocoaBundleStructure">
     <EmbedApplication
     	ApplicationName="$(AssemblyName)"
     	ExcludedAssemblies="@(ExcludedAssemblies)"
