@@ -29,3 +29,5 @@ using System.Runtime.InteropServices;
 [assembly: NeutralResourcesLanguage("en-US")]
 [assembly: ComVisible(false)]
 [assembly: Guid("5711e7b0-b69c-4783-8f07-6f234100ee1c")]
+[assembly: AssemblyVersionAttribute("4.0.0.0")]
+[assembly: AssemblyFileVersionAttribute("4.0.0.0")]

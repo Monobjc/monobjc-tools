@@ -16,28 +16,11 @@
     <echo message="Building Tools"/>
     <echo message="------------------------"/>
 
-    <!-- Create the assembly info -->
-    <property name="version.info" value="${build.dir}/GeneratedAssemblyInfo.${monobjc.version}.0.0.cs"/>
-    <asminfo output="${version.info}" language="CSharp" unless="${file::exists(version.info)}">
-      <imports>
-        <import namespace="System" />
-        <import namespace="System.Reflection" />
-        <import namespace="System.Runtime.InteropServices" />
-      </imports>
-      <attributes>
-        <attribute type="AssemblyVersionAttribute" value="${monobjc.version}.0.0" />
-        <attribute type="AssemblyFileVersionAttribute" value="${monobjc.version}.0.0" />
-        <attribute type="AssemblyConfigurationAttribute" value="Release Configuration" unless="${testing}"/>
-        <attribute type="AssemblyConfigurationAttribute" value="Testing Configuration" if="${testing}"/>
-      </attributes>
-    </asminfo>
-
     <!-- Builds tools library -->
     <csc target="library"
        keyfile="Monobjc.snk"
        output="${dist.dir}/Monobjc.Tools.dll">
       <sources>
-        <include name="${version.info}"/>
         <include name="Monobjc.Tools/**/*.cs"/>
       </sources>
       <resources prefix="Monobjc.Tools.Properties">
@@ -53,7 +36,6 @@
     <csc target="library"
        output="${dist.dir}/Monobjc.NAnt.dll">
       <sources>
-        <include name="${version.info}"/>
         <include name="Monobjc.Tools/**/*.cs"/>
         <exclude name="Monobjc.Tools/**/AssemblyInfo.cs"/>
         <include name="Monobjc.NAnt/**/*.cs"/>
@@ -77,7 +59,6 @@
        keyfile="Monobjc.snk"
        output="${dist.dir}/Monobjc.MSBuild.dll">
       <sources>
-        <include name="${version.info}"/>
         <include name="Monobjc.Tools/**/*.cs"/>
         <exclude name="Monobjc.Tools/**/AssemblyInfo.cs"/>
         <include name="Monobjc.MSBuild/**/*.cs"/>
@@ -109,7 +90,6 @@
        keyfile="Monobjc.snk"
        output="${dist.dir}/Monobjc.Sdp.exe">
       <sources>
-        <include name="${version.info}"/>
         <include name="Monobjc.Sdp/**/*.cs"/>
       </sources>
       <resources prefix="Monobjc.Sdp.Properties">
