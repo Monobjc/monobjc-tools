@@ -15,7 +15,7 @@
     <!-- Important files -->
     <InfoPListPath>Info.plist</InfoPListPath>
     <Entitlements>Entitlements.plist</Entitlements>
-    <ProductDefinition>Product.plist</ProductDefinition>
+    <ProductDefinition>Definition.plist</ProductDefinition>
 	
     <!-- Define private properties -->  
 	<_MainAssembly>$(OutputPath)\$(AssemblyName).exe</_MainAssembly>
