@@ -26,15 +26,21 @@ namespace Monobjc.MSBuild.Tasks
 {
     public class CopyRuntime : Task
     {
+        private MacOSVersion targetOSVersion;
+		
 		public CopyRuntime()
 		{
-			this.TargetOSVersion = MacOSVersion.MacOS105;
+			this.targetOSVersion = MacOSVersion.MacOS105;
 		}
 		
         [Required]
 		public String ApplicationName { get; set; }
 		
-        public MacOSVersion TargetOSVersion { get; set; }
+        public String TargetOSVersion
+		{
+			get { return this.targetOSVersion.ToString(); }
+			set { this.targetOSVersion = (MacOSVersion) Enum.Parse(typeof(MacOSVersion), value); }
+		}
 		
         [Required]
 		public ITaskItem ToDirectory { get; set; }
@@ -45,7 +51,7 @@ namespace Monobjc.MSBuild.Tasks
             this.Log.LogMessage("Copying runtime");
 
 			String path = Path.Combine(this.ToDirectory.ItemSpec, this.ApplicationName);
-			FileProvider.CopyFile(this.TargetOSVersion, "runtime", path, "a+x");
+			FileProvider.CopyFile(this.targetOSVersion, "runtime", path, "a+x");
 			
 			return true;
         }

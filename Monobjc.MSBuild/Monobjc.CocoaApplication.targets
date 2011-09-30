@@ -38,7 +38,7 @@
   Create a managed application that needs the .NET runtime to run
   -->
   <Target Name="BundleManaged" DependsOnTargets="_CreateCocoaBundleStructure">
-    <CopyRuntime ApplicationName="$(AssemblyName)" ToDirectory="$(MacOSPath)" />
+    <CopyRuntime ApplicationName="$(AssemblyName)" TargetOSVersion="$(MacOSVersion)" ToDirectory="$(MacOSPath)" />
     
     <CompileXib XibFiles="@(Page)" ToDirectory="$(ResourcesPath)" />
     
