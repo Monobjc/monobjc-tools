@@ -981,6 +981,7 @@
         </Replace>
       </Class>
       <Class name="NSDocumentController">
+        <Patch>Properties[SharedDocumentController].Type=NSDocumentController</Patch>
       </Class>
       <Class name="NSDraggingSession">
         <Patch>Enumerations[NSDraggingItemEnumerationOptions].Values[NSDraggingItemEnumerationConcurrent].Value=<![CDATA[1U << 0]]></Patch>
@@ -1176,6 +1177,7 @@
         <Patch>Methods[GenerateGlyphsForGlyphStorageDesiredNumberOfCharactersGlyphIndexCharacterIndex].Parameters[glyphIndex].IsOut=true</Patch>
         <Patch>Methods[GenerateGlyphsForGlyphStorageDesiredNumberOfCharactersGlyphIndexCharacterIndex].Parameters[charIndex].Type=NSUInteger</Patch>
         <Patch>Methods[GenerateGlyphsForGlyphStorageDesiredNumberOfCharactersGlyphIndexCharacterIndex].Parameters[charIndex].IsOut=true</Patch>
+        <Patch>Properties[SharedGlyphGenerator].Type=NSGlyphGenerator</Patch>
       </Class>
       <Class name="NSGlyphInfo">
         <Patch>Enumerations[NSCharacterCollection].BaseType=NSUInteger</Patch>
@@ -1805,6 +1807,7 @@ NSString *NSFindPanelCaseInsensitiveSearch;
         <Patch>AdditionFor=NSURL</Patch>
       </Class>
       <Class name="NSUserDefaultsController">
+        <Patch>Properties[SharedUserDefaultsController].Type=NSUserDefaultsController</Patch>
       </Class>
       <Class name="NSView">
         <Patch>Methods[GetRectsBeingDrawnCount].Parameters[rects].Type=IntPtr</Patch>
@@ -2355,7 +2358,9 @@ enum {]]>
       </Type>
     </Types>
     <Classes>
-      <Class name="AVAsset"></Class>
+      <Class name="AVAsset">
+        <Patch>Methods[AssetWithURL].ReturnType=AVAsset</Patch>
+      </Class>
       <Class name="AVAssetExportSession"></Class>
       <Class name="AVAssetImageGenerator">
         <Patch>Methods[CopyCGImageAtTimeActualTimeError].Parameters[actualTime].Type=CMTime</Patch>
@@ -2557,7 +2562,10 @@ enum {]]></With>
           <With><![CDATA[public new int TrackID]]></With>
         </Replace>
       </Class>
-      <Class name="AVPlayer"></Class>
+      <Class name="AVPlayer">
+        <Patch>Methods[PlayerWithPlayerItem].ReturnType=AVPlayer</Patch>
+        <Patch>Methods[PlayerWithURL].ReturnType=AVPlayer</Patch>
+      </Class>
       <Class name="AVPlayerItem"></Class>
       <Class name="AVPlayerItemAccessLog"></Class>
       <Class name="AVPlayerItemAccessLogEvent"></Class>
@@ -4172,6 +4180,7 @@ enum {]]></With>
       </Class>
       <Class name="NSDecimalNumberHandler">
         <Patch>Methods[DecimalNumberHandlerWithRoundingModeScaleRaiseOnExactnessRaiseOnOverflowRaiseOnUnderflowRaiseOnDivideByZero].ReturnType=NSDecimalNumberHandler</Patch>
+        <Patch>Properties[DefaultDecimalNumberHandler].Type=NSDecimalNumberHandler</Patch>
       </Class>
       <Class name="NSDeleteCommand">
       </Class>

@@ -70,7 +70,7 @@ namespace Monobjc.Tools.Generator.Tasks.Output
 
         private void FindStaticInitializers(ClassEntity classEntity)
         {
-            string[] prefixes = new[] {"AB", "ABV", "NS", "AE", "AX", "ATSU", "CG", "CT", "LS", "PM", "QD", "UT", "AU", "AUMIDI", "CF", "CL", "CV", "DR", "QT", "QL", "SC", "PDF", "Web", "CA", "CP", "SU", "DOM"};
+            string[] prefixes = new[] {"AB", "ABV", "AV", "NS", "AE", "AX", "ATSU", "CG", "CT", "CM", "LS", "PM", "QD", "UT", "AU", "AUMIDI", "CF", "CL", "CV", "DR", "QT", "QL", "SC", "PDF", "Web", "CA", "CP", "SU", "DOM"};
             foreach (string prefix in prefixes)
             {
                 if (!classEntity.Name.StartsWith(prefix))
@@ -80,6 +80,16 @@ namespace Monobjc.Tools.Generator.Tasks.Output
 
                 String name = classEntity.Name.Substring(prefix.Length);
                 PropertyEntity propertyEntity = classEntity.Properties.Find(p => p.Name.Equals(name) && p.Type == "Id");
+                if (propertyEntity != null)
+                {
+                    Console.WriteLine("Found: {0}.{1}", classEntity.Name, propertyEntity.Name);
+                }
+                propertyEntity = classEntity.Properties.Find(p => p.Name.Contains("Shared" + name) && p.Type == "Id");
+                if (propertyEntity != null)
+                {
+                    Console.WriteLine("Found: {0}.{1}", classEntity.Name, propertyEntity.Name);
+                }
+                propertyEntity = classEntity.Properties.Find(p => p.Name.Contains("Default" + name) && p.Type == "Id");
                 if (propertyEntity != null)
                 {
                     Console.WriteLine("Found: {0}.{1}", classEntity.Name, propertyEntity.Name);
