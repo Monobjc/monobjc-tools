@@ -31,8 +31,15 @@ namespace Monobjc.Tools.Generators
         /// </summary>
         public InfoPListGenerator()
         {
+			this.Logger = new NullLogger ();
             this.TargetOSVersion = MacOSVersion.MacOS105;
         }
+
+		/// <summary>
+		///   Gets or sets the logger.
+		/// </summary>
+		/// <value>The logger.</value>
+		public IExecutionLogger Logger { get; set; }
 
         /// <summary>
         ///   Gets or sets the name of the application.
@@ -90,6 +97,8 @@ namespace Monobjc.Tools.Generators
         {
             if (this.Content == null)
             {
+				this.Logger.LogDebug ("Using default template");
+				
                 // Load template
                 this.Content = Resources.InfoPlist;
             }
@@ -102,7 +111,7 @@ namespace Monobjc.Tools.Generators
             // Set default values
             this.Identifier = this.Identifier ?? "net.monobjc.app";
             this.Version = this.Version ?? "1.0";
-            this.MainNibFile = this.MainNibFile ?? "MainMenu";
+            this.MainNibFile = (this.MainNibFile != null) ? Path.GetFileNameWithoutExtension(this.MainNibFile) : "MainMenu";
             this.PrincipalClass = this.PrincipalClass ?? "NSApplication";
 
             // Replace template values

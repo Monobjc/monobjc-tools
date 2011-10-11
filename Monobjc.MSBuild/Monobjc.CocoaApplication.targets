@@ -11,6 +11,7 @@
     <MacOSPath>$(ContentsPath)\MacOS</MacOSPath>
     <ResourcesPath>$(ContentsPath)\Resources</ResourcesPath>
     <FrameworksPath>$(ContentsPath)\Frameworks</FrameworksPath>
+    <UseCompression>true</UseCompression>
     
     <!-- Important files -->
     <InfoPListPath>Info.plist</InfoPListPath>
@@ -30,8 +31,8 @@
     <MakeDir Directories="$(ResourcesPath)" />
     <MakeDir Directories="$(FrameworksPath)" Condition=" '$(EmbeddedFrameworks)' != '' " />
 	
-    <GenerateInfoPList MainAssembly="$(_MainAssembly)" ToDirectory="$(ContentsPath)" MinRequiredOSVersion="$(MacOSVersion)" Condition=" Exists('$(InfoPListPath)') " Template="$(InfoPListPath)" />
-    <GenerateInfoPList MainAssembly="$(_MainAssembly)" ToDirectory="$(ContentsPath)" MinRequiredOSVersion="$(MacOSVersion)" Condition=" !Exists('$(InfoPListPath)') " />
+    <GenerateInfoPList MainAssembly="$(_MainAssembly)" ToDirectory="$(ContentsPath)" MinRequiredOSVersion="$(MacOSVersion)" Icon="$(BundleIcon)" MainNibFile="$(MainNibFile)" Condition=" Exists('$(InfoPListPath)') " Template="$(InfoPListPath)" />
+    <GenerateInfoPList MainAssembly="$(_MainAssembly)" ToDirectory="$(ContentsPath)" MinRequiredOSVersion="$(MacOSVersion)" Icon="$(BundleIcon)" MainNibFile="$(MainNibFile)" Condition=" !Exists('$(InfoPListPath)') " />
   </Target>
   
   <!--
@@ -57,6 +58,7 @@
   <Target Name="BundleNative" DependsOnTargets="_CreateCocoaBundleStructure">
     <EmbedApplication
     	ApplicationName="$(AssemblyName)"
+    	Compress="$(UseCompression)"
     	ExcludedAssemblies="@(ExcludedAssemblies)"
     	IncludedAssemblies="@(AdditionalAssemblies)"
     	IncludedLibraries="@(AdditionalLibraries)"

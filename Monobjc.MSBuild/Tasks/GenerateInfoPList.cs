@@ -134,10 +134,20 @@ namespace Monobjc.MSBuild.Tasks
             {
                 Assembly assembly = Assembly.ReflectionOnlyLoadFrom(this.MainAssembly.ItemSpec);
                 AssemblyName assemblyName = assembly.GetName();
-                this.ApplicationName = assemblyName.Name;
-                this.Identifier = assembly.EntryPoint.DeclaringType.Namespace;
-                this.Version = assemblyName.Version.ToString();
-            }
+                this.generator.ApplicationName = assemblyName.Name;
+                this.generator.Identifier = assembly.EntryPoint.DeclaringType.Namespace;
+                this.generator.Version = assemblyName.Version.ToString();
+            } else {
+				this.generator.ApplicationName = this.ApplicationName;
+				this.generator.Identifier = this.Identifier;
+				this.generator.Version = this.Version;
+			}
+			
+			// Set other parameters
+			this.generator.Icon = this.Icon;
+			this.generator.MainNibFile = this.MainNibFile;
+			this.generator.PrincipalClass = this.PrincipalClass;
+			this.generator.TargetOSVersion = this.minRequiredOSVersion;
 
             // Write the file
             String path = Path.Combine(this.ToDirectory.ToString(), "Info.plist");

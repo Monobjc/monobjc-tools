@@ -31,6 +31,8 @@ namespace Monobjc.Tools.Generators
         private const String KEY_SYMBOL = "SYMBOL";
         private const String KEY_LIBRARY = "LIBRARY";
         private const String KEY_ASSEMBLY = "ASSEMBLY";
+        private const String KEY_INPUT_SIZE = "INPUT_SIZE";
+        private const String KEY_OUTPUT_SIZE = "OUTPUT_SIZE";
 
         /// <summary>
         ///   Initializes a new instance of the <see cref = "NativeCodeGenerator" /> class.
@@ -76,6 +78,14 @@ namespace Monobjc.Tools.Generators
         /// </summary>
         /// <value>The folder for developer tools.</value>
         public String DeveloperToolsFolder { get; set; }
+
+		/// <summary>
+		/// Gets or sets a value indicating whether the data file will be compressed.
+		/// </summary>
+		/// <value>
+		/// <c>true</c> to compress; otherwise, <c>false</c>.
+		/// </value>
+		public bool Compress { get; set; }
 
         /// <summary>
         ///   Generates the native executable.
@@ -174,9 +184,14 @@ namespace Monobjc.Tools.Generators
                 builder.Append(result);
             }
 
+            // Add zlib shared library
+			if (this.Compress) {
+	            builder.AppendFormat(" -l{0}", "z");
+			}
+
             // Add Monobjc shared library
             builder.AppendFormat(" -l{0}", "monobjc");
-
+			
             // Add all the static libraries
             foreach (Dictionary<string, string> dictionary in assemblies)
             {
@@ -215,10 +230,24 @@ namespace Monobjc.Tools.Generators
                 sourceWriter.WriteLine("// This source code was produced by the Monobjc Tools, DO NOT EDIT !!!");
                 sourceWriter.WriteLine();
                 sourceWriter.WriteLine("#include <stdlib.h>");
+				if (this.Compress) {
+	                sourceWriter.WriteLine("#include <zlib.h>");
+				}
                 sourceWriter.WriteLine("#include <mono/metadata/assembly.h>");
                 sourceWriter.WriteLine("#include \"monobjc.h\"");
                 sourceWriter.WriteLine();
 
+				// Output the custom structure
+                sourceWriter.WriteLine("// Structure for MonoBundledAssemblyExt");
+                sourceWriter.WriteLine("typedef struct {");
+				sourceWriter.WriteLine("\tconst char *name;");
+				sourceWriter.WriteLine("\tconst unsigned char *data;");
+				sourceWriter.WriteLine("\tconst unsigned int size;");
+                sourceWriter.WriteLine("\tconst unsigned char *zip_data;");
+                sourceWriter.WriteLine("\tconst unsigned int zip_size;");
+                sourceWriter.WriteLine("} MonoBundledAssemblyExt;");
+                sourceWriter.WriteLine();
+				
                 // Output the symbols for the assemblies
                 this.Logger.LogInfo("Output symbols for assemblies (" + assemblies.Count() + ")");
                 sourceWriter.WriteLine("// Symbols for assemblies");
@@ -245,25 +274,60 @@ namespace Monobjc.Tools.Generators
                     sourceWriter.WriteLine("extern const char {0}[];", machineConfig[KEY_SYMBOL]);
                 }
                 sourceWriter.WriteLine();
-
+				
                 // Output the bundle for each assembly
                 this.Logger.LogInfo("Output bundle for assemblies (" + assemblies.Count() + ")");
                 sourceWriter.WriteLine("// Bundle for assemblies");
                 foreach (Dictionary<string, string> dictionary in assemblies)
                 {
-                    FileInfo fileInfo = new FileInfo(dictionary[KEY_FILE]);
-                    sourceWriter.WriteLine("static const MonoBundledAssembly bundle_{0} = {{ \"{1}\", {0}, {2} }};", dictionary[KEY_SYMBOL], dictionary[KEY_NAME], fileInfo.Length);
+					if (this.Compress) {
+    	                sourceWriter.WriteLine("static MonoBundledAssemblyExt bundle_{0} = {{ \"{1}\", NULL, {2}, {0}, {3} }};", dictionary[KEY_SYMBOL], dictionary[KEY_NAME], dictionary[KEY_INPUT_SIZE], dictionary[KEY_OUTPUT_SIZE]);
+					} else {
+	                    sourceWriter.WriteLine("static MonoBundledAssemblyExt bundle_{0} = {{ \"{1}\", {0}, {2}, NULL, 0 }};", dictionary[KEY_SYMBOL], dictionary[KEY_NAME], dictionary[KEY_INPUT_SIZE]);
+					}
                 }
                 sourceWriter.WriteLine();
-                sourceWriter.WriteLine("static const MonoBundledAssembly *bundled[] = {");
-                foreach (Dictionary<string, string> dictionary in assemblies)
-                {
-                    sourceWriter.WriteLine("\t&bundle_{0},", dictionary[KEY_SYMBOL]);
-                }
-                sourceWriter.WriteLine("\tNULL");
-                sourceWriter.WriteLine("};");
-                sourceWriter.WriteLine();
-
+				
+				if (this.Compress) {
+	                sourceWriter.WriteLine("int bundle_inflate(MonoBundledAssemblyExt *bundle) {");
+	                sourceWriter.WriteLine("\tif (!bundle->zip_data) {");
+	                sourceWriter.WriteLine("\t\treturn 0;");
+	                sourceWriter.WriteLine("\t}");
+	                sourceWriter.WriteLine();
+					sourceWriter.WriteLine("\tbundle->data = (const unsigned char *) malloc(bundle->size);");
+	                sourceWriter.WriteLine();
+					sourceWriter.WriteLine("\tint ret;");
+					sourceWriter.WriteLine("\tz_stream strm = { 0 };");
+					sourceWriter.WriteLine("\tret = inflateInit(&strm);");
+	                sourceWriter.WriteLine("\tif (ret != Z_OK) {");
+	                sourceWriter.WriteLine("\t\treturn ret;");
+	                sourceWriter.WriteLine("\t}");
+	                sourceWriter.WriteLine();
+	                sourceWriter.WriteLine("\tstrm.next_in = (Bytef *) bundle->zip_data;");
+	                sourceWriter.WriteLine("\tstrm.avail_in = (uInt) bundle->zip_size;");
+	                sourceWriter.WriteLine();
+	                sourceWriter.WriteLine("\twhile(1) {");
+	                sourceWriter.WriteLine("\t\tstrm.next_out = (Bytef *) bundle->data;");
+	                sourceWriter.WriteLine("\t\tstrm.avail_out = (uInt) bundle->size;");
+	                sourceWriter.WriteLine("\t\tret = inflate(&strm, Z_NO_FLUSH);");
+	                sourceWriter.WriteLine("\t\tif (ret == Z_STREAM_END) {");
+	                sourceWriter.WriteLine("\t\t\tbreak;");
+	                sourceWriter.WriteLine("\t\t}");
+	                sourceWriter.WriteLine("\t\tif (ret != Z_OK) {");
+	                sourceWriter.WriteLine("\t\t\treturn ret;");
+	                sourceWriter.WriteLine("\t\t}");
+	                sourceWriter.WriteLine("\t}");
+	                sourceWriter.WriteLine();
+					sourceWriter.WriteLine("\tret = inflateEnd(&strm);");
+	                sourceWriter.WriteLine("\tif (ret != Z_OK) {");
+	                sourceWriter.WriteLine("\t\treturn ret;");
+	                sourceWriter.WriteLine("\t}");
+	                sourceWriter.WriteLine();
+	                sourceWriter.WriteLine("\t\treturn 0;");
+	                sourceWriter.WriteLine("}");
+	                sourceWriter.WriteLine();
+				}
+				
                 // Output the main image
                 sourceWriter.WriteLine("static char *image_name = \"{0}\";", mainImage);
                 sourceWriter.WriteLine();
@@ -273,6 +337,19 @@ namespace Monobjc.Tools.Generators
                 sourceWriter.WriteLine("\tint i;");
                 sourceWriter.WriteLine();
 
+				int i = 0;
+                sourceWriter.WriteLine("\tMonoBundledAssemblyExt *bundled[{0}];", assemblies.Count() + 1);
+                foreach (Dictionary<string, string> dictionary in assemblies)
+                {
+					if (this.Compress) {
+		                sourceWriter.WriteLine("\tbundle_inflate(&bundle_{1});", i, dictionary[KEY_SYMBOL]);
+					}
+	                sourceWriter.WriteLine("\tbundled[{0}] = &bundle_{1};", i, dictionary[KEY_SYMBOL]);
+					i++;
+                }
+                sourceWriter.WriteLine("\tbundled[{0}] = NULL;", i);
+                sourceWriter.WriteLine("\t");
+				
                 sourceWriter.WriteLine("\t// Shift the arguments to include the image name");
                 sourceWriter.WriteLine("\tchar **newargs = (char **) malloc (sizeof(char *) * (argc + 2));");
                 sourceWriter.WriteLine("\tnewargs [0] = argv[0];");
@@ -292,7 +369,7 @@ namespace Monobjc.Tools.Generators
                 {
                     sourceWriter.WriteLine("\tmono_register_config_for_assembly(\"{0}\", {1});", dictionary[KEY_ASSEMBLY], dictionary[KEY_SYMBOL]);
                 }
-                sourceWriter.WriteLine("\tmono_register_bundled_assemblies(bundled);");
+                sourceWriter.WriteLine("\tmono_register_bundled_assemblies((const MonoBundledAssembly **) bundled);");
                 sourceWriter.WriteLine();
 
                 sourceWriter.WriteLine("\t// Invoke the Mono runtime");
@@ -301,16 +378,19 @@ namespace Monobjc.Tools.Generators
             }
         }
 
-        private static Dictionary<string, string> CreateBundle(DataLibraryCreator creator, string assembly, bool isText)
+        private Dictionary<string, string> CreateBundle(DataLibraryCreator creator, string assembly, bool isText)
         {
             Dictionary<String, String> bundle = new Dictionary<String, String>();
 
             // Create the static library for the assembly
+			creator.Compress = this.Compress && !isText;
             creator.CreateStaticLibrary(assembly, isText);
             bundle[KEY_FILE] = assembly;
             bundle[KEY_NAME] = Path.GetFileName(assembly);
             bundle[KEY_SYMBOL] = creator.SymbolName;
             bundle[KEY_LIBRARY] = creator.OutputFile;
+            bundle[KEY_INPUT_SIZE] = creator.InputSize.ToString();
+            bundle[KEY_OUTPUT_SIZE] = creator.OutputSize.ToString();
 
             return bundle;
         }

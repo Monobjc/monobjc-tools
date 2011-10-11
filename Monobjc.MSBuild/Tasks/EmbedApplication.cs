@@ -90,6 +90,14 @@ namespace Monobjc.MSBuild.Tasks
         /// </summary>
         /// <value>The machine configuration.</value>
         public ITaskItem MachineConfiguration { get; set; }
+
+		/// <summary>
+		/// Gets or sets a value indicating whether to compress assemblies.
+		/// </summary>
+		/// <value>
+		/// <c>true</c> to compress; otherwise, <c>false</c>.
+		/// </value>
+		public bool Compress { get; set; }
 		
         /// <summary>
         ///   Executes the task.
@@ -111,7 +119,6 @@ namespace Monobjc.MSBuild.Tasks
 			if (this.MachineConfiguration == null) {
 				this.MachineConfiguration = new TaskItem("/Library/Frameworks/Mono.framework/Home/etc/mono/4.0/machine.config");
 			}
-
 			
 			// HACK: We need to put a search directory in order to properly lookup assemblies with no explicit version
 			List<ITaskItem> directories = this.SearchDirectories.ToList();
@@ -142,6 +149,7 @@ namespace Monobjc.MSBuild.Tasks
             codeGenerator.MachineConfiguration = this.MachineConfiguration.ItemSpec;
             codeGenerator.TargetOSVersion = this.targetOSVersion;
             codeGenerator.TargetArchitecture = this.targetArchitecture;
+			codeGenerator.Compress = this.Compress;
             String executableFile = codeGenerator.Generate(workingDir);
             String libraryFile = Path.Combine(workingDir, "libmonobjc.dylib");
 			

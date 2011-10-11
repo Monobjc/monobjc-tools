@@ -10,7 +10,6 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Monobjc.Tools</RootNamespace>
     <AssemblyName>Monobjc.Tools</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\Monobjc.snk</AssemblyOriginatorKeyFile>
@@ -34,8 +33,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core">
-    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="ICSharpCode.SharpZipLib" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>

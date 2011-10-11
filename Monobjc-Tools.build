@@ -29,6 +29,8 @@
       <references>
         <include name="System.dll"/>
         <include name="System.Core.dll"/>
+        <include name="System.Xml.dll"/>
+        <include name="ICSharpCode.SharpZipLib.dll"/>
       </references>
     </csc>
 
@@ -49,6 +51,8 @@
       <references>
         <include name="System.dll"/>
         <include name="System.Core.dll"/>
+        <include name="System.Xml.dll"/>
+        <include name="ICSharpCode.SharpZipLib.dll"/>
         <include name="${nant::get-base-directory()}/NAnt.Core.dll"/>
         <include name="${nant::get-base-directory()}/NAnt.DotNetTasks.dll"/>
       </references>
@@ -72,6 +76,8 @@
       <references>
         <include name="System.dll"/>
         <include name="System.Core.dll"/>
+        <include name="System.Xml.dll"/>
+        <include name="ICSharpCode.SharpZipLib.dll"/>
         <include name="Microsoft.Build.Framework.dll"/>
         <include name="Microsoft.Build.Tasks.v4.0.dll"/>
         <include name="Microsoft.Build.Utilities.v4.0.dll"/>
