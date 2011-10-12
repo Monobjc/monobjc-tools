@@ -38,27 +38,51 @@ namespace Monobjc.MSBuild.Tasks
 			this.targetArchitecture = MacOSArchitecture.X86;
 		}
 		
+        /// <summary>
+        /// Gets or sets the name of the application.
+        /// </summary>
+        /// <value>The name of the application.</value>
         [Required]
 		public String ApplicationName { get; set; }
 		
+        /// <summary>
+        /// Gets or sets the target OS version.
+        /// </summary>
+        /// <value>The target OS version.</value>
         public String TargetOSVersion
 		{
 			get { return this.targetOSVersion.ToString(); }
 			set { this.targetOSVersion = (MacOSVersion) Enum.Parse(typeof(MacOSVersion), value); }
 		}
 		
+        /// <summary>
+        /// Gets or sets the target architecture.
+        /// </summary>
+        /// <value>The target architecture.</value>
         public String TargetArchitecture
 		{
 			get { return this.targetArchitecture.ToString(); }
 			set { this.targetArchitecture = (MacOSArchitecture) Enum.Parse(typeof(MacOSArchitecture), value); }
 		}
 		
+        /// <summary>
+        /// Gets or sets the main assembly.
+        /// </summary>
+        /// <value>The main assembly.</value>
         [Required]
         public ITaskItem MainAssembly { get; set; }
 		
+        /// <summary>
+        /// Gets or sets the output dir.
+        /// </summary>
+        /// <value>The output dir.</value>
         [Required]
 		public ITaskItem ToDirectory { get; set; }
 		
+        /// <summary>
+        /// Gets or sets the working dir.
+        /// </summary>
+        /// <value>The working dir.</value>
 		public ITaskItem WorkingDirectory { get; set; }
 		
         /// <summary>

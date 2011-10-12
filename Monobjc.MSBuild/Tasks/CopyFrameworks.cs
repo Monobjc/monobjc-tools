@@ -26,12 +26,25 @@ namespace Monobjc.MSBuild.Tasks
 {
     public class CopyFrameworks : Task
     {
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Monobjc.MSBuild.Tasks.CopyFrameworks"/> class.
+		/// </summary>
 		public CopyFrameworks()
 		{
 		}
 		
-        public ITaskItem[] Frameworks { get; set; }
+		/// <summary>
+		/// Gets or sets the frameworks.
+		/// </summary>
+		/// <value>
+		/// The frameworks.
+		/// </value>
+        public String Frameworks { get; set; }
 		
+        /// <summary>
+        /// Gets or sets the output dir.
+        /// </summary>
+        /// <value>The output dir.</value>
         [Required]
 		public ITaskItem ToDirectory { get; set; }
 		
@@ -44,8 +57,7 @@ namespace Monobjc.MSBuild.Tasks
 			// TODO: I18N
             this.Log.LogMessage("Copying frameworks");
 			
-			foreach(ITaskItem item in this.Frameworks) {
-				String name = item.ItemSpec;
+			foreach(String name in this.Frameworks.Split(';')) {
 				String path;
 				
 				// Probe system location

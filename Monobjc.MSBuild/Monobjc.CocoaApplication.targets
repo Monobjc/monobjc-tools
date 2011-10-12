@@ -6,7 +6,7 @@
 
   <PropertyGroup>
     <!-- Define public properties -->  
-    <AppBundlePath>$(OutputPath)\$(AssemblyName).app</AppBundlePath>
+    <AppBundlePath>$(OutputPath)\$(TargetName).app</AppBundlePath>
     <ContentsPath>$(AppBundlePath)\Contents</ContentsPath>
     <MacOSPath>$(ContentsPath)\MacOS</MacOSPath>
     <ResourcesPath>$(ContentsPath)\Resources</ResourcesPath>
@@ -19,10 +19,10 @@
     <ProductDefinition>Definition.plist</ProductDefinition>
 	
     <!-- Define private properties -->  
-	<_MainAssembly>$(OutputPath)\$(AssemblyName).exe</_MainAssembly>
-	<_NativeWorkingPath>$(OutputPath)\embed</_NativeWorkingPath>
+	<_MainAssembly>$(OutputPath)\$(TargetFileName)</_MainAssembly>
+	<_NativeWorkingPath>$(OutputPath)\Embed</_NativeWorkingPath>
   </PropertyGroup>
-
+  
   <!-- 
   Create the Cocoa application bundle structure
   -->
@@ -39,7 +39,7 @@
   Create a managed application that needs the .NET runtime to run
   -->
   <Target Name="BundleManaged" DependsOnTargets="_CreateCocoaBundleStructure">
-    <CopyRuntime ApplicationName="$(AssemblyName)" TargetOSVersion="$(MacOSVersion)" ToDirectory="$(MacOSPath)" />
+    <CopyRuntime ApplicationName="$(TargetName)" TargetOSVersion="$(MacOSVersion)" ToDirectory="$(MacOSPath)" />
     
     <CompileXib XibFiles="@(Page)" ToDirectory="$(ResourcesPath)" />
     
@@ -49,34 +49,53 @@
     <Copy SkipUnchangedFiles="true" SourceFiles="@(Content)" DestinationFolder="$(ResourcesPath)" />
 	
 	<CodeSigning Bundle="$(AppBundlePath)" Identity="$(SigningIdentity)" Entitlements="$(Entitlements)" Condition=" '$(SigningIdentity)' != '' " />
-	<ProductBuilding Bundle="$(AppBundlePath)" Identity="$(ArchiveIdentity)" ProductDefinition="$(ProductDefinition)" Condition=" '$(Archive)' == 'True' " />
   </Target>
   
   <!--
   Create a self-contained application for redistribution
   -->
   <Target Name="BundleNative" DependsOnTargets="_CreateCocoaBundleStructure">
+  
     <EmbedApplication
-    	ApplicationName="$(AssemblyName)"
+        ApplicationName="$(TargetName)"
     	Compress="$(UseCompression)"
     	ExcludedAssemblies="@(ExcludedAssemblies)"
     	IncludedAssemblies="@(AdditionalAssemblies)"
     	IncludedLibraries="@(AdditionalLibraries)"
     	MainAssembly="$(_MainAssembly)"
-    	SearchDirectories="@(ReferencePath->'%(RootDir)\%(Directory)')"
+    	SearchDirectories="@(ResolvedFiles->'%(RootDir)%(Directory)')"
     	TargetArchitecture="$(MacOSArch)"
     	TargetOSVersion="$(MacOSVersion)"
     	ToDirectory="$(MacOSPath)"
-    	WorkingDirectory="$(_NativeWorkingPath)" />
+    	WorkingDirectory="$(_NativeWorkingPath)"/>
 
 	<CompileXib XibFiles="@(Page)" ToDirectory="$(ResourcesPath)" />
 
     <Copy SkipUnchangedFiles="true" SourceFiles="@(Content)" DestinationFolder="$(ResourcesPath)" />
-    <CopyFrameworks Frameworks="@(EmbeddedFrameworks)" ToDirectory="$(FrameworksPath)" />
+    <CopyFrameworks Frameworks="$(EmbeddedFrameworks)" ToDirectory="$(FrameworksPath)" />
 
 	<CodeSigning Bundle="$(AppBundlePath)" Identity="$(SigningIdentity)" Entitlements="$(Entitlements)" Condition=" '$(SigningIdentity)' != '' " />
   </Target>
   
+  <!--
+  Export an Xcode project that uses the result of the BundleNative task
+  <Target Name="ExportToXcode" DependsOnTargets="BundleNative">
+  
+    <ExportToXcode
+        Name="$(TargetName)"
+        InfoPList="$(InfoPListPath)"
+        XibFiles="@(Page)"
+        Resources="@(Content)"
+        Frameworks="$(MacOSFrameworks)"
+        Identity="$(SigningIdentity)"
+        Entitlements="$(Entitlements)"
+        TargetArchitecture="$(MacOSArch)"
+        TargetOSVersion="$(MacOSVersion)"
+        BaseDirectory="$(_NativeWorkingPath)"/>
+  
+  </Target>
+  -->
+
   <!--
   Create a package for application installation
   -->

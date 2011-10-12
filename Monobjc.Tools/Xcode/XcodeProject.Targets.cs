@@ -129,6 +129,70 @@ namespace Monobjc.Tools.Xcode
         }
 
         /// <summary>
+        /// Gets the libraries.
+        /// </summary>
+        /// <param name="targetName">Name of the target.</param>
+        /// <returns>A list of libraries.</returns>
+        public IEnumerable<String> GetLibraries(String targetName)
+        {
+            PBXTarget target = this.GetTarget(targetName);
+            if (target == null)
+            {
+                yield break;
+            }
+
+            PBXBuildPhase phase = GetTargetPhase<PBXFrameworksBuildPhase>(target);
+            if (phase == null)
+            {
+                yield break;
+            }
+
+            foreach (PBXBuildFile buildFile in phase.Files)
+            {
+				String extension = Path.GetExtension(buildFile.FileRef.Name);
+				if (extension.Equals(".a") || extension.Equals(".dylib")) {
+	                yield return Path.GetFileNameWithoutExtension(buildFile.FileRef.Name);
+				}
+            }
+        }
+
+        /// <summary>
+        ///   Adds the library.
+        /// </summary>
+        /// <param name = "groups">The groups.</param>
+        /// <param name = "library">The library.</param>
+        /// <param name = "targetName">Name of the target.</param>
+        /// <returns></returns>
+        public PBXBuildFile AddLibrary(String groups, String library, String targetName)
+        {
+            lock (this.syncRoot)
+            {
+                PBXTarget target = this.GetTarget(targetName);
+                PBXBuildPhase phase = GetTargetPhase<PBXFrameworksBuildPhase>(target);
+                PBXFileElement fileElement = this.AddFile(groups, library, PBXSourceTree.Absolute);
+                PBXBuildFile buildFile = phase.FindFile(fileElement);
+                if (buildFile == null)
+                {
+                    buildFile = new PBXBuildFile(fileElement);
+                    phase.AddFile(buildFile);
+                }
+                return buildFile;
+            }
+        }
+
+        /// <summary>
+        ///   Removes the framework.
+        /// </summary>
+        /// <param name = "groups">The groups.</param>
+        /// <param name = "framework">The framework.</param>
+        /// <param name = "targetName">Name of the target.</param>
+        /// <returns></returns>
+        public PBXBuildFile RemoveLibrary(String groups, String library, String targetName)
+        {
+            return this.RemoveFile(groups, Path.GetFileName(library), targetName);
+        }
+
+        /// <summary>
         /// Gets the frameworks.
         /// </summary>
         /// <param name="targetName">Name of the target.</param>
@@ -149,7 +213,10 @@ namespace Monobjc.Tools.Xcode
 
             foreach (PBXBuildFile buildFile in phase.Files)
             {
-                yield return Path.GetFileNameWithoutExtension(buildFile.FileRef.Name);
+				String extension = Path.GetExtension(buildFile.FileRef.Name);
+				if (extension.Equals(".framework")) {
+	                yield return Path.GetFileNameWithoutExtension(buildFile.FileRef.Name);
+				}
             }
         }
 

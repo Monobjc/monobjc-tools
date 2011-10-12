@@ -26,10 +26,26 @@ namespace Monobjc.MSBuild.Tasks
 {
 	public class CompileXib : Task
 	{
+		/// <summary>
+		/// Gets or sets the xib file.
+		/// </summary>
+		/// <value>
+		/// The xib file.
+		/// </value>
 		public ITaskItem XibFile { get; set; }
-
+		
+		/// <summary>
+		/// Gets or sets the xib files.
+		/// </summary>
+		/// <value>
+		/// The xib files.
+		/// </value>
 		public ITaskItem[] XibFiles { get; set; }
-
+		
+        /// <summary>
+        /// Gets or sets the output dir.
+        /// </summary>
+        /// <value>The output dir.</value>
         [Required]
 		public ITaskItem ToDirectory { get; set; }
 

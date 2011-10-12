@@ -5,8 +5,9 @@
 	<UsingTask TaskName="CopyFrameworks"    AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
 	<UsingTask TaskName="CopyRuntime"       AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
 	<UsingTask TaskName="CodeSigning"       AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
-	<UsingTask TaskName="GenerateInfoPList" AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
 	<UsingTask TaskName="EmbedApplication"  AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
+	<UsingTask TaskName="ExportToXcode"     AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
+	<UsingTask TaskName="GenerateInfoPList" AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
 	<UsingTask TaskName="ProductBuilding"   AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
 
 </Project>

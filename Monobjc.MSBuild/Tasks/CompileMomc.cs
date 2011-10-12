@@ -29,6 +29,10 @@ namespace Monobjc.MSBuild.Tasks
 
 		public ITaskItem[] Models { get; set; }
 
+        /// <summary>
+        /// Gets or sets the output dir.
+        /// </summary>
+        /// <value>The output dir.</value>
         [Required]
 		public ITaskItem ToDirectory { get; set; }
 

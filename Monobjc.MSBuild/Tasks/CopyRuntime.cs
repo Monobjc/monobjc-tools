@@ -28,20 +28,39 @@ namespace Monobjc.MSBuild.Tasks
     {
         private MacOSVersion targetOSVersion;
 		
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Monobjc.MSBuild.Tasks.CopyRuntime"/> class.
+		/// </summary>
 		public CopyRuntime()
 		{
 			this.targetOSVersion = MacOSVersion.MacOS105;
 		}
 		
+		/// <summary>
+		/// Gets or sets the name of the application.
+		/// </summary>
+		/// <value>
+		/// The name of the application.
+		/// </value>
         [Required]
 		public String ApplicationName { get; set; }
 		
+		/// <summary>
+		/// Gets or sets the target OS version.
+		/// </summary>
+		/// <value>
+		/// The target OS version.
+		/// </value>
         public String TargetOSVersion
 		{
 			get { return this.targetOSVersion.ToString(); }
 			set { this.targetOSVersion = (MacOSVersion) Enum.Parse(typeof(MacOSVersion), value); }
 		}
 		
+        /// <summary>
+        /// Gets or sets the output dir.
+        /// </summary>
+        /// <value>The output dir.</value>
         [Required]
 		public ITaskItem ToDirectory { get; set; }
 		
