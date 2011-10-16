@@ -36,6 +36,10 @@ namespace Monobjc.Tools.Xcode
         Group,
         /// <summary>
         /// </summary>
+        [Description("SOURCE_ROOT")]
+		SourceRoot,
+        /// <summary>
+        /// </summary>
         [Description("BUILT_PRODUCTS_DIR")]
         BuildProductDir,
         /// <summary>

@@ -119,23 +119,37 @@ namespace Monobjc.MSBuild.Tasks
 		}
 		
 		/// <summary>
-		/// Gets or sets the output dir.
+		/// Gets or sets the base directory.
 		/// </summary>
-		/// <value>The output dir.</value>
+		/// <value>
+		/// The base directory.
+		/// </value>
 		[Required]
 		public ITaskItem BaseDirectory { get; set; }
+		
+		/// <summary>
+		/// Gets or sets the native directory.
+		/// </summary>
+		/// <value>
+		/// The native directory.
+		/// </value>
+		[Required]
+		public ITaskItem NativeDirectory { get; set; }
 		
 		/// <summary>
 		///   Executes the task.
 		/// </summary>
 		public override bool Execute ()
 		{
-			String outputFolder = this.BaseDirectory.ItemSpec;
+			String baseFolder = this.BaseDirectory.ItemSpec;
+			String nativeFolder = this.NativeDirectory.ItemSpec;
 			String targetName = this.Name;
 			
-			XcodeProject xcodeProject = new XcodeProject (outputFolder, this.Name);
-			xcodeProject.Document.Project.ProjectRoot = "../../..";
-						
+			// TODO: Move all above into Tools
+			
+			XcodeProject xcodeProject = new XcodeProject (baseFolder, this.Name);
+			xcodeProject.Document.Project.ProjectRoot = String.Empty;
+
 			xcodeProject.AddGroup (GROUP_SOURCES);
 			xcodeProject.AddGroup (GROUP_RESOURCES);
 			xcodeProject.AddGroup (GROUP_FRAMEWORKS);
@@ -150,7 +164,6 @@ namespace Monobjc.MSBuild.Tasks
 			xcodeProject.AddBuildConfigurationSettings (CONFIGURATION_RELEASE, null, "SDKROOT", "macosx");
 			// TODO: Use specific version
 			xcodeProject.AddBuildConfigurationSettings (CONFIGURATION_RELEASE, null, "MACOSX_DEPLOYMENT_TARGET", "10.5");
-			xcodeProject.AddBuildConfigurationSettings (CONFIGURATION_RELEASE, null, "GCC_C_LANGUAGE_STANDARD", "gnu99");
 			xcodeProject.AddBuildConfigurationSettings (CONFIGURATION_RELEASE, null, "GCC_WARN_64_TO_32_BIT_CONVERSION", "YES");
 			xcodeProject.AddBuildConfigurationSettings (CONFIGURATION_RELEASE, null, "GCC_WARN_ABOUT_RETURN_TYPE", "YES");
 			xcodeProject.AddBuildConfigurationSettings (CONFIGURATION_RELEASE, null, "GCC_WARN_UNUSED_VARIABLE", "YES");
@@ -158,20 +171,29 @@ namespace Monobjc.MSBuild.Tasks
 			xcodeProject.AddTarget (targetName, PBXProductType.Application);
 			xcodeProject.AddBuildConfigurationSettings (CONFIGURATION_RELEASE, targetName, "DEBUG_INFORMATION_FORMAT", "dwarf-with-dsym");
 			xcodeProject.AddBuildConfigurationSettings (CONFIGURATION_RELEASE, targetName, "COPY_PHASE_STRIP", "YES");
-			xcodeProject.AddBuildConfigurationSettings (CONFIGURATION_RELEASE, targetName, "INFOPLIST_FILE", "../../../Info.plist");
+			xcodeProject.AddBuildConfigurationSettings (CONFIGURATION_RELEASE, targetName, "INFOPLIST_FILE", "Info.plist");
 			xcodeProject.AddBuildConfigurationSettings (CONFIGURATION_RELEASE, targetName, "PRODUCT_NAME", "$(TARGET_NAME)");
 			xcodeProject.AddBuildConfigurationSettings (CONFIGURATION_RELEASE, targetName, "WRAPPER_EXTENSION", "app");
 			xcodeProject.AddBuildConfigurationSettings (CONFIGURATION_RELEASE, targetName, "ALWAYS_SEARCH_USER_PATHS", "NO");
 			xcodeProject.AddBuildConfigurationSettings (CONFIGURATION_RELEASE, targetName, "GCC_ENABLE_OBJC_EXCEPTIONS", "YES");
 			
+			// Add specific files and options
+			xcodeProject.AddFile(GROUP_RESOURCES, "Info.plist");
+			if (this.Identity != null) {
+				xcodeProject.AddBuildConfigurationSettings (CONFIGURATION_RELEASE, targetName, "CODE_SIGN_IDENTITY", this.Identity);
+			}
+			if (this.Entitlements != null) {
+				PBXFileReference file = (PBXFileReference) xcodeProject.AddFile(GROUP_RESOURCES, this.Entitlements.ItemSpec);
+				xcodeProject.AddBuildConfigurationSettings (CONFIGURATION_RELEASE, targetName, "CODE_SIGN_ENTITLEMENTS", file.Path);
+			}
+			
 			// Add source files
-			xcodeProject.AddFile(GROUP_SOURCES, Path.Combine(outputFolder, "main.c"), targetName);
-			xcodeProject.AddFile(GROUP_SOURCES, Path.Combine(outputFolder, "monobjc.h"), targetName);
+			xcodeProject.AddFile(GROUP_SOURCES, Path.Combine(nativeFolder, "main.c"), targetName);
+			xcodeProject.AddFile(GROUP_SOURCES, Path.Combine(nativeFolder, "monobjc.h"), targetName);
 			
 			// Add XIB files
 			if (this.XibFiles != null) {
 				foreach (ITaskItem item in this.XibFiles) {
-					this.Log.LogMessage("XIB file " + item.ItemSpec);
 					xcodeProject.AddFile (GROUP_RESOURCES, item.ItemSpec, targetName);
 				}
 			}
@@ -179,7 +201,6 @@ namespace Monobjc.MSBuild.Tasks
 			// Add resources
 			if (this.Resources != null) {
 				foreach (ITaskItem item in this.Resources) {
-					this.Log.LogMessage("Resource file " + item.ItemSpec);
 					xcodeProject.AddFile (GROUP_RESOURCES, item.ItemSpec, targetName);
 				}
 			}
@@ -187,16 +208,23 @@ namespace Monobjc.MSBuild.Tasks
 			// Add frameworks
 			if (this.Frameworks != null) {
 				foreach(String name in this.Frameworks.Split(';')) {
-					this.Log.LogMessage("Framework " + name);
 					xcodeProject.AddFramework (GROUP_FRAMEWORKS, name, targetName);
+				}
+				if (!this.Frameworks.Contains("Security")) {
+					xcodeProject.AddFramework (GROUP_FRAMEWORKS, "Security", targetName);
+				}
+				if (!this.Frameworks.Contains("IOKit")) {
+					xcodeProject.AddFramework (GROUP_FRAMEWORKS, "IOKit", targetName);
 				}
 			}
 			
-			IEnumerable<String> libraries = Directory.EnumerateFiles(outputFolder, "lib*.*");
+			// Add libraries
+			IEnumerable<String> libraries = Directory.EnumerateFiles(nativeFolder, "lib*.*");
 			foreach (String library in libraries) {
 				this.Log.LogMessage("Library file " + library);
 				xcodeProject.AddLibrary (GROUP_LIBRARIES, library, targetName);
 			}
+			xcodeProject.AddLibrary (GROUP_LIBRARIES, "/usr/lib/libz.dylib", targetName);
 			
 			xcodeProject.Save();
 			

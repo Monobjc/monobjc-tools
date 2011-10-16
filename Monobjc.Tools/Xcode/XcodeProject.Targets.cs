@@ -169,7 +169,7 @@ namespace Monobjc.Tools.Xcode
             {
                 PBXTarget target = this.GetTarget(targetName);
                 PBXBuildPhase phase = GetTargetPhase<PBXFrameworksBuildPhase>(target);
-                PBXFileElement fileElement = this.AddFile(groups, library, PBXSourceTree.Absolute);
+                PBXFileElement fileElement = this.AddFile(groups, library, PBXSourceTree.Group);
                 PBXBuildFile buildFile = phase.FindFile(fileElement);
                 if (buildFile == null)
                 {

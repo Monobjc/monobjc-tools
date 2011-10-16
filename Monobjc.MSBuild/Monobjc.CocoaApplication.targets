@@ -15,7 +15,7 @@
     
     <!-- Important files -->
     <InfoPListPath>Info.plist</InfoPListPath>
-    <Entitlements>Entitlements.plist</Entitlements>
+    <Entitlements>App.entitlements</Entitlements>
     <ProductDefinition>Definition.plist</ProductDefinition>
 	
     <!-- Define private properties -->  
@@ -79,6 +79,7 @@
   
   <!--
   Export an Xcode project that uses the result of the BundleNative task
+  -->
   <Target Name="ExportToXcode" DependsOnTargets="BundleNative">
   
     <ExportToXcode
@@ -91,10 +92,10 @@
         Entitlements="$(Entitlements)"
         TargetArchitecture="$(MacOSArch)"
         TargetOSVersion="$(MacOSVersion)"
-        BaseDirectory="$(_NativeWorkingPath)"/>
+        BaseDirectory="$(MSBuildProjectDirectory)"
+        NativeDirectory="$(_NativeWorkingPath)"/>
   
   </Target>
-  -->
 
   <!--
   Create a package for application installation

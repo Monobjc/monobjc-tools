@@ -236,6 +236,12 @@ namespace Monobjc.Tools.Generators
                 sourceWriter.WriteLine("#include <mono/metadata/assembly.h>");
                 sourceWriter.WriteLine("#include \"monobjc.h\"");
                 sourceWriter.WriteLine();
+				sourceWriter.WriteLine("#ifdef RECEIGEN");
+				sourceWriter.WriteLine("#define RUNNER mono_main");
+				sourceWriter.WriteLine("#define RUNNER_SIGNATURE int(*_RUNNER_)(int argc, char *argv[])");
+				sourceWriter.WriteLine("#include \"receigen.h\"");
+				sourceWriter.WriteLine("#endif");
+                sourceWriter.WriteLine();
 
 				// Output the custom structure
                 sourceWriter.WriteLine("// Structure for MonoBundledAssemblyExt");
@@ -373,7 +379,11 @@ namespace Monobjc.Tools.Generators
                 sourceWriter.WriteLine();
 
                 sourceWriter.WriteLine("\t// Invoke the Mono runtime");
+				sourceWriter.WriteLine("#ifdef RECEIGEN");
+                sourceWriter.WriteLine("\treturn CheckReceiptAndRun(argc + 1, newargs);");
+				sourceWriter.WriteLine("#else");
                 sourceWriter.WriteLine("\treturn mono_main(argc + 1, newargs);");
+				sourceWriter.WriteLine("#endif");
                 sourceWriter.WriteLine("}");
             }
         }
