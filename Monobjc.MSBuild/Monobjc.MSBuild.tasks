@@ -1,5 +1,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
+	<UsingTask TaskName="CallReceigen"      AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
 	<UsingTask TaskName="CompileMomc"       AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
 	<UsingTask TaskName="CompileXib"        AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
 	<UsingTask TaskName="CopyFrameworks"    AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>

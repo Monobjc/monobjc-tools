@@ -162,6 +162,7 @@
     <Compile Include="Xcode\XCConfigurationList.cs" />
     <Compile Include="Xcode\XcodeCompatibilityVersion.cs" />
     <Compile Include="Xcode\XcodeProject.cs" />
+    <Compile Include="External\Receigen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Embedded\Info.plist" />

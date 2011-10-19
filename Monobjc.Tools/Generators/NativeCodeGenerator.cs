@@ -49,6 +49,14 @@ namespace Monobjc.Tools.Generators
         /// <value>The logger.</value>
         public IExecutionLogger Logger { get; set; }
 
+		/// <summary>
+		/// Gets or sets a value indicating whether this instance use Receigen.
+		/// </summary>
+		/// <value>
+		/// <c>true</c> to use Receigen; otherwise, <c>false</c>.
+		/// </value>
+		public bool UseReceigen { get; set; }
+		
         /// <summary>
         ///   Gets or sets the assemblies.
         /// </summary>
@@ -87,6 +95,14 @@ namespace Monobjc.Tools.Generators
 		/// </value>
 		public bool Compress { get; set; }
 
+		/// <summary>
+		/// Gets or sets the native compiler.
+		/// </summary>
+		/// <value>
+		/// The native compiler.
+		/// </value>
+		public String NativeCompiler { get; set; }
+		
         /// <summary>
         ///   Generates the native executable.
         /// </summary>
@@ -95,6 +111,9 @@ namespace Monobjc.Tools.Generators
         public String Generate(String directory)
         {
             NativeContext nativeContext = new NativeContext(this.TargetOSVersion, this.TargetArchitecture);
+			if (this.NativeCompiler == null) {
+				this.NativeCompiler = nativeContext.Compiler;
+			}
 
             // We embed:
             // - the assemblies (with their configuration)
@@ -162,61 +181,18 @@ namespace Monobjc.Tools.Generators
 
             // Dump the library file
             nativeContext.WriteLibrary(directory);
-
-            // Compute the resulting executable file
-            String executableFile = Path.Combine(directory, Path.GetFileNameWithoutExtension(mainImage));
-
-            // Build the compilation command line
-            StringBuilder builder = new StringBuilder();
-            builder.AppendFormat("-g -O -I\"{0}\" -L\"{0}\"", directory);
-            builder.AppendFormat(" {0}", nativeContext.ArchitectureFlags);
-            builder.AppendFormat(" {0}", nativeContext.SDKFlags);
-            builder.AppendFormat(" -o \"{0}\" ", executableFile);
-
-            this.Logger.LogInfo("Querying for Mono flags...");
-
-            // Add the pkg-config flags for Mono
-            using (ProcessHelper helper = new ProcessHelper("pkg-config", string.Format("{0} {1}", "--cflags --libs", "mono-2")))
-            {
-                helper.Logger = this.Logger;
-                String result = helper.Execute();
-                result = result.Replace("\n", String.Empty);
-                builder.Append(result);
-            }
-
-            // Add zlib shared library
-			if (this.Compress) {
-	            builder.AppendFormat(" -l{0}", "z");
-			}
-
-            // Add Monobjc shared library
-            builder.AppendFormat(" -l{0}", "monobjc");
 			
-            // Add all the static libraries
-            foreach (Dictionary<string, string> dictionary in assemblies)
-            {
-                builder.AppendFormat(" -l{0}", dictionary[KEY_SYMBOL]);
-            }
-            foreach (Dictionary<string, string> dictionary in configurations)
-            {
-                builder.AppendFormat(" -l{0}", dictionary[KEY_SYMBOL]);
-            }
-            if (machineConfig != null)
-            {
-                builder.AppendFormat(" -l{0}", machineConfig[KEY_SYMBOL]);
-            }
-
-            builder.AppendFormat(" \"{0}\"", Path.Combine(directory, "main.c"));
-
-            this.Logger.LogInfo("Compiling...");
-			// TODO: I18N
-            this.Logger.LogDebug(String.Format("Arguments: '{0}'", builder.ToString()));
-            using (ProcessHelper helper = new ProcessHelper(nativeContext.Compiler, builder.ToString()))
-            {
-                helper.Logger = this.Logger;
-                helper.Execute();
-            }
-
+			// Stage 1: Preparation of common properties
+            String mainObject = Path.Combine(directory, "main.o");
+            String executableFile = Path.Combine(directory, Path.GetFileNameWithoutExtension(mainImage));
+			String nativeOptions = String.Format(" {0} {1} ", nativeContext.ArchitectureFlags, nativeContext.SDKFlags);
+			
+			// Stage 2: Compilation
+			this.Compile(directory, mainSource, mainObject, nativeOptions);
+			
+			// Stage 3: Linkage
+			this.Link(directory, mainObject, executableFile, nativeOptions, assemblies, configurations, machineConfig);
+			
             this.Logger.LogInfo("Embedding done");
 
             return executableFile;
@@ -294,6 +270,7 @@ namespace Monobjc.Tools.Generators
                 }
                 sourceWriter.WriteLine();
 				
+				// Output the inflate function
 				if (this.Compress) {
 	                sourceWriter.WriteLine("int bundle_inflate(MonoBundledAssemblyExt *bundle) {");
 	                sourceWriter.WriteLine("\tif (!bundle->zip_data) {");
@@ -387,7 +364,93 @@ namespace Monobjc.Tools.Generators
                 sourceWriter.WriteLine("}");
             }
         }
+		
+		private void Compile(String directory, String sourceFile, String objectFile, String nativeOptions)
+		{
+            // Build the command line
+            StringBuilder builder = new StringBuilder();
+            builder.AppendFormat(" -Os -gdwarf-2 {0} -I\"{1}\" ", nativeOptions, directory);
+            builder.AppendFormat(" -c \"{0}\" -o \"{1}\" ", sourceFile, objectFile);
 
+			if (this.UseReceigen) {
+	            builder.AppendFormat(" -DRECEIGEN ");
+			}
+			
+            // Add the pkg-config flags for Mono
+            using (ProcessHelper helper = new ProcessHelper("pkg-config", String.Format("{0} {1}", "--cflags", "mono-2")))
+            {
+                helper.Logger = this.Logger;
+                String result = helper.Execute();
+                result = result.Replace("\n", String.Empty);
+                builder.Append(result);
+            }
+			
+			// TODO: I18N
+            this.Logger.LogInfo("Compiling...");
+            this.Logger.LogDebug(String.Format("Arguments: '{0}'", builder.ToString()));
+            using (ProcessHelper helper = new ProcessHelper(this.NativeCompiler, builder.ToString()))
+            {
+                helper.Logger = this.Logger;
+                helper.Execute();
+            }
+		}
+		
+		private void Link(String directory, String objectFile, String outputFile, String nativeOptions, List<Dictionary<String, String>> assemblies, List<Dictionary<String, String>> configurations, Dictionary<String, String> machineConfig)
+		{
+            // Build the command line
+            StringBuilder builder = new StringBuilder();
+            builder.AppendFormat(" {0} -L\"{1}\" ", nativeOptions, directory);
+			
+            // Add the pkg-config flags for Mono
+            using (ProcessHelper helper = new ProcessHelper("pkg-config", String.Format("{0} {1}", "--libs", "mono-2")))
+            {
+                helper.Logger = this.Logger;
+                String result = helper.Execute();
+                result = result.Replace("\n", String.Empty);
+                builder.Append(result);
+            }
+			
+            // Add zlib shared library
+			if (this.Compress) {
+	            builder.Append(" -lz ");
+			}
+
+            // Add Monobjc shared library
+            builder.AppendFormat(" -lmonobjc ");
+			
+            // Add all the static libraries
+            foreach (Dictionary<string, string> dictionary in assemblies)
+            {
+                builder.AppendFormat(" -l{0}", dictionary[KEY_SYMBOL]);
+            }
+            foreach (Dictionary<string, string> dictionary in configurations)
+            {
+                builder.AppendFormat(" -l{0}", dictionary[KEY_SYMBOL]);
+            }
+            if (machineConfig != null)
+            {
+                builder.AppendFormat(" -l{0}", machineConfig[KEY_SYMBOL]);
+            }
+			
+			// Append required framework for Receigen
+			if (this.UseReceigen) {
+                builder.AppendFormat(" -framework {0}", "Foundation");
+                builder.AppendFormat(" -framework {0}", "Security");
+                builder.AppendFormat(" -framework {0}", "IOKit");
+			}
+			
+            builder.AppendFormat(" -o \"{0}\" \"{1}\" ", outputFile, objectFile);
+			
+			// TODO: I18N
+            this.Logger.LogInfo("Linking...");
+            this.Logger.LogDebug(String.Format("Arguments: '{0}'", builder.ToString()));
+            using (ProcessHelper helper = new ProcessHelper(this.NativeCompiler, builder.ToString()))
+            {
+                helper.Logger = this.Logger;
+                helper.Execute();
+            }
+		}
+		
         private Dictionary<string, string> CreateBundle(DataLibraryCreator creator, string assembly, bool isText)
         {
             Dictionary<String, String> bundle = new Dictionary<String, String>();

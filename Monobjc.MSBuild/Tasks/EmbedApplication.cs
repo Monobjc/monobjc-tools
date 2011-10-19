@@ -32,11 +32,22 @@ namespace Monobjc.MSBuild.Tasks
         private MacOSVersion targetOSVersion;
         private MacOSArchitecture targetArchitecture;
 		
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Monobjc.MSBuild.Tasks.EmbedApplication"/> class.
+		/// </summary>
 		public EmbedApplication()
 		{
 			this.targetOSVersion = MacOSVersion.MacOS105;
 			this.targetArchitecture = MacOSArchitecture.X86;
 		}
+		
+		/// <summary>
+		/// Gets or sets a value indicating whether this instance use Receigen.
+		/// </summary>
+		/// <value>
+		/// <c>true</c> to use Receigen; otherwise, <c>false</c>.
+		/// </value>
+		public bool UseReceigen { get; set; }
 		
         /// <summary>
         /// Gets or sets the name of the application.
@@ -123,6 +134,14 @@ namespace Monobjc.MSBuild.Tasks
 		/// </value>
 		public bool Compress { get; set; }
 		
+		/// <summary>
+		/// Gets or sets the native compiler.
+		/// </summary>
+		/// <value>
+		/// The native compiler.
+		/// </value>
+		public String NativeCompiler { get; set; }
+		
         /// <summary>
         ///   Executes the task.
         /// </summary>
@@ -174,6 +193,8 @@ namespace Monobjc.MSBuild.Tasks
             codeGenerator.TargetOSVersion = this.targetOSVersion;
             codeGenerator.TargetArchitecture = this.targetArchitecture;
 			codeGenerator.Compress = this.Compress;
+			codeGenerator.UseReceigen = this.UseReceigen;
+			codeGenerator.NativeCompiler = this.NativeCompiler;
             String executableFile = codeGenerator.Generate(workingDir);
             String libraryFile = Path.Combine(workingDir, "libmonobjc.dylib");
 			
