@@ -34,9 +34,8 @@ namespace Monobjc.MSBuild.Tasks
         ///   Gets or sets the bundle directory.
         /// </summary>
         /// <value>The bundle directory.</value>
-        [Required]
         public ITaskItem Bundle { get; set; }
-
+		
         /// <summary>
         ///   Gets or sets the signing identity.
         /// </summary>
@@ -67,7 +66,7 @@ namespace Monobjc.MSBuild.Tasks
 
             // Take the first one if the the default is required
             identity = identity ?? identities.FirstOrDefault();
-
+			
             return this.PerformSigning(identity);
         }
 

@@ -88,15 +88,10 @@
 
 	<CodeSigning Bundle="$(AppBundlePath)" Identity="$(SigningIdentity)" Entitlements="$(Entitlements)" Condition=" '$(SigningIdentity)' != '' " />
 	
-    <CreateItem Include="$(MacOSPath)\libmonobjc*.dylib">
-      <Output TaskParameter="Include" ItemName="_LibMonobjcBinary" />
+    <CreateItem Include="$(MacOSPath)\*.dylib">
+      <Output TaskParameter="Include" ItemName="_NativeLibraries" />
     </CreateItem>
-	<CodeSigning Bundle="@(_LibMonobjcBinary->'%(fullpath)')" Identity="$(SigningIdentity)" Condition=" '$(SigningIdentity)' != '' " />
-    <CreateItem Include="$(MacOSPath)\libmono-*.dylib">
-      <Output TaskParameter="Include" ItemName="_LibMonoBinary" />
-    </CreateItem>
-	<CodeSigning Bundle="@(_LibMonoBinary->'%(fullpath)')" Identity="$(SigningIdentity)" Condition=" '$(SigningIdentity)' != '' " />
-    
+	<CodeSigning Targets="@(_NativeLibraries)" Identity="$(SigningIdentity)" Condition=" '$(SigningIdentity)' != '' " />
   </Target>
   
   <!--

@@ -22,26 +22,56 @@ using Microsoft.Build.Framework;
 
 namespace Monobjc.MSBuild.Tasks
 {
-    /// <summary>
-    ///   This task signs application bundle.
-    /// </summary>
-    public class CodeSigning : Signing
-    {
-        /// <summary>
-        ///   Gets or sets the entitlements.
-        /// </summary>
-        /// <value>The entitlements.</value>
-        public ITaskItem Entitlements { get; set; }
+	/// <summary>
+	///   This task signs application bundle.
+	/// </summary>
+	public class CodeSigning : Signing
+	{
+		/// <summary>
+		///   Gets or sets the entitlements.
+		/// </summary>
+		/// <value>The entitlements.</value>
+		public ITaskItem Entitlements { get; set; }
 		
-        /// <summary>
-        ///   Performs the signing.
-        /// </summary>
-        /// <param name = "identity">The identity.</param>
-        protected override bool PerformSigning(String identity)
-        {
-            String output = CodeSign.SignApplication(this.Bundle.ItemSpec, identity, (this.Entitlements != null && File.Exists(this.Entitlements.ItemSpec)) ? this.Entitlements.ItemSpec : null);
-            this.Log.LogMessage(output);
+		/// <summary>
+		/// Gets or sets the target.
+		/// </summary>
+		/// <value>
+		/// The target.
+		/// </value>
+		public ITaskItem Target { get; set; }
+
+		/// <summary>
+		/// Gets or sets the targets.
+		/// </summary>
+		/// <value>
+		/// The targets.
+		/// </value>
+		public ITaskItem[] Targets { get; set; }
+
+		/// <summary>
+		///   Performs the signing.
+		/// </summary>
+		/// <param name = "identity">The identity.</param>
+		protected override bool PerformSigning (String identity)
+		{
+			ITaskItem[] items;
+			if (this.Bundle != null) {
+				items = new ITaskItem[]{this.Bundle};
+			} else if (this.Target != null) {
+				items = new ITaskItem[]{this.Target};
+			} else if (this.Targets != null) {
+				items = this.Targets;
+			} else {
+				// TODO: I18N
+				this.Log.LogError ("You must provide at least one element to sign.");
+				return false;
+			}
+			foreach(ITaskItem item in items) {
+				String output = CodeSign.SignApplication (item.ItemSpec, identity, (this.Entitlements != null && File.Exists (this.Entitlements.ItemSpec)) ? this.Entitlements.ItemSpec : null);
+				this.Log.LogMessage (output);
+			}
 			return true;
-        }
-    }
+		}
+	}
 }
