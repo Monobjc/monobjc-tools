@@ -246,7 +246,7 @@ namespace Monobjc.Tools.Generator.Generators
         {
             return String.Format(CultureInfo.CurrentCulture,
                                  "{0}{1} {2}",
-                                 methodParameterEntity.IsOut ? "out " : methodParameterEntity.IsByRef ? "ref " : String.Empty,
+                                 methodParameterEntity.IsOut ? "out " : (!methodParameterEntity.IsBlock && methodParameterEntity.IsByRef) ? "ref " : String.Empty,
                                  methodParameterEntity.Type,
                                  methodParameterEntity.Name);
         }
