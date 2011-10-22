@@ -4,32 +4,42 @@
   <!-- Import the Monobcj MSBuild tasks -->
   <Import Project="$(MSBuildBinPath)\Monobjc.MSBuild.tasks" />
 
+  <!--
+  ========================================
+  Common part
+  ========================================
+  -->
+
+  <!-- Define public properties -->  
   <PropertyGroup>
-    <!-- Define public properties -->  
     <AppBundlePath>$(OutputPath)\$(TargetName).app</AppBundlePath>
     <ContentsPath>$(AppBundlePath)\Contents</ContentsPath>
     <MacOSPath>$(ContentsPath)\MacOS</MacOSPath>
     <ResourcesPath>$(ContentsPath)\Resources</ResourcesPath>
     <FrameworksPath>$(ContentsPath)\Frameworks</FrameworksPath>
-    <UseCompression>true</UseCompression>
-    <UseReceigen>false</UseReceigen>
-    <NativeCompiler>cc</NativeCompiler>
-    
-    <!-- Important files -->
     <InfoPListPath>Info.plist</InfoPListPath>
     <Entitlements>App.entitlements</Entitlements>
     <ProductDefinition>Definition.plist</ProductDefinition>
+  </PropertyGroup>
+
+  <!-- Define defaults for embedding -->    
+  <PropertyGroup>
+    <UseCompression Condition="'$(UseCompression)' == ''">true</UseCompression>
+    <UseReceigen Condition="'$(UseReceigen)' == ''">true</UseReceigen>
+    <NativeCompiler Condition="'$(NativeCompiler)' == ''">cc</NativeCompiler>
+  </PropertyGroup>
 	
-    <!-- Define private properties -->  
+  <!-- Define private properties -->  
+  <PropertyGroup>
 	<_MainAssembly>$(OutputPath)\$(TargetFileName)</_MainAssembly>
 	<_NativeWorkingPath>$(OutputPath)\Embed</_NativeWorkingPath>
 	<_ReceigenPath>\Applications\Receigen.app\Contents\MacOS\Receigen</_ReceigenPath>
   </PropertyGroup>
-  
+
   <!-- 
   Create the Cocoa application bundle structure
   -->
-  <Target Name="_CreateCocoaBundleStructure" DependsOnTargets="Build">
+  <Target Name="CreateCocoaBundleStructure" DependsOnTargets="Build">
     <MakeDir Directories="$(MacOSPath)" />
     <MakeDir Directories="$(ResourcesPath)" />
     <MakeDir Directories="$(FrameworksPath)" Condition=" '$(EmbeddedFrameworks)' != '' " />
@@ -41,14 +51,38 @@
   <!--
   Call the Receigen application to generate the receipt validation code
   -->
-  <Target Name="_Receigen" DependsOnTargets="_CreateCocoaBundleStructure">
+  <Target Name="Receigen" DependsOnTargets="CreateCocoaBundleStructure">
   	<CallReceigen Path="$(_ReceigenPath)" InfoPList="$(ContentsPath)/$(InfoPListPath)" ToDirectory="$(_NativeWorkingPath)" Condition=" $(UseReceigen) And Exists('$(_ReceigenPath)') "/>
   </Target>
 
   <!--
+  ========================================
+  BundleManaged part
+  ========================================
+  -->
+
+  <PropertyGroup>
+	<BundleManagedDependsOn>
+		BeforeBundleManaged;
+		CoreBundleManaged;
+		AfterBundleManaged;
+	</BundleManagedDependsOn>
+  </PropertyGroup>
+
+  <Target Name="BeforeBundleManaged"/>
+  <Target Name="AfterBundleManaged"/>
+  <Target Name="BundleManaged" DependsOnTargets="$(BundleManagedDependsOn)"/>
+  
+  <PropertyGroup>
+	<CoreBundleManagedDependsOn>
+		CreateCocoaBundleStructure;
+	</CoreBundleManagedDependsOn>
+  </PropertyGroup>
+
+  <!--
   Create a managed application that needs the .NET runtime to run
   -->
-  <Target Name="BundleManaged" DependsOnTargets="_CreateCocoaBundleStructure">
+  <Target Name="CoreBundleManaged" DependsOnTargets="$(CoreBundleManagedDependsOn)">
     <CopyRuntime ApplicationName="$(TargetName)" TargetOSVersion="$(MacOSVersion)" ToDirectory="$(MacOSPath)" />
     
     <CompileXib XibFiles="@(Page)" ToDirectory="$(ResourcesPath)" />
@@ -62,9 +96,35 @@
   </Target>
   
   <!--
+  ========================================
+  BundleNative part
+  ========================================
+  -->
+
+  <PropertyGroup>
+	<BundleNativeDependsOn>
+		BeforeBundleNative;
+		CoreBundleNative;
+		AfterBundleNative;
+	</BundleNativeDependsOn>
+  </PropertyGroup>
+
+  <Target Name="BeforeBundleNative"/>
+  <Target Name="AfterBundleNative"/>
+  <Target Name="BundleNative" DependsOnTargets="$(BundleNativeDependsOn)"/>
+  
+  <PropertyGroup>
+	<CoreBundleNativeDependsOn>
+		Build;
+		CreateCocoaBundleStructure;
+		Receigen;
+	</CoreBundleNativeDependsOn>
+  </PropertyGroup>
+
+  <!--
   Create a self-contained application for redistribution
   -->
-  <Target Name="BundleNative" DependsOnTargets="_CreateCocoaBundleStructure;_Receigen">
+  <Target Name="CoreBundleNative" DependsOnTargets="$(CoreBundleNativeDependsOn)">
   
     <EmbedApplication
         ApplicationName="$(TargetName)"
@@ -95,9 +155,33 @@
   </Target>
   
   <!--
+  ========================================
+  Packaging part
+  ========================================
+  -->
+
+  <PropertyGroup>
+	<PackageDependsOn>
+		BeforePackage;
+		CorePackage;
+		AfterPackage;
+	</PackageDependsOn>
+  </PropertyGroup>
+
+  <Target Name="BeforePackage"/>
+  <Target Name="AfterPackage"/>
+  <Target Name="Package" DependsOnTargets="$(PackageDependsOn)"/>
+  
+  <PropertyGroup>
+	<CorePackageDependsOn>
+		BundleNative;
+	</CorePackageDependsOn>
+  </PropertyGroup>
+
+  <!--
   Create a package for application installation
   -->
-  <Target Name="Package" DependsOnTargets="BundleNative">
+  <Target Name="CorePackage" DependsOnTargets="$(CorePackageDependsOn)">
 	<ProductBuilding Bundle="$(AppBundlePath)" Identity="$(ArchiveIdentity)" ProductDefinition="$(ProductDefinition)" Condition=" '$(Archive)' == 'True' " />
   </Target>
   
