@@ -10,7 +10,6 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Monobjc.Tools.Sdp</RootNamespace>
     <AssemblyName>Monobjc.Tools.Sdp</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -21,6 +20,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <Commandlineparameters>--input=Evernote.sdef</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -63,13 +64,6 @@
     <Compile Include="Common\XPath\XPathIteratorReader.cs" />
     <Compile Include="Common\XPath\XPathNavigatorIterator.cs" />
     <Compile Include="Common\XPath\XPathVariable.cs" />
-    <Compile Include="Generation\Generator.cs" />
-    <Compile Include="Generation\NamingHelper.cs" />
-    <Compile Include="Generation\GenerationContext.cs" />
-    <Compile Include="Model\sdef.cs">
-      <DependentUpon>sdef.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Serializers.cs" />
     <Compile Include="Options\Options.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,6 +92,10 @@
     <Compile Include="XPointer\XPointerReader.cs" />
     <Compile Include="XPointer\XPointerSchema.cs" />
     <Compile Include="XPointer\XPointerSchemaPointerPart.cs" />
+    <Compile Include="Generation\GenerationContext.cs" />
+    <Compile Include="Generation\NamingHelper.cs" />
+    <Compile Include="Generation\Generator.cs" />
+    <Compile Include="Model\sdef.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -107,10 +105,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Model\sdef.dtd" />
-    <None Include="Model\sdef.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="monobjc-sdp" />
+    <None Include="Model\sdef.xsd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

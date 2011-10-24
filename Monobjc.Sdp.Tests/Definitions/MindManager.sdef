@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+
+<!--
+	Applescript Terminology definition for MindManager
+-->
+
+<dictionary title="MindManager Scripting Dictionary">
+	<!--
+		STANDARD SUITE
+
+		By in large, this is the standard suite provided by Apple, but it does have
+		some MindManager specific extensions. For example the "for" preposition
+		added to the "make command" is not standard. Document has some
+		MindManager specific properties as well.
+	-->
+
+	<suite name="Standard Suite" code="????" description="Common classes and commands for all applications.">
+		<command name="open" code="aevtodoc"
+				description="Open a document.">
+			<direct-parameter description="The file(s) to be opened.">
+				<type type="file" list="yes"/>
+			</direct-parameter>
+		</command>
+		<enumeration name="save options" code="savo">
+			<enumerator name="yes" code="yes " description="Save the file."/>
+			<enumerator name="no" code="no  " description="Do not save the file."/>
+			<enumerator name="ask" code="ask "
+				description="Ask the user whether or not to save the file."/>
+		</enumeration>
+		<command name="close" code="coreclos" description="Close a document.">
+			<cocoa class="NSCloseCommand"/>
+			<direct-parameter type="specifier"
+				description="The document(s) or window(s) to close."/>
+			<parameter name="saving" code="savo" type="save options" optional="yes"
+				description="Whether or not changes should be saved before closing.">
+				<cocoa key="SaveOptions"/>
+			</parameter>
+			<parameter name="saving in" code="kfil" type="file" optional="yes"
+				description="The file in which to save the document.">
+				<cocoa key="File"/>
+			</parameter>
+		</command>
+		<command name="save" code="coresave" description="Save a document.">
+			<direct-parameter type="specifier"
+				description="The document(s) or window(s) to save."/>
+			<parameter name="in" code="kfil" type="file" optional="yes"
+				description="The file in which to save the document.">
+				<cocoa key="File"/>
+			</parameter>
+		</command>
+		<enumeration name="printing error handling" code="enum">
+			<enumerator name="standard" code="lwst"
+				description="Standard PostScript error handling."/>
+			<enumerator name="detailed" code="lwdt"
+				description="Print a detailed report of PostScript errors."/>
+		</enumeration>
+		<command name="print" code="aevtpdoc"
+				description="Print a document.">
+			<direct-parameter
+				description="The file(s), document(s), or window(s) to be printed.">
+				<type type="file" list="yes"/>
+				<type type="specifier"/>
+			</direct-parameter>
+			<parameter name="with properties" code="prdt" type="print settings" optional="yes"
+				description="The print settings to use.">
+				<cocoa key="PrintSettings"/>
+			</parameter>
+			<parameter name="print dialog" code="pdlg" type="boolean" optional="yes"
+				description="Should the application show the print dialog?">
+				<cocoa key="ShowPrintDialog"/>
+			</parameter>
+		</command>
+		<command name="quit" code="aevtquit" description="Quit the application.">
+			<cocoa class="NSQuitCommand"/>
+			<parameter name="saving" code="savo" type="save options" optional="yes"
+				description="Whether or not changed documents should be saved before closing.">
+				<cocoa key="SaveOptions"/>
+			</parameter>
+		</command>
+		<command name="count" code="corecnte"
+				description="Return the number of elements of a particular class within an object.">
+			<cocoa class="NSCountCommand"/>
+			<direct-parameter type="specifier"
+				description="The object whose elements are to be counted."/>
+			<parameter name="each" code="kocl" type="type" optional="yes"
+				description="The class of objects to be counted.">
+				<cocoa key="ObjectClass"/>
+			</parameter>
+			<result type="integer" description="The number of elements."/>
+		</command>
+		<command name="delete" code="coredelo" description="Delete an object.">
+			<cocoa class="NSDeleteCommand"/>
+			<direct-parameter type="specifier" description="The object to delete."/>
+		</command>
+		<command name="duplicate" code="coreclon" description="Copy object(s) and put the copies at a new location.">
+			<cocoa class="NSCloneCommand"/>
+			<direct-parameter type="specifier"
+				description="The object(s) to duplicate."/>
+			<parameter name="to" code="insh" type="location specifier"
+				description="The location for the new object(s).">
+				<cocoa key="ToLocation"/>
+			</parameter>
+			<parameter name="with properties" code="prdt" type="record" optional="yes"
+				description="Properties to be set in the new duplicated object(s).">
+				<cocoa key="WithProperties"/>
+			</parameter>
+		</command>
+		<command name="exists" code="coredoex" description="Verify if an object exists.">
+			<cocoa class="NSExistsCommand"/>
+			<direct-parameter type="any" description="The object in question."/>
+			<result type="boolean" description="true if it exists, false if not."/>
+		</command>
+
+		<command name="make" code="corecrel" description="Make a new object.">
+			<documentation>
+				<html>
+					<p>The &quot;<b>for</b>&quot; parameter is not part of the Apple defined core suite. This parameter is used when the destination of an object is implied by the class of the object being created.</p>
+					<p>For example, the statement:</p>
+					<blockquote><code>make new boundary for the first subtopic of the central topic of document 1</code></blockquote>
+					<p> creates a new boundary object and assigns it to the boundary of the specified topic.</p>
+				</html>
+			</documentation>
+			<cocoa class="NSCreateCommand"/>
+			<result type="specifier" description="to the new object"/>
+			<parameter name="new" code="kocl" type="type" description="The class of the new object.">
+				<cocoa key="ObjectClass"/>
+			</parameter>
+			<parameter name="at" code="insh" type="location specifier" optional="yes" description="The location at which to insert the object.">
+				<cocoa key="Location"/>
+			</parameter>
+			<parameter name="for" code="For " type="specifier" optional="yes" description="The object that will own the object being created.">
+				<cocoa key="NewParent"/>
+			</parameter>
+			<parameter name="with data" code="data" type="any" optional="yes" description="The initial data for the object.">
+				<cocoa key="ObjectData"/>
+			</parameter>
+			<parameter name="with properties" code="prdt" type="record" optional="yes" description="The initial values for properties of the object.">
+				<cocoa key="KeyDictionary"/>
+			</parameter>
+		</command>
+
+		<command name="move" code="coremove" description="Move object(s) to a new location.">
+			<cocoa class="NSMoveCommand"/>
+			<direct-parameter type="specifier" description="The object(s) to move."/>
+			<parameter name="to" code="insh" type="location specifier"
+				description="The new location for the object(s).">
+				<cocoa key="ToLocation"/>
+			</parameter>
+		</command>
+
+		<class name="item" code="cobj" description="A scriptable object.">
+			<cocoa class="AbstractObject"/>
+			<property name="class" code="pcls" type="type" access="r" description="The class of the object.">
+				<cocoa key="classCode"/>
+			</property>
+			<property name="properties" code="pALL" type="record" description="All of the object&apos;s properties.">
+				<cocoa key="scriptingProperties"/>
+			</property>
+			<!--
+				The blank method declarations are needed to emulate the existing
+				NSCoreSuite.scriptSuite.framework. Ordinarily, you wouldn&apos;t do this.
+			-->
+			<responds-to name="count">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to name="delete">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to name="duplicate">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to name="exists">
+				<cocoa method=""/>
+			</responds-to>
+			<responds-to name="move">
+				<cocoa method=""/>
+			</responds-to>
+		</class> <!-- item -->
+		
+		<class name="application" code="capp" description="The application&apos;s top-level scripting object.">
+			<cocoa class="OmjApplication"/>
+			<property name="name" code="pnam" type="text" access="r"
+				description="The name of the application."/>
+			<property name="frontmost" code="pisf" type="boolean" access="r"
+				description="Is this the frontmost (active) application?">
+				<cocoa key="isActive"/>
+			</property>
+			<property name="version" code="vers" type="text" access="r"
+				description="The version of the application."/>
+			<element type="document">
+				<cocoa key="orderedDocuments"/>
+			</element>
+			<element type="window" access="r">
+				<cocoa key="orderedWindows"/>
+			</element>
+			<responds-to name="open">
+				<cocoa method="handleOpenScriptCommand:"/>
+			</responds-to>
+			<responds-to name="print">
+				<cocoa method="handlePrintScriptCommand:"/>
+			</responds-to>
+			<responds-to name="quit">
+				<cocoa method="handleQuitScriptCommand:"/>
+			</responds-to>
+			<responds-to name="make">
+				<cocoa method="handleCreateCommand:"/>
+			</responds-to>
+		</class> <!-- application -->
+
+		<class name="document" code="docu" description="A MindManager Map document.">
+			<cocoa class="OmjMapDocument"/>
+
+            <!-- standard suite items -->
+			<property name="name" code="pnam" type="text" description="The document&apos;s name.">
+				<cocoa key="displayName"/>
+			</property>
+			<property name="modified" code="imod" type="boolean" access="r"
+				description="Has the document been modified since the last save?">
+				<cocoa key="isDocumentEdited"/>
+			</property>
+			<property name="file" code="file" type="file" access="r"
+				description="The document&apos;s location on disk.">
+				<cocoa key="fileURL"/>
+			</property>
+
+            <!-- MindManager document properties -->
+            <!-- (properties not supported in the UI are hidden) -->
+			<property name="author" code="Athr" description="The author of the map." type="text">
+				<cocoa key="author"/>
+			</property>
+			<property name="category" code="Cgry" description="Category this map has been assigned to." type="text" hidden="yes">
+				<cocoa key="category"/>
+			</property>			
+			<property name="central topic" code="CTpc" description="The central topic of a map." type="topic" access="r">
+				<cocoa key="centralTopic"/>
+			</property>
+			<property name="comments" code="Cmts" description="Comments assigned to the document." type="text" hidden="yes">
+				<cocoa key="comments"/>
+			</property>
+			<property name="company" code="Job " description="Company where the map was authored." type="text">
+				<cocoa key="company"/>
+			</property>
+			<property name="document type" code="DTyp" type="document type" access="r" hidden="yes" description="Kind of document." >
+				<cocoa key="documentType"/>
+			</property>
+			<property name="email address" code="Emal" description="Email address of the map&apos;s author." type="text">
+				<cocoa key="emailAddress"/>
+			</property>
+			<property name="keywords" code="Kwds" description="Keywords describing this map." type="text" hidden="yes">
+				<cocoa key="keywords"/>
+			</property>
+			<property name="manager name" code="Mgr " description="Name of the author&apos;s manager." type="text" hidden="yes">
+				<cocoa key="managerName"/>
+			</property>
+			<property name="selection" code="Seln" description="The document's currently selected items." access="r">
+				<type type="item" list="yes"/>
+			</property>
+			<property name="stores preview image" code="ISav" description="When saved, does this document include a preview image?" type="boolean"  hidden="yes">
+				<cocoa key="storesPreviewImage"/>
+			</property>
+			<property name="subject" code="Sbjt" description="The subject the author assigned to the map." type="text" hidden="yes">
+				<cocoa key="subject"/>
+			</property>
+			<property name="URL base" code="HBas" description="Base location for all relative URLs." type="text" hidden="yes">
+				<cocoa key="urlBase"/>
+			</property>
+            <property name="zoom level" code="ZomL" type="integer" access="r" description="The magnification level as a percentage from 10 to 400.  You can change this value with the zoom command."/>
+			<!-- end MindManager properties -->
+
+            <!-- MindManager document elements -->
+            <element type="topic" description="All the topics in the document.">
+                <cocoa key="topics"/>
+            </element>
+			<!-- end MindManager elements -->
+
+            <responds-to name="zoom">
+                <cocoa method="handleZoomToCommand:"/>
+            </responds-to>
+            <responds-to name="balance map">
+                <cocoa method="handleBalanceMapCommand:"/>
+            </responds-to>
+			<responds-to name="close">
+				<cocoa method="handleCloseScriptCommand:"/>
+			</responds-to>
+			<responds-to name="print">
+				<cocoa method="handlePrintScriptCommand:"/>
+			</responds-to>
+			<responds-to name="save">
+				<cocoa method="handleSaveScriptCommand:"/>
+			</responds-to>
+			<responds-to name="delete">
+				<cocoa method="handleDeleteScriptCommand:"/>
+			</responds-to>
+			<responds-to name="select all">
+				<cocoa method="handleSelectAllScriptCommand:"/>
+			</responds-to>
+			<responds-to name="deselect all">
+				<cocoa method="handleDeselectAllScriptCommand:"/>
+			</responds-to>
+			<responds-to name="move">
+				<cocoa method="handleMoveScriptCommand:"/>
+			</responds-to>
+			<responds-to name="duplicate">
+				<cocoa method="handleCloneScriptCommand:"/>
+			</responds-to>
+		</class> <!-- document -->
+
+		<class name="window" code="cwin" description="A window.">
+			<cocoa class="NSWindow"/>
+			<property name="name" code="pnam" type="text" access="r"
+				description="The full title of the window.">
+				<cocoa key="title"/>
+			</property>
+			<property name="id" code="ID  " type="integer" access="r"
+				description="The unique identifier of the window.">
+				<cocoa key="uniqueID"/>
+			</property>
+			<property name="index" code="pidx" type="integer"
+				description="The index of the window, ordered front to back.">
+				<!-- the type is supposed to be "integer" but is number -->
+				<cocoa key="orderedIndex"/>
+			</property>
+			<property name="bounds" code="pbnd" type="rectangle"
+				description="The bounding rectangle of the window.">
+				<cocoa key="boundsAsQDRect"/>
+			</property>
+			<property name="closeable" code="hclb" type="boolean" access="r"
+				description="Whether the window has a close box.">
+				<cocoa key="hasCloseBox"/>
+			</property>
+			<property name="miniaturizable" code="ismn" type="boolean" access="r"
+				description="Whether the window can be minimized.">
+				<cocoa key="isMiniaturizable"/>
+			</property>
+			<property name="miniaturized" code="pmnd" type="boolean"
+				description="Whether the window is currently minimized.">
+				<cocoa key="isMiniaturized"/>
+			</property>
+			<property name="resizable" code="prsz" type="boolean" access="r"
+				description="Whether the window can be resized.">
+				<cocoa key="isResizable"/>
+			</property>
+			<property name="visible" code="pvis" type="boolean"
+				description="Whether the window is currently visible.">
+				<cocoa key="isVisible"/>
+			</property>
+			<property name="zoomable" code="iszm" type="boolean" access="r"
+				description="Whether the window can be zoomed.">
+				<cocoa key="isZoomable"/>
+			</property>
+			<property name="zoomed" code="pzum" type="boolean"
+				description="Whether the window is currently zoomed.">
+				<cocoa key="isZoomed"/>
+			</property>
+			<property name="document" code="docu" type="document" access="r" description="The document whose contents are being displayed in the window."/>
+			<property name="titled" code="ptit" type="boolean" access="r" description="Whether the window has a title bar.">
+				<cocoa key="hasTitleBar"/>
+			</property>
+			<property name="floating" code="isfl" type="boolean" access="r" description="Whether the window floats.">
+				<cocoa key="isFloatingPanel"/>
+			</property>
+			<property name="modal" code="pmod" type="boolean" access="r" description="Whether the window is the application&apos;s current modal window.">
+				<cocoa key="isModalPanel"/>
+			</property>
+
+			<responds-to name="close">
+				<cocoa method="handleCloseScriptCommand:"/>
+			</responds-to>
+			<responds-to name="print">
+				<cocoa method="handlePrintScriptCommand:"/>
+			</responds-to>
+			<responds-to name="save">
+				<cocoa method="handleSaveScriptCommand:"/>
+			</responds-to>
+		</class> <!-- window -->
+	</suite>
+
+	<!--
+		TEXT SUITE
+
+		This suite is copied from other Apple Applications
+	-->
+
+	<suite name="Text Suite" code="????" description="A set of basic classes for text processing.">
+		<class name="rich text" plural="rich text" code="ctxt"
+				description="Rich (styled) text.">
+			<cocoa class="ASText"/>
+			<property name="color" code="colr" type="color"
+				description="The color of the first character.">
+				<cocoa key="foregroundColor"/>
+			</property>
+			<property name="font" code="font" type="text"
+				description="The name of the font of the first character.">
+				<cocoa key="fontName"/>
+			</property>
+			<property name="size" code="ptsz" type="integer"
+				description="The size in points of the first character.">
+				<cocoa key="fontSize"/>
+			</property>
+			<element type="character"/>
+			<element type="paragraph"/>
+			<element type="word"/>
+			<element type="attribute run"/>
+			<element type="attachment"/>
+		</class>
+		<class name="character" code="cha "
+				description="This subdivides the text into characters.">
+			<cocoa class="NSTextStorage"/>
+			<type type="text"/>
+			<property name="color" code="colr" type="color"
+				description="The color of the first character.">
+				<cocoa key="foregroundColor"/>
+			</property>
+			<property name="font" code="font" type="text"
+				description="The name of the font of the first character.">
+				<cocoa key="fontName"/>
+			</property>
+			<property name="size" code="ptsz" type="integer"
+				description="The size in points of the first character.">
+				<cocoa key="fontSize"/>
+			</property>
+			<element type="character"/>
+			<element type="paragraph"/>
+			<element type="word"/>
+			<element type="attribute run"/>
+			<element type="attachment"/>
+		</class>
+		<class name="paragraph" code="cpar"
+				description="This subdivides the text into paragraphs.">
+			<cocoa class="NSTextStorage"/>
+			<type type="text"/>
+			<property name="color" code="colr" type="color"
+				description="The color of the first character.">
+				<cocoa key="foregroundColor"/>
+			</property>
+			<property name="font" code="font" type="text"
+				description="The name of the font of the first character.">
+				<cocoa key="fontName"/>
+			</property>
+			<property name="size" code="ptsz" type="integer"
+				description="The size in points of the first character.">
+				<cocoa key="fontSize"/>
+			</property>
+			<element type="character"/>
+			<element type="paragraph"/>
+			<element type="word"/>
+			<element type="attribute run"/>
+			<element type="attachment"/>
+		</class>
+		<class name="word" code="cwor"
+				description="This subdivides the text into words.">
+			<cocoa class="NSTextStorage"/>
+			<type type="text"/>
+			<property name="color" code="colr" type="color"
+				description="The color of the first character.">
+				<cocoa key="foregroundColor"/>
+			</property>
+			<property name="font" code="font" type="text"
+				description="The name of the font of the first character.">
+				<cocoa key="fontName"/>
+			</property>
+			<property name="size" code="ptsz" type="integer"
+				description="The size in points of the first character.">
+				<cocoa key="fontSize"/>
+			</property>
+			<element type="character"/>
+			<element type="paragraph"/>
+			<element type="word"/>
+			<element type="attribute run"/>
+			<element type="attachment"/>
+		</class>
+		<class name="attribute run" code="catr"
+				description="This subdivides the text into chunks that all have the same attributes.">
+			<cocoa class="NSTextStorage"/>
+			<type type="text"/>
+			<property name="color" code="colr" type="color"
+				description="The color of the first character.">
+				<cocoa key="foregroundColor"/>
+			</property>
+			<property name="font" code="font" type="text"
+				description="The name of the font of the first character.">
+				<cocoa key="fontName"/>
+			</property>
+			<property name="size" code="ptsz" type="integer"
+				description="The size in points of the first character.">
+				<cocoa key="fontSize"/>
+			</property>
+			<element type="character"/>
+			<element type="paragraph"/>
+			<element type="word"/>
+			<element type="attribute run"/>
+			<element type="attachment"/>
+		</class>
+		<class name="attachment" code="atts" inherits="rich text"
+				description="Represents an inline text attachment. This class is used mainly for make commands.">
+			<cocoa class="NSAttachmentTextStorage"/>
+			<property name="file name" code="atfn" type="text"
+				description="The path to the file for the attachment.">
+				<cocoa key="filename"/>
+			</property>
+		</class>
+	</suite>
+
+    <!--
+        MindManager Suite
+    -->
+
+    <suite name="MindManager Suite" code="MMas" description="The tools you need to interact with MindManager.">
+		<command name="reveal" code="MMasShow" description="Make sure an object is visible in the current view.">
+			<direct-parameter type="topic" description="The topic to reveal."/>
+		</command>
+
+		<command name="select" code="MMasSlct" description="Select objects in the map.">
+			<cocoa class="ASSelectScriptCommand"/>
+            <direct-parameter>
+				<type type="specifier" list="yes"/>
+			</direct-parameter>
+		</command>
+
+		<command name="select all" code="MMasSAll" description="Select all the items in a map.">
+			<direct-parameter type="document"/>
+		</command>
+
+		<command name="deselect all" code="MMasDslc" description="Deselect the items in a map.">
+			<direct-parameter type="document"/>
+		</command>
+
+		<command name="zoom" code="MMasZom2" description="Change magnification of a document.">
+			<documentation>
+				<html>
+					<p>You can set the value from 10 (10% magnification) to 400 (4x magnification). 
+						You can also use zoom to fit map or zoom to fit selection. </p>
+				</html>
+			</documentation>
+			<direct-parameter type="document" description="The document to zoom."/>
+			<parameter name="to" code="ZmMd" optional="no" description="The new magnification of the document.">
+				<type type="zoom mode"/>
+				<type type="integer"/>
+				<cocoa key="mode"/>
+			</parameter>
+		</command>
+
+		<command name="balance map" code="MMasBnce" description="Reapply the subtopic layout of the central topic to balance the map.">
+			<direct-parameter type="document" description="The document to balance."/>
+		</command>
+
+		<class name="topic" inherits="item" code="Topc" description="A topic in a map.">
+			<cocoa class="ASTopic"/>
+			<property name="id" code="ID  " type="text" access="r" description="An identifier for a topic that is unique within its map.">
+				<cocoa key="uniqueID"/>
+			</property>
+			<property name="name" code="pnam" type="text" description="The name of a topic." >
+				<documentation>
+					<html>
+						<p>A topic's name is its title without any formatting. Names are <b>not</b> guaranteed to be unique and a topic without a title can have an empty string as its name.</p>
+					</html>
+				</documentation>
+			</property>
+
+            <property name="bookmark" code="Bkmk" type="boolean" description="Has the topic been bookmarked?"/>
+			<property name="boundary" code="Bdry" type="boundary" access="r" description="The boundary surrounding the topic."/>
+			<property name="collapsed" code="Clsd" type="boolean" description="Is the subtree rooted at this topic collapsed?"/>
+			<property name="filtered" code="Ftrd" type="boolean" description="Is this topic filtered?"/>
+			<property name="fill color" code="FClr" description="The color used to fill the topic&apos;s shape.">
+				<type type="color"/>
+				<type type="color constant"/>
+			</property>
+			<property name="hyperlink URL" code="HLnk" type="text" description="The hyperlink associated with this topic.">
+				<cocoa key="hyperlinkURL"/>
+			</property>
+			<property name="label" code="Labl" type="text" description="The hyperlink label applied to the topic."/>
+			<property name="level" code="Levl" type="integer" access="r" description="The depth of the topic in the central topic&apos;s tree."/>
+			<property name="line color" code="LClr" description="The color of the line connecting the topic to its parent.">
+				<type type="color"/>
+				<type type="color constant"/>
+			</property>
+			<property name="main topic" code="Mtpc" type="boolean" access = "r" description="Is this topic a main topic (a direct subtopic of the central topic)?">
+				<cocoa key="isMainTopic"/>
+			</property>
+			<property name="notes" code="TpcN" type="text" description="The text of the notes attached to this topic."/>
+			<property name="parent" code="Prnt" access="r" description="The map element that this topic descends from.">
+				<type type="topic"/>
+				<type type="boundary"/>
+				<type type="relationship"/>
+				<type type="document"/>
+			</property>
+			<property name="shape" code="Shap" type="topic shape" description="The shape of the topic."/>
+			<property name="task" code="Task" type="task" access="r" description="The project management task information for this topic."/>
+			<property name="text color" code="LClr" description="The color applied to the text of the topic&apos;s title.">
+				<documentation>
+					<html>
+						<p>The text of a topic&apos;s title can have multiple colors. Changing this property will change the color of the entire title.</p>
+					</html>
+				</documentation>
+				<type type="color"/>
+				<type type="color constant"/>
+			</property>
+			<property name="title" code="TpcT" description="The title of the topic.">
+				<type type="rich text"/>
+				<type type="text"/>
+			</property>
+			<property name="visible" code="pvis" type="boolean" access="r" description="Is the topic currently visible?"/>
+
+			<element type="callout" description="Callout topics on the current topic.">
+				<cocoa key="callouts"/>
+				<documentation>
+					<html><p>The central topic cannot have callouts.</p></html>
+				</documentation>
+			</element>
+            <element type="relationship" description="All the relationships connected to the topic.">
+                <cocoa key="relationships"/>
+            </element>
+			<element type="subtopic" description="The subtopics of a topic.">
+				<cocoa key="subtopics"/>
+			</element>
+
+			<element type="attribute" description="The set of external data attached to the topic.">
+				<cocoa key="customAttributes"/>
+			</element>
+
+			<responds-to name="make">
+				<cocoa method="handleCreateCommand:"/>
+			</responds-to>
+			<responds-to name="reveal">
+				<cocoa method="handleShowScriptCommand:"/>
+			</responds-to>
+			<responds-to name="move">
+				<cocoa method="handleMoveScriptCommand:"/>
+			</responds-to>
+			<responds-to name="duplicate">
+				<cocoa method="handleCloneScriptCommand:"/>
+			</responds-to>
+		</class> <!-- topic -->
+
+		<class name="subtopic" inherits="topic" code="STpc" description="A synonym of topic that refers to a topic that descends from another topic.">
+			<cocoa class="ASSubtopic"/>
+		</class> <!-- subtopic -->
+
+		<class name="callout" inherits="topic" code="Calt" description="A synonym of topic that refers to a callout attached to a topic.">
+			<cocoa class="ASCallout"/>
+		</class> <!-- callout -->
+
+		<class name="boundary" inherits="item" code="Bdry" description="A border that surrounds a topic and its subtopics." plural="boundaries">
+			<documentation>
+				<html>
+					<p>To create a boundary around a topic you can use a statement like: </p>
+					<blockquote><code>make new boundary for aReferenceToATopic</code></blockquote>
+					<p>The central topic cannot have a boundary.</p>
+				</html>
+			</documentation>
+			<cocoa class="ASBoundary"/>
+			<property name="id" code="ID  " type="text" access="r" description="A identifier for the boundary that is unique within its map." >
+				<cocoa key="uniqueID"/>
+			</property>
+
+			<property name="callout" code="Calt" type="callout" description="The callout topic attached to the boundary. Boundaries can only have one callout."/>
+			<property name="fill color" code="FClr" description="The color used to fill the boundary." >
+				<type type="color"/>
+				<type type="color constant"/>
+			</property>
+ 			<property name="line color" code="LClr" description="The color applied to the boundary&apos;s line.">
+				<type type="color"/>
+				<type type="color constant"/>
+			</property>
+			<property name="line dash" code="Ldsh" description="The dash pattern applied to the boundary&apos;s line.">
+				<type type="dash pattern"/>
+			</property>
+			<property name="line width" code="bLWt" type="real" description="The width of the boundary&apos;s line (in points)."/>
+			<property name="shape" code="Shap" description="Shape of this boundary.">
+				<type type="boundary shape"/>
+			</property>
+			<property name="topic" code="Topc" type="topic" access="r" description="The topic that this boundary surrounds."/>
+
+			<element type="relationship" description="The relationships connected to the boundary.">
+                <cocoa key="relationships"/>
+            </element>
+		</class> <!-- boundary -->
+
+		<class name="relationship" inherits="item" code="Rlsh" description="This object represents a relationship between two map elements.">
+			<documentation>
+				<html>
+					<p>When creating a relationship for the first time, you must specify both the starting location
+					and ending location for the relationship using the <code>with properties</code> parameter of the make command: </p>
+					<blockquote><code>make new relationship with properties &#x00AC; <br/>{ starting location : aTopic, ending location : aTopic }</code></blockquote>
+					<p> although the terms <code>starting location</code> and <code>ending location</code> imply a directonality to the relationship,
+						the shape of the arrowheads are independent of those designations. This allows you to create directional, bi-directional,
+						and un-directed relationships on a map. </p>
+				</html>
+			</documentation>
+			<cocoa class="ASRelationship"/>
+			<property name="id" code="ID  " type="text" access="r" description="A identifier for the relationship that is unique within its document." >
+				<cocoa key="uniqueID"/>
+			</property>
+
+			<property name="starting location" code="Cob1" description="The map item found at the starting location of the relationship.">
+				<type type="topic"/>
+				<type type="boundary"/>
+			</property>
+			<property name="ending location" code="Cob2" description="The map item found at the ending location of the relationship.">
+				<type type="topic"/>
+				<type type="boundary"/>
+			</property>
+
+			<property name="starting arrowhead" code="Shp1" description="The shape of the arrowhead drawn at the starting location of the relationship.">
+				<type type="arrowhead"/>
+			</property>
+			<property name="ending arrowhead" code="Shp2" description="The shape of the arrowhead drawn at the ending location of the relationship.">
+				<type type="arrowhead"/>
+			</property>
+
+			<property name="line color" code="LClr" description="The color of the relationship&apos;s line.">
+				<type type="color"/>
+				<type type="color constant"/>
+			</property>
+			<property name="line dash" code="Ldsh" description="The dash pattern of this relationship.">
+				<type type="dash pattern"/>
+			</property>
+            <property name="line shape" code="LShp" type="line shape" description="The shape of the relationship&apos;s line."/>
+			<property name="line width" code="bLWt" type="real" description="The width of the relationship&apos;s line."/>
+			<property name="control points" code="CoPt" description="Locations of the intermediate points that define the relationship line&apos;s shape.">
+				<documentation>
+					<html>
+						<p>	
+							The control points list is an array of four values. The four values represent offsets from the
+							staring or ending location to the corresponding control point. The first two values represent the horizontal
+							and vertical offsets respectively for the control point connected to the starting location. The third and fourth values
+							define the offset for the control point connected to the ending location.
+						</p>
+					</html>
+				</documentation>
+				<type type="list of real"/>
+			</property>
+
+			<element type="callout" codes="Calt" description="The callout topics attached to the relationship.">
+				<cocoa key="callouts"/>
+			</element>
+		</class>
+
+		<class name="task" code="Task" description="Project management task information found on a topic.">
+            <cocoa class="ASTask"/>
+
+            <property name="topic" code="Topc" type="topic" access="r" description="The topic that this task information describes."/>
+
+			<property name="start date" code="TkSD" type="date" description="The date the task starts."/>
+			<property name="due date" code="TkDD" type="date" description="The date that the task is due."/>
+			<property name="duration" code="TkDr" type="integer" description="How long the task lasts in hours."/>
+
+			<property name="percent complete" code="TkPc" description="What percentage (0 - 100) of the task has been completed? (This can be none.)">
+				<type type="integer"/>
+				<type type="no setting"/>
+			</property>
+
+			<property name="priority" code="TkPr" description="The priority of the task ranging from 1 (highest priority) to 9 (lowest priority) or none.">
+				<type type="integer"/>
+				<type type="no setting"/>
+			</property>
+			<property name="resources" code="TkRs" type="text" description="People or other resources assigned to this task."/>
+
+			<property name="categories" plural="categories" code="TkCt" type="text" description="Categories this task belongs to." >
+                <cocoa key="categories"/>
+            </property>
+
+		</class>
+
+		<class name="attribute" code="ATtr" inherits="item" description="Attributes are ways for scripts to attach custom data to topics. Attributes are stored in categories called &apos;name spaces&apos;. Within each category are a series of attributes with unique names. Each attribute also has a string that is the attribute's value.">
+            <cocoa class="ASCustomAttribute"/>
+
+            <property name="id" code="ID  " type="text" access="r" description="The unique identifier for this attribute. The ID is formed by concatenating the name onto the end of the name space with a &apos;#&apos; between them">
+				<cocoa key="uniqueID" />
+			</property>
+			<property name="name space" code="Nspc" type="text" description="Name spaces are used to help prevent clashes between attributes with the same name. Each application or script should define it's own name space and use that name space for all its attributes. A good choice for a name space is a Uniform Resource Identifier (URI), but that is not a requirement. A name space cannot contain the &apos;#&apos; character">
+				<cocoa key="nameSpace" />
+			</property>
+			<property name="name" code="pnam" type="text" description="The common name or identifying key for this attribute. Names must consist of only letters, numbers, and underscore characters. The first character must be a letter"/>
+			<property name="value" code="valu" type="text" description="A text string that defines the value of the attribute." />
+		</class>
+
+		<enumeration name="document type" code="Dtyp" hidden="yes" description="Types of map documents.">
+			<enumerator name="map" code="MMap" hidden="yes" description="The document type of a plain MindManager map."/>
+			<enumerator name="template" code="MMat" hidden="yes"  description="A document that contains a map template."/>
+			<enumerator name="style" code="MMas" hidden="yes" description="A document that defines the style of a map."/>
+			<enumerator name="map part" code="MMmp" hidden="yes"  description="A document type representing a map part."/>
+			<enumerator name="markers" code="MMrk" hidden="yes" description="A document containing a set of markers."/>
+		</enumeration>
+
+		<enumeration name="zoom mode" code="ZmMd" description="Zoom mode.">
+			<enumerator name="fit map" code="ZmM1"/>
+			<enumerator name="fit selection" code="ZmM2"/>
+		</enumeration>
+
+		<enumeration name="no setting" code="TPr#" description="A special value indicating no setting for the given property.">
+			<enumerator name="none" code="None"/>
+		</enumeration>
+
+		<enumeration name="color constant" code="MMCl" description="Constants that can be used in the place of colors.">
+			<enumerator name="none" code="None"/>
+			<enumerator name="automatic" code="Auto" description="Setting a color to this value asks the topic to use the default color for the map style."/>
+		</enumeration>
+
+		<enumeration name="topic shape" code="TShp" description="Shapes of topics." inline="0">
+			<enumerator name="none" code="None"/>
+			<enumerator name="line" code="Ts02"/>
+			<enumerator name="rectangle" code="Ts03"/>
+			<enumerator name="rounded rectangle" code="Ts04"/>
+			<enumerator name="hexagon" code="Ts05"/>
+			<enumerator name="octagon" code="Ts06"/>
+			<enumerator name="circle" code="Ts07"/>
+			<enumerator name="oval" code="Ts08"/>
+			<enumerator name="image" code="Ts09" description="The topic&apos;s shape is defined by an image rather than a geometric shape.">
+				<documentation>
+					<html>
+						<p>The Macintosh version of MindManager currently does not support the image shape and will substitute a rectangle in its place. Maps copied from other platforms may have topics with this shape.</p>
+					</html>
+				</documentation>
+			</enumerator>
+			<enumerator name="rectangle balloon" code="Ts10"/>
+			<enumerator name="rounded rectangle balloon" code="Ts11"/>
+			<enumerator name="oval balloon" code="Ts12"/>
+			<enumerator name="thought bubble" code="Ts13"/>
+			<enumerator name="highlight" code="Ts14"/>
+			<enumerator name="automatic" code="Auto" description="Setting a shape to this value asks the topic to use the default shape for the map style."/>
+		</enumeration>
+
+		<enumeration name="line shape" code="LShp" description="The shapes used by relationship lines.">
+			<enumerator name="bezier" code="Ls01"/>
+			<enumerator name="straight" code="Ls02"/>
+			<enumerator name="angled" code="Ls03"/>
+			<enumerator name="curved" code="Ls04"/>
+		</enumeration>
+
+		<enumeration name="capitalization style" code="tCap" description="Capitalization of displayed text." inline="0" hidden = "yes">
+			<enumerator name="no capitalization" code="tCp1"/>
+			<enumerator name="sentence capitalization" code="tCp2"/>
+			<enumerator name="title capitalization" code="tCp3"/>
+			<enumerator name="upper case capitalization" code="tCp4"/>
+			<enumerator name="lower case capitalization" code="tCp5"/>
+		</enumeration>
+
+		<enumeration name="dash pattern" code="Dshp" description="Dash patterns used for boundaries and relationships." inline="0">
+			<enumerator name="solid" code="Dp01"/>
+			<enumerator name="round dot" code="Dp02"/>
+			<enumerator name="square dot" code="Dp03"/>
+			<enumerator name="dash" code="Dp04"/>
+			<enumerator name="dash dot" code="Dp05"/>
+			<enumerator name="long dash" code="Dp06"/>
+			<enumerator name="long dash dot" code="Dp07"/>
+			<enumerator name="long dash dot dot" code="Dp08"/>
+		</enumeration>
+
+		<enumeration name="boundary shape" code="bShp" description="Shape options for boundaries." inline="0">
+			<enumerator name="lines" code="Bs01"/>
+			<enumerator name="zig zag" code="Bs02"/>
+			<enumerator name="scallops" code="Bs03"/>
+			<enumerator name="waves" code="Bs04"/>
+			<enumerator name="curved line" code="Bs05"/>
+			<enumerator name="rectangle" code="Bs06"/>
+			<enumerator name="curved rectangle" code="Bs07"/>
+			<enumerator name="elbow" code="Bs08"/>
+			<enumerator name="sheared elbow" code="Bs09"/>
+			<enumerator name="arc" code="Bs10"/>
+			<enumerator name="curve" code="Bs11"/>
+		</enumeration>
+
+		<enumeration name="arrowhead" code="bShp" description="Shapes of arrowheads at the ends of a relationship." inline="0">
+			<enumerator name="no arrow" code="Rs01"/>
+			<enumerator name="arrow" code="Rs02"/>
+			<enumerator name="open arrow" code="Rs03"/>
+			<enumerator name="stealth arrow" code="Rs04"/>
+			<enumerator name="diamond arrow" code="Rs05"/>
+			<enumerator name="oval arrow" code="Rs06"/>
+		</enumeration>
+	</suite>
+
+	<suite name="Value types" code="Valu" description="Value types used in the application.">
+		<value-type name="color" code="cRGB">
+			<cocoa class="NSColor"/>
+		</value-type>
+
+		<record-type name="print settings" code="pset">
+			<property name="copies" code="lwcp" type="integer"
+				description="The number of copies of a document to be printed.">
+				<cocoa key="NSCopies"/>
+			</property>
+			<property name="collating" code="lwcl" type="boolean"
+				description="Should printed copies be collated?">
+				<cocoa key="NSMustCollate"/>
+			</property>
+			<property name="starting page" code="lwfp" type="integer"
+				description="The first page of the document to be printed.">
+				<cocoa key="NSFirstPage"/>
+			</property>
+			<property name="ending page" code="lwlp" type="integer"
+				description="The last page of the document to be printed.">
+				<cocoa key="NSLastPage"/>
+			</property>
+			<property name="pages across" code="lwla" type="integer"
+				description="The number of logical pages laid across a physical page.">
+				<cocoa key="NSPagesAcross"/>
+			</property>
+			<property name="pages down" code="lwld" type="integer"
+				description="The number of logical pages laid out down a physical page.">
+				<cocoa key="NSPagesDown"/>
+			</property>
+			<property name="error handling" code="lweh" type="printing error handling"
+				description="How errors are handled.">
+				<cocoa key="NSDetailedErrorReporting"/>
+			</property>
+			<property name="fax number" code="faxn" type="text"
+				description="For fax number.">
+				<cocoa key="NSFaxNumber"/>
+			</property>
+			<property name="target printer" code="trpr" type="text"
+				description="For target printer.">
+				<cocoa key="NSPrinterName"/>
+			</property>
+		</record-type>
+	</suite>
+
+</dictionary>

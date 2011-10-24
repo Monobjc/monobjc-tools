@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="iWeb">
+	<!--
+    STANDARD SUITE
+  -->
+	<suite name="Standard Suite" code="core" description="Common classes and commands for all applications.">
+		<cocoa name="NSCoreSuite"/>
+		<enumeration name="save options" code="savo">
+			<enumerator name="yes" code="yes " description="Save the file."/>
+			<enumerator name="no" code="no  " description="Do not save the file."/>
+			<enumerator name="ask" code="ask " description="Ask the user whether or not to save the file."/>
+		</enumeration>
+		<enumeration name="printing error handling" code="enum">
+			<enumerator name="standard" code="lwst" description="Standard PostScript error handling"/>
+			<enumerator name="detailed" code="lwdt" description="print a detailed report of PostScript errors"/>
+		</enumeration>
+		<record-type name="print settings" code="pset">
+			<property name="copies" code="lwcp" description="the number of copies of a document to be printed" type="integer">
+				<cocoa key="NSCopies"/>
+			</property>
+			<property name="collating" code="lwcl" description="Should printed copies be collated?" type="boolean">
+				<cocoa key="NSMustCollate"/>
+			</property>
+			<property name="starting page" code="lwfp" description="the first page of the document to be printed" type="integer">
+				<cocoa key="NSFirstPage"/>
+			</property>
+			<property name="ending page" code="lwlp" description="the last page of the document to be printed" type="integer">
+				<cocoa key="NSLastPage"/>
+			</property>
+			<property name="pages across" code="lwla" description="number of logical pages laid across a physical page" type="integer">
+				<cocoa key="NSPagesAcross"/>
+			</property>
+			<property name="pages down" code="lwld" description="number of logical pages laid out down a physical page" type="integer">
+				<cocoa key="NSPagesDown"/>
+			</property>
+			<property name="error handling" code="lweh" description="how errors are handled" type="printing error handling">
+				<cocoa key="NSDetailedErrorReporting"/>
+			</property>
+			<property name="fax number" code="faxn" description="for fax number" type="text">
+				<cocoa key="NSFaxNumber"/>
+			</property>
+			<property name="target printer" code="trpr" description="for target printer" type="text">
+				<cocoa key="NSPrinterName"/>
+			</property>
+		</record-type>
+		<class name="application" code="capp" description="The application&apos;s top-level scripting object.">
+			<cocoa class="NSApplication"/>
+			<element type="document">
+				<cocoa key="orderedDocuments"/>
+			</element>
+			<element type="window" access="r">
+				<cocoa key="orderedWindows"/>
+			</element>
+			<property name="name" code="pnam" description="The name of the application." type="text" access="r"/>
+			<property name="frontmost" code="pisf" description="Is this the frontmost (active) application?" type="boolean" access="r">
+				<cocoa key="isActive"/>
+			</property>
+			<property name="version" code="vers" description="The version of the application." type="text" access="r"/>
+			<responds-to name="open" command="open">
+				<cocoa method="handleOpenScriptCommand:"/>
+			</responds-to>
+			<responds-to name="print" command="print">
+				<cocoa method="handlePrintScriptCommand:"/>
+			</responds-to>
+			<responds-to name="quit" command="quit">
+				<cocoa method="handleQuitScriptCommand:"/>
+			</responds-to>
+		</class>
+		<class name="window" code="cwin" description="A window.">
+			<cocoa class="NSWindow"/>
+			<property name="name" code="pnam" description="The full title of the window." type="text" access="r">
+				<cocoa key="title"/>
+			</property>
+			<property name="id" code="ID  " description="The unique identifier of the window." type="integer" access="r">
+				<cocoa key="uniqueID"/>
+			</property>
+			<property name="index" code="pidx" description="The index of the window, ordered front to back." type="integer">
+				<cocoa key="orderedIndex"/>
+			</property>
+			<property name="bounds" code="pbnd" description="The bounding rectangle of the window." type="rectangle">
+				<cocoa key="boundsAsQDRect"/>
+			</property>
+			<property name="closeable" code="hclb" description="Whether the window has a close box." type="boolean" access="r">
+				<cocoa key="hasCloseBox"/>
+			</property>
+			<property name="minimizable" code="ismn" description="Whether the window can be minimized." type="boolean" access="r">
+				<cocoa key="isMiniaturizable"/>
+			</property>
+			<property name="minimized" code="pmnd" description="Whether the window is currently minimized." type="boolean">
+				<cocoa key="isMiniaturized"/>
+			</property>
+			<property name="resizable" code="prsz" description="Whether the window can be resized." type="boolean" access="r">
+				<cocoa key="isResizable"/>
+			</property>
+			<property name="visible" code="pvis" description="Whether the window is currently visible." type="boolean">
+				<cocoa key="isVisible"/>
+			</property>
+			<property name="zoomable" code="iszm" description="Whether the window can be zoomed." type="boolean" access="r">
+				<cocoa key="isZoomable"/>
+			</property>
+			<property name="zoomed" code="pzum" description="Whether the window is currently zoomed." type="boolean">
+				<cocoa key="isZoomed"/>
+			</property>
+			<property name="document" code="docu" description="The document whose contents are being displayed in the window." type="document" access="r"/>
+			<responds-to name="close" command="close">
+				<cocoa method="handleCloseScriptCommand:"/>
+			</responds-to>
+			<responds-to name="print" command="print">
+				<cocoa method="handlePrintScriptCommand:"/>
+			</responds-to>
+			<responds-to name="save" command="save">
+				<cocoa method="handleSaveScriptCommand:"/>
+			</responds-to>
+		</class>
+		<!--
+        According to TN2106, 'open' should return the resulting document
+        object.  However, the Cocoa implementation does not do this yet.
+      <result type="specifier"/>
+      -->
+		<command name="open" code="aevtodoc" description="Open a document.">
+			<direct-parameter description="The file(s) to be opened.">
+				<type type="file" list="yes"/>
+			</direct-parameter>
+		</command>
+		<command name="close" code="coreclos" description="Close a document.">
+			<cocoa class="NSCloseCommand"/>
+			<direct-parameter description="the document(s) or window(s) to close." type="specifier"/>
+			<parameter name="saving" code="savo" description="Whether or not changes should be saved before closing." type="save options" optional="yes">
+				<cocoa key="SaveOptions"/>
+			</parameter>
+			<parameter name="saving in" code="kfil" description="The file in which to save the document." type="file" optional="yes">
+				<cocoa key="File"/>
+			</parameter>
+		</command>
+		<command name="save" code="coresave" description="Save a document.">
+			<direct-parameter description="The document(s) or window(s) to save." type="specifier"/>
+			<parameter name="in" code="kfil" description="The file in which to save the document." type="file" optional="yes">
+				<cocoa key="File"/>
+			</parameter>
+			<parameter name="as" code="fltp" description="The type of file to save." type="text" optional="yes">
+				<cocoa key="FileType"/>
+			</parameter>
+		</command>
+		<command name="print" code="aevtpdoc" description="Print a document.">
+			<direct-parameter description="The file(s), document(s), or window(s) to be printed.">
+				<type type="file" list="yes"/>
+				<type type="specifier"/>
+			</direct-parameter>
+			<parameter name="with properties" code="prdt" description="The print settings to use." type="print settings" optional="yes">
+				<cocoa key="PrintSettings"/>
+			</parameter>
+			<parameter name="print dialog" code="pdlg" description="Should the application show the print dialog?" type="boolean" optional="yes">
+				<cocoa key="ShowPrintDialog"/>
+			</parameter>
+		</command>
+		<command name="quit" code="aevtquit" description="Quit the application.">
+			<cocoa class="NSQuitCommand"/>
+			<parameter name="saving" code="savo" description="Whether or not changed documents should be saved before closing." type="save options" optional="yes">
+				<cocoa key="SaveOptions"/>
+			</parameter>
+		</command>
+		<command name="count" code="corecnte" description="Return the number of elements of a particular class within an object.">
+			<cocoa class="NSCountCommand"/>
+			<direct-parameter description="the object whose elements are to be counted" type="specifier"/>
+			<parameter name="each" code="kocl" description="The class of objects to be counted." type="type" optional="yes">
+				<cocoa key="ObjectClass"/>
+			</parameter>
+			<result description="the number of elements" type="integer"/>
+		</command>
+		<command name="delete" code="coredelo" description="Delete an object.">
+			<cocoa class="NSDeleteCommand"/>
+			<direct-parameter description="the object to delete" type="specifier"/>
+		</command>
+		<command name="duplicate" code="coreclon" description="Copy object(s) and put the copies at a new location.">
+			<cocoa class="NSCloneCommand"/>
+			<direct-parameter description="the object(s) to duplicate" type="specifier"/>
+			<parameter name="to" code="insh" description="The location for the new object(s)." type="location specifier" optional="yes">
+				<cocoa key="ToLocation"/>
+			</parameter>
+			<parameter name="with properties" code="prdt" description="Properties to be set in the new duplicated object(s)." type="record" optional="yes">
+				<cocoa key="WithProperties"/>
+			</parameter>
+			<result description="the duplicated object(s)" type="specifier"/>
+		</command>
+		<command name="exists" code="coredoex" description="Verify if an object exists.">
+			<cocoa class="NSExistsCommand"/>
+			<direct-parameter description="the object in question" type="any"/>
+			<result description="true if it exists, false if not" type="boolean"/>
+		</command>
+		<command name="make" code="corecrel" description="Make a new object.">
+			<cocoa class="NSCreateCommand"/>
+			<parameter name="new" code="kocl" description="The class of the new object." type="type">
+				<cocoa key="ObjectClass"/>
+			</parameter>
+			<parameter name="at" code="insh" description="The location at which to insert the object." type="location specifier" optional="yes">
+				<cocoa key="Location"/>
+			</parameter>
+			<parameter name="with data" code="data" description="The initial contents of the object." type="any" optional="yes">
+				<cocoa key="ObjectData"/>
+			</parameter>
+			<parameter name="with properties" code="prdt" description="The initial values for properties of the object." type="record" optional="yes">
+				<cocoa key="KeyDictionary"/>
+			</parameter>
+			<result description="to the new object" type="specifier"/>
+		</command>
+		<command name="move" code="coremove" description="Move object(s) to a new location.">
+			<cocoa class="NSMoveCommand"/>
+			<direct-parameter description="the object(s) to move" type="specifier"/>
+			<parameter name="to" code="insh" description="The new location for the object(s)." type="location specifier">
+				<cocoa key="ToLocation"/>
+			</parameter>
+			<result description="the moved object(s)" type="specifier"/>
+		</command>
+	</suite>
+	<suite name="iWeb" code="iWeb" description="iWeb specific classes">
+		<cocoa name="iWeb"/>
+		<value-type name="File Info" code="PhIn">
+			<cocoa class="NSDictionary"/>
+		</value-type>
+		<class name="document" code="docu" description="A document.">
+			<cocoa class="BLDomain"/>
+			<property name="has no pages" code="BLnp" type="boolean">
+				<cocoa key="hasNoPages"/>
+			</property>
+			<responds-to name="add photo album" command="add photo album">
+				<cocoa method="scriptAddPhotoAlbum:"/>
+			</responds-to>
+			<responds-to name="add photo blog entries" command="add photo blog entries">
+				<cocoa method="scriptBlogPhotos:"/>
+			</responds-to>
+			<responds-to name="add movie blog entry" command="add movie blog entry">
+				<cocoa method="scriptBlogMovie:"/>
+			</responds-to>
+			<responds-to name="add movie page" command="add movie page">
+				<cocoa method="scriptAddMoviePage:"/>
+			</responds-to>
+			<responds-to name="add page if there are no pages" command="add page if there are no pages">
+				<cocoa method="scriptAddPageIfEmpty:"/>
+			</responds-to>
+			<responds-to name="add file blog entries" command="add file blog entries">
+				<cocoa method="scriptBlogFiles:"/>
+			</responds-to>
+			<responds-to name="podcast" command="podcast">
+				<cocoa method="scriptPodcast:"/>
+			</responds-to>
+		</class>
+		<command hidden="yes" name="add photo album" code="iWbcaPA:" description="adds a photo album">
+			<cocoa class="BLScriptCommand"/>
+			<direct-parameter description="Document to add photos album to" type="specifier"/>
+			<parameter name="named" code="aPA2" description="Name of photo album" type="text" optional="yes">
+				<cocoa key="name"/>
+			</parameter>
+			<parameter name="with images" code="aPA1" description="List of image paths and descriptions">
+				<cocoa key="images"/>
+				<type type="File Info" list="yes"/>
+			</parameter>
+			<parameter name="and identifier" code="aPA3" description="Unique identifier used to check if this photo album has been sent to iWeb before" type="text" optional="yes">
+				<cocoa key="id"/>
+			</parameter>
+		</command>
+		<command hidden="yes" name="add photo blog entries" code="iWbcbPh:" description="adds photo blog entries">
+			<cocoa name="BlogPhotos" class="BLScriptCommand"/>
+			<direct-parameter type="document"/>
+			<parameter name="with images" code="bPh1" description="List of image paths and descriptions">
+				<cocoa key="images"/>
+				<type type="File Info" list="yes"/>
+			</parameter>
+		</command>
+		<command hidden="yes" name="add movie blog entry" code="iWbcbMv:" description="adds a movie blog entry">
+			<cocoa name="BlogMovie" class="BLScriptCommand"/>
+			<direct-parameter type="document"/>
+			<parameter name="named" code="bMv2" description="Name of movie blog entry" type="text" optional="yes">
+				<cocoa key="name"/>
+			</parameter>
+			<parameter name="with movie" code="bMv1" description="Path to movie" type="text">
+				<cocoa key="movie"/>
+			</parameter>
+		</command>
+		<command hidden="yes" name="add movie page" code="iWbcaMP:" description="adds a movie page">
+			<cocoa class="BLScriptCommand"/>
+			<direct-parameter type="document"/>
+			<parameter name="named" code="aMP2" description="Name of movie page" type="text" optional="yes">
+				<cocoa key="name"/>
+			</parameter>
+			<parameter name="with movie" code="aMP1" description="Path to movie" type="text">
+				<cocoa key="movie"/>
+			</parameter>
+			<parameter name="and identifier" code="aMP3" description="Unique identifier used to check if this movie has been sent to iWeb before" type="text" optional="yes">
+				<cocoa key="id"/>
+			</parameter>
+		</command>
+		<command hidden="yes" name="add page if there are no pages" code="iWbcAdf:" description="adds a new page if there are no pages">
+			<cocoa name="AddPageIfEmpty" class="BLScriptCommand"/>
+			<direct-parameter type="document"/>
+		</command>
+		<command hidden="yes" name="add file blog entries" code="iWbcbFi:" description="adds file blog entries">
+			<cocoa name="BlogFiles" class="BLScriptCommand"/>
+			<direct-parameter type="document"/>
+			<parameter name="with files" code="bFi1" description="List of file paths and descriptions">
+				<cocoa key="files"/>
+				<type type="File Info" list="yes"/>
+			</parameter>
+		</command>
+		<command hidden="yes" name="podcast" code="iWbcPdc:" description="podcasts an episode">
+			<cocoa class="BLScriptCommand"/>
+			<direct-parameter type="document"/>
+			<parameter name="bundle" code="aPc1" description="Path to podcast episode bundle" type="text">
+				<cocoa key="bundle"/>
+			</parameter>
+		</command>
+	</suite>
+</dictionary>

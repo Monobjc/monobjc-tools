@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -35,10 +35,10 @@ namespace Monobjc.Tools.Sdp.Generation
         public GenerationContext(String prefix, IEnumerable<@class> classes, IEnumerable<classextension> classExtensions, IEnumerable<command> commands, IEnumerable<enumeration> enumerations)
         {
             this.Prefix = prefix;
-            this.Classes = classes;
-            this.ClassExtensions = classExtensions;
-            this.Commands = commands;
-            this.Enumerations = enumerations;
+            this.Classes = new List<@class>(classes);
+            this.ClassExtensions = new List<classextension>(classExtensions);
+            this.Commands = new List<command>(commands);
+            this.Enumerations = new List<enumeration>(enumerations);
         }
 
         /// <summary>
@@ -70,7 +70,14 @@ namespace Monobjc.Tools.Sdp.Generation
         /// </summary>
         /// <value>The enumerations.</value>
         public IEnumerable<enumeration> Enumerations { get; set; }
-
+		
+		public void Merge()
+		{
+			// Merge classes that have the same name
+			
+			
+		}
+		
         /// <summary>
         ///   Gets the class extension for the given class.
         /// </summary>
@@ -85,13 +92,20 @@ namespace Monobjc.Tools.Sdp.Generation
         public IEnumerable<element> GetElementsFor(@class cls)
         {
             List<element> items = new List<element>();
-
-            // Add class items if any
-            if (cls.element != null)
-            {
-                items.AddRange(cls.element);
-            }
-
+			
+			// Iterate over each class so we catch extensions
+			foreach(@class clazz in this.Classes) {
+				if (clazz.name != cls.name) {
+					continue;
+				}
+				
+	            // Add class items if any
+	            if (clazz.element != null)
+	            {
+	                items.AddRange(cls.element);
+	            }
+			}
+			
             // Add extension items if any
             IEnumerable<element> extensionItems = this.GetClassExtensionFor(cls).Where(c => c.element != null).SelectMany(c => c.element);
             if (extensionItems != null)
@@ -116,7 +130,7 @@ namespace Monobjc.Tools.Sdp.Generation
                 IEnumerable<element> baseElements = this.GetElementsFor(baseClass);
                 foreach (element item in items)
                 {
-                    if (item.hiddenSpecified && item.hidden == yorn.yes)
+                    if (item.hidden)
                     {
                         continue;
                     }
@@ -132,7 +146,7 @@ namespace Monobjc.Tools.Sdp.Generation
             {
                 foreach (element item in items)
                 {
-                    if (item.hiddenSpecified && item.hidden == yorn.yes)
+                    if (item.hidden)
                     {
                         continue;
                     }
@@ -148,11 +162,18 @@ namespace Monobjc.Tools.Sdp.Generation
         {
             List<property> items = new List<property>();
 
-            // Add class items if any
-            if (cls.property != null)
-            {
-                items.AddRange(cls.property);
-            }
+			// Iterate over each class so we catch extensions
+			foreach(@class clazz in this.Classes) {
+				if (clazz.name != cls.name) {
+					continue;
+				}
+				
+	            // Add class items if any
+	            if (clazz.property != null)
+	            {
+	                items.AddRange(cls.property);
+	            }
+			}
 
             // Add extension items if any
             IEnumerable<property> extensionItems = this.GetClassExtensionFor(cls).Where(c => c.property != null).SelectMany(c => c.property);
@@ -167,7 +188,7 @@ namespace Monobjc.Tools.Sdp.Generation
                 {
                     continue;
                 }
-                if (item.hiddenSpecified && item.hidden == yorn.yes)
+                if (item.hidden)
                 {
                     continue;
                 }
@@ -185,7 +206,7 @@ namespace Monobjc.Tools.Sdp.Generation
 
             foreach (command item in this.Commands)
             {
-                if (item.hiddenSpecified && item.hidden == yorn.yes)
+                if (item.hidden)
                 {
                     continue;
                 }
@@ -193,11 +214,11 @@ namespace Monobjc.Tools.Sdp.Generation
                 {
                     continue;
                 }
-                if (item.parameter != null && item.parameter.Any(p => p.type1 == "any"))
+                if (item.parameter != null && item.parameter.Any(p => p.type == "any"))
                 {
                     continue;
                 }
-                if (item.result != null && item.result.type1 == "any")
+                if (item.result != null && item.result.type == "any")
                 {
                     continue;
                 }
@@ -209,7 +230,7 @@ namespace Monobjc.Tools.Sdp.Generation
                         String type = GetType(item.directparameter);
                         if (type == "specifier")
                         {
-                            if (!item.directparameter.optionalSpecified || item.directparameter.optional != yorn.yes)
+                            if (!item.directparameter.optional)
                             {
                                 continue;
                             }
@@ -228,7 +249,7 @@ namespace Monobjc.Tools.Sdp.Generation
                         continue;
                     }
 
-                    String type = item.directparameter.type1 ?? item.directparameter.type[0].type1;
+                    String type = item.directparameter.type ?? item.directparameter.Items[0].type1;
                     if (type == "specifier" && isObject)
                     {
                         yield return item;
@@ -250,7 +271,7 @@ namespace Monobjc.Tools.Sdp.Generation
         /// </returns>
         public static bool IsApplicationClass(@class cls)
         {
-            return cls.name == "application";
+            return cls.name == "application" && String.IsNullOrEmpty(cls.inherits);
         }
 
         /// <summary>
@@ -258,14 +279,14 @@ namespace Monobjc.Tools.Sdp.Generation
         /// </summary>
         public static String GetType(directparameter parameter)
         {
-            if (parameter.type1 != null)
-            {
-                return parameter.type1;
-            }
             if (parameter.type != null)
             {
-                type type = parameter.type[0];
-                if (type.listSpecified && type.list == yorn.yes)
+                return parameter.type;
+            }
+            if (parameter.Items != null)
+            {
+                type type = parameter.Items[0];
+                if (type.list)
                 {
                     return "list";
                 }
@@ -279,14 +300,14 @@ namespace Monobjc.Tools.Sdp.Generation
         /// </summary>
         public static String GetType(parameter parameter)
         {
-            if (parameter.type1 != null)
-            {
-                return parameter.type1;
-            }
             if (parameter.type != null)
             {
-                type type = parameter.type[0];
-                if (type.listSpecified && type.list == yorn.yes)
+                return parameter.type;
+            }
+            if (parameter.Items != null)
+            {
+                type type = parameter.Items[0];
+                if (type.list)
                 {
                     return "list";
                 }
@@ -304,13 +325,13 @@ namespace Monobjc.Tools.Sdp.Generation
             {
                 return null;
             }
-            if (result.type1 != null)
+            if (result.type != null)
             {
-                return result.type1;
+                return result.type;
             }
-            if (result.type!=null )
+            if (result.Items !=null)
             {
-                return result.type[0].type1;
+                return result.Items[0].type1;
             }
             return null;
         }
@@ -356,7 +377,7 @@ namespace Monobjc.Tools.Sdp.Generation
                         result = "void";
                         break;
                     case "boolean":
-                        result = "Boolean";
+                        result = "bool";
                         break;
                     case "integer":
                     case "unsigned integer":
@@ -366,7 +387,7 @@ namespace Monobjc.Tools.Sdp.Generation
                         result = "Int64";
                         break;
                     case "real":
-                        result = "Double";
+                        result = "double";
                         break;
                     case "property":
                         result = "IntPtr";
@@ -403,6 +424,7 @@ namespace Monobjc.Tools.Sdp.Generation
                         result = "NSRect";
                         break;
                     case "alias":
+                    case "file":
                         result = "NSURL";
                         break;
                     case "specifier":

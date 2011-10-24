@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+
+<dictionary title="Evernote Scripting Terminology">
+  <suite name="Standard Suite" code="????" description="Common classes and commands for all applications.">
+
+    <command name="close" code="coreclos" description="Close a window.">
+      <cocoa class="NSCloseCommand"/>
+      <direct-parameter type="specifier" description="the window(s) to close."/>
+    </command>
+
+    <enumeration name="printing error handling" code="enum">
+      <enumerator name="standard" code="lwst" description="Standard PostScript error handling">
+        <cocoa boolean-value="NO"/>
+      </enumerator>
+      <enumerator name="detailed" code="lwdt" description="print a detailed report of PostScript errors">
+        <cocoa boolean-value="YES"/>
+      </enumerator>
+    </enumeration>
+
+    <record-type name="print settings" code="pset">
+      <property name="copies" code="lwcp" type="integer" description="the number of copies of a document to be printed">
+        <cocoa key="NSCopies"/>
+      </property>
+      <property name="collating" code="lwcl" type="boolean" description="Should printed copies be collated?">
+        <cocoa key="NSMustCollate"/>
+      </property>
+      <property name="starting page" code="lwfp" type="integer" description="the first page of the document to be printed">
+        <cocoa key="NSFirstPage"/>
+      </property>
+      <property name="ending page" code="lwlp" type="integer" description="the last page of the document to be printed">
+        <cocoa key="NSLastPage"/>
+      </property>
+      <property name="pages across" code="lwla" type="integer" description="number of logical pages laid across a physical page">
+        <cocoa key="NSPagesAcross"/>
+      </property>
+      <property name="pages down" code="lwld" type="integer" description="number of logical pages laid out down a physical page">
+        <cocoa key="NSPagesDown"/>
+      </property>
+      <property name="requested print time" code="lwqt" type="date" description="the time at which the desktop printer should print the document">
+        <cocoa key="NSPrintTime"/>
+      </property>
+      <property name="error handling" code="lweh" type="printing error handling" description="how errors are handled">
+        <cocoa key="NSDetailedErrorReporting"/>
+      </property>
+      <property name="fax number" code="faxn" type="text" description="for fax number">
+        <cocoa key="NSFaxNumber"/>
+      </property>
+      <property name="target printer" code="trpr" type="text" description="for target printer">
+        <cocoa key="NSPrinterName"/>
+      </property>
+    </record-type>
+
+    <command name="print" code="aevtpdoc" description="Print a document.">
+      <direct-parameter description="The file(s), document(s), or window(s) to be printed.">
+        <type type="file" list="yes"/>
+        <type type="specifier"/>
+      </direct-parameter>
+      <parameter name="with properties" code="prdt" type="print settings" optional="yes" description="The print settings to use.">
+        <cocoa key="PrintSettings"/>
+      </parameter>
+      <parameter name="print dialog" code="pdlg" type="boolean" optional="yes" description="Should the application show the print dialog?">
+        <cocoa key="ShowPrintDialog"/>
+      </parameter>
+    </command>
+    
+    <command name="quit" code="aevtquit" description="Quit the application.">
+      <cocoa class="NSQuitCommand"/>
+    </command>
+
+    <command name="count" code="corecnte" description="Return the number of elements of a particular class within an object.">
+      <cocoa class="NSCountCommand"/>
+      <direct-parameter type="specifier" description="The objects to be counted."/>
+      <parameter name="each" code="kocl" type="type" optional="yes" description="The class of objects to be counted." hidden="yes">
+        <cocoa key="ObjectClass"/>
+      </parameter>
+      <result type="integer" description="The count."/>
+    </command>
+
+    <command name="delete" code="coredelo" description="Delete an object.">
+      <cocoa class="ENDeleteCommand"/>
+      <direct-parameter description="The object(s) to delete.">
+        <type type="specifier"/>
+        <type type="specifier" list="yes"/>
+      </direct-parameter>
+    </command>
+
+    <command name="exists" code="coredoex" description="Verify that an object exists.">
+      <cocoa class="NSExistsCommand"/>
+      <direct-parameter type="any" description="The object(s) to check."/>
+      <result type="boolean" description="Did the object(s) exist?"/>
+    </command>
+
+    <command name="make" code="corecrel" description="Create a new object.">
+      <cocoa class="ENCreateCommand"/>
+      <parameter name="new" code="kocl" type="type" description="The class of the new object.">
+        <cocoa key="ObjectClass"/>
+      </parameter>
+      <parameter name="at" code="insh" type="location specifier" optional="yes" description="The location at which to insert the object.">
+        <cocoa key="Location"/>
+      </parameter>
+      <parameter name="with data" code="data" type="any" optional="yes" description="The initial contents of the object.">
+        <cocoa key="ObjectData"/>
+      </parameter>
+      <parameter name="with properties" code="prdt" type="record" optional="yes" description="The initial values for properties of the object.">
+        <cocoa key="KeyDictionary"/>
+      </parameter>
+      <result type="specifier" description="The new object."/>
+    </command>
+
+    <command name="move" code="coremove" description="Move an object to a new location.">
+      <cocoa class="ENMoveCommand"/>
+      <direct-parameter type="specifier" description="The object(s) to move."/>
+      <parameter name="to" code="insh" type="location specifier" description="The new location for the object(s).">
+        <cocoa key="ToLocation"/>
+      </parameter>
+    </command>
+
+    <class name="application" code="capp" description="The application's top-level scripting object.">
+      <cocoa class="NSApplication"/>
+      <property name="name" code="pnam" type="text" access="r" description="The name of the application."/>
+      <property name="frontmost" code="pisf" type="boolean" access="r" description="Is this the active application?">
+        <cocoa key="isActive"/>
+      </property>
+      <property name="version" code="vers" type="text" access="r" description="The version number of the application."/>
+      <element type="window" access="r">
+        <cocoa key="orderedWindows"/>
+      </element>
+      <responds-to command="print">
+        <cocoa method="handlePrintScriptCommand:"/>
+      </responds-to>
+      <responds-to command="quit">
+        <cocoa method="handleQuitScriptCommand:"/>
+      </responds-to>
+    </class>
+
+    <class name="window" code="cwin" description="A window.">
+      <cocoa class="NSWindow"/>
+      <property name="name" code="pnam" type="text" access="r" description="The title of the window.">
+        <cocoa key="title"/>
+      </property>
+      <property name="id" code="ID  " type="integer" access="r" description="The unique identifier of the window.">
+        <cocoa key="uniqueID"/>
+      </property>
+      <property name="index" code="pidx" type="integer" description="The index of the window, ordered front to back.">
+        <cocoa key="scriptingOrderedIndex"/>
+      </property>
+      <property name="bounds" code="pbnd" type="rectangle" description="The bounding rectangle of the window.">
+        <cocoa key="boundsAsQDRect"/>
+      </property>
+      <property name="closeable" code="hclb" type="boolean" access="r" description="Does the window have a close button?">
+        <cocoa key="hasCloseBox"/>
+      </property>
+      <property name="miniaturizable" code="ismn" type="boolean" access="r" description="Does the window have a minimize button?">
+        <cocoa key="isMiniaturizable"/>
+      </property>
+      <property name="miniaturized" code="pmnd" type="boolean" description="Is the window minimized right now?">
+        <cocoa key="isMiniaturized"/>
+      </property>
+      <property name="resizable" code="prsz" type="boolean" access="r" description="Can the window be resized?">
+        <cocoa key="isResizable"/>
+      </property>
+      <property name="visible" code="pvis" type="boolean" description="Is the window visible right now?">
+        <cocoa key="isVisible"/>
+      </property>
+      <property name="zoomable" code="iszm" type="boolean" access="r" description="Does the window have a zoom button?">
+        <cocoa key="isZoomable"/>
+      </property>
+      <property name="zoomed" code="pzum" type="boolean" description="Is the window zoomed right now?">
+        <cocoa key="isZoomed"/>
+      </property>
+      <responds-to command="close">
+        <cocoa method="handleCloseScriptCommand:"/>
+      </responds-to>
+      <responds-to command="print">
+        <cocoa method="handlePrintScriptCommand:"/>
+      </responds-to>
+    </class>
+
+  </suite>
+
+  <suite name="Evernote Suite" code="EVRN" description="Evernote Application Suite">
+    <cocoa name="Evernote"/>
+    
+    <class name="account info" plural="accounts" code="EVai" description="Information about an Evernote account.">
+      <cocoa class="ENScriptingAccountInfo"/>
+      <property name="name" type="text" access="r" code="pnam" description="The account's username.">
+        <cocoa key="scriptingAccountName"/>
+      </property>
+      <property name="account type" type="account types" access="r" code="EV08" description="The account type.">
+        <cocoa key="scriptingAccountType"/>
+      </property>
+      <property name="upload limit" type="integer" access="r" code="EV09" description="Maximum data upload (in bytes) for the current month.">
+        <cocoa key="scriptingUploadLimit"/>
+      </property>
+      <property name="upload reset date" type="date" access="r" code="EV10" description="When the data upload counter will be reset.">
+        <cocoa key="scriptingQuotaRestartDate"/>
+      </property>
+      <property name="upload used" type="integer" access="r" code="EV11" description="Data uploaded (in bytes) so far for the current month.">
+        <cocoa key="scriptingUploadUsed"/>
+      </property>
+    </class>
+    
+    <class name="application" code="capp" description="The application's top-level scripting object." inherits="application">
+      <cocoa class="NSApplication"/>
+      <element type="notebook" description="The notebooks." access="r">
+        <cocoa key="scriptingNotebooks"/>
+      </element>
+      <element type="tag" description="The tags." access="r">
+        <cocoa key="scriptingTags"/>
+      </element>
+      <responds-to command="synchronize">
+        <cocoa method="handleSyncScriptCommand:"/>
+      </responds-to>
+      <responds-to command="find notes">
+        <cocoa method="handleFindNotesScriptCommand:"/>
+      </responds-to>
+      <responds-to command="create notebook">
+        <cocoa method="handleCreateNotebookScriptCommand:"/>
+      </responds-to>      
+      <responds-to command="export">
+        <cocoa method="handleExportScriptCommand:"/>
+      </responds-to>
+      <responds-to command="import">
+        <cocoa method="handleImportScriptCommand:"/>
+      </responds-to>
+      <responds-to command="assign">
+        <cocoa method="handleAssignScriptCommand:"/>
+      </responds-to>
+      <responds-to command="unassign">
+        <cocoa method="handleUnassignScriptCommand:"/>
+      </responds-to>
+      <responds-to command="create note">
+        <cocoa method="handleCreateNoteScriptCommand:"/>
+      </responds-to>
+      <responds-to command="open collection window">
+        <cocoa method="handleOpenCollectionWindowScriptCommand:"/>
+      </responds-to>
+      <responds-to command="open note window">
+        <cocoa method="handleOpenNoteWindowScriptCommand:"/>
+      </responds-to>
+      <element type="window" access="r">
+        <cocoa key="scriptingOrderedWindows"/>
+      </element>
+      <element type="account info" access="r">
+        <cocoa key="scriptingAccounts"/>
+      </element>
+      <property name="current account" type="account info" access="r" code="EV04" description="Information about the currently-active Evernote account.">
+        <cocoa key="scriptingCurrentAccount"/>
+      </property>
+      <property name="selection" code="EV15" description="The note(s) selected in the front-most window.  Returns empty list if the front-most window is not a collection or note window, or if there is no front-most window." access="r">
+        <cocoa key="scriptingSelection"/>
+        <type type="note" list="yes"/>
+      </property>
+    </class>
+    
+    <class name="collection window" code="EVcw" description="A note collection window." inherits="window">
+      <cocoa class="ENNoteCollectionWindow"/>
+      <element type="note" access="r">
+        <cocoa key="scriptingNotes"/>
+      </element>
+      <property name="selection" code="EV01" description="Notes that are selected in the window." access="r">
+        <cocoa key="scriptingSelection"/>
+        <type type="note" list="yes"/>
+      </property>
+      <property name="query string" type="text" code="EV20" description="The query string used to determine which notes are displayed in the window.  Setting this property causes the window's contents to update to reflect the new query.">
+        <cocoa key="scriptingQueryString"/>
+      </property>
+    </class>
+    
+    <class name="note window" code="EVnw" description="A single-note window." inherits="window">
+      <cocoa class="ENNoteEditorWindow"/>
+      <element type="note" access="r">
+        <cocoa key="scriptingNotes"/>
+      </element>
+      <property name="selection" code="EV02" description="The window's single note." access="r">
+        <cocoa key="scriptingSelection"/>
+        <type type="note" list="yes"/>
+      </property>
+    </class>
+
+    <class name="notebook" code="EVnb" description="A notebook.">
+      <cocoa class="ENNotebookMO"/>
+      <property name="name" code="pnam" description="The notebook's name." type="text">
+        <cocoa key="name"/>
+      </property>
+      <property name="notebook type" code="EVnt" access="r" description="The notebook's type." type="notebook types">
+        <cocoa key="type"/>
+      </property>
+      <property name="default" code="EVnd" access="r" description="Indicates if this is the 'default' notebook for the account." type="boolean">
+        <cocoa key="default"/>
+      </property>
+      <element type="note" description="The notes in this notebook." access="r">
+        <cocoa key="scriptingNotes"/>
+      </element>
+    </class>
+
+    <class name="tag" code="EVtg" description="A tag.">
+      <cocoa class="ENTagMO"/>
+      <property name="name" code="pnam" description="The tag's name." type="text">
+        <cocoa key="name"/>
+      </property>
+      <property name="parent" code="ENtp" description="The tag's parent tag, if any.">
+        <cocoa key="parent"/>
+        <type type="tag"/>
+        <type type="missing value"/>
+      </property>
+      <responds-to command="assign">
+        <cocoa method="handleAssignScriptCommand:"/>
+      </responds-to>
+      <responds-to command="unassign">
+        <cocoa method="handleUnassignScriptCommand:"/>
+      </responds-to>
+    </class>
+
+    <class name="note" code="EVnn" description="A note.">
+      <cocoa class="ENNoteMO"/>
+      <property name="local id" code="ID  " description="locally unique note ID." type="text" hidden="yes">
+        <cocoa key="localStoreIDAsString"/>
+      </property>
+      <property name="title" code="EVet" description="The note's title." type="text">
+        <cocoa key="title"/>
+      </property>
+      <property name="creation date" code="EVdd" description="The note's creation date." type="date">
+        <cocoa key="created"/>
+      </property>
+      <property name="modification date" code="EVmm" description="The note's last modification date." type="date">
+        <cocoa key="updated"/>
+      </property>
+      <property name="subject date" code="EVsd" description="The date associated with the note's content.">
+        <cocoa key="subjectDate"/>
+        <type type="date"/>
+        <type type="missing value"/>
+      </property>
+      <property name="source URL" code="EVsu" description="The note's source URL.">
+        <cocoa key="sourceURL"/>
+        <type type="text"/>
+        <type type="missing value"/>
+      </property>
+      <property name="latitude" code="EVla">
+        <cocoa key="latitude"/>
+        <type type="real"/>
+        <type type="missing value"/>
+      </property>
+      <property name="longitude" code="EVlo">
+        <cocoa key="longitude"/>
+        <type type="real"/>
+        <type type="missing value"/>
+      </property>
+      <property name="altitude" code="EVat">
+        <cocoa key="altitude"/>
+        <type type="real"/>
+        <type type="missing value"/>
+      </property>
+      <property name="ENML content" code="EVml" description="The note's content in ENML representation." access="r" type="text">
+        <cocoa key="content"/>
+      </property>
+      <property name="HTML content" code="EVhl" description="The note's content in HTML representation." type="text">
+        <cocoa key="scriptingHtml"/>
+      </property>
+      <property name="tags" description="The tags assigned to this note." code="EVtg">
+        <cocoa key="scriptingTags"/>
+        <type type="tag" list="yes"/>
+      </property>
+      <property name="notebook" description="The notebook containing this note." code="EV22" access="r" type="notebook">
+        <cocoa key="notebook"/>
+      </property>
+
+      <element type="attachment" description="The media attached to this note.  Images, Audio, PDFs, etc." access="r">
+        <cocoa key="scriptingResources"/>
+      </element>
+      <responds-to command="append">
+        <cocoa method="handleAppendScriptCommand:"/>
+      </responds-to>
+    </class>
+
+    <class name="attachment" code="EVnr" description="A note attachment.  Image, Audio, PDF, etc.">
+      <cocoa class="ENResourceMO"/>
+      <property name="local id" code="ID  " description="locally unique attachment ID." type="text" hidden="yes">
+        <cocoa key="localStoreIDAsString"/>
+      </property>
+      <property name="filename" code="EVrf" description="The attachment's original filename, if available.">
+        <type type="text"/>
+        <type type="missing value"/>
+        <cocoa key="filename"/>
+      </property>
+      <property name="mime" code="EVrm" description="The attachment's mime type." type="text">
+        <cocoa key="mime"/>
+      </property>
+      <property name="size" code="EVrs" description="The attachment's size in bytes." type="integer">
+        <cocoa key="dataLength"/>
+      </property>
+      <property name="source URL" code="EVsu" description="The attachment's source URL.">
+        <cocoa key="sourceURL"/>
+        <type type="text"/>
+        <type type="missing value"/>
+      </property>
+      <property name="latitude" code="EVla">
+        <cocoa key="latitude"/>
+        <type type="real"/>
+        <type type="missing value"/>
+      </property>
+      <property name="longitude" code="EVlo">
+        <cocoa key="longitude"/>
+        <type type="real"/>
+        <type type="missing value"/>
+      </property>
+      <property name="altitude" code="EVat">
+        <cocoa key="altitude"/>
+        <type type="real"/>
+        <type type="missing value"/>
+      </property>
+      <property name="hash" code="EVah" description="The attachment's hash (used to identify the attachment in the note's ENML)." type="text" access="r">
+        <cocoa key="scriptingHash"/>
+      </property>
+      <property name="recognition data" 
+                code="EV23" 
+                description="Recognition data for this resource, if any.  Note that a resource will not have recognition data until it is provided by the service.  This XML data conforms to the following DTD: http://xml.evernote.com/pub/recoIndex.dtd" 
+                access="r">
+        <cocoa key="scriptingRecoData"/>
+        <type type="text"/>
+        <type type="missing value"/>
+      </property>
+      
+      <responds-to command="write">
+        <cocoa method="handleWriteToScriptCommand:"/>
+      </responds-to>
+    </class>
+
+    <command name="synchronize" code="EVRNsync" description="Synchronize with the Evernote server.  Returns immediately.  Does nothing if a sync is currently in progress.">
+    </command>
+    
+    <command name="open collection window" code="EVRNoncw" description="Open a new note collection window.">
+      <parameter name="with query string" type="text" code="EV16" description="Query string for new window.  Default displays all notes." optional="yes">
+        <cocoa key="queryString"/>
+      </parameter>
+      <result description="The new collection window" type="collection window"/>
+    </command>
+    
+    <command name="open note window" code="EVRNonwn" description="Open a note window for a specific note.  If the note already is open in a note window, that window is activated and returned, otherwise a new note window is created.">
+      <parameter name="with" type="note" code="EV17" description="Note to open.">
+        <cocoa key="note"/>
+      </parameter>
+      <result description="The new note window" type="note window"/>
+    </command>
+
+    <command name="find notes" code="EVRNfind" description="Search for notes using the Evernote query syntax.">
+      <direct-parameter description="query string" type="text"/>
+      <result description="Notes matching the query.">
+        <type type="note" list="yes"/>
+      </result>
+    </command>
+    
+    <command name="create notebook" code="EVRNcrnb" description="Create a new notebook.">
+      <direct-parameter description="the name for the new notebook" type="text"/>
+      <parameter name="with type" type="notebook types" code="Nbty" description="Notebook type.  Default is synchronized." optional="yes">
+        <cocoa key="notebookType"/>
+      </parameter>
+      <result description="The new notebook" type="notebook"/>
+    </command>
+
+    <command name="export" code="EVRNenxp" description="Export notes.">
+      <direct-parameter description="the notes to export.">
+        <type type="note" list="yes"/>
+      </direct-parameter>
+      <parameter name="to" code="kfil" type="file" description="File to export into.  The contents of this file will be overwritten.">
+        <cocoa key="toFile"/>
+      </parameter>
+      <parameter name="tags" code="Exit" type="boolean" optional="yes" description="Include tags when exporting.  Default is TRUE.">
+        <cocoa key="includeTags"/>
+      </parameter>
+      <parameter name="format" code="Expf" type="export formats" optional="yes" description="Format for note export.  Default is ENEX.">
+        <cocoa key="format"/>
+      </parameter>
+    </command>
+
+    <command name="import" code="EVRNenim" description="Import notes from an xml file.">
+      <direct-parameter code="kfil" type="file" description="the file to import."/>
+      <parameter name="to" code="Enim" optional="yes" description="Notebook to import into.  Can be a notebook name or object reference.">
+        <type type="notebook"/>
+        <type type="text"/>
+        <cocoa key="notebook"/>
+      </parameter>
+      <parameter name="tags" code="Exit" type="boolean" optional="yes" description="Include tags when importing.  Default is FALSE.">
+        <cocoa key="includeTags"/>
+      </parameter>
+       <result description="Newly imported notes.">
+        <type type="note"/>
+        <type type="note" list="yes"/>
+      </result>
+    </command>
+    
+    <command name="append" code="EVRNadtn" description="Append data to an existing note.  You must specify exactly one of 'text', 'html', or 'attachment' parameters.">
+      <direct-parameter code="EVnn" type="note" description="The note to modify."/>
+      <parameter name="text" code="EV18" type="text" optional="yes" description="Text to append.">
+        <cocoa key="text"/>
+      </parameter>
+      <parameter name="html" code="EV19" type="text" optional="yes" description="HTML to append.">
+        <cocoa key="html"/>
+      </parameter>
+      <parameter name="attachment" code="EV21" type="file" optional="yes" description="Attachment file to append.">
+        <cocoa key="attachment"/>
+      </parameter>
+    </command>
+
+    <command name="write" code="EVRNerwf" description="Write the attachment data to a file.">
+      <direct-parameter description="The attachment to write.">
+        <type type="attachment"/>
+      </direct-parameter>
+      <parameter name="to" code="kfil" type="file" description="File to write to.  The contents of this file will be overwritten.">
+        <cocoa key="toFile"/>
+      </parameter>
+    </command>
+
+    <command name="create note" code="EVRNcrnt" description="Create a new note.  You must specify exactly one of 'from file', 'from url', 'with text', or 'with html'.">
+      <parameter name="from file" code="kfil" type="file" optional="yes" description="Clip the contents of the specified file.">
+        <cocoa key="fromFile"/>
+      </parameter>
+      <parameter name="from url" code="Ennu" type="text" optional="yes" description="Clip the contents of the specified URL.">
+        <cocoa key="fromURL"/>
+      </parameter>
+      <parameter name="with text" code="Enxt" type="text" optional="yes" description="Create a new note using the specified plain-text as content.">
+        <cocoa key="withText"/>
+      </parameter>      
+      <parameter name="with html" code="Enhl" type="text" optional="yes" description="Create a new note using the specified html as content.">
+        <cocoa key="withHTML"/>
+      </parameter>      
+      <parameter name="title" code="Entt" description="Title for the new note." optional="yes">
+        <type type="text"/>
+        <cocoa key="title"/>
+      </parameter>
+      <parameter name="notebook" code="Ennb" description="Notebook in which to place the note.  Can be the name of a notebook or an object reference.  If no notebook with the specified name exists a new one is created.  If no notebook is specified, the default notebook for the account is used." optional="yes">
+        <type type="text"/>
+        <type type="notebook"/>
+        <cocoa key="notebook"/>
+      </parameter>
+      <parameter name="tags" code="Engg" description="Tags to assign to the new note.  Can be the name of a tag or an object reference.  If no tag with the specified name exists a new one is created." optional="yes">
+        <type type="text" list="yes"/>
+        <type type="tag" list="yes"/>
+        <cocoa key="tags"/>
+      </parameter>
+      <parameter name="attachments" code="Enaa" description="Files to attach to the note." optional="yes">
+        <type type="file" list="yes"/>
+        <cocoa key="attachments"/>
+      </parameter>
+      <parameter name="created" code="Endt" description="Creation date for the new note.  Defaults to now." optional="yes">
+        <type type="date"/>
+        <cocoa key="createdDate"/>
+      </parameter>      
+      <result description="The new note.">
+        <type type="note"/>
+      </result>
+    </command>
+    
+    <command name="assign" code="EVRNassn" description="Assign one or more tags to one or more notes.">
+      <direct-parameter description="One or more tags to assign.">
+        <type type="tag"/>
+        <type type="tag" list="yes"/>
+      </direct-parameter>
+      <parameter name="to" code="EV13" description="One or more notes to modify.">
+        <type type="note"/>
+        <type type="note" list="yes"/>
+        <cocoa key="notes"/>
+      </parameter>
+    </command>
+    
+    <command name="unassign" code="EVRNunas" description="Un-assign one or more tags from one or more notes.">
+      <direct-parameter description="One or mote tags to unassign.">
+        <type type="tag"/>
+        <type type="tag" list="yes"/>
+      </direct-parameter>
+      <parameter name="from" code="EV14" description="One or more notes to modify.">
+        <type type="note"/>
+        <type type="note" list="yes"/>
+        <cocoa key="notes"/>
+      </parameter>
+    </command>
+  
+    <enumeration name="notebook types" code="Nbty">
+      <enumerator name="synchronized" code="priv" description="Default notebook type.  Notes are synchronized to and from the server.">
+        <cocoa integer-value="0"/>
+      </enumerator>
+      <enumerator name="published" code="publ" description="Synchronized notebook that is publicly available.">
+        <cocoa integer-value="1"/>
+      </enumerator>
+      <enumerator name="local only" code="loco" description="Local only notebook.  Never synchronized with server.  Only available on this client.">
+        <cocoa integer-value="2"/>
+      </enumerator>
+    </enumeration>
+
+    <enumeration name="export formats" code="Exff">
+      <enumerator name="ENEX" code="enex" description="An XML-based format that preserves the exact note content and all attachments.  Suitable for importing into another Evernote client or 3rd party application.  Use this format for making local backups.">
+        <cocoa integer-value="0"/>
+      </enumerator>
+      <enumerator name="HTML" code="exht" description="Content of each note is converted to HTML.  Attachments are exported as separate files that are linked from the note HTML.">
+        <cocoa integer-value="1"/>
+      </enumerator>
+    </enumeration>
+    
+    <enumeration name="account types" code="EVak">
+      <enumerator name="standard" code="EV05" description="Standard (free) account type.">
+        <cocoa integer-value="1"/>
+      </enumerator>
+      <enumerator name="premium" code="EV06" description="Premium account type.">
+        <cocoa integer-value="3"/>
+      </enumerator>
+      <enumerator name="other" code="EV07" description="Specialized account type.">
+        <cocoa integer-value="99"/>
+      </enumerator>
+    </enumeration>
+    
+  </suite>
+</dictionary>

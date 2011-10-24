@@ -18,6 +18,7 @@
 using System;
 using Monobjc.Tools.Sdp.Generation;
 using NDesk.Options;
+using System.IO;
 
 namespace Monobjc.Tools.Sdp
 {
@@ -43,7 +44,7 @@ namespace Monobjc.Tools.Sdp
             }
             if (prefix == null)
             {
-                Usage();
+				prefix = inputFile.Substring(0, inputFile.Length - ".sdef".Length);
             }
 
             Generator generator = Generator.CreateGenerator(language);

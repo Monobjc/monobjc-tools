@@ -96,6 +96,7 @@
        keyfile="Monobjc.snk"
        output="${dist.dir}/Monobjc.Sdp.exe">
       <sources>
+        <exclude name="Monobjc.Sdp/bin/**/*.cs"/>
         <include name="Monobjc.Sdp/**/*.cs"/>
       </sources>
       <resources prefix="Monobjc.Sdp.Properties">

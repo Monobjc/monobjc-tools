@@ -112,7 +112,7 @@ namespace Monobjc.Tools.Sdp.Generation
             parts.Add(GenerateObjCName(command.name));
 
             bool first = true;
-            if (isApplication && command.directparameter != null && command.directparameter.type1 != "specifier")
+            if (isApplication && command.directparameter != null && command.directparameter.type != "specifier")
             {
                 parts.Add(":");
                 first = false;

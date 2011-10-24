@@ -1,2976 +1,1020 @@
-﻿//
-// This file is part of Monobjc, a .NET/Objective-C bridge
-// Copyright (C) 2007-2011 - Laurent Etiemble
-//
-// Monobjc is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// any later version.
-//
-// Monobjc is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
-//
+﻿using System;
+using System.Xml;
+using System.Xml.Linq;
+using System.Linq;
+
 namespace Monobjc.Tools.Sdp.Model {
-    using System.Xml.Serialization;
     
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
     public partial class dictionary {
         
-        //private string[][] documentationField;
+		public dictionary(XElement element)
+		{
+			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
+			this.suite = element.Elements("suite").Select(e => new suite(e)).ToArray();
+			this.title = (String) element.Attribute("title");
+		}
+		
+        public documentation[] documentation {
+			get; set;
+        }
         
-        private suite[] suiteField;
-        
-        private string baseField;
-        
-        private string titleField;
-        
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlArrayItemAttribute("html", typeof(string), IsNullable=false)]
-        //public string[][] documentation {
-        //    get {
-        //        return this.documentationField;
-        //    }
-        //    set {
-        //        this.documentationField = value;
-        //    }
-        //}
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("suite")]
         public suite[] suite {
-            get {
-                return this.suiteField;
-            }
-            set {
-                this.suiteField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string title {
-            get {
-                return this.titleField;
-            }
-            set {
-                this.titleField = value;
-            }
+			get; set;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
-    public partial class suite {
-        
-        private cocoa cocoaField;
-        
-        private object[] itemsField;
-        
-        private string baseField;
-        
-        private string nameField;
-        
-        private string codeField;
-        
-        private string descriptionField;
-        
-        private yorn hiddenField;
-        
-        private bool hiddenFieldSpecified;
-        
-        /// <remarks/>
-        public cocoa cocoa {
-            get {
-                return this.cocoaField;
-            }
-            set {
-                this.cocoaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("class", typeof(@class))]
-        [System.Xml.Serialization.XmlElementAttribute("class-extension", typeof(classextension))]
-        [System.Xml.Serialization.XmlElementAttribute("command", typeof(command))]
-        [System.Xml.Serialization.XmlElementAttribute("documentation", typeof(documentation))]
-        [System.Xml.Serialization.XmlElementAttribute("enumeration", typeof(enumeration))]
-        [System.Xml.Serialization.XmlElementAttribute("event", typeof(@event))]
-        [System.Xml.Serialization.XmlElementAttribute("record-type", typeof(recordtype))]
-        [System.Xml.Serialization.XmlElementAttribute("value-type", typeof(valuetype))]
-        public object[] Items {
-            get {
-                return this.itemsField;
-            }
-            set {
-                this.itemsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn hidden {
-            get {
-                return this.hiddenField;
-            }
-            set {
-                this.hiddenField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool hiddenSpecified {
-            get {
-                return this.hiddenFieldSpecified;
-            }
-            set {
-                this.hiddenFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
-    public partial class cocoa {
-        
-        private string baseField;
-        
-        private string nameField;
-        
-        private string classField;
-        
-        private string keyField;
-        
-        private string methodField;
-        
-        private yorn insertatbeginningField;
-        
-        private bool insertatbeginningFieldSpecified;
-        
-        private cocoaBooleanvalue booleanvalueField;
-        
-        private bool booleanvalueFieldSpecified;
-        
-        private string integervalueField;
-        
-        private string stringvalueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKEN")]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKEN")]
-        public string @class {
-            get {
-                return this.classField;
-            }
-            set {
-                this.classField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKEN")]
-        public string key {
-            get {
-                return this.keyField;
-            }
-            set {
-                this.keyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKEN")]
-        public string method {
-            get {
-                return this.methodField;
-            }
-            set {
-                this.methodField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute("insert-at-beginning")]
-        public yorn insertatbeginning {
-            get {
-                return this.insertatbeginningField;
-            }
-            set {
-                this.insertatbeginningField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool insertatbeginningSpecified {
-            get {
-                return this.insertatbeginningFieldSpecified;
-            }
-            set {
-                this.insertatbeginningFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute("boolean-value")]
-        public cocoaBooleanvalue booleanvalue {
-            get {
-                return this.booleanvalueField;
-            }
-            set {
-                this.booleanvalueField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool booleanvalueSpecified {
-            get {
-                return this.booleanvalueFieldSpecified;
-            }
-            set {
-                this.booleanvalueFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute("integer-value", DataType="NMTOKEN")]
-        public string integervalue {
-            get {
-                return this.integervalueField;
-            }
-            set {
-                this.integervalueField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute("string-value")]
-        public string stringvalue {
-            get {
-                return this.stringvalueField;
-            }
-            set {
-                this.stringvalueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    public enum yorn {
-        
-        /// <remarks/>
-        yes,
-        
-        /// <remarks/>
-        no,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public enum cocoaBooleanvalue {
-        
-        /// <remarks/>
-        YES,
-        
-        /// <remarks/>
-        NO,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
-    public partial class @class {
-        
-        private cocoa cocoaField;
-        
-        private contents[] contentsField;
-        
-        //private string[][] documentationField;
-        
-        private element[] elementField;
-        
-        private property[] propertyField;
-        
-        private respondsto[] respondstoField;
-        
-        private synonym[] synonymField;
-        
-        private xref[] xrefField;
-        
-        private string baseField;
-        
-        private string nameField;
-        
-        private string idField;
-        
-        private string codeField;
-        
-        private yorn hiddenField;
-        
-        private bool hiddenFieldSpecified;
-        
-        private string pluralField;
-        
-        private string inheritsField;
-        
-        private string descriptionField;
-        
-        /// <remarks/>
-        public cocoa cocoa {
-            get {
-                return this.cocoaField;
-            }
-            set {
-                this.cocoaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("contents")]
-        public contents[] contents {
-            get {
-                return this.contentsField;
-            }
-            set {
-                this.contentsField = value;
-            }
-        }
-        
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlElementAttribute("documentation", typeof(documentation))]
-        //public string[][] documentation {
-        //    get {
-        //        return this.documentationField;
-        //    }
-        //    set {
-        //        this.documentationField = value;
-        //    }
-        //}
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("element")]
-        public element[] element {
-            get {
-                return this.elementField;
-            }
-            set {
-                this.elementField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("property")]
-        public property[] property {
-            get {
-                return this.propertyField;
-            }
-            set {
-                this.propertyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("responds-to")]
-        public respondsto[] respondsto {
-            get {
-                return this.respondstoField;
-            }
-            set {
-                this.respondstoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("synonym")]
-        public synonym[] synonym {
-            get {
-                return this.synonymField;
-            }
-            set {
-                this.synonymField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("xref")]
-        public xref[] xref {
-            get {
-                return this.xrefField;
-            }
-            set {
-                this.xrefField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
-        public string id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn hidden {
-            get {
-                return this.hiddenField;
-            }
-            set {
-                this.hiddenField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool hiddenSpecified {
-            get {
-                return this.hiddenFieldSpecified;
-            }
-            set {
-                this.hiddenFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
-        public string plural {
-            get {
-                return this.pluralField;
-            }
-            set {
-                this.pluralField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
-        public string inherits {
-            get {
-                return this.inheritsField;
-            }
-            set {
-                this.inheritsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
-    public partial class contents {
-        
-        private cocoa cocoaField;
-        
-        private type[] typeField;
-        
-        private string baseField;
-        
-        private string nameField;
-        
-        private string codeField;
-        
-        private string type1Field;
-        
-        private contentsAccess accessField;
-        
-        private yorn hiddenField;
-        
-        private bool hiddenFieldSpecified;
-        
-        private string descriptionField;
-        
-        public contents() {
-            this.accessField = contentsAccess.rw;
-        }
-        
-        /// <remarks/>
-        public cocoa cocoa {
-            get {
-                return this.cocoaField;
-            }
-            set {
-                this.cocoaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("type")]
-        public type[] type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute("type", DataType="NMTOKENS")]
-        public string type1 {
-            get {
-                return this.type1Field;
-            }
-            set {
-                this.type1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(contentsAccess.rw)]
-        public contentsAccess access {
-            get {
-                return this.accessField;
-            }
-            set {
-                this.accessField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn hidden {
-            get {
-                return this.hiddenField;
-            }
-            set {
-                this.hiddenField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool hiddenSpecified {
-            get {
-                return this.hiddenFieldSpecified;
-            }
-            set {
-                this.hiddenFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
-    public partial class type {
-        
-        private string baseField;
-        
-        private string type1Field;
-        
-        private yorn listField;
-        
-        private bool listFieldSpecified;
-        
-        private yorn hiddenField;
-        
-        private bool hiddenFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute("type", DataType="NMTOKENS")]
-        public string type1 {
-            get {
-                return this.type1Field;
-            }
-            set {
-                this.type1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn list {
-            get {
-                return this.listField;
-            }
-            set {
-                this.listField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool listSpecified {
-            get {
-                return this.listFieldSpecified;
-            }
-            set {
-                this.listFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn hidden {
-            get {
-                return this.hiddenField;
-            }
-            set {
-                this.hiddenField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool hiddenSpecified {
-            get {
-                return this.hiddenFieldSpecified;
-            }
-            set {
-                this.hiddenFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public enum contentsAccess {
-        
-        /// <remarks/>
-        r,
-        
-        /// <remarks/>
-        w,
-        
-        /// <remarks/>
-        rw,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
     public partial class documentation {
         
-        private string[] htmlField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("html")]
-        public string[] html {
-            get {
-                return this.htmlField;
-            }
-            set {
-                this.htmlField = value;
-            }
+		public documentation(XElement element)
+		{
+			this.Items = element.Elements("html").Select(e => new html(e)).ToArray();
+		}
+		
+        public html[] Items {
+			get; set;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
+    public partial class html {
+        
+		public html(XElement element)
+		{
+			this.Text = element.Nodes().OfType<XText>().Select(n => n.Value).ToArray();
+		}
+		
+        public string[] Text {
+			get; set;
+        }
+    }
+    
+    public partial class suite {
+        
+		public suite(XElement element)
+		{
+			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
+			this.@class = element.Elements("class").Select(e => new @class(e)).ToArray();
+			this.classextension = element.Elements("class-extension").Select(e => new classextension(e)).ToArray();
+			this.command = element.Elements("command").Select(e => new command(e)).ToArray();
+			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
+			this.enumeration = element.Elements("enumeration").Select(e => new enumeration(e)).ToArray();
+			this.@event = element.Elements("event").Select(e => new @event(e)).ToArray();
+			this.recordtype = element.Elements("record-type").Select(e => new recordtype(e)).ToArray();
+			this.valuetype = element.Elements("value-type").Select(e => new valuetype(e)).ToArray();
+			this.name = (String) element.Attribute("name");
+			this.code = (String) element.Attribute("code");
+			this.description = (String) element.Attribute("description");
+			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
+		}
+		
+        public cocoa Item {
+			get; set;
+        }
+        
+        public @class[] @class {
+			get; set;
+        }
+        
+        public classextension[] classextension {
+			get; set;
+        }
+        
+        public command[] command {
+			get; set;
+        }
+        
+        public documentation[] documentation {
+			get; set;
+        }
+        
+        public enumeration[] enumeration {
+			get; set;
+        }
+        
+        public @event[] @event {
+			get; set;
+        }
+        
+        public recordtype[] recordtype {
+			get; set;
+        }
+        
+        public valuetype[] valuetype {
+			get; set;
+        }
+        
+        public string name {
+			get; set;
+        }
+        
+        public string code {
+			get; set;
+        }
+        
+        public string description {
+			get; set;
+        }
+        
+        public bool hidden {
+			get; set;
+        }
+    }
+    
+    public partial class cocoa {
+        
+		public cocoa(XElement element)
+		{
+			this.name = (String) element.Attribute("name");
+			this.@class = (String) element.Attribute("class");
+			this.key = (String) element.Attribute("key");
+			this.method = (String) element.Attribute("method");
+			this.insertatbeginning = "yes".Equals((String) element.Attribute("insert-at-beginning"), StringComparison.OrdinalIgnoreCase);
+			this.booleanvalue = "yes".Equals((String) element.Attribute("boolean-value"), StringComparison.OrdinalIgnoreCase);
+			this.integervalue = (String) element.Attribute("integer-value");
+			this.stringvalue = (String) element.Attribute("string-value");
+		}
+		
+        public string name {
+			get; set;
+        }
+        
+        public string @class {
+			get; set;
+        }
+        
+        public string key {
+			get; set;
+        }
+        
+        public string method {
+			get; set;
+        }
+        
+        public bool insertatbeginning {
+			get; set;
+        }
+        
+        public bool booleanvalue {
+			get; set;
+        }
+        
+        public string integervalue {
+			get; set;
+        }
+        
+        public string stringvalue {
+			get; set;
+        }
+    }
+    
+    public partial class @class {
+        
+		public @class(XElement element)
+		{
+			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
+			this.contents = element.Elements("contents").Select(e => new contents(e)).ToArray();
+			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
+			this.element = element.Elements("element").Select(e => new element(e)).ToArray();
+			this.property = element.Elements("property").Select(e => new property(e)).ToArray();
+			this.respondsto = element.Elements("respondsto").Select(e => new respondsto(e)).ToArray();
+			this.synonym = element.Elements("synonym").Select(e => new synonym(e)).ToArray();
+			this.xref = element.Elements("xref").Select(e => new xref(e)).ToArray();
+			this.name = (String) element.Attribute("name");
+			this.id = (String) element.Attribute("id");
+			this.code = (String) element.Attribute("code");
+			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
+			this.plural = (String) element.Attribute("plural");
+			this.inherits = (String) element.Attribute("inherits");
+			this.description = (String) element.Attribute("description");
+		}
+		
+        public cocoa Item {
+			get; set;
+        }
+        
+		public contents[] contents {
+			get; set;
+		}
+		
+		public documentation[] documentation {
+			get; set;
+		}
+		
+		public element[] element {
+			get; set;
+		}
+		
+		public property[] property {
+			get; set;
+		}
+		
+		public respondsto[] respondsto {
+			get; set;
+		}
+		
+		public synonym[] synonym {
+			get; set;
+		}
+		
+		public xref[] xref {
+			get; set;
+		}
+		
+        public string name {
+			get; set;
+        }
+        
+        public string id {
+			get; set;
+        }
+        
+        public string code {
+			get; set;
+        }
+        
+        public bool hidden {
+			get; set;
+        }
+        
+        public string plural {
+			get; set;
+        }
+        
+        public string inherits {
+			get; set;
+        }
+        
+        public string description {
+			get; set;
+        }
+    }
+    
+    public partial class contents {
+        
+		public contents(XElement element)
+		{
+			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
+			this.Items = element.Elements("type").Select(e => new type(e)).ToArray();
+			this.name = (String) element.Attribute("name");
+			this.code = (String) element.Attribute("code");
+			this.type = (String) element.Attribute("type");
+			this.access = (String) element.Attribute("access");
+			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
+			this.description = (String) element.Attribute("description");
+		}
+        
+        public cocoa Item {
+			get; set;
+        }
+        
+        public type[] Items {
+			get; set;
+        }
+        
+        public string name {
+			get; set;
+        }
+        
+        public string code {
+			get; set;
+        }
+        
+        public string type {
+			get; set;
+        }
+        
+        public string access {
+			get; set;
+        }
+        
+        public bool hidden {
+			get; set;
+        }
+        
+        public string description {
+			get; set;
+        }
+    }
+    
+    public partial class type {
+        
+		public type(XElement element)
+		{
+			this.type1 = (String) element.Attribute("type");
+			this.list = "yes".Equals((String) element.Attribute("list"), StringComparison.OrdinalIgnoreCase);
+			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
+		}
+		
+        public string type1 {
+			get; set;
+        }
+        
+        public bool list {
+			get; set;
+        }
+        
+        public bool hidden {
+			get; set;
+        }
+    }
+    
     public partial class element {
         
-        private cocoa cocoaField;
-        
-        private accessor[] accessorField;
-        
-        private string baseField;
-        
-        private string typeField;
-        
-        private elementAccess accessField;
-        
-        private yorn hiddenField;
-        
-        private bool hiddenFieldSpecified;
-        
-        private string descriptionField;
-        
-        public element() {
-            this.accessField = elementAccess.rw;
+		public element(XElement element)
+		{
+			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
+			this.accessor = element.Elements("accessor").Select(e => new accessor(e)).ToArray();
+			this.type = (String) element.Attribute("type");
+			this.access = (String) element.Attribute("access");
+			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
+			this.description = (String) element.Attribute("description");
+		}
+		
+        public cocoa Item {
+			get; set;
         }
         
-        /// <remarks/>
-        public cocoa cocoa {
-            get {
-                return this.cocoaField;
-            }
-            set {
-                this.cocoaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("accessor")]
         public accessor[] accessor {
-            get {
-                return this.accessorField;
-            }
-            set {
-                this.accessorField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
         public string type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(elementAccess.rw)]
-        public elementAccess access {
-            get {
-                return this.accessField;
-            }
-            set {
-                this.accessField = value;
-            }
+        public string access {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn hidden {
-            get {
-                return this.hiddenField;
-            }
-            set {
-                this.hiddenField = value;
-            }
+        public bool hidden {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool hiddenSpecified {
-            get {
-                return this.hiddenFieldSpecified;
-            }
-            set {
-                this.hiddenFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
+			get; set;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
     public partial class accessor {
         
-        private string baseField;
-        
-        private accessortype styleField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public accessortype style {
-            get {
-                return this.styleField;
-            }
-            set {
-                this.styleField = value;
-            }
+		public accessor(XElement element)
+		{
+			this.style = (String) element.Attribute("style");
+		}
+		
+        public string style {
+			get; set;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="accessor-type")]
-    public enum accessortype {
-        
-        /// <remarks/>
-        index,
-        
-        /// <remarks/>
-        name,
-        
-        /// <remarks/>
-        id,
-        
-        /// <remarks/>
-        range,
-        
-        /// <remarks/>
-        relative,
-        
-        /// <remarks/>
-        test,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public enum elementAccess {
-        
-        /// <remarks/>
-        r,
-        
-        /// <remarks/>
-        w,
-        
-        /// <remarks/>
-        rw,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
     public partial class property {
         
-        private cocoa cocoaField;
+		public property(XElement element)
+		{
+			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
+			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
+			this.synonym = element.Elements("synonym").Select(e => new synonym(e)).ToArray();
+			this.Items = element.Elements("type").Select(e => new type(e)).ToArray();
+			this.name = (String) element.Attribute("name");
+			this.code = (String) element.Attribute("code");
+			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
+			this.type = (String) element.Attribute("type");
+			this.access = (String) element.Attribute("access");
+			this.inproperties = "yes".Equals((String) element.Attribute("in-properties"), StringComparison.OrdinalIgnoreCase);
+			this.description = (String) element.Attribute("description");
+		}
         
-        private object[] itemsField;
-        
-        private string baseField;
-        
-        private string nameField;
-        
-        private string codeField;
-        
-        private yorn hiddenField;
-        
-        private bool hiddenFieldSpecified;
-        
-        private string typeField;
-        
-        private propertyAccess accessField;
-        
-        private yorn inpropertiesField;
-        
-        private bool inpropertiesFieldSpecified;
-        
-        private string descriptionField;
-        
-        public property() {
-            this.accessField = propertyAccess.rw;
+        public cocoa Item {
+			get; set;
         }
         
-        /// <remarks/>
-        public cocoa cocoa {
-            get {
-                return this.cocoaField;
-            }
-            set {
-                this.cocoaField = value;
-            }
+        public documentation[] documentation {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("documentation", typeof(documentation))]
-        [System.Xml.Serialization.XmlElementAttribute("synonym", typeof(synonym))]
-        [System.Xml.Serialization.XmlElementAttribute("type", typeof(type))]
-        public object[] Items {
-            get {
-                return this.itemsField;
-            }
-            set {
-                this.itemsField = value;
-            }
+        public synonym[] synonym {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
+        public type[] Items {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
         public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn hidden {
-            get {
-                return this.hiddenField;
-            }
-            set {
-                this.hiddenField = value;
-            }
+        public bool hidden {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool hiddenSpecified {
-            get {
-                return this.hiddenFieldSpecified;
-            }
-            set {
-                this.hiddenFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
         public string type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(propertyAccess.rw)]
-        public propertyAccess access {
-            get {
-                return this.accessField;
-            }
-            set {
-                this.accessField = value;
-            }
+        public string access {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute("in-properties")]
-        public yorn inproperties {
-            get {
-                return this.inpropertiesField;
-            }
-            set {
-                this.inpropertiesField = value;
-            }
+        public bool inproperties {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool inpropertiesSpecified {
-            get {
-                return this.inpropertiesFieldSpecified;
-            }
-            set {
-                this.inpropertiesFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
+			get; set;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
     public partial class synonym {
         
-        private cocoa cocoaField;
+		public synonym(XElement element)
+		{
+			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
+			this.name = (String) element.Attribute("name");
+			this.code = (String) element.Attribute("code");
+			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
+		}
         
-        private string baseField;
-        
-        private string nameField;
-        
-        private string codeField;
-        
-        private yorn hiddenField;
-        
-        private bool hiddenFieldSpecified;
-        
-        /// <remarks/>
-        public cocoa cocoa {
-            get {
-                return this.cocoaField;
-            }
-            set {
-                this.cocoaField = value;
-            }
+        public cocoa Item {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
         public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn hidden {
-            get {
-                return this.hiddenField;
-            }
-            set {
-                this.hiddenField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool hiddenSpecified {
-            get {
-                return this.hiddenFieldSpecified;
-            }
-            set {
-                this.hiddenFieldSpecified = value;
-            }
+        public bool hidden {
+			get; set;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public enum propertyAccess {
-        
-        /// <remarks/>
-        r,
-        
-        /// <remarks/>
-        w,
-        
-        /// <remarks/>
-        rw,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute("responds-to", Namespace="", IsNullable=false)]
     public partial class respondsto {
         
-        private cocoa cocoaField;
+		public respondsto(XElement element)
+		{
+			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
+			this.command = (String) element.Attribute("command");
+			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
+			this.name = (String) element.Attribute("name");
+		}
         
-        private string baseField;
-        
-        private string commandField;
-        
-        private yorn hiddenField;
-        
-        private bool hiddenFieldSpecified;
-        
-        private string nameField;
-        
-        /// <remarks/>
-        public cocoa cocoa {
-            get {
-                return this.cocoaField;
-            }
-            set {
-                this.cocoaField = value;
-            }
+        public cocoa Item {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
         public string command {
-            get {
-                return this.commandField;
-            }
-            set {
-                this.commandField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn hidden {
-            get {
-                return this.hiddenField;
-            }
-            set {
-                this.hiddenField = value;
-            }
+        public bool hidden {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool hiddenSpecified {
-            get {
-                return this.hiddenFieldSpecified;
-            }
-            set {
-                this.hiddenFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
         public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
+			get; set;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
     public partial class xref {
         
-        private string baseField;
+		public xref(XElement element)
+		{
+			this.target = (String) element.Attribute("target");
+			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
+		}
         
-        private string targetField;
-        
-        private yorn hiddenField;
-        
-        private bool hiddenFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string target {
-            get {
-                return this.targetField;
-            }
-            set {
-                this.targetField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn hidden {
-            get {
-                return this.hiddenField;
-            }
-            set {
-                this.hiddenField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool hiddenSpecified {
-            get {
-                return this.hiddenFieldSpecified;
-            }
-            set {
-                this.hiddenFieldSpecified = value;
-            }
+        public bool hidden {
+			get; set;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute("class-extension", Namespace="", IsNullable=false)]
     public partial class classextension {
         
-        private cocoa cocoaField;
+		public classextension(XElement element)
+		{
+			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
+			this.contents = element.Elements("contents").Select(e => new contents(e)).ToArray();
+			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
+			this.element = element.Elements("element").Select(e => new element(e)).ToArray();
+			this.property = element.Elements("property").Select(e => new property(e)).ToArray();
+			this.respondsto = element.Elements("respondsto").Select(e => new respondsto(e)).ToArray();
+			this.synonym = element.Elements("synonym").Select(e => new synonym(e)).ToArray();
+			this.xref = element.Elements("xref").Select(e => new xref(e)).ToArray();
+			this.id = (String) element.Attribute("id");
+			this.extends = (String) element.Attribute("extends");
+			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
+			this.description = (String) element.Attribute("description");
+		}
         
-        private contents[] contentsField;
-        
-        private documentation[] documentationField;
-        
-        private element[] elementField;
-        
-        private property[] propertyField;
-        
-        private respondsto[] respondstoField;
-        
-        private synonym[] synonymField;
-        
-        private xref[] xrefField;
-        
-        private string baseField;
-        
-        private string idField;
-        
-        private string extendsField;
-        
-        private yorn hiddenField;
-        
-        private bool hiddenFieldSpecified;
-        
-        private string descriptionField;
-        
-        /// <remarks/>
-        public cocoa cocoa {
-            get {
-                return this.cocoaField;
-            }
-            set {
-                this.cocoaField = value;
-            }
+        public cocoa Item {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("contents")]
         public contents[] contents {
-            get {
-                return this.contentsField;
-            }
-            set {
-                this.contentsField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("documentation")]
         public documentation[] documentation {
-            get {
-                return this.documentationField;
-            }
-            set {
-                this.documentationField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("element")]
         public element[] element {
-            get {
-                return this.elementField;
-            }
-            set {
-                this.elementField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("property")]
         public property[] property {
-            get {
-                return this.propertyField;
-            }
-            set {
-                this.propertyField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("responds-to")]
         public respondsto[] respondsto {
-            get {
-                return this.respondstoField;
-            }
-            set {
-                this.respondstoField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("synonym")]
         public synonym[] synonym {
-            get {
-                return this.synonymField;
-            }
-            set {
-                this.synonymField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("xref")]
         public xref[] xref {
-            get {
-                return this.xrefField;
-            }
-            set {
-                this.xrefField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
         public string id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
         public string extends {
-            get {
-                return this.extendsField;
-            }
-            set {
-                this.extendsField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn hidden {
-            get {
-                return this.hiddenField;
-            }
-            set {
-                this.hiddenField = value;
-            }
+        public bool hidden {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool hiddenSpecified {
-            get {
-                return this.hiddenFieldSpecified;
-            }
-            set {
-                this.hiddenFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
+			get; set;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
     public partial class command {
         
-        private cocoa cocoaField;
+		public command(XElement element)
+		{
+			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
+			this.synonym = element.Elements("synonym").Select(e => new synonym(e)).ToArray();
+			this.directparameter = element.Element("direct-parameter") != null ? new directparameter(element.Element("direct-parameter")) : null;
+			this.parameter = element.Elements("parameter").Select(e => new parameter(e)).ToArray();
+			this.result = element.Element("result") != null ? new result(element.Element("result")) : null;
+			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
+			this.xref = element.Elements("xref").Select(e => new xref(e)).ToArray();
+			this.name = (String) element.Attribute("name");
+			this.id = (String) element.Attribute("id");
+			this.code = (String) element.Attribute("code");
+			this.description = (String) element.Attribute("description");
+			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
+		}
         
-        private synonym[] synonymField;
-        
-        private directparameter directparameterField;
-        
-        private parameter[] parameterField;
-        
-        private result resultField;
-        
-        private documentation[] documentationField;
-        
-        private xref[] xrefField;
-        
-        private string baseField;
-        
-        private string nameField;
-        
-        private string idField;
-        
-        private string codeField;
-        
-        private string descriptionField;
-        
-        private yorn hiddenField;
-        
-        private bool hiddenFieldSpecified;
-        
-        /// <remarks/>
-        public cocoa cocoa {
-            get {
-                return this.cocoaField;
-            }
-            set {
-                this.cocoaField = value;
-            }
+        public cocoa Item {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("synonym")]
         public synonym[] synonym {
-            get {
-                return this.synonymField;
-            }
-            set {
-                this.synonymField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("direct-parameter")]
         public directparameter directparameter {
-            get {
-                return this.directparameterField;
-            }
-            set {
-                this.directparameterField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("parameter")]
         public parameter[] parameter {
-            get {
-                return this.parameterField;
-            }
-            set {
-                this.parameterField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
         public result result {
-            get {
-                return this.resultField;
-            }
-            set {
-                this.resultField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("documentation")]
         public documentation[] documentation {
-            get {
-                return this.documentationField;
-            }
-            set {
-                this.documentationField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("xref")]
         public xref[] xref {
-            get {
-                return this.xrefField;
-            }
-            set {
-                this.xrefField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
         public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
         public string id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn hidden {
-            get {
-                return this.hiddenField;
-            }
-            set {
-                this.hiddenField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool hiddenSpecified {
-            get {
-                return this.hiddenFieldSpecified;
-            }
-            set {
-                this.hiddenFieldSpecified = value;
-            }
+        public bool hidden {
+			get; set;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute("direct-parameter", Namespace="", IsNullable=false)]
     public partial class directparameter {
         
-        private type[] typeField;
+		public directparameter(XElement element)
+		{
+			this.Items = element.Elements("type").Select(e => new type(e)).ToArray();
+			this.type = (String) element.Attribute("type");
+			this.optional = "yes".Equals((String) element.Attribute("optional"), StringComparison.OrdinalIgnoreCase);
+			this.description = (String) element.Attribute("description");
+		}
         
-        private string baseField;
-        
-        private string type1Field;
-        
-        private yorn optionalField;
-        
-        private bool optionalFieldSpecified;
-        
-        private string descriptionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("type")]
-        public type[] type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
+        public type[] Items {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
+        public string type {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute("type", DataType="NMTOKENS")]
-        public string type1 {
-            get {
-                return this.type1Field;
-            }
-            set {
-                this.type1Field = value;
-            }
+        public bool optional {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn optional {
-            get {
-                return this.optionalField;
-            }
-            set {
-                this.optionalField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool optionalSpecified {
-            get {
-                return this.optionalFieldSpecified;
-            }
-            set {
-                this.optionalFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
+			get; set;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
     public partial class parameter {
         
-        private cocoa cocoaField;
+		public parameter(XElement element)
+		{
+			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
+			this.Items = element.Elements("type").Select(e => new type(e)).ToArray();
+			this.name = (String) element.Attribute("name");
+			this.code = (String) element.Attribute("code");
+			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
+			this.type = (String) element.Attribute("type");
+			this.optional = "yes".Equals((String) element.Attribute("optional"), StringComparison.OrdinalIgnoreCase);
+			this.description = (String) element.Attribute("description");
+		}
         
-        private type[] typeField;
-        
-        private string baseField;
-        
-        private string nameField;
-        
-        private string codeField;
-        
-        private yorn hiddenField;
-        
-        private bool hiddenFieldSpecified;
-        
-        private string type1Field;
-        
-        private yorn optionalField;
-        
-        private bool optionalFieldSpecified;
-        
-        private string descriptionField;
-        
-        /// <remarks/>
-        public cocoa cocoa {
-            get {
-                return this.cocoaField;
-            }
-            set {
-                this.cocoaField = value;
-            }
+        public cocoa Item {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("type")]
-        public type[] type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
+        public type[] Items {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
         public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn hidden {
-            get {
-                return this.hiddenField;
-            }
-            set {
-                this.hiddenField = value;
-            }
+        public bool hidden {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool hiddenSpecified {
-            get {
-                return this.hiddenFieldSpecified;
-            }
-            set {
-                this.hiddenFieldSpecified = value;
-            }
+        public string type {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute("type", DataType="NMTOKENS")]
-        public string type1 {
-            get {
-                return this.type1Field;
-            }
-            set {
-                this.type1Field = value;
-            }
+        public bool optional {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn optional {
-            get {
-                return this.optionalField;
-            }
-            set {
-                this.optionalField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool optionalSpecified {
-            get {
-                return this.optionalFieldSpecified;
-            }
-            set {
-                this.optionalFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
+			get; set;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
     public partial class result {
         
-        private type[] typeField;
+		public result(XElement element)
+		{
+			this.Items = element.Elements("type").Select(e => new type(e)).ToArray();
+			this.type = (String) element.Attribute("type");
+			this.description = (String) element.Attribute("description");
+		}
         
-        private string baseField;
-        
-        private string type1Field;
-        
-        private string descriptionField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("type")]
-        public type[] type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
+        public type[] Items {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
+        public string type {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute("type", DataType="NMTOKENS")]
-        public string type1 {
-            get {
-                return this.type1Field;
-            }
-            set {
-                this.type1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
+			get; set;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
     public partial class enumeration {
         
-        private cocoa cocoaField;
+		public enumeration(XElement element)
+		{
+			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
+			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
+			this.enumerator = element.Elements("enumerator").Select(e => new enumerator(e)).ToArray();
+			this.xref = element.Elements("xref").Select(e => new xref(e)).ToArray();
+			this.name = (String) element.Attribute("name");
+			this.id = (String) element.Attribute("id");
+			this.code = (String) element.Attribute("code");
+			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
+			this.description = (String) element.Attribute("description");
+			this.inline = (String) element.Attribute("inline");
+		}
         
-        private object[] itemsField;
-        
-        private string baseField;
-        
-        private string nameField;
-        
-        private string idField;
-        
-        private string codeField;
-        
-        private yorn hiddenField;
-        
-        private bool hiddenFieldSpecified;
-        
-        private string descriptionField;
-        
-        private string inlineField;
-        
-        /// <remarks/>
-        public cocoa cocoa {
-            get {
-                return this.cocoaField;
-            }
-            set {
-                this.cocoaField = value;
-            }
+        public cocoa Item {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("documentation", typeof(documentation))]
-        [System.Xml.Serialization.XmlElementAttribute("enumerator", typeof(enumerator))]
-        [System.Xml.Serialization.XmlElementAttribute("xref", typeof(xref))]
-        public object[] Items {
-            get {
-                return this.itemsField;
-            }
-            set {
-                this.itemsField = value;
-            }
+        public documentation[] documentation {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
+        public enumerator[] enumerator {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
+        public xref[] xref {
+			get; set;
+        }
+        
         public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
         public string id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn hidden {
-            get {
-                return this.hiddenField;
-            }
-            set {
-                this.hiddenField = value;
-            }
+        public bool hidden {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool hiddenSpecified {
-            get {
-                return this.hiddenFieldSpecified;
-            }
-            set {
-                this.hiddenFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string inline {
-            get {
-                return this.inlineField;
-            }
-            set {
-                this.inlineField = value;
-            }
+			get; set;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
     public partial class enumerator {
         
-        private cocoa cocoaField;
+		public enumerator(XElement element)
+		{
+			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
+			this.synonym = element.Elements("synonym").Select(e => new synonym(e)).ToArray();
+			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
+			this.name = (String) element.Attribute("name");
+			this.code = (String) element.Attribute("code");
+			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
+			this.description = (String) element.Attribute("description");
+		}
         
-        private synonym[] synonymField;
-        
-        private documentation[] documentationField;
-        
-        private string baseField;
-        
-        private string nameField;
-        
-        private string codeField;
-        
-        private yorn hiddenField;
-        
-        private bool hiddenFieldSpecified;
-        
-        private string descriptionField;
-        
-        /// <remarks/>
-        public cocoa cocoa {
-            get {
-                return this.cocoaField;
-            }
-            set {
-                this.cocoaField = value;
-            }
+        public cocoa Item {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("synonym")]
         public synonym[] synonym {
-            get {
-                return this.synonymField;
-            }
-            set {
-                this.synonymField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("documentation")]
         public documentation[] documentation {
-            get {
-                return this.documentationField;
-            }
-            set {
-                this.documentationField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
         public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn hidden {
-            get {
-                return this.hiddenField;
-            }
-            set {
-                this.hiddenField = value;
-            }
+        public bool hidden {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool hiddenSpecified {
-            get {
-                return this.hiddenFieldSpecified;
-            }
-            set {
-                this.hiddenFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
+			get; set;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
     public partial class @event {
         
-        private cocoa cocoaField;
+		public @event(XElement element)
+		{
+			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
+			this.synonym = element.Elements("synonym").Select(e => new synonym(e)).ToArray();
+			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
+			this.directparameter = element.Element("direct-parameter") != null ? new directparameter(element.Element("direct-parameter")) : null;
+			this.parameter = element.Elements("parameter").Select(e => new parameter(e)).ToArray();
+			this.result = element.Element("result") != null ? new result(element.Element("result")) : null;
+			this.xref = element.Elements("xref").Select(e => new xref(e)).ToArray();
+			this.id = (String) element.Attribute("id");
+			this.name = (String) element.Attribute("name");
+			this.code = (String) element.Attribute("code");
+			this.description = (String) element.Attribute("description");
+			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
+		}
         
-        private synonym[] synonymField;
-        
-        private documentation[] documentationField;
-        
-        private directparameter directparameterField;
-        
-        private object[] itemsField;
-        
-        private result resultField;
-        
-        private documentation[] documentation1Field;
-        
-        private xref[] xrefField;
-        
-        private string baseField;
-        
-        private string nameField;
-        
-        private string idField;
-        
-        private string codeField;
-        
-        private string descriptionField;
-        
-        private yorn hiddenField;
-        
-        private bool hiddenFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public cocoa cocoa {
-            get {
-                return this.cocoaField;
-            }
-            set {
-                this.cocoaField = value;
-            }
+        public cocoa Item {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("synonym", Order=1)]
         public synonym[] synonym {
-            get {
-                return this.synonymField;
-            }
-            set {
-                this.synonymField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("documentation", Order=2)]
         public documentation[] documentation {
-            get {
-                return this.documentationField;
-            }
-            set {
-                this.documentationField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("direct-parameter", Order=3)]
         public directparameter directparameter {
-            get {
-                return this.directparameterField;
-            }
-            set {
-                this.directparameterField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("documentation", typeof(documentation), Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute("parameter", typeof(parameter), Order=4)]
-        public object[] Items {
-            get {
-                return this.itemsField;
-            }
-            set {
-                this.itemsField = value;
-            }
+        public parameter[] parameter {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public result result {
-            get {
-                return this.resultField;
-            }
-            set {
-                this.resultField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("documentation", Order=6)]
-        public documentation[] documentation1 {
-            get {
-                return this.documentation1Field;
-            }
-            set {
-                this.documentation1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("xref", Order=7)]
         public xref[] xref {
-            get {
-                return this.xrefField;
-            }
-            set {
-                this.xrefField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
         public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
         public string id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn hidden {
-            get {
-                return this.hiddenField;
-            }
-            set {
-                this.hiddenField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool hiddenSpecified {
-            get {
-                return this.hiddenFieldSpecified;
-            }
-            set {
-                this.hiddenFieldSpecified = value;
-            }
+        public bool hidden {
+			get; set;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute("record-type", Namespace="", IsNullable=false)]
     public partial class recordtype {
         
-        private cocoa cocoaField;
+		public recordtype(XElement element)
+		{
+			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
+			this.synonym = element.Elements("synonym").Select(e => new synonym(e)).ToArray();
+			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
+			this.property = element.Elements("property").Select(e => new property(e)).ToArray();
+			this.xref = element.Elements("xref").Select(e => new xref(e)).ToArray();
+			this.name = (String) element.Attribute("name");
+			this.id = (String) element.Attribute("id");
+			this.code = (String) element.Attribute("code");
+			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
+			this.plural = (String) element.Attribute("plural");
+			this.description = (String) element.Attribute("description");
+		}
         
-        private synonym[] synonymField;
-        
-        private object[] itemsField;
-        
-        private string baseField;
-        
-        private string nameField;
-        
-        private string idField;
-        
-        private string codeField;
-        
-        private yorn hiddenField;
-        
-        private bool hiddenFieldSpecified;
-        
-        private string pluralField;
-        
-        private string descriptionField;
-        
-        /// <remarks/>
-        public cocoa cocoa {
-            get {
-                return this.cocoaField;
-            }
-            set {
-                this.cocoaField = value;
-            }
+        public cocoa Item {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("synonym")]
         public synonym[] synonym {
-            get {
-                return this.synonymField;
-            }
-            set {
-                this.synonymField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("documentation", typeof(documentation))]
-        [System.Xml.Serialization.XmlElementAttribute("property", typeof(property))]
-        [System.Xml.Serialization.XmlElementAttribute("xref", typeof(xref))]
-        public object[] Items {
-            get {
-                return this.itemsField;
-            }
-            set {
-                this.itemsField = value;
-            }
+        public documentation[] documentation {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
+        public property[] property {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
+        public xref[] xref {
+			get; set;
+        }
+        
         public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
         public string id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn hidden {
-            get {
-                return this.hiddenField;
-            }
-            set {
-                this.hiddenField = value;
-            }
+        public bool hidden {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool hiddenSpecified {
-            get {
-                return this.hiddenFieldSpecified;
-            }
-            set {
-                this.hiddenFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
         public string plural {
-            get {
-                return this.pluralField;
-            }
-            set {
-                this.pluralField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
+			get; set;
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "2.0.50727.3038")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    [System.Xml.Serialization.XmlRootAttribute("value-type", Namespace="", IsNullable=false)]
     public partial class valuetype {
         
-        private cocoa cocoaField;
+		public valuetype(XElement element)
+		{
+			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
+			this.synonym = element.Elements("synonym").Select(e => new synonym(e)).ToArray();
+			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
+			this.xref = element.Elements("xref").Select(e => new xref(e)).ToArray();
+			this.name = (String) element.Attribute("name");
+			this.id = (String) element.Attribute("id");
+			this.code = (String) element.Attribute("code");
+			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
+			this.plural = (String) element.Attribute("plural");
+			this.description = (String) element.Attribute("description");
+		}
         
-        private synonym[] synonymField;
-        
-        private documentation[] documentationField;
-        
-        private xref[] xrefField;
-        
-        private string baseField;
-        
-        private string nameField;
-        
-        private string idField;
-        
-        private string codeField;
-        
-        private yorn hiddenField;
-        
-        private bool hiddenFieldSpecified;
-        
-        private string pluralField;
-        
-        private string descriptionField;
-        
-        /// <remarks/>
-        public cocoa cocoa {
-            get {
-                return this.cocoaField;
-            }
-            set {
-                this.cocoaField = value;
-            }
+        public cocoa Item {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("synonym")]
         public synonym[] synonym {
-            get {
-                return this.synonymField;
-            }
-            set {
-                this.synonymField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("documentation")]
         public documentation[] documentation {
-            get {
-                return this.documentationField;
-            }
-            set {
-                this.documentationField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("xref")]
         public xref[] xref {
-            get {
-                return this.xrefField;
-            }
-            set {
-                this.xrefField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://www.w3.org/XML/1998/namespace")]
-        public string @base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
         public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
         public string id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public yorn hidden {
-            get {
-                return this.hiddenField;
-            }
-            set {
-                this.hiddenField = value;
-            }
+        public bool hidden {
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool hiddenSpecified {
-            get {
-                return this.hiddenFieldSpecified;
-            }
-            set {
-                this.hiddenFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="NMTOKENS")]
         public string plural {
-            get {
-                return this.pluralField;
-            }
-            set {
-                this.pluralField = value;
-            }
+			get; set;
         }
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-            }
+			get; set;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -27,6 +27,7 @@ using Microsoft.CSharp;
 using Microsoft.VisualBasic;
 using Monobjc.Tools.Sdp.Model;
 using Mvp.Xml.XInclude;
+using System.Xml.Linq;
 
 namespace Monobjc.Tools.Sdp.Generation
 {
@@ -71,56 +72,56 @@ namespace Monobjc.Tools.Sdp.Generation
         /// <param name = "inputFile">The input file.</param>
         public void Generate(String prefix, String inputFile)
         {
-            String workFile = Path.GetTempFileName();
             String outputFile = prefix + "." + this.Extension;
+			String workingFile = Path.ChangeExtension(inputFile, ".xml");
             if (!File.Exists(inputFile))
             {
                 throw new ArgumentException("Input file not found: " + inputFile);
             }
 
             // Use a XInclude compliant parser to load all the inclusions
-            Console.WriteLine("Parsing '" + inputFile + "' ...");
+            Console.WriteLine("Processing '" + inputFile + "' ...");
             using (XIncludingReader reader = new XIncludingReader(inputFile))
             {
+				// Load the definition file
+				// All the XInclude extensions will be unfolded
                 XmlDocument doc = new XmlDocument();
                 doc.Load(reader);
-                doc.Save(workFile);
-            }
+				
+				// Remove "xml:base attribute"
+				// This cause error when using XmlSerializer
+				RemoveXmlBase (doc.DocumentElement);
+				
+				doc.Save(workingFile);
+				
+				// Convert the document to a Linq compatible object
+				XDocument xDoc = ToXDocument(doc);
 
-            // Process the input file
-            Console.WriteLine("Processing '" + inputFile + "' ...");
-            using (TextReader reader = new StreamReader(workFile))
-            {
+				// Output the code
                 using (TextWriter writer = new StreamWriter(outputFile))
                 {
-                    this.Generate(prefix, reader, writer);
-                }
+                    this.Generate(prefix, xDoc, writer);
+				}				
             }
         }
-
-        /// <summary>
-        ///   Generates a wrapper.
-        /// </summary>
-        /// <param name = "prefix">The prefix.</param>
-        /// <param name = "reader">The reader.</param>
-        /// <param name = "writer">The writer.</param>
-        public void Generate(String prefix, TextReader reader, TextWriter writer)
-        {
-            //XmlSerializer serializer = new XmlSerializer(typeof(dictionary));
-            XmlSerializer serializer = new dictionarySerializer();
-            dictionary dictionary = serializer.Deserialize(reader) as dictionary;
-
-            if (dictionary == null)
+		
+		public void Generate(String prefix, XDocument document, TextWriter writer)
+		{
+			XElement root = document.Element("dictionary");
+            if (root == null)
             {
                 return;
             }
-
-            IEnumerable<@class> classes = dictionary.suite.Where(s => s.Items != null).SelectMany(s => s.Items).Where(i => i is @class).Cast<@class>();
-            IEnumerable<classextension> classExtensions = dictionary.suite.Where(s => s.Items != null).SelectMany(s => s.Items).Where(i => i is classextension).Cast<classextension>();
-            IEnumerable<command> commands = dictionary.suite.Where(s => s.Items != null).SelectMany(s => s.Items).Where(i => i is command).Cast<command>();
-            IEnumerable<enumeration> enumerations = dictionary.suite.Where(s => s.Items != null).SelectMany(s => s.Items).Where(i => i is enumeration).Cast<enumeration>();
+			
+			dictionary dictionary = new dictionary(root);
+			
+			IEnumerable<@class> classes = dictionary.suite.SelectMany(suite => suite.@class);
+			IEnumerable<classextension> classExtensions = dictionary.suite.SelectMany(suite => suite.classextension);
+			IEnumerable<command> commands = dictionary.suite.SelectMany(suite => suite.command);
+			IEnumerable<enumeration> enumerations = dictionary.suite.SelectMany(suite => suite.enumeration);
             GenerationContext context = new GenerationContext(prefix, classes, classExtensions, commands, enumerations);
-
+			context.Merge();
+			
             // Create the compilation unit
             CodeCompileUnit compileUnit = this.Generate(context);
 
@@ -134,8 +135,8 @@ namespace Monobjc.Tools.Sdp.Generation
                 options.VerbatimOrder = true;
                 this.provider.GenerateCodeFromCompileUnit(compileUnit, tw, new CodeGeneratorOptions());
             }
-        }
-
+		}
+		
         private String Extension
         {
             get { return this.provider.FileExtension; }
@@ -193,7 +194,7 @@ namespace Monobjc.Tools.Sdp.Generation
             typeDeclaration.IsEnum = true;
             typeDeclaration.BaseTypes.Add(typeof (uint));
 
-            IEnumerable<enumerator> values = enumeration.Items.Where(i => i is enumerator).Cast<enumerator>();
+            IEnumerable<enumerator> values = enumeration.enumerator;
             foreach (enumerator value in values)
             {
                 CodeMemberField memberField = new CodeMemberField();
@@ -339,8 +340,8 @@ namespace Monobjc.Tools.Sdp.Generation
             // Generate getter
             switch (property.access)
             {
-                case propertyAccess.r:
-                case propertyAccess.rw:
+                case "r":
+                case "rw":
                     {
                         String selector = NamingHelper.GenerateObjCName(property.name);
 
@@ -359,8 +360,8 @@ namespace Monobjc.Tools.Sdp.Generation
             // Generate setter
             switch (property.access)
             {
-                case propertyAccess.rw:
-                case propertyAccess.w:
+                case "rw":
+                case "w":
                     {
                         String selector = "set" + propertyName + ":";
 
@@ -383,7 +384,7 @@ namespace Monobjc.Tools.Sdp.Generation
             bool isApplication = GenerationContext.IsApplicationClass(cls);
             String returnType = context.ConvertType(GenerationContext.GetType(command.result) ?? "void", true);
             bool hasReturnType = returnType != "void";
-            bool useDirectParameter = isApplication && command.directparameter != null && command.directparameter.type1 != "specifier";
+            bool useDirectParameter = isApplication && command.directparameter != null && command.directparameter.type != "specifier";
             String methodName = NamingHelper.GenerateDotNetMethodsName(command);
 
             // Define various references
@@ -450,5 +451,30 @@ namespace Monobjc.Tools.Sdp.Generation
 
             return memberMethod;
         }
-    }
+		
+		private static void RemoveXmlBase (XmlDocument document)
+		{
+			RemoveXmlBase (document.DocumentElement);
+		}
+		
+		private static void RemoveXmlBase (XmlElement element)
+		{
+			element.RemoveAttribute ("xml:base");
+			if (!element.HasChildNodes) {
+				return;
+			}
+			IEnumerable<XmlElement> children = element.ChildNodes.OfType<XmlElement> ();
+			foreach (XmlElement child in children) {
+				RemoveXmlBase (child);
+			}
+		}
+		
+		private static XDocument ToXDocument (XmlDocument xmlDocument)
+		{
+			using (XmlNodeReader nodeReader = new XmlNodeReader(xmlDocument)) {
+				nodeReader.MoveToContent ();
+				return XDocument.Load (nodeReader);
+			}
+		}		
+	}
 }

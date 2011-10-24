@@ -13,16 +13,16 @@
 	"xmlns:xi	CDATA	#FIXED 'http://www.w3.org/2003/XInclude'
 	 xml:base	CDATA	#IMPLIED">
 
+<!-- DOCUMENTATION ELEMENTS -->
+<!ELEMENT documentation (html*)>
+<!ELEMENT html (#PCDATA)>
+
 <!-- DICTIONARY (ROOT ELEMENT) -->
 <!ELEMENT dictionary (documentation*, suite+)>
 <!ATTLIST dictionary
   %common.attrib;
   title      CDATA           #IMPLIED 
   >
-
-<!-- DOCUMENTATION ELEMENTS -->
-<!ELEMENT documentation (html*)>
-<!ELEMENT html (#PCDATA)>
 
 <!ELEMENT xref EMPTY>
 <!ATTLIST xref
