@@ -2,6 +2,7 @@
 using System.Xml;
 using System.Xml.Linq;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Monobjc.Tools.Sdp.Model {
     
@@ -9,16 +10,16 @@ namespace Monobjc.Tools.Sdp.Model {
         
 		public dictionary(XElement element)
 		{
-			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
-			this.suite = element.Elements("suite").Select(e => new suite(e)).ToArray();
+			this.documentation = new List<documentation>(element.Elements("documentation").Select(e => new documentation(e)));
+			this.suite = new List<suite>(element.Elements("suite").Select(e => new suite(e)));
 			this.title = (String) element.Attribute("title");
 		}
 		
-        public documentation[] documentation {
+        public IList<documentation> documentation {
 			get; set;
         }
         
-        public suite[] suite {
+        public IList<suite> suite {
 			get; set;
         }
         
@@ -31,10 +32,10 @@ namespace Monobjc.Tools.Sdp.Model {
         
 		public documentation(XElement element)
 		{
-			this.Items = element.Elements("html").Select(e => new html(e)).ToArray();
+			this.Items = new List<html>(element.Elements("html").Select(e => new html(e)));
 		}
 		
-        public html[] Items {
+        public IList<html> Items {
 			get; set;
         }
     }
@@ -43,10 +44,10 @@ namespace Monobjc.Tools.Sdp.Model {
         
 		public html(XElement element)
 		{
-			this.Text = element.Nodes().OfType<XText>().Select(n => n.Value).ToArray();
+			this.Text = new List<String>(element.Nodes().OfType<XText>().Select(n => n.Value));
 		}
 		
-        public string[] Text {
+        public IList<String> Text {
 			get; set;
         }
     }
@@ -56,14 +57,14 @@ namespace Monobjc.Tools.Sdp.Model {
 		public suite(XElement element)
 		{
 			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
-			this.@class = element.Elements("class").Select(e => new @class(e)).ToArray();
-			this.classextension = element.Elements("class-extension").Select(e => new classextension(e)).ToArray();
-			this.command = element.Elements("command").Select(e => new command(e)).ToArray();
-			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
-			this.enumeration = element.Elements("enumeration").Select(e => new enumeration(e)).ToArray();
-			this.@event = element.Elements("event").Select(e => new @event(e)).ToArray();
-			this.recordtype = element.Elements("record-type").Select(e => new recordtype(e)).ToArray();
-			this.valuetype = element.Elements("value-type").Select(e => new valuetype(e)).ToArray();
+			this.@class = new List<@class>(element.Elements("class").Select(e => new @class(e)));
+			this.classextension = new List<classextension>(element.Elements("class-extension").Select(e => new classextension(e)));
+			this.command = new List<command>(element.Elements("command").Select(e => new command(e)));
+			this.documentation = new List<documentation>(element.Elements("documentation").Select(e => new documentation(e)));
+			this.enumeration = new List<enumeration>(element.Elements("enumeration").Select(e => new enumeration(e)));
+			this.@event = new List<@event>(element.Elements("event").Select(e => new @event(e)));
+			this.recordtype = new List<recordtype>(element.Elements("record-type").Select(e => new recordtype(e)));
+			this.valuetype = new List<valuetype>(element.Elements("value-type").Select(e => new valuetype(e)));
 			this.name = (String) element.Attribute("name");
 			this.code = (String) element.Attribute("code");
 			this.description = (String) element.Attribute("description");
@@ -74,35 +75,35 @@ namespace Monobjc.Tools.Sdp.Model {
 			get; set;
         }
         
-        public @class[] @class {
+        public IList<@class> @class {
 			get; set;
         }
         
-        public classextension[] classextension {
+        public IList<classextension> classextension {
 			get; set;
         }
         
-        public command[] command {
+        public IList<command> command {
 			get; set;
         }
         
-        public documentation[] documentation {
+        public IList<documentation> documentation {
 			get; set;
         }
         
-        public enumeration[] enumeration {
+        public IList<enumeration> enumeration {
 			get; set;
         }
         
-        public @event[] @event {
+        public IList<@event> @event {
 			get; set;
         }
         
-        public recordtype[] recordtype {
+        public IList<recordtype> recordtype {
 			get; set;
         }
         
-        public valuetype[] valuetype {
+        public IList<valuetype> valuetype {
 			get; set;
         }
         
@@ -175,13 +176,13 @@ namespace Monobjc.Tools.Sdp.Model {
 		public @class(XElement element)
 		{
 			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
-			this.contents = element.Elements("contents").Select(e => new contents(e)).ToArray();
-			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
-			this.element = element.Elements("element").Select(e => new element(e)).ToArray();
-			this.property = element.Elements("property").Select(e => new property(e)).ToArray();
-			this.respondsto = element.Elements("respondsto").Select(e => new respondsto(e)).ToArray();
-			this.synonym = element.Elements("synonym").Select(e => new synonym(e)).ToArray();
-			this.xref = element.Elements("xref").Select(e => new xref(e)).ToArray();
+			this.contents = new List<contents>(element.Elements("contents").Select(e => new contents(e)));
+			this.documentation = new List<documentation>(element.Elements("documentation").Select(e => new documentation(e)));
+			this.element = new List<element>(element.Elements("element").Select(e => new element(e)));
+			this.property = new List<property>(element.Elements("property").Select(e => new property(e)));
+			this.respondsto = new List<respondsto>(element.Elements("respondsto").Select(e => new respondsto(e)));
+			this.synonym = new List<synonym>(element.Elements("synonym").Select(e => new synonym(e)));
+			this.xref = new List<xref>(element.Elements("xref").Select(e => new xref(e)));
 			this.name = (String) element.Attribute("name");
 			this.id = (String) element.Attribute("id");
 			this.code = (String) element.Attribute("code");
@@ -195,31 +196,31 @@ namespace Monobjc.Tools.Sdp.Model {
 			get; set;
         }
         
-		public contents[] contents {
+		public IList<contents> contents {
 			get; set;
 		}
 		
-		public documentation[] documentation {
+		public IList<documentation> documentation {
 			get; set;
 		}
 		
-		public element[] element {
+		public IList<element> element {
 			get; set;
 		}
 		
-		public property[] property {
+		public IList<property> property {
 			get; set;
 		}
 		
-		public respondsto[] respondsto {
+		public IList<respondsto> respondsto {
 			get; set;
 		}
 		
-		public synonym[] synonym {
+		public IList<synonym> synonym {
 			get; set;
 		}
 		
-		public xref[] xref {
+		public IList<xref> xref {
 			get; set;
 		}
 		
@@ -257,7 +258,7 @@ namespace Monobjc.Tools.Sdp.Model {
 		public contents(XElement element)
 		{
 			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
-			this.Items = element.Elements("type").Select(e => new type(e)).ToArray();
+			this.Items = new List<type>(element.Elements("type").Select(e => new type(e)));
 			this.name = (String) element.Attribute("name");
 			this.code = (String) element.Attribute("code");
 			this.type = (String) element.Attribute("type");
@@ -270,7 +271,7 @@ namespace Monobjc.Tools.Sdp.Model {
 			get; set;
         }
         
-        public type[] Items {
+        public IList<type> Items {
 			get; set;
         }
         
@@ -326,7 +327,7 @@ namespace Monobjc.Tools.Sdp.Model {
 		public element(XElement element)
 		{
 			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
-			this.accessor = element.Elements("accessor").Select(e => new accessor(e)).ToArray();
+			this.accessor = new List<accessor>(element.Elements("accessor").Select(e => new accessor(e)));
 			this.type = (String) element.Attribute("type");
 			this.access = (String) element.Attribute("access");
 			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
@@ -337,7 +338,7 @@ namespace Monobjc.Tools.Sdp.Model {
 			get; set;
         }
         
-        public accessor[] accessor {
+        public IList<accessor> accessor {
 			get; set;
         }
         
@@ -375,9 +376,9 @@ namespace Monobjc.Tools.Sdp.Model {
 		public property(XElement element)
 		{
 			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
-			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
-			this.synonym = element.Elements("synonym").Select(e => new synonym(e)).ToArray();
-			this.Items = element.Elements("type").Select(e => new type(e)).ToArray();
+			this.documentation = new List<documentation>(element.Elements("documentation").Select(e => new documentation(e)));
+			this.synonym = new List<synonym>(element.Elements("synonym").Select(e => new synonym(e)));
+			this.Items = new List<type>(element.Elements("type").Select(e => new type(e)));
 			this.name = (String) element.Attribute("name");
 			this.code = (String) element.Attribute("code");
 			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
@@ -391,15 +392,15 @@ namespace Monobjc.Tools.Sdp.Model {
 			get; set;
         }
         
-        public documentation[] documentation {
+        public IList<documentation> documentation {
 			get; set;
         }
         
-        public synonym[] synonym {
+        public IList<synonym> synonym {
 			get; set;
         }
         
-        public type[] Items {
+        public IList<type> Items {
 			get; set;
         }
         
@@ -508,13 +509,13 @@ namespace Monobjc.Tools.Sdp.Model {
 		public classextension(XElement element)
 		{
 			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
-			this.contents = element.Elements("contents").Select(e => new contents(e)).ToArray();
-			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
-			this.element = element.Elements("element").Select(e => new element(e)).ToArray();
-			this.property = element.Elements("property").Select(e => new property(e)).ToArray();
-			this.respondsto = element.Elements("respondsto").Select(e => new respondsto(e)).ToArray();
-			this.synonym = element.Elements("synonym").Select(e => new synonym(e)).ToArray();
-			this.xref = element.Elements("xref").Select(e => new xref(e)).ToArray();
+			this.contents = new List<contents>(element.Elements("contents").Select(e => new contents(e)));
+			this.documentation = new List<documentation>(element.Elements("documentation").Select(e => new documentation(e)));
+			this.element = new List<element>(element.Elements("element").Select(e => new element(e)));
+			this.property = new List<property>(element.Elements("property").Select(e => new property(e)));
+			this.respondsto = new List<respondsto>(element.Elements("respondsto").Select(e => new respondsto(e)));
+			this.synonym = new List<synonym>(element.Elements("synonym").Select(e => new synonym(e)));
+			this.xref = new List<xref>(element.Elements("xref").Select(e => new xref(e)));
 			this.id = (String) element.Attribute("id");
 			this.extends = (String) element.Attribute("extends");
 			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
@@ -525,31 +526,31 @@ namespace Monobjc.Tools.Sdp.Model {
 			get; set;
         }
         
-        public contents[] contents {
+        public IList<contents> contents {
 			get; set;
         }
         
-        public documentation[] documentation {
+        public IList<documentation> documentation {
 			get; set;
         }
         
-        public element[] element {
+        public IList<element> element {
 			get; set;
         }
         
-        public property[] property {
+        public IList<property> property {
 			get; set;
         }
         
-        public respondsto[] respondsto {
+        public IList<respondsto> respondsto {
 			get; set;
         }
         
-        public synonym[] synonym {
+        public IList<synonym> synonym {
 			get; set;
         }
         
-        public xref[] xref {
+        public IList<xref> xref {
 			get; set;
         }
         
@@ -575,12 +576,12 @@ namespace Monobjc.Tools.Sdp.Model {
 		public command(XElement element)
 		{
 			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
-			this.synonym = element.Elements("synonym").Select(e => new synonym(e)).ToArray();
+			this.synonym = new List<synonym>(element.Elements("synonym").Select(e => new synonym(e)));
 			this.directparameter = element.Element("direct-parameter") != null ? new directparameter(element.Element("direct-parameter")) : null;
-			this.parameter = element.Elements("parameter").Select(e => new parameter(e)).ToArray();
+			this.parameter = new List<parameter>(element.Elements("parameter").Select(e => new parameter(e)));
 			this.result = element.Element("result") != null ? new result(element.Element("result")) : null;
-			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
-			this.xref = element.Elements("xref").Select(e => new xref(e)).ToArray();
+			this.documentation = new List<documentation>(element.Elements("documentation").Select(e => new documentation(e)));
+			this.xref = new List<xref>(element.Elements("xref").Select(e => new xref(e)));
 			this.name = (String) element.Attribute("name");
 			this.id = (String) element.Attribute("id");
 			this.code = (String) element.Attribute("code");
@@ -592,7 +593,7 @@ namespace Monobjc.Tools.Sdp.Model {
 			get; set;
         }
         
-        public synonym[] synonym {
+        public IList<synonym> synonym {
 			get; set;
         }
         
@@ -600,7 +601,7 @@ namespace Monobjc.Tools.Sdp.Model {
 			get; set;
         }
         
-        public parameter[] parameter {
+        public IList<parameter> parameter {
 			get; set;
         }
         
@@ -608,11 +609,11 @@ namespace Monobjc.Tools.Sdp.Model {
 			get; set;
         }
         
-        public documentation[] documentation {
+        public IList<documentation> documentation {
 			get; set;
         }
         
-        public xref[] xref {
+        public IList<xref> xref {
 			get; set;
         }
         
@@ -641,13 +642,13 @@ namespace Monobjc.Tools.Sdp.Model {
         
 		public directparameter(XElement element)
 		{
-			this.Items = element.Elements("type").Select(e => new type(e)).ToArray();
+			this.Items = new List<type>(element.Elements("type").Select(e => new type(e)));
 			this.type = (String) element.Attribute("type");
 			this.optional = "yes".Equals((String) element.Attribute("optional"), StringComparison.OrdinalIgnoreCase);
 			this.description = (String) element.Attribute("description");
 		}
         
-        public type[] Items {
+        public IList<type> Items {
 			get; set;
         }
         
@@ -669,7 +670,7 @@ namespace Monobjc.Tools.Sdp.Model {
 		public parameter(XElement element)
 		{
 			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
-			this.Items = element.Elements("type").Select(e => new type(e)).ToArray();
+			this.Items = new List<type>(element.Elements("type").Select(e => new type(e)));
 			this.name = (String) element.Attribute("name");
 			this.code = (String) element.Attribute("code");
 			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
@@ -682,7 +683,7 @@ namespace Monobjc.Tools.Sdp.Model {
 			get; set;
         }
         
-        public type[] Items {
+        public IList<type> Items {
 			get; set;
         }
         
@@ -715,12 +716,12 @@ namespace Monobjc.Tools.Sdp.Model {
         
 		public result(XElement element)
 		{
-			this.Items = element.Elements("type").Select(e => new type(e)).ToArray();
+			this.Items = new List<type>(element.Elements("type").Select(e => new type(e)));
 			this.type = (String) element.Attribute("type");
 			this.description = (String) element.Attribute("description");
 		}
         
-        public type[] Items {
+        public IList<type> Items {
 			get; set;
         }
         
@@ -738,9 +739,9 @@ namespace Monobjc.Tools.Sdp.Model {
 		public enumeration(XElement element)
 		{
 			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
-			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
-			this.enumerator = element.Elements("enumerator").Select(e => new enumerator(e)).ToArray();
-			this.xref = element.Elements("xref").Select(e => new xref(e)).ToArray();
+			this.documentation = new List<documentation>(element.Elements("documentation").Select(e => new documentation(e)));
+			this.enumerator = new List<enumerator>(element.Elements("enumerator").Select(e => new enumerator(e)));
+			this.xref = new List<xref>(element.Elements("xref").Select(e => new xref(e)));
 			this.name = (String) element.Attribute("name");
 			this.id = (String) element.Attribute("id");
 			this.code = (String) element.Attribute("code");
@@ -753,15 +754,15 @@ namespace Monobjc.Tools.Sdp.Model {
 			get; set;
         }
         
-        public documentation[] documentation {
+        public IList<documentation> documentation {
 			get; set;
         }
         
-        public enumerator[] enumerator {
+        public IList<enumerator> enumerator {
 			get; set;
         }
         
-        public xref[] xref {
+        public IList<xref> xref {
 			get; set;
         }
         
@@ -795,8 +796,8 @@ namespace Monobjc.Tools.Sdp.Model {
 		public enumerator(XElement element)
 		{
 			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
-			this.synonym = element.Elements("synonym").Select(e => new synonym(e)).ToArray();
-			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
+			this.synonym = new List<synonym>(element.Elements("synonym").Select(e => new synonym(e)));
+			this.documentation = new List<documentation>(element.Elements("documentation").Select(e => new documentation(e)));
 			this.name = (String) element.Attribute("name");
 			this.code = (String) element.Attribute("code");
 			this.hidden = "yes".Equals((String) element.Attribute("hidden"), StringComparison.OrdinalIgnoreCase);
@@ -807,11 +808,11 @@ namespace Monobjc.Tools.Sdp.Model {
 			get; set;
         }
         
-        public synonym[] synonym {
+        public IList<synonym> synonym {
 			get; set;
         }
         
-        public documentation[] documentation {
+        public IList<documentation> documentation {
 			get; set;
         }
         
@@ -837,12 +838,12 @@ namespace Monobjc.Tools.Sdp.Model {
 		public @event(XElement element)
 		{
 			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
-			this.synonym = element.Elements("synonym").Select(e => new synonym(e)).ToArray();
-			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
+			this.synonym = new List<synonym>(element.Elements("synonym").Select(e => new synonym(e)));
+			this.documentation = new List<documentation>(element.Elements("documentation").Select(e => new documentation(e)));
 			this.directparameter = element.Element("direct-parameter") != null ? new directparameter(element.Element("direct-parameter")) : null;
-			this.parameter = element.Elements("parameter").Select(e => new parameter(e)).ToArray();
+			this.parameter = new List<parameter>(element.Elements("parameter").Select(e => new parameter(e)));
 			this.result = element.Element("result") != null ? new result(element.Element("result")) : null;
-			this.xref = element.Elements("xref").Select(e => new xref(e)).ToArray();
+			this.xref = new List<xref>(element.Elements("xref").Select(e => new xref(e)));
 			this.id = (String) element.Attribute("id");
 			this.name = (String) element.Attribute("name");
 			this.code = (String) element.Attribute("code");
@@ -854,11 +855,11 @@ namespace Monobjc.Tools.Sdp.Model {
 			get; set;
         }
         
-        public synonym[] synonym {
+        public IList<synonym> synonym {
 			get; set;
         }
         
-        public documentation[] documentation {
+        public IList<documentation> documentation {
 			get; set;
         }
         
@@ -866,7 +867,7 @@ namespace Monobjc.Tools.Sdp.Model {
 			get; set;
         }
         
-        public parameter[] parameter {
+        public IList<parameter> parameter {
 			get; set;
         }
         
@@ -874,7 +875,7 @@ namespace Monobjc.Tools.Sdp.Model {
 			get; set;
         }
         
-        public xref[] xref {
+        public IList<xref> xref {
 			get; set;
         }
         
@@ -904,10 +905,10 @@ namespace Monobjc.Tools.Sdp.Model {
 		public recordtype(XElement element)
 		{
 			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
-			this.synonym = element.Elements("synonym").Select(e => new synonym(e)).ToArray();
-			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
-			this.property = element.Elements("property").Select(e => new property(e)).ToArray();
-			this.xref = element.Elements("xref").Select(e => new xref(e)).ToArray();
+			this.synonym = new List<synonym>(element.Elements("synonym").Select(e => new synonym(e)));
+			this.documentation = new List<documentation>(element.Elements("documentation").Select(e => new documentation(e)));
+			this.property = new List<property>(element.Elements("property").Select(e => new property(e)));
+			this.xref = new List<xref>(element.Elements("xref").Select(e => new xref(e)));
 			this.name = (String) element.Attribute("name");
 			this.id = (String) element.Attribute("id");
 			this.code = (String) element.Attribute("code");
@@ -920,19 +921,19 @@ namespace Monobjc.Tools.Sdp.Model {
 			get; set;
         }
         
-        public synonym[] synonym {
+        public IList<synonym> synonym {
 			get; set;
         }
         
-        public documentation[] documentation {
+        public IList<documentation> documentation {
 			get; set;
         }
         
-        public property[] property {
+        public IList<property> property {
 			get; set;
         }
         
-        public xref[] xref {
+        public IList<xref> xref {
 			get; set;
         }
         
@@ -966,9 +967,9 @@ namespace Monobjc.Tools.Sdp.Model {
 		public valuetype(XElement element)
 		{
 			this.Item = element.Element("cocoa") != null ? new cocoa(element.Element("cocoa")) : null;
-			this.synonym = element.Elements("synonym").Select(e => new synonym(e)).ToArray();
-			this.documentation = element.Elements("documentation").Select(e => new documentation(e)).ToArray();
-			this.xref = element.Elements("xref").Select(e => new xref(e)).ToArray();
+			this.synonym = new List<synonym>(element.Elements("synonym").Select(e => new synonym(e)));
+			this.documentation = new List<documentation>(element.Elements("documentation").Select(e => new documentation(e)));
+			this.xref = new List<xref>(element.Elements("xref").Select(e => new xref(e)));
 			this.name = (String) element.Attribute("name");
 			this.id = (String) element.Attribute("id");
 			this.code = (String) element.Attribute("code");
@@ -981,15 +982,15 @@ namespace Monobjc.Tools.Sdp.Model {
 			get; set;
         }
         
-        public synonym[] synonym {
+        public IList<synonym> synonym {
 			get; set;
         }
         
-        public documentation[] documentation {
+        public IList<documentation> documentation {
 			get; set;
         }
         
-        public xref[] xref {
+        public IList<xref> xref {
 			get; set;
         }
         

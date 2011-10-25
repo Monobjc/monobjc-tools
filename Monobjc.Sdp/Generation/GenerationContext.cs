@@ -73,15 +73,42 @@ namespace Monobjc.Tools.Sdp.Generation
 		
 		public void Merge()
 		{
-			// Merge classes that have the same name
+			// Copy classes list
+			IList<@class> allClasses = new List<@class>(this.Classes);
 			
+			// Get application classes
+			IList<@class> applicationClasses = this.Classes.Where(c => IsApplicationClass(c)).ToList();
+			if (applicationClasses.Count == 0) {
+                throw new NotSupportedException("No application class found");
+			}
 			
+			@class mainApplicationClass = applicationClasses[0];
+			for(int i = 1; i < applicationClasses.Count; i++) {
+				@class cls = applicationClasses[i];
+				
+				foreach(element element in cls.element) {
+					if (mainApplicationClass.element.Any(e => e.type == element.type)) {
+						continue;
+					}
+					mainApplicationClass.element.Add(element);
+				}
+				foreach(property property in cls.property) {
+					if (mainApplicationClass.property.Any(p => p.name == property.name)) {
+						continue;
+					}
+					mainApplicationClass.property.Add(property);
+				}
+				
+				allClasses.Remove(cls);
+			}
+			
+			this.Classes = allClasses;
 		}
 		
         /// <summary>
         ///   Gets the class extension for the given class.
         /// </summary>
-        private IEnumerable<classextension> GetClassExtensionFor(@class cls)
+        public IEnumerable<classextension> GetClassExtensionFor(@class cls)
         {
             return this.ClassExtensions.Where(classExtension => String.Equals(classExtension.extends, cls.name));
         }
@@ -93,18 +120,11 @@ namespace Monobjc.Tools.Sdp.Generation
         {
             List<element> items = new List<element>();
 			
-			// Iterate over each class so we catch extensions
-			foreach(@class clazz in this.Classes) {
-				if (clazz.name != cls.name) {
-					continue;
-				}
-				
-	            // Add class items if any
-	            if (clazz.element != null)
-	            {
-	                items.AddRange(cls.element);
-	            }
-			}
+            // Add class items if any
+            if (cls.element != null)
+            {
+                items.AddRange(cls.element);
+            }
 			
             // Add extension items if any
             IEnumerable<element> extensionItems = this.GetClassExtensionFor(cls).Where(c => c.element != null).SelectMany(c => c.element);
@@ -162,18 +182,11 @@ namespace Monobjc.Tools.Sdp.Generation
         {
             List<property> items = new List<property>();
 
-			// Iterate over each class so we catch extensions
-			foreach(@class clazz in this.Classes) {
-				if (clazz.name != cls.name) {
-					continue;
-				}
-				
-	            // Add class items if any
-	            if (clazz.property != null)
-	            {
-	                items.AddRange(cls.property);
-	            }
-			}
+            // Add class items if any
+            if (cls.property != null)
+            {
+                items.AddRange(cls.property);
+            }
 
             // Add extension items if any
             IEnumerable<property> extensionItems = this.GetClassExtensionFor(cls).Where(c => c.property != null).SelectMany(c => c.property);
@@ -249,7 +262,7 @@ namespace Monobjc.Tools.Sdp.Generation
                         continue;
                     }
 
-                    String type = item.directparameter.type ?? item.directparameter.Items[0].type1;
+                    String type = GetType(item.directparameter);
                     if (type == "specifier" && isObject)
                     {
                         yield return item;
@@ -271,7 +284,7 @@ namespace Monobjc.Tools.Sdp.Generation
         /// </returns>
         public static bool IsApplicationClass(@class cls)
         {
-            return cls.name == "application" && String.IsNullOrEmpty(cls.inherits);
+            return cls.name == "application";
         }
 
         /// <summary>
@@ -365,19 +378,38 @@ namespace Monobjc.Tools.Sdp.Generation
         public String ConvertType(String type, bool anyType)
         {
             String result = type;
-            bool replaced = false;
+
+            // Search for a known class or enumeration
+            @class typeCls = (from cls in this.Classes
+                              where (cls.id != null && String.Equals(cls.id, type))
+                                    || (cls.id == null && String.Equals(cls.name, type))
+                              select cls).FirstOrDefault();
+            enumeration typeEnumeration = (from enm in this.Enumerations
+                                           where (enm.id != null && String.Equals(enm.id, type))
+                                                 || (enm.id == null && String.Equals(enm.name, type))
+                                           select enm).FirstOrDefault();
+
+            if (typeCls != null)
+            {
+                result = NamingHelper.GenerateDotNetName(this.Prefix, typeCls.name);
+				return result;
+            }
+            else if (typeEnumeration != null)
+            {
+                result = NamingHelper.GenerateDotNetName(this.Prefix, typeEnumeration.name);
+				return result;
+            }
 
             if (anyType)
             {
                 // Search for a common type
-                replaced = true;
                 switch (type)
                 {
                     case "void":
                         result = "void";
                         break;
                     case "boolean":
-                        result = "bool";
+                        result = "Boolean";
                         break;
                     case "integer":
                     case "unsigned integer":
@@ -433,30 +465,7 @@ namespace Monobjc.Tools.Sdp.Generation
                         break;
                     default:
                         result = "Id";
-                        replaced = false;
                         break;
-                }
-            }
-
-            // If not replaced, then search for a known class or enumeration
-            if (!replaced)
-            {
-                @class typeCls = (from cls in this.Classes
-                                  where (cls.id != null && String.Equals(cls.id, type))
-                                        || (cls.id == null && String.Equals(cls.name, type))
-                                  select cls).FirstOrDefault();
-                enumeration typeEnumeration = (from enm in this.Enumerations
-                                               where (enm.id != null && String.Equals(enm.id, type))
-                                                     || (enm.id == null && String.Equals(enm.name, type))
-                                               select enm).FirstOrDefault();
-
-                if (typeCls != null)
-                {
-                    result = NamingHelper.GenerateDotNetName(this.Prefix, typeCls.name);
-                }
-                else if (typeEnumeration != null)
-                {
-                    result = NamingHelper.GenerateDotNetName(this.Prefix, typeEnumeration.name);
                 }
             }
 
