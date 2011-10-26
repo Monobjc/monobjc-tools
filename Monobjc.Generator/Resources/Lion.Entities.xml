@@ -1240,6 +1240,7 @@
       <Class name="NSLayoutConstraint">
         <Patch>Methods[ConstraintWithItemAttributeRelatedByToItemAttributeMultiplierConstant].ReturnType=NSLayoutConstraint</Patch>
         <Patch>Enumerations[NSLayoutPriority].BaseType=int</Patch>
+        <Patch>Enumerations[NSLayoutPriority].MixedType=float,float</Patch>
         <Replace type="Html">
           <Source><![CDATA[/* <!--a-->choose<!--/a--> <!--a-->only<!--/a--> <!--a-->one<!--/a--> <!--a-->of<!--/a--> <!--a-->these<!--/a--> */]]></Source>
           <With><![CDATA[<!-- -->]]></With>
@@ -1251,28 +1252,6 @@
         <Replace type="Html">
           <Source><![CDATA[// <!--a-->default<!--/a-->]]></Source>
           <With><![CDATA[<!-- -->]]></With>
-        </Replace>
-        <!--
-        <Replace type="Generated">
-          <Source><![CDATA[return ObjectiveCRuntime.SendMessage<NSLayoutPriority>(this, "priority");]]></Source>
-          <With><![CDATA[return (NSLayoutPriority) (int) ObjectiveCRuntime.SendMessage<float>(this, "priority");]]></With>
-        </Replace>
-        -->
-        <!--
-        <Replace type="Generated">
-          <Source><![CDATA[ObjectiveCRuntime.SendMessage(this, "setPriority:", value);]]></Source>
-          <With><![CDATA[ObjectiveCRuntime.SendMessage(this, "setPriority:", value);]]></With>
-        </Replace>
-        -->
-        <Replace type="Generated">
-          <Source>
-            <![CDATA[[GeneratedCodeAttribute("MonobjcGenerator", "0.0.0.0")]
-    public enum NSLayoutPriority]]></Source>
-          <With>
-            <![CDATA[[GeneratedCodeAttribute("MonobjcGenerator", "0.0.0.0")]
-    [ObjectiveCUnderlyingTypeAttribute(typeof(float), Is64Bits = false)]
-    [ObjectiveCUnderlyingTypeAttribute(typeof(float), Is64Bits = true)]
-    public enum NSLayoutPriority]]></With>
         </Replace>
         <Replace type="Generated">
           <Source><![CDATA[= NSLayoutAttribute]]></Source>

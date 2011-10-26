@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -86,9 +86,11 @@ namespace Monobjc.Tools.Generator.Generators
             // If the type is a mixed type, then output the attributes
             String type32 = GetRealType(enumerationEntity.BaseType, false);
             String type64 = GetRealType(enumerationEntity.BaseType, true);
-            if (!String.Equals(type32, type64))
+            if (!String.IsNullOrEmpty(enumerationEntity.MixedType) /*!String.Equals(type32, type64)*/)
             {
 #if MIXED_MODE
+	            type32 = GetRealType(enumerationEntity.Name, false);
+    	        type64 = GetRealType(enumerationEntity.Name, true);
                 this.Writer.WriteLineFormat(1, "[ObjectiveCUnderlyingTypeAttribute(typeof({0}), Is64Bits = false)]", type32);
                 this.Writer.WriteLineFormat(1, "[ObjectiveCUnderlyingTypeAttribute(typeof({0}), Is64Bits = true)]", type64);
 #endif
@@ -104,7 +106,7 @@ namespace Monobjc.Tools.Generator.Generators
             }
 
             // Append enumeration declaration
-            this.Writer.WriteLineFormat(1, "public enum {0} : {1}", enumerationEntity.Name, type32);
+            this.Writer.WriteLineFormat(1, "public enum {0} : {1}", enumerationEntity.Name, GetRealType(enumerationEntity.BaseType, false));
             this.Writer.WriteLineFormat(1, "{{");
 
             // Append methods

@@ -297,13 +297,13 @@ namespace Monobjc.Tools.Generator.Tasks.Generation
                             TypedEntity typedEntity = BaseEntity.LoadFrom<TypedEntity>(xmlFile);
                             if (!String.IsNullOrEmpty(typedEntity.MixedType))
                             {
-                                BaseGenerator.MixedTypes[typedEntity.Name] = typedEntity.MixedType;
+								AddMixedType(typedEntity.Name, typedEntity.MixedType);
                             }
                             foreach (EnumerationEntity enumerationEntity in typedEntity.Enumerations)
                             {
                                 if (!String.IsNullOrEmpty(enumerationEntity.MixedType))
                                 {
-                                    BaseGenerator.MixedTypes[enumerationEntity.Name] = enumerationEntity.MixedType;
+									AddMixedType(enumerationEntity.Name, enumerationEntity.MixedType);
                                 }
                             }
                             break;
@@ -322,13 +322,13 @@ namespace Monobjc.Tools.Generator.Tasks.Generation
                             }
                             if (!String.IsNullOrEmpty(classEntity.MixedType))
                             {
-                                BaseGenerator.MixedTypes[classEntity.Name] = classEntity.MixedType;
+								AddMixedType(classEntity.Name, classEntity.MixedType);
                             }
                             foreach (EnumerationEntity enumerationEntity in classEntity.Enumerations)
                             {
                                 if (!String.IsNullOrEmpty(enumerationEntity.MixedType))
                                 {
-                                    BaseGenerator.MixedTypes[enumerationEntity.Name] = enumerationEntity.MixedType;
+									AddMixedType(enumerationEntity.Name, enumerationEntity.MixedType);
                                 }
                             }
                             break;
@@ -338,7 +338,7 @@ namespace Monobjc.Tools.Generator.Tasks.Generation
                             EnumerationEntity enumerationEntity = BaseEntity.LoadFrom<EnumerationEntity>(xmlFile);
                             if (!String.IsNullOrEmpty(enumerationEntity.MixedType))
                             {
-                                BaseGenerator.MixedTypes[enumerationEntity.Name] = enumerationEntity.MixedType;
+								AddMixedType(enumerationEntity.Name, enumerationEntity.MixedType);
                             }
                             break;
                         }
@@ -347,7 +347,7 @@ namespace Monobjc.Tools.Generator.Tasks.Generation
                             StructureEntity structureEntity = BaseEntity.LoadFrom<StructureEntity>(xmlFile);
                             if (!String.IsNullOrEmpty(structureEntity.MixedType))
                             {
-                                BaseGenerator.MixedTypes[structureEntity.Name] = structureEntity.MixedType;
+								AddMixedType(structureEntity.Name, structureEntity.MixedType);
                             }
                             break;
                         }
@@ -356,6 +356,12 @@ namespace Monobjc.Tools.Generator.Tasks.Generation
             Console.WriteLine("Loaded {0} mixed types", BaseGenerator.MixedTypes.Count);
         }
 
+		private static void AddMixedType(String name, String mixedType)
+		{
+            Console.WriteLine("Adding MixedType {0}={1}", name, mixedType);
+			BaseGenerator.MixedTypes[name] = mixedType;
+		}
+		
         private void LoadDependentEntitiesForClass(ClassEntity classEntity)
         {
             if (classEntity == null)
