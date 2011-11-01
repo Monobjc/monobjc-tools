@@ -17,78 +17,81 @@
 //
 namespace Monobjc.Tools.Xcode
 {
-    /// <summary>
-    /// </summary>
-    public enum PBXElementType
-    {
-        /// <summary>
-        /// </summary>
-        None = 0,
-        /// <summary>
-        /// </summary>
-        PBXBuildFile,
-        /// <summary>
-        /// </summary>
-        PBXBuildPhase,
-        /// <summary>
-        /// </summary>
-        PBXAppleScriptBuildPhase,
-        /// <summary>
-        /// </summary>
-        PBXCopyFilesBuildPhase,
-        /// <summary>
-        /// </summary>
-        PBXFrameworksBuildPhase,
-        /// <summary>
-        /// </summary>
-        PBXHeadersBuildPhase,
-        /// <summary>
-        /// </summary>
-        PBXResourcesBuildPhase,
-        /// <summary>
-        /// </summary>
-        PBXShellScriptBuildPhase,
-        /// <summary>
-        /// </summary>
-        PBXSourcesBuildPhase,
-        /// <summary>
-        /// </summary>
-        PBXBuildRule,
-        /// <summary>
-        /// </summary>
-        PBXContainerItemProxy,
-        /// <summary>
-        /// </summary>
-        PBXFileReference,
-        /// <summary>
-        /// </summary>
-        PBXGroup,
-        /// <summary>
-        /// </summary>
-        PBXTarget,
-        /// <summary>
-        /// </summary>
-        PBXAggregateTarget,
-        /// <summary>
-        /// </summary>
-        PBXLegacyTarget,
-        /// <summary>
-        /// </summary>
-        PBXNativeTarget,
-        /// <summary>
-        /// </summary>
-        PBXProject,
-        /// <summary>
-        /// </summary>
-        PBXTargetDependency,
-        /// <summary>
-        /// </summary>
-        PBXVariantGroup,
-        /// <summary>
-        /// </summary>
-        XCBuildConfiguration,
-        /// <summary>
-        /// </summary>
-        XCConfigurationList,
-    }
+	/// <summary>
+	/// </summary>
+	public enum PBXElementType
+	{
+		/// <summary>
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// </summary>
+		PBXBuildFile,
+		/// <summary>
+		/// </summary>
+		PBXBuildPhase,
+		/// <summary>
+		/// </summary>
+		PBXAppleScriptBuildPhase,
+		/// <summary>
+		/// </summary>
+		PBXCopyFilesBuildPhase,
+		/// <summary>
+		/// </summary>
+		PBXFrameworksBuildPhase,
+		/// <summary>
+		/// </summary>
+		PBXHeadersBuildPhase,
+		/// <summary>
+		/// </summary>
+		PBXResourcesBuildPhase,
+		/// <summary>
+		/// </summary>
+		PBXShellScriptBuildPhase,
+		/// <summary>
+		/// </summary>
+		PBXSourcesBuildPhase,
+		/// <summary>
+		/// </summary>
+		PBXBuildRule,
+		/// <summary>
+		/// </summary>
+		PBXContainerItemProxy,
+		/// <summary>
+		/// </summary>
+		PBXFileReference,
+		/// <summary>
+		/// </summary>
+		PBXGroup,
+		/// <summary>
+		/// </summary>
+		PBXTarget,
+		/// <summary>
+		/// </summary>
+		PBXAggregateTarget,
+		/// <summary>
+		/// </summary>
+		PBXLegacyTarget,
+		/// <summary>
+		/// </summary>
+		PBXNativeTarget,
+		/// <summary>
+		/// </summary>
+		PBXProject,
+		/// <summary>
+		/// </summary>
+		PBXReferenceProxy,
+		/// <summary>
+		/// </summary>
+		PBXTargetDependency,
+		/// <summary>
+		/// </summary>
+		PBXVariantGroup,
+		/// <summary>
+		/// </summary>
+		XCBuildConfiguration,
+		/// <summary>
+		/// </summary>
+		XCConfigurationList,
+	}
 }

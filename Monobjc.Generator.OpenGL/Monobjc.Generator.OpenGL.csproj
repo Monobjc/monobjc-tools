@@ -9,7 +9,6 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Monobjc.Tools.Generator.OpenGL</RootNamespace>
     <AssemblyName>MonobjcGeneratorOpenGL</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

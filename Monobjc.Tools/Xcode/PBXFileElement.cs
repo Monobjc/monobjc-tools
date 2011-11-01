@@ -39,7 +39,7 @@ namespace Monobjc.Tools.Xcode
         ///   Gets or sets the name.
         /// </summary>
         /// <value>The name.</value>
-        public String Name { get; set; }
+        public virtual String Name { get; set; }
 
         /// <summary>
         ///   Gets the description.

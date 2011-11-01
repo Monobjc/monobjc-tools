@@ -115,32 +115,32 @@ namespace Monobjc.Tools.Xcode
         /// </summary>
         /// <param name = "writer">The writer.</param>
         /// <param name = "map">The map.</param>
-        public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
+        public override void WriteTo(ProjectWriter writer, IDictionary<IPBXElement, string> map)
         {
-            writer.WritePBXElementPrologue(2, map, this);
+            writer.WritePBXElementPrologue(2, map, this, true);
             if (this.FileEncoding != PBXFileEncoding.Default)
             {
-                writer.WritePBXProperty(3, map, "fileEncoding", (int) this.FileEncoding);
+                writer.WritePBXProperty(3, map, "fileEncoding", (int) this.FileEncoding, true);
             }
             if (this.ExplicitFileType != PBXFileType.None)
             {
-                writer.WritePBXProperty(3, map, "explicitFileType", this.ExplicitFileType.ToDescription());
+                writer.WritePBXProperty(3, map, "explicitFileType", this.ExplicitFileType.ToDescription(), true);
             }
             if (this.IncludeInIndex != 1)
             {
-                writer.WritePBXProperty(3, map, "includeInIndex", this.IncludeInIndex);
+                writer.WritePBXProperty(3, map, "includeInIndex", this.IncludeInIndex, true);
             }
             if (this.LastKnownFileType != PBXFileType.None)
             {
-                writer.WritePBXProperty(3, map, "lastKnownFileType", this.LastKnownFileType.ToDescription());
+                writer.WritePBXProperty(3, map, "lastKnownFileType", this.LastKnownFileType.ToDescription(), true);
             }
             if (this.LineEnding != PBXLineEnding.Unix)
             {
-                writer.WritePBXProperty(3, map, "lineEnding", (int) this.LineEnding);
+                writer.WritePBXProperty(3, map, "lineEnding", (int) this.LineEnding, true);
             }
-            writer.WritePBXProperty(3, map, "name", this.Name);
-            writer.WritePBXProperty(3, map, "path", this.Path);
-            writer.WritePBXProperty(3, map, "sourceTree", this.SourceTree.ToDescription());
+            writer.WritePBXProperty(3, map, "name", this.Name, true);
+            writer.WritePBXProperty(3, map, "path", this.Path, true);
+            writer.WritePBXProperty(3, map, "sourceTree", this.SourceTree.ToDescription(), true);
             writer.WritePBXElementEpilogue(2);
         }
     }

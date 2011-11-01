@@ -19,13 +19,13 @@ using System.ComponentModel;
 
 namespace Monobjc.Tools.Xcode
 {
-    /// <summary>
-    /// </summary>
-    public enum PBXCompilerSpec
-    {
-        /// <summary>
-        /// </summary>
-        [Description("com.apple.compilers.proxy.script")]
-        ProxyScript,
-    }
+	/// <summary>
+	/// </summary>
+	public enum PBXCompilerSpec
+	{
+		/// <summary>
+		/// </summary>
+		[Description("com.apple.compilers.proxy.script")]
+		ProxyScript,
+	}
 }

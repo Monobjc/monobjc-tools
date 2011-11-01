@@ -17,43 +17,37 @@
 //
 namespace Monobjc.Tools.Xcode
 {
-    public class PBXAggregateTarget : PBXTarget
-    {
-        /// <summary>
-        ///   Gets the nature.
-        /// </summary>
-        /// <value>The nature.</value>
-        public override PBXElementType Nature
-        {
-            get { return PBXElementType.PBXAggregateTarget; }
-        }
+	public class PBXAggregateTarget : PBXTarget
+	{
+		/// <summary>
+		///   Gets the nature.
+		/// </summary>
+		/// <value>The nature.</value>
+		public override PBXElementType Nature {
+			get { return PBXElementType.PBXAggregateTarget; }
+		}
 
-        /// <summary>
-        ///   Accepts the specified visitor.
-        /// </summary>
-        /// <param name = "visitor">The visitor.</param>
-        public override void Accept(IPBXVisitor visitor)
-        {
-            visitor.Visit(this);
+		/// <summary>
+		///   Accepts the specified visitor.
+		/// </summary>
+		/// <param name = "visitor">The visitor.</param>
+		public override void Accept (IPBXVisitor visitor)
+		{
+			visitor.Visit (this);
 
-            if (this.BuildConfigurationList != null)
-            {
-                this.BuildConfigurationList.Accept(visitor);
-            }
-            if (this.BuildPhases != null)
-            {
-                foreach (PBXBuildPhase phase in this.BuildPhases)
-                {
-                    phase.Accept(visitor);
-                }
-            }
-            if (this.Dependencies != null)
-            {
-                foreach (PBXTargetDependency dependency in this.Dependencies)
-                {
-                    dependency.Accept(visitor);
-                }
-            }
-        }
-    }
+			if (this.BuildConfigurationList != null) {
+				this.BuildConfigurationList.Accept (visitor);
+			}
+			if (this.BuildPhases != null) {
+				foreach (PBXBuildPhase phase in this.BuildPhases) {
+					phase.Accept (visitor);
+				}
+			}
+			if (this.Dependencies != null) {
+				foreach (PBXTargetDependency dependency in this.Dependencies) {
+					dependency.Accept (visitor);
+				}
+			}
+		}
+	}
 }

@@ -19,36 +19,36 @@ using System.ComponentModel;
 
 namespace Monobjc.Tools.Xcode
 {
-    /// <summary>
-    /// </summary>
-    public enum PBXProductType
-    {
-        /// <summary>
-        /// </summary>
-        None = 0,
-        /// <summary>
-        /// </summary>
-        [Description("com.apple.product-type.application")]
-        Application,
-        /// <summary>
-        /// </summary>
-        [Description("com.apple.product-type.tool")]
-        Tool,
-        /// <summary>
-        /// </summary>
-        [Description("com.apple.product-type.library.static")]
-        LibraryStatic,
-        /// <summary>
-        /// </summary>
-        [Description("com.apple.product-type.library.dynamic")]
-        LibraryDynamic,
-        /// <summary>
-        /// </summary>
-        [Description("com.apple.product-type.kernel-extension")]
-        KernelExtension,
-        /// <summary>
-        /// </summary>
-        [Description("com.apple.product-type.kernel-extension.iokit")]
-        KernelExtensionIOKit,
-    }
+	/// <summary>
+	/// </summary>
+	public enum PBXProductType
+	{
+		/// <summary>
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// </summary>
+		[Description("com.apple.product-type.application")]
+		Application,
+		/// <summary>
+		/// </summary>
+		[Description("com.apple.product-type.tool")]
+		Tool,
+		/// <summary>
+		/// </summary>
+		[Description("com.apple.product-type.library.static")]
+		LibraryStatic,
+		/// <summary>
+		/// </summary>
+		[Description("com.apple.product-type.library.dynamic")]
+		LibraryDynamic,
+		/// <summary>
+		/// </summary>
+		[Description("com.apple.product-type.kernel-extension")]
+		KernelExtension,
+		/// <summary>
+		/// </summary>
+		[Description("com.apple.product-type.kernel-extension.iokit")]
+		KernelExtensionIOKit,
+	}
 }

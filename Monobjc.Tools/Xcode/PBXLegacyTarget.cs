@@ -89,7 +89,7 @@ namespace Monobjc.Tools.Xcode
         /// </summary>
         /// <param name = "writer">The writer.</param>
         /// <param name = "map">The map.</param>
-        public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
+        public override void WriteTo(ProjectWriter writer, IDictionary<IPBXElement, string> map)
         {
             writer.WritePBXElementPrologue(2, map, this);
             writer.WritePBXProperty(3, map, "buildArgumentsString", this.BuildArgumentsString);

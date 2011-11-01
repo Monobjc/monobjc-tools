@@ -22,90 +22,86 @@ using System.Linq;
 
 namespace Monobjc.Tools.Xcode
 {
-    public class XCBuildConfiguration : PBXElement
-    {
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "XCBuildConfiguration" /> class.
-        /// </summary>
-        public XCBuildConfiguration()
-        {
-            this.BuildSettings = new Dictionary<String, Object>();
-        }
+	public class XCBuildConfiguration : PBXElement
+	{
+		/// <summary>
+		///   Initializes a new instance of the <see cref = "XCBuildConfiguration" /> class.
+		/// </summary>
+		public XCBuildConfiguration ()
+		{
+			this.BuildSettings = new Dictionary<String, Object> ();
+		}
 
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "XCBuildConfiguration" /> class.
-        /// </summary>
-        /// <param name = "name">The name.</param>
-        public XCBuildConfiguration(String name) : this()
-        {
-            this.Name = name;
-        }
+		/// <summary>
+		///   Initializes a new instance of the <see cref = "XCBuildConfiguration" /> class.
+		/// </summary>
+		/// <param name = "name">The name.</param>
+		public XCBuildConfiguration (String name) : this()
+		{
+			this.Name = name;
+		}
 
-        /// <summary>
-        ///   Gets or sets the base configuration reference.
-        /// </summary>
-        /// <value>The base configuration reference.</value>
-        public PBXFileReference BaseConfigurationReference { get; set; }
+		/// <summary>
+		///   Gets or sets the base configuration reference.
+		/// </summary>
+		/// <value>The base configuration reference.</value>
+		public PBXFileReference BaseConfigurationReference { get; set; }
 
-        /// <summary>
-        ///   Gets or sets the build settings.
-        /// </summary>
-        /// <value>The build settings.</value>
-        public IDictionary<String, Object> BuildSettings { get; set; }
+		/// <summary>
+		///   Gets or sets the build settings.
+		/// </summary>
+		/// <value>The build settings.</value>
+		public IDictionary<String, Object> BuildSettings { get; set; }
 
-        /// <summary>
-        ///   Gets or sets the name.
-        /// </summary>
-        /// <value>The name.</value>
-        public String Name { get; set; }
+		/// <summary>
+		///   Gets or sets the name.
+		/// </summary>
+		/// <value>The name.</value>
+		public String Name { get; set; }
 
-        /// <summary>
-        ///   Gets the elemnt's nature.
-        /// </summary>
-        /// <value>The nature.</value>
-        public override PBXElementType Nature
-        {
-            get { return PBXElementType.XCBuildConfiguration; }
-        }
+		/// <summary>
+		///   Gets the elemnt's nature.
+		/// </summary>
+		/// <value>The nature.</value>
+		public override PBXElementType Nature {
+			get { return PBXElementType.XCBuildConfiguration; }
+		}
 
-        /// <summary>
-        ///   Gets the description.
-        /// </summary>
-        /// <value>The description.</value>
-        public override string Description
-        {
-            get { return this.Name; }
-        }
+		/// <summary>
+		///   Gets the description.
+		/// </summary>
+		/// <value>The description.</value>
+		public override string Description {
+			get { return this.Name; }
+		}
 
-        /// <summary>
-        ///   Accepts the specified visitor.
-        /// </summary>
-        /// <param name = "visitor">The visitor.</param>
-        public override void Accept(IPBXVisitor visitor)
-        {
-            visitor.Visit(this);
+		/// <summary>
+		///   Accepts the specified visitor.
+		/// </summary>
+		/// <param name = "visitor">The visitor.</param>
+		public override void Accept (IPBXVisitor visitor)
+		{
+			visitor.Visit (this);
 
-            if (this.BaseConfigurationReference != null)
-            {
-                this.BaseConfigurationReference.Accept(visitor);
-            }
-        }
+			if (this.BaseConfigurationReference != null) {
+				this.BaseConfigurationReference.Accept (visitor);
+			}
+		}
 
-        /// <summary>
-        ///   Writes this element to the writer.
-        /// </summary>
-        /// <param name = "writer">The writer.</param>
-        /// <param name = "map">The map.</param>
-        public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
-        {
-            writer.WritePBXElementPrologue(2, map, this);
-            if (this.BaseConfigurationReference != null)
-            {
-                writer.WritePBXProperty(3, map, "baseConfigurationReference", this.BaseConfigurationReference);
-            }
-            writer.WritePBXProperty(3, map, "buildSettings", this.BuildSettings.ToDictionary(kvp => kvp.Key, kvp => kvp.Value));
-            writer.WritePBXProperty(3, map, "name", this.Name);
-            writer.WritePBXElementEpilogue(2);
-        }
-    }
+		/// <summary>
+		///   Writes this element to the writer.
+		/// </summary>
+		/// <param name = "writer">The writer.</param>
+		/// <param name = "map">The map.</param>
+		public override void WriteTo (ProjectWriter writer, IDictionary<IPBXElement, string> map)
+		{
+			writer.WritePBXElementPrologue (2, map, this);
+			if (this.BaseConfigurationReference != null) {
+				writer.WritePBXProperty (3, map, "baseConfigurationReference", this.BaseConfigurationReference);
+			}
+			writer.WritePBXProperty (3, map, "buildSettings", this.BuildSettings.ToDictionary (kvp => kvp.Key, kvp => kvp.Value));
+			writer.WritePBXProperty (3, map, "name", this.Name);
+			writer.WritePBXElementEpilogue (2);
+		}
+	}
 }

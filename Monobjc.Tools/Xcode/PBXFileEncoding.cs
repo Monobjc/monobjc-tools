@@ -17,60 +17,60 @@
 //
 namespace Monobjc.Tools.Xcode
 {
-    /// <summary>
-    /// </summary>
-    public enum PBXFileEncoding : uint
-    {
-        /// <summary>
-        /// </summary>
-        Default = 0,
-        /// <summary>
-        /// </summary>
-        UTF8 = 4,
-        /// <summary>
-        /// </summary>
-        UTF16 = 10,
-        /// <summary>
-        /// </summary>
-        UTF16_BE = 2415919360,
-        /// <summary>
-        /// </summary>
-        UTF16_LE = 2483028224,
-        /// <summary>
-        /// </summary>
-        Western = 30,
-        /// <summary>
-        /// </summary>
-        Japanese = 2147483649,
-        /// <summary>
-        /// </summary>
-        TraditionalChinese = 2147483650,
-        /// <summary>
-        /// </summary>
-        Korean = 2147483651,
-        /// <summary>
-        /// </summary>
-        Arabic = 2147483652,
-        /// <summary>
-        /// </summary>
-        Hebrew = 2147483653,
-        /// <summary>
-        /// </summary>
-        Greek = 2147483654,
-        /// <summary>
-        /// </summary>
-        Cyrillic = 2147483655,
-        /// <summary>
-        /// </summary>
-        SimplifiedChinese = 2147483673,
-        /// <summary>
-        /// </summary>
-        CentralEuropean = 2147483677,
-        /// <summary>
-        /// </summary>
-        Turkish = 2147483683,
-        /// <summary>
-        /// </summary>
-        Icelandic = 2147483685,
-    }
+	/// <summary>
+	/// </summary>
+	public enum PBXFileEncoding : uint
+	{
+		/// <summary>
+		/// </summary>
+		Default = 0,
+		/// <summary>
+		/// </summary>
+		UTF8 = 4,
+		/// <summary>
+		/// </summary>
+		UTF16 = 10,
+		/// <summary>
+		/// </summary>
+		UTF16_BE = 2415919360,
+		/// <summary>
+		/// </summary>
+		UTF16_LE = 2483028224,
+		/// <summary>
+		/// </summary>
+		Western = 30,
+		/// <summary>
+		/// </summary>
+		Japanese = 2147483649,
+		/// <summary>
+		/// </summary>
+		TraditionalChinese = 2147483650,
+		/// <summary>
+		/// </summary>
+		Korean = 2147483651,
+		/// <summary>
+		/// </summary>
+		Arabic = 2147483652,
+		/// <summary>
+		/// </summary>
+		Hebrew = 2147483653,
+		/// <summary>
+		/// </summary>
+		Greek = 2147483654,
+		/// <summary>
+		/// </summary>
+		Cyrillic = 2147483655,
+		/// <summary>
+		/// </summary>
+		SimplifiedChinese = 2147483673,
+		/// <summary>
+		/// </summary>
+		CentralEuropean = 2147483677,
+		/// <summary>
+		/// </summary>
+		Turkish = 2147483683,
+		/// <summary>
+		/// </summary>
+		Icelandic = 2147483685,
+	}
 }

@@ -17,18 +17,18 @@
 //
 namespace Monobjc.Tools.Xcode
 {
-    /// <summary>
-    /// </summary>
-    public enum PBXLineEnding
-    {
-        /// <summary>
-        /// </summary>
-        Unix = 0,
-        /// <summary>
-        /// </summary>
-        MacOS = 1,
-        /// <summary>
-        /// </summary>
-        Windows = 2,
-    }
+	/// <summary>
+	/// </summary>
+	public enum PBXLineEnding
+	{
+		/// <summary>
+		/// </summary>
+		Unix = 0,
+		/// <summary>
+		/// </summary>
+		MacOS = 1,
+		/// <summary>
+		/// </summary>
+		Windows = 2,
+	}
 }

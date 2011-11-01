@@ -73,7 +73,15 @@ namespace Monobjc.Tools.Xcode
         {
             get { return this.RootObject; }
         }
-
+		
+		/// <summary>
+		/// Gets the mapping.
+		/// </summary>
+		/// <value>
+		/// The mapping.
+		/// </value>
+		public IDictionary<IPBXElement, String> Mapping { get; private set; }
+		
         /// <summary>
         ///   Loads the specified content.
         /// </summary>
@@ -114,12 +122,13 @@ namespace Monobjc.Tools.Xcode
         ///   Writes the specified writer.
         /// </summary>
         /// <param name = "writer">The writer.</param>
-        public void Write(TextWriter writer)
+        public void Write(ProjectWriter writer)
         {
             // 1. Collect all the objects
             CollectVisitor collectVisitor = new CollectVisitor();
             this.RootObject.Accept(collectVisitor);
             IDictionary<IPBXElement, String> map = collectVisitor.Map;
+			this.Mapping = map;
 
             // 2. Ouput the prologue
             writer.WriteLine("// !$*UTF8*$!");
@@ -176,7 +185,8 @@ namespace Monobjc.Tools.Xcode
             Encoding encoding = new UTF8Encoding(false);
             using (StreamWriter writer = new StreamWriter(path, false, encoding))
             {
-                this.Write(writer);
+				ProjectWriter projectWriter = new ProjectNSWriter(writer);
+                this.Write(projectWriter);
             }
         }
     }
