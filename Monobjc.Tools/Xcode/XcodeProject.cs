@@ -58,8 +58,8 @@ namespace Monobjc.Tools.Xcode
 		/// The base dir.
 		/// </value>
 		public String BaseDir { 
-			get { return this.Project.ProjectRoot; } 
-			set { this.Project.ProjectRoot = value; }
+			get { return this.Project.ProjectDirPath; } 
+			set { this.Project.ProjectDirPath = value; }
 		}
 
 		/// <summary>
