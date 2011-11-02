@@ -19,44 +19,46 @@ using System;
 
 namespace Monobjc.Tools
 {
-    public class Program
-    {
-        public static void Main(String[] args)
-        {
-            //KeyChainAccessTests keyChainAccessTests = new KeyChainAccessTests();
-            //keyChainAccessTests.TestKeyChainAccess();
+	public class Program
+	{
+		public static void Main (String[] args)
+		{
+			//KeyChainAccessTests keyChainAccessTests = new KeyChainAccessTests();
+			//keyChainAccessTests.TestKeyChainAccess();
 
-            //NativeVersionExtractorTests nativeVersionExtractorTests = new NativeVersionExtractorTests();
-            //nativeVersionExtractorTests.TestNativeVersionExtractor();
+			//NativeVersionExtractorTests nativeVersionExtractorTests = new NativeVersionExtractorTests();
+			//nativeVersionExtractorTests.TestNativeVersionExtractor();
 
-            //PBXProjectGenerationTests pBXProjectGenerationTests = new PBXProjectGenerationTests();
-            //pBXProjectGenerationTests.TestProjectGeneration001();
+			//PBXProjectGenerationTests pBXProjectGenerationTests = new PBXProjectGenerationTests ();
+			//pBXProjectGenerationTests.TestProjectGeneration001 ();
+			//pBXProjectGenerationTests.TestProjectGeneration002 ();
 
-            XcodeProjectGenerationTests xcodeProjectGenerationTests = new XcodeProjectGenerationTests();
-            xcodeProjectGenerationTests.TestProjectGeneration001();
-            xcodeProjectGenerationTests.TestProjectGeneration002();
-            xcodeProjectGenerationTests.TestProjectGeneration003();
+			XcodeProjectGenerationTests xcodeProjectGenerationTests = new XcodeProjectGenerationTests();
+			xcodeProjectGenerationTests.TestProjectGeneration001();
+			xcodeProjectGenerationTests.TestProjectGeneration002();
+			xcodeProjectGenerationTests.TestProjectGeneration003();
+			xcodeProjectGenerationTests.TestProjectGeneration004();
 
-            //XIBLoadTests xibLoadTests = new XIBLoadTests();
-            //xibLoadTests.TestMainMenuReading001();
-            //xibLoadTests.TestMainMenuReading002();
-            //xibLoadTests.TestMainMenuReading003();
-            //xibLoadTests.TestMainMenuReading004();
-            //xibLoadTests.TestMainMenuReading005();
-            //xibLoadTests.TestMainMenuReading006();
-            //xibLoadTests.TestMainMenuReading007();
-            //xibLoadTests.TestMainMenuReading008();
-            //xibLoadTests.TestMainMenuReading010();
-            //xibLoadTests.TestMainMenuReading011();
-            //xibLoadTests.TestMainMenuReading012();
-            //xibLoadTests.TestMyDocumentReading005();
+			//XIBLoadTests xibLoadTests = new XIBLoadTests();
+			//xibLoadTests.TestMainMenuReading001();
+			//xibLoadTests.TestMainMenuReading002();
+			//xibLoadTests.TestMainMenuReading003();
+			//xibLoadTests.TestMainMenuReading004();
+			//xibLoadTests.TestMainMenuReading005();
+			//xibLoadTests.TestMainMenuReading006();
+			//xibLoadTests.TestMainMenuReading007();
+			//xibLoadTests.TestMainMenuReading008();
+			//xibLoadTests.TestMainMenuReading010();
+			//xibLoadTests.TestMainMenuReading011();
+			//xibLoadTests.TestMainMenuReading012();
+			//xibLoadTests.TestMyDocumentReading005();
 
-            //PListLoadTests pListLoadTests = new PListLoadTests();
-            //pListLoadTests.TestPListReading001();
-            //pListLoadTests.TestPListReading002();
-            //pListLoadTests.TestPListReading004();
-            //pListLoadTests.TestPListReading005();
-            //pListLoadTests.TestPListReading010();
-        }
-    }
+			//PListLoadTests pListLoadTests = new PListLoadTests();
+			//pListLoadTests.TestPListReading001();
+			//pListLoadTests.TestPListReading002();
+			//pListLoadTests.TestPListReading004();
+			//pListLoadTests.TestPListReading005();
+			//pListLoadTests.TestPListReading010();
+		}
+	}
 }

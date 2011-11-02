@@ -241,5 +241,48 @@ namespace Monobjc.Tools
 		
 		    project2.Save();
 		}
+		
+        [Test]
+        public void TestProjectGeneration004()
+        {
+            // Create the main project
+            string targetName = "MyApplication004";
+            XcodeProject project = new XcodeProject(".", targetName);
+
+            project.AddTarget(targetName, PBXProductType.Application);
+			
+            project.AddBuildConfigurationSettings("Release", null, "ARCHS", "$(ARCHS_STANDARD_32_64_BIT)");
+            project.AddBuildConfigurationSettings("Release", null, "SDKROOT", "macosx");
+
+            project.AddBuildConfigurationSettings("Release", targetName, "DEBUG_INFORMATION_FORMAT", "dwarf-with-dsym");
+            project.AddBuildConfigurationSettings("Release", targetName, "COPY_PHASE_STRIP", "YES");
+			project.AddBuildConfigurationSettings ("Release", targetName, "INFOPLIST_FILE", "../../Info.plist");
+            project.AddBuildConfigurationSettings("Release", targetName, "PRODUCT_NAME", "$(TARGET_NAME)");
+            project.AddBuildConfigurationSettings("Release", targetName, "WRAPPER_EXTENSION", "app");
+            project.AddBuildConfigurationSettings("Release", targetName, "ALWAYS_SEARCH_USER_PATHS", "NO");
+            project.AddBuildConfigurationSettings("Release", targetName, "GCC_ENABLE_OBJC_EXCEPTIONS", "YES");
+			
+			project.BaseDir = "../..";
+			
+            project.AddFile("Files", "MyApplicationAppDelegate.h", targetName);
+            project.AddFile("Files", "MyApplicationAppDelegate.m", targetName);
+            project.AddFile("Files", "Wrong.h", targetName);
+            project.RemoveFile("Files", "Wrong.h", targetName);
+
+            project.AddFile("Files", "main.m", targetName);
+            project.AddFile("Files", "MyApplication-Info.plist", targetName);
+
+            project.AddFile("Files", "en.lproj/MainMenu.xib", targetName);
+            project.AddFile("Files", "fr.lproj/MainMenu.xib", targetName);
+            project.RemoveFile("Files", "fr.lproj/MainMenu.xib", targetName);
+
+            project.AddFramework("Frameworks", "Cocoa", targetName);
+            project.AddFramework("Frameworks", "AddressBook", targetName);
+            project.RemoveFramework("Frameworks", "AddressBook", targetName);
+
+            //var frameworks = project.GetFrameworks(targetName);
+
+            project.Save();
+        }
     }
 }

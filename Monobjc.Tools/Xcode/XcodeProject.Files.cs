@@ -115,7 +115,11 @@ namespace Monobjc.Tools.Xcode
 				// Extract information
 				String name = Path.GetFileName (file);
 				String path = Path.GetFullPath (file);
-				String baseDir = Path.GetFullPath (String.IsNullOrEmpty (this.Project.ProjectRoot) ? this.Dir : this.Project.ProjectRoot);
+				String rootDir = Path.GetFullPath (this.Dir);
+				if (!String.IsNullOrEmpty(this.BaseDir)) {
+					rootDir = Path.Combine(rootDir, this.BaseDir);
+					rootDir = Path.GetFullPath (rootDir);
+				}
 				String parentDir = Path.GetDirectoryName (file);
 
 				// If the file is localized, then add it to a variant group
@@ -143,8 +147,8 @@ namespace Monobjc.Tools.Xcode
 					if (sourceTree != PBXSourceTree.None) {
 						fileReference.SourceTree = sourceTree;
 					} else {
-						if (path.StartsWith (baseDir)) {
-							path = path.Substring (baseDir.Length + 1);
+						if (path.StartsWith (rootDir)) {
+							path = path.Substring (rootDir.Length + 1);
 							fileReference.SourceTree = PBXSourceTree.Group;
 						} else {
 							fileReference.SourceTree = PBXSourceTree.Absolute;

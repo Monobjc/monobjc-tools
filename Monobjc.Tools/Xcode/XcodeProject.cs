@@ -52,6 +52,17 @@ namespace Monobjc.Tools.Xcode
 		public String Name { get; set; }
 
 		/// <summary>
+		/// Gets or sets the base dir.
+		/// </summary>
+		/// <value>
+		/// The base dir.
+		/// </value>
+		public String BaseDir { 
+			get { return this.Project.ProjectRoot; } 
+			set { this.Project.ProjectRoot = value; }
+		}
+
+		/// <summary>
 		///   Gets or sets the document.
 		/// </summary>
 		/// <value>The document.</value>
