@@ -237,7 +237,7 @@ namespace Monobjc.Tools
 			
 		    project2.AddDependantProject(project1, targetName);
 			
-			project2.ClearDependantProjects(targetName);
+			project2.RemoveDependantProject(project1, targetName);
 		
 		    project2.Save();
 		}

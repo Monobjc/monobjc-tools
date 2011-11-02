@@ -427,7 +427,7 @@ namespace Monobjc.Tools.Xcode
 				PBXFileReference productReference = target.ProductReference;
 
 				// Add a dummy group for references
-				PBXGroup @group = this.AddGroup ("References");
+				PBXGroup referecenGroup = this.AddGroup ("References");
 				
 				// Add file reference
 				PBXFileReference fileReference = this.AddFile (String.Empty, project.ProjectFolder) as PBXFileReference;
@@ -443,16 +443,14 @@ namespace Monobjc.Tools.Xcode
 				PBXReferenceProxy referenceProxy = new PBXReferenceProxy ();
 				referenceProxy.RemoteRef = itemProxy;
 				referenceProxy.SourceTree = PBXSourceTree.BuildProductDir;
-				if (target != null) {
-					referenceProxy.FileType = productReference.ExplicitFileType;
-					referenceProxy.Path = Path.GetFileName (productReference.Path);
-				}
+				referenceProxy.FileType = productReference.ExplicitFileType;
+				referenceProxy.Path = Path.GetFileName (productReference.Path);
 				
 				// Add reference proxy
-					@group.AddChild (referenceProxy);
+				referecenGroup.AddChild (referenceProxy);
 				
 				// Add association
-				this.Project.AddProjectReference (@group, fileReference);
+				this.Project.AddProjectReference (referecenGroup, fileReference);
 			}
 		}
 
@@ -463,7 +461,28 @@ namespace Monobjc.Tools.Xcode
 		/// <param name = "targetName">Name of the target.</param>
 		public void RemoveDependantProject (XcodeProject project, String targetName)
 		{
-			throw new NotImplementedException ();
+			lock(this.syncRoot) {
+				// Get the native target
+				PBXNativeTarget target = project.GetDefaultTarget () as PBXNativeTarget;
+				if (target == null) {
+					return;
+				}
+				
+				// Get the product reference
+				PBXFileReference productReference = target.ProductReference;
+
+				// Add a dummy group for references
+				PBXGroup referenceGroup = this.AddGroup ("References");
+
+				// Find the reference proxy
+				String path = Path.GetFileName(productReference.Path);
+				PBXReferenceProxy referenceProxy = referenceGroup.Children.OfType<PBXReferenceProxy>().FirstOrDefault(r => r.Path == path);
+				if (referenceProxy == null) {
+					return;
+				}
+				
+				this.RemoveDependantProject (referenceProxy);
+			}
 		}
 		
 		/// <summary>
@@ -474,7 +493,7 @@ namespace Monobjc.Tools.Xcode
 		{
 			lock (this.syncRoot) {
 				// Add a dummy group for references
-				PBXGroup @group = this.AddGroup ("References");
+				PBXGroup referenceGroup = this.AddGroup ("References");
 			
 				// Get proxies references
 				PBXContainerItemProxy containerItemProxy = referenceProxy.RemoteRef;
@@ -484,7 +503,7 @@ namespace Monobjc.Tools.Xcode
 				this.Project.MainGroup.RemoveChild (fileReference);
 			
 				// Remove proxy
-					@group.RemoveChild (referenceProxy);
+				referenceGroup.RemoveChild (referenceProxy);
 			
 				// Remove association
 				this.Project.RemoveProjectReference (fileReference);
@@ -551,7 +570,15 @@ namespace Monobjc.Tools.Xcode
 
 			return phase;
 		}
-
+		
+		/// <summary>
+		/// Gets the build configuration.
+		/// </summary>
+		/// <returns>
+		/// The build configuration.
+		/// </returns>
+		/// <param name="configurationName">The configuration.</param>
+		/// <param name="target">The target.</param>
 		private XCBuildConfiguration GetBuildConfiguration (String configurationName, PBXTarget target)
 		{
 			XCConfigurationList configurationList = target != null ? target.BuildConfigurationList : this.Project.BuildConfigurationList;
