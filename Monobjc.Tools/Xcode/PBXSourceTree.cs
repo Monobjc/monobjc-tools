@@ -19,32 +19,32 @@ using System.ComponentModel;
 
 namespace Monobjc.Tools.Xcode
 {
-    /// <summary>
-    /// </summary>
-    public enum PBXSourceTree
-    {
-        /// <summary>
-        /// </summary>
-        None = 0,
-        /// <summary>
-        /// </summary>
-        [Description("<absolute>")]
-        Absolute,
-        /// <summary>
-        /// </summary>
-        [Description("<group>")]
-        Group,
-        /// <summary>
-        /// </summary>
-        [Description("SOURCE_ROOT")]
+	/// <summary>
+	/// </summary>
+	public enum PBXSourceTree
+	{
+		/// <summary>
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// </summary>
+		[Description("<absolute>")]
+		Absolute,
+		/// <summary>
+		/// </summary>
+		[Description("<group>")]
+		Group,
+		/// <summary>
+		/// </summary>
+		[Description("SOURCE_ROOT")]
 		SourceRoot,
-        /// <summary>
-        /// </summary>
-        [Description("BUILT_PRODUCTS_DIR")]
-        BuildProductDir,
-        /// <summary>
-        /// </summary>
-        [Description("SDKROOT")]
-        SdkRoot,
-    }
+		/// <summary>
+		/// </summary>
+		[Description("BUILT_PRODUCTS_DIR")]
+		BuildProductDir,
+		/// <summary>
+		/// </summary>
+		[Description("SDKROOT")]
+		SdkRoot,
+	}
 }

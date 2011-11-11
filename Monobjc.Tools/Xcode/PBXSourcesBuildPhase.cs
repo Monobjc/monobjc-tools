@@ -17,41 +17,37 @@
 //
 namespace Monobjc.Tools.Xcode
 {
-    public class PBXSourcesBuildPhase : PBXBuildPhase
-    {
-        /// <summary>
-        ///   Gets the elemnt's nature.
-        /// </summary>
-        /// <value>The nature.</value>
-        public override PBXElementType Nature
-        {
-            get { return PBXElementType.PBXSourcesBuildPhase; }
-        }
+	public class PBXSourcesBuildPhase : PBXBuildPhase
+	{
+		/// <summary>
+		///   Gets the elemnt's nature.
+		/// </summary>
+		/// <value>The nature.</value>
+		public override PBXElementType Nature {
+			get { return PBXElementType.PBXSourcesBuildPhase; }
+		}
 
-        /// <summary>
-        ///   Gets the description.
-        /// </summary>
-        /// <value>The description.</value>
-        public override string Description
-        {
-            get { return "Sources"; }
-        }
+		/// <summary>
+		///   Gets the description.
+		/// </summary>
+		/// <value>The description.</value>
+		public override string Description {
+			get { return "Sources"; }
+		}
 
-        /// <summary>
-        ///   Accepts the specified visitor.
-        /// </summary>
-        /// <param name = "visitor">The visitor.</param>
-        public override void Accept(IPBXVisitor visitor)
-        {
-            visitor.Visit(this);
+		/// <summary>
+		///   Accepts the specified visitor.
+		/// </summary>
+		/// <param name = "visitor">The visitor.</param>
+		public override void Accept (IPBXVisitor visitor)
+		{
+			visitor.Visit (this);
 
-            if (this.Files != null)
-            {
-                foreach (PBXBuildFile file in this.Files)
-                {
-                    file.Accept(visitor);
-                }
-            }
-        }
-    }
+			if (this.Files != null) {
+				foreach (PBXBuildFile file in this.Files) {
+					file.Accept (visitor);
+				}
+			}
+		}
+	}
 }

@@ -19,15 +19,26 @@ using System.ComponentModel;
 
 namespace Monobjc.Tools.Xcode
 {
-    public enum XcodeCompatibilityVersion
-    {
-        [Description("Xcode 2.4")]
-        Xcode_2_4 = 42,
-        [Description("Xcode 3.0")]
-        Xcode_3_0 = 44,
-        [Description("Xcode 3.1")]
-        Xcode_3_1 = 45,
-        [Description("Xcode 3.2")]
-        Xcode_3_2 = 46,
-    }
+	/// <summary>
+	/// Xcode compatibility version.
+	/// </summary>
+	public enum XcodeCompatibilityVersion
+	{
+		/// <summary>
+		/// </summary>
+		[Description("Xcode 2.4")]
+		Xcode_2_4 = 42,
+		/// <summary>
+		/// </summary>
+		[Description("Xcode 3.0")]
+		Xcode_3_0 = 44,
+		/// <summary>
+		/// </summary>
+		[Description("Xcode 3.1")]
+		Xcode_3_1 = 45,
+		/// <summary>
+		/// </summary>
+		[Description("Xcode 3.2")]
+		Xcode_3_2 = 46,
+	}
 }

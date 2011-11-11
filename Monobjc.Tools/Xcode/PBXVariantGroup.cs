@@ -17,43 +17,44 @@
 //
 namespace Monobjc.Tools.Xcode
 {
-    public class PBXVariantGroup : PBXGroup
-    {
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "PBXVariantGroup" /> class.
-        /// </summary>
-        public PBXVariantGroup() {}
+	public class PBXVariantGroup : PBXGroup
+	{
+		/// <summary>
+		///   Initializes a new instance of the <see cref = "PBXVariantGroup" /> class.
+		/// </summary>
+		public PBXVariantGroup ()
+		{
+		}
 
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "PBXVariantGroup" /> class.
-        /// </summary>
-        /// <param name = "name">The name.</param>
-        public PBXVariantGroup(string name) : base(name) {}
+		/// <summary>
+		///   Initializes a new instance of the <see cref = "PBXVariantGroup" /> class.
+		/// </summary>
+		/// <param name = "name">The name.</param>
+		public PBXVariantGroup (string name) : base(name)
+		{
+		}
 
-        /// <summary>
-        ///   Gets the elemnt's nature.
-        /// </summary>
-        /// <value>The nature.</value>
-        public override PBXElementType Nature
-        {
-            get { return PBXElementType.PBXVariantGroup; }
-        }
+		/// <summary>
+		///   Gets the elemnt's nature.
+		/// </summary>
+		/// <value>The nature.</value>
+		public override PBXElementType Nature {
+			get { return PBXElementType.PBXVariantGroup; }
+		}
 
-        /// <summary>
-        ///   Accepts the specified visitor.
-        /// </summary>
-        /// <param name = "visitor">The visitor.</param>
-        public override void Accept(IPBXVisitor visitor)
-        {
-            visitor.Visit(this);
+		/// <summary>
+		///   Accepts the specified visitor.
+		/// </summary>
+		/// <param name = "visitor">The visitor.</param>
+		public override void Accept (IPBXVisitor visitor)
+		{
+			visitor.Visit (this);
 
-            if (this.Children != null)
-            {
-                foreach (PBXFileElement target in this.Children)
-                {
-                    target.Accept(visitor);
-                }
-            }
-        }
-    }
+			if (this.Children != null) {
+				foreach (PBXFileElement target in this.Children) {
+					target.Accept (visitor);
+				}
+			}
+		}
+	}
 }

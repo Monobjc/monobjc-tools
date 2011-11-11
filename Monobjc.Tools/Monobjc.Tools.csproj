@@ -156,13 +156,15 @@
     <Compile Include="Xcode\PBXTarget.cs" />
     <Compile Include="Xcode\PBXTargetDependency.cs" />
     <Compile Include="Xcode\PBXVariantGroup.cs" />
-    <Compile Include="Xcode\TextWriterExtensions.cs" />
     <Compile Include="Xcode\Visitors\CollectVisitor.cs" />
     <Compile Include="Xcode\XCBuildConfiguration.cs" />
     <Compile Include="Xcode\XCConfigurationList.cs" />
     <Compile Include="Xcode\XcodeCompatibilityVersion.cs" />
     <Compile Include="Xcode\XcodeProject.cs" />
     <Compile Include="External\Receigen.cs" />
+    <Compile Include="Xcode\PBXReferenceProxy.cs" />
+    <Compile Include="Xcode\ProjectNSWriter.cs" />
+    <Compile Include="Xcode\ProjectWriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Embedded\Info.plist" />

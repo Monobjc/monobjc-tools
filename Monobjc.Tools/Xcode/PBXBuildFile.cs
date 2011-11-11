@@ -82,14 +82,14 @@ namespace Monobjc.Tools.Xcode
         /// </summary>
         /// <param name = "writer">The writer.</param>
         /// <param name = "map">The map.</param>
-        public override void WriteTo(TextWriter writer, IDictionary<IPBXElement, string> map)
+        public override void WriteTo(ProjectWriter writer, IDictionary<IPBXElement, string> map)
         {
-            writer.WritePBXElementPrologue(2, map, this);
+            writer.WritePBXElementPrologue(2, map, this, true);
             if (this.FileRef != null)
             {
-                writer.WritePBXProperty(3, map, "fileRef", this.FileRef);
+                writer.WritePBXProperty(3, map, "fileRef", this.FileRef, true);
             }
-            writer.WritePBXElementEpilogue(2);
+            writer.WritePBXElementEpilogue(2, true);
         }
     }
 }

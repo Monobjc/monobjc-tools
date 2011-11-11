@@ -21,225 +21,233 @@ using System.Globalization;
 
 namespace Monobjc.Tools.Xcode.Visitors
 {
-    /// <summary>
-    /// </summary>
-    public class CollectVisitor : IPBXVisitor
-    {
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "CollectVisitor" /> class.
-        /// </summary>
-        public CollectVisitor()
-        {
-            this.Map = new Dictionary<IPBXElement, String>();
-        }
+	/// <summary>
+	/// </summary>
+	public class CollectVisitor : IPBXVisitor
+	{
+		/// <summary>
+		///   Initializes a new instance of the <see cref = "CollectVisitor" /> class.
+		/// </summary>
+		public CollectVisitor ()
+		{
+			this.Map = new Dictionary<IPBXElement, String> ();
+		}
 
-        /// <summary>
-        ///   Gets or sets the map.
-        /// </summary>
-        /// <value>The map.</value>
-        public IDictionary<IPBXElement, String> Map { get; private set; }
+		/// <summary>
+		///   Gets or sets the map.
+		/// </summary>
+		/// <value>The map.</value>
+		public IDictionary<IPBXElement, String> Map { get; private set; }
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(PBXAggregateTarget element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXAggregateTarget element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(PBXAppleScriptBuildPhase element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXAppleScriptBuildPhase element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(PBXBuildFile element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXBuildFile element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(PBXBuildRule element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXBuildRule element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(PBXContainerItemProxy element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXContainerItemProxy element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(PBXCopyFilesBuildPhase element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXCopyFilesBuildPhase element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(PBXFileReference element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXFileReference element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(PBXFrameworksBuildPhase element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXFrameworksBuildPhase element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(PBXGroup element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXGroup element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(PBXHeadersBuildPhase element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXHeadersBuildPhase element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(PBXLegacyTarget element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXLegacyTarget element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(PBXNativeTarget element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXNativeTarget element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(PBXProject element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXProject element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(PBXResourcesBuildPhase element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXResourcesBuildPhase element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(PBXShellScriptBuildPhase element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXReferenceProxy element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(PBXSourcesBuildPhase element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXShellScriptBuildPhase element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(PBXTargetDependency element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXSourcesBuildPhase element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(PBXVariantGroup element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXTargetDependency element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(XCBuildConfiguration element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (PBXVariantGroup element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Visits the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        public void Visit(XCConfigurationList element)
-        {
-            this.Add(element);
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (XCBuildConfiguration element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Adds the specified element.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        private void Add(IPBXElement element)
-        {
-            if (this.Map.ContainsKey(element))
-            {
-                return;
-            }
-            this.Map.Add(element, this.GetElementUID(element));
-        }
+		/// <summary>
+		///   Visits the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		public void Visit (XCConfigurationList element)
+		{
+			this.Add (element);
+		}
 
-        /// <summary>
-        ///   Gets the element UID.
-        /// </summary>
-        /// <param name = "element">The element.</param>
-        /// <returns></returns>
-        private string GetElementUID(IPBXElement element)
-        {
-            return String.Format(CultureInfo.CurrentCulture, "{0}{1}", element.Nature.GetHashCode().ToString("X8"), element.GetHashCode().ToString("X16"));
-        }
-    }
+		/// <summary>
+		///   Adds the specified element.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		private void Add (IPBXElement element)
+		{
+			if (this.Map.ContainsKey (element)) {
+				return;
+			}
+			this.Map.Add (element, this.GetElementUID (element));
+		}
+
+		/// <summary>
+		///   Gets the element UID.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		/// <returns></returns>
+		private string GetElementUID (IPBXElement element)
+		{
+			return String.Format (CultureInfo.CurrentCulture, "{0}{1}", element.Nature.GetHashCode ().ToString ("X8"), element.GetHashCode ().ToString ("X16"));
+		}
+	}
 }
