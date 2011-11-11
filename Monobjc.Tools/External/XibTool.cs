@@ -86,6 +86,10 @@ namespace Monobjc.Tools.External
             }
         }
 
+		/// <summary>
+		/// Gets or sets the executable.
+		/// </summary>
+		/// <value>The executable.</value>
         private static string Executable
         {
             get

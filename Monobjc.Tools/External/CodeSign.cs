@@ -62,6 +62,10 @@ namespace Monobjc.Tools.External
 			return SignApplication(bundle, identity, null);
         }
 
+		/// <summary>
+		/// Gets or sets the executable.
+		/// </summary>
+		/// <value>The executable.</value>
         private static string Executable
         {
             get { return "/usr/bin/codesign"; }

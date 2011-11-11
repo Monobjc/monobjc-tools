@@ -21,6 +21,7 @@ using System.Linq;
 using Microsoft.Build.Framework;
 using Microsoft.Build.Utilities;
 using Monobjc.MSBuild.Properties;
+using Monobjc.MSBuild.Utilities;
 using Monobjc.Tools.Utilities;
 using Monobjc.Tools.External;
 
@@ -62,15 +63,19 @@ namespace Monobjc.MSBuild.Tasks
         /// </summary>
 		public override bool Execute ()
 		{
+			Receigen receigen = new Receigen();
+            receigen.Logger = new ExecutionLogger(this);
+			
 			if (this.Path != null) {
-				Receigen.Executable = this.Path.ItemSpec;
+				receigen.Executable = this.Path.ItemSpec;
 			}
-			String result = Receigen.Generate(this.InfoPList.ItemSpec, System.IO.Path.GetFullPath(this.ToDirectory.ItemSpec));
-			if (String.IsNullOrWhiteSpace(result)) {
-				this.Log.LogError("Error while running Receigen");
-				return false;
-			}
+			
+			String plist = System.IO.Path.GetFullPath(this.InfoPList.ItemSpec);
+			String directory = System.IO.Path.GetFullPath(this.ToDirectory.ItemSpec);
+			
+			String result = receigen.Generate(plist, directory);
 			this.Log.LogMessage(result);
+			
 			return true;
         }
     }
