@@ -6947,6 +6947,40 @@ enum
       </Protocol>
     </Protocols>
   </Framework>
+  <Framework name="StoreKit" usings="Foundation" assembly="Monobjc.StoreKit">
+		<Types>
+			<Type name="StoreKitFramework.Constants">
+				<Patch>Enumerations[Store_Kit_Errors].Name=StoreKitError</Patch>
+				<Patch>Enumerations[StoreKitError].BaseType=int</Patch>
+			</Type>
+		</Types>
+		<Classes>
+			<Class name="SKMutablePayment">
+			</Class>
+			<Class name="SKPayment">
+			</Class>
+			<Class name="SKPaymentQueue">
+			</Class>
+			<Class name="SKPaymentTransaction">
+			</Class>
+			<Class name="SKProduct">
+			</Class>
+			<Class name="SKProductsRequest">
+			</Class>
+			<Class name="SKProductsResponse">
+			</Class>
+			<Class name="SKRequest">
+			</Class>
+		</Classes>
+		<Protocols>
+			<Protocol name="SKPaymentTransactionObserver">
+			</Protocol>
+			<Protocol name="SKProductsRequestDelegate">
+			</Protocol>
+			<Protocol name="SKRequestDelegate">
+			</Protocol>
+		</Protocols>
+  </Framework>
   <Framework name="WebKit" usings="Foundation,AppKit,WebKit.DOM" assembly="Monobjc.WebKit">
     <Types>
       <Type name="WebKitFramework.Constants">

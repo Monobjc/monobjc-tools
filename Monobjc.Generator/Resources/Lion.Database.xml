@@ -3879,6 +3879,42 @@
   <Entry ns="Sparkle" nature="P" name="SUVersionComparison" style="Doxygen" file="SUVersionComparison">
     <url>N/A</url>
   </Entry>
+  <Entry ns="StoreKit" nature="C" name="SKMutablePayment" style="Cocoa" file="SKMutablePayment">
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/StoreKit/Reference/SKMutablePaymentRequest_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="StoreKit" nature="C" name="SKPayment" style="Cocoa" file="SKPayment">
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/StoreKit/Reference/SKPaymentRequest_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="StoreKit" nature="C" name="SKPaymentQueue" style="Cocoa" file="SKPaymentQueue">
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/StoreKit/Reference/SKPaymentQueue_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="StoreKit" nature="C" name="SKPaymentTransaction" style="Cocoa" file="SKPaymentTransaction">
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/StoreKit/Reference/SKPaymentTransaction_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="StoreKit" nature="C" name="SKProduct" style="Cocoa" file="SKProduct">
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/StoreKit/Reference/SKProduct_Reference/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="StoreKit" nature="C" name="SKProductsRequest" style="Cocoa" file="SKProductsRequest">
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/StoreKit/Reference/SKProductsRequest/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="StoreKit" nature="C" name="SKProductsResponse" style="Cocoa" file="SKProductsResponse">
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/StoreKit/Reference/SKProductsResponse/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="StoreKit" nature="C" name="SKRequest" style="Cocoa" file="SKRequest">
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/StoreKit/Reference/SKRequest/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="StoreKit" nature="P" name="SKPaymentTransactionObserver" style="Cocoa" file="SKPaymentTransactionObserver">
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/StoreKit/Reference/SKPaymentTransactionObserver_Protocol/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="StoreKit" nature="P" name="SKProductsRequestDelegate" style="Cocoa" file="SKProductsRequestDelegate">
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/StoreKit/Reference/SKProductsRequestDelegate/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="StoreKit" nature="P" name="SKRequestDelegate" style="Cocoa" file="SKRequestDelegate">
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/StoreKit/Reference/SKRequestDelegate/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="StoreKit" nature="T" name="StoreKitFramework.Constants" style="Cocoa" file="StoreKitFramework.Constants">
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/StoreKit/Reference/StoreKitTypes/Reference/reference.html</url>
+  </Entry>
   <Entry ns="WebKit" nature="C" name="WebArchive" style="Cocoa" file="WebArchive">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/WebKit/Classes/WebArchive_Class/Reference/Reference.html</url>
   </Entry>
