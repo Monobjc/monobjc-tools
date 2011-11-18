@@ -54,7 +54,7 @@ namespace Monobjc.Tools.Generator
             int verbose = 0;
             String tasks = null;
             String targetDir = null;
-            String docSet = null;
+            String docSet = "Lion";
 
             // Create an option set
             OptionSet p = new OptionSet().
@@ -133,6 +133,7 @@ namespace Monobjc.Tools.Generator
                         manager.AddTask(new DumpDeprecatedTask("Search for Deprecated API"));
                         //manager.AddTask(new CopyURLTask("Copy Deprecated URLs"));
                         manager.AddTask(new DumpMissingTask("Search for missing entities"));
+                        manager.AddTask(new DumpAllNamesTask("List All Names"));
                         break;
 
                         //

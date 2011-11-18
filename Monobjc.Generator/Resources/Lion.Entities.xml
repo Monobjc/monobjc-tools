@@ -1862,6 +1862,14 @@ NSString *NSFindPanelCaseInsensitiveSearch;
           <With><![CDATA[<dd><p class=]]></With>
         </Replace>
         <Replace type="Xhtml">
+          <Source><![CDATA[// <!--a-->let<!--/a--><!--a-->AppKit<!--/a--><!--a-->infer<!--/a--><!--a-->animation<!--/a--><!--a-->behavior<!--/a--><!--a-->for<!--/a--><!--a-->this<!--/a--><!--a-->window<!--/a-->]]></Source>
+          <With><![CDATA[ ]]></With>
+        </Replace>
+        <Replace type="Xhtml">
+          <Source><![CDATA[// <!--a-->suppress<!--/a--><!--a-->inferred<!--/a--><!--a-->animations<!--/a--> (don'<!--a-->t<!--/a--><!--a-->animate<!--/a-->)]]></Source>
+          <With><![CDATA[ ]]></With>
+        </Replace>
+        <Replace type="Xhtml">
           <Source>
             <![CDATA[};
 enum {]]>
@@ -3667,6 +3675,10 @@ enum {]]></With>
         <Replace type="Html">
           <Source><![CDATA[<dd><p><p class=]]></Source>
           <With><![CDATA[<dd><p class=]]></With>
+        </Replace>
+        <Replace type="Xhtml">
+          <Source><![CDATA[// <!--a-->convenience<!--/a--><!--a-->combinations<!--/a-->]]></Source>
+          <With><![CDATA[ ]]></With>
         </Replace>
         <Replace type="Xhtml">
           <Source><![CDATA[642<!--a-->m<!--/a-->]]></Source>

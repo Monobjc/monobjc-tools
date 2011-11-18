@@ -1440,9 +1440,6 @@
   <Entry ns="CoreData" nature="C" name="NSRelationshipDescription" style="Cocoa" file="NSRelationshipDescription">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/NSRelationshipDescription.html</url>
   </Entry>
-  <Entry ns="CoreData" nature="C" name="NSSaveChangesRequest" style="Cocoa" file="NSSaveChangesRequest">
-    <url>${DOCSET}/Contents/Resources/Documents/documentation/CoreData/Reference/NSSaveChangesRequest_Class/Reference/Reference.html</url>
-  </Entry>
   <Entry ns="CoreData" nature="T" name="CoreDataFramework.Constants" style="Cocoa" file="CoreDataFramework.Constants">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/CoreDataFramework/Miscellaneous/CoreData_Constants/index.html</url>
   </Entry>
@@ -2932,7 +2929,7 @@
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSUbiquitousKeyValueStore" style="Cocoa" file="NSUbiquitousKeyValueStore">
-    <url>${DOCSET}/Contents/Resources/Documents/documentation/Miscellaneous/Reference/NSUbiquitousKeyValueStore_class/Reference/Reference.html</url>
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/Foundation/Reference/NSUbiquitousKeyValueStore_class/Reference/Reference.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSUnarchiver" style="Cocoa" file="NSUnarchiver">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSUnarchiver_Class/Reference/Reference.html</url>

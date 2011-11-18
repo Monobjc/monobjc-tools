@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2011 - Laurent Etiemble
 //
@@ -17,6 +17,7 @@
 //
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml.Serialization;
 
 namespace Monobjc.Tools.Generator.Model.Entities
@@ -197,6 +198,23 @@ namespace Monobjc.Tools.Generator.Model.Entities
                 {
                     this.Functions.Add(functionEntity);
                 }
+            }
+        }
+
+        /// <summary>
+        ///   Gets the children.
+        /// </summary>
+        /// <value>The children.</value>
+        [XmlIgnore]
+        public override List<BaseEntity> Children
+        {
+            get
+            {
+                List<BaseEntity> children = new List<BaseEntity>();
+                children.AddRange(this.Functions.Cast<BaseEntity>());
+                children.AddRange(this.Enumerations.Cast<BaseEntity>());
+                children.AddRange(this.Constants.Cast<BaseEntity>());
+                return children;
             }
         }
     }
