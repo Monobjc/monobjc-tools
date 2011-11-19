@@ -4266,11 +4266,13 @@ enum {]]></With>
         <Patch>Properties[Data].Type=NSData</Patch>
         <Patch>Properties[Data].Getter.ReturnType=NSData</Patch>
         <Patch>Properties[Data].CopyInDescendants=true</Patch>
+        <Patch>Enumerations[NSDataReadingOptions].MinAvailability=Mac OS X v10.4</Patch>
         <Patch>Enumerations[NSDataReadingOptions].Values[NSDataReadingMapped]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Deprecated name for NSDataReadingMappedIfSafe.</Line></Summary><MinAvailability>Mac OS X v10.6</MinAvailability><Name>NSDataReadingMapped</Name><Value>1U &lt;&lt; 0</Value></EnumerationValue>]]></Patch>
         <Patch>Enumerations[NSDataReadingOptions].Values[NSMappedRead]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Deprecated name for NSDataReadingMapped.</Line></Summary><MinAvailability>Mac OS X v10.4</MinAvailability><Name>NSMappedRead</Name><Value>1U &lt;&lt; 0</Value></EnumerationValue>]]></Patch>
         <Patch>Enumerations[NSDataReadingOptions].Values[NSUncachedRead]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Deprecated name for NSDataReadingUncached.</Line></Summary><MinAvailability>Mac OS X v10.4</MinAvailability><Name>NSUncachedRead</Name><Value>1U &lt;&lt; 1</Value></EnumerationValue>]]></Patch>
         <Patch>Enumerations[Legacy_Reading_Options].Generate=false</Patch>
-        <Patch>Enumerations[NSDataReadingOptions].Values[NSUncachedRead]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Deprecated name for NSDataWritingAtomic.</Line></Summary><MinAvailability>Mac OS X v10.4</MinAvailability><Name>NSAtomicWrite</Name><Value>1U &lt;&lt; 0</Value></EnumerationValue>]]></Patch>
+        <Patch>Enumerations[NSDataWritingOptions].MinAvailability=Mac OS X v10.4</Patch>
+        <Patch>Enumerations[NSDataWritingOptions].Values[NSAtomicWrite]=<![CDATA[<EnumerationValue Generate="true"><Summary><Line>Deprecated name for NSDataWritingAtomic.</Line></Summary><MinAvailability>Mac OS X v10.4</MinAvailability><Name>NSAtomicWrite</Name><Value>1U &lt;&lt; 0</Value></EnumerationValue>]]></Patch>
         <Patch>Enumerations[Legacy_Writing_Options].Generate=false</Patch>
         <Replace type="Generated">
           <Source><![CDATA[1UL <<]]></Source>
