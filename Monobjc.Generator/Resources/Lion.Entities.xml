@@ -259,24 +259,41 @@
         <Patch>Functions[CGPathAddCurveToPoint].Parameters[m].Type=IntPtr</Patch>
         <Patch>Functions[CGPathAddEllipseInRect].Parameters[m].Type=IntPtr</Patch>
         <Patch>Functions[CGPathAddLines].Parameters[m].Type=IntPtr</Patch>
+        <Patch>Functions[CGPathAddLines].Parameters[points[]].Name=points</Patch>
+        <Patch>Functions[CGPathAddLines].Parameters[points].Type=IntPtr</Patch>
         <Patch>Functions[CGPathAddLineToPoint].Parameters[m].Type=IntPtr</Patch>
         <Patch>Functions[CGPathAddPath].Parameters[m].Type=IntPtr</Patch>
         <Patch>Functions[CGPathAddQuadCurveToPoint].Parameters[m].Type=IntPtr</Patch>
         <Patch>Functions[CGPathAddRect].Parameters[m].Type=IntPtr</Patch>
         <Patch>Functions[CGPathAddRects].Parameters[m].Type=IntPtr</Patch>
-        <Patch>Functions[CGPathContainsPoint].Parameters[m].Type=IntPtr</Patch>
-        <Patch>Functions[CGPathIsRect].Parameters[rect].Type=IntPtr</Patch>
-        <Patch>Functions[CGPathMoveToPoint].Parameters[m].Type=IntPtr</Patch>
-
-        <Patch>Functions[CGPathAddLines].Parameters[points[]].Name=points</Patch>
-        <Patch>Functions[CGPathAddLines].Parameters[points].Type=IntPtr</Patch>
         <Patch>Functions[CGPathAddRects].Parameters[rects[]].Name=rects</Patch>
         <Patch>Functions[CGPathAddRects].Parameters[rects].Type=IntPtr</Patch>
+        <Patch>Functions[CGPathAddRelativeArc].Parameters[matrix].Type=CGAffineTransform</Patch>
+        <Patch>Functions[CGPathAddRelativeArc].Parameters[matrix].IsByRef=true</Patch>
         <Patch>Functions[CGPathApply].Parameters[function].Type=IntPtr</Patch>
+        <Patch>Functions[CGPathContainsPoint].Parameters[m].Type=IntPtr</Patch>
+        <Patch>Functions[CGPathCreateCopyByDashingPath].Parameters[transform].Type=CGAffineTransform</Patch>
+        <Patch>Functions[CGPathCreateCopyByDashingPath].Parameters[transform].IsByRef=true</Patch>
+        <Patch>Functions[CGPathCreateCopyByDashingPath].Parameters[lengths].Type=IntPtr</Patch>
+        <Patch>Functions[CGPathCreateCopyByStrokingPath].Parameters[transform].Type=CGAffineTransform</Patch>
+        <Patch>Functions[CGPathCreateCopyByStrokingPath].Parameters[transform].IsByRef=true</Patch>
+        <Patch>Functions[CGPathCreateCopyByTransformingPath].Parameters[transform].Type=CGAffineTransform</Patch>
+        <Patch>Functions[CGPathCreateCopyByTransformingPath].Parameters[transform].IsByRef=true</Patch>
         <Patch>Functions[CGPathCreateMutable].Parameters[d].Generate=false</Patch>
+        <Patch>Functions[CGPathCreateMutableCopyByTransformingPath].Parameters[transform].Type=CGAffineTransform</Patch>
+        <Patch>Functions[CGPathCreateMutableCopyByTransformingPath].Parameters[transform].IsByRef=true</Patch>
+        <Patch>Functions[CGPathCreateWithEllipseInRect].Parameters[transform].Type=CGAffineTransform</Patch>
+        <Patch>Functions[CGPathCreateWithEllipseInRect].Parameters[transform].IsByRef=true</Patch>
+        <Patch>Functions[CGPathCreateWithRect].Parameters[transform].Type=CGAffineTransform</Patch>
+        <Patch>Functions[CGPathCreateWithRect].Parameters[transform].IsByRef=true</Patch>
+        <Patch>Functions[CGPathIsRect].Parameters[rect].Type=IntPtr</Patch>
         <Patch>Functions[CGPathGetTypeID].Generate=false</Patch>
+        <Patch>Functions[CGPathMoveToPoint].Parameters[m].Type=IntPtr</Patch>
+				
         <Patch>Enumerations[CGPathDrawingMode].BaseType=int</Patch>
         <Patch>Enumerations[CGPathElementType].BaseType=int</Patch>
+        <Patch>Enumerations[CGLineCap].BaseType=int</Patch>
+        <Patch>Enumerations[CGLineJoin].BaseType=int</Patch>
       </Type>
       <Type name="CGPattern">
         <Patch>Functions[CGPatternCreate].Parameters[callbacks].Type=IntPtr</Patch>
@@ -666,6 +683,10 @@
         <Patch>Constants[NSAnimationProgress].Generate=false</Patch>
       </Class>
       <Class name="NSAnimationContext">
+		<Patch>Methods[RunAnimationGroupCompletionHandler].Parameters[changes].Type=Block</Patch>
+		<Patch>Methods[RunAnimationGroupCompletionHandler].Parameters[changes].IsBlock=false</Patch>
+		<Patch>Methods[RunAnimationGroupCompletionHandler].Parameters[completionHandler].Type=Block</Patch>
+		<Patch>Methods[RunAnimationGroupCompletionHandler].Parameters[completionHandler].IsBlock=false</Patch>
       </Class>
       <Class name="NSAppleScript_AppKitAdditions">
       </Class>
@@ -682,6 +703,10 @@
         <Patch>Enumerations[NSRemoteNotificationType].BaseType=NSUInteger</Patch>
         <!-- TODO: Move to a NSUInteger constant -->
         <Patch>Enumerations[NSUpdateWindowsRunLoopOrdering].Generate=false</Patch>
+		<Replace type="Xhtml">
+			<Source><![CDATA[FullScreen">NSApplicationPresentationFullScreen</a>]]></Source>
+			<With><![CDATA[FullScreen">, NSApplicationPresentationFullScreen</a>]]></With>
+		</Replace>
       </Class>
       <Class name="NSArrayController">
         <Patch>Properties[ArrangedObjects].Type=NSArray</Patch>
@@ -975,12 +1000,20 @@
       <Class name="NSDockTile">
       </Class>
       <Class name="NSDocument">
+		<Patch>Methods[PerformActivityWithSynchronousWaitingUsingBlock].Parameters[inBlock].Type=Block</Patch>
+		<Patch>Methods[PerformActivityWithSynchronousWaitingUsingBlock].Parameters[inBlock].IsBlock=false</Patch>
+		<Patch>Methods[PerformAsynchronousFileAccessUsingBlock].Parameters[inBlock].Type=Block</Patch>
+		<Patch>Methods[PerformAsynchronousFileAccessUsingBlock].Parameters[inBlock].IsBlock=false</Patch>
         <Replace type="Xhtml">
           <Source><![CDATA[<a href="#//apple_ref/doc/c_ref/NSAutosaveOperation">NSAutosaveOperation</a> = 3]]></Source>
           <With><![CDATA[<a href="#//apple_ref/doc/c_ref/NSAutosaveOperation">, NSAutosaveOperation</a> = 3]]></With>
         </Replace>
       </Class>
       <Class name="NSDocumentController">
+		<Patch>Methods[OpenDocumentWithContentsOfURLDisplayCompletionHandler].Parameters[completionHandler].Type=Block</Patch>
+		<Patch>Methods[OpenDocumentWithContentsOfURLDisplayCompletionHandler].Parameters[completionHandler].IsBlock=false</Patch>
+		<Patch>Methods[ReopenDocumentForURLWithContentsOfURLDisplayCompletionHandler].Parameters[completionHandler].Type=Block</Patch>
+		<Patch>Methods[ReopenDocumentForURLWithContentsOfURLDisplayCompletionHandler].Parameters[completionHandler].IsBlock=false</Patch>
         <Patch>Properties[SharedDocumentController].Type=NSDocumentController</Patch>
       </Class>
       <Class name="NSDraggingSession">
@@ -2177,6 +2210,110 @@ enum {]]>
         <Patch>BaseType=NSTableViewDelegate</Patch>
         <Patch>DelegateFor=NSOutlineView</Patch>
         <Patch>DelegateProperty=Delegate</Patch>
+<Patch>Methods[OutlineViewColumnDidMove]=<![CDATA[
+<Method Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true">
+<Summary>
+<Line>Invoked whenever the user moves a column in the outline view.</Line>
+</Summary>
+<MinAvailability>Mac OS X v10.0</MinAvailability>
+<Name>OutlineViewColumnDidMove</Name>
+<Selector>outlineViewColumnDidMove:</Selector>
+<Signature>- (void)outlineViewColumnDidMove:(NSNotification *)notification</Signature>
+<ReturnType>void</ReturnType>
+<Parameters>
+<Parameter Generate="true" CopyInDescendants="false" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The posted notification.</Line></Summary><Name>notification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>
+]]></Patch>
+<Patch>Methods[OutlineViewColumnDidResize]=<![CDATA[
+<Method Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true">
+<Summary>
+<Line>Invoked whenever the user resizes a column in the outline view.</Line>
+</Summary>
+<MinAvailability>Mac OS X v10.0</MinAvailability>
+<Name>OutlineViewColumnDidResize</Name>
+<Selector>outlineViewColumnDidResize:</Selector>
+<Signature>- (void)outlineViewColumnDidResize:(NSNotification *)notification</Signature>
+<ReturnType>void</ReturnType>
+<Parameters>
+<Parameter Generate="true" CopyInDescendants="false" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The posted notification.</Line></Summary><Name>notification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>
+]]></Patch>
+<Patch>Methods[OutlineViewItemDidCollapse]=<![CDATA[
+<Method Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true">
+<Summary>
+<Line>Invoked when the did collapse notification is posted—that is, whenever the user collapses an item in the outline view.</Line>
+</Summary>
+<MinAvailability>Mac OS X v10.0</MinAvailability>
+<Name>OutlineViewItemDidCollapse</Name>
+<Selector>outlineViewItemDidCollapse:</Selector>
+<Signature>- (void)outlineViewItemDidCollapse:(NSNotification *)notification</Signature>
+<ReturnType>void</ReturnType>
+<Parameters>
+<Parameter Generate="true" CopyInDescendants="false" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The posted notification.</Line></Summary><Name>notification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>
+]]></Patch>
+<Patch>Methods[OutlineViewItemDidExpand]=<![CDATA[
+<Method Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true">
+<Summary>
+<Line>Invoked when notification is posted—that is, whenever the user expands an item in the outline view.</Line>
+</Summary>
+<MinAvailability>Mac OS X v10.0</MinAvailability>
+<Name>OutlineViewItemDidExpand</Name>
+<Selector>outlineViewItemDidExpand:</Selector>
+<Signature>- (void)outlineViewItemDidExpand:(NSNotification *)notification</Signature>
+<ReturnType>void</ReturnType>
+<Parameters>
+<Parameter Generate="true" CopyInDescendants="false" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The posted notification.</Line></Summary><Name>notification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>
+]]></Patch>
+<Patch>Methods[OutlineViewItemWillCollapse]=<![CDATA[
+<Method Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true">
+<Summary>
+<Line>Invoked when notification is posted—that is, whenever the user is about to collapse an item in the outline view.</Line>
+</Summary>
+<MinAvailability>Mac OS X v10.0</MinAvailability>
+<Name>OutlineViewItemWillCollapse</Name>
+<Selector>outlineViewItemWillCollapse:</Selector>
+<Signature>- (void)outlineViewItemWillCollapse:(NSNotification *)notification</Signature>
+<ReturnType>void</ReturnType>
+<Parameters>
+<Parameter Generate="true" CopyInDescendants="false" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The posted notification.</Line></Summary><Name>notification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>
+]]></Patch>
+<Patch>Methods[OutlineViewItemWillExpand]=<![CDATA[
+<Method Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true">
+<Summary>
+<Line>Invoked when notification is posted—that is, whenever the user is about to expand an item in the outline view.</Line>
+</Summary>
+<MinAvailability>Mac OS X v10.0</MinAvailability>
+<Name>OutlineViewItemWillExpand</Name>
+<Selector>outlineViewItemWillExpand:</Selector>
+<Signature>- (void)outlineViewItemWillExpand:(NSNotification *)notification</Signature>
+<ReturnType>void</ReturnType>
+<Parameters>
+<Parameter Generate="true" CopyInDescendants="false" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The posted notification.</Line></Summary><Name>notification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>
+]]></Patch>
+<Patch>Methods[OutlineViewSelectionDidChange]=<![CDATA[
+<Method Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true">
+<Summary>
+<Line>Invoked when the selection did change notification is posted—that is, immediately after the outline view’s selection has changed.</Line>
+</Summary>
+<MinAvailability>Mac OS X v10.0</MinAvailability>
+<Name>OutlineViewSelectionDidChange</Name>
+<Selector>outlineViewSelectionDidChange:</Selector>
+<Signature>- (void)outlineViewSelectionDidChange:(NSNotification *)notification</Signature>
+<ReturnType>void</ReturnType>
+<Parameters>
+<Parameter Generate="true" CopyInDescendants="false" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The posted notification.</Line></Summary><Name>notification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>
+]]></Patch>
+<Patch>Methods[OutlineViewSelectionIsChanging]=<![CDATA[
+<Method Generate="true" CopyInDescendants="false" Static="false" GenerateConstructor="true">
+<Summary>
+<Line>Invoked when notification is posted—that is, whenever the outline view’s selection changes.</Line>
+</Summary>
+<MinAvailability>Mac OS X v10.0</MinAvailability>
+<Name>OutlineViewSelectionIsChanging</Name>
+<Selector>outlineViewSelectionIsChanging:</Selector>
+<Signature>- (void)outlineViewSelectionIsChanging:(NSNotification *)notification</Signature>
+<ReturnType>void</ReturnType>
+<Parameters>
+<Parameter Generate="true" CopyInDescendants="false" IsOut="false" IsByRef="false" IsBlock="false"><Summary><Line>The posted notification.</Line></Summary><Name>notification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>
+]]></Patch>
       </Protocol>
       <Protocol name="NSPanelDelegate">
         <Patch>BaseType=NSWindowDelegate</Patch>
@@ -3661,6 +3798,12 @@ enum {]]></With>
   <Framework name="Foundation" usings="ApplicationServices" assembly="Monobjc.Foundation">
     <Types>
       <Type name="FoundationFramework.Constants">
+        <Patch>Enumerations[_NSByteOrder].Name=NSByteOrder</Patch>
+        <Patch>Enumerations[NSByteOrder].BaseType=NSInteger</Patch>
+        <Patch>Enumerations[NSByteOrder].Values[NS_UnknownByteOrder].Value=0</Patch>
+        <Patch>Enumerations[NSByteOrder].Values[NS_LittleEndian].Value=1</Patch>
+        <Patch>Enumerations[NSByteOrder].Values[NS_BigEndian].Value=2</Patch>
+        <Patch>Enumerations[NSRectEdge].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSNotFound].Generate=false</Patch>
         <Patch>Enumerations[Memory_Allocation].Name=NSMemoryAllocation</Patch>
         <Patch>Enumerations[NSMemoryAllocation].BaseType=NSUInteger</Patch>
@@ -3698,14 +3841,12 @@ enum {]]></With>
           <Source><![CDATA[1UL <<]]></Source>
           <With><![CDATA[1U <<]]></With>
         </Replace>
+		<Replace type="Generated">
+			<Source><![CDATA[public enum long : uint]]></Source>
+			<With><![CDATA[public enum NSAlignmentOptions : ulong]]></With>
+		</Replace>
       </Type>
       <Type name="FoundationFramework.DataTypes">
-        <Patch>Enumerations[_NSByteOrder].Name=NSByteOrder</Patch>
-        <Patch>Enumerations[NSByteOrder].BaseType=NSInteger</Patch>
-        <Patch>Enumerations[NSByteOrder].Values[NS_UnknownByteOrder].Value=0</Patch>
-        <Patch>Enumerations[NSByteOrder].Values[NS_LittleEndian].Value=1</Patch>
-        <Patch>Enumerations[NSByteOrder].Values[NS_BigEndian].Value=2</Patch>
-        <Patch>Enumerations[NSRectEdge].BaseType=NSUInteger</Patch>
       </Type>
       <Type name="FoundationFramework.Functions">
         <Patch>Functions[NSAllHashTableObjects].Generate=false</Patch>
@@ -4916,6 +5057,7 @@ enum]]>
         </Replace>
       </Class>
       <Class name="NSTask">
+        <Patch>Properties[TerminationHandler].Type=IntPtr</Patch>
       </Class>
       <Class name="NSTextCheckingResult">
         <Patch>Enumerations[NSTextCheckingType].BaseType=ulong</Patch>
@@ -4925,6 +5067,10 @@ enum]]>
         <Replace type="Xhtml">
           <Source><![CDATA[<!--a-->purposes<!--/a-->]]></Source>
           <With><![CDATA[ ]]></With>
+        </Replace>
+		<Replace type="Xhtml">
+          <Source><![CDATA[PhoneNumber">NSTextCheckingTypePhoneNumber</a>]]></Source>
+          <With><![CDATA[PhoneNumber">,NSTextCheckingTypePhoneNumber</a>]]></With>
         </Replace>
         <Replace type="Generated">
           <Source><![CDATA[1ULL <<]]></Source>
@@ -6287,7 +6433,7 @@ enum
       <Class name="CIContext">
       </Class>
       <Class name="CIFilter">
-        <Patch>Methods[FilterWithNameKeysAndValues].Parameters[namekeysAndValues:key0,...].Generate=false</Patch>
+        <Patch>Methods[FilterWithNameKeysAndValues].Parameters[key0,...].Generate=false</Patch>
         <Patch>Methods[FilterWithNameKeysAndValues].Parameters[key0]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>key0</Name><Type>NSString</Type></Parameter>]]></Patch>
         <Patch>Methods[FilterWithNameKeysAndValues].Parameters[values]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
         <Patch>Methods[Apply].Parameters[k,...].Generate=false</Patch>
