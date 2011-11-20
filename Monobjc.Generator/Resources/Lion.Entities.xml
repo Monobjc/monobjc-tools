@@ -1837,15 +1837,17 @@ NSString *NSFindPanelCaseInsensitiveSearch;
         <Patch>Methods[AdjustPageWidthNewLeftRightLimit].Parameters[newRight].IsOut=true</Patch>
         <Patch>Methods[SortSubviewsUsingFunctionContext].Parameters[compare].Type=IdComparator</Patch>
         <Patch>Methods[ViewWithTag].ReturnType=NSView</Patch>
-
         <Patch>Properties[Animator]=<![CDATA[<Property Generate="true" Static="false"><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>Mac OS X v10.5</MinAvailability><Name>Animator</Name><Type>Id</Type><Getter Generate="true" Static="false" GenerateConstructor="true"><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>Mac OS X v10.5</MinAvailability><Name>Animator</Name><Selector>animator</Selector><Signature>- (id)animator</Signature><ReturnType>Id</ReturnType><ReturnsDocumentation>Returns a proxy object for the receiver that can initiate implied animations in response to property changes.</ReturnsDocumentation><Parameters /></Getter></Property>]]></Patch>
         <Patch>Properties[Animator].Type=NSView</Patch>
         <Patch>Properties[Animator].Getter.ReturnType=NSView</Patch>
         <Patch>Properties[AutoresizingMask].Type=NSAutoresizingMask</Patch>
-
         <Patch>Enumerations[Resizing_masks].Name=NSAutoresizingMask</Patch>
         <Patch>Enumerations[NSAutoresizingMask].BaseType=NSUInteger</Patch>
         <Patch>Enumerations[NSAutoresizingMask].Flags=true</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[instead.)<div class="declaration">]]></Source>
+          <With><![CDATA[instead.)</p><div class="declaration">]]></With>
+        </Replace>
       </Class>
       <Class name="NSViewAnimation">
       </Class>
