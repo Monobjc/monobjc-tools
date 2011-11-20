@@ -7118,6 +7118,18 @@ enum
 		</Types>
 		<Classes>
 			<Class name="SKMutablePayment">
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual NSString ProductIdentifier]]></Source>
+          <With><![CDATA[public new NSString ProductIdentifier]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual NSInteger Quantity]]></Source>
+          <With><![CDATA[public new NSInteger Quantity]]></With>
+        </Replace>
+        <Replace type="Generated">
+          <Source><![CDATA[public virtual NSData RequestData]]></Source>
+          <With><![CDATA[public new NSData RequestData]]></With>
+        </Replace>
 			</Class>
 			<Class name="SKPayment">
 			</Class>
@@ -7128,6 +7140,7 @@ enum
 			<Class name="SKProduct">
 			</Class>
 			<Class name="SKProductsRequest">
+				<Patch>Properties[Delegate].Generate=false</Patch>
 			</Class>
 			<Class name="SKProductsResponse">
 			</Class>
