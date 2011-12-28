@@ -2,6 +2,8 @@
 <project name="Monobjc Tools" default="build" basedir=".">
   <description>Monobjc Tools Build File</description>
 
+  <property name="nant.settings.currentframework" value="mono-4.0"/>
+  
   <!-- Define some properties if they are missing -->
   <property name="monobjc.version" value="4.0" unless="${property::exists('monobjc.version')}"/>
   <property name="build.dir" value="${path::get-full-path('./build')}" unless="${property::exists('build.dir')}"/>
