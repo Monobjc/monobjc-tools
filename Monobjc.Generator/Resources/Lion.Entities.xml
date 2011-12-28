@@ -7155,6 +7155,7 @@ enum
 			<Protocol name="SKPaymentTransactionObserver">
 			</Protocol>
 			<Protocol name="SKProductsRequestDelegate">
+				<Patch>BaseType=SKRequestDelegate</Patch>
 			</Protocol>
 			<Protocol name="SKRequestDelegate">
 			</Protocol>
