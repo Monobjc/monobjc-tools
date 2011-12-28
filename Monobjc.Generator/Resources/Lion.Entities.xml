@@ -7132,8 +7132,12 @@ enum
         </Replace>
 			</Class>
 			<Class name="SKPayment">
+		        <Patch>Methods[PaymentWithProduct].ReturnType=SKPayment</Patch>
+		        <Patch>Methods[PaymentWithProduct].CopyInDescendants=true</Patch>
 			</Class>
 			<Class name="SKPaymentQueue">
+		        <Patch>Methods[AddTransactionObserver].Parameters[observer].Type=Id</Patch>
+		        <Patch>Methods[RemoveTransactionObserver].Parameters[observer].Type=Id</Patch>
 			</Class>
 			<Class name="SKPaymentTransaction">
 			</Class>
