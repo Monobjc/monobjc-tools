@@ -23,7 +23,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Monobjc Bridge NAnt Tasks Library")]
 [assembly: AssemblyCompany("Monobjc Project")]
 [assembly: AssemblyProduct("Monobjc Project")]
-[assembly: AssemblyCopyright("Copyright © Monobjc Project 2007-2011 - Licensed under General Public License")]
+[assembly: AssemblyCopyright("Copyright (c) Monobjc Project 2007-2012 - Licensed under General Public License")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en-US")]
