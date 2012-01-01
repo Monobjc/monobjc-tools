@@ -1,6 +1,6 @@
 ﻿//
 // This file is part of Monobjc, a .NET/Objective-C bridge
-// Copyright (C) 2007-2011 - Laurent Etiemble
+// Copyright (C) 2007-2012 - Laurent Etiemble
 //
 // Monobjc is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -80,19 +80,30 @@ namespace Monobjc.Tools.Doxygenator
             {
                 XElement element = new XElement("Class");
                 String name = compound.name;
+
                 String categoryName = name.Replace('(', '_').Trim(')');
+
                 var pos = name.IndexOf("(");
+
                 String className = (pos != -1) ? name.Substring(0, pos) : name;
+
                 element.Add(new XAttribute("name", categoryName));
+
                 if (className != categoryName)
+
                 {
+
                     XElement additionElement = new XElement("Patch");
+
                     additionElement.SetValue("AdditionFor=" + className);
+
                     element.Add(additionElement);
+
                 }
                 classesElement.Add(element);
 
                 String inputFile = Path.Combine(inputFolder, compound.refid + ".xml");
+
                 String outputFile = Path.Combine(classOutput, categoryName);
                 File.Copy(inputFile, outputFile, true);
             }

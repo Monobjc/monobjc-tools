@@ -1,6 +1,6 @@
 ﻿//
 // This file is part of Monobjc, a .NET/Objective-C bridge
-// Copyright (C) 2007-2011 - Laurent Etiemble
+// Copyright (C) 2007-2012 - Laurent Etiemble
 //
 // Monobjc is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -52,22 +52,40 @@ namespace Monobjc.Tools
             project.AddBuildConfigurationSettings("Release", targetName, "GCC_ENABLE_OBJC_EXCEPTIONS", "YES");
 
             project.AddFile("Files", "MyApplicationAppDelegate.h", targetName);
+
             project.AddFile("Files", "MyApplicationAppDelegate.m", targetName);
+
             project.AddFile("Files", "Wrong.h", targetName);
+
             project.RemoveFile("Files", "Wrong.h", targetName);
 
+
+
             project.AddFile("Files", "main.m", targetName);
+
             project.AddFile("Files", "MyApplication-Info.plist", targetName);
 
+
+
             project.AddFile("Files", "en.lproj/MainMenu.xib", targetName);
+
             project.AddFile("Files", "fr.lproj/MainMenu.xib", targetName);
+
             project.RemoveFile("Files", "fr.lproj/MainMenu.xib", targetName);
 
+
+
             project.AddFramework("Frameworks", "Cocoa", targetName);
+
             project.AddFramework("Frameworks", "AddressBook", targetName);
+
             project.RemoveFramework("Frameworks", "AddressBook", targetName);
 
+
+
             //var frameworks = project.GetFrameworks(targetName);
+
+
 
             project.Save();
         }
