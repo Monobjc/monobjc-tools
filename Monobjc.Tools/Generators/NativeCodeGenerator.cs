@@ -173,7 +173,7 @@ namespace Monobjc.Tools.Generators
             this.Logger.LogInfo("Creating source file...");
 
             // Generate the main source file
-            String mainSource = Path.Combine(directory, "main.c");
+            String mainSource = Path.Combine(directory, "main.m");
             this.GenerateMainSource(mainSource, mainImage, assemblies, configurations, machineConfig);
 
             // Dump the header file
@@ -214,7 +214,6 @@ namespace Monobjc.Tools.Generators
                 sourceWriter.WriteLine();
 				sourceWriter.WriteLine("#ifdef RECEIGEN");
 				sourceWriter.WriteLine("#define RUNNER mono_main");
-				sourceWriter.WriteLine("#define RUNNER_SIGNATURE int(*_RUNNER_)(int argc, char *argv[])");
 				sourceWriter.WriteLine("#include \"receigen.h\"");
 				sourceWriter.WriteLine("#endif");
                 sourceWriter.WriteLine();
@@ -434,6 +433,7 @@ namespace Monobjc.Tools.Generators
 			
 			// Append required framework for Receigen
 			if (this.UseReceigen) {
+                builder.AppendFormat(" -framework {0}", "AppKit");
                 builder.AppendFormat(" -framework {0}", "Foundation");
                 builder.AppendFormat(" -framework {0}", "Security");
                 builder.AppendFormat(" -framework {0}", "IOKit");

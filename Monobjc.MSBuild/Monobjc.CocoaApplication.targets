@@ -25,7 +25,7 @@
   <!-- Define defaults for embedding -->    
   <PropertyGroup>
     <UseCompression Condition="'$(UseCompression)' == ''">true</UseCompression>
-    <UseReceigen Condition="'$(UseReceigen)' == ''">true</UseReceigen>
+    <UseReceigen Condition="'$(UseReceigen)' == ''">false</UseReceigen>
     <NativeCompiler Condition="'$(NativeCompiler)' == ''">cc</NativeCompiler>
   </PropertyGroup>
 	
@@ -90,7 +90,7 @@
     <Copy SkipUnchangedFiles="true" SourceFiles="$(_MainAssembly)" DestinationFolder="$(ResourcesPath)" />
     <Copy SkipUnchangedFiles="true" SourceFiles="$(_MainAssembly).mdb" DestinationFolder="$(ResourcesPath)" Condition=" Exists('$(_MainAssembly).mdb') " />
     <Copy SkipUnchangedFiles="true" SourceFiles="@(ReferenceCopyLocalPaths)" DestinationFolder="$(ResourcesPath)" />
-    <Copy SkipUnchangedFiles="true" SourceFiles="@(Content)" DestinationFolder="$(ResourcesPath)" />
+    <Copy SkipUnchangedFiles="true" SourceFiles="@(Content)" DestinationFiles="@(Content->'$(ResourcesPath)\%(Identity)')" />
 	
 	<CodeSigning Bundle="$(AppBundlePath)" Identity="$(SigningIdentity)" Entitlements="$(Entitlements)" Condition=" '$(SigningIdentity)' != '' " />
   </Target>
@@ -143,7 +143,7 @@
 
 	<CompileXib XibFiles="@(Page)" ToDirectory="$(ResourcesPath)" />
 
-    <Copy SkipUnchangedFiles="true" SourceFiles="@(Content)" DestinationFolder="$(ResourcesPath)" />
+    <Copy SkipUnchangedFiles="true" SourceFiles="@(Content)" DestinationFiles="@(Content->'$(ResourcesPath)\%(Identity)')" />
     <CopyFrameworks Frameworks="$(EmbeddedFrameworks)" ToDirectory="$(FrameworksPath)" />
 
 	<CodeSigning Bundle="$(AppBundlePath)" Identity="$(SigningIdentity)" Entitlements="$(Entitlements)" Condition=" '$(SigningIdentity)' != '' " />

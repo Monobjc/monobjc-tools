@@ -21,6 +21,7 @@ using Microsoft.Build.Utilities;
 using Monobjc.MSBuild.Utilities;
 using Monobjc.Tools.Generators;
 using Monobjc.Tools.Properties;
+using System.IO;
 
 namespace Monobjc.MSBuild.Tasks
 {
@@ -57,7 +58,13 @@ namespace Monobjc.MSBuild.Tasks
 			if (this.XibFile != null) {
 				XibCompiler compiler = new XibCompiler ();
 				compiler.Logger = new ExecutionLogger (this);
-				if (!compiler.Compile (this.XibFile.ItemSpec, this.ToDirectory.ItemSpec)) {
+				
+				String file = this.XibFile.ItemSpec;
+				String dest = this.ToDirectory.ItemSpec;
+				String parent = Path.GetDirectoryName(file);
+				dest = Path.Combine(dest, parent);
+				
+				if (!compiler.Compile (file, dest)) {
 					this.Log.LogError (Resources.XibCompilationFailed);
 					return false;
 				}
@@ -66,7 +73,12 @@ namespace Monobjc.MSBuild.Tasks
 				XibCompiler compiler = new XibCompiler ();
 				compiler.Logger = new ExecutionLogger (this);
 				foreach (ITaskItem item in this.XibFiles) {
-					if (!compiler.Compile (item.ItemSpec, this.ToDirectory.ItemSpec)) {
+					String file = item.ItemSpec;
+					String dest = this.ToDirectory.ItemSpec;
+					String parent = Path.GetDirectoryName(file);
+					dest = Path.Combine(dest, parent);
+				
+					if (!compiler.Compile (file, dest)) {
 						this.Log.LogError (Resources.XibCompilationFailed);
 						return false;
 					}
