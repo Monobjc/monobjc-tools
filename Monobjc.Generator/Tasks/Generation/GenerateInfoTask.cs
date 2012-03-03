@@ -1,6 +1,6 @@
 ﻿//
 // This file is part of Monobjc, a .NET/Objective-C bridge
-// Copyright (C) 2007-2011 - Laurent Etiemble
+// Copyright (C) 2007-2012 - Laurent Etiemble
 //
 // Monobjc is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -91,7 +91,7 @@ namespace Monobjc.Tools.Generator.Tasks.Generation
                         writer.WriteLineFormat(0, "[assembly: AssemblyDescription(\"Monobjc Bridge {0} Library\")]", framework);
                         writer.WriteLineFormat(0, "[assembly: AssemblyCompany(\"Monobjc Project\")]");
                         writer.WriteLineFormat(0, "[assembly: AssemblyProduct(\"Monobjc Bridge Project\")]");
-                        writer.WriteLineFormat(0, "[assembly: AssemblyCopyright(\"Copyright (c) Monobjc Project 2007-2011 - Licensed under MIT License\")]");
+                        writer.WriteLineFormat(0, "[assembly: AssemblyCopyright(\"Copyright (c) Monobjc Project 2007-2012 - Licensed under MIT License\")]");
                         writer.WriteLineFormat(0, "[assembly: AssemblyTrademark(\"\")]");
                         writer.WriteLineFormat(0, "[assembly: AssemblyCulture(\"\")]");
                         writer.WriteLineFormat(0, "[assembly: NeutralResourcesLanguage(\"en-US\")]");

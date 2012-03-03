@@ -1,6 +1,6 @@
 ﻿//
 // This file is part of Monobjc, a .NET/Objective-C bridge
-// Copyright (C) 2007-2011 - Laurent Etiemble
+// Copyright (C) 2007-2012 - Laurent Etiemble
 //
 // Monobjc is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -21,6 +21,7 @@ using Microsoft.Build.Utilities;
 using Monobjc.MSBuild.Utilities;
 using Monobjc.Tools.Generators;
 using Monobjc.Tools.Properties;
+using System.IO;
 
 namespace Monobjc.MSBuild.Tasks
 {
@@ -57,7 +58,13 @@ namespace Monobjc.MSBuild.Tasks
 			if (this.XibFile != null) {
 				XibCompiler compiler = new XibCompiler ();
 				compiler.Logger = new ExecutionLogger (this);
-				if (!compiler.Compile (this.XibFile.ItemSpec, this.ToDirectory.ItemSpec)) {
+				
+				String file = this.XibFile.ItemSpec;
+				String dest = this.ToDirectory.ItemSpec;
+				String parent = Path.GetDirectoryName(file);
+				dest = Path.Combine(dest, parent);
+				
+				if (!compiler.Compile (file, dest)) {
 					this.Log.LogError (Resources.XibCompilationFailed);
 					return false;
 				}
@@ -66,13 +73,19 @@ namespace Monobjc.MSBuild.Tasks
 				XibCompiler compiler = new XibCompiler ();
 				compiler.Logger = new ExecutionLogger (this);
 				foreach (ITaskItem item in this.XibFiles) {
-					if (!compiler.Compile (item.ItemSpec, this.ToDirectory.ItemSpec)) {
+					String file = item.ItemSpec;
+					String dest = this.ToDirectory.ItemSpec;
+					String parent = Path.GetDirectoryName(file);
+					dest = Path.Combine(dest, parent);
+				
+					if (!compiler.Compile (file, dest)) {
 						this.Log.LogError (Resources.XibCompilationFailed);
 						return false;
 					}
 				}
 				return true;
 			} else {
+
 				this.Log.LogError(Resources.XibCompilationFailed);
 				return false;
 			}
