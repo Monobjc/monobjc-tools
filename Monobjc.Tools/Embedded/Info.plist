@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
+	<string>${}</string>
 	<key>CFBundleExecutable</key>
 	<string>${}</string>
 	<key>CFBundleIconFile</key>

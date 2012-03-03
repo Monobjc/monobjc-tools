@@ -33,6 +33,7 @@ namespace Monobjc.Tools.Generators
         {
 			this.Logger = new NullLogger ();
             this.TargetOSVersion = MacOSVersion.MacOS105;
+			this.DevelopmentRegion = "en";
         }
 
 		/// <summary>
@@ -84,6 +85,12 @@ namespace Monobjc.Tools.Generators
         public String PrincipalClass { get; set; }
 
         /// <summary>
+        ///   Gets or sets the development region.
+        /// </summary>
+        /// <value>The development region.</value>
+        public String DevelopmentRegion { get; set; }
+
+        /// <summary>
         ///   Gets or sets the content of the Info.plist file.
         ///   <para>On input, allows to set the template to use.</para>
         /// </summary>
@@ -115,6 +122,7 @@ namespace Monobjc.Tools.Generators
             this.PrincipalClass = this.PrincipalClass ?? "NSApplication";
 
             // Replace template values
+            Replace(dict, "CFBundleDevelopmentRegion", this.DevelopmentRegion);
             Replace(dict, "CFBundleExecutable", this.ApplicationName);
             Replace(dict, "CFBundleIconFile", this.Icon);
             Replace(dict, "CFBundleIdentifier", this.Identifier);
