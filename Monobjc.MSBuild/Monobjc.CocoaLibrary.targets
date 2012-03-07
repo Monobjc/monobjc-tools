@@ -4,10 +4,4 @@
 	<!-- Import the Monobjc Common targets -->
 	<Import Project="$(MSBuildBinPath)\Monobjc.Common.targets" />
 
-	<PropertyGroup>
-		<!-- Define private properties -->  
-		<_MainAssembly>$(OutputPath)\$(AssemblyName).exe</_MainAssembly>
-		<_NativeWorkingPath>$(OutputPath)\embed</_NativeWorkingPath>
-	</PropertyGroup>
-
 </Project>

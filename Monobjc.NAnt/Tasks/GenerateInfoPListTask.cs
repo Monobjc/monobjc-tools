@@ -68,6 +68,17 @@ namespace Monobjc.NAnt.Tasks
         }
 
         /// <summary>
+        ///   Gets or sets the development region.
+        /// </summary>
+        /// <value>The development region.</value>
+        [TaskAttribute("region")]
+        public string DevelopmentRegion
+        {
+            get { return this.generator.DevelopmentRegion; }
+            set { this.generator.DevelopmentRegion = value; }
+        }
+
+        /// <summary>
         ///   Gets or sets the icon.
         /// </summary>
         /// <value>The icon.</value>

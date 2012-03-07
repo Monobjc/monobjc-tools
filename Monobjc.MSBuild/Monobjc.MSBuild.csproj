@@ -86,5 +86,7 @@
     <None Include="Monobjc.CocoaApplication.targets" />
     <None Include="Monobjc.ConsoleApplication.targets" />
     <None Include="Monobjc.MSBuild.tasks" />
+    <None Include="Monobjc.CocoaLibrary.targets" />
+    <None Include="Monobjc.Common.targets" />
   </ItemGroup>
 </Project>

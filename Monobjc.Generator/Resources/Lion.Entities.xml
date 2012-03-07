@@ -4526,6 +4526,9 @@ enum {]]></With>
       <Class name="NSLinguisticTagger">
       </Class>
       <Class name="NSLocale">
+        <Patch>Properties[AutoupdatingCurrentLocale].Type=NSLocale</Patch>
+        <Patch>Properties[CurrentLocale].Type=NSLocale</Patch>
+        <Patch>Properties[SystemLocale].Type=NSLocale</Patch>
         <Patch>Enumerations[NSLocaleLanguageDirection].Values[NSLocaleLanguageDirectionUnknown].Value=0</Patch>
         <Patch>Enumerations[NSLocaleLanguageDirection].Values[NSLocaleLanguageDirectionLeftToRight].Value=1</Patch>
         <Patch>Enumerations[NSLocaleLanguageDirection].Values[NSLocaleLanguageDirectionRightToLeft].Value=2</Patch>

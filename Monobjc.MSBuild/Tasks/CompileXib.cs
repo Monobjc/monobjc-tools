@@ -22,6 +22,8 @@ using Monobjc.MSBuild.Utilities;
 using Monobjc.Tools.Generators;
 using Monobjc.Tools.Properties;
 using System.IO;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Monobjc.MSBuild.Tasks
 {
@@ -30,65 +32,77 @@ namespace Monobjc.MSBuild.Tasks
 		/// <summary>
 		/// Gets or sets the xib file.
 		/// </summary>
-		/// <value>
-		/// The xib file.
-		/// </value>
+		/// <value>The xib file.</value>
 		public ITaskItem XibFile { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the xib files.
 		/// </summary>
-		/// <value>
-		/// The xib files.
-		/// </value>
+		/// <value>The xib files.</value>
 		public ITaskItem[] XibFiles { get; set; }
 		
-        /// <summary>
-        /// Gets or sets the output dir.
-        /// </summary>
-        /// <value>The output dir.</value>
-        [Required]
+		/// <summary>
+		/// Gets or sets the output dir.
+		/// </summary>
+		/// <value>The output dir.</value>
 		public ITaskItem ToDirectory { get; set; }
 
-        /// <summary>
-        ///   Executes the task.
-        /// </summary>
+		/// <summary>
+		/// Gets or sets the output dir.
+		/// </summary>
+		/// <value>The output dirs.</value>
+		public ITaskItem[] ToDirectories { get; set; }
+
+		/// <summary>
+		///   Executes the task.
+		/// </summary>
 		public override bool Execute ()
 		{
-			if (this.XibFile != null) {
-				XibCompiler compiler = new XibCompiler ();
-				compiler.Logger = new ExecutionLogger (this);
-				
-				String file = this.XibFile.ItemSpec;
-				String dest = this.ToDirectory.ItemSpec;
-				String parent = Path.GetDirectoryName(file);
-				dest = Path.Combine(dest, parent);
+			List<ITaskItem> files = new List<ITaskItem> ();
+			List<ITaskItem> directories = new List<ITaskItem> ();
+			
+			if (this.XibFile != null && this.ToDirectory != null) {
+				files.Add (this.XibFile);
+				directories.Add (this.ToDirectory);
+			} else if (this.XibFiles != null && this.ToDirectory != null) {
+				files.AddRange (this.XibFiles);
+				for (int i = 0; i < files.Count; i++) {
+					directories.Add (this.ToDirectory);
+				}
+			} else if (this.XibFiles != null && this.ToDirectories != null) {
+				files.AddRange (this.XibFiles);
+				directories.AddRange (this.ToDirectories);
+			} else if (this.XibFile == null && this.ToDirectory == null &&
+			           this.XibFiles == null && this.ToDirectories == null) {
+				return true;
+			} else {
+				this.Log.LogError (Resources.XibCompilationFailed);
+				return false;
+			}
+			
+			//this.Log.LogMessage("Got {0} files and {1} folders", files.Count, directories.Count);
+			
+			if (files.Count != directories.Count) {
+				this.Log.LogError (Resources.XibCompilationFailed);
+				return false;
+			}
+			
+			XibCompiler compiler = new XibCompiler ();
+			compiler.Logger = new ExecutionLogger (this);
+			
+			for (int i = 0; i < files.Count; i++) {
+				String file = files [i].ItemSpec;
+				String dest = directories [i].ItemSpec;
+				String parent = Path.GetDirectoryName (file);
+				dest = Path.Combine (dest, parent);
 				
 				if (!compiler.Compile (file, dest)) {
 					this.Log.LogError (Resources.XibCompilationFailed);
 					return false;
 				}
-				return true;
-			} else if (this.XibFiles != null) {
-				XibCompiler compiler = new XibCompiler ();
-				compiler.Logger = new ExecutionLogger (this);
-				foreach (ITaskItem item in this.XibFiles) {
-					String file = item.ItemSpec;
-					String dest = this.ToDirectory.ItemSpec;
-					String parent = Path.GetDirectoryName(file);
-					dest = Path.Combine(dest, parent);
-				
-					if (!compiler.Compile (file, dest)) {
-						this.Log.LogError (Resources.XibCompilationFailed);
-						return false;
-					}
-				}
-				return true;
-			} else {
-
-				this.Log.LogError(Resources.XibCompilationFailed);
-				return false;
 			}
+			
+			return true;
 		}
 	}
 }

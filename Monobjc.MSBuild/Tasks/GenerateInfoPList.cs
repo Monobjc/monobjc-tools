@@ -40,6 +40,7 @@ namespace Monobjc.MSBuild.Tasks
         {
             this.generator = new InfoPListGenerator();
 			this.minRequiredOSVersion = MacOSVersion.MacOS105;
+			this.DevelopmentRegion = "en";
         }
 
         /// <summary>
@@ -59,6 +60,12 @@ namespace Monobjc.MSBuild.Tasks
         /// </summary>
         /// <value>The name of the application.</value>
         public String ApplicationName { get; set; }
+
+        /// <summary>
+        ///   Gets or sets the development region.
+        /// </summary>
+        /// <value>The development region.</value>
+        public String DevelopmentRegion { get; set; }
 
         /// <summary>
         /// Gets or sets the icon.
@@ -144,6 +151,7 @@ namespace Monobjc.MSBuild.Tasks
 			}
 			
 			// Set other parameters
+			this.generator.DevelopmentRegion = this.DevelopmentRegion;
 			this.generator.Icon = this.Icon;
 			this.generator.MainNibFile = this.MainNibFile;
 			this.generator.PrincipalClass = this.PrincipalClass;
