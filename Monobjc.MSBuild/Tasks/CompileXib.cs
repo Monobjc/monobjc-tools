@@ -61,6 +61,11 @@ namespace Monobjc.MSBuild.Tasks
 			List<ITaskItem> files = new List<ITaskItem> ();
 			List<ITaskItem> directories = new List<ITaskItem> ();
 			
+			// No file to compile equals success
+			if (files.Count == 0) {
+				return true;
+			}
+			
 			if (this.XibFile != null && this.ToDirectory != null) {
 				files.Add (this.XibFile);
 				directories.Add (this.ToDirectory);
@@ -80,7 +85,7 @@ namespace Monobjc.MSBuild.Tasks
 				return false;
 			}
 			
-			//this.Log.LogMessage("Got {0} files and {1} folders", files.Count, directories.Count);
+			this.Log.LogMessage("Processing {0} files to {1} folders", files.Count, directories.Count);
 			
 			if (files.Count != directories.Count) {
 				this.Log.LogError (Resources.XibCompilationFailed);
