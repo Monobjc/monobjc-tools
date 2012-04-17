@@ -1901,6 +1901,10 @@ NSString *NSFindPanelCaseInsensitiveSearch;
           <Source><![CDATA[<dd><p><p class=]]></Source>
           <With><![CDATA[<dd><p class=]]></With>
         </Replace>
+        <Replace type="Html">
+          <Source><![CDATA[instead.)<div class="declaration">]]></Source>
+          <With><![CDATA[instead.)</p><div class="declaration">]]></With>
+        </Replace>
         <Replace type="Xhtml">
           <Source><![CDATA[// <!--a-->let<!--/a--><!--a-->AppKit<!--/a--><!--a-->infer<!--/a--><!--a-->animation<!--/a--><!--a-->behavior<!--/a--><!--a-->for<!--/a--><!--a-->this<!--/a--><!--a-->window<!--/a-->]]></Source>
           <With><![CDATA[ ]]></With>
@@ -2423,6 +2427,10 @@ enum {]]>
         <Patch>Methods[TextViewCompletionsForPartialWordRangeIndexOfSelectedItem].Parameters[index].IsOut=true</Patch>
         <Patch>Methods[TextViewWillCheckTextInRangeOptionsTypes].Parameters[checkingTypes].Type=NSTextCheckingTypes</Patch>
         <Patch>Methods[TextViewWillCheckTextInRangeOptionsTypes].Parameters[checkingTypes].IsByRef=true</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[instead.)<div class="declaration">]]></Source>
+          <With><![CDATA[instead.)</p><div class="declaration">]]></With>
+        </Replace>
       </Protocol>
       <Protocol name="NSTokenFieldCellDelegate">
         <Patch>DelegateFor=NSTokenFieldCell</Patch>

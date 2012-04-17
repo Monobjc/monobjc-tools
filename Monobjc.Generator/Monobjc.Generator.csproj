@@ -154,6 +154,7 @@
     <Compile Include="Utilities\HtmlCleaner.cs" />
     <Compile Include="Utilities\PathExtensions.cs" />
     <Compile Include="Utilities\TypeManager.cs" />
+    <Compile Include="Tasks\Output\DumpEmptySignatureTask.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Lion.Database.xml">
