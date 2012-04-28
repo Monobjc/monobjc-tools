@@ -118,7 +118,6 @@
     <Compile Include="External\CodeSign.cs" />
     <Compile Include="External\ProductBuild.cs" />
     <Compile Include="External\HdiUtil.cs" />
-    <Compile Include="Generators\DmgCreator.cs" />
     <Compile Include="Utilities\FileProvider.cs" />
     <Compile Include="External\Lipo.cs" />
     <Compile Include="Utilities\SecItemClass.cs" />
