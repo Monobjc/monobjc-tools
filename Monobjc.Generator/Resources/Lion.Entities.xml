@@ -675,6 +675,7 @@
         <Patch>Methods[AlertWithMessageTextDefaultButtonAlternateButtonOtherButtonInformativeTextWithFormat].Parameters[informativeText]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary /><Name>informativeText</Name><Type>NSString</Type></Parameter>]]></Patch>
         <Patch>Methods[AlertWithMessageTextDefaultButtonAlternateButtonOtherButtonInformativeTextWithFormat].Parameters[values]=<![CDATA[<Parameter Generate="true" IsOut="false" IsByRef="false"><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>]]></Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
+        <Patch>Properties[Window].Type=NSWindow</Patch>
         <Patch>Enumerations[Button_Return_Values].Name=NSButtonReturn</Patch>
         <Patch>Enumerations[NSButtonReturn].BaseType=NSInteger</Patch>
       </Class>
@@ -1670,10 +1671,12 @@
       <Class name="NSTableHeaderView">
       </Class>
       <Class name="NSTableRowView">
+        <Patch>Methods[ViewAtColumn].ReturnType=NSView</Patch>
       </Class>
       <Class name="NSTableView">
         <Patch>Methods[DragImageForRowsWithIndexesTableColumnsEventOffset].Parameters[dragImageOffset].Type=NSPoint</Patch>
         <Patch>Methods[DragImageForRowsWithIndexesTableColumnsEventOffset].Parameters[dragImageOffset].IsByRef=true</Patch>
+        <Patch>Methods[ViewAtColumnRowMakeIfNecessary].ReturnType=NSView</Patch>
         <Patch>Properties[DataSource].Type=Id</Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Properties[GridStyleMask].Type=NSTableViewGridLineStyle</Patch>
@@ -1691,6 +1694,7 @@
         <Patch>Properties[Delegate].Type=Id</Patch>
       </Class>
       <Class name="NSTabViewItem">
+        <Patch>Properties[View].Type=NSView</Patch>
         <Patch>Enumerations[NSTabState].BaseType=NSUInteger</Patch>
       </Class>
       <Class name="NSText">
@@ -1874,6 +1878,7 @@ NSString *NSFindPanelCaseInsensitiveSearch;
         <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Properties[StyleMask].Type=NSWindowStyleMask</Patch>
         <Patch>Properties[RestorationClass].Type=Class</Patch>
+        <Patch>Properties[WindowController].Type=NSWindowController</Patch>
 
         <Patch>Enumerations[Window_Style_Masks].Name=NSWindowStyleMask</Patch>
         <Patch>Enumerations[NSWindowStyleMask].BaseType=NSUInteger</Patch>
@@ -1895,6 +1900,10 @@ NSString *NSFindPanelCaseInsensitiveSearch;
         <Replace type="Html">
           <Source><![CDATA[<dd><p><p class=]]></Source>
           <With><![CDATA[<dd><p class=]]></With>
+        </Replace>
+        <Replace type="Html">
+          <Source><![CDATA[instead.)<div class="declaration">]]></Source>
+          <With><![CDATA[instead.)</p><div class="declaration">]]></With>
         </Replace>
         <Replace type="Xhtml">
           <Source><![CDATA[// <!--a-->let<!--/a--><!--a-->AppKit<!--/a--><!--a-->infer<!--/a--><!--a-->animation<!--/a--><!--a-->behavior<!--/a--><!--a-->for<!--/a--><!--a-->this<!--/a--><!--a-->window<!--/a-->]]></Source>
@@ -2418,6 +2427,10 @@ enum {]]>
         <Patch>Methods[TextViewCompletionsForPartialWordRangeIndexOfSelectedItem].Parameters[index].IsOut=true</Patch>
         <Patch>Methods[TextViewWillCheckTextInRangeOptionsTypes].Parameters[checkingTypes].Type=NSTextCheckingTypes</Patch>
         <Patch>Methods[TextViewWillCheckTextInRangeOptionsTypes].Parameters[checkingTypes].IsByRef=true</Patch>
+        <Replace type="Html">
+          <Source><![CDATA[instead.)<div class="declaration">]]></Source>
+          <With><![CDATA[instead.)</p><div class="declaration">]]></With>
+        </Replace>
       </Protocol>
       <Protocol name="NSTokenFieldCellDelegate">
         <Patch>DelegateFor=NSTokenFieldCell</Patch>
@@ -3866,7 +3879,6 @@ enum {]]></With>
         <Patch>Functions[NSClassFromString].Generate=false</Patch>
         <Patch>Functions[NSCompareHashTables].Generate=false</Patch>
         <Patch>Functions[NSCompareMapTables].Generate=false</Patch>
-        <Patch>Functions[NSContainsRect].Generate=false</Patch>
         <Patch>Functions[NSConvertHostDoubleToSwapped].Generate=false</Patch>
         <Patch>Functions[NSConvertHostFloatToSwapped].Generate=false</Patch>
         <Patch>Functions[NSConvertSwappedDoubleToHost].Generate=false</Patch>
@@ -3885,19 +3897,60 @@ enum {]]></With>
         <Patch>Functions[NSCreateZone].Generate=false</Patch>
         <Patch>Functions[NSDeallocateMemoryPages].Generate=false</Patch>
         <Patch>Functions[NSDeallocateObject].Generate=false</Patch>
-        <Patch>Functions[NSDecimalAdd].Generate=false</Patch>
-        <Patch>Functions[NSDecimalCompact].Generate=false</Patch>
-        <Patch>Functions[NSDecimalCompare].Generate=false</Patch>
-        <Patch>Functions[NSDecimalCopy].Generate=false</Patch>
-        <Patch>Functions[NSDecimalDivide].Generate=false</Patch>
-        <Patch>Functions[NSDecimalIsNotANumber].Generate=false</Patch>
-        <Patch>Functions[NSDecimalMultiply].Generate=false</Patch>
-        <Patch>Functions[NSDecimalMultiplyByPowerOf10].Generate=false</Patch>
-        <Patch>Functions[NSDecimalNormalize].Generate=false</Patch>
-        <Patch>Functions[NSDecimalPower].Generate=false</Patch>
-        <Patch>Functions[NSDecimalRound].Generate=false</Patch>
-        <Patch>Functions[NSDecimalString].Generate=false</Patch>
-        <Patch>Functions[NSDecimalSubtract].Generate=false</Patch>
+        <Patch>Functions[NSDecimalAdd].Parameters[result].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalAdd].Parameters[result].IsOut=true</Patch>
+        <Patch>Functions[NSDecimalAdd].Parameters[leftOperand].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalAdd].Parameters[leftOperand].IsByRef=true</Patch>
+        <Patch>Functions[NSDecimalAdd].Parameters[rightOperand].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalAdd].Parameters[rightOperand].IsByRef=true</Patch>
+        <Patch>Functions[NSDecimalCompact].Parameters[number].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalCompact].Parameters[number].IsByRef=true</Patch>
+        <Patch>Functions[NSDecimalCompare].Parameters[leftOperand].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalCompare].Parameters[leftOperand].IsByRef=true</Patch>
+        <Patch>Functions[NSDecimalCompare].Parameters[rightOperand].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalCompare].Parameters[rightOperand].IsByRef=true</Patch>
+        <Patch>Functions[NSDecimalCopy].Parameters[destination].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalCopy].Parameters[destination].IsOut=true</Patch>
+        <Patch>Functions[NSDecimalCopy].Parameters[source].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalCopy].Parameters[source].IsByRef=true</Patch>
+        <Patch>Functions[NSDecimalDivide].Parameters[result].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalDivide].Parameters[result].IsOut=true</Patch>
+        <Patch>Functions[NSDecimalDivide].Parameters[leftOperand].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalDivide].Parameters[leftOperand].IsByRef=true</Patch>
+        <Patch>Functions[NSDecimalDivide].Parameters[rightOperand].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalDivide].Parameters[rightOperand].IsByRef=true</Patch>
+        <Patch>Functions[NSDecimalIsNotANumber].Parameters[dcm].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalIsNotANumber].Parameters[dcm].IsByRef=true</Patch>
+        <Patch>Functions[NSDecimalMultiply].Parameters[result].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalMultiply].Parameters[result].IsOut=true</Patch>
+        <Patch>Functions[NSDecimalMultiply].Parameters[leftOperand].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalMultiply].Parameters[leftOperand].IsByRef=true</Patch>
+        <Patch>Functions[NSDecimalMultiply].Parameters[rightOperand].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalMultiply].Parameters[rightOperand].IsByRef=true</Patch>
+        <Patch>Functions[NSDecimalMultiplyByPowerOf10].Parameters[result].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalMultiplyByPowerOf10].Parameters[result].IsOut=true</Patch>
+        <Patch>Functions[NSDecimalMultiplyByPowerOf10].Parameters[number].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalMultiplyByPowerOf10].Parameters[number].IsByRef=true</Patch>
+        <Patch>Functions[NSDecimalNormalize].Parameters[number1].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalNormalize].Parameters[number1].IsByRef=true</Patch>
+        <Patch>Functions[NSDecimalNormalize].Parameters[number2].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalNormalize].Parameters[number2].IsByRef=true</Patch>
+        <Patch>Functions[NSDecimalPower].Parameters[result].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalPower].Parameters[result].IsOut=true</Patch>
+        <Patch>Functions[NSDecimalPower].Parameters[number].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalPower].Parameters[number].IsByRef=true</Patch>
+        <Patch>Functions[NSDecimalRound].Parameters[result].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalRound].Parameters[result].IsOut=true</Patch>
+        <Patch>Functions[NSDecimalRound].Parameters[number].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalRound].Parameters[number].IsByRef=true</Patch>
+        <Patch>Functions[NSDecimalString].Parameters[dcm].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalString].Parameters[dcm].IsByRef=true</Patch>
+        <Patch>Functions[NSDecimalSubtract].Parameters[result].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalSubtract].Parameters[result].IsOut=true</Patch>
+        <Patch>Functions[NSDecimalSubtract].Parameters[leftOperand].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalSubtract].Parameters[leftOperand].IsByRef=true</Patch>
+        <Patch>Functions[NSDecimalSubtract].Parameters[rightOperand].Type=NSDecimal</Patch>
+        <Patch>Functions[NSDecimalSubtract].Parameters[rightOperand].IsByRef=true</Patch>
         <Patch>Functions[NSDecrementExtraRefCountWasZero].Generate=false</Patch>
         <Patch>Functions[NSDefaultMallocZone].Generate=false</Patch>
         <Patch>Functions[NSDivideRect].Generate=false</Patch>
@@ -3905,6 +3958,10 @@ enum {]]></With>
         <Patch>Functions[NSEndMapTableEnumeration].Generate=false</Patch>
         <Patch>Functions[NSEnumerateHashTable].Generate=false</Patch>
         <Patch>Functions[NSEnumerateMapTable].Generate=false</Patch>
+        <Patch>Functions[NSEqualPoints].Generate=false</Patch>
+        <Patch>Functions[NSEqualRanges].Generate=false</Patch>
+        <Patch>Functions[NSEqualRects].Generate=false</Patch>
+        <Patch>Functions[NSEqualSizes].Generate=false</Patch>
         <Patch>Functions[NSEqualPoints].Generate=false</Patch>
         <Patch>Functions[NSEqualRanges].Generate=false</Patch>
         <Patch>Functions[NSEqualRects].Generate=false</Patch>
@@ -3931,6 +3988,18 @@ enum {]]></With>
         <Patch>Functions[NSIntersectionRect].Generate=false</Patch>
         <Patch>Functions[NSIntersectsRect].Generate=false</Patch>
         <Patch>Functions[NSIsEmptyRect].Generate=false</Patch>
+        <Patch>Functions[NSInsetRect].Generate=false</Patch>
+        <Patch>Functions[NSIntegralRect].Generate=false</Patch>
+        <Patch>Functions[NSIntersectionRange].Generate=false</Patch>
+        <Patch>Functions[NSIntersectionRect].Generate=false</Patch>
+        <Patch>Functions[NSIntersectsRect].Generate=false</Patch>
+        <Patch>Functions[NSIsEmptyRect].Generate=false</Patch>
+        <Patch>Functions[NSInsetRect].Generate=false</Patch>
+        <Patch>Functions[NSIntegralRect].Generate=false</Patch>
+        <Patch>Functions[NSIntersectionRange].Generate=false</Patch>
+        <Patch>Functions[NSIntersectionRect].Generate=false</Patch>
+        <Patch>Functions[NSIntersectsRect].Generate=false</Patch>
+        <Patch>Functions[NSIsEmptyRect].Generate=false</Patch>
         <Patch>Functions[NSJavaBundleCleanup].Generate=false</Patch>
         <Patch>Functions[NSJavaBundleSetup].Generate=false</Patch>
         <Patch>Functions[NSJavaClassesForBundle].Generate=false</Patch>
@@ -3950,6 +4019,14 @@ enum {]]></With>
         <Patch>Functions[NSLogPageSize].Generate=false</Patch>
         <Patch>Functions[NSLogv].Generate=false</Patch>
         <Patch>Functions[NSMakeCollectable].Generate=false</Patch>
+        <Patch>Functions[NSMakePoint].Generate=false</Patch>
+        <Patch>Functions[NSMakeRange].Generate=false</Patch>
+        <Patch>Functions[NSMakeRect].Generate=false</Patch>
+        <Patch>Functions[NSMakeSize].Generate=false</Patch>
+        <Patch>Functions[NSMakePoint].Generate=false</Patch>
+        <Patch>Functions[NSMakeRange].Generate=false</Patch>
+        <Patch>Functions[NSMakeRect].Generate=false</Patch>
+        <Patch>Functions[NSMakeSize].Generate=false</Patch>
         <Patch>Functions[NSMakePoint].Generate=false</Patch>
         <Patch>Functions[NSMakeRange].Generate=false</Patch>
         <Patch>Functions[NSMakeRect].Generate=false</Patch>
@@ -3983,16 +4060,20 @@ enum {]]></With>
         <Patch>Functions[NSRectFromCGRect].Generate=false</Patch>
         <Patch>Functions[NSRectFromString].Generate=false</Patch>
         <Patch>Functions[NSRectToCGRect].Generate=false</Patch>
+        <Patch>Functions[NSRectFromCGRect].Generate=false</Patch>
+        <Patch>Functions[NSRectFromString].Generate=false</Patch>
+        <Patch>Functions[NSRectToCGRect].Generate=false</Patch>
         <Patch>Functions[NSRecycleZone].Generate=false</Patch>
         <Patch>Functions[NSResetHashTable].Generate=false</Patch>
         <Patch>Functions[NSResetMapTable].Generate=false</Patch>
         <Patch>Functions[NSRoundDownToMultipleOfPageSize].Generate=false</Patch>
         <Patch>Functions[NSRoundUpToMultipleOfPageSize].Generate=false</Patch>
-        <Patch>Functions[NSSearchPathForDirectoriesInDomains].Generate=false</Patch>
-        <Patch>Functions[NSSelectorFromString].Generate=false</Patch>
         <Patch>Functions[NSSetUncaughtExceptionHandler].Generate=false</Patch>
         <Patch>Functions[NSSetZoneName].Generate=false</Patch>
         <Patch>Functions[NSShouldRetainWithZone].Generate=false</Patch>
+        <Patch>Functions[NSSizeFromCGSize].Generate=false</Patch>
+        <Patch>Functions[NSSizeFromString].Generate=false</Patch>
+        <Patch>Functions[NSSizeToCGSize].Generate=false</Patch>
         <Patch>Functions[NSSizeFromCGSize].Generate=false</Patch>
         <Patch>Functions[NSSizeFromString].Generate=false</Patch>
         <Patch>Functions[NSSizeToCGSize].Generate=false</Patch>
@@ -5871,6 +5952,7 @@ enum]]>
       <Class name="IKFilterBrowserView">
       </Class>
       <Class name="IKFilterUIView">
+        <Patch>Methods[ViewWithFrameFilter].ReturnType=IKFilterUIView</Patch>
       </Class>
       <Class name="IKImageBrowserCell">
         <Patch>Enumerations[IKImageBrowserCellState].BaseType=int</Patch>

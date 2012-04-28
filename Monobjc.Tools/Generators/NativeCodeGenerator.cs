@@ -173,7 +173,7 @@ namespace Monobjc.Tools.Generators
             this.Logger.LogInfo("Creating source file...");
 
             // Generate the main source file
-            String mainSource = Path.Combine(directory, "main.m");
+            String mainSource = Path.Combine(directory, "main.c");
             this.GenerateMainSource(mainSource, mainImage, assemblies, configurations, machineConfig);
 
             // Dump the header file
