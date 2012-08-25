@@ -137,15 +137,16 @@ namespace Monobjc.Tools.Generator
                         manager.AddTask(new DumpEmptySignatureTask("Empty Signatures"));
                         break;
 
-                        //
+                    case "dump":
+                        manager.AddTask(new DumpGenerationTask("Generation Result"));
+						break;
+
+                        //	
                         // This code is reserved when developing new task
                         //
                     case "dev":
                         // ...
                         break;
-                        //
-                        // This code is reserved when developing new task
-                        //
 
                     default:
                         Help();

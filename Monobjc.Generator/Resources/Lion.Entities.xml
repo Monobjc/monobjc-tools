@@ -694,8 +694,10 @@
       <Class name="NSApplication">
         <Patch>Methods[DiscardEventsMatchingMaskBeforeEvent].Parameters[mask].Type=NSEventMask</Patch>
         <Patch>Methods[NextEventMatchingMaskUntilDateInModeDequeue].Parameters[mask].Type=NSEventMask</Patch>
+        <Patch>Methods[RegisterUserInterfaceItemSearchHandler].Parameters[handler].Type=Id</Patch>
         <Patch>Methods[SearchStringInUserInterfaceItemStringSearchRangeFoundRange].Parameters[foundRange].Type=NSRange</Patch>
         <Patch>Methods[SearchStringInUserInterfaceItemStringSearchRangeFoundRange].Parameters[foundRange].IsOut=true</Patch>
+        <Patch>Methods[UnregisterUserInterfaceItemSearchHandler].Parameters[handler].Type=Id</Patch>
         <Patch>Properties[Delegate].Type=Id</Patch>
         <Patch>Constants[NSApp].Generate=false</Patch>
         <Patch>Enumerations[Return_values_for_modal_operations].Name=NSRunResponse</Patch>
@@ -1025,7 +1027,8 @@
         </Replace>
       </Class>
       <Class name="NSDraggingItem">
-      <!-- Replace by a block -->
+        <Patch>Methods[InitWithPasteboardWriter].Parameters[pasteboardWriter].Type=Id</Patch>
+      	<!-- Replace by a block -->
         <Patch>Properties[ImageComponentsProvider].Type=IntPtr</Patch>
       </Class>
       <Class name="NSDraggingImageComponent">
@@ -1138,9 +1141,6 @@
           <With><![CDATA[]]></With>
         </Replace>
       </Class>
-      <Class name="NSFileWrapper">
-        <Patch>Methods[InitWithSerializedRepresentation].GenerateConstructor=false</Patch>
-      </Class>
       <Class name="NSFileWrapper_AppKitAdditions">
         <Patch>AdditionFor=NSFileWrapper</Patch>
       </Class>
@@ -1207,6 +1207,7 @@
         <Patch>Methods[TitleWidth].Name=GetTitleWidth</Patch>
       </Class>
       <Class name="NSGlyphGenerator">
+        <Patch>Methods[GenerateGlyphsForGlyphStorageDesiredNumberOfCharactersGlyphIndexCharacterIndex].Parameters[glyphStorage].Type=Id</Patch>
         <Patch>Methods[GenerateGlyphsForGlyphStorageDesiredNumberOfCharactersGlyphIndexCharacterIndex].Parameters[glyphIndex].Type=NSUInteger</Patch>
         <Patch>Methods[GenerateGlyphsForGlyphStorageDesiredNumberOfCharactersGlyphIndexCharacterIndex].Parameters[glyphIndex].IsOut=true</Patch>
         <Patch>Methods[GenerateGlyphsForGlyphStorageDesiredNumberOfCharactersGlyphIndexCharacterIndex].Parameters[charIndex].Type=NSUInteger</Patch>
@@ -1500,6 +1501,7 @@
         </Replace>
       </Class>
       <Class name="NSPasteboardItem">
+        <Patch>Methods[SetDataProviderForTypes].Parameters[dataProvider].Type=Id</Patch>
       </Class>
       <Class name="NSPathCell">
         <Patch>Properties[Delegate].Type=Id</Patch>
@@ -1546,8 +1548,8 @@
         <Patch>Enumerations[NSPrintingPageOrder].BaseType=NSInteger</Patch>
       </Class>
       <Class name="NSPrintPanel">
-        <Patch>Methods[AddAccessoryController].Parameters[accessoryController].Type=INSPrintPanelAccessorizing</Patch>
-        <Patch>Methods[RemoveAccessoryController].Parameters[accessoryController].Type=INSPrintPanelAccessorizing</Patch>
+        <Patch>Methods[AddAccessoryController].Parameters[accessoryController].Type=Id</Patch>
+        <Patch>Methods[RemoveAccessoryController].Parameters[accessoryController].Type=Id</Patch>
       </Class>
       <Class name="NSProgressIndicator">
         <Patch>Enumerations[NSProgressIndicatorStyle].BaseType=NSUInteger</Patch>
@@ -1730,6 +1732,7 @@
         <Patch>Properties[FindBarContainer].Type=Id</Patch>
       </Class>
       <Class name="NSTextInputContext">
+        <Patch>Methods[InitWithClient].Parameters[theClient].Type=Id</Patch>
       </Class>
       <Class name="NSTextList">
       </Class>
@@ -1979,9 +1982,6 @@ enum {]]>
       </Class>
       <Class name="NSDocumentController.Deprecated">
         <Patch>AdditionFor=NSDocumentController</Patch>
-      </Class>
-      <Class name="NSFileWrapper.Deprecated">
-        <Patch>AdditionFor=NSFileWrapper</Patch>
       </Class>
       <Class name="NSFont.Deprecated">
         <Patch>AdditionFor=NSFont</Patch>
@@ -4513,12 +4513,18 @@ enum {]]></With>
         </Replace>
       </Class>
       <Class name="NSFileCoordinator">
+        <Patch>Methods[AddFilePresenter].Parameters[filePresenter].Type=Id</Patch>
+        <Patch>Methods[RemoveFilePresenter].Parameters[filePresenter].Type=Id</Patch>
+        <Patch>Methods[InitWithFilePresenter].Parameters[filePresenterOrNil].Type=Id</Patch>
         <Patch>Methods[PrepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor].Parameters[batchAccessor].Type=Action</Patch>
         <Patch>Methods[PrepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor].Parameters[batchAccessor].IsBlock=true</Patch>
       </Class>
       <Class name="NSFileSecurity">
       </Class>
       <Class name="NSFileVersion">
+      </Class>
+      <Class name="NSFileWrapper">
+        <Patch>Methods[InitWithSerializedRepresentation].GenerateConstructor=false</Patch>
       </Class>
       <Class name="NSFormatter">
         <Patch>Methods[GetObjectValueForStringErrorDescription].Parameters[anObject].Type=Id</Patch>
@@ -5342,6 +5348,9 @@ enum]]>
       <Class name="NSFileManager.Deprecated">
         <Patch>AdditionFor=NSFileManager</Patch>
       </Class>
+      <Class name="NSFileWrapper.Deprecated">
+        <Patch>AdditionFor=NSFileWrapper</Patch>
+      </Class>
       <Class name="NSGarbageCollector.Deprecated">
         <Patch>AdditionFor=NSGarbageCollector</Patch>
       </Class>
@@ -5387,6 +5396,8 @@ enum]]>
         <Patch>AdditionFor=NSURL</Patch>
       </Class>
       <Class name="NSURLHandle.Deprecated">
+        <Patch>Methods[AddClient].Parameters[client].Type=Id</Patch>
+        <Patch>Methods[RemoveClient].Parameters[client].Type=Id</Patch>
         <Patch>AdditionFor=NSURLHandle</Patch>
       </Class>
 

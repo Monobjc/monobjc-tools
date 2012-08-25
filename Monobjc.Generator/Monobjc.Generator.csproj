@@ -155,6 +155,7 @@
     <Compile Include="Utilities\PathExtensions.cs" />
     <Compile Include="Utilities\TypeManager.cs" />
     <Compile Include="Tasks\Output\DumpEmptySignatureTask.cs" />
+    <Compile Include="Tasks\Output\DumpGeneration.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Lion.Database.xml">

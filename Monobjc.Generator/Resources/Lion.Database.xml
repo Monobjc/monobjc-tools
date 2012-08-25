@@ -228,12 +228,6 @@
   <Entry ns="AppKit" nature="C" name="NSEvent" style="Cocoa" file="NSEvent">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Classes/NSEvent_Class/Reference/Reference.html</url>
   </Entry>
-  <Entry ns="AppKit" nature="C" name="NSFileWrapper" style="Cocoa" file="NSFileWrapper">
-    <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/Reference/Reference.html</url>
-  </Entry>
-  <Entry ns="AppKit" nature="C" name="NSFileWrapper.Deprecated" style="Cocoa" file="NSFileWrapper.Deprecated">
-    <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</url>
-  </Entry>
   <Entry ns="AppKit" nature="C" name="NSFileWrapper_AppKitAdditions" style="Cocoa" file="NSFileWrapper_AppKitAdditions">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/AppKit/Reference/NSFileWrapper_AppKitAdditions/NSFileWrapperApplicationKitAdditions.html</url>
   </Entry>
@@ -2588,6 +2582,12 @@
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSFileVersion" style="Cocoa" file="NSFileVersion">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Foundation/Reference/NSFileVersion_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Foundation" nature="C" name="NSFileWrapper" style="Cocoa" file="NSFileWrapper">
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/Reference/Reference.html</url>
+  </Entry>
+  <Entry ns="Foundation" nature="C" name="NSFileWrapper.Deprecated" style="Cocoa" file="NSFileWrapper.Deprecated">
+    <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</url>
   </Entry>
   <Entry ns="Foundation" nature="C" name="NSFormatter" style="Cocoa" file="NSFormatter">
     <url>${DOCSET}/Contents/Resources/Documents/documentation/Cocoa/Reference/Foundation/Classes/NSFormatter_Class/Reference/Reference.html</url>
