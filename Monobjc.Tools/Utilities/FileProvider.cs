@@ -40,6 +40,9 @@ namespace Monobjc.Tools.Utilities
                 case MacOSVersion.MacOS107:
                     dir = Path.Combine(basedir, "monobjc-10.7");
                     break;
+                case MacOSVersion.MacOS108:
+                    dir = Path.Combine(basedir, "monobjc-10.8");
+                    break;
                 default:
                     throw new NotSupportedException("Unsupported version of Mac OS X");
             }
