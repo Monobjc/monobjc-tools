@@ -16,30 +16,69 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using Monobjc.NAnt.Properties;
 using Monobjc.Tools.External;
-using Monobjc.Tools.Utilities;
 using NAnt.Core;
 using NAnt.Core.Attributes;
+using NAnt.Core.Types;
+using System.Collections.Generic;
 
 namespace Monobjc.NAnt.Tasks
 {
-    /// <summary>
-    ///   This task signs application bundle.
-    /// </summary>
-    [TaskName("codesign")]
-    public class CodeSignTask : SigningTask
-    {
-        /// <summary>
-        /// Performs the signing.
-        /// </summary>
-        /// <param name="identity">The identity.</param>
-        protected override void PerformSigning(string identity)
-        {
-            String output = CodeSign.SignApplication(this.Bundle.ToString(), identity);
-            this.Log(Level.Info, output);
-        }
-    }
+	/// <summary>
+	///   This task signs application bundle.
+	/// </summary>
+	[TaskName("codesign")]
+	public class CodeSignTask : SigningTask
+	{
+		/// <summary>
+		///   Gets or sets the entitlements.
+		/// </summary>
+		/// <value>The entitlements.</value>
+		[TaskAttribute("entitlements", Required = false)]
+		public FileInfo Entitlements { get; set; }
+
+		/// <summary>
+		/// Gets or sets the targets.
+		/// </summary>
+		/// <value>The targets.</value>
+		[BuildElement ("targets", Required = false)]
+		public FileSet Targets { get; set; }
+
+		/// <summary>
+		/// Performs the signing.
+		/// </summary>
+		/// <param name="identity">The identity.</param>
+		protected override void PerformSigning (String identity)
+		{
+			List<String> paths = new List<String> ();
+			if (this.Bundle != null) {
+				paths.Add (this.Bundle.ToString ());
+			} else if (this.Targets != null) {
+				paths.AddRange (this.Targets.FileNames.OfType<String> ());
+			} else {
+				// TODO: I18N
+				this.Log (Level.Error, "You must provide at least one element to sign.");
+				return;
+			}
+
+			String entitlements = null;
+			if (this.Entitlements != null && File.Exists (this.Entitlements.ToString ())) {
+				entitlements = this.Entitlements.ToString ();
+			}
+
+			foreach (String path in paths) {
+				using (StringWriter outputWriter = new StringWriter()) {
+					using (StringWriter errorWriter = new StringWriter()) {
+						CodeSign.SignApplication (path, identity, entitlements, outputWriter, errorWriter);
+						String outputLog = outputWriter.ToString ();
+						String errorLog = errorWriter.ToString ();
+						this.Log (Level.Info, outputLog);
+						this.Log (Level.Info, errorLog);
+					}
+				}
+			}
+		}
+	}
 }

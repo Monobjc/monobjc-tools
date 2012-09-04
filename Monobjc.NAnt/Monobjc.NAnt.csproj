@@ -31,10 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NAnt.Core">
-      <HintPath>C:\Additions\nant-0.86-beta1\bin\NAnt.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\Current\share\NAnt\bin\NAnt.Core.dll</HintPath>
     </Reference>
     <Reference Include="NAnt.DotNetTasks">
-      <HintPath>C:\Additions\nant-0.86-beta1\bin\NAnt.DotNetTasks.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\Current\share\NAnt\bin\NAnt.DotNetTasks.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

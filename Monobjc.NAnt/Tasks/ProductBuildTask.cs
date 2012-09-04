@@ -15,6 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
+using System;
 using System.IO;
 using Monobjc.Tools.External;
 using NAnt.Core;
@@ -22,28 +23,40 @@ using NAnt.Core.Attributes;
 
 namespace Monobjc.NAnt.Tasks
 {
-    /// <summary>
-    ///   This task generate and signs the application installer.
-    /// </summary>
-    [TaskName("product-build")]
-    public class ProductBuildTask : SigningTask
-    {
-        /// <summary>
-        ///   Gets or sets the product definition.
-        /// </summary>
-        /// <value>The product definition.</value>
-        [TaskAttribute("definition", Required = false)]
-        [StringValidator(AllowEmpty = false)]
-        public FileInfo ProductDefinition { get; set; }
+	/// <summary>
+	///   This task generate and signs the application installer.
+	/// </summary>
+	[TaskName("product-build")]
+	public class ProductBuildTask : SigningTask
+	{
+		/// <summary>
+		///   Gets or sets the product definition.
+		/// </summary>
+		/// <value>The product definition.</value>
+		[TaskAttribute("definition", Required = false)]
+		[StringValidator(AllowEmpty = false)]
+		public FileInfo ProductDefinition { get; set; }
 
-        /// <summary>
-        ///   Performs the signing.
-        /// </summary>
-        /// <param name = "identity">The identity.</param>
-        protected override void PerformSigning(string identity)
-        {
-            string output = ProductBuild.ArchiveApplication(this.Bundle.ToString(), identity, (this.ProductDefinition != null && this.ProductDefinition.Exists) ? this.ProductDefinition.ToString() : null);
-            this.Log(Level.Info, output);
-        }
-    }
+		/// <summary>
+		///   Performs the signing.
+		/// </summary>
+		/// <param name = "identity">The identity.</param>
+		protected override void PerformSigning (String identity)
+		{
+			String productDefinition = null;
+			if (this.ProductDefinition != null && File.Exists (this.ProductDefinition.ToString ())) {
+				productDefinition = this.ProductDefinition.ToString ();
+			}
+
+			using (StringWriter outputWriter = new StringWriter()) {
+				using (StringWriter errorWriter = new StringWriter()) {
+					ProductBuild.ArchiveApplication (this.Bundle.ToString (), identity, productDefinition, outputWriter, errorWriter);
+					String outputLog = outputWriter.ToString ();
+					String errorLog = errorWriter.ToString ();
+					this.Log (Level.Info, outputLog);
+					this.Log (Level.Info, errorLog);
+				}
+			}
+		}
+	}
 }

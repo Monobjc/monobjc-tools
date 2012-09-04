@@ -22,30 +22,28 @@ using System.IO;
 
 namespace Monobjc.Tools.Utilities
 {
-    /// <summary>
-    ///   Helper class used to launch an external process and to capture its output.
-    /// </summary>
-    internal class ProcessHelper : IDisposable
-    {
-        private readonly Process process;
-        private readonly ProcessStartInfo processInfo;
-        private readonly StringWriter writer;
+	/// <summary>
+	///   Helper class used to launch an external process and to capture its output.
+	/// </summary>
+	internal class ProcessHelper : IDisposable
+	{
+		private readonly Process process;
+		private readonly ProcessStartInfo processInfo;
 
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "ProcessHelper" /> class.
-        /// </summary>
-        /// <param name = "command">The command.</param>
-        /// <param name = "arguments">The arguments.</param>
-        public ProcessHelper(String command, String arguments)
-        {
-            this.Logger = new NullLogger();
+		/// <summary>
+		///   Initializes a new instance of the <see cref = "ProcessHelper" /> class.
+		/// </summary>
+		/// <param name = "command">The command.</param>
+		/// <param name = "arguments">The arguments.</param>
+		public ProcessHelper (String command, String arguments)
+		{
+			this.Logger = new NullLogger ();
 
-            this.writer = new StringWriter(CultureInfo.InvariantCulture);
-            this.process = new Process {EnableRaisingEvents = true};
-            this.process.ErrorDataReceived += this.Process_ErrorDataReceived;
-            this.process.OutputDataReceived += this.Process_OutputDataReceived;
+			this.process = new Process {EnableRaisingEvents = true};
+			this.process.ErrorDataReceived += this.ProcessErrorDataReceived;
+			this.process.OutputDataReceived += this.ProcessOutputDataReceived;
 
-            this.processInfo = new ProcessStartInfo
+			this.processInfo = new ProcessStartInfo
                                    {
                                        FileName = command,
                                        Arguments = arguments,
@@ -56,72 +54,106 @@ namespace Monobjc.Tools.Utilities
                                        CreateNoWindow = true
                                    };
 
-            this.process.StartInfo = this.processInfo;
-        }
+			this.process.StartInfo = this.processInfo;
+		}
 
-        /// <summary>
-        ///   Gets or sets the logger.
-        /// </summary>
-        /// <value>The logger.</value>
-        public IExecutionLogger Logger { get; set; }
+		/// <summary>
+		///   Gets or sets the logger.
+		/// </summary>
+		/// <value>The logger.</value>
+		public IExecutionLogger Logger { get; set; }
 
-        /// <summary>
-        ///   Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            this.writer.Dispose();
-        }
+		/// <summary>
+		/// Gets or sets the output writer.
+		/// </summary>
+		/// <value>The output writer.</value>
+		public TextWriter OutputWriter { get; set; }
 
-        /// <summary>
-        ///   Executes this external process.
-        /// </summary>
-        /// <returns>The complete ouput of the process</returns>
-        public String Execute()
-        {
-            try
-            {
-                this.process.Start();
-                this.process.BeginErrorReadLine();
-                this.process.BeginOutputReadLine();
-                this.process.WaitForExit();
-            }
-            catch (Exception ex)
-            {
-                if (this.Logger != null)
-                {
-                    this.Logger.LogError(ex.ToString());
-                }
-            }
-            return this.writer.ToString();
-        }
+		/// <summary>
+		/// Gets or sets the error writer.
+		/// </summary>
+		/// <value>The error writer.</value>
+		public TextWriter ErrorWriter { get; set; }
 
-        /// <summary>
-        ///   Handles the OutputDataReceived event of the Process control.
-        /// </summary>
-        /// <param name = "sender">The source of the event.</param>
-        /// <param name = "e">The <see cref = "System.Diagnostics.DataReceivedEventArgs" /> instance containing the event data.</param>
-        private void Process_OutputDataReceived(object sender, DataReceivedEventArgs e)
-        {
-            this.writer.WriteLine(e.Data);
-            if (this.Logger != null)
-            {
-                this.Logger.LogInfo(e.Data);
-            }
-        }
+		/// <summary>
+		///   Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+		/// </summary>
+		public void Dispose ()
+		{
+		}
 
-        /// <summary>
-        ///   Handles the ErrorDataReceived event of the Process control.
-        /// </summary>
-        /// <param name = "sender">The source of the event.</param>
-        /// <param name = "e">The <see cref = "System.Diagnostics.DataReceivedEventArgs" /> instance containing the event data.</param>
-        private void Process_ErrorDataReceived(object sender, DataReceivedEventArgs e)
-        {
-            this.writer.WriteLine(e.Data);
-            if (this.Logger != null)
-            {
-                this.Logger.LogError(e.Data);
-            }
-        }
-    }
+		/// <summary>
+		///   Executes this external process.
+		/// </summary>
+		public void Execute ()
+		{
+			bool internalOutput = false;
+			bool internalError = false;
+
+			try {
+				if (this.OutputWriter == null) {
+					this.OutputWriter = new StringWriter ();
+					internalOutput = true;
+				}
+				if (this.ErrorWriter == null) {
+					this.ErrorWriter = new StringWriter ();
+					internalError = true;
+				}
+
+				this.process.Start ();
+				this.process.BeginErrorReadLine ();
+				this.process.BeginOutputReadLine ();
+				this.process.WaitForExit ();
+			} catch (Exception ex) {
+				if (this.Logger != null) {
+					this.Logger.LogError (ex.ToString ());
+				}
+			} finally {
+				if (internalOutput) {
+					this.OutputWriter.Dispose ();
+				}
+				if (internalError) {
+					this.ErrorWriter.Dispose ();
+				}
+			}
+		}
+
+		/// <summary>
+		///   Executes this external process.
+		/// </summary>
+		public String ExecuteAndReturnOutput()
+		{
+			using(StringWriter writer = new StringWriter()) {
+				this.OutputWriter = writer;
+				this.Execute();
+				return writer.ToString();
+			}
+		}
+
+		/// <summary>
+		///   Handles the OutputDataReceived event of the Process control.
+		/// </summary>
+		/// <param name = "sender">The source of the event.</param>
+		/// <param name = "e">The <see cref = "System.Diagnostics.DataReceivedEventArgs" /> instance containing the event data.</param>
+		private void ProcessOutputDataReceived (object sender, DataReceivedEventArgs e)
+		{
+			this.OutputWriter.WriteLine (e.Data);
+			if (this.Logger != null) {
+				this.Logger.LogInfo (e.Data);
+			}
+		}
+
+		/// <summary>
+		///   Handles the ErrorDataReceived event of the Process control.
+		/// </summary>
+		/// <param name = "sender">The source of the event.</param>
+		/// <param name = "e">The <see cref = "System.Diagnostics.DataReceivedEventArgs" /> instance containing the event data.</param>
+		private void ProcessErrorDataReceived (object sender, DataReceivedEventArgs e)
+		{
+			this.ErrorWriter.WriteLine (e.Data);
+			if (this.Logger != null) {
+				this.Logger.LogError (e.Data);
+			}
+		}
+	}
 }

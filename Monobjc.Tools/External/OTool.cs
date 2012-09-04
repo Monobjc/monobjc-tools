@@ -41,7 +41,7 @@ namespace Monobjc.Tools.External
         {
             String arguments = String.Format(CultureInfo.InvariantCulture, "-D \"{0}\"", nativeBinary);
             ProcessHelper helper = new ProcessHelper(Executable, arguments);
-            String output = helper.Execute();
+			String output = helper.ExecuteAndReturnOutput ();
 
             String installName = String.Empty;
             Match match = OTOOL_ID_REGEX.Match(output);
@@ -61,7 +61,7 @@ namespace Monobjc.Tools.External
         {
             String arguments = String.Format(CultureInfo.InvariantCulture, "-L \"{0}\"", nativeBinary);
             ProcessHelper helper = new ProcessHelper(Executable, arguments);
-            String output = helper.Execute();
+			String output = helper.ExecuteAndReturnOutput ();
 
             List<String> dependencies = new List<String>();
             MatchCollection matches = OTOOL_LIST_REGEX.Matches(output);

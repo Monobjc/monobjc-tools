@@ -36,7 +36,7 @@ namespace Monobjc.NAnt.Tasks
         ///   Gets or sets the bundle directory.
         /// </summary>
         /// <value>The bundle directory.</value>
-        [TaskAttribute("bundle", Required = true)]
+        [TaskAttribute("bundle", Required = false)]
         [StringValidator(AllowEmpty = false)]
         public DirectoryInfo Bundle { get; set; }
 

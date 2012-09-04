@@ -379,7 +379,7 @@ namespace Monobjc.Tools.Generators
             using (ProcessHelper helper = new ProcessHelper("pkg-config", String.Format("{0} {1}", "--cflags", "mono-2")))
             {
                 helper.Logger = this.Logger;
-                String result = helper.Execute();
+				String result = helper.ExecuteAndReturnOutput ();
                 result = result.Replace("\n", String.Empty);
                 builder.Append(result);
             }
@@ -404,7 +404,7 @@ namespace Monobjc.Tools.Generators
             using (ProcessHelper helper = new ProcessHelper("pkg-config", String.Format("{0} {1}", "--libs", "mono-2")))
             {
                 helper.Logger = this.Logger;
-                String result = helper.Execute();
+				String result = helper.ExecuteAndReturnOutput ();
                 result = result.Replace("\n", String.Empty);
                 builder.Append(result);
             }

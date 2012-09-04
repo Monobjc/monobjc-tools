@@ -17,6 +17,7 @@
 //
 using System;
 using System.Globalization;
+using System.IO;
 using Monobjc.Tools.Utilities;
 
 namespace Monobjc.Tools.External
@@ -27,16 +28,17 @@ namespace Monobjc.Tools.External
     public static class InstallNameTool
     {
         /// <summary>
-        ///   Changes the id of the given library.
+        ///   Change, TextWriter outputWriter = null, TextWriter errorWriter = null)s the id of the given library.
         /// </summary>
         /// <param name = "library">The library.</param>
         /// <param name = "newId">The new id.</param>
-        public static String ChangeId(String library, String newId)
+        public static void ChangeId(String library, String newId, TextWriter outputWriter = null, TextWriter errorWriter = null)
         {
             String arguments = String.Format(CultureInfo.InvariantCulture, "-id \"{1}\" \"{0}\"", library, newId);
             ProcessHelper helper = new ProcessHelper(Executable, arguments);
-            String output = helper.Execute();
-            return output;
+			helper.OutputWriter = outputWriter;
+			helper.ErrorWriter = errorWriter;
+			helper.Execute ();
         }
 
         /// <summary>
@@ -45,12 +47,13 @@ namespace Monobjc.Tools.External
         /// <param name = "library">The library.</param>
         /// <param name = "oldDependency">The old dependency.</param>
         /// <param name = "newDependency">The new dependency.</param>
-        public static String ChangeDependency(String library, String oldDependency, String newDependency)
+        public static void ChangeDependency(String library, String oldDependency, String newDependency, TextWriter outputWriter = null, TextWriter errorWriter = null)
         {
             String arguments = String.Format(CultureInfo.InvariantCulture, "-change \"{1}\" \"{2}\" \"{0}\"", library, oldDependency, newDependency);
             ProcessHelper helper = new ProcessHelper(Executable, arguments);
-            String output = helper.Execute();
-            return output;
+			helper.OutputWriter = outputWriter;
+			helper.ErrorWriter = errorWriter;
+			helper.Execute ();
         }
 
         private static string Executable

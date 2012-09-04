@@ -45,7 +45,7 @@ namespace Monobjc.Tools.Generator
             Console.WriteLine("\t-h|--help           : Display this help");
             Console.WriteLine("\t-t|--tasks=value    : A comma separated list of task to execute ('retrieve', 'extract', 'generate', 'copy'");
             Console.WriteLine("\t-d|--dir=value      : The directory where to copy generated code");
-            Console.WriteLine("\t-s|--set=value      : The documentation set to use ('SnowLeopard', 'Lion')");
+            Console.WriteLine("\t-s|--set=value      : The documentation set to use ('SnowLeopard', 'Lion', 'MountainLion')");
             Console.WriteLine();
         }
 
@@ -54,7 +54,7 @@ namespace Monobjc.Tools.Generator
             int verbose = 0;
             String tasks = null;
             String targetDir = null;
-            String docSet = "Lion";
+            String docSet = "MountainLion";
 
             // Create an option set
             OptionSet p = new OptionSet().
@@ -127,13 +127,13 @@ namespace Monobjc.Tools.Generator
                         manager.AddTask(new GenerateInfoTask("Generate Assembly Info", targetDir));
                         break;
                     case "analyze":
-                        //manager.AddTask(new DumpDelegateMethodsTask("Search Delegate Methods"));
-                        //manager.AddTask(new DumpStaticInitializersTask("Search Static Initializers"));
-                        //manager.AddTask(new ValidateTask("Validate URLs"));
-                        //manager.AddTask(new DumpDeprecatedTask("Search for Deprecated API"));
-                        //manager.AddTask(new CopyURLTask("Copy Deprecated URLs"));
-                        //manager.AddTask(new DumpMissingTask("Search for missing entities"));
-                        //manager.AddTask(new DumpAllNamesTask("List All Names"));
+                        manager.AddTask(new DumpDelegateMethodsTask("Search Delegate Methods"));
+                        manager.AddTask(new DumpStaticInitializersTask("Search Static Initializers"));
+                        manager.AddTask(new ValidateTask("Validate URLs"));
+                        manager.AddTask(new DumpDeprecatedTask("Search for Deprecated API"));
+                        manager.AddTask(new CopyURLTask("Copy Deprecated URLs"));
+                        manager.AddTask(new DumpMissingTask("Search for missing entities"));
+                        manager.AddTask(new DumpAllNamesTask("List All Names"));
                         manager.AddTask(new DumpEmptySignatureTask("Empty Signatures"));
                         break;
 

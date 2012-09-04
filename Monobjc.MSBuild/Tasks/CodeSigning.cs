@@ -36,17 +36,13 @@ namespace Monobjc.MSBuild.Tasks
 		/// <summary>
 		/// Gets or sets the target.
 		/// </summary>
-		/// <value>
-		/// The target.
-		/// </value>
+		/// <value>The target.</value>
 		public ITaskItem Target { get; set; }
 
 		/// <summary>
 		/// Gets or sets the targets.
 		/// </summary>
-		/// <value>
-		/// The targets.
-		/// </value>
+		/// <value>The targets.</value>
 		public ITaskItem[] Targets { get; set; }
 
 		/// <summary>
@@ -67,9 +63,22 @@ namespace Monobjc.MSBuild.Tasks
 				this.Log.LogError ("You must provide at least one element to sign.");
 				return false;
 			}
-			foreach(ITaskItem item in items) {
-				String output = CodeSign.SignApplication (item.ItemSpec, identity, (this.Entitlements != null && File.Exists (this.Entitlements.ItemSpec)) ? this.Entitlements.ItemSpec : null);
-				this.Log.LogMessage (output);
+
+			String entitlements = null;
+			if (this.Entitlements != null && File.Exists (this.Entitlements.ItemSpec)) {
+				entitlements = this.Entitlements.ItemSpec;
+			}
+
+			foreach (ITaskItem item in items) {
+				using (StringWriter outputWriter = new StringWriter()) {
+					using (StringWriter errorWriter = new StringWriter()) {
+						CodeSign.SignApplication (item.ItemSpec, identity, entitlements, outputWriter, errorWriter);
+						String outputLog = outputWriter.ToString ();
+						String errorLog = errorWriter.ToString ();
+						this.Log.LogMessage (outputLog);
+						this.Log.LogMessage (errorLog);
+					}
+				}
 			}
 			return true;
 		}

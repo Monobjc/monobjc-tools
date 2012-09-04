@@ -1,0 +1,3311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entities>
+  <!--
+  System Frameworks
+  -->
+  <Framework name="AddressBook" usings="Foundation,AppKit" assembly="Monobjc.AddressBook">
+    <Types>
+      <Type name="AddressBookFramework.Constants">
+      </Type>
+      <Type name="AddressBookFramework.Functions">
+      </Type>
+    </Types>
+    <Classes>
+      <Class name="ABAddressBook">
+      </Class>
+      <Class name="ABGroup">
+      </Class>
+      <Class name="ABMultiValue">
+      </Class>
+      <Class name="ABMutableMultiValue">
+      </Class>
+      <Class name="ABPeoplePickerView">
+      </Class>
+      <Class name="ABPerson">
+      </Class>
+      <Class name="ABPersonView">
+      </Class>
+      <Class name="ABRecord">
+      </Class>
+      <Class name="ABSearchElement">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="ABActionDelegate">
+      </Protocol>
+      <Protocol name="ABImageClient">
+      </Protocol>
+    </Protocols>
+  </Framework>
+  <Framework name="ApplicationServices" usings="Foundation" assembly="Monobjc.Foundation">
+    <Types>
+      <Type name="CGAffineTransform">
+      </Type>
+      <Type name="CGBitmapContext"/>
+      <Type name="CGColor">
+      </Type>
+      <Type name="CGColorSpace">
+      </Type>
+      <Type name="CGContext">
+      </Type>
+      <Type name="CGDataConsumer">
+      </Type>
+      <Type name="CGDataProvider">
+      </Type>
+      <Type name="CGFont">
+      </Type>
+      <Type name="CGFunction">
+      </Type>
+      <Type name="CGGeometry">
+      </Type>
+      <Type name="CGGLContext"/>
+      <Type name="CGGradient">
+      </Type>
+      <Type name="CGImage">
+      </Type>
+      <Type name="CGImageDestination">
+      </Type>
+      <Type name="CGImageProperties">
+      </Type>
+      <Type name="CGImageSource">
+      </Type>
+      <Type name="CGGeometry">
+      </Type>
+      <Type name="CGLayer">
+      </Type>
+      <Type name="CGPath">
+				
+      </Type>
+      <Type name="CGPattern">
+      </Type>
+      <Type name="CGPDFArray">
+      </Type>
+      <Type name="CGPDFContentStream">
+      </Type>
+      <Type name="CGPDFContext">
+      </Type>
+      <Type name="CGPDFDictionary">
+      </Type>
+      <Type name="CGPDFDocument">
+      </Type>
+      <Type name="CGPDFObject">
+      </Type>
+      <Type name="CGPDFOperatorTable">
+      </Type>
+      <Type name="CGPDFPage">
+      </Type>
+      <Type name="CGPDFScanner">
+      </Type>
+      <Type name="CGPDFStream">
+      </Type>
+      <Type name="CGPDFString">
+      </Type>
+      <Type name="CGPSConverter">
+      </Type>
+      <Type name="CGShading">
+      </Type>
+      <Type name="CTFont">
+      </Type>
+      <Type name="CTFontCollection">
+      </Type>
+      <Type name="CTFontDescriptor">
+      </Type>
+      <Type name="CTFontManager">
+      </Type>
+      <Type name="CTFrame">
+    
+      </Type>
+      <Type name="CTFramesetter">
+      </Type>
+      <Type name="CTGlyphInfo">
+      </Type>
+      <Type name="CTLine">
+      </Type>
+      <Type name="CTParagraphStyle">
+      </Type>
+      <Type name="CTRun">
+      </Type>
+      <Type name="CTTextTab">
+      </Type>
+      <Type name="CTTypesetter">
+      </Type>
+      <Type name="CGContext.Deprecated">
+      </Type>
+      <Type name="CGDataProvider.Deprecated">
+      </Type>
+      <Type name="CGFont.Deprecated">
+     </Type>
+      <Type name="CGGLContext.Deprecated">
+      </Type>
+      <Type name="CGPDFDocument.Deprecated">
+      </Type>
+    </Types>
+    <Enumerations>
+      <Enumeration name="CGRectEdge">
+      </Enumeration>
+      <Enumeration name="CGFontManagerError">
+      </Enumeration>
+    </Enumerations>
+    <Structures>
+      <Structure name="CGAffineTransform">
+      </Structure>
+      <Structure name="CGFloat">
+      </Structure>
+      <Structure name="CGPoint">
+      </Structure>
+      <Structure name="CGRect">
+      </Structure>
+      <Structure name="CGSize">
+      </Structure>
+    </Structures>
+  </Framework>
+  <Framework name="AppKit" usings="Foundation,CoreData,QuartzCore,ApplicationServices" assembly="Monobjc.AppKit">
+    <Types>
+      <Type name="AppKitFramework.Constants">
+      </Type>
+      <Type name="AppKitFramework.DataTypes">
+      </Type>
+      <Type name="AppKitFramework.Functions">
+      </Type>
+    </Types>
+    <Classes>
+      <Class name="CIColor_AppKitAdditions">
+      </Class>
+      <Class name="CIImage_AppKitAdditions">
+      </Class>
+      <Class name="NSActionCell">
+      </Class>
+      <Class name="NSAffineTransform_AppKitAdditions">
+      </Class>
+      <Class name="NSAlert">
+      </Class>
+      <Class name="NSAnimation">
+      </Class>
+      <Class name="NSAnimationContext">
+      </Class>
+      <Class name="NSAppleScript_AppKitAdditions">
+      </Class>
+      <Class name="NSApplication">
+        <!-- TODO: Move to a NSUInteger constant -->
+      </Class>
+      <Class name="NSArrayController">
+      </Class>
+      <Class name="NSATSTypesetter">
+      </Class>
+      <Class name="NSAttributedString_AppKitAdditions">
+      </Class>
+      <Class name="NSBezierPath">
+      </Class>
+      <Class name="NSBitmapImageRep">
+      </Class>
+      <Class name="NSBox">
+      </Class>
+      <Class name="NSBrowser">
+      </Class>
+      <Class name="NSBrowserCell">
+      </Class>
+      <Class name="NSBundle_AppKitAdditions">
+      </Class>
+      <Class name="NSButton">
+      </Class>
+      <Class name="NSButtonCell">
+      </Class>
+      <Class name="NSCachedImageRep">
+      </Class>
+      <Class name="NSCell">
+        <!-- TODO: Deprecated -->
+      </Class>
+      <Class name="NSCIImageRep">
+      </Class>
+      <Class name="NSClipView">
+      </Class>
+      <Class name="NSCoder_AppKitAdditions">
+      </Class>
+      <Class name="NSCollectionView">
+      </Class>
+      <Class name="NSCollectionViewItem">
+      </Class>
+      <Class name="NSColor">
+      </Class>
+      <Class name="NSColorList">
+      </Class>
+      <Class name="NSColorPanel">
+      </Class>
+      <Class name="NSColorPicker">
+      </Class>
+      <Class name="NSColorSpace">
+      </Class>
+      <Class name="NSColorWell">
+      </Class>
+      <Class name="NSComboBox">
+      </Class>
+      <Class name="NSComboBoxCell">
+      </Class>
+      <Class name="NSControl">
+      </Class>
+      <Class name="NSController">
+      </Class>
+      <Class name="NSCursor">
+      </Class>
+      <Class name="NSCustomImageRep">
+      </Class>
+      <Class name="NSDatePicker">
+      </Class>
+      <Class name="NSDatePickerCell">
+      </Class>
+      <Class name="NSDictionaryController">
+      </Class>
+      <Class name="NSDockTile">
+      </Class>
+      <Class name="NSDocument">
+      </Class>
+      <Class name="NSDocumentController">
+      </Class>
+      <Class name="NSDraggingSession">
+      </Class>
+      <Class name="NSDraggingItem">
+      </Class>
+      <Class name="NSDraggingImageComponent">
+      </Class>
+      <Class name="NSDrawer">
+      </Class>
+      <Class name="NSEPSImageRep">
+      </Class>
+      <Class name="NSEvent">
+      </Class>
+      <Class name="NSFileWrapper_AppKitAdditions">
+      </Class>
+      <Class name="NSFont">
+      </Class>
+      <Class name="NSFontDescriptor">
+      </Class>
+      <Class name="NSFontManager">
+      </Class>
+      <Class name="NSFontPanel">
+      </Class>
+      <Class name="NSForm">
+      </Class>
+      <Class name="NSFormCell">
+      </Class>
+      <Class name="NSGlyphGenerator">
+      </Class>
+      <Class name="NSGlyphInfo">
+      </Class>
+      <Class name="NSGradient">
+      </Class>
+      <Class name="NSGraphicsContext">
+      </Class>
+      <Class name="NSHelpManager">
+      </Class>
+      <Class name="NSImage">
+      </Class>
+      <Class name="NSImageCell">
+      </Class>
+      <Class name="NSImageRep">
+      </Class>
+      <Class name="NSImageView">
+      </Class>
+      <Class name="NSLayoutConstraint">
+      </Class>
+      <Class name="NSLayoutManager">
+      </Class>
+      <Class name="NSLevelIndicator">
+      </Class>
+      <Class name="NSLevelIndicatorCell">
+      </Class>
+      <Class name="NSMatrix">
+      </Class>
+      <Class name="NSMenu">
+      </Class>
+      <Class name="NSMenuItem">
+      </Class>
+      <Class name="NSMenuItemCell">
+      </Class>
+      <Class name="NSMenuView">
+      </Class>
+      <Class name="NSMutableAttributedString_AppKitAdditions">
+      </Class>
+      <Class name="NSMutableParagraphStyle">
+      </Class>
+      <Class name="NSNib">
+      </Class>
+      <Class name="NSNibConnector">
+      </Class>
+      <Class name="NSNibControlConnector">
+      </Class>
+      <Class name="NSNibOutletConnector">
+      </Class>
+      <Class name="NSObjectController">
+      </Class>
+      <Class name="NSOpenGLContext">
+      </Class>
+      <Class name="NSOpenGLLayer">
+      </Class>
+      <Class name="NSOpenGLPixelBuffer">
+      </Class>
+      <Class name="NSOpenGLPixelFormat">
+      </Class>
+      <Class name="NSOpenGLView">
+      </Class>
+      <Class name="NSOpenPanel">
+      </Class>
+      <Class name="NSOutlineView">
+      </Class>
+      <Class name="NSPageLayout">
+      </Class>
+      <Class name="NSPanel">
+      </Class>
+      <Class name="NSParagraphStyle">
+      </Class>
+      <Class name="NSPasteboard">
+      </Class>
+      <Class name="NSPasteboardItem">
+      </Class>
+      <Class name="NSPathCell">
+      </Class>
+      <Class name="NSPathComponentCell">
+      </Class>
+      <Class name="NSPathControl">
+      </Class>
+      <Class name="NSPDFImageRep">
+      </Class>
+      <Class name="NSPersistentDocument">
+      </Class>
+      <Class name="NSPICTImageRep">
+      </Class>
+      <Class name="NSPopover">
+      </Class>
+      <Class name="NSPopUpButton">
+      </Class>
+      <Class name="NSPopUpButtonCell">
+      </Class>
+      <Class name="NSPredicateEditor">
+      </Class>
+      <Class name="NSPredicateEditorRowTemplate">
+      </Class>
+      <Class name="NSPrinter">
+      </Class>
+      <Class name="NSPrintInfo">
+      </Class>
+      <Class name="NSPrintOperation">
+      </Class>
+      <Class name="NSPrintPanel">
+      </Class>
+      <Class name="NSProgressIndicator">
+      </Class>
+      <Class name="NSResponder">
+      </Class>
+      <Class name="NSRuleEditor">
+      </Class>
+      <Class name="NSRulerMarker">
+      </Class>
+      <Class name="NSRulerView">
+      </Class>
+      <Class name="NSRunningApplication">
+      </Class>
+      <Class name="NSSavePanel">
+      </Class>
+      <Class name="NSScreen">
+      </Class>
+      <Class name="NSScroller">
+      </Class>
+      <Class name="NSScrollView">
+      </Class>
+      <Class name="NSSearchField">
+      </Class>
+      <Class name="NSSearchFieldCell">
+      </Class>
+      <Class name="NSSecureTextField">
+      </Class>
+      <Class name="NSSecureTextFieldCell">
+      </Class>
+      <Class name="NSSegmentedCell">
+      </Class>
+      <Class name="NSSegmentedControl">
+      </Class>
+      <Class name="NSShadow">
+      </Class>
+      <Class name="NSSlider">
+      </Class>
+      <Class name="NSSliderCell">
+      </Class>
+      <Class name="NSSound">
+      </Class>
+      <Class name="NSSpeechRecognizer">
+      </Class>
+      <Class name="NSSpeechSynthesizer">
+      </Class>
+      <Class name="NSSpellChecker">
+      </Class>
+      <Class name="NSSplitView">
+      </Class>
+      <Class name="NSStatusBar">
+      </Class>
+      <Class name="NSStatusItem">
+      </Class>
+      <Class name="NSStepper">
+      </Class>
+      <Class name="NSStepperCell">
+      </Class>
+      <Class name="NSString_AppKitAdditions">
+      </Class>
+      <Class name="NSTableCellView">
+      </Class>
+      <Class name="NSTableColumn">
+      </Class>
+      <Class name="NSTableHeaderCell">
+      </Class>
+      <Class name="NSTableHeaderView">
+      </Class>
+      <Class name="NSTableRowView">
+      </Class>
+      <Class name="NSTableView">
+      </Class>
+      <Class name="NSTabView">
+      </Class>
+      <Class name="NSTabViewItem">
+      </Class>
+      <Class name="NSText">
+      </Class>
+      <Class name="NSTextAttachment">
+      </Class>
+      <Class name="NSTextAttachmentCell">
+      </Class>
+      <Class name="NSTextBlock">
+      </Class>
+      <Class name="NSTextContainer">
+      </Class>
+      <Class name="NSTextField">
+      </Class>
+      <Class name="NSTextFieldCell">
+      </Class>
+      <Class name="NSTextFinder">
+      </Class>
+      <Class name="NSTextInputContext">
+      </Class>
+      <Class name="NSTextList">
+      </Class>
+      <Class name="NSTextStorage">
+      </Class>
+      <Class name="NSTextTab">
+      </Class>
+      <Class name="NSTextTable">
+      </Class>
+      <Class name="NSTextTableBlock">
+      </Class>
+      <Class name="NSTextView">
+      </Class>
+      <Class name="NSTokenField">
+      </Class>
+      <Class name="NSTokenFieldCell">
+      </Class>
+      <Class name="NSToolbar">
+      </Class>
+      <Class name="NSToolbarItem">
+      </Class>
+      <Class name="NSToolbarItemGroup">
+      </Class>
+      <Class name="NSTouch">
+      </Class>
+      <Class name="NSTrackingArea">
+      </Class>
+      <Class name="NSTreeController">
+      </Class>
+      <Class name="NSTreeNode">
+      </Class>
+      <Class name="NSTypesetter">
+      </Class>
+      <Class name="NSURL_AppKitAdditions">
+      </Class>
+      <Class name="NSUserDefaultsController">
+      </Class>
+      <Class name="NSView">
+      </Class>
+      <Class name="NSViewAnimation">
+      </Class>
+      <Class name="NSViewController">
+      </Class>
+      <Class name="NSWindow">
+      </Class>
+      <Class name="NSWindowController">
+      </Class>
+      <Class name="NSWorkspace">
+      </Class>
+      <Class name="NSActionCell.Deprecated">
+      </Class>
+      <Class name="NSApplication.Deprecated">
+      </Class>
+      <Class name="NSATSTypesetter.Deprecated">
+      </Class>
+      <Class name="NSAttributedString_AppKitAdditions.Deprecated">
+      </Class>
+      <Class name="NSBezierPath.Deprecated">
+      </Class>
+      <Class name="NSBrowser.Deprecated">
+      </Class>
+      <Class name="NSCachedImageRep.Deprecated">
+      </Class>
+      <Class name="NSCell.Deprecated">
+      </Class>
+      <Class name="NSCollectionViewItem.Deprecated">
+      </Class>
+      <Class name="NSControl.Deprecated">
+      </Class>
+      <Class name="NSDocument.Deprecated">
+      </Class>
+      <Class name="NSDocumentController.Deprecated">
+      </Class>
+      <Class name="NSFont.Deprecated">
+      </Class>
+      <Class name="NSGraphicsContext.Deprecated">
+      </Class>
+      <Class name="NSImage.Deprecated">
+      </Class>
+      <Class name="NSMenu.Deprecated">
+      </Class>
+      <Class name="NSMenuItem.Deprecated">
+      </Class>
+      <Class name="NSOpenPanel.Deprecated">
+      </Class>
+      <Class name="NSPageLayout.Deprecated">
+      </Class>
+      <Class name="NSPersistentDocument.Deprecated">
+      </Class>
+      <Class name="NSPrinter.Deprecated">
+      </Class>
+      <Class name="NSPrintInfo.Deprecated">
+      </Class>
+      <Class name="NSPrintOperation.Deprecated">
+      </Class>
+      <Class name="NSPrintPanel.Deprecated">
+      </Class>
+      <Class name="NSProgressIndicator.Deprecated">
+      </Class>
+      <Class name="NSSavePanel.Deprecated">
+      </Class>
+      <Class name="NSScroller.Deprecated">
+      </Class>
+      <Class name="NSSound.Deprecated">
+      </Class>
+      <Class name="NSSpellChecker.Deprecated">
+      </Class>
+      <Class name="NSSplitView.Deprecated">
+      </Class>
+      <Class name="NSTableColumn.Deprecated">
+      </Class>
+      <Class name="NSTableView.Deprecated">
+      </Class>
+      <Class name="NSTextField.Deprecated">
+      </Class>
+      <Class name="NSTextView.Deprecated">
+      </Class>
+      <Class name="NSWindow.Deprecated">
+      </Class>
+      <Class name="NSWorkspace.Deprecated">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="NSAccessibility">
+      </Protocol>
+      <Protocol name="NSAlertDelegate">
+      </Protocol>
+      <Protocol name="NSAnimatablePropertyContainer">
+      </Protocol>
+      <Protocol name="NSAnimationDelegate">
+      </Protocol>
+      <Protocol name="NSApplicationDelegate">
+      </Protocol>
+      <Protocol name="NSBrowserDelegate">
+      </Protocol>
+      <Protocol name="NSChangeSpelling">
+      </Protocol>
+      <Protocol name="NSCollectionViewDelegate">
+      </Protocol>
+      <Protocol name="NSColorPanelDelegate">
+      </Protocol>
+      <Protocol name="NSColorPickingCustom">
+      </Protocol>
+      <Protocol name="NSColorPickingDefault">
+      </Protocol>
+      <Protocol name="NSComboBoxCellDataSource">
+      </Protocol>
+      <Protocol name="NSComboBoxDataSource">
+      </Protocol>
+      <Protocol name="NSComboBoxDelegate">
+      </Protocol>
+      <Protocol name="NSControlTextEditingDelegate">
+      </Protocol>
+      <Protocol name="NSDatePickerCellDelegate">
+      </Protocol>
+      <Protocol name="NSDictionaryControllerKeyValuePair">
+      </Protocol>
+      <Protocol name="NSDockTilePlugIn">
+      </Protocol>
+      <Protocol name="NSDraggingDestination">
+      </Protocol>
+      <Protocol name="NSDraggingInfo">
+      </Protocol>
+      <Protocol name="NSDraggingSource">
+      </Protocol>
+      <Protocol name="NSDrawerDelegate">
+      </Protocol>
+      <Protocol name="NSEditor">
+      </Protocol>
+      <Protocol name="NSEditorRegistration">
+      </Protocol>
+      <Protocol name="NSFontManagerDelegate">
+      </Protocol>
+      <Protocol name="NSFontPanelValidation">
+      </Protocol>
+      <Protocol name="NSGlyphStorage">
+      </Protocol>
+      <Protocol name="NSIgnoreMisspelledWords">
+      </Protocol>
+      <Protocol name="NSImageDelegate">
+      </Protocol>
+      <Protocol name="NSLayoutManagerDelegate">
+      </Protocol>
+      <Protocol name="NSMatrixDelegate">
+      </Protocol>
+      <Protocol name="NSMenuDelegate">
+      </Protocol>
+      <Protocol name="NSMenuValidation">
+      </Protocol>
+      <Protocol name="NSNibAwaking">
+      </Protocol>
+      <Protocol name="NSOpenSavePanelDelegate">
+      </Protocol>
+      <Protocol name="NSOutlineViewDataSource">
+      </Protocol>
+      <Protocol name="NSOutlineViewDelegate">
+      </Protocol>
+      <Protocol name="NSPanelDelegate">
+      </Protocol>
+      <Protocol name="NSPasteboardItemDataProvider">
+      </Protocol>
+      <Protocol name="NSPasteboardReading">
+      </Protocol>
+      <Protocol name="NSPasteboardWriting">
+      </Protocol>
+      <Protocol name="NSPathCellDelegate">
+      </Protocol>
+      <Protocol name="NSPathControlDelegate">
+      </Protocol>
+      <Protocol name="NSPlaceholders">
+      </Protocol>
+      <Protocol name="NSPopoverDelegate">
+      </Protocol>
+      <Protocol name="NSPrintPanelAccessorizing">
+      </Protocol>
+      <Protocol name="NSRuleEditorDelegate">
+      </Protocol>
+      <Protocol name="NSRulerViewDelegate">
+      </Protocol>
+      <Protocol name="NSServicesRequests">
+      </Protocol>
+      <Protocol name="NSSoundDelegate">
+      </Protocol>
+      <Protocol name="NSSpeechRecognizerDelegate">
+      </Protocol>
+      <Protocol name="NSSpeechSynthesizerDelegate">
+      </Protocol>
+      <Protocol name="NSSplitViewDelegate">
+      </Protocol>
+      <Protocol name="NSTableViewDataSource;NSTableDataSource">
+      </Protocol>
+      <Protocol name="NSTableViewDelegate">
+      </Protocol>
+      <Protocol name="NSTabViewDelegate">
+      </Protocol>
+      <Protocol name="NSTextAttachmentCell">
+      </Protocol>
+      <Protocol name="NSTextDelegate">
+      </Protocol>
+      <Protocol name="NSTextFieldDelegate">
+      </Protocol>
+      <Protocol name="NSTextFinderClient">
+      </Protocol>
+      <Protocol name="NSTextFinderBarContainer">
+      </Protocol>
+      <Protocol name="NSTextInput">
+      </Protocol>
+      <Protocol name="NSTextInputClient">
+      </Protocol>
+      <Protocol name="NSTextLayoutOrientationProvider">
+      </Protocol>
+      <Protocol name="NSTextStorageDelegate">
+      </Protocol>
+      <Protocol name="NSTextViewDelegate">
+      </Protocol>
+      <Protocol name="NSTokenFieldCellDelegate">
+      </Protocol>
+      <Protocol name="NSTokenFieldDelegate">
+      </Protocol>
+      <Protocol name="NSToolbarDelegate">
+      </Protocol>
+      <Protocol name="NSToolbarItemValidation">
+      </Protocol>
+      <Protocol name="NSToolTipOwner">
+      </Protocol>
+      <Protocol name="NSUserInterfaceValidations">
+      </Protocol>
+      <Protocol name="NSUserInterfaceItemIdentification">
+      </Protocol>
+      <Protocol name="NSUserInterfaceItemSearching">
+      </Protocol>
+      <Protocol name="NSValidatedUserInterfaceItem">
+      </Protocol>
+      <Protocol name="NSWindowDelegate">
+      </Protocol>
+      <Protocol name="NSWindowRestoration">
+      </Protocol>
+      <Protocol name="NSWindowScripting">
+      </Protocol>
+      <Protocol name="NSDraggingSource.Deprecated">
+      </Protocol>
+    </Protocols>
+    <Enumerations>
+      <Enumeration name="NSTrackingAreaOptions">
+      </Enumeration>
+      <Enumeration name="NSTrackingRectTag">
+      </Enumeration>
+    </Enumerations>
+  </Framework>
+  <Framework name="AVFoundation" usings="Foundation,AppKit,ApplicationServices,CoreMedia,QuartzCore,Kernel" assembly="Monobjc.AVFoundation">
+    <Types>
+      <Type name="AVFoundationFramework.Functions">
+      </Type>
+      <Type name="AVFoundationFramework.AudioSettings.Constants">
+      </Type>
+      <Type name="AVFoundationFramework.Constants">
+      </Type>
+      <Type name="AVFoundationFramework.Error.Constants">
+      </Type>
+      <Type name="AVFoundationFramework.ID3.Constants">
+      </Type>
+      <Type name="AVFoundationFramework.iTunes.Constants">
+      </Type>
+      <Type name="AVFoundationFramework.QuickTime.Constants">
+      </Type>
+    </Types>
+    <Classes>
+      <Class name="AVAsset">
+      </Class>
+      <Class name="AVAssetExportSession"/>
+      <Class name="AVAssetImageGenerator">
+      </Class>
+      <Class name="AVAssetReader">
+      </Class>
+      <Class name="AVAssetReaderAudioMixOutput"/>
+      <Class name="AVAssetReaderOutput"/>
+      <Class name="AVAssetReaderTrackOutput"/>
+      <Class name="AVAssetReaderVideoCompositionOutput"/>
+      <Class name="AVAssetTrack"/>
+      <Class name="AVAssetTrackSegment"/>
+      <Class name="AVAssetWriter">
+      </Class>
+      <Class name="AVAssetWriterInput"/>
+      <Class name="AVAssetWriterInputPixelBufferAdaptor"/>
+      <Class name="AVAudioMix"/>
+      <Class name="AVAudioMixInputParameters">
+      </Class>
+      <Class name="AVAudioPlayer"/>
+      <Class name="AVAudioRecorder"/>
+      <Class name="AVCaptureAudioChannel"/>
+      <Class name="AVCaptureAudioDataOutput"/>
+      <Class name="AVCaptureAudioFileOutput"/>
+      <Class name="AVCaptureAudioPreviewOutput"/>
+      <Class name="AVCaptureConnection">
+      </Class>
+      <Class name="AVCaptureDevice"/>
+      <Class name="AVCaptureDeviceFormat"/>
+      <Class name="AVCaptureDeviceInput"/>
+      <Class name="AVCaptureDeviceInputSource"/>
+      <Class name="AVCaptureFileOutput"/>
+      <Class name="AVCaptureInput"/>
+      <Class name="AVCaptureInputPort"/>
+      <Class name="AVCaptureMovieFileOutput"/>
+      <Class name="AVCaptureOutput"/>
+      <Class name="AVCaptureScreenInput"/>
+      <Class name="AVCaptureSession"/>
+      <Class name="AVCaptureStillImageOutput"/>
+      <Class name="AVCaptureVideoDataOutput"/>
+      <Class name="AVCaptureVideoPreviewLayer">
+      </Class>
+      <Class name="AVComposition"/>
+      <Class name="AVCompositionTrack"/>
+      <Class name="AVCompositionTrackSegment"/>
+      <Class name="AVFrameRateRange"/>
+      <Class name="AVMetadataItem">
+      </Class>
+      <Class name="AVMutableAudioMix">
+      </Class>
+      <Class name="AVMutableAudioMixInputParameters">
+      </Class>
+      <Class name="AVMutableComposition">
+      </Class>
+      <Class name="AVMutableCompositionTrack">
+      </Class>
+      <Class name="AVMutableMetadataItem">
+	  </Class>
+      <Class name="AVMutableTimedMetadataGroup">
+      </Class>
+      <Class name="AVMutableVideoComposition">
+      </Class>
+      <Class name="AVMutableVideoCompositionInstruction">
+      </Class>
+      <Class name="AVMutableVideoCompositionLayerInstruction">
+      </Class>
+      <Class name="AVPlayer">
+      </Class>
+      <Class name="AVPlayerItem"/>
+      <Class name="AVPlayerItemAccessLog"/>
+      <Class name="AVPlayerItemAccessLogEvent"/>
+      <Class name="AVPlayerItemErrorLog"/>
+      <Class name="AVPlayerItemErrorLogEvent"/>
+      <Class name="AVPlayerItemTrack"/>
+      <Class name="AVPlayerLayer"/>
+      <Class name="AVQueuePlayer"/>
+      <Class name="AVSynchronizedLayer"/>
+      <Class name="AVTimedMetadataGroup"/>
+      <Class name="AVURLAsset">
+      </Class>
+      <Class name="AVVideoComposition"/>
+      <Class name="AVVideoCompositionCoreAnimationTool"/>
+      <Class name="AVVideoCompositionInstruction"/>
+      <Class name="AVVideoCompositionLayerInstruction">
+      </Class>
+      <Class name="NSCoder_AVFoundationAdditions">
+      </Class>
+      <Class name="NSValue_AVFoundationAdditions">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="AVAsynchronousKeyValueLoading">
+	  </Protocol>
+      <Protocol name="AVAudioPlayerDelegate"/>
+      <Protocol name="AVAudioRecorderDelegate"/>
+      <Protocol name="AVCaptureAudioDataOutputSampleBufferDelegate"/>
+      <Protocol name="AVCaptureFileOutputDelegate"/>
+      <Protocol name="AVCaptureFileOutputRecordingDelegate"/>
+      <Protocol name="AVCaptureVideoDataOutputSampleBufferDelegate"/>
+    </Protocols>
+  </Framework>
+  <Framework name="CoreData" usings="Foundation,AppKit,QuartzCore" assembly="Monobjc.AppKit">
+    <Types>
+      <Type name="CoreDataFramework.Constants"/>
+    </Types>
+    <Classes>
+      <Class name="NSAtomicStore">
+      </Class>
+      <Class name="NSAtomicStoreCacheNode">
+      </Class>
+      <Class name="NSAttributeDescription">
+      </Class>
+      <Class name="NSEntityDescription">
+      </Class>
+      <Class name="NSEntityMapping">
+      </Class>
+      <Class name="NSEntityMigrationPolicy">
+      </Class>
+      <Class name="NSExpressionDescription">
+      </Class>
+      <Class name="NSFetchedPropertyDescription">
+      </Class>
+      <Class name="NSFetchRequest">
+      </Class>
+      <Class name="NSFetchRequestExpression">
+      </Class>
+      <Class name="NSIncrementalStore">
+      </Class>
+      <Class name="NSIncrementalStoreNode">
+      </Class>
+      <Class name="NSManagedObject">
+      </Class>
+      <Class name="NSManagedObjectContext">
+      </Class>
+      <Class name="NSManagedObjectID">
+      </Class>
+      <Class name="NSManagedObjectModel">
+      </Class>
+      <Class name="NSMappingModel">
+      </Class>
+      <Class name="NSMergeConflict">
+      </Class>
+      <Class name="NSMergePolicy">
+      </Class>
+      <Class name="NSMigrationManager">
+      </Class>
+      <Class name="NSPersistentStore">
+      </Class>
+      <Class name="NSPersistentStoreCoordinator">
+      </Class>
+      <Class name="NSPersistentStoreRequest">
+      </Class>
+      <Class name="NSPropertyDescription">
+      </Class>
+      <Class name="NSPropertyMapping">
+      </Class>
+      <Class name="NSRelationshipDescription">
+      </Class>
+      <Class name="NSSaveChangesRequest">
+      </Class>
+      <Class name="NSPersistentStoreCoordinator.Deprecated">
+      </Class>
+    </Classes>
+  </Framework>
+  <Framework name="CoreFoundation" usings="Foundation" assembly="Monobjc.Foundation">
+    <Types>
+      <Type name="CFAllocator">
+      </Type>
+      <Type name="CFArray">
+      </Type>
+      <Type name="CFAttributedString">
+      </Type>
+      <Type name="CFBag">
+      </Type>
+      <Type name="CFBinaryHeap">
+      </Type>
+      <Type name="CFBitVector">
+      </Type>
+      <Type name="CFBoolean">
+      </Type>
+      <Type name="CFBundle">
+      </Type>
+      <Type name="CFCalendar">
+      </Type>
+      <Type name="CFCharacterSet">
+      </Type>
+      <Type name="CFData">
+      </Type>
+      <Type name="CFDate">
+
+      </Type>
+      <Type name="CFDateFormatter">
+
+      </Type>
+      <Type name="CFDictionary">
+
+      </Type>
+      <Type name="CFError">
+
+      </Type>
+      <Type name="CFFileDescriptor">
+
+      </Type>
+      <Type name="CFLocale">
+
+      </Type>
+      <Type name="CFMachPort">
+
+      </Type>
+      <Type name="CFMessagePort">
+
+      </Type>
+      <Type name="CFMutableArray">
+
+      </Type>
+      <Type name="CFMutableAttributedString">
+
+      </Type>
+      <Type name="CFMutableBag">
+
+      </Type>
+      <Type name="CFMutableBitVector">
+
+      </Type>
+      <Type name="CFMutableCharacterSet">
+
+      </Type>
+      <Type name="CFMutableData">
+
+      </Type>
+      <Type name="CFMutableDictionary">
+
+      </Type>
+      <Type name="CFMutableSet">
+
+      </Type>
+      <Type name="CFMutableString">
+
+      </Type>
+      <Type name="CFNotificationCenter">
+
+      </Type>
+      <Type name="CFNull">
+
+      </Type>
+      <Type name="CFNumber">
+
+      </Type>
+      <Type name="CFNumberFormatter">
+
+      </Type>
+      <Type name="CFPlugIn">
+
+      </Type>
+      <Type name="CFPlugInInstance">
+
+      </Type>
+      <Type name="CFPropertyList">
+
+      </Type>
+      <Type name="CFReadStream">
+
+      </Type>
+      <Type name="CFRunLoop">
+
+      </Type>
+      <Type name="CFRunLoopObserver">
+
+      </Type>
+      <Type name="CFRunLoopSource">
+
+      </Type>
+      <Type name="CFRunLoopTimer">
+
+      </Type>
+      <Type name="CFSet">
+
+      </Type>
+      <Type name="CFSocket">
+
+      </Type>
+      <Type name="CFString">
+      </Type>
+      <Type name="CFStringTokenizer">
+
+      </Type>
+      <Type name="CFTimeZone">
+
+      </Type>
+      <Type name="CFTree">
+
+      </Type>
+      <Type name="CFType">
+      </Type>
+      <Type name="CFURL">
+
+      </Type>
+      <Type name="CFUserNotification">
+
+      </Type>
+      <Type name="CFUUID">
+
+      </Type>
+      <Type name="CFWriteStream">
+
+      </Type>
+      <Type name="CFXMLNode">
+
+      </Type>
+      <Type name="CFXMLParser">
+
+      </Type>
+      <Type name="CFXMLTree">
+
+      </Type>
+    </Types>
+    <Structures>
+      <Structure name="CFHashCode"/>
+      <Structure name="CFIndex"/>
+      <Structure name="CFOptionFlags"/>
+      <Structure name="CFRange"/>
+      <Structure name="CFTypeID"/>
+    </Structures>
+  </Framework>
+  <Framework name="CoreLocation" usings="Foundation" assembly="Monobjc.CoreLocation">
+    <Types>
+      <Type name="CoreLocationFramework.Constants">
+      </Type>
+    </Types>
+    <Classes>
+      <Class name="CLLocation">
+      </Class>
+      <Class name="CLLocationManager">
+      </Class>
+      <Class name="CLRegion">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="CLLocationManagerDelegate">
+      </Protocol>
+    </Protocols>
+    <Enumerations>
+      <Enumeration name="CLAuthorizationStatus">
+    </Enumeration>
+    </Enumerations>
+  </Framework>
+  <Framework name="CoreMedia" usings="Foundation,AppKit,ApplicationServices" assembly="Monobjc.CoreMedia">
+    <Types>
+      <Type name="CoreMedia.Constants">
+      </Type>
+      <Type name="CoreMedia.DataTypes">
+      </Type>
+      <Type name="CMAttachment">
+      </Type>
+      <Type name="CMBlockBuffer">
+      </Type>
+      <Type name="CMBufferQueue">
+      </Type>
+      <Type name="CMFormatDescription">
+				
+				
+				
+      </Type>
+      <Type name="CMSampleBuffer">
+				
+				
+      </Type>
+      <Type name="CMTime">
+      </Type>
+      <Type name="CMTimeRange">
+      </Type>
+    </Types>
+  </Framework>
+  <Framework name="CoreMIDI" usings="Foundation" assembly="Monobjc.CoreMIDI">
+    <Types>
+      <Type name="MIDIServices">
+      </Type>
+      <Type name="MIDISetup">
+      </Type>
+      <Type name="MIDIThruConnection">
+      </Type>
+    </Types>
+  </Framework>
+  <Framework name="CoreServices" usings="CoreFoundation,Foundation,ApplicationServices" assembly="Monobjc.AppKit">
+    <Types>
+      <Type name="UTType">
+      </Type>
+    </Types>
+  </Framework>
+  <Framework name="CoreWLAN" usings="Foundation,Security,SecurityFoundation" assembly="Monobjc.CoreWLAN">
+    <Types>
+      <Type name="CoreWLANFramework.Constants">
+      </Type>
+      <Type name="CoreWLANFramework.Types">
+      </Type>
+      <Type name="CoreWLANFramework.Util">
+      </Type>
+    </Types>
+    <Classes>
+      <Class name="CW8021XProfile">
+      </Class>
+      <Class name="CW8021XProfile.Deprecated">
+      </Class>
+      <Class name="CWChannel">
+      </Class>
+      <Class name="CWConfiguration">
+      </Class>
+      <Class name="CWConfiguration.Deprecated">
+      </Class>
+      <Class name="CWInterface">
+      </Class>
+      <Class name="CWMutableConfiguration">
+      </Class>
+      <Class name="CWMutableNetworkProfile">
+      </Class>
+      <Class name="CWNetwork">
+      </Class>
+      <Class name="CWNetworkProfile">
+      </Class>
+      <Class name="CWWirelessProfile">
+      </Class>
+      <Class name="CWWirelessProfile.Deprecated">
+      </Class>
+    </Classes>
+  </Framework>
+  <Framework name="DiscRecording" usings="Foundation" assembly="Monobjc.DiscRecording">
+    <Classes>
+      <Class name="DRBurn">
+      </Class>
+      <Class name="DRBurn_Header">
+      </Class>
+      <Class name="DRBurn_ImageContentCreation">
+      </Class>
+      <Class name="DRBurn_PropertyConvenienceMethods">
+      </Class>
+      <Class name="DRCDTextBlock">
+      </Class>
+      <Class name="DRCDText_Header">
+      </Class>
+      <Class name="DRCDTextBlock_PropertyConvenienceMethods">
+      </Class>
+      <Class name="DRContentFile_Header">
+
+      </Class>
+      <Class name="DRContentFolder_Header">
+
+      </Class>
+      <Class name="DRContentObject_Header">
+
+      </Class>
+      <Class name="DRContentProperties_Header">
+
+      </Class>
+      <Class name="DRContentTrack_Header">
+
+      </Class>
+      <Class name="DRCoreBurn_Header">
+
+      </Class>
+      <Class name="DRCoreCDText_Header">
+
+      </Class>
+      <Class name="DRCoreDevice_Header">
+
+      </Class>
+      <Class name="DRCoreErase_Header">
+
+      </Class>
+      <Class name="DRCoreErrors_Header">
+
+      </Class>
+      <Class name="DRCoreNotifications_Header">
+
+      </Class>
+      <Class name="DRCoreObject_Header">
+
+      </Class>
+      <Class name="DRCoreStatus_Header">
+
+      </Class>
+      <Class name="DRCoreTrack_Header">
+
+      </Class>
+      <Class name="DRDevice">
+      </Class>
+      <Class name="DRDevice_Header">
+      </Class>
+      <Class name="DRDevice_InfoConvenience">
+      </Class>
+      <Class name="DRDevice_StatusConvenience">
+      </Class>
+      <Class name="DRErase">
+      </Class>
+      <Class name="DRErase_Header">
+      </Class>
+      <Class name="DRErase_PropertyConvenienceMethods">
+      </Class>
+      <Class name="DRFile">
+      </Class>
+      <Class name="DRFile_Header">
+      </Class>
+      <Class name="DRFile_VirtualFiles">
+      </Class>
+      <Class name="DRFile_VirtualLinks">
+      </Class>
+      <Class name="DRFolder">
+      </Class>
+      <Class name="DRFolder_Header">
+      </Class>
+      <Class name="DRFolder_VirtualFolders">
+      </Class>
+      <Class name="DRFSObject">
+      </Class>
+      <Class name="DRFSObject_Header">
+      </Class>
+      <Class name="DRMSF">
+      </Class>
+      <Class name="DRMSF_Header">
+      </Class>
+      <Class name="DRMSFFormatter">
+      </Class>
+      <Class name="DRMSFFormatter_Header">
+      </Class>
+      <Class name="DRNotificationCenter">
+      </Class>
+      <Class name="DRStatus">
+      </Class>
+      <Class name="DRTrack">
+      </Class>
+      <Class name="DRTrack_Header">
+      </Class>
+      <Class name="DRTrack_AudioContentCreation">
+      </Class>
+      <Class name="DRTrack_DataContentCreation">
+      </Class>
+      <Class name="DRTrack_PropertyConvenience">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="DRFileDataProduction">
+      </Protocol>
+      <Protocol name="DRTrackDataProduction">
+      </Protocol>
+    </Protocols>
+    <Enumerations>
+      <Enumeration name="DRFileFork">
+      </Enumeration>
+      <Enumeration name="DRFilesystemInclusionMask">
+      </Enumeration>
+    </Enumerations>
+  </Framework>
+  <Framework name="DiscRecordingUI" usings="Foundation,AppKit,DiscRecording" assembly="Monobjc.DiscRecordingUI">
+    <Types>
+      <Type name="DiscRecordingUIFramework.Constants">
+      </Type>
+    </Types>
+    <Classes>
+      <Class name="DRBurnProgressPanel">
+      </Class>
+      <Class name="DRBurnProgressPanel_Header">
+      </Class>
+      <Class name="DRBurnSession_Header">
+      </Class>
+      <Class name="DRBurnSetupPanel">
+      </Class>
+      <Class name="DRBurnSetupPanel_Header">
+      </Class>
+      <Class name="DREraseProgressPanel">
+      </Class>
+      <Class name="DREraseProgressPanel_Header">
+      </Class>
+      <Class name="DREraseSession_Header">
+      </Class>
+      <Class name="DREraseSetupPanel">
+      </Class>
+      <Class name="DREraseSetupPanel_Header">
+      </Class>
+      <Class name="DRSetupPanel">
+      </Class>
+      <Class name="DRSetupPanel_Header">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="DRBurnProgressPanelDelegate">
+      </Protocol>
+      <Protocol name="DREraseProgressPanelDelegate">
+      </Protocol>
+      <Protocol name="DRSetupPanelDelegate">
+      </Protocol>
+    </Protocols>
+  </Framework>
+  <Framework name="Foundation" usings="ApplicationServices" assembly="Monobjc.Foundation">
+    <Types>
+      <Type name="FoundationFramework.Constants">
+      </Type>
+      <Type name="FoundationFramework.DataTypes">
+      </Type>
+      <Type name="FoundationFramework.Functions">
+      </Type>
+    </Types>
+    <Classes>
+      <Class name="NSAffineTransform">
+      </Class>
+      <Class name="NSAppleEventDescriptor">
+      </Class>
+      <Class name="NSAppleEventManager">
+      </Class>
+      <Class name="NSAppleScript">
+      </Class>
+      <Class name="NSArchiver">
+      </Class>
+      <Class name="NSArray">
+      </Class>
+      <Class name="NSAssertionHandler">
+      </Class>
+      <Class name="NSAttributedString">
+      </Class>
+      <Class name="NSAutoreleasePool">
+      </Class>
+      <Class name="NSBlockOperation">
+      </Class>
+      <Class name="NSBundle">
+      </Class>
+      <Class name="NSCache">
+      </Class>
+      <Class name="NSCachedURLResponse">
+      </Class>
+      <Class name="NSCalendar">
+        <!-- TODO: Move to constant -->
+      </Class>
+      <Class name="NSCharacterSet">
+        <!-- TODO: Move to constant -->
+      </Class>
+      <Class name="NSClassDescription">
+      </Class>
+      <Class name="NSCloneCommand">
+      </Class>
+      <Class name="NSCloseCommand">
+      </Class>
+      <Class name="NSCoder">
+      </Class>
+      <Class name="NSComparisonPredicate">
+      </Class>
+      <Class name="NSCompoundPredicate">
+      </Class>
+      <Class name="NSCondition">
+      </Class>
+      <Class name="NSConditionLock">
+      </Class>
+      <Class name="NSConnection">
+      </Class>
+      <Class name="NSCountCommand">
+      </Class>
+      <Class name="NSCountedSet">
+      </Class>
+      <Class name="NSCreateCommand">
+      </Class>
+      <Class name="NSData">
+      </Class>
+      <Class name="NSDataDetector">
+      </Class>
+      <Class name="NSDate">
+      </Class>
+      <Class name="NSDateComponents">
+        <!-- TODO: Convert to constant -->
+      </Class>
+      <Class name="NSDateFormatter">
+      </Class>
+      <Class name="NSDecimalNumber">
+      </Class>
+      <Class name="NSDecimalNumberHandler">
+      </Class>
+      <Class name="NSDeleteCommand">
+      </Class>
+      <Class name="NSDeserializer">
+      </Class>
+      <Class name="NSDictionary">
+      </Class>
+      <Class name="NSDirectoryEnumerator">
+      </Class>
+      <Class name="NSDistantObject">
+      </Class>
+      <Class name="NSDistantObjectRequest">
+      </Class>
+      <Class name="NSDistributedLock">
+      </Class>
+      <Class name="NSDistributedNotificationCenter">
+      </Class>
+      <Class name="NSEnumerator">
+      </Class>
+      <Class name="NSError">
+      </Class>
+      <Class name="NSException">
+      </Class>
+      <Class name="NSExistsCommand">
+      </Class>
+      <Class name="NSExpression">
+      </Class>
+      <Class name="NSFileHandle">
+      </Class>
+      <Class name="NSFileManager">
+      </Class>
+      <Class name="NSFileCoordinator">
+      </Class>
+      <Class name="NSFileSecurity">
+      </Class>
+      <Class name="NSFileVersion">
+      </Class>
+      <Class name="NSFileWrapper">
+      </Class>
+      <Class name="NSFormatter">
+      </Class>
+      <Class name="NSGarbageCollector">
+      </Class>
+      <Class name="NSGetCommand">
+      </Class>
+      <Class name="NSHashTable">
+      </Class>
+      <Class name="NSHost">
+      </Class>
+      <Class name="NSHTTPCookie">
+      </Class>
+      <Class name="NSHTTPCookieStorage">
+      </Class>
+      <Class name="NSHTTPURLResponse">
+      </Class>
+      <Class name="NSIndexPath">
+      </Class>
+      <Class name="NSIndexSet">
+      </Class>
+      <Class name="NSIndexSpecifier">
+      </Class>
+      <Class name="NSInputStream">
+      </Class>
+      <Class name="NSInvocation">
+      </Class>
+      <Class name="NSInvocationOperation">
+      </Class>
+      <Class name="NSJSONSerialization">
+      </Class>
+      <Class name="NSKeyedArchiver">
+      </Class>
+      <Class name="NSKeyedUnarchiver">
+      </Class>
+      <Class name="NSLinguisticTagger">
+      </Class>
+      <Class name="NSLocale">
+      </Class>
+      <Class name="NSLock">
+      </Class>
+      <Class name="NSLogicalTest">
+      </Class>
+      <Class name="NSMachBootstrapServer">
+      </Class>
+      <Class name="NSMachPort">
+      </Class>
+      <Class name="NSMapTable">
+      </Class>
+      <Class name="NSMessagePort">
+      </Class>
+      <Class name="NSMessagePortNameServer">
+      </Class>
+      <Class name="NSMetadataItem">
+      </Class>
+      <Class name="NSMetadataQuery">
+      </Class>
+      <Class name="NSMetadataQueryAttributeValueTuple">
+      </Class>
+      <Class name="NSMetadataQueryResultGroup">
+      </Class>
+      <Class name="NSMethodSignature">
+      </Class>
+      <Class name="NSMiddleSpecifier">
+      </Class>
+      <Class name="NSMoveCommand">
+      </Class>
+      <Class name="NSMutableArray">
+      </Class>
+      <Class name="NSMutableAttributedString">
+      </Class>
+      <Class name="NSMutableCharacterSet">
+      </Class>
+      <Class name="NSMutableData">
+      </Class>
+      <Class name="NSMutableDictionary">
+      </Class>
+      <Class name="NSMutableIndexSet">
+      </Class>
+      <Class name="NSMutableOrderedSet">
+      </Class>
+      <Class name="NSMutableSet">
+      </Class>
+      <Class name="NSMutableString">
+      </Class>
+      <Class name="NSMutableURLRequest">
+      </Class>
+      <Class name="NSNameSpecifier">
+      </Class>
+      <Class name="NSNetService">
+      </Class>
+      <Class name="NSNetServiceBrowser">
+      </Class>
+      <Class name="NSNotification">
+      </Class>
+      <Class name="NSNotificationCenter">
+      </Class>
+      <Class name="NSNotificationQueue">
+      </Class>
+      <Class name="NSNull">
+      </Class>
+      <Class name="NSNumber">
+        <!-- TODO: Review following -->
+      </Class>
+      <Class name="NSNumberFormatter">
+      </Class>
+      <Class name="NSObject">
+      </Class>
+      <Class name="NSOperation">
+      </Class>
+      <Class name="NSOperationQueue">
+        <!-- TODO: Move to constants -->
+      </Class>
+      <Class name="NSOrderedSet">
+      </Class>
+      <Class name="NSOrthography">
+      </Class>
+      <Class name="NSOutputStream">
+      </Class>
+      <Class name="NSPipe">
+      </Class>
+      <Class name="NSPointerArray">
+      </Class>
+      <Class name="NSPointerFunctions">
+      </Class>
+      <Class name="NSPort">
+      </Class>
+      <Class name="NSPortCoder">
+      </Class>
+      <Class name="NSPortMessage">
+      </Class>
+      <Class name="NSPortNameServer">
+      </Class>
+      <Class name="NSPositionalSpecifier">
+      </Class>
+      <Class name="NSPredicate">
+      </Class>
+      <Class name="NSProcessInfo">
+      </Class>
+      <Class name="NSPropertyListSerialization">
+      </Class>
+      <Class name="NSPropertySpecifier">
+      </Class>
+      <Class name="NSProtocolChecker">
+      </Class>
+      <Class name="NSProxy">
+      </Class>
+      <Class name="NSPurgeableData">
+      </Class>
+      <Class name="NSQuitCommand">
+      </Class>
+      <Class name="NSRandomSpecifier">
+      </Class>
+      <Class name="NSRangeSpecifier">
+      </Class>
+      <Class name="NSRecursiveLock">
+      </Class>
+      <Class name="NSRegularExpression">
+      </Class>
+      <Class name="NSRelativeSpecifier">
+      </Class>
+      <Class name="NSRunLoop">
+      </Class>
+      <Class name="NSScanner">
+      </Class>
+      <Class name="NSScriptClassDescription">
+      </Class>
+      <Class name="NSScriptCoercionHandler">
+      </Class>
+      <Class name="NSScriptCommand">
+      </Class>
+      <Class name="NSScriptCommandDescription">
+      </Class>
+      <Class name="NSScriptExecutionContext">
+      </Class>
+      <Class name="NSScriptObjectSpecifier">
+      </Class>
+      <Class name="NSScriptSuiteRegistry">
+      </Class>
+      <Class name="NSScriptWhoseTest">
+      </Class>
+      <Class name="NSSerializer">
+      </Class>
+      <Class name="NSSet">
+      </Class>
+      <Class name="NSSetCommand">
+      </Class>
+      <Class name="NSSocketPort">
+      </Class>
+      <Class name="NSSocketPortNameServer">
+      </Class>
+      <Class name="NSSortDescriptor">
+      </Class>
+      <Class name="NSSpecifierTest">
+      </Class>
+      <Class name="NSSpellServer">
+      </Class>
+      <Class name="NSStream">
+      </Class>
+      <Class name="NSString">
+      </Class>
+      <Class name="NSTask">
+      </Class>
+      <Class name="NSTextCheckingResult">
+      </Class>
+      <Class name="NSThread">
+      </Class>
+      <Class name="NSTimer">
+      </Class>
+      <Class name="NSTimeZone">
+      </Class>
+      <Class name="NSUbiquitousKeyValueStore">
+      </Class>
+      <Class name="NSUnarchiver">
+      </Class>
+      <Class name="NSUndoManager">
+        <!-- TODO: Move with other ordering -->
+      </Class>
+      <Class name="NSUniqueIDSpecifier">
+      </Class>
+      <Class name="NSURL">
+      </Class>
+      <Class name="NSURLAuthenticationChallenge">
+      </Class>
+      <Class name="NSURLCache">
+      </Class>
+      <Class name="NSURLConnection">
+      </Class>
+      <Class name="NSURLCredential">
+      </Class>
+      <Class name="NSURLCredentialStorage">
+      </Class>
+      <Class name="NSURLDownload">
+      </Class>
+      <Class name="NSURLHandle">
+      </Class>
+      <Class name="NSURLProtectionSpace">
+      </Class>
+      <Class name="NSURLProtocol">
+      </Class>
+      <Class name="NSURLRequest">
+      </Class>
+      <Class name="NSURLResponse">
+      </Class>
+      <Class name="NSUserDefaults">
+     </Class>
+      <Class name="NSValue">
+      </Class>
+      <Class name="NSValueTransformer">
+      </Class>
+      <Class name="NSWhoseSpecifier">
+      </Class>
+      <Class name="NSXMLDocument">
+      </Class>
+      <Class name="NSXMLDTD">
+      </Class>
+      <Class name="NSXMLDTDNode">
+      </Class>
+      <Class name="NSXMLElement">
+      </Class>
+      <Class name="NSXMLNode">
+      </Class>
+      <Class name="NSXMLParser">
+      </Class>
+      <Class name="NSArray.Deprecated">
+      </Class>
+      <Class name="NSCoder.Deprecated">
+      </Class>
+      <Class name="NSConnection.Deprecated">
+      </Class>
+      <Class name="NSData.Deprecated">
+      </Class>
+      <Class name="NSDate.Deprecated">
+      </Class>
+      <Class name="NSDeserializer.Deprecated">
+      </Class>
+      <Class name="NSFileManager.Deprecated">
+      </Class>
+      <Class name="NSFileWrapper.Deprecated">
+      </Class>
+      <Class name="NSGarbageCollector.Deprecated">
+      </Class>
+      <Class name="NSMutableArray.Deprecated">
+      </Class>
+      <Class name="NSNetService.Deprecated">
+      </Class>
+      <Class name="NSNetServiceBrowser.Deprecated">
+      </Class>
+      <Class name="NSObject.Deprecated">
+      </Class>
+      <Class name="NSRunLoop.Deprecated">
+      </Class>
+      <Class name="NSScriptClassDescription.Deprecated">
+      </Class>
+      <Class name="NSSerializer.Deprecated">
+      </Class>
+      <Class name="NSString.Deprecated">
+      </Class>
+      <Class name="NSURL.Deprecated">
+      </Class>
+      <Class name="NSURLHandle.Deprecated">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="NSCacheDelegate">
+      </Protocol>
+      <Protocol name="NSCoding">
+      </Protocol>
+      <Protocol name="NSComparisonMethods">
+      </Protocol>
+      <Protocol name="NSConnectionDelegate">
+      </Protocol>
+      <Protocol name="NSCopying">
+      </Protocol>
+      <Protocol name="NSDecimalNumberBehaviors">
+      </Protocol>
+      <Protocol name="NSDiscardableContent">
+      </Protocol>
+      <Protocol name="NSErrorRecoveryAttempting">
+      </Protocol>
+      <Protocol name="NSFastEnumeration">
+      </Protocol>
+      <Protocol name="NSFileManagerDelegate">
+      </Protocol>
+      <Protocol name="NSFilePresenter">
+      </Protocol>
+      <Protocol name="NSKeyedArchiverDelegate">
+      </Protocol>
+      <Protocol name="NSKeyedUnarchiverDelegate">
+      </Protocol>
+      <!-- Moved from AppKit framework for easier overriding -->
+      <Protocol name="NSKeyValueBindingCreation">
+      </Protocol>
+      <Protocol name="NSKeyValueCoding">
+      </Protocol>
+      <Protocol name="NSKeyValueObserving">
+      </Protocol>
+      <Protocol name="NSLocking">
+      </Protocol>
+      <Protocol name="NSMachPortDelegate">
+      </Protocol>
+      <Protocol name="NSMetadataQueryDelegate">
+      </Protocol>
+      <Protocol name="NSMutableCopying">
+      </Protocol>
+      <Protocol name="NSNetServiceBrowserDelegate">
+      </Protocol>
+      <Protocol name="NSNetServiceDelegate">
+      </Protocol>
+      <Protocol name="NSObjCTypeSerializationCallBack">
+      </Protocol>
+      <Protocol name="NSObject">
+      </Protocol>
+      <Protocol name="NSPortDelegate">
+      </Protocol>
+      <Protocol name="NSScriptingComparisonMethods">
+      </Protocol>
+      <Protocol name="NSScriptKeyValueCoding">
+      </Protocol>
+      <Protocol name="NSScriptObjectSpecifiers">
+      </Protocol>
+      <Protocol name="NSSpellServerDelegate">
+      </Protocol>
+      <Protocol name="NSStreamDelegate">
+      </Protocol>
+      <Protocol name="NSURLAuthenticationChallengeSender">
+      </Protocol>
+      <Protocol name="NSURLHandleClient">
+      </Protocol>
+      <Protocol name="NSURLProtocolClient">
+      </Protocol>
+      <Protocol name="NSURLConnectionDelegate">
+      </Protocol>
+      <Protocol name="NSURLDownloadDelegate">
+      </Protocol>
+      <Protocol name="NSXMLParserDelegate">
+      </Protocol>
+      <Protocol name="NSKeyValueCoding.Deprecated">
+
+      </Protocol>
+      <Protocol name="NSKeyValueObserving.Deprecated">
+
+      </Protocol>
+      <Protocol name="NSObjCTypeSerializationCallBack.Deprecated">
+
+      </Protocol>
+      <Protocol name="NSURLHandleClient.Deprecated">
+
+      </Protocol>
+    </Protocols>
+    <Structures>
+      <Structure name="NSDecimal">
+      </Structure>
+      <Structure name="NSInteger">
+      </Structure>
+      <Structure name="NSPoint">
+      </Structure>
+      <Structure name="NSRange">
+      </Structure>
+      <Structure name="NSRect">
+      </Structure>
+      <Structure name="NSSize">
+      </Structure>
+      <Structure name="NSUInteger">
+      </Structure>
+    </Structures>
+  </Framework>
+  <Framework name="InputMethodKit" usings="Foundation,AppKit" assembly="Monobjc.InputMethodKit">
+    <Classes>
+      <Class name="IMKCandidates">
+      </Class>
+      <Class name="IMKInputController">
+      </Class>
+      <Class name="IMKServer">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="IMKMouseHandling">
+      </Protocol>
+      <Protocol name="IMKServerInput">
+      </Protocol>
+      <Protocol name="IMKStateSetting">
+      </Protocol>
+      <Protocol name="IMKTextInput">
+      </Protocol>
+    </Protocols>
+  </Framework>
+  <Framework name="Kernel" usings="Foundation" assembly="Monobjc.Foundation">
+    <Types>
+      <Type name="Dispatch">
+	  </Type>
+    </Types>
+  </Framework>
+  <Framework name="OpenGL" assembly="Monobjc.OpenGL">
+    <Types>
+      <Type name="CGL">
+      </Type>
+      <Type name="CGL.Deprecated">
+      </Type>
+    </Types>
+  </Framework>
+  <Framework name="QTKit" usings="Foundation,AppKit,QuartzCore" assembly="Monobjc.QTKit">
+    <Types>
+      <Type name="QTKitFramework.Constants">
+      </Type>
+      <Type name="QTKitFramework.DataTypes"/>
+      <Type name="QTKitFramework.Functions">
+      </Type>
+    </Types>
+    <Classes>
+      <Class name="NSCoder_QTKitAdditions">
+      </Class>
+      <Class name="NSValue_QTKitAdditions">
+      </Class>
+      <Class name="QTCaptureAudioPreviewOutput">
+      </Class>
+      <Class name="QTCaptureConnection">
+      </Class>
+      <Class name="QTCaptureDecompressedAudioOutput">
+      </Class>
+      <Class name="QTCaptureDecompressedVideoOutput">
+      </Class>
+      <Class name="QTCaptureDevice">
+      </Class>
+      <Class name="QTCaptureDeviceInput">
+      </Class>
+      <Class name="QTCaptureFileOutput">
+      </Class>
+      <Class name="QTCaptureInput">
+      </Class>
+      <Class name="QTCaptureLayer">
+      </Class>
+      <Class name="QTCaptureMovieFileOutput">
+      </Class>
+      <Class name="QTCaptureOutput">
+      </Class>
+      <Class name="QTCaptureSession">
+      </Class>
+      <Class name="QTCaptureVideoPreviewOutput">
+      </Class>
+      <Class name="QTCaptureView">
+      </Class>
+      <Class name="QTCompressionOptions">
+      </Class>
+      <Class name="QTDataReference">
+      </Class>
+      <Class name="QTFormatDescription">
+      </Class>
+      <Class name="QTMedia">
+      </Class>
+      <Class name="QTMovie">
+      </Class>
+      <Class name="QTMovieLayer">
+      </Class>
+      <Class name="QTMovieView">
+      </Class>
+      <Class name="QTSampleBuffer">
+      </Class>
+      <Class name="QTTrack">
+      </Class>
+      <Class name="QTMovieView.Deprecated">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="QTCaptureDecompressedAudioOutputDelegate">
+      </Protocol>
+      <Protocol name="QTCaptureDecompressedVideoOutputDelegate">
+      </Protocol>
+      <Protocol name="QTCaptureFileOutputDelegate">
+      </Protocol>
+      <Protocol name="QTCaptureVideoPreviewOutputDelegate">
+      </Protocol>
+      <Protocol name="QTCaptureViewDelegate">
+      </Protocol>
+      <Protocol name="QTMovieDelegate">
+      </Protocol>
+    </Protocols>
+    <Enumerations>
+      <Enumeration name="QTMovieOperationPhase">
+      </Enumeration>
+      <Enumeration name="QTSampleBufferAudioBufferListOptions">
+      </Enumeration>
+    </Enumerations>
+    <Structures>
+      <Structure name="QTTime">
+      </Structure>
+      <Structure name="QTTime64">
+      </Structure>
+    </Structures>
+  </Framework>
+  <Framework name="Quartz" usings="Foundation,AppKit,QuartzCore,ApplicationServices" assembly="Monobjc.Quartz">
+    <Classes>
+      <Class name="CIFilter_ImageKitAdditions">
+      </Class>
+      <Class name="IKCameraDeviceView">
+      </Class>
+      <Class name="IKDeviceBrowserView">
+      </Class>
+      <Class name="IKFilterBrowserPanel">
+      </Class>
+      <Class name="IKFilterBrowserView">
+      </Class>
+      <Class name="IKFilterUIView">
+      </Class>
+      <Class name="IKImageBrowserCell">
+      </Class>
+      <Class name="IKImageBrowserView">
+      </Class>
+      <Class name="IKImageEditPanel">
+      </Class>
+      <Class name="IKImageView">
+      </Class>
+      <Class name="IKImagePicker">
+      </Class>
+      <Class name="IKPictureTaker;IKImagePicker">
+      </Class>
+      <Class name="IKSaveOptions">
+      </Class>
+      <Class name="IKScannerDeviceView">
+      </Class>
+      <Class name="IKSlideshow">
+      </Class>
+      <Class name="PDFAction">
+      </Class>
+      <Class name="PDFActionGoTo">
+      </Class>
+      <Class name="PDFActionNamed">
+      </Class>
+      <Class name="PDFActionRemoteGoTo">
+      </Class>
+      <Class name="PDFActionResetForm">
+      </Class>
+      <Class name="PDFActionURL">
+      </Class>
+      <Class name="PDFAnnotation">
+      </Class>
+      <Class name="PDFAnnotationButtonWidget">
+      </Class>
+      <Class name="PDFAnnotationChoiceWidget">
+      </Class>
+      <Class name="PDFAnnotationCircle">
+      </Class>
+      <Class name="PDFAnnotationFreeText">
+      </Class>
+      <Class name="PDFAnnotationInk">
+      </Class>
+      <Class name="PDFAnnotationLine">
+      </Class>
+      <Class name="PDFAnnotationLink">
+      </Class>
+      <Class name="PDFAnnotationMarkup">
+      </Class>
+      <Class name="PDFAnnotationPopup">
+      </Class>
+      <Class name="PDFAnnotationSquare">
+      </Class>
+      <Class name="PDFAnnotationStamp">
+      </Class>
+      <Class name="PDFAnnotationText">
+      </Class>
+      <Class name="PDFAnnotationTextWidget">
+      </Class>
+      <Class name="PDFBorder">
+      </Class>
+      <Class name="PDFDestination">
+      </Class>
+      <Class name="PDFDocument">
+      </Class>
+      <Class name="PDFOutline">
+      </Class>
+      <Class name="PDFPage">
+      </Class>
+      <Class name="PDFSelection">
+      </Class>
+      <Class name="PDFThumbnailView">
+      </Class>
+      <Class name="PDFView">
+      </Class>
+      <Class name="PDFAnnotationButtonWidget.Deprecated">
+      </Class>
+      <Class name="QCComposition">
+      </Class>
+      <Class name="QCCompositionLayer">
+      </Class>
+      <Class name="QCCompositionParameterView">
+      </Class>
+      <Class name="QCCompositionPickerPanel">
+      </Class>
+      <Class name="QCCompositionPickerView">
+      </Class>
+      <Class name="QCCompositionRepository">
+      </Class>
+      <Class name="QCPlugIn">
+      </Class>
+      <Class name="QCPlugInViewController">
+      </Class>
+      <Class name="QCRenderer">
+      </Class>
+      <Class name="QCView">
+      </Class>
+      <Class name="QLPreviewPanel">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="IKCameraDeviceViewDelegate">
+      </Protocol>
+      <Protocol name="IKDeviceBrowserViewDelegate">
+      </Protocol>
+      <Protocol name="IKFilterCustomUIProvider">
+      </Protocol>
+      <Protocol name="IKImageBrowserDataSource">
+      </Protocol>
+      <Protocol name="IKImageBrowserDelegate">
+      </Protocol>
+      <Protocol name="IKImageBrowserItem">
+      </Protocol>
+      <Protocol name="IKImageEditPanelDataSource">
+      </Protocol>
+      <Protocol name="IKScannerDeviceViewDelegate">
+      </Protocol>
+      <Protocol name="IKSaveOptionsDelegate">
+      </Protocol>
+      <Protocol name="IKSlideshowDataSource">
+      </Protocol>
+      <Protocol name="PDFDocumentDelegate">
+      </Protocol>
+      <Protocol name="PDFViewDelegate">
+      </Protocol>
+      <Protocol name="QCCompositionParameterViewDelegate">
+      </Protocol>
+      <Protocol name="QCCompositionPickerViewDelegate">
+      </Protocol>
+      <Protocol name="QCCompositionRenderer;QCRenderer">
+      </Protocol>
+      <Protocol name="QCPlugInContext">
+      </Protocol>
+      <Protocol name="QCPlugInInputImageSource">
+      </Protocol>
+      <Protocol name="QCPlugInOutputImageProvider">
+      </Protocol>
+      <Protocol name="QLPreviewPanelDataSource">
+      </Protocol>
+      <Protocol name="QLPreviewPanelDelegate">
+      </Protocol>
+      <Protocol name="QLPreviewItem">
+      </Protocol>
+    </Protocols>
+    <Enumerations>
+      <Enumeration name="PDFAreaOfInterest"/>
+      <Enumeration name="PDFBorderStyle"/>
+      <Enumeration name="PDFDisplayBox"/>
+      <Enumeration name="PDFDisplayMode"/>
+      <Enumeration name="PDFLineStyle"/>
+      <Enumeration name="PDFMarkupType"/>
+      <Enumeration name="PDFTextAnnotationIconType"/>
+    </Enumerations>
+  </Framework>
+  <Framework name="QuartzCore" usings="Foundation,AppKit,ApplicationServices" assembly="Monobjc.AppKit">
+    <Types>
+      <Type name="QuartzCoreFramework.Constants"/>
+      <Type name="QuartzCoreFramework.Functions"/>
+      <Type name="CVBuffer">
+      </Type>
+      <Type name="CVDisplayLink">
+      </Type>
+      <Type name="CVImageBuffer">
+    </Type>
+      <Type name="CVOpenGLBuffer">
+      </Type>
+      <Type name="CVOpenGLBufferPool">
+      </Type>
+      <Type name="CVOpenGLTexture">
+      </Type>
+      <Type name="CVPixelBuffer">
+      </Type>
+      <Type name="CVPixelBufferPool">
+      </Type>
+      <Type name="CVPixelFormatDescription">
+        <!--
+        -->
+      </Type>
+      <Type name="CVTime">
+      </Type>
+    </Types>
+    <Classes>
+      <Class name="CAAnimation">
+      </Class>
+      <Class name="CAAnimationGroup">
+      </Class>
+      <Class name="CABasicAnimation">
+      </Class>
+      <Class name="CAConstraint">
+      </Class>
+      <Class name="CAConstraintLayoutManager">
+      </Class>
+      <Class name="CAEmitterCell">
+      </Class>
+      <Class name="CAEmitterLayer">
+      </Class>
+      <Class name="CAGradientLayer">
+      </Class>
+      <Class name="CAKeyframeAnimation">
+      </Class>
+      <Class name="CALayer">
+      </Class>
+      <Class name="CAMediaTimingFunction">
+      </Class>
+      <Class name="CAOpenGLLayer">
+      </Class>
+      <Class name="CAPropertyAnimation">
+      </Class>
+      <Class name="CARenderer">
+      </Class>
+      <Class name="CAReplicatorLayer">
+      </Class>
+      <Class name="CAScrollLayer">
+      </Class>
+      <Class name="CAShapeLayer">
+      </Class>
+      <Class name="CATextLayer">
+      </Class>
+      <Class name="CATiledLayer">
+      </Class>
+      <Class name="CATransaction">
+      </Class>
+      <Class name="CATransformLayer">
+      </Class>
+      <Class name="CATransition">
+      </Class>
+      <Class name="CAValueFunction">
+      </Class>
+      <Class name="CIColor">
+      </Class>
+      <Class name="CIContext">
+      </Class>
+      <Class name="CIFilter">
+      </Class>
+      <Class name="CIFilter_CoreAnimationAdditions">
+      </Class>
+      <Class name="CIFilterGenerator">
+      </Class>
+      <Class name="CIFilterShape">
+      </Class>
+      <Class name="CIImage">
+      </Class>
+      <Class name="CIImageAccumulator">
+      </Class>
+      <Class name="CIKernel">
+      </Class>
+      <Class name="CIPlugIn">
+      </Class>
+      <Class name="CISampler">
+      </Class>
+      <Class name="CIVector">
+      </Class>
+      <Class name="NSValue_CoreAnimationAdditions">
+      </Class>
+      <Class name="CIContext.Deprecated">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="CAAnimationDelegate">
+      </Protocol>
+      <Protocol name="CAAction">
+      </Protocol>
+      <Protocol name="CALayerDelegate">
+      </Protocol>
+      <Protocol name="CALayoutManager">
+      </Protocol>
+      <Protocol name="CAMediaTiming">
+      </Protocol>
+      <Protocol name="CIImageProvider">
+      </Protocol>
+      <Protocol name="CIPlugInRegistration">
+      </Protocol>
+    </Protocols>
+  </Framework>
+  <Framework name="ScriptingBridge" usings="Foundation,ApplicationServices" assembly="Monobjc.ScriptingBridge">
+    <Classes>
+      <Class name="SBApplication">
+      </Class>
+      <Class name="SBElementArray">
+      </Class>
+      <Class name="SBObject">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="SBApplicationDelegate">
+      </Protocol>
+    </Protocols>
+  </Framework>
+  <Framework name="Security" usings="Foundation" assembly="Monobjc.Security">
+    <Types>
+      <Type name="Authorization">
+        <!-- TODO: Move to constants -->
+      </Type>
+      <Type name="CertServices">
+        <!--
+        -->
+      </Type>
+      <Type name="CodeSigning">
+      </Type>
+      <Type name="KeyChain">
+
+
+
+
+      </Type>
+    </Types>
+    <Enumerations>
+      <Enumeration name="SecCSFlags">
+      </Enumeration>
+    </Enumerations>
+  </Framework>
+  <Framework name="SecurityFoundation" usings="Foundation,Security" assembly="Monobjc.SecurityFoundation">
+    <Classes>
+      <Class name="SFAuthorization">
+      </Class>
+      <Class name="SFAuthorization.Deprecated">
+      </Class>
+    </Classes>
+  </Framework>
+  <Framework name="SecurityInterface" usings="Foundation,AppKit,Security,SecurityFoundation" assembly="Monobjc.SecurityInterface">
+    <Types>
+      <Type name="SecurityInterfaceFramework.Constants">
+      </Type>
+      <Type name="SecurityInterfaceFramework.DataTypes">
+      </Type>
+    </Types>
+    <Classes>
+      <Class name="SFAuthorizationPluginView">
+      </Class>
+      <Class name="SFAuthorizationView">
+      </Class>
+      <Class name="SFCertificatePanel">
+      </Class>
+      <Class name="SFCertificateTrustPanel">
+      </Class>
+      <Class name="SFCertificateView">
+      </Class>
+      <Class name="SFChooseIdentityPanel">
+      </Class>
+      <Class name="SFKeychainSavePanel">
+      </Class>
+      <Class name="SFKeychainSettingsPanel">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="SFAuthorizationViewDelegate">
+      </Protocol>
+      <Protocol name="SFCertificatePanelDelegate">
+      </Protocol>
+      <Protocol name="SFChooseIdentityPanelDelegate">
+      </Protocol>
+    </Protocols>
+  </Framework>
+  <Framework name="StoreKit" usings="Foundation" assembly="Monobjc.StoreKit">
+    <Types>
+      <Type name="StoreKitFramework.Constants">
+			</Type>
+    </Types>
+    <Classes>
+      <Class name="SKMutablePayment">
+			</Class>
+      <Class name="SKPayment">
+			</Class>
+      <Class name="SKPaymentQueue">
+			</Class>
+      <Class name="SKPaymentTransaction">
+			</Class>
+      <Class name="SKProduct">
+			</Class>
+      <Class name="SKProductsRequest">
+			</Class>
+      <Class name="SKProductsResponse">
+			</Class>
+      <Class name="SKRequest">
+			</Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="SKPaymentTransactionObserver">
+			</Protocol>
+      <Protocol name="SKProductsRequestDelegate">
+			</Protocol>
+      <Protocol name="SKRequestDelegate">
+			</Protocol>
+    </Protocols>
+  </Framework>
+  <Framework name="WebKit" usings="Foundation,AppKit,WebKit.DOM" assembly="Monobjc.WebKit">
+    <Types>
+      <Type name="WebKitFramework.Constants">
+      </Type>
+    </Types>
+    <Classes>
+      <Class name="WebArchive">
+      </Class>
+      <Class name="WebBackForwardList">
+      </Class>
+      <Class name="WebDataSource">
+      </Class>
+      <Class name="WebDownload">
+      </Class>
+      <Class name="WebFrame">
+      </Class>
+      <Class name="WebFrameView">
+      </Class>
+      <Class name="WebHistory">
+      </Class>
+      <Class name="WebHistoryItem">
+      </Class>
+      <Class name="WebPreferences">
+      </Class>
+      <Class name="WebResource">
+      </Class>
+      <Class name="WebScriptObject">
+      </Class>
+      <Class name="WebUndefined">
+      </Class>
+      <Class name="WebView">
+      </Class>
+      <Class name="WebBackForwardList.Deprecated">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="WebDocumentRepresentation">
+      </Protocol>
+      <Protocol name="WebDocumentSearching">
+      </Protocol>
+      <Protocol name="WebDocumentText">
+      </Protocol>
+      <Protocol name="WebDocumentView">
+      </Protocol>
+      <Protocol name="WebDownloadDelegate">
+      </Protocol>
+      <Protocol name="WebEditingDelegate">
+      </Protocol>
+      <Protocol name="WebFrameLoadDelegate">
+      </Protocol>
+      <Protocol name="WebJavaPlugIn">
+      </Protocol>
+      <Protocol name="WebOpenPanelResultListener">
+      </Protocol>
+      <Protocol name="WebPlugIn">
+      </Protocol>
+      <Protocol name="WebPlugInContainer">
+      </Protocol>
+      <Protocol name="WebPlugInViewFactory">
+      </Protocol>
+      <Protocol name="WebPolicyDecisionListener">
+      </Protocol>
+      <Protocol name="WebPolicyDelegate">
+      </Protocol>
+      <Protocol name="WebResourceLoadDelegate">
+      </Protocol>
+      <Protocol name="WebScripting">
+      </Protocol>
+      <Protocol name="WebUIDelegate">
+      </Protocol>
+      <Protocol name="WebFrameLoadDelegate.Deprecated"/>
+      <Protocol name="WebUIDelegate.Deprecated"/>
+    </Protocols>
+  </Framework>
+  <Framework name="JavaScriptCore" usings="Foundation,AppKit,WebKit" assembly="Monobjc.WebKit">
+    <Classes>
+      <Class name="JavaScript_Definitions">
+      </Class>
+      <Class name="JavaScriptCore_Definitions">
+      </Class>
+      <Class name="JSBase_Definitions">
+      </Class>
+      <Class name="JSContextRef_Definitions">
+      </Class>
+      <Class name="JSObjectRef_Definitions">
+      </Class>
+      <Class name="JSStringRef_Definitions">
+      </Class>
+      <Class name="JSStringRefCF_Definitions">
+      </Class>
+      <Class name="JSValueRef_Definitions">
+      </Class>
+    </Classes>
+  </Framework>
+  <Framework name="WebKit.DOM" usings="Foundation,AppKit,WebKit" assembly="Monobjc.WebKit">
+    <Classes>
+      <Class name="DOMAbstractView"/>
+      <Class name="DOMAttr"/>
+      <Class name="DOMBlob"/>
+      <Class name="DOMCDATASection"/>
+      <Class name="DOMCharacterData"/>
+      <Class name="DOMCharacterData_DOMCharacterDataDeprecated">
+      </Class>
+      <Class name="DOMComment"/>
+      <Class name="DOMCounter"/>
+      <Class name="DOMCSSCharsetRule"/>
+      <Class name="DOMCSSFontFaceRule"/>
+      <Class name="DOMCSSImportRule"/>
+      <Class name="DOMCSSMediaRule"/>
+      <Class name="DOMCSSMediaRule_DOMCSSMediaRuleDeprecated">
+      </Class>
+      <Class name="DOMCSSPageRule"/>
+      <Class name="DOMCSSPrimitiveValue"/>
+      <Class name="DOMCSSPrimitiveValue_DOMCSSPrimitiveValueDeprecated">
+      </Class>
+      <Class name="DOMCSSRule"/>
+      <Class name="DOMCSSRuleList"/>
+      <Class name="DOMCSSStyleDeclaration"/>
+      <Class name="DOMCSSStyleDeclaration_DOMCSS2Properties">
+      </Class>
+      <Class name="DOMCSSStyleDeclaration_DOMCSSStyleDeclarationDeprecated">
+      </Class>
+      <Class name="DOMCSSStyleRule"/>
+      <Class name="DOMCSSStyleSheet"/>
+      <Class name="DOMCSSStyleSheet_DOMCSSStyleSheetDeprecated">
+      </Class>
+      <Class name="DOMCSSUnknownRule"/>
+      <Class name="DOMCSSValue"/>
+      <Class name="DOMCSSValueList"/>
+      <Class name="DOMDocument"/>
+      <Class name="DOMDocument_DOMDocumentDeprecated">
+      </Class>
+      <Class name="DOMDocument_WebDOMDocumentOperations">
+      </Class>
+      <Class name="DOMDocumentFragment"/>
+      <Class name="DOMDocumentType"/>
+      <Class name="DOMElement"/>
+      <Class name="DOMElement_DOMElementAppKitExtensions">
+      </Class>
+      <Class name="DOMElement_DOMElementDeprecated">
+      </Class>
+      <Class name="DOMEntity"/>
+      <Class name="DOMEntityReference"/>
+      <Class name="DOMEvent"/>
+      <Class name="DOMEvent_DOMEventDeprecated">
+      </Class>
+      <Class name="DOMFile"/>
+      <Class name="DOMFileList"/>
+      <Class name="DOMHTMLAnchorElement"/>
+      <Class name="DOMHTMLAppletElement"/>
+      <Class name="DOMHTMLAreaElement"/>
+      <Class name="DOMHTMLBaseElement"/>
+      <Class name="DOMHTMLBaseFontElement"/>
+      <Class name="DOMHTMLBodyElement"/>
+      <Class name="DOMHTMLBRElement"/>
+      <Class name="DOMHTMLButtonElement"/>
+      <Class name="DOMHTMLCollection"/>
+      <Class name="DOMHTMLDirectoryElement"/>
+      <Class name="DOMHTMLDivElement"/>
+      <Class name="DOMHTMLDListElement"/>
+      <Class name="DOMHTMLDocument"/>
+      <Class name="DOMHTMLDocument_DOMHTMLDocumentExtensions">
+      </Class>
+      <Class name="DOMHTMLElement">
+      </Class>
+      <Class name="DOMHTMLEmbedElement"/>
+      <Class name="DOMHTMLFieldSetElement"/>
+      <Class name="DOMHTMLFontElement"/>
+      <Class name="DOMHTMLFormElement"/>
+      <Class name="DOMHTMLFrameElement"/>
+      <Class name="DOMHTMLFrameElement_WebDOMHTMLFrameElementOperations">
+      </Class>
+      <Class name="DOMHTMLFrameSetElement"/>
+      <Class name="DOMHTMLHeadElement"/>
+      <Class name="DOMHTMLHeadingElement"/>
+      <Class name="DOMHTMLHRElement"/>
+      <Class name="DOMHTMLHtmlElement">
+      </Class>
+      <Class name="DOMHTMLIFrameElement"/>
+      <Class name="DOMHTMLIFrameElement_WebDOMHTMLIFrameElementOperations">
+      </Class>
+      <Class name="DOMHTMLImageElement"/>
+      <Class name="DOMHTMLInputElement"/>
+      <Class name="DOMHTMLIsIndexElement"/>
+      <Class name="DOMHTMLLabelElement"/>
+      <Class name="DOMHTMLLegendElement"/>
+      <Class name="DOMHTMLLIElement"/>
+      <Class name="DOMHTMLLinkElement">
+      </Class>
+      <Class name="DOMHTMLMapElement"/>
+      <Class name="DOMHTMLMarqueeElement"/>
+      <Class name="DOMHTMLMenuElement"/>
+      <Class name="DOMHTMLMetaElement"/>
+      <Class name="DOMHTMLModElement"/>
+      <Class name="DOMHTMLObjectElement"/>
+      <Class name="DOMHTMLObjectElement_WebDOMHTMLObjectElementOperations">
+      </Class>
+      <Class name="DOMHTMLOListElement"/>
+      <Class name="DOMHTMLOptGroupElement"/>
+      <Class name="DOMHTMLOptionElement"/>
+      <Class name="DOMHTMLOptionsCollection"/>
+      <Class name="DOMHTMLParagraphElement"/>
+      <Class name="DOMHTMLParamElement"/>
+      <Class name="DOMHTMLPreElement"/>
+      <Class name="DOMHTMLQuoteElement"/>
+      <Class name="DOMHTMLScriptElement"/>
+      <Class name="DOMHTMLSelectElement"/>
+      <Class name="DOMHTMLSelectElement_DOMHTMLSelectElementDeprecated">
+      </Class>
+      <Class name="DOMHTMLStyleElement">
+      </Class>
+      <Class name="DOMHTMLTableCaptionElement"/>
+      <Class name="DOMHTMLTableCellElement"/>
+      <Class name="DOMHTMLTableColElement"/>
+      <Class name="DOMHTMLTableElement"/>
+      <Class name="DOMHTMLTableRowElement"/>
+      <Class name="DOMHTMLTableSectionElement"/>
+      <Class name="DOMHTMLTextAreaElement"/>
+      <Class name="DOMHTMLTitleElement"/>
+      <Class name="DOMHTMLUListElement"/>
+      <Class name="DOMImplementation"/>
+      <Class name="DOMImplementation_DOMImplementationDeprecated">
+      </Class>
+      <Class name="DOMKeyboardEvent"/>
+      <Class name="DOMMediaList"/>
+      <Class name="DOMMouseEvent"/>
+      <Class name="DOMMouseEvent_DOMMouseEventDeprecated">
+      </Class>
+      <Class name="DOMMutationEvent"/>
+      <Class name="DOMMutationEvent_DOMMutationEventDeprecated">
+      </Class>
+      <Class name="DOMNamedNodeMap"/>
+      <Class name="DOMNamedNodeMap_DOMNamedNodeMapDeprecated">
+      </Class>
+      <Class name="DOMNode"/>
+      <Class name="DOMNode_DOMNodeDeprecated">
+      </Class>
+      <Class name="DOMNode_DOMNodeExtensions">
+      </Class>
+      <Class name="DOMNode_WebDOMNodeOperations">
+      </Class>
+      <Class name="DOMNodeIterator"/>
+      <Class name="DOMNodeList"/>
+      <Class name="DOMNotation"/>
+      <Class name="DOMObject">
+      </Class>
+      <Class name="DOMObject_DOMLinkStyle">
+      </Class>
+      <Class name="DOMOverflowEvent"/>
+      <Class name="DOMProcessingInstruction">
+      </Class>
+      <Class name="DOMProgressEvent"/>
+      <Class name="DOMRange">
+      </Class>
+      <Class name="DOMRange_DOMRangeDeprecated">
+      </Class>
+      <Class name="DOMRange_WebDOMRangeOperations">
+      </Class>
+      <Class name="DOMRect"/>
+      <Class name="DOMRGBColor"/>
+      <Class name="DOMStyleSheet"/>
+      <Class name="DOMStyleSheetList"/>
+      <Class name="DOMText"/>
+      <Class name="DOMTreeWalker"/>
+      <Class name="DOMUIEvent"/>
+      <Class name="DOMUIEvent_DOMUIEventDeprecated">
+      </Class>
+      <Class name="DOMWheelEvent"/>
+      <Class name="DOMXPathExpression"/>
+      <Class name="DOMXPathExpression_DOMXPathExpressionDeprecated">
+      </Class>
+      <Class name="DOMXPathResult"/>
+      <Class name="DOM_Definitions">
+      </Class>
+      <Class name="DOMAbstractView_Definitions">
+      </Class>
+      <Class name="DOMAttr_Definitions">
+      </Class>
+      <Class name="DOMBlob_Definitions">
+      </Class>
+      <Class name="DOMCDATASection_Definitions">
+      </Class>
+      <Class name="DOMCharacterData_Definitions">
+      </Class>
+      <Class name="DOMComment_Definitions">
+      </Class>
+      <Class name="DOMCore_Definitions">
+      </Class>
+      <Class name="DOMCounter_Definitions">
+      </Class>
+      <Class name="DOMCSS_Definitions">
+      </Class>
+      <Class name="DOMCSSCharsetRule_Definitions">
+      </Class>
+      <Class name="DOMCSSFontFaceRule_Definitions">
+      </Class>
+      <Class name="DOMCSSImportRule_Definitions">
+      </Class>
+      <Class name="DOMCSSMediaRule_Definitions">
+      </Class>
+      <Class name="DOMCSSPageRule_Definitions">
+      </Class>
+      <Class name="DOMCSSPrimitiveValue_Definitions">
+      </Class>
+      <Class name="DOMCSSRule_Definitions">
+      </Class>
+      <Class name="DOMCSSRuleList_Definitions">
+      </Class>
+      <Class name="DOMCSSStyleDeclaration_Definitions">
+      </Class>
+      <Class name="DOMCSSStyleRule_Definitions">
+      </Class>
+      <Class name="DOMCSSStyleSheet_Definitions">
+      </Class>
+      <Class name="DOMCSSUnknownRule_Definitions">
+      </Class>
+      <Class name="DOMCSSValue_Definitions">
+      </Class>
+      <Class name="DOMCSSValueList_Definitions">
+      </Class>
+      <Class name="DOMDocument_Definitions">
+      </Class>
+      <Class name="DOMDocumentFragment_Definitions">
+      </Class>
+      <Class name="DOMDocumentType_Definitions">
+      </Class>
+      <Class name="DOMElement_Definitions">
+      </Class>
+      <Class name="DOMEntity_Definitions">
+      </Class>
+      <Class name="DOMEntityReference_Definitions">
+      </Class>
+      <Class name="DOMEvent_Definitions">
+      </Class>
+      <Class name="DOMEventException_Definitions">
+      </Class>
+      <Class name="DOMEventListener_Definitions">
+      </Class>
+      <Class name="DOMEvents_Definitions">
+      </Class>
+      <Class name="DOMEventTarget_Definitions">
+      </Class>
+      <Class name="DOMException_Definitions">
+      </Class>
+      <Class name="DOMExtensions_Definitions">
+      </Class>
+      <Class name="DOMFile_Definitions">
+      </Class>
+      <Class name="DOMFileList_Definitions">
+      </Class>
+      <Class name="DOMHTML_Definitions">
+      </Class>
+      <Class name="DOMHTMLAnchorElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLAppletElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLAreaElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLBaseElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLBaseFontElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLBodyElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLBRElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLButtonElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLCollection_Definitions">
+      </Class>
+      <Class name="DOMHTMLDirectoryElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLDivElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLDListElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLDocument_Definitions">
+      </Class>
+      <Class name="DOMHTMLElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLEmbedElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLFieldSetElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLFontElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLFormElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLFrameElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLFrameSetElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLHeadElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLHeadingElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLHRElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLHtmlElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLIFrameElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLImageElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLInputElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLIsIndexElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLLabelElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLLegendElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLLIElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLLinkElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLMapElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLMarqueeElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLMenuElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLMetaElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLModElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLObjectElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLOListElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLOptGroupElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLOptionElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLOptionsCollection_Definitions">
+      </Class>
+      <Class name="DOMHTMLParagraphElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLParamElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLPreElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLQuoteElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLScriptElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLSelectElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLStyleElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLTableCaptionElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLTableCellElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLTableColElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLTableElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLTableRowElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLTableSectionElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLTextAreaElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLTitleElement_Definitions">
+      </Class>
+      <Class name="DOMHTMLUListElement_Definitions">
+      </Class>
+      <Class name="DOMImplementation_Definitions">
+      </Class>
+      <Class name="DOMKeyboardEvent_Definitions">
+      </Class>
+      <Class name="DOMMediaList_Definitions">
+      </Class>
+      <Class name="DOMMouseEvent_Definitions">
+      </Class>
+      <Class name="DOMMutationEvent_Definitions">
+      </Class>
+      <Class name="DOMNamedNodeMap_Definitions">
+      </Class>
+      <Class name="DOMNode_Definitions">
+      </Class>
+      <Class name="DOMNodeFilter_Definitions">
+      </Class>
+      <Class name="DOMNodeIterator_Definitions">
+      </Class>
+      <Class name="DOMNodeList_Definitions">
+      </Class>
+      <Class name="DOMNotation_Definitions">
+      </Class>
+      <Class name="DOMObject_Definitions">
+      </Class>
+      <Class name="DOMOverflowEvent_Definitions">
+      </Class>
+      <Class name="DOMProcessingInstruction_Definitions">
+      </Class>
+      <Class name="DOMProgressEvent_Definitions">
+      </Class>
+      <Class name="DOMRange_Definitions">
+      </Class>
+      <Class name="DOMRangeException_Definitions">
+      </Class>
+      <Class name="DOMRanges_Definitions">
+      </Class>
+      <Class name="DOMRect_Definitions">
+      </Class>
+      <Class name="DOMRGBColor_Definitions">
+      </Class>
+      <Class name="DOMStyleSheet_Definitions">
+      </Class>
+      <Class name="DOMStyleSheetList_Definitions">
+      </Class>
+      <Class name="DOMStylesheets_Definitions">
+      </Class>
+      <Class name="DOMText_Definitions">
+      </Class>
+      <Class name="DOMTraversal_Definitions">
+      </Class>
+      <Class name="DOMTreeWalker_Definitions">
+      </Class>
+      <Class name="DOMUIEvent_Definitions">
+      </Class>
+      <Class name="DOMViews_Definitions">
+      </Class>
+      <Class name="DOMWheelEvent_Definitions">
+      </Class>
+      <Class name="DOMXPath_Definitions">
+      </Class>
+      <Class name="DOMXPathException_Definitions">
+      </Class>
+      <Class name="DOMXPathExpression_Definitions">
+      </Class>
+      <Class name="DOMXPathNSResolver_Definitions">
+      </Class>
+      <Class name="DOMXPathResult_Definitions">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="DOMEventListener"/>
+      <Protocol name="DOMEventTarget"/>
+      <Protocol name="DOMNodeFilter"/>
+      <Protocol name="DOMXPathNSResolver"/>
+    </Protocols>
+  </Framework>
+  <!--
+  User Frameworks
+  -->
+  <Framework name="CorePlot" usings="Foundation,AppKit,QuartzCore,ApplicationServices" assembly="Monobjc.CorePlot">
+    <Classes>
+      <Class name="CPTAnnotation"/>
+      <Class name="CPTAnnotationHostLayer"/>
+      <Class name="CPTAxis"/>
+      <Class name="CPTAxisLabel"/>
+      <Class name="CPTAxisLabelGroup"/>
+      <Class name="CPTAxisSet"/>
+      <Class name="CPTAxisTitle"/>
+      <Class name="CPTBarPlot"/>
+      <Class name="CPTBorderedLayer"/>
+      <Class name="CPTColor">
+      </Class>
+      <Class name="CPTColorSpace">
+      </Class>
+      <Class name="CPTConstrainedPosition"/>
+      <Class name="CPTDarkGradientTheme"/>
+      <Class name="CPTDecimalNumberValueTransformer">
+      </Class>
+      <Class name="CPTFill"/>
+      <Class name="CPTGradient">
+      </Class>
+      <Class name="CPTGraph"/>
+      <Class name="CPTGridLineGroup"/>
+      <Class name="CPTGridLines"/>
+      <Class name="CPTImage">
+      </Class>
+      <Class name="CPTLayer">
+      </Class>
+      <Class name="CPTLayerAnnotation"/>
+      <Class name="CPTLayerHostingView">
+      </Class>
+      <Class name="CPTLegend"/>
+      <Class name="CPTLegendEntry"/>
+      <Class name="CPTLimitBand"/>
+      <Class name="CPTLineStyle">
+      </Class>
+      <Class name="CPTMutableLineStyle">
+      </Class>
+      <Class name="CPTMutableNumericData">
+      </Class>
+      <Class name="CPTMutableTextStyle">
+      </Class>
+      <Class name="CPTMutableNumericData"/>
+      <Class name="CPTMutableTextStyle"/>
+      <Class name="CPTNumericData"/>
+      <Class name="CPTPieChart"/>
+      <Class name="CPTPlainBlackTheme"/>
+      <Class name="CPTPlainWhiteTheme"/>
+      <Class name="CPTPlot">
+      </Class>
+      <Class name="CPTPlotArea">
+      </Class>
+      <Class name="CPTPlotAreaFrame"/>
+      <Class name="CPTPlotGroup">
+      </Class>
+      <Class name="CPTPlotRange"/>
+      <Class name="CPTPlotSpace">
+      </Class>
+      <Class name="CPTPlotSpaceAnnotation"/>
+      <Class name="CPTPlotSymbol"/>
+      <Class name="CPTPolarPlotSpace"/>
+      <Class name="CPTRangePlot"/>
+      <Class name="CPTScatterPlot"/>
+      <Class name="CPTSlateTheme"/>
+      <Class name="CPTStocksTheme"/>
+      <Class name="CPTTextLayer"/>
+      <Class name="CPTTextStyle">
+      </Class>
+      <Class name="CPTTheme"/>
+      <Class name="CPTTimeFormatter">
+      </Class>
+      <Class name="CPTTradingRangePlot"/>
+      <Class name="CPTXYAxis">
+      </Class>
+      <Class name="CPTXYAxisSet"/>
+      <Class name="CPTXYGraph"/>
+      <Class name="CPTXYPlotSpace"/>
+      <Class name="CPTXYTheme"/>
+      <Class name="CPTAnnotation_AbstractMethods">
+      </Class>
+      <Class name="CPTAxis_AbstractMethods">
+      </Class>
+      <Class name="CPTColor_CPTPlatformSpecificColorExtensions">
+      </Class>
+      <Class name="CPTFill_AbstractMethods">
+      </Class>
+      <Class name="CPTGraph_AbstractFactoryMethods">
+      </Class>
+      <Class name="CPTLayer_CPTPlatformSpecificLayerExtensions">
+      </Class>
+      <Class name="CPTMutableNumericData_TypeConversion">
+      </Class>
+      <Class name="CPTNumericData_TypeConversion">
+      </Class>
+      <Class name="CPTPlot_AbstractMethods">
+      </Class>
+      <Class name="CPTPlotSpace_AbstractMethods">
+      </Class>
+      <Class name="CPTTheme_AbstractMethods">
+      </Class>
+      <Class name="NSDecimalNumber_CPTExtensions">
+      </Class>
+      <Class name="NSException_CPTExtensions">
+      </Class>
+      <Class name="NSNumber_CPTExtensions">
+      </Class>
+      <Class name="NSString_CPTTextStyleExtensions">
+      </Class>
+      <Class name="CorePlot_Definitions">
+      </Class>
+      <Class name="CPTAnnotation_Definitions">
+      </Class>
+      <Class name="CPTAnnotationHostLayer_Definitions">
+      </Class>
+      <Class name="CPTAxis_Definitions">
+      </Class>
+      <Class name="CPTAxisLabel_Definitions">
+      </Class>
+      <Class name="CPTAxisLabelGroup_Definitions">
+      </Class>
+      <Class name="CPTAxisSet_Definitions">
+      </Class>
+      <Class name="CPTAxisTitle_Definitions">
+      </Class>
+      <Class name="CPTBarPlot_Definitions">
+      </Class>
+      <Class name="CPTBorderedLayer_Definitions">
+      </Class>
+      <Class name="CPTColor_Definitions">
+      </Class>
+      <Class name="CPTColorSpace_Definitions">
+      </Class>
+      <Class name="CPTConstrainedPosition_Definitions">
+      </Class>
+      <Class name="CPTDarkGradientTheme_Definitions">
+      </Class>
+      <Class name="CPTDecimalNumberValueTransformer_Definitions">
+      </Class>
+      <Class name="CPTDefinitions_Definitions">
+      </Class>
+      <Class name="CPTExceptions_Definitions">
+      </Class>
+      <Class name="CPTFill_Definitions">
+      </Class>
+      <Class name="CPTGradient_Definitions">
+      </Class>
+      <Class name="CPTGraph_Definitions">
+      </Class>
+      <Class name="CPTGridLineGroup_Definitions">
+      </Class>
+      <Class name="CPTGridLines_Definitions">
+      </Class>
+      <Class name="CPTImage_Definitions">
+      </Class>
+      <Class name="CPTLayer_Definitions">
+      </Class>
+      <Class name="CPTLayerAnnotation_Definitions">
+      </Class>
+      <Class name="CPTLayerHostingView_Definitions">
+      </Class>
+      <Class name="CPTLayoutManager_Definitions">
+      </Class>
+      <Class name="CPTLegend_Definitions">
+      </Class>
+      <Class name="CPTLegendEntry_Definitions">
+      </Class>
+      <Class name="CPTLimitBand_Definitions">
+      </Class>
+      <Class name="CPTLineStyle_Definitions">
+      </Class>
+      <Class name="CPTMutableLineStyle_Definitions">
+      </Class>
+      <Class name="CPTMutableNumericData_TypeConversion_Definitions">
+      </Class>
+      <Class name="CPTMutableNumericData_Definitions">
+      </Class>
+      <Class name="CPTMutableTextStyle_Definitions">
+      </Class>
+      <Class name="CPTNumericData_TypeConversion_Definitions">
+      </Class>
+      <Class name="CPTNumericData_Definitions">
+      </Class>
+      <Class name="CPTNumericDataType_Definitions">
+      </Class>
+      <Class name="CPTPathExtensions_Definitions">
+      </Class>
+      <Class name="CPTPieChart_Definitions">
+      </Class>
+      <Class name="CPTPlainBlackTheme_Definitions">
+      </Class>
+      <Class name="CPTPlainWhiteTheme_Definitions">
+      </Class>
+      <Class name="CPTPlatformSpecificCategories_Definitions">
+      </Class>
+      <Class name="CPTPlatformSpecificDefines_Definitions">
+      </Class>
+      <Class name="CPTPlatformSpecificFunctions_Definitions">
+      </Class>
+      <Class name="CPTPlot_Definitions">
+      </Class>
+      <Class name="CPTPlotArea_Definitions">
+      </Class>
+      <Class name="CPTPlotAreaFrame_Definitions">
+      </Class>
+      <Class name="CPTPlotGroup_Definitions">
+      </Class>
+      <Class name="CPTPlotRange_Definitions">
+      </Class>
+      <Class name="CPTPlotSpace_Definitions">
+      </Class>
+      <Class name="CPTPlotSpaceAnnotation_Definitions">
+      </Class>
+      <Class name="CPTPlotSymbol_Definitions">
+      </Class>
+      <Class name="CPTPolarPlotSpace_Definitions">
+      </Class>
+      <Class name="CPTRangePlot_Definitions">
+      </Class>
+      <Class name="CPTResponder_Definitions">
+      </Class>
+      <Class name="CPTScatterPlot_Definitions">
+      </Class>
+      <Class name="CPTSlateTheme_Definitions">
+      </Class>
+      <Class name="CPTStocksTheme_Definitions">
+      </Class>
+      <Class name="CPTTextLayer_Definitions">
+      </Class>
+      <Class name="CPTTextStyle_Definitions">
+      </Class>
+      <Class name="CPTTheme_Definitions">
+      </Class>
+      <Class name="CPTTimeFormatter_Definitions">
+      </Class>
+      <Class name="CPTTradingRangePlot_Definitions">
+      </Class>
+      <Class name="CPTUtilities_Definitions">
+      </Class>
+      <Class name="CPTXYAxis_Definitions">
+      </Class>
+      <Class name="CPTXYAxisSet_Definitions">
+      </Class>
+      <Class name="CPTXYGraph_Definitions">
+      </Class>
+      <Class name="CPTXYPlotSpace_Definitions">
+      </Class>
+      <Class name="CPTXYTheme_Definitions">
+      </Class>
+      <Class name="NSDecimalNumberExtensions_Definitions">
+      </Class>
+      <Class name="NSExceptionExtensions_Definitions">
+      </Class>
+      <Class name="NSNumberExtensions_Definitions">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="CPTAxisDelegate"/>
+      <Protocol name="CPTBarPlotDataSource"/>
+      <Protocol name="CPTBarPlotDelegate"/>
+      <Protocol name="CPTLayoutManager"/>
+      <Protocol name="CPTLegendDelegate"/>
+      <Protocol name="CPTPieChartDataSource"/>
+      <Protocol name="CPTPieChartDelegate"/>
+      <Protocol name="CPTPlotDataSource">
+      </Protocol>
+      <Protocol name="CPTPlotSpaceDelegate"/>
+      <Protocol name="CPTResponder"/>
+      <Protocol name="CPTScatterPlotDataSource"/>
+      <Protocol name="CPTScatterPlotDelegate"/>
+    </Protocols>
+    <Structures>
+      <Structure name="CPTConstraints"/>
+      <Structure name="CPTContextNode"/>
+      <Structure name="CPTGradientElement"/>
+      <Structure name="CPTNumericDataType"/>
+      <Structure name="CPTRGBAColor"/>
+    </Structures>
+  </Framework>
+  <Framework name="Growl" usings="Foundation,AppKit" assembly="Monobjc.Growl">
+    <Classes>
+      <Class name="GrowlApplicationBridge">
+      </Class>
+      <Class name="GrowlDefines_Definitions">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="GrowlApplicationBridgeDelegate">
+      </Protocol>
+      <Protocol name="GrowlApplicationBridgeInstallationDelegate">
+      </Protocol>
+    </Protocols>
+  </Framework>
+  <Framework name="SM2DGraphView" usings="Foundation,AppKit,ApplicationServices" assembly="Monobjc.SM2DGraphView">
+    <Classes>
+      <Class name="SM2DGraphView">
+      </Class>
+      <Class name="SMPieChartView">
+      </Class>
+      <Class name="SM2DGraphView_Definitions">
+      </Class>
+      <Class name="SMPieChartView_Definitions">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="SM2DGraphDataSource">
+      </Protocol>
+      <Protocol name="SM2DGraphDelegate">
+      </Protocol>
+      <Protocol name="SMPieChartDataSource">
+      </Protocol>
+      <Protocol name="SMPieChartDelegate">
+      </Protocol>
+    </Protocols>
+  </Framework>
+  <Framework name="Sparkle" usings="Foundation,AppKit" assembly="Monobjc.Sparkle">
+    <Classes>
+      <Class name="SUAppcast">
+      </Class>
+      <Class name="SUAppcastItem">
+      </Class>
+      <Class name="SUUpdater">
+      </Class>
+    </Classes>
+    <Protocols>
+      <Protocol name="SUVersionComparison">
+      </Protocol>
+      <Protocol name="SUAppcastDelegate">
+      </Protocol>
+      <Protocol name="SUUpdaterDelegate">
+      </Protocol>
+    </Protocols>
+    <Structures/>
+  </Framework>
+</Entities>

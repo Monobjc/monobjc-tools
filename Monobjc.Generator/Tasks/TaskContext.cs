@@ -97,7 +97,14 @@ namespace Monobjc.Tools.Generator.Tasks
 
         public String DocSet
         {
-            get { return this.Settings["DocSet"]; }
+            get { 
+				String docSet = this.Settings["DocSet"];
+				if (docSet.StartsWith("~")) {
+					String home = Environment.GetEnvironmentVariable("HOME");
+					docSet = docSet.Replace("~", home);
+				}
+				return docSet;
+			}
         }
 
         private String Storage

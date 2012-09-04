@@ -18,45 +18,42 @@
 using System;
 using System.Globalization;
 using Monobjc.Tools.Utilities;
+using System.IO;
 
 namespace Monobjc.Tools.External
 {
-    /// <summary>
-    ///   Wrapper class around the <c>lipo</c> command line tool.
-    /// </summary>
-    public static class Lipo
-    {
-        /// <summary>
-        ///   Returns the architectures for the given file.
-        /// </summary>
-        /// <param name = "file">The file.</param>
-        /// <returns>The result of the command.</returns>
-        public static MacOSArchitecture GetArchitecture(String file)
-        {
-            String arguments = String.Format(CultureInfo.InvariantCulture, "-info \"{0}\"", file);
-            ProcessHelper helper = new ProcessHelper(Executable, arguments);
-            String output = helper.Execute();
+	/// <summary>
+	///   Wrapper class around the <c>lipo</c> command line tool.
+	/// </summary>
+	public static class Lipo
+	{
+		/// <summary>
+		///   Returns the architectures for the given file.
+		/// </summary>
+		/// <param name = "file">The file.</param>
+		/// <returns>The result of the command.</returns>
+		public static MacOSArchitecture GetArchitecture (String file)
+		{
+			String arguments = String.Format (CultureInfo.InvariantCulture, "-info \"{0}\"", file);
+			ProcessHelper helper = new ProcessHelper (Executable, arguments);
+			String output = helper.ExecuteAndReturnOutput ();
 
-            MacOSArchitecture architecture = MacOSArchitecture.None;
-            if (output.Contains("i386"))
-            {
-                architecture |= MacOSArchitecture.X86;
-            }
-            if (output.Contains("x86_64"))
-            {
-                architecture |= MacOSArchitecture.X8664;
-            }
-            if (output.Contains("ppc7400"))
-            {
-                architecture |= MacOSArchitecture.PPC;
-            }
+			MacOSArchitecture architecture = MacOSArchitecture.None;
+			if (output.Contains ("i386")) {
+				architecture |= MacOSArchitecture.X86;
+			}
+			if (output.Contains ("x86_64")) {
+				architecture |= MacOSArchitecture.X8664;
+			}
+			if (output.Contains ("ppc7400")) {
+				architecture |= MacOSArchitecture.PPC;
+			}
 
-            return architecture;
-        }
+			return architecture;
+		}
 
-        private static string Executable
-        {
-            get { return "lipo"; }
-        }
-    }
+		private static string Executable {
+			get { return "lipo"; }
+		}
+	}
 }

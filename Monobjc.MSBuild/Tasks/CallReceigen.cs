@@ -16,13 +16,9 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Build.Framework;
 using Microsoft.Build.Utilities;
-using Monobjc.MSBuild.Properties;
 using Monobjc.MSBuild.Utilities;
-using Monobjc.Tools.Utilities;
 using Monobjc.Tools.External;
 
 namespace Monobjc.MSBuild.Tasks

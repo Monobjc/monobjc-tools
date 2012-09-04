@@ -57,7 +57,7 @@ namespace Monobjc.Tools.External
             }
             String arguments = String.Format(CultureInfo.InvariantCulture, "\"{0}\" \"{1}\"", modelDir, destinationDir);
             ProcessHelper helper = new ProcessHelper(Executable, arguments);
-            String output = helper.Execute();
+            String output = helper.ExecuteAndReturnOutput();
             return output;
         }
 

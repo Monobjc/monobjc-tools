@@ -69,7 +69,7 @@ namespace Monobjc.Tools.External
             }
             String arguments = String.Format(CultureInfo.InvariantCulture, "--errors --warnings --notices --compile \"{0}\" \"{1}\"", destination, xibFile);
             ProcessHelper helper = new ProcessHelper(Executable, arguments);
-            String output = helper.Execute();
+			String output = helper.ExecuteAndReturnOutput ();
             try
             {
 				output = output.Trim();

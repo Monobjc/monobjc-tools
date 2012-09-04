@@ -34,7 +34,7 @@ namespace Monobjc.Tools.External
         /// <param name = "identity">The signing identity.</param>
         /// <param name = "productDefinition">The product definition.</param>
         /// <returns>The result of the command.</returns>
-        public static String ArchiveApplication(String bundle, String identity, String productDefinition)
+        public static void ArchiveApplication(String bundle, String identity, String productDefinition, TextWriter outputWriter = null, TextWriter errorWriter = null)
         {
             String package = Path.ChangeExtension(bundle, ".pkg");
 
@@ -51,8 +51,9 @@ namespace Monobjc.Tools.External
             arguments.AppendFormat(" \"{0}\" ", package);
 
             ProcessHelper helper = new ProcessHelper(Executable, arguments.ToString());
-            String output = helper.Execute();
-            return output;
+			helper.OutputWriter = outputWriter;
+			helper.ErrorWriter = errorWriter;
+			helper.Execute ();
         }
 
         private static string Executable

@@ -22,26 +22,38 @@ using Monobjc.Tools.External;
 
 namespace Monobjc.MSBuild.Tasks
 {
-    /// <summary>
-    ///   This task generate and signs the application installer.
-    /// </summary>
-    public class ProductBuilding : Signing
-    {
-        /// <summary>
-        ///   Gets or sets the product definition.
-        /// </summary>
-        /// <value>The product definition.</value>
-        public ITaskItem ProductDefinition { get; set; }
+	/// <summary>
+	///   This task generate and signs the application installer.
+	/// </summary>
+	public class ProductBuilding : Signing
+	{
+		/// <summary>
+		///   Gets or sets the product definition.
+		/// </summary>
+		/// <value>The product definition.</value>
+		public ITaskItem ProductDefinition { get; set; }
 
-        /// <summary>
-        ///   Performs the signing.
-        /// </summary>
-        /// <param name = "identity">The identity.</param>
-        protected override bool PerformSigning(String identity)
-        {
-            String output = ProductBuild.ArchiveApplication(this.Bundle.ItemSpec, identity, (this.ProductDefinition != null && File.Exists(this.ProductDefinition.ItemSpec)) ? this.ProductDefinition.ItemSpec : null);
-            this.Log.LogMessage(output);
+		/// <summary>
+		///   Performs the signing.
+		/// </summary>
+		/// <param name = "identity">The identity.</param>
+		protected override bool PerformSigning (String identity)
+		{
+			String productDefinition = null;
+			if (this.ProductDefinition != null && File.Exists (this.ProductDefinition.ItemSpec)) {
+				productDefinition = this.ProductDefinition.ItemSpec;
+			}
+
+			using (StringWriter outputWriter = new StringWriter()) {
+				using (StringWriter errorWriter = new StringWriter()) {
+					ProductBuild.ArchiveApplication (this.Bundle.ItemSpec, identity, productDefinition, outputWriter, errorWriter);
+					String outputLog = outputWriter.ToString ();
+					String errorLog = errorWriter.ToString ();
+					this.Log.LogMessage (outputLog);
+					this.Log.LogMessage (errorLog);
+				}
+			}
 			return true;
-        }
-    }
+		}
+	}
 }

@@ -16,6 +16,7 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System;
+using System.IO;
 using System.Globalization;
 using Monobjc.Tools.Utilities;
 
@@ -32,12 +33,13 @@ namespace Monobjc.Tools.External
         /// <param name = "source">The source file or folder.</param>
         /// <param name = "destination">The destination file or folder.</param>
         /// <returns>The result of the command.</returns>
-        public static String Recursivly(String source, String destination)
+        public static void Recursivly(String source, String destination, TextWriter outputWriter = null, TextWriter errorWriter = null)
         {
             String arguments = String.Format(CultureInfo.InvariantCulture, "-R \"{0}\" \"{1}\"", source, destination);
             ProcessHelper helper = new ProcessHelper(Executable, arguments);
-            String output = helper.Execute();
-            return output;
+			helper.OutputWriter = outputWriter;
+			helper.ErrorWriter = errorWriter;
+			helper.Execute ();
         }
 
         private static string Executable

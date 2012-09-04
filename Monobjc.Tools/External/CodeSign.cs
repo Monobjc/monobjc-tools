@@ -16,6 +16,7 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System;
+using System.IO;
 using System.Text;
 using Monobjc.Tools.Utilities;
 
@@ -33,7 +34,7 @@ namespace Monobjc.Tools.External
         /// <param name = "identity">The signing identity.</param>
         /// <param name = "identity">The entitlements.</param>
         /// <returns>The result of the command.</returns>
-        public static String SignApplication(String bundle, String identity, String entitlements)
+        public static void SignApplication(String bundle, String identity, String entitlements, TextWriter outputWriter = null, TextWriter errorWriter = null)
         {
             StringBuilder arguments = new StringBuilder(" -v ");
             if (identity != null)
@@ -47,8 +48,9 @@ namespace Monobjc.Tools.External
             arguments.AppendFormat(" \"{0}\" ", bundle);
 
             ProcessHelper helper = new ProcessHelper(Executable, arguments.ToString());
-            String output = helper.Execute();
-            return output;
+			helper.OutputWriter = outputWriter;
+			helper.ErrorWriter = errorWriter;
+			helper.Execute ();
         }
 
         /// <summary>
@@ -57,9 +59,9 @@ namespace Monobjc.Tools.External
         /// <param name = "bundle">The path to the application bundle.</param>
         /// <param name = "identity">The signing identity.</param>
         /// <returns>The result of the command.</returns>
-        public static String SignApplication(String bundle, String identity)
+        public static void SignApplication(String bundle, String identity, TextWriter outputWriter = null, TextWriter errorWriter = null)
         {
-			return SignApplication(bundle, identity, null);
+			SignApplication(bundle, identity, null, outputWriter, errorWriter);
         }
 
 		/// <summary>

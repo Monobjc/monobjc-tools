@@ -78,7 +78,6 @@ namespace Monobjc.MSBuild.Tasks
 				this.Log.LogError("Framework {0} not found", name);
 				continue;
 			copy:
-				
 				Copy copy = new Copy();
 				copy.BuildEngine = this.BuildEngine;
 				copy.SourceFiles = new TaskItem[] { new TaskItem(path) };

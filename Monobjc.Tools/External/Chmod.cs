@@ -18,31 +18,32 @@
 using System;
 using System.Globalization;
 using Monobjc.Tools.Utilities;
+using System.IO;
 
 namespace Monobjc.Tools.External
 {
-    /// <summary>
-    ///   Wrapper class around the <c>chmod</c> command line tool.
-    /// </summary>
-    public static class Chmod
-    {
-        /// <summary>
-        ///   Applies new permissions to a file.
-        /// </summary>
-        /// <param name = "mask">The permission mask.</param>
-        /// <param name = "file">The file.</param>
-        /// <returns>The result of the command.</returns>
-        public static String ApplyTo(String mask, String file)
-        {
-            String arguments = String.Format(CultureInfo.InvariantCulture, "{0} \"{1}\"", mask, file);
-            ProcessHelper helper = new ProcessHelper(Executable, arguments);
-            String output = helper.Execute();
-            return output;
-        }
+	/// <summary>
+	///   Wrapper class around the <c>chmod</c> command line tool.
+	/// </summary>
+	public static class Chmod
+	{
+		/// <summary>
+		///   Applies new permissions to a file.
+		/// </summary>
+		/// <param name = "mask">The permission mask.</param>
+		/// <param name = "file">The file.</param>
+		/// <returns>The result of the command.</returns>
+		public static void ApplyTo (String mask, String file, TextWriter outputWriter = null, TextWriter errorWriter = null)
+		{
+			String arguments = String.Format (CultureInfo.InvariantCulture, "{0} \"{1}\"", mask, file);
+			ProcessHelper helper = new ProcessHelper (Executable, arguments);
+			helper.OutputWriter = outputWriter;
+			helper.ErrorWriter = errorWriter;
+			helper.Execute ();
+		}
 
-        private static string Executable
-        {
-            get { return "chmod"; }
-        }
-    }
+		private static string Executable {
+			get { return "chmod"; }
+		}
+	}
 }

@@ -89,13 +89,16 @@ namespace Monobjc.Tools.External
 			StringBuilder arguments = new StringBuilder ();
 			arguments.AppendFormat (" --identifier {0} ", identifier.Value);
 			arguments.AppendFormat (" --version {0} ", version.Value);
-			arguments.AppendFormat (" --output \"{0}\" ", file);
-			
+
 			this.Logger.LogDebug ("Calling '" + this.Executable + "' with '" + arguments + "'");
 			
 			ProcessHelper helper = new ProcessHelper (this.Executable, arguments.ToString ());
-			String output = helper.Execute ();
-			return output;
+			String output = helper.ExecuteAndReturnOutput ();
+
+			Directory.CreateDirectory(Path.GetDirectoryName(file));
+			File.WriteAllText(file, output);
+
+			return "Done";
 		}
 		
 		/// <summary>
