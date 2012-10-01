@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="ScriptingBridge" usings="Foundation,AppKit" assembly="Monobjc.ScriptingBridge" source="DocSet">
+	<Types>
+	</Types>
+	<Classes>
+		<Class name="SBApplication">
+			<File>Cocoa/Reference/SBApplication_Class/SBApplication/SBApplication.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ApplicationWithBundleIdentifier"].ReturnType="SBApplication"]]></Change>
+				<Change><![CDATA[Methods["ApplicationWithProcessIdentifier"].ReturnType="SBApplication"]]></Change>
+				<Change><![CDATA[Methods["ApplicationWithURL"].ReturnType="SBApplication"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="SBApplication.Deprecated">
+			<File>Cocoa/Reference/SBApplication_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="SBApplication"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="SBElementArray">
+			<File>Cocoa/Reference/SBElementArray_Class/SBElementArray/SBElementArray.html</File>
+		</Class>
+		<Class name="SBObject">
+			<File>Cocoa/Reference/SBObject_Class/SBObject/SBObject.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["SendEventIdParameters"].Parameters["firstParamCode,..."].Name="firstParamCode"]]></Change>
+				<Change><![CDATA[Methods["SendEventIdParameters"].Parameters["values]="<Parameter><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter">]]></Change>
+			</Patch>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="SBApplicationDelegate">
+			<File>Cocoa/Reference/SBApplicationDelegate_Protocol/SBApplicationDelegate/SBApplicationDelegate.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="SBApplication"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[Methods["EventDidFailWithError"].Parameters["@event"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Protocol>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

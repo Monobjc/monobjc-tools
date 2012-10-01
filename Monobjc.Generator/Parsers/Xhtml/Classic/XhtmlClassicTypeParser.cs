@@ -22,7 +22,7 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
@@ -37,12 +37,11 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
         /// </summary>
         /// <param name = "settings">The settings.</param>
         /// <param name = "typeManager">The type manager.</param>
-        public XhtmlClassicTypeParser(NameValueCollection settings, TypeManager typeManager)
-            : base(settings, typeManager)
+		public XhtmlClassicTypeParser(NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger)
         {
-            this.ConstantParser = new XhtmlClassicConstantParser(settings, typeManager);
-            this.EnumerationParser = new XhtmlClassicEnumerationParser(settings, typeManager);
-            this.FunctionParser = new XhtmlClassicFunctionParser(settings, typeManager);
+            this.ConstantParser = new XhtmlClassicConstantParser(settings, typeManager, logger);
+            this.EnumerationParser = new XhtmlClassicEnumerationParser(settings, typeManager, logger);
+            this.FunctionParser = new XhtmlClassicFunctionParser(settings, typeManager, logger);
         }
 
         /// <summary>
@@ -127,7 +126,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
                         XElement startElement = marker.ElementsAfterSelf("table").FirstOrDefault();
                         IEnumerable<XElement> elements = marker.ElementsAfterSelf().TakeWhile(el => el.Name != "a");
 
-                        FunctionEntity entity = this.FunctionParser.Parse(name, elements);
+						FunctionEntity entity = this.FunctionParser.Parse(typedEntity, name, elements);
                         if (entity != null)
                         {
                             typedEntity.Functions.Add(entity);
@@ -135,7 +134,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
                     }
                     else
                     {
-                        Console.WriteLine("MISSING marker for function " + name);
+						this.Logger.WriteLine("MISSING marker for function " + name);
                     }
                 }
             }
@@ -174,7 +173,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
                         XElement startElement = marker.ElementsAfterSelf("table").FirstOrDefault();
                         IEnumerable<XElement> elements = marker.ElementsAfterSelf().TakeWhile(el => el.Name != "a");
 
-                        ConstantEntity entity = this.ConstantParser.Parse(name, elements);
+						ConstantEntity entity = this.ConstantParser.Parse(typedEntity, name, elements);
                         if (entity != null)
                         {
                             typedEntity.Constants.Add(entity);
@@ -182,7 +181,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
                     }
                     else
                     {
-                        Console.WriteLine("MISSING marker for constant " + name);
+						this.Logger.WriteLine("MISSING marker for constant " + name);
                     }
                 }
             }
@@ -225,7 +224,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
                             XElement startElement = marker.ElementsAfterSelf("table").FirstOrDefault();
                             IEnumerable<XElement> elements = marker.ElementsAfterSelf().TakeWhile(el => el.Name != "a");
 
-                            EnumerationEntity entity = this.EnumerationParser.Parse(name, elements);
+							EnumerationEntity entity = this.EnumerationParser.Parse(typedEntity, name, elements);
                             if (entity != null)
                             {
                                 typedEntity.Enumerations.Add(entity);
@@ -233,7 +232,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
                         }
                         else
                         {
-                            Console.WriteLine("MISSING marker for constant " + name);
+							this.Logger.WriteLine("MISSING marker for constant " + name);
                         }
                     }
                 }

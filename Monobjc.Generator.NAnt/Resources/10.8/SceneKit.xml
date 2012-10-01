@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="SceneKit" usings="Foundation,AppKit" assembly="Monobjc.SceneKit" source="DocSet">
+	<Types>
+	</Types>
+	<Classes>
+		<Class name="SCNBox">
+			<File>SceneKit/Reference/SCNBox_Class/Reference/SCNBox.html</File>
+		</Class>
+		<Class name="SCNCamera">
+			<File>SceneKit/Reference/SCNCamera_Class/Reference/SCNCamera.html</File>
+		</Class>
+		<Class name="SCNCapsule">
+			<File>SceneKit/Reference/SCNCapsule_Class/Reference/SCNCapsule.html</File>
+		</Class>
+		<Class name="SCNCone">
+			<File>SceneKit/Reference/SCNCone_Class/Reference/SCNCone.html</File>
+		</Class>
+		<Class name="SCNCylinder">
+			<File>SceneKit/Reference/SCNCylinder_Class/Reference/SCNCylinder.html</File>
+		</Class>
+		<Class name="SCNFloor">
+			<File>SceneKit/Reference/SCNFloor_Class/Reference/SCNFloor.html</File>
+		</Class>
+		<Class name="SCNGeometry">
+			<File>SceneKit/Reference/SCNGeometry_Class/Reference/SCNGeometry.html</File>
+		</Class>
+		<Class name="SCNGeometryElement">
+			<File>SceneKit/Reference/SCNGeometryElement_Class/Reference/SCNGeometryElement.html</File>
+		</Class>
+		<Class name="SCNGeometrySource">
+			<File>SceneKit/Reference/SCNGeometrySource_Class/Reference/SCNGeometrySource.html</File>
+		</Class>
+		<Class name="SCNHitTestResult">
+			<File>SceneKit/Reference/SCNHitTestResult_Class/Reference/SCNHitTestResult.html</File>
+		</Class>
+		<Class name="SCNLayer">
+			<File>SceneKit/Reference/SCNLayer_Class/Reference/SCNLayer.html</File>
+		</Class>
+		<Class name="SCNLight">
+			<File>SceneKit/Reference/SCNLight_Class/Reference/SCNLight.html</File>
+		</Class>
+		<Class name="SCNMaterial">
+			<File>SceneKit/Reference/SCNMaterial_Class/Reference/SCNMaterial.html</File>
+		</Class>
+		<Class name="SCNMaterialProperty">
+			<File>SceneKit/Reference/SCNMaterialProperty_Class/Reference/SCNMaterialProperty.html</File>
+		</Class>
+		<Class name="SCNNode">
+			<File>SceneKit/Reference/SCNNode_Class/Reference/SCNNode.html</File>
+		</Class>
+		<Class name="SCNPlane">
+			<File>SceneKit/Reference/SCNPlane_Class/Reference/SCNPlane.html</File>
+		</Class>
+		<Class name="SCNProgram">
+			<File>SceneKit/Reference/SCNProgram_Class/Reference/SCNProgram.html</File>
+		</Class>
+		<Class name="SCNPyramid">
+			<File>SceneKit/Reference/SCNPyramid_Class/Reference/SCNPyramid.html</File>
+		</Class>
+		<Class name="SCNScene">
+			<File>SceneKit/Reference/SCNScene_Class/Reference/SCNScene.html</File>
+		</Class>
+		<Class name="SCNSceneSource">
+			<File>SceneKit/Reference/SCNSceneSource_Class/Reference/SCNSceneSource.html</File>
+		</Class>
+		<Class name="SCNSphere">
+			<File>SceneKit/Reference/SCNSphere_Class/Reference/SCNSphere.html</File>
+		</Class>
+		<Class name="SCNText">
+			<File>SceneKit/Reference/SCNText_Class/Reference/SCNText.html</File>
+		</Class>
+		<Class name="SCNTorus">
+			<File>SceneKit/Reference/SCNTorus_Class/Reference/SCNTorus.html</File>
+		</Class>
+		<Class name="SCNTransaction">
+			<File>SceneKit/Reference/SCNTransaction_Class/Introduction/SCNTransaction.html</File>
+		</Class>
+		<Class name="SCNTube">
+			<File>SceneKit/Reference/SCNTube_Class/Reference/SCNTube.html</File>
+		</Class>
+		<Class name="SCNView">
+			<File>SceneKit/Reference/SCNView_Class/Reference/SCNView.html</File>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="SCNAnimatable">
+			<File>SceneKit/Reference/SCNAnimatable_Protocol/SCNAnimatable.html</File>
+		</Protocol>
+		<Protocol name="SCNBoundingVolume">
+			<File>SceneKit/Reference/SCNBoundingVolume_Protocol/Reference/SCNBoundingVolume.html</File>
+		</Protocol>
+		<Protocol name="SCNNodeRendererDelegate">
+			<File>SceneKit/Reference/SCNNodeRendererDelegate_Protocol/Reference/SCNNodeRendererDelegate.html</File>
+		</Protocol>
+		<Protocol name="SCNProgramDelegate">
+			<File>SceneKit/Reference/SCNProgramDelegate_Protocol/Reference/SCNProgramDelegate.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="SCNProgram"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="SCNSceneRenderer">
+			<File>SceneKit/Reference/SCNSceneRenderer_Protocol/Reference/SCNSceneRenderer.html</File>
+		</Protocol>
+		<Protocol name="SCNSceneRendererDelegate">
+			<File>SceneKit/Reference/SCNSceneRendererDelegate_Protocol/Reference/SCNSceneRendererDelegate.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="SCNSceneRenderer"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

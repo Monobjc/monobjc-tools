@@ -1,46 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4E5AB71D-38C8-4F8F-BCCF-ABA04FD016EB}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ProjectGuid>{05F4FC5D-33B1-46A0-ADB8-8A6749DA8474}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <RootNamespace>Monobjc.Tools.Generator</RootNamespace>
-    <AssemblyName>MonobjcGenerator</AssemblyName>
-    <FileAlignment>512</FileAlignment>
+    <AssemblyName>Monobjc.Generator</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;GENERATED_ATTRIBUTE;MIXED_MODE</DefineConstants>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;MIXED_MODE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Commandlineparameters>-t=extract</Commandlineparameters>
+    <ConsolePause>False</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;GENERATED_ATTRIBUTE;MIXED_MODE</DefineConstants>
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <DefineConstants>MIXED_MODE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="ICSharpCode.NRefactory, Version=3.2.0.5777, Culture=neutral, PublicKeyToken=efe927acf176eea2">
-      <HintPath>ICSharpCode.NRefactory.dll</HintPath>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="ICSharpCode.NRefactory">
+      <HintPath>lib\ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Parsers\Sgml\SgmlParser.cs" />
+    <Compile Include="Parsers\Sgml\SgmlReader.cs" />
+    <Compile Include="Utilities\Extensions.cs" />
+    <Compile Include="Model\Doxygen\index.cs">
+      <SubType>code</SubType>
+    </Compile>
+    <Compile Include="Model\Descriptors\DocSet.cs" />
+    <Compile Include="Model\Descriptors\Extensions.cs" />
+    <Compile Include="Model\Descriptors\Framework.cs" />
+    <Compile Include="Model\Descriptors\Framework.Extensions.cs" />
+    <Compile Include="Model\Entities\BaseEntity.cs" />
+    <Compile Include="Model\Entities\BaseEntity.Persistence.cs" />
+    <Compile Include="Model\Entities\ClassEntity.cs" />
+    <Compile Include="Model\Entities\ConstantEntity.cs" />
+    <Compile Include="Model\Entities\EnumerationEntity.cs" />
+    <Compile Include="Model\Entities\EnumerationValueEntity.cs" />
+    <Compile Include="Model\Entities\FunctionEntity.cs" />
+    <Compile Include="Model\Entities\MethodEntity.cs" />
+    <Compile Include="Model\Entities\MethodParameterEntity.cs" />
+    <Compile Include="Model\Entities\PropertyEntity.cs" />
+    <Compile Include="Model\Entities\ProtocolEntity.cs" />
+    <Compile Include="Model\Entities\StructureEntity.cs" />
+    <Compile Include="Model\Entities\TypedEntity.cs" />
+    <Compile Include="Parsers\BaseParser.cs" />
+    <Compile Include="Parsers\IBaseParser.cs" />
+    <Compile Include="Parsers\MethodParametersEnumerator.cs" />
+    <Compile Include="Parsers\MethodSelectorExtractor.cs" />
+    <Compile Include="Parsers\MethodSignatureEnumerator.cs" />
+    <Compile Include="Utilities\TypeManager.cs" />
+    <Compile Include="Model\Mappings.cs" />
+    <Compile Include="Parsers\Xhtml\XhtmlBaseParser.cs" />
+    <Compile Include="Parsers\Xhtml\IXhtmlClassParser.cs" />
+    <Compile Include="Parsers\Xhtml\IXhtmlTypeParser.cs" />
+    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaClassParser.cs" />
+    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaConstantParser.cs" />
+    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaFunctionParser.cs" />
+    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaMethodParser.cs" />
+    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaNotificationParser.cs" />
+    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaPropertyParser.cs" />
+    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaTypeParser.cs" />
+    <Compile Include="Utilities\CommentHelper.cs" />
+    <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicClassParser.cs" />
+    <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicConstantParser.cs" />
+    <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicEnumerationParser.cs" />
+    <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicFunctionParser.cs" />
+    <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicMethodParser.cs" />
+    <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicPropertyParser.cs" />
+    <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicTypeParser.cs" />
+    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenClassParser.cs" />
+    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenConstantParser.cs" />
+    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenEnumerationParser.cs" />
+    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenFunctionParser.cs" />
+    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenMethodParser.cs" />
+    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenPropertyParser.cs" />
+    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenTypeParser.cs" />
+    <Compile Include="Parsers\CodeDom\CodeDomBaseParser.cs" />
+    <Compile Include="Parsers\CodeDom\CodeDomClassParser.cs" />
+    <Compile Include="Parsers\CodeDom\CodeDomEnumParser.cs" />
+    <Compile Include="Parsers\CodeDom\CodeDomExpressionPrinter.cs" />
+    <Compile Include="Parsers\CodeDom\CodeDomProtocolParser.cs" />
+    <Compile Include="Parsers\CodeDom\CodeDomTypeParser.cs" />
+    <Compile Include="Parsers\CodeDom\Utilities\CodeDomSpecialParser.cs" />
+    <Compile Include="Parsers\CodeDom\Utilities\Comment_Extensions.cs" />
     <Compile Include="Generators\BaseGenerator.cs" />
     <Compile Include="Generators\ClassAdditionsGenerator.cs" />
     <Compile Include="Generators\ClassConstantsGenerator.cs" />
@@ -53,375 +116,37 @@
     <Compile Include="Generators\ConstantGenerator.cs" />
     <Compile Include="Generators\EnumerationGenerator.cs" />
     <Compile Include="Generators\FunctionGenerator.cs" />
-    <Compile Include="Generators\GenerationHelper.cs" />
     <Compile Include="Generators\GenerationStatistics.cs" />
     <Compile Include="Generators\MethodGenerator.cs" />
     <Compile Include="Generators\PropertyGenerator.cs" />
     <Compile Include="Generators\ProtocolGenerator.cs" />
     <Compile Include="Generators\TypedGenerator.cs" />
-    <Compile Include="Model\Configuration\Entities.cs" />
-    <Compile Include="Model\Configuration\Mappings.cs" />
-    <Compile Include="Model\Database\Entries.cs" />
-    <Compile Include="Model\Database\Entry.cs" />
-    <Compile Include="Model\Database\EntryFolderType.cs" />
-    <Compile Include="Model\Database\PageStyle.cs" />
-    <Compile Include="Model\Entities\BaseEntity.cs" />
-    <Compile Include="Model\Entities\ClassEntity.cs" />
-    <Compile Include="Model\Entities\ConstantEntity.cs" />
-    <Compile Include="Model\Entities\EnumerationEntity.cs" />
-    <Compile Include="Model\Entities\EnumerationValueEntity.cs" />
-    <Compile Include="Model\Entities\FunctionEntity.cs" />
-    <Compile Include="Model\Entities\MethodEntity.cs" />
-    <Compile Include="Model\Entities\MethodParameterEntity.cs" />
-    <Compile Include="Model\Entities\PropertyEntity.cs" />
-    <Compile Include="Model\Entities\ProtocolEntity.cs" />
-    <Compile Include="Model\Entities\StructureEntity.cs" />
-    <Compile Include="Model\Entities\TypedEntity.cs" />
-    <Compile Include="Options\Options.cs" />
-    <Compile Include="Parsers\BaseParser.cs" />
-    <Compile Include="Parsers\CodeDom\CodeDomBaseParser.cs" />
-    <Compile Include="Parsers\CodeDom\CodeDomClassParser.cs" />
-    <Compile Include="Parsers\CodeDom\CodeDomEnumParser.cs" />
-    <Compile Include="Parsers\CodeDom\CodeDomExpressionPrinter.cs" />
-    <Compile Include="Parsers\CodeDom\CodeDomProtocolParser.cs" />
-    <Compile Include="Parsers\CodeDom\CodeDomTypeParser.cs" />
-    <Compile Include="Parsers\CodeDom\Utilities\CodeDomSpecialParser.cs" />
-    <Compile Include="Parsers\CodeDom\Utilities\Comment_Extensions.cs" />
-    <Compile Include="Parsers\IBaseParser.cs" />
-    <Compile Include="Parsers\MethodParametersEnumerator.cs" />
-    <Compile Include="Parsers\MethodSelectorExtractor.cs" />
-    <Compile Include="Parsers\MethodSignatureEnumerator.cs" />
-    <Compile Include="Parsers\Sgml\SgmlParser.cs" />
-    <Compile Include="Parsers\Sgml\SgmlReader.cs" />
-    <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicClassParser.cs" />
-    <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicConstantParser.cs" />
-    <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicEnumerationParser.cs" />
-    <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicFunctionParser.cs" />
-    <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicMethodParser.cs" />
-    <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicPropertyParser.cs" />
-    <Compile Include="Parsers\Xhtml\Classic\XhtmlClassicTypeParser.cs" />
-    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaClassParser.cs" />
-    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaConstantParser.cs" />
-    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaFunctionParser.cs" />
-    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaMethodParser.cs" />
-    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaNotificationParser.cs" />
-    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaPropertyParser.cs" />
-    <Compile Include="Parsers\Xhtml\Cocoa\XhtmlCocoaTypeParser.cs" />
-    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenClassParser.cs" />
-    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenConstantParser.cs" />
-    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenEnumerationParser.cs" />
-    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenFunctionParser.cs" />
-    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenMethodParser.cs" />
-    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenPropertyParser.cs" />
-    <Compile Include="Parsers\Xhtml\Doxygen\XhtmlDoxygenTypeParser.cs" />
-    <Compile Include="Parsers\Xhtml\XhtmlBaseParser.cs" />
-    <Compile Include="Parsers\Xhtml\XhtmlClassParser.cs" />
-    <Compile Include="Parsers\Xhtml\XhtmlTypeParser.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasks\BaseTask.cs" />
-    <Compile Include="Tasks\Conversion\CSharp2XmlTask.cs" />
-    <Compile Include="Tasks\Conversion\Html2XhtmlTask.cs" />
-    <Compile Include="Tasks\Conversion\Xhtml2XmlTask.cs" />
-    <Compile Include="Tasks\General\CopyURLTask.cs" />
-    <Compile Include="Tasks\General\LoadTask.cs" />
-    <Compile Include="Tasks\General\RetrieveTask.cs" />
-    <Compile Include="Tasks\General\ValidateTask.cs" />
-    <Compile Include="Tasks\Generation\GenerateCodeTask.cs" />
-    <Compile Include="Tasks\Generation\GenerateInfoTask.cs" />
-    <Compile Include="Tasks\ITask.cs" />
-    <Compile Include="Tasks\Output\DumpDeprecatedTask.cs" />
-    <Compile Include="Tasks\Output\DumpAllNamesTask.cs" />
-    <Compile Include="Tasks\Output\CopyInPlaceTask.cs" />
-    <Compile Include="Tasks\Output\DumpDelegateMethodsTask.cs" />
-    <Compile Include="Tasks\Output\DumpInitMethodsTask.cs" />
-    <Compile Include="Tasks\Output\DumpMissingTask.cs" />
-    <Compile Include="Tasks\Output\DumpPropertyNamesTask.cs" />
-    <Compile Include="Tasks\Output\DumpStaticInitializersTask.cs" />
-    <Compile Include="Tasks\Patching\CleanClassicTask.cs" />
-    <Compile Include="Tasks\Patching\DeprecateTask.cs" />
-    <Compile Include="Tasks\Patching\PatchXmlTask.cs" />
-    <Compile Include="Tasks\Patching\ReplaceTextTask.cs" />
-    <Compile Include="Tasks\TaskContext.cs" />
-    <Compile Include="Tasks\TaskManager.cs" />
-    <Compile Include="Utilities\CommentHelper.cs" />
-    <Compile Include="Utilities\Extensions.cs" />
-    <Compile Include="Utilities\HtmlCleaner.cs" />
-    <Compile Include="Utilities\PathExtensions.cs" />
-    <Compile Include="Utilities\TypeManager.cs" />
-    <Compile Include="Tasks\Output\DumpEmptySignatureTask.cs" />
-    <Compile Include="Tasks\Output\DumpGeneration.cs" />
+    <Compile Include="Utilities\MRUDictionary.cs" />
+    <Compile Include="Generators\OpaqueTypedGenerator.cs" />
+    <Compile Include="Model\Entities\EnumerationCollection.cs" />
+    <Compile Include="Model\Entities\ConstantCollection.cs" />
+    <Compile Include="Model\Entities\EnumerationValueCollection.cs" />
+    <Compile Include="Model\Entities\FunctionCollection.cs" />
+    <Compile Include="Model\Entities\MethodCollection.cs" />
+    <Compile Include="Model\Entities\PropertyCollection.cs" />
+    <Compile Include="Model\Entities\MethodParamaterCollection.cs" />
+    <Compile Include="Model\Entities\BaseCollection.cs" />
+    <Compile Include="Model\Entities\BaseEntity.Patching.cs" />
+    <Compile Include="Dynamic.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Lion.Database.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Lion.Entities.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Lion.Mappings.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\AppKit\E\NSTrackingAreaOptions">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\ApplicationServices\E\CGRectEdge">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\ApplicationServices\S\CGAffineTransform">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\ApplicationServices\S\CGFloat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\ApplicationServices\S\CGPoint">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\ApplicationServices\S\CGRect">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\ApplicationServices\S\CGSize">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\CoreData\E\NSSnapshotEventType">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\CoreFoundation\S\CFHashCode">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\CoreFoundation\S\CFIndex">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\CoreFoundation\S\CFOptionFlags">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\CoreFoundation\S\CFRange">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\CoreFoundation\S\CFTypeID">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\E\NSPropertyListReadOptions">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\E\NSPropertyListWriteOptions">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\S\NSDecimal">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\S\NSInteger">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\S\NSPoint">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\S\NSRange">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\S\NSRect">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\S\NSSize">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\S\NSUInteger">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\InputMethodKit\E\IMKCandidatePanelType">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\InputMethodKit\E\IMKCandidatesLocationHint">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\InputMethodKit\E\IMKLocationToOffsetMappingMode">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\QTKit\E\QTSampleBufferAudioBufferListOptions">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\QTKit\S\QTTime">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\QTKit\S\QTTimeRange">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Quartz\E\PDFAreaOfInterest">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Quartz\E\PDFBorderStyle">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Quartz\E\PDFDisplayBox">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Quartz\E\PDFDisplayMode">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Quartz\E\PDFLineStyle">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Quartz\E\PDFMarkupType">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Quartz\E\PDFTextAnnotationIconType">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DTD\xhtml-lat1.ent">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DTD\xhtml-special.ent">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DTD\xhtml-symbol.ent">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DTD\xhtml1-transitional.dtd">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Entities.xsd">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\SnowLeopard.Database.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\SnowLeopard.Entities.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Resources\SnowLeopard.Mappings.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Resources\MIT.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\AppKit\P\NSColorPanelDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\AppKit\P\NSFontManagerDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\AppKit\P\NSRulerViewDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\P\NSFileManagerDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\P\NSURLConnectionDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Foundation\P\NSURLDownloadDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\QTKit\E\QTMovieOperationPhase">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\AppKit\P\NSPanelDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\ApplicationServices\E\CTFontManagerError">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\CoreLocation\C\CLRegion">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SnowLeopard.properties">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Lion.properties">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <None Include="Xml\CoreLocation\E\CLAuthorizationStatus">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Xml\QTKit\P\QTCaptureDecompressedAudioOutputDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Xml\QTKit\P\QTCaptureDecompressedVideoOutputDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Xml\QTKit\P\QTCaptureFileOutputDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Xml\QTKit\P\QTCaptureVideoPreviewOutputDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Xml\QTKit\P\QTCaptureViewDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Xml\QTKit\P\QTMovieDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <Content Include="Xml\QuartzCore\P\CAAnimationDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\QuartzCore\P\CALayerDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Quartz\P\IKSaveOptionsDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Quartz\P\PDFDocumentDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Quartz\P\PDFViewDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\SecurityInterface\P\SFAuthorizationViewDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\SecurityInterface\P\SFCertificatePanelDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\SecurityInterface\P\SFChooseIdentityPanelDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\WebKit\P\WebDownloadDelegate">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Xml\Security\E\SecCSFlags">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\MountainLion.Database.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\MountainLion.Entities.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\MountainLion.Mappings.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="MountainLion.properties">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Folder Include="Model\" />
+    <Folder Include="Parsers\" />
+    <Folder Include="Utilities\" />
+    <Folder Include="Model\Descriptors\" />
+    <Folder Include="Parsers\Xhtml\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
-  <ItemGroup>
-    <Folder Include="Xml\CoreData\" />
+    <None Include="Model\Doxygen\index.xsd" />
+    <None Include="Model\Descriptors\Framework.xsd" />
+    <None Include="lib\Db4objects.Db4o.dll" />
+    <None Include="lib\Db4objects.Db4o.Linq.dll" />
+    <None Include="lib\ICSharpCode.NRefactory.dll" />
+    <None Include="lib\Mono.Reflection.dll" />
   </ItemGroup>
 </Project>

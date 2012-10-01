@@ -20,209 +20,238 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
 
-namespace Monobjc.Tools.Generator.Model.Entities
+namespace Monobjc.Tools.Generator.Model
 {
-    /// <summary>
-    ///   Represents the model for a class.
-    /// </summary>
-    [Serializable]
-    [XmlRoot("Class")]
-    public class ClassEntity : TypedEntity
-    {
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "ClassEntity" /> class.
-        /// </summary>
-        public ClassEntity()
-        {
-            this.Methods = new List<MethodEntity>();
-            this.Properties = new List<PropertyEntity>();
-            this.DelegateMethods = new List<MethodEntity>();
-        }
+	/// <summary>
+	///   Represents the model for a class.
+	/// </summary>
+	[Serializable]
+	[XmlRoot("Class")]
+	public partial class ClassEntity : TypedEntity
+	{
+		/// <summary>
+		///   Initializes a new instance of the <see cref = "ClassEntity" /> class.
+		/// </summary>
+		public ClassEntity ()
+		{
+			this.Methods = new MethodCollection();
+			this.Properties = new PropertyCollection();
+			this.DelegateMethods = new MethodCollection();
+		}
 
-        /// <summary>
-        ///   Gets or sets the pattern used for description.
-        /// </summary>
-        /// <value>The pattern used for description.</value>
-        [XmlElement("Description")]
-        public String Description { get; set; }
+		/// <summary>
+		///   Gets or sets the pattern used for description.
+		/// </summary>
+		/// <value>The pattern used for description.</value>
+		[XmlElement ("Description")]
+		public String Description {
+			get;
+			set;
+		}
 
-        /// <summary>
-        ///   Gets or sets the methods.
-        /// </summary>
-        /// <value>The methods.</value>
-        [XmlArray]
-        [XmlArrayItem(typeof (MethodEntity), ElementName = "Method")]
-        public List<MethodEntity> Methods { get; set; }
+		/// <summary>
+		///   Gets or sets the class owner.
+		/// </summary>
+		/// <value>The class owner.</value>
+		[XmlElement ("AdditionFor")]
+		public String AdditionFor {
+			get;
+			set;
+		}
+		
+		/// <summary>
+		///   Gets or sets the conforms to.
+		/// </summary>
+		/// <value>The conforms to.</value>
+		[XmlElement ("Protocols")]
+		public String ConformsTo {
+			get;
+			set;
+		}
+		
+		/// <summary>
+		///   Gets or sets the methods.
+		/// </summary>
+		/// <value>The methods.</value>
+		[XmlArray]
+		[XmlArrayItem (typeof(MethodEntity), ElementName = "Method")]
+		public MethodCollection Methods {
+			get;
+			set;
+		}
 
-        /// <summary>
-        ///   Gets or sets the properties.
-        /// </summary>
-        /// <value>The properties.</value>
-        [XmlArray]
-        [XmlArrayItem(typeof (PropertyEntity), ElementName = "Property")]
-        public List<PropertyEntity> Properties { get; set; }
+		/// <summary>
+		///   Gets or sets the properties.
+		/// </summary>
+		/// <value>The properties.</value>
+		[XmlArray]
+		[XmlArrayItem (typeof(PropertyEntity), ElementName = "Property")]
+		public PropertyCollection Properties {
+			get;
+			set;
+		}
 
-        /// <summary>
-        ///   Gets or sets the delegate methods.
-        /// </summary>
-        /// <value>The delegate methods.</value>
-        [XmlArray]
-        [XmlArrayItem(typeof (MethodEntity), ElementName = "DelegateMethod")]
-        public List<MethodEntity> DelegateMethods { get; set; }
+		/// <summary>
+		///   Gets or sets the delegate methods.
+		/// </summary>
+		/// <value>The delegate methods.</value>
+		[XmlArray]
+		[XmlArrayItem (typeof(MethodEntity), ElementName = "DelegateMethod")]
+		public MethodCollection DelegateMethods {
+			get;
+			set;
+		}
 
-        /// <summary>
-        ///   Gets or sets the conforms to.
-        /// </summary>
-        /// <value>The conforms to.</value>
-        [XmlElement("Protocols")]
-        public String ConformsTo { get; set; }
+		/// <summary>
+		///   Gets or sets the super class.
+		/// </summary>
+		/// <value>The super class.</value>
+		[XmlIgnore]
+		public ClassEntity SuperClass { get; set; }
 
-        /// <summary>
-        ///   Gets or sets the class owner.
-        /// </summary>
-        /// <value>The class owner.</value>
-        [XmlElement("AdditionFor")]
-        public String AdditionFor { get; set; }
+		/// <summary>
+		///   Gets or sets the protocols implemented.
+		/// </summary>
+		/// <value>The protocols implemented</value>
+		[XmlIgnore]
+		public List<ProtocolEntity> Protocols { get; set; }
 
-        /// <summary>
-        ///   Gets or sets the super class.
-        /// </summary>
-        /// <value>The super class.</value>
-        [XmlIgnore]
-        public ClassEntity SuperClass { get; set; }
+		/// <summary>
+		///   Gets or sets the extended class.
+		/// </summary>
+		/// <value>The extended class.</value>
+		[XmlIgnore]
+		public ClassEntity ExtendedClass { get; set; }
 
-        /// <summary>
-        ///   Gets or sets the protocols implemented.
-        /// </summary>
-        /// <value>The protocols implemented</value>
-        [XmlIgnore]
-        public List<ProtocolEntity> Protocols { get; set; }
+		/// <summary>
+		///   Determines whether the specified instance has method.
+		/// </summary>
+		/// <param name = "name">The name.</param>
+		/// <param name = "isStatic">if set to <c>true</c> [is static].</param>
+		/// <returns>
+		///   <c>true</c> if the specified instance has method; otherwise, <c>false</c>.
+		/// </returns>
+		public bool HasMethod (String name, bool isStatic)
+		{
+			MethodEntity entity = this.Methods.SingleOrDefault (m => m.Name.Equals (name) && m.Static == isStatic);
+			return (entity != null);
+		}
 
-        /// <summary>
-        ///   Gets or sets the extended class.
-        /// </summary>
-        /// <value>The extended class.</value>
-        [XmlIgnore]
-        public ClassEntity ExtendedEntity { get; set; }
+		/// <summary>
+		///   Gets a value indicating whether this instance has constructors.
+		/// </summary>
+		/// <value>
+		///   <c>true</c> if this instance has constructors; otherwise, <c>false</c>.
+		/// </value>
+		public bool HasConstructors {
+			get { 
+				return (this.GetConstructors (true, true).Count () > 0);
+			}
+		}
 
-        /// <summary>
-        ///   Determines whether the specified instance has method.
-        /// </summary>
-        /// <param name = "name">The name.</param>
-        /// <param name = "isStatic">if set to <c>true</c> [is static].</param>
-        /// <returns>
-        ///   <c>true</c> if the specified instance has method; otherwise, <c>false</c>.
-        /// </returns>
-        public bool HasMethod(String name, bool isStatic)
-        {
-            MethodEntity entity = this.Methods.SingleOrDefault(m => m.Name.Equals(name) && m.Static == isStatic);
-            return (entity != null);
-        }
+		/// <summary>
+		///   Gets all methods (superclass and protocols).
+		/// </summary>
+		public IEnumerable<MethodEntity> GetMethods (bool includeSuper, bool includeProtocols)
+		{
+			List<MethodEntity> methods = new List<MethodEntity> (this.Methods);
 
-        /// <summary>
-        ///   Gets a value indicating whether this instance has constructors.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if this instance has constructors; otherwise, <c>false</c>.
-        /// </value>
-        public bool HasConstructors
-        {
-            get { return (this.GetConstructors(true, true).Count() > 0); }
-        }
+			if (this.SuperClass != null && includeSuper) {
+				methods.AddRange (this.SuperClass.GetMethods (true, true));
+			}
 
-        /// <summary>
-        ///   Gets all methods (superclass and protocols).
-        /// </summary>
-        public IEnumerable<MethodEntity> GetMethods(bool includeSuper, bool includeProtocols)
-        {
-            List<MethodEntity> methods = new List<MethodEntity>(this.Methods);
+			if (this.Protocols != null && includeProtocols) {
+				foreach (ProtocolEntity protocol in this.Protocols) {
+					methods.AddRange (protocol.Methods);
+				}
+			}
+			return methods.Distinct ();
+		}
 
-            if (this.SuperClass != null && includeSuper)
-            {
-                methods.AddRange(this.SuperClass.GetMethods(true, true));
-            }
+		/// <summary>
+		///   Gets all constructors (superclass and protocols).
+		/// </summary>
+		public IEnumerable<MethodEntity> GetConstructors (bool includeSuper, bool includeProtocols)
+		{
+			IEnumerable<MethodEntity> methods = this.GetMethods (includeSuper, includeProtocols);
 
-            if (this.Protocols != null && includeProtocols)
-            {
-                foreach (ProtocolEntity protocol in this.Protocols)
-                {
-                    methods.AddRange(protocol.Methods);
-                }
-            }
-            return methods.Distinct();
-        }
+			return methods.Where (m => m.IsConstructor);
+		}
 
-        /// <summary>
-        ///   Gets all constructors (superclass and protocols).
-        /// </summary>
-        public IEnumerable<MethodEntity> GetConstructors(bool includeSuper, bool includeProtocols)
-        {
-            IEnumerable<MethodEntity> methods = this.GetMethods(includeSuper, includeProtocols);
+		/// <summary>
+		///   Gets all methods (superclass and protocols).
+		/// </summary>
+		public IEnumerable<PropertyEntity> GetProperties (bool includeSuper, bool includeProtocols)
+		{
+			List<PropertyEntity> properties = new List<PropertyEntity> (this.Properties);
 
-            return methods.Where(m => m.IsConstructor);
-        }
+			if (this.SuperClass != null && includeSuper) {
+				properties.AddRange (this.SuperClass.GetProperties (true, true));
+			}
 
-        /// <summary>
-        ///   Gets all methods (superclass and protocols).
-        /// </summary>
-        public IEnumerable<PropertyEntity> GetProperties(bool includeSuper, bool includeProtocols)
-        {
-            List<PropertyEntity> properties = new List<PropertyEntity>(this.Properties);
+			if (this.Protocols != null && includeProtocols) {
+				foreach (ProtocolEntity protocol in this.Protocols) {
+					properties.AddRange (protocol.Properties);
+				}
+			}
+			return properties.Distinct ();
+		}
 
-            if (this.SuperClass != null && includeSuper)
-            {
-                properties.AddRange(this.SuperClass.GetProperties(true, true));
-            }
+		/// <summary>
+		///   Adds the entities.
+		/// </summary>
+		/// <param name = "entities">The entities.</param>
+		public override void AddRange (List<BaseEntity> entities)
+		{
+			base.AddRange (entities);
 
-            if (this.Protocols != null && includeProtocols)
-            {
-                foreach (ProtocolEntity protocol in this.Protocols)
-                {
-                    properties.AddRange(protocol.Properties);
-                }
-            }
-            return properties.Distinct();
-        }
+			foreach (BaseEntity entity in entities) {
+				MethodEntity methodEntity = entity as MethodEntity;
+				if (methodEntity != null) {
+					this.Methods.Add (methodEntity);
+				}
+				PropertyEntity propertyEntity = entity as PropertyEntity;
+				if (propertyEntity != null) {
+					this.Properties.Add (propertyEntity);
+				}
+			}
+		}
 
-        /// <summary>
-        ///   Adds the entities.
-        /// </summary>
-        /// <param name = "entities">The entities.</param>
-        public override void AddRange(List<BaseEntity> entities)
-        {
-            base.AddRange(entities);
+		/// <summary>
+		///   Gets the children.
+		/// </summary>
+		/// <value>The children.</value>
+		[XmlIgnore]
+		public override List<BaseEntity> Children {
+			get {
+				List<BaseEntity> children = new List<BaseEntity> ();
+				children.AddRange (this.Methods.Cast<BaseEntity> ());
+				children.AddRange (this.Properties.Cast<BaseEntity> ());
+				children.AddRange (this.Enumerations.Cast<BaseEntity> ());
+				children.AddRange (this.Constants.Cast<BaseEntity> ());
+				return children;
+			}
+		}
 
-            foreach (BaseEntity entity in entities)
-            {
-                MethodEntity methodEntity = entity as MethodEntity;
-                if (methodEntity != null)
-                {
-                    this.Methods.Add(methodEntity);
-                }
-                PropertyEntity propertyEntity = entity as PropertyEntity;
-                if (propertyEntity != null)
-                {
-                    this.Properties.Add(propertyEntity);
-                }
-            }
-        }
-
-        /// <summary>
-        ///   Gets the children.
-        /// </summary>
-        /// <value>The children.</value>
-        [XmlIgnore]
-        public override List<BaseEntity> Children
-        {
-            get
-            {
-                List<BaseEntity> children = new List<BaseEntity>();
-                children.AddRange(this.Methods.Cast<BaseEntity>());
-                children.AddRange(this.Properties.Cast<BaseEntity>());
-                children.AddRange(this.Enumerations.Cast<BaseEntity>());
-                children.AddRange(this.Constants.Cast<BaseEntity>());
-                return children;
-            }
-        }
-    }
+		/// <summary>
+		///   Serves as a hash function for a particular type.
+		/// </summary>
+		/// <returns>
+		///   A hash code for the current <see cref = "T:System.Object" />.
+		/// </returns>
+		/// <filterpriority>2</filterpriority>
+		public override int GetHashCode ()
+		{
+			unchecked {
+				int hash = base.GetHashCode();
+				hash = hash * 23 + (this.AdditionFor != null ? this.AdditionFor.GetHashCode () : 0);
+				hash = hash * 23 + (this.ConformsTo != null ? this.ConformsTo.GetHashCode () : 0);
+				hash = hash * 23 + this.DelegateMethods.GetHashCode ();
+				hash = hash * 23 + (this.Description != null ? this.Description.GetHashCode () : 0);
+				hash = hash * 23 + this.Methods.GetHashCode ();
+				hash = hash * 23 + this.Properties.GetHashCode ();
+				return hash;
+			}
+		}
+	}
 }

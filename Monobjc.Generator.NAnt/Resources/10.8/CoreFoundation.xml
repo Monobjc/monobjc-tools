@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="CoreFoundation" usings="" assembly="Monobjc.Foundation" source="DocSet">
+	<Types>
+		<Type name="CFAllocator">
+			<File>CoreFoundation/Reference/CFAllocatorRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFArray">
+			<File>CoreFoundation/Reference/CFArrayRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFAttributedString">
+			<File>CoreFoundation/Reference/CFAttributedString/Reference/reference.html</File>
+		</Type>
+		<Type name="CFBag">
+			<File>CoreFoundation/Reference/CFBagRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFBinaryHeap">
+			<File>CoreFoundation/Reference/CFBinaryHeapRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFBitVector">
+			<File>CoreFoundation/Reference/CFBitVectorRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFBoolean">
+			<File>CoreFoundation/Reference/CFBooleanRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFBundle">
+			<File>CoreFoundation/Reference/CFBundleRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFCalendar">
+			<File>CoreFoundation/Reference/CFCalendarRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFCharacterSet">
+			<File>CoreFoundation/Reference/CFCharacterSetRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFData">
+			<File>CoreFoundation/Reference/CFDataRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFDate">
+			<File>CoreFoundation/Reference/CFDateRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFDateFormatter">
+			<File>CoreFoundation/Reference/CFDateFormatterRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFDictionary">
+			<File>CoreFoundation/Reference/CFDictionaryRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFError">
+			<File>CoreFoundation/Reference/CFErrorRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFFileDescriptor">
+			<File>CoreFoundation/Reference/CFFileDescriptorRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFLocale">
+			<File>CoreFoundation/Reference/CFLocaleRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFMachPort">
+			<File>CoreFoundation/Reference/CFMachPortRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFMessagePort">
+			<File>CoreFoundation/Reference/CFMessagePortRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFMutableArray">
+			<File>CoreFoundation/Reference/CFMutableArrayRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFMutableAttributedString">
+			<File>CoreFoundation/Reference/CFMutableAttributedString/Reference/reference.html</File>
+		</Type>
+		<Type name="CFMutableBag">
+			<File>CoreFoundation/Reference/CFMutableBagRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFMutableBitVector">
+			<File>CoreFoundation/Reference/CFMutableBitVectorRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFMutableCharacterSet">
+			<File>CoreFoundation/Reference/CFMutableCharacterSetRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFMutableData">
+			<File>CoreFoundation/Reference/CFMutableDataRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFMutableDictionary">
+			<File>CoreFoundation/Reference/CFMutableDictionaryRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFMutableSet">
+			<File>CoreFoundation/Reference/CFMutableSetRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFMutableString">
+			<File>CoreFoundation/Reference/CFMutableStringRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFNotificationCenter">
+			<File>CoreFoundation/Reference/CFNotificationCenterRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFNull">
+			<File>CoreFoundation/Reference/CFNullRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFNumber">
+			<File>CoreFoundation/Reference/CFNumberRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFNumberFormatter">
+			<File>CoreFoundation/Reference/CFNumberFormatterRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFPlugIn">
+			<File>CoreFoundation/Reference/CFPlugInRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFPlugInInstance">
+			<File>CoreFoundation/Reference/CFPlugInInstanceRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFPropertyList">
+			<File>CoreFoundation/Reference/CFPropertyListRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFReadStream">
+			<File>CoreFoundation/Reference/CFReadStreamRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFRunLoop">
+			<File>CoreFoundation/Reference/CFRunLoopRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFRunLoopObserver">
+			<File>CoreFoundation/Reference/CFRunLoopObserverRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFRunLoopSource">
+			<File>CoreFoundation/Reference/CFRunLoopSourceRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFRunLoopTimer">
+			<File>CoreFoundation/Reference/CFRunLoopTimerRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFSet">
+			<File>CoreFoundation/Reference/CFSetRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFSocket">
+			<File>CoreFoundation/Reference/CFSocketRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFString">
+			<File>CoreFoundation/Reference/CFStringRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFStringTokenizer">
+			<File>CoreFoundation/Reference/CFStringTokenizerRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFTimeZone">
+			<File>CoreFoundation/Reference/CFTimeZoneRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFTree">
+			<File>CoreFoundation/Reference/CFTreeRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFType">
+			<File>CoreFoundation/Reference/CFTypeRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CFHash"].ReturnType="CFHashCode"]]></Change>
+				<Change><![CDATA[Functions["CFHash"].Parameters["CFHash"].Name="cf"]]></Change>
+				<Change><![CDATA[Functions["CFHash"].Parameters["cf"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CFURL">
+			<File>CoreFoundation/Reference/CFURLRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFUserNotification">
+			<File>CoreFoundation/Reference/CFUserNotificationRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFUUID">
+			<File>CoreFoundation/Reference/CFUUIDRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFWriteStream">
+			<File>CoreFoundation/Reference/CFWriteStreamRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFXMLNode">
+			<File>CoreFoundation/Reference/CFXMLNodeRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFXMLNode.Deprecated">
+			<File>CoreFoundation/Reference/CFXMLNodeRef/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+		</Type>
+		<Type name="CFXMLParser">
+			<File>CoreFoundation/Reference/CFXMLParserRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFXMLTree">
+			<File>CoreFoundation/Reference/CFXMLTreeRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CFXMLTree.Deprecated">
+			<File>CoreFoundation/Reference/CFXMLTreeRef/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+		</Type>
+		<Type name="Base Utilities">
+			<File>CoreFoundation/Reference/CFBaseUtils/Reference/reference.html</File>
+		</Type>
+		<Type name="Byte-Order Utilities">
+			<File>CoreFoundation/Reference/CFByteOrderUtils/Reference/reference.html</File>
+		</Type>
+		<Type name="Core Foundation URL Access Utilities">
+			<File>CoreFoundation/Reference/CFURLAccessUtils/Reference/reference.html</File>
+		</Type>
+		<Type name="Preferences Utilities">
+			<File>CoreFoundation/Reference/CFPreferencesUtils/Reference/reference.html</File>
+		</Type>
+		<Type name="Socket Name Server Utilities">
+			<File>CoreFoundation/Reference/CFSocketNameServerUtils/Reference/reference.html</File>
+		</Type>
+		<Type name="Time Utilities">
+			<File>CoreFoundation/Reference/CFTimeUtils/Reference/reference.html</File>
+		</Type>
+	</Types>
+	<Structures>
+		<Structure name="CFHashCode" />
+		<Structure name="CFIndex" />
+		<Structure name="CFRange" />
+		<Structure name="CFTypeID" />
+	</Structures>
+</Framework>

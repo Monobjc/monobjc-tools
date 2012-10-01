@@ -22,7 +22,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
@@ -37,7 +37,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
         /// </summary>
         /// <param name = "settings">The settings.</param>
         /// <param name = "typeManager">The type manager.</param>
-        public XhtmlClassicConstantParser(NameValueCollection settings, TypeManager typeManager) : base(settings, typeManager) {}
+		public XhtmlClassicConstantParser(NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger) {}
 
         /// <summary>
         ///   Parses the specified entity.
@@ -49,7 +49,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
             throw new NotImplementedException();
         }
 
-        public ConstantEntity Parse(string constantElement, IEnumerable<XElement> elements)
+		public ConstantEntity Parse(TypedEntity typedEntity, string constantElement, IEnumerable<XElement> elements)
         {
             ConstantEntity constantEntity = new ConstantEntity();
 
@@ -89,14 +89,14 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
                 bool isOut;
                 bool isByRef;
                 bool isBlock;
-                type = this.TypeManager.ConvertType(type, out isOut, out isByRef, out isBlock);
+				type = this.TypeManager.ConvertType(type, out isOut, out isByRef, out isBlock, this.Logger);
 
                 constantEntity.Type = type;
                 constantEntity.Name = r.Groups[2].Value.Trim();
             }
             else
             {
-                Console.WriteLine("FAILED to parse constant '{0}'", stripped);
+				this.Logger.WriteLine("FAILED to parse constant '{0}'", stripped);
                 return constantEntity;
             }
 

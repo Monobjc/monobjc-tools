@@ -21,81 +21,80 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
 {
-    /// <summary>
-    ///   XHTML parser dedicated to constants.
-    /// </summary>
-    public class XhtmlDoxygenConstantParser : XhtmlBaseParser
-    {
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "XhtmlDoxygenConstantParser" /> class.
-        /// </summary>
-        /// <param name = "settings">The settings.</param>
-        /// <param name = "typeManager">The type manager.</param>
-        public XhtmlDoxygenConstantParser(NameValueCollection settings, TypeManager typeManager) : base(settings, typeManager) {}
+	/// <summary>
+	///   XHTML parser dedicated to constants.
+	/// </summary>
+	public class XhtmlDoxygenConstantParser : XhtmlBaseParser
+	{
+		/// <summary>
+		///   Initializes a new instance of the <see cref = "XhtmlDoxygenConstantParser" /> class.
+		/// </summary>
+		/// <param name = "settings">The settings.</param>
+		/// <param name = "typeManager">The type manager.</param>
+		public XhtmlDoxygenConstantParser (NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger)
+		{
+		}
 
-        /// <summary>
-        ///   Parses the specified entity.
-        /// </summary>
-        /// <param name = "entity">The entity.</param>
-        /// <param name = "reader">The reader.</param>
-        public override void Parse(BaseEntity entity, TextReader reader)
-        {
-            throw new NotImplementedException();
-        }
+		/// <summary>
+		///   Parses the specified entity.
+		/// </summary>
+		/// <param name = "entity">The entity.</param>
+		/// <param name = "reader">The reader.</param>
+		public override void Parse (BaseEntity entity, TextReader reader)
+		{
+			throw new NotImplementedException ();
+		}
 
-        public ConstantEntity Parse(XElement constantElement)
-        {
-            ConstantEntity constantEntity = new ConstantEntity();
+		public ConstantEntity Parse (TypedEntity typedEntity, XElement constantElement)
+		{
+			ConstantEntity constantEntity = new ConstantEntity ();
 
-            String kind = constantElement.Attribute("kind").Value;
-            constantEntity.Name = constantElement.Element("name").TrimAll();
+			String kind = constantElement.Attribute ("kind").Value;
+			constantEntity.Name = constantElement.Element ("name").TrimAll ();
 
-            // Elements for brief description
-            IEnumerable<XElement> abstractElements = constantElement.Element("briefdescription").Elements("para");
+			// Elements for brief description
+			IEnumerable<XElement> abstractElements = constantElement.Element ("briefdescription").Elements ("para");
 
-            // Extract for detailed description
-            IEnumerable<XElement> detailsElements = (from el in constantElement.Element("detaileddescription").Elements("para")
-                                                     where !el.Elements("simplesect").Any()
-                                                           && el.Elements("parameterlist").Any()
-                                                           && el.Elements("xrefsect").Any()
+			// Extract for detailed description
+			IEnumerable<XElement> detailsElements = (from el in constantElement.Element ("detaileddescription").Elements ("para")
+                                                     where !el.Elements ("simplesect").Any ()
+				&& el.Elements ("parameterlist").Any ()
+				&& el.Elements ("xrefsect").Any ()
                                                      select el);
 
-            // Add brief description
-            foreach (XElement paragraph in abstractElements)
-            {
-                constantEntity.Summary.Add(paragraph.TrimAll());
-            }
-            foreach (XElement paragraph in detailsElements)
-            {
-                constantEntity.Summary.Add(paragraph.TrimAll());
-            }
+			// Add brief description
+			foreach (XElement paragraph in abstractElements) {
+				constantEntity.Summary.Add (paragraph.TrimAll ());
+			}
+			foreach (XElement paragraph in detailsElements) {
+				constantEntity.Summary.Add (paragraph.TrimAll ());
+			}
 
-            switch (kind)
-            {
-                case "define":
-                    {
-                        constantEntity.Type = "MISSING";
-                        constantEntity.Static = true;
-                        constantEntity.Value = constantElement.Element("initializer").TrimAll();
-                    }
-                    break;
-                case "variable":
-                    {
-                        String type = constantElement.Element("type").TrimAll();
-                        type = type.Replace("const", String.Empty).Trim();
+			switch (kind) {
+			case "define":
+				{
+					constantEntity.Type = "MISSING";
+					constantEntity.Static = true;
+					constantEntity.Value = constantElement.Element ("initializer").TrimAll ();
+				}
+				break;
+			case "variable":
+				{
+					String type = constantElement.Element ("type").TrimAll ();
+					type = type.Replace ("const", String.Empty).Trim ();
 
-                        bool isOut, isByRef, isBlock;
-                        constantEntity.Type = this.TypeManager.ConvertType(type, out isOut, out isByRef, out isBlock);
-                    }
-                    break;
-            }
+					bool isOut, isByRef, isBlock;
+					constantEntity.Type = this.TypeManager.ConvertType (type, out isOut, out isByRef, out isBlock, this.Logger);
+				}
+				break;
+			}
 
-            /*
+			/*
             // Get the availability
             if (availabilityElement != null)
             {
@@ -103,7 +102,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
             }
              */
 
-            return constantEntity;
-        }
-    }
+			return constantEntity;
+		}
+	}
 }

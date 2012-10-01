@@ -18,12 +18,12 @@
 using System;
 using System.Xml.Serialization;
 
-namespace Monobjc.Tools.Generator.Model.Entities
+namespace Monobjc.Tools.Generator.Model
 {
     /// <summary>
     ///   Represents the model for a structure.
     /// </summary>
     [Serializable]
     [XmlRoot("Structure")]
-    public class StructureEntity : TypedEntity {}
+    public partial class StructureEntity : TypedEntity {}
 }

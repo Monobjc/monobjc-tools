@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="GameKit" usings="Foundation,AppKit" assembly="Monobjc.GameKit" source="DocSet">
+	<Types>
+		<Type name="GameKitFramework.Constants">
+			<File>GameKit/Reference/GameKit_ConstantsRef/Reference/reference.html</File>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="GKAchievement">
+			<File>GameKit/Reference/GKAchievement_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKAchievementDescription">
+			<File>GameKit/Reference/GKAchievementDescription_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKAchievementViewController">
+			<File>GameKit/Reference/GKAchievementViewController_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKDialogController">
+			<File>GameKit/Reference/GKDialogController_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKFriendRequestComposeViewController">
+			<File>GameKit/Reference/GKFriendRequestComposeViewController_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKInvite">
+			<File>GameKit/Reference/GKInvite_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKLeaderboard">
+			<File>GameKit/Reference/GKLeaderboard_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKLeaderboardViewController">
+			<File>GameKit/Reference/GKLeaderboardViewController_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKLocalPlayer">
+			<File>GameKit/Reference/GKLocalPlayer_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKMatch">
+			<File>GameKit/Reference/GKMatch_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKMatchmaker">
+			<File>GameKit/Reference/GKMatchmaker_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKMatchmakerViewController">
+			<File>GameKit/Reference/GKMatchmakerViewController_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKMatchRequest">
+			<File>GameKit/Reference/GKMatchRequest_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKNotificationBanner">
+			<File>GameKit/Reference/GKNotificationBanner_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKPlayer">
+			<File>GameKit/Reference/GKPlayer_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKScore">
+			<File>GameKit/Reference/GKScore_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKTurnBasedEventHandler">
+			<File>GameKit/Reference/GKTurnBasedEventHandler_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKTurnBasedMatch">
+			<File>GameKit/Reference/GKTurnBasedMatch_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKTurnBasedMatchmakerViewController">
+			<File>GameKit/Reference/GKTurnBasedMatchmakerViewController_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKTurnBasedParticipant">
+			<File>GameKit/Reference/GKTurnBasedParticipant_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKVoiceChat">
+			<File>GameKit/Reference/GKVoiceChat_Ref/Reference/Reference.html</File>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="GKAchievementViewControllerDelegate">
+			<File>GameKit/Reference/GKAchievementViewControllerDelegate_Ref/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="GKAchievementViewController"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="GKFriendRequestComposeViewControllerDelegate">
+			<File>GameKit/Reference/GKFriendRequestComposeViewControllerDelegate_Ref/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="GKFriendRequestComposeViewController"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="GKLeaderboardViewControllerDelegate">
+			<File>GameKit/Reference/GKLeaderboardViewControllerDelegate_Ref/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="GKLeaderboardViewController"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="GKMatchDelegate">
+			<File>GameKit/Reference/GKMatchDelegate_Ref/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="GKMatch"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="GKMatchmakerViewControllerDelegate">
+			<File>GameKit/Reference/GKMatchmakerViewControllerDelegate_Ref/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="GKMatchmakerViewController"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="GKTurnBasedEventHandlerDelegate">
+			<File>GameKit/Reference/GKTurnBasedEventHandlerDelegate_Ref/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="GKTurnBasedEventHandler"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="GKTurnBasedMatchmakerViewControllerDelegate">
+			<File>GameKit/Reference/GKTurnBasedMatchmakerViewControllerDelegate_Ref/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="GKTurnBasedMatchmakerViewController"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

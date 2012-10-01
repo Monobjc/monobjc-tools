@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="Growl" usings="Foundation,AppKit" assembly="Monobjc.Growl" source="Doxygen" style="Doxygen" path="/Library/Frameworks/Growl.framework/Headers">
+	<Classes>
+		<Class name="GrowlApplicationBridge">
+			<Patch type="Model">
+				<Change><![CDATA[Properties["GrowlDelegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="GrowlDefines_Definitions">
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor=GrowlApplicationBridge]]></Change>
+				<Change><![CDATA[Constants[XSTR"].Generate=false]]></Change>
+				<Change><![CDATA[Constants[STRING_TYPE"].Generate=false]]></Change>
+				<Change><![CDATA[Constants[GROWL_APP_NAME"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_APP_ID"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_APP_ICON"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_NOTIFICATIONS_DEFAULT"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_NOTIFICATIONS_ALL"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_NOTIFICATIONS_HUMAN_READABLE_NAMES"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_NOTIFICATIONS_DESCRIPTIONS"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_TICKET_VERSION"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_NOTIFICATION_NAME"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_NOTIFICATION_TITLE"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_NOTIFICATION_DESCRIPTION"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_NOTIFICATION_ICON"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_NOTIFICATION_APP_ICON"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_NOTIFICATION_PRIORITY"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_NOTIFICATION_STICKY"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_NOTIFICATION_CLICK_CONTEXT"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_DISPLAY_PLUGIN"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_NOTIFICATION_IDENTIFIER"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_APP_PID"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_NOTIFICATION_PROGRESS"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_APP_REGISTRATION"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_APP_REGISTRATION_CONF"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_NOTIFICATION"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_SHUTDOWN"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_PING"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_PONG"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_IS_READY"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_NOTIFICATION_CLICKED"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_NOTIFICATION_TIMED_OUT"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_KEY_CLICKED_CONTEXT"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_REG_DICT_EXTENSION"].Type="NSString"]]></Change>
+				<Change><![CDATA[Constants[GROWL_POSITION_PREFERENCE_KEY"].Type="NSString"]]></Change>
+			</Patch>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="GrowlApplicationBridgeDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor=GrowlApplicationBridge]]></Change>
+				<Change><![CDATA[DelegateProperty=GrowlDelegate]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="GrowlApplicationBridgeInstallationDelegate">
+		</Protocol>
+	</Protocols>
+</Framework>

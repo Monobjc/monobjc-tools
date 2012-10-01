@@ -22,7 +22,7 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
@@ -37,12 +37,11 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
         /// </summary>
         /// <param name = "settings">The settings.</param>
         /// <param name = "typeManager">The type manager.</param>
-        public XhtmlDoxygenTypeParser(NameValueCollection settings, TypeManager typeManager)
-            : base(settings, typeManager)
+		public XhtmlDoxygenTypeParser(NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger)
         {
-            this.ConstantParser = new XhtmlDoxygenConstantParser(settings, typeManager);
-            this.EnumerationParser = new XhtmlDoxygenEnumerationParser(settings, typeManager);
-            this.FunctionParser = new XhtmlDoxygenFunctionParser(settings, typeManager);
+            this.ConstantParser = new XhtmlDoxygenConstantParser(settings, typeManager, logger);
+            this.EnumerationParser = new XhtmlDoxygenEnumerationParser(settings, typeManager, logger);
+            this.FunctionParser = new XhtmlDoxygenFunctionParser(settings, typeManager, logger);
         }
 
         /// <summary>
@@ -136,7 +135,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
                     }
                     else
                     {
-                        Console.WriteLine("MISSING marker for function " + name);
+                        this.Logger.WriteLine("MISSING marker for function " + name);
                     }
                 }
             }
@@ -156,7 +155,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
                                                 select el);
             foreach (XElement memberDef in memberDefs)
             {
-                ConstantEntity constantEntity = this.ConstantParser.Parse(memberDef);
+				ConstantEntity constantEntity = this.ConstantParser.Parse(typedEntity, memberDef);
                 typedEntity.Constants.Add(constantEntity);
             }
         }
@@ -173,7 +172,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
                                                 select el);
             foreach (XElement memberDef in memberDefs)
             {
-                EnumerationEntity enumerationEntity = this.EnumerationParser.Parse(memberDef);
+				EnumerationEntity enumerationEntity = this.EnumerationParser.Parse(typedEntity, memberDef);
                 typedEntity.Enumerations.Add(enumerationEntity);
             }
         }

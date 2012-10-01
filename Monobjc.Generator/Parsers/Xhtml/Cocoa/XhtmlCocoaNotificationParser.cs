@@ -20,7 +20,7 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
@@ -35,7 +35,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
         /// </summary>
         /// <param name = "settings">The settings.</param>
         /// <param name = "typeManager">The type manager.</param>
-        public XhtmlCocoaNotificationParser(NameValueCollection settings, TypeManager typeManager) : base(settings, typeManager) {}
+		public XhtmlCocoaNotificationParser(NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger) {}
 
         /// <summary>
         ///   Parses the specified entity.
@@ -52,7 +52,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
         /// </summary>
         /// <param name = "notificationElement">The notification element.</param>
         /// <returns></returns>
-        public ConstantEntity Parse(XElement notificationElement)
+		public ConstantEntity Parse(TypedEntity typedEntity, XElement notificationElement)
         {
             ConstantEntity notificationEntity = new ConstantEntity();
             notificationEntity.Type = "NSString";
@@ -60,7 +60,9 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
             // Get the name
             notificationEntity.Name = notificationElement.TrimAll();
 
-            // Get the content and the discussion
+			this.Logger.WriteLine("  Notification '" + notificationEntity.Name + "'");
+
+			// Get the content and the discussion
             XElement summaryElement = (from el in notificationElement.ElementsAfterSelf("section")
                                        where (String) el.Attribute("class") == "spaceabove"
                                        select el).FirstOrDefault();

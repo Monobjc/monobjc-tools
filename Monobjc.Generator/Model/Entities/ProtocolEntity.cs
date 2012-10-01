@@ -18,34 +18,61 @@
 using System;
 using System.Xml.Serialization;
 
-namespace Monobjc.Tools.Generator.Model.Entities
+namespace Monobjc.Tools.Generator.Model
 {
-    /// <summary>
-    ///   Represents the model for a protocol.
-    /// </summary>
-    [Serializable]
-    [XmlRoot("Protocol")]
-    public class ProtocolEntity : ClassEntity
-    {
-        /// <summary>
-        ///   Gets or sets the class owner.
-        /// </summary>
-        /// <value>The class owner.</value>
-        [XmlElement("DelegateFor")]
-        public String DelegateFor { get; set; }
+	/// <summary>
+	///   Represents the model for a protocol.
+	/// </summary>
+	[Serializable]
+	[XmlRoot("Protocol")]
+	public partial class ProtocolEntity : ClassEntity
+	{
 
-        /// <summary>
-        ///   Gets or sets the delegate property.
-        /// </summary>
-        /// <value>The delegate property.</value>
-        [XmlElement("DelegateProperty")]
-        public String DelegateProperty { get; set; }
+		/// <summary>
+		///   Gets or sets the class owner.
+		/// </summary>
+		/// <value>The class owner.</value>
+		[XmlElement ("DelegateFor")]
+		public String DelegateFor {
+			get;
+			set;
+		}
 
-        /// <summary>
-        ///   Gets or sets the delegate owner.
-        /// </summary>
-        /// <value>The delegate owner.</value>
-        [XmlIgnore]
-        public ClassEntity DelegatorEntity { get; set; }
-    }
+		/// <summary>
+		///   Gets or sets the delegate property.
+		/// </summary>
+		/// <value>The delegate property.</value>
+		[XmlElement ("DelegateProperty")]
+		public String DelegateProperty {
+			get;
+			set;
+		}
+
+		/// <summary>
+		///   Gets or sets the delegate owner.
+		/// </summary>
+		/// <value>The delegate owner.</value>
+		[XmlIgnore]
+		public ClassEntity DelegatorEntity {
+			get;
+			set;
+		}
+
+		/// <summary>
+		///   Serves as a hash function for a particular type.
+		/// </summary>
+		/// <returns>
+		///   A hash code for the current <see cref = "T:System.Object" />.
+		/// </returns>
+		/// <filterpriority>2</filterpriority>
+		public override int GetHashCode ()
+		{
+			unchecked {
+				int hash = base.GetHashCode();
+				hash = hash * 23 + (this.DelegateFor != null ? this.DelegateFor.GetHashCode () : 0);
+				hash = hash * 23 + (this.DelegateProperty != null ? this.DelegateProperty.GetHashCode () : 0);
+				return hash;
+			}
+		}
+	}
 }

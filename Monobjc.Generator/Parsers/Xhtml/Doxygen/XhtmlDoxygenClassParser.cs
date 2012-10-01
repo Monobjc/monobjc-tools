@@ -22,181 +22,164 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
 {
-    /// <summary>
-    ///   XHTML parser dedicated to classes and protocols.
-    /// </summary>
-    public class XhtmlDoxygenClassParser : XhtmlDoxygenTypeParser, IXhtmlClassParser
-    {
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "XhtmlDoxygenClassParser" /> class.
-        /// </summary>
-        /// <param name = "settings">The settings.</param>
-        /// <param name = "typeManager">The type manager.</param>
-        public XhtmlDoxygenClassParser(NameValueCollection settings, TypeManager typeManager)
-            : base(settings, typeManager)
-        {
-            this.MethodParser = new XhtmlDoxygenMethodParser(settings, typeManager);
-            this.PropertyParser = new XhtmlDoxygenPropertyParser(settings, typeManager);
-        }
+	/// <summary>
+	///   XHTML parser dedicated to classes and protocols.
+	/// </summary>
+	public class XhtmlDoxygenClassParser : XhtmlDoxygenTypeParser, IXhtmlClassParser
+	{
+		/// <summary>
+		///   Initializes a new instance of the <see cref = "XhtmlDoxygenClassParser" /> class.
+		/// </summary>
+		/// <param name = "settings">The settings.</param>
+		/// <param name = "typeManager">The type manager.</param>
+		public XhtmlDoxygenClassParser (NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger)
+		{
+			this.MethodParser = new XhtmlDoxygenMethodParser (settings, typeManager, logger);
+			this.PropertyParser = new XhtmlDoxygenPropertyParser (settings, typeManager, logger);
+		}
 
-        /// <summary>
-        ///   Gets or sets the method parser.
-        /// </summary>
-        /// <value>The method parser.</value>
-        protected XhtmlDoxygenMethodParser MethodParser { get; private set; }
+		/// <summary>
+		///   Gets or sets the method parser.
+		/// </summary>
+		/// <value>The method parser.</value>
+		protected XhtmlDoxygenMethodParser MethodParser { get; private set; }
 
-        /// <summary>
-        ///   Gets or sets the property parser.
-        /// </summary>
-        /// <value>The property parser.</value>
-        protected XhtmlDoxygenPropertyParser PropertyParser { get; private set; }
+		/// <summary>
+		///   Gets or sets the property parser.
+		/// </summary>
+		/// <value>The property parser.</value>
+		protected XhtmlDoxygenPropertyParser PropertyParser { get; private set; }
 
-        /// <summary>
-        ///   Parses the specified entity.
-        /// </summary>
-        /// <param name = "entity">The entity.</param>
-        /// <param name = "reader">The reader.</param>
-        public override void Parse(BaseEntity entity, TextReader reader)
-        {
-            ClassEntity classEntity = (ClassEntity) entity;
-            if (classEntity == null)
-            {
-                throw new ArgumentException("ClassEntity expected", "entity");
-            }
+		/// <summary>
+		///   Parses the specified entity.
+		/// </summary>
+		/// <param name = "entity">The entity.</param>
+		/// <param name = "reader">The reader.</param>
+		public override void Parse (BaseEntity entity, TextReader reader)
+		{
+			ClassEntity classEntity = (ClassEntity)entity;
+			if (classEntity == null) {
+				throw new ArgumentException ("ClassEntity expected", "entity");
+			}
 
-            using (XmlTextReader xmlTextReader = new XmlTextReader(reader))
-            {
-                XElement root = XElement.Load(xmlTextReader);
+			using (XmlTextReader xmlTextReader = new XmlTextReader(reader)) {
+				XElement root = XElement.Load (xmlTextReader);
 
-                // Extract inheritance
-                IEnumerable<String> conformsElements = (from el in root.Descendants("basecompoundref")
-                                                        select el.TrimAll());
-                List<String> protocols = new List<string>();
-                foreach (string conformsElement in conformsElements)
-                {
-                    if (conformsElement.StartsWith("<"))
-                    {
-                        String protocol = conformsElement.Trim('<', '>');
-                        if (protocol.EndsWith("-p"))
-                        {
-                            protocol = protocol.Replace("-p", String.Empty);
-                        }
-                        protocols.Add(protocol);
-                    }
-                    else
-                    {
-                        classEntity.BaseType = conformsElement.Trim();
-                    }
-                }
+				// Extract inheritance
+				IEnumerable<String> conformsElements = (from el in root.Descendants ("basecompoundref")
+                                                        select el.TrimAll ());
+				List<String> protocols = new List<string> ();
+				foreach (string conformsElement in conformsElements) {
+					if (conformsElement.StartsWith ("<")) {
+						String protocol = conformsElement.Trim ('<', '>');
+						if (protocol.EndsWith ("-p")) {
+							protocol = protocol.Replace ("-p", String.Empty);
+						}
+						protocols.Add (protocol);
+					} else {
+						classEntity.BaseType = conformsElement.Trim ();
+					}
+				}
 
-                if (!(classEntity is ProtocolEntity) && String.IsNullOrEmpty(classEntity.BaseType))
-                {
-                    classEntity.BaseType = "NSObject";
-                }
-                classEntity.ConformsTo = String.Join(",", protocols.Distinct().ToArray());
+				if (!(classEntity is ProtocolEntity) && String.IsNullOrEmpty (classEntity.BaseType)) {
+					classEntity.BaseType = "NSObject";
+				}
+				classEntity.ConformsTo = String.Join (",", protocols.Distinct ().ToArray ());
 
-                // Functions
-                this.ExtractFunctions(classEntity, root);
+				// Functions
+				this.ExtractFunctions (classEntity, root);
 
-                // Methods
-                this.ExtractMethods(classEntity, root);
+				// Methods
+				this.ExtractMethods (classEntity, root);
 
-                // Properties
-                this.ExtractProperties(classEntity, root);
+				// Properties
+				this.ExtractProperties (classEntity, root);
 
-                // Constants
-                this.ExtractConstants(classEntity, root);
+				// Constants
+				this.ExtractConstants (classEntity, root);
 
-                // Enumerations
-                this.ExtractEnumerations(classEntity, root);
-            }
+				// Enumerations
+				this.ExtractEnumerations (classEntity, root);
+			}
 
-            // Extract getter and search for setter
-            List<String> notGetterMethods = this.Settings["NotGetterMethods"].Split(',').ToList();
-            List<MethodEntity> methodModels = new List<MethodEntity>(classEntity.Methods);
-            foreach (MethodEntity methodModel in methodModels)
-            {
-                if (notGetterMethods.Contains(methodModel.Name) || !methodModel.IsGetter)
-                {
-                    continue;
-                }
+			// Extract getter and search for setter
+			List<String> notGetterMethods = this.Settings ["NotGetterMethods"].Split (new []{','}, StringSplitOptions.RemoveEmptyEntries).ToList ();
+			List<MethodEntity> methodModels = new List<MethodEntity> (classEntity.Methods);
+			foreach (MethodEntity methodModel in methodModels) {
+				if (notGetterMethods.Contains (methodModel.Name) || !methodModel.IsGetter) {
+					continue;
+				}
 
-                classEntity.Methods.Remove(methodModel);
-                MethodEntity getter = methodModel;
+				classEntity.Methods.Remove (methodModel);
+				MethodEntity getter = methodModel;
 
-                MethodEntity setter = classEntity.Methods.Find(m => String.Equals("Set" + getter.Name, m.Name) && String.Equals(m.ReturnType, "void"));
-                if (setter == null)
-                {
-                    setter = classEntity.Methods.Find(m => m.IsSetterFor(getter));
-                }
-                if (setter != null)
-                {
-                    classEntity.Methods.Remove(setter);
-                }
+				MethodEntity setter = classEntity.Methods.Find (m => String.Equals ("Set" + getter.Name, m.Name) && String.Equals (m.ReturnType, "void"));
+				if (setter == null) {
+					setter = classEntity.Methods.Find (m => m.IsSetterFor (getter));
+				}
+				if (setter != null) {
+					classEntity.Methods.Remove (setter);
+				}
 
-                Console.WriteLine("Converting " + getter.Name + " to property");
+				this.Logger.WriteLine ("Converting " + getter.Name + " to property");
 
-                PropertyEntity property = new PropertyEntity();
-                property.Name = getter.Name;
-                property.Type = getter.ReturnType;
-                property.Summary = getter.Summary;
-                property.MinAvailability = getter.MinAvailability;
-                property.Static = getter.Static;
-                property.Getter = getter;
-                property.Setter = setter;
+				PropertyEntity property = new PropertyEntity ();
+				property.Name = getter.Name;
+				property.Type = getter.ReturnType;
+				property.Summary = getter.Summary;
+				property.MinAvailability = getter.MinAvailability;
+				property.Static = getter.Static;
+				property.Getter = getter;
+				property.Setter = setter;
 
-                classEntity.Properties.Add(property);
-            }
+				classEntity.Properties.Add (property);
+			}
 
-            // Ensure that availability is set on entity.
-            entity.AdjustAvailability();
-        }
+			// Ensure that availability is set on entity.
+			entity.AdjustAvailability ();
+		}
 
-        protected void ExtractProperties(ClassEntity classEntity, XElement root)
-        {
-            // Extract name
-            String compoundname = (from el in root.Descendants("compoundname")
-                                   select el.TrimAll()).FirstOrDefault();
+		protected void ExtractProperties (ClassEntity classEntity, XElement root)
+		{
+			// Extract name
+			String compoundname = (from el in root.Descendants ("compoundname")
+                                   select el.TrimAll ()).FirstOrDefault ();
 
-            IEnumerable<XElement> memberDefs = (from el in root.Descendants("memberdef")
-                                                where el.Attribute("kind").Value == "property"
+			IEnumerable<XElement> memberDefs = (from el in root.Descendants ("memberdef")
+                                                where el.Attribute ("kind").Value == "property"
                                                 select el);
-            foreach (XElement memberDef in memberDefs)
-            {
-                String definition = memberDef.Element("definition").TrimAll();
-                if (!definition.Contains(compoundname + "::"))
-                {
-                    continue;
-                }
-                PropertyEntity propertyEntity = this.PropertyParser.Parse(memberDef);
-                classEntity.Properties.Add(propertyEntity);
-            }
-        }
+			foreach (XElement memberDef in memberDefs) {
+				String definition = memberDef.Element ("definition").TrimAll ();
+				if (!definition.Contains (compoundname + "::")) {
+					continue;
+				}
+				PropertyEntity propertyEntity = this.PropertyParser.Parse (classEntity, memberDef);
+				classEntity.Properties.Add (propertyEntity);
+			}
+		}
 
-        protected void ExtractMethods(ClassEntity classEntity, XElement root)
-        {
-            // Extract name
-            String compoundname = (from el in root.Descendants("compoundname")
-                                   select el.TrimAll()).FirstOrDefault();
+		protected void ExtractMethods (ClassEntity classEntity, XElement root)
+		{
+			// Extract name
+			String compoundname = (from el in root.Descendants ("compoundname")
+                                   select el.TrimAll ()).FirstOrDefault ();
 
-            IEnumerable<XElement> memberDefs = (from el in root.Descendants("memberdef")
-                                                where el.Attribute("kind").Value == "function"
+			IEnumerable<XElement> memberDefs = (from el in root.Descendants ("memberdef")
+                                                where el.Attribute ("kind").Value == "function"
                                                 select el);
-            foreach (XElement memberDef in memberDefs)
-            {
-                String definition = memberDef.Element("definition").TrimAll();
-                if (!definition.Contains(compoundname + "::"))
-                {
-                    continue;
-                }
-                MethodEntity methodEntity = this.MethodParser.Parse(memberDef);
-                classEntity.Methods.Add(methodEntity);
-            }
-        }
-    }
+			foreach (XElement memberDef in memberDefs) {
+				String definition = memberDef.Element ("definition").TrimAll ();
+				if (!definition.Contains (compoundname + "::")) {
+					continue;
+				}
+				MethodEntity methodEntity = this.MethodParser.Parse (classEntity, memberDef);
+				classEntity.Methods.Add (methodEntity);
+			}
+		}
+	}
 }

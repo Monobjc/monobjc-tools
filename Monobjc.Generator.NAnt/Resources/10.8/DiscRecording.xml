@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="DiscRecording" usings="Foundation" assembly="Monobjc.DiscRecording" source="DocSet">
+	<Types>
+		<Type name="DRBurn_Header">
+			<File>DiscRecording/Reference/DRBurn_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRCDText_Header">
+			<File>DiscRecording/Reference/DRCDText_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRContentFile_Header">
+			<File>DiscRecording/Reference/DRContentFile_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRContentFolder_Header">
+			<File>DiscRecording/Reference/DRContentFolder_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRContentObject_Header">
+			<File>DiscRecording/Reference/DRContentObject_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRContentProperties_Header">
+			<File>DiscRecording/Reference/DRContentProperties_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRContentTrack_Header">
+			<File>DiscRecording/Reference/DRContentTrack_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRCoreBurn_Header">
+			<File>DiscRecording/Reference/DRCoreBurn_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRCoreCDText_Header">
+			<File>DiscRecording/Reference/DRCoreCDText_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRCoreDevice_Header">
+			<File>DiscRecording/Reference/DRCoreDevice_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRCoreErase_Header">
+			<File>DiscRecording/Reference/DRCoreErase_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRCoreErrors_Header">
+			<File>DiscRecording/Reference/DRCoreErrors_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRCoreNotifications_Header">
+			<File>DiscRecording/Reference/DRCoreNotifications_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRCoreObject_Header">
+			<File>DiscRecording/Reference/DRCoreObject_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRCoreStatus_Header">
+			<File>DiscRecording/Reference/DRCoreStatus_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRCoreTrack_Header">
+			<File>DiscRecording/Reference/DRCoreTrack_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRDevice_Header">
+			<File>DiscRecording/Reference/DRDevice_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRErase_Header">
+			<File>DiscRecording/Reference/DRErase_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRFile_Header">
+			<File>DiscRecording/Reference/DRFile_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRFSObject_Header">
+			<File>DiscRecording/Reference/DRFSObject_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRStatus_Header">
+			<File>DiscRecording/Reference/DRStatus_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRTrack_Header">
+			<File>DiscRecording/Reference/DRTrack_header_reference/Reference/reference.html</File>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="DRBurn">
+			<File>DiscRecording/Reference/DRBurn_reference/translated_content/DRBurn.html</File>
+		</Class>
+		<Class name="DRBurn_ImageContentCreation">
+			<File>DiscRecording/Reference/DRBurnImageContentCreation_reference/translated_content/DRBurn(ImageContentCreation).html</File>
+		</Class>
+		<Class name="DRBurn_PropertyConvenienceMethods">
+			<File>DiscRecording/Reference/DRBurnPropertyConvenienceMethods_reference/translated_content/DRBurn(PropertyConvenienceMethods).html</File>
+		</Class>
+		<Class name="DRCDTextBlock">
+			<File>DiscRecording/Reference/DRCDTextBlock_reference/translated_content/DRCDTextBlock.html</File>
+		</Class>
+		<Class name="DRCDTextBlock_PropertyConvenienceMethods">
+			<File>DiscRecording/Reference/DRCDTextBlockPropertyConvenienceMethods_reference/translated_content/DRCDTextBlock(PropertyConvenienceMethods).html</File>
+		</Class>
+		<Class name="DRDevice">
+			<File>DiscRecording/Reference/DRDevice_reference/translated_content/DRDevice.html</File>
+		</Class>
+		<Class name="DRDevice_InfoConvenience">
+			<File>DiscRecording/Reference/DRDeviceInfoConvenience_reference/translated_content/DRDevice(InfoConvenience).html</File>
+		</Class>
+		<Class name="DRDevice_StatusConvenience">
+			<File>DiscRecording/Reference/DRDeviceStatusConvenience_reference/translated_content/DRDevice(StatusConvenience).html</File>
+		</Class>
+		<Class name="DRErase">
+			<File>DiscRecording/Reference/DRErase_reference/translated_content/DRErase.html</File>
+		</Class>
+		<Class name="DRErase_PropertyConvenienceMethods">
+			<File>DiscRecording/Reference/DRErasePropertyConvenienceMethods_reference/translated_content/DRErase(PropertyConvenienceMethods).html</File>
+		</Class>
+		<Class name="DRFile">
+			<File>DiscRecording/Reference/DRFile_reference/translated_content/DRFile.html</File>
+		</Class>
+		<Class name="DRFile_VirtualFiles">
+			<File>DiscRecording/Reference/DRFileVirtualFiles_reference/translated_content/DRFile(VirtualFiles).html</File>
+		</Class>
+		<Class name="DRFile_VirtualLinks">
+			<File>DiscRecording/Reference/DRFileVirtualLinks_reference/translated_content/DRFile(VirtualLinks).html</File>
+		</Class>
+		<Class name="DRFolder">
+			<File>DiscRecording/Reference/DRFolder_reference/translated_content/DRFolder.html</File>
+		</Class>
+		<Class name="DRFolder_VirtualFolders">
+			<File>DiscRecording/Reference/DRFolderVirtualFolders_reference/translated_content/DRFolder(VirtualFolders).html</File>
+		</Class>
+		<Class name="DRFSObject">
+			<File>DiscRecording/Reference/DRFSObject_reference/translated_content/DRFSObject.html</File>
+		</Class>
+		<Class name="DRMSF">
+			<File>DiscRecording/Reference/DRMSF_reference/translated_content/DRMSF.html</File>
+		</Class>
+		<Class name="DRMSFFormatter">
+			<File>DiscRecording/Reference/DRMSFFormatter_reference/translated_content/DRMSFFormatter.html</File>
+		</Class>
+		<Class name="DRNotificationCenter">
+			<File>DiscRecording/Reference/DRNotificationCenter_reference/translated_content/DRNotificationCenter.html</File>
+		</Class>
+		<Class name="DRTrack">
+			<File>DiscRecording/Reference/DRTrack_reference/translated_content/DRTrack.html</File>
+		</Class>
+		<Class name="DRTrack_AudioContentCreation">
+			<File>DiscRecording/Reference/DRTrackAudioContentCreation_reference/translated_content/DRTrack(AudioContentCreation).html</File>
+		</Class>
+		<Class name="DRTrack_DataContentCreation">
+			<File>DiscRecording/Reference/DRTrackDataContentCreation_reference/translated_content/DRTrack(DataContentCreation).html</File>
+		</Class>
+		<Class name="DRTrack_PropertyConvenience">
+			<File>DiscRecording/Reference/DRTrackPropertyConvenience_reference/translated_content/DRTrack(PropertyConvenience).html</File>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="DRFileDataProduction">
+			<File>DiscRecording/Reference/DRFileDataProduction_reference/translated_content/DRFileDataProduction.html</File>
+		</Protocol>
+		<Protocol name="DRTrackDataProduction">
+			<File>DiscRecording/Reference/DRTrackDataProduction_reference/translated_content/DRTrackDataProduction.html</File>
+		</Protocol>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

@@ -18,114 +18,100 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.IO;
 using ICSharpCode.NRefactory;
 using ICSharpCode.NRefactory.Ast;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Parsers.CodeDom.Utilities;
 using Monobjc.Tools.Generator.Utilities;
 using Attribute = ICSharpCode.NRefactory.Ast.Attribute;
 
 namespace Monobjc.Tools.Generator.Parsers.CodeDom
 {
-    /// <summary>
-    ///   Base class for code DOM parsing.
-    /// </summary>
-    public abstract class CodeDomBaseParser : BaseParser
-    {
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "CodeDomBaseParser" /> class.
-        /// </summary>
-        /// <param name = "settings">The settings.</param>
-        /// <param name = "typeManager">The type manager.</param>
-        protected CodeDomBaseParser(NameValueCollection settings, TypeManager typeManager) : base(settings, typeManager) {}
+	/// <summary>
+	///   Base class for code DOM parsing.
+	/// </summary>
+	public abstract class CodeDomBaseParser : BaseParser
+	{
+		/// <summary>
+		///   Initializes a new instance of the <see cref = "CodeDomBaseParser" /> class.
+		/// </summary>
+		/// <param name = "settings">The settings.</param>
+		/// <param name = "typeManager">The type manager.</param>
+		protected CodeDomBaseParser (NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger)
+		{
+		}
 
-        /// <summary>
-        ///   Gets or sets the code DOM special parser.
-        /// </summary>
-        /// <value>The code DOM special parser.</value>
-        protected CodeDomSpecialParser CodeDomSpecialParser { get; set; }
+		/// <summary>
+		///   Gets or sets the code DOM special parser.
+		/// </summary>
+		/// <value>The code DOM special parser.</value>
+		protected CodeDomSpecialParser CodeDomSpecialParser { get; set; }
 
-        /// <summary>
-        ///   Appends the comment.
-        /// </summary>
-        /// <param name = "node">The node.</param>
-        protected IEnumerable<Comment> GetDocumentationCommentsBefore(INode node)
-        {
-            return this.CodeDomSpecialParser.GetDocumentationCommentsBefore(node);
-        }
+		/// <summary>
+		///   Appends the comment.
+		/// </summary>
+		/// <param name = "node">The node.</param>
+		protected IEnumerable<Comment> GetDocumentationCommentsBefore (INode node)
+		{
+			return this.CodeDomSpecialParser.GetDocumentationCommentsBefore (node);
+		}
 
-        /// <summary>
-        ///   Appends the comment.
-        /// </summary>
-        /// <param name = "entity">The entity.</param>
-        /// <param name = "node">The node.</param>
-        /// <param name = "comments">The comments.</param>
-        protected static void AppendComment(BaseEntity entity, IEnumerable<Comment> comments)
-        {
-            foreach (Comment comment in comments)
-            {
-                String c = comment.CommentText.Trim();
-                if (CommentHelper.IsSummary(c))
-                {
-                    continue;
-                }
-                if (CommentHelper.IsAvailability(c))
-                {
-                    String str = c;
-                    foreach (String s in new[] {"<para>", "</para>", "&lt;para&gt;", "&lt;/para&gt;"})
-                    {
-                        str = str.Replace(s, String.Empty);
-                    }
-                    entity.MinAvailability = CommentHelper.ExtractAvailability(str.Trim());
-                }
-                else if (CommentHelper.IsParameter(c) || CommentHelper.IsReturn(c) || CommentHelper.IsSignature(c))
-                {
-                    // Do nothing
-                }
-                else if (CommentHelper.IsParagraph(c))
-                {
-                    String str = c;
-                    foreach (String s in new[] {"<para>", "</para>", "&lt;para&gt;", "&lt;/para&gt;"})
-                    {
-                        str = str.Replace(s, String.Empty);
-                    }
-                    entity.Summary.Add(str.Trim());
-                }
-                else if (CommentHelper.IsRemarks(c))
-                {
-                    String str = c;
-                    foreach (String s in new[] {"<remarks>", "</remarks>", "&lt;remarks&gt;", "&lt;/remarks&gt;"})
-                    {
-                        str = str.Replace(s, String.Empty);
-                    }
-                    entity.Summary.Add(str.Trim());
-                }
-                else
-                {
-                    entity.Summary.Add(c);
-                }
-            }
-        }
+		/// <summary>
+		///   Appends the comment.
+		/// </summary>
+		/// <param name = "entity">The entity.</param>
+		/// <param name = "node">The node.</param>
+		/// <param name = "comments">The comments.</param>
+		protected static void AppendComment (BaseEntity entity, IEnumerable<Comment> comments)
+		{
+			foreach (Comment comment in comments) {
+				String c = comment.CommentText.Trim ();
+				if (CommentHelper.IsSummary (c)) {
+					continue;
+				}
+				if (CommentHelper.IsAvailability (c)) {
+					String str = c;
+					foreach (String s in new[] {"<para>", "</para>", "&lt;para&gt;", "&lt;/para&gt;"}) {
+						str = str.Replace (s, String.Empty);
+					}
+					entity.MinAvailability = CommentHelper.ExtractAvailability (str.Trim ());
+				} else if (CommentHelper.IsParameter (c) || CommentHelper.IsReturn (c) || CommentHelper.IsSignature (c)) {
+					// Do nothing
+				} else if (CommentHelper.IsParagraph (c)) {
+					String str = c;
+					foreach (String s in new[] {"<para>", "</para>", "&lt;para&gt;", "&lt;/para&gt;"}) {
+						str = str.Replace (s, String.Empty);
+					}
+					entity.Summary.Add (str.Trim ());
+				} else if (CommentHelper.IsRemarks (c)) {
+					String str = c;
+					foreach (String s in new[] {"<remarks>", "</remarks>", "&lt;remarks&gt;", "&lt;/remarks&gt;"}) {
+						str = str.Replace (s, String.Empty);
+					}
+					entity.Summary.Add (str.Trim ());
+				} else {
+					entity.Summary.Add (c);
+				}
+			}
+		}
 
-        /// <summary>
-        ///   Finds the attribute on the given node.
-        /// </summary>
-        /// <param name = "declaration">The declaration.</param>
-        /// <param name = "attributeName">Name of the attribute.</param>
-        /// <returns></returns>
-        protected static Attribute FindAttribute(AttributedNode declaration, String attributeName)
-        {
-            foreach (AttributeSection attributeSection in declaration.Attributes)
-            {
-                foreach (Attribute attribute in attributeSection.Attributes)
-                {
-                    if (String.Equals(attribute.Name, attributeName))
-                    {
-                        return attribute;
-                    }
-                }
-            }
-            return null;
-        }
-    }
+		/// <summary>
+		///   Finds the attribute on the given node.
+		/// </summary>
+		/// <param name = "declaration">The declaration.</param>
+		/// <param name = "attributeName">Name of the attribute.</param>
+		/// <returns></returns>
+		protected static Attribute FindAttribute (AttributedNode declaration, String attributeName)
+		{
+			foreach (AttributeSection attributeSection in declaration.Attributes) {
+				foreach (Attribute attribute in attributeSection.Attributes) {
+					if (String.Equals (attribute.Name, attributeName)) {
+						return attribute;
+					}
+				}
+			}
+			return null;
+		}
+	}
 }

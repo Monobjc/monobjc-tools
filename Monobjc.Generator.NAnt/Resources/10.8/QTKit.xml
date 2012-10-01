@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="QTKit" usings="Foundation,AppKit" assembly="Monobjc.QTKit" source="DocSet">
+	<Types>
+		<Type name="QTKitFramework.Constants">
+			<File>QuickTime/Reference/QTKitCaptureConstants_Ref/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Constants[QTErrorTimeKey"].MinAvailability="Mac OS X v10.6"]]></Change>
+				<Change><![CDATA[Constants[QTErrorFileSizeKey"].MinAvailability="Mac OS X v10.6"]]></Change>
+				<Change><![CDATA[Enumerations["QTKit_Error_Codes"].Name="QTKError"]]></Change>
+				<Change><![CDATA[Enumerations["QTKError"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["QTKError"].MinAvailability="Mac OS X v10.5"]]></Change>
+				<Change><![CDATA[Enumerations["QTKError"].Values[QTErrorMaximumNumberOfSamplesForFileFormatReached"].MinAvailability="Mac OS X v10.5"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="QTKitFramework.DataTypes">
+			<File>QuickTime/Reference/QTKitFramework/Miscellaneous/QTKit_DataTypes/Reference/reference.html</File>
+		</Type>
+		<Type name="QTKitFramework.Functions">
+			<File>QuickTime/Reference/QTKitFramework/Miscellaneous/QTKit_Functions/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["QTGetTimeInterval"].Parameters["timeInterval"].Type="double"]]></Change>
+				<Change><![CDATA[Functions["QTGetTimeInterval"].Parameters["timeInterval"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["QTGetTimeRecord"].Parameters["timeRecord"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["QTMakeTime"].Parameters["long"].Name="timeValue"]]></Change>
+				<Change><![CDATA[Functions["QTMakeTime"].Parameters["timeValue"].Type="long"]]></Change>
+				<Change><![CDATA[Functions["QTMakeTime"].Parameters["timeScale"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Functions["QTMakeTimeWithTimeInterval"].ReturnType="QTTime"]]></Change>
+				<Change><![CDATA[Functions["QTMakeTimeWithTimeRecord"].ReturnType="QTTime"]]></Change>
+				<Change><![CDATA[Functions["QTSMPTETimeCompare"].Parameters["otherTime"].Type="SMPTETime"]]></Change>
+				<Change><![CDATA[Functions["QTTimeFromString"].ReturnType="QTTime"]]></Change>
+			</Patch>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="NSCoder_QTKitAdditions">
+			<File>QuickTime/Reference/QTKitFramework/Classes/NSCoder_QTKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSCoder"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSValue_QTKitAdditions">
+			<File>QuickTime/Reference/QTKitFramework/Classes/NSValue_QTKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSValue"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="QTCaptureAudioPreviewOutput">
+			<File>QuickTime/Reference/QTCaptureAudioPreviewOutput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="QTCaptureConnection">
+			<File>QuickTime/Reference/QTCaptureConnection_Ref/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="QTCaptureDecompressedAudioOutput">
+			<File>QuickTime/Reference/QTCaptureDecompressedAudioOutput_Ref/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="QTCaptureDecompressedVideoOutput">
+			<File>QuickTime/Reference/QTCaptureDecompressedVideoOutput_Ref/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="QTCaptureDevice">
+			<File>QuickTime/Reference/QTCaptureDevice_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Enumerations"].Name="QTCaptureDeviceAVCTransportControl"]]></Change>
+				<Change><![CDATA[Enumerations["QTCaptureDeviceAVCTransportControl"].BaseType="int"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="QTCaptureDeviceInput">
+			<File>QuickTime/Reference/QTCaptureDeviceInput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="QTCaptureFileOutput">
+			<File>QuickTime/Reference/QTCaptureFileOutput_Ref/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="QTCaptureInput">
+			<File>QuickTime/Reference/QTCaptureInput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="QTCaptureLayer">
+			<File>QuickTime/Reference/QTCaptureLayer/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="QTCaptureMovieFileOutput">
+			<File>QuickTime/Reference/QTCaptureMovieFileOutput_Ref/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="QTCaptureOutput">
+			<File>QuickTime/Reference/QTCaptureOutput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="QTCaptureSession">
+			<File>QuickTime/Reference/QTCaptureSession_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="QTCaptureVideoPreviewOutput">
+			<File>QuickTime/Reference/QTCaptureVideoPreviewOutput_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="QTCaptureView">
+			<File>QuickTime/Reference/QTCaptureView_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="QTCompressionOptions">
+			<File>QuickTime/Reference/QTCompressionOptions_Ref/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["CompressionOptionsWithIdentifier"].ReturnType="QTCompressionOptions"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="QTDataReference">
+			<File>QuickTime/Reference/QTKitFramework/Classes/QTDataReference_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["DataReferenceWithDataRefType"].ReturnType="QTDataReference"]]></Change>
+				<Change><![CDATA[Methods["DataReferenceWithDataRefDataType"].ReturnType="QTDataReference"]]></Change>
+				<Change><![CDATA[Methods["DataReferenceWithReferenceToData"].ReturnType="QTDataReference"]]></Change>
+				<Change><![CDATA[Methods["DataReferenceWithReferenceToDataNameMIMEType"].ReturnType="QTDataReference"]]></Change>
+				<Change><![CDATA[Methods["DataReferenceWithReferenceToFile"].ReturnType="QTDataReference"]]></Change>
+				<Change><![CDATA[Methods["DataReferenceWithReferenceToURL"].ReturnType="QTDataReference"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="QTFormatDescription">
+			<File>QuickTime/Reference/QTFormatDescription_Ref/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="QTMedia">
+			<File>QuickTime/Reference/QTKitFramework/Classes/QTMedia_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["MediaWithQuickTimeMediaError"].ReturnType="QTMedia"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="QTMovie">
+			<File>QuickTime/Reference/QTKitFramework/Classes/QTMovie_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["InitToWritableDataReferenceError"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitToWritableFileError"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["MovieFileTypes"].Parameters["types"].Type="QTMovieFileTypeOptions"]]></Change>
+				<Change><![CDATA[Methods["MovieNamedError"].ReturnType="QTMovie"]]></Change>
+				<Change><![CDATA[Methods["MovieWithAttributesError"].ReturnType="QTMovie"]]></Change>
+				<Change><![CDATA[Methods["MovieWithDataError"].ReturnType="QTMovie"]]></Change>
+				<Change><![CDATA[Methods["MovieWithDataReferenceError"].ReturnType="QTMovie"]]></Change>
+				<Change><![CDATA[Methods["MovieWithFileError"].ReturnType="QTMovie"]]></Change>
+				<Change><![CDATA[Methods["MovieWithPasteboardError"].ReturnType="QTMovie"]]></Change>
+				<Change><![CDATA[Methods["MovieWithQuickTimeMovieDisposeWhenDoneError"].ReturnType="QTMovie"]]></Change>
+				<Change><![CDATA[Methods["MovieWithURLError"].ReturnType="QTMovie"]]></Change>
+				<Change><![CDATA[Methods["MovieWithTimeRangeError"].ReturnType="QTMovie"]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["Movie"].Type="QTMovie"]]></Change>
+				<Change><![CDATA[Properties["Movie"].Getter.ReturnType="QTMovie"]]></Change>
+				<Change><![CDATA[Enumerations["QTMovieFileTypeOptions"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["QTMovieLoadState"].Values[QTMovieLoadStateError"].Value=-1]]></Change>
+				<Change><![CDATA[Enumerations["QTMovieLoadState"].Values[QTMovieLoadStateComplete"].Value=100000]]></Change>
+			</Patch>
+		</Class>
+		<Class name="QTMovieLayer">
+			<File>QuickTime/Reference/QTMovieLayer/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="QTMovieView">
+			<File>QuickTime/Reference/QTKitFramework/Classes/QTMovieView_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="QTMovieView.Deprecated">
+			<File>QuickTime/Reference/QTKitFramework/Classes/QTMovieView_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="QTMovieView"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="QTSampleBuffer">
+			<File>QuickTime/Reference/QTSampleBuffer_Ref/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["AudioBufferListWithOptions"].ReturnType="IntPtr"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="QTTrack">
+			<File>QuickTime/Reference/QTKitFramework/Classes/QTTrack_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["TrackWithQuickTimeTrackError"].ReturnType="QTTrack"]]></Change>
+			</Patch>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="QTCaptureDecompressedAudioOutputDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="QTCaptureDecompressedAudioOutput"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="QTCaptureDecompressedVideoOutputDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="QTCaptureDecompressedVideoOutput"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="QTCaptureFileOutputDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="QTCaptureFileOutput"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="QTCaptureVideoPreviewOutputDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="QTCaptureVideoPreviewOutput"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="QTCaptureViewDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="QTCaptureView"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="QTMovieDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="QTMovie"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+	</Protocols>
+	<Structures>
+		<Structure name="QTTime" />
+	</Structures>
+	<Enumerations>
+		<Enumeration name="QTMovieOperationPhase" />
+		<Enumeration name="QTSampleBufferAudioBufferListOptions" />
+	</Enumerations>
+</Framework>

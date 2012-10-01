@@ -20,8 +20,9 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
+using System.IO;
 
 namespace Monobjc.Tools.Generator.Parsers.Xhtml
 {
@@ -39,7 +40,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml
         /// </summary>
         /// <param name = "settings">The settings.</param>
         /// <param name = "typeManager">The type manager.</param>
-        protected XhtmlBaseParser(NameValueCollection settings, TypeManager typeManager) : base(settings, typeManager) {}
+		protected XhtmlBaseParser(NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger) {}
 
         /// <summary>
         ///   Gets the name of the method.
@@ -58,7 +59,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml
             return builder.ToString();
         }
 
-        protected bool SplitEnumeration(string declaration, ref string name, ref string type, ref string values)
+        protected bool SplitEnumeration(String declaration, ref String name, ref String type, ref String values)
         {
             Match r = ENUMERATION_REGEX.Match(declaration);
             if (r.Success)
@@ -97,14 +98,15 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml
                 bool isOut;
                 bool isByRef;
                 bool isBlock;
-                type = this.TypeManager.ConvertType(type, out isOut, out isByRef, out isBlock);
+                type = this.TypeManager.ConvertType(type, out isOut, out isByRef, out isBlock, this.Logger);
 
-                //Console.WriteLine("Enumeration found '{0}' of type '{1}'", name, type);
+				//this.Logger.WriteLine("Enumeration found '{0}' of type '{1}'", name, type);
 
                 return true;
             }
 
-            Console.WriteLine("FAILED to parse enum '{0}'", declaration);
+			this.Logger.WriteLine("FAILED to parse enum '{0}'", declaration);
+
             return false;
         }
 

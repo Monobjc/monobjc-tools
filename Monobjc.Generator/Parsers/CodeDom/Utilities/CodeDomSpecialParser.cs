@@ -21,51 +21,47 @@ using ICSharpCode.NRefactory.Ast;
 
 namespace Monobjc.Tools.Generator.Parsers.CodeDom.Utilities
 {
-    /// <summary>
-    ///   Parse for special nodes when building Code DOM.
-    /// </summary>
-    public class CodeDomSpecialParser
-    {
-        private readonly IList<ISpecial> specials;
+	/// <summary>
+	///   Parse for special nodes when building Code DOM.
+	/// </summary>
+	public class CodeDomSpecialParser
+	{
+		private readonly IList<ISpecial> specials;
+		private int current;
 
-        private int current;
+		/// <summary>
+		///   Initializes a new instance of the <see cref = "CodeDomSpecialParser" /> class.
+		/// </summary>
+		/// <param name = "specials">The specials.</param>
+		public CodeDomSpecialParser (IList<ISpecial> specials)
+		{
+			this.specials = specials;
+			this.current = 0;
+		}
 
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "CodeDomSpecialParser" /> class.
-        /// </summary>
-        /// <param name = "specials">The specials.</param>
-        public CodeDomSpecialParser(IList<ISpecial> specials)
-        {
-            this.specials = specials;
-            this.current = 0;
-        }
+		/// <summary>
+		///   Gets the documentation comments before the given node.
+		/// </summary>
+		/// <param name = "node">The node.</param>
+		/// <returns>An enumeration of comments.</returns>
+		public IEnumerable<Comment> GetDocumentationCommentsBefore (INode node)
+		{
+			IList<Comment> result = new List<Comment> ();
 
-        /// <summary>
-        ///   Gets the documentation comments before the given node.
-        /// </summary>
-        /// <param name = "node">The node.</param>
-        /// <returns>An enumeration of comments.</returns>
-        public IEnumerable<Comment> GetDocumentationCommentsBefore(INode node)
-        {
-            IList<Comment> result = new List<Comment>();
+			// Append the comments for enumeration
+			while (this.current < this.specials.Count) {
+				Comment comment = this.specials [this.current++] as Comment;
+				if (comment == null || comment.CommentType != CommentType.Documentation) {
+					continue;
+				}
+				if (comment.EndPosition.CompareTo (node.StartLocation) > 0) {
+					this.current--;
+					break;
+				}
+				result.Add (comment);
+			}
 
-            // Append the comments for enumeration
-            while (this.current < this.specials.Count)
-            {
-                Comment comment = this.specials[this.current++] as Comment;
-                if (comment == null || comment.CommentType != CommentType.Documentation)
-                {
-                    continue;
-                }
-                if (comment.EndPosition.CompareTo(node.StartLocation) > 0)
-                {
-                    this.current--;
-                    break;
-                }
-                result.Add(comment);
-            }
-
-            return result;
-        }
-    }
+			return result;
+		}
+	}
 }

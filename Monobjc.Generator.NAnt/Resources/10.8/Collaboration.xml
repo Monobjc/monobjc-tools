@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="Collaboration" usings="Foundation" assembly="Monobjc.Collaboration" source="DocSet">
+	<Types>
+	</Types>
+	<Classes>
+		<Class name="CBGroupIdentity">
+			<File>Networking/Reference/CBGroupIdentity_Ref/CBGroupIdentity/CBGroupIdentity.html</File>
+		</Class>
+		<Class name="CBIdentity">
+			<File>Networking/Reference/CBIdentity_Ref/CBIdentity/CBIdentity.html</File>
+		</Class>
+		<Class name="CBIdentityAuthority">
+			<File>Networking/Reference/CBIdentityAuthority_Ref/CBIdentityAuthority/CBIdentityAuthority.html</File>
+		</Class>
+		<Class name="CBIdentityPicker">
+			<File>Networking/Reference/CBIdentityPicker_Ref/CBIdentityPicker/CBIdentityPicker.html</File>
+		</Class>
+		<Class name="CBUserIdentity">
+			<File>Networking/Reference/CBUserIdentity/CBUserIdentity/CBUserIdentity.html</File>
+		</Class>
+	</Classes>
+	<Protocols>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

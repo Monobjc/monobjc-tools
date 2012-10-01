@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="DiscRecordingUI" usings="Foundation,AppKit" assembly="Monobjc.DiscRecordingUI" source="DocSet">
+	<Types>
+		<Type name="DiscRecordingUIResources_Header">
+			<File>DiscRecordingUI/Reference/DiscRecordingUIResources_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRBurnProgressPanel_Header">
+			<File>DiscRecordingUI/Reference/DRBurnProgressPanel_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRBurnSession_Header">
+			<File>DiscRecordingUI/Reference/DRBurnSession_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRBurnSetupPanel_Header">
+			<File>DiscRecordingUI/Reference/DRBurnSetupPanel_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DREraseProgressPanel_Header">
+			<File>DiscRecordingUI/Reference/DREraseProgressPanel_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DREraseSession_Header">
+			<File>DiscRecordingUI/Reference/DREraseSession_header_reference/Reference/reference.html</File>
+		</Type>
+		<Type name="DRSetupPanel_Header">
+			<File>DiscRecordingUI/Reference/DRSetupPanel_header_reference/Reference/reference.html</File>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="DRBurnProgressPanel">
+			<File>DiscRecordingUI/Reference/DRBurnProgressPanel_reference/translated_content/DRBurnProgressPanel.html</File>
+		</Class>
+		<Class name="DRBurnSetupPanel">
+			<File>DiscRecordingUI/Reference/DRBurnSetupPanel_reference/translated_content/DRBurnSetupPanel.html</File>
+		</Class>
+		<Class name="DREraseProgressPanel">
+			<File>DiscRecordingUI/Reference/DREraseProgressPanel_reference/translated_content/DREraseProgressPanel.html</File>
+		</Class>
+		<Class name="DREraseSetupPanel">
+			<File>DiscRecordingUI/Reference/DREraseSetupPanel_reference/translated_content/DREraseSetupPanel.html</File>
+		</Class>
+		<Class name="DRSetupPanel">
+			<File>DiscRecordingUI/Reference/DRSetupPanel_reference/translated_content/DRSetupPanel.html</File>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="DRBurnProgressPanelDelegate">
+			<File>DiscRecordingUI/Reference/NSObjectDRBurnProgressPanelDelegateMethods_reference/translated_content/NSObject(DRBurnProgressPanelDelegateMethods).html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="DRBurnProgressPanel"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="DREraseProgressPanelDelegate">
+			<File>DiscRecordingUI/Reference/NSObjectDREraseProgressPanelDelegateMethods_reference/translated_content/NSObject(DREraseProgressPanelDelegateMethods).html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="DREraseProgressPanel"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="DRSetupPanelDelegate">
+			<File>DiscRecordingUI/Reference/NSObjectDRSetupPanelDelegate_reference/translated_content/NSObject(DRSetupPanelDelegate).html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="DRSetupPanel"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

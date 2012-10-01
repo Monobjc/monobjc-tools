@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="CoreMIDI" usings="Foundation" assembly="Monobjc.CoreMIDI" source="DocSet">
+	<Types>
+		<Type name="MIDIServices">
+		</Type>
+		<Type name="MIDISetup">
+		</Type>
+		<Type name="MIDIThruConnection">
+		</Type>
+	</Types>
+</Framework>

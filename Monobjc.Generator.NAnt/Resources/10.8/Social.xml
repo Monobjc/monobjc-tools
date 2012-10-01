@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="Social" usings="Foundation,AppKit" assembly="Monobjc.Social" source="DocSet">
+	<Types>
+	</Types>
+	<Classes>
+		<Class name="SLRequest">
+			<File>Social/Reference/SLRequest_Class/Reference/Reference.html</File>
+		</Class>
+	</Classes>
+	<Protocols>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

@@ -113,16 +113,16 @@ namespace Monobjc.Tools.Generator.Utilities
 
         public static bool IsOlderThan(this String fileName1, String fileName2)
         {
-            DateTime dt1 = File.GetLastWriteTime(fileName1);
-            DateTime dt2 = File.GetLastWriteTime(fileName2);
+			DateTime dt1 = fileName1 != null ? File.GetLastWriteTime(fileName1) : DateTime.MinValue;
+            DateTime dt2 = fileName2 != null ? File.GetLastWriteTime(fileName2) : DateTime.MinValue;
             return (dt1.CompareTo(dt2) < 0);
         }
 
         public static bool IsYoungerThan(this String fileName1, String fileName2)
         {
-            DateTime dt1 = File.GetLastWriteTime(fileName1);
-            DateTime dt2 = File.GetLastWriteTime(fileName2);
-            return (dt1.CompareTo(dt2) >= 0);
+			DateTime dt1 = fileName1 != null ? File.GetLastWriteTime(fileName1) : DateTime.MaxValue;
+			DateTime dt2 = fileName2 != null ? File.GetLastWriteTime(fileName2) : DateTime.MaxValue;
+			return (dt1.CompareTo(dt2) > 0);
         }
 
         /// <summary>

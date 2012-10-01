@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Flags="false">
+	<Summary>
+		<Line>Text annotations can use the following icon types.</Line>
+	</Summary>
+	<MinAvailability>Mac OS X v10.4</MinAvailability>
+	<MaxAvailability>VERSION</MaxAvailability>
+	<Name>PDFTextAnnotationIconType</Name>
+	<Namespace>Quartz</Namespace>
+	<BaseType>int</BaseType>
+	<Enumerations />
+	<Constants />
+	<Notifications />
+	<Functions />
+	<Values>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>Comment annotation icon.</Line>
+			</Summary>
+			<Name>kPDFTextAnnotationIconComment</Name>
+			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>Key annotation icon.</Line>
+			</Summary>
+			<Name>kPDFTextAnnotationIconKey</Name>
+			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>Note annotation icon.</Line>
+			</Summary>
+			<Name>kPDFTextAnnotationIconNote</Name>
+			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>Help annotation icon.</Line>
+			</Summary>
+			<Name>kPDFTextAnnotationIconHelp</Name>
+			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>New Paragraph annotation icon.</Line>
+			</Summary>
+			<Name>kPDFTextAnnotationIconNewParagraph</Name>
+			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>Paragraph annotation icon.</Line>
+			</Summary>
+			<Name>kPDFTextAnnotationIconParagraph</Name>
+			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>Insert annotation icon.</Line>
+			</Summary>
+			<Name>kPDFTextAnnotationIconInsert</Name>
+			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+	</Values>
+</Enumeration>

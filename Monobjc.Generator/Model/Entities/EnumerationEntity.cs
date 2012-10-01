@@ -20,52 +20,73 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
 
-namespace Monobjc.Tools.Generator.Model.Entities
+namespace Monobjc.Tools.Generator.Model
 {
-    /// <summary>
-    ///   Represents the model for an enumaration.
-    /// </summary>
-    [Serializable]
-    [XmlRoot("Enumeration")]
-    [XmlInclude(typeof (EnumerationValueEntity))]
-    public class EnumerationEntity : TypedEntity
-    {
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "EnumerationEntity" /> class.
-        /// </summary>
-        public EnumerationEntity()
-        {
-            this.Values = new List<EnumerationValueEntity>();
-        }
+	/// <summary>
+	///   Represents the model for an enumaration.
+	/// </summary>
+	[Serializable]
+	[XmlRoot("Enumeration")]
+	[XmlInclude(typeof(EnumerationValueEntity))]
+	public partial class EnumerationEntity : TypedEntity
+	{
+		/// <summary>
+		///   Initializes a new instance of the <see cref = "EnumerationEntity" /> class.
+		/// </summary>
+		public EnumerationEntity ()
+		{
+			this.Values = new EnumerationValueCollection();
+		}
 
-        /// <summary>
-        ///   Gets or sets a value indicating whether this <see cref = "EnumerationEntity" /> is flags.
-        /// </summary>
-        /// <value><c>true</c> if flags; otherwise, <c>false</c>.</value>
-        [XmlAttribute]
-        public bool Flags { get; set; }
+		/// <summary>
+		///   Gets or sets a value indicating whether this <see cref = "EnumerationEntity" /> is flags.
+		/// </summary>
+		/// <value><c>true</c> if flags; otherwise, <c>false</c>.</value>
+		[XmlAttribute]
+		public bool Flags {
+			get;
+			set;
+		}
 
-        /// <summary>
-        ///   Gets or sets the values.
-        /// </summary>
-        /// <value>The values.</value>
-        [XmlArray]
-        [XmlArrayItem(typeof (EnumerationValueEntity), ElementName = "EnumerationValue")]
-        public List<EnumerationValueEntity> Values { get; set; }
+		/// <summary>
+		///   Gets or sets the values.
+		/// </summary>
+		/// <value>The values.</value>
+		[XmlArray]
+		[XmlArrayItem (typeof(EnumerationValueEntity), ElementName = "EnumerationValue")]
+		public EnumerationValueCollection Values {
+			get;
+			set;
+		}
 
-        /// <summary>
-        ///   Gets the children.
-        /// </summary>
-        /// <value>The children.</value>
-        [XmlIgnore]
-        public override List<BaseEntity> Children
-        {
-            get
-            {
-                List<BaseEntity> children = new List<BaseEntity>();
-                children.AddRange(this.Values.Cast<BaseEntity>());
-                return children;
-            }
-        }
-    }
+		/// <summary>
+		///   Gets the children.
+		/// </summary>
+		/// <value>The children.</value>
+		[XmlIgnore]
+		public override List<BaseEntity> Children {
+			get {
+				List<BaseEntity> children = new List<BaseEntity> ();
+				children.AddRange (this.Values.Cast<BaseEntity> ());
+				return children;
+			}
+		}
+
+		/// <summary>
+		///   Serves as a hash function for a particular type.
+		/// </summary>
+		/// <returns>
+		///   A hash code for the current <see cref = "T:System.Object" />.
+		/// </returns>
+		/// <filterpriority>2</filterpriority>
+		public override int GetHashCode ()
+		{
+			unchecked {
+				int hash = base.GetHashCode();
+				hash = hash * 23 + this.Flags.GetHashCode ();
+				hash = hash * 23 + this.Values.GetHashCode ();
+				return hash;
+			}
+		}
+	}
 }

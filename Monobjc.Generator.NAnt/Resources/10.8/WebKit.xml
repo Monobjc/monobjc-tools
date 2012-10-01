@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="WebKit" usings="Foundation,AppKit" assembly="Monobjc.WebKit" source="DocSet">
+	<Types>
+		<Type name="WebKitFramework.Constants">
+			<File>Cocoa/Reference/WebKit/Miscellaneous/WebKit_Constants/Reference/reference.html</File>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="DOMDocument_WebKitAdditions">
+			<File>Cocoa/Reference/WebKit/Classes/DOMDocument_WebKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DOMDocument"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="DOMElement_WebKitAdditions">
+			<File>Cocoa/Reference/DOMElement_WebKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DOMElement"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="DOMHTMLDocument_WebkitAdditions">
+			<File>Cocoa/Reference/DOMHTMLDocument_WebKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DOMHTMLDocument"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="DOMHTMLFrameElement_WebkitAdditions">
+			<File>Cocoa/Reference/WebKit/Classes/DOMHTMLFrameElement_WebKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DOMHTMLFrameElement"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="DOMHTMLIFrameElement_WebkitAdditions">
+			<File>Cocoa/Reference/WebKit/Classes/DOMHTMLIFrameElement_WebKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DOMHTMLIFrameElement"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="DOMHTMLObjectElement_WebkitAdditions">
+			<File>Cocoa/Reference/WebKit/Classes/DOMHTMLObjectElement_WebKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DOMHTMLObjectElement"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="DOMNode_WebkitAdditions">
+			<File>Cocoa/Reference/WebKit/Classes/DOMNode_WebKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DOMNode"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="DOMRange_WebkitAdditions">
+			<File>Cocoa/Reference/WebKit/Classes/DOMRange_WebKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DOMRange"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="WebArchive">
+			<File>Cocoa/Reference/WebKit/Classes/WebArchive_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="WebBackForwardList">
+			<File>Cocoa/Reference/WebKit/Classes/WebBackForwardList_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="WebBackForwardList.Deprecated">
+			<File>Cocoa/Reference/WebKit/Classes/WebBackForwardList_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="WebBackForwardList"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="WebDataSource">
+			<File>Cocoa/Reference/WebKit/Classes/WebDataSource_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="WebDownload">
+			<File>Cocoa/Reference/WebKit/Classes/WebDownload_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="WebFrame">
+			<File>Cocoa/Reference/WebKit/Classes/WebFrame_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="WebFrameView">
+			<File>Cocoa/Reference/WebKit/Classes/WebFrameView_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="WebHistory">
+			<File>Cocoa/Reference/WebKit/Classes/WebHistory_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="WebHistoryItem">
+			<File>Cocoa/Reference/WebKit/Classes/WebHistoryItem_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="WebPreferences">
+			<File>Cocoa/Reference/WebKit/Classes/WebPreferences_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="WebResource">
+			<File>Cocoa/Reference/WebKit/Classes/WebResource_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="WebScriptObject">
+			<File>Cocoa/Reference/WebKit/Classes/WebScriptObject_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="WebUndefined">
+			<File>Cocoa/Reference/WebKit/Classes/WebUndefined_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="WebView">
+			<File>Cocoa/Reference/WebKit/Classes/WebView_Class/Reference/Reference.html</File>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="WebDocumentRepresentation">
+			<File>Cocoa/Reference/WebKit/Protocols/WebDocumentRepresentation_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="WebDocumentSearching">
+			<File>Cocoa/Reference/WebKit/Protocols/WebDocumentSearching_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="WebDocumentText">
+			<File>Cocoa/Reference/WebKit/Protocols/WebDocumentText_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="WebDocumentView">
+			<File>Cocoa/Reference/WebKit/Protocols/WebDocumentView_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="WebDownloadDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="WebDownload"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="WebEditingDelegate">
+			<File>Cocoa/Reference/WebKit/Protocols/WebEditingDelegate_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="WebFrameLoadDelegate">
+			<File>Cocoa/Reference/WebKit/Protocols/WebFrameLoadDelegate_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="WebFrameLoadDelegate.Deprecated">
+			<File>Cocoa/Reference/WebKit/Protocols/WebFrameLoadDelegate_Protocol/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="WebFrameLoadDelegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="WebJavaPlugIn">
+			<File>Cocoa/Reference/WebKit/Protocols/WebJavaPlugIn_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="WebOpenPanelResultListener">
+			<File>Cocoa/Reference/WebKit/Protocols/WebOpenPanelResultListener_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="WebPlugIn">
+			<File>Cocoa/Reference/WebKit/Protocols/WebPlugIn_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="WebPlugInContainer">
+			<File>Cocoa/Reference/WebKit/Protocols/WebPlugInContainer_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="WebPlugInViewFactory">
+			<File>Cocoa/Reference/WebKit/Protocols/WebPlugInViewFactory_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="WebPolicyDecisionListener">
+			<File>Cocoa/Reference/WebKit/Protocols/WebPolicyDecisionListener_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="WebPolicyDelegate">
+			<File>Cocoa/Reference/WebKit/Protocols/WebPolicyDelegate_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="WebResourceLoadDelegate">
+			<File>Cocoa/Reference/WebKit/Protocols/WebResourceLoadDelegate_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="WebScripting">
+			<File>Cocoa/Reference/WebKit/Protocols/WebScripting_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="WebUIDelegate">
+			<File>Cocoa/Reference/WebKit/Protocols/WebUIDelegate_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="WebUIDelegate.Deprecated">
+			<File>Cocoa/Reference/WebKit/Protocols/WebUIDelegate_Protocol/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="WebUIDelegate"]]></Change>
+			</Patch>
+		</Protocol>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

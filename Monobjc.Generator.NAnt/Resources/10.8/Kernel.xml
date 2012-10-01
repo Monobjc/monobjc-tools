@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="Kernel" usings="" assembly="Monobjc.Foundation" source="DocSet">
+	<Types>
+		<Type name="Dispatch">
+			<File>Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["dispatch_after"].Parameters["block"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_after"].Parameters["block"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_apply"].Parameters["d"].Name="block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_apply"].Parameters["block"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_apply"].Parameters["block"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_apply_f"].Parameters["d"].Name="work"]]></Change>
+				<Change><![CDATA[Functions["dispatch_apply_f"].Parameters["work"].Type="<![CDATA[dispatch_function_tc"]]></Change>
+				<Change><![CDATA[Functions["dispatch_apply_f"].Parameters["t"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_async"].Parameters["block"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_async"].Parameters["block"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_barrier_async"].Parameters["block"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_barrier_async"].Parameters["block"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_barrier_sync"].Parameters["block"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_barrier_sync"].Parameters["block"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_data_apply"].Parameters["applier"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_data_apply"].Parameters["applier"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_data_copy_region"].Parameters["offset_ptr"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Functions["dispatch_data_copy_region"].Parameters["offset_ptr"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["dispatch_data_create"].Parameters["destructor"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_data_create"].Parameters["destructor"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_data_create_map"].Parameters["buffer_ptr"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["dispatch_data_create_map"].Parameters["size_ptr"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Functions["dispatch_data_create_map"].Parameters["size_ptr"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["dispatch_debug"].Parameters["message"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["dispatch_get_current_queue"].Parameters["d"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_get_global_queue"].Parameters["long"].Name="flags"]]></Change>
+				<Change><![CDATA[Functions["dispatch_get_global_queue"].Parameters["flags"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Functions["dispatch_get_main_queue"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_get_specific"].MinAvailability="Mac OS X v10.7"]]></Change>
+				<Change><![CDATA[Functions["dispatch_queue_get_label"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["dispatch_group_async"].Parameters["block"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_group_async"].Parameters["block"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_group_create"].Parameters["d"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_group_notify"].Parameters["block"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_group_notify"].Parameters["block"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_io_create"].Parameters["d"].Name="cleanup_handler"]]></Change>
+				<Change><![CDATA[Functions["dispatch_io_create"].Parameters["cleanup_handler"].Type="<![CDATA[Action<int>"]]></Change>
+				<Change><![CDATA[Functions["dispatch_io_create_with_path"].Parameters["path"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["dispatch_io_create_with_path"].Parameters["d"].Name="cleanup_handler"]]></Change>
+				<Change><![CDATA[Functions["dispatch_io_create_with_path"].Parameters["cleanup_handler"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_io_create_with_path"].Parameters["cleanup_handler"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_io_read"].Parameters["io_handler"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_io_read"].Parameters["io_handler"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_io_write"].Parameters["io_handler"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_io_write"].Parameters["io_handler"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_main"].Parameters["d"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_once"].Parameters["predicate"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Functions["dispatch_once"].Parameters["predicate"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["dispatch_once"].Parameters["block"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_once"].Parameters["block"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_queue_create"].Parameters["label"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["dispatch_read"].Parameters["d"].Name="handler"]]></Change>
+				<Change><![CDATA[Functions["dispatch_read"].Parameters["handler"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_read"].Parameters["handler"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_read"].Parameters["error"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_source_create"].Parameters["long"].Name="mask"]]></Change>
+				<Change><![CDATA[Functions["dispatch_source_create"].Parameters["mask"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Functions["dispatch_source_merge_data"].Parameters["long"].Name="value"]]></Change>
+				<Change><![CDATA[Functions["dispatch_source_merge_data"].Parameters["value"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Functions["dispatch_source_set_cancel_handler"].Parameters["cancel_handler"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_source_set_cancel_handler"].Parameters["cancel_handler"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_source_set_event_handler"].Parameters["handler"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_source_set_event_handler"].Parameters["handler"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_source_set_registration_handler"].MinAvailability="Mac OS X v10.7"]]></Change>
+				<Change><![CDATA[Functions["dispatch_source_set_registration_handler"].Parameters["registration_handler"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_source_set_registration_handler"].Parameters["registration_handler"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_source_set_registration_handler_f"].MinAvailability="Mac OS X v10.7"]]></Change>
+				<Change><![CDATA[Functions["dispatch_sync"].Parameters["block"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_sync"].Parameters["block"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_time"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_walltime"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_write"].Parameters["d"].Name="handler"]]></Change>
+				<Change><![CDATA[Functions["dispatch_write"].Parameters["handler"].Type="Block"]]></Change>
+				<Change><![CDATA[Functions["dispatch_write"].Parameters["handler"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_write"].Parameters["error"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["dispatch_queue_priority_t"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["dispatch_source_mach_send_flags_t"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["dispatch_source_proc_flags_t"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["dispatch_source_vnode_flags_t"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA["/System/Library/Frameworks/Kernel.framework/Kernel"]]></Source>
+					<With><![CDATA[DISPATCH_LIBRARY]]></With>
+				</Replace>
+			</Patch>
+		</Type>
+	</Types>
+	<Classes>
+	</Classes>
+	<Protocols>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="GLKit" usings="Foundation,AppKit" assembly="Monobjc.GLKit" source="DocSet">
+	<Types>
+		<Type name="GLKitFramework.MathUtilities">
+			<File>GLkit/Reference/GLKMathUtils/Reference/reference.html</File>
+		</Type>
+		<Type name="GLKitFramework.EffectsConstants">
+			<File>GLkit/Reference/GLKEffectsConstants/Reference/reference.html</File>
+		</Type>
+		<Type name="GLKMatrix3">
+			<File>GLkit/Reference/GLKMatrix3/Reference/reference.html</File>
+		</Type>
+		<Type name="GLKMatrix4">
+			<File>GLkit/Reference/GLKMatrix4/Reference/reference.html</File>
+		</Type>
+		<Type name="GLKMatrixStack">
+			<File>GLkit/Reference/GLKMatrixStack/Reference/reference.html</File>
+		</Type>
+		<Type name="GLKQuaternion">
+			<File>GLkit/Reference/GLKQuaternion/Reference/reference.html</File>
+		</Type>
+		<Type name="GLKVector2">
+			<File>GLkit/Reference/GLKVector2/Reference/reference.html</File>
+		</Type>
+		<Type name="GLKVector3">
+			<File>GLkit/Reference/GLKVector3/Reference/reference.html</File>
+		</Type>
+		<Type name="GLKVector4">
+			<File>GLkit/Reference/GLKVector4/Reference/reference.html</File>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="GLKBaseEffect">
+			<File>GLkit/Reference/GLKBaseEffect_ClassRef/Reference/Reference.html</File>
+		</Class>
+		<Class name="GLKEffectProperty">
+			<File>GLkit/Reference/GLKEffectProperty_ClassRef/Reference/Reference.html</File>
+		</Class>
+		<Class name="GLKEffectPropertyFog">
+			<File>GLkit/Reference/GLKEffectPropertyFog_ClassRef/Reference/Reference.html</File>
+		</Class>
+		<Class name="GLKEffectPropertyLight">
+			<File>GLkit/Reference/GLKEffectPropertyLight_ClassRef/Reference/Reference.html</File>
+		</Class>
+		<Class name="GLKEffectPropertyMaterial">
+			<File>GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/Reference/Reference.html</File>
+		</Class>
+		<Class name="GLKEffectPropertyTexture">
+			<File>GLkit/Reference/GLKEffectPropertyTexture_ClassRef/Reference/Reference.html</File>
+		</Class>
+		<Class name="GLKEffectPropertyTransform">
+			<File>GLkit/Reference/GLKEffectPropertyTransform_ClassRef/Reference/Reference.html</File>
+		</Class>
+		<Class name="GLKReflectionMapEffect">
+			<File>GLkit/Reference/GLKReflectionEffect_ClassRef/Reference/Reference.html</File>
+		</Class>
+		<Class name="GLKSkyboxEffect">
+			<File>GLkit/Reference/GLKSkyboxEffect_ClassRef/Reference/Reference.html</File>
+		</Class>
+		<Class name="GLKTextureInfo">
+			<File>GLkit/Reference/GLKTextureInfo_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GLKTextureLoader">
+			<File>GLkit/Reference/GLKTextureLoader_ClassRef/Reference/Reference.html</File>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="GLKNamedEffect">
+			<File>GLkit/Reference/GLKNamedEffect_ProtocolRef/Reference/Reference.html</File>
+		</Protocol>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

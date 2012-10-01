@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="Security" usings="Foundation,AppKit" assembly="Monobjc.Security" source="DocSet">
+	<Types>
+		<Type name="Authorization">
+			<File>Security/Reference/authorization_ref/Reference/reference.html</File>
+		</Type>
+		<Type name="Authorization.Deprecated">
+			<File>Security/Reference/authorization_ref/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+		</Type>
+		<Type name="CertServices">
+			<File>Security/Reference/certifkeytrustservices/Reference/reference.html</File>
+		</Type>
+		<Type name="CertServices.Deprecated">
+			<File>Security/Reference/certifkeytrustservices/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+		</Type>
+		<Type name="CodeSigning">
+			<File>Security/Reference/CodeSigningRef/Reference/reference.html</File>
+		</Type>
+		<Type name="KeychainServices">
+			<File>Security/Reference/keychainservices/Reference/reference.html</File>
+		</Type>
+	</Types>
+	<Classes>
+	</Classes>
+	<Protocols>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+		<Enumeration name="SecCSFlags" />
+	</Enumerations>
+</Framework>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure Generate="true">
+	<Name>CGPoint</Name>
+	<Namespace>ApplicationServices</Namespace>
+	<MixedType>CGPoint,CGPoint64</MixedType>
+</Structure>

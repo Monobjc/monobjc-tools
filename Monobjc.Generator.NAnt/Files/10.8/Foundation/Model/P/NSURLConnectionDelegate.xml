@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Protocol Generate="true">
+	<Summary />
+	<MinAvailability>Mac OS X v10.2 with Safari 1.0 installed</MinAvailability>
+	<MaxAvailability>VERSION</MaxAvailability>
+	<Name>NSURLConnectionDelegate</Name>
+	<Namespace>Foundation</Namespace>
+	<Enumerations />
+	<Constants />
+	<Functions />
+	<Methods />
+	<Properties />
+	<DelegateMethods />
+</Protocol>

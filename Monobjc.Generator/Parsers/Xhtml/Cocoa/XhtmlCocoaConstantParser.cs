@@ -22,284 +22,240 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
 {
-    /// <summary>
-    ///   XHTML parser dedicated to constants.
-    /// </summary>
-    public class XhtmlCocoaConstantParser : XhtmlBaseParser
-    {
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "XhtmlNotificationParser" /> class.
-        /// </summary>
-        /// <param name = "settings">The settings.</param>
-        /// <param name = "typeManager">The type manager.</param>
-        public XhtmlCocoaConstantParser(NameValueCollection settings, TypeManager typeManager) : base(settings, typeManager) {}
+	/// <summary>
+	///   XHTML parser dedicated to constants.
+	/// </summary>
+	public class XhtmlCocoaConstantParser : XhtmlBaseParser
+	{
+		/// <summary>
+		///   Initializes a new instance of the <see cref = "XhtmlNotificationParser" /> class.
+		/// </summary>
+		/// <param name = "settings">The settings.</param>
+		/// <param name = "typeManager">The type manager.</param>
+		public XhtmlCocoaConstantParser (NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger)
+		{
+		}
 
-        /// <summary>
-        ///   Parses the specified entity.
-        /// </summary>
-        /// <param name = "entity">The entity.</param>
-        /// <param name = "reader">The reader.</param>
-        public override void Parse(BaseEntity entity, TextReader reader)
-        {
-            throw new NotImplementedException();
-        }
+		/// <summary>
+		///   Parses the specified entity.
+		/// </summary>
+		/// <param name = "entity">The entity.</param>
+		/// <param name = "reader">The reader.</param>
+		public override void Parse (BaseEntity entity, TextReader reader)
+		{
+			throw new NotImplementedException ();
+		}
 
-        /// <summary>
-        ///   Parses the specified constant element.
-        /// </summary>
-        /// <param name = "constantElement">The constant element.</param>
-        public List<BaseEntity> Parse(XElement constantElement)
-        {
-            // Get the name
-            String name = constantElement.TrimAll();
+		/// <summary>
+		///   Parses the specified constant element.
+		/// </summary>
+		/// <param name = "constantElement">The constant element.</param>
+		public List<BaseEntity> Parse (TypedEntity typedEntity, XElement constantElement)
+		{
+			// Get the name
+			String name = constantElement.TrimAll ();
 
-            // Get the abstract
-            XElement summaryElement = (from el in constantElement.ElementsAfterSelf("p")
-                                       where (String) el.Attribute("class") == "abstract"
-                                       select el).FirstOrDefault();
-            String summary = summaryElement.TrimAll();
+			// Get the abstract
+			XElement summaryElement = (from el in constantElement.ElementsAfterSelf ("p")
+                                       where (String)el.Attribute ("class") == "abstract"
+                                       select el).FirstOrDefault ();
+			String summary = summaryElement.TrimAll ();
 
-            // Get the declaration
-            XElement declarationElement = (from el in constantElement.ElementsAfterSelf("pre")
-                                           where (String) el.Attribute("class") == "declaration"
-                                           select el).FirstOrDefault();
-            String declaration = declarationElement.TrimAll();
+			// Get the declaration
+			XElement declarationElement = (from el in constantElement.ElementsAfterSelf ("pre")
+                                           where (String)el.Attribute ("class") == "declaration"
+                                           select el).FirstOrDefault ();
+			String declaration = declarationElement.TrimAll ();
 
-            // Make various tests
-            bool isDefine = declaration.StartsWith("#define");
-            bool isEnum = declaration.StartsWith("enum") || declaration.StartsWith("typedef enum") || declaration.Contains(" enum ");
+			// Make various tests
+			bool isDefine = declaration.StartsWith ("#define");
+			bool isEnum = declaration.StartsWith ("enum") || declaration.StartsWith ("typedef enum") || declaration.Contains (" enum ");
 
-            if (isDefine)
-            {
-                List<BaseEntity> entities = ExtractDefine(constantElement, name, summary, declaration);
-                return entities;
-            }
+			if (isDefine) {
+				List<BaseEntity> entities = ExtractDefine (constantElement, name, summary, declaration);
+				return entities;
+			}
 
-            if (isEnum)
-            {
-                List<BaseEntity> entities = this.ExtractEnumeration(constantElement, name, summary, declaration);
-                if (entities != null)
-                {
-                    return entities;
-                }
-            }
+			if (isEnum) {
+				List<BaseEntity> entities = this.ExtractEnumeration (constantElement, name, summary, declaration);
+				if (entities != null) {
+					return entities;
+				}
+			}
 
-            return this.ExtractConstants(constantElement, name, summary, declaration);
-        }
+			return this.ExtractConstants (constantElement, name, summary, declaration);
+		}
 
-        private static List<BaseEntity> ExtractDefine(XElement constantElement, String name, String summary, String declaration)
-        {
-            return null;
-        }
+		private static List<BaseEntity> ExtractDefine (XElement constantElement, String name, String summary, String declaration)
+		{
+			return null;
+		}
 
-        private List<BaseEntity> ExtractEnumeration(XElement constantElement, String name, String summary, String declaration)
-        {
-            declaration = declaration.Trim(';');
+		private List<BaseEntity> ExtractEnumeration (XElement constantElement, String name, String summary, String declaration)
+		{
+			declaration = declaration.Trim (';');
 
-            // Default values
-            String type = "NOTYPE";
-            String values = String.Empty;
+			// Default values
+			String type = "NOTYPE";
+			String values = String.Empty;
 
-            // Match the enumeration definition
-            bool result = this.SplitEnumeration(declaration, ref name, ref type, ref values);
-            if (!result)
-            {
-                return null;
-            }
+			// Match the enumeration definition
+			bool result = this.SplitEnumeration (declaration, ref name, ref type, ref values);
+			if (!result) {
+				return null;
+			}
 
-            // Create the enumeration
-            EnumerationEntity enumerationEntity = new EnumerationEntity();
-            enumerationEntity.Name = name;
-            enumerationEntity.BaseType = type;
-            enumerationEntity.Namespace = "MISSING";
-            enumerationEntity.Summary.Add(summary);
+			// Create the enumeration
+			EnumerationEntity enumerationEntity = new EnumerationEntity ();
+			enumerationEntity.Name = name;
+			enumerationEntity.BaseType = type;
+			enumerationEntity.Namespace = "MISSING";
+			enumerationEntity.Summary.Add (summary);
 
-            // Parse the values
-            string[] pairs = values.Split(',');
-            foreach (string pair in pairs)
-            {
-                if (String.Equals(pair.TrimAll(), String.Empty))
-                {
-                    continue;
-                }
+			// Parse the values
+			string[] pairs = values.Split (new []{','}, StringSplitOptions.RemoveEmptyEntries);
+			foreach (string pair in pairs) {
+				String key;
+				String value = String.Empty;
+				if (pair.IndexOf ('=') != -1) {
+					string[] parts = pair.Split (new []{'='}, StringSplitOptions.RemoveEmptyEntries);
+					key = parts [0].Trim ();
+					value = parts [1].Trim ();
+				} else {
+					key = pair.Trim ();
+				}
 
-                String key;
-                String value = String.Empty;
-                if (pair.IndexOf('=') != -1)
-                {
-                    string[] parts = pair.Split('=');
-                    key = parts[0].Trim();
-                    value = parts[1].Trim();
-                }
-                else
-                {
-                    key = pair.Trim();
-                }
+				// Add a new value
+				EnumerationValueEntity enumerationValueEntity = new EnumerationValueEntity ();
+				enumerationValueEntity.Name = key;
 
-                // Add a new value
-                EnumerationValueEntity enumerationValueEntity = new EnumerationValueEntity();
-                enumerationValueEntity.Name = key;
+				if (value.Length == 6 && value.StartsWith ("'") && value.EndsWith ("'")) {
+					String v = value.Trim ('\'');
+					enumerationValueEntity.Value = "0x" + FourCharToInt (v).ToString ("X8");
+				} else {
+					enumerationValueEntity.Value = value;
+				}
 
-                if (value.Length == 6 && value.StartsWith("'") && value.EndsWith("'"))
-                {
-                    String v = value.Trim('\'');
-                    enumerationValueEntity.Value = "0x" + FourCharToInt(v).ToString("X8");
-                }
-                else
-                {
-                    enumerationValueEntity.Value = value;
-                }
+				enumerationEntity.Values.Add (enumerationValueEntity);
+			}
 
-                enumerationEntity.Values.Add(enumerationValueEntity);
-            }
+			// Get the definitions
+			XElement termList = (from el in constantElement.ElementsAfterSelf ("dl")
+                                 where (String)el.Attribute ("class") == "termdef"
+                                 select el).FirstOrDefault ();
+			if (termList != null) {
+				IEnumerable<XElement> dtList = termList.Elements ("dt");
+				IEnumerable<XElement> ddList = termList.Elements ("dd");
 
-            // Get the definitions
-            XElement termList = (from el in constantElement.ElementsAfterSelf("dl")
-                                 where (String) el.Attribute("class") == "termdef"
-                                 select el).FirstOrDefault();
-            if (termList != null)
-            {
-                IEnumerable<XElement> dtList = termList.Elements("dt");
-                IEnumerable<XElement> ddList = termList.Elements("dd");
+				if (dtList.Count () == ddList.Count ()) {
+					// Iterate over definitions
+					for (int i = 0; i < dtList.Count(); i++) {
+						String term = dtList.ElementAt (i).Value.TrimAll ();
+						IEnumerable<String> summaries = ddList.ElementAt (i).Elements ("p").Select (p => p.Value.TrimAll ());
 
-                if (dtList.Count() == ddList.Count())
-                {
-                    // Iterate over definitions
-                    for (int i = 0; i < dtList.Count(); i++)
-                    {
-                        String term = dtList.ElementAt(i).Value.TrimAll();
-                        IEnumerable<String> summaries = ddList.ElementAt(i).Elements("p").Select(p => p.Value.TrimAll());
+						// Find the enumeration value
+						EnumerationValueEntity enumerationValueEntity = enumerationEntity.Values.Find (v => v.Name == term);
+						if (enumerationValueEntity != null) {
+							foreach (string sum in summaries) {
+								if (CommentHelper.IsAvailability (sum)) {
+									enumerationValueEntity.MinAvailability = CommentHelper.ExtractAvailability (sum);
+									break;
+								}
+								enumerationValueEntity.Summary.Add (sum);
+							}
+						} else {
+							this.Logger.WriteLine ("Term with no match '" + term + "'");
+						}
+					}
+				} else {
+					this.Logger.WriteLine ("MISMATCH in terms");
+				}
+			}
 
-                        // Find the enumeration value
-                        EnumerationValueEntity enumerationValueEntity = enumerationEntity.Values.Find(v => v.Name == term);
-                        if (enumerationValueEntity != null)
-                        {
-                            foreach (string sum in summaries)
-                            {
-                                if (CommentHelper.IsAvailability(sum))
-                                {
-                                    enumerationValueEntity.MinAvailability = CommentHelper.ExtractAvailability(sum);
-                                    break;
-                                }
-                                enumerationValueEntity.Summary.Add(sum);
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("Term with no match '" + term + "'");
-                        }
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("MISMATCH in terms");
-                }
-            }
+			// Make sure availability is ok
+			enumerationEntity.AdjustAvailability ();
 
-            // Make sure availability is ok
-            enumerationEntity.AdjustAvailability();
+			return new List<BaseEntity> {enumerationEntity};
+		}
 
-            return new List<BaseEntity> {enumerationEntity};
-        }
+		private List<BaseEntity> ExtractConstants (XElement constantElement, String name, String summary, String declaration)
+		{
+			List<BaseEntity> constants = new List<BaseEntity> ();
 
+			// Extract types and names
+			string[] declarations = declaration.Split (new []{';'}, StringSplitOptions.RemoveEmptyEntries);
+			foreach (string part in declarations) {
+				//this.Logger.WriteLine("Parsing constant '{0}'...", part.Trim());
 
-        private List<BaseEntity> ExtractConstants(XElement constantElement, String name, String summary, String declaration)
-        {
-            List<BaseEntity> constants = new List<BaseEntity>();
+				String stripped = part.Trim ();
+				stripped = stripped.Replace ("extern", String.Empty);
+				stripped = stripped.Replace ("const", String.Empty);
+				stripped = stripped.TrimAll ();
 
-            // Extract types and names
-            string[] declarations = declaration.Split(';');
-            foreach (string part in declarations)
-            {
-                if (part.Trim() == String.Empty)
-                {
-                    continue;
-                }
+				Match r = CONSTANT_REGEX.Match (stripped);
+				if (r.Success) {
+					String type = r.Groups [1].Value.Trim (' ', '*', ' ');
 
-                //Console.WriteLine("Parsing constant '{0}'...", part.Trim());
+					bool isOut;
+					bool isByRef;
+					bool isBlock;
+					type = this.TypeManager.ConvertType (type, out isOut, out isByRef, out isBlock, this.Logger);
 
-                String stripped = part;
-                stripped = stripped.Replace("extern", String.Empty);
-                stripped = stripped.Replace("const", String.Empty);
-                stripped = stripped.TrimAll();
+					ConstantEntity constantEntity = new ConstantEntity ();
+					constantEntity.Type = type;
+					constantEntity.Name = r.Groups [2].Value.Trim ();
+					constants.Add (constantEntity);
 
-                Match r = CONSTANT_REGEX.Match(stripped);
-                if (r.Success)
-                {
-                    String type = r.Groups[1].Value.Trim(' ', '*', ' ');
+					//this.Logger.WriteLine("Constant found '{0}' of type '{1}'", constantEntity.Name, constantEntity.Type);
+				} else {
+					this.Logger.WriteLine ("FAILED to parse constant '{0}'", stripped);
+					return null;
+				}
+			}
 
-                    bool isOut;
-                    bool isByRef;
-                    bool isBlock;
-                    type = this.TypeManager.ConvertType(type, out isOut, out isByRef, out isBlock);
+			// Get the definitions
+			XElement termDefinitions = (from el in constantElement.ElementsAfterSelf ("dl")
+                                        where (String)el.Attribute ("class") == "termdef"
+                                        select el).FirstOrDefault ();
+			if (termDefinitions == null) {
+				this.Logger.WriteLine ("MISSING terms");
+				return null;
+			}
 
-                    ConstantEntity constantEntity = new ConstantEntity();
-                    constantEntity.Type = type;
-                    constantEntity.Name = r.Groups[2].Value.Trim();
-                    constants.Add(constantEntity);
+			IEnumerable<XElement> termName = termDefinitions.Elements ("dt");
+			IEnumerable<XElement> termDefinition = termDefinitions.Elements ("dd");
 
-                    //Console.WriteLine("Constant found '{0}' of type '{1}'", constantEntity.Name, constantEntity.Type);
-                }
-                else
-                {
-                    Console.WriteLine("FAILED to parse constant '{0}'", stripped);
-                    return null;
-                }
-            }
+			if (termName.Count () == termDefinition.Count ()) {
+				// Iterate over definitions
+				for (int i = 0; i < termName.Count(); i++) {
+					String term = termName.ElementAt (i).Value.TrimAll ();
+					IEnumerable<String> summaries = termDefinition.ElementAt (i).Elements ("p").Select (p => p.Value.TrimAll ());
 
-            // Get the definitions
-            XElement termDefinitions = (from el in constantElement.ElementsAfterSelf("dl")
-                                        where (String) el.Attribute("class") == "termdef"
-                                        select el).FirstOrDefault();
-            if (termDefinitions == null)
-            {
-                Console.WriteLine("MISSING terms");
-                return null;
-            }
+					// Find the enumeration value
+					BaseEntity baseEntity = constants.Find (c => c.Name == term);
+					if (baseEntity != null) {
+						foreach (string sum in summaries) {
+							if (CommentHelper.IsAvailability (sum)) {
+								baseEntity.MinAvailability = CommentHelper.ExtractAvailability (sum);
+								break;
+							}
+							baseEntity.Summary.Add (sum);
+						}
+					} else {
+						this.Logger.WriteLine ("Term with no match '" + term + "'");
+					}
+				}
+			} else {
+				this.Logger.WriteLine ("MISMATCH in terms");
+				return null;
+			}
 
-            IEnumerable<XElement> termName = termDefinitions.Elements("dt");
-            IEnumerable<XElement> termDefinition = termDefinitions.Elements("dd");
-
-            if (termName.Count() == termDefinition.Count())
-            {
-                // Iterate over definitions
-                for (int i = 0; i < termName.Count(); i++)
-                {
-                    String term = termName.ElementAt(i).Value.TrimAll();
-                    IEnumerable<String> summaries = termDefinition.ElementAt(i).Elements("p").Select(p => p.Value.TrimAll());
-
-                    // Find the enumeration value
-                    BaseEntity baseEntity = constants.Find(c => c.Name == term);
-                    if (baseEntity != null)
-                    {
-                        foreach (string sum in summaries)
-                        {
-                            if (CommentHelper.IsAvailability(sum))
-                            {
-                                baseEntity.MinAvailability = CommentHelper.ExtractAvailability(sum);
-                                break;
-                            }
-                            baseEntity.Summary.Add(sum);
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Term with no match '" + term + "'");
-                    }
-                }
-            }
-            else
-            {
-                Console.WriteLine("MISMATCH in terms");
-                return null;
-            }
-
-            return constants;
-        }
-    }
+			return constants;
+		}
+	}
 }

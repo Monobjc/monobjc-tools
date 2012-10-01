@@ -19,255 +19,240 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Generators
 {
-    /// <summary>
-    ///   Base class for class generator.
-    /// </summary>
-    public abstract class BaseGenerator
-    {
-        private static readonly IDictionary<string, string> AVAILABILITIES = CreateAvailabilities();
-        public static readonly IDictionary<String, String> MixedTypes = new Dictionary<String, String>();
+	/// <summary>
+	///   Base class for class generator.
+	/// </summary>
+	public abstract class BaseGenerator
+	{
+		private static readonly IDictionary<string, string> AVAILABILITIES = CreateAvailabilities ();
 
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "BaseGenerator" /> class.
-        /// </summary>
-        /// <param name = "writer">The writer.</param>
-        /// <param name = "statistics">The statistics.</param>
-        protected BaseGenerator(StreamWriter writer, GenerationStatistics statistics)
-        {
-            this.Writer = writer;
-            this.Statistics = statistics;
-            this.Usings = new List<String>();
-        }
+		/// <summary>
+		///   Initializes a new instance of the <see cref = "BaseGenerator" /> class.
+		/// </summary>
+		protected BaseGenerator ()
+		{
+		}
 
-        /// <summary>
-        ///   Gets or sets the License txt.
-        /// </summary>
-        /// <value>The License text.</value>
-        public static String License { get; set; }
+		/// <summary>
+		///   Gets or sets the writer.
+		/// </summary>
+		public StreamWriter Writer { get; set; }
+		
+		/// <summary>
+		///   Gets or sets the statistics.
+		/// </summary>
+		public GenerationStatistics Statistics { get; set; }
 
-        /// <summary>
-        ///   Gets or sets the type manager.
-        /// </summary>
-        /// <value>The type manager.</value>
-        public static TypeManager TypeManager { get; set; }
+		/// <summary>
+		///   Gets or sets the License txt.
+		/// </summary>
+		public String License { get; set; }
 
-        /// <summary>
-        ///   Gets or sets the writer.
-        /// </summary>
-        /// <value>The writer.</value>
-        protected StreamWriter Writer { get; private set; }
+		/// <summary>
+		///   Gets or sets the type manager.
+		/// </summary>
+		public TypeManager TypeManager { get; set; }
 
-        /// <summary>
-        ///   Gets or sets the statistics.
-        /// </summary>
-        /// <value>The statistics.</value>
-        protected GenerationStatistics Statistics { get; private set; }
+		/// <summary>
+		/// Gets or sets the mixed types.
+		/// </summary>
+		public IDictionary<String, String> MixedTypes { get; set; }
 
-        /// <summary>
-        ///   Gets or sets the usings.
-        /// </summary>
-        /// <value>The usings.</value>
-        public List<string> Usings { get; set; }
+		/// <summary>
+		///   Gets or sets the usings.
+		/// </summary>
+		public String[] Usings { get; set; }
 
-        /// <summary>
-        ///   Append the standard namespaces
-        /// </summary>
-        protected void AppendStandardNamespaces()
-        {
-            this.Writer.WriteLineFormat(0, "using Monobjc;");
-            foreach (string @using in this.Usings)
-            {
-                this.Writer.WriteLineFormat(0, "using Monobjc.{0};", @using);
-            }
-            this.Writer.WriteLineFormat(0, "using System;");
-            this.Writer.WriteLineFormat(0, "using System.CodeDom.Compiler;");
-            this.Writer.WriteLineFormat(0, "using System.Globalization;");
-            this.Writer.WriteLineFormat(0, "using System.Runtime.InteropServices;");
-            this.Writer.WriteLine();
-        }
+		/// <summary>
+		/// Generate the code for the specified entity.
+		/// </summary>
+		public abstract void Generate (BaseEntity entity);
 
-        /// <summary>
-        ///   Appends the availability paragraph.
-        /// </summary>
-        /// <param name = "indent">The indent.</param>
-        /// <param name = "entity">The entity.</param>
-        protected void AppendAvailability(int indent, BaseEntity entity)
-        {
-            if (!String.IsNullOrEmpty(entity.MinAvailability))
-            {
-                this.Writer.WriteLineFormat(indent, "/// <para>{0}</para>", CommentHelper.GetAvailability(entity.MinAvailability));
-            }
-        }
+		/// <summary>
+		///   Append the standard namespaces
+		/// </summary>
+		protected void AppendStandardNamespaces ()
+		{
+			this.Writer.WriteLineFormat (0, "using System;");
+			this.Writer.WriteLineFormat (0, "using System.CodeDom.Compiler;");
+			this.Writer.WriteLineFormat (0, "using System.Globalization;");
+			this.Writer.WriteLineFormat (0, "using System.Runtime.InteropServices;");
+			this.Writer.WriteLine ();
+			this.Writer.WriteLineFormat (0, "using Monobjc;");
+			foreach (string @using in this.Usings) {
+				this.Writer.WriteLineFormat (0, "using Monobjc.{0};",  @using);
+			}
+			this.Writer.WriteLine ();
+		}
 
-        /// <summary>
-        ///   Appends the start condition for OS version.
-        /// </summary>
-        /// <param name = "entity">The entity.</param>
-        protected void AppendStartCondition(BaseEntity entity)
-        {
-            String define = GetDefine(entity.MinAvailability);
-            if (!String.IsNullOrEmpty(define))
-            {
-                this.Writer.WriteLineFormat(0, "#if {0}", define);
-            }
-            if (entity.Obsolete == null)
-            {
-                define = GetDefine(entity.MaxAvailability);
-                if (!String.IsNullOrEmpty(define))
-                {
-                    this.Writer.WriteLineFormat(0, "#if !{0}", define);
-                }
-            }
-        }
+		/// <summary>
+		///   Appends the availability paragraph.
+		/// </summary>
+		/// <param name = "indent">The indent.</param>
+		/// <param name = "entity">The entity.</param>
+		protected void AppendAvailability (int indent, BaseEntity entity)
+		{
+			if (!String.IsNullOrEmpty (entity.MinAvailability)) {
+				this.Writer.WriteLineFormat (indent, "/// <para>{0}</para>", CommentHelper.GetAvailability (entity.MinAvailability));
+			}
+		}
 
-        /// <summary>
-        ///   Appends the end condition for OS version.
-        /// </summary>
-        /// <param name = "entity">The entity.</param>
-        protected void AppendEndCondition(BaseEntity entity)
-        {
-            String define = GetDefine(entity.MinAvailability);
-            if (!String.IsNullOrEmpty(define))
-            {
-                this.Writer.WriteLineFormat(0, "#endif");
-            }
-            if (entity.Obsolete == null)
-            {
-                define = GetDefine(entity.MaxAvailability);
-                if (!String.IsNullOrEmpty(define))
-                {
-                    this.Writer.WriteLineFormat(0, "#endif");
-                }
-            }
-        }
+		/// <summary>
+		///   Appends the start condition for OS version.
+		/// </summary>
+		/// <param name = "entity">The entity.</param>
+		protected void AppendStartCondition (BaseEntity entity)
+		{
+			String define = GetDefine (entity.MinAvailability);
+			if (!String.IsNullOrEmpty (define)) {
+				this.Writer.WriteLineFormat (0, "#if {0}", define);
+			}
+			if (entity.Obsolete == null) {
+				define = GetDefine (entity.MaxAvailability);
+				if (!String.IsNullOrEmpty (define)) {
+					this.Writer.WriteLineFormat (0, "#if !{0}", define);
+				}
+			}
+		}
 
-        /// <summary>
-        ///   Appends the obsolete attribute.
-        /// </summary>
-        /// <param name = "entity">The entity.</param>
-        protected void AppendObsoleteAttribute(BaseEntity entity)
-        {
-            if (entity.Obsolete != null)
-            {
-                String message = String.Empty;
-                if (entity.Obsolete != String.Empty)
-                {
-                    message = " " + entity.Obsolete;
-                }
+		/// <summary>
+		///   Appends the end condition for OS version.
+		/// </summary>
+		/// <param name = "entity">The entity.</param>
+		protected void AppendEndCondition (BaseEntity entity)
+		{
+			String define = GetDefine (entity.MinAvailability);
+			if (!String.IsNullOrEmpty (define)) {
+				this.Writer.WriteLineFormat (0, "#endif");
+			}
+			if (entity.Obsolete == null) {
+				define = GetDefine (entity.MaxAvailability);
+				if (!String.IsNullOrEmpty (define)) {
+					this.Writer.WriteLineFormat (0, "#endif");
+				}
+			}
+		}
 
-                String define = GetDefine(entity.MaxAvailability);
-                if (!String.IsNullOrEmpty(define))
-                {
-                    this.Writer.WriteLineFormat(0, "#if {0}", define);
-                }
-                this.Writer.WriteLineFormat(2, "[Obsolete(\"Deprecated in {0}.{1}\")]", entity.MaxAvailability, message);
-                if (!String.IsNullOrEmpty(define))
-                {
-                    this.Writer.WriteLineFormat(0, "#endif");
-                }
-            }
-        }
+		/// <summary>
+		///   Appends the obsolete attribute.
+		/// </summary>
+		/// <param name = "entity">The entity.</param>
+		protected void AppendObsoleteAttribute (BaseEntity entity)
+		{
+			if (entity.Obsolete != null) {
+				String message = String.Empty;
+				if (entity.Obsolete != String.Empty) {
+					message = " " + entity.Obsolete;
+				}
 
-        /// <summary>
-        ///   Determines whether the specified type is a mixed type.
-        /// </summary>
-        /// <param name = "type">The type.</param>
-        /// <returns>
-        ///   <c>true</c> if the specified type is a mixed type; otherwise, <c>false</c>.
-        /// </returns>
-        protected static bool IsMixedType(String type)
-        {
-            return MixedTypes.ContainsKey(type);
-        }
+				String define = GetDefine (entity.MaxAvailability);
+				if (!String.IsNullOrEmpty (define)) {
+					this.Writer.WriteLineFormat (0, "#if {0}", define);
+				}
+				this.Writer.WriteLineFormat (2, "[Obsolete(\"Deprecated in {0}.{1}\")]", entity.MaxAvailability, message);
+				if (!String.IsNullOrEmpty (define)) {
+					this.Writer.WriteLineFormat (0, "#endif");
+				}
+			}
+		}
 
-        /// <summary>
-        ///   Gets the real type of the given type.
-        /// </summary>
-        /// <param name = "type">The type.</param>
-        /// <param name = "is64Bits">if set to <c>true</c>, return the 64 bits real type.</param>
-        /// <returns>The real type.</returns>
-        protected static String GetRealType(String type, bool is64Bits)
-        {
-            if (MixedTypes.ContainsKey(type))
-            {
-                string[] types = MixedTypes[type].Split(',');
-                return types[is64Bits ? 1 : 0];
-            }
-            return type;
-        }
+		/// <summary>
+		///   Determines whether the specified type is a mixed type.
+		/// </summary>
+		/// <param name = "type">The type.</param>
+		/// <returns>
+		///   <c>true</c> if the specified type is a mixed type; otherwise, <c>false</c>.
+		/// </returns>
+		protected bool IsMixedType (String type)
+		{
+			return this.MixedTypes.ContainsKey (type);
+		}
 
-        /// <summary>
-        ///   Gets the define string for the given version of OS.
-        /// </summary>
-        /// <param name = "availability">The availability.</param>
-        /// <returns></returns>
-        private static string GetDefine(string availability)
-        {
-            if (String.IsNullOrEmpty(availability))
-            {
-                return null;
-            }
-            if (AVAILABILITIES.ContainsKey(availability))
-            {
-                return AVAILABILITIES[availability];
-            }
-            //Console.WriteLine("Unknown availability => " + availability);
-            return null;
-        }
+		/// <summary>
+		///   Gets the real type of the given type.
+		/// </summary>
+		/// <param name = "type">The type.</param>
+		/// <param name = "is64Bits">if set to <c>true</c>, return the 64 bits real type.</param>
+		/// <returns>The real type.</returns>
+		protected String GetRealType (String type, bool is64Bits)
+		{
+			if (this.MixedTypes.ContainsKey (type)) {
+				string[] types = this.MixedTypes [type].Split (',');
+				return types [is64Bits ? 1 : 0];
+			}
+			return type;
+		}
 
-        /// <summary>
-        ///   Set the define to use for each version of OS.
-        /// </summary>
-        private static IDictionary<string, string> CreateAvailabilities()
-        {
-            IDictionary<string, string> result = new Dictionary<string, string>();
-            result.Add("Mac OS X v10.0", "");
-            result.Add("Mac OS X v10.1", "");
-            result.Add("Mac OS X v10.2", "");
-            result.Add("Mac OS X v10.3", "");
-            result.Add("Mac OS X v10.3.9", "");
-            result.Add("Mac OS X v10.4", "");
-            result.Add("Mac OS X v10.5", "MACOSX_10_5");
-            result.Add("Mac OS X v10.6", "MACOSX_10_6");
-            result.Add("Mac OS X v10.7", "MACOSX_10_7");
-            result.Add("Sparkle 1.5", "");
-            return result;
-        }
+		/// <summary>
+		///   Gets the define string for the given version of OS.
+		/// </summary>
+		/// <param name = "availability">The availability.</param>
+		/// <returns></returns>
+		private static String GetDefine (string availability)
+		{
+			if (String.IsNullOrEmpty (availability)) {
+				return null;
+			}
+			if (AVAILABILITIES.ContainsKey (availability)) {
+				return AVAILABILITIES [availability];
+			}
+			//Console.WriteLine("Unknown availability => " + availability);
+			return null;
+		}
 
-        /// <summary>
-        ///   Gets the type signature.
-        /// </summary>
-        protected static String GetTypeSignature(MethodParameterEntity methodParameterEntity)
-        {
-            return String.Format(CultureInfo.CurrentCulture,
+		/// <summary>
+		///   Set the define to use for each version of OS.
+		/// </summary>
+		private static IDictionary<string, string> CreateAvailabilities ()
+		{
+			IDictionary<string, string> result = new Dictionary<string, string> ();
+			result.Add ("OS X v10.0", "");
+			result.Add ("OS X v10.1", "");
+			result.Add ("OS X v10.2", "");
+			result.Add ("OS X v10.3", "");
+			result.Add ("OS X v10.3.9", "");
+			result.Add ("OS X v10.4", "");
+			result.Add ("OS X v10.5", "MACOSX_10_5");
+			result.Add ("OS X v10.6", "MACOSX_10_6");
+			result.Add ("OS X v10.7", "MACOSX_10_7");
+			result.Add ("OS X v10.8", "MACOSX_10_8");
+			result.Add ("Sparkle 1.5", "");
+			return result;
+		}
+
+		/// <summary>
+		///   Gets the type signature.
+		/// </summary>
+		protected static String GetTypeSignature (MethodParameterEntity methodParameterEntity)
+		{
+			return String.Format (CultureInfo.CurrentCulture,
                                  "{0}{1} {2}",
                                  methodParameterEntity.IsOut ? "out " : (!methodParameterEntity.IsBlock && methodParameterEntity.IsByRef) ? "ref " : String.Empty,
                                  methodParameterEntity.Type,
                                  methodParameterEntity.Name);
-        }
+		}
 
-        /// <summary>
-        ///   Gets the parameter for an invocation.
-        /// </summary>
-        protected static String GetInvocationParameter(MethodParameterEntity methodParameterEntity, MethodParameterEntity destinationMethodParameterEntity = null)
-        {
-            if (destinationMethodParameterEntity != null && !methodParameterEntity.Type.Equals(destinationMethodParameterEntity.Type))
-            {
-                return String.Format(CultureInfo.CurrentCulture,
+		/// <summary>
+		///   Gets the parameter for an invocation.
+		/// </summary>
+		protected static String GetInvocationParameter (MethodParameterEntity methodParameterEntity, MethodParameterEntity destinationMethodParameterEntity = null)
+		{
+			if (destinationMethodParameterEntity != null && !methodParameterEntity.Type.Equals (destinationMethodParameterEntity.Type)) {
+				return String.Format (CultureInfo.CurrentCulture,
                                      "{0}({1}) {2}",
                                      methodParameterEntity.IsOut ? "out " : methodParameterEntity.IsByRef ? "ref " : String.Empty,
                                      destinationMethodParameterEntity.Type,
                                      methodParameterEntity.Name);
-            }
-            return String.Format(CultureInfo.CurrentCulture,
+			}
+			return String.Format (CultureInfo.CurrentCulture,
                                  "{0}{1}",
                                  methodParameterEntity.IsOut ? "out " : methodParameterEntity.IsByRef ? "ref " : String.Empty,
                                  methodParameterEntity.Name);
-        }
-    }
+		}
+	}
 }

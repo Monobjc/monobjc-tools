@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="SecurityFoundation" usings="Foundation,AppKit" assembly="Monobjc.SecurityFoundation" source="DocSet">
+	<Types>
+	</Types>
+	<Classes>
+		<Class name="SFAuthorization">
+			<File>Security/Reference/SecurityFoundationFramework/Classes/SFAuthorization_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="SFAuthorization.Deprecated">
+			<File>Security/Reference/SecurityFoundationFramework/Classes/SFAuthorization_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="SFAuthorization"]]></Change>
+			</Patch>
+		</Class>
+	</Classes>
+	<Protocols>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

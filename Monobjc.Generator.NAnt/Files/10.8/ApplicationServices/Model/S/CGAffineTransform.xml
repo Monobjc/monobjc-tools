@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure Generate="true">
+	<Name>CGAffineTransform</Name>
+	<Namespace>ApplicationServices</Namespace>
+	<MixedType>CGAffineTransform,CGAffineTransform64</MixedType>
+</Structure>

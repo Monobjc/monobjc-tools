@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="Sparkle" usings="Foundation,AppKit" assembly="Monobjc.Sparkle" source="Doxygen" style="Doxygen" path="/Library/Frameworks/Sparkle.framework/Headers">
+	<Classes>
+		<Class name="SUAppcast">
+			<Patch type="Model">
+				<Change><![CDATA[Constants["items"].Generate=false]]></Change>
+				<Change><![CDATA[Constants["userAgentString"].Generate=false]]></Change>
+				<Change><![CDATA[Constants["delegate"].Generate=false]]></Change>
+				<Change><![CDATA[Constants["incrementalData"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="SUAppcastItem">
+			<Patch type="Model">
+				<Change><![CDATA[Constants["title"].Generate=false]]></Change>
+				<Change><![CDATA[Constants["date"].Generate=false]]></Change>
+				<Change><![CDATA[Constants["itemDescription"].Generate=false]]></Change>
+				<Change><![CDATA[Constants["releaseNotesURL"].Generate=false]]></Change>
+				<Change><![CDATA[Constants["DSASignature"].Generate=false]]></Change>
+				<Change><![CDATA[Constants["minimumSystemVersion"].Generate=false]]></Change>
+				<Change><![CDATA[Constants["fileURL"].Generate=false]]></Change>
+				<Change><![CDATA[Constants["versionString"].Generate=false]]></Change>
+				<Change><![CDATA[Constants["displayVersionString"].Generate=false]]></Change>
+				<Change><![CDATA[Constants["propertiesDictionary"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="SUUpdater">
+			<Patch type="Model">
+				<Change><![CDATA[Constants["checkTimer"].Generate=false]]></Change>
+				<Change><![CDATA[Constants["driver"].Generate=false]]></Change>
+				<Change><![CDATA[Constants["host"].Generate=false]]></Change>
+				<Change><![CDATA[Constants["delegate"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="SUVersionComparison">
+		</Protocol>
+		<Protocol name="SUAppcastDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="SUAppcast"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="SUUpdaterDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="SUUpdater"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+	</Protocols>
+</Framework>
