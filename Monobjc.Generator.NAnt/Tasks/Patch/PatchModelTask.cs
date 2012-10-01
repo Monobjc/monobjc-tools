@@ -84,6 +84,7 @@ namespace Monobjc.Tools.Generator.NAnt
 		{
 			T entity = BaseEntity.LoadFrom<T> (file);
 			foreach (var change in changes) {
+				this.Log(Level.Verbose, "Patching {0} with '{1}'", name, change);
 
 				int hash = entity.GetHashCode();
 				BaseEntity.Change<T> (entity, change);

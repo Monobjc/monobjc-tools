@@ -35,7 +35,7 @@
 		<framework descriptor="${data.dir}/Resources/10.8/CoreData.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/CoreLocation.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/CoreMedia.xml" />
-		<framework descriptor="${data.dir}/Resources/10.8/CoreMidi.xml" />
+		<framework descriptor="${data.dir}/Resources/10.8/CoreMIDI.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/CoreServices.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/CoreWLAN.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/DiscRecording.xml" />
