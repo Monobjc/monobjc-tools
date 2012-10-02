@@ -76,7 +76,7 @@ namespace Monobjc.Tools.Generator.Parsers
                 return false;
             }
 
-            int count = 0;
+            int count = 1;
             int closingIndex = openingIndex + 1;
             while (true)
             {
@@ -87,11 +87,11 @@ namespace Monobjc.Tools.Generator.Parsers
                 }
                 if (c == ')')
                 {
-                    if (count == 0)
+					count--;
+					if (count == 0)
                     {
                         break;
                     }
-                    count--;
                 }
             }
 

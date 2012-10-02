@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="Foundation" assembly="Monobjc.Foundation" source="DocSet">
+<Framework name="Foundation" usings="ApplicationServices" assembly="Monobjc.Foundation" source="DocSet">
 	<Types>
 		<Type name="FoundationFramework.Constants">
 			<File>Cocoa/Reference/Foundation/Miscellaneous/Foundation_Constants/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[ = 4095
+]]></Source>
+					<With><![CDATA[ = 4095,
+]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Enumerations["_NSByteOrder"].Name="NSByteOrder"]]></Change>
 				<Change><![CDATA[Enumerations["NSByteOrder"].BaseType="NSInteger"]]></Change>
@@ -21,6 +29,8 @@
 				<Change><![CDATA[Enumerations["NSErrorCode"].BaseType="NSInteger"]]></Change>
 				<Change><![CDATA[Enumerations["URL_Loading_System_Error_Codes"].Name="NSURLLoadingSystemErrorCode"]]></Change>
 				<Change><![CDATA[Enumerations["NSURLLoadingSystemErrorCode"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["long"].Name="NSAlignmentOptions"]]></Change>
+				<Change><![CDATA[Enumerations["NSAlignmentOptions"].BaseType="ulong"]]></Change>
 			</Patch>
 		</Type>
 		<Type name="FoundationFramework.DataTypes">
@@ -283,7 +293,11 @@
 				<Change><![CDATA[Functions["NSZoneMalloc"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["NSZoneName"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["NSZoneRealloc"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NS_DURING"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NS_ENDHANDLER"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NS_HANDLER"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["NS_VALUERETURN"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NS_VOIDRETURN"].Generate=false]]></Change>
 			</Patch>
 		</Type>
 	</Types>
@@ -404,6 +418,7 @@
 				<Change><![CDATA[Methods["RangeOfUnitStartDateIntervalForDate"].Parameters["tip"].Type="double"]]></Change>
 				<Change><![CDATA[Methods["RangeOfUnitStartDateIntervalForDate"].Parameters["tip"].IsOut=true]]></Change>
 				<Change><![CDATA[Enumerations["NSCalendarUnit"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSDateComponents_wrapping_behavior"].Generate=false]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSCharacterSet">
@@ -417,6 +432,7 @@
 				<Change><![CDATA[Methods["CharacterSetWithContentsOfFile"].CopyInDescendants=true]]></Change>
 				<Change><![CDATA[Methods["CharacterSetWithRange"].ReturnType="NSCharacterSet"]]></Change>
 				<Change><![CDATA[Methods["CharacterSetWithRange"].CopyInDescendants=true]]></Change>
+				<Change><![CDATA[Enumerations["NSOpenStepUnicodeReservedBase"].Generate=false]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSClassDescription">
@@ -687,6 +703,10 @@
 		<Class name="NSExpression">
 			<File>Cocoa/Reference/Foundation/Classes/NSExpression_Class/Reference/NSExpression.html</File>
 			<Patch type="Model">
+				<Change><![CDATA[Methods["ExpressionWithFormat"].Parameters["expressionFormat,..."].Generate=false]]></Change>
+				<Change><![CDATA[Methods["ExpressionWithFormat"].Parameters.Set("expressionFormat", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>expressionFormat</Name><Type>NSString</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["ExpressionWithFormat"].Parameters.Set("values", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["ExpressionWithFormatArguments"].Generate=false]]></Change>
 				<Change><![CDATA[Methods["ExpressionValueWithObjectContext"].ReturnType="NSExpression"]]></Change>
 				<Change><![CDATA[Properties["ExpressionBlock"].Type="IntPtr"]]></Change>
 			</Patch>
@@ -1125,9 +1145,9 @@
 				<!--
 				<Change><![CDATA[Properties.First(Name == "Class" && Static == False).Generate=false]]></Change>
 				<Change><![CDATA[Properties.First(Name == "Class" && Static == True).Generate=false]]></Change>
+				-->
 				<Change><![CDATA[Properties.First(Name == "Description" && Static == True).Generate=false]]></Change>
 				<Change><![CDATA[Properties.First(Name == "Superclass" && Static == True).Generate=false]]></Change>
-				-->
 			</Patch>
 		</Class>
 		<Class name="NSObject.Deprecated">
@@ -1591,6 +1611,9 @@
 				<Change><![CDATA[Enumerations["NSStringEncodingConversionOptions"].BaseType="NSUInteger"]]></Change>
 				<Change><![CDATA[Enumerations["String_Encodings"].Name="NSStringEncoding"]]></Change>
 				<Change><![CDATA[Enumerations["NSStringEncoding"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["String_Enumeration_Options"].Name="NSStringEnumerationOptions"]]></Change>
+				<Change><![CDATA[Enumerations["NSStringEnumerationOptions"].BaseType="NSUInteger"]]></Change>
+				String_Enumeration_Options
 			</Patch>
 		</Class>
 		<Class name="NSString.Deprecated">
@@ -1618,18 +1641,24 @@
 		</Class>
 		<Class name="NSTextCheckingResult">
 			<File>AppKit/Reference/NSTextCheckingResult_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[&lt;&lt; 10
+]]></Source>
+					<With><![CDATA[&lt;&lt; 10,
+]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Enumerations["NSTextCheckingType"].BaseType="ulong"]]></Change>
-				<Change><![CDATA[Enumerations["NSTextCheckingType"].MixedType="ulong,ulong"]]></Change>
 				<Change><![CDATA[Enumerations["NSTextCheckingTypes"].BaseType="ulong"]]></Change>
-				<Change><![CDATA[Enumerations["NSTextCheckingTypes"].MixedType="ulong,ulong"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSThread">
 			<File>Cocoa/Reference/Foundation/Classes/NSThread_Class/Reference/Reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Properties.First(Name == "IsMainThread" && Static == True).Generate=false]]></Change>
-				<Change><![CDATA[Properties.First(Name == "ThreadPriority" && Static == True).MaxAvailability="Mac OS X v10.6"]]></Change>
+				<Change><![CDATA[Properties.First(Name == "ThreadPriority" && Static == True).Generate=false]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSTimer">
@@ -1898,6 +1927,12 @@
 		</Protocol>
 		<Protocol name="NSFilePresenter">
 			<File>Foundation/Reference/NSFilePresenter_protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["RelinquishPresentedItemToReader"].Parameters["reader"].Type="Action<Action>"]]></Change>
+				<Change><![CDATA[Methods["RelinquishPresentedItemToReader"].Parameters["reader"].IsBlock=true]]></Change>
+				<Change><![CDATA[Methods["RelinquishPresentedItemToWriter"].Parameters["writer"].Type="Action<Action>"]]></Change>
+				<Change><![CDATA[Methods["RelinquishPresentedItemToWriter"].Parameters["writer"].IsBlock=true]]></Change>
+			</Patch>
 		</Protocol>
 		<Protocol name="NSKeyedArchiverDelegate">
 			<File>Cocoa/Reference/NSKeyedArchiverDelegate_Protocol/Reference/Reference.html</File>

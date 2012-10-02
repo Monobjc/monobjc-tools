@@ -53,8 +53,12 @@ namespace Monobjc.Tools.Generator.Generators
 			this.Writer.WriteLineFormat (1, "public partial class {0}", classEntity.Name);
 			this.Writer.WriteLineFormat (1, "{{");
 
-			// Append methods
+			// Append constructors
 			IEnumerable<MethodEntity> constructors = classEntity.GetConstructors (true, true);
+
+			// Filter out constructors to avoid duplicate
+			constructors = constructors.Distinct (new MethodComparer ());
+
 			foreach (MethodEntity methodEntity in constructors.Where(e => e.GenerateConstructor)) {
 				this.MethodGenerator.GenerateConstructor (classEntity, methodEntity);
 				this.Writer.WriteLine ();
@@ -68,6 +72,27 @@ namespace Monobjc.Tools.Generator.Generators
 
 			// Append namespace ender
 			this.Writer.WriteLineFormat (0, "}}");
+		}
+
+
+		public class MethodComparer : IEqualityComparer<MethodEntity>
+		{
+			public bool Equals (MethodEntity x, MethodEntity y)
+			{
+				if (!x.Selector.Equals (y.Selector)) {
+					return false;
+				}
+				return true;
+			}
+			
+			public int GetHashCode (MethodEntity obj)
+			{
+				unchecked {
+					int hash = 17;
+					hash = hash * 23 + obj.Selector.GetHashCode ();
+					return hash;
+				}
+			}			
 		}
 	}
 }

@@ -80,6 +80,9 @@ namespace Monobjc.Tools.Generator.Model
 				case "NSUInteger":
 					this.MixedType = "uint,ulong";
 					break;
+				default:
+					break;
+					this.MixedType = String.Empty;
 				}
 			}
 		}

@@ -246,6 +246,7 @@
 	<Mapping type="dispatch_io_interval_flags_t">NSUInteger</Mapping>
 	<Mapping type="dispatch_semaphore_t">IntPtr</Mapping>
 	<Mapping type="float">float</Mapping>
+	<Mapping type="id (^)(id, NSArray *, NSMutableDictionary *)"><![CDATA[block:Func<Id, NSArray, NSMutableDictionary, Id>]]></Mapping>
 	<Mapping type="id (^)(id evaluatedObject, NSArray *expressions, NSMutableDictionary *context)"><![CDATA[block:Func<Id, NSArray, NSMutableDictionary, Id>]]></Mapping>
 	<Mapping type="id">Id</Mapping>
 	<Mapping type="inout NSRange *">ref:NSRange</Mapping>
@@ -297,7 +298,7 @@
 	<Mapping type="void (^)(NSInteger sequenceNumber,  NSArray *results, NSOrthography *orthography, NSInteger wordCount)"><![CDATA[block:Action<NSInteger, NSArray, NSOrthography, int>]]></Mapping>
 	<Mapping type="void (^)(NSInteger sequenceNumber, NSArray *results, NSOrthography *orthography, NSInteger wordCount)"><![CDATA[block:Action<NSInteger, NSArray, NSOrthography, int>]]></Mapping>
 	<Mapping type="void (^)(NSNotification *)"><![CDATA[block:Action<NSNotification>]]></Mapping>
-	<Mapping type="void (^)(NSRange range, BOOL *stop)"><![CDATA[block:Action<Range, IntPtr>]]></Mapping>
+	<Mapping type="void (^)(NSRange range, BOOL *stop)"><![CDATA[block:Action<NSRange, IntPtr>]]></Mapping>
 	<Mapping type="void (^)(NSString *acceptedString)"><![CDATA[Action<NSString>]]></Mapping>
 	<Mapping type="void (^)(NSString *line, BOOL *stop)"><![CDATA[block:Action<NSString, IntPtr>]]></Mapping>
 	<Mapping type="void (^)(NSString *substring, NSRange  substringRange, NSRange enclosingRange, BOOL *stop)"><![CDATA[block:Action<NSString, NSRange, NSRange, IntPtr>]]></Mapping>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="Kernel" usings="" assembly="Monobjc.Foundation" source="DocSet">
+<Framework name="Kernel" usings="Foundation" assembly="Monobjc.Foundation" source="DocSet">
 	<Types>
 		<Type name="Dispatch">
 			<File>Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html</File>
@@ -10,7 +10,7 @@
 				<Change><![CDATA[Functions["dispatch_apply"].Parameters["block"].Type="Block"]]></Change>
 				<Change><![CDATA[Functions["dispatch_apply"].Parameters["block"].IsBlock=false]]></Change>
 				<Change><![CDATA[Functions["dispatch_apply_f"].Parameters["d"].Name="work"]]></Change>
-				<Change><![CDATA[Functions["dispatch_apply_f"].Parameters["work"].Type="<![CDATA[dispatch_function_tc"]]></Change>
+				<Change><![CDATA[Functions["dispatch_apply_f"].Parameters["work"].Type="dispatch_function_tc"]]></Change>
 				<Change><![CDATA[Functions["dispatch_apply_f"].Parameters["t"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["dispatch_async"].Parameters["block"].Type="Block"]]></Change>
 				<Change><![CDATA[Functions["dispatch_async"].Parameters["block"].IsBlock=false]]></Change>
@@ -40,7 +40,7 @@
 				<Change><![CDATA[Functions["dispatch_group_notify"].Parameters["block"].Type="Block"]]></Change>
 				<Change><![CDATA[Functions["dispatch_group_notify"].Parameters["block"].IsBlock=false]]></Change>
 				<Change><![CDATA[Functions["dispatch_io_create"].Parameters["d"].Name="cleanup_handler"]]></Change>
-				<Change><![CDATA[Functions["dispatch_io_create"].Parameters["cleanup_handler"].Type="<![CDATA[Action<int>"]]></Change>
+				<Change><![CDATA[Functions["dispatch_io_create"].Parameters["cleanup_handler"].Type="Action<int>"]]></Change>
 				<Change><![CDATA[Functions["dispatch_io_create_with_path"].Parameters["path"].Type="String"]]></Change>
 				<Change><![CDATA[Functions["dispatch_io_create_with_path"].Parameters["d"].Name="cleanup_handler"]]></Change>
 				<Change><![CDATA[Functions["dispatch_io_create_with_path"].Parameters["cleanup_handler"].Type="Block"]]></Change>

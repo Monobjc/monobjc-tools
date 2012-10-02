@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="CoreFoundation" usings="" assembly="Monobjc.Foundation" source="DocSet">
+<Framework name="CoreFoundation" usings="Foundation" assembly="Monobjc.Foundation" source="DocSet">
 	<Types>
 		<Type name="CFAllocator">
 			<File>CoreFoundation/Reference/CFAllocatorRef/Reference/reference.html</File>

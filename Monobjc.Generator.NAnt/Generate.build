@@ -240,7 +240,7 @@
 	Generate statistics from the model to measure non-regression
 	================================================================================
 	-->
-	<target name="statistics" depends="generate">
+	<target name="statistics">
 		<dump-statistics dir="${data.dir}" report="${data.dir}/TestResult.xml">
 			<docset refid="10.8" />
 			<framework-set refid="docset" />
