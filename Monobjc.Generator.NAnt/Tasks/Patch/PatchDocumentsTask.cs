@@ -44,30 +44,50 @@ namespace Monobjc.Tools.Generator.NAnt
 				return;
 			}
 
-			if (this.Type == DocumentType.Generated) {
-				path += ".cs";
+			IList<String> paths = new List<String>();
+			switch(this.Type) {
+			case DocumentType.Generated:
+				paths.Add(path + ".cs");
+				paths.Add(path + ".Class.cs");
+				paths.Add(path + ".Constants.cs");
+				paths.Add(path + ".Constructors.cs");
+				paths.Add(path + ".Protocol.cs");
+				paths.Add(path + ".Protocols.cs");
+				break;
+			default:
+				paths.Add(path);
+				break;
 			}
 
-			if (!File.Exists(path)) {
-				return;
-			}
+			this.Patch(paths, entity, replacements);
+		}
 
-			String contents = File.ReadAllText (path);
-			bool modified = false;
-			foreach (PatchReplace replacement in replacements) {
-				String source = replacement.Source;
-				String with = replacement.With;
-				if (contents.Contains (source)) {
-					contents = contents.Replace (source, with);
-					modified |= true;
+		protected void Patch (IEnumerable<String> paths, FrameworkEntity entity, IEnumerable<PatchReplace> replacements)
+		{
+			foreach (var path in paths) {
+				if (!File.Exists (path)) {
+					continue;
 				}
-			}
+
+				this.Log (Level.Verbose, String.Format ("Probing {0} for '{1}'...", Path.GetFileName(path), entity.name));
+
+				String contents = File.ReadAllText (path);
+				bool modified = false;
+				foreach (PatchReplace replacement in replacements) {
+					String source = replacement.Source;
+					String with = replacement.With;
+					if (contents.Contains (source)) {
+						contents = contents.Replace (source, with);
+						modified |= true;
+					}
+				}
 			
-			if (modified) {
-				this.Log (Level.Info, String.Format ("Patching {0} for '{1}'...", this.Type, entity.name));
-				File.WriteAllText (path, contents);
-			} else {
-				this.Log (Level.Debug, String.Format ("Skipping {0} for '{1}'...", this.Type, entity.name));
+				if (modified) {
+					this.Log (Level.Info, String.Format ("Patching {0} for '{1}'...", this.Type, entity.name));
+					File.WriteAllText (path, contents);
+				} else {
+					this.Log (Level.Verbose, String.Format ("Skipping {0} for '{1}'...", this.Type, entity.name));
+				}
 			}
 		}
 	}

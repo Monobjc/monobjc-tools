@@ -32,6 +32,12 @@
 				<Change><![CDATA[Enumerations["long"].Name="NSAlignmentOptions"]]></Change>
 				<Change><![CDATA[Enumerations["NSAlignmentOptions"].BaseType="ulong"]]></Change>
 			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[UL <<]]></Source>
+					<With><![CDATA[ <<]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="FoundationFramework.DataTypes">
 			<File>Cocoa/Reference/Foundation/Miscellaneous/Foundation_DataTypes/Reference/reference.html</File>
@@ -547,6 +553,12 @@
 				<Change><![CDATA[Enumerations["NSDataWritingOptions"].Values.Set("NSAtomicWrite", "<EnumerationValue><Summary><Line>Deprecated name for NSDataWritingAtomic.</Line></Summary><MinAvailability>Mac OS X v10.4</MinAvailability><Name>NSAtomicWrite</Name><Value>1U &lt;&lt; 0</Value></EnumerationValue>")]]></Change>
 				<Change><![CDATA[Enumerations["Legacy_Writing_Options"].Generate=false]]></Change>
 			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[UL <<]]></Source>
+					<With><![CDATA[ <<]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="NSData.Deprecated">
 			<File>Cocoa/Reference/Foundation/Classes/NSData_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
@@ -746,6 +758,17 @@
 				<Change><![CDATA[Methods["FileSystemRepresentationWithPath"].ReturnType="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["StringWithFileSystemRepresentationLength"].Parameters["@string"].Type="String"]]></Change>
 				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["UbiquityIdentityToken"].Type="Id"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[UL <<]]></Source>
+					<With><![CDATA[ <<]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[L <<]]></Source>
+					<With><![CDATA[ <<]]></With>
+				</Replace>
 			</Patch>
 		</Class>
 		<Class name="NSFileManager.Deprecated">
@@ -798,6 +821,12 @@
 				<Change><![CDATA[Properties["HashTableWithWeakObjects"].Type="NSHashTable"]]></Change>
 				<Change><![CDATA[Enumerations["Hash_Table_Options"].Name="NSHashTableOptions"]]></Change>
 				<Change><![CDATA[Enumerations["NSHashTableOptions"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[ = NSPointerFunctions]]></Source>
+					<With><![CDATA[ =  NSPointerFunctionsOptions.NSPointerFunctions]]></With>
+				</Replace>
 			</Patch>
 		</Class>
 		<Class name="NSHashTable.Deprecated">
@@ -878,6 +907,12 @@
 		</Class>
 		<Class name="NSJSONSerialization">
 			<File>Foundation/Reference/NSJSONSerialization_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[UL <<]]></Source>
+					<With><![CDATA[ <<]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="NSKeyedArchiver">
 			<File>Cocoa/Reference/Foundation/Classes/NSKeyedArchiver_Class/Reference/Reference.html</File>
@@ -943,6 +978,12 @@
 				<Change><![CDATA[Properties["MapTableWithStrongToWeakObjects"].Type="NSMapTable"]]></Change>
 				<Change><![CDATA[Properties["MapTableWithWeakToStrongObjects"].Type="NSMapTable"]]></Change>
 				<Change><![CDATA[Properties["MapTableWithWeakToWeakObjects"].Type="NSMapTable"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[ = NSPointerFunctions]]></Source>
+					<With><![CDATA[ =  NSPointerFunctionsOptions.NSPointerFunctions]]></With>
+				</Replace>
 			</Patch>
 		</Class>
 		<Class name="NSMapTable.Deprecated">
@@ -1013,6 +1054,10 @@
 		</Class>
 		<Class name="NSMutableDictionary">
 			<File>Cocoa/Reference/Foundation/Classes/NSMutableDictionary_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["SetObjectForKey"].Parameters["aKey"].Type="Id"]]></Change>
+				<Change><![CDATA[Methods["SetObjectForKeyedSubscript"].Parameters["aKey"].Type="Id"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSMutableIndexSet">
 			<File>Cocoa/Reference/Foundation/Classes/NSMutableIndexSet_Class/Reference/Reference.html</File>
@@ -1257,6 +1302,12 @@
 				<Change><![CDATA[Properties["SizeFunction"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Enumerations["Memory_and_Personality_Options"].Name="NSPointerFunctionsOptions"]]></Change>
 				<Change><![CDATA[Enumerations["NSPointerFunctionsOptions"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[UL <<]]></Source>
+					<With><![CDATA[ <<]]></With>
+				</Replace>
 			</Patch>
 		</Class>
 		<Class name="NSPort">
@@ -1613,7 +1664,12 @@
 				<Change><![CDATA[Enumerations["NSStringEncoding"].BaseType="NSUInteger"]]></Change>
 				<Change><![CDATA[Enumerations["String_Enumeration_Options"].Name="NSStringEnumerationOptions"]]></Change>
 				<Change><![CDATA[Enumerations["NSStringEnumerationOptions"].BaseType="NSUInteger"]]></Change>
-				String_Enumeration_Options
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[UL <<]]></Source>
+					<With><![CDATA[ <<]]></With>
+				</Replace>
 			</Patch>
 		</Class>
 		<Class name="NSString.Deprecated">
@@ -1714,6 +1770,12 @@
 				<Change><![CDATA[Methods["InitByResolvingBookmarkDataOptionsRelativeToURLBookmarkDataIsStaleError"].Parameters["isStale"].IsOut=true]]></Change>
 				<Change><![CDATA[Methods["InitFileURLWithPath"].GenerateConstructor=false]]></Change>
 				<Change><![CDATA[Methods["WriteBookmarkDataToURLOptionsError"].Parameters["options"].Type="NSURLBookmarkCreationOptions"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[UL <<]]></Source>
+					<With><![CDATA[ <<]]></With>
+				</Replace>
 			</Patch>
 		</Class>
 		<Class name="NSURL.Deprecated">
@@ -1852,10 +1914,26 @@
 		</Class>
 		<Class name="NSXMLNode">
 			<File>Cocoa/Reference/Foundation/Classes/NSXMLNode_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[// &lt;a>&lt;/a>]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[// &lt;a/>]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Enumerations["Input_and_Output_Options"].Name="NSXMLNodeOptions"]]></Change>
 				<Change><![CDATA[Enumerations["NSXMLNodeOptions"].BaseType="NSUInteger"]]></Change>
 				<Change><![CDATA[Enumerations["NSXMLNodeOptions"].Flags=true]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[UL <<]]></Source>
+					<With><![CDATA[ <<]]></With>
+				</Replace>
 			</Patch>
 		</Class>
 		<Class name="NSXMLParser">
@@ -1867,6 +1945,12 @@
 		</Class>
 		<Class name="NSXPCConnection">
 			<File>Foundation/Reference/NSXPCConnection_reference/translated_content/NSXPCConnection.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[UL),]]></Source>
+					<With><![CDATA[),]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="NSXPCInterface">
 			<File>Foundation/Reference/NSXPCInterface_reference/translated_content/NSXPCInterface.html</File>

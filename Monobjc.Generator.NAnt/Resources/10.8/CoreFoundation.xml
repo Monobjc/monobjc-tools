@@ -142,7 +142,7 @@
 		<Type name="CFType">
 			<File>CoreFoundation/Reference/CFTypeRef/Reference/reference.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Functions["CFHash"].ReturnType="CFHashCode"]]></Change>
+				<Change><![CDATA[Functions["CFHash"].ReturnType="NSUInteger"]]></Change>
 				<Change><![CDATA[Functions["CFHash"].Parameters["CFHash"].Name="cf"]]></Change>
 				<Change><![CDATA[Functions["CFHash"].Parameters["cf"].Type="IntPtr"]]></Change>
 			</Patch>
