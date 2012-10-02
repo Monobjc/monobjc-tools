@@ -420,11 +420,75 @@
 		</Class>
 		<Class name="NSCalendar">
 			<File>Cocoa/Reference/Foundation/Classes/NSCalendar_Class/Reference/NSCalendar.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[>kCFCalendarUnitYearForWeekOfYear</a>]]></Source>
+					<With><![CDATA[>kCFCalendarUnitYearForWeekOfYear,</a>]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["RangeOfUnitStartDateIntervalForDate"].Parameters["tip"].Type="double"]]></Change>
 				<Change><![CDATA[Methods["RangeOfUnitStartDateIntervalForDate"].Parameters["tip"].IsOut=true]]></Change>
 				<Change><![CDATA[Enumerations["NSCalendarUnit"].BaseType="NSUInteger"]]></Change>
 				<Change><![CDATA[Enumerations["NSDateComponents_wrapping_behavior"].Generate=false]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[= kCFCalendarUnitYearForWeekOfYear]]></Source>
+					<With><![CDATA[= (1U << 14)]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[= kCFCalendarUnitWeekOfYear]]></Source>
+					<With><![CDATA[= (1U << 13)]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[= kCFCalendarUnitWeekOfMonth]]></Source>
+					<With><![CDATA[= (1U << 12)]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[= kCFCalendarUnitQuarter]]></Source>
+					<With><![CDATA[= (1U << 11)]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[= kCFCalendarUnitWeekdayOrdinal]]></Source>
+					<With><![CDATA[= (1U << 10)]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[= kCFCalendarUnitWeekday]]></Source>
+					<With><![CDATA[= (1U << 9)]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[= kCFCalendarUnitWeek]]></Source>
+					<With><![CDATA[= (1U << 8)]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[= kCFCalendarUnitSecond]]></Source>
+					<With><![CDATA[= (1U << 7)]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[= kCFCalendarUnitMinute]]></Source>
+					<With><![CDATA[= (1U << 6)]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[= kCFCalendarUnitHour]]></Source>
+					<With><![CDATA[= (1U << 5)]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[= kCFCalendarUnitDay]]></Source>
+					<With><![CDATA[= (1U << 4)]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[= kCFCalendarUnitMonth]]></Source>
+					<With><![CDATA[= (1U << 3)]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[= kCFCalendarUnitYear]]></Source>
+					<With><![CDATA[= (1U << 2)]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[= kCFCalendarUnitEra]]></Source>
+					<With><![CDATA[= (1U << 1)]]></With>
+				</Replace>
 			</Patch>
 		</Class>
 		<Class name="NSCharacterSet">
