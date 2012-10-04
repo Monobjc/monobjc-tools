@@ -62,11 +62,11 @@ namespace Monobjc.Tools.Generator.Model
 			}
 		}
 
-		public override int GetHashCode ()
+		public virtual int GetHashValue ()
 		{
 			unchecked {
-				int hash = base.GetHashCode();
-				return this.Aggregate(hash, (current, item) => current * 23 + item.GetHashCode()); 
+				int hash = 17;
+				return this.Aggregate(hash, (current, item) => current * 23 + item.GetHashValue()); 
 			}
 		}
 	}

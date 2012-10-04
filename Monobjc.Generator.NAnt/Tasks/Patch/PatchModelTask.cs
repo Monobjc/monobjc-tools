@@ -12,7 +12,7 @@ namespace Monobjc.Tools.Generator.NAnt
 	public class PatchModelTask : BaseTask
 	{
 		/// <summary>
-		/// Gets or sets the mapping file.
+		/// Gets or sets the report file.
 		/// </summary>
 		[TaskAttribute("report", Required = false)]
 		[StringValidator(AllowEmpty = false)]
@@ -83,18 +83,23 @@ namespace Monobjc.Tools.Generator.NAnt
 		private void LoadAndChange<T> (String name, String file, IEnumerable<String> changes, TextWriter writer) where T : BaseEntity
 		{
 			T entity = BaseEntity.LoadFrom<T> (file);
+			bool modified = false;
 			foreach (var change in changes) {
 				this.Log(Level.Verbose, "Patching {0} with '{1}'", name, change);
 
-				int hash = entity.GetHashCode();
+				int hash = entity.GetHashValue();
 				BaseEntity.Change<T> (entity, change);
-				int newHash = entity.GetHashCode();
+				int newHash = entity.GetHashValue();
 
+				modified |= (hash != newHash);
 				if (writer != null) {
 					writer.WriteLine("{0} {1} with '{2}'", (hash != newHash) ? "MODIFIED " : "UNTOUCHED", name, change);
 				}
 			}
-			entity.SaveTo (file);
+
+			if (modified) {
+				entity.SaveTo (file);
+			}
 		}
 	}
 }

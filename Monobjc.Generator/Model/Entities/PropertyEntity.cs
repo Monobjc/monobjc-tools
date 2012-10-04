@@ -166,14 +166,14 @@ namespace Monobjc.Tools.Generator.Model
 		///   A hash code for the current <see cref = "T:System.Object" />.
 		/// </returns>
 		/// <filterpriority>2</filterpriority>
-		public override int GetHashCode ()
+		public override int GetHashValue ()
 		{
 			unchecked {
-				int hash = base.GetHashCode();
+				int hash = base.GetHashValue();
 				hash = hash * 23 + this.Static.GetHashCode ();
 				hash = hash * 23 + (this.Type != null ? this.Type.GetHashCode () : 0);
-				hash = hash * 23 + (this.HasGetter ? this.Getter.GetHashCode () : 0);
-				hash = hash * 23 + (this.HasSetter ? this.Setter.GetHashCode () : 0);
+				hash = hash * 23 + (this.HasGetter ? this.Getter.GetHashValue () : 0);
+				hash = hash * 23 + (this.HasSetter ? this.Setter.GetHashValue () : 0);
 				return hash;
 			}
 		}

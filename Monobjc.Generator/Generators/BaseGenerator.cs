@@ -29,8 +29,6 @@ namespace Monobjc.Tools.Generator.Generators
 	/// </summary>
 	public abstract class BaseGenerator
 	{
-		private static readonly IDictionary<string, string> AVAILABILITIES = CreateAvailabilities ();
-
 		/// <summary>
 		///   Initializes a new instance of the <see cref = "BaseGenerator" /> class.
 		/// </summary>
@@ -108,12 +106,12 @@ namespace Monobjc.Tools.Generator.Generators
 		/// <param name = "entity">The entity.</param>
 		protected void AppendStartCondition (BaseEntity entity)
 		{
-			String define = GetDefine (entity.MinAvailability);
+			String define = AvailabilityHelper.GetDefine (entity.MinAvailability);
 			if (!String.IsNullOrEmpty (define)) {
 				this.Writer.WriteLineFormat (0, "#if {0}", define);
 			}
 			if (entity.Obsolete == null) {
-				define = GetDefine (entity.MaxAvailability);
+				define = AvailabilityHelper.GetDefine (entity.MaxAvailability);
 				if (!String.IsNullOrEmpty (define)) {
 					this.Writer.WriteLineFormat (0, "#if !{0}", define);
 				}
@@ -126,12 +124,12 @@ namespace Monobjc.Tools.Generator.Generators
 		/// <param name = "entity">The entity.</param>
 		protected void AppendEndCondition (BaseEntity entity)
 		{
-			String define = GetDefine (entity.MinAvailability);
+			String define = AvailabilityHelper.GetDefine (entity.MinAvailability);
 			if (!String.IsNullOrEmpty (define)) {
 				this.Writer.WriteLineFormat (0, "#endif");
 			}
 			if (entity.Obsolete == null) {
-				define = GetDefine (entity.MaxAvailability);
+				define = AvailabilityHelper.GetDefine (entity.MaxAvailability);
 				if (!String.IsNullOrEmpty (define)) {
 					this.Writer.WriteLineFormat (0, "#endif");
 				}
@@ -150,7 +148,7 @@ namespace Monobjc.Tools.Generator.Generators
 					message = " " + entity.Obsolete;
 				}
 
-				String define = GetDefine (entity.MaxAvailability);
+				String define = AvailabilityHelper.GetDefine (entity.MaxAvailability);
 				if (!String.IsNullOrEmpty (define)) {
 					this.Writer.WriteLineFormat (0, "#if {0}", define);
 				}
@@ -186,43 +184,6 @@ namespace Monobjc.Tools.Generator.Generators
 				return types [is64Bits ? 1 : 0];
 			}
 			return type;
-		}
-
-		/// <summary>
-		///   Gets the define string for the given version of OS.
-		/// </summary>
-		/// <param name = "availability">The availability.</param>
-		/// <returns></returns>
-		private static String GetDefine (string availability)
-		{
-			if (String.IsNullOrEmpty (availability)) {
-				return null;
-			}
-			if (AVAILABILITIES.ContainsKey (availability)) {
-				return AVAILABILITIES [availability];
-			}
-			//Console.WriteLine("Unknown availability => " + availability);
-			return null;
-		}
-
-		/// <summary>
-		///   Set the define to use for each version of OS.
-		/// </summary>
-		private static IDictionary<string, string> CreateAvailabilities ()
-		{
-			IDictionary<string, string> result = new Dictionary<string, string> ();
-			result.Add ("OS X v10.0", "");
-			result.Add ("OS X v10.1", "");
-			result.Add ("OS X v10.2", "");
-			result.Add ("OS X v10.3", "");
-			result.Add ("OS X v10.3.9", "");
-			result.Add ("OS X v10.4", "");
-			result.Add ("OS X v10.5", "MACOSX_10_5");
-			result.Add ("OS X v10.6", "MACOSX_10_6");
-			result.Add ("OS X v10.7", "MACOSX_10_7");
-			result.Add ("OS X v10.8", "MACOSX_10_8");
-			result.Add ("Sparkle 1.5", "");
-			return result;
 		}
 
 		/// <summary>

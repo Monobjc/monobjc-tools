@@ -15,7 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
-using System.IO;
+using System;
 using System.Linq;
 using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
@@ -71,6 +71,8 @@ namespace Monobjc.Tools.Generator.Generators
 		public override void Generate (BaseEntity entity)
 		{
 			ProtocolEntity protocolEntity = (ProtocolEntity)entity;
+			bool addition = !String.IsNullOrEmpty (protocolEntity.AdditionFor);
+			String name = protocolEntity.Name.Split ('.') [0]; 
 
 			// Append License
 			this.Writer.WriteLineFormat (0, License);
@@ -86,14 +88,19 @@ namespace Monobjc.Tools.Generator.Generators
 			this.AppendStartCondition (protocolEntity);
 
 			// Append class starter
-			this.Writer.WriteLineFormat (1, "[ObjectiveCProtocol(\"{0}\")]", protocolEntity.Name);
+			if (!addition) {
+				this.Writer.WriteLineFormat (1, "[ObjectiveCProtocol(\"{0}\")]", name);
 #if GENERATED_ATTRIBUTE
-            this.Writer.WriteLineFormat(1, "[GeneratedCodeAttribute(\"{0}\", \"{1}\")]", GenerationHelper.ToolName, GenerationHelper.ToolVersion);
+	            this.Writer.WriteLineFormat(1, "[GeneratedCodeAttribute(\"{0}\", \"{1}\")]", GenerationHelper.ToolName, GenerationHelper.ToolVersion);
 #endif
-			if (string.IsNullOrEmpty (protocolEntity.BaseType)) {
-				this.Writer.WriteLineFormat (1, "public partial interface I{0} : {1}", protocolEntity.Name, "IManagedWrapper");
+			}
+
+			if (addition) {
+				this.Writer.WriteLineFormat (1, "public partial interface I{0}", name);
+			} else if (String.IsNullOrEmpty (protocolEntity.BaseType)) {
+				this.Writer.WriteLineFormat (1, "public partial interface I{0} : {1}", name, "IManagedWrapper");
 			} else {
-				this.Writer.WriteLineFormat (1, "public partial interface I{0} : I{1}", protocolEntity.Name, protocolEntity.BaseType);
+				this.Writer.WriteLineFormat (1, "public partial interface I{0} : I{1}", name, protocolEntity.BaseType);
 			}
 			this.Writer.WriteLineFormat (1, "{{");
 

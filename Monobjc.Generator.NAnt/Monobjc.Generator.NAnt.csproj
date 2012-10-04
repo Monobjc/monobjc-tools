@@ -58,6 +58,8 @@
     <Compile Include="Tasks\Diagnostics\FindDelegateTask.cs" />
     <Compile Include="Tasks\Generation\GenerateCodeTask.cs" />
     <Compile Include="Tasks\Generation\GatherMixedTypesTask.cs" />
+    <Compile Include="Tasks\Patch\MarkDeprecationTask.cs" />
+    <Compile Include="Tasks\Patch\MergeDeprecatedTask.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tasks\" />

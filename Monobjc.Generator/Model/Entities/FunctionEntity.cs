@@ -86,10 +86,10 @@ namespace Monobjc.Tools.Generator.Model
 		///   A hash code for the current <see cref = "T:System.Object" />.
 		/// </returns>
 		/// <filterpriority>2</filterpriority>
-		public override int GetHashCode ()
+		public override int GetHashValue ()
 		{
 			unchecked {
-				int hash = base.GetHashCode();
+				int hash = base.GetHashValue();
 				hash = hash * 23 + (this.SharedLibrary != null ? this.SharedLibrary.GetHashCode () : 0);
 				hash = hash * 23 + (this.EntryPoint != null ? this.EntryPoint.GetHashCode () : 0);
 				return hash;

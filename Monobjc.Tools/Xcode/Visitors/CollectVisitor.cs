@@ -247,7 +247,7 @@ namespace Monobjc.Tools.Xcode.Visitors
 		/// <returns></returns>
 		private string GetElementUID (IPBXElement element)
 		{
-			return String.Format (CultureInfo.CurrentCulture, "{0}{1}", element.Nature.GetHashCode ().ToString ("X8"), element.GetHashCode ().ToString ("X16"));
+			return String.Format (CultureInfo.CurrentCulture, "{0}{1}", element.Nature.GetHashValue ().ToString ("X8"), element.GetHashValue ().ToString ("X16"));
 		}
 	}
 }

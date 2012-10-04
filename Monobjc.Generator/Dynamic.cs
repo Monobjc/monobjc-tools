@@ -214,11 +214,11 @@ namespace System.Linq.Dynamic
             this.properties = properties.ToArray();
             hashCode = 0;
             foreach (DynamicProperty p in properties) {
-                hashCode ^= p.Name.GetHashCode() ^ p.Type.GetHashCode();
+				hashCode ^= p.Name.GetHashCode() ^ p.Type.GetHashCode();
             }
         }
 
-        public override int GetHashCode() {
+		public override int GetHashCode() {
             return hashCode;
         }
 

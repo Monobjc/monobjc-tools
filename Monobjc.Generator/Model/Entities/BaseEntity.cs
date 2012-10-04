@@ -203,7 +203,7 @@ namespace Monobjc.Tools.Generator.Model
 		///   A hash code for the current <see cref = "T:System.Object" />.
 		/// </returns>
 		/// <filterpriority>2</filterpriority>
-		public override int GetHashCode ()
+		public virtual int GetHashValue ()
 		{
 			unchecked {
 				int hash = 17;

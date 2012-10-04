@@ -173,6 +173,18 @@
 			<docset refid="10.8" />
 			<framework-set refid="all" />
 		</patch-model>
+
+		<!-- Annotate deprecated model -->
+		<mark-deprecation dir="${data.dir}" report="${data.dir}/mark-deprecation.log">
+			<docset refid="10.8" />
+			<framework-set refid="all" />
+		</mark-deprecation>
+
+		<!-- Merge deprecated model -->
+		<merge-deprecated dir="${data.dir}" report="${data.dir}/merge-deprecated.log">
+			<docset refid="10.8" />
+			<framework-set refid="all" />
+		</merge-deprecated>
 	</target>
 
 	<!--

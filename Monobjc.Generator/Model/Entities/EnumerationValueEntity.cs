@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2012 - Laurent Etiemble
 //
@@ -44,10 +44,10 @@ namespace Monobjc.Tools.Generator.Model
 		///   A hash code for the current <see cref = "T:System.Object" />.
 		/// </returns>
 		/// <filterpriority>2</filterpriority>
-		public override int GetHashCode ()
+		public override int GetHashValue ()
 		{
 			unchecked {
-				int hash = base.GetHashCode();
+				int hash = base.GetHashValue();
 				hash = hash * 23 + (this.Value != null ? this.Value.GetHashCode () : 0);
 				return hash;
 			}

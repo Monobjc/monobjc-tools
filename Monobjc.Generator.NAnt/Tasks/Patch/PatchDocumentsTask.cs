@@ -62,14 +62,14 @@ namespace Monobjc.Tools.Generator.NAnt
 			this.Patch(paths, entity, replacements);
 		}
 
-		protected void Patch (IEnumerable<String> paths, FrameworkEntity entity, IEnumerable<PatchReplace> replacements)
+		protected void Patch (IEnumerable<String> paths, FrameworkEntity e, IEnumerable<PatchReplace> replacements)
 		{
 			foreach (var path in paths) {
 				if (!File.Exists (path)) {
 					continue;
 				}
 
-				this.Log (Level.Verbose, String.Format ("Probing {0} for '{1}'...", Path.GetFileName(path), entity.name));
+				this.Log (Level.Verbose, String.Format ("Probing {0} for '{1}'...", Path.GetFileName(path), e.name));
 
 				String contents = File.ReadAllText (path);
 				bool modified = false;
@@ -83,10 +83,10 @@ namespace Monobjc.Tools.Generator.NAnt
 				}
 			
 				if (modified) {
-					this.Log (Level.Info, String.Format ("Patching {0} for '{1}'...", this.Type, entity.name));
+					this.Log (Level.Info, String.Format ("Patching {0} for '{1}'...", this.Type, e.name));
 					File.WriteAllText (path, contents);
 				} else {
-					this.Log (Level.Verbose, String.Format ("Skipping {0} for '{1}'...", this.Type, entity.name));
+					this.Log (Level.Verbose, String.Format ("Skipping {0} for '{1}'...", this.Type, e.name));
 				}
 			}
 		}

@@ -351,6 +351,12 @@
 		</Type>
 		<Type name="CGPDFDocument.Deprecated">
 			<File>GraphicsImaging/Reference/CGPDFDocument/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[OS X version 10]]></Source>
+					<With><![CDATA[OS X v10]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="CGPDFObject">
 			<File>GraphicsImaging/Reference/CGPDFObject/Reference/reference.html</File>

@@ -133,6 +133,8 @@
     <Compile Include="Model\Entities\BaseCollection.cs" />
     <Compile Include="Model\Entities\BaseEntity.Patching.cs" />
     <Compile Include="Dynamic.cs" />
+    <Compile Include="Utilities\AvailabilityHelper.cs" />
+    <Compile Include="Model\Entities\Comparers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />

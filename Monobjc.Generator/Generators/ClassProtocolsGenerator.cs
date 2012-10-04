@@ -51,15 +51,17 @@ namespace Monobjc.Tools.Generator.Generators
 			this.AppendStartCondition (classEntity);
 
 			// Append class starter
-			this.Writer.WriteLineFormat (1, "public partial class {0} : ", classEntity.Name);
+			this.Writer.WriteLineFormat (1, "public partial class {0}", classEntity.Name);
 
 			// Sort protocols and emit them in order
 			classEntity.Protocols.Sort ((p1, p2) => p1.MinAvailability.CompareTo (p2.MinAvailability));
+
+
 			for (int i = 0; i < classEntity.Protocols.Count; i++) {
 				ClassEntity protocolEntity = classEntity.Protocols [i];
 
 				this.AppendStartCondition (protocolEntity);
-				this.Writer.WriteLineFormat (1, (i == 0) ? "I{0}" : ", I{0}", protocolEntity.Name);
+				this.Writer.WriteLineFormat (1, (i == 0) ? " : I{0}" : ", I{0}", protocolEntity.Name);
 				this.AppendEndCondition (protocolEntity);
 			}
 

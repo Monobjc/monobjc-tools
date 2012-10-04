@@ -242,12 +242,12 @@ namespace Monobjc.Tools.Generator.Model
 		///   A hash code for the current <see cref = "T:System.Object" />.
 		/// </returns>
 		/// <filterpriority>2</filterpriority>
-		public override int GetHashCode ()
+		public override int GetHashValue ()
 		{
 			unchecked {
-				int hash = base.GetHashCode();
+				int hash = base.GetHashValue();
 				hash = hash * 23 + this.GenerateConstructor.GetHashCode ();
-				hash = hash * 23 + this.Parameters.GetHashCode ();
+				hash = hash * 23 + this.Parameters.GetHashValue ();
 				hash = hash * 23 + (this.ReturnsDocumentation != null ? this.ReturnsDocumentation.GetHashCode () : 0);
 				hash = hash * 23 + (this.ReturnType != null ? this.ReturnType.GetHashCode () : 0);
 				hash = hash * 23 + (this.Selector != null ? this.Selector.GetHashCode () : 0);

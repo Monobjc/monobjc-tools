@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2012 - Laurent Etiemble
 //
@@ -72,27 +72,6 @@ namespace Monobjc.Tools.Generator.Generators
 
 			// Append namespace ender
 			this.Writer.WriteLineFormat (0, "}}");
-		}
-
-
-		public class MethodComparer : IEqualityComparer<MethodEntity>
-		{
-			public bool Equals (MethodEntity x, MethodEntity y)
-			{
-				if (!x.Selector.Equals (y.Selector)) {
-					return false;
-				}
-				return true;
-			}
-			
-			public int GetHashCode (MethodEntity obj)
-			{
-				unchecked {
-					int hash = 17;
-					hash = hash * 23 + obj.Selector.GetHashCode ();
-					return hash;
-				}
-			}			
 		}
 	}
 }
