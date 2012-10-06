@@ -405,6 +405,12 @@
 				<Change><![CDATA[Enumerations["Mach_O_Architecture"].Name="NSMachOArchitecture"]]></Change>
 				<Change><![CDATA[Enumerations["NSMachOArchitecture"].BaseType="int"]]></Change>
 			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual bool Load()]]></Source>
+					<With><![CDATA[public new bool Load()]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="NSCache">
 			<File>Cocoa/Reference/NSCache_Class/Reference/Reference.html</File>
@@ -600,12 +606,10 @@
 				<Change><![CDATA[Methods["DataWithBytesNoCopyLengthFreeWhenDone"].ReturnType="NSData"]]></Change>
 				<Change><![CDATA[Methods["DataWithContentsOfFile"].ReturnType="NSData"]]></Change>
 				<Change><![CDATA[Methods["DataWithContentsOfFileOptionsError"].ReturnType="NSData"]]></Change>
-				<Change><![CDATA[Methods["DataWithContentsOfMappedFile"].ReturnType="NSData"]]></Change>
 				<Change><![CDATA[Methods["DataWithContentsOfURL"].ReturnType="NSData"]]></Change>
 				<Change><![CDATA[Methods["DataWithContentsOfURLOptionsError"].ReturnType="NSData"]]></Change>
 				<Change><![CDATA[Methods["DataWithData"].ReturnType="NSData"]]></Change>
 				<Change><![CDATA[Methods["InitWithBytesNoCopyLength"].GenerateConstructor=false]]></Change>
-				<Change><![CDATA[Methods["InitWithContentsOfMappedFile"].GenerateConstructor=false]]></Change>
 				<Change><![CDATA[Properties["Data"].Type="NSData"]]></Change>
 				<Change><![CDATA[Properties["Data"].CopyInDescendants=true]]></Change>
 				<Change><![CDATA[Enumerations["NSDataReadingOptions"].MinAvailability="Mac OS X v10.4"]]></Change>
@@ -628,6 +632,8 @@
 			<File>Cocoa/Reference/Foundation/Classes/NSData_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[AdditionFor="NSData"]]></Change>
+				<Change><![CDATA[Methods["DataWithContentsOfMappedFile"].ReturnType="NSData"]]></Change>
+				<Change><![CDATA[Methods["InitWithContentsOfMappedFile"].GenerateConstructor=false]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSDataDetector">
@@ -707,17 +713,15 @@
 				<Change><![CDATA[Methods["DictionaryWithObjectForKey"].CopyInDescendants=true]]></Change>
 				<Change><![CDATA[Methods["DictionaryWithObjectsForKeys"].ReturnType="NSDictionary"]]></Change>
 				<Change><![CDATA[Methods["DictionaryWithObjectsForKeys"].CopyInDescendants=true]]></Change>
-				<Change><![CDATA[Methods["DictionaryWithObjectsForKeysCount"].ReturnType="NSDictionary"]]></Change>
-				<Change><![CDATA[Methods["DictionaryWithObjectsForKeysCount"].CopyInDescendants=true]]></Change>
+				<Change><![CDATA[Methods["DictionaryWithObjectsAndKeys"].Parameters["firstObject,"].Generate=false]]></Change>
+				<Change><![CDATA[Methods["DictionaryWithObjectsAndKeys"].Parameters.Set("firstObject", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>firstObject</Name><Type>Id</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["DictionaryWithObjectsAndKeys"].Parameters.Set("values", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
 				<Change><![CDATA[Methods["DictionaryWithObjectsAndKeys"].ReturnType="NSDictionary"]]></Change>
 				<Change><![CDATA[Methods["DictionaryWithObjectsAndKeys"].CopyInDescendants=true]]></Change>
 				<Change><![CDATA[Methods["DictionaryWithObjectsForKeysCount"].Parameters["objects"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["DictionaryWithObjectsForKeysCount"].Parameters["keys"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["DictionaryWithObjectsForKeysCount"].ReturnType="NSDictionary"]]></Change>
 				<Change><![CDATA[Methods["DictionaryWithObjectsForKeysCount"].CopyInDescendants=true]]></Change>
-				<Change><![CDATA[Methods["DictionaryWithObjectsAndKeys"].Parameters["firstObject,"].Generate=false]]></Change>
-				<Change><![CDATA[Methods["DictionaryWithObjectsAndKeys"].Parameters.Set("firstObject", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>firstObject</Name><Type>Id</Type></Parameter>")]]></Change>
-				<Change><![CDATA[Methods["DictionaryWithObjectsAndKeys"].Parameters.Set("values", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
-				<Change><![CDATA[Methods["DictionaryWithObjectsAndKeys"].CopyInDescendants=true]]></Change>
 				<Change><![CDATA[Methods["GetObjectsAndKeys"].Parameters["objects"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["GetObjectsAndKeys"].Parameters["keys"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["InitWithObjectsForKeysCount"].Parameters["objects"].Type="IntPtr"]]></Change>
@@ -857,6 +861,7 @@
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSFileWrapper_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[AdditionFor="NSFileWrapper"]]></Change>
+				<Change><![CDATA[Methods["InitSymbolicLinkWithDestination"].GenerateConstructor=false]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSFormatter">
@@ -882,9 +887,6 @@
 			<File>Cocoa/Reference/NSHashTable_class/Introduction/Introduction.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["HashTableWithOptions"].ReturnType="NSHashTable"]]></Change>
-				<Change><![CDATA[Properties["HashTableWithWeakObjects"].Type="NSHashTable"]]></Change>
-				<Change><![CDATA[Enumerations["Hash_Table_Options"].Name="NSHashTableOptions"]]></Change>
-				<Change><![CDATA[Enumerations["NSHashTableOptions"].BaseType="NSUInteger"]]></Change>
 			</Patch>
 			<Patch type="Generated">
 				<Replace>
@@ -897,6 +899,7 @@
 			<File>Cocoa/Reference/NSHashTable_class/Introduction/../DeprecationAppendix/AppendixADeprecatedAPI.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[AdditionFor="NSHashTable"]]></Change>
+				<Change><![CDATA[Properties["HashTableWithWeakObjects"].Type="NSHashTable"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSHost">
@@ -910,6 +913,12 @@
 		</Class>
 		<Class name="NSHTTPCookie">
 			<File>Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSUInteger Version]]></Source>
+					<With><![CDATA[public new NSUInteger Version]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="NSHTTPCookieStorage">
 			<File>Cocoa/Reference/Foundation/Classes/NSHTTPCookieStorage_Class/Reference/Reference.html</File>
@@ -1038,10 +1047,6 @@
 			<File>Cocoa/Reference/NSMapTable_class/Reference/NSMapTable.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["MapTableWithKeyOptionsValueOptions"].ReturnType="NSMapTable"]]></Change>
-				<Change><![CDATA[Properties["MapTableWithStrongToStrongObjects"].Type="NSMapTable"]]></Change>
-				<Change><![CDATA[Properties["MapTableWithStrongToWeakObjects"].Type="NSMapTable"]]></Change>
-				<Change><![CDATA[Properties["MapTableWithWeakToStrongObjects"].Type="NSMapTable"]]></Change>
-				<Change><![CDATA[Properties["MapTableWithWeakToWeakObjects"].Type="NSMapTable"]]></Change>
 			</Patch>
 			<Patch type="Generated">
 				<Replace>
@@ -1054,6 +1059,10 @@
 			<File>Cocoa/Reference/NSMapTable_class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[AdditionFor="NSMapTable"]]></Change>
+				<Change><![CDATA[Properties["MapTableWithStrongToStrongObjects"].Type="NSMapTable"]]></Change>
+				<Change><![CDATA[Properties["MapTableWithStrongToWeakObjects"].Type="NSMapTable"]]></Change>
+				<Change><![CDATA[Properties["MapTableWithWeakToStrongObjects"].Type="NSMapTable"]]></Change>
+				<Change><![CDATA[Properties["MapTableWithWeakToWeakObjects"].Type="NSMapTable"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSMessagePort">
@@ -1251,10 +1260,7 @@
 				<Change><![CDATA[Methods["MutableCopyWithZone"].Generate=false]]></Change>
 				<Change><![CDATA[Methods["Retain"].Generate=false]]></Change>
 				<Change><![CDATA[Methods["Release"].Generate=false]]></Change>
-				<!--
-				<Change><![CDATA[Properties.First(Name == "Class" && Static == False).Generate=false]]></Change>
-				<Change><![CDATA[Properties.First(Name == "Class" && Static == True).Generate=false]]></Change>
-				-->
+				<Change><![CDATA[Properties.First(Name == "Class" && Static == true).Generate=false]]></Change>
 				<Change><![CDATA[Properties.First(Name == "Description" && Static == True).Generate=false]]></Change>
 				<Change><![CDATA[Properties.First(Name == "Superclass" && Static == True).Generate=false]]></Change>
 			</Patch>
@@ -1344,14 +1350,14 @@
 			<Patch type="Model">
 				<Change><![CDATA[Methods["PointerArrayWithOptions"].ReturnType="NSPointerArray"]]></Change>
 				<Change><![CDATA[Methods["PointerArrayWithPointerFunctions"].ReturnType="NSPointerArray"]]></Change>
-				<Change><![CDATA[Properties["PointerArrayWithStrongObjects"].Type="NSPointerArray"]]></Change>
-				<Change><![CDATA[Properties["PointerArrayWithWeakObjects"].Type="NSPointerArray"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSPointerArray.Deprecated">
 			<File>Cocoa/Reference/Foundation/Classes/NSPointerArray_Class/Introduction/../DeprecationAppendix/AppendixADeprecatedAPI.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[AdditionFor="NSPointerArray"]]></Change>
+				<Change><![CDATA[Properties["PointerArrayWithStrongObjects"].Type="NSPointerArray"]]></Change>
+				<Change><![CDATA[Properties["PointerArrayWithWeakObjects"].Type="NSPointerArray"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSPointerFunctions">
@@ -1467,9 +1473,9 @@
 				<Change><![CDATA[Methods["Retain"].Generate=false]]></Change>
 				<Change><![CDATA[Methods["Release"].Generate=false]]></Change>
 				<!--
-				<Change><![CDATA[Properties.First(Name == "Class" && Static == False).Generate=false]]></Change>
-				<Change><![CDATA[Properties.First(Name == "Class" && Static == True).Generate=false]]></Change>
+				<Change><![CDATA[Properties.First(Name == "Class" && Static == false).Generate=false]]></Change>
 				-->
+				<Change><![CDATA[Properties.First(Name == "Class" && Static == true).Generate=false]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSPurgeableData">
@@ -1649,69 +1655,69 @@
 		<Class name="NSString">
 			<File>Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Methods["LocalizedStringWithFormat"].Parameters["format..."].Generate=false]]></Change>
+				<Change><![CDATA[Methods["CharacterAtIndex"].ReturnType="char"]]></Change>
+				<Change><![CDATA[Methods["CStringUsingEncoding"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetBytesMaxLengthUsedLengthEncodingOptionsRangeRemainingRange"].Parameters["usedBufferCount"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["GetBytesMaxLengthUsedLengthEncodingOptionsRangeRemainingRange"].Parameters["usedBufferCount"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Methods["GetCharactersRange"].Parameters["buffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetCStringMaxLengthEncoding"].Parameters["buffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetFileSystemRepresentationMaxLength"].Parameters["buffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetLineStartEndContentsEndForRange"].Parameters["contentsEndIndex"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["GetLineStartEndContentsEndForRange"].Parameters["contentsEndIndex"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Methods["GetLineStartEndContentsEndForRange"].Parameters["lineEndIndex"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["GetLineStartEndContentsEndForRange"].Parameters["lineEndIndex"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Methods["GetLineStartEndContentsEndForRange"].Parameters["startIndex"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["GetLineStartEndContentsEndForRange"].Parameters["startIndex"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Methods["GetParagraphStartEndContentsEndForRange"].Parameters["contentsEndIndex"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["GetParagraphStartEndContentsEndForRange"].Parameters["contentsEndIndex"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Methods["GetParagraphStartEndContentsEndForRange"].Parameters["endIndex"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["GetParagraphStartEndContentsEndForRange"].Parameters["endIndex"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Methods["GetParagraphStartEndContentsEndForRange"].Parameters["startIndex"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["GetParagraphStartEndContentsEndForRange"].Parameters["startIndex"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Methods["InitWithCharactersLength"].Parameters["characters"].Type="String"]]></Change>
+				<Change><![CDATA[Methods["InitWithCharactersNoCopyLengthFreeWhenDone"].Parameters["characters"].Type="String"]]></Change>
+				<Change><![CDATA[Methods["InitWithContentsOfFileUsedEncodingError"].Parameters["enc"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["InitWithContentsOfFileUsedEncodingError"].Parameters["enc"].Type="NSStringEncoding"]]></Change>
+				<Change><![CDATA[Methods["InitWithContentsOfURLUsedEncodingError"].Parameters["enc"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["InitWithContentsOfURLUsedEncodingError"].Parameters["enc"].Type="NSStringEncoding"]]></Change>
+				<Change><![CDATA[Methods["InitWithCStringEncoding"].Parameters["nullTerminatedCString"].Type="String"]]></Change>
+				<Change><![CDATA[Methods["InitWithCStringEncoding"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithFormat"].Parameters.Set("format", "<Parameter><Summary /><Name>format</Name><Type>NSString</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["InitWithFormat"].Parameters.Set("values", "<Parameter><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["InitWithFormat"].Parameters["format..."].Generate=false]]></Change>
+				<Change><![CDATA[Methods["InitWithFormatArguments"].Generate=false]]></Change>
+				<Change><![CDATA[Methods["InitWithFormatLocale"].Parameters.Set("locale", "<Parameter><Summary /><Name>locale</Name><Type>Id</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["InitWithFormatLocale"].Parameters.Set("values", "<Parameter><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["InitWithFormatLocale"].Parameters["locale..."].Generate=false]]></Change>
+				<Change><![CDATA[Methods["InitWithFormatLocaleArguments"].Generate=false]]></Change>
+				<Change><![CDATA[Methods["InitWithUTF8String"].Parameters["bytes"].Type="String"]]></Change>
 				<Change><![CDATA[Methods["LocalizedStringWithFormat"].Parameters.Set("format", "<Parameter><Summary /><Name>format</Name><Type>NSString</Type></Parameter>")]]></Change>
 				<Change><![CDATA[Methods["LocalizedStringWithFormat"].Parameters.Set("values", "<Parameter><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["LocalizedStringWithFormat"].Parameters["format..."].Generate=false]]></Change>
 				<Change><![CDATA[Methods["LocalizedStringWithFormat"].ReturnType="NSString"]]></Change>
+				<Change><![CDATA[Methods["StringByAppendingFormat"].Parameters.Set("format", "<Parameter><Summary /><Name>format</Name><Type>NSString</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["StringByAppendingFormat"].Parameters.Set("values", "<Parameter><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["StringByAppendingFormat"].Parameters["format..."].Generate=false]]></Change>
+				<Change><![CDATA[Methods["StringByAppendingFormat"].ReturnType="NSString"]]></Change>
 				<Change><![CDATA[Methods["StringWithCharactersLength"].Parameters["chars"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["StringWithCharactersLength"].ReturnType="NSString"]]></Change>
 				<Change><![CDATA[Methods["StringWithContentsOfFileEncodingError"].ReturnType="NSString"]]></Change>
+				<Change><![CDATA[Methods["StringWithContentsOfFileUsedEncodingError"].Parameters["enc"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["StringWithContentsOfFileUsedEncodingError"].Parameters["enc"].Type="NSStringEncoding"]]></Change>
 				<Change><![CDATA[Methods["StringWithContentsOfFileUsedEncodingError"].ReturnType="NSString"]]></Change>
 				<Change><![CDATA[Methods["StringWithContentsOfURLEncodingError"].ReturnType="NSString"]]></Change>
+				<Change><![CDATA[Methods["StringWithContentsOfURLUsedEncodingError"].Parameters["enc"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["StringWithContentsOfURLUsedEncodingError"].Parameters["enc"].Type="NSStringEncoding"]]></Change>
 				<Change><![CDATA[Methods["StringWithContentsOfURLUsedEncodingError"].ReturnType="NSString"]]></Change>
 				<Change><![CDATA[Methods["StringWithCStringEncoding"].Parameters["cString"].Type="String"]]></Change>
 				<Change><![CDATA[Methods["StringWithCStringEncoding"].ReturnType="NSString"]]></Change>
-				<Change><![CDATA[Methods["StringWithFormat"].Parameters["format,..."].Generate=false]]></Change>
 				<Change><![CDATA[Methods["StringWithFormat"].Parameters.Set("format", "<Parameter><Summary /><Name>format</Name><Type>NSString</Type></Parameter>")]]></Change>
 				<Change><![CDATA[Methods["StringWithFormat"].Parameters.Set("values", "<Parameter><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["StringWithFormat"].Parameters["format,..."].Generate=false]]></Change>
 				<Change><![CDATA[Methods["StringWithFormat"].ReturnType="NSString"]]></Change>
 				<Change><![CDATA[Methods["StringWithString"].ReturnType="NSString"]]></Change>
 				<Change><![CDATA[Methods["StringWithUTF8String"].Parameters["bytes"].Type="String"]]></Change>
 				<Change><![CDATA[Methods["StringWithUTF8String"].ReturnType="NSString"]]></Change>
-				<Change><![CDATA[Methods["CharacterAtIndex"].ReturnType="char"]]></Change>
-				<Change><![CDATA[Methods["CStringUsingEncoding"].ReturnType="IntPtr"]]></Change>
-				<Change><![CDATA[Methods["GetCharactersRange"].Parameters["buffer"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Methods["GetCStringMaxLengthEncoding"].Parameters["buffer"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Methods["GetFileSystemRepresentationMaxLength"].Parameters["buffer"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Methods["InitWithCharactersLength"].Parameters["characters"].Type="String"]]></Change>
-				<Change><![CDATA[Methods["InitWithCharactersNoCopyLengthFreeWhenDone"].Parameters["characters"].Type="String"]]></Change>
-				<Change><![CDATA[Methods["InitWithCStringEncoding"].Parameters["nullTerminatedCString"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Methods["InitWithFormat"].Parameters["format..."].Generate=false]]></Change>
-				<Change><![CDATA[Methods["InitWithFormat"].Parameters.Set("format", "<Parameter><Summary /><Name>format</Name><Type>NSString</Type></Parameter>")]]></Change>
-				<Change><![CDATA[Methods["InitWithFormat"].Parameters.Set("values", "<Parameter><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
-				<Change><![CDATA[Methods["InitWithFormatArguments"].Generate=false]]></Change>
-				<Change><![CDATA[Methods["InitWithFormatLocale"].Parameters["locale..."].Generate=false]]></Change>
-				<Change><![CDATA[Methods["InitWithFormatLocale"].Parameters.Set("format", "<Parameter><Summary /><Name>format</Name><Type>NSString</Type></Parameter>")]]></Change>
-				<Change><![CDATA[Methods["InitWithFormatLocale"].Parameters.Set("locale", "<Parameter><Summary /><Name>locale</Name><Type>Id</Type></Parameter>")]]></Change>
-				<Change><![CDATA[Methods["InitWithFormatLocale"].Parameters.Set("values", "<Parameter><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
-				<Change><![CDATA[Methods["InitWithFormatLocaleArguments"].Generate=false]]></Change>
-				<Change><![CDATA[Methods["InitWithUTF8String"].Parameters["bytes"].Type="String"]]></Change>
-				<Change><![CDATA[Methods["StringByAppendingFormat"].Parameters["format..."].Generate=false]]></Change>
-				<Change><![CDATA[Methods["StringByAppendingFormat"].Parameters.Set("format", "<Parameter><Summary /><Name>format</Name><Type>NSString</Type></Parameter>")]]></Change>
-				<Change><![CDATA[Methods["StringByAppendingFormat"].Parameters.Set("values", "<Parameter><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
-				<Change><![CDATA[Methods["StringByAppendingFormat"].ReturnType="NSString"]]></Change>
-				<Change><![CDATA[Methods["GetBytesMaxLengthUsedLengthEncodingOptionsRangeRemainingRange"].Parameters["usedBufferCount"].Type="NSUInteger"]]></Change>
-				<Change><![CDATA[Methods["GetBytesMaxLengthUsedLengthEncodingOptionsRangeRemainingRange"].Parameters["usedBufferCount"].IsByRef=true]]></Change>
-				<Change><![CDATA[Methods["GetLineStartEndContentsEndForRange"].Parameters["startIndex"].Type="NSUInteger"]]></Change>
-				<Change><![CDATA[Methods["GetLineStartEndContentsEndForRange"].Parameters["startIndex"].IsByRef=true]]></Change>
-				<Change><![CDATA[Methods["GetLineStartEndContentsEndForRange"].Parameters["lineEndIndex"].Type="NSUInteger"]]></Change>
-				<Change><![CDATA[Methods["GetLineStartEndContentsEndForRange"].Parameters["lineEndIndex"].IsByRef=true]]></Change>
-				<Change><![CDATA[Methods["GetLineStartEndContentsEndForRange"].Parameters["contentsEndIndex"].Type="NSUInteger"]]></Change>
-				<Change><![CDATA[Methods["GetLineStartEndContentsEndForRange"].Parameters["contentsEndIndex"].IsByRef=true]]></Change>
-				<Change><![CDATA[Methods["GetParagraphStartEndContentsEndForRange"].Parameters["startIndex"].Type="NSUInteger"]]></Change>
-				<Change><![CDATA[Methods["GetParagraphStartEndContentsEndForRange"].Parameters["startIndex"].IsByRef=true]]></Change>
-				<Change><![CDATA[Methods["GetParagraphStartEndContentsEndForRange"].Parameters["endIndex"].Type="NSUInteger"]]></Change>
-				<Change><![CDATA[Methods["GetParagraphStartEndContentsEndForRange"].Parameters["endIndex"].IsByRef=true]]></Change>
-				<Change><![CDATA[Methods["GetParagraphStartEndContentsEndForRange"].Parameters["contentsEndIndex"].Type="NSUInteger"]]></Change>
-				<Change><![CDATA[Methods["GetParagraphStartEndContentsEndForRange"].Parameters["contentsEndIndex"].IsByRef=true]]></Change>
-				<Change><![CDATA[Methods["StringWithContentsOfFileUsedEncodingError"].Parameters["enc"].Type="NSStringEncoding"]]></Change>
-				<Change><![CDATA[Methods["StringWithContentsOfFileUsedEncodingError"].Parameters["enc"].IsOut=true]]></Change>
-				<Change><![CDATA[Methods["StringWithContentsOfURLUsedEncodingError"].Parameters["enc"].Type="NSStringEncoding"]]></Change>
-				<Change><![CDATA[Methods["StringWithContentsOfURLUsedEncodingError"].Parameters["enc"].IsOut=true]]></Change>
-				<Change><![CDATA[Methods["InitWithContentsOfFileUsedEncodingError"].Parameters["enc"].Type="NSStringEncoding"]]></Change>
-				<Change><![CDATA[Methods["InitWithContentsOfFileUsedEncodingError"].Parameters["enc"].IsOut=true]]></Change>
-				<Change><![CDATA[Methods["InitWithContentsOfURLUsedEncodingError"].Parameters["enc"].Type="NSStringEncoding"]]></Change>
-				<Change><![CDATA[Methods["InitWithContentsOfURLUsedEncodingError"].Parameters["enc"].IsOut=true]]></Change>
 				<Change><![CDATA[Properties["AvailableStringEncodings"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Properties["FileSystemRepresentation"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Properties["String"].Type="NSString"]]></Change>
@@ -1740,15 +1746,19 @@
 			<File>Cocoa/Reference/Foundation/Classes/NSString_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[AdditionFor="NSString"]]></Change>
-				<Change><![CDATA[Methods["StringWithCString"].Parameters["cString"].Type="String"]]></Change>
-				<Change><![CDATA[Methods["StringWithCStringLength"].Parameters["cString"].Type="String"]]></Change>
+				<Change><![CDATA[Methods["GetCharacters"].Parameters["buffer"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["GetCString"].Parameters["buffer"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["GetCStringMaxLength"].Parameters["buffer"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["GetCStringMaxLengthRangeRemainingRange"].Parameters["buffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithContentsOfFile"].GenerateConstructor=false]]></Change>
 				<Change><![CDATA[Methods["InitWithCString"].Parameters["cString"].Type="String"]]></Change>
+				<Change><![CDATA[Methods["InitWithCString"].GenerateConstructor=false]]></Change>
 				<Change><![CDATA[Methods["InitWithCStringLength"].Parameters["cString"].Type="String"]]></Change>
+				<Change><![CDATA[Methods["InitWithCStringLength"].GenerateConstructor=false]]></Change>
 				<Change><![CDATA[Methods["InitWithCStringNoCopyLengthFreeWhenDone"].Parameters["cString"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Methods["GetCharacters"].Parameters["buffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithCStringNoCopyLengthFreeWhenDone"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["StringWithCString"].Parameters["cString"].Type="String"]]></Change>
+				<Change><![CDATA[Methods["StringWithCStringLength"].Parameters["cString"].Type="String"]]></Change>
 				<Change><![CDATA[Properties["CString"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Properties["LossyCString"].Type="IntPtr"]]></Change>
 			</Patch>
@@ -1928,6 +1938,10 @@
 		</Class>
 		<Class name="NSUUID">
 			<File>Foundation/Reference/NSUUID_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["GetUUIDBytes"].Parameters["uuid"].Type="UUID"]]></Change>
+				<Change><![CDATA[Methods["InitWithUUIDBytes"].Parameters["bytes"].Type="UUID"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSValue">
 			<File>Cocoa/Reference/Foundation/Classes/NSValue_Class/Reference/Reference.html</File>
@@ -1952,6 +1966,12 @@
 			<Patch type="Model">
 				<Change><![CDATA[Enumerations["Document_Content_Types"].Name="NSXMLDocumentContentKind"]]></Change>
 				<Change><![CDATA[Enumerations["NSXMLDocumentContentKind"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSString Version]]></Source>
+					<With><![CDATA[public new NSString Version]]></With>
+				</Replace>
 			</Patch>
 		</Class>
 		<Class name="NSXMLDTD">
@@ -2014,6 +2034,10 @@
 					<Source><![CDATA[UL),]]></Source>
 					<With><![CDATA[),]]></With>
 				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["InterruptionHandler"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["InvalidationHandler"].Type="IntPtr"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSXPCInterface">
@@ -2167,7 +2191,7 @@
 				<Change><![CDATA[Methods["Autorelease"].Generate=false]]></Change>
 				<Change><![CDATA[Methods["Release"].Generate=false]]></Change>
 				<Change><![CDATA[Methods["Retain"].Generate=false]]></Change>
-				<Change><![CDATA[Properties["Class"].Generate=false]]></Change>
+				<Change><![CDATA[Properties.First(Name == "Class").Generate=false]]></Change>
 			</Patch>
 		</Protocol>
 		<Protocol name="NSPortDelegate">

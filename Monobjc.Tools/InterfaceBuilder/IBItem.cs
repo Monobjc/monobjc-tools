@@ -149,9 +149,9 @@ namespace Monobjc.Tools.InterfaceBuilder
         /// <returns>
         ///   A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
         /// </returns>
-        public override int GetHashValue()
+        public override int GetHashCode()
         {
-            return this.Key.GetHashValue();
+			return this.Key.GetHashCode();
         }
 
         /// <summary>

@@ -64,9 +64,9 @@ namespace Mvp.Xml.Common.XPath
 		/// <summary>
 		/// See <see cref="Object.GetHashCode"/>.
 		/// </summary>
-		public override int GetHashValue()
+		public override int GetHashCode()
 		{
-			return (Name + "." + Value.GetHashValue()).GetHashValue();
+			return (Name + "." + Value.GetHashCode()).GetHashCode();
 		}
 
 
