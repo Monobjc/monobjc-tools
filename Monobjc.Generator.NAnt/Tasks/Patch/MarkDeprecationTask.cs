@@ -53,7 +53,7 @@ namespace Monobjc.Tools.Generator.NAnt
 				return;
 			}
 
-			this.Log (Level.Info, String.Format ("Marking {0} for '{1}'...", DocumentType.Model, e.name));
+			this.Log (Level.Verbose, String.Format ("Checking {0}...", e.name));
 
 			Action<TypedEntity> markFunctions = (t) => Mark<FunctionEntity>(t.Functions);
 			Action<ClassEntity> markMethods = (c) => Mark<MethodEntity>(c.Methods);
@@ -90,6 +90,7 @@ namespace Monobjc.Tools.Generator.NAnt
 			}
 
 			if (hash != newHash) {
+				this.Log (Level.Info, String.Format ("Marking '{0}'...", entity.Name));
 				entity.SaveTo (file);
 			}
 		}

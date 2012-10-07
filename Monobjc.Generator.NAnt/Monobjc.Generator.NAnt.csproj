@@ -359,9 +359,6 @@
     <Content Include="Files\10.8\CoreData\Model\E\NSSnapshotEventType.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Files\10.8\CoreLocation\Model\E\CLAuthorizationStatus.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Files\10.8\InputMethodKit\Model\E\IMKCandidatePanelType.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

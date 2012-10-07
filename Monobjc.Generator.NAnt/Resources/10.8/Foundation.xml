@@ -45,6 +45,8 @@
 		<Type name="FoundationFramework.Functions">
 			<File>Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/Reference/reference.html</File>
 			<Patch type="Model">
+				<Change><![CDATA[Functions["CFBridgingRelease"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CFBridgingRetain"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["NSAllHashTableObjects"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["NSAllMapTableKeys"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["NSAllMapTableValues"].Generate=false]]></Change>
@@ -1264,6 +1266,12 @@
 				<Change><![CDATA[Properties.First(Name == "Description" && Static == True).Generate=false]]></Change>
 				<Change><![CDATA[Properties.First(Name == "Superclass" && Static == True).Generate=false]]></Change>
 			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[[ObjectiveCClass("NSObject")]]]></Source>
+					<With><![CDATA[[ObjectiveCClass("NSObject", InterceptDealloc = true)]]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="NSObject.Deprecated">
 			<File>Cocoa/Reference/Foundation/Classes/NSObject_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
@@ -1476,6 +1484,12 @@
 				<Change><![CDATA[Properties.First(Name == "Class" && Static == false).Generate=false]]></Change>
 				-->
 				<Change><![CDATA[Properties.First(Name == "Class" && Static == true).Generate=false]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[[ObjectiveCClass("NSProxy")]]]></Source>
+					<With><![CDATA[[ObjectiveCClass("NSProxy", InterceptDealloc = true)]]]></With>
+				</Replace>
 			</Patch>
 		</Class>
 		<Class name="NSPurgeableData">

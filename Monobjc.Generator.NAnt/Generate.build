@@ -28,12 +28,15 @@
 	</framework-set>
 	<framework-set id="docset">
 		<framework-set refid="base" />
+		<!--
 		<framework descriptor="${data.dir}/Resources/10.8/Accounts.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/AddressBook.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/AVFoundation.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/Collaboration.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/CoreData.xml" />
+		-->
 		<framework descriptor="${data.dir}/Resources/10.8/CoreLocation.xml" />
+		<!--
 		<framework descriptor="${data.dir}/Resources/10.8/CoreMedia.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/CoreMIDI.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/CoreServices.xml" />
@@ -54,6 +57,7 @@
 		<framework descriptor="${data.dir}/Resources/10.8/Social.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/StoreKit.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/WebKit.xml" />
+		-->
 	</framework-set>
 	<framework-set id="system-frameworks">
 		<framework descriptor="${data.dir}/Resources/10.8/WebKit.DOM.xml" />
@@ -65,13 +69,14 @@
 		<framework descriptor="${data.dir}/Resources/Sparkle-1.5.xml" />
 	</framework-set>
 	<framework-set id="doxygen">
+		<!--
 		<framework-set refid="system-frameworks" />
 		<framework-set refid="thirdparty-frameworks" />
+		-->
 	</framework-set>
 	<framework-set id="all">
-		<framework-set refid="base" />
-		<!--
 		<framework-set refid="docset" />
+		<!--
 		<framework-set refid="doxygen" />
 		-->
 	</framework-set>
@@ -99,13 +104,13 @@
 		<!-- Copy files from DocSet -->
 		<copy-documents dir="${data.dir}" source-type="DocSet" destination-type="Html" check-source="true">
 			<docset refid="10.8" />
-			<framework-set refid="docset" />
+			<framework-set refid="all" />
 		</copy-documents>
 
 		<!-- Clean-up classic format -->
 		<clean-classic-documents dir="${data.dir}" type="Html">
 			<docset refid="10.8" />
-			<framework-set refid="docset" />
+			<framework-set refid="all" />
 		</clean-classic-documents>
 
 		<!-- Path HTML documents -->
@@ -117,13 +122,13 @@
 		<!-- Convert HTML documents to XHTML -->
 		<html-to-xhtml dir="${data.dir}">
 			<docset refid="10.8" />
-			<framework-set refid="docset" />
+			<framework-set refid="all" />
 		</html-to-xhtml>
 
 		<!-- Path XHTML documents -->
 		<patch-documents dir="${data.dir}" type="Xhtml">
 			<docset refid="10.8" />
-			<framework-set refid="docset" />
+			<framework-set refid="all" />
 		</patch-documents>
 	</target>
 

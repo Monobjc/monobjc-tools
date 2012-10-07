@@ -36,7 +36,7 @@ namespace Monobjc.Tools.Generator.NAnt
 						continue;
 					}
 
-					this.Log (Level.Info, String.Format ("Merging {0}...", e.name));
+					this.Log (Level.Verbose, String.Format ("Merging {0}...", e.name));
 					
 					String name = e.name.Split('.')[0];
 					IEnumerable<FrameworkEntity> list = entities.Where(v => (v.type == e.type) && (v.name.Split('.')[0] == name)).OrderBy(v => v.name);
@@ -108,6 +108,7 @@ namespace Monobjc.Tools.Generator.NAnt
 			}
 			
 			if (hash != newHash) {
+				this.Log (Level.Verbose, String.Format ("Merging '{0}'...", target.Name));
 				target.SaveTo (files.First());
 			}
 		}

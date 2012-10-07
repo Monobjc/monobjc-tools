@@ -69,7 +69,7 @@ namespace Monobjc.Tools.Generator.NAnt
 					continue;
 				}
 
-				this.Log (Level.Verbose, String.Format ("Probing {0} for '{1}'...", Path.GetFileName(path), e.name));
+				this.Log (Level.Verbose, String.Format ("Probing '{0}'...", e.name));
 
 				String contents = File.ReadAllText (path);
 				bool modified = false;
@@ -83,10 +83,10 @@ namespace Monobjc.Tools.Generator.NAnt
 				}
 			
 				if (modified) {
-					this.Log (Level.Info, String.Format ("Patching {0} for '{1}'...", this.Type, e.name));
+					this.Log (Level.Info, String.Format ("Patching '{0}'...", e.name));
 					File.WriteAllText (path, contents);
 				} else {
-					this.Log (Level.Verbose, String.Format ("Skipping {0} for '{1}'...", this.Type, e.name));
+					this.Log (Level.Verbose, String.Format ("Skipping '{0}'...", e.name));
 				}
 			}
 		}

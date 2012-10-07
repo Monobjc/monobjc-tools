@@ -88,6 +88,8 @@
 	<Mapping type="CGShadingRef">IntPtr</Mapping>
 	<Mapping type="CGWindowLevel">int</Mapping>
 	<Mapping type="CIFormat">int</Mapping>
+	<Mapping type="CLGeocodeCompletionHandler"><![CDATA[block:Action<NSArray, NSError>]]></Mapping>
+	<Mapping type="CLHeadingComponentValue">double</Mapping>
 	<Mapping type="CLLocationAccuracy">double</Mapping>
 	<Mapping type="CLLocationDegrees">double</Mapping>
 	<Mapping type="CLLocationDirection">double</Mapping>

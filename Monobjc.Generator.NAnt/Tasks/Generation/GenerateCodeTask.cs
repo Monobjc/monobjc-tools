@@ -55,7 +55,7 @@ namespace Monobjc.Tools.Generator.NAnt
 
 			foreach (var f in frameworks) {
 				foreach (var e in f.GetEntities()) {
-					if (e.name.EndsWith(".Deprecated")) {
+					if (e.name.EndsWith (".Deprecated")) {
 						continue;
 					}
 
@@ -63,7 +63,7 @@ namespace Monobjc.Tools.Generator.NAnt
 					
 					String sourcePath = e.GetPath (baseFolder, DocumentType.Model);
 					String destinationPath = e.GetPath (baseFolder, DocumentType.Generated);
-										
+
 					if (sourcePath == null || !File.Exists (sourcePath)) {
 						continue;
 					}
@@ -230,13 +230,13 @@ namespace Monobjc.Tools.Generator.NAnt
 			String mixedTypesFile = this.MixedTypesFile.ToString ();
 			Dictionary<String, String> table = new Dictionary<String, String> ();
 			
-			String[] lines = File.ReadAllLines(mixedTypesFile);
-			foreach(String line in lines) {
-				String[] parts = line.Split('=');
+			String[] lines = File.ReadAllLines (mixedTypesFile);
+			foreach (String line in lines) {
+				String[] parts = line.Split ('=');
 				if (parts.Length != 2) {
 					continue;
 				}
-				this.AddMixedType(table, parts[0], parts[1]);
+				this.AddMixedType (table, parts [0], parts [1]);
 			}
 			this.Log (Level.Info, "Loaded {0} mixed types", table.Count);
 
@@ -261,7 +261,7 @@ namespace Monobjc.Tools.Generator.NAnt
 			this.Log (Level.Verbose, "Loading class dependencies for " + classEntity.Name);
 
 			// Retrieve super class
-			ClassEntity baseTypeEntity = this.FindAndLoad<ClassEntity>(baseFolder, entities, FrameworkEntityType.C, classEntity.BaseType);
+			ClassEntity baseTypeEntity = this.FindAndLoad<ClassEntity> (baseFolder, entities, FrameworkEntityType.C, classEntity.BaseType);
 			if (baseTypeEntity != null) {
 				this.LoadClassDependencies (baseFolder, entities, baseTypeEntity);
 				classEntity.SuperClass = baseTypeEntity;
@@ -272,7 +272,7 @@ namespace Monobjc.Tools.Generator.NAnt
 				String[] parts = classEntity.ConformsTo.Split (new []{','}, StringSplitOptions.RemoveEmptyEntries);
 				classEntity.Protocols = new List<ProtocolEntity> ();
 				foreach (var p in parts) {
-					ProtocolEntity protocolEntity = this.FindAndLoad<ProtocolEntity>(baseFolder, entities, FrameworkEntityType.P, p);
+					ProtocolEntity protocolEntity = this.FindAndLoad<ProtocolEntity> (baseFolder, entities, FrameworkEntityType.P, p);
 					if (protocolEntity == null) {
 						continue;
 					}
@@ -281,7 +281,7 @@ namespace Monobjc.Tools.Generator.NAnt
 			}
 
 			// Retrieve extended class
-			ClassEntity additionForEntity = this.FindAndLoad<ClassEntity>(baseFolder, entities, FrameworkEntityType.C, classEntity.AdditionFor);
+			ClassEntity additionForEntity = this.FindAndLoad<ClassEntity> (baseFolder, entities, FrameworkEntityType.C, classEntity.AdditionFor);
 			if (additionForEntity != null) {
 				this.LoadClassDependencies (baseFolder, entities, additionForEntity);
 				classEntity.ExtendedClass = additionForEntity;
@@ -299,7 +299,7 @@ namespace Monobjc.Tools.Generator.NAnt
 			this.LoadClassDependencies (baseFolder, entities, protocolEntity);
 			
 			// Retrieve delegator class
-			ClassEntity delegateForEntity = this.FindAndLoad<ClassEntity>(baseFolder, entities, FrameworkEntityType.C, protocolEntity.DelegateFor);
+			ClassEntity delegateForEntity = this.FindAndLoad<ClassEntity> (baseFolder, entities, FrameworkEntityType.C, protocolEntity.DelegateFor);
 			if (delegateForEntity != null) {
 				this.LoadClassDependencies (baseFolder, entities, delegateForEntity);
 				protocolEntity.DelegatorEntity = delegateForEntity;

@@ -57,7 +57,7 @@ namespace Monobjc.Tools.Generator.NAnt
 				return;
 			}
 
-			this.Log (Level.Info, String.Format ("Patching {0} for '{1}'...", DocumentType.Model, e.name));
+			this.Log (Level.Verbose, String.Format ("Patching '{0}'...", e.name));
 
 			switch (e.type) {
 			case FrameworkEntityType.T:
@@ -98,6 +98,7 @@ namespace Monobjc.Tools.Generator.NAnt
 			}
 
 			if (modified) {
+				this.Log (Level.Info, String.Format ("Patching '{0}'...", name));
 				entity.SaveTo (file);
 			}
 		}
