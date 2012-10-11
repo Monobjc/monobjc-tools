@@ -41,7 +41,9 @@
 		<framework descriptor="${data.dir}/Resources/10.8/CoreMIDI.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/CoreServices.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/CoreWLAN.xml" />
+		-->
 		<framework descriptor="${data.dir}/Resources/10.8/DiscRecording.xml" />
+		<!--
 		<framework descriptor="${data.dir}/Resources/10.8/DiscRecordingUI.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/EventKit.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/GameKit.xml" />

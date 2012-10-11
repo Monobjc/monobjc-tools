@@ -52,6 +52,8 @@ namespace Monobjc.Tools.Generator.Utilities
 				return "@long";
 			case "object":
 				return "@object";
+			case "ref":
+				return "@ref";
 			case "string":
 				return "@string";
 			default:
@@ -86,6 +88,11 @@ namespace Monobjc.Tools.Generator.Utilities
 			isByRef = false;
 			isBlock = false;
 			type = type.Trim ();
+
+			// Remove extern keyword
+			while(type.Contains("extern ")) {
+				type = type.Replace("extern ", String.Empty);
+			}
 
 			// Types to map
 			if (this.Mappings.ContainsKey (type)) {

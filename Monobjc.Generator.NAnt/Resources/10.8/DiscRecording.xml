@@ -3,21 +3,77 @@
 	<Types>
 		<Type name="DRBurn_Header">
 			<File>DiscRecording/Reference/DRBurn_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="DRCDText_Header">
 			<File>DiscRecording/Reference/DRCDText_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="DRContentFile_Header">
 			<File>DiscRecording/Reference/DRContentFile_header_reference/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["DRFileFork_indicies"].Name="DRFileFork"]]></Change>
+				<Change><![CDATA[Enumerations["DRFileFork"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["DRFileForkSizeQuery_contants"].Name="DRFileForkSizeQuery"]]></Change>
+				<Change><![CDATA[Enumerations["DRFileForkSizeQuery"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["DRFileMessage_constants"].Name="DRFileMessage"]]></Change>
+				<Change><![CDATA[Enumerations["DRFileMessage"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["DRLinkType_contants"].Name="DRLinkType"]]></Change>
+				<Change><![CDATA[Enumerations["DRLinkType"].BaseType="uint"]]></Change>
+			</Patch>
 		</Type>
 		<Type name="DRContentFolder_Header">
 			<File>DiscRecording/Reference/DRContentFolder_header_reference/Reference/reference.html</File>
 		</Type>
 		<Type name="DRContentObject_Header">
 			<File>DiscRecording/Reference/DRContentObject_header_reference/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["DRFilesystemMask_contants"].Name="DRFilesystemMask"]]></Change>
+				<Change><![CDATA[Enumerations["DRFilesystemMask"].BaseType="uint"]]></Change>
+			</Patch>
 		</Type>
 		<Type name="DRContentProperties_Header">
 			<File>DiscRecording/Reference/DRContentProperties_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="DRContentTrack_Header">
 			<File>DiscRecording/Reference/DRContentTrack_header_reference/Reference/reference.html</File>
@@ -27,15 +83,69 @@
 		</Type>
 		<Type name="DRCoreCDText_Header">
 			<File>DiscRecording/Reference/DRCoreCDText_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["CD_Text_Encodings"].Name="CDTextEncodings"]]></Change>
+				<Change><![CDATA[Enumerations["CDTextEncodings"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["CD_Text_Genres"].Name="CDTextGenres"]]></Change>
+				<Change><![CDATA[Enumerations["CDTextGenres"].BaseType="uint"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[/*  ISO-Latin-1,]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[asofOSX v10.5 theappropriate CD-Textvariantwillnowbeused  */  ]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="DRCoreDevice_Header">
 			<File>DiscRecording/Reference/DRCoreDevice_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="DRCoreErase_Header">
 			<File>DiscRecording/Reference/DRCoreErase_header_reference/Reference/reference.html</File>
 		</Type>
 		<Type name="DRCoreErrors_Header">
 			<File>DiscRecording/Reference/DRCoreErrors_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["DiscRecording_Errors"].Name="DiscRecordingErrors"]]></Change>
+				<Change><![CDATA[Enumerations["DiscRecordingErrors"].BaseType="uint"]]></Change>
+			</Patch>
 		</Type>
 		<Type name="DRCoreNotifications_Header">
 			<File>DiscRecording/Reference/DRCoreNotifications_header_reference/Reference/reference.html</File>
@@ -45,27 +155,157 @@
 		</Type>
 		<Type name="DRCoreStatus_Header">
 			<File>DiscRecording/Reference/DRCoreStatus_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="DRCoreTrack_Header">
 			<File>DiscRecording/Reference/DRCoreTrack_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Block_Sizes"].Name="DRBlockSize"]]></Change>
+				<Change><![CDATA[Enumerations["DRBlockSize"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["Block_Types"].Name="DRBlockType"]]></Change>
+				<Change><![CDATA[Enumerations["DRBlockType"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["Data_Forms"].Name="DRDataForm"]]></Change>
+				<Change><![CDATA[Enumerations["DRDataForm"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["Session_Format"].Name="DRSessionFormat"]]></Change>
+				<Change><![CDATA[Enumerations["DRSessionFormat"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["Track_Messages"].Name="DRTrackMessage"]]></Change>
+				<Change><![CDATA[Enumerations["DRTrackMessage"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["Track_Modes"].Name="DRTrackMode"]]></Change>
+				<Change><![CDATA[Enumerations["DRTrackMode"].BaseType="uint"]]></Change>
+			</Patch>
 		</Type>
 		<Type name="DRDevice_Header">
 			<File>DiscRecording/Reference/DRDevice_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="DRErase_Header">
 			<File>DiscRecording/Reference/DRErase_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="DRFile_Header">
 			<File>DiscRecording/Reference/DRFile_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["File_Fork_Types"].Name="DRFileFork"]]></Change>
+				<Change><![CDATA[Enumerations["DRFileFork"].BaseType="uint"]]></Change>
+			</Patch>
 		</Type>
 		<Type name="DRFSObject_Header">
 			<File>DiscRecording/Reference/DRFSObject_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["DRFilesystemInclusionMask_constants"].Name="DRFilesystemInclusionMask"]]></Change>
+				<Change><![CDATA[Enumerations["DRFilesystemInclusionMask"].BaseType="uint"]]></Change>
+			</Patch>
 		</Type>
 		<Type name="DRStatus_Header">
 			<File>DiscRecording/Reference/DRStatus_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="DRTrack_Header">
 			<File>DiscRecording/Reference/DRTrack_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Track_Flags"].Name="DRTrackFlags"]]></Change>
+				<Change><![CDATA[Enumerations["DRTrackFlags"].BaseType="uint"]]></Change>
+			</Patch>
 		</Type>
 	</Types>
 	<Classes>
@@ -142,9 +382,18 @@
 	<Protocols>
 		<Protocol name="DRFileDataProduction">
 			<File>DiscRecording/Reference/DRFileDataProduction_reference/translated_content/DRFileDataProduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ProduceFileForkIntoBufferLengthAtAddressBlockSize"].Parameters["buffer"].Type="String"]]></Change>
+			</Patch>
 		</Protocol>
 		<Protocol name="DRTrackDataProduction">
 			<File>DiscRecording/Reference/DRTrackDataProduction_reference/translated_content/DRTrackDataProduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ProduceDataForTrackIntoBufferLengthAtAddressBlockSizeIoFlags"].Parameters["buffer"].Type="String"]]></Change>
+				<Change><![CDATA[Methods["ProducePreGapForTrackIntoBufferLengthAtAddressBlockSizeIoFlags"].Parameters["buffer"].Type="String"]]></Change>
+				<Change><![CDATA[Methods["VerifyDataForTrackInBufferLengthAtAddressBlockSizeIoFlags"].Parameters["buffer"].Type="String"]]></Change>
+				<Change><![CDATA[Methods["VerifyPreGapForTrackInBufferLengthAtAddressBlockSizeIoFlags"].Parameters["buffer"].Type="String"]]></Change>
+			</Patch>
 		</Protocol>
 	</Protocols>
 	<Structures>

@@ -152,7 +152,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
 					parameterEntity.IsOut = isOut;
 					parameterEntity.IsByRef = isByRef;
 					parameterEntity.IsBlock = isBlock;
-					parameterEntity.Name = parameterName;
+					parameterEntity.Name = TypeManager.ConvertName(parameterName);
 					functionEntity.Parameters.Add (parameterEntity);
 				}
 			}
