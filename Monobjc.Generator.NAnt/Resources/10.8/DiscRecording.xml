@@ -34,6 +34,12 @@
 		<Type name="DRContentFile_Header">
 			<File>DiscRecording/Reference/DRContentFile_header_reference/Reference/reference.html</File>
 			<Patch type="Model">
+				<Change><![CDATA[Functions["DRFileCreateReal"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFileCreateRealWithURL"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFileCreateVirtualLink"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFileCreateVirtualWithCallback"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFileCreateVirtualWithData"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFileGetTypeID"].Generate=false]]></Change>
 				<Change><![CDATA[Enumerations["DRFileFork_indicies"].Name="DRFileFork"]]></Change>
 				<Change><![CDATA[Enumerations["DRFileFork"].BaseType="uint"]]></Change>
 				<Change><![CDATA[Enumerations["DRFileForkSizeQuery_contants"].Name="DRFileForkSizeQuery"]]></Change>
@@ -46,10 +52,39 @@
 		</Type>
 		<Type name="DRContentFolder_Header">
 			<File>DiscRecording/Reference/DRContentFolder_header_reference/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["DRFolderAddChild"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFolderConvertRealToVirtual"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFolderCopyChildren"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFolderCountChildren"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFolderCreateReal"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFolderCreateRealWithURL"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFolderCreateVirtual"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFolderGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFolderRemoveChild"].Generate=false]]></Change>
+			</Patch>
 		</Type>
 		<Type name="DRContentObject_Header">
 			<File>DiscRecording/Reference/DRContentObject_header_reference/Reference/reference.html</File>
 			<Patch type="Model">
+				<Change><![CDATA[Functions["DRFSObjectCopyBaseName"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFSObjectCopyFilesystemProperties"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFSObjectCopyFilesystemProperty"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFSObjectCopyMangledName"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFSObjectCopyMangledNames"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFSObjectCopyRealURL"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFSObjectCopySpecificName"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFSObjectCopySpecificNames"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFSObjectGetFilesystemMask"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFSObjectGetParent"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFSObjectGetRealFSRef"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFSObjectIsVirtual"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFSObjectSetBaseName"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFSObjectSetFilesystemMask"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFSObjectSetFilesystemProperties"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFSObjectSetFilesystemProperty"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFSObjectSetSpecificName"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFSObjectSetSpecificNames"].Generate=false]]></Change>
 				<Change><![CDATA[Enumerations["DRFilesystemMask_contants"].Name="DRFilesystemMask"]]></Change>
 				<Change><![CDATA[Enumerations["DRFilesystemMask"].BaseType="uint"]]></Change>
 			</Patch>
@@ -77,9 +112,25 @@
 		</Type>
 		<Type name="DRContentTrack_Header">
 			<File>DiscRecording/Reference/DRContentTrack_header_reference/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["DRAudioTrackCreate"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRAudioTrackCreateWithURL"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFilesystemTrackCreate"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRFilesystemTrackEstimateOverhead"].Generate=false]]></Change>
+			</Patch>
 		</Type>
 		<Type name="DRCoreBurn_Header">
 			<File>DiscRecording/Reference/DRCoreBurn_header_reference/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["DRBurnAbort"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRBurnCopyStatus"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRBurnCreate"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRBurnGetDevice"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRBurnGetProperties"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRBurnGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRBurnSetProperties"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRBurnWriteLayout"].Generate=false]]></Change>
+			</Patch>
 		</Type>
 		<Type name="DRCoreCDText_Header">
 			<File>DiscRecording/Reference/DRCoreCDText_header_reference/Reference/reference.html</File>
@@ -90,6 +141,16 @@
 				</Replace>
 			</Patch>
 			<Patch type="Model">
+				<Change><![CDATA[Functions["DRCDTextBlockCreate"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRCDTextBlockCreateArrayFromPackList"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRCDTextBlockFlatten"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRCDTextBlockGetProperties"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRCDTextBlockGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRCDTextBlockGetValue"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRCDTextBlockGetTrackDictionaries"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRCDTextBlockSetProperties"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRCDTextBlockSetTrackDictionaries"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRCDTextBlockSetValue"].Generate=false]]></Change>
 				<Change><![CDATA[Enumerations["CD_Text_Encodings"].Name="CDTextEncodings"]]></Change>
 				<Change><![CDATA[Enumerations["CDTextEncodings"].BaseType="uint"]]></Change>
 				<Change><![CDATA[Enumerations["CD_Text_Genres"].Name="CDTextGenres"]]></Change>
@@ -103,6 +164,14 @@
 				<Replace>
 					<Source><![CDATA[asofOSX v10.5 theappropriate CD-Textvariantwillnowbeused  */  ]]></Source>
 					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[kCFStringEncodingISOLatin1]]></Source>
+					<With><![CDATA[NSStringEncoding.NSISOLatin1StringEncoding]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[kCFStringEncodingASCII]]></Source>
+					<With><![CDATA[NSStringEncoding.NSNonLossyASCIIStringEncoding]]></With>
 				</Replace>
 			</Patch>
 		</Type>
@@ -126,9 +195,36 @@
 					<With><![CDATA[ ]]></With>
 				</Replace>
 			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["DRCopyDeviceArray"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRDeviceAcquireExclusiveAccess"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRDeviceAcquireMediaReservation"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRDeviceCloseTray"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRDeviceCopyDeviceForBSDName"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRDeviceCopyDeviceForIORegistryEntryPath"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRDeviceCopyInfo"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRDeviceCopyStatus"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRDeviceEjectMedia"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRDeviceGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRDeviceIsValid"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRDeviceKPSForXFactor"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRDeviceOpenTray"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRDeviceReleaseExclusiveAccess"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRDeviceReleaseMediaReservation"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRDeviceXFactorForKPS"].Generate=false]]></Change>
+			</Patch>
 		</Type>
 		<Type name="DRCoreErase_Header">
 			<File>DiscRecording/Reference/DRCoreErase_header_reference/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["DREraseCopyStatus"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DREraseCreate"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DREraseGetDevice"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DREraseGetProperties"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DREraseGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DREraseSetProperties"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DREraseStart"].Generate=false]]></Change>
+			</Patch>
 		</Type>
 		<Type name="DRCoreErrors_Header">
 			<File>DiscRecording/Reference/DRCoreErrors_header_reference/Reference/reference.html</File>
@@ -143,15 +239,30 @@
 				</Replace>
 			</Patch>
 			<Patch type="Model">
+				<Change><![CDATA[Functions["DRCopyLocalizedStringForAdditionalSense"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRCopyLocalizedStringForDiscRecordingError"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRCopyLocalizedStringForSenseCode"].Generate=false]]></Change>
 				<Change><![CDATA[Enumerations["DiscRecording_Errors"].Name="DiscRecordingErrors"]]></Change>
 				<Change><![CDATA[Enumerations["DiscRecordingErrors"].BaseType="uint"]]></Change>
 			</Patch>
 		</Type>
 		<Type name="DRCoreNotifications_Header">
 			<File>DiscRecording/Reference/DRCoreNotifications_header_reference/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["DRNotificationCenterAddObserver"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRNotificationCenterCreate"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRNotificationCenterCreateRunLoopSource"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRNotificationCenterGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRNotificationCenterRemoveObserver"].Generate=false]]></Change>
+			</Patch>
 		</Type>
 		<Type name="DRCoreObject_Header">
 			<File>DiscRecording/Reference/DRCoreObject_header_reference/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["DRCopyLocalizedStringForValue"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRGetRefCon"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRSetRefCon"].Generate=false]]></Change>
+			</Patch>
 		</Type>
 		<Type name="DRCoreStatus_Header">
 			<File>DiscRecording/Reference/DRCoreStatus_header_reference/Reference/reference.html</File>
@@ -185,8 +296,30 @@
 					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER]]></Source>
 					<With><![CDATA[ ]]></With>
 				</Replace>
+				<Replace>
+					<Source><![CDATA[#<!--a-->if<!--/a--> <!--a-->MAC_OS_X_VERSION_MAX_ALLOWED<!--/a--> >= <!--a-->MAC_OS_X_VERSION_10_5<!--/a-->]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[#<!--a-->endif<!--/a-->]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* <!--a-->added<!--/a--> <!--a-->in<!--/a--> 10.3 */]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* <!--a-->added<!--/a--> <!--a-->in<!--/a--> 10.4 */]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
 			</Patch>
 			<Patch type="Model">
+				<Change><![CDATA[Functions["DRTrackCreate"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRTrackEstimateLength"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRTrackGetProperties"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRTrackGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRTrackSetProperties"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRTrackSpeedTest"].Generate=false]]></Change>
 				<Change><![CDATA[Enumerations["Block_Sizes"].Name="DRBlockSize"]]></Change>
 				<Change><![CDATA[Enumerations["DRBlockSize"].BaseType="uint"]]></Change>
 				<Change><![CDATA[Enumerations["Block_Types"].Name="DRBlockType"]]></Change>
@@ -199,6 +332,9 @@
 				<Change><![CDATA[Enumerations["DRTrackMessage"].BaseType="uint"]]></Change>
 				<Change><![CDATA[Enumerations["Track_Modes"].Name="DRTrackMode"]]></Change>
 				<Change><![CDATA[Enumerations["DRTrackMode"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["Track_Flags"].Name="DRTrackFlags"]]></Change>
+				<Change><![CDATA[Enumerations["DRTrackFlags"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["DRTrackFlags"].Flags=true]]></Change>
 			</Patch>
 		</Type>
 		<Type name="DRDevice_Header">
@@ -242,6 +378,7 @@
 			<Patch type="Model">
 				<Change><![CDATA[Enumerations["File_Fork_Types"].Name="DRFileFork"]]></Change>
 				<Change><![CDATA[Enumerations["DRFileFork"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["DRFileFork"].Generate=false]]></Change>
 			</Patch>
 		</Type>
 		<Type name="DRFSObject_Header">
@@ -267,6 +404,7 @@
 			<Patch type="Model">
 				<Change><![CDATA[Enumerations["DRFilesystemInclusionMask_constants"].Name="DRFilesystemInclusionMask"]]></Change>
 				<Change><![CDATA[Enumerations["DRFilesystemInclusionMask"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["DRFilesystemInclusionMask"].Flags=true]]></Change>
 			</Patch>
 		</Type>
 		<Type name="DRStatus_Header">
@@ -305,6 +443,8 @@
 			<Patch type="Model">
 				<Change><![CDATA[Enumerations["Track_Flags"].Name="DRTrackFlags"]]></Change>
 				<Change><![CDATA[Enumerations["DRTrackFlags"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["DRTrackFlags"].Flags=true]]></Change>
+				<Change><![CDATA[Enumerations["DRTrackFlags"].Generate=false]]></Change>
 			</Patch>
 		</Type>
 	</Types>
@@ -314,51 +454,81 @@
 		</Class>
 		<Class name="DRBurn_ImageContentCreation">
 			<File>DiscRecording/Reference/DRBurnImageContentCreation_reference/translated_content/DRBurn(ImageContentCreation).html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DRBurn"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="DRBurn_PropertyConvenienceMethods">
 			<File>DiscRecording/Reference/DRBurnPropertyConvenienceMethods_reference/translated_content/DRBurn(PropertyConvenienceMethods).html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DRBurn"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="DRCDTextBlock">
 			<File>DiscRecording/Reference/DRCDTextBlock_reference/translated_content/DRCDTextBlock.html</File>
 		</Class>
 		<Class name="DRCDTextBlock_PropertyConvenienceMethods">
 			<File>DiscRecording/Reference/DRCDTextBlockPropertyConvenienceMethods_reference/translated_content/DRCDTextBlock(PropertyConvenienceMethods).html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DRCDTextBlock"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="DRDevice">
 			<File>DiscRecording/Reference/DRDevice_reference/translated_content/DRDevice.html</File>
 		</Class>
 		<Class name="DRDevice_InfoConvenience">
 			<File>DiscRecording/Reference/DRDeviceInfoConvenience_reference/translated_content/DRDevice(InfoConvenience).html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DRDevice"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="DRDevice_StatusConvenience">
 			<File>DiscRecording/Reference/DRDeviceStatusConvenience_reference/translated_content/DRDevice(StatusConvenience).html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DRDevice"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="DRErase">
 			<File>DiscRecording/Reference/DRErase_reference/translated_content/DRErase.html</File>
 		</Class>
 		<Class name="DRErase_PropertyConvenienceMethods">
 			<File>DiscRecording/Reference/DRErasePropertyConvenienceMethods_reference/translated_content/DRErase(PropertyConvenienceMethods).html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DRErase"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="DRFile">
 			<File>DiscRecording/Reference/DRFile_reference/translated_content/DRFile.html</File>
 		</Class>
 		<Class name="DRFile_VirtualFiles">
 			<File>DiscRecording/Reference/DRFileVirtualFiles_reference/translated_content/DRFile(VirtualFiles).html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DRFile"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="DRFile_VirtualLinks">
 			<File>DiscRecording/Reference/DRFileVirtualLinks_reference/translated_content/DRFile(VirtualLinks).html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DRFile"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="DRFolder">
 			<File>DiscRecording/Reference/DRFolder_reference/translated_content/DRFolder.html</File>
 		</Class>
 		<Class name="DRFolder_VirtualFolders">
 			<File>DiscRecording/Reference/DRFolderVirtualFolders_reference/translated_content/DRFolder(VirtualFolders).html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DRFolder"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="DRFSObject">
 			<File>DiscRecording/Reference/DRFSObject_reference/translated_content/DRFSObject.html</File>
 		</Class>
 		<Class name="DRMSF">
 			<File>DiscRecording/Reference/DRMSF_reference/translated_content/DRMSF.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["InitWithFrames"].GenerateConstructor=false]]></Change>
+			</Patch>
 		</Class>
 		<Class name="DRMSFFormatter">
 			<File>DiscRecording/Reference/DRMSFFormatter_reference/translated_content/DRMSFFormatter.html</File>
@@ -371,12 +541,21 @@
 		</Class>
 		<Class name="DRTrack_AudioContentCreation">
 			<File>DiscRecording/Reference/DRTrackAudioContentCreation_reference/translated_content/DRTrack(AudioContentCreation).html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DRTrack"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="DRTrack_DataContentCreation">
 			<File>DiscRecording/Reference/DRTrackDataContentCreation_reference/translated_content/DRTrack(DataContentCreation).html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DRTrack"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="DRTrack_PropertyConvenience">
 			<File>DiscRecording/Reference/DRTrackPropertyConvenience_reference/translated_content/DRTrack(PropertyConvenience).html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="DRTrack"]]></Change>
+			</Patch>
 		</Class>
 	</Classes>
 	<Protocols>
@@ -390,9 +569,17 @@
 			<File>DiscRecording/Reference/DRTrackDataProduction_reference/translated_content/DRTrackDataProduction.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["ProduceDataForTrackIntoBufferLengthAtAddressBlockSizeIoFlags"].Parameters["buffer"].Type="String"]]></Change>
+				<Change><![CDATA[Methods["ProduceDataForTrackIntoBufferLengthAtAddressBlockSizeIoFlags"].Parameters["flags"].Type="uint"]]></Change>
+				<Change><![CDATA[Methods["ProduceDataForTrackIntoBufferLengthAtAddressBlockSizeIoFlags"].Parameters["flags"].IsOut=true]]></Change>
 				<Change><![CDATA[Methods["ProducePreGapForTrackIntoBufferLengthAtAddressBlockSizeIoFlags"].Parameters["buffer"].Type="String"]]></Change>
+				<Change><![CDATA[Methods["ProducePreGapForTrackIntoBufferLengthAtAddressBlockSizeIoFlags"].Parameters["flags"].Type="uint"]]></Change>
+				<Change><![CDATA[Methods["ProducePreGapForTrackIntoBufferLengthAtAddressBlockSizeIoFlags"].Parameters["flags"].IsOut=true]]></Change>
 				<Change><![CDATA[Methods["VerifyDataForTrackInBufferLengthAtAddressBlockSizeIoFlags"].Parameters["buffer"].Type="String"]]></Change>
+				<Change><![CDATA[Methods["VerifyDataForTrackInBufferLengthAtAddressBlockSizeIoFlags"].Parameters["flags"].Type="uint"]]></Change>
+				<Change><![CDATA[Methods["VerifyDataForTrackInBufferLengthAtAddressBlockSizeIoFlags"].Parameters["flags"].IsOut=true]]></Change>
 				<Change><![CDATA[Methods["VerifyPreGapForTrackInBufferLengthAtAddressBlockSizeIoFlags"].Parameters["buffer"].Type="String"]]></Change>
+				<Change><![CDATA[Methods["VerifyPreGapForTrackInBufferLengthAtAddressBlockSizeIoFlags"].Parameters["flags"].Type="uint"]]></Change>
+				<Change><![CDATA[Methods["VerifyPreGapForTrackInBufferLengthAtAddressBlockSizeIoFlags"].Parameters["flags"].IsOut=true]]></Change>
 			</Patch>
 		</Protocol>
 	</Protocols>
