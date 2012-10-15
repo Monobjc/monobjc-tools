@@ -57,7 +57,7 @@
 				<Patch type="Model">
 					<Change><![CDATA[Functions["CMBufferQueueCallForEachBuffer"].Parameters["s"].Name="callback"]]></Change>
 					<Change><![CDATA[Functions["CMBufferQueueCallForEachBuffer"].Parameters["callback"].Type="CMBufferQueueCallback"]]></Change>
-					<Change><![CDATA[Functions["CMBufferQueueCallForEachBuffer"].Parameters["refcon](0).Generate=false]]></Change>
+					<Change><![CDATA[Functions["CMBufferQueueCallForEachBuffer"].Parameters.Where(Name == "refcon").First().Generate=false]]></Change>
 					<Change><![CDATA[Functions["CMBufferQueueCreate"].Parameters["callbacks"].Type="CMBufferCallbacks"]]></Change>
 					<Change><![CDATA[Functions["CMBufferQueueCreate"].Parameters["callbacks"].IsByRef=true]]></Change>
 					<Change><![CDATA[Functions["CMBufferQueueCreate"].Parameters["queueOut"].Type="IntPtr"]]></Change>
@@ -71,7 +71,7 @@
 					<Change><![CDATA[Functions["CMBufferQueueInstallTriggerWithIntegerThreshold"].Parameters["triggerTokenOut"].IsOut=true]]></Change>
 					<Change><![CDATA[Functions["CMBufferQueueResetWithCallback"].Parameters["d"].Name="callback"]]></Change>
 					<Change><![CDATA[Functions["CMBufferQueueResetWithCallback"].Parameters["callback"].Type="CMBufferQueueCallback"]]></Change>
-					<Change><![CDATA[Functions["CMBufferQueueResetWithCallback"].Parameters["refcon](0).Generate=false]]></Change>
+					<Change><![CDATA[Functions["CMBufferQueueResetWithCallback"].Parameters.Where(Name == "refcon").First().Generate=false]]></Change>
 					<Change><![CDATA[Enumerations["Error_Codes"].Name="CMBufferQueueErrorCodes"]]></Change>
 					<Change><![CDATA[Enumerations["CMBufferQueueErrorCodes"].BaseType="int"]]></Change>
 					<Change><![CDATA[Enumerations["Trigger_Conditions"].Name="CMBufferQueueTriggerConditions"]]></Change>
@@ -81,7 +81,7 @@
 		<Type name="CMFormatDescription">
 			<File>CoreMedia/Reference/CMFormatDescription/Reference/reference.html</File>
 				<Patch type="Model">
-					<Change><![CDATA[Constants[eoFormatDescriptionRef"].Generate=false]]></Change>
+					<Change><![CDATA[Constants["eoFormatDescriptionRef"].Generate=false]]></Change>
 					<Change><![CDATA[Functions["CMFormatDescriptionGetTypeID"].Generate=false]]></Change>
 					<Change><![CDATA[Functions["CMAudioFormatDescriptionCreate"].Parameters["asbd"].Type="AudioStreamBasicDescription"]]></Change>
 					<Change><![CDATA[Functions["CMAudioFormatDescriptionCreate"].Parameters["asbd"].IsByRef=true]]></Change>
@@ -147,11 +147,11 @@
 					<Change><![CDATA[Enumerations["CMTextJustificationValue"].BaseType="sbyte"]]></Change>
 					<Change><![CDATA[Enumerations["Audio_Format_Description_Masks"].Name="CMAudioFormatDescriptionMask"]]></Change>
 					<Change><![CDATA[Enumerations["CMAudioFormatDescriptionMask"].BaseType="uint"]]></Change>
-					<Change><![CDATA[Enumerations["CMMuxedStreamType"].Values[kCMMuxedStreamType_DV"].Value=0x65762020]]></Change>
+					<Change><![CDATA[Enumerations["CMMuxedStreamType"].Values["kCMMuxedStreamType_DV"].Value="0x65762020"]]></Change>
 					<Change><![CDATA[Enumerations["CMClosedCaptionFormatType"].BaseType="uint"]]></Change>
 					<Change><![CDATA[Enumerations["Video_Profiles"].Name="CMFormatDescriptionVideoProfiles"]]></Change>
 					<Change><![CDATA[Enumerations["CMFormatDescriptionVideoProfiles"].BaseType="uint"]]></Change>
-					<Change><![CDATA[Enumerations["CMVideoCodecType"].Values[kCMVideoCodecType_422YpCbCr8"].Value=CMPixelFormatType.kCMPixelFormat_422YpCbCr8]]></Change>
+					<Change><![CDATA[Enumerations["CMVideoCodecType"].Values["kCMVideoCodecType_422YpCbCr8"].Value="CMPixelFormatType.kCMPixelFormat_422YpCbCr8"]]></Change>
 				</Patch>
 		</Type>
 		<Type name="CMSampleBuffer">
@@ -183,7 +183,7 @@
 					<Change><![CDATA[Functions["CMSampleBufferCallForEachSample"].Parameters["s"].Name="callback"]]></Change>
 					<Change><![CDATA[Functions["CMSampleBufferCallForEachSample"].Parameters["callback"].Type="CMSampleBufferCallForEachSampleCallback"]]></Change>
 					<Change><![CDATA[Functions["CMSampleBufferCallForEachSample"].Parameters["index"].Generate=false]]></Change>
-					<Change><![CDATA[Functions["CMSampleBufferCallForEachSample"].Parameters["refcon](0).Generate=false]]></Change>
+					<Change><![CDATA[Functions["CMSampleBufferCallForEachSample"].Parameters.Where(Name == "refcon").First().Generate=false]]></Change>
 					<Change><![CDATA[Functions["CMAudioSampleBufferCreateWithPacketDescriptions"].Generate=false]]></Change>
 					<Change><![CDATA[Functions["CMSampleBufferCreate"].Generate=false]]></Change>
 					<Change><![CDATA[Functions["CMSampleBufferCreateCopyWithNewTiming"].Generate=false]]></Change>

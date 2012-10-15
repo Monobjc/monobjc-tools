@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="Security" usings="Foundation,AppKit" assembly="Monobjc.Security" source="DocSet">
+<Framework name="Security" usings="Foundation" assembly="Monobjc.Security" source="DocSet">
 	<Types>
 		<Type name="Authorization">
 			<File>Security/Reference/authorization_ref/Reference/reference.html</File>

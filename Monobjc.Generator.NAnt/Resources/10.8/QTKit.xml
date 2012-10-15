@@ -4,12 +4,12 @@
 		<Type name="QTKitFramework.Constants">
 			<File>QuickTime/Reference/QTKitCaptureConstants_Ref/Reference/reference.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Constants[QTErrorTimeKey"].MinAvailability="Mac OS X v10.6"]]></Change>
-				<Change><![CDATA[Constants[QTErrorFileSizeKey"].MinAvailability="Mac OS X v10.6"]]></Change>
+				<Change><![CDATA[Constants["QTErrorTimeKey"].MinAvailability="OS X v10.6"]]></Change>
+				<Change><![CDATA[Constants["QTErrorFileSizeKey"].MinAvailability="OS X v10.6"]]></Change>
 				<Change><![CDATA[Enumerations["QTKit_Error_Codes"].Name="QTKError"]]></Change>
 				<Change><![CDATA[Enumerations["QTKError"].BaseType="NSInteger"]]></Change>
-				<Change><![CDATA[Enumerations["QTKError"].MinAvailability="Mac OS X v10.5"]]></Change>
-				<Change><![CDATA[Enumerations["QTKError"].Values[QTErrorMaximumNumberOfSamplesForFileFormatReached"].MinAvailability="Mac OS X v10.5"]]></Change>
+				<Change><![CDATA[Enumerations["QTKError"].MinAvailability="OS X v10.5"]]></Change>
+				<Change><![CDATA[Enumerations["QTKError"].Values["QTErrorMaximumNumberOfSamplesForFileFormatReached"].MinAvailability="OS X v10.5"]]></Change>
 			</Patch>
 		</Type>
 		<Type name="QTKitFramework.DataTypes">
@@ -150,8 +150,8 @@
 				<Change><![CDATA[Properties["Movie"].Type="QTMovie"]]></Change>
 				<Change><![CDATA[Properties["Movie"].Getter.ReturnType="QTMovie"]]></Change>
 				<Change><![CDATA[Enumerations["QTMovieFileTypeOptions"].BaseType="int"]]></Change>
-				<Change><![CDATA[Enumerations["QTMovieLoadState"].Values[QTMovieLoadStateError"].Value=-1]]></Change>
-				<Change><![CDATA[Enumerations["QTMovieLoadState"].Values[QTMovieLoadStateComplete"].Value=100000]]></Change>
+				<Change><![CDATA[Enumerations["QTMovieLoadState"].Values["QTMovieLoadStateError"].Value="-1"]]></Change>
+				<Change><![CDATA[Enumerations["QTMovieLoadState"].Values["QTMovieLoadStateComplete"].Value="100000"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="QTMovieLayer">

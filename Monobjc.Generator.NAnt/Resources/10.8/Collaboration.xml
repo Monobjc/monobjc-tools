@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="Collaboration" usings="Foundation" assembly="Monobjc.Collaboration" source="DocSet">
+<Framework name="Collaboration" usings="Foundation,AppKit" assembly="Monobjc.Collaboration" source="DocSet">
 	<Types>
 	</Types>
 	<Classes>

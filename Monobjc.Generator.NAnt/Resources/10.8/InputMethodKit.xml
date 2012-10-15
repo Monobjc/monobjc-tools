@@ -10,8 +10,6 @@
 			<File>Cocoa/Reference/IMKInputController_Class/Reference/IMKInputController_ref.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Properties["Client"].Type="IIMKTextInput"]]></Change>
-				<Change><![CDATA[Properties["Client"].Getter.ReturnType="IIMKTextInput"]]></Change>
-				<Change><![CDATA[Properties["Delegate;"].Getter.Name="Delegate"]]></Change>
 				<Change><![CDATA[Properties["Delegate;"].Name="Delegate"]]></Change>
 				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
 			</Patch>
@@ -19,7 +17,7 @@
 		<Class name="IMKServer">
 			<File>Cocoa/Reference/IMKServer_Class/Reference/IMKServer_Ref.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Protocols= ]]></Change>
+				<Change><![CDATA[ConformsTo=""]]></Change>
 			</Patch>
 		</Class>
 	</Classes>

@@ -69,7 +69,7 @@
 		<Class name="CWMutableNetworkProfile">
 			<File>CoreWLAN/Reference/CWMutableNetworkProfile_reference/translated_content/CWMutableNetworkProfile.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[MinAvailability="Mac OS X v10.7"]]></Change>
+				<Change><![CDATA[MinAvailability="OS X v10.7"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="CWNetwork">
@@ -81,7 +81,7 @@
 		<Class name="CWWirelessProfile">
 			<File>CoreWLAN/Reference/CWWirelessProfile_reference/translated_content/CWWirelessProfile.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[MinAvailability=Mac OS X v10.6]]></Change>
+				<Change><![CDATA[MinAvailability="OS X v10.6"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="CWWirelessProfile.Deprecated">

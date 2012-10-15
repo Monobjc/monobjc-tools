@@ -53,7 +53,7 @@
 		<Protocol name="SKProductsRequestDelegate">
 			<File>StoreKit/Reference/SKProductsRequestDelegate/Reference/Reference.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[BaseType=SKRequestDelegate]]></Change>
+				<Change><![CDATA[BaseType="SKRequestDelegate"]]></Change>
 				<Change><![CDATA[DelegateFor="SKProductsRequest"]]></Change>
 				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
 			</Patch>

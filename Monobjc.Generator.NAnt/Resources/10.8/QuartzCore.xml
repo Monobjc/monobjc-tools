@@ -191,7 +191,7 @@
 					<Change><![CDATA[Enumerations["CAAutoresizingMask"].Flags=true]]></Change>
 					<Change><![CDATA[Enumerations["CAEdgeAntialiasingMask"].BaseType="uint"]]></Change>
 					<Change><![CDATA[Enumerations["CAEdgeAntialiasingMask"].Flags=true]]></Change>
-					<Change><![CDATA[Constants[CATransform3DIdentity"].Generate=false]]></Change>
+					<Change><![CDATA[Constants["CATransform3DIdentity"].Generate=false]]></Change>
 				</Patch>
 		</Class>
 		<Class name="CAMediaTimingFunction">
@@ -278,11 +278,11 @@
 			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.html</File>
 				<Patch type="Model">
 					<Change><![CDATA[Methods["FilterWithNameKeysAndValues"].Parameters["key0,..."].Generate=false]]></Change>
-					<Change><![CDATA[Methods["FilterWithNameKeysAndValues"].Parameters["key0]="<Parameter><Summary><Line>MISSING</Line></Summary><Name>key0</Name><Type>NSString</Type></Parameter">]]></Change>
-					<Change><![CDATA[Methods["FilterWithNameKeysAndValues"].Parameters["values]="<Parameter><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter">]]></Change>
+					<Change><![CDATA[Methods["FilterWithNameKeysAndValues"].Parameters.Set("key0", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>key0</Name><Type>NSString</Type></Parameter>")]]></Change>
+					<Change><![CDATA[Methods["FilterWithNameKeysAndValues"].Parameters.Set("values", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
 					<Change><![CDATA[Methods["Apply"].Parameters["k,..."].Generate=false]]></Change>
-					<Change><![CDATA[Methods["Apply"].Parameters["k]="<Parameter><Summary><Line>MISSING</Line></Summary><Name>k</Name><Type>NSString</Type></Parameter">]]></Change>
-					<Change><![CDATA[Methods["Apply"].Parameters["values]="<Parameter><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter">]]></Change>
+					<Change><![CDATA[Methods["Apply"].Parameters.Set("k", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>k</Name><Type>NSString</Type></Parameter>")]]></Change>
+					<Change><![CDATA[Methods["Apply"].Parameters.Set("values", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
 				</Patch>
 		</Class>
 		<Class name="CIFilter_CoreAnimationAdditions">
@@ -335,8 +335,8 @@
 		<Class name="CISampler">
 			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CISampler_Class/Reference/Reference.html</File>
 				<Patch type="Model">
-					<Change><![CDATA[Methods["InitWithImageKeysAndValues"].Parameters["keysAndValues]="<Parameter><Summary><Line>MISSING</Line></Summary><Name>keysAndValues</Name><Type>params object[]</Type></Parameter">]]></Change>
-					<Change><![CDATA[Methods["SamplerWithImageKeysAndValues"].Parameters["keysAndValues]="<Parameter><Summary><Line>MISSING</Line></Summary><Name>keysAndValues</Name><Type>params object[]</Type></Parameter">]]></Change>
+					<Change><![CDATA[Methods["InitWithImageKeysAndValues"].Parameters.Set("keysAndValues", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>keysAndValues</Name><Type>params object[]</Type></Parameter>")]]></Change>
+					<Change><![CDATA[Methods["SamplerWithImageKeysAndValues"].Parameters.Set("keysAndValues", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>keysAndValues</Name><Type>params object[]</Type></Parameter>")]]></Change>
 				</Patch>
 		</Class>
 		<Class name="CIVector">

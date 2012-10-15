@@ -60,7 +60,7 @@
 				<Change><![CDATA[Functions["CTFontGetVerticalTranslationsForGlyphs"].Parameters["glyphs"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["CTFontGetVerticalTranslationsForGlyphs"].Parameters["translations[]"].Name="translations"]]></Change>
 				<Change><![CDATA[Functions["CTFontGetVerticalTranslationsForGlyphs"].Parameters["translations"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Enumerations["CTFontUIFontType"].Values[kCTFontNoFontType"].Value=0xFFFFFFFF]]></Change>
+				<Change><![CDATA[Enumerations["CTFontUIFontType"].Values["kCTFontNoFontType"].Value="0xFFFFFFFF"]]></Change>
 			</Patch>
 		</Type>
 		<Type name="CTFontCollection">
@@ -76,11 +76,11 @@
 				<Change><![CDATA[Functions["CTFontDescriptorCopyLocalizedAttribute"].Parameters["language"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["CTFontDescriptorGetTypeID"].Generate=false]]></Change>
 				<Change><![CDATA[Enumerations["Font_Class_Mask_Shift_Constants"].Generate=false]]></Change>
-				<Change><![CDATA[Enumerations["CTFontSymbolicTraits"].Values[kCTFontClassMaskTrait"].Value=15U << 28]]></Change>
-				<Change><![CDATA[Enumerations["CTFontStylisticClass"].Values[kCTFontSansSerifClass"].Value=8U << 28]]></Change>
-				<Change><![CDATA[Enumerations["CTFontStylisticClass"].Values[kCTFontOrnamentalsClass"].Value=9U << 28]]></Change>
-				<Change><![CDATA[Enumerations["CTFontStylisticClass"].Values[kCTFontScriptsClass"].Value=10U << 28]]></Change>
-				<Change><![CDATA[Enumerations["CTFontStylisticClass"].Values[kCTFontSymbolicClass"].Value=12U << 28]]></Change>
+				<Change><![CDATA[Enumerations["CTFontSymbolicTraits"].Values["kCTFontClassMaskTrait"].Value="15U << 28"]]></Change>
+				<Change><![CDATA[Enumerations["CTFontStylisticClass"].Values["kCTFontSansSerifClass"].Value="8U << 28"]]></Change>
+				<Change><![CDATA[Enumerations["CTFontStylisticClass"].Values["kCTFontOrnamentalsClass"].Value="9U << 28"]]></Change>
+				<Change><![CDATA[Enumerations["CTFontStylisticClass"].Values["kCTFontScriptsClass"].Value="10U << 28"]]></Change>
+				<Change><![CDATA[Enumerations["CTFontStylisticClass"].Values["kCTFontSymbolicClass"].Value="12U << 28"]]></Change>
 			</Patch>
 		</Type>
 		<Type name="CTFontManager">
@@ -108,7 +108,7 @@
 				<Change><![CDATA[Functions["CTFrameGetLineOrigins"].Parameters["origins[]"].Name="origins"]]></Change>
 				<Change><![CDATA[Functions["CTFrameGetLineOrigins"].Parameters["origins"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["CTFrameGetTypeID"].Generate=false]]></Change>
-				<Change><![CDATA[Enumerations["CTFramePathFillRule](0).Generate=false]]></Change>
+				<Change><![CDATA[Enumerations.Where(Name == "CTFramePathFillRule").First().Generate=false]]></Change>
 			</Patch>
 		</Type>
 		<Type name="CTFramesetter">
