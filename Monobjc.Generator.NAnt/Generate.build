@@ -63,16 +63,12 @@
 		<framework descriptor="${data.dir}/Resources/Sparkle-1.5.xml" />
 	</framework-set>
 	<framework-set id="doxygen">
-		<!--
 		<framework-set refid="system-frameworks" />
 		<framework-set refid="thirdparty-frameworks" />
-		-->
 	</framework-set>
 	<framework-set id="all">
 		<framework-set refid="docset" />
-		<!--
 		<framework-set refid="doxygen" />
-		-->
 	</framework-set>
 
 	<!--
