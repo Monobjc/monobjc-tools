@@ -614,13 +614,13 @@
 				<Change><![CDATA[Methods["InitWithBytesNoCopyLength"].GenerateConstructor=false]]></Change>
 				<Change><![CDATA[Properties["Data"].Type="NSData"]]></Change>
 				<Change><![CDATA[Properties["Data"].CopyInDescendants=true]]></Change>
-				<Change><![CDATA[Enumerations["NSDataReadingOptions"].MinAvailability="Mac OS X v10.4"]]></Change>
-				<Change><![CDATA[Enumerations["NSDataReadingOptions"].Values.Set("NSDataReadingMapped", "<EnumerationValue><Summary><Line>Deprecated name for NSDataReadingMappedIfSafe.</Line></Summary><MinAvailability>Mac OS X v10.6</MinAvailability><Name>NSDataReadingMapped</Name><Value>1U &lt;&lt; 0</Value></EnumerationValue>")]]></Change>
-				<Change><![CDATA[Enumerations["NSDataReadingOptions"].Values.Set("NSMappedRead", "<EnumerationValue><Summary><Line>Deprecated name for NSDataReadingMapped.</Line></Summary><MinAvailability>Mac OS X v10.4</MinAvailability><Name>NSMappedRead</Name><Value>1U &lt;&lt; 0</Value></EnumerationValue>")]]></Change>
-				<Change><![CDATA[Enumerations["NSDataReadingOptions"].Values.Set("NSUncachedRead", "<EnumerationValue><Summary><Line>Deprecated name for NSDataReadingUncached.</Line></Summary><MinAvailability>Mac OS X v10.4</MinAvailability><Name>NSUncachedRead</Name><Value>1U &lt;&lt; 1</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSDataReadingOptions"].MinAvailability="OS X v10.4"]]></Change>
+				<Change><![CDATA[Enumerations["NSDataReadingOptions"].Values.Set("NSDataReadingMapped", "<EnumerationValue><Summary><Line>Deprecated name for NSDataReadingMappedIfSafe.</Line></Summary><MinAvailability>OS X v10.6</MinAvailability><Name>NSDataReadingMapped</Name><Value>1U &lt;&lt; 0</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSDataReadingOptions"].Values.Set("NSMappedRead", "<EnumerationValue><Summary><Line>Deprecated name for NSDataReadingMapped.</Line></Summary><MinAvailability>OS X v10.4</MinAvailability><Name>NSMappedRead</Name><Value>1U &lt;&lt; 0</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSDataReadingOptions"].Values.Set("NSUncachedRead", "<EnumerationValue><Summary><Line>Deprecated name for NSDataReadingUncached.</Line></Summary><MinAvailability>OS X v10.4</MinAvailability><Name>NSUncachedRead</Name><Value>1U &lt;&lt; 1</Value></EnumerationValue>")]]></Change>
 				<Change><![CDATA[Enumerations["Legacy_Reading_Options"].Generate=false]]></Change>
-				<Change><![CDATA[Enumerations["NSDataWritingOptions"].MinAvailability="Mac OS X v10.4"]]></Change>
-				<Change><![CDATA[Enumerations["NSDataWritingOptions"].Values.Set("NSAtomicWrite", "<EnumerationValue><Summary><Line>Deprecated name for NSDataWritingAtomic.</Line></Summary><MinAvailability>Mac OS X v10.4</MinAvailability><Name>NSAtomicWrite</Name><Value>1U &lt;&lt; 0</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSDataWritingOptions"].MinAvailability="OS X v10.4"]]></Change>
+				<Change><![CDATA[Enumerations["NSDataWritingOptions"].Values.Set("NSAtomicWrite", "<EnumerationValue><Summary><Line>Deprecated name for NSDataWritingAtomic.</Line></Summary><MinAvailability>OS X v10.4</MinAvailability><Name>NSAtomicWrite</Name><Value>1U &lt;&lt; 0</Value></EnumerationValue>")]]></Change>
 				<Change><![CDATA[Enumerations["Legacy_Writing_Options"].Generate=false]]></Change>
 			</Patch>
 			<Patch type="Generated">
@@ -1283,7 +1283,7 @@
 			<File>Cocoa/Reference/NSOperation_class/Reference/Reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["CompletionBlock"].Generate=false]]></Change>
-				<Change><![CDATA[Properties.Set("CompletionBlock", "<Property><Summary><Line>Returns the block to execute when the operation’s main task is complete.</Line><Line>Operation objects monitor the isFinished key path and execute this block when the value at that key path changes to YES. As a result, this block is called regardless of whether the operation completed successfully or was cancelled.</Line></Summary><Availability>Mac OS X v10.6</Availability><Name>CompletionBlock</Name><Type>IntPtr</Type><Getter><Summary><Line>Returns the block to execute when the operation’s main task is complete.</Line><Line>Operation objects monitor the isFinished key path and execute this block when the value at that key path changes to YES. As a result, this block is called regardless of whether the operation completed successfully or was cancelled.</Line></Summary><Availability>Mac OS X v10.6</Availability><Name>CompletionBlock</Name><Selector>completionBlock</Selector><Signature>- (void (^)(void))completionBlock</Signature><ReturnType>IntPtr</ReturnType><ReturnsDocumentation>The block to execute after the operation’s main task is completed. This block takes no parameters and has no return value.</ReturnsDocumentation><Parameters /></Getter></Property>")]]></Change>
+				<Change><![CDATA[Properties.Set("CompletionBlock", "<Property><Summary><Line>Returns the block to execute when the operation’s main task is complete.</Line><Line>Operation objects monitor the isFinished key path and execute this block when the value at that key path changes to YES. As a result, this block is called regardless of whether the operation completed successfully or was cancelled.</Line></Summary><Availability>OS X v10.6</Availability><Name>CompletionBlock</Name><Type>IntPtr</Type><Getter><Summary><Line>Returns the block to execute when the operation’s main task is complete.</Line><Line>Operation objects monitor the isFinished key path and execute this block when the value at that key path changes to YES. As a result, this block is called regardless of whether the operation completed successfully or was cancelled.</Line></Summary><Availability>OS X v10.6</Availability><Name>CompletionBlock</Name><Selector>completionBlock</Selector><Signature>- (void (^)(void))completionBlock</Signature><ReturnType>IntPtr</ReturnType><ReturnsDocumentation>The block to execute after the operation’s main task is completed. This block takes no parameters and has no return value.</ReturnsDocumentation><Parameters /></Getter></Property>")]]></Change>
 				<Change><![CDATA[Enumerations["Operation_Priorities"].Name="NSOperationQueuePriority"]]></Change>
 				<Change><![CDATA[Enumerations["NSOperationQueuePriority"].BaseType="NSInteger"]]></Change>
 			</Patch>
@@ -1495,7 +1495,7 @@
 		<Class name="NSPurgeableData">
 			<File>Cocoa/Reference/NSPurgeableData_Class/Reference/Reference.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[MinAvailability="Mac OS X v10.6"]]></Change>
+				<Change><![CDATA[MinAvailability="OS X v10.6"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSQuitCommand">
@@ -1619,7 +1619,7 @@
 				<Change><![CDATA[Methods["InitWithObjects"].Parameters.Set("firstObj", "<Parameter><Summary /><Name>firstObj</Name><Type>Id</Type></Parameter>")]]></Change>
 				<Change><![CDATA[Methods["InitWithObjects"].Parameters.Set("values", "<Parameter><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
 				<Change><![CDATA[Methods["InitWithObjectsCount"].Generate=false]]></Change>
-				<Change><![CDATA[Properties.Set("Set", "<Property><Summary><Line>Creates and returns an empty set.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>Set</Name><Type>NSSet</Type><Getter><Summary><Line>Creates and returns an empty set.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>Set</Name><Selector>set</Selector><Signature>+ (id)set</Signature><ReturnType>NSSet</ReturnType><ReturnsDocumentation>A new empty set.</ReturnsDocumentation><Parameters /></Getter></Property>")]]></Change>
+				<Change><![CDATA[Properties.Set("Set", "<Property><Summary><Line>Creates and returns an empty set.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>Set</Name><Type>NSSet</Type><Getter><Summary><Line>Creates and returns an empty set.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>Set</Name><Selector>set</Selector><Signature>+ (id)set</Signature><ReturnType>NSSet</ReturnType><ReturnsDocumentation>A new empty set.</ReturnsDocumentation><Parameters /></Getter></Property>")]]></Change>
 				<Change><![CDATA[Properties["Set"].Static=true]]></Change>
 				<Change><![CDATA[Properties["Set"].CopyInDescendants=true]]></Change>
 			</Patch>

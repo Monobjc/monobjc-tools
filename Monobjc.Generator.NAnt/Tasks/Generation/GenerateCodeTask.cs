@@ -67,8 +67,14 @@ namespace Monobjc.Tools.Generator.NAnt
 					if (sourcePath == null || !File.Exists (sourcePath)) {
 						continue;
 					}
-					
-					String file = destinationPath + "*.cs";
+
+					String file = null;
+					if (e.type == FrameworkEntityType.P) {
+						file = destinationPath + ".Protocol.cs";
+					} else {
+						file = destinationPath + ".cs";
+					}
+
 					if (sourcePath.IsYoungerThan (file)) {
 						this.Generate (baseFolder, entities, f, e, sourcePath, destinationPath);
 					} else {
@@ -107,6 +113,9 @@ namespace Monobjc.Tools.Generator.NAnt
 			if (!entity.Generate) {
 				return;
 			}
+
+			// Make sure that availability is ready
+			entity.AdjustAvailability ();
 			
 			this.Log (Level.Info, String.Format ("Generating '{0}'...", e.name));
 			
@@ -126,6 +135,9 @@ namespace Monobjc.Tools.Generator.NAnt
 			if (!entity.Generate) {
 				return;
 			}
+			
+			// Make sure that availability is ready
+			entity.AdjustAvailability ();
 			
 			this.Log (Level.Info, String.Format ("Generating '{0}'...", e.name));
 			
@@ -171,6 +183,9 @@ namespace Monobjc.Tools.Generator.NAnt
 				return;
 			}
 			
+			// Make sure that availability is ready
+			entity.AdjustAvailability ();
+			
 			this.Log (Level.Info, String.Format ("Generating '{0}'...", e.name));
 			
 			this.LoadProtocolDependencies (baseFolder, entities, entity);
@@ -199,13 +214,16 @@ namespace Monobjc.Tools.Generator.NAnt
 				return;
 			}
 			
+			// Make sure that availability is ready
+			entity.AdjustAvailability ();
+			
 			this.Log (Level.Info, String.Format ("Generating '{0}'...", e.name));
 			
 			file = destinationPath + ".cs";
 			this.Generate<EnumerationGenerator> (f, entity, file);
 		}
 
-		private void Generate<T> (Framework f, BaseEntity entity, String file) where T :BaseGenerator, new()
+		private void Generate<T> (Framework f, BaseEntity entity, String file) where T : BaseGenerator, new()
 		{
 			using (StreamWriter writer = new StreamWriter(file)) {
 				T generator = new T ();
