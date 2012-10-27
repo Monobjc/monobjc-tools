@@ -9,8 +9,8 @@ using System.Linq;
 
 namespace Monobjc.Tools.Generator.NAnt
 {
-	[TaskName("gather-mixed-types")]
-	public class GatherMixedTypesTask : BaseTask
+	[TaskName("gather-types")]
+	public class GatherTypesTask : BaseTask
 	{
 		/// <summary>
 		/// Gets or sets the mixed types file.
@@ -30,8 +30,8 @@ namespace Monobjc.Tools.Generator.NAnt
 			IList<FrameworkEntity> entities = frameworks.SelectMany (f => f.GetEntities ()).ToList ();
 
 			String mixedTypesFile = this.MixedTypesFile.ToString ();
-			Dictionary<String, String> table = new Dictionary<String, String> ();
-			this.LoadMixedTypes(mixedTypesFile, table);
+			Dictionary<String, String> mixedTypesTable = new Dictionary<String, String> ();
+			this.LoadMixedTypes (mixedTypesFile, mixedTypesTable);
 
 			foreach (var e in entities) {
 				String sourcePath = e.GetPath (baseFolder, DocumentType.Model);
@@ -47,84 +47,91 @@ namespace Monobjc.Tools.Generator.NAnt
 				
 				switch (e.type) {
 				case FrameworkEntityType.T:
-				{
-					TypedEntity entity = BaseEntity.LoadFrom<TypedEntity> (sourcePath);
-					this.AddMixedType (table, entity.Name, entity.MixedType);
-					foreach (EnumerationEntity enumerationEntity in entity.Enumerations) {
-						this.AddMixedType (table, enumerationEntity.Name, enumerationEntity.MixedType);
+					{
+						TypedEntity entity = BaseEntity.LoadFrom<TypedEntity> (sourcePath);
+						foreach (EnumerationEntity enumerationEntity in entity.Enumerations) {
+							this.AddMixedType (mixedTypesTable, enumerationEntity);
+						}
 					}
-				}
 					break;
 				case FrameworkEntityType.C:
-				{
-					ClassEntity entity = BaseEntity.LoadFrom<ClassEntity> (sourcePath);
-					this.AddMixedType (table, entity.Name, entity.MixedType);
-					foreach (EnumerationEntity enumerationEntity in entity.Enumerations) {
-						this.AddMixedType (table, enumerationEntity.Name, enumerationEntity.MixedType);
+					{
+						ClassEntity entity = BaseEntity.LoadFrom<ClassEntity> (sourcePath);
+						foreach (EnumerationEntity enumerationEntity in entity.Enumerations) {
+							this.AddMixedType (mixedTypesTable, enumerationEntity);
+						}
 					}
-				}
 					break;
 				case FrameworkEntityType.P:
-				{
-					ProtocolEntity entity = BaseEntity.LoadFrom<ProtocolEntity> (sourcePath);
-					this.AddMixedType (table, entity.Name, entity.MixedType);
-					foreach (EnumerationEntity enumerationEntity in entity.Enumerations) {
-						this.AddMixedType (table, enumerationEntity.Name, enumerationEntity.MixedType);
+					{
+						ProtocolEntity entity = BaseEntity.LoadFrom<ProtocolEntity> (sourcePath);
+						foreach (EnumerationEntity enumerationEntity in entity.Enumerations) {
+							this.AddMixedType (mixedTypesTable, enumerationEntity);
+						}
 					}
-				}
 					break;
 				case FrameworkEntityType.S:
-				{
-					StructureEntity entity = BaseEntity.LoadFrom<StructureEntity> (sourcePath);
-					this.AddMixedType (table, entity.Name, entity.MixedType);
-				}
+					{
+						StructureEntity entity = BaseEntity.LoadFrom<StructureEntity> (sourcePath);
+						this.AddMixedType (mixedTypesTable, entity);
+					}
 					break;
 				case FrameworkEntityType.E:
-				{
-					EnumerationEntity entity = BaseEntity.LoadFrom<EnumerationEntity> (sourcePath);
-					this.AddMixedType (table, entity.Name, entity.MixedType);
-				}
+					{
+						EnumerationEntity entity = BaseEntity.LoadFrom<EnumerationEntity> (sourcePath);
+						this.AddMixedType (mixedTypesTable, entity);
+					}
 					break;
 				default:
 					throw new NotSupportedException ("Entity type not support: " + e.type);
 				}
 			}
 
-			this.SaveMixedTypes(mixedTypesFile, table);
+			this.SaveMixedTypes (mixedTypesFile, mixedTypesTable);
 		}
 
-		private void LoadMixedTypes(String file, Dictionary<String, String> table)
+		private void LoadMixedTypes (String file, Dictionary<String, String> table)
 		{
-			if (!File.Exists(file)) {
+			if (!File.Exists (file)) {
 				return;
 			}
-
-			String[] lines = File.ReadAllLines(file);
-			foreach(String line in lines) {
-				String[] parts = line.Split('=');
+			
+			String[] lines = File.ReadAllLines (file);
+			foreach (String line in lines) {
+				String[] parts = line.Split ('=');
 				if (parts.Length != 2) {
 					continue;
 				}
-				this.AddMixedType(table, parts[0], parts[1]);
+				this.AddMixedType (table, parts [0], parts [1]);
 			}
 		}
-
-		private void SaveMixedTypes(String file, Dictionary<String, String> table)
+		
+		private void SaveMixedTypes (String file, Dictionary<String, String> table)
 		{
-			List<String> lines = new List<String>();
-			foreach(String key in table.Keys) {
-				lines.Add(String.Format("{0}={1}", key, table[key]));
+			List<String> lines = new List<String> ();
+			foreach (String key in table.Keys) {
+				lines.Add (String.Format ("{0}={1}", key, table [key]));
 			}
-			File.WriteAllLines(file, lines.ToArray());
+			File.WriteAllLines (file, lines.ToArray ());
 		}
 
-		private void AddMixedType (Dictionary<String, String> table, String name, String mixedType)
+		private void AddMixedType (Dictionary<String, String> table, TypedEntity entity)
 		{
-			if (String.IsNullOrWhiteSpace (mixedType)) {
-				return;
+			String types = entity.MixedType;
+			if (String.IsNullOrWhiteSpace (types)) {
+				if (!String.IsNullOrEmpty (entity.BaseType)) {
+					types = entity.BaseType + "," + entity.BaseType;
+				} else {
+					types = entity.Name + "," + entity.Name;
+				}
 			}
-			this.Log (Level.Info, String.Format ("Adding MixedType {0}={1}", name, mixedType));
-			table [name] = mixedType;
+			this.AddMixedType (table, entity.Name, types);
+		}
+
+		private void AddMixedType (Dictionary<String, String> table, String name, String types)
+		{
+			this.Log (Level.Info, String.Format ("Adding MixedType {0}={1}", name, types));
+			table [name] = types;
 		}
 	}
 }

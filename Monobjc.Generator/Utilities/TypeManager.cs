@@ -26,7 +26,10 @@ namespace Monobjc.Tools.Generator.Utilities
 	public class TypeManager
 	{
 		private readonly List<String> Classes = new List<String> ();
+		private readonly List<String> Enumerations = new List<String> ();
+		private readonly List<String> Structures = new List<String> ();
 		private readonly Dictionary<String, String> Mappings = new Dictionary<String, String> ();
+		private IDictionary<String, String> MixedTypes = null;
 
 		/// <summary>
 		///   Converts the name.
@@ -90,8 +93,8 @@ namespace Monobjc.Tools.Generator.Utilities
 			type = type.Trim ();
 
 			// Remove extern keyword
-			while(type.Contains("extern ")) {
-				type = type.Replace("extern ", String.Empty);
+			while (type.Contains("extern ")) {
+				type = type.Replace ("extern ", String.Empty);
 			}
 
 			// Types to map
@@ -185,24 +188,87 @@ namespace Monobjc.Tools.Generator.Utilities
 		///   Sets the classes.
 		/// </summary>
 		/// <param name = "classes">The classes.</param>
-		public void SetClasses (IEnumerable<string> classes)
+		public void SetClasses (IEnumerable<String> values)
 		{
 			this.Classes.Clear ();
 			this.Classes.Add ("Id");
 			this.Classes.Add ("Class");
-			this.Classes.AddRange (classes);
+			this.Classes.AddRange (values);
 		}
 
 		/// <summary>
-		///   Determines whether the specified instance has class.
+		/// Sets the mixed types.
 		/// </summary>
-		/// <param name = "class">The @class.</param>
-		/// <returns>
-		///   <c>true</c> if the specified instance has class; otherwise, <c>false</c>.
-		/// </returns>
-		public bool HasClass (string @class)
+		public void SetMixedTypes (IDictionary<String, String> values)
 		{
-			return this.Classes.Contains (@class);
+			this.MixedTypes = values;
+		}
+
+		/// <summary>
+		/// Sets the enumerations.
+		/// </summary>
+		public void SetEnumerations (IEnumerable<String> values)
+		{
+			this.Enumerations.AddRange (values);
+		}
+
+		/// <summary>
+		/// Sets the structures.
+		/// </summary>
+		public void SetStructures (IEnumerable<String> values)
+		{
+			this.Structures.AddRange (values);
+		}
+		
+		/// <summary>
+		///   Determines whether the specified instance contains this class.
+		/// </summary>
+		public bool HasClass (string value)
+		{
+			return this.Classes.Contains (value);
+		}
+		
+		/// <summary>
+		///   Determines whether the specified instance contains this enumeration.
+		/// </summary>
+		public bool HasEnumeration (string value)
+		{
+			return this.Enumerations.Contains (value);
+		}
+		
+		/// <summary>
+		///   Determines whether the specified instance contains this structure.
+		/// </summary>
+		public bool HasStructure (string value)
+		{
+			return this.Structures.Contains (value);
+		}
+		
+		/// <summary>
+		///   Determines whether the specified type is a mixed type.
+		/// </summary>
+		/// <param name = "type">The type.</param>
+		/// <returns>
+		///   <c>true</c> if the specified type is a mixed type; otherwise, <c>false</c>.
+		/// </returns>
+		protected bool IsMixedType (String type)
+		{
+			return this.MixedTypes.ContainsKey (type);
+		}
+		
+		/// <summary>
+		///   Gets the real type of the given type.
+		/// </summary>
+		/// <param name = "type">The type.</param>
+		/// <param name = "is64Bits">if set to <c>true</c>, return the 64 bits real type.</param>
+		/// <returns>The real type.</returns>
+		protected String GetRealType (String type, bool is64Bits)
+		{
+			if (this.MixedTypes.ContainsKey (type)) {
+				string[] types = this.MixedTypes [type].Split (',');
+				return types [is64Bits ? 1 : 0];
+			}
+			return type;
 		}
 	}
 }

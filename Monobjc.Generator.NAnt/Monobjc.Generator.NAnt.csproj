@@ -72,6 +72,7 @@
     <Folder Include="Tasks\Patch\" />
     <Folder Include="Files\10.8\AppKit\Model\" />
     <Folder Include="Files\10.8\AppKit\Model\S\" />
+    <Folder Include="Files\10.8\Security\Model\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Generate.build">
@@ -392,5 +393,43 @@
       <Project>{05F4FC5D-33B1-46A0-ADB8-8A6749DA8474}</Project>
       <Name>Monobjc.Generator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Files\10.8\Security\Model\S\AuthorizationEnvironment.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\Security\Model\S\AuthorizationItem.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\Security\Model\S\AuthorizationItemSet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\Security\Model\S\AuthorizationRights.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\Security\Model\S\CSSM_DATA.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\Security\Model\S\CSSM_DL_DB_HANDLE.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\Security\Model\S\SecItemImportExportKeyParameters.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\Security\Model\S\SecKeychainSettings.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\Security\Model\S\SecKeyImportExportParameters.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\Security\Model\S\SecKeychainAttribute.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\Security\Model\S\SecKeychainAttributeInfo.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\Security\Model\S\SecKeychainAttributeList.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

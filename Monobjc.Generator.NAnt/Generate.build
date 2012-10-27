@@ -189,10 +189,10 @@
 	-->
 	<target name="generate" depends="convert">
 		<!-- Collect mixed types -->
-		<gather-mixed-types dir="${data.dir}" mixed-types="${data.dir}/MixedTypes.txt">
+		<gather-types dir="${data.dir}" mixed-types="${data.dir}/MixedTypes.txt">
 			<docset refid="10.8" />
 			<framework-set refid="all" />
-		</gather-mixed-types>
+		</gather-types>
 
 		<!-- Generate source code -->
 		<generate-code dir="${data.dir}" mixed-types="${data.dir}/MixedTypes.txt" license="Resources/MIT.txt">

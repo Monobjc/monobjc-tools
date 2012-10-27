@@ -6,8 +6,6 @@
 			<Patch type="Model">
 				<Change><![CDATA[Functions["AuthorizationCopyInfo"].Parameters["info"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["AuthorizationCopyInfo"].Parameters["info"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["AuthorizationCopyPrivilegedReference"].Parameters["authorization"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["AuthorizationCopyPrivilegedReference"].Parameters["authorization"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["AuthorizationCopyRights"].Parameters["rights"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["AuthorizationCopyRights"].Parameters["environment"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["AuthorizationCopyRights"].Parameters["authorizedRights"].Type="IntPtr"]]></Change>
@@ -42,36 +40,77 @@
 		</Type>
 		<Type name="Authorization.Deprecated">
 			<File>Security/Reference/authorization_ref/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["AuthorizationCopyPrivilegedReference"].Parameters["authorization"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["AuthorizationCopyPrivilegedReference"].Parameters["authorization"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["AuthorizationExecuteWithPrivileges"].Parameters["pathToTool"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["AuthorizationExecuteWithPrivileges"].Parameters["const"].Name="arguments"]]></Change>
+				<Change><![CDATA[Functions["AuthorizationExecuteWithPrivileges"].Parameters["arguments"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["AuthorizationExecuteWithPrivileges"].Parameters["communicationsPipe"].Type="IntPtr"]]></Change>
+			</Patch>
 		</Type>
 		<Type name="CertServices">
 			<File>Security/Reference/certifkeytrustservices/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[// <!--a-->Symmetric<!--/a--> <!--a-->Keysizes<!--/a--> - <!--a-->default<!--/a--> <!--a-->is<!--/a--> <!--a-->currently<!--/a--> <a href="#//apple_ref/doc/c_ref/kSecAES128">kSecAES128</a> <!--a-->for<!--/a--> AES.]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[// <!--a-->Supported<!--/a--> <!--a-->ECC<!--/a--> <!--a-->Keys<!--/a--> <!--a-->for<!--/a--> Suite-<!--a-->B<!--/a--> <!--a-->from<!--/a--> <!--a-->RFC<!--/a--> 4492 <a href="../../../../DeveloperTools/Conceptual/MachORuntime/Reference/reference.html#//apple_ref/doc/c_ref/section">section</a> 5.1.1.]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[// <!--a-->default<!--/a--> <!--a-->is<!--/a--> <!--a-->currently<!--/a--> <a href="#//apple_ref/doc/c_ref/kSecp256r1">kSecp256r1</a>]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[// <!--a-->Yes<!--/a-->,
+   521]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[// <!--a-->Boundaries<!--/a--> <!--a-->for<!--/a--> <!--a-->RSA<!--/a--> <!--a-->KeySizes<!--/a--> - <!--a-->default<!--/a--> <!--a-->is<!--/a--> <!--a-->currently<!--/a--> 2048]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[// <!--a-->RSA<!--/a--> <!--a-->keysizes<!--/a--> <!--a-->must<!--/a--> <!--a-->be<!--/a--> <!--a-->multiples<!--/a--> <!--a-->of<!--/a--> 8]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
+				<Change><![CDATA[Functions["SecCertificateCopyLongDescription"].Parameters["error"].Type="NSError"]]></Change>
+				<Change><![CDATA[Functions["SecCertificateCopyLongDescription"].Parameters["error"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecCertificateCopyNormalizedIssuerContent"].Parameters["error"].Type="NSError"]]></Change>
+				<Change><![CDATA[Functions["SecCertificateCopyNormalizedIssuerContent"].Parameters["error"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecCertificateCopyNormalizedSubjectContent"].Parameters["error"].Type="NSError"]]></Change>
+				<Change><![CDATA[Functions["SecCertificateCopyNormalizedSubjectContent"].Parameters["error"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecCertificateCopySerialNumber"].Parameters["error"].Type="NSError"]]></Change>
+				<Change><![CDATA[Functions["SecCertificateCopySerialNumber"].Parameters["error"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecCertificateCopyShortDescription"].Parameters["error"].Type="NSError"]]></Change>
+				<Change><![CDATA[Functions["SecCertificateCopyShortDescription"].Parameters["error"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecCertificateCopyValues"].Parameters["error"].Type="NSError"]]></Change>
+				<Change><![CDATA[Functions["SecCertificateCopyValues"].Parameters["error"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecKeyCreateFromData"].Parameters["error"].Type="NSError"]]></Change>
+				<Change><![CDATA[Functions["SecKeyCreateFromData"].Parameters["error"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecKeyDeriveFromPassword"].Parameters["error"].Type="NSError"]]></Change>
+				<Change><![CDATA[Functions["SecKeyDeriveFromPassword"].Parameters["error"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecKeyGenerateSymmetric"].Parameters["error"].Type="NSError"]]></Change>
+				<Change><![CDATA[Functions["SecKeyGenerateSymmetric"].Parameters["error"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecKeyUnwrapSymmetric"].Parameters["keyToUnwrap"].Type="NSData"]]></Change>
+				<Change><![CDATA[Functions["SecKeyUnwrapSymmetric"].Parameters["keyToUnwrap"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecKeyUnwrapSymmetric"].Parameters["error"].Type="NSError"]]></Change>
+				<Change><![CDATA[Functions["SecKeyUnwrapSymmetric"].Parameters["error"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecKeyWrapSymmetric"].Parameters["error"].Type="NSError"]]></Change>
+				<Change><![CDATA[Functions["SecKeyWrapSymmetric"].Parameters["error"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecCertificateCopyCommonName"].Parameters["commonName"].Type="NSString"]]></Change>
 				<Change><![CDATA[Functions["SecCertificateCopyCommonName"].Parameters["commonName"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecCertificateCopyEmailAddresses"].Parameters["emailAddresses"].Type="NSArray"]]></Change>
 				<Change><![CDATA[Functions["SecCertificateCopyEmailAddresses"].Parameters["emailAddresses"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecCertificateCopyPreference"].Parameters["certificate"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["SecCertificateCopyPreference"].Parameters["certificate"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecCertificateCopyPublicKey"].Parameters["key"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecCertificateCopyPublicKey"].Parameters["key"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecCertificateCreateFromData"].Parameters["data"].Type="CSSM_DATA"]]></Change>
-				<Change><![CDATA[Functions["SecCertificateCreateFromData"].Parameters["data"].IsByRef=true]]></Change>
-				<Change><![CDATA[Functions["SecCertificateCreateFromData"].Parameters["certificate"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["SecCertificateCreateFromData"].Parameters["certificate"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecCertificateGetAlgorithmID"].Parameters["algid"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["SecCertificateGetAlgorithmID"].Parameters["algid"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecCertificateGetCLHandle"].Parameters["clHandle"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["SecCertificateGetCLHandle"].Parameters["clHandle"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecCertificateGetData"].Parameters["data"].Type="CSSM_DATA"]]></Change>
-				<Change><![CDATA[Functions["SecCertificateGetData"].Parameters["data"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecCertificateGetIssuer"].Parameters["issuer"].Type="CSSM_X509_NAME"]]></Change>
-				<Change><![CDATA[Functions["SecCertificateGetIssuer"].Parameters["issuer"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecCertificateGetItem"].Parameters["item"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecCertificateGetItem"].Parameters["item"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecCertificateGetSubject"].Parameters["subject"].Type="CSSM_X509_NAME"]]></Change>
-				<Change><![CDATA[Functions["SecCertificateGetSubject"].Parameters["subject"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecCertificateGetType"].Parameters["certificateType"].Type="CSSM_CERT_TYPE"]]></Change>
-				<Change><![CDATA[Functions["SecCertificateGetType"].Parameters["certificateType"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecCertificateGetTypeID"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecKeyGeneratePair"].Parameters["publicKey"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecKeyGeneratePair"].Parameters["publicKey"].IsOut=true]]></Change>
@@ -79,8 +118,6 @@
 				<Change><![CDATA[Functions["SecKeyGeneratePair"].Parameters["privateKey"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecIdentityCopyCertificate"].Parameters["certificateRef"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecIdentityCopyCertificate"].Parameters["certificateRef"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecIdentityCopyPreference"].Parameters["identity"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["SecIdentityCopyPreference"].Parameters["identity"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecIdentityCopyPrivateKey"].Parameters["privateKeyRef"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecIdentityCopyPrivateKey"].Parameters["privateKeyRef"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecIdentityCopySystemIdentity"].Parameters["idRef"].Type="IntPtr"]]></Change>
@@ -89,46 +126,12 @@
 				<Change><![CDATA[Functions["SecIdentityCopySystemIdentity"].Parameters["actualDomain"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecIdentityCreateWithCertificate"].Parameters["identityRef"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecIdentityCreateWithCertificate"].Parameters["identityRef"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecIdentitySearchCopyNext"].Parameters["identity"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["SecIdentitySearchCopyNext"].Parameters["identity"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecIdentitySearchCreate"].Parameters["searchRef"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["SecIdentitySearchCreate"].Parameters["searchRef"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecIdentityGetTypeID"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecIdentitySearchGetTypeID"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecKeyCreatePair"].Parameters["publicKey"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["SecKeyCreatePair"].Parameters["publicKey"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecKeyCreatePair"].Parameters["privateKey"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["SecKeyCreatePair"].Parameters["privateKey"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecKeyGenerate"].Parameters["keyRef"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["SecKeyGenerate"].Parameters["keyRef"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecKeyGetCredentials"].Parameters["outCredentials"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["SecKeyGetCredentials"].Parameters["outCredentials"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecKeyGetCSPHandle"].Parameters["cspHandle"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["SecKeyGetCSPHandle"].Parameters["cspHandle"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecKeyGetCSSMKey"].Parameters["cssmKey"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["SecKeyGetCSSMKey"].Parameters["cssmKey"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeyGetTypeID"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecPKCS12Import"].Parameters["items"].Type="NSArray"]]></Change>
 				<Change><![CDATA[Functions["SecPKCS12Import"].Parameters["items"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecPolicyCreateBasicX509"].Parameters["d"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecPolicyGetOID"].Parameters["oid"].Type="CSSM_DATA"]]></Change>
-				<Change><![CDATA[Functions["SecPolicyGetOID"].Parameters["oid"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecPolicyGetTPHandle"].Parameters["tpHandle"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["SecPolicyGetTPHandle"].Parameters["tpHandle"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecPolicyGetValue"].Parameters["value"].Type="CSSM_DATA"]]></Change>
-				<Change><![CDATA[Functions["SecPolicyGetValue"].Parameters["value"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecPolicyGetTypeID"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecPolicySearchCopyNext"].Parameters["policyRef"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["SecPolicySearchCopyNext"].Parameters["policyRef"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecPolicySearchCreate"].Parameters["policyOID"].Type="CSSM_DATA"]]></Change>
-				<Change><![CDATA[Functions["SecPolicySearchCreate"].Parameters["policyOID"].IsByRef=true]]></Change>
-				<Change><![CDATA[Functions["SecPolicySearchCreate"].Parameters["value"].Type="CSSM_DATA"]]></Change>
-				<Change><![CDATA[Functions["SecPolicySearchCreate"].Parameters["value"].IsByRef=true]]></Change>
-				<Change><![CDATA[Functions["SecPolicySearchCreate"].Parameters["searchRef"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["SecPolicySearchCreate"].Parameters["searchRef"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecPolicySetValue"].Parameters["value"].Type="CSSM_DATA"]]></Change>
-				<Change><![CDATA[Functions["SecPolicySetValue"].Parameters["value"].IsByRef=true]]></Change>
-				<Change><![CDATA[Functions["SecPolicySearchGetTypeID"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecTrustCopyAnchorCertificates"].Parameters["anchors"].Type="NSArray"]]></Change>
 				<Change><![CDATA[Functions["SecTrustCopyAnchorCertificates"].Parameters["anchors"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecTrustCopyAnchorCertificates"].Generate=false]]></Change>
@@ -144,20 +147,14 @@
 				<Change><![CDATA[Functions["SecTrustEvaluate"].Parameters["result"].Type="SecTrustResultType"]]></Change>
 				<Change><![CDATA[Functions["SecTrustEvaluate"].Parameters["result"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecTrustEvaluate"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecTrustGetCssmResult"].Parameters["result"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["SecTrustGetCssmResult"].Parameters["result"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecTrustGetCssmResult"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecTrustGetCssmResultCode"].Parameters["resultCode"].Type="int"]]></Change>
-				<Change><![CDATA[Functions["SecTrustGetCssmResultCode"].Parameters["resultCode"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecTrustGetCssmResultCode"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecTrustGetResult"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecTrustGetTPHandle"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecTrustGetTrustResult"].Parameters["result"].Type="SecTrustResultType"]]></Change>
+				<Change><![CDATA[Functions["SecTrustGetTrustResult"].Parameters["result"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecTrustGetTrustResult"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecTrustGetTypeID"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecTrustGetVerifyTime"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecTrustSetAnchorCertificates"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecTrustSetAnchorCertificatesOnly"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecTrustSetKeychains"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecTrustSetParameters"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecTrustSetPolicies"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecTrustSettingsCopyCertificates"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecTrustSettingsCopyModificationDate"].Generate=false]]></Change>
@@ -184,25 +181,90 @@
 				<Change><![CDATA[Enumerations["SecTrustSettingsDomain"].BaseType="uint"]]></Change>
 				<Change><![CDATA[Enumerations["SecTrustSettingsKeyUsage"].BaseType="uint"]]></Change>
 				<Change><![CDATA[Enumerations["SecTrustSettingsResult"].BaseType="uint"]]></Change>
-				
-				<Change><![CDATA[Enumerations["SecKeySizes"].Values["// SymmetricKeysizes - defaultiscurrentlykSecAES128for AES.  kSec3DES192"].Name="kSec3DES192"]]></Change>
-				<Change><![CDATA[Enumerations["SecKeySizes"].Values["kSec3DES192"].Summary.Add("192-bit DES.")]]></Change>
-				<Change><![CDATA[Enumerations["SecKeySizes"].Values["kSec3DES192"].MinAvailability="OS X 10.7 and later"]]></Change>
-				<Change><![CDATA[Enumerations["SecKeySizes"].Values["// SupportedECCKeysfor Suite-BfromRFC 4492 section 5.1.1.  // defaultiscurrentlykSecp256r1kSecp192r1"].Name="kSecp192r1"]]></Change>
-				<Change><![CDATA[Enumerations["SecKeySizes"].Values["kSecp192r1"].Summary.Add("192-bit ECC Keys for Suite-B from RFC 4492 section 5.1.1.")]]></Change>
-				<Change><![CDATA[Enumerations["SecKeySizes"].Values["kSecp192r1"].MinAvailability="OS X 10.7 and later"]]></Change>
-				<Change><![CDATA[Enumerations["SecKeySizes"].Values["// Yes"].Generate=false]]></Change>
-				<Change><![CDATA[Enumerations["SecKeySizes"].Values["521    // BoundariesforRSAKeySizes - defaultiscurrently 2048  // RSAkeysizesmustbemultiplesof 8  kSecRSAMin"].Name="kSecRSAMin"]]></Change>
-				<Change><![CDATA[Enumerations["SecKeySizes"].Values["kSecRSAMin"].Summary.Add("1024 bits is the minimum size for an RSA key.")]]></Change>
-				<Change><![CDATA[Enumerations["SecKeySizes"].Values["kSecRSAMin"].MinAvailability="OS X 10.7 and later"]]></Change>
 			</Patch>
 		</Type>
 		<Type name="CertServices.Deprecated">
 			<File>Security/Reference/certifkeytrustservices/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["SecCertificateCopyPreference"].Parameters["certificate"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecCertificateCopyPreference"].Parameters["certificate"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecCertificateCreateFromData"].Parameters["data"].Type="CSSM_DATA"]]></Change>
+				<Change><![CDATA[Functions["SecCertificateCreateFromData"].Parameters["data"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["SecCertificateCreateFromData"].Parameters["certificate"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecCertificateCreateFromData"].Parameters["certificate"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecCertificateCreateFromData"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecCertificateGetAlgorithmID"].Parameters["algid"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecCertificateGetAlgorithmID"].Parameters["algid"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecCertificateGetCLHandle"].Parameters["clHandle"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecCertificateGetCLHandle"].Parameters["clHandle"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecCertificateGetData"].Parameters["data"].Type="CSSM_DATA"]]></Change>
+				<Change><![CDATA[Functions["SecCertificateGetData"].Parameters["data"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecCertificateGetData"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecCertificateGetIssuer"].Parameters["issuer"].Type="CSSM_X509_NAME"]]></Change>
+				<Change><![CDATA[Functions["SecCertificateGetIssuer"].Parameters["issuer"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecCertificateGetIssuer"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecCertificateGetSubject"].Parameters["subject"].Type="CSSM_X509_NAME"]]></Change>
+				<Change><![CDATA[Functions["SecCertificateGetSubject"].Parameters["subject"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecCertificateGetSubject"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecCertificateGetType"].Parameters["certificateType"].Type="CSSM_CERT_TYPE"]]></Change>
+				<Change><![CDATA[Functions["SecCertificateGetType"].Parameters["certificateType"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecCertificateGetType"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecIdentityCopyPreference"].Parameters["identity"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecIdentityCopyPreference"].Parameters["identity"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecIdentitySearchCopyNext"].Parameters["identity"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecIdentitySearchCopyNext"].Parameters["identity"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecIdentitySearchCreate"].Parameters["searchRef"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecIdentitySearchCreate"].Parameters["searchRef"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecIdentitySearchGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecKeyCreatePair"].Parameters["publicKey"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecKeyCreatePair"].Parameters["publicKey"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecKeyCreatePair"].Parameters["privateKey"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecKeyCreatePair"].Parameters["privateKey"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecKeyGenerate"].Parameters["keyRef"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecKeyGenerate"].Parameters["keyRef"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecKeyGetCSPHandle"].Parameters["cspHandle"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecKeyGetCSPHandle"].Parameters["cspHandle"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecKeyGetCSSMKey"].Parameters["cssmKey"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecKeyGetCSSMKey"].Parameters["cssmKey"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecKeyGetCredentials"].Parameters["outCredentials"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecKeyGetCredentials"].Parameters["outCredentials"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecPolicyGetOID"].Parameters["oid"].Type="CSSM_DATA"]]></Change>
+				<Change><![CDATA[Functions["SecPolicyGetOID"].Parameters["oid"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecPolicyGetOID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecPolicyGetTPHandle"].Parameters["tpHandle"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecPolicyGetTPHandle"].Parameters["tpHandle"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecPolicyGetValue"].Parameters["value"].Type="CSSM_DATA"]]></Change>
+				<Change><![CDATA[Functions["SecPolicyGetValue"].Parameters["value"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecPolicyGetValue"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecPolicySearchCopyNext"].Parameters["policyRef"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecPolicySearchCopyNext"].Parameters["policyRef"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecPolicySearchCreate"].Parameters["policyOID"].Type="CSSM_DATA"]]></Change>
+				<Change><![CDATA[Functions["SecPolicySearchCreate"].Parameters["policyOID"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["SecPolicySearchCreate"].Parameters["value"].Type="CSSM_DATA"]]></Change>
+				<Change><![CDATA[Functions["SecPolicySearchCreate"].Parameters["value"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["SecPolicySearchCreate"].Parameters["searchRef"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecPolicySearchCreate"].Parameters["searchRef"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecPolicySearchCreate"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecPolicySetValue"].Parameters["value"].Type="CSSM_DATA"]]></Change>
+				<Change><![CDATA[Functions["SecPolicySetValue"].Parameters["value"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["SecPolicySetValue"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecPolicySearchGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecTrustGetCssmResult"].Parameters["result"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecTrustGetCssmResult"].Parameters["result"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecTrustGetCssmResult"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecTrustGetCssmResultCode"].Parameters["resultCode"].Type="int"]]></Change>
+				<Change><![CDATA[Functions["SecTrustGetCssmResultCode"].Parameters["resultCode"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecTrustGetCssmResultCode"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecTrustGetResult"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecTrustGetTPHandle"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecTrustSetParameters"].Generate=false]]></Change>
+			</Patch>
 		</Type>
 		<Type name="CodeSigning">
 			<File>Security/Reference/CodeSigningRef/Reference/reference.html</File>
 			<Patch type="Model">
+				<Change><![CDATA[Functions["SecStaticCodeCreateWithPathAndAttributes"].Parameters["staticCode"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecStaticCodeCreateWithPathAndAttributes"].Parameters["staticCode"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecCodeCheckValidityWithErrors"].Parameters["errors"].Type="NSError"]]></Change>
 				<Change><![CDATA[Functions["SecCodeCheckValidityWithErrors"].Parameters["errors"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecCodeCopyDesignatedRequirement"].Parameters["requirement"].Type="IntPtr"]]></Change>
@@ -260,14 +322,68 @@ enum
 {]]></Source>
 					<With><![CDATA[]]></With>
 				</Replace>
+				<Replace>
+					<Source><![CDATA[/* SecKeychainItem.<!--a-->h<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* <!--a-->Record<!--/a--> <!--a-->Type<!--/a--> <!--a-->defined<!--/a--> <!--a-->in<!--/a--> <!--a-->The<!--/a--> <a href="../../../../Kernel/Reference/IOVideoDeviceLib_kernel_header_reference/Reference/reference.html#//apple_ref/doc/c_ref/Open">Open</a> <!--a-->Group<!--/a--> <!--a-->Application<!--/a--> <!--a-->Name<!--/a--> <!--a-->Space<!--/a-->  */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* cssmtype.<!--a-->h<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* <!--a-->require<!--/a--> re-<!--a-->entering<!--/a--> <!--a-->of<!--/a--> <!--a-->passphrase<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* <!--a-->the<!--/a--> <!--a-->following<!--/a--> <!--a-->bits<!--/a--> <!--a-->are<!--/a--> <!--a-->ignored<!--/a--> <!--a-->by<!--/a--> 10.4 <!--a-->and<!--/a--> <!--a-->earlier<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* <!--a-->prompt<!--/a--> <!--a-->for<!--/a--> unsigned <!--a-->clients<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* <!--a-->UNSIGNED<!--/a--> <!--a-->bit<!--/a--> <!--a-->overrides<!--/a--> <!--a-->system<!--/a--> <!--a-->default<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* <!--a-->prompt<!--/a--> <!--a-->for<!--/a--> <!--a-->invalid<!--/a--> <!--a-->signed<!--/a--> <!--a-->clients<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
 			</Patch>
 			<Patch type="Model">
+				<Change><![CDATA[Functions["SecACLCopyContents"].Parameters["applicationList"].Type="NSArray"]]></Change>
+				<Change><![CDATA[Functions["SecACLCopyContents"].Parameters["applicationList"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecACLCopyContents"].Parameters["description"].Type="NSString"]]></Change>
+				<Change><![CDATA[Functions["SecACLCopyContents"].Parameters["description"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecACLCopyContents"].Parameters["promptSelector"].Type="SecKeychainPromptSelector"]]></Change>
+				<Change><![CDATA[Functions["SecACLCopyContents"].Parameters["promptSelector"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecACLCreateWithSimpleContents"].Parameters["newAcl"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecACLCreateWithSimpleContents"].Parameters["newAcl"].IsOut=true]]></Change>
+				
+				<Change><![CDATA[Functions["SecAccessCreateWithOwnerAndACL"].Parameters["error"].Type="NSError"]]></Change>
+				<Change><![CDATA[Functions["SecAccessCreateWithOwnerAndACL"].Parameters["error"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecAccessCreateWithOwnerAndACL"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecAccessCopyOwnerAndACL"].Parameters["userId"].Type="int"]]></Change>
+				<Change><![CDATA[Functions["SecAccessCopyOwnerAndACL"].Parameters["userId"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecAccessCopyOwnerAndACL"].Parameters["groupId"].Type="int"]]></Change>
+				<Change><![CDATA[Functions["SecAccessCopyOwnerAndACL"].Parameters["groupId"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecAccessCopyOwnerAndACL"].Parameters["ownerType"].Type="SecAccessOwnerType"]]></Change>
+				<Change><![CDATA[Functions["SecAccessCopyOwnerAndACL"].Parameters["ownerType"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecAccessCopyOwnerAndACL"].Parameters["aclList"].Type="NSArray"]]></Change>
+				<Change><![CDATA[Functions["SecAccessCopyOwnerAndACL"].Parameters["aclList"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecAccessCopyOwnerAndACL"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecAccessCopyACLList"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecAccessCopySelectedACLList"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecAccessCreate"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecAccessCreateFromOwnerAndACL"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecAccessGetOwnerAndACL"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecAccessGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecACLCopyContents"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecACLCopySimpleContents"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecACLCreateFromSimpleContents"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecACLGetAuthorizations"].Generate=false]]></Change>
@@ -279,6 +395,21 @@ enum
 				<Change><![CDATA[Functions["SecItemAdd"].Parameters["result"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecItemCopyMatching"].Parameters["result"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecItemCopyMatching"].Parameters["result"].IsOut=true]]></Change>
+				
+				<Change><![CDATA[Functions["SecItemExport"].Parameters["keyParams"].Type="SecItemImportExportKeyParameters"]]></Change>
+				<Change><![CDATA[Functions["SecItemExport"].Parameters["keyParams"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["SecItemExport"].Parameters["exportedData"].Type="NSData"]]></Change>
+				<Change><![CDATA[Functions["SecItemExport"].Parameters["exportedData"].IsOut=true]]></Change>
+				
+				<Change><![CDATA[Functions["SecItemImport"].Parameters["inputFormat"].Type="SecExternalFormat"]]></Change>
+				<Change><![CDATA[Functions["SecItemImport"].Parameters["inputFormat"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["SecItemImport"].Parameters["itemType"].Type="SecExternalItemType"]]></Change>
+				<Change><![CDATA[Functions["SecItemImport"].Parameters["itemType"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["SecItemImport"].Parameters["keyParams"].Type="SecItemImportExportKeyParameters"]]></Change>
+				<Change><![CDATA[Functions["SecItemImport"].Parameters["keyParams"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["SecItemImport"].Parameters["outItems"].Type="NSArray"]]></Change>
+				<Change><![CDATA[Functions["SecItemImport"].Parameters["outItems"].IsOut=true]]></Change>
+				
 				<Change><![CDATA[Functions["SecKeychainAddGenericPassword"].Parameters["serviceName"].Type="String"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainAddGenericPassword"].Parameters["accountName"].Type="String"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainAddGenericPassword"].Parameters["passwordData"].Type="IntPtr"]]></Change>
@@ -327,8 +458,12 @@ enum
 				<Change><![CDATA[Functions["SecKeychainFindInternetPassword"].Parameters["itemRef"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainFreeAttributeInfo"].Parameters["info"].Type="SecKeychainAttributeInfo"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainFreeAttributeInfo"].Parameters["info"].IsByRef=true]]></Change>
-				<Change><![CDATA[Functions["SecKeychainGetCSPHandle"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecKeychainGetDLDBHandle"].Generate=false]]></Change>
+				
+				
+				<Change><![CDATA[Functions["SecKeychainGetCSPHandle"].Parameters["cspHandle"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecKeychainGetDLDBHandle"].Parameters["dldbHandle"].Type="IntPtr"]]></Change>
+				
+				
 				<Change><![CDATA[Functions["SecKeychainGetPath"].Parameters["ioPathLength"].Type="uint"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainGetPath"].Parameters["ioPathLength"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainGetPath"].Parameters["pathName"].Type="IntPtr"]]></Change>
@@ -342,7 +477,7 @@ enum
 				<Change><![CDATA[Functions["SecKeychainGetUserInteractionAllowed"].Parameters["state"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainGetVersion"].Parameters["returnVers"].Type="uint"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainGetVersion"].Parameters["returnVers"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecKeychainItemCopyAccess"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecKeychainItemCopyAccess"].Parameters["access"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemCopyAccess"].Parameters["access"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemCopyAttributesAndData"].Parameters["info"].Type="SecKeychainAttributeInfo"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemCopyAttributesAndData"].Parameters["info"].IsOut=true]]></Change>
@@ -374,23 +509,48 @@ enum
 				<Change><![CDATA[Functions["SecKeychainItemCreateFromContent"].Parameters["itemRef"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemCreatePersistentReference"].Parameters["persistentItemRef"].Type="NSData"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemCreatePersistentReference"].Parameters["persistentItemRef"].IsOut=true]]></Change>
+
+								
 				<Change><![CDATA[Functions["SecKeychainItemExport"].Parameters["keyParams"].Type="SecKeyImportExportParameters"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemExport"].Parameters["keyParams"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemExport"].Parameters["exportedData"].Type="NSData"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemExport"].Parameters["exportedData"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecKeychainItemExport"].Generate=false]]></Change>
+				
+				
 				<Change><![CDATA[Functions["SecKeychainItemFreeAttributesAndData"].Parameters["attrList"].Type="SecKeychainAttributeList"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemFreeAttributesAndData"].Parameters["attrList"].IsByRef=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemFreeContent"].Parameters["attrList"].Type="SecKeychainAttributeList"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemFreeContent"].Parameters["attrList"].IsByRef=true]]></Change>
-				<Change><![CDATA[Functions["SecKeychainItemGetDLDBHandle"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecKeychainItemGetTypeID"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecKeychainItemGetUniqueRecordID"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecKeychainItemImport"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecKeychainItemModifyAttributesAndData"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecKeychainItemModifyContent"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecKeychainItemSetAccess"].Generate=false]]></Change>
+	
+				<Change><![CDATA[Functions["SecKeychainItemGetTypeID"].Parameters["d"].Generate=false]]></Change>
+
+			
+				<Change><![CDATA[Functions["SecKeychainItemGetDLDBHandle"].Parameters["dldbHandle"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecKeychainItemGetUniqueRecordID"].Parameters["uniqueRecordID"].Type="IntPtr"]]></Change>
+						
+				<Change><![CDATA[Functions["SecKeychainItemImport"].Parameters["inputFormat"].Type="SecExternalFormat"]]></Change>
+				<Change><![CDATA[Functions["SecKeychainItemImport"].Parameters["inputFormat"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecKeychainItemImport"].Parameters["itemType"].Type="SecExternalItemType"]]></Change>
+				<Change><![CDATA[Functions["SecKeychainItemImport"].Parameters["itemType"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecKeychainItemImport"].Parameters["keyParams"].Type="SecKeyImportExportParameters"]]></Change>
+				<Change><![CDATA[Functions["SecKeychainItemImport"].Parameters["keyParams"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecKeychainItemImport"].Parameters["outItems"].Type="NSArray"]]></Change>
+				<Change><![CDATA[Functions["SecKeychainItemImport"].Parameters["outItems"].IsOut=true]]></Change>
+				
+				
+									
+															
 				<Change><![CDATA[Functions["SecKeychainLockAll"].Parameters["d"].Generate=false]]></Change>
+
+			
+						
+				<Change><![CDATA[Functions["SecKeychainItemModifyAttributesAndData"].Parameters["attrList"].Type="SecKeychainAttributeList"]]></Change>
+				<Change><![CDATA[Functions["SecKeychainItemModifyAttributesAndData"].Parameters["attrList"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["SecKeychainItemModifyContent"].Parameters["attrList"].Type="SecKeychainAttributeList"]]></Change>
+				<Change><![CDATA[Functions["SecKeychainItemModifyContent"].Parameters["attrList"].IsOut=true]]></Change>
+
+												
+																																				
 				<Change><![CDATA[Functions["SecKeychainOpen"].Parameters["pathName"].Type="String"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainOpen"].Parameters["keychain"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainOpen"].Parameters["keychain"].IsOut=true]]></Change>
@@ -400,13 +560,21 @@ enum
 				<Change><![CDATA[Functions["SecKeychainSearchCreateFromAttributes"].Parameters["attrList"].IsByRef=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainSearchCreateFromAttributes"].Parameters["searchRef"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainSearchCreateFromAttributes"].Parameters["searchRef"].IsOut=true]]></Change>
-				<Change><![CDATA[Functions["SecKeychainSearchGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecKeychainSearchGetTypeID"].Parameters["d"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecKeychainSetSettings"].Parameters["newSettings"].Type="SecKeychainSettings"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainSetSettings"].Parameters["newSettings"].IsByRef=true]]></Change>
-				<Change><![CDATA[Functions["SecTrustedApplicationCopyData"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecTrustedApplicationCreateFromPath"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecTrustedApplicationGetTypeID"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["SecTrustedApplicationSetData"].Generate=false]]></Change>
+				
+				
+				<Change><![CDATA[Functions["SecTrustedApplicationCopyData"].Parameters["data"].Type="NSData"]]></Change>
+				<Change><![CDATA[Functions["SecTrustedApplicationCopyData"].Parameters["data"].IsOut=true]]></Change>
+
+				<Change><![CDATA[Functions["SecTrustedApplicationCreateFromPath"].Parameters["path"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["SecTrustedApplicationCreateFromPath"].Parameters["app"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["SecTrustedApplicationCreateFromPath"].Parameters["app"].IsOut=true]]></Change>
+				
+												
+				<Change><![CDATA[Functions["SecTrustedApplicationGetTypeID"].Parameters["d"].Generate=false]]></Change>
+				
 				<Change><![CDATA[Enumerations["CSSM_Authorization_Tag_Type_Constants"].Name="CSSM_ACL_AUTHORIZATION_TAG"]]></Change>
 				<Change><![CDATA[Enumerations["CSSM_ACL_AUTHORIZATION_TAG"].BaseType="int"]]></Change>
 				<Change><![CDATA[Enumerations["CSSM_ACL_AUTHORIZATION_TAG"].Generate=false]]></Change>
@@ -424,10 +592,32 @@ enum
 				<Change><![CDATA[Enumerations["SecItemClass"].BaseType="uint"]]></Change>
 				<Change><![CDATA[Enumerations["SecPreferencesDomain"].BaseType="int"]]></Change>
 				<Change><![CDATA[Enumerations["SecAccessOwnerType"].BaseType="uint"]]></Change>
-				<Change><![CDATA[Enumerations["Keychain_Status_Masks"].Name="SecKeychainStatusMask"]]></Change>
-				<Change><![CDATA[Enumerations["SecKeychainStatusMask"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["Keychain_Status_Masks"].Name="SecKeychainStatus"]]></Change>
+				<Change><![CDATA[Enumerations["SecKeychainStatus"].BaseType="uint"]]></Change>
 				<Change><![CDATA[Enumerations["Keychain_Protocol_Type_Constants"].Name="SecProtocolType"]]></Change>
 				<Change><![CDATA[Enumerations["SecProtocolType"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["SecKeychainPromptSelector"].BaseType="ushort"]]></Change>
+				
+					<Change><![CDATA[Enumerations["SecItemClass"].Values["kSecCertificateItemClass"].Value="0x80000000 + 0x1000"]]></Change>
+					<Change><![CDATA[Enumerations["SecItemClass"].Values["kSecPublicKeyItemClass"].Value="0x80000000 + 0x0005"]]></Change>
+					<Change><![CDATA[Enumerations["SecItemClass"].Values["kSecPrivateKeyItemClass"].Value="0x80000000 + 0x0006"]]></Change>
+					<Change><![CDATA[Enumerations["SecItemClass"].Values["kSecSymmetricKeyItemClass"].Value="0x80000000 + 0x0007"]]></Change>
+				
+				<Change><![CDATA[Enumerations["SecAuthenticationType"].Values["kSecAuthenticationTypeNTLM"].Value="0x6e746c6d"]]></Change>
+				<Change><![CDATA[Enumerations["SecAuthenticationType"].Values["kSecAuthenticationTypeMSN"].Value="0x6d736e61"]]></Change>
+				<Change><![CDATA[Enumerations["SecAuthenticationType"].Values["kSecAuthenticationTypeDPA"].Value="0x64706161"]]></Change>
+				<Change><![CDATA[Enumerations["SecAuthenticationType"].Values["kSecAuthenticationTypeRPA"].Value="0x72706161"]]></Change>
+				<Change><![CDATA[Enumerations["SecAuthenticationType"].Values["kSecAuthenticationTypeHTTPBasic"].Value="0x68747470"]]></Change>
+				<Change><![CDATA[Enumerations["SecAuthenticationType"].Values["kSecAuthenticationTypeHTTPDigest"].Value="0x68747464"]]></Change>
+				<Change><![CDATA[Enumerations["SecAuthenticationType"].Values["kSecAuthenticationTypeHTMLForm"].Value="0x666f726d"]]></Change>
+				<Change><![CDATA[Enumerations["SecAuthenticationType"].Values["kSecAuthenticationTypeDefault"].Value="0x64666c74"]]></Change>
+				<Change><![CDATA[Enumerations["SecAuthenticationType"].Values["kSecAuthenticationTypeAny"].Value="0x00000000"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+			<Replace>
+			<Source><![CDATA[ = 1 << kSec]]></Source>
+			<With><![CDATA[ = 1 << (int) SecKeychainEvent.kSec]]></With>
+			</Replace>
 			</Patch>
 		</Type>
 	</Types>
@@ -436,6 +626,18 @@ enum
 	<Protocols>
 	</Protocols>
 	<Structures>
+		<Structure name="AuthorizationEnvironment"/>
+		<Structure name="AuthorizationItem"/>
+		<Structure name="AuthorizationItemSet"/>
+		<Structure name="AuthorizationRights"/>
+		<Structure name="CSSM_DATA"/>
+		<Structure name="CSSM_DL_DB_HANDLE"/>
+		<Structure name="SecItemImportExportKeyParameters"/>
+		<Structure name="SecKeychainSettings"/>
+		<Structure name="SecKeyImportExportParameters"/>
+		<Structure name="SecKeychainAttribute"/>
+		<Structure name="SecKeychainAttributeInfo"/>
+		<Structure name="SecKeychainAttributeList"/>
 	</Structures>
 	<Enumerations>
 		<Enumeration name="SecCSFlags" />
