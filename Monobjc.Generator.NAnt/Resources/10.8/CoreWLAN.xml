@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="CoreWLAN" usings="Foundation" assembly="Monobjc.CoreWLAN" source="DocSet">
+<Framework name="CoreWLAN" usings="Foundation,Security,SecurityFoundation" assembly="Monobjc.CoreWLAN" source="DocSet">
 	<Types>
 		<Type name="CoreWLANFramework.Constants">
 			<File>CoreWLAN/Reference/CoreWLANConstants_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[FOUNDATION_EXTERN]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NS_AVAILABLE_MAC
+   (
+   10_6);]]></Source>
+					<With><![CDATA[;]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NS_DEPRECATED_MAC
+   (
+   10_6,
+   10_7);]]></Source>
+					<With><![CDATA[;]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NS_AVAILABLE_MAC
+   (
+   10_7);]]></Source>
+					<With><![CDATA[;]]></With>
+				</Replace>				
+			</Patch>
 		</Type>
 		<Type name="CoreWLANFramework.DataTypes">
 			<File>CoreWLAN/Reference/CoreWLANTypes_header_reference/Reference/reference.html</File>
@@ -13,8 +38,29 @@
 				<Change><![CDATA[Enumerations["CWErr"].BaseType="NSInteger"]]></Change>
 				<Change><![CDATA[Enumerations["CWIBSSModeSecurity"].BaseType="NSInteger"]]></Change>
 				<Change><![CDATA[Enumerations["CWInterfaceMode"].BaseType="NSInteger"]]></Change>
-				<Change><![CDATA[Enumerations["CWPHYMode"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["CWInterfaceState"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations.First(Name == "CWOpMode").BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations.Last(Name == "CWOpMode").BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations.First(Name == "CWOpMode").Name = ((entity.Enumerations.Count(Name == "CWOpMode") == 2) ? "CWInterfaceMode" : "CWOpMode")]]></Change>
+				<Change><![CDATA[Enumerations.First(Name == "CWPHYMode").BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations.Last(Name == "CWPHYMode").BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations.Last(Name == "CWPHYMode").Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["CWScanType"].BaseType="NSInteger"]]></Change>
 				<Change><![CDATA[Enumerations["CWSecurity"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["CWSecurityMode"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["kCWParamErr"].Name="CWErrorCodes"]]></Change>
+				<Change><![CDATA[Enumerations["CWErrorCodes"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CWSecurity"].Values["kCWSecurityUnknown"].Value="Int32.MaxValue"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[1UL <<]]></Source>
+					<With><![CDATA[1 <<]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[ = kCW]]></Source>
+					<With><![CDATA[ = CWErr.kCW]]></With>
+				</Replace>
 			</Patch>
 		</Type>
 		<Type name="CoreWLANFramework.Utils">

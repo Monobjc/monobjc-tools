@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="StoreKit" usings="Foundation,AppKit" assembly="Monobjc.StoreKit" source="DocSet">
+<Framework name="StoreKit" usings="Foundation" assembly="Monobjc.StoreKit" source="DocSet">
 	<Types>
 		<Type name="StoreKitFramework.Constants">
 			<File>StoreKit/Reference/StoreKitTypes/Reference/reference.html</File>
@@ -12,6 +12,20 @@
 	<Classes>
 		<Class name="SKMutablePayment">
 			<File>StoreKit/Reference/SKMutablePaymentRequest_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSString ProductIdentifier]]></Source>
+					<With><![CDATA[public new NSString ProductIdentifier]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSInteger Quantity]]></Source>
+					<With><![CDATA[public new NSInteger Quantity]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSData RequestData]]></Source>
+					<With><![CDATA[public new NSData RequestData]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="SKPayment">
 			<File>StoreKit/Reference/SKPaymentRequest_Class/Reference/Reference.html</File>

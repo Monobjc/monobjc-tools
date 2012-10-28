@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="ScriptingBridge" usings="Foundation,AppKit" assembly="Monobjc.ScriptingBridge" source="DocSet">
+<Framework name="ScriptingBridge" usings="Foundation" assembly="Monobjc.ScriptingBridge" source="DocSet">
 	<Types>
 	</Types>
 	<Classes>
