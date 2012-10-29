@@ -3,12 +3,82 @@
 	<Types>
 		<Type name="AppKitFramework.Constants">
 			<File>Cocoa/Reference/ApplicationKit/Miscellaneous/AppKit_Constants/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Attributed_String_Errors"].Name="NSAttributedStringError"]]></Change>
+				<Change><![CDATA[Enumerations["NSAttributedStringError"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["Services_Error_Codes"].Name="NSServicesError"]]></Change>
+				<Change><![CDATA[Enumerations["NSServicesError"].BaseType="NSInteger"]]></Change>
+			</Patch>
 		</Type>
 		<Type name="AppKitFramework.DataTypes">
 			<File>Cocoa/Reference/ApplicationKit/Miscellaneous/AppKit_DataTypes/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["NSAnimationEffect"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSFocusRingPlacement"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSFocusRingType"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSInterfaceStyle"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSOpenGLGlobalOption"].BaseType="int"]]></Change>
+			</Patch>
 		</Type>
 		<Type name="AppKitFramework.Functions">
 			<File>Cocoa/Reference/ApplicationKit/Miscellaneous/AppKit_Functions/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["NSAvailableWindowDepths"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["NSBestDepth"].Parameters["exactMatch"].Type="bool"]]></Change>
+				<Change><![CDATA[Functions["NSBestDepth"].Parameters["exactMatch"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["NSCountWindows"].Parameters["count"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Functions["NSCountWindows"].Parameters["count"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["NSEventMaskFromType"].ReturnType="NSEventMask"]]></Change>
+				<Change><![CDATA[Functions["NSBeginAlertSheet"].Parameters["values"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSBeginCriticalAlertSheet"].Parameters["values"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSBeginInformationalAlertSheet"].Parameters["values"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSGetAlertPanel"].Parameters["values"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSGetCriticalAlertPanel"].Parameters["values"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSGetInformationalAlertPanel"].Parameters["values"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRunAlertPanel"].Parameters["values"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRunCriticalAlertPanel"].Parameters["values"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRunInformationalAlertPanel"].Parameters["values"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSApplicationLoad"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSApplicationMain"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSConvertGlyphsToPackedGlyphs"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSCopyBits"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSCountWindowsForContext"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSCreateFileContentsPboardType"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSCreateFilenamePboardType"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSDottedFrameRect"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSDrawBitmap"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSDrawButton"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSDrawColorTiledRects"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSDrawDarkBezel"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSDrawGrayBezel"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSDrawGroove"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSDrawLightBezel"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSDrawTiledRects"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSGetFileType"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSGetFileTypes"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSGetWindowServerMemory"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSInterfaceStyleForKey"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSIsControllerMarker"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSNumberOfColorComponents"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSOpenGLGetOption"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSOpenGLGetVersion"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSOpenGLSetOption"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSPerformService"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRectClipList"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRectFillList"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRectFillListUsingOperation"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRectFillListWithColors"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRectFillListWithColorsUsingOperation"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRectFillListWithGrays"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRegisterServicesProvider"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSSetFocusRingStyle"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSSetShowsServicesMenuItem"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSShowsServicesMenuItem"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSUnregisterServicesProvider"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSUpdateDynamicServices"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSWindowList"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSWindowListForContext"].Generate=false]]></Change>
+			</Patch>
 		</Type>
 	</Types>
 	<Classes>
@@ -42,15 +112,30 @@
 		<Class name="NSAlert">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSAlert_Class/Reference/Reference.html</File>
 			<Patch type="Model">
+				<Change><![CDATA[Methods["AlertWithMessageTextDefaultButtonAlternateButtonOtherButtonInformativeTextWithFormat"].Parameters["informativeText,"].Generate=false]]></Change>
+				<Change><![CDATA[Methods["AlertWithMessageTextDefaultButtonAlternateButtonOtherButtonInformativeTextWithFormat"].Parameters.Set("informativeText", "<Parameter><Summary /><Name>informativeText</Name><Type>NSString</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["AlertWithMessageTextDefaultButtonAlternateButtonOtherButtonInformativeTextWithFormat"].Parameters.Set("values", "<Parameter><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["Window"].Type="NSWindow"]]></Change>
 				<Change><![CDATA[Enumerations["Button_Return_Values"].Name="NSButtonReturn"]]></Change>
 				<Change><![CDATA[Enumerations["NSButtonReturn"].BaseType="NSInteger"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSAnimation">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSAnimation_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Constants["NSAnimationProgress"].Generate=false]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSAnimationContext">
 			<File>Cocoa/Reference/NSAnimationContext_class/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["RunAnimationGroupCompletionHandler"].Parameters["changes"].Type="Block"]]></Change>
+				<Change><![CDATA[Methods["RunAnimationGroupCompletionHandler"].Parameters["changes"].IsBlock=false]]></Change>
+				<Change><![CDATA[Methods["RunAnimationGroupCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+				<Change><![CDATA[Methods["RunAnimationGroupCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSAppleScript_AppKitAdditions">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSAppleScript_AppKitAdditions/Reference/Reference.html</File>
@@ -61,8 +146,20 @@
 		<Class name="NSApplication">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSApplication_Class/Reference/Reference.html</File>
 			<Patch type="Model">
+				<Change><![CDATA[Methods["DiscardEventsMatchingMaskBeforeEvent"].Parameters["mask"].Type="NSEventMask"]]></Change>
+				<Change><![CDATA[Methods["NextEventMatchingMaskUntilDateInModeDequeue"].Parameters["mask"].Type="NSEventMask"]]></Change>
+				<Change><![CDATA[Methods["RegisterUserInterfaceItemSearchHandler"].Parameters["handler"].Type="Id"]]></Change>
+				<Change><![CDATA[Methods["SearchStringInUserInterfaceItemStringSearchRangeFoundRange"].Parameters["foundRange"].Type="NSRange"]]></Change>
+				<Change><![CDATA[Methods["SearchStringInUserInterfaceItemStringSearchRangeFoundRange"].Parameters["foundRange"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["UnregisterUserInterfaceItemSearchHandler"].Parameters["handler"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Constants["NSApp"].Generate=false]]></Change>
 				<Change><![CDATA[Enumerations["Return_values_for_modal_operations"].Name="NSRunResponse"]]></Change>
 				<Change><![CDATA[Enumerations["NSRunResponse"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["Notification_Type_Constants"].Name="NSRemoteNotificationType"]]></Change>
+				<Change><![CDATA[Enumerations["NSRemoteNotificationType"].BaseType="NSUInteger"]]></Change>
+				<!-- TODO: Move to a NSUInteger constant -->
+				<Change><![CDATA[Enumerations["NSUpdateWindowsRunLoopOrdering"].Generate=false]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSApplication.Deprecated">
@@ -73,9 +170,36 @@
 		</Class>
 		<Class name="NSArrayController">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSArrayController_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["ArrangedObjects"].Type="NSArray"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSATSTypesetter">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSATSTypesetter_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["glyphBuffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["charIndexBuffer"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["charIndexBuffer"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["inscribeBuffer"].Type="NSGlyphInscription"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["inscribeBuffer"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["elasticBuffer"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["elasticBuffer"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetLineFragmentRectUsedRectForParagraphSeparatorGlyphRangeAtProposedOrigin"].Parameters["lineFragmentRect"].Type="NSRect"]]></Change>
+				<Change><![CDATA[Methods["GetLineFragmentRectUsedRectForParagraphSeparatorGlyphRangeAtProposedOrigin"].Parameters["lineFragmentRect"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetLineFragmentRectUsedRectForParagraphSeparatorGlyphRangeAtProposedOrigin"].Parameters["lineFragmentUsedRect"].Type="NSRect"]]></Change>
+				<Change><![CDATA[Methods["GetLineFragmentRectUsedRectForParagraphSeparatorGlyphRangeAtProposedOrigin"].Parameters["lineFragmentUsedRect"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["LayoutParagraphAtPoint"].Parameters["lineFragmentOrigin"].Type="NSPoint"]]></Change>
+				<Change><![CDATA[Methods["LayoutParagraphAtPoint"].Parameters["lineFragmentOrigin"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["SetBidiLevelsForGlyphRange"].Parameters["levels"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["SetLocationWithAdvancementsForStartOfGlyphRange"].Parameters["advancements"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["SubstituteGlyphsInRangeWithGlyphs"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["WillSetLineFragmentRectForGlyphRangeUsedRectBaselineOffset"].Parameters["lineRect"].Type="NSRect"]]></Change>
+				<Change><![CDATA[Methods["WillSetLineFragmentRectForGlyphRangeUsedRectBaselineOffset"].Parameters["lineRect"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["WillSetLineFragmentRectForGlyphRangeUsedRectBaselineOffset"].Parameters["usedRect"].Type="NSRect"]]></Change>
+				<Change><![CDATA[Methods["WillSetLineFragmentRectForGlyphRangeUsedRectBaselineOffset"].Parameters["usedRect"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["WillSetLineFragmentRectForGlyphRangeUsedRectBaselineOffset"].Parameters["baselineOffset"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["WillSetLineFragmentRectForGlyphRangeUsedRectBaselineOffset"].Parameters["baselineOffset"].IsOut=true]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSATSTypesetter.Deprecated">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSATSTypesetter_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
@@ -87,13 +211,18 @@
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSAttributedString_AppKitAdditions/Reference/Reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[AdditionFor="NSAttributedString"]]></Change>
+				<Change><![CDATA[Methods["InitWithDocFormatDocumentAttributes"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithHTMLDocumentAttributes"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithRTFDDocumentAttributes"].GenerateConstructor=false]]></Change>
 				<Change><![CDATA[Enumerations["Underlining_Styles"].Name="NSUnderlineStyle"]]></Change>
 				<Change><![CDATA[Enumerations["NSUnderlineStyle"].BaseType="NSInteger"]]></Change>
 				<Change><![CDATA[Enumerations["Underlining_Patterns"].Name="NSUnderlinePattern"]]></Change>
+				<Change><![CDATA[Enumerations["NSUnderliningPattern"].BaseType="NSUInteger"]]></Change>
 				<Change><![CDATA[Enumerations["NSUnderlineStyle"].BaseType="NSInteger"]]></Change>
 				<Change><![CDATA[Enumerations["NSSpellingStateAttributeName_Flags"].Name="NSSpellingState"]]></Change>
 				<Change><![CDATA[Enumerations["NSSpellingState"].BaseType="int"]]></Change>
 				<Change><![CDATA[Enumerations["NSSpellingState"].Flags=true]]></Change>
+				<Change><![CDATA[Constants["NSUnderlineByWordMask"].Type="NSUInteger"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSAttributedString_AppKitAdditions.Deprecated">

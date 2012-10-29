@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="Social" usings="Foundation,AppKit" assembly="Monobjc.Social" source="DocSet">
+<Framework name="Social" usings="Foundation,Accounts" assembly="Monobjc.Social" source="DocSet">
 	<Types>
 	</Types>
 	<Classes>
 		<Class name="SLRequest">
 			<File>Social/Reference/SLRequest_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+			<Replace>
+			<Source><![CDATA[<!--a-->NS_ENUM<!--/a-->(<a href="../../../../Cocoa/Reference/Foundation/Miscellaneous/Foundation_DataTypes/Reference/reference.html#//apple_ref/doc/c_ref/NSInteger">NSInteger</a>,
+   <a href="#//apple_ref/doc/c_ref/SLRequestMethod">SLRequestMethod</a>)]]></Source>
+			<With><![CDATA[enum SLRequestMethod]]></With>
+			</Replace>
+			</Patch>
 		</Class>
 	</Classes>
 	<Protocols>
