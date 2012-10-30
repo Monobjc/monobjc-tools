@@ -113,6 +113,16 @@
 		</Type>
 		<Type name="CVTime">
 			<File>QuartzCore/Reference/CVTimeRef/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[ &lt;&lt; 17)
+};
+enum
+{]]></Source>
+					<With><![CDATA[ &lt;&lt; 17),
+]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Functions["CVGetCurrentHostTime"].Parameters["d"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["CVGetHostClockFrequency"].Parameters["d"].Generate=false]]></Change>
@@ -133,12 +143,12 @@
 	<Classes>
 		<Class name="CAAnimation">
 			<File>GraphicsImaging/Reference/CAAnimation_class/Introduction/Introduction.html</File>
-				<Patch type="Model">
-					<Change><![CDATA[Properties["Animation"].Type="CAAnimation"]]></Change>
-					<Change><![CDATA[Properties["Animation"].Getter.ReturnType="CAAnimation"]]></Change>
-					<Change><![CDATA[Properties["Animation"].CopyInDescendants=true]]></Change>
-					<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
-				</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Animation"].Type="CAAnimation"]]></Change>
+				<Change><![CDATA[Properties["Animation"].Getter.ReturnType="CAAnimation"]]></Change>
+				<Change><![CDATA[Properties["Animation"].CopyInDescendants=true]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CAAnimationGroup">
 			<File>GraphicsImaging/Reference/CAAnimationGroup_class/Introduction/Introduction.html</File>
@@ -148,25 +158,25 @@
 		</Class>
 		<Class name="CAConstraint">
 			<File>GraphicsImaging/Reference/CAConstraint_class/Introduction/Introduction.html</File>
-				<Patch type="Model">
-					<Change><![CDATA[Methods["ConstraintWithAttributeRelativeToAttribute"].ReturnType="CAConstraint"]]></Change>
-					<Change><![CDATA[Methods["ConstraintWithAttributeRelativeToAttributeOffset"].ReturnType="CAConstraint"]]></Change>
-					<Change><![CDATA[Methods["ConstraintWithAttributeRelativeToAttributeScaleOffset"].ReturnType="CAConstraint"]]></Change>
-					<Change><![CDATA[Enumerations["_CAConstraintAttribute"].Name="CAConstraintAttribute"]]></Change>
-					<Change><![CDATA[Enumerations["CAConstraintAttribute"].BaseType="int"]]></Change>
-				</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ConstraintWithAttributeRelativeToAttribute"].ReturnType="CAConstraint"]]></Change>
+				<Change><![CDATA[Methods["ConstraintWithAttributeRelativeToAttributeOffset"].ReturnType="CAConstraint"]]></Change>
+				<Change><![CDATA[Methods["ConstraintWithAttributeRelativeToAttributeScaleOffset"].ReturnType="CAConstraint"]]></Change>
+				<Change><![CDATA[Enumerations["_CAConstraintAttribute"].Name="CAConstraintAttribute"]]></Change>
+				<Change><![CDATA[Enumerations["CAConstraintAttribute"].BaseType="int"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CAConstraintLayoutManager">
 			<File>GraphicsImaging/Reference/CAConstraintLayoutManager_class/Introduction/Introduction.html</File>
-				<Patch type="Model">
-					<Change><![CDATA[Properties["LayoutManager"].Type="CAConstraintLayoutManager"]]></Change>
-				</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["LayoutManager"].Type="CAConstraintLayoutManager"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CAEmitterCell">
 			<File>GraphicsImaging/Reference/CAEmitterCell_class/Reference/Reference.html</File>
-				<Patch type="Model">
-					<Change><![CDATA[Properties["EmitterCell"].Type="CAEmitterCell"]]></Change>
-				</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["EmitterCell"].Type="CAEmitterCell"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CAEmitterLayer">
 			<File>GraphicsImaging/Reference/CAEmitterLayer_class/Reference/Reference.html</File>
@@ -179,48 +189,48 @@
 		</Class>
 		<Class name="CALayer">
 			<File>GraphicsImaging/Reference/CALayer_class/Introduction/Introduction.html</File>
-				<Patch type="Model">
-					<Change><![CDATA[Properties["AutoresizingMask"].Type="CAAutoresizingMask"]]></Change>
-					<Change><![CDATA[Properties["CompositingFilter"].Type="CIFilter"]]></Change>
-					<Change><![CDATA[Properties["EdgeAntialiasingMask"].Type="CAEdgeAntialiasingMask"]]></Change>
-					<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
-					<Change><![CDATA[Properties["Layer"].Type="CALayer"]]></Change>
-					<Change><![CDATA[Properties["Layer"].Getter.ReturnType="CALayer"]]></Change>
-					<Change><![CDATA[Properties["Layer"].CopyInDescendants=true]]></Change>
-					<Change><![CDATA[Enumerations["CAAutoresizingMask"].BaseType="uint"]]></Change>
-					<Change><![CDATA[Enumerations["CAAutoresizingMask"].Flags=true]]></Change>
-					<Change><![CDATA[Enumerations["CAEdgeAntialiasingMask"].BaseType="uint"]]></Change>
-					<Change><![CDATA[Enumerations["CAEdgeAntialiasingMask"].Flags=true]]></Change>
-					<Change><![CDATA[Constants["CATransform3DIdentity"].Generate=false]]></Change>
-				</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["AutoresizingMask"].Type="CAAutoresizingMask"]]></Change>
+				<Change><![CDATA[Properties["CompositingFilter"].Type="CIFilter"]]></Change>
+				<Change><![CDATA[Properties["EdgeAntialiasingMask"].Type="CAEdgeAntialiasingMask"]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["Layer"].Type="CALayer"]]></Change>
+				<Change><![CDATA[Properties["Layer"].Getter.ReturnType="CALayer"]]></Change>
+				<Change><![CDATA[Properties["Layer"].CopyInDescendants=true]]></Change>
+				<Change><![CDATA[Enumerations["CAAutoresizingMask"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["CAAutoresizingMask"].Flags=true]]></Change>
+				<Change><![CDATA[Enumerations["CAEdgeAntialiasingMask"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["CAEdgeAntialiasingMask"].Flags=true]]></Change>
+				<Change><![CDATA[Constants["CATransform3DIdentity"].Generate=false]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CAMediaTimingFunction">
 			<File>Cocoa/Reference/CAMediaTimingFunction_class/Introduction/Introduction.html</File>
-				<Patch type="Model">
-					<Change><![CDATA[Methods["FunctionWithControlPoints"].ReturnType="CAMediaTimingFunction"]]></Change>
-					<Change><![CDATA[Methods["FunctionWithName"].ReturnType="CAMediaTimingFunction"]]></Change>
-					<Change><![CDATA[Methods["GetControlPointAtIndexValues"].Parameters["index"].Type="IntPtr"]]></Change>
-				</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["FunctionWithControlPoints"].ReturnType="CAMediaTimingFunction"]]></Change>
+				<Change><![CDATA[Methods["FunctionWithName"].ReturnType="CAMediaTimingFunction"]]></Change>
+				<Change><![CDATA[Methods["GetControlPointAtIndexValues"].Parameters["index"].Type="IntPtr"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CAOpenGLLayer">
 			<File>GraphicsImaging/Reference/CAOpenGLLayer_class/Introduction/Introduction.html</File>
-				<Patch type="Model">
-					<Change><![CDATA[Methods["CanDrawInCGLContextPixelFormatForLayerTimeDisplayTime"].Parameters["timeStamp"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Methods["DrawInCGLContextPixelFormatForLayerTimeDisplayTime"].Parameters["timeStamp"].Type="IntPtr"]]></Change>
-				</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["CanDrawInCGLContextPixelFormatForLayerTimeDisplayTime"].Parameters["timeStamp"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["DrawInCGLContextPixelFormatForLayerTimeDisplayTime"].Parameters["timeStamp"].Type="IntPtr"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CAPropertyAnimation">
 			<File>GraphicsImaging/Reference/CAPropertyAnimation_class/Introduction/Introduction.html</File>
-				<Patch type="Model">
-					<Change><![CDATA[Methods["AnimationWithKeyPath"].ReturnType="CAPropertyAnimation"]]></Change>
-					<Change><![CDATA[Methods["AnimationWithKeyPath"].CopyInDescendants=true]]></Change>
-				</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["AnimationWithKeyPath"].ReturnType="CAPropertyAnimation"]]></Change>
+				<Change><![CDATA[Methods["AnimationWithKeyPath"].CopyInDescendants=true]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CARenderer">
 			<File>GraphicsImaging/Reference/CARenderer_class/Introduction/Introduction.html</File>
-				<Patch type="Model">
-					<Change><![CDATA[Methods["BeginFrameAtTimeTimeStamp"].Parameters["timeStamp"].Type="IntPtr"]]></Change>
-				</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["BeginFrameAtTimeTimeStamp"].Parameters["timeStamp"].Type="IntPtr"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CAReplicatorLayer">
 			<File>GraphicsImaging/Reference/CAReplicatorLayer_class/Reference/Reference.html</File>
@@ -236,12 +246,12 @@
 		</Class>
 		<Class name="CATiledLayer">
 			<File>GraphicsImaging/Reference/CATiledLayer_class/Introduction/Introduction.html</File>
-				<Patch type="Model">
-					<Change><![CDATA[Properties["LevelsOfDetail"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Properties["LevelsOfDetail"].Getter.ReturnType="IntPtr"]]></Change>
-					<Change><![CDATA[Properties["LevelsOfDetailBias"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Properties["LevelsOfDetailBias"].Getter.ReturnType="IntPtr"]]></Change>
-				</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["LevelsOfDetail"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["LevelsOfDetail"].Getter.ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["LevelsOfDetailBias"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["LevelsOfDetailBias"].Getter.ReturnType="IntPtr"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CATransaction">
 			<File>GraphicsImaging/Reference/CATransaction_class/Introduction/Introduction.html</File>
@@ -257,13 +267,13 @@
 		</Class>
 		<Class name="CIColor">
 			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/Reference/Reference.html</File>
-				<Patch type="Model">
-					<Change><![CDATA[Methods["InitWithCGColor"].GenerateConstructor=false]]></Change>
-					<Change><![CDATA[Properties["Components"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Properties["Components"].Getter.ReturnType="IntPtr"]]></Change>
-					<Change><![CDATA[Properties["NumberOfComponents"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Properties["NumberOfComponents"].Getter.ReturnType="IntPtr"]]></Change>
-				</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["InitWithCGColor"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Properties["Components"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["Components"].Getter.ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["NumberOfComponents"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["NumberOfComponents"].Getter.ReturnType="IntPtr"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CIContext">
 			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/Reference/Reference.html</File>
@@ -276,14 +286,14 @@
 		</Class>
 		<Class name="CIFilter">
 			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.html</File>
-				<Patch type="Model">
-					<Change><![CDATA[Methods["FilterWithNameKeysAndValues"].Parameters["key0,..."].Generate=false]]></Change>
-					<Change><![CDATA[Methods["FilterWithNameKeysAndValues"].Parameters.Set("key0", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>key0</Name><Type>NSString</Type></Parameter>")]]></Change>
-					<Change><![CDATA[Methods["FilterWithNameKeysAndValues"].Parameters.Set("values", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
-					<Change><![CDATA[Methods["Apply"].Parameters["k,..."].Generate=false]]></Change>
-					<Change><![CDATA[Methods["Apply"].Parameters.Set("k", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>k</Name><Type>NSString</Type></Parameter>")]]></Change>
-					<Change><![CDATA[Methods["Apply"].Parameters.Set("values", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
-				</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["FilterWithNameKeysAndValues"].Parameters["key0,..."].Generate=false]]></Change>
+				<Change><![CDATA[Methods["FilterWithNameKeysAndValues"].Parameters.Set("key0", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>key0</Name><Type>NSString</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["FilterWithNameKeysAndValues"].Parameters.Set("values", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["Apply"].Parameters["k,..."].Generate=false]]></Change>
+				<Change><![CDATA[Methods["Apply"].Parameters.Set("k", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>k</Name><Type>NSString</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["Apply"].Parameters.Set("values", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CIFilter_CoreAnimationAdditions">
 			<File>GraphicsImaging/Reference/CIFilter_CA_Additions/Introduction/Introduction.html</File>
@@ -296,26 +306,26 @@
 		</Class>
 		<Class name="CIFilterShape">
 			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilterShape_Class/Reference/Reference.html</File>
-				<Patch type="Model">
-					<Change><![CDATA[Methods["ShapeWithRect"].ReturnType="CIFilterShape"]]></Change>
-				</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ShapeWithRect"].ReturnType="CIFilterShape"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CIImage">
 			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/Reference/Reference.html</File>
-				<Patch type="Model">
-					<Change><![CDATA[Methods["ImageWithBitmapDataBytesPerRowSizeFormatColorSpace"].Parameters["bpr"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Methods["ImageWithImageProviderSizeFormatColorSpaceOptions"].Parameters["width"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Methods["ImageWithImageProviderSizeFormatColorSpaceOptions"].Parameters["height"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Methods["InitWithBitmapDataBytesPerRowSizeFormatColorSpace"].Parameters["bpr"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Methods["InitWithCGImage"].GenerateConstructor=false]]></Change>
-					<Change><![CDATA[Methods["InitWithCGImageOptions"].GenerateConstructor=false]]></Change>
-					<Change><![CDATA[Methods["InitWithCGLayer"].GenerateConstructor=false]]></Change>
-					<Change><![CDATA[Methods["InitWithCGLayerOptions"].GenerateConstructor=false]]></Change>
-					<Change><![CDATA[Methods["InitWithCVImageBuffer"].GenerateConstructor=false]]></Change>
-					<Change><![CDATA[Methods["InitWithImageProviderSizeFormatColorSpaceOptions"].Parameters["width:(size_t)height"].Name="width"]]></Change>
-					<Change><![CDATA[Methods["InitWithImageProviderSizeFormatColorSpaceOptions"].Parameters["width"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Methods["InitWithImageProviderSizeFormatColorSpaceOptions"].Parameters["height"].Type="IntPtr"]]></Change>
-				</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ImageWithBitmapDataBytesPerRowSizeFormatColorSpace"].Parameters["bpr"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ImageWithImageProviderSizeFormatColorSpaceOptions"].Parameters["width"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ImageWithImageProviderSizeFormatColorSpaceOptions"].Parameters["height"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithBitmapDataBytesPerRowSizeFormatColorSpace"].Parameters["bpr"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithCGImage"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithCGImageOptions"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithCGLayer"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithCGLayerOptions"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithCVImageBuffer"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithImageProviderSizeFormatColorSpaceOptions"].Parameters["width:(size_t)height"].Name="width"]]></Change>
+				<Change><![CDATA[Methods["InitWithImageProviderSizeFormatColorSpaceOptions"].Parameters["width"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithImageProviderSizeFormatColorSpaceOptions"].Parameters["height"].Type="IntPtr"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CIImageAccumulator">
 			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImageAccumulator_Class/Reference/Reference.html</File>
@@ -334,22 +344,22 @@
 		</Class>
 		<Class name="CISampler">
 			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CISampler_Class/Reference/Reference.html</File>
-				<Patch type="Model">
-					<Change><![CDATA[Methods["InitWithImageKeysAndValues"].Parameters.Set("keysAndValues", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>keysAndValues</Name><Type>params object[]</Type></Parameter>")]]></Change>
-					<Change><![CDATA[Methods["SamplerWithImageKeysAndValues"].Parameters.Set("keysAndValues", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>keysAndValues</Name><Type>params object[]</Type></Parameter>")]]></Change>
-				</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["InitWithImageKeysAndValues"].Parameters.Set("keysAndValues", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>keysAndValues</Name><Type>params object[]</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["SamplerWithImageKeysAndValues"].Parameters.Set("keysAndValues", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>keysAndValues</Name><Type>params object[]</Type></Parameter>")]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CIVector">
 			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/Reference/Reference.html</File>
-				<Patch type="Model">
-					<Change><![CDATA[Methods["VectorWithValuesCount"].Parameters["values"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Methods["VectorWithValuesCount"].Parameters["count"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Methods["InitWithValuesCount"].Parameters["values"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Methods["InitWithValuesCount"].Parameters["count"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Methods["ValueAtIndex"].Parameters["index"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Properties["Count"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Properties["Count"].Getter.ReturnType="IntPtr"]]></Change>
-				</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["VectorWithValuesCount"].Parameters["values"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["VectorWithValuesCount"].Parameters["count"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithValuesCount"].Parameters["values"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithValuesCount"].Parameters["count"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ValueAtIndex"].Parameters["index"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["Count"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["Count"].Getter.ReturnType="IntPtr"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSValue_CoreAnimationAdditions">
 			<File>GraphicsImaging/Reference/NSValue_CA_additions/Introduction/Introduction.html</File>
@@ -382,15 +392,15 @@
 		</Protocol>
 		<Protocol name="CIImageProvider">
 			<File>GraphicsImaging/Reference/QuartzCoreFramework/Protocols/CIImageProvider_Protocol/Reference/Reference.html</File>
-				<Patch type="Model">
-					<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["x:(size_t)y"].Name="x"]]></Change>
-					<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["width:(size_t)height"].Name="width"]]></Change>
-					<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["rowbytes"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["x"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["y"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["width"].Type="IntPtr"]]></Change>
-					<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["height"].Type="IntPtr"]]></Change>
-				</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["x:(size_t)y"].Name="x"]]></Change>
+				<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["width:(size_t)height"].Name="width"]]></Change>
+				<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["rowbytes"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["x"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["y"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["width"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["height"].Type="IntPtr"]]></Change>
+			</Patch>
 		</Protocol>
 		<Protocol name="CIPlugInRegistration">
 			<File>GraphicsImaging/Reference/QuartzCoreFramework/Protocols/CIPlugInRegistration_Protocol/Reference/Reference.html</File>
