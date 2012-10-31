@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="Quartz" usings="Foundation,AppKit" assembly="Monobjc.Quartz" source="DocSet">
+<Framework name="Quartz" usings="ApplicationServices,Foundation,AppKit" assembly="Monobjc.Quartz" source="DocSet">
 	<Types>
 	</Types>
 	<Classes>

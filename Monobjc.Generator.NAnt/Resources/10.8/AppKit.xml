@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="AppKit" usings="Foundation,CoreData,QuartzCore,ApplicationServices" assembly="Monobjc.AppKit" source="DocSet">
+<Framework name="AppKit" usings="ApplicationServices,Foundation,CoreData,QuartzCore" assembly="Monobjc.AppKit" source="DocSet">
 	<Types>
 		<Type name="AppKitFramework.Constants">
 			<File>Cocoa/Reference/ApplicationKit/Miscellaneous/AppKit_Constants/Reference/reference.html</File>
@@ -96,6 +96,9 @@
 		</Class>
 		<Class name="NSActionCell">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSActionCell_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["IntegerValue"].Generate=false]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSActionCell.Deprecated">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSActionCell_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
@@ -135,6 +138,7 @@
 				<Change><![CDATA[Methods["RunAnimationGroupCompletionHandler"].Parameters["changes"].IsBlock=false]]></Change>
 				<Change><![CDATA[Methods["RunAnimationGroupCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
 				<Change><![CDATA[Methods["RunAnimationGroupCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+				<Change><![CDATA[Properties["CompletionHandler"].Type="IntPtr"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSAppleScript_AppKitAdditions">
@@ -145,6 +149,14 @@
 		</Class>
 		<Class name="NSApplication">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSApplication_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[ = (1 &lt;&lt;  9)
+   ]]></Source>
+					<With><![CDATA[ = (1 &lt;&lt;  9),
+   ]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["DiscardEventsMatchingMaskBeforeEvent"].Parameters["mask"].Type="NSEventMask"]]></Change>
 				<Change><![CDATA[Methods["NextEventMatchingMaskUntilDateInModeDequeue"].Parameters["mask"].Type="NSEventMask"]]></Change>
@@ -518,6 +530,12 @@
 				<Change><![CDATA[Properties["Formatter"].Type="NSFormatter"]]></Change>
 				<Change><![CDATA[Properties["SelectedCell"].Type="NSCell"]]></Change>
 			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSInteger Tag]]></Source>
+					<With><![CDATA[public new NSInteger Tag]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="NSControl.Deprecated">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSControl_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
@@ -647,9 +665,6 @@
 				<Change><![CDATA[Methods["EventWithEventRef"].Parameters["eventRef"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Properties["EventRef"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Properties["EventRef"].Getter.ReturnType="IntPtr"]]></Change>
-				<!--
-					<Change><![CDATA[Properties.First(Name == "ModifierFlags" && Static == True).Name="GlobalModifierFlags"]]></Change>
-					-->
 				<Change><![CDATA[Properties["ModifierFlags"].Type="NSModifierFlags"]]></Change>
 				<Change><![CDATA[Properties["GlobalModifierFlags"].Type="NSModifierFlags"]]></Change>
 				<Change><![CDATA[Enumerations["NSEventType"].BaseType="NSUInteger"]]></Change>
@@ -677,6 +692,16 @@
 				<Change><![CDATA[Enumerations["NSEventGestureAxis"].BaseType="NSInteger"]]></Change>
 				<Change><![CDATA[Enumerations["NSEventPhase"].BaseType="NSUInteger"]]></Change>
 			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public static NSModifierFlags ModifierFlags]]></Source>
+					<With><![CDATA[public static NSModifierFlags GlobalModifierFlags]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[ }; NSUIntegerNSEventMaskFromType(NSEventTypetype) { return (1 << type);]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="NSFileWrapper_AppKitAdditions">
 			<File>AppKit/Reference/NSFileWrapper_AppKitAdditions/NSFileWrapperApplicationKitAdditions.html</File>
@@ -686,6 +711,12 @@
 		</Class>
 		<Class name="NSFont">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSFont_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[)<pre class="declaration">]]></Source>
+					<With><![CDATA[)</p><pre class="declaration">]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["FontWithNameMatrix"].Parameters["fontMatrix"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["GetAdvancementsForGlyphsCount"].Parameters["glyphs"].Type="IntPtr"]]></Change>
@@ -702,6 +733,15 @@
 				<Change><![CDATA[Enumerations["NSGlyphRelation"].BaseType="NSUInteger"]]></Change>
 				<!-- TODO: Move to constants -->
 				<Change><![CDATA[Enumerations["Reserved_Glyph_Codes"].Generate=false]]></Change>
+				<Change><![CDATA[Methods["PositionOfGlyphPrecededByGlyphIsNominal"].Parameters["flag"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["PositionOfGlyphPrecededByGlyphIsNominal"].Parameters["flag"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["PositionOfGlyphStruckOverGlyphMetricsExist"].Parameters["flag"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["PositionOfGlyphStruckOverGlyphMetricsExist"].Parameters["flag"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["PositionOfGlyphStruckOverRectMetricsExist"].Parameters["flag"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["PositionOfGlyphStruckOverRectMetricsExist"].Parameters["flag"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["PositionOfGlyphWithRelationToBaseGlyphTotalAdvancementMetricsExist"].Parameters["flag"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["PositionOfGlyphWithRelationToBaseGlyphTotalAdvancementMetricsExist"].Parameters["flag"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["PositionsForCompositeSequenceNumberOfGlyphsPointArray"].Parameters["glyphs"].Type="IntPtr"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSFont.Deprecated">
@@ -712,6 +752,9 @@
 		</Class>
 		<Class name="NSFontCollection">
 			<File>AppKit/Reference/NSFontCollection_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["RenameFontCollectionWithNameVisibilityToNameError"].Parameters.Last(Name == "name").Name= ((entity.Methods["RenameFontCollectionWithNameVisibilityToNameError"].Parameters.Count(Name == "name") == 2) ? "name2" : "name")]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSFontDescriptor">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSFontDescriptor_Class/Reference/Reference.html</File>
@@ -828,6 +871,12 @@
 		</Class>
 		<Class name="NSImageCell">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSImageCell_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[)<pre class="declaration">]]></Source>
+					<With><![CDATA[)</p><pre class="declaration">]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="NSImageRep">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSImageRep_Class/Reference/Reference.html</File>
@@ -850,6 +899,20 @@
 		</Class>
 		<Class name="NSLayoutConstraint">
 			<File>AppKit/Reference/NSLayoutConstraint_Class/NSLayoutConstraint/NSLayoutConstraint.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[/* <!--a-->choose<!--/a--> <!--a-->only<!--/a--> <!--a-->one<!--/a--> <!--a-->of<!--/a--> <!--a-->these<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[// <!--a-->default<!--/a-->]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* <!--a-->choose<!--/a--> <!--a-->only<!--/a--> <!--a-->one<!--/a--> <!--a-->of<!--/a--> <!--a-->these<!--/a--> <!--a-->three<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["ConstraintWithItemAttributeRelatedByToItemAttributeMultiplierConstant"].ReturnType="NSLayoutConstraint"]]></Change>
 				<Change><![CDATA[Enumerations["NSLayoutPriority"].BaseType="int"]]></Change>
@@ -939,6 +1002,14 @@
 		</Class>
 		<Class name="NSMenu">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSMenu_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[ = 1 &lt;&lt; 1
+   ]]></Source>
+					<With><![CDATA[ = 1 &lt;&lt; 1,
+   ]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
 			</Patch>
@@ -1287,6 +1358,12 @@
 		</Class>
 		<Class name="NSScroller">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSScroller_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[)<pre class="declaration">]]></Source>
+					<With><![CDATA[)</p><pre class="declaration">]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Enumerations["NSScrollArrowPosition"].BaseType="NSUInteger"]]></Change>
 				<Change><![CDATA[Enumerations["NSScrollerArrow"].BaseType="NSUInteger"]]></Change>
@@ -1708,6 +1785,29 @@
 		</Class>
 		<Class name="NSWindow">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSWindow_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[ = 1 &lt;&lt; 1
+};
+enum {]]></Source>
+					<With><![CDATA[ = 1 &lt;&lt; 1,
+]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[ = 1 &lt;&lt; 4,
+};
+enum {]]></Source>
+					<With><![CDATA[ = 1 &lt;&lt; 4 ,
+]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[ = 1 &lt;&lt; 6
+};
+enum {]]></Source>
+					<With><![CDATA[ = 1 &lt;&lt; 6,
+]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["ContentRectForFrameRectStyleMask"].Parameters["windowStyle"].Type="NSWindowStyleMask"]]></Change>
 				<Change><![CDATA[Methods["FrameRectForContentRectStyleMask"].Parameters["windowStyle"].Type="NSWindowStyleMask"]]></Change>
@@ -2094,6 +2194,10 @@
 			<Patch type="Model">
 				<Change><![CDATA[DelegateFor="NSSharingService"]]></Change>
 				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[Methods["SharingServiceSourceWindowForShareItemsSharingContentScope"].Parameters["sharingContentScope"].Type="NSSharingContentScope"]]></Change>
+				<Change><![CDATA[Methods["SharingServiceSourceWindowForShareItemsSharingContentScope"].Parameters["sharingContentScope"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["SharingServiceTransitionImageForShareItemContentRect"].Parameters["contentRect"].Type="NSRect"]]></Change>
+				<Change><![CDATA[Methods["SharingServiceTransitionImageForShareItemContentRect"].Parameters["contentRect"].IsByRef=true]]></Change>
 			</Patch>
 		</Protocol>
 		<Protocol name="NSSharingServicePickerDelegate">

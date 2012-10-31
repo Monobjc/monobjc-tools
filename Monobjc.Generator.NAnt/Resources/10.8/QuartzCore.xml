@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="QuartzCore" usings="Foundation,AppKit" assembly="Monobjc.AppKit" source="DocSet">
+<Framework name="QuartzCore" usings="ApplicationServices,Foundation,AppKit" assembly="Monobjc.AppKit" source="DocSet">
 	<Types>
 		<Type name="CoreVideoFramework.Constants">
 			<File>QuartzCore/Reference/CVConstantsRef/Reference/reference.html</File>
@@ -316,6 +316,10 @@ enum
 				<Change><![CDATA[Methods["ImageWithBitmapDataBytesPerRowSizeFormatColorSpace"].Parameters["bpr"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["ImageWithImageProviderSizeFormatColorSpaceOptions"].Parameters["width"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["ImageWithImageProviderSizeFormatColorSpaceOptions"].Parameters["height"].Type="IntPtr"]]></Change>
+				
+				<Change><![CDATA[Methods["ImageWithIOSurface"].Parameters["surface"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ImageWithIOSurfaceOptions"].Parameters["surface"].Type="IntPtr"]]></Change>
+				
 				<Change><![CDATA[Methods["InitWithBitmapDataBytesPerRowSizeFormatColorSpace"].Parameters["bpr"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["InitWithCGImage"].GenerateConstructor=false]]></Change>
 				<Change><![CDATA[Methods["InitWithCGImageOptions"].GenerateConstructor=false]]></Change>
@@ -325,6 +329,11 @@ enum
 				<Change><![CDATA[Methods["InitWithImageProviderSizeFormatColorSpaceOptions"].Parameters["width:(size_t)height"].Name="width"]]></Change>
 				<Change><![CDATA[Methods["InitWithImageProviderSizeFormatColorSpaceOptions"].Parameters["width"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["InitWithImageProviderSizeFormatColorSpaceOptions"].Parameters["height"].Type="IntPtr"]]></Change>
+				
+				<Change><![CDATA[Methods["InitWithIOSurface"].Parameters["surface"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithIOSurface"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithIOSurfaceOptions"].Parameters["surface"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithIOSurfaceOptions"].GenerateConstructor=false]]></Change>
 			</Patch>
 		</Class>
 		<Class name="CIImageAccumulator">

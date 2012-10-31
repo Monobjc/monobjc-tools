@@ -173,7 +173,8 @@
 				<Change><![CDATA[Functions["CGRectMakeWithDictionaryRepresentation"].Parameters["rect"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["CGSizeMakeWithDictionaryRepresentation"].Parameters["size"].Type="CGSize"]]></Change>
 				<Change><![CDATA[Functions["CGSizeMakeWithDictionaryRepresentation"].Parameters["size"].IsOut=true]]></Change>
-				<Change><![CDATA[Enumerations["CGRectEdge"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CGRectEdge"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["CGRectEdge"].Generate=false]]></Change>
 			</Patch>
 		</Type>
 		<Type name="CGGLContext">

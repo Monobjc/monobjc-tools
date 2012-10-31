@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="QTKit" usings="Foundation,AppKit" assembly="Monobjc.QTKit" source="DocSet">
+<Framework name="QTKit" usings="ApplicationServices,Foundation,AppKit" assembly="Monobjc.QTKit" source="DocSet">
 	<Types>
 		<Type name="QTKitFramework.Constants">
 			<File>QuickTime/Reference/QTKitCaptureConstants_Ref/Reference/reference.html</File>

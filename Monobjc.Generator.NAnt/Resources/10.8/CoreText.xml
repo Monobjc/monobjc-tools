@@ -3,6 +3,9 @@
 	<Types>
 		<Type name="CoreTextUtilities">
 			<File>Carbon/Reference/CoreText_Utilities_Ref/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CTGetCoreTextVersion"].Parameters["d"].Generate=false]]></Change>
+			</Patch>
 		</Type>
 		<Type name="CoreTextStringAttributes">
 			<File>Carbon/Reference/CoreText_StringAttributes_Ref/Reference/reference.html</File>
@@ -89,14 +92,26 @@
 				<Change><![CDATA[Functions["CTFontManagerCopyAvailableFontFamilyNames"].Parameters["d"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["CTFontManagerCopyAvailableFontURLs"].Parameters["d"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["CTFontManagerCopyAvailablePostScriptNames"].Parameters["d"].Generate=false]]></Change>
+
+				
+												
 				<Change><![CDATA[Functions["CTFontManagerRegisterFontsForURL"].Parameters["error"].Type="NSError"]]></Change>
-				<Change><![CDATA[Functions["CTFontManagerRegisterFontsForURL"].Parameters["error"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerRegisterFontsForURL"].Parameters["error"].IsOut=true]]></Change>				
 				<Change><![CDATA[Functions["CTFontManagerRegisterFontsForURLs"].Parameters["errors"].Type="NSArray"]]></Change>
 				<Change><![CDATA[Functions["CTFontManagerRegisterFontsForURLs"].Parameters["errors"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerRegisterGraphicsFont"].Parameters["error"].Type="NSError"]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerRegisterGraphicsFont"].Parameters["error"].IsOut=true]]></Change>
+
+								
 				<Change><![CDATA[Functions["CTFontManagerUnregisterFontsForURL"].Parameters["error"].Type="NSError"]]></Change>
 				<Change><![CDATA[Functions["CTFontManagerUnregisterFontsForURL"].Parameters["error"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["CTFontManagerUnregisterFontsForURLs"].Parameters["errors"].Type="NSArray"]]></Change>
 				<Change><![CDATA[Functions["CTFontManagerUnregisterFontsForURLs"].Parameters["errors"].IsOut=true]]></Change>
+				
+				
+				<Change><![CDATA[Functions["CTFontManagerUnregisterGraphicsFont"].Parameters["error"].Type="NSError"]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerUnregisterGraphicsFont"].Parameters["error"].IsOut=true]]></Change>
+				
 				<Change><![CDATA[Functions["CTFontManagerCreateFontRequestRunLoopSource"].Generate=false]]></Change>
 				<Change><![CDATA[Enumerations["Font_Registration_Errors"].Generate=false]]></Change>
 				<Change><![CDATA[Enumerations["CTFontManagerError"].Generate=false]]></Change>
