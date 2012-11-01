@@ -138,6 +138,12 @@ enum
 				<Change><![CDATA[Enumerations["SMPTE_Time_Types"].Name="SMPTETimeTypes"]]></Change>
 				<Change><![CDATA[Enumerations["SMPTETimeTypes"].BaseType="uint"]]></Change>
 			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[ = (1L <<]]></Source>
+					<With><![CDATA[ = (1 <<]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 	</Types>
 	<Classes>
@@ -316,10 +322,8 @@ enum
 				<Change><![CDATA[Methods["ImageWithBitmapDataBytesPerRowSizeFormatColorSpace"].Parameters["bpr"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["ImageWithImageProviderSizeFormatColorSpaceOptions"].Parameters["width"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["ImageWithImageProviderSizeFormatColorSpaceOptions"].Parameters["height"].Type="IntPtr"]]></Change>
-				
 				<Change><![CDATA[Methods["ImageWithIOSurface"].Parameters["surface"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["ImageWithIOSurfaceOptions"].Parameters["surface"].Type="IntPtr"]]></Change>
-				
 				<Change><![CDATA[Methods["InitWithBitmapDataBytesPerRowSizeFormatColorSpace"].Parameters["bpr"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["InitWithCGImage"].GenerateConstructor=false]]></Change>
 				<Change><![CDATA[Methods["InitWithCGImageOptions"].GenerateConstructor=false]]></Change>
@@ -329,7 +333,6 @@ enum
 				<Change><![CDATA[Methods["InitWithImageProviderSizeFormatColorSpaceOptions"].Parameters["width:(size_t)height"].Name="width"]]></Change>
 				<Change><![CDATA[Methods["InitWithImageProviderSizeFormatColorSpaceOptions"].Parameters["width"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["InitWithImageProviderSizeFormatColorSpaceOptions"].Parameters["height"].Type="IntPtr"]]></Change>
-				
 				<Change><![CDATA[Methods["InitWithIOSurface"].Parameters["surface"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["InitWithIOSurface"].GenerateConstructor=false]]></Change>
 				<Change><![CDATA[Methods["InitWithIOSurfaceOptions"].Parameters["surface"].Type="IntPtr"]]></Change>
@@ -416,6 +419,7 @@ enum
 		</Protocol>
 	</Protocols>
 	<Structures>
+		<Structure name="CVTimeStamp" />
 	</Structures>
 	<Enumerations>
 	</Enumerations>

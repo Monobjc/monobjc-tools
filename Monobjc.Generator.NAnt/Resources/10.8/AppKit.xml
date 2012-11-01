@@ -329,9 +329,7 @@
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSBundle_AppKitAdditions/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[AdditionFor="NSBundle_AppKitAdditions"]]></Change>
-				<Change><![CDATA[Methods.First(Name == "LoadNibFileExternalNameTableWithZone" && Static == True).Generate=false]]></Change>
 				<Change><![CDATA[Methods.First(Name == "LoadNibFileExternalNameTableWithZone" && Static == False).Generate=false]]></Change>
-				<Change><![CDATA[Methods["LoadNibNamedOwner"].Generate=false]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSButton">
@@ -629,6 +627,16 @@
 			<Patch type="Model">
 				<Change><![CDATA[Enumerations["NSDraggingItemEnumerationOptions"].Values["NSDraggingItemEnumerationConcurrent"].Value="1U << 0"]]></Change>
 			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[ = 1U <<]]></Source>
+					<With><![CDATA[ = 1 <<]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[= (1UL <<]]></Source>
+					<With><![CDATA[= (1 <<]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="NSDrawer">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSDrawer_Class/Reference/Reference.html</File>
@@ -658,6 +666,10 @@
 				<Replace>
 					<Source><![CDATA[typedef unsigned long long NSEventMask;]]></Source>
 					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[<!--a-->NX_SUBTYPE_TABLET_PROXIMITY<!--/a-->]]></Source>
+					<With><![CDATA[<!--a-->NX_SUBTYPE_TABLET_PROXIMITY,<!--/a-->]]></With>
 				</Replace>
 			</Patch>
 			<Patch type="Model">
@@ -691,6 +703,7 @@
 				<Change><![CDATA[Enumerations["NSEventSwipeTrackingOptions"].BaseType="NSUInteger"]]></Change>
 				<Change><![CDATA[Enumerations["NSEventGestureAxis"].BaseType="NSInteger"]]></Change>
 				<Change><![CDATA[Enumerations["NSEventPhase"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSEventMask"].Values["NSEventMaskSwipe"].Value="0x80000000U"]]></Change>
 			</Patch>
 			<Patch type="Generated">
 				<Replace>
@@ -700,6 +713,62 @@
 				<Replace>
 					<Source><![CDATA[ }; NSUIntegerNSEventMaskFromType(NSEventTypetype) { return (1 << type);]]></Source>
 					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[ = 1ULL << NS]]></Source>
+					<With><![CDATA[ = 1 << NS]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[ = 1U << NS]]></Source>
+					<With><![CDATA[ = 1 << NS]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[ = 1 << NS]]></Source>
+					<With><![CDATA[ = 1 << (int) NSEventType.NS]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_TABLET_POINTER_UNKNOWN]]></Source>
+					<With>0</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_TABLET_POINTER_PEN]]></Source>
+					<With>1</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_TABLET_POINTER_CURSOR]]></Source>
+					<With>2</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_TABLET_POINTER_ERASER]]></Source>
+					<With>3</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_SUBTYPE_DEFAULT]]></Source>
+					<With>0</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_SUBTYPE_TABLET_POINT]]></Source>
+					<With>1</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_SUBTYPE_TABLET_PROXIMITY]]></Source>
+					<With>2</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_SUBTYPE_MOUSE_TOUCH]]></Source>
+					<With>3</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_TABLET_BUTTON_PENTIPMASK]]></Source>
+					<With>1</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_TABLET_BUTTON_PENLOWERSIDEMASK]]></Source>
+					<With>2</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_TABLET_BUTTON_PENUPPERSIDEMASK]]></Source>
+					<With>4</With>
 				</Replace>
 			</Patch>
 		</Class>
@@ -733,6 +802,12 @@
 				<Change><![CDATA[Enumerations["NSGlyphRelation"].BaseType="NSUInteger"]]></Change>
 				<!-- TODO: Move to constants -->
 				<Change><![CDATA[Enumerations["Reserved_Glyph_Codes"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSFont.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSFont_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSFont"]]></Change>
 				<Change><![CDATA[Methods["PositionOfGlyphPrecededByGlyphIsNominal"].Parameters["flag"].Type="bool"]]></Change>
 				<Change><![CDATA[Methods["PositionOfGlyphPrecededByGlyphIsNominal"].Parameters["flag"].IsOut=true]]></Change>
 				<Change><![CDATA[Methods["PositionOfGlyphStruckOverGlyphMetricsExist"].Parameters["flag"].Type="bool"]]></Change>
@@ -744,16 +819,16 @@
 				<Change><![CDATA[Methods["PositionsForCompositeSequenceNumberOfGlyphsPointArray"].Parameters["glyphs"].Type="IntPtr"]]></Change>
 			</Patch>
 		</Class>
-		<Class name="NSFont.Deprecated">
-			<File>Cocoa/Reference/ApplicationKit/Classes/NSFont_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="NSFont"]]></Change>
-			</Patch>
-		</Class>
 		<Class name="NSFontCollection">
 			<File>AppKit/Reference/NSFontCollection_Class/Reference/Reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["RenameFontCollectionWithNameVisibilityToNameError"].Parameters.Last(Name == "name").Name= ((entity.Methods["RenameFontCollectionWithNameVisibilityToNameError"].Parameters.Count(Name == "name") == 2) ? "name2" : "name")]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[ = (1UL <<]]></Source>
+					<With><![CDATA[ = (1 <<]]></With>
+				</Replace>
 			</Patch>
 		</Class>
 		<Class name="NSFontDescriptor">
@@ -918,6 +993,12 @@
 				<Change><![CDATA[Enumerations["NSLayoutPriority"].BaseType="int"]]></Change>
 				<Change><![CDATA[Enumerations["NSLayoutPriority"].MixedType="float,float"]]></Change>
 			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[ = NS]]></Source>
+					<With><![CDATA[ =  NSLayoutAttribute.NS]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="NSLayoutManager">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSLayoutManager_Class/Reference/Reference.html</File>
@@ -954,7 +1035,6 @@
 				<Change><![CDATA[Methods["RectArrayForGlyphRangeWithinSelectedGlyphRangeInTextContainerRectCount"].Parameters["rectCount"].Type="NSUInteger"]]></Change>
 				<Change><![CDATA[Methods["RectArrayForGlyphRangeWithinSelectedGlyphRangeInTextContainerRectCount"].Parameters["rectCount"].IsOut=true]]></Change>
 				<Change><![CDATA[Methods["SetLocationsStartingGlyphIndexesCountForGlyphRange"].Parameters["glyphIndexes"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Methods["ShowPackedGlyphsLengthGlyphRangeAtPointFontColorPrintingAdjustment"].Parameters["glyphs"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["ShowCGGlyphsPositionsCountFontMatrixAttributesInContext"].Parameters["glyphs"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["ShowCGGlyphsPositionsCountFontMatrixAttributesInContext"].Parameters["positions"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
@@ -968,6 +1048,7 @@
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSLayoutManager_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[AdditionFor="NSLayoutManager"]]></Change>
+				<Change><![CDATA[Methods["ShowPackedGlyphsLengthGlyphRangeAtPointFontColorPrintingAdjustment"].Parameters["glyphs"].Type="IntPtr"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSLevelIndicator">
@@ -1704,6 +1785,7 @@
 			<Patch type="Model">
 				<Change><![CDATA[Properties["Identity"].Type="INSCopying"]]></Change>
 				<Change><![CDATA[Properties["Identity"].Getter.ReturnType="INSCopying"]]></Change>
+				<Change><![CDATA[Enumerations["NSTouchPhase"].Values["NSTouchPhaseAny"].Value="0xFFFFFFFFU"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSTrackingArea">
@@ -2007,6 +2089,7 @@ enum {]]></Source>
 			<File>Cocoa/Reference/ApplicationKit/Protocols/NSDraggingInfo_Protocol/Reference/Reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Enumerations["NSDraggingItemEnumerationOptions"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["NSDragOperation"].Values["NSDragOperationEvery"].Value="0xFFFFFFFFU"]]></Change>
 			</Patch>
 		</Protocol>
 		<Protocol name="NSDraggingSource">
