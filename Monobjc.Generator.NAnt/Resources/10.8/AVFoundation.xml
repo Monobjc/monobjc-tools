@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="AVFoundation" usings="Foundation" assembly="Monobjc.AVFoundation" source="DocSet">
+<Framework name="AVFoundation" usings="ApplicationServices,AppKit,CoreMedia,Foundation,QuartzCore" assembly="Monobjc.AVFoundation" source="DocSet">
 	<Types>
 		<Type name="AVFoundationFramework.AudioSettings.Constants">
 			<File>AVFoundation/Reference/AVFoundationAudioSettings_Constants/Reference/reference.html</File>
@@ -55,6 +55,16 @@
 		</Class>
 		<Class name="AVAssetImageGenerator">
 			<File>AVFoundation/Reference/AVAssetImageGenerator_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[<pre class="declaration">
+{
+   <a]]></Source>
+					<With><![CDATA[<pre class="declaration">
+enum {
+   <a ]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["CopyCGImageAtTimeActualTimeError"].Parameters["actualTime"].Type="CMTime"]]></Change>
 				<Change><![CDATA[Methods["CopyCGImageAtTimeActualTimeError"].Parameters["actualTime"].IsOut=true]]></Change>
@@ -193,6 +203,16 @@
 		<Class name="AVFrameRateRange">
 			<File>AVFoundation/Reference/AVFrameRateRange_Class/Reference/Reference.html</File>
 		</Class>
+		<Class name="AVMediaSelectionGroup">
+			<!-- Not yet published for OS X
+			<File>AVFoundation/Reference/AVMediaSelectionGroup_Class/Reference/Reference.html</File>
+			-->
+		</Class>
+		<Class name="AVMediaSelectionOption">
+			<!-- Not yet published for OS X
+			<File>AVFoundation/Reference/AVMediaSelectionOption_Class/Reference/Reference.html</File>
+			-->
+		</Class>
 		<Class name="AVMetadataItem">
 			<File>AVFoundation/Reference/AVMetadataItem_Class/Reference/Reference.html</File>
 			<Patch type="Model">
@@ -242,10 +262,14 @@
 			<Patch type="Model">
 				<Change><![CDATA[Methods["PlayerWithPlayerItem"].ReturnType="AVPlayer"]]></Change>
 				<Change><![CDATA[Methods["PlayerWithURL"].ReturnType="AVPlayer"]]></Change>
+				<Change><![CDATA[Properties["MasterClock"].Type="IntPtr"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="AVPlayerItem">
 			<File>AVFoundation/Reference/AVPlayerItem_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Timebase"].Type="IntPtr"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="AVPlayerItemAccessLog">
 			<File>AVFoundation/Reference/AVPlayerItemAccessLog_Class/Reference/Reference.html</File>
@@ -258,6 +282,9 @@
 		</Class>
 		<Class name="AVPlayerItemErrorLogEvent">
 			<File>AVFoundation/Reference/AVPlayerItemErrorLogEvent_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVPlayerItemOutput">
+			<File>AVFoundation/Reference/AVPlayerItemOutput_Class/Reference/Reference.html</File>
 		</Class>
 		<Class name="AVPlayerItemTrack">
 			<File>AVFoundation/Reference/AVPlayerItemTrack_Class/Reference/Reference.html</File>
@@ -276,6 +303,20 @@
 		</Class>
 		<Class name="AVURLAsset">
 			<File>AVFoundation/Reference/AVURLAsset_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+			<Replace>
+			<Source><![CDATA[= 0UL]]></Source>
+			<With><![CDATA[= 0]]></With>
+			</Replace>
+			<Replace>
+			<Source><![CDATA[= (1UL <<]]></Source>
+			<With><![CDATA[= (1 <<]]></With>
+			</Replace>
+			<Replace>
+			<Source><![CDATA[= 0xFFFFUL]]></Source>
+			<With><![CDATA[= 0xFFFFU]]></With>
+			</Replace>
+			</Patch>
 		</Class>
 		<Class name="AVVideoComposition">
 			<File>AVFoundation/Reference/AVVideoComposition_Class/Reference/Reference.html</File>
@@ -302,6 +343,17 @@
 		</Class>
 		<Class name="AVVideoCompositionLayerInstruction">
 			<File>AVFoundation/Reference/AVVideoCompositionLayerInstruction_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["startOpacity"].Type="float"]]></Change>
+				<Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["startOpacity"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["endOpacity"].Type="float"]]></Change>
+				<Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["endOpacity"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["timeRange"].Type="CMTimeRange"]]></Change>
+				<Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["timeRange"].IsByRef=true]]></Change>
+				
+				<Change><![CDATA[Methods["GetTransformRampForTimeStartTransformEndTransformTimeRange"].Parameters["timeRange"].Type="CMTimeRange"]]></Change>
+				<Change><![CDATA[Methods["GetTransformRampForTimeStartTransformEndTransformTimeRange"].Parameters["timeRange"].IsByRef=true]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSCoder_AVFoundationAdditions">
 			<File>AVFoundation/Reference/NSCoder_AVFoundation_Additions/Reference/Reference.html</File>
@@ -353,6 +405,11 @@
 		</Protocol>
 		<Protocol name="AVCaptureVideoDataOutputSampleBufferDelegate">
 			<File>AVFoundation/Reference/AVCaptureVideoDataOutputSampleBufferDelegate_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="AVVideoCompositionValidationHandling">
+			<!-- Not yet published for OS X
+			<File>AVFoundation/Reference/AVVideoCompositionValidationHandling_Protocol/Reference/Reference.html</File>
+			-->
 		</Protocol>
 	</Protocols>
 </Framework>

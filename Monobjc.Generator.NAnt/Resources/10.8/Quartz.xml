@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="Quartz" usings="ApplicationServices,Foundation,AppKit" assembly="Monobjc.Quartz" source="DocSet">
+<Framework name="Quartz" usings="ApplicationServices,AppKit,Foundation,QuartzCore" assembly="Monobjc.Quartz" source="DocSet">
 	<Types>
 	</Types>
 	<Classes>
@@ -118,6 +118,7 @@
 		<Class name="PDFAnnotationButtonWidget">
 			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationButtonWidget_Class/Reference/Reference.html</File>
 			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Types_of_PDF_Annotation_Buttons"].Name="PDFWidgetControlType"]]></Change>
 				<Change><![CDATA[Enumerations["PDFWidgetControlType"].BaseType="NSInteger"]]></Change>
 			</Patch>
 		</Class>
@@ -364,5 +365,12 @@
 	<Structures>
 	</Structures>
 	<Enumerations>
+		<Enumeration name="PDFAreaOfInterest" />
+		<Enumeration name="PDFBorderStyle" />
+		<Enumeration name="PDFDisplayBox" />
+		<Enumeration name="PDFDisplayMode" />
+		<Enumeration name="PDFLineStyle" />
+		<Enumeration name="PDFMarkupType" />
+		<Enumeration name="PDFTextAnnotationIconType" />
 	</Enumerations>
 </Framework>

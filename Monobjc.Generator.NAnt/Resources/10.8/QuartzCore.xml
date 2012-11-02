@@ -261,6 +261,16 @@ enum
 		</Class>
 		<Class name="CATransaction">
 			<File>GraphicsImaging/Reference/CATransaction_class/Introduction/Introduction.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public static void SetValueForKey]]></Source>
+					<With><![CDATA[public new static void SetValueForKey]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public static Id ValueForKey]]></Source>
+					<With><![CDATA[public new static Id ValueForKey]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="CATransformLayer">
 			<File>GraphicsImaging/Reference/CATransformLayer_class/Reference/Reference.html</File>

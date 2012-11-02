@@ -8,9 +8,17 @@
 		</Class>
 		<Class name="CBIdentity">
 			<File>Networking/Reference/CBIdentity_Ref/CBIdentity/CBIdentity.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["IdentityWithCSIdentity"].Parameters["csIdentity"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["CSIdentity"].Type="IntPtr"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CBIdentityAuthority">
 			<File>Networking/Reference/CBIdentityAuthority_Ref/CBIdentityAuthority/CBIdentityAuthority.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["IdentityAuthorityWithCSIdentityAuthority"].Parameters["CSIdentityAuthority"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["CSIdentityAuthority"].Type="IntPtr"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CBIdentityPicker">
 			<File>Networking/Reference/CBIdentityPicker_Ref/CBIdentityPicker/CBIdentityPicker.html</File>

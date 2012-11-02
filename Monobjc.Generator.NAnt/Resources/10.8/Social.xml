@@ -6,11 +6,14 @@
 		<Class name="SLRequest">
 			<File>Social/Reference/SLRequest_Class/Reference/Reference.html</File>
 			<Patch type="Html">
-			<Replace>
-			<Source><![CDATA[<!--a-->NS_ENUM<!--/a-->(<a href="../../../../Cocoa/Reference/Foundation/Miscellaneous/Foundation_DataTypes/Reference/reference.html#//apple_ref/doc/c_ref/NSInteger">NSInteger</a>,
+				<Replace>
+					<Source><![CDATA[<!--a-->NS_ENUM<!--/a-->(<a href="../../../../Cocoa/Reference/Foundation/Miscellaneous/Foundation_DataTypes/Reference/reference.html#//apple_ref/doc/c_ref/NSInteger">NSInteger</a>,
    <a href="#//apple_ref/doc/c_ref/SLRequestMethod">SLRequestMethod</a>)]]></Source>
-			<With><![CDATA[enum SLRequestMethod]]></With>
-			</Replace>
+					<With><![CDATA[enum SLRequestMethod]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+			<Change><![CDATA[Enumerations["SLRequestMethod"].BaseType="NSInteger"]]></Change>
 			</Patch>
 		</Class>
 	</Classes>

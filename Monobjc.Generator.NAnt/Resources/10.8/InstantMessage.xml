@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="InstantMessage" usings="Foundation,AppKit" assembly="Monobjc.InstantMessage" source="DocSet">
+<Framework name="InstantMessage" usings="AddressBook,AppKit,Foundation,QuartzCore" assembly="Monobjc.InstantMessage" source="DocSet">
 	<Types>
 		<Type name="InstantMessageFramework.Functions">
 			<File>Cocoa/Reference/InstantMessage_Functions/Reference/reference.html</File>

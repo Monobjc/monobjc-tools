@@ -363,6 +363,12 @@
 				<Change><![CDATA[Enumerations["NSButtonType"].BaseType="NSUInteger"]]></Change>
 				<Change><![CDATA[Enumerations["NSGradientType"].BaseType="NSUInteger"]]></Change>
 			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSString KeyEquivalent]]></Source>
+					<With><![CDATA[public new NSString KeyEquivalent]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="NSButtonCell.Deprecated">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSButtonCell_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
@@ -1080,6 +1086,12 @@
 				<Change><![CDATA[Properties["SelectedCell"].Type="NSCell"]]></Change>
 				<Change><![CDATA[Enumerations["NSMatrixMode"].BaseType="NSUInteger"]]></Change>
 			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual Class CellClass]]></Source>
+					<With><![CDATA[public new Class CellClass]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="NSMenu">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSMenu_Class/Reference/Reference.html</File>
@@ -1243,6 +1255,12 @@
 				<Change><![CDATA[Constants.Set("NSAlertAlternateReturn", "<Constant><Summary><Line>The user pressed the alternate button.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>NSAlertAlternateReturn</Name><Type>NSInteger</Type><Static>true</Static><Value>0</Value></Constant>")]]></Change>
 				<Change><![CDATA[Constants.Set("NSAlertOtherReturn", "<Constant><Summary><Line>The user pressed a second alternate button.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>NSAlertOtherReturn</Name><Type>NSInteger</Type><Static>true</Static><Value>-1</Value></Constant>")]]></Change>
 				<Change><![CDATA[Constants.Set("NSAlertErrorReturn", "<Constant><Summary><Line>The alert cannot identify the reason it was closed; it may have been closed by an external source or by a button other than those listed above.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>NSAlertErrorReturn</Name><Type>NSInteger</Type><Static>true</Static><Value>-2</Value></Constant>")]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual bool WorksWhenModal]]></Source>
+					<With><![CDATA[public new bool WorksWhenModal]]></With>
+				</Replace>
 			</Patch>
 		</Class>
 		<Class name="NSParagraphStyle">
@@ -1744,6 +1762,12 @@
 				<Change><![CDATA[Enumerations["NSSelectionGranularity"].BaseType="NSUInteger"]]></Change>
 				<Change><![CDATA[Enumerations["NSSelectionAffinity"].BaseType="NSUInteger"]]></Change>
 				<Change><![CDATA[Enumerations["NSFindPanelAction"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual bool IsRulerVisible]]></Source>
+					<With><![CDATA[public new bool IsRulerVisible]]></With>
+				</Replace>
 			</Patch>
 		</Class>
 		<Class name="NSTextView.Deprecated">

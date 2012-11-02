@@ -74,6 +74,12 @@
     <Folder Include="Files\10.8\AppKit\Model\S\" />
     <Folder Include="Files\10.8\Security\Model\" />
     <Folder Include="Files\10.8\QuartzCore\Model\S\" />
+    <Folder Include="Files\10.8\CoreMedia\" />
+    <Folder Include="Files\10.8\CoreMedia\Model\" />
+    <Folder Include="Files\10.8\AVFoundation\" />
+    <Folder Include="Files\10.8\AVFoundation\Html\" />
+    <Folder Include="Files\10.8\AVFoundation\Html\P\" />
+    <Folder Include="Files\10.8\AVFoundation\Html\C\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Generate.build">
@@ -391,6 +397,21 @@
     <Content Include="Files\10.8\QuartzCore\Model\S\CVTimeStamp.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\10.8\OpenGL.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\CoreMedia\Model\S\CMBlockBufferCustomBlockSource.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\CoreMedia\Model\S\CMBufferCallbacks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\CoreMedia\Model\S\CMTime.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\CoreMedia\Model\S\CMTimeRange.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\doxygen.cfg" />
@@ -436,6 +457,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Files\10.8\Security\Model\S\SecKeychainAttributeList.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\AVFoundation\Html\P\AVVideoCompositionValidationHandling.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\AVFoundation\Html\C\AVMediaSelectionGroup.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\AVFoundation\Html\C\AVMediaSelectionOption.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

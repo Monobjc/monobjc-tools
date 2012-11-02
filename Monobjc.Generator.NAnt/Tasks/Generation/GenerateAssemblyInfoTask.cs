@@ -34,6 +34,10 @@ namespace Monobjc.Tools.Generator.NAnt
 				String path = Path.Combine(folder, "Properties", "AssemblyInfo.cs");
 				Directory.CreateDirectory(Path.GetDirectoryName(path));
 
+				if (File.Exists(path)) {
+					continue;
+				}
+
 				// Set variables
 				String assembly = f.assembly;
 				String name = assembly.Replace("Monobjc.", String.Empty);

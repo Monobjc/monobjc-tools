@@ -44,6 +44,12 @@
 				<Change><![CDATA[Constants["GROWL_REG_DICT_EXTENSION"].Type="NSString"]]></Change>
 				<Change><![CDATA[Constants["GROWL_POSITION_PREFERENCE_KEY"].Type="NSString"]]></Change>
 			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[XSTR(]]></Source>
+					<With><![CDATA[NSString.NSPinnedString(]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 	</Classes>
 	<Protocols>

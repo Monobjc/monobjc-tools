@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="SecurityInterface" usings="Foundation,AppKit" assembly="Monobjc.SecurityInterface" source="DocSet">
+<Framework name="SecurityInterface" usings="ApplicationServices,AppKit,Foundation,Security,SecurityFoundation" assembly="Monobjc.SecurityInterface" source="DocSet">
 	<Types>
 		<Type name="SecurityInterfaceFramework.Constants">
 			<File>SecurityInterface/Reference/securityinterfaceconstantsref/Reference/reference.html</File>
 		</Type>
 		<Type name="SecurityInterfaceFramework.DataTypes">
 			<File>Security/Reference/SecurityInterfaceFramework/Miscellaneous/SecurityInterface_DataTypes/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["SFAuthorizationViewState"].BaseType="uint"]]></Change>
+			</Patch>
 		</Type>
 	</Types>
 	<Classes>
 		<Class name="SFAuthorizationPluginView">
 			<File>Security/Reference/SFAuthorizationPluginView_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["InitWithCallbacksAndEngineRef"].Parameters["callbacks"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["Callbacks"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["Callbacks"].Getter.ReturnType="IntPtr"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="SFAuthorizationView">
 			<File>Security/Reference/SecurityInterfaceFramework/Classes/SFAuthorizationView_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["AuthorizationRights"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["AuthorizationRights"].Getter.ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="SFCertificatePanel">
 			<File>Security/Reference/SecurityInterfaceFramework/Classes/SFCertificatePanel_Class/Reference/Reference.html</File>
@@ -29,9 +42,17 @@
 		</Class>
 		<Class name="SFKeychainSavePanel">
 			<File>Security/Reference/SecurityInterfaceFramework/Classes/SFKeychainSavePanel_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["BeginSheetForDirectoryFileModalForWindowModalDelegateDidEndSelectorContextInfo"].Generate=false]]></Change>
+				<Change><![CDATA[Methods["RunModalForDirectoryFile"].Generate=false]]></Change>
+			</Patch>
 		</Class>
 		<Class name="SFKeychainSettingsPanel">
 			<File>Security/Reference/SecurityInterfaceFramework/Classes/SFKeychainSettingsPanel_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["BeginSheetForWindowModalDelegateDidEndSelectorContextInfoSettingsKeychain"].Parameters["settings"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["RunModalForSettingsKeychain"].Parameters["settings"].Type="IntPtr"]]></Change>
+			</Patch>
 		</Class>
 	</Classes>
 	<Protocols>

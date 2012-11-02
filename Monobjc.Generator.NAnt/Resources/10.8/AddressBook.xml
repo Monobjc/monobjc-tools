@@ -3,11 +3,23 @@
 	<Types>
 		<Type name="AddressBookFramework.Constants">
 			<File>UserExperience/Reference/AddressBook/Miscellaneous/AddressBook_Constants/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[<a href="#//apple_ref/doc/c_ref/kABMultiDateComponentsProperty">kABMultiDateComponentsProperty</a>]]></Source>
+					<With><![CDATA[<a href="#//apple_ref/doc/c_ref/kABMultiDateComponentsProperty">,kABMultiDateComponentsProperty</a>]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Enumerations["_ABPropertyType"].Name="ABPropertyType"]]></Change>
 				<Change><![CDATA[Enumerations["ABPropertyType"].BaseType="CFIndex"]]></Change>
 				<Change><![CDATA[Enumerations["Error_Constants"].Name="ABErrorCodes"]]></Change>
 				<Change><![CDATA[Enumerations["ABErrorCodes"].BaseType="int"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[kABMultiValueMask]]></Source>
+					<With><![CDATA[0x100]]></With>
+				</Replace>
 			</Patch>
 		</Type>
 		<Type name="AddressBookFramework.Functions">
@@ -17,6 +29,9 @@
 	<Classes>
 		<Class name="ABAddressBook">
 			<File>UserExperience/Reference/AddressBook/Classes/ABAddressBook_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Errors"].Generate=false]]></Change>
+			</Patch>
 		</Class>
 		<Class name="ABGroup">
 			<File>UserExperience/Reference/AddressBook/Classes/ABGroup_Class/Reference/Reference.html</File>
