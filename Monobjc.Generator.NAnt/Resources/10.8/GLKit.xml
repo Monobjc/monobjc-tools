@@ -1,32 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="GLKit" usings="Foundation,AppKit" assembly="Monobjc.GLKit" source="DocSet">
+<Framework name="GLKit" usings="AppKit,Foundation,OpenGL" assembly="Monobjc.GLKit" source="DocSet">
 	<Types>
 		<Type name="GLKitFramework.MathUtilities">
 			<File>GLkit/Reference/GLKMathUtils/Reference/reference.html</File>
 		</Type>
 		<Type name="GLKitFramework.EffectsConstants">
 			<File>GLkit/Reference/GLKEffectsConstants/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["GLKVertexAttrib"].BaseType="int"]]></Change>
+			</Patch>
 		</Type>
 		<Type name="GLKMatrix3">
 			<File>GLkit/Reference/GLKMatrix3/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["GLKMatrix3MakeWithArray"].Parameters["values[9]"].Name="values"]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3MakeWithArray"].Parameters["values"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3MakeWithArrayAndTranspose"].Parameters["values[9]"].Name="values"]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3MakeWithArrayAndTranspose"].Parameters["values"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3MultiplyVector3Array"].Parameters["vectors"].Type="IntPtr"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public partial class GLKMatrix3]]></Source>
+					<With><![CDATA[public partial struct GLKMatrix3]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="GLKMatrix4">
 			<File>GLkit/Reference/GLKMatrix4/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["GLKMatrix4MakeWithArray"].Parameters["values[16]"].Name="values"]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix4MakeWithArray"].Parameters["values"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix4MakeWithArrayAndTranspose"].Parameters["values[16]"].Name="values"]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix4MakeWithArrayAndTranspose"].Parameters["values"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix4MultiplyAndProjectVector3Array"].Parameters["vectors"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix4MultiplyVector3Array"].Parameters["vectors"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix4MultiplyVector3ArrayWithTranslation"].Parameters["vectors"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix4MultiplyVector4Array"].Parameters["vectors"].Type="IntPtr"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public partial class GLKMatrix4]]></Source>
+					<With><![CDATA[public partial struct GLKMatrix4]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="GLKMatrixStack">
 			<File>GLkit/Reference/GLKMatrixStack/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["GLKMatrixStackGetTypeID"].Parameters["d"].Generate=false]]></Change>
+			</Patch>
 		</Type>
 		<Type name="GLKQuaternion">
 			<File>GLkit/Reference/GLKQuaternion/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["GLKQuaternionMakeWithArray"].Parameters["values[4]"].Name="values"]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionMakeWithArray"].Parameters["values"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionRotateVector3Array"].Parameters["vectors"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionRotateVector4Array"].Parameters["vectors"].Type="IntPtr"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public partial class GLKQuaternion]]></Source>
+					<With><![CDATA[public partial struct GLKQuaternion]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="GLKVector2">
 			<File>GLkit/Reference/GLKVector2/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["GLKVector2MakeWithArray"].Parameters["values[2]"].Name="values"]]></Change>
+				<Change><![CDATA[Functions["GLKVector2MakeWithArray"].Parameters["values"].Type="IntPtr"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public partial class GLKVector2]]></Source>
+					<With><![CDATA[public partial struct GLKVector2]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="GLKVector3">
 			<File>GLkit/Reference/GLKVector3/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["GLKVector3MakeWithArray"].Parameters["values[3]"].Name="values"]]></Change>
+				<Change><![CDATA[Functions["GLKVector3MakeWithArray"].Parameters["values"].Type="IntPtr"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public partial class GLKVector3]]></Source>
+					<With><![CDATA[public partial struct GLKVector3]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="GLKVector4">
 			<File>GLkit/Reference/GLKVector4/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["GLKVector4MakeWithArray"].Parameters["values[4]"].Name="values"]]></Change>
+				<Change><![CDATA[Functions["GLKVector4MakeWithArray"].Parameters["values"].Type="IntPtr"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public partial class GLKVector4]]></Source>
+					<With><![CDATA[public partial struct GLKVector4]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 	</Types>
 	<Classes>
@@ -38,15 +115,31 @@
 		</Class>
 		<Class name="GLKEffectPropertyFog">
 			<File>GLkit/Reference/GLKEffectPropertyFog_ClassRef/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["GLKFogMode"].BaseType="int"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="GLKEffectPropertyLight">
 			<File>GLkit/Reference/GLKEffectPropertyLight_ClassRef/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["GLKLightingType"].BaseType="int"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="GLKEffectPropertyMaterial">
 			<File>GLkit/Reference/GLKEffectPropertyMaterial_ClassRef/Reference/Reference.html</File>
 		</Class>
 		<Class name="GLKEffectPropertyTexture">
 			<File>GLkit/Reference/GLKEffectPropertyTexture_ClassRef/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["GLKTextureTarget"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["GLKTextureEnvMode"].BaseType="int"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[ = GL_]]></Source>
+					<With><![CDATA[ = GL.GL_]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="GLKEffectPropertyTransform">
 			<File>GLkit/Reference/GLKEffectPropertyTransform_ClassRef/Reference/Reference.html</File>
@@ -62,6 +155,14 @@
 		</Class>
 		<Class name="GLKTextureLoader">
 			<File>GLkit/Reference/GLKTextureLoader_ClassRef/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[ = 12
+   ]]></Source>
+					<With><![CDATA[ = 12,
+   ]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 	</Classes>
 	<Protocols>

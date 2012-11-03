@@ -158,7 +158,7 @@
 	-->
 	<target name="convert" depends="process">
 		<!-- Convert Model documents to XHTML -->
-		<xhtml-to-model dir="${data.dir}" mappings="Resources/Mappings.xml" methods="${methods}" report="${data.dir}/xhtml-to-model.log">
+		<xhtml-to-model dir="${data.dir}" mappings="Resources/Mappings.xml" methods="${methods}" report="${data.dir}/xhtml-to-model.log" mapping-report="${data.dir}/mapping.log">
 			<docset refid="10.8" />
 			<framework-set refid="all" />
 		</xhtml-to-model>

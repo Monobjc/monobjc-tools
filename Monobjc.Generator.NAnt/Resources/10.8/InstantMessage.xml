@@ -34,6 +34,10 @@
 	<Protocols>
 		<Protocol name="IMVideoDataSource">
 			<File>Cocoa/Reference/IMAVDataSource_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["GetOpenGLBufferContextPixelFormat"].Parameters["contextOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetOpenGLBufferContextPixelFormat"].Parameters["pixelFormatOut"].Type="IntPtr"]]></Change>
+			</Patch>
 		</Protocol>
 	</Protocols>
 	<Structures>

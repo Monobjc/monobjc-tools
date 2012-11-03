@@ -90,7 +90,17 @@ namespace Monobjc.Tools.Generator.Model
 			get;
 			set;
 		}
-
+		
+		/// <summary>
+		///   Gets or sets a value indicating whether this instance is an array.
+		/// </summary>
+		/// <value><c>true</c> if this instance is an array; otherwise, <c>false</c>.</value>
+		[XmlAttribute]
+		public bool IsArray {
+			get;
+			set;
+		}
+		
 		/// <summary>
 		///   Indicates whether the current object is equal to another object of the same type.
 		/// </summary>

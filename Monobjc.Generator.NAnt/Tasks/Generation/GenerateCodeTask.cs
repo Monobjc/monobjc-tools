@@ -248,17 +248,6 @@ namespace Monobjc.Tools.Generator.NAnt
 			manager.SetClasses(names);
 		}
 		
-		private void LoadStructures(TypeManager manager, IList<FrameworkEntity> entities)
-		{
-			IEnumerable<String> names = entities.Where(e => e.type == FrameworkEntityType.S).Select(e => e.name);
-			manager.SetStructures(names);
-		}
-		
-		private void LoadEnumerations(TypeManager manager, IList<FrameworkEntity> entities)
-		{
-			// TODO
-		}
-
 		private Dictionary<String, String> LoadMixedTypes (String baseFolder, IList<FrameworkEntity> entities)
 		{
 			this.Log (Level.Info, "Loading mixed types...");

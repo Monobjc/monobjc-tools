@@ -30,6 +30,7 @@ namespace Monobjc.Tools.Generator.Utilities
 		private readonly List<String> Structures = new List<String> ();
 		private readonly Dictionary<String, String> Mappings = new Dictionary<String, String> ();
 		private IDictionary<String, String> MixedTypes = null;
+		private readonly Dictionary<String, String> samples = new Dictionary<String, String> (); 
 
 		/// <summary>
 		///   Converts the name.
@@ -112,6 +113,11 @@ namespace Monobjc.Tools.Generator.Utilities
 					isBlock = true;
 					return value.Substring (6);
 				}
+
+				if (!this.samples.ContainsKey(type)) {
+					this.samples.Add(type, value);
+				}
+				
 				return value;
 			}
 
@@ -135,7 +141,8 @@ namespace Monobjc.Tools.Generator.Utilities
 			}
 
 			if (protocolStart > 0 && protocolEnd > 0) {
-				return "I" + type.Substring (protocolStart, type.Length - protocolStart - protocolEnd).Trim ();
+				String value = "I" + type.Substring (protocolStart, type.Length - protocolStart - protocolEnd).Trim ();
+				return value;
 			}
 
 			// Classes
@@ -152,6 +159,10 @@ namespace Monobjc.Tools.Generator.Utilities
 				}
 			}
 
+			if (!this.samples.ContainsKey(type)) {
+				this.samples.Add(type, "N/A");
+			}
+			
 			if (logger != null) {
 				logger.WriteLine ("    '{0}' uses no mapping", type);
 			}
@@ -185,6 +196,13 @@ namespace Monobjc.Tools.Generator.Utilities
 		}
 
 		/// <summary>
+		/// Gets the samples.
+		/// </summary>
+		public IDictionary<String, String> Samples {
+			get { return this.samples; }
+		}
+
+		/// <summary>
 		///   Sets the classes.
 		/// </summary>
 		/// <param name = "classes">The classes.</param>
@@ -205,43 +223,11 @@ namespace Monobjc.Tools.Generator.Utilities
 		}
 
 		/// <summary>
-		/// Sets the enumerations.
-		/// </summary>
-		public void SetEnumerations (IEnumerable<String> values)
-		{
-			this.Enumerations.AddRange (values);
-		}
-
-		/// <summary>
-		/// Sets the structures.
-		/// </summary>
-		public void SetStructures (IEnumerable<String> values)
-		{
-			this.Structures.AddRange (values);
-		}
-		
-		/// <summary>
 		///   Determines whether the specified instance contains this class.
 		/// </summary>
 		public bool HasClass (string value)
 		{
 			return this.Classes.Contains (value);
-		}
-		
-		/// <summary>
-		///   Determines whether the specified instance contains this enumeration.
-		/// </summary>
-		public bool HasEnumeration (string value)
-		{
-			return this.Enumerations.Contains (value);
-		}
-		
-		/// <summary>
-		///   Determines whether the specified instance contains this structure.
-		/// </summary>
-		public bool HasStructure (string value)
-		{
-			return this.Structures.Contains (value);
 		}
 		
 		/// <summary>

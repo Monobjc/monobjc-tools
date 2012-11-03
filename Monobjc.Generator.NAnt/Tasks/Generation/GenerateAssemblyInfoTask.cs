@@ -29,14 +29,14 @@ namespace Monobjc.Tools.Generator.NAnt
 			IEnumerable<Framework> frameworks = this.CreateFrameworks (docSet);
 
 			foreach (var f in frameworks) {
-				this.Log (Level.Info, String.Format ("Generation info for '{0}'...", f.name));
 				String folder = f.GetPath(baseFolder, DocumentType.Generated);
 				String path = Path.Combine(folder, "Properties", "AssemblyInfo.cs");
 				Directory.CreateDirectory(Path.GetDirectoryName(path));
-
 				if (File.Exists(path)) {
 					continue;
 				}
+
+				this.Log (Level.Info, String.Format ("Generation info for '{0}'...", f.name));
 
 				// Set variables
 				String assembly = f.assembly;

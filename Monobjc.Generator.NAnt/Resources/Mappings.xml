@@ -20,6 +20,8 @@
 	<Mapping type="BOOL (^)(NSUInteger idx, BOOL *stop)"><![CDATA[block:Func<NSUInteger, IntPtr, bool>]]></Mapping>
 	<Mapping type="BOOL (^)(NSURL *url, NSError *error)"><![CDATA[block:Func<NSURL, NSError, bool>]]></Mapping>
 	<Mapping type="BOOL">bool</Mapping>
+	<Mapping type="BOOL *">ref:bool</Mapping>
+	<Mapping type="bool *">ref:bool</Mapping>
 	<Mapping type="Boolean">bool</Mapping>
 	<Mapping type="CFAllocatorContext *">IntPtr</Mapping>
 	<Mapping type="CFAllocatorRef">IntPtr</Mapping>
@@ -107,6 +109,8 @@
 	<Mapping type="CMItemIndex">NSInteger</Mapping>
 	<Mapping type="CMPersistentTrackID">int</Mapping>
 	<Mapping type="CMSampleBufferRef">IntPtr</Mapping>
+	<Mapping type="CMTime *">ref:CMTime</Mapping>
+	<Mapping type="CMTimeRange *">ref:CMTimeRange</Mapping>
 	<Mapping type="CMTimeEpoch">long</Mapping>
 	<Mapping type="CMTimeScale">int</Mapping>
 	<Mapping type="CMTimeValue">long</Mapping>
@@ -142,6 +146,7 @@
 	<Mapping type="CVPixelBufferPoolRef">IntPtr</Mapping>
 	<Mapping type="CVPixelBufferRef">IntPtr</Mapping>
 	<Mapping type="CVReturn">int</Mapping>
+	<Mapping type="CVTimeStamp *">ref:CVTimeStamp</Mapping>
 	<Mapping type="DescType">uint</Mapping>
 	<Mapping type="dispatch_block_t"><![CDATA[block:Action]]></Mapping>
 	<Mapping type="dispatch_data_applier_t"><![CDATA[block:Func<IntPtr, NSUInteger, IntPtr, NSUInteger, bool>]]></Mapping>
@@ -182,6 +187,9 @@
 	<Mapping type="GLuint">uint</Mapping>
 	<Mapping type="GLushort">ushort</Mapping>
 	<Mapping type="GLvoid">void</Mapping>
+	<Mapping type="GLKMatrixStackRef">IntPtr</Mapping>
+	<Mapping type="GLKVector3 *">IntPtr</Mapping>
+	<Mapping type="GLKVector4 *">IntPtr</Mapping>
 	<Mapping type="Handle">IntPtr</Mapping>
 	<Mapping type="IBAction">void</Mapping>
 	<Mapping type="ICCameraDevice *">IntPtr</Mapping>
@@ -193,6 +201,7 @@
 	<Mapping type="id">Id</Mapping>
 	<Mapping type="IMP">IntPtr</Mapping>
 	<Mapping type="inout NSRange *">ref:NSRange</Mapping>
+	<Mapping type="int *">ref:int</Mapping>
 	<Mapping type="int16_t">short</Mapping>
 	<Mapping type="int32_t">int</Mapping>
 	<Mapping type="int64_t">long</Mapping>
@@ -245,6 +254,7 @@
 	<Mapping type="OSErr">short</Mapping>
 	<Mapping type="OSStatus">int</Mapping>
 	<Mapping type="OSType">uint</Mapping>
+	<Mapping type="OSType *">ref:uint</Mapping>
 	<Mapping type="out id *">out:Id</Mapping>
 	<Mapping type="out NSError **">out:NSError</Mapping>
 	<Mapping type="pid_t">int</Mapping>

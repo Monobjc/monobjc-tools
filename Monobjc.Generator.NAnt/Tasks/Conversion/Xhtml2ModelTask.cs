@@ -36,12 +36,19 @@ namespace Monobjc.Tools.Generator.NAnt
 		public String NoGetterMethods { get; set; }
 
 		/// <summary>
-		/// Gets or sets the mapping file.
+		/// Gets or sets the report file.
 		/// </summary>
 		[TaskAttribute("report", Required = false)]
 		[StringValidator(AllowEmpty = false)]
 		public FileInfo Report { get; set; }
 		
+		/// <summary>
+		/// Gets or sets the mapping report file.
+		/// </summary>
+		[TaskAttribute("mapping-report", Required = false)]
+		[StringValidator(AllowEmpty = false)]
+		public FileInfo MappingReport { get; set; }
+
 		/// <summary>
 		/// Executes the task.
 		/// </summary>
@@ -96,6 +103,18 @@ namespace Monobjc.Tools.Generator.NAnt
 			if (this.Report != null) {
 				writer.Close ();
 				writer.Dispose ();
+			}
+
+			if (this.MappingReport != null) {
+				using(writer = new StreamWriter (this.MappingReport.ToString ())) {
+					IDictionary<String, String> samples = this.typeManager.Samples;
+					List<String> keys = new List<String>(samples.Keys);
+					keys.Sort();
+					foreach(var key in keys) {
+						writer.WriteLine("{0}={1}", key, samples[key]);
+					}
+					writer.Close();
+				}
 			}
 		}
 
