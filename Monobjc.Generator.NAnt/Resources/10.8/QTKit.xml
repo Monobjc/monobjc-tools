@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="QTKit" usings="ApplicationServices,AppKit,Foundation,Quartz" assembly="Monobjc.QTKit" source="DocSet">
+<Framework name="QTKit" usings="ApplicationServices,AppKit,Foundation,QuartzCore" assembly="Monobjc.QTKit" source="DocSet">
 	<Types>
 		<Type name="QTKitFramework.Constants">
 			<File>QuickTime/Reference/QTKitCaptureConstants_Ref/Reference/reference.html</File>
@@ -221,7 +221,12 @@
 		</Protocol>
 	</Protocols>
 	<Structures>
+		<Structure name="AudioBuffer" />
+		<Structure name="AudioBufferList" />
 		<Structure name="QTTime" />
+		<Structure name="QTTimeRange" />
+		<Structure name="SMPTETime" />
+		<Structure name="TimeRecord" />
 	</Structures>
 	<Enumerations>
 		<Enumeration name="QTMovieOperationPhase" />

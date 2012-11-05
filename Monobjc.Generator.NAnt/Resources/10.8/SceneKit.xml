@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="SceneKit" usings="Foundation,AppKit" assembly="Monobjc.SceneKit" source="DocSet">
+<Framework name="SceneKit" usings="ApplicationServices,AppKit,Foundation,QuartzCore" assembly="Monobjc.SceneKit" source="DocSet">
 	<Types>
 	</Types>
 	<Classes>
@@ -26,6 +26,9 @@
 		</Class>
 		<Class name="SCNGeometryElement">
 			<File>SceneKit/Reference/SCNGeometryElement_Class/Reference/SCNGeometryElement.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["SCNGeometryPrimitiveType"].BaseType="int"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="SCNGeometrySource">
 			<File>SceneKit/Reference/SCNGeometrySource_Class/Reference/SCNGeometrySource.html</File>
@@ -41,9 +44,17 @@
 		</Class>
 		<Class name="SCNMaterial">
 			<File>SceneKit/Reference/SCNMaterial_Class/Reference/SCNMaterial.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["SCNCullMode"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["SCNTransparencyMode"].BaseType="int"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="SCNMaterialProperty">
 			<File>SceneKit/Reference/SCNMaterialProperty_Class/Reference/SCNMaterialProperty.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["SCNFilterMode"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["SCNWrapMode"].BaseType="int"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="SCNNode">
 			<File>SceneKit/Reference/SCNNode_Class/Reference/SCNNode.html</File>
@@ -62,12 +73,38 @@
 		</Class>
 		<Class name="SCNSceneSource">
 			<File>SceneKit/Reference/SCNSceneSource_Class/Reference/SCNSceneSource.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["ConsistencyErrorCodes"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["SCNSceneSourceStatus"].BaseType="int"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="SCNSphere">
 			<File>SceneKit/Reference/SCNSphere_Class/Reference/SCNSphere.html</File>
 		</Class>
 		<Class name="SCNText">
 			<File>SceneKit/Reference/SCNText_Class/Reference/SCNText.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[<div class="declaration">#if TARGET_OS_IPHONE</div>]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[<div class="declaration"> @property(nonatomic, retain) UIFont *font;</div>]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[<div class="declaration"> #else</div>]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[<div class="declaration">  @property(nonatomic, retain) NSFont *font;</div>]]></Source>
+					<With><![CDATA[@property(nonatomic, retain) NSFont *font;]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[<div class="declaration">  #endif</div>]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="SCNTorus">
 			<File>SceneKit/Reference/SCNTorus_Class/Reference/SCNTorus.html</File>

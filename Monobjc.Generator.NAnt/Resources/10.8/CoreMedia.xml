@@ -244,6 +244,7 @@
 		<Structure name="CMBlockBufferCustomBlockSource" />
 		<Structure name="CMBufferCallbacks" />
 		<Structure name="CMTime" />
+		<Structure name="CMTimeMapping" />
 		<Structure name="CMTimeRange" />
 	</Structures>
 	<Enumerations>

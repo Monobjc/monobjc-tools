@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Structure Generate="true">
-	<Name>QTTImeRange</Name>
+	<Name>AudioBuffer</Name>
 	<Namespace>QTKit</Namespace>
-	<MixedType>QTTImeRange,QTTImeRange64</MixedType>
+	<MixedType>AudioBuffer,AudioBuffer</MixedType>
 </Structure>

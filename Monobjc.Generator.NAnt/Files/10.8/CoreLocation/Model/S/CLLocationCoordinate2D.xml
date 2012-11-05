@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Structure Generate="true">
+	<Name>CLLocationCoordinate2D</Name>
+	<Namespace>CoreLocation</Namespace>
+	<MixedType>CLLocationCoordinate2D,CLLocationCoordinate2D</MixedType>
+</Structure>

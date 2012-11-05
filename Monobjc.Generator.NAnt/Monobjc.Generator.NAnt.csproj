@@ -60,6 +60,7 @@
     <Compile Include="Tasks\Generation\GatherMixedTypesTask.cs" />
     <Compile Include="Tasks\Patch\MarkDeprecationTask.cs" />
     <Compile Include="Tasks\Patch\MergeDeprecatedTask.cs" />
+    <Compile Include="Tasks\Diagnostics\GenerateMappingTask.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tasks\" />
@@ -80,6 +81,15 @@
     <Folder Include="Files\10.8\AVFoundation\Html\" />
     <Folder Include="Files\10.8\AVFoundation\Html\P\" />
     <Folder Include="Files\10.8\AVFoundation\Html\C\" />
+    <Folder Include="Files\10.8\CoreLocation\" />
+    <Folder Include="Files\10.8\CoreLocation\Model\" />
+    <Folder Include="Files\10.8\CoreLocation\Model\S\" />
+    <Folder Include="Files\10.8\CorePlot\" />
+    <Folder Include="Files\10.8\CorePlot\Model\" />
+    <Folder Include="Files\10.8\CorePlot\Model\S\" />
+    <Folder Include="Files\10.8\GLKit\" />
+    <Folder Include="Files\10.8\GLKit\Model\" />
+    <Folder Include="Files\10.8\GLKit\Model\S\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Generate.build">
@@ -410,6 +420,60 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Files\10.8\CoreMedia\Model\S\CMTimeRange.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\QuartzCore\Model\S\CATransform3D.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\QuartzCore\Model\S\CVSMPTETime.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\CoreLocation\Model\S\CLLocationCoordinate2D.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\CoreMedia\Model\S\CMTimeMapping.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\CorePlot\Model\S\CPTConstraints.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\CorePlot\Model\S\CPTNumericDataType.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\Foundation\Model\S\UUID.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\GLKit\Model\S\GLKMatrix2.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\GLKit\Model\S\GLKMatrix3.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\GLKit\Model\S\GLKMatrix4.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\GLKit\Model\S\GLKQuaternion.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\GLKit\Model\S\GLKVector2.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\GLKit\Model\S\GLKVector3.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\GLKit\Model\S\GLKVector4.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\QTKit\Model\S\TimeRecord.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\QTKit\Model\S\SMPTETime.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\QTKit\Model\S\AudioBufferList.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\QTKit\Model\S\AudioBuffer.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

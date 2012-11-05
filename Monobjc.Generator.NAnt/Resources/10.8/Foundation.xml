@@ -2316,19 +2316,13 @@
 		</Protocol>
 	</Protocols>
 	<Structures>
-		<Structure name="NSDecimal">
-		</Structure>
-		<Structure name="NSInteger">
-		</Structure>
-		<Structure name="NSPoint">
-		</Structure>
-		<Structure name="NSRange">
-		</Structure>
-		<Structure name="NSRect">
-		</Structure>
-		<Structure name="NSSize">
-		</Structure>
-		<Structure name="NSUInteger">
-		</Structure>
+		<Structure name="NSDecimal" />
+		<Structure name="NSInteger" />
+		<Structure name="NSPoint" />
+		<Structure name="NSRange" />
+		<Structure name="NSRect" />
+		<Structure name="NSSize" />
+		<Structure name="NSUInteger" />
+		<Structure name="UUID" />
 	</Structures>
 </Framework>

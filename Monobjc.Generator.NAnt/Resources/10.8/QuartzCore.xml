@@ -429,6 +429,8 @@ enum
 		</Protocol>
 	</Protocols>
 	<Structures>
+		<Structure name="CATransform3D" />
+		<Structure name="CVSMPTETime" />
 		<Structure name="CVTimeStamp" />
 	</Structures>
 	<Enumerations>

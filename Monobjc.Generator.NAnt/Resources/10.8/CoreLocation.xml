@@ -69,7 +69,6 @@
 		</Protocol>
 	</Protocols>
 	<Structures>
+		<Structure name="CLLocationCoordinate2D" />
 	</Structures>
-	<Enumerations>
-	</Enumerations>
 </Framework>

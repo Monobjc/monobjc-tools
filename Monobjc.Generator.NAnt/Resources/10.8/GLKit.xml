@@ -171,7 +171,12 @@
 		</Protocol>
 	</Protocols>
 	<Structures>
+		<Structure name="GLKMatrix2"/>
+		<Structure name="GLKMatrix3"/>
+		<Structure name="GLKMatrix4"/>
+		<Structure name="GLKQuaternion"/>
+		<Structure name="GLKVector2"/>
+		<Structure name="GLKVector3"/>
+		<Structure name="GLKVector4"/>
 	</Structures>
-	<Enumerations>
-	</Enumerations>
 </Framework>

@@ -158,7 +158,7 @@
 	-->
 	<target name="convert" depends="process">
 		<!-- Convert Model documents to XHTML -->
-		<xhtml-to-model dir="${data.dir}" mappings="Resources/Mappings.xml" methods="${methods}" report="${data.dir}/xhtml-to-model.log" mapping-report="${data.dir}/mapping.log">
+		<xhtml-to-model dir="${data.dir}" mappings="Resources/Mappings.xml" methods="${methods}" report="${data.dir}/xhtml-to-model.log" mapping-report="${data.dir}/Mappings.txt">
 			<docset refid="10.8" />
 			<framework-set refid="all" />
 		</xhtml-to-model>
@@ -232,14 +232,25 @@
 	================================================================================
 	-->
 	<target name="analyze" depends="process">
+		<!-- Find deprecation inside documentation 
 		<find-deprecation dir="${data.dir}" report="${data.dir}/find-deprecation.log">
 			<docset refid="10.8" />
 			<framework-set refid="docset" />
 		</find-deprecation>
+		-->
+		
+		<!-- Find delegates 
 		<find-delegate dir="${data.dir}" report="${data.dir}/find-delegate.log">
 			<docset refid="10.8" />
 			<framework-set refid="docset" />
 		</find-delegate>
+		-->
+		
+		<!-- Generate mapping file -->
+		<generate-mapping dir="${data.dir}" mapping-report="${data.dir}/Mappings.txt" mixed-types="${data.dir}/MixedTypes.txt" mappings="${data.dir}/Mappings.xml">
+			<docset refid="10.8" />
+			<framework-set refid="docset" />
+		</generate-mapping>
 	</target>
 
 	<!--

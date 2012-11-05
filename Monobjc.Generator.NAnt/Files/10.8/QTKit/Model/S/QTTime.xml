@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Structure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Override="false" Flags="false">
+<Structure Generate="true">
 	<Name>QTTIme</Name>
 	<Namespace>QTKit</Namespace>
 	<MixedType>QTTIme,QTTIme64</MixedType>

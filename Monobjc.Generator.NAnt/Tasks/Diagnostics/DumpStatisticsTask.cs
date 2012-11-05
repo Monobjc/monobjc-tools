@@ -4,7 +4,6 @@ using System.IO;
 using NAnt.Core;
 using NAnt.Core.Attributes;
 using Monobjc.Tools.Generator.Model;
-using Monobjc.Tools.Generator.Parsers;
 
 namespace Monobjc.Tools.Generator.NAnt
 {
