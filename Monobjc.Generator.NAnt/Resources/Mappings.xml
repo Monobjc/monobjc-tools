@@ -346,6 +346,8 @@
 	<Mapping type="OSType">uint</Mapping>
 	<Mapping type="Protocol *">IntPtr</Mapping>
 	<Mapping type="QTVisualContextRef">IntPtr</Mapping>
+	<Mapping type="SCNVector3 *">ref:SCNVector3</Mapping>
+	<Mapping type="SCNVector4 *">ref:SCNVector4</Mapping>
 	<Mapping type="SEL *">IntPtr</Mapping>
 	<Mapping type="SEL">IntPtr</Mapping>
 	<Mapping type="SInt32 *">ref:int</Mapping>

@@ -68,6 +68,9 @@
 		<Class name="SCNPyramid">
 			<File>SceneKit/Reference/SCNPyramid_Class/Reference/SCNPyramid.html</File>
 		</Class>
+		<Class name="SCNRenderer">
+			<File>SceneKit/Reference/SCNRenderer_Class/Reference/SCNRenderer.html</File>
+		</Class>l
 		<Class name="SCNScene">
 			<File>SceneKit/Reference/SCNScene_Class/Reference/SCNScene.html</File>
 		</Class>
@@ -105,12 +108,21 @@
 					<With><![CDATA[]]></With>
 				</Replace>
 			</Patch>
-		</Class>
-		<Class name="SCNTorus">
+		</Class><Class name="SCNTorus">
 			<File>SceneKit/Reference/SCNTorus_Class/Reference/SCNTorus.html</File>
 		</Class>
 		<Class name="SCNTransaction">
 			<File>SceneKit/Reference/SCNTransaction_Class/Introduction/SCNTransaction.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public static void SetValueForKey]]></Source>
+					<With><![CDATA[public new static void SetValueForKey]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public static Id ValueForKey]]></Source>
+					<With><![CDATA[public new static Id ValueForKey]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="SCNTube">
 			<File>SceneKit/Reference/SCNTube_Class/Reference/SCNTube.html</File>
@@ -148,7 +160,7 @@
 		</Protocol>
 	</Protocols>
 	<Structures>
+		<Structure name="SCNVector3" />
+		<Structure name="SCNVector4" />
 	</Structures>
-	<Enumerations>
-	</Enumerations>
 </Framework>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SCNRenderer Class Reference</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta id="book-resource-type" name="book-resource-type" content="Reference">
+    <script>String.prototype.cleanUpURL=function(){var c,b="",a=this;if(this.match("#")){b="#"+this.split("#")[1];a=this.split("#")[0]}a=a.replace(/\/\.\/|([^:])\/\//g,"$1/");if(a==="./"){return""+b}while(a!==c){c=a;a=a.replace(/[\/][^\/]+\/+\.\.\//,"/")}a=a.replace(/^.[^\/]+\/+\.\.\//,"");return a+b};(function(){var a="../../../../../";var c=window.location.pathname;var b=(c.slice(0,c.lastIndexOf("/"))+"/"+a).cleanUpURL();if(top.location.href==window.location.href){if("createTouch" in document){if(document.getElementById("book-resource-type").content!=="Standalone"){switch(navigator.platform){case"iPad":window.location.replace(a+"ipad/#"+c.replace(b,"")+window.location.hash);break;case"iPhone":break}}}else{window.location.replace(a+(window.location.protocol=="file:"?"index.html":"")+"#"+c.replace(b,"").cleanUpURL()+window.location.hash)}}})();</script>
+    <meta scheme="apple_ref" id="identifier" name="identifier" content="//apple_ref/doc/uid/TP40012014">
+	<meta id="document-version" name="document-version" content="1.0.4">
+    <meta id="chapterId" name="chapterId" content="TP40012014-CLSCHSCNRenderer">
+    <meta id="date" name="date" content="2012-10-25">
+    <meta id="description" name="description" content="Describes a Scene Kit renderer for rendering a scene into an arbitrary low-level OpenGL context.">
+    <meta id="book-title" name="book-title" content="SCNRenderer Class Reference">
+    <meta id="book-root" name="book-root" content="../">
+    <meta id="book-json" name="book-json" content="../book.json">
+    <meta id="book-assignments" name="book-assignments" content="{Type/Reference}, {Framework/Media Layer/SceneKit}">
+    <meta name="pdf" contents="../SCNRenderer_Class.pdf" /><link id="book-pdf" media="print" rel="alternate" type="application/pdf" href="../SCNRenderer_Class.pdf" />
+    
+    <meta id="generator" name="generator" content="Gutenberg 30477">
+    <meta name='numbat' content='aa879094b666337fdcde744b62fbff30'>
+    <meta id="copyright" name="copyright" content="Copyright 2012 Apple Inc. All Rights Reserved.">
+    <meta name = "viewport" content = "width = device-width" >
+    <meta id="xcode-display" name="xcode-display" content="render">
+    <meta id="IndexTitle" name="IndexTitle" content="SCNRenderer Class Reference">
+    <meta id="resources-uri" name="resources-uri" content="../../../../../Resources/673">
+    <link id="book-index-page" rel="Start" title="SCNRenderer Class Reference" type="text/html" href="../index.html">
+    <link id="next-page" rel="Next" type="text/html" href="../History/History.html">
+    <link id="previous-page" rel="Prev" type="text/html" href="">
+    <link rel="stylesheet" type="text/css" href="../../../../../Resources/673/CSS/ac_media.css" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../../../../Resources/673/CSS/devpubs.css" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../../../../Resources/673/CSS/docs.css" charset="utf-8">
+    <!--[if IE]><link rel="stylesheet" type="text/css" href="../../../../../Resources/673/CSS/ie.css"><![endif]-->
+    
+</head>    
+<body><a name="//apple_ref/doc/uid/TP40012014-CLSCHSCNRenderer" title="SCNRenderer"></a>
+    <article id="contents" tabindex="0" role="main">
+        <div id="pageNavigationLinks_top" class="pageNavigationLinks">
+            <a class='nextLink' rel='next' href='../History/History.html'>Next</a>
+        </div>
+        <a id="top" name="top"></a>
+        <a id="INDEX" href="../index.html" style="display:none;"></a>
+        
+        <a name="//apple_ref/doc/uid/TP40012014" title="SCNRenderer"></a><a name="//apple_ref/occ/cl/SCNRenderer" title="SCNRenderer"></a><a name="//apple_ref/doc/c_ref/SCNRenderer" title="SCNRenderer"></a><a name="//apple_ref/doc/uid/TP40012014-CLSCHSCNRenderer-SW1" title="SCNRenderer"></a><h1 id="pageTitle">SCNRenderer Class Reference</h1><div class="spec_sheet_info_box"><table cellspacing="0" class="specbox"><tr><td scope="row"><strong><span class="InheritsFrom">Inherits from</span></strong></td><td><div class="zSharedSpecBoxHeadList"><a href="../../../../Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html#//apple_ref/occ/cl/NSObject">NSObject</a></div></td></tr><tr><td scope="row"><strong><span class="noWrap">Conforms to</span></strong></td><td><div class="zSharedSpecBoxHeadList"><span class="content_text"><a href="../../SCNSceneRenderer_Protocol/Reference/SCNSceneRenderer.html#//apple_ref/occ/intf/SCNSceneRenderer">SCNSceneRenderer</a></span><br/><span class="content_text"><a href="../../../../Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject.html#//apple_ref/occ/intf/NSObject">NSObject (NSObject)</a></span><br/></div></td></tr><tr><td scope="row"><strong><span class="FrameworkPath">Framework</span></strong></td><td><div class="zSharedSpecBoxHeadList">/System/Library/Frameworks/<a href="../../SceneKit_Framework/_index.html#//apple_ref/doc/uid/TP40012283">SceneKit.framework</a></div></td></tr><tr><td scope="row"><strong>Availability</strong></td><td><div class="zSharedSpecBoxHeadList"><div>Available in OS X v10.8 and later.</div></div></td></tr><tr><td scope="row"><strong><span class="DeclaredIn">Declared in</span></strong></td><td><div class="zSharedSpecBoxHeadList"><span class="content_text">SCNRenderer.h</span><br/></div></td></tr></table></div><div id="Overview_section" class="zClassDescription"><a name="//apple_ref/doc/uid/TP40012014-CLSCHSCNRenderer-DontLinkElementID_1" title="Overview"></a><h2 class="jump zClassDescription_Name">Overview</h2><p class="abstract"> The <code>SCNRenderer</code> class implements <code>SCNSceneRenderer</code> protocol and allows rendering of a scene into an arbitrary low-level OpenGL context. </p></div><div id="Tasks_section" class="zMethodsByTask"><a name="//apple_ref/doc/uid/TP40012014-CLSCHSCNRenderer-DontLinkElementID_2" title="Tasks"></a><h2 class="jump zMethodsByTask_Name">Tasks</h2>
+<a name="//apple_ref/doc/uid/TP40012014-CLSCHSCNRenderer-SW2" title="Rendering a Scene"></a>
+		<h3 class="tasks">Rendering a Scene</h3>
+		
+		
+		
+		
+		<ul class="tooltip">
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/instm/SCNRenderer/render">&#8211;&#xA0;render</a></code>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='Renders the updated scene at the current time to the target context.'></span>
+                    
+                </span></li>
+			
+		</ul>
+
+
+<a name="//apple_ref/doc/uid/TP40012014-CLSCHSCNRenderer-SW6" title="Specifying a Scene"></a>
+		<h3 class="tasks">Specifying a Scene</h3>
+		
+		
+		
+		
+		<ul class="tooltip">
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/instp/SCNRenderer/scene">&#xA0;&#xA0;scene</a></code><span class="task_api_suffix">&#160;&#160;property</span>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='The scene associated with the <code>SCNRenderer</code> object.'></span>
+                    
+                </span></li>
+			
+		</ul>
+
+
+<a name="//apple_ref/doc/uid/TP40012014-CLSCHSCNRenderer-SW7" title="Creating a New Renderer"></a>
+		<h3 class="tasks">Creating a New Renderer</h3>
+		
+		
+		
+		
+		<ul class="tooltip">
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/clm/SCNRenderer/rendererWithContext:options:">+&#xA0;rendererWithContext:options:</a></code>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='Creates and returns an <code>SCNRenderer</code> instance with the render target specified by the Core OpenGL context.'></span>
+                    
+                </span></li>
+			
+		</ul>
+
+
+</div><a name="//apple_ref/doc/uid/TP40012014-CLSCHSCNRenderer-DontLinkElementID_3" title="Properties"></a><h2 class="jump">Properties</h2><div class="api propertyObjC"><a name="//apple_ref/occ/instp/SCNRenderer/scene" title="scene"></a><a name="//apple_ref/occ/instm/SCNRenderer/setScene:" title="scene"></a><a name="//apple_ref/occ/instm/SCNRenderer/scene" title="scene"></a><a name="//apple_ref/doc/uid/TP40012014-CLSCHSCNRenderer-SW5" title="scene"></a><a name="//apple_ref/doc/uid/TP40012014-CLSCHSCNRenderer-DontLinkElementID_6"></a><h3 class="jump propertyObjC method_property">scene</h3><p class="abstract">The scene associated with the <code>SCNRenderer</code> object.</p><div class="declaration"><div class="declaration">@property(nonatomic, retain) <a href="../../SCNScene_Class/Reference/SCNScene.html#//apple_ref/doc/c_ref/SCNScene">SCNScene</a> *scene;</div></div><div class="api availability"><h5>Availability</h5><ul><li>Available in OS X v10.8 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">SCNRenderer.h</code></div></div><a name="//apple_ref/doc/uid/TP40012014-CLSCHSCNRenderer-DontLinkElementID_4" title="Class Methods"></a><h2 class="jump">Class Methods</h2><div class="api classMethod"><a name="//apple_ref/occ/clm/SCNRenderer/rendererWithContext:options:" title="rendererWithContext:options:"></a><a name="//apple_ref/doc/uid/TP40012014-CLSCHSCNRenderer-SW4" title="rendererWithContext:options:"></a><a name="//apple_ref/doc/uid/TP40012014-CLSCHSCNRenderer-DontLinkElementID_7"></a><h3 class="jump classMethod">rendererWithContext:options:</h3><p class="abstract">Creates and returns an <code>SCNRenderer</code> instance with the render target specified by the Core OpenGL context.</p><div class="declaration">+ (SCNRenderer *)rendererWithContext:(void *)<em>context</em> options:(<a href="../../../../Cocoa/Reference/Foundation/Classes/NSDictionary_Class/Reference/Reference.html#//apple_ref/doc/c_ref/NSDictionary">NSDictionary</a> *)<em>options</em>; </div><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>context</em></dt><dd><p>A Core OpenGL render context that is used as the render target (usually a CGLContextObj).</p></dd><dt><em>options</em></dt><dd><p>An optional dictionary for future extensions.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>A new instance of <code>SCNRenderer</code> that will use <em>context</em> as the render target.</p></div>   <div class="api availability"><h5>Availability</h5><ul><li>Available in OS X v10.8 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">SCNRenderer.h</code></div></div><div id="InstanceMethods_section" class="zInstanceMethods"><a name="//apple_ref/doc/uid/TP40012014-CLSCHSCNRenderer-DontLinkElementID_5" title="Instance Methods"></a><h2 class="jump">Instance Methods</h2><div class="api instanceMethod"><a name="//apple_ref/occ/instm/SCNRenderer/render" title="render"></a><a name="//apple_ref/doc/uid/TP40012014-CLSCHSCNRenderer-SW3" title="render"></a><a name="//apple_ref/doc/uid/TP40012014-CLSCHSCNRenderer-DontLinkElementID_8"></a><h3 class="jump instanceMethod">render</h3><p class="abstract">Renders the updated scene at the current time to the target context.</p><div class="declaration">- (void) render; </div><div class="api availability"><h5>Availability</h5><ul><li>Available in OS X v10.8 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">SCNRenderer.h</code></div></div></div>
+
+
+
+
+
+
+
+
+        <div id="pageNavigationLinks_bottom" class="pageNavigationLinks">
+            <a class='nextLink' rel='next' href='../History/History.html'>Next</a>
+        </div><br/>
+        <div class="copyright"><br/><hr /><div align="center"><p class="content_text" lang="en" dir="ltr"> &#x00a9; 2012 Apple Inc. All Rights Reserved. &#40;Last updated: 2012-10-25&#041;</p></div></div>
+
+        <div id="feedbackForm" class="hideOnPrint" style="margin-left: auto; margin-right: auto; width: 38em; margin-bottom: 15px; margin-top: 15px; font-weight: bold; color: #333333; background: #d9d9d9; padding: 5px 10px 5px 10px; height: 15px; text-align: center; -webkit-border-radius: 12px; -moz-border-radius: 12px; vertical-align: middle;">
+    Did this document help you?
+    <span class="tooltip" data-abstract="<b>Yes:</b> Tell us what works for you.">
+       <a href="/feedback/?v=1" class='urlLink'>Yes</a>
+    </span>
+    <span class="tooltip" data-abstract="<b>It's good, but:</b> Report typos, inaccuracies, and so forth.">
+        <a href="/feedback/?v=2" class='urlLink'>It's good, but...</a>
+    </span>
+    <span class="tooltip" data-abstract="<b>Not helpful:</b> Tell us what would have helped.">
+        <a href="/feedback/?v=3" class='urlLink'>Not helpful...</a>
+    </span>
+</div>
+        <div id="globalfooter" class="hideInXcode hideOnPrint">
+    <p class="gf-buy">Shop the <a href="http://www.apple.com/store/" target="_top">Apple Online Store</a> (1-800-MY-APPLE), visit an <a href="http://www.apple.com/retail/" target="_top">Apple Retail Store</a>, or find a <a href="http://www.apple.com/buy/locator/" target="_top">reseller</a>.</p>
+
+<ul class="gf-links piped">
+	<li><a class="first" href="http://lists.apple.com/" target="_top">Mailing Lists</a></li>
+	<li><a href="http://developer.apple.com/rss/" target="_top">RSS Feeds</a></li>
+</ul>
+
+<div class="gf-sosumi">
+    <p>Copyright &copy; 2010 Apple Inc. All rights reserved.</p>
+    <ul class="piped">
+    <li><a href="http://www.apple.com/legal/terms/site.html" class="first" target="_top">Terms of Use</a></li>
+    <li><a href="http://www.apple.com/legal/privacy/" target="_top">Privacy Policy</a></li>
+    </ul>
+</div>
+    </div><!--/globalfooter-->
+    </article>
+</body>
+<script charset="utf-8" src="../../../../../Resources/673/JavaScript/lib/prototype.js"></script>
+<!-- Media player includes -->
+<script charset="utf-8" src="../../../../../Resources/673/JavaScript/lib/scriptaculous.js"></script>
+<script charset="utf-8" src="../../../../../Resources/673/JavaScript/lib/event_mixins.js"></script>
+<script charset="utf-8" src="../../../../../Resources/673/JavaScript/lib/browserdetect.js"></script>
+<script charset="utf-8" src="../../../../../Resources/673/JavaScript/lib/ac_media.js"></script>
+<!-- /Media player includes -->
+<script charset="utf-8" src="../../../../../Resources/673/JavaScript/devpubs.js"></script>
+<script charset="utf-8" src="../../../../../Resources/673/JavaScript/book.js"></script>
+<script charset="utf-8" src="../../../../../Resources/673/JavaScript/tasks.js"></script>
+<script type="text/javascript" src="/library/webstats/pagetracker.js"></script>
+<script type="text/javascript">
+if(typeof PageTracker !== 'undefined') {
+  if(window.addEventListener) {
+    window.addEventListener("load", function(){PageTracker.logPageLoad()},false);
+  } else if(window.attachEvent) {
+    window.attachEvent("onload",function(){PageTracker.logPageLoad()});
+  }
+}
+</script>
+</html>

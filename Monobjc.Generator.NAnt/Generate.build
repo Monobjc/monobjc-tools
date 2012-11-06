@@ -80,6 +80,8 @@
 		<!-- Copy any prepared files -->
 		<copy todir="${data.dir}">
 			<fileset basedir="${data.dir}/Files">
+				<include name="**/*.html" />
+				<include name="**/*.xhtml" />
 				<include name="**/*.xml" />
 			</fileset>
 		</copy>

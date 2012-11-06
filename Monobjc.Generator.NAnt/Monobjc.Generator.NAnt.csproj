@@ -90,6 +90,11 @@
     <Folder Include="Files\10.8\GLKit\" />
     <Folder Include="Files\10.8\GLKit\Model\" />
     <Folder Include="Files\10.8\GLKit\Model\S\" />
+    <Folder Include="Files\10.8\SceneKit\" />
+    <Folder Include="Files\10.8\SceneKit\Html\" />
+    <Folder Include="Files\10.8\SceneKit\Html\C\" />
+    <Folder Include="Files\10.8\SceneKit\Model\" />
+    <Folder Include="Files\10.8\SceneKit\Model\S\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Generate.build">
@@ -476,6 +481,12 @@
     <Content Include="Files\10.8\QTKit\Model\S\AudioBuffer.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Files\10.8\SceneKit\Model\S\SCNVector3.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\SceneKit\Model\S\SCNVector4.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\doxygen.cfg" />
@@ -530,6 +541,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Files\10.8\AVFoundation\Html\C\AVMediaSelectionOption.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\SceneKit\Html\C\SCNRenderer.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
