@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Framework name="WebKit.DOM" usings="Foundation,AppKit,WebKit" assembly="Monobjc.WebKit" source="Doxygen" style="Doxygen" path="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/WebKit.framework/Headers">
+<Framework name="WebKit.DOM" usings="AppKit,Foundation,WebKit" assembly="Monobjc.WebKit" source="Doxygen" style="Doxygen" path="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/WebKit.framework/Headers">
 	<Types />
 	<Classes>
 		<Class type="C" name="DOMAbstractView" />
@@ -214,7 +214,11 @@
 		<Class type="C" name="DOMNodeIterator" />
 		<Class type="C" name="DOMNodeList" />
 		<Class type="C" name="DOMNotation" />
-		<Class type="C" name="DOMObject" />
+		<Class type="C" name="DOMObject">
+			<Patch type="Model">
+				<Change><![CDATA[Constants["_internal"].Generate=false]]></Change>
+			</Patch>
+		</Class>
 		<Class type="C" name="DOMObject_DOMLinkStyle">
 			<Patch type="Model">
 				<Change>AdditionFor="DOMObject"</Change>
@@ -430,11 +434,15 @@
 		<Class type="C" name="DOMCSSPrimitiveValue_Definitions">
 			<Patch type="Model">
 				<Change>AdditionFor="DOMCSSPrimitiveValue"</Change>
+				<Change><![CDATA[Enumerations["@0"].Name="DOMCSSUnitType"]]></Change>
+				<Change><![CDATA[Enumerations["DOMCSSUnitType"].BaseType="ushort"]]></Change>
 			</Patch>
 		</Class>
 		<Class type="C" name="DOMCSSRule_Definitions">
 			<Patch type="Model">
 				<Change>AdditionFor="DOMCSSRule"</Change>
+				<Change><![CDATA[Enumerations["@1"].Name="DOMCSSRuleType"]]></Change>
+				<Change><![CDATA[Enumerations["DOMCSSRuleType"].BaseType="ushort"]]></Change>
 			</Patch>
 		</Class>
 		<Class type="C" name="DOMCSSRuleList_Definitions">
@@ -465,6 +473,8 @@
 		<Class type="C" name="DOMCSSValue_Definitions">
 			<Patch type="Model">
 				<Change>AdditionFor="DOMCSSValue"</Change>
+				<Change><![CDATA[Enumerations["@2"].Name="DOMCSSValueType"]]></Change>
+				<Change><![CDATA[Enumerations["DOMCSSValueType"].BaseType="ushort"]]></Change>
 			</Patch>
 		</Class>
 		<Class type="C" name="DOMCSSValueList_Definitions">
@@ -490,6 +500,8 @@
 		<Class type="C" name="DOMElement_Definitions">
 			<Patch type="Model">
 				<Change>AdditionFor="DOMElement"</Change>
+				<Change><![CDATA[Enumerations["@3"].Name="DOMElementInput"]]></Change>
+				<Change><![CDATA[Enumerations["DOMElementInput"].BaseType="int"]]></Change>
 			</Patch>
 		</Class>
 		<Class type="C" name="DOMEntity_Definitions">
@@ -505,11 +517,14 @@
 		<Class type="C" name="DOMEvent_Definitions">
 			<Patch type="Model">
 				<Change>AdditionFor="DOMEvent"</Change>
+				<Change><![CDATA[Enumerations["@4"].Name="DOMEventPhase"]]></Change>
+				<Change><![CDATA[Enumerations["DOMEventPhase"].BaseType="ushort"]]></Change>
 			</Patch>
 		</Class>
 		<Class type="C" name="DOMEventException_Definitions">
 			<Patch type="Model">
 				<Change>AdditionFor="DOMEventException"</Change>
+				<Change><![CDATA[Enumerations["DOMEventExceptionCode"].BaseType="int"]]></Change>
 			</Patch>
 		</Class>
 		<Class type="C" name="DOMEventListener_Definitions">
@@ -530,6 +545,7 @@
 		<Class type="C" name="DOMException_Definitions">
 			<Patch type="Model">
 				<Change>AdditionFor="DOMException"</Change>
+				<Change><![CDATA[Enumerations["DOMExceptionCode"].BaseType="int"]]></Change>
 			</Patch>
 		</Class>
 		<Class type="C" name="DOMExtensions_Definitions">
@@ -845,6 +861,8 @@
 		<Class type="C" name="DOMKeyboardEvent_Definitions">
 			<Patch type="Model">
 				<Change>AdditionFor="DOMKeyboardEvent"</Change>
+				<Change><![CDATA[Enumerations["@5"].Name="DOMKeyLocation"]]></Change>
+				<Change><![CDATA[Enumerations["DOMKeyLocation"].BaseType="uint"]]></Change>
 			</Patch>
 		</Class>
 		<Class type="C" name="DOMMediaList_Definitions">
@@ -860,6 +878,8 @@
 		<Class type="C" name="DOMMutationEvent_Definitions">
 			<Patch type="Model">
 				<Change>AdditionFor="DOMMutationEvent"</Change>
+				<Change><![CDATA[Enumerations["@6"].Name="DOMAttributeChange"]]></Change>
+				<Change><![CDATA[Enumerations["DOMAttributeChange"].BaseType="ushort"]]></Change>
 			</Patch>
 		</Class>
 		<Class type="C" name="DOMNamedNodeMap_Definitions">
@@ -870,11 +890,16 @@
 		<Class type="C" name="DOMNode_Definitions">
 			<Patch type="Model">
 				<Change>AdditionFor="DOMNode"</Change>
+				<Change><![CDATA[Enumerations["@7"].Name="DOMNodeType"]]></Change>
+				<Change><![CDATA[Enumerations["DOMNodeType"].BaseType="ushort"]]></Change>
 			</Patch>
 		</Class>
 		<Class type="C" name="DOMNodeFilter_Definitions">
 			<Patch type="Model">
 				<Change>AdditionFor="DOMNodeFilter"</Change>
+				<Change><![CDATA[Enumerations["@8"].Name="DOMNodeFilterResult"]]></Change>
+				<Change><![CDATA[Enumerations["DOMNodeFilterResult"].BaseType="short"]]></Change>
+				<Change><![CDATA[Enumerations["DOMNodeFilterResult"].Values["DOM_SHOW_ALL"].Value="-1"]]></Change>
 			</Patch>
 		</Class>
 		<Class type="C" name="DOMNodeIterator_Definitions">
@@ -900,6 +925,8 @@
 		<Class type="C" name="DOMOverflowEvent_Definitions">
 			<Patch type="Model">
 				<Change>AdditionFor="DOMOverflowEvent"</Change>
+				<Change><![CDATA[Enumerations["@9"].Name="DOMOverflowOrientation"]]></Change>
+				<Change><![CDATA[Enumerations["DOMOverflowOrientation"].BaseType="ushort"]]></Change>
 			</Patch>
 		</Class>
 		<Class type="C" name="DOMProcessingInstruction_Definitions">
@@ -915,11 +942,14 @@
 		<Class type="C" name="DOMRange_Definitions">
 			<Patch type="Model">
 				<Change>AdditionFor="DOMRange"</Change>
+				<Change><![CDATA[Enumerations["@10"].Name="DOMRangeOffset"]]></Change>
+				<Change><![CDATA[Enumerations["DOMRangeOffset"].BaseType="int"]]></Change>
 			</Patch>
 		</Class>
 		<Class type="C" name="DOMRangeException_Definitions">
 			<Patch type="Model">
 				<Change>AdditionFor="DOMRangeException"</Change>
+				<Change><![CDATA[Enumerations["DOMRangeExceptionCode"].BaseType="int"]]></Change>
 			</Patch>
 		</Class>
 		<Class type="C" name="DOMRanges_Definitions">
@@ -990,6 +1020,7 @@
 		<Class type="C" name="DOMXPathException_Definitions">
 			<Patch type="Model">
 				<Change>AdditionFor="DOMXPathException"</Change>
+				<Change><![CDATA[Enumerations["DOMXPathExceptionCode"].BaseType="int"]]></Change>
 			</Patch>
 		</Class>
 		<Class type="C" name="DOMXPathExpression_Definitions">
@@ -1005,6 +1036,8 @@
 		<Class type="C" name="DOMXPathResult_Definitions">
 			<Patch type="Model">
 				<Change>AdditionFor="DOMXPathResult"</Change>
+				<Change><![CDATA[Enumerations["@11"].Name="DOMXPathResultType"]]></Change>
+				<Change><![CDATA[Enumerations["DOMXPathResultType"].BaseType="ushort"]]></Change>
 			</Patch>
 		</Class>
 		<Class type="C" name="HIWebView_Definitions">

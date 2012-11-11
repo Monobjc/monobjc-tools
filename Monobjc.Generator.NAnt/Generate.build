@@ -133,6 +133,23 @@
 		<!-- Copy only header files from frameworks -->
 		<doxygen-copy-headers dir="${data.dir}">
 			<framework-set refid="doxygen" />
+			<filterchain>
+				<replacestring from="AVAILABLE_WEBKIT_VERSION_1_0_AND_LATER_BUT_DEPRECATED_IN_WEBKIT_VERSION_3_0" to=""/>
+				<replacestring from="AVAILABLE_WEBKIT_VERSION_1_0_AND_LATER_BUT_DEPRECATED_IN_WEBKIT_VERSION_4_0" to=""/>
+				<replacestring from="AVAILABLE_WEBKIT_VERSION_1_3_AND_LATER_BUT_DEPRECATED_IN_WEBKIT_VERSION_3_0" to=""/>
+				<replacestring from="AVAILABLE_WEBKIT_VERSION_1_3_AND_LATER_BUT_DEPRECATED_AFTER_WEBKIT_VERSION_5_1" to=""/>
+				<replacestring from="AVAILABLE_WEBKIT_VERSION_3_0_AND_LATER_BUT_DEPRECATED" to=""/>
+				<replacestring from="AVAILABLE_WEBKIT_VERSION_3_0_AND_LATER" to=""/>
+				<replacestring from="AVAILABLE_IN_WEBKIT_VERSION_4_0" to=""/>
+				<replacestring from="AVAILABLE_IN_WEBKIT_VERSION_4_1" to=""/>
+				<replacestring from="AVAILABLE_AFTER_WEBKIT_VERSION_5_1" to=""/>
+				<replacestring from="WEBKIT_OBJC_METHOD_ANNOTATION" to=""/>
+				<replacestring from="WEBKIT_VERSION_MAX_ALLOWED >= WEBKIT_VERSION_1_3" to="1"/>
+				<replacestring from="WEBKIT_VERSION_MAX_ALLOWED >= WEBKIT_VERSION_3_0" to="1"/>
+				<replacestring from="WEBKIT_VERSION_MAX_ALLOWED >= WEBKIT_VERSION_4_0" to="1"/>
+				<replacestring from="WEBKIT_VERSION_MAX_ALLOWED >= WEBKIT_VERSION_5_1" to="1"/>
+				<replacestring from="WEBKIT_VERSION_MAX_ALLOWED >= WEBKIT_VERSION_LATEST" to="1"/>
+			</filterchain>
 		</doxygen-copy-headers>
 		
 		<!-- Launch Doxygen -->

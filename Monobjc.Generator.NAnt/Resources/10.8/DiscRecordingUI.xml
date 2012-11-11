@@ -1,23 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="DiscRecordingUI" usings="Foundation,AppKit" assembly="Monobjc.DiscRecordingUI" source="DocSet">
+<Framework name="DiscRecordingUI" usings="AppKit,Foundation,DiscRecording" assembly="Monobjc.DiscRecordingUI" source="DocSet">
 	<Types>
 		<Type name="DiscRecordingUIResources_Header">
 			<File>DiscRecordingUI/Reference/DiscRecordingUIResources_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="DRBurnProgressPanel_Header">
 			<File>DiscRecordingUI/Reference/DRBurnProgressPanel_header_reference/Reference/reference.html</File>
 		</Type>
 		<Type name="DRBurnSession_Header">
 			<File>DiscRecordingUI/Reference/DRBurnSession_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[/* <!--a-->use<!--/a--> <!--a-->defaults<!--/a--> <!--a-->for<!--/a--> <!--a-->all<!--/a--> <!--a-->the<!--/a--> <!--a-->options<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/*
+   <!--a-->Report<!--/a--> <!--a-->all<!--/a--> <!--a-->status<!--/a--> <!--a-->changes<!--/a--> <!--a-->in<!--/a--> <!--a-->detail<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* <!--a-->use<!--/a--> <!--a-->defaults<!--/a--> <!--a-->for<!--/a--> <!--a-->all<!--/a--> <!--a-->the<!--/a--> <!--a-->options<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* <!--a-->Force<!--/a--> <!--a-->discs<!--/a--> <!--a-->to<!--/a--> <!--a-->be<!--/a--> <!--a-->closed<!--/a--> (<!--a-->not<!--/a--> <!--a-->appendable<!--/a-->) */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/*
+   Don'<!--a-->t<!--/a--> <!--a-->handle<!--/a--> <!--a-->media<!--/a--> reservations. <!--a-->Application<!--/a--> <!--a-->handles<!--/a--> <!--a-->them<!--/a--> <!--a-->itself<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* <!--a-->Allow<!--/a--> <!--a-->the<!--/a--> <!--a-->user<!--/a--> <!--a-->to<!--/a--> <!--a-->perform<!--/a--> <!--a-->a<!--/a--> <!--a-->test<!--/a--> <!--a-->burn<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["DRBurnSessionBeginProgressDialog"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRBurnSessionCreate"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRBurnSessionGetBurn"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRBurnSessionGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRBurnSessionSetBurn"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DRBurnSessionSetupDialog"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["Burn_Progress_Dialog_Option_Flags"].Name="DRBurnSessionProgressDialogOptionFlags"]]></Change>
+				<Change><![CDATA[Enumerations["DRBurnSessionProgressDialogOptionFlags"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["DRBurnSessionProgressDialogOptionFlags"].Flags=true]]></Change>
+				<Change><![CDATA[Enumerations["Burn_Session_Dialog_Result_Codes"].Name="DRBurnSessionDialogResult"]]></Change>
+				<Change><![CDATA[Enumerations["DRBurnSessionDialogResult"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["Burn_Setup_Dialog_Option_Flags"].Name="DRBurnSessionSetupDialogOptionFlags"]]></Change>
+				<Change><![CDATA[Enumerations["DRBurnSessionSetupDialogOptionFlags"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["DRBurnSessionSetupDialogOptionFlags"].Flags=true]]></Change>
+				<Change><![CDATA[Enumerations["DRBurnSessionProgressDialogOptions_struct_version"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["DRBurnSessionSetupCallbacks_struct_version"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["DRBurnSessionSetupDialogOptions_struct_version"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["kDRBurnProgressSetupCallbacksCurrentVersion_struct_version"].Generate=false]]></Change>
+			</Patch>
 		</Type>
 		<Type name="DRBurnSetupPanel_Header">
 			<File>DiscRecordingUI/Reference/DRBurnSetupPanel_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="DREraseProgressPanel_Header">
 			<File>DiscRecordingUI/Reference/DREraseProgressPanel_header_reference/Reference/reference.html</File>
 		</Type>
 		<Type name="DREraseSession_Header">
 			<File>DiscRecordingUI/Reference/DREraseSession_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[/* <!--a-->use<!--/a--> <!--a-->defaults<!--/a--> <!--a-->for<!--/a--> <!--a-->all<!--/a--> <!--a-->the<!--/a--> <!--a-->options<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* <!--a-->use<!--/a--> <!--a-->defaults<!--/a--> <!--a-->for<!--/a--> <!--a-->all<!--/a--> <!--a-->the<!--/a--> <!--a-->options<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/*
+   Don'<!--a-->t<!--/a--> <!--a-->handle<!--/a--> <!--a-->media<!--/a--> reservations. <!--a-->Application<!--/a--> <!--a-->handles<!--/a--> <!--a-->them<!--/a--> <!--a-->itself<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["DREraseSessionBeginProgressDialog"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DREraseSessionCreate"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DREraseSessionGetErase"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DREraseSessionGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DREraseSessionSetErase"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["DREraseSessionSetupDialog"].Generate=false]]></Change>
+				
+				<Change><![CDATA[Enumerations["Erase_Progress_Dialog_Option_Flags"].Name="DREraseSessionProgressDialogOptionFlags"]]></Change>
+				<Change><![CDATA[Enumerations["DREraseSessionProgressDialogOptionFlags"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["DREraseSessionProgressDialogOptionFlags"].Flags=true]]></Change>
+				<Change><![CDATA[Enumerations["Erase_Session_Dialog_Result_Codes"].Name="DREraseSessionDialogResult"]]></Change>
+				<Change><![CDATA[Enumerations["DREraseSessionDialogResult"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["Erase_Setup_Dialog_Option_Flags"].Name="DREraseSessionSetupDialogOptionFlags"]]></Change>
+				<Change><![CDATA[Enumerations["DREraseSessionSetupDialogOptionFlags"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["DREraseSessionSetupDialogOptionFlags"].Flags=true]]></Change>
+				
+				<Change><![CDATA[Enumerations["DREraseSessionProgressDialogOptions_struct_version"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["DREraseSessionSetupCallbacks_struct_version"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["DREraseSessionSetupDialogOptions_struct_version"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["kDREraseProgressSetupCallbacksCurrentVersion_struct_version"].Generate=false]]></Change>
+			</Patch>
 		</Type>
 		<Type name="DRSetupPanel_Header">
 			<File>DiscRecordingUI/Reference/DRSetupPanel_header_reference/Reference/reference.html</File>

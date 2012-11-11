@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="WebKit" usings="Foundation,AppKit" assembly="Monobjc.WebKit" source="DocSet">
+<Framework name="WebKit" usings="AppKit,Foundation,WebKit.DOM" assembly="Monobjc.WebKit" source="DocSet">
 	<Types>
 		<Type name="WebKitFramework.Constants">
 			<File>Cocoa/Reference/WebKit/Miscellaneous/WebKit_Constants/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["WebKit_Policy_Errors"].Name="WebKitPolicyError"]]></Change>
+				<Change><![CDATA[Enumerations["WebKitPolicyError"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["WebKit_Plug_in_and_Java_Errors"].Name="WebKitPlugInError"]]></Change>
+				<Change><![CDATA[Enumerations["WebKitPlugInError"].BaseType="NSInteger"]]></Change>
+			</Patch>
 		</Type>
 	</Types>
 	<Classes>
@@ -74,12 +80,21 @@
 		</Class>
 		<Class name="WebFrame">
 			<File>Cocoa/Reference/WebKit/Classes/WebFrame_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["GlobalContext"].Generate=false]]></Change>
+			</Patch>
 		</Class>
 		<Class name="WebFrameView">
 			<File>Cocoa/Reference/WebKit/Classes/WebFrameView_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["DocumentView"].Type="IWebDocumentView"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="WebHistory">
 			<File>Cocoa/Reference/WebKit/Classes/WebHistory_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["OrderedItemsLastVisitedOnDay"].Generate=false]]></Change>
+			</Patch>
 		</Class>
 		<Class name="WebHistoryItem">
 			<File>Cocoa/Reference/WebKit/Classes/WebHistoryItem_Class/Reference/Reference.html</File>
@@ -92,6 +107,9 @@
 		</Class>
 		<Class name="WebScriptObject">
 			<File>Cocoa/Reference/WebKit/Classes/WebScriptObject_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["JSObject"].Generate=false]]></Change>
+			</Patch>
 		</Class>
 		<Class name="WebUndefined">
 			<File>Cocoa/Reference/WebKit/Classes/WebUndefined_Class/Reference/Reference.html</File>
@@ -117,13 +135,21 @@
 			<Patch type="Model">
 				<Change><![CDATA[DelegateFor="WebDownload"]]></Change>
 				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[BaseType="NSURLDownloadDelegate"]]></Change>
 			</Patch>
 		</Protocol>
 		<Protocol name="WebEditingDelegate">
 			<File>Cocoa/Reference/WebKit/Protocols/WebEditingDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["WebViewInsertAction"].BaseType="int"]]></Change>
+			</Patch>
 		</Protocol>
 		<Protocol name="WebFrameLoadDelegate">
 			<File>Cocoa/Reference/WebKit/Protocols/WebFrameLoadDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="WebView"]]></Change>
+				<Change><![CDATA[DelegateProperty="FrameLoadDelegate"]]></Change>
+			</Patch>
 		</Protocol>
 		<Protocol name="WebFrameLoadDelegate.Deprecated">
 			<File>Cocoa/Reference/WebKit/Protocols/WebFrameLoadDelegate_Protocol/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
@@ -151,15 +177,34 @@
 		</Protocol>
 		<Protocol name="WebPolicyDelegate">
 			<File>Cocoa/Reference/WebKit/Protocols/WebPolicyDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="WebView"]]></Change>
+				<Change><![CDATA[DelegateProperty="PolicyDelegate"]]></Change>
+				<Change><![CDATA[Enumerations["WebNavigationType"].BaseType="int"]]></Change>
+			</Patch>
 		</Protocol>
 		<Protocol name="WebResourceLoadDelegate">
 			<File>Cocoa/Reference/WebKit/Protocols/WebResourceLoadDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="WebView"]]></Change>
+				<Change><![CDATA[DelegateProperty="ResourceLoadDelegate"]]></Change>
+			</Patch>
 		</Protocol>
 		<Protocol name="WebScripting">
 			<File>Cocoa/Reference/WebKit/Protocols/WebScripting_Protocol/Reference/Reference.html</File>
 		</Protocol>
 		<Protocol name="WebUIDelegate">
 			<File>Cocoa/Reference/WebKit/Protocols/WebUIDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="WebView"]]></Change>
+				<Change><![CDATA[DelegateProperty="UIDelegate"]]></Change>
+				<Change><![CDATA[Enumerations["Menu_Item_Tags"].Name="WebMenuItemTag"]]></Change>
+				<Change><![CDATA[Enumerations["WebMenuItemTag"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["WebDragDestinationAction"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["WebDragDestinationAction"].Values["WebDragDestinationActionAny"].Value="UInt32.MaxValue"]]></Change>
+				<Change><![CDATA[Enumerations["WebDragSourceAction"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["WebDragSourceAction"].Values["WebDragSourceActionAny"].Value="UInt32.MaxValue"]]></Change>
+			</Patch>
 		</Protocol>
 		<Protocol name="WebUIDelegate.Deprecated">
 			<File>Cocoa/Reference/WebKit/Protocols/WebUIDelegate_Protocol/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
@@ -168,8 +213,4 @@
 			</Patch>
 		</Protocol>
 	</Protocols>
-	<Structures>
-	</Structures>
-	<Enumerations>
-	</Enumerations>
 </Framework>

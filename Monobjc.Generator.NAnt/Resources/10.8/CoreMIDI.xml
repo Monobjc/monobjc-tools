@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="CoreMIDI" usings="Foundation" assembly="Monobjc.CoreMIDI" source="DocSet">
+<Framework name="CoreMIDI" usings="Foundation" assembly="Monobjc.CoreMIDI" source="DocSet" style="Classic">
 	<Types>
 		<Type name="MIDIServices">
+			<File>MusicAudio/Reference/CACoreMIDIRef/MIDIServices/index.html</File>
 		</Type>
 		<Type name="MIDISetup">
+			<File>MusicAudio/Reference/CACoreMIDIRef/MIDISetup/index.html</File>
 		</Type>
 		<Type name="MIDIThruConnection">
+			<File>MusicAudio/Reference/CACoreMIDIRef/MIDIThruConnection/index.html</File>
+		</Type>
+		<Type name="MIDIDriver">
+			<File>MusicAudio/Reference/CACoreMIDIServerRef/MIDIDriver/index.html</File>
 		</Type>
 	</Types>
 </Framework>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using NAnt.Core;
 using NAnt.Core.Attributes;
+using NAnt.Core.Filters;
 using NAnt.Core.Tasks;
 using NAnt.Core.Types;
 using Monobjc.Tools.Generator.Model;
@@ -12,6 +13,12 @@ namespace Monobjc.Tools.Generator.NAnt
 	[TaskName("doxygen-copy-headers")]
 	public class DoxygenCopyHeadersTask : BaseTask
 	{
+		/// <summary>
+		/// Gets or sets the filters.
+		/// </summary>
+		[BuildElement ("filterchain")]
+		public FilterChain Filters { get; set; }
+
 		/// <summary>
 		/// Executes the task.
 		/// </summary>
@@ -41,7 +48,7 @@ namespace Monobjc.Tools.Generator.NAnt
 					copyTask.ToDirectory = new DirectoryInfo(Path.Combine(baseFolder, f.name, DocumentType.Source.ToString()));
 				}
 				copyTask.CopyFileSet = fileSet;
-
+				copyTask.Filters = this.Filters;
 				copyTask.Execute();
 			}
 		}
