@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="ApplicationServices" usings="Foundation,AppKit" assembly="Monobjc.AppKit" source="DocSet">
+<Framework name="ApplicationServices" usings="AppKit,Foundation" assembly="Monobjc.AppKit" source="DocSet">
 	<Types>
 		<Type name="CoreTextUtilities">
 			<File>Carbon/Reference/CoreText_Utilities_Ref/Reference/reference.html</File>
@@ -201,4 +201,7 @@
 	<Structures>
 		<Structure name="CTParagraphStyleSetting" />
 	</Structures>
+	<Enumerations>
+		<Enumeration name="CTFontManagerError" />
+	</Enumerations>
 </Framework>

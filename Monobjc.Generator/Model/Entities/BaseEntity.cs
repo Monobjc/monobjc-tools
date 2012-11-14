@@ -123,8 +123,8 @@ namespace Monobjc.Tools.Generator.Model
 		/// </summary>
 		public void AdjustAvailability ()
 		{
-			String minAvailability = "VERSION";
-			String maxAvailability = "VERSION";
+			String minAvailability = String.IsNullOrEmpty(this.MinAvailability) ? "VERSION" : this.MinAvailability;
+			String maxAvailability = String.IsNullOrEmpty(this.MaxAvailability) ? "VERSION" : this.MaxAvailability;
 
 			foreach (BaseEntity value in this.Children.Where(c => c.Generate)) {
 				string valueMinAvailability = value.MinAvailability ?? String.Empty;

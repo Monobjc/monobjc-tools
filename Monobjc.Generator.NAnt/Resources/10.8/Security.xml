@@ -249,6 +249,7 @@
 				<Change><![CDATA[Functions["SecPolicySetValue"].Parameters["value"].IsByRef=true]]></Change>
 				<Change><![CDATA[Functions["SecPolicySetValue"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecPolicySearchGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecTrustGetCSSMAnchorCertificates"].Parameters["cssmAnchors"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecTrustGetCssmResult"].Parameters["result"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecTrustGetCssmResult"].Parameters["result"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecTrustGetCssmResult"].Generate=false]]></Change>
@@ -257,7 +258,10 @@
 				<Change><![CDATA[Functions["SecTrustGetCssmResultCode"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecTrustGetResult"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecTrustGetTPHandle"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecTrustGetUserTrust"].Parameters["trustSetting"].Type="SecTrustResultType"]]></Change>
+				<Change><![CDATA[Functions["SecTrustGetUserTrust"].Parameters["trustSetting"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecTrustSetParameters"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["SecTrustSetUserTrust"].Parameters["trustSetting"].Type="SecTrustResultType"]]></Change>
 			</Patch>
 		</Type>
 		<Type name="CodeSigning">

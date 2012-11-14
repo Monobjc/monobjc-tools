@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure Generate="true">
+	<Name>CGDataProviderCallbacks</Name>
+	<Namespace>ApplicationServices</Namespace>
+	<MixedType>CGDataProviderCallbacks,CGDataProviderCallbacks</MixedType>
+</Structure>

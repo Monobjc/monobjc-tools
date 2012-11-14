@@ -189,9 +189,9 @@ namespace Monobjc.Tools.Generator.Generators
 
 				this.Writer.WriteLineFormat (4, "if (this.{0} != null)", methodEntity.Name);
 				this.Writer.WriteLineFormat (4, "{{");
-				this.Writer.WriteLineFormat (5, "foreach({0}EventHandler handler in this.{0}.GetInvocationList())", methodEntity.Name);
+				this.Writer.WriteLineFormat (5, "foreach(Delegate handler in this.{0}.GetInvocationList())", methodEntity.Name);
 				this.Writer.WriteLineFormat (5, "{{");
-				this.Writer.WriteLineFormat (6, "this.{0} -= handler;", methodEntity.Name);
+				this.Writer.WriteLineFormat (6, "this.{0} -= ({0}EventHandler) handler;", methodEntity.Name);
 				this.Writer.WriteLineFormat (5, "}}");
 				this.Writer.WriteLineFormat (4, "}}");
 

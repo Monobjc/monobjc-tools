@@ -95,6 +95,9 @@
     <Folder Include="Files\10.8\SceneKit\Html\C\" />
     <Folder Include="Files\10.8\SceneKit\Model\" />
     <Folder Include="Files\10.8\SceneKit\Model\S\" />
+    <Folder Include="Files\10.8\CoreMIDI\" />
+    <Folder Include="Files\10.8\CoreMIDI\Model\" />
+    <Folder Include="Files\10.8\CoreMIDI\Model\S\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Generate.build">
@@ -487,6 +490,33 @@
     <Content Include="Files\10.8\SceneKit\Model\S\SCNVector4.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Files\10.8\CoreMIDI\Model\S\MIDINotification.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\CoreMIDI\Model\S\MIDIObjectAddRemoveNotification.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\CoreMIDI\Model\S\MIDIObjectPropertyChangeNotification.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\CoreMIDI\Model\S\MIDIPacket.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\CoreMIDI\Model\S\MIDIPacketList.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\CoreMIDI\Model\S\MIDISysexSendRequest.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\CoreMIDI\Model\S\MIDIThruConnectionEndpoint.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\CoreMIDI\Model\S\MIDIThruConnectionParams.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\10.8\CoreMIDI\Model\S\MIDITransform.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\doxygen.cfg" />
@@ -544,6 +574,21 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Files\10.8\SceneKit\Html\C\SCNRenderer.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\ApplicationServices\Model\S\CGDataConsumerCallbacks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\ApplicationServices\Model\S\CGDataProviderCallbacks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\ApplicationServices\Model\S\CGDataProviderDirectAccessCallbacks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\ApplicationServices\Model\S\CGDataProviderDirectCallbacks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\10.8\ApplicationServices\Model\S\CGDataProviderSequentialCallbacks.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

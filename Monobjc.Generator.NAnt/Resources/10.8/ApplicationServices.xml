@@ -114,15 +114,15 @@
 		<Type name="CGDataProvider">
 			<File>GraphicsImaging/Reference/CGDataProvider/Reference/reference.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Functions["CGDataProviderCreateDirect"].Parameters["size"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["CGDataProviderCreateDirect"].Parameters["callbacks"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["CGDataProviderCreateSequential"].Parameters["callbacks"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["CGDataProviderCreateWithFilename"].Parameters["filename"].Type="String"]]></Change>
 				<Change><![CDATA[Functions["CGDataProviderGetTypeID"].Generate=false]]></Change>
 			</Patch>
 		</Type>
 		<Type name="CGDataProvider.Deprecated">
 			<File>GraphicsImaging/Reference/CGDataProvider/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGDataProviderCreateDirect"].Parameters["size"].Type="IntPtr"]]></Change>
+			</Patch>
 		</Type>
 		<Type name="CGFont">
 			<File>GraphicsImaging/Reference/CGFont/Reference/reference.html</File>
@@ -425,6 +425,11 @@
 	</Classes>
 	<Structures>
 		<Structure name="CGAffineTransform" />
+		<Structure name="CGDataConsumerCallbacks" />
+		<Structure name="CGDataProviderCallbacks" />
+		<Structure name="CGDataProviderDirectAccessCallbacks" />
+		<Structure name="CGDataProviderDirectCallbacks" />
+		<Structure name="CGDataProviderSequentialCallbacks" />
 		<Structure name="CGFloat" />
 		<Structure name="CGPoint" />
 		<Structure name="CGRect" />
@@ -432,6 +437,5 @@
 	</Structures>
 	<Enumerations>
 		<Enumeration name="CGRectEdge" />
-		<Enumeration name="CTFontManagerError" />
 	</Enumerations>
 </Framework>

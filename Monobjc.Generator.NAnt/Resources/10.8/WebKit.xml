@@ -134,13 +134,15 @@
 		<Protocol name="WebDownloadDelegate">
 			<Patch type="Model">
 				<Change><![CDATA[DelegateFor="WebDownload"]]></Change>
-				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[DelegateProperty="DownloadDelegate"]]></Change>
 				<Change><![CDATA[BaseType="NSURLDownloadDelegate"]]></Change>
 			</Patch>
 		</Protocol>
 		<Protocol name="WebEditingDelegate">
 			<File>Cocoa/Reference/WebKit/Protocols/WebEditingDelegate_Protocol/Reference/Reference.html</File>
 			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="WebView"]]></Change>
+				<Change><![CDATA[DelegateProperty="EditingDelegate"]]></Change>
 				<Change><![CDATA[Enumerations["WebViewInsertAction"].BaseType="int"]]></Change>
 			</Patch>
 		</Protocol>

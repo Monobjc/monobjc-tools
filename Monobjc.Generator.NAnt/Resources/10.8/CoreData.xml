@@ -45,6 +45,18 @@
 					<With><![CDATA[= 0<!--a-->x02,<!--/a-->]]></With>
 				</Replace>
 			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public partial class NSFetchRequest : NSPersistentStoreRequest]]></Source>
+					<With><![CDATA[public partial class NSFetchRequest :
+#if MACOSX_10_7
+        NSPersistentStoreRequest
+#else
+        NSObject
+#endif
+]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="NSFetchRequestExpression">
 			<File>Cocoa/Reference/NSFetchRequestExpression_class/Reference/NSFetchRequestExpression.html</File>
@@ -59,10 +71,10 @@
 		<Class name="NSIncrementalStoreNode">
 			<File>CoreData/Reference/NSIncrementalStoreNode_Class/Reference/NSIncrementalStoreNode.html</File>
 			<Patch type="Generated">
-        <Replace>
-          <Source><![CDATA[public virtual ulong Version]]></Source>
-          <With><![CDATA[public new ulong Version]]></With>
-        </Replace>
+				<Replace>
+					<Source><![CDATA[public virtual ulong Version]]></Source>
+					<With><![CDATA[public new ulong Version]]></With>
+				</Replace>
 			</Patch>
 		</Class>
 		<Class name="NSManagedObject">
@@ -71,10 +83,10 @@
 				<Change><![CDATA[Methods["ValidateValueForKeyError"].Parameters["value"].Type="IntPtr"]]></Change>
 			</Patch>
 			<Patch type="Generated">
-        <Replace>
-          <Source><![CDATA[public virtual Id ObservationInfo]]></Source>
-          <With><![CDATA[public new Id ObservationInfo]]></With>
-        </Replace>
+				<Replace>
+					<Source><![CDATA[public virtual Id ObservationInfo]]></Source>
+					<With><![CDATA[public new Id ObservationInfo]]></With>
+				</Replace>
 			</Patch>
 		</Class>
 		<Class name="NSManagedObjectContext">
