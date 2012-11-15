@@ -50,6 +50,7 @@
 				<Change><![CDATA[Enumerations["CWSecurityMode"].BaseType="NSInteger"]]></Change>
 				<Change><![CDATA[Enumerations["kCWParamErr"].Name="CWErrorCodes"]]></Change>
 				<Change><![CDATA[Enumerations["CWErrorCodes"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CWErrorCodes"].Generate=false]]></Change>
 				<Change><![CDATA[Enumerations["CWSecurity"].Values["kCWSecurityUnknown"].Value="Int32.MaxValue"]]></Change>
 			</Patch>
 			<Patch type="Generated">

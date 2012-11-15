@@ -93,7 +93,13 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
 				this.Logger.WriteLine ("SKIPPING define statement: " + name);
 				return null;
 			}
+			
+			// Trim down signature
+			while (signature.IndexOf("  ") != -1) {
+				signature = signature.Replace ("  ", " ");
+			}
 			functionEntity.Signature = signature;
+			//Console.WriteLine("signature='" + signature + "'");
 
 			// Extract abstract
 			IEnumerable<XElement> abstractElements = elements.SkipWhile (el => el.Name != "p").TakeWhile (el => el.Name == "p");
@@ -134,6 +140,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
 					String parameterType = "NOTYPE";
 					String parameterName = "NONAME";
 
+					//Console.WriteLine("parameter='" + parameter + "'");
 					Match r = PARAMETER_REGEX.Match (parameter);
 					if (r.Success) {
 						parameterType = r.Groups [2].Value.Trim ();

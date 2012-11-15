@@ -69,7 +69,9 @@
 			<File>SceneKit/Reference/SCNPyramid_Class/Reference/SCNPyramid.html</File>
 		</Class>
 		<Class name="SCNRenderer">
+			<!-- Not yet published for OS X
 			<File>SceneKit/Reference/SCNRenderer_Class/Reference/SCNRenderer.html</File>
+			-->
 		</Class>l
 		<Class name="SCNScene">
 			<File>SceneKit/Reference/SCNScene_Class/Reference/SCNScene.html</File>

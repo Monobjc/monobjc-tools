@@ -8,6 +8,7 @@
 			<Patch type="Model">
 				<Change><![CDATA[Properties["Proximity"].Type="EKAlarmProximity"]]></Change>
 				<Change><![CDATA[Enumerations["EKAlarmType"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["EKAlarmType"].MinAvailability="OS X v10.8"]]></Change>
 				<Change><![CDATA[Enumerations["EKAlarmProximity"].BaseType="NSInteger"]]></Change>
 			</Patch>
 		</Class>
@@ -72,6 +73,7 @@
 				<Change><![CDATA[Enumerations["EKSourceType"].BaseType="NSInteger"]]></Change>
 				<Change><![CDATA[Enumerations["EKEntityType"].BaseType="NSInteger"]]></Change>
 				<Change><![CDATA[Enumerations["EKEntityMask"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["EKEntityMask"].MinAvailability="OS X v10.8"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="EKStructuredLocation">

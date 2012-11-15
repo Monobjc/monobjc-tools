@@ -410,6 +410,9 @@ enum {
 			<!-- Not yet published for OS X
 			<File>AVFoundation/Reference/AVVideoCompositionValidationHandling_Protocol/Reference/Reference.html</File>
 			-->
+			<Patch type="Model">
+				<Change><![CDATA[MinAvailability="OS X v10.7"]]></Change>
+			</Patch>
 		</Protocol>
 	</Protocols>
 </Framework>

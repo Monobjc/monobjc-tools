@@ -81,7 +81,13 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
 				this.Logger.WriteLine ("SKIPPING define statement: " + name);
 				return null;
 			}
+			
+			// Trim down signature
+			while (signature.IndexOf("  ") != -1) {
+				signature = signature.Replace ("  ", " ");
+			}
 			functionEntity.Signature = signature;
+			//Console.WriteLine("signature='" + signature + "'");
 
 			// Parse signature
 			int pos = signature.IndexOf (name);
@@ -94,22 +100,19 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
 			parameters = parameters.Trim (';', '(', ')');
 			if (parameters != "void") {
 				foreach (string parameter in parameters.Split(new []{','}, StringSplitOptions.RemoveEmptyEntries)) {
-					String parameterType;
-					String parameterName;
+					String parameterType = "NOTYPE";
+					String parameterName = "NONAME";
 
-					String param = parameter;
-					while (param.IndexOf("  ") != -1) {
-						param = param.Replace ("  ", " ");
-					}
-					Match r = PARAMETER_REGEX.Match (param);
+					//Console.WriteLine("parameter='" + parameter + "'");
+					Match r = PARAMETER_REGEX.Match (parameter);
 					if (r.Success) {
 						parameterType = r.Groups [2].Value.Trim ();
 						parameterName = r.Groups [3].Value.Trim ();
-					} else if (param.Trim () == "...") {
+					} else if (parameter.Trim () == "...") {
 						parameterType = "params Object[]";
 						parameterName = "values";
 					} else {
-						this.Logger.WriteLine ("FAILED to parse parameter: " + param);
+						this.Logger.WriteLine ("FAILED to parse parameter: " + parameter);
 						return null;
 					}
 					parameterType = parameterType.Trim ();
