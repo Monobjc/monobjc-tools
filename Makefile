@@ -25,8 +25,8 @@ export MONOBJC_VERSION?=5.0
 # Set the tools
 export CPC?=rsync -a
 export MKDIR?=mkdir -p
-export RMF?=rm -Rf
-export XBUILD?=xbuild /p:Configuration=Release /verbosity:quiet
+export RMRF?=rm -Rf
+export XBUILD?=xbuild /p:Configuration=Release /verbosity:minimal
 
 PROJECTS= \
 	Monobjc.Tools \
@@ -61,10 +61,12 @@ clean:
 		($(XBUILD) /p:OutDir=$(BUILD_DIR)/$$i/ $$i/$$i.csproj /t:Clean); \
 	done;
 	$(XBUILD) $(GENERATOR)/$(GENERATOR).csproj /t:Clean
-	$(RMF) "$(BUILD_DIR)"
-	$(RMF) "$(DIST_DIR)"
+	$(RMRF) "$(BUILD_DIR)"
+	$(RMRF) "$(DIST_DIR)"
 
-generate: $(MARKER_FILE)
+generate-doc:
+
+generate-wrappers: $(MARKER_FILE)
 
 $(MARKER_FILE): $(GENERATOR_FILES)
 	$(XBUILD) $(GENERATOR)/$(GENERATOR).csproj
