@@ -412,6 +412,10 @@ enum {
 			-->
 			<Patch type="Model">
 				<Change><![CDATA[MinAvailability="OS X v10.7"]]></Change>
+				<Change><![CDATA[Methods["VideoCompositionShouldContinueValidatingAfterFindingEmptyTimeRange"].MinAvailability="OS X v10.7"]]></Change>
+				<Change><![CDATA[Methods["VideoCompositionShouldContinueValidatingAfterFindingInvalidTimeRangeInInstruction"].MinAvailability="OS X v10.7"]]></Change>
+				<Change><![CDATA[Methods["VideoCompositionShouldContinueValidatingAfterFindingInvalidTrackIDInInstructionLayerInstructionAsset"].MinAvailability="OS X v10.7"]]></Change>
+				<Change><![CDATA[Methods["VideoCompositionShouldContinueValidatingAfterFindingInvalidValueForKey"].MinAvailability="OS X v10.7"]]></Change>
 			</Patch>
 		</Protocol>
 	</Protocols>

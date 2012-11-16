@@ -14,3 +14,4 @@ _ReSharper*
 libmonobjc.dylib
 monobjc.h
 runtime
+.generated
