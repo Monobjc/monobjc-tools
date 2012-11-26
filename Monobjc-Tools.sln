@@ -6,6 +6,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		GPL.rtf = GPL.rtf
 		Monobjc-Tools.build = Monobjc-Tools.build
 		README = README
+		Makefile = Makefile
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monobjc.Generator", "Monobjc.Generator\Monobjc.Generator.csproj", "{05F4FC5D-33B1-46A0-ADB8-8A6749DA8474}"

@@ -34,7 +34,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="NAnt.Core">
-      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Mono.framework\Versions\Current\share\NAnt\bin\NAnt.Core.dll</HintPath>
+      <HintPath>..\external\NAnt.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -589,6 +589,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Files\10.8\ApplicationServices\Model\S\CGDataProviderSequentialCallbacks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\external\NAnt.exe">
+      <Link>NAnt.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\external\NAnt.exe.config">
+      <Link>NAnt.exe.config</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
