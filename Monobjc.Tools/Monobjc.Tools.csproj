@@ -11,13 +11,13 @@
     <RootNamespace>Monobjc.Tools</RootNamespace>
     <AssemblyName>Monobjc.Tools</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\Monobjc.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>False</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -25,7 +25,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>True</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -164,6 +164,7 @@
     <Compile Include="Xcode\PBXReferenceProxy.cs" />
     <Compile Include="Xcode\ProjectNSWriter.cs" />
     <Compile Include="Xcode\ProjectWriter.cs" />
+    <Compile Include="External\TiffUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Embedded\Info.plist" />
