@@ -165,6 +165,7 @@
     <Compile Include="Xcode\ProjectNSWriter.cs" />
     <Compile Include="Xcode\ProjectWriter.cs" />
     <Compile Include="External\TiffUtil.cs" />
+    <Compile Include="External\IconUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Embedded\Info.plist" />
