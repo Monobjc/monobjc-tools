@@ -17,17 +17,14 @@
 //
 using System.Reflection;
 using System.Resources;
-using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Monobjc Bridge - MSBuild Tasks Library")]
-[assembly: AssemblyDescription("Monobjc Bridge MSBuild Tasks Library")]
+[assembly: AssemblyTitle("Monobjc - MSBuild Tasks Library")]
+[assembly: AssemblyDescription("Monobjc MSBuild Tasks Library")]
 [assembly: AssemblyCompany("Monobjc Project")]
 [assembly: AssemblyProduct("Monobjc Project")]
 [assembly: AssemblyCopyright("Copyright (c) Monobjc Project 2007-2012 - Licensed under General Public License")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en-US")]
-[assembly: ComVisible(false)]
-[assembly: Guid("0e0cb019-09aa-4241-ab20-0ad932b27bc9")]
-[assembly: AssemblyVersionAttribute("4.0.0.0")]
-[assembly: AssemblyFileVersionAttribute("4.0.0.0")]
+[assembly: AssemblyVersionAttribute("5.0.0.0")]
+[assembly: AssemblyFileVersionAttribute("5.0.0.0")]

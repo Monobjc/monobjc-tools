@@ -17,17 +17,14 @@
 //
 using System.Reflection;
 using System.Resources;
-using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Monobjc Bridge - NAnt Tasks Library")]
-[assembly: AssemblyDescription("Monobjc Bridge NAnt Tasks Library")]
+[assembly: AssemblyTitle("Monobjc - Scripting Descriptor Processor")]
+[assembly: AssemblyDescription("Monobjc Scripting Descriptor Processor")]
 [assembly: AssemblyCompany("Monobjc Project")]
 [assembly: AssemblyProduct("Monobjc Project")]
 [assembly: AssemblyCopyright("Copyright (c) Monobjc Project 2007-2012 - Licensed under General Public License")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en-US")]
-[assembly: ComVisible(false)]
-[assembly: Guid("fd36f6cd-6108-4055-9e34-85f1d8f5c98d")]
 [assembly: AssemblyVersionAttribute("4.0.0.0")]
 [assembly: AssemblyFileVersionAttribute("4.0.0.0")]

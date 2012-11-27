@@ -1,6 +1,6 @@
 ﻿//
 // This file is part of Monobjc, a .NET/Objective-C bridge
-// Copyright (C) 2007-2010 - Laurent Etiemble
+// Copyright (C) 2007-2012 - Laurent Etiemble
 //
 // Monobjc is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -17,17 +17,14 @@
 //
 using System.Reflection;
 using System.Resources;
-using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Monobjc Bridge - Class Generator")]
-[assembly: AssemblyDescription("Monobjc Bridge Class Generator")]
+[assembly: AssemblyTitle("Monobjc - Class Generator")]
+[assembly: AssemblyDescription("Monobjc Class Generator")]
 [assembly: AssemblyCompany("Monobjc Project")]
 [assembly: AssemblyProduct("Monobjc Project")]
 [assembly: AssemblyCopyright("Copyright (c) Monobjc Project 2007-2012 - Licensed under General Public License")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en-US")]
-[assembly: ComVisible(false)]
-[assembly: Guid("5711e7b0-b69c-4783-8f07-6f234100ee1c")]
-[assembly: AssemblyVersionAttribute("4.0.0.0")]
-[assembly: AssemblyFileVersionAttribute("4.0.0.0")]
+[assembly: AssemblyVersionAttribute("5.0.0.0")]
+[assembly: AssemblyFileVersionAttribute("5.0.0.0")]

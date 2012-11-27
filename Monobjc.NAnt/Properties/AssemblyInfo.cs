@@ -17,7 +17,6 @@
 //
 using System.Reflection;
 using System.Resources;
-using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("Monobjc Bridge - NAnt Tasks Library")]
 [assembly: AssemblyDescription("Monobjc Bridge NAnt Tasks Library")]
@@ -27,7 +26,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en-US")]
-[assembly: ComVisible(false)]
-[assembly: Guid("007b65f0-ca03-4791-b334-7b70bb144979")]
-[assembly: AssemblyVersionAttribute("4.0.0.0")]
-[assembly: AssemblyFileVersionAttribute("4.0.0.0")]
+[assembly: AssemblyVersionAttribute("5.0.0.0")]
+[assembly: AssemblyFileVersionAttribute("5.0.0.0")]

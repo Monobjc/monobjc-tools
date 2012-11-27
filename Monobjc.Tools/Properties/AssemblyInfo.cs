@@ -17,17 +17,14 @@
 //
 using System.Reflection;
 using System.Resources;
-using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Monobjc Bridge - Tools Library")]
-[assembly: AssemblyDescription("Monobjc Bridge Tools Library")]
+[assembly: AssemblyTitle("Monobjc - Tools Library")]
+[assembly: AssemblyDescription("Monobjc Tools Library")]
 [assembly: AssemblyCompany("Monobjc Project")]
 [assembly: AssemblyProduct("Monobjc Project")]
 [assembly: AssemblyCopyright("Copyright (c) Monobjc Project 2007-2012 - Licensed under General Public License")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en-US")]
-[assembly: ComVisible(false)]
-[assembly: Guid("87AE781E-A6DB-40C7-A714-0E43C1FD144E")]
-[assembly: AssemblyVersionAttribute("4.0.0.0")]
-[assembly: AssemblyFileVersionAttribute("4.0.0.0")]
+[assembly: AssemblyVersionAttribute("5.0.0.0")]
+[assembly: AssemblyFileVersionAttribute("5.0.0.0")]
