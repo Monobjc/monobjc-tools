@@ -17,8 +17,8 @@
 //
 using System;
 using System.Globalization;
-using Monobjc.Tools.Utilities;
 using System.IO;
+using Monobjc.Tools.Utilities;
 
 namespace Monobjc.Tools.External
 {
@@ -33,9 +33,13 @@ namespace Monobjc.Tools.External
 		/// <param name = "mask">The permission mask.</param>
 		/// <param name = "file">The file.</param>
 		/// <returns>The result of the command.</returns>
-		public static void Cat (String outputFile, String inputFile1, params String[] inputFiles)
+		public static void Cat (String outputFile, String[] inputFiles, TextWriter outputWriter = null, TextWriter errorWriter = null)
 		{
-			String arguments = String.Format (CultureInfo.InvariantCulture, "\"{0}\" \"{1}\" \"{2}\"", inputFile1, String.Join("\" \"", inputFiles), outputFile);
+			if (inputFiles.Length < 2) {
+				// TODO: I18N
+				throw new ArgumentException("At least 2 files must be provided", "inputFiles");
+			}
+			String arguments = String.Format (CultureInfo.InvariantCulture, "\"{0}\" \"{1}\"", String.Join("\" \"", inputFiles), outputFile);
 			ProcessHelper helper = new ProcessHelper (Executable, arguments);
 			helper.OutputWriter = outputWriter;
 			helper.ErrorWriter = errorWriter;
