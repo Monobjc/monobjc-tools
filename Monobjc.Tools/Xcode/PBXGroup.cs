@@ -74,6 +74,14 @@ namespace Monobjc.Tools.Xcode
             this.children.Remove(element);
         }
 
+		/// <summary>
+		/// Clear all the children.
+		/// </summary>
+		public void Clear()
+		{
+			this.children.Clear();
+		}
+
         /// <summary>
         ///   Gets or sets the source tree.
         /// </summary>

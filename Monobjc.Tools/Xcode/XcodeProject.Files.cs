@@ -52,6 +52,16 @@ namespace Monobjc.Tools.Xcode
 		}
 
 		/// <summary>
+		///   Gets the group.
+		/// </summary>
+		/// <param name = "groups">The group path.</param>
+		/// <returns></returns>
+		public PBXGroup GetGroup (String groups)
+		{
+			return this.AddGroup(groups);
+		}
+
+		/// <summary>
 		///   Removes the group.
 		/// </summary>
 		/// <param name = "groups">The groups.</param>
@@ -87,6 +97,17 @@ namespace Monobjc.Tools.Xcode
 		}
 
 		/// <summary>
+		///   Gets the group.
+		/// </summary>
+		/// <param name = "groups">The group path.</param>
+		/// <returns></returns>
+		public void ClearGroup(String groups)
+		{
+			PBXGroup group = this.GetGroup (groups);
+			group.Clear();
+		}
+
+		/// <summary>
 		///   Adds the file.
 		/// </summary>
 		/// <param name = "groups">The groups.</param>
@@ -108,7 +129,7 @@ namespace Monobjc.Tools.Xcode
 		{
 			lock (this.syncRoot) {
 				// Prepare the group that will contain the file
-				PBXGroup group = this.AddGroup (groups);
+				PBXGroup group = this.GetGroup (groups);
 				PBXFileReference fileReference = null;
 				PBXFileElement result = null;
 
@@ -175,7 +196,7 @@ namespace Monobjc.Tools.Xcode
 		{
 			lock (this.syncRoot) {
 				// Prepare the group that contains the file
-				PBXGroup group = this.AddGroup (groups);
+				PBXGroup group = this.GetGroup (groups);
 				PBXFileReference fileReference = null;
 				PBXFileElement result = null;
 
