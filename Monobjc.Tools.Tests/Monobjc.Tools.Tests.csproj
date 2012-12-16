@@ -51,6 +51,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ArtworkCombinerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Monobjc.Tools\Monobjc.Tools.csproj">
@@ -87,6 +88,12 @@
     <None Include="Embedded\project-004.pbxproj" />
     <None Include="Embedded\project-005.pbxproj" />
     <None Include="Embedded\project-006.pbxproj" />
+    <None Include="Embedded\calendar-blue.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Embedded\calendar-blue%402x.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

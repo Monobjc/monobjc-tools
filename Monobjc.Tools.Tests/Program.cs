@@ -33,11 +33,11 @@ namespace Monobjc.Tools
 			//pBXProjectGenerationTests.TestProjectGeneration001 ();
 			//pBXProjectGenerationTests.TestProjectGeneration002 ();
 
-			XcodeProjectGenerationTests xcodeProjectGenerationTests = new XcodeProjectGenerationTests();
-			xcodeProjectGenerationTests.TestProjectGeneration001();
-			xcodeProjectGenerationTests.TestProjectGeneration002();
-			xcodeProjectGenerationTests.TestProjectGeneration003();
-			xcodeProjectGenerationTests.TestProjectGeneration004();
+			//XcodeProjectGenerationTests xcodeProjectGenerationTests = new XcodeProjectGenerationTests();
+			//xcodeProjectGenerationTests.TestProjectGeneration001();
+			//xcodeProjectGenerationTests.TestProjectGeneration002();
+			//xcodeProjectGenerationTests.TestProjectGeneration003();
+			//xcodeProjectGenerationTests.TestProjectGeneration004();
 
 			//XIBLoadTests xibLoadTests = new XIBLoadTests();
 			//xibLoadTests.TestMainMenuReading001();
@@ -59,6 +59,9 @@ namespace Monobjc.Tools
 			//pListLoadTests.TestPListReading004();
 			//pListLoadTests.TestPListReading005();
 			//pListLoadTests.TestPListReading010();
+
+			ArtworkCombinerTests artworkCombinerTests = new ArtworkCombinerTests();
+			artworkCombinerTests.TestImageCombination();
 		}
 	}
 }

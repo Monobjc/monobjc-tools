@@ -39,7 +39,14 @@ namespace Monobjc.Tools.External
 				// TODO: I18N
 				throw new ArgumentException("At least 2 files must be provided", "inputFiles");
 			}
-			String arguments = String.Format (CultureInfo.InvariantCulture, "\"{0}\" \"{1}\"", String.Join("\" \"", inputFiles), outputFile);
+			bool upToDate = true;
+			foreach(String inputFile in inputFiles) {
+				upToDate &= FileExtensions.UpToDate(inputFile, outputFile);
+			}
+			if (upToDate) {
+				return;
+			}
+			String arguments = String.Format (CultureInfo.InvariantCulture, "-cathidpicheck \"{0}\" -out \"{1}\"", String.Join("\" \"", inputFiles), outputFile);
 			ProcessHelper helper = new ProcessHelper (Executable, arguments);
 			helper.OutputWriter = outputWriter;
 			helper.ErrorWriter = errorWriter;
