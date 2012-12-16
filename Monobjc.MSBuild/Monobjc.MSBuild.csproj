@@ -59,7 +59,6 @@
     <Compile Include="Tasks\ProductBuilding.cs" />
     <Compile Include="Tasks\CopyRuntime.cs" />
     <Compile Include="Tasks\CopyFrameworks.cs" />
-    <Compile Include="Tasks\ExportToXcode.cs" />
     <Compile Include="Tasks\CallReceigen.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,14 +1,13 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-	<UsingTask TaskName="CallReceigen"      AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
-	<UsingTask TaskName="CompileMomc"       AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
-	<UsingTask TaskName="CompileXib"        AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
-	<UsingTask TaskName="CopyFrameworks"    AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
-	<UsingTask TaskName="CopyRuntime"       AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
-	<UsingTask TaskName="CodeSigning"       AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
-	<UsingTask TaskName="EmbedApplication"  AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
-	<UsingTask TaskName="ExportToXcode"     AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
-	<UsingTask TaskName="GenerateInfoPList" AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
-	<UsingTask TaskName="ProductBuilding"   AssemblyName="Monobjc.MSBuild, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
+	<UsingTask TaskName="CallReceigen"      AssemblyName="Monobjc.MSBuild, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
+	<UsingTask TaskName="CompileMomc"       AssemblyName="Monobjc.MSBuild, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
+	<UsingTask TaskName="CompileXib"        AssemblyName="Monobjc.MSBuild, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
+	<UsingTask TaskName="CopyFrameworks"    AssemblyName="Monobjc.MSBuild, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
+	<UsingTask TaskName="CopyRuntime"       AssemblyName="Monobjc.MSBuild, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
+	<UsingTask TaskName="CodeSigning"       AssemblyName="Monobjc.MSBuild, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
+	<UsingTask TaskName="EmbedApplication"  AssemblyName="Monobjc.MSBuild, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
+	<UsingTask TaskName="GenerateInfoPList" AssemblyName="Monobjc.MSBuild, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
+	<UsingTask TaskName="ProductBuilding"   AssemblyName="Monobjc.MSBuild, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
 
 </Project>
