@@ -177,7 +177,7 @@ namespace Monobjc.Tools.Generators
 
 			// (2) Create the object file
 			this.Logger.LogDebug ("Create object file '" + Path.GetFileName (oFile) + "'...");
-			using (ProcessHelper helper = new ProcessHelper("gcc", string.Format("{0} -c -o \"{1}\" \"{2}\"", this.ArchitectureFlags ?? String.Empty, oFile, sFile))) {
+			using (ProcessHelper helper = new ProcessHelper("cc", string.Format("{0} -c -o \"{1}\" \"{2}\"", this.ArchitectureFlags ?? String.Empty, oFile, sFile))) {
 				helper.Logger = this.Logger;
 				helper.Execute ();
 			}
