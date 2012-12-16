@@ -18,35 +18,37 @@
 using System;
 using System.IO;
 using Microsoft.Build.Framework;
-using Monobjc.Tools.External;
+using Microsoft.Build.Utilities;
+using Monobjc.MSBuild.Utilities;
+using Monobjc.Tools.Generators;
 
 namespace Monobjc.MSBuild.Tasks
 {
-	/// <summary>
-	///   This task generate and signs the application installer.
-	/// </summary>
-	public class ProductBuilding : Signing
-	{
+    public class CombineArtwork : Task
+    {
 		/// <summary>
-		///   Gets or sets the product definition.
+		/// Gets or sets a value indicating whether to do artwork combination.
 		/// </summary>
-		/// <value>The product definition.</value>
-		public ITaskItem ProductDefinition { get; set; }
+		/// <value><c>true</c> to do artwork combination; otherwise, <c>false</c>.</value>
+		public bool DoCombine { get; set; }
 
-		/// <summary>
-		///   Performs the signing.
-		/// </summary>
-		/// <param name = "identity">The identity.</param>
-		protected override bool PerformSigning (String identity)
-		{
-			String productDefinition = null;
-			if (this.ProductDefinition != null && File.Exists (this.ProductDefinition.ItemSpec)) {
-				productDefinition = this.ProductDefinition.ItemSpec;
-			}
+        /// <summary>
+        /// Gets or sets the dir.
+        /// </summary>
+        /// <value>The dir.</value>
+        [Required]
+		public ITaskItem Directory { get; set; }
+		
+        public override bool Execute()
+        {
+			// TODO: I18N
+            this.Log.LogMessage("Combining artwork...");
 
 			using (StringWriter outputWriter = new StringWriter()) {
 				using (StringWriter errorWriter = new StringWriter()) {
-					ProductBuild.ArchiveApplication (this.Bundle.ItemSpec, identity, productDefinition, outputWriter, errorWriter);
+					ArtworkCombiner combiner = new ArtworkCombiner();
+					combiner.Logger = new ExecutionLogger(this);
+					combiner.Combine(this.Directory.ToString(), outputWriter, errorWriter);
 					String outputLog = outputWriter.ToString ();
 					String errorLog = errorWriter.ToString ();
 					this.Log.LogMessage (outputLog);
@@ -55,6 +57,6 @@ namespace Monobjc.MSBuild.Tasks
 			}
 
 			return true;
-		}
-	}
+        }
+    }
 }

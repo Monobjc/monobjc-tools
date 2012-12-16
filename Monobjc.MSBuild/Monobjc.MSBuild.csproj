@@ -60,6 +60,7 @@
     <Compile Include="Tasks\CopyRuntime.cs" />
     <Compile Include="Tasks\CopyFrameworks.cs" />
     <Compile Include="Tasks\CallReceigen.cs" />
+    <Compile Include="Tasks\CombineArtwork.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Monobjc.Tools\Monobjc.Tools.csproj">
