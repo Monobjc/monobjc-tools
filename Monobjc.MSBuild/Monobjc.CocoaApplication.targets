@@ -94,7 +94,7 @@
 		<Copy SkipUnchangedFiles="true" SourceFiles="@(ReferenceCopyLocalPaths)" DestinationFolder="$(ResourcesPath)" />
 		<Copy SkipUnchangedFiles="true" SourceFiles="@(Content)" DestinationFiles="@(Content->'$(ResourcesPath)\%(Identity)')" />
 		
-		<CodeSigning Bundle="$(AppBundlePath)" Identity="$(SigningIdentity)" Entitlements="$(Entitlements)" Condition=" '$(SigningIdentity)' != '' " />
+		<CodeSigning Bundle="$(AppBundlePath)" Identity="$(SigningIdentity)" UseEntitlements="$(UseEntitlements)" Entitlements="$(Entitlements)" Condition=" '$(SigningIdentity)' != '' " />
 	</Target>
   
 	<!--
@@ -149,7 +149,7 @@
 	    <Copy SkipUnchangedFiles="true" SourceFiles="@(Content)" DestinationFiles="@(Content->'$(ResourcesPath)\%(Identity)')" />
 	    <CopyFrameworks Frameworks="$(EmbeddedFrameworks)" ToDirectory="$(FrameworksPath)" />
 
-		<CodeSigning Bundle="$(AppBundlePath)" Identity="$(SigningIdentity)" Entitlements="$(Entitlements)" Condition=" '$(SigningIdentity)' != '' " />
+		<CodeSigning Bundle="$(AppBundlePath)" Identity="$(SigningIdentity)" UseEntitlements="$(UseEntitlements)" Entitlements="$(Entitlements)" Condition=" '$(SigningIdentity)' != '' " />
 	
 	    <CreateItem Include="$(MacOSPath)\*.dylib">
 	      <Output TaskParameter="Include" ItemName="_NativeLibraries" />

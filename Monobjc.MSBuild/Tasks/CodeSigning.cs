@@ -28,6 +28,12 @@ namespace Monobjc.MSBuild.Tasks
 	public class CodeSigning : Signing
 	{
 		/// <summary>
+		/// Gets or sets a value indicating whether to use entitlements or not.
+		/// </summary>
+		/// <value><c>true</c> to use entitlements; otherwise, <c>false</c>.</value>
+		public bool UseEntitlements { get; set; }
+
+		/// <summary>
 		///   Gets or sets the entitlements.
 		/// </summary>
 		/// <value>The entitlements.</value>
@@ -65,7 +71,7 @@ namespace Monobjc.MSBuild.Tasks
 			}
 
 			String entitlements = null;
-			if (this.Entitlements != null && File.Exists (this.Entitlements.ItemSpec)) {
+			if (this.UseEntitlements && this.Entitlements != null && File.Exists (this.Entitlements.ItemSpec)) {
 				entitlements = this.Entitlements.ItemSpec;
 			}
 
