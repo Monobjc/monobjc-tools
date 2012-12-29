@@ -85,7 +85,7 @@ namespace Monobjc.Tools.Utilities
 		/// <summary>
 		///   Executes this external process.
 		/// </summary>
-		public void Execute ()
+		public int Execute ()
 		{
 			bool internalOutput = false;
 			bool internalError = false;
@@ -104,10 +104,13 @@ namespace Monobjc.Tools.Utilities
 				this.process.BeginErrorReadLine ();
 				this.process.BeginOutputReadLine ();
 				this.process.WaitForExit ();
+
+				return this.process.ExitCode;
 			} catch (Exception ex) {
 				if (this.Logger != null) {
 					this.Logger.LogError (ex.ToString ());
 				}
+				return -1;
 			} finally {
 				if (internalOutput) {
 					this.OutputWriter.Dispose ();

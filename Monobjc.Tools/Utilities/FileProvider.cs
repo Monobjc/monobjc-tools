@@ -48,7 +48,7 @@ namespace Monobjc.Tools.Utilities
 				}
 			}
 
-			if (String.IsNullOrEmpty(result)) {
+			if (!String.IsNullOrEmpty(result)) {
 				return result;
 			}
 

@@ -37,8 +37,10 @@ namespace Monobjc.Tools.External
 		{
 			if (inputFiles.Length < 2) {
 				// TODO: I18N
-				throw new ArgumentException("At least 2 files must be provided", "inputFiles");
+				throw new ArgumentException("At least 2 image files must be provided", "inputFiles");
 			}
+
+			// Check if combination is needed
 			bool upToDate = true;
 			foreach(String inputFile in inputFiles) {
 				upToDate &= FileExtensions.UpToDate(inputFile, outputFile);
@@ -46,11 +48,22 @@ namespace Monobjc.Tools.External
 			if (upToDate) {
 				return;
 			}
+
+			// Perform the combination
 			String arguments = String.Format (CultureInfo.InvariantCulture, "-cathidpicheck \"{0}\" -out \"{1}\"", String.Join("\" \"", inputFiles), outputFile);
 			ProcessHelper helper = new ProcessHelper (Executable, arguments);
 			helper.OutputWriter = outputWriter;
 			helper.ErrorWriter = errorWriter;
-			helper.Execute ();
+			int exitCode = helper.Execute ();
+
+			if (exitCode == -1) {
+				return;
+			}
+
+			// Remove sources
+			foreach(String inputFile in inputFiles) {
+				File.Delete(inputFile);
+			}
 		}
 
 		private static string Executable {
