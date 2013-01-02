@@ -36,6 +36,7 @@
     <Reference Include="System.Core" />
     <Reference Include="ICSharpCode.SharpZipLib" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Security" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="External\Chmod.cs" />
@@ -167,6 +168,7 @@
     <Compile Include="External\TiffUtil.cs" />
     <Compile Include="External\IconUtil.cs" />
     <Compile Include="Generators\ArtworkCombiner.cs" />
+    <Compile Include="Generators\ArtworkEncrypter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Embedded\Info.plist" />

@@ -23,17 +23,16 @@ namespace Monobjc.Tools
 {
 	[TestFixture]
 	[Category("Images")]
-	[Category("Combination")]
-	public class ArtworkCombinerTests
+	[Category("Encryption")]
+	public class ArtworkEncrypterTests
 	{
 		[Test]
-		public void TestImageCombination ()
+		public void TestImageEncryption ()
 		{
-			StringWriter outputWriter = new StringWriter ();
-			StringWriter errorWriter = new StringWriter ();
+			File.Copy ("Embedded/application-sidebar-list.nopng", "dummy.png", true);
 
-			ArtworkCombiner combiner = new ArtworkCombiner ();
-			combiner.Combine (".", outputWriter, errorWriter);
+			ArtworkEncrypter encrypter = new ArtworkEncrypter ();
+			encrypter.Encrypt (".", "123");
 		}
 	}
 }

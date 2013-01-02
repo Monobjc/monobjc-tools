@@ -60,8 +60,11 @@ namespace Monobjc.Tools
 			//pListLoadTests.TestPListReading005();
 			//pListLoadTests.TestPListReading010();
 
-			ArtworkCombinerTests artworkCombinerTests = new ArtworkCombinerTests();
-			artworkCombinerTests.TestImageCombination();
+			//ArtworkCombinerTests artworkCombinerTests = new ArtworkCombinerTests();
+			//artworkCombinerTests.TestImageCombination();
+
+			ArtworkEncrypterTests artworkEncrypterTests = new ArtworkEncrypterTests ();
+			artworkEncrypterTests.TestImageEncryption ();
 		}
 	}
 }
