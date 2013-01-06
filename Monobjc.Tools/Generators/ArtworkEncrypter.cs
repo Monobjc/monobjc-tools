@@ -153,7 +153,7 @@ namespace Monobjc.Tools.Generators
 			if (read < 4) {
 				return true;
 			}
-			bool isEncrypted = false;
+			bool isEncrypted = true;
 			isEncrypted &= (header [0] == MAGIC_NUMBER [0]);
 			isEncrypted &= (header [1] == MAGIC_NUMBER [1]);
 			isEncrypted &= (header [2] == MAGIC_NUMBER [2]);
