@@ -95,6 +95,7 @@
 		<Copy SkipUnchangedFiles="true" SourceFiles="@(Content)" DestinationFiles="@(Content->'$(ResourcesPath)\%(Identity)')" />
 		
 		<CombineArtwork DoCombine="$(CombineArtwork)" Directory="$(ResourcesPath)" />
+		<EncryptArtwork DoEncrypt="$(EncryptArtwork)" EncryptionSeed="$(EncryptArtworkSeed)" Directory="$(ResourcesPath)" />
 		
 		<CodeSigning Bundle="$(AppBundlePath)" Identity="$(SigningIdentity)" UseEntitlements="$(UseEntitlements)" Entitlements="$(Entitlements)" Condition=" '$(SigningIdentity)' != '' " />
 	</Target>
@@ -152,6 +153,7 @@
 	    <CopyFrameworks Frameworks="$(EmbeddedFrameworks)" ToDirectory="$(FrameworksPath)" />
 
 		<CombineArtwork DoCombine="$(CombineArtwork)" Directory="$(ResourcesPath)" />
+		<EncryptArtwork DoEncrypt="$(EncryptArtwork)" EncryptionSeed="$(EncryptArtworkSeed)" Directory="$(ResourcesPath)" />
 
 		<CodeSigning Bundle="$(AppBundlePath)" Identity="$(SigningIdentity)" UseEntitlements="$(UseEntitlements)" Entitlements="$(Entitlements)" Condition=" '$(SigningIdentity)' != '' " />
 	

@@ -8,6 +8,7 @@
 	<UsingTask TaskName="CopyFrameworks"    AssemblyName="Monobjc.MSBuild, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
 	<UsingTask TaskName="CopyRuntime"       AssemblyName="Monobjc.MSBuild, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
 	<UsingTask TaskName="EmbedApplication"  AssemblyName="Monobjc.MSBuild, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
+	<UsingTask TaskName="EncryptArtwork"    AssemblyName="Monobjc.MSBuild, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
 	<UsingTask TaskName="GenerateInfoPList" AssemblyName="Monobjc.MSBuild, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
 	<UsingTask TaskName="ProductBuilding"   AssemblyName="Monobjc.MSBuild, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d5a8d181860c16be"/>
 
