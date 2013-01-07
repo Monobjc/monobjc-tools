@@ -70,5 +70,5 @@ generate-wrappers: $(MARKER_FILE)
 
 $(MARKER_FILE): $(GENERATOR_FILES)
 	$(XBUILD) $(GENERATOR)/$(GENERATOR).csproj
-	(cd $(GENERATOR)/bin/Release && nant copy-in-place);
+	(cd $(GENERATOR)/bin/Release && mono NAnt.exe copy-in-place);
 	if [ ! -f $(MARKER_FILE) ]; then touch $(MARKER_FILE); fi;
