@@ -23,6 +23,7 @@
 		<framework descriptor="${data.dir}/Resources/10.8/CoreText.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/Quartz.xml" />
 		<framework descriptor="${data.dir}/Resources/10.8/QuartzCore.xml" />
+		<framework descriptor="${data.dir}/Resources/10.8/OpenGL.xml" />
 	</framework-set>
 	<framework-set id="docset">
 		<framework-set refid="base" />
