@@ -18,6 +18,41 @@
 				<Change><![CDATA[Functions["GLKMatrix3MakeWithArrayAndTranspose"].Parameters["values[9]"].Name="values"]]></Change>
 				<Change><![CDATA[Functions["GLKMatrix3MakeWithArrayAndTranspose"].Parameters["values"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["GLKMatrix3MultiplyVector3Array"].Parameters["vectors"].Type="IntPtr"]]></Change>
+				<!-- Most of the functions are inlined -->
+				<Change><![CDATA[Functions["GLKMatrix3Add"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3GetColumn"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3GetMatrix2"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3GetRow"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3Invert"].Generate=true]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3InvertAndTranspose"].Generate=true]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3Make"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3MakeAndTranspose"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3MakeRotation"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3MakeScale"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3MakeWithArray"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3MakeWithArrayAndTranspose"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3MakeWithColumns"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3MakeWithQuaternion"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3MakeWithRows"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3MakeXRotation"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3MakeYRotation"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3MakeZRotation"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3Multiply"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3MultiplyVector3"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3MultiplyVector3Array"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3Rotate"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3RotateWithVector3"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3RotateWithVector4"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3RotateX"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3RotateY"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3RotateZ"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3Scale"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3ScaleWithVector3"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3ScaleWithVector4"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3SetColumn"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3SetRow"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3Subtract"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMatrix3Transpose"].Generate=false]]></Change>
 			</Patch>
 			<Patch type="Generated">
 				<Replace>
@@ -58,6 +93,28 @@
 				<Change><![CDATA[Functions["GLKQuaternionMakeWithArray"].Parameters["values"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["GLKQuaternionRotateVector3Array"].Parameters["vectors"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["GLKQuaternionRotateVector4Array"].Parameters["vectors"].Type="IntPtr"]]></Change>
+				<!-- Most of the functions are inlined -->
+				<Change><![CDATA[Functions["GLKQuaternionAdd"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionAngle"].Generate=true]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionAxis"].Generate=true]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionConjugate"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionInvert"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionLength"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionMake"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionMakeWithAngleAndAxis"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionMakeWithAngleAndVector3Axis"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionMakeWithArray"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionMakeWithMatrix3"].Generate=true]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionMakeWithMatrix4"].Generate=true]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionMakeWithVector3"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionMultiply"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionNormalize"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionRotateVector3"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionRotateVector3Array"].Generate=true]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionRotateVector4"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionRotateVector4Array"].Generate=true]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionSlerp"].Generate=true]]></Change>
+				<Change><![CDATA[Functions["GLKQuaternionSubtract"].Generate=false]]></Change>
 			</Patch>
 			<Patch type="Generated">
 				<Replace>
@@ -171,12 +228,12 @@
 		</Protocol>
 	</Protocols>
 	<Structures>
-		<Structure name="GLKMatrix2"/>
-		<Structure name="GLKMatrix3"/>
-		<Structure name="GLKMatrix4"/>
-		<Structure name="GLKQuaternion"/>
-		<Structure name="GLKVector2"/>
-		<Structure name="GLKVector3"/>
-		<Structure name="GLKVector4"/>
+		<Structure name="GLKMatrix2" />
+		<Structure name="GLKMatrix3" />
+		<Structure name="GLKMatrix4" />
+		<Structure name="GLKQuaternion" />
+		<Structure name="GLKVector2" />
+		<Structure name="GLKVector3" />
+		<Structure name="GLKVector4" />
 	</Structures>
 </Framework>
