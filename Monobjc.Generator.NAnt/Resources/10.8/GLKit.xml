@@ -3,6 +3,10 @@
 	<Types>
 		<Type name="GLKitFramework.MathUtilities">
 			<File>GLkit/Reference/GLKMathUtils/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["GLKMathDegreesToRadians"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["GLKMathRadiansToDegrees"].Generate=false]]></Change>
+			</Patch>
 		</Type>
 		<Type name="GLKitFramework.EffectsConstants">
 			<File>GLkit/Reference/GLKEffectsConstants/Reference/reference.html</File>
@@ -188,6 +192,7 @@
 		<Type name="GLKVector3">
 			<File>GLkit/Reference/GLKVector3/Reference/reference.html</File>
 			<Patch type="Model">
+				<Change><![CDATA[Generate=false]]></Change>
 				<Change><![CDATA[Functions["GLKVector3MakeWithArray"].Parameters["values[3]"].Name="values"]]></Change>
 				<Change><![CDATA[Functions["GLKVector3MakeWithArray"].Parameters["values"].Type="IntPtr"]]></Change>
 			</Patch>
@@ -201,6 +206,7 @@
 		<Type name="GLKVector4">
 			<File>GLkit/Reference/GLKVector4/Reference/reference.html</File>
 			<Patch type="Model">
+				<Change><![CDATA[Generate=false]]></Change>
 				<Change><![CDATA[Functions["GLKVector4MakeWithArray"].Parameters["values[4]"].Name="values"]]></Change>
 				<Change><![CDATA[Functions["GLKVector4MakeWithArray"].Parameters["values"].Type="IntPtr"]]></Change>
 			</Patch>
