@@ -26,8 +26,6 @@ namespace Monobjc.Tools.Generator.Utilities
 	public class TypeManager
 	{
 		private readonly List<String> Classes = new List<String> ();
-		private readonly List<String> Enumerations = new List<String> ();
-		private readonly List<String> Structures = new List<String> ();
 		private readonly Dictionary<String, String> Mappings = new Dictionary<String, String> ();
 		private IDictionary<String, String> MixedTypes = null;
 		private readonly Dictionary<String, String> samples = new Dictionary<String, String> (); 

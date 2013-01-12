@@ -81,8 +81,8 @@ namespace Monobjc.Tools.Generator.Model
 					this.MixedType = "uint,ulong";
 					break;
 				default:
-					break;
 					this.MixedType = String.Empty;
+					break;
 				}
 			}
 		}
