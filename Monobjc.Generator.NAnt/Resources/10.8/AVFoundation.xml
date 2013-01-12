@@ -222,12 +222,30 @@ enum {
 		</Class>
 		<Class name="AVMutableAudioMix">
 			<File>AVFoundation/Reference/AVMutableAudioMix_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSArray InputParameters]]></Source>
+					<With><![CDATA[public new NSArray InputParameters]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="AVMutableAudioMixInputParameters">
 			<File>AVFoundation/Reference/AVMutableAudioMixInputParameters_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual int TrackID]]></Source>
+					<With><![CDATA[public new int TrackID]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="AVMutableComposition">
 			<File>AVFoundation/Reference/AVMutableComposition_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual CGSize NaturalSize]]></Source>
+					<With><![CDATA[public new CGSize NaturalSize]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="AVMutableComposition.Deprecated">
 			<File>AVFoundation/Reference/AVMutableComposition_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
@@ -237,6 +255,32 @@ enum {
 		</Class>
 		<Class name="AVMutableCompositionTrack">
 			<File>AVFoundation/Reference/AVMutableCompositionTrack_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSString ExtendedLanguageTag]]></Source>
+					<With><![CDATA[public new NSString ExtendedLanguageTag]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSString LanguageCode]]></Source>
+					<With><![CDATA[public new NSString LanguageCode]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual int NaturalTimeScale]]></Source>
+					<With><![CDATA[public new int NaturalTimeScale]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual CGAffineTransform PreferredTransform]]></Source>
+					<With><![CDATA[public new CGAffineTransform PreferredTransform]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual float PreferredVolume]]></Source>
+					<With><![CDATA[public new float PreferredVolume]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSArray Segments]]></Source>
+					<With><![CDATA[public new NSArray Segments]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="AVMutableMetadataItem">
 			<File>AVFoundation/Reference/AVMutableMetadataItem_Class/Reference/Reference.html</File>
@@ -244,15 +288,87 @@ enum {
 				<Change><![CDATA[Properties["Key"].Type="Id"]]></Change>
 				<Change><![CDATA[Properties["Value"].Type="Id"]]></Change>
 			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual CMTime Duration]]></Source>
+					<With><![CDATA[public new CMTime Duration]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSDictionary ExtraAttributes]]></Source>
+					<With><![CDATA[public new NSDictionary ExtraAttributes]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual Id Key]]></Source>
+					<With><![CDATA[public new Id Key]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSString KeySpace]]></Source>
+					<With><![CDATA[public new NSString KeySpace]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSLocale Locale]]></Source>
+					<With><![CDATA[public new NSLocale Locale]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual CMTime Time]]></Source>
+					<With><![CDATA[public new CMTime Time]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual Id Value]]></Source>
+					<With><![CDATA[public new Id Value]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="AVMutableTimedMetadataGroup">
 			<File>AVFoundation/Reference/AVMutableTimedMetadataGroup_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSArray Items]]></Source>
+					<With><![CDATA[public new NSArray Items]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual CMTimeRange TimeRange]]></Source>
+					<With><![CDATA[public new CMTimeRange TimeRange]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="AVMutableVideoComposition">
 			<File>AVFoundation/Reference/AVMutableVideoComposition_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual AVVideoCompositionCoreAnimationTool AnimationTool]]></Source>
+					<With><![CDATA[public new AVVideoCompositionCoreAnimationTool AnimationTool]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual CMTime FrameDuration]]></Source>
+					<With><![CDATA[public new CMTime FrameDuration]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSArray Instructions]]></Source>
+					<With><![CDATA[public new NSArray Instructions]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual CGSize RenderSize]]></Source>
+					<With><![CDATA[public new CGSize RenderSize]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="AVMutableVideoCompositionInstruction">
 			<File>AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual bool EnablePostProcessing]]></Source>
+					<With><![CDATA[public new bool EnablePostProcessing]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSArray LayerInstructions]]></Source>
+					<With><![CDATA[public new NSArray LayerInstructions]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual CMTimeRange TimeRange]]></Source>
+					<With><![CDATA[public new CMTimeRange TimeRange]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="AVMutableVideoCompositionLayerInstruction">
 			<File>AVFoundation/Reference/AVMutableVideoCompositionLayerInstruction_Class/Reference/Reference.html</File>
@@ -263,6 +379,12 @@ enum {
 				<Change><![CDATA[Methods["PlayerWithPlayerItem"].ReturnType="AVPlayer"]]></Change>
 				<Change><![CDATA[Methods["PlayerWithURL"].ReturnType="AVPlayer"]]></Change>
 				<Change><![CDATA[Properties["MasterClock"].Type="IntPtr"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual int TrackID]]></Source>
+					<With><![CDATA[public new int TrackID]]></With>
+				</Replace>
 			</Patch>
 		</Class>
 		<Class name="AVPlayerItem">
