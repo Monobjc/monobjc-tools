@@ -120,7 +120,14 @@
 		<Class type="C" name="DOMHTMLHeadElement" />
 		<Class type="C" name="DOMHTMLHeadingElement" />
 		<Class type="C" name="DOMHTMLHRElement" />
-		<Class type="C" name="DOMHTMLHtmlElement" />
+		<Class type="C" name="DOMHTMLHtmlElement">
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSString Version]]></Source>
+					<With><![CDATA[public new NSString Version]]></With>
+				</Replace>
+			</Patch>
+		</Class>
 		<Class type="C" name="DOMHTMLIFrameElement" />
 		<Class type="C" name="DOMHTMLIFrameElement_WebDOMHTMLIFrameElementOperations">
 			<Patch type="Model">
