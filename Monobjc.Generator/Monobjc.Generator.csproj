@@ -146,9 +146,6 @@
   <ItemGroup>
     <None Include="Model\Doxygen\index.xsd" />
     <None Include="Model\Descriptors\Framework.xsd" />
-    <None Include="lib\Db4objects.Db4o.dll" />
-    <None Include="lib\Db4objects.Db4o.Linq.dll" />
     <None Include="lib\ICSharpCode.NRefactory.dll" />
-    <None Include="lib\Mono.Reflection.dll" />
   </ItemGroup>
 </Project>
