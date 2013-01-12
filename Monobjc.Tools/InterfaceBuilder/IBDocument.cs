@@ -41,7 +41,7 @@ namespace Monobjc.Tools.InterfaceBuilder
         /// <returns>An instance of <see cref = "IBDocument" /></returns>
         public static IBDocument LoadFromXml(String content)
         {
-            XmlReaderSettings settings = new XmlReaderSettings {CloseInput = true, ProhibitDtd = false, XmlResolver = new IBXmlResolver()};
+            XmlReaderSettings settings = new XmlReaderSettings {CloseInput = true, DtdProcessing = DtdProcessing.Parse, XmlResolver = new IBXmlResolver()};
             using (XmlReader reader = XmlReader.Create(new StringReader(content), settings))
             {
                 return LoadFromXml(reader);
@@ -147,7 +147,7 @@ namespace Monobjc.Tools.InterfaceBuilder
         /// <returns>An instance of <see cref = "IBDocument" /></returns>
         public static IBDocument LoadFromFile(String path)
         {
-            XmlReaderSettings settings = new XmlReaderSettings {CloseInput = true, ProhibitDtd = false, XmlResolver = new IBXmlResolver()};
+			XmlReaderSettings settings = new XmlReaderSettings {CloseInput = true, DtdProcessing = DtdProcessing.Parse, XmlResolver = new IBXmlResolver()};
             using (XmlReader reader = XmlReader.Create(path, settings))
             {
                 return LoadFromXml(reader);

@@ -61,7 +61,7 @@ namespace Monobjc.Tools.PropertyList
         /// <returns>An instance of <see cref = "PListDocument" /></returns>
         public static PListDocument LoadFromXml(String content)
         {
-            XmlReaderSettings settings = new XmlReaderSettings {CloseInput = true, ProhibitDtd = false, XmlResolver = new PListXmlResolver()};
+            XmlReaderSettings settings = new XmlReaderSettings {CloseInput = true, DtdProcessing = DtdProcessing.Parse, XmlResolver = new PListXmlResolver()};
             using (XmlReader reader = XmlReader.Create(new StringReader(content), settings))
             {
                 return LoadFromXml(reader);
@@ -159,7 +159,7 @@ namespace Monobjc.Tools.PropertyList
         /// <returns>An instance of <see cref = "PListDocument" /></returns>
         public static PListDocument LoadFromFile(String path)
         {
-            XmlReaderSettings settings = new XmlReaderSettings {CloseInput = true, ProhibitDtd = false, XmlResolver = new PListXmlResolver()};
+            XmlReaderSettings settings = new XmlReaderSettings {CloseInput = true, DtdProcessing = DtdProcessing.Parse, XmlResolver = new PListXmlResolver()};
             using (XmlReader reader = XmlReader.Create(path, settings))
             {
                 return LoadFromXml(reader);
