@@ -358,6 +358,30 @@ enum
 					<Source><![CDATA[/* <!--a-->prompt<!--/a--> <!--a-->for<!--/a--> <!--a-->invalid<!--/a--> <!--a-->signed<!--/a--> <!--a-->clients<!--/a--> */]]></Source>
 					<With><![CDATA[]]></With>
 				</Replace>
+				<Replace>
+					<Source><![CDATA[/* <!--a-->Asymmetric<!--/a--> <!--a-->Key<!--/a--> <!--a-->Formats<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* <!--a-->Symmetric<!--/a--> <!--a-->Key<!--/a--> <!--a-->Formats<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* <!--a-->Formats<!--/a--> <!--a-->for<!--/a--> <!--a-->wrapped<!--/a--> <!--a-->symmetric<!--/a--> <!--a-->and<!--/a--> <!--a-->private<!--/a--> <!--a-->keys<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[//<!--a-->not<!--/a--> <!--a-->supported<!--/a-->]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* <!--a-->Formats<!--/a--> <!--a-->for<!--/a--> <!--a-->certificates<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* <!--a-->Aggregate<!--/a--> <!--a-->Types<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
 			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Functions["SecACLCopyContents"].Parameters["applicationList"].Type="NSArray"]]></Change>

@@ -126,6 +126,14 @@
 					<Source><![CDATA[public virtual NSString Version]]></Source>
 					<With><![CDATA[public new NSString Version]]></With>
 				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSString ClassName]]></Source>
+					<With><![CDATA[public new NSString ClassName]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSString InnerText]]></Source>
+					<With><![CDATA[public new NSString InnerText]]></With>
+				</Replace>
 			</Patch>
 		</Class>
 		<Class type="C" name="DOMHTMLIFrameElement" />
@@ -139,7 +147,14 @@
 		<Class type="C" name="DOMHTMLLabelElement" />
 		<Class type="C" name="DOMHTMLLegendElement" />
 		<Class type="C" name="DOMHTMLLIElement" />
-		<Class type="C" name="DOMHTMLLinkElement" />
+		<Class type="C" name="DOMHTMLLinkElement">
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual DOMStyleSheet Sheet]]></Source>
+					<With><![CDATA[public new DOMStyleSheet Sheet]]></With>
+				</Replace>
+			</Patch>
+		</Class>
 		<Class type="C" name="DOMHTMLMapElement" />
 		<Class type="C" name="DOMHTMLMarqueeElement" />
 		<Class type="C" name="DOMHTMLMenuElement" />
@@ -166,7 +181,14 @@
 				<Change>AdditionFor="DOMHTMLSelectElement"</Change>
 			</Patch>
 		</Class>
-		<Class type="C" name="DOMHTMLStyleElement" />
+		<Class type="C" name="DOMHTMLStyleElement">
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual DOMStyleSheet Sheet]]></Source>
+					<With><![CDATA[public new DOMStyleSheet Sheet]]></With>
+				</Replace>
+			</Patch>
+		</Class>
 		<Class type="C" name="DOMHTMLTableCaptionElement" />
 		<Class type="C" name="DOMHTMLTableCellElement" />
 		<Class type="C" name="DOMHTMLTableColElement" />
@@ -232,9 +254,20 @@
 			</Patch>
 		</Class>
 		<Class type="C" name="DOMOverflowEvent" />
-		<Class type="C" name="DOMProcessingInstruction" />
+		<Class type="C" name="DOMProcessingInstruction">
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual DOMStyleSheet Sheet]]></Source>
+					<With><![CDATA[public new DOMStyleSheet Sheet]]></With>
+				</Replace>
+			</Patch>
+		</Class>
 		<Class type="C" name="DOMProgressEvent" />
-		<Class type="C" name="DOMRange" />
+		<Class type="C" name="DOMRange">
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ToString"].Generate=false]]></Change>
+			</Patch>
+		</Class>
 		<Class type="C" name="DOMRange_DOMRangeDeprecated">
 			<Patch type="Model">
 				<Change>AdditionFor="DOMRange"</Change>

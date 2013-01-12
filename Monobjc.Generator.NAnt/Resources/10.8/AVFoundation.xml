@@ -372,6 +372,12 @@ enum {
 		</Class>
 		<Class name="AVMutableVideoCompositionLayerInstruction">
 			<File>AVFoundation/Reference/AVMutableVideoCompositionLayerInstruction_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual int TrackID]]></Source>
+					<With><![CDATA[public new int TrackID]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="AVPlayer">
 			<File>AVFoundation/Reference/AVPlayer_Class/Reference/Reference.html</File>
@@ -379,12 +385,6 @@ enum {
 				<Change><![CDATA[Methods["PlayerWithPlayerItem"].ReturnType="AVPlayer"]]></Change>
 				<Change><![CDATA[Methods["PlayerWithURL"].ReturnType="AVPlayer"]]></Change>
 				<Change><![CDATA[Properties["MasterClock"].Type="IntPtr"]]></Change>
-			</Patch>
-			<Patch type="Generated">
-				<Replace>
-					<Source><![CDATA[public virtual int TrackID]]></Source>
-					<With><![CDATA[public new int TrackID]]></With>
-				</Replace>
 			</Patch>
 		</Class>
 		<Class name="AVPlayerItem">

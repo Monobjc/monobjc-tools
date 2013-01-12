@@ -123,12 +123,24 @@
 	<Classes>
 		<Class name="DRBurnProgressPanel">
 			<File>DiscRecordingUI/Reference/DRBurnProgressPanel_reference/translated_content/DRBurnProgressPanel.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSString Description]]></Source>
+					<With><![CDATA[public new NSString Description]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="DRBurnSetupPanel">
 			<File>DiscRecordingUI/Reference/DRBurnSetupPanel_reference/translated_content/DRBurnSetupPanel.html</File>
 		</Class>
 		<Class name="DREraseProgressPanel">
 			<File>DiscRecordingUI/Reference/DREraseProgressPanel_reference/translated_content/DREraseProgressPanel.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSString Description]]></Source>
+					<With><![CDATA[public new NSString Description]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="DREraseSetupPanel">
 			<File>DiscRecordingUI/Reference/DREraseSetupPanel_reference/translated_content/DREraseSetupPanel.html</File>

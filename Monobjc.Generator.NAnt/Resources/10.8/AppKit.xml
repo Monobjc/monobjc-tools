@@ -96,18 +96,17 @@
 		</Class>
 		<Class name="NSActionCell">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSActionCell_Class/Reference/Reference.html</File>
-			<Patch type="Model">
-				<Change><![CDATA[Properties["ControlView"].Generate=false]]></Change>
-				<Change><![CDATA[Properties["FloatValue"].Generate=false]]></Change>
-				<Change><![CDATA[Properties["IntValue"].Generate=false]]></Change>
-				<Change><![CDATA[Properties["IntegerValue"].Generate=false]]></Change>
-				<Change><![CDATA[Properties["StringValue"].Generate=false]]></Change>
-			</Patch>
 		</Class>
 		<Class name="NSActionCell.Deprecated">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSActionCell_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[AdditionFor="NSActionCell"]]></Change>
+				<Change><![CDATA[Methods["SetFloatingPointFormatLeftRight"].MaxAvailability="OS X v10.5"]]></Change>
+				<Change><![CDATA[Properties["ControlView"].MaxAvailability="OS X v10.5"]]></Change>
+				<Change><![CDATA[Properties["FloatValue"].MaxAvailability="OS X v10.5"]]></Change>
+				<Change><![CDATA[Properties["IntValue"].MaxAvailability="OS X v10.5"]]></Change>
+				<Change><![CDATA[Properties["IntegerValue"].MaxAvailability="OS X v10.5"]]></Change>
+				<Change><![CDATA[Properties["StringValue"].MaxAvailability="OS X v10.5"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSAffineTransform_AppKitAdditions">

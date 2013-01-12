@@ -10,7 +10,12 @@
 					<With><![CDATA[ = 4095,
 ]]></With>
 				</Replace>
+				<Replace>
+					<Source><![CDATA[// convenience combinations]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
 			</Patch>
+			
 			<Patch type="Model">
 				<Change><![CDATA[Enumerations["_NSByteOrder"].Name="NSByteOrder"]]></Change>
 				<Change><![CDATA[Enumerations["NSByteOrder"].BaseType="NSInteger"]]></Change>
