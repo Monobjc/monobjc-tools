@@ -102,6 +102,7 @@
 			<Patch type="Model">
 				<Change><![CDATA[AdditionFor="NSActionCell"]]></Change>
 				<Change><![CDATA[Methods["SetFloatingPointFormatLeftRight"].MaxAvailability="OS X v10.5"]]></Change>
+				<Change><![CDATA[Methods["setObjectValue"].MaxAvailability="OS X v10.5"]]></Change>
 				<Change><![CDATA[Properties["ControlView"].MaxAvailability="OS X v10.5"]]></Change>
 				<Change><![CDATA[Properties["FloatValue"].MaxAvailability="OS X v10.5"]]></Change>
 				<Change><![CDATA[Properties["IntValue"].MaxAvailability="OS X v10.5"]]></Change>
