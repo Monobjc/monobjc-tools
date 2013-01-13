@@ -105,7 +105,18 @@
 				<Change>AdditionFor="DOMHTMLDocument"</Change>
 			</Patch>
 		</Class>
-		<Class type="C" name="DOMHTMLElement" />
+		<Class type="C" name="DOMHTMLElement">
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSString ClassName]]></Source>
+					<With><![CDATA[public new NSString ClassName]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSString InnerText]]></Source>
+					<With><![CDATA[public new NSString InnerText]]></With>
+				</Replace>
+			</Patch>
+		</Class>
 		<Class type="C" name="DOMHTMLEmbedElement" />
 		<Class type="C" name="DOMHTMLFieldSetElement" />
 		<Class type="C" name="DOMHTMLFontElement" />

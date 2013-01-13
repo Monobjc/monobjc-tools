@@ -96,6 +96,9 @@
 		</Class>
 		<Class name="NSActionCell">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSActionCell_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["IntegerValue"].Generate=false]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSActionCell.Deprecated">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSActionCell_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
@@ -106,7 +109,6 @@
 				<Change><![CDATA[Properties["ControlView"].MaxAvailability="OS X v10.5"]]></Change>
 				<Change><![CDATA[Properties["FloatValue"].MaxAvailability="OS X v10.5"]]></Change>
 				<Change><![CDATA[Properties["IntValue"].MaxAvailability="OS X v10.5"]]></Change>
-				<Change><![CDATA[Properties["IntegerValue"].MaxAvailability="OS X v10.5"]]></Change>
 				<Change><![CDATA[Properties["StringValue"].MaxAvailability="OS X v10.5"]]></Change>
 			</Patch>
 		</Class>
@@ -1916,6 +1918,14 @@ enum {]]></Source>
 enum {]]></Source>
 					<With><![CDATA[ = 1 &lt;&lt; 6,
 ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[// <!--a-->let<!--/a--> <!--a-->AppKit<!--/a--> <!--a-->infer<!--/a--> <!--a-->animation<!--/a--> <!--a-->behavior<!--/a--> <!--a-->for<!--/a--> <!--a-->this<!--/a--> <!--a-->window<!--/a-->]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[// <!--a-->suppress<!--/a--> <!--a-->inferred<!--/a--> <!--a-->animations<!--/a--> (don'<!--a-->t<!--/a--> <!--a-->animate<!--/a-->)]]></Source>
+					<With><![CDATA[]]></With>
 				</Replace>
 			</Patch>
 			<Patch type="Model">

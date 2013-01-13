@@ -46,12 +46,6 @@
 				<Change><![CDATA[DelegateFor="SUUpdater"]]></Change>
 				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
 			</Patch>
-			<Patch type="Generated">
-				<Replace>
-					<Source><![CDATA[id< SUVersionComparison >]]></Source>
-					<With><![CDATA[id&lt; SUVersionComparison &gt;]]></With>
-				</Replace>
-			</Patch>
 		</Protocol>
 	</Protocols>
 </Framework>

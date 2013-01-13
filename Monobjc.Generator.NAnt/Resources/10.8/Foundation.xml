@@ -11,7 +11,7 @@
 ]]></With>
 				</Replace>
 				<Replace>
-					<Source><![CDATA[// convenience combinations]]></Source>
+					<Source><![CDATA[// <!--a-->convenience<!--/a--> <!--a-->combinations<!--/a-->]]></Source>
 					<With><![CDATA[]]></With>
 				</Replace>
 			</Patch>

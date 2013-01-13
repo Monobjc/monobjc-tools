@@ -287,7 +287,7 @@ namespace Monobjc.Tools.Generator.Generators
 			foreach (String line in methodEntity.Summary) {
 				this.Writer.WriteLineFormat (indent, "/// <para>{0}</para>", line.EscapeAll ());
 			}
-			this.Writer.WriteLineFormat (indent, "/// <para>Original signature is '{0}'</para>", methodEntity.Signature);
+			this.Writer.WriteLineFormat (indent, "/// <para>Original signature is '{0}'</para>", methodEntity.Signature.EscapeAll());
 			this.AppendAvailability (indent, methodEntity);
 			this.Writer.WriteLineFormat (indent, "/// </summary>");
 
