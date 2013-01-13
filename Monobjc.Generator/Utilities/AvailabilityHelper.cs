@@ -41,8 +41,8 @@ namespace Monobjc.Tools.Generator.Utilities
 			result.Add ("OS X v10.2", "");
 			result.Add ("OS X v10.3", "");
 			result.Add ("OS X v10.3.9", "");
-			result.Add ("OS X v10.4", "MACOSX_10_4");
-			result.Add ("OS X v10.5", "MACOSX_10_5");
+			result.Add ("OS X v10.4", "");
+			result.Add ("OS X v10.5", "");
 			result.Add ("OS X v10.6", "MACOSX_10_6");
 			result.Add ("OS X v10.7", "MACOSX_10_7");
 			result.Add ("OS X v10.8", "MACOSX_10_8");
