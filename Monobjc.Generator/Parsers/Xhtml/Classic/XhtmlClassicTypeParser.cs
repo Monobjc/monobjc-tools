@@ -123,7 +123,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
                                        select el).FirstOrDefault();
                     if (marker != null)
                     {
-                        XElement startElement = marker.ElementsAfterSelf("table").FirstOrDefault();
+                        //XElement startElement = marker.ElementsAfterSelf("table").FirstOrDefault();
                         IEnumerable<XElement> elements = marker.ElementsAfterSelf().TakeWhile(el => el.Name != "a");
 
 						FunctionEntity entity = this.FunctionParser.Parse(typedEntity, name, elements);
@@ -170,7 +170,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
                                        select el).FirstOrDefault();
                     if (marker != null)
                     {
-                        XElement startElement = marker.ElementsAfterSelf("table").FirstOrDefault();
+                        //XElement startElement = marker.ElementsAfterSelf("table").FirstOrDefault();
                         IEnumerable<XElement> elements = marker.ElementsAfterSelf().TakeWhile(el => el.Name != "a");
 
 						ConstantEntity entity = this.ConstantParser.Parse(typedEntity, name, elements);
@@ -221,7 +221,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
                                            select el).FirstOrDefault();
                         if (marker != null)
                         {
-                            XElement startElement = marker.ElementsAfterSelf("table").FirstOrDefault();
+                            //XElement startElement = marker.ElementsAfterSelf("table").FirstOrDefault();
                             IEnumerable<XElement> elements = marker.ElementsAfterSelf().TakeWhile(el => el.Name != "a");
 
 							EnumerationEntity entity = this.EnumerationParser.Parse(typedEntity, name, elements);

@@ -358,8 +358,8 @@ namespace Monobjc.Tools.Generator.Generators
 
 		private void GenerateConstructorBody (int indent, string target, MethodEntity methodEntity, MethodEntity innerMethodEntity, bool needStorage, bool varargs)
 		{
-			bool hasReturn = !String.Equals (methodEntity.ReturnType, "void");
-			bool mixed = (innerMethodEntity != null);
+			//bool hasReturn = !String.Equals (methodEntity.ReturnType, "void");
+			//bool mixed = (innerMethodEntity != null);
 
 			this.GenerateLocalsAllocation (indent, methodEntity, innerMethodEntity);
 			this.GenerateLocalsMarshalling (indent, methodEntity, innerMethodEntity);
@@ -489,7 +489,7 @@ namespace Monobjc.Tools.Generator.Generators
 			int index = 1;
 			for (int i = 0; i < methodEntity.Parameters.Count; i++) {
 				MethodParameterEntity methodParameterEntity = methodEntity.Parameters [i];
-				MethodParameterEntity innerMethodParameterEntity = innerMethodEntity != null ? innerMethodEntity.Parameters [i] : methodParameterEntity;
+				//MethodParameterEntity innerMethodParameterEntity = innerMethodEntity != null ? innerMethodEntity.Parameters [i] : methodParameterEntity;
 
 				if (methodParameterEntity.IsOut || methodParameterEntity.IsByRef) {
 					this.Writer.WriteLineFormat (indent, "Marshal.FreeHGlobal(__local{0});", index++);

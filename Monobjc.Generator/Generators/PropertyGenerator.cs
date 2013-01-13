@@ -84,9 +84,9 @@ namespace Monobjc.Tools.Generator.Generators
                                         type,
                                         propertyEntity.Name);
 
-			String type32 = GetRealType (type, false);
-			String type64 = GetRealType (type, true);
-			bool useMixedInvocation = !String.Equals (type32, type64);
+			//String type32 = GetRealType (type, false);
+			//String type64 = GetRealType (type, true);
+			//bool useMixedInvocation = !String.Equals (type32, type64);
 
 			// Append getter
 			if (implementation) {

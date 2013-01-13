@@ -153,6 +153,26 @@ namespace Monobjc.Tools.Generator.Model
 		}
 
 		/// <summary>
+		/// Serves as a hash function for a <see cref="Monobjc.Tools.Generator.Model.BaseEntity"/> object.
+		/// </summary>
+		/// <returns>
+		/// A hash code for this instance that is suitable for use in hashing algorithms and data structures such as a hash table.
+		/// </returns>
+		public override int GetHashCode ()
+		{
+			unchecked {
+				int hash = 17;
+				hash = hash * 23 + this.CopyInDescendants.GetHashCode ();
+				hash = hash * 23 + this.Generate.GetHashCode ();
+				hash = hash * 23 + (this.MaxAvailability != null ? this.MaxAvailability.GetHashCode () : 0);
+				hash = hash * 23 + (this.MinAvailability != null ? this.MinAvailability.GetHashCode () : 0);
+				hash = hash * 23 + (this.Name != null ? this.Name.GetHashCode () : 0);
+				hash = hash * 23 + (this.Obsolete != null ? this.Obsolete.GetHashCode () : 0);
+				return hash;
+			}
+		}
+
+		/// <summary>
 		///   Indicates whether the current object is equal to another object of the same type.
 		/// </summary>
 		/// <returns>

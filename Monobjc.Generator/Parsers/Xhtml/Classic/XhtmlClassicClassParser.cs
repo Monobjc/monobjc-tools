@@ -179,7 +179,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
 						el.Attribute ("name").Value.EndsWith ("/" + name)
                                        select el).FirstOrDefault ();
 					if (marker != null) {
-						XElement startElement = marker.ElementsAfterSelf ("table").FirstOrDefault ();
+						//XElement startElement = marker.ElementsAfterSelf ("table").FirstOrDefault ();
 						IEnumerable<XElement> elements = marker.ElementsAfterSelf ().TakeWhile (el => el.Name != "a");
 
 						PropertyEntity propertyEntity = this.PropertyParser.Parse (classEntity, name, elements);
@@ -212,7 +212,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
 						el.Attribute ("name").Value.EndsWith ("/" + name)
                                        select el).FirstOrDefault ();
 					if (marker != null) {
-						XElement startElement = marker.ElementsAfterSelf ("table").FirstOrDefault ();
+						//XElement startElement = marker.ElementsAfterSelf ("table").FirstOrDefault ();
 						IEnumerable<XElement> elements = marker.ElementsAfterSelf ().TakeWhile (el => el.Name != "a");
 
 						MethodEntity methodEntity = this.MethodParser.Parse (classEntity, name, elements);

@@ -1379,7 +1379,7 @@ namespace Monobjc.Tools.Generator.Parsers.Sgml
                 this.OpenInput();
             }
 
-            State start = this.m_state;
+            /*State start = this.m_state;*/
             if (this.m_node.Simulated)
             {
                 // return the next node
@@ -1424,7 +1424,7 @@ namespace Monobjc.Tools.Generator.Parsers.Sgml
                         {
                             this.Pop();
                         }
-                        Node n = this.m_node;
+                        /*Node n = this.m_node;*/
                         foundnode = this.ParseMarkup();
                         break;
                     case State.PartialTag:

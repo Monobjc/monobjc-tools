@@ -214,6 +214,27 @@ namespace Monobjc.Tools.Generator.Model
 		}
 
 		/// <summary>
+		/// Serves as a hash function for a <see cref="Monobjc.Tools.Generator.Model.MethodEntity"/> object.
+		/// </summary>
+		/// <returns>
+		/// A hash code for this instance that is suitable for use in hashing algorithms and data structures such as a hash table.
+		/// </returns>
+		public override int GetHashCode ()
+		{
+			unchecked {
+				int hash = base.GetHashCode();
+				hash = hash * 23 + this.GenerateConstructor.GetHashCode ();
+				hash = hash * 23 + this.Parameters.GetHashCode ();
+				hash = hash * 23 + (this.ReturnsDocumentation != null ? this.ReturnsDocumentation.GetHashCode () : 0);
+				hash = hash * 23 + (this.ReturnType != null ? this.ReturnType.GetHashCode () : 0);
+				hash = hash * 23 + (this.Selector != null ? this.Selector.GetHashCode () : 0);
+				hash = hash * 23 + (this.Signature != null ? this.Signature.GetHashCode () : 0);
+				hash = hash * 23 + this.Static.GetHashCode ();
+				return hash;
+			}
+		}
+
+		/// <summary>
 		///   Determines whether the specified <see cref = "T:System.Object" /> is equal to the current <see cref = "T:System.Object" />.
 		/// </summary>
 		/// <returns>

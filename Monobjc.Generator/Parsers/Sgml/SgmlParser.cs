@@ -2856,7 +2856,7 @@ namespace Monobjc.Tools.Generator.Parsers.Sgml
         private Entity ParseParameterEntity(string term)
         {
             // almost the same as this.current.ScanToken, except we also terminate on ';'
-            char ch = this.m_current.ReadChar();
+            /*char ch = */this.m_current.ReadChar();
             string name = this.m_current.ScanToken(this.m_sb, ";" + term, false);
             if (this.m_current.Lastchar == ';')
             {

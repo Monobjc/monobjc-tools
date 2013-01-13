@@ -276,7 +276,7 @@
 		<Class type="C" name="DOMProgressEvent" />
 		<Class type="C" name="DOMRange">
 			<Patch type="Model">
-				<Change><![CDATA[Methods["ToString"].Generate=false]]></Change>
+				<Change><![CDATA[Properties["ToString"].Generate=false]]></Change>
 			</Patch>
 		</Class>
 		<Class type="C" name="DOMRange_DOMRangeDeprecated">
