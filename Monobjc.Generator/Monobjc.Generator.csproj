@@ -14,28 +14,16 @@
     <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>False</Optimize>
-<<<<<<< HEAD
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;GENERATED_ATTRIBUTE;MIXED_MODE</DefineConstants>
-=======
     <OutputPath>bin\Debug</OutputPath>
     <DefineConstants>DEBUG;MIXED_MODE</DefineConstants>
->>>>>>> MacOSX_10_8
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-<<<<<<< HEAD
-    <DebugType>pdbonly</DebugType>
-    <Optimize>True</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;GENERATED_ATTRIBUTE;MIXED_MODE</DefineConstants>
-=======
     <DebugType>none</DebugType>
     <Optimize>True</Optimize>
     <OutputPath>bin\Release</OutputPath>
->>>>>>> MacOSX_10_8
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>

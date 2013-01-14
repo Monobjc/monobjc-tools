@@ -30,14 +30,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
     <Reference Include="NAnt.Core">
+      <HintPath>..\external\NAnt.Core.dll</HintPath>
     </Reference>
     <Reference Include="NAnt.DotNetTasks">
       <HintPath>..\external\NAnt.DotNetTasks.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Monobjc.Tools\Properties\Resources.Designer.cs">
