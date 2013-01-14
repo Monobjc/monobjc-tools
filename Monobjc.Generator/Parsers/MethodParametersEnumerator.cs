@@ -89,7 +89,7 @@ namespace Monobjc.Tools.Generator.Parsers
                 return false;
             }
 
-            int count = 0;
+            int count = 1;
             int closingIndex = openingIndex + 1;
             while (true)
             {
@@ -100,11 +100,11 @@ namespace Monobjc.Tools.Generator.Parsers
                 }
                 if (c == ')')
                 {
-                    if (count == 0)
+					count--;
+					if (count == 0)
                     {
                         break;
                     }
-                    count--;
                 }
             }
 
@@ -132,8 +132,30 @@ namespace Monobjc.Tools.Generator.Parsers
         public void Reset()
         {
             this.CurrentToken = null;
-            // Set the index after the return type parathesis
-            this.Index = this.Signature.IndexOf(')');
+
+            // Set the index after the return type
+			int index = 0;
+			int count = 0;
+			bool found = false;
+			while (!found && index < this.Signature.Length)
+			{
+				char c = this.Signature[index++];
+				if (c == '(')
+				{
+					count++;
+				}
+				if (c == ')')
+				{
+					count--;
+					if (count == 0)
+					{
+						found = true;
+						break;
+					}
+				}
+			}
+
+			this.Index = index;
         }
 
         /// <summary>

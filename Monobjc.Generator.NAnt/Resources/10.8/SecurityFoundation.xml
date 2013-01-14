@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="SecurityFoundation" usings="Foundation,Security" assembly="Monobjc.SecurityFoundation" source="DocSet">
+	<Types>
+	</Types>
+	<Classes>
+		<Class name="SFAuthorization">
+			<File>Security/Reference/SecurityFoundationFramework/Classes/SFAuthorization_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["AuthorizationWithFlagsRightsEnvironment"].ReturnType="SFAuthorization"]]></Change>
+				<Change><![CDATA[Methods["AuthorizationWithFlagsRightsEnvironment"].Parameters["rights"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["AuthorizationWithFlagsRightsEnvironment"].Parameters["environment"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithFlagsRightsEnvironment"].Parameters["rights"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithFlagsRightsEnvironment"].Parameters["environment"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ObtainWithRightsFlagsEnvironmentAuthorizedRightsError"].Parameters["rights"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ObtainWithRightsFlagsEnvironmentAuthorizedRightsError"].Parameters["environment"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ObtainWithRightsFlagsEnvironmentAuthorizedRightsError"].Parameters["authorizedRights"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["Authorization"].Type="SFAuthorization"]]></Change>
+				<Change><![CDATA[Properties["Authorization"].Getter.ReturnType="SFAuthorization"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="SFAuthorization.Deprecated">
+			<File>Security/Reference/SecurityFoundationFramework/Classes/SFAuthorization_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="SFAuthorization"]]></Change>
+				<Change><![CDATA[Methods["PermitWithRightsFlagsEnvironmentAuthorizedRights"].Parameters["rights"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["PermitWithRightsFlagsEnvironmentAuthorizedRights"].Parameters["environment"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["PermitWithRightsFlagsEnvironmentAuthorizedRights"].Parameters["authorizedRights"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Class>
+	</Classes>
+	<Protocols>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

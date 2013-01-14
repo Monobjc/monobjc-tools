@@ -16,64 +16,75 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 
 namespace Monobjc.Tools.Generator.Generators
 {
-    /// <summary>
-    ///   Base class for class entity.
-    /// </summary>
-    public abstract class ClassGenerator : TypedGenerator
-    {
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "ClassGenerator" /> class.
-        /// </summary>
-        /// <param name = "writer">The writer.</param>
-        /// <param name = "statistics">The statistics.</param>
-        protected ClassGenerator(StreamWriter writer, GenerationStatistics statistics) : base(writer, statistics)
-        {
-            this.MethodGenerator = new MethodGenerator(writer, statistics);
-            this.PropertyGenerator = new PropertyGenerator(writer, statistics);
-        }
+	/// <summary>
+	///   Base class for class entity.
+	/// </summary>
+	public abstract class ClassGenerator : TypedGenerator
+	{
+		private MethodGenerator methodGenerator;
+		private PropertyGenerator propertyGenerator;
 
-        /// <summary>
-        ///   Gets or sets the method generator.
-        /// </summary>
-        /// <value>The method generator.</value>
-        protected MethodGenerator MethodGenerator { get; private set; }
+		/// <summary>
+		/// Gets the method generator.
+		/// </summary>
+		protected MethodGenerator MethodGenerator {
+			get {
+				if (this.methodGenerator == null) {
+					this.methodGenerator = new MethodGenerator () {
+						Writer = this.Writer,
+						Statistics = this.Statistics,
+						MixedTypes = this.MixedTypes,
+						TypeManager = this.TypeManager,
+					};
+				}
+				return this.methodGenerator;
+			}
+		}
+		
+		/// <summary>
+		/// Gets the property generator.
+		/// </summary>
+		protected PropertyGenerator PropertyGenerator {
+			get {
+				if (this.propertyGenerator == null) {
+					this.propertyGenerator = new PropertyGenerator () {
+						Writer = this.Writer,
+						Statistics = this.Statistics,
+						MixedTypes = this.MixedTypes,
+						TypeManager = this.TypeManager,
+					};
+				}
+				return this.propertyGenerator;
+			}
+		}
 
-        /// <summary>
-        ///   Gets or sets the property generator.
-        /// </summary>
-        /// <value>The property generator.</value>
-        protected PropertyGenerator PropertyGenerator { get; private set; }
+		/// <summary>
+		///   Gets all methods of the superclass and own.
+		/// </summary>
+		protected static IEnumerable<MethodEntity> GetAllMethods (ClassEntity classEntity, bool withOwn)
+		{
+			List<MethodEntity> methods = (classEntity.SuperClass != null) ? classEntity.SuperClass.GetMethods (true, true).ToList () : new List<MethodEntity> ();
+			if (withOwn) {
+				methods.AddRange (classEntity.Methods);
+			}
+			return methods.Distinct ();
+		}
 
-        /// <summary>
-        ///   Gets all methods of the superclass and own.
-        /// </summary>
-        protected static IEnumerable<MethodEntity> GetAllMethods(ClassEntity classEntity, bool withOwn)
-        {
-            List<MethodEntity> methods = (classEntity.SuperClass != null) ? classEntity.SuperClass.GetMethods(true, true).ToList() : new List<MethodEntity>();
-            if (withOwn)
-            {
-                methods.AddRange(classEntity.Methods);
-            }
-            return methods.Distinct();
-        }
-
-        /// <summary>
-        ///   Gets the properties of the superclass and own.
-        /// </summary>
-        protected static IEnumerable<PropertyEntity> GetProperties(ClassEntity classEntity, bool withOwn)
-        {
-            List<PropertyEntity> properties = (classEntity.SuperClass != null) ? classEntity.SuperClass.GetProperties(true, true).ToList() : new List<PropertyEntity>();
-            if (withOwn)
-            {
-                properties.AddRange(classEntity.Properties);
-            }
-            return properties.Distinct();
-        }
-    }
+		/// <summary>
+		///   Gets the properties of the superclass and own.
+		/// </summary>
+		protected static IEnumerable<PropertyEntity> GetProperties (ClassEntity classEntity, bool withOwn)
+		{
+			List<PropertyEntity> properties = (classEntity.SuperClass != null) ? classEntity.SuperClass.GetProperties (true, true).ToList () : new List<PropertyEntity> ();
+			if (withOwn) {
+				properties.AddRange (classEntity.Properties);
+			}
+			return properties.Distinct ();
+		}
+	}
 }

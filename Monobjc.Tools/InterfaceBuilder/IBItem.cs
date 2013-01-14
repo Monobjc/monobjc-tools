@@ -151,7 +151,7 @@ namespace Monobjc.Tools.InterfaceBuilder
         /// </returns>
         public override int GetHashCode()
         {
-            return this.Key.GetHashCode();
+			return this.Key.GetHashCode();
         }
 
         /// <summary>

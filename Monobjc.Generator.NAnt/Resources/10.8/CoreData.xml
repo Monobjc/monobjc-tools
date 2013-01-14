@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="CoreData" usings="Foundation,AppKit" assembly="Monobjc.AppKit" source="DocSet">
+	<Types>
+		<Type name="CoreDataFramework.Constants">
+			<File>Cocoa/Reference/CoreDataFramework/Miscellaneous/CoreData_Constants/Reference/reference.html</File>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="NSAtomicStore">
+			<File>Cocoa/Reference/NSAtomicStore_class/Reference/NSAtomicStore.html</File>
+		</Class>
+		<Class name="NSAtomicStoreCacheNode">
+			<File>Cocoa/Reference/NSAtomicStoreCacheNode_class/Reference/NSAtomicStoreCacheNode.html</File>
+		</Class>
+		<Class name="NSAttributeDescription">
+			<File>Cocoa/Reference/CoreDataFramework/Classes/NSAttributeDescription_Class/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["NSAttributeType"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSEntityDescription">
+			<File>Cocoa/Reference/CoreDataFramework/Classes/NSEntityDescription_Class/NSEntityDescription.html</File>
+		</Class>
+		<Class name="NSEntityMapping">
+			<File>Cocoa/Reference/NSEntityMapping_class/Reference/NSEntityMapping.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Entity_Mapping_Types"].Name="NSEntityMappingType"]]></Change>
+				<Change><![CDATA[Enumerations["NSEntityMappingType"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSEntityMigrationPolicy">
+			<File>Cocoa/Reference/NSEntityMigrationPolicy_class/NSEntityMigrationPolicy.html</File>
+		</Class>
+		<Class name="NSExpressionDescription">
+			<File>Cocoa/Reference/NSExpressionDescription_Class/NSExpressionDescription.html</File>
+		</Class>
+		<Class name="NSFetchedPropertyDescription">
+			<File>Cocoa/Reference/CoreDataFramework/Classes/NSFetchedPropertyDescription_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSFetchRequest">
+			<File>Cocoa/Reference/CoreDataFramework/Classes/NSFetchRequest_Class/NSFetchRequest.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[= 0<!--a-->x02<!--/a-->]]></Source>
+					<With><![CDATA[= 0<!--a-->x02,<!--/a-->]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public partial class NSFetchRequest : NSPersistentStoreRequest]]></Source>
+					<With><![CDATA[public partial class NSFetchRequest :
+#if MACOSX_10_7
+        NSPersistentStoreRequest
+#else
+        NSObject
+#endif
+]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="NSFetchRequestExpression">
+			<File>Cocoa/Reference/NSFetchRequestExpression_class/Reference/NSFetchRequestExpression.html</File>
+			<Patch type="Model">
+				<!-- TODO: Move to constant -->
+				<Change><![CDATA[Enumerations["Fetch_request_expression_type"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSIncrementalStore">
+			<File>CoreData/Reference/NSIncrementalStore_Class/Reference/NSIncrementalStore.html</File>
+		</Class>
+		<Class name="NSIncrementalStoreNode">
+			<File>CoreData/Reference/NSIncrementalStoreNode_Class/Reference/NSIncrementalStoreNode.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual ulong Version]]></Source>
+					<With><![CDATA[public new ulong Version]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="NSManagedObject">
+			<File>Cocoa/Reference/CoreDataFramework/Classes/NSManagedObject_Class/Reference/NSManagedObject.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ValidateValueForKeyError"].Parameters["value"].Type="IntPtr"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual Id ObservationInfo]]></Source>
+					<With><![CDATA[public new Id ObservationInfo]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="NSManagedObjectContext">
+			<File>Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/NSManagedObjectContext.html</File>
+		</Class>
+		<Class name="NSManagedObjectID">
+			<File>Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectID_Class/Reference/NSManagedObjectID.html</File>
+		</Class>
+		<Class name="NSManagedObjectModel">
+			<File>Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSMappingModel">
+			<File>Cocoa/Reference/NSMappingModel_class/NSMappingModel.html</File>
+		</Class>
+		<Class name="NSMergeConflict">
+			<File>CoreData/Reference/NSMergeConflict_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSMergePolicy">
+			<File>CoreData/Reference/NSMergePolicy_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSMigrationManager">
+			<File>Cocoa/Reference/NSMigrationManager_class/Reference/NSMigrationManager.html</File>
+		</Class>
+		<Class name="NSPersistentStore">
+			<File>Cocoa/Reference/NSPersistentStore_Class/NSPersistentStore.html</File>
+		</Class>
+		<Class name="NSPersistentStoreCoordinator">
+			<File>Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/NSPersistentStoreCoordinator.html</File>
+		</Class>
+		<Class name="NSPersistentStoreCoordinator.Deprecated">
+			<File>Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSPersistentStoreCoordinator"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSPersistentStoreRequest">
+			<File>CoreData/Reference/NSPersistentStoreRequest_Class/NSPersistentStoreRequest.html</File>
+		</Class>
+		<Class name="NSPropertyDescription">
+			<File>Cocoa/Reference/CoreDataFramework/Classes/NSPropertyDescription_Class/NSPropertyDescription.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["NSDeleteRule"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSPropertyMapping">
+			<File>Cocoa/Reference/NSPropertyMapping_class/Reference/NSPropertyMapping.html</File>
+		</Class>
+		<Class name="NSRelationshipDescription">
+			<File>Cocoa/Reference/CoreDataFramework/Classes/NSRelationshipDescription_Class/NSRelationshipDescription.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["NSDeleteRule"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+	</Classes>
+	<Protocols>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

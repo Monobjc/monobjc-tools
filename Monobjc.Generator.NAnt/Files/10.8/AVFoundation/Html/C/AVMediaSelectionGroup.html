@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AVMediaSelectionGroup Class Reference</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta id="book-resource-type" name="book-resource-type" content="Reference">
+    <script>String.prototype.cleanUpURL=function(){var c,b="",a=this;if(this.match("#")){b="#"+this.split("#")[1];a=this.split("#")[0]}a=a.replace(/\/\.\/|([^:])\/\//g,"$1/");if(a==="./"){return""+b}while(a!==c){c=a;a=a.replace(/[\/][^\/]+\/+\.\.\//,"/")}a=a.replace(/^.[^\/]+\/+\.\.\//,"");return a+b};(function(){var a="../../../../../";var c=window.location.pathname;var b=(c.slice(0,c.lastIndexOf("/"))+"/"+a).cleanUpURL();if(top.location.href==window.location.href){if("createTouch" in document){if(document.getElementById("book-resource-type").content!=="Standalone"){switch(navigator.platform){case"iPad":window.location.replace(a+"ipad/#"+c.replace(b,"")+window.location.hash);break;case"iPhone":break}}}else{window.location.replace(a+(window.location.protocol=="file:"?"index.html":"")+"#"+c.replace(b,"").cleanUpURL()+window.location.hash)}}})();</script>
+    <meta scheme="apple_ref" id="identifier" name="identifier" content="//apple_ref/doc/uid/TP40011011">
+	<meta id="document-version" name="document-version" content="2.0.1">
+    <meta id="chapterId" name="chapterId" content="TP40011011-CH1">
+    <meta id="date" name="date" content="iOS 6.0">
+    <meta id="description" name="description" content="Describes an object that represents a collection of mutually exclusive options for the presentation of media within an asset.">
+    <meta id="book-title" name="book-title" content="AVMediaSelectionGroup Class Reference">
+    <meta id="book-root" name="book-root" content="../">
+    <meta id="book-json" name="book-json" content="../book.json">
+    <meta id="book-assignments" name="book-assignments" content="{Type/Reference}, {Framework/Media Layer/AVFoundation}">
+    <meta name="pdf" contents="../AVMediaSelectionGroup_Class.pdf" /><link id="book-pdf" media="print" rel="alternate" type="application/pdf" href="../AVMediaSelectionGroup_Class.pdf" />
+    
+    <meta id="generator" name="generator" content="Gutenberg 30223">
+    <meta name='numbat' content='aa879094b666337fdcde744b62fbff30'>
+    <meta id="copyright" name="copyright" content="Copyright 2012 Apple Inc. All Rights Reserved.">
+    <meta name = "viewport" content = "width = device-width" >
+    <meta id="xcode-display" name="xcode-display" content="render">
+    <meta id="IndexTitle" name="IndexTitle" content="AVMediaSelectionGroup Class Reference">
+    <meta id="resources-uri" name="resources-uri" content="../../../../../Resources/677">
+    <link id="book-index-page" rel="Start" title="AVMediaSelectionGroup Class Reference" type="text/html" href="../index.html">
+    <link id="next-page" rel="Next" type="text/html" href="../RevisionHistory.html">
+    <link id="previous-page" rel="Prev" type="text/html" href="">
+    <link rel="stylesheet" type="text/css" href="../../../../../Resources/677/CSS/ac_media.css" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../../../../Resources/677/CSS/devpubs.css" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../../../../Resources/677/CSS/docs.css" charset="utf-8">
+    <!--[if IE]><link rel="stylesheet" type="text/css" href="../../../../../Resources/677/CSS/ie.css"><![endif]-->
+    
+<link rel="stylesheet" type="text/css" href="../../../../../Resources/677/CSS/xcode4.css" charset="utf-8">
+</head>    
+<body><a name="//apple_ref/doc/uid/TP40011011-CH1" title="AVMediaSelectionGroup"></a>
+    <article id="contents" tabindex="0" role="main">
+        <div id="pageNavigationLinks_top" class="pageNavigationLinks">
+            <a class='nextLink' rel='next' href='../RevisionHistory.html'>Next</a>
+        </div>
+        <a id="top" name="top"></a>
+        <a id="INDEX" href="../index.html" style="display:none;"></a>
+        
+        <a name="//apple_ref/doc/uid/TP40011011" title="AVMediaSelectionGroup"></a><a name="//apple_ref/occ/cl/AVMediaSelectionGroup" title="AVMediaSelectionGroup"></a><a name="//apple_ref/doc/c_ref/AVMediaSelectionGroup" title="AVMediaSelectionGroup"></a><a name="//apple_ref/doc/uid/TP40011011-CH1-SW1" title="AVMediaSelectionGroup"></a><h1 id="pageTitle">AVMediaSelectionGroup Class Reference</h1><div class="spec_sheet_info_box"><table cellspacing="0" class="specbox"><tr><td scope="row"><strong><span class="InheritsFrom">Inherits from</span></strong></td><td><div class="zSharedSpecBoxHeadList"><a href="../../../../Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html#//apple_ref/occ/cl/NSObject">NSObject</a></div></td></tr><tr><td scope="row"><strong><span class="noWrap">Conforms to</span></strong></td><td><div class="zSharedSpecBoxHeadList"><span class="content_text"><a href="../../../../Cocoa/Reference/Foundation/Protocols/NSCopying_Protocol/Reference/Reference.html#//apple_ref/occ/intf/NSCopying">NSCopying</a></span><br/><span class="content_text"><a href="../../../../Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject.html#//apple_ref/occ/intf/NSObject">NSObject (NSObject)</a></span><br/></div></td></tr><tr><td scope="row"><strong><span class="FrameworkPath">Framework</span></strong></td><td><div class="zSharedSpecBoxHeadList">/System/Library/Frameworks/<a href="../../AVFoundationFramework/_index.html#//apple_ref/doc/uid/TP40008072">AVFoundation.framework</a></div></td></tr><tr><td scope="row"><strong>Availability</strong></td><td><div class="zSharedSpecBoxHeadList"><div>Available in iOS 5.0 and later.</div></div></td></tr><tr><td scope="row"><strong><span class="noWrap">Companion guide</span></strong></td><td><div class="zSharedSpecBoxHeadList"><span class="content_text"><a href="../../../../AudioVideo/Conceptual/AVFoundationPG/Articles/00_Introduction.html#//apple_ref/doc/uid/TP40010188" target="_self">AV Foundation Programming Guide</a></span><br/></div></td></tr><tr><td scope="row"><strong><span class="DeclaredIn">Declared in</span></strong></td><td><div class="zSharedSpecBoxHeadList"><span class="content_text">AVMediaSelectionGroup.h</span><br/></div></td></tr></table></div><div id="Overview_section" class="zClassDescription"><a name="//apple_ref/doc/uid/TP40011011-CH1-DontLinkElementID_1" title="Overview"></a><h2 class="jump zClassDescription_Name">Overview</h2><p class="abstract">An <code>AVMediaSelectionGroup</code> represents a collection of mutually exclusive options for the presentation of media within an asset.</p></div><div id="Tasks_section" class="zMethodsByTask"><a name="//apple_ref/doc/uid/TP40011011-CH1-DontLinkElementID_2" title="Tasks"></a><h2 class="jump zMethodsByTask_Name">Tasks</h2>
+<a name="//apple_ref/doc/uid/TP40011011-CH1-SW2" title="Accessing Options"></a>
+		<h3 class="tasks">Accessing Options</h3>
+		
+		
+		
+		
+		<ul class="tooltip">
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/instp/AVMediaSelectionGroup/options">&#xA0;&#xA0;options</a></code><span class="task_api_suffix">&#160;&#160;property</span>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='A collection of mutually exclusive media selection options (read-only)'></span>
+                    
+                </span></li>
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/instm/AVMediaSelectionGroup/mediaSelectionOptionWithPropertyList:">&#8211;&#xA0;mediaSelectionOptionWithPropertyList:</a></code>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='Returns the instance of <code>AVMediaSelectionOption</code> with properties that match the given property list.'></span>
+                    
+                </span></li>
+			
+		</ul>
+
+
+<a name="//apple_ref/doc/uid/TP40011011-CH1-SW5" title="Configuring Empty Selection"></a>
+		<h3 class="tasks">Configuring Empty Selection</h3>
+		
+		
+		
+		
+		<ul class="tooltip">
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/instp/AVMediaSelectionGroup/allowsEmptySelection">&#xA0;&#xA0;allowsEmptySelection</a></code><span class="task_api_suffix">&#160;&#160;property</span>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='Indicates whether it’s possible to present none of the options in the group when an associated player item is played. (read-only)'></span>
+                    
+                </span></li>
+			
+		</ul>
+
+
+<a name="//apple_ref/doc/uid/TP40011011-CH1-SW7" title="Filtering Selection Options"></a>
+		<h3 class="tasks">Filtering Selection Options</h3>
+		
+		
+		
+		
+		<ul class="tooltip">
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/clm/AVMediaSelectionGroup/playableMediaSelectionOptionsFromArray:">+&#xA0;playableMediaSelectionOptionsFromArray:</a></code>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='Returns an array containing the media selection options from a given array that are playable.'></span>
+                    
+                </span></li>
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/clm/AVMediaSelectionGroup/mediaSelectionOptionsFromArray:withLocale:">+&#xA0;mediaSelectionOptionsFromArray:withLocale:</a></code>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='Returns an array containing the media selection options from a given array that match the specified locale.'></span>
+                    
+                </span></li>
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/clm/AVMediaSelectionGroup/mediaSelectionOptionsFromArray:withMediaCharacteristics:">+&#xA0;mediaSelectionOptionsFromArray:withMediaCharacteristics:</a></code>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='Returns an array containing the media selection options from a given array that match given media characteristics.'></span>
+                    
+                </span></li>
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/clm/AVMediaSelectionGroup/mediaSelectionOptionsFromArray:withoutMediaCharacteristics:">+&#xA0;mediaSelectionOptionsFromArray:withoutMediaCharacteristics:</a></code>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='Returns an array containing the media selection options from a given array that do not match given media characteristics.'></span>
+                    
+                </span></li>
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/clm/AVMediaSelectionGroup/mediaSelectionOptionsFromArray:filteredAndSortedAccordingToPreferredLanguages:">+&#xA0;mediaSelectionOptionsFromArray:filteredAndSortedAccordingToPreferredLanguages:</a></code>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='Returns an array of media selection options, filtering them according to whether their locales match one of the specified languages. '></span>
+                    
+                </span></li>
+			
+		</ul>
+
+
+</div><a name="//apple_ref/doc/uid/TP40011011-CH1-DontLinkElementID_3" title="Properties"></a><h2 class="jump">Properties</h2><div class="api propertyObjC"><a name="//apple_ref/occ/instp/AVMediaSelectionGroup/allowsEmptySelection" title="allowsEmptySelection"></a><a name="//apple_ref/occ/instm/AVMediaSelectionGroup/allowsEmptySelection" title="allowsEmptySelection"></a><a name="//apple_ref/doc/uid/TP40011011-CH1-SW6" title="allowsEmptySelection"></a><a name="//apple_ref/doc/uid/TP40011011-CH1-DontLinkElementID_6"></a><h3 class="jump propertyObjC method_property">allowsEmptySelection</h3><p class="abstract">Indicates whether it’s possible to present none of the options in the group when an associated player item is played. (read-only)</p><div class="declaration"><div class="declaration">@property(nonatomic, readonly) BOOL allowsEmptySelection</div></div><div class="api discussion"><h5>Discussion</h5><p>If the value of this property is <code>YES</code>, you can deselect all of the available media options in the group by passing <code>nil</code> as the specified <code><a href="../../AVMediaSelectionOption_Class/Reference/Reference.html#//apple_ref/occ/cl/AVMediaSelectionOption" target="_self">AVMediaSelectionOption</a></code> object to <code><a href="../../AVPlayerItem_Class/Reference/Reference.html#//apple_ref/occ/instm/AVPlayerItem/selectMediaOption:inMediaSelectionGroup:" target="_self">selectMediaOption:inMediaSelectionGroup:</a></code>.</p></div>  <div class="api availability"><h5>Availability</h5><ul><li>Available in iOS 5.0 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">AVMediaSelectionGroup.h</code></div></div><div class="api propertyObjC"><a name="//apple_ref/occ/instp/AVMediaSelectionGroup/options" title="options"></a><a name="//apple_ref/occ/instm/AVMediaSelectionGroup/options" title="options"></a><a name="//apple_ref/doc/uid/TP40011011-CH1-SW3" title="options"></a><a name="//apple_ref/doc/uid/TP40011011-CH1-DontLinkElementID_7"></a><h3 class="jump propertyObjC method_property">options</h3><p class="abstract">A collection of mutually exclusive media selection options (read-only)</p><div class="declaration"><div class="declaration">@property(nonatomic, readonly) <a href="../../../../Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/c_ref/NSArray">NSArray</a> *options</div></div><div class="api discussion"><h5>Discussion</h5><p>The value of the property is an array of <code><a href="../../AVMediaSelectionOption_Class/Reference/Reference.html#//apple_ref/occ/cl/AVMediaSelectionOption" target="_self">AVMediaSelectionOption</a></code> objects.</p></div>  <div class="api availability"><h5>Availability</h5><ul><li>Available in iOS 5.0 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">AVMediaSelectionGroup.h</code></div></div><a name="//apple_ref/doc/uid/TP40011011-CH1-DontLinkElementID_4" title="Class Methods"></a><h2 class="jump">Class Methods</h2><div class="api classMethod"><a name="//apple_ref/occ/clm/AVMediaSelectionGroup/mediaSelectionOptionsFromArray:filteredAndSortedAccordingToPreferredLanguages:" title="mediaSelectionOptionsFromArray:filteredAndSortedAccordingToPreferredLanguages:"></a><a name="//apple_ref/doc/uid/TP40011011-CH1-SW12" title="mediaSelectionOptionsFromArray:filteredAndSortedAccordingToPreferredLanguages:"></a><a name="//apple_ref/doc/uid/TP40011011-CH1-DontLinkElementID_8"></a><h3 class="jump classMethod">mediaSelectionOptionsFromArray:filteredAndSortedAccordingToPreferredLanguages:</h3><p class="abstract">Returns an array of media selection options, filtering them according to whether their locales match one of the specified languages. </p><div class="declaration">+ (<a href="../../../../Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/c_ref/NSArray">NSArray</a> *)mediaSelectionOptionsFromArray:(<a href="../../../../Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/c_ref/NSArray">NSArray</a> *)<em>mediaSelectionOptions</em> filteredAndSortedAccordingToPreferredLanguages:(<a href="../../../../Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/c_ref/NSArray">NSArray</a> *)<em>preferredLanguages</em></div><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>mediaSelectionOptions</em></dt><dd><p>An array of <code><a href="../../AVMediaSelectionOption_Class/Reference/Reference.html#//apple_ref/occ/cl/AVMediaSelectionOption" target="_self">AVMediaSelectionOption</a></code> objects to be filtered and sorted.</p></dd><dt><em>preferredLanguages</em></dt><dd><p>An array of <code><a href="../../../../Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html#//apple_ref/occ/cl/NSString" target="_self">NSString</a></code> objects, each of which contains a canonicalized IETF BCP 47 language identifier. The strings should be sorted in order of preference, with the string corresponding to the most preferred language as the first element in the array. Typically, you retrieve these strings using the <code><a href="../../../../Cocoa/Reference/Foundation/Classes/NSLocale_Class/Reference/Reference.html#//apple_ref/occ/clm/NSLocale/preferredLanguages" target="_self">preferredLanguages</a></code> class method of the <code>NSLocale</code> class. </p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>An array of <code><a href="../../AVMediaSelectionOption_Class/Reference/Reference.html#//apple_ref/occ/cl/AVMediaSelectionOption" target="_self">AVMediaSelectionOption</a></code> objects that match one of the languages in the <em>preferredLanguages</em> parameter. The objects in this array are sorted based on the language each one matches, with objects matching the most preferred language first in the array. </p></div>   <div class="api availability"><h5>Availability</h5><ul><li>Available in iOS 6.0 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">AVMediaSelectionGroup.h</code></div></div><div class="api classMethod"><a name="//apple_ref/occ/clm/AVMediaSelectionGroup/mediaSelectionOptionsFromArray:withLocale:" title="mediaSelectionOptionsFromArray:withLocale:"></a><a name="//apple_ref/doc/uid/TP40011011-CH1-SW9" title="mediaSelectionOptionsFromArray:withLocale:"></a><a name="//apple_ref/doc/uid/TP40011011-CH1-DontLinkElementID_9"></a><h3 class="jump classMethod">mediaSelectionOptionsFromArray:withLocale:</h3><p class="abstract">Returns an array containing the media selection options from a given array that match the specified locale.</p><div class="declaration">+ (<a href="../../../../Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/c_ref/NSArray">NSArray</a> *)mediaSelectionOptionsFromArray:(<a href="../../../../Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/c_ref/NSArray">NSArray</a> *)<em>array</em> withLocale:(<a href="../../../../Cocoa/Reference/Foundation/Classes/NSLocale_Class/Reference/Reference.html#//apple_ref/doc/c_ref/NSLocale">NSLocale</a> *)<em>locale</em></div><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>array</em></dt><dd><p>An array of <code><a href="../../AVMediaSelectionOption_Class/Reference/Reference.html#//apple_ref/occ/cl/AVMediaSelectionOption" target="_self">AVMediaSelectionOption</a></code> objects to be filtered.</p></dd><dt><em>locale</em></dt><dd><p>The locale that must be matched for a media selection option to be copied to the output array.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>An array containing the media selection options from <em>array</em> that match the <em>locale</em>.</p></div>   <div class="api availability"><h5>Availability</h5><ul><li>Available in iOS 5.0 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">AVMediaSelectionGroup.h</code></div></div><div class="api classMethod"><a name="//apple_ref/occ/clm/AVMediaSelectionGroup/mediaSelectionOptionsFromArray:withMediaCharacteristics:" title="mediaSelectionOptionsFromArray:withMediaCharacteristics:"></a><a name="//apple_ref/doc/uid/TP40011011-CH1-SW10" title="mediaSelectionOptionsFromArray:withMediaCharacteristics:"></a><a name="//apple_ref/doc/uid/TP40011011-CH1-DontLinkElementID_10"></a><h3 class="jump classMethod">mediaSelectionOptionsFromArray:withMediaCharacteristics:</h3><p class="abstract">Returns an array containing the media selection options from a given array that match given media characteristics.</p><div class="declaration">+ (<a href="../../../../Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/c_ref/NSArray">NSArray</a> *)mediaSelectionOptionsFromArray:(<a href="../../../../Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/c_ref/NSArray">NSArray</a> *)<em>array</em> withMediaCharacteristics:(<a href="../../../../Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/c_ref/NSArray">NSArray</a> *)<em>mediaCharacteristics</em></div><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>array</em></dt><dd><p>An array of <code><a href="../../AVMediaSelectionOption_Class/Reference/Reference.html#//apple_ref/occ/cl/AVMediaSelectionOption" target="_self">AVMediaSelectionOption</a></code> objects to be filtered.</p></dd><dt><em>mediaCharacteristics</em></dt><dd><p>The media characteristics that must be matched for a media selection option to be present in the output array.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>An array containing the media selection options from <em>array</em> that match <em>mediaCharacteristics</em>.</p></div>   <div class="api availability"><h5>Availability</h5><ul><li>Available in iOS 5.0 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">AVMediaSelectionGroup.h</code></div></div><div class="api classMethod"><a name="//apple_ref/occ/clm/AVMediaSelectionGroup/mediaSelectionOptionsFromArray:withoutMediaCharacteristics:" title="mediaSelectionOptionsFromArray:withoutMediaCharacteristics:"></a><a name="//apple_ref/doc/uid/TP40011011-CH1-SW11" title="mediaSelectionOptionsFromArray:withoutMediaCharacteristics:"></a><a name="//apple_ref/doc/uid/TP40011011-CH1-DontLinkElementID_11"></a><h3 class="jump classMethod">mediaSelectionOptionsFromArray:withoutMediaCharacteristics:</h3><p class="abstract">Returns an array containing the media selection options from a given array that do not match given media characteristics.</p><div class="declaration">+ (<a href="../../../../Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/c_ref/NSArray">NSArray</a> *)mediaSelectionOptionsFromArray:(<a href="../../../../Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/c_ref/NSArray">NSArray</a> *)<em>array</em> withoutMediaCharacteristics:(<a href="../../../../Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/c_ref/NSArray">NSArray</a> *)<em>mediaCharacteristics</em></div><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>array</em></dt><dd><p>An array of <code><a href="../../AVMediaSelectionOption_Class/Reference/Reference.html#//apple_ref/occ/cl/AVMediaSelectionOption" target="_self">AVMediaSelectionOption</a></code> objects to be filtered.</p></dd><dt><em>mediaCharacteristics</em></dt><dd><p>The media characteristics that must not be present for a media selection option to be present in the output array.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>An array containing the media selection options from <em>array</em> that lack the media characteristics in <em>mediaCharacteristics</em>.</p></div>   <div class="api availability"><h5>Availability</h5><ul><li>Available in iOS 5.0 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">AVMediaSelectionGroup.h</code></div></div><div class="api classMethod"><a name="//apple_ref/occ/clm/AVMediaSelectionGroup/playableMediaSelectionOptionsFromArray:" title="playableMediaSelectionOptionsFromArray:"></a><a name="//apple_ref/doc/uid/TP40011011-CH1-SW8" title="playableMediaSelectionOptionsFromArray:"></a><a name="//apple_ref/doc/uid/TP40011011-CH1-DontLinkElementID_12"></a><h3 class="jump classMethod">playableMediaSelectionOptionsFromArray:</h3><p class="abstract">Returns an array containing the media selection options from a given array that are playable.</p><div class="declaration">+ (<a href="../../../../Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/c_ref/NSArray">NSArray</a> *)playableMediaSelectionOptionsFromArray:(<a href="../../../../Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/c_ref/NSArray">NSArray</a> *)<em>array</em></div><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>array</em></dt><dd><p>An array of <code><a href="../../AVMediaSelectionOption_Class/Reference/Reference.html#//apple_ref/occ/cl/AVMediaSelectionOption" target="_self">AVMediaSelectionOption</a></code> objects to be filtered by playability.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>An array containing the media selection options from <em>array</em> that are playable.</p></div>   <div class="api availability"><h5>Availability</h5><ul><li>Available in iOS 5.0 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">AVMediaSelectionGroup.h</code></div></div><div id="InstanceMethods_section" class="zInstanceMethods"><a name="//apple_ref/doc/uid/TP40011011-CH1-DontLinkElementID_5" title="Instance Methods"></a><h2 class="jump">Instance Methods</h2><div class="api instanceMethod"><a name="//apple_ref/occ/instm/AVMediaSelectionGroup/mediaSelectionOptionWithPropertyList:" title="mediaSelectionOptionWithPropertyList:"></a><a name="//apple_ref/doc/uid/TP40011011-CH1-SW4" title="mediaSelectionOptionWithPropertyList:"></a><a name="//apple_ref/doc/uid/TP40011011-CH1-DontLinkElementID_13"></a><h3 class="jump instanceMethod">mediaSelectionOptionWithPropertyList:</h3><p class="abstract">Returns the instance of <code>AVMediaSelectionOption</code> with properties that match the given property list.</p><div class="declaration">- (<a href="../../AVMediaSelectionOption_Class/Reference/Reference.html#//apple_ref/doc/c_ref/AVMediaSelectionOption">AVMediaSelectionOption</a> *)mediaSelectionOptionWithPropertyList:(id)<em>plist</em></div><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>plist</em></dt><dd><p>A property list previously obtained from an option in the group using <code><a href="../../AVMediaSelectionOption_Class/Reference/Reference.html#//apple_ref/occ/instm/AVMediaSelectionOption/propertyList" target="_self">propertyList</a></code> (<code>AVMediaSelectionOption</code>).</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>If the properties in <em>plist</em> match those of an option in the group, a corresponding instance of <code><a href="../../AVMediaSelectionOption_Class/Reference/Reference.html#//apple_ref/occ/cl/AVMediaSelectionOption" target="_self">AVMediaSelectionOption</a></code>, otherwise <code>nil</code>.</p></div>   <div class="api availability"><h5>Availability</h5><ul><li>Available in iOS 5.0 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">AVMediaSelectionGroup.h</code></div></div></div>
+        <div id="pageNavigationLinks_bottom" class="pageNavigationLinks">
+            <a class='nextLink' rel='next' href='../RevisionHistory.html'>Next</a>
+        </div><br/>
+        <div class="copyright"><br/><hr /><div align="center"><p class="content_text" lang="en" dir="ltr"> &#x00a9; 2012 Apple Inc. All Rights Reserved. &#40;Last updated: iOS 6.0&#041;</p></div></div>
+
+        <div id="feedbackForm" class="hideOnPrint" style="margin-left: auto; margin-right: auto; width: 38em; margin-bottom: 15px; margin-top: 15px; font-weight: bold; color: #333333; background: #d9d9d9; padding: 5px 10px 5px 10px; height: 15px; text-align: center; -webkit-border-radius: 12px; -moz-border-radius: 12px; vertical-align: middle;">
+    Did this document help you?
+    <span class="tooltip" data-abstract="<b>Yes:</b> Tell us what works for you.">
+       <a href="http://developer.apple.com/feedback/?v=1&url=%2Flibrary%2Fios%2Fdocumentation%2FAVFoundation%2FReference%2FAVMediaSelectionGroup_Class%2FReference%2FReference.html%3Fdocset%3Dcom.apple.adc.documentation.AppleiOS6.0.iOSLibrary-41.39%26id%3DTP40011011-2.0&media=xcode" class='urlLink'>Yes</a>
+    </span>
+    <span class="tooltip" data-abstract="<b>It's good, but:</b> Report typos, inaccuracies, and so forth.">
+        <a href="http://developer.apple.com/feedback/?v=2&url=%2Flibrary%2Fios%2Fdocumentation%2FAVFoundation%2FReference%2FAVMediaSelectionGroup_Class%2FReference%2FReference.html%3Fdocset%3Dcom.apple.adc.documentation.AppleiOS6.0.iOSLibrary-41.39%26id%3DTP40011011-2.0&media=xcode" class='urlLink'>It's good, but...</a>
+    </span>
+    <span class="tooltip" data-abstract="<b>Not helpful:</b> Tell us what would have helped.">
+        <a href="http://developer.apple.com/feedback/?v=3&url=%2Flibrary%2Fios%2Fdocumentation%2FAVFoundation%2FReference%2FAVMediaSelectionGroup_Class%2FReference%2FReference.html%3Fdocset%3Dcom.apple.adc.documentation.AppleiOS6.0.iOSLibrary-41.39%26id%3DTP40011011-2.0&media=xcode" class='urlLink'>Not helpful...</a>
+    </span>
+</div>
+        
+    </article>
+</body>
+<script charset="utf-8" src="../../../../../Resources/677/JavaScript/lib/prototype.js"></script>
+<!-- Media player includes -->
+<script charset="utf-8" src="../../../../../Resources/677/JavaScript/lib/scriptaculous.js"></script>
+<script charset="utf-8" src="../../../../../Resources/677/JavaScript/lib/event_mixins.js"></script>
+<script charset="utf-8" src="../../../../../Resources/677/JavaScript/lib/browserdetect.js"></script>
+<script charset="utf-8" src="../../../../../Resources/677/JavaScript/lib/ac_media.js"></script>
+<!-- /Media player includes -->
+<script charset="utf-8" src="../../../../../Resources/677/JavaScript/devpubs.js"></script>
+<script charset="utf-8" src="../../../../../Resources/677/JavaScript/book.js"></script>
+<script charset="utf-8" src="../../../../../Resources/677/JavaScript/tasks.js"></script>
+</html>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- List the documentation source -->
+	<xs:simpleType name="DocumentOrigin">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="None" />
+			<xs:enumeration value="DocSet" />
+			<xs:enumeration value="Doxygen" />
+			<xs:enumeration value="Source" />
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- List the page styles -->
+	<xs:simpleType name="PageStyle">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="None" />
+			<xs:enumeration value="Cocoa" />
+			<xs:enumeration value="Classic" />
+			<xs:enumeration value="Doxygen" />
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- List the entity type -->
+	<xs:simpleType name="FrameworkEntityType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="None" />
+			<xs:enumeration value="C" />
+			<xs:enumeration value="E" />
+			<xs:enumeration value="P" />
+			<xs:enumeration value="S" />
+			<xs:enumeration value="T" />
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- List the patch targets -->
+	<xs:simpleType name="DocumentType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="None" />
+			<xs:enumeration value="DocSet" />
+			<xs:enumeration value="Doxygen" />
+			<xs:enumeration value="Source" />
+			<xs:enumeration value="Html" />
+			<xs:enumeration value="Xhtml" />
+			<xs:enumeration value="Model" />
+			<xs:enumeration value="Generated" />
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Define the patch type -->
+	<xs:complexType name="Patch">
+		<xs:sequence>
+			<xs:element name="Replace" maxOccurs="unbounded" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element type="xs:string" name="Source" />
+						<xs:element type="xs:string" name="With" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element type="xs:string" name="Change" maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+		<xs:attribute type="DocumentType" name="type" use="required" />
+	</xs:complexType>
+	<!-- Define the entity -->
+	<xs:complexType name="FrameworkEntity">
+		<xs:sequence>
+			<xs:element type="xs:string" name="File" default="N/A" />
+			<xs:element name="Patch" type="Patch" maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+		<xs:attribute type="FrameworkEntityType" name="type" use="required" />
+		<xs:attribute type="xs:string" name="name" use="required" />
+	</xs:complexType>
+	<!-- Define the type entity -->
+	<xs:complexType name="FrameworkType">
+		<xs:complexContent>
+			<xs:extension base="FrameworkEntity" />
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Define the class entity -->
+	<xs:complexType name="FrameworkClass">
+		<xs:complexContent>
+			<xs:extension base="FrameworkEntity" />
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Define the protocol entity -->
+	<xs:complexType name="FrameworkProtocol">
+		<xs:complexContent>
+			<xs:extension base="FrameworkEntity" />
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Define the structure entity -->
+	<xs:complexType name="FrameworkStructure">
+		<xs:complexContent>
+			<xs:extension base="FrameworkEntity" />
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Define the enumeration entity -->
+	<xs:complexType name="FrameworkEnumeration">
+		<xs:complexContent>
+			<xs:extension base="FrameworkEntity" />
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Define the framework -->
+	<xs:element name="Framework">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Types" maxOccurs="1" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Type" type="FrameworkType" maxOccurs="unbounded" minOccurs="0">
+							
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Classes" maxOccurs="1" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Class" type="FrameworkClass" maxOccurs="unbounded" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Protocols" maxOccurs="1" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Protocol" type="FrameworkProtocol" maxOccurs="unbounded" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Structures" maxOccurs="1" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Structure" type="FrameworkStructure" maxOccurs="unbounded" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Enumerations" maxOccurs="1" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Enumeration" type="FrameworkEnumeration" maxOccurs="unbounded" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute type="xs:string" name="name" use="required" />
+			<xs:attribute type="xs:string" name="usings" use="optional" />
+			<xs:attribute type="xs:string" name="assembly" use="required" />
+			<xs:attribute type="DocumentOrigin" name="source" use="required" />
+			<xs:attribute type="PageStyle" name="style" use="optional" default="Cocoa" />
+			<xs:attribute type="xs:string" name="path" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

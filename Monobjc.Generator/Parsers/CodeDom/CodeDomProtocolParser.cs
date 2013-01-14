@@ -16,23 +16,25 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System.Collections.Specialized;
+using System.IO;
 using ICSharpCode.NRefactory.Ast;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Parsers.CodeDom
 {
-    public class CodeDomProtocolParser : CodeDomClassParser
-    {
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "CodeDomProtocolParser" /> class.
-        /// </summary>
-        /// <param name = "settings">The settings.</param>
-        /// <param name = "typeManager">The type manager.</param>
-        public CodeDomProtocolParser(NameValueCollection settings, TypeManager typeManager) : base(settings, typeManager) {}
+	public class CodeDomProtocolParser : CodeDomClassParser
+	{
+		/// <summary>
+		///   Initializes a new instance of the <see cref = "CodeDomProtocolParser" /> class.
+		/// </summary>
+		/// <param name = "settings">The settings.</param>
+		/// <param name = "typeManager">The type manager.</param>
+		public CodeDomProtocolParser (NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger)
+		{
+		}
 
-        protected override ClassType ClassType
-        {
-            get { return ClassType.Interface; }
-        }
-    }
+		protected override ClassType ClassType {
+			get { return ClassType.Interface; }
+		}
+	}
 }

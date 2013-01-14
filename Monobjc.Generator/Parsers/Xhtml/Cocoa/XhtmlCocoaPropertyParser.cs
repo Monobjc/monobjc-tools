@@ -21,7 +21,7 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
@@ -36,7 +36,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
         /// </summary>
         /// <param name = "settings">The settings.</param>
         /// <param name = "typeManager">The type manager.</param>
-        public XhtmlCocoaPropertyParser(NameValueCollection settings, TypeManager typeManager) : base(settings, typeManager) {}
+		public XhtmlCocoaPropertyParser(NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger) {}
 
         /// <summary>
         ///   Parses the specified entity.
@@ -53,10 +53,12 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
         /// </summary>
         /// <param name = "propertyElement">The property element.</param>
         /// <returns></returns>
-        public PropertyEntity Parse(XElement propertyElement)
+		public PropertyEntity Parse(TypedEntity typedEntity, XElement propertyElement)
         {
             XElement nameElement = propertyElement.Element("h3");
             String name = nameElement.TrimAll();
+
+			this.Logger.WriteLine("  Property '" + name + "'");
 
             // Extract the declaration
             XElement signatureElement = (from el in propertyElement.Elements("div")
@@ -136,7 +138,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
             }
 
             bool isOut, isByRef, isBlock;
-            String type = this.TypeManager.ConvertType(returnType, out isOut, out isByRef, out isBlock);
+			String type = this.TypeManager.ConvertType(returnType, out isOut, out isByRef, out isBlock, this.Logger);
 
             PropertyEntity propertyEntity = new PropertyEntity();
             propertyEntity.MinAvailability = minAvailability;

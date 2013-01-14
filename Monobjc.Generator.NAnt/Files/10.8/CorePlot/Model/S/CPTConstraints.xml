@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure Generate="true">
+	<Name>CPTConstraints</Name>
+	<Namespace>CorePlot</Namespace>
+	<MixedType>CPTConstraints,CPTConstraints</MixedType>
+</Structure>

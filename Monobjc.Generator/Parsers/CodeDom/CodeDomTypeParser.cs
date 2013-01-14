@@ -16,20 +16,23 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System.Collections.Specialized;
+using System.IO;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Parsers.CodeDom
 {
-    /// <summary>
-    ///   Base class for typed entity parsing from code DOM.
-    /// </summary>
-    public abstract class CodeDomTypeParser : CodeDomBaseParser
-    {
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "CodeDomTypeParser" /> class.
-        /// </summary>
-        /// <param name = "settings">The settings.</param>
-        /// <param name = "typeManager">The type manager.</param>
-        public CodeDomTypeParser(NameValueCollection settings, TypeManager typeManager) : base(settings, typeManager) {}
-    }
+	/// <summary>
+	///   Base class for typed entity parsing from code DOM.
+	/// </summary>
+	public abstract class CodeDomTypeParser : CodeDomBaseParser
+	{
+		/// <summary>
+		///   Initializes a new instance of the <see cref = "CodeDomTypeParser" /> class.
+		/// </summary>
+		/// <param name = "settings">The settings.</param>
+		/// <param name = "typeManager">The type manager.</param>
+		public CodeDomTypeParser (NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger)
+		{
+		}
+	}
 }

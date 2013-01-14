@@ -21,7 +21,7 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
@@ -36,7 +36,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
         /// </summary>
         /// <param name = "settings">The settings.</param>
         /// <param name = "typeManager">The type manager.</param>
-        public XhtmlCocoaMethodParser(NameValueCollection settings, TypeManager typeManager) : base(settings, typeManager) {}
+		public XhtmlCocoaMethodParser(NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger) {}
 
         /// <summary>
         ///   Parses the specified entity.
@@ -53,13 +53,15 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
         /// </summary>
         /// <param name = "methodElement">The method element.</param>
         /// <returns></returns>
-        public MethodEntity Parse(XElement methodElement)
+		public MethodEntity Parse(TypedEntity typedEntity, XElement methodElement)
         {
             MethodEntity methodEntity = new MethodEntity();
 
             XElement selectorElement = methodElement.Element("h3");
             methodEntity.Selector = selectorElement.TrimAll();
             methodEntity.Name = GetMethodName(methodEntity);
+
+			this.Logger.WriteLine("  Method '" + methodEntity.Selector + "'");
 
             // Extract signature
             XElement signatureElement = (from el in methodElement.Elements("div")
@@ -89,7 +91,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
             MethodSignatureEnumerator signatureEnumerator = new MethodSignatureEnumerator(methodEntity.Signature);
             if (signatureEnumerator.MoveNext())
             {
-                methodEntity.ReturnType = this.TypeManager.ConvertType(signatureEnumerator.Current.TrimAll());
+				methodEntity.ReturnType = this.TypeManager.ConvertType(signatureEnumerator.Current.TrimAll(), this.Logger);
             }
             else
             {
@@ -103,7 +105,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
             {
                 MethodParameterEntity parameterEntity = new MethodParameterEntity();
                 bool isOut, isByRef, isBlock;
-                parameterEntity.Type = this.TypeManager.ConvertType(parameterTypesEnumerator.Current, out isOut, out isByRef, out isBlock);
+				parameterEntity.Type = this.TypeManager.ConvertType(parameterTypesEnumerator.Current, out isOut, out isByRef, out isBlock, this.Logger);
                 parameterEntity.IsOut = isOut;
                 parameterEntity.IsByRef = isByRef;
                 parameterEntity.IsBlock = isBlock;

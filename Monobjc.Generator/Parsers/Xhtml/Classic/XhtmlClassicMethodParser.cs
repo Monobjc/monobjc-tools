@@ -21,7 +21,7 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
@@ -36,7 +36,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
         /// </summary>
         /// <param name = "settings">The settings.</param>
         /// <param name = "typeManager">The type manager.</param>
-        public XhtmlClassicMethodParser(NameValueCollection settings, TypeManager typeManager) : base(settings, typeManager) {}
+		public XhtmlClassicMethodParser(NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger) {}
 
         /// <summary>
         ///   Parses the specified entity.
@@ -48,7 +48,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
             throw new NotImplementedException();
         }
 
-        public MethodEntity Parse(String selector, IEnumerable<XElement> elements)
+		public MethodEntity Parse(TypedEntity typedEntity, String selector, IEnumerable<XElement> elements)
         {
             MethodEntity methodEntity = new MethodEntity();
 
@@ -117,7 +117,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
             MethodSignatureEnumerator signatureEnumerator = new MethodSignatureEnumerator(methodEntity.Signature);
             if (signatureEnumerator.MoveNext())
             {
-                methodEntity.ReturnType = this.TypeManager.ConvertType(signatureEnumerator.Current.TrimAll());
+				methodEntity.ReturnType = this.TypeManager.ConvertType(signatureEnumerator.Current.TrimAll(), this.Logger);
             }
             else
             {
@@ -131,7 +131,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
             {
                 MethodParameterEntity parameterEntity = new MethodParameterEntity();
                 bool isOut, isByRef, isBlock;
-                parameterEntity.Type = this.TypeManager.ConvertType(parameterTypesEnumerator.Current, out isOut, out isByRef, out isBlock);
+				parameterEntity.Type = this.TypeManager.ConvertType(parameterTypesEnumerator.Current, out isOut, out isByRef, out isBlock, this.Logger);
                 parameterEntity.IsOut = isOut;
                 parameterEntity.IsByRef = isByRef;
                 parameterEntity.IsBlock = isBlock;

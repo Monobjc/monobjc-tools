@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="OpenGL" usings="Foundation" assembly="Monobjc.OpenGL" source="DocSet">
+	<Types>
+		<Type name="CGL">
+			<File>GraphicsImaging/Reference/CGL_OpenGL/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGLChoosePixelFormat"].Parameters["attribs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLChoosePixelFormat"].Parameters["pix"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLChoosePixelFormat"].Parameters["npix"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLCreateContext"].Parameters["ctx"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLCreatePBuffer"].Parameters["pbuffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLDescribePBuffer"].Parameters["width"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLDescribePBuffer"].Parameters["height"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLDescribePBuffer"].Parameters["target"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLDescribePBuffer"].Parameters["internalFormat"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLDescribePBuffer"].Parameters["mipmap"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLDescribePixelFormat"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLDescribeRenderer"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLErrorString"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetCurrentContext"].Parameters["d"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CGLGetGlobalOption"].Parameters["params"].Name="@params"]]></Change>
+				<Change><![CDATA[Functions["CGLGetGlobalOption"].Parameters["@params"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetOffScreen"].Parameters["width"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetOffScreen"].Parameters["height"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetOffScreen"].Parameters["rowbytes"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetOffScreen"].Parameters["baseaddr"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetOption"].Parameters["param"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetParameter"].Parameters["params"].Name="@params"]]></Change>
+				<Change><![CDATA[Functions["CGLGetParameter"].Parameters["@params"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetPBuffer"].Parameters["pbuffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetPBuffer"].Parameters["face"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetPBuffer"].Parameters["level"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetPBuffer"].Parameters["screen"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetVersion"].Parameters["majorvers"].Type="int"]]></Change>
+				<Change><![CDATA[Functions["CGLGetVersion"].Parameters["majorvers"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CGLGetVersion"].Parameters["minorvers"].Type="int"]]></Change>
+				<Change><![CDATA[Functions["CGLGetVersion"].Parameters["minorvers"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CGLGetVirtualScreen"].Parameters["screen"].Type="int"]]></Change>
+				<Change><![CDATA[Functions["CGLGetVirtualScreen"].Parameters["screen"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CGLIsEnabled"].Parameters["enable"].Type="int"]]></Change>
+				<Change><![CDATA[Functions["CGLIsEnabled"].Parameters["enable"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CGLQueryRendererInfo"].Parameters["rend"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLQueryRendererInfo"].Parameters["nrend"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLSetGlobalOption"].Parameters["params"].Name="@params"]]></Change>
+				<Change><![CDATA[Functions["CGLSetGlobalOption"].Parameters["@params"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLSetParameter"].Parameters["params"].Name="@params"]]></Change>
+				<Change><![CDATA[Functions["CGLSetParameter"].Parameters["@params"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Enumerations["CGLPixelFormatAttribute"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CGLContextEnable"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CGLContextParameter"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CGLGlobalOption"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CGLRendererProperty"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CGLOpenGLProfile"].BaseType="int"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGL.Deprecated">
+			<File>GraphicsImaging/Reference/CGL_OpenGL/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGLCreatePBuffer"].Parameters["pbuffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLDescribePBuffer"].Parameters["width"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLDescribePBuffer"].Parameters["height"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLDescribePBuffer"].Parameters["target"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLDescribePBuffer"].Parameters["internalFormat"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLDescribePBuffer"].Parameters["mipmap"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetOffScreen"].Parameters["width"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetOffScreen"].Parameters["height"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetOffScreen"].Parameters["rowbytes"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetOffScreen"].Parameters["baseaddr"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetPBuffer"].Parameters["pbuffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetPBuffer"].Parameters["face"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetPBuffer"].Parameters["level"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGLGetPBuffer"].Parameters["screen"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Type>
+	</Types>
+</Framework>

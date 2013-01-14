@@ -20,106 +20,104 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
+using System.IO;
 
 namespace Monobjc.Tools.Generator.Parsers.Xhtml
 {
-    /// <summary>
-    ///   Base class for XHTML parsing.
-    /// </summary>
-    public abstract class XhtmlBaseParser : BaseParser
-    {
-        protected static readonly Regex ENUMERATION_REGEX = new Regex(@"(typedef )?enum( ?[_A-z]+)? ?\{(.+)\};?( ?typedef)?( ?[A-z0-9_]+ ?)?([A-z]+)?");
-        protected static readonly Regex CONSTANT_REGEX = new Regex(@"(id ?|unsigned ?|double ?|float ?\*?|NSString ?\*? ?|CFStringRef ?|CIFormat|CATransform3D|CLLocationDistance ?)([A-z0-9]+)$");
-        protected static readonly Regex PARAMETER_REGEX = new Regex(@"(const )?([0-9A-z]+ ?\*{0,2} ?)([0-9A-z]+)");
+	/// <summary>
+	///   Base class for XHTML parsing.
+	/// </summary>
+	public abstract class XhtmlBaseParser : BaseParser
+	{
+		protected static readonly Regex ENUMERATION_REGEX = new Regex (@"(typedef )?enum( ?[_A-z]+)? ?\{(.+)\};?( ?typedef)?( ?[A-z0-9_]+ ?)?([A-z]+)?");
+		protected static readonly Regex CONSTANT_REGEX = new Regex (@"(id ?|unsigned ?|double ?|float ?\*?|NSString ?\*? ?|CFStringRef ?|CIFormat|CATransform3D|CLLocationDistance ?)([A-z0-9]+)$");
+		protected static readonly Regex PARAMETER_REGEX = new Regex (@"(const )?([0-9A-z]+ ?\*{0,2} ?)([0-9A-z]+)");
 
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "XhtmlBaseParser" /> class.
-        /// </summary>
-        /// <param name = "settings">The settings.</param>
-        /// <param name = "typeManager">The type manager.</param>
-        protected XhtmlBaseParser(NameValueCollection settings, TypeManager typeManager) : base(settings, typeManager) {}
+		/// <summary>
+		///   Initializes a new instance of the <see cref = "XhtmlBaseParser" /> class.
+		/// </summary>
+		/// <param name = "settings">The settings.</param>
+		/// <param name = "typeManager">The type manager.</param>
+		protected XhtmlBaseParser (NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger)
+		{
+		}
 
-        /// <summary>
-        ///   Gets the name of the method.
-        /// </summary>
-        /// <param name = "methodEntity">The method entity.</param>
-        /// <returns></returns>
-        internal static String GetMethodName(MethodEntity methodEntity)
-        {
-            String[] parts = methodEntity.Selector.Split(new[] {':'}, StringSplitOptions.RemoveEmptyEntries);
-            StringBuilder builder = new StringBuilder();
-            foreach (String part in parts)
-            {
-                String token = part.UpperCaseFirstLetter();
-                builder.Append(token);
-            }
-            return builder.ToString();
-        }
+		/// <summary>
+		///   Gets the name of the method.
+		/// </summary>
+		/// <param name = "methodEntity">The method entity.</param>
+		/// <returns></returns>
+		internal static String GetMethodName (MethodEntity methodEntity)
+		{
+			String[] parts = methodEntity.Selector.Split (new[] {':'}, StringSplitOptions.RemoveEmptyEntries);
+			StringBuilder builder = new StringBuilder ();
+			foreach (String part in parts) {
+				String token = part.UpperCaseFirstLetter ();
+				builder.Append (token);
+			}
+			return builder.ToString ();
+		}
 
-        protected bool SplitEnumeration(string declaration, ref string name, ref string type, ref string values)
-        {
-            Match r = ENUMERATION_REGEX.Match(declaration);
-            if (r.Success)
-            {
-                String v2 = r.Groups[2].Value.Trim();
-                String v5 = r.Groups[5].Value.Trim();
-                String v6 = r.Groups[6].Value.Trim();
+		protected bool SplitEnumeration (String declaration, ref String name, ref String type, ref String values)
+		{
+			String trimmedDeclaration = declaration;
+			while (trimmedDeclaration.Contains("  ")) {
+				trimmedDeclaration = trimmedDeclaration.Replace ("  ", " ");
+			}
+			Match r = ENUMERATION_REGEX.Match (trimmedDeclaration);
+			if (r.Success) {
+				String v2 = r.Groups [2].Value.Trim ();
+				String v5 = r.Groups [5].Value.Trim ();
+				String v6 = r.Groups [6].Value.Trim ();
 
-                values = r.Groups[3].Value.Trim();
+				values = r.Groups [3].Value.Trim ();
 
-                // Name can be before enumeration values
-                if (!String.IsNullOrEmpty(v5) && !String.IsNullOrEmpty(v6))
-                {
-                    type = v5;
-                    name = v6;
-                }
-                else if (!String.IsNullOrEmpty(v5) && String.IsNullOrEmpty(v6))
-                {
-                    name = v5;
-                }
-                else if (!String.IsNullOrEmpty(v2) && !String.IsNullOrEmpty(v5))
-                {
-                    name = v5;
-                }
-                else if (!String.IsNullOrEmpty(v2) && String.IsNullOrEmpty(v6))
-                {
-                    name = v2;
-                }
+				// Name can be before enumeration values
+				if (!String.IsNullOrEmpty (v5) && !String.IsNullOrEmpty (v6)) {
+					type = v5;
+					name = v6;
+				} else if (!String.IsNullOrEmpty (v5) && String.IsNullOrEmpty (v6)) {
+					name = v5;
+				} else if (!String.IsNullOrEmpty (v2) && !String.IsNullOrEmpty (v5)) {
+					name = v5;
+				} else if (!String.IsNullOrEmpty (v2) && String.IsNullOrEmpty (v6)) {
+					name = v2;
+				}
 
-                // Clean results
-                name = name.Trim(';');
+				// Clean results
+				name = name.Trim (';');
 
-                // Make sure name is ok
-                name = " -:—".Aggregate(name, (current, c) => current.Replace(c, '_'));
+				// Make sure name is ok
+				name = " -:—".Aggregate (name, (current, c) => current.Replace (c, '_'));
 
-                bool isOut;
-                bool isByRef;
-                bool isBlock;
-                type = this.TypeManager.ConvertType(type, out isOut, out isByRef, out isBlock);
+				bool isOut;
+				bool isByRef;
+				bool isBlock;
+				type = this.TypeManager.ConvertType (type, out isOut, out isByRef, out isBlock, this.Logger);
 
-                //Console.WriteLine("Enumeration found '{0}' of type '{1}'", name, type);
+				//this.Logger.WriteLine("Enumeration found '{0}' of type '{1}'", name, type);
 
-                return true;
-            }
+				return true;
+			}
 
-            Console.WriteLine("FAILED to parse enum '{0}'", declaration);
-            return false;
-        }
+			this.Logger.WriteLine ("FAILED to parse enum '{0}'", declaration);
 
-        /// <summary>
-        ///   Converts a four-char value to an unsigned integer.
-        /// </summary>
-        /// <param name = "fourCharValue">The four char value.</param>
-        /// <returns>An unsigned integer</returns>
-        protected static uint FourCharToInt(String fourCharValue)
-        {
-            if (fourCharValue.Length != 4)
-            {
-                throw new ArgumentException();
-            }
-            return fourCharValue.Aggregate(0u, (i, c) => (i*256) + c);
-        }
-    }
+			return false;
+		}
+
+		/// <summary>
+		///   Converts a four-char value to an unsigned integer.
+		/// </summary>
+		/// <param name = "fourCharValue">The four char value.</param>
+		/// <returns>An unsigned integer</returns>
+		protected static uint FourCharToInt (String fourCharValue)
+		{
+			if (fourCharValue.Length != 4) {
+				throw new ArgumentException ();
+			}
+			return fourCharValue.Aggregate (0u, (i, c) => (i * 256) + c);
+		}
+	}
 }

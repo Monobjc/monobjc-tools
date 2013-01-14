@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Protocol xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" CopyInDescendants="false" Nature="P">
+	<Summary />
+	<MinAvailability>Mac OS X v10.0</MinAvailability>
+	<MaxAvailability>VERSION</MaxAvailability>
+	<Name>NSPanelDelegate</Name>
+	<Namespace>AppKit</Namespace>
+	<Enumerations />
+	<Constants />
+	<Functions />
+	<Methods />
+	<Properties />
+	<DelegateMethods />
+	<DelegateFor>NSPanel</DelegateFor>
+	<DelegateProperty>Delegate</DelegateProperty>
+</Protocol>

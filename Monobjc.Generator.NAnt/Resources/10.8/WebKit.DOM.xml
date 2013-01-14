@@ -1,0 +1,1279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Framework name="WebKit.DOM" usings="AppKit,Foundation,WebKit" assembly="Monobjc.WebKit" source="Doxygen" style="Doxygen" path="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/WebKit.framework/Headers">
+	<Types />
+	<Classes>
+		<Class type="C" name="DOMAbstractView" />
+		<Class type="C" name="DOMAttr" />
+		<Class type="C" name="DOMBlob" />
+		<Class type="C" name="DOMCDATASection" />
+		<Class type="C" name="DOMCharacterData" />
+		<Class type="C" name="DOMCharacterData_DOMCharacterDataDeprecated">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCharacterData"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMComment" />
+		<Class type="C" name="DOMCounter" />
+		<Class type="C" name="DOMCSSCharsetRule" />
+		<Class type="C" name="DOMCSSFontFaceRule" />
+		<Class type="C" name="DOMCSSImportRule" />
+		<Class type="C" name="DOMCSSMediaRule" />
+		<Class type="C" name="DOMCSSMediaRule_DOMCSSMediaRuleDeprecated">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSMediaRule"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSPageRule" />
+		<Class type="C" name="DOMCSSPrimitiveValue" />
+		<Class type="C" name="DOMCSSPrimitiveValue_DOMCSSPrimitiveValueDeprecated">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSPrimitiveValue"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSRule" />
+		<Class type="C" name="DOMCSSRuleList" />
+		<Class type="C" name="DOMCSSStyleDeclaration" />
+		<Class type="C" name="DOMCSSStyleDeclaration_DOMCSS2Properties">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSStyleDeclaration"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSStyleDeclaration_DOMCSSStyleDeclarationDeprecated">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSStyleDeclaration"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSStyleRule" />
+		<Class type="C" name="DOMCSSStyleSheet" />
+		<Class type="C" name="DOMCSSStyleSheet_DOMCSSStyleSheetDeprecated">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSStyleSheet"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSUnknownRule" />
+		<Class type="C" name="DOMCSSValue" />
+		<Class type="C" name="DOMCSSValueList" />
+		<Class type="C" name="DOMDocument" />
+		<Class type="C" name="DOMDocument_DOMDocumentDeprecated">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMDocument"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMDocument_WebDOMDocumentOperations">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMDocument"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMDocumentFragment" />
+		<Class type="C" name="DOMDocumentType" />
+		<Class type="C" name="DOMElement" />
+		<Class type="C" name="DOMElement_DOMElementAppKitExtensions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMElement_DOMElementDeprecated">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMEntity" />
+		<Class type="C" name="DOMEntityReference" />
+		<Class type="C" name="DOMEvent" />
+		<Class type="C" name="DOMEvent_DOMEventDeprecated">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMEvent"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMFile" />
+		<Class type="C" name="DOMFileList" />
+		<Class type="C" name="DOMHTMLAnchorElement" />
+		<Class type="C" name="DOMHTMLAppletElement" />
+		<Class type="C" name="DOMHTMLAreaElement" />
+		<Class type="C" name="DOMHTMLBaseElement" />
+		<Class type="C" name="DOMHTMLBaseFontElement" />
+		<Class type="C" name="DOMHTMLBodyElement" />
+		<Class type="C" name="DOMHTMLBRElement" />
+		<Class type="C" name="DOMHTMLButtonElement" />
+		<Class type="C" name="DOMHTMLCollection" />
+		<Class type="C" name="DOMHTMLDirectoryElement" />
+		<Class type="C" name="DOMHTMLDivElement" />
+		<Class type="C" name="DOMHTMLDListElement" />
+		<Class type="C" name="DOMHTMLDocument" />
+		<Class type="C" name="DOMHTMLDocument_DOMHTMLDocumentExtensions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLDocument"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLElement">
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSString ClassName]]></Source>
+					<With><![CDATA[public new NSString ClassName]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSString InnerText]]></Source>
+					<With><![CDATA[public new NSString InnerText]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLEmbedElement" />
+		<Class type="C" name="DOMHTMLFieldSetElement" />
+		<Class type="C" name="DOMHTMLFontElement" />
+		<Class type="C" name="DOMHTMLFormElement" />
+		<Class type="C" name="DOMHTMLFrameElement" />
+		<Class type="C" name="DOMHTMLFrameElement_WebDOMHTMLFrameElementOperations">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLFrameElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLFrameSetElement" />
+		<Class type="C" name="DOMHTMLHeadElement" />
+		<Class type="C" name="DOMHTMLHeadingElement" />
+		<Class type="C" name="DOMHTMLHRElement" />
+		<Class type="C" name="DOMHTMLHtmlElement">
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSString Version]]></Source>
+					<With><![CDATA[public new NSString Version]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSString ClassName]]></Source>
+					<With><![CDATA[public new NSString ClassName]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSString InnerText]]></Source>
+					<With><![CDATA[public new NSString InnerText]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLIFrameElement" />
+		<Class type="C" name="DOMHTMLIFrameElement_WebDOMHTMLIFrameElementOperations">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLIFrameElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLImageElement" />
+		<Class type="C" name="DOMHTMLInputElement" />
+		<Class type="C" name="DOMHTMLLabelElement" />
+		<Class type="C" name="DOMHTMLLegendElement" />
+		<Class type="C" name="DOMHTMLLIElement" />
+		<Class type="C" name="DOMHTMLLinkElement">
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual DOMStyleSheet Sheet]]></Source>
+					<With><![CDATA[public new DOMStyleSheet Sheet]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLMapElement" />
+		<Class type="C" name="DOMHTMLMarqueeElement" />
+		<Class type="C" name="DOMHTMLMenuElement" />
+		<Class type="C" name="DOMHTMLMetaElement" />
+		<Class type="C" name="DOMHTMLModElement" />
+		<Class type="C" name="DOMHTMLObjectElement" />
+		<Class type="C" name="DOMHTMLObjectElement_WebDOMHTMLObjectElementOperations">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLObjectElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLOListElement" />
+		<Class type="C" name="DOMHTMLOptGroupElement" />
+		<Class type="C" name="DOMHTMLOptionElement" />
+		<Class type="C" name="DOMHTMLOptionsCollection" />
+		<Class type="C" name="DOMHTMLParagraphElement" />
+		<Class type="C" name="DOMHTMLParamElement" />
+		<Class type="C" name="DOMHTMLPreElement" />
+		<Class type="C" name="DOMHTMLQuoteElement" />
+		<Class type="C" name="DOMHTMLScriptElement" />
+		<Class type="C" name="DOMHTMLSelectElement" />
+		<Class type="C" name="DOMHTMLSelectElement_DOMHTMLSelectElementDeprecated">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLSelectElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLStyleElement">
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual DOMStyleSheet Sheet]]></Source>
+					<With><![CDATA[public new DOMStyleSheet Sheet]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLTableCaptionElement" />
+		<Class type="C" name="DOMHTMLTableCellElement" />
+		<Class type="C" name="DOMHTMLTableColElement" />
+		<Class type="C" name="DOMHTMLTableElement" />
+		<Class type="C" name="DOMHTMLTableRowElement" />
+		<Class type="C" name="DOMHTMLTableSectionElement" />
+		<Class type="C" name="DOMHTMLTextAreaElement" />
+		<Class type="C" name="DOMHTMLTitleElement" />
+		<Class type="C" name="DOMHTMLUListElement" />
+		<Class type="C" name="DOMImplementation" />
+		<Class type="C" name="DOMImplementation_DOMImplementationDeprecated">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMImplementation"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMKeyboardEvent" />
+		<Class type="C" name="DOMMediaList" />
+		<Class type="C" name="DOMMouseEvent" />
+		<Class type="C" name="DOMMouseEvent_DOMMouseEventDeprecated">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMMouseEvent"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMMutationEvent" />
+		<Class type="C" name="DOMMutationEvent_DOMMutationEventDeprecated">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMMutationEvent"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMNamedNodeMap" />
+		<Class type="C" name="DOMNamedNodeMap_DOMNamedNodeMapDeprecated">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMNamedNodeMap"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMNode" />
+		<Class type="C" name="DOMNode_DOMNodeDeprecated">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMNode"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMNode_DOMNodeExtensions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMNode"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMNode_WebDOMNodeOperations">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMNode"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMNodeIterator" />
+		<Class type="C" name="DOMNodeList" />
+		<Class type="C" name="DOMNotation" />
+		<Class type="C" name="DOMObject">
+			<Patch type="Model">
+				<Change><![CDATA[Constants["_internal"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMObject_DOMLinkStyle">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMObject"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMOverflowEvent" />
+		<Class type="C" name="DOMProcessingInstruction">
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual DOMStyleSheet Sheet]]></Source>
+					<With><![CDATA[public new DOMStyleSheet Sheet]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMProgressEvent" />
+		<Class type="C" name="DOMRange">
+			<Patch type="Model">
+				<Change><![CDATA[Properties["ToString"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMRange_DOMRangeDeprecated">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMRange"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMRange_WebDOMRangeOperations">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMRange"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMRect" />
+		<Class type="C" name="DOMRGBColor" />
+		<Class type="C" name="DOMStyleSheet" />
+		<Class type="C" name="DOMStyleSheetList" />
+		<Class type="C" name="DOMText" />
+		<Class type="C" name="DOMTreeWalker" />
+		<Class type="C" name="DOMUIEvent" />
+		<Class type="C" name="DOMUIEvent_DOMUIEventDeprecated">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMUIEvent"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMWheelEvent" />
+		<Class type="C" name="DOMXPathExpression" />
+		<Class type="C" name="DOMXPathExpression_DOMXPathExpressionDeprecated">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMXPathExpression"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMXPathResult" />
+		<Class type="C" name="NSObject_WebDownloadDelegate">
+			<Patch type="Model">
+				<Change>AdditionFor="NSObject"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="NSObject_WebFrameLoadDelegate">
+			<Patch type="Model">
+				<Change>AdditionFor="NSObject"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="NSObject_WebJavaPlugIn">
+			<Patch type="Model">
+				<Change>AdditionFor="NSObject"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="NSObject_WebPlugIn">
+			<Patch type="Model">
+				<Change>AdditionFor="NSObject"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="NSObject_WebPlugInContainer">
+			<Patch type="Model">
+				<Change>AdditionFor="NSObject"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="NSObject_WebPolicyDelegate">
+			<Patch type="Model">
+				<Change>AdditionFor="NSObject"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="NSObject_WebResourceLoadDelegate">
+			<Patch type="Model">
+				<Change>AdditionFor="NSObject"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="NSObject_WebScripting">
+			<Patch type="Model">
+				<Change>AdditionFor="NSObject"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="NSObject_WebUIDelegate">
+			<Patch type="Model">
+				<Change>AdditionFor="NSObject"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="NSObject_WebViewEditingDelegate">
+			<Patch type="Model">
+				<Change>AdditionFor="NSObject"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebArchive" />
+		<Class type="C" name="WebBackForwardList" />
+		<Class type="C" name="WebBackForwardList_WebBackForwardListDeprecated">
+			<Patch type="Model">
+				<Change>AdditionFor="WebBackForwardList"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebDataSource" />
+		<Class type="C" name="WebDownload" />
+		<Class type="C" name="WebFrame" />
+		<Class type="C" name="WebFrameView" />
+		<Class type="C" name="WebHistory" />
+		<Class type="C" name="WebHistoryItem" />
+		<Class type="C" name="WebPreferences" />
+		<Class type="C" name="WebResource" />
+		<Class type="C" name="WebScriptObject" />
+		<Class type="C" name="WebUndefined" />
+		<Class type="C" name="WebView" />
+		<Class type="C" name="WebView_WebIBActions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebView"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebView_WebViewCSS">
+			<Patch type="Model">
+				<Change>AdditionFor="WebView"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebView_WebViewEditing">
+			<Patch type="Model">
+				<Change>AdditionFor="WebView"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebView_WebViewEditingActions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebView"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebView_WebViewUndoableEditing">
+			<Patch type="Model">
+				<Change>AdditionFor="WebView"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="CarbonUtils_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="CarbonUtils"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOM_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOM"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMAbstractView_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMAbstractView"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMAttr_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMAttr"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMBlob_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMBlob"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCDATASection_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCDATASection"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCharacterData_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCharacterData"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMComment_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMComment"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCore_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCore"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCounter_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCounter"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSS_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSS"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSCharsetRule_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSCharsetRule"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSFontFaceRule_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSFontFaceRule"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSImportRule_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSImportRule"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSMediaRule_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSMediaRule"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSPageRule_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSPageRule"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSPrimitiveValue_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSPrimitiveValue"</Change>
+				<Change><![CDATA[Enumerations["@0"].Name="DOMCSSUnitType"]]></Change>
+				<Change><![CDATA[Enumerations["DOMCSSUnitType"].BaseType="ushort"]]></Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSRule_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSRule"</Change>
+				<Change><![CDATA[Enumerations["@1"].Name="DOMCSSRuleType"]]></Change>
+				<Change><![CDATA[Enumerations["DOMCSSRuleType"].BaseType="ushort"]]></Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSRuleList_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSRuleList"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSStyleDeclaration_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSStyleDeclaration"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSStyleRule_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSStyleRule"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSStyleSheet_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSStyleSheet"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSUnknownRule_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSUnknownRule"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSValue_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSValue"</Change>
+				<Change><![CDATA[Enumerations["@2"].Name="DOMCSSValueType"]]></Change>
+				<Change><![CDATA[Enumerations["DOMCSSValueType"].BaseType="ushort"]]></Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMCSSValueList_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMCSSValueList"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMDocument_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMDocument"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMDocumentFragment_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMDocumentFragment"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMDocumentType_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMDocumentType"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMElement"</Change>
+				<Change><![CDATA[Enumerations["@3"].Name="DOMElementInput"]]></Change>
+				<Change><![CDATA[Enumerations["DOMElementInput"].BaseType="int"]]></Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMEntity_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMEntity"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMEntityReference_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMEntityReference"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMEvent_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMEvent"</Change>
+				<Change><![CDATA[Enumerations["@4"].Name="DOMEventPhase"]]></Change>
+				<Change><![CDATA[Enumerations["DOMEventPhase"].BaseType="ushort"]]></Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMEventException_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMEventException"</Change>
+				<Change><![CDATA[Enumerations["DOMEventExceptionCode"].BaseType="int"]]></Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMEventListener_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMEventListener"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMEvents_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMEvents"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMEventTarget_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMEventTarget"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMException_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMException"</Change>
+				<Change><![CDATA[Enumerations["DOMExceptionCode"].BaseType="int"]]></Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMExtensions_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMExtensions"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMFile_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMFile"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMFileList_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMFileList"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTML_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTML"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLAnchorElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLAnchorElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLAppletElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLAppletElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLAreaElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLAreaElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLBaseElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLBaseElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLBaseFontElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLBaseFontElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLBodyElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLBodyElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLBRElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLBRElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLButtonElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLButtonElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLCollection_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLCollection"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLDirectoryElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLDirectoryElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLDivElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLDivElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLDListElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLDListElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLDocument_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLDocument"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLEmbedElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLEmbedElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLFieldSetElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLFieldSetElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLFontElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLFontElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLFormElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLFormElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLFrameElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLFrameElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLFrameSetElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLFrameSetElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLHeadElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLHeadElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLHeadingElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLHeadingElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLHRElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLHRElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLHtmlElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLHtmlElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLIFrameElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLIFrameElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLImageElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLImageElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLInputElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLInputElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLLabelElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLLabelElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLLegendElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLLegendElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLLIElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLLIElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLLinkElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLLinkElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLMapElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLMapElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLMarqueeElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLMarqueeElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLMenuElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLMenuElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLMetaElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLMetaElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLModElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLModElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLObjectElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLObjectElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLOListElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLOListElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLOptGroupElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLOptGroupElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLOptionElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLOptionElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLOptionsCollection_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLOptionsCollection"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLParagraphElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLParagraphElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLParamElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLParamElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLPreElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLPreElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLQuoteElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLQuoteElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLScriptElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLScriptElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLSelectElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLSelectElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLStyleElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLStyleElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLTableCaptionElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLTableCaptionElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLTableCellElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLTableCellElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLTableColElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLTableColElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLTableElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLTableElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLTableRowElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLTableRowElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLTableSectionElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLTableSectionElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLTextAreaElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLTextAreaElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLTitleElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLTitleElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMHTMLUListElement_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMHTMLUListElement"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMImplementation_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMImplementation"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMKeyboardEvent_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMKeyboardEvent"</Change>
+				<Change><![CDATA[Enumerations["@5"].Name="DOMKeyLocation"]]></Change>
+				<Change><![CDATA[Enumerations["DOMKeyLocation"].BaseType="uint"]]></Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMMediaList_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMMediaList"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMMouseEvent_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMMouseEvent"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMMutationEvent_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMMutationEvent"</Change>
+				<Change><![CDATA[Enumerations["@6"].Name="DOMAttributeChange"]]></Change>
+				<Change><![CDATA[Enumerations["DOMAttributeChange"].BaseType="ushort"]]></Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMNamedNodeMap_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMNamedNodeMap"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMNode_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMNode"</Change>
+				<Change><![CDATA[Enumerations["@7"].Name="DOMNodeType"]]></Change>
+				<Change><![CDATA[Enumerations["DOMNodeType"].BaseType="ushort"]]></Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMNodeFilter_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMNodeFilter"</Change>
+				<Change><![CDATA[Enumerations["@8"].Name="DOMNodeFilterResult"]]></Change>
+				<Change><![CDATA[Enumerations["DOMNodeFilterResult"].BaseType="short"]]></Change>
+				<Change><![CDATA[Enumerations["DOMNodeFilterResult"].Values["DOM_SHOW_ALL"].Value="-1"]]></Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMNodeIterator_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMNodeIterator"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMNodeList_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMNodeList"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMNotation_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMNotation"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMObject_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMObject"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMOverflowEvent_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMOverflowEvent"</Change>
+				<Change><![CDATA[Enumerations["@9"].Name="DOMOverflowOrientation"]]></Change>
+				<Change><![CDATA[Enumerations["DOMOverflowOrientation"].BaseType="ushort"]]></Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMProcessingInstruction_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMProcessingInstruction"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMProgressEvent_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMProgressEvent"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMRange_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMRange"</Change>
+				<Change><![CDATA[Enumerations["@10"].Name="DOMRangeOffset"]]></Change>
+				<Change><![CDATA[Enumerations["DOMRangeOffset"].BaseType="int"]]></Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMRangeException_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMRangeException"</Change>
+				<Change><![CDATA[Enumerations["DOMRangeExceptionCode"].BaseType="int"]]></Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMRanges_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMRanges"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMRect_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMRect"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMRGBColor_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMRGBColor"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMStyleSheet_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMStyleSheet"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMStyleSheetList_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMStyleSheetList"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMStylesheets_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMStylesheets"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMText_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMText"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMTraversal_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMTraversal"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMTreeWalker_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMTreeWalker"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMUIEvent_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMUIEvent"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMViews_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMViews"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMWheelEvent_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMWheelEvent"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMXPath_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMXPath"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMXPathException_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMXPathException"</Change>
+				<Change><![CDATA[Enumerations["DOMXPathExceptionCode"].BaseType="int"]]></Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMXPathExpression_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMXPathExpression"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMXPathNSResolver_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMXPathNSResolver"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="DOMXPathResult_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="DOMXPathResult"</Change>
+				<Change><![CDATA[Enumerations["@11"].Name="DOMXPathResultType"]]></Change>
+				<Change><![CDATA[Enumerations["DOMXPathResultType"].BaseType="ushort"]]></Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="HIWebView_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="HIWebView"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="npapi_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="npapi"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="npfunctions_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="npfunctions"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="npruntime_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="npruntime"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="nptypes_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="nptypes"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebArchive_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebArchive"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebBackForwardList_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebBackForwardList"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebDataSource_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebDataSource"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebDocument_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebDocument"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebDOMOperations_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebDOMOperations"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebDownload_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebDownload"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebEditingDelegate_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebEditingDelegate"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebFrame_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebFrame"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebFrameLoadDelegate_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebFrameLoadDelegate"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebFrameView_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebFrameView"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebHistory_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebHistory"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebHistoryItem_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebHistoryItem"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebJavaPlugIn_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebJavaPlugIn"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebKit_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebKit"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebKitErrors_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebKitErrors"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebPlugin_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebPlugin"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebPluginContainer_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebPluginContainer"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebPluginViewFactory_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebPluginViewFactory"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebPolicyDelegate_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebPolicyDelegate"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebPreferences_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebPreferences"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebResource_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebResource"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebResourceLoadDelegate_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebResourceLoadDelegate"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebScriptObject_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebScriptObject"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebUIDelegate_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebUIDelegate"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebView_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebView"</Change>
+			</Patch>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol type="P" name="DOMEventListener" />
+		<Protocol type="P" name="DOMEventTarget" />
+		<Protocol type="P" name="DOMNodeFilter" />
+		<Protocol type="P" name="DOMXPathNSResolver" />
+		<Protocol type="P" name="WebDocumentRepresentation" />
+		<Protocol type="P" name="WebDocumentSearching" />
+		<Protocol type="P" name="WebDocumentText" />
+		<Protocol type="P" name="WebDocumentView" />
+		<Protocol type="P" name="WebDownloadDelegate" />
+		<Protocol type="P" name="WebOpenPanelResultListener" />
+		<Protocol type="P" name="WebPlugInViewFactory" />
+		<Protocol type="P" name="WebPolicyDecisionListener" />
+	</Protocols>
+	<Structures>
+		<Structure type="S" name="NPByteRange" />
+		<Structure type="S" name="NPEmbedPrint" />
+		<Structure type="S" name="NPFullPrint" />
+		<Structure type="S" name="NPImageExpose" />
+		<Structure type="S" name="NPNetscapeFuncs" />
+		<Structure type="S" name="NPP" />
+		<Structure type="S" name="NPPluginFuncs" />
+		<Structure type="S" name="NPPrint" />
+		<Structure type="S" name="NPRect" />
+		<Structure type="S" name="NPSavedData" />
+		<Structure type="S" name="NPSize" />
+		<Structure type="S" name="NPStream" />
+		<Structure type="S" name="NPString" />
+		<Structure type="S" name="NPVariant" />
+		<Structure type="S" name="NPWindow" />
+		<Structure type="S" name="NPClass" />
+		<Structure type="S" name="NPObject" />
+	</Structures>
+	<Enumerations />
+</Framework>

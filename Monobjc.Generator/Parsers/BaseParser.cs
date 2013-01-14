@@ -18,54 +18,59 @@
 using System;
 using System.Collections.Specialized;
 using System.IO;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Parsers
 {
-    public abstract class BaseParser : IBaseParser
-    {
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "BaseParser" /> class.
-        /// </summary>
-        /// <param name = "settings">The settings.</param>
-        /// <param name = "typeManager">The type manager.</param>
-        protected BaseParser(NameValueCollection settings, TypeManager typeManager)
-        {
-            this.Settings = settings;
-            this.TypeManager = typeManager;
-        }
+	public abstract class BaseParser : IBaseParser
+	{
+		/// <summary>
+		///   Initializes a new instance of the <see cref = "BaseParser" /> class.
+		/// </summary>
+		/// <param name = "settings">The settings.</param>
+		/// <param name = "typeManager">The type manager.</param>
+		protected BaseParser (NameValueCollection settings, TypeManager typeManager, TextWriter logger)
+		{
+			this.Settings = settings;
+			this.TypeManager = typeManager;
+			this.Logger = logger ?? new StringWriter();
+		}
 
-        /// <summary>
-        ///   Gets or sets the settings.
-        /// </summary>
-        /// <value>The settings.</value>
-        public NameValueCollection Settings { get; private set; }
+		/// <summary>
+		/// Gets or sets the logger.
+		/// </summary>
+		public TextWriter Logger { get; private set; }
 
-        /// <summary>
-        ///   Gets or sets the type manager.
-        /// </summary>
-        /// <value>The type manager.</value>
-        public TypeManager TypeManager { get; private set; }
+		/// <summary>
+		///   Gets or sets the settings.
+		/// </summary>
+		/// <value>The settings.</value>
+		public NameValueCollection Settings { get; private set; }
 
-        /// <summary>
-        ///   Parses the specified entity.
-        /// </summary>
-        /// <param name = "entity">The entity.</param>
-        /// <param name = "file">The file.</param>
-        public void Parse(BaseEntity entity, String file)
-        {
-            using (StreamReader reader = new StreamReader(file))
-            {
-                Parse(entity, reader);
-            }
-        }
+		/// <summary>
+		///   Gets or sets the type manager.
+		/// </summary>
+		/// <value>The type manager.</value>
+		public TypeManager TypeManager { get; private set; }
 
-        /// <summary>
-        ///   Parses the specified entity.
-        /// </summary>
-        /// <param name = "entity">The entity.</param>
-        /// <param name = "reader">The reader.</param>
-        public abstract void Parse(BaseEntity entity, TextReader reader);
-    }
+		/// <summary>
+		///   Parses the specified entity.
+		/// </summary>
+		/// <param name = "entity">The entity.</param>
+		/// <param name = "file">The file.</param>
+		public void Parse (BaseEntity entity, String file)
+		{
+			using (StreamReader reader = new StreamReader(file)) {
+				Parse (entity, reader);
+			}
+		}
+
+		/// <summary>
+		///   Parses the specified entity.
+		/// </summary>
+		/// <param name = "entity">The entity.</param>
+		/// <param name = "reader">The reader.</param>
+		public abstract void Parse (BaseEntity entity, TextReader reader);
+	}
 }

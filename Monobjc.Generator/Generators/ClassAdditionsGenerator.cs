@@ -18,90 +18,74 @@
 using System;
 using System.IO;
 using System.Linq;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Generators
 {
-    /// <summary>
-    ///   Code generator for class's additions.
-    /// </summary>
-    public class ClassAdditionsGenerator : ClassGenerator
-    {
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "ClassAdditionsGenerator" /> class.
-        /// </summary>
-        /// <param name = "writer">The writer.</param>
-        /// <param name = "statistics">The statistics.</param>
-        public ClassAdditionsGenerator(StreamWriter writer, GenerationStatistics statistics) : base(writer, statistics) {}
+	/// <summary>
+	///   Code generator for class's additions.
+	/// </summary>
+	public class ClassAdditionsGenerator : ClassGenerator
+	{
+		/// <summary>
+		///   Generates the specified entity.
+		/// </summary>
+		/// <param name = "entity">The entity.</param>
+		public override void Generate (BaseEntity entity)
+		{
+			ClassEntity classEntity = (ClassEntity)entity;
+			ClassEntity extendedClass = classEntity.ExtendedClass ?? classEntity;
+			bool sameClass = String.Equals (classEntity.Namespace, extendedClass.Namespace);
 
-        /// <summary>
-        ///   Generates the specified entity.
-        /// </summary>
-        /// <param name = "entity">The entity.</param>
-        public override void Generate(BaseEntity entity)
-        {
-            ClassEntity classEntity = (ClassEntity) entity;
-            ClassEntity extendedEntity = classEntity.ExtendedEntity ?? classEntity;
-            bool sameClass = String.Equals(classEntity.Namespace, extendedEntity.Namespace);
+			// Append License
+			this.Writer.WriteLineFormat (0, License);
 
-            // Append License
-            this.Writer.WriteLineFormat(0, License);
+			// Append usings
+			this.AppendStandardNamespaces ();
 
-            // Append usings
-            this.AppendStandardNamespaces();
+			// Append namespace starter
+			this.Writer.WriteLineFormat (0, "namespace Monobjc.{0}", classEntity.Namespace);
+			this.Writer.WriteLineFormat (0, "{{");
 
-            // Append namespace starter
-            this.Writer.WriteLineFormat(0, "namespace Monobjc.{0}", classEntity.Namespace);
-            this.Writer.WriteLineFormat(0, "{{");
+			// Append static condition if needed
+			this.AppendStartCondition (classEntity);
 
-            // Append static condition if needed
-            this.AppendStartCondition(classEntity);
+			// Append class starter
+			if (sameClass) {
+				this.Writer.WriteLineFormat (1, "public partial class {0}", extendedClass.Name);
+			} else {
+				this.Writer.WriteLineFormat (1, "public static partial class {0}_{1}Additions", extendedClass.Name, classEntity.Namespace);
+			}
+			this.Writer.WriteLineFormat (1, "{{");
 
-            // Append class starter
-            if (sameClass)
-            {
-                this.Writer.WriteLineFormat(1, "public partial class {0}", extendedEntity.Name);
-            }
-            else
-            {
-                this.Writer.WriteLineFormat(1, "public static partial class {0}_{1}Additions", extendedEntity.Name, classEntity.Namespace);
-            }
-            this.Writer.WriteLineFormat(1, "{{");
+			// Append methods
+			foreach (MethodEntity methodEntity in classEntity.Methods.Where(e => e.Generate)) {
+				this.MethodGenerator.Generate (extendedClass, methodEntity, true, !sameClass);
+				this.Writer.WriteLine ();
+			}
 
-            // Append methods
-            foreach (MethodEntity methodEntity in classEntity.Methods.Where(e => e.Generate))
-            {
-                this.MethodGenerator.Generate(extendedEntity, methodEntity, true, !sameClass);
-                this.Writer.WriteLine();
-            }
+			// Append properties
+			foreach (PropertyEntity propertyEntity in classEntity.Properties.Where(e => e.Generate)) {
+				if (sameClass) {
+					this.PropertyGenerator.Generate (extendedClass, propertyEntity);
+				} else {
+					this.MethodGenerator.Generate (extendedClass, propertyEntity.GetterAsMethodEntity (), true, true);
+					if (propertyEntity.Setter != null) {
+						this.MethodGenerator.Generate (extendedClass, propertyEntity.SetterAsMethodEntity (), true, true);
+					}
+				}
+				this.Writer.WriteLine ();
+			}
 
-            // Append properties
-            foreach (PropertyEntity propertyEntity in classEntity.Properties.Where(e => e.Generate))
-            {
-                if (sameClass)
-                {
-                    this.PropertyGenerator.Generate(extendedEntity, propertyEntity);
-                }
-                else
-                {
-                    this.MethodGenerator.Generate(extendedEntity, propertyEntity.GetterAsMethodEntity(), true, true);
-                    if (propertyEntity.Setter != null)
-                    {
-                        this.MethodGenerator.Generate(extendedEntity, propertyEntity.SetterAsMethodEntity(), true, true);
-                    }
-                }
-                this.Writer.WriteLine();
-            }
+			// Append class ender
+			this.Writer.WriteLineFormat (1, "}}");
 
-            // Append class ender
-            this.Writer.WriteLineFormat(1, "}}");
+			// Append static condition if needed
+			this.AppendEndCondition (classEntity);
 
-            // Append static condition if needed
-            this.AppendEndCondition(classEntity);
-
-            // Append namespace ender
-            this.Writer.WriteLineFormat(0, "}}");
-        }
-    }
+			// Append namespace ender
+			this.Writer.WriteLineFormat (0, "}}");
+		}
+	}
 }

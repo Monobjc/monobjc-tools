@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2012 - Laurent Etiemble
 //
@@ -18,20 +18,39 @@
 using System;
 using System.Xml.Serialization;
 
-namespace Monobjc.Tools.Generator.Model.Entities
+namespace Monobjc.Tools.Generator.Model
 {
-    /// <summary>
-    ///   Represents the model for an enumaration value.
-    /// </summary>
-    [Serializable]
-    [XmlRoot("EnumerationValue")]
-    public class EnumerationValueEntity : BaseEntity
-    {
-        /// <summary>
-        ///   Gets or sets the value.
-        /// </summary>
-        /// <value>The value.</value>
-        [XmlElement]
-        public String Value { get; set; }
-    }
+	/// <summary>
+	///   Represents the model for an enumaration value.
+	/// </summary>
+	[Serializable]
+	[XmlRoot("EnumerationValue")]
+	public partial class EnumerationValueEntity : BaseEntity
+	{
+		/// <summary>
+		///   Gets or sets the value.
+		/// </summary>
+		/// <value>The value.</value>
+		[XmlElement]
+		public String Value {
+			get;
+			set;
+		}
+
+		/// <summary>
+		///   Serves as a hash function for a particular type.
+		/// </summary>
+		/// <returns>
+		///   A hash code for the current <see cref = "T:System.Object" />.
+		/// </returns>
+		/// <filterpriority>2</filterpriority>
+		public override int GetHashValue ()
+		{
+			unchecked {
+				int hash = base.GetHashValue();
+				hash = hash * 23 + (this.Value != null ? this.Value.GetHashCode () : 0);
+				return hash;
+			}
+		}
+	}
 }

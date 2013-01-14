@@ -22,7 +22,7 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
@@ -37,12 +37,11 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
         /// </summary>
         /// <param name = "settings">The settings.</param>
         /// <param name = "typeManager">The type manager.</param>
-        public XhtmlCocoaTypeParser(NameValueCollection settings, TypeManager typeManager)
-            : base(settings, typeManager)
+		public XhtmlCocoaTypeParser(NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger)
         {
-            this.ConstantParser = new XhtmlCocoaConstantParser(settings, typeManager);
-            this.NotificationParser = new XhtmlCocoaNotificationParser(settings, typeManager);
-            this.FunctionParser = new XhtmlCocoaFunctionParser(settings, typeManager);
+            this.ConstantParser = new XhtmlCocoaConstantParser(settings, typeManager, logger);
+            this.NotificationParser = new XhtmlCocoaNotificationParser(settings, typeManager, logger);
+            this.FunctionParser = new XhtmlCocoaFunctionParser(settings, typeManager, logger);
         }
 
         /// <summary>
@@ -80,14 +79,38 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
             {
                 XElement root = XElement.Load(xmlTextReader);
 
+				// Get the spec box
+				XElement specElement = (from el in root.Descendants("div")
+				                        where (String) el.Attribute("class") == "spec_sheet_info_box"
+				                        select el).FirstOrDefault();
+				if (specElement != null)
+				{
+					// Inherits
+					XElement inheritElement = (from el in specElement.Descendants("td")
+					                           let prev = el.ElementsBeforeSelf("td").FirstOrDefault()
+					                           where prev != null && prev.Value.TrimAll() == "Derived from"
+					                           select el).FirstOrDefault();
+					if (inheritElement != null)
+					{
+						string hierarchy = inheritElement.TrimAll();
+						string[] parents = hierarchy.Split(new[] {':'}, StringSplitOptions.RemoveEmptyEntries);
+
+						String parent = parents[0].Trim();
+						if (parent.EndsWith("Ref")) {
+							parent = parent.Substring(0, parent.Length - "Ref".Length);
+						}
+						typedEntity.BaseType = parent;
+					}
+				}
+
                 // Constants
-                this.ExtractConstants(typedEntity, root);
+				this.ExtractConstants(typedEntity, root);
 
-                // Notifications
-                this.ExtractNotifications(typedEntity, root);
+				// Notifications
+				this.ExtractNotifications(typedEntity, root);
 
-                // Functions
-                this.ExtractFunctions(typedEntity, root);
+				// Functions
+				this.ExtractFunctions(typedEntity, root);
             }
 
             // Make sure availability is ok
@@ -101,7 +124,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
                                                      select el;
             foreach (XElement functionElement in functionElements)
             {
-                FunctionEntity functionEntity = this.FunctionParser.Parse(functionElement);
+				FunctionEntity functionEntity = this.FunctionParser.Parse(typedEntity, functionElement);
                 if (functionEntity != null)
                 {
                     typedEntity.Functions.Add(functionEntity);
@@ -116,7 +139,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
                                                          select el;
             foreach (XElement notificationElement in notificationElements)
             {
-                ConstantEntity notificationEntity = this.NotificationParser.Parse(notificationElement);
+				ConstantEntity notificationEntity = this.NotificationParser.Parse(typedEntity, notificationElement);
                 typedEntity.Constants.Add(notificationEntity);
             }
         }
@@ -127,9 +150,9 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
                                                      where (String) el.Attribute("class") == "constantGroup"
                                                            || (String) el.Attribute("class") == "tight jump typeDef"
                                                      select el;
-            foreach (XElement constantElement in constantElements)
+			foreach (XElement constantElement in constantElements)
             {
-                List<BaseEntity> entities = this.ConstantParser.Parse(constantElement);
+				List<BaseEntity> entities = this.ConstantParser.Parse(typedEntity, constantElement);
                 if (entities != null)
                 {
                     typedEntity.AddRange(entities);
@@ -141,7 +164,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
                                select el;
             foreach (XElement constantElement in constantElements)
             {
-                List<BaseEntity> entities = this.ConstantParser.Parse(constantElement);
+				List<BaseEntity> entities = this.ConstantParser.Parse(typedEntity, constantElement);
                 if (entities != null)
                 {
                     typedEntity.AddRange(entities);

@@ -13,13 +13,13 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Monobjc.  If not, see <http://www.gnu.org/Licenses/>.
+// along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System.Reflection;
 using System.Resources;
 
-[assembly: AssemblyTitle("Monobjc - Class Generator")]
-[assembly: AssemblyDescription("Monobjc Class Generator")]
+[assembly: AssemblyTitle("Monobjc - Generator Library")]
+[assembly: AssemblyDescription("Monobjc Generator Library")]
 [assembly: AssemblyCompany("Monobjc Project")]
 [assembly: AssemblyProduct("Monobjc Project")]
 [assembly: AssemblyCopyright("Copyright (c) Monobjc Project 2007-2012 - Licensed under General Public License")]

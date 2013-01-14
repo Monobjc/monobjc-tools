@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="CoreMIDI" usings="Foundation" assembly="Monobjc.CoreMIDI" source="DocSet" style="Classic">
+	<Types>
+		<Type name="MIDIServices">
+			<File>MusicAudio/Reference/CACoreMIDIRef/MIDIServices/CompositePage.html</File>
+			<Patch type="Xhtml">
+				<Replace>
+					<Source><![CDATA[</span>]]></Source>
+					<With><![CDATA[ </span>]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[outObjectType = ObjectiveCRuntime.GetInstance<MIDIObjectType>(Marshal.ReadIntPtr(__local2));]]></Source>
+					<With><![CDATA[outObjectType = (MIDIObjectType) Marshal.ReadInt32(__local2);]]></With>
+				</Replace>
+			</Patch>
+		</Type>
+		<Type name="MIDISetup">
+			<File>MusicAudio/Reference/CACoreMIDIRef/MIDISetup/CompositePage.html</File>
+			<Patch type="Xhtml">
+				<Replace>
+					<Source><![CDATA[</span>]]></Source>
+					<With><![CDATA[ </span>]]></With>
+				</Replace>
+			</Patch>
+		</Type>
+		<Type name="MIDIThruConnection">
+			<File>MusicAudio/Reference/CACoreMIDIRef/MIDIThruConnection/CompositePage.html</File>
+			<Patch type="Xhtml">
+				<Replace>
+					<Source><![CDATA[</span>]]></Source>
+					<With><![CDATA[ </span>]]></With>
+				</Replace>
+			</Patch>
+		</Type>
+		<Type name="MIDIDriver">
+			<File>MusicAudio/Reference/CACoreMIDIServerRef/MIDIDriver/CompositePage.html</File>
+			<Patch type="Xhtml">
+				<Replace>
+					<Source><![CDATA[</span>]]></Source>
+					<With><![CDATA[ </span>]]></With>
+				</Replace>
+			</Patch>
+		</Type>
+	</Types>
+	<Structures>
+		<Structure name="MIDINotification" />
+		<Structure name="MIDIObjectAddRemoveNotification" />
+		<Structure name="MIDIObjectPropertyChangeNotification" />
+		<Structure name="MIDIPacket" />
+		<Structure name="MIDIPacketList" />
+		<Structure name="MIDISysexSendRequest" />
+		<Structure name="MIDIThruConnectionEndpoint" />
+		<Structure name="MIDIThruConnectionParams" />
+		<Structure name="MIDITransform" />
+	</Structures>
+	<Enumeration>
+		<Enumeration name="MIDIErrors" />
+		<Enumeration name="MIDINotificationMessageID" />
+		<Enumeration name="MIDIObjectType" />
+		<Enumeration name="MIDITransformType" />
+	</Enumeration>
+</Framework>

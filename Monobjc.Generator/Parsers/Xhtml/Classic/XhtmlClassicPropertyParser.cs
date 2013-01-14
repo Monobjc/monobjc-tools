@@ -21,7 +21,7 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
@@ -36,7 +36,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
         /// </summary>
         /// <param name = "settings">The settings.</param>
         /// <param name = "typeManager">The type manager.</param>
-        public XhtmlClassicPropertyParser(NameValueCollection settings, TypeManager typeManager) : base(settings, typeManager) {}
+		public XhtmlClassicPropertyParser(NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger) {}
 
         /// <summary>
         ///   Parses the specified entity.
@@ -53,7 +53,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
         /// </summary>
         /// <param name = "propertyElement">The property element.</param>
         /// <returns></returns>
-        public PropertyEntity Parse(XElement propertyElement)
+		public PropertyEntity Parse(TypedEntity typedEntity, XElement propertyElement)
         {
             XElement nameElement = propertyElement.Element("h3");
             String name = nameElement.TrimAll();
@@ -135,7 +135,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
             }
 
             bool isOut, isByRef, isBlock;
-            String type = this.TypeManager.ConvertType(returnType, out isOut, out isByRef, out isBlock);
+			String type = this.TypeManager.ConvertType(returnType, out isOut, out isByRef, out isBlock, this.Logger);
 
             PropertyEntity propertyEntity = new PropertyEntity();
             propertyEntity.MinAvailability = minAvailability;
@@ -162,7 +162,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
             return propertyEntity;
         }
 
-        public PropertyEntity Parse(string name, IEnumerable<XElement> elements)
+        public PropertyEntity Parse(TypedEntity typedEntity, string name, IEnumerable<XElement> elements)
         {
             XElement declarationElement = (from el in elements
                                            where el.Name == "div" &&
@@ -259,7 +259,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
             }
 
             bool isOut, isByRef, isBlock;
-            String type = this.TypeManager.ConvertType(returnType, out isOut, out isByRef, out isBlock);
+			String type = this.TypeManager.ConvertType(returnType, out isOut, out isByRef, out isBlock, this.Logger);
 
             PropertyEntity propertyEntity = new PropertyEntity();
             propertyEntity.MinAvailability = minAvailability;

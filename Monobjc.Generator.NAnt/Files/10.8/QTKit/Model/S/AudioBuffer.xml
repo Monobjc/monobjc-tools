@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Structure Generate="true">
+	<Name>AudioBuffer</Name>
+	<Namespace>QTKit</Namespace>
+	<MixedType>AudioBuffer,AudioBuffer</MixedType>
+</Structure>

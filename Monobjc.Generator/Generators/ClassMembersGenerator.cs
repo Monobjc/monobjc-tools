@@ -18,115 +18,99 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Generators
 {
-    /// <summary>
-    ///   Code generator for class's members.
-    /// </summary>
-    public class ClassMembersGenerator : ClassGenerator
-    {
-        /// <summary>
-        ///   Initializes a new instance of the <see cref = "ClassMembersGenerator" /> class.
-        /// </summary>
-        /// <param name = "writer">The writer.</param>
-        /// <param name = "statistics">The statistics.</param>
-        public ClassMembersGenerator(StreamWriter writer, GenerationStatistics statistics) : base(writer, statistics) {}
+	/// <summary>
+	///   Code generator for class's members.
+	/// </summary>
+	public class ClassMembersGenerator : ClassGenerator
+	{
+		/// <summary>
+		///   Generates the specified entity.
+		/// </summary>
+		/// <param name = "entity">The entity.</param>
+		public override void Generate (BaseEntity entity)
+		{
+			ClassEntity classEntity = (ClassEntity)entity;
 
-        /// <summary>
-        ///   Generates the specified entity.
-        /// </summary>
-        /// <param name = "entity">The entity.</param>
-        public override void Generate(BaseEntity entity)
-        {
-            ClassEntity classEntity = (ClassEntity) entity;
+			// Append License
+			this.Writer.WriteLineFormat (0, License);
 
-            // Append License
-            this.Writer.WriteLineFormat(0, License);
+			// Append usings
+			this.AppendStandardNamespaces ();
 
-            // Append usings
-            this.AppendStandardNamespaces();
+			// Append namespace starter
+			this.Writer.WriteLineFormat (0, "namespace Monobjc.{0}", classEntity.Namespace);
+			this.Writer.WriteLineFormat (0, "{{");
 
-            // Append namespace starter
-            this.Writer.WriteLineFormat(0, "namespace Monobjc.{0}", classEntity.Namespace);
-            this.Writer.WriteLineFormat(0, "{{");
+			// Append static condition if needed
+			this.AppendStartCondition (classEntity);
 
-            // Append static condition if needed
-            this.AppendStartCondition(classEntity);
+			// Append class starter
+			this.Writer.WriteLineFormat (1, "public partial class {0}", classEntity.Name);
+			this.Writer.WriteLineFormat (1, "{{");
 
-            // Append class starter
-            this.Writer.WriteLineFormat(1, "public partial class {0}", classEntity.Name);
-            this.Writer.WriteLineFormat(1, "{{");
+			// Collect all the existing methods
+			IEnumerable<MethodEntity> methods = GetAllMethods (classEntity, false);
 
-            // Collect all the existing methods
-            IEnumerable<MethodEntity> methods = GetAllMethods(classEntity, false);
+			// Collect all the existing properties
+			IEnumerable<PropertyEntity> properties = GetProperties (classEntity, false);
 
-            // Collect all the existing properties
-            IEnumerable<PropertyEntity> properties = GetProperties(classEntity, false);
+			// Append methods
+			foreach (MethodEntity methodEntity in classEntity.Methods.Where(e => e.Generate)) {
+				if (methods.Contains (methodEntity)) {
+					continue;
+				}
+				this.MethodGenerator.Generate (classEntity, methodEntity, true, false);
+				this.Writer.WriteLine ();
+			}
 
-            // Append methods
-            foreach (MethodEntity methodEntity in classEntity.Methods.Where(e => e.Generate))
-            {
-                if (methods.Contains(methodEntity))
-                {
-                    continue;
-                }
-                this.MethodGenerator.Generate(classEntity, methodEntity, true, false);
-                this.Writer.WriteLine();
-            }
+			// Append methods that need to be copy from the parent
+			foreach (MethodEntity methodEntity in methods.Where(e => e.CopyInDescendants)) {
+				if (classEntity.Methods.Contains (methodEntity)) {
+					continue;
+				}
+				methodEntity.ReturnType = classEntity.Name;
+				this.MethodGenerator.Generate (classEntity, methodEntity, true, false, true);
+				this.Writer.WriteLine ();
+			}
 
-            // Append methods that need to be copy from the parent
-            foreach (MethodEntity methodEntity in methods.Where(e => e.CopyInDescendants))
-            {
-                if (classEntity.Methods.Contains(methodEntity))
-                {
-                    continue;
-                }
-                methodEntity.ReturnType = classEntity.Name;
-                this.MethodGenerator.Generate(classEntity, methodEntity, true, false, true);
-                this.Writer.WriteLine();
-            }
+			// Append properties
+			foreach (PropertyEntity propertyEntity in classEntity.Properties.Where(e => e.Generate)) {
+				if (properties.Contains (propertyEntity)) {
+					continue;
+				}
+				this.PropertyGenerator.Generate (classEntity, propertyEntity);
+				this.Writer.WriteLine ();
+			}
 
-            // Append properties
-            foreach (PropertyEntity propertyEntity in classEntity.Properties.Where(e => e.Generate))
-            {
-                if (properties.Contains(propertyEntity))
-                {
-                    continue;
-                }
-                this.PropertyGenerator.Generate(classEntity, propertyEntity);
-                this.Writer.WriteLine();
-            }
+			// Append properties that need to be copy from the parent
+			foreach (PropertyEntity propertyEntity in properties.Where(e => e.CopyInDescendants)) {
+				if (classEntity.Properties.Contains (propertyEntity)) {
+					continue;
+				}
+				propertyEntity.Type = classEntity.Name;
+				this.PropertyGenerator.Generate (classEntity, propertyEntity, true, true);
+				this.Writer.WriteLine ();
+			}
 
-            // Append properties that need to be copy from the parent
-            foreach (PropertyEntity propertyEntity in properties.Where(e => e.CopyInDescendants))
-            {
-                if (classEntity.Properties.Contains(propertyEntity))
-                {
-                    continue;
-                }
-                propertyEntity.Type = classEntity.Name;
-                this.PropertyGenerator.Generate(classEntity, propertyEntity, true, true);
-                this.Writer.WriteLine();
-            }
+			// Output the functions
+			foreach (FunctionEntity functionEntity in classEntity.Functions.Where(e => e.Generate)) {
+				this.FunctionGenerator.Generate (classEntity, functionEntity);
+				this.Writer.WriteLine ();
+			}
 
-            // Output the functions
-            foreach (FunctionEntity functionEntity in classEntity.Functions.Where(e => e.Generate))
-            {
-                this.FunctionGenerator.Generate(classEntity, functionEntity);
-                this.Writer.WriteLine();
-            }
+			// Append class ender
+			this.Writer.WriteLineFormat (1, "}}");
 
-            // Append class ender
-            this.Writer.WriteLineFormat(1, "}}");
+			// Append static condition if needed
+			this.AppendEndCondition (classEntity);
 
-            // Append static condition if needed
-            this.AppendEndCondition(classEntity);
-
-            // Append namespace ender
-            this.Writer.WriteLineFormat(0, "}}");
-        }
-    }
+			// Append namespace ender
+			this.Writer.WriteLineFormat (0, "}}");
+		}
+	}
 }

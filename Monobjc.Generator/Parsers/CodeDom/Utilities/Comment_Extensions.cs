@@ -24,54 +24,50 @@ using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Parsers.CodeDom.Utilities
 {
-    public static class Comment_Extensions
-    {
-        private static readonly Regex regex = new Regex("<param.+name.*=\"(.+)\">(.+)</param>");
+	public static class Comment_Extensions
+	{
+		private static readonly Regex regex = new Regex ("<param.+name.*=\"(.+)\">(.+)</param>");
 
-        /// <summary>
-        ///   Remove common tags from the comment.
-        /// </summary>
-        /// <param name = "comment">The comment.</param>
-        /// <param name = "strings">The additionnal strings to remove.</param>
-        /// <returns>A clean comment</returns>
-        public static String Trim(this Comment comment, params string[] strings)
-        {
-            String c = comment.CommentText;
-            c = Trim(c, "para");
-            c = Trim(c, "param");
-            c = Trim(c, "return");
-            c = Trim(c, "remarks");
-            foreach (string s in strings)
-            {
-                c = c.Replace(s, String.Empty);
-            }
-            return c.Trim();
-        }
+		/// <summary>
+		///   Remove common tags from the comment.
+		/// </summary>
+		/// <param name = "comment">The comment.</param>
+		/// <param name = "strings">The additionnal strings to remove.</param>
+		/// <returns>A clean comment</returns>
+		public static String Trim (this Comment comment, params string[] strings)
+		{
+			String c = comment.CommentText;
+			c = Trim (c, "para");
+			c = Trim (c, "param");
+			c = Trim (c, "return");
+			c = Trim (c, "remarks");
+			foreach (string s in strings) {
+				c = c.Replace (s, String.Empty);
+			}
+			return c.Trim ();
+		}
 
-        public static String GetParameterDescription(this IEnumerable<Comment> comments, String name)
-        {
-            IEnumerable<Comment> parameterComments = comments.Where(c => CommentHelper.IsParameter(c.CommentText.Trim()));
-            foreach (Comment parameterComment in parameterComments)
-            {
-                Match m = regex.Match(parameterComment.CommentText.Trim());
-                if (m.Success)
-                {
-                    return m.Groups[2].Value.Trim();
-                }
-            }
-            return "MISSING";
-        }
+		public static String GetParameterDescription (this IEnumerable<Comment> comments, String name)
+		{
+			IEnumerable<Comment> parameterComments = comments.Where (c => CommentHelper.IsParameter (c.CommentText.Trim ()));
+			foreach (Comment parameterComment in parameterComments) {
+				Match m = regex.Match (parameterComment.CommentText.Trim ());
+				if (m.Success) {
+					return m.Groups [2].Value.Trim ();
+				}
+			}
+			return "MISSING";
+		}
 
-        /// <summary>
-        ///   Remove a tag from the given string.
-        /// </summary>
-        private static string Trim(String comment, String tag)
-        {
-            foreach (String p in new[] {"<" + tag + ">", "</" + tag + ">", "&lt;" + tag + "&gt;", "&lt;/" + tag + "&gt;"})
-            {
-                comment = comment.Replace(p, String.Empty);
-            }
-            return comment;
-        }
-    }
+		/// <summary>
+		///   Remove a tag from the given string.
+		/// </summary>
+		private static string Trim (String comment, String tag)
+		{
+			foreach (String p in new[] {"<" + tag + ">", "</" + tag + ">", "&lt;" + tag + "&gt;", "&lt;/" + tag + "&gt;"}) {
+				comment = comment.Replace (p, String.Empty);
+			}
+			return comment;
+		}
+	}
 }

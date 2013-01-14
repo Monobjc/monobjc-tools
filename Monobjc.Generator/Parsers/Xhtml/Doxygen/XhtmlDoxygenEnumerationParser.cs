@@ -21,7 +21,7 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using Monobjc.Tools.Generator.Model.Entities;
+using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
@@ -36,7 +36,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
         /// </summary>
         /// <param name = "settings">The settings.</param>
         /// <param name = "typeManager">The type manager.</param>
-        public XhtmlDoxygenEnumerationParser(NameValueCollection settings, TypeManager typeManager) : base(settings, typeManager) {}
+		public XhtmlDoxygenEnumerationParser(NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger) {}
 
         /// <summary>
         ///   Parses the specified entity.
@@ -48,7 +48,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
             throw new NotImplementedException();
         }
 
-        public EnumerationEntity Parse(XElement enumerationElement)
+		public EnumerationEntity Parse(TypedEntity typedEntity, XElement enumerationElement)
         {
             EnumerationEntity enumerationEntity = new EnumerationEntity();
 

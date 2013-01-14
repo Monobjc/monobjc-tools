@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2012 - Laurent Etiemble
 //
@@ -121,9 +121,9 @@ namespace Monobjc.Tools.PropertyList
         /// <returns>
         ///   A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
         /// </returns>
-        public override int GetHashCode()
+		public override int GetHashCode()
         {
-            return this.Value.GetHashCode();
+			return this.Value.GetHashCode();
         }
 
         /// <summary>

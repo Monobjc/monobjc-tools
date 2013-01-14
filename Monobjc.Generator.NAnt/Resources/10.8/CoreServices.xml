@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="CoreServices" usings="CoreFoundation,Foundation,ApplicationServices" assembly="Monobjc.AppKit" source="DocSet">
+	<Types>
+		<Type name="UTType">
+			<File>MobileCoreServices/Reference/UTTypeRef/Reference/reference.html</File>
+		</Type>
+	</Types>
+</Framework>

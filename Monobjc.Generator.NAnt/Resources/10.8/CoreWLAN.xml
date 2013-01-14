@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="CoreWLAN" usings="Foundation,Security,SecurityFoundation" assembly="Monobjc.CoreWLAN" source="DocSet">
+	<Types>
+		<Type name="CoreWLANFramework.Constants">
+			<File>CoreWLAN/Reference/CoreWLANConstants_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[FOUNDATION_EXTERN]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NS_AVAILABLE_MAC
+   (
+   10_6);]]></Source>
+					<With><![CDATA[;]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NS_DEPRECATED_MAC
+   (
+   10_6,
+   10_7);]]></Source>
+					<With><![CDATA[;]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NS_AVAILABLE_MAC
+   (
+   10_7);]]></Source>
+					<With><![CDATA[;]]></With>
+				</Replace>				
+			</Patch>
+		</Type>
+		<Type name="CoreWLANFramework.DataTypes">
+			<File>CoreWLAN/Reference/CoreWLANTypes_header_reference/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["CWChannelBand"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["CWChannelWidth"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["CWCipherKeyFlags"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["CWErr"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["CWIBSSModeSecurity"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["CWInterfaceMode"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["CWInterfaceState"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations.First(Name == "CWOpMode").BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations.Last(Name == "CWOpMode").BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations.First(Name == "CWOpMode").Name = ((entity.Enumerations.Count(Name == "CWOpMode") == 2) ? "CWInterfaceMode" : "CWOpMode")]]></Change>
+				<Change><![CDATA[Enumerations.First(Name == "CWPHYMode").BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations.Last(Name == "CWPHYMode").BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations.Last(Name == "CWPHYMode").Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["CWScanType"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["CWSecurity"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["CWSecurityMode"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["kCWParamErr"].Name="CWErrorCodes"]]></Change>
+				<Change><![CDATA[Enumerations["CWErrorCodes"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CWErrorCodes"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["CWSecurity"].Values["kCWSecurityUnknown"].Value="Int32.MaxValue"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[1UL <<]]></Source>
+					<With><![CDATA[1 <<]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[ = kCW]]></Source>
+					<With><![CDATA[ = CWErr.kCW]]></With>
+				</Replace>
+			</Patch>
+		</Type>
+		<Type name="CoreWLANFramework.Utils">
+			<File>CoreWLAN/Reference/CoreWLANUtil_header_reference/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CWKeychainCopyEAPIdentity"].Parameters["identity"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CWKeychainCopyEAPIdentity"].Parameters["identity"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CWKeychainCopyEAPIdentityList"].Parameters["list"].Type="NSArray"]]></Change>
+				<Change><![CDATA[Functions["CWKeychainCopyEAPIdentityList"].Parameters["list"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CWKeychainCopyEAPUsernameAndPassword"].Parameters["username"].Type="NSString"]]></Change>
+				<Change><![CDATA[Functions["CWKeychainCopyEAPUsernameAndPassword"].Parameters["username"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CWKeychainCopyEAPUsernameAndPassword"].Parameters["password"].Type="NSString"]]></Change>
+				<Change><![CDATA[Functions["CWKeychainCopyEAPUsernameAndPassword"].Parameters["password"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CWKeychainCopyPassword"].Parameters["password"].Type="NSString"]]></Change>
+				<Change><![CDATA[Functions["CWKeychainCopyPassword"].Parameters["password"].IsOut=true]]></Change>
+			</Patch>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="CW8021XProfile">
+			<File>CoreWLAN/Reference/CW8021XProfile_reference/translated_content/CW8021XProfile.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[MinAvailability="Mac OS X v10.6"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CW8021XProfile.Deprecated">
+			<File>CoreWLAN/Reference/CW8021XProfile_reference/translated_content/../DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="CW8021XProfile"]]></Change>
+				<Change><![CDATA[Methods["Init"].Generate=false]]></Change>
+				<Change><![CDATA[Properties["AlwaysPromptForPassword"].Type="bool"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CWChannel">
+			<File>CoreWLAN/Reference/CWChannel_reference/translated_content/CWChannel.html</File>
+		</Class>
+		<Class name="CWConfiguration">
+			<File>CoreWLAN/Reference/CWConfiguration_reference/translated_content/CWConfiguration.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["Init"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CWInterface">
+			<File>CoreWLAN/Reference/CWInterface_reference/translated_content/CWInterface.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["Init"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CWMutableConfiguration">
+			<File>CoreWLAN/Reference/CWMutableConfiguration_reference/translated_content/CWMutableConfiguration.html</File>
+		</Class>
+		<Class name="CWMutableNetworkProfile">
+			<File>CoreWLAN/Reference/CWMutableNetworkProfile_reference/translated_content/CWMutableNetworkProfile.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[MinAvailability="OS X v10.7"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CWNetwork">
+			<File>CoreWLAN/Reference/CWNetwork_reference/translated_content/CWNetwork.html</File>
+		</Class>
+		<Class name="CWNetworkProfile">
+			<File>CoreWLAN/Reference/CWNetworkProfile_reference/translated_content/CWNetworkProfile.html</File>
+		</Class>
+		<Class name="CWWirelessProfile">
+			<File>CoreWLAN/Reference/CWWirelessProfile_reference/translated_content/CWWirelessProfile.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[MinAvailability="OS X v10.6"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CWWirelessProfile.Deprecated">
+			<File>CoreWLAN/Reference/CWWirelessProfile_reference/translated_content/../DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="CWWirelessProfile"]]></Change>
+				<Change><![CDATA[Methods["Init"].Generate=false]]></Change>
+				<Change><![CDATA[Properties["AlwaysPromptForPassword"].Type="bool"]]></Change>
+			</Patch>
+		</Class>
+	</Classes>
+</Framework>

@@ -18,8 +18,8 @@
 using System.Reflection;
 using System.Resources;
 
-[assembly: AssemblyTitle("Monobjc Bridge - NAnt Tasks Library")]
-[assembly: AssemblyDescription("Monobjc Bridge NAnt Tasks Library")]
+[assembly: AssemblyTitle("Monobjc - NAnt Tasks Library")]
+[assembly: AssemblyDescription("Monobjc NAnt Tasks Library")]
 [assembly: AssemblyCompany("Monobjc Project")]
 [assembly: AssemblyProduct("Monobjc Project")]
 [assembly: AssemblyCopyright("Copyright (c) Monobjc Project 2007-2012 - Licensed under General Public License")]
