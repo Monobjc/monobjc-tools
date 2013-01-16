@@ -32,7 +32,6 @@
 				<Change><![CDATA[Functions["dispatch_get_global_queue"].Parameters["long"].Name="flags"]]></Change>
 				<Change><![CDATA[Functions["dispatch_get_global_queue"].Parameters["flags"].Type="NSUInteger"]]></Change>
 				<Change><![CDATA[Functions["dispatch_get_main_queue"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["dispatch_get_specific"].MinAvailability="Mac OS X v10.7"]]></Change>
 				<Change><![CDATA[Functions["dispatch_queue_get_label"].ReturnType="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["dispatch_group_async"].Parameters["block"].Type="Block"]]></Change>
 				<Change><![CDATA[Functions["dispatch_group_async"].Parameters["block"].IsBlock=false]]></Change>
@@ -67,10 +66,8 @@
 				<Change><![CDATA[Functions["dispatch_source_set_cancel_handler"].Parameters["cancel_handler"].IsBlock=false]]></Change>
 				<Change><![CDATA[Functions["dispatch_source_set_event_handler"].Parameters["handler"].Type="Block"]]></Change>
 				<Change><![CDATA[Functions["dispatch_source_set_event_handler"].Parameters["handler"].IsBlock=false]]></Change>
-				<Change><![CDATA[Functions["dispatch_source_set_registration_handler"].MinAvailability="Mac OS X v10.7"]]></Change>
 				<Change><![CDATA[Functions["dispatch_source_set_registration_handler"].Parameters["registration_handler"].Type="Block"]]></Change>
 				<Change><![CDATA[Functions["dispatch_source_set_registration_handler"].Parameters["registration_handler"].IsBlock=false]]></Change>
-				<Change><![CDATA[Functions["dispatch_source_set_registration_handler_f"].MinAvailability="Mac OS X v10.7"]]></Change>
 				<Change><![CDATA[Functions["dispatch_sync"].Parameters["block"].Type="Block"]]></Change>
 				<Change><![CDATA[Functions["dispatch_sync"].Parameters["block"].IsBlock=false]]></Change>
 				<Change><![CDATA[Functions["dispatch_time"].Generate=false]]></Change>
