@@ -5,6 +5,17 @@
 	<Classes>
 		<Class name="IMKCandidates">
 			<File>Cocoa/Reference/IMKCandidates_Class/Reference/IMKCandidates_ref.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public partial class IMKCandidates : NSResponder]]></Source>
+					<With><![CDATA[public partial class IMKCandidates :
+#if MACOSX_10_7
+		NSResponder
+#else
+		NSObject
+#endif]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="IMKInputController">
 			<File>Cocoa/Reference/IMKInputController_Class/Reference/IMKInputController_ref.html</File>
