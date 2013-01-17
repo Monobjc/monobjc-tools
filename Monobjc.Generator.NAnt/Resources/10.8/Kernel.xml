@@ -68,6 +68,8 @@
 				<Change><![CDATA[Functions["dispatch_source_set_event_handler"].Parameters["handler"].IsBlock=false]]></Change>
 				<Change><![CDATA[Functions["dispatch_source_set_registration_handler"].Parameters["registration_handler"].Type="Block"]]></Change>
 				<Change><![CDATA[Functions["dispatch_source_set_registration_handler"].Parameters["registration_handler"].IsBlock=false]]></Change>
+				<Change><![CDATA[Functions["dispatch_source_set_registration_handler"].MinAvailability="OS X 10.7"]]></Change>
+				<Change><![CDATA[Functions["dispatch_source_set_registration_handler_f"].MinAvailability="OS X 10.7"]]></Change>
 				<Change><![CDATA[Functions["dispatch_sync"].Parameters["block"].Type="Block"]]></Change>
 				<Change><![CDATA[Functions["dispatch_sync"].Parameters["block"].IsBlock=false]]></Change>
 				<Change><![CDATA[Functions["dispatch_time"].Generate=false]]></Change>
