@@ -105,8 +105,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Model\sdef.dtd" />
-    <None Include="monobjc-sdp" />
     <None Include="Model\sdef.xsd" />
+    <None Include="monobjc-sdp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -84,10 +84,20 @@
   </Target>
   -->
   <ItemGroup>
-    <None Include="Monobjc.CocoaApplication.targets" />
-    <None Include="Monobjc.ConsoleApplication.targets" />
-    <None Include="Monobjc.MSBuild.tasks" />
-    <None Include="Monobjc.CocoaLibrary.targets" />
-    <None Include="Monobjc.Common.targets" />
+    <None Include="Monobjc.CocoaApplication.targets">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Monobjc.ConsoleApplication.targets">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Monobjc.MSBuild.tasks">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Monobjc.CocoaLibrary.targets">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Monobjc.Common.targets">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

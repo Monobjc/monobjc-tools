@@ -53,8 +53,14 @@ all:
 	done;
 	$(CPC) "$(BUILD_DIR)/Monobjc.Tools/Monobjc.Tools.dll" "$(DIST_DIR)"
 	$(CPC) "$(BUILD_DIR)/Monobjc.NAnt/Monobjc.NAnt.dll" "$(DIST_DIR)"
+	$(CPC) "$(BUILD_DIR)/Monobjc.MSBuild/Monobjc.CocoaApplication.targets" "$(DIST_DIR)"
+	$(CPC) "$(BUILD_DIR)/Monobjc.MSBuild/Monobjc.CocoaLibrary.targets" "$(DIST_DIR)"
+	$(CPC) "$(BUILD_DIR)/Monobjc.MSBuild/Monobjc.Common.targets" "$(DIST_DIR)"
+	$(CPC) "$(BUILD_DIR)/Monobjc.MSBuild/Monobjc.ConsoleApplication.targets" "$(DIST_DIR)"
 	$(CPC) "$(BUILD_DIR)/Monobjc.MSBuild/Monobjc.MSBuild.dll" "$(DIST_DIR)"
+	$(CPC) "$(BUILD_DIR)/Monobjc.MSBuild/Monobjc.MSBuild.tasks" "$(DIST_DIR)"
 	$(CPC) "$(BUILD_DIR)/Monobjc.Sdp/Monobjc.Tools.Sdp.exe" "$(DIST_DIR)"
+	$(CPC) "$(BUILD_DIR)/Monobjc.Sdp/monobjc-sdp" "$(DIST_DIR)"
 
 clean:
 	for i in $(PROJECTS); do \
