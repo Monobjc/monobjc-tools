@@ -15,7 +15,9 @@
 // You should have received a copy of the GNU General Public License
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
+using System;
 using System.IO;
+using System.Security.Cryptography;
 using Monobjc.Tools.Generators;
 using NUnit.Framework;
 
@@ -26,13 +28,34 @@ namespace Monobjc.Tools
 	[Category("Encryption")]
 	public class ArtworkEncrypterTests
 	{
+		private static readonly String KEY = "123";
+
 		[Test]
 		public void TestImageEncryption ()
 		{
 			File.Copy ("Embedded/application-sidebar-list.nopng", "dummy.png", true);
-
+			
 			ArtworkEncrypter encrypter = new ArtworkEncrypter ();
-			encrypter.Encrypt (".", "123");
+			encrypter.Encrypt (".", KEY);
+		}
+
+		[Test]
+		public void TestImageDecryption ()
+		{
+			Aes provider = ArtworkEncrypter.GetProvider(KEY);
+
+			{
+				byte[] clean = File.ReadAllBytes ("Embedded/application-sidebar-list.nopng");
+				byte [] content = ArtworkEncrypter.Encrypt (clean, provider);
+				
+				byte[] output = ArtworkEncrypter.Decrypt (content, provider);
+				File.WriteAllBytes ("dummy2.png", output);
+			}
+			{
+				byte [] content = File.ReadAllBytes("dummy.png");
+				byte[] output = ArtworkEncrypter.Decrypt (content, provider);
+				File.WriteAllBytes ("dummy3.png", output);
+			}
 		}
 	}
 }

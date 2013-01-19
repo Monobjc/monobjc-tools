@@ -28,7 +28,7 @@ namespace Monobjc.Tools.Generators
 	/// <summary>
 	///   Wrapper to handle artwork combination.
 	/// </summary>
-	public class ArtworkEncrypter
+	public partial class ArtworkEncrypter
 	{
 		private static byte[] MAGIC_NUMBER = new byte[]{ 0x50 , 0x4B, 0x03, 0x04 };
 
@@ -66,13 +66,12 @@ namespace Monobjc.Tools.Generators
 				provider.Key = DeriveKey (encryptionSeed);
 
 				// Perform the encryption
-				IDictionary<String, String[]> combinations = new Dictionary<String, String[]> ();
 				foreach (String extension in this.Extensions.Split(',')) {
 					String dotExtension = "." + extension;
 					IList<String> files = new List<String> (this.Enumerate (directory, dotExtension));
 					
 					foreach (var file in files) {
-						Encrypt (file, provider);
+						Encrypt (file, file, provider);
 					}
 				}
 
@@ -98,67 +97,30 @@ namespace Monobjc.Tools.Generators
 			return result;
 		}
 
-		private byte[] DeriveKey (String encryptionSeed)
+		private void Encrypt (String inputFile, String outputFile, Aes aes)
 		{
-			SHA256 sha = SHA256Managed.Create ();
-			byte[] result = sha.ComputeHash (Encoding.UTF8.GetBytes (encryptionSeed));
-			return result;
-		}
-
-		private void Encrypt (String file, Aes aes)
-		{
-			if (IsEncrypted (file)) {
+			if (IsEncrypted (inputFile)) {
 				return;
 			}
-
-			this.Logger.LogDebug (String.Format (CultureInfo.CurrentCulture, "Encrypting {0}...", file));
-
-			using (ICryptoTransform transform = aes.CreateEncryptor ()) {
-				using (MemoryStream memoryStream = new MemoryStream()) {
-					// Write the magic number
-					memoryStream.Write (MAGIC_NUMBER, 0, 4);
-
-					// Write the IV
-					memoryStream.Write (aes.IV, 0, 16);
-
-					// Now, write the encrypted file
-					using (CryptoStream cryptoStream = new CryptoStream(memoryStream, transform, CryptoStreamMode.Write)) {
-						// Copy the file into the crypto stream
-						using (Stream sourceStream = new FileStream(file, FileMode.Open, FileAccess.Read)) {
-							sourceStream.CopyTo (cryptoStream);
-							sourceStream.Flush ();
-							sourceStream.Close ();
-						}
-					}
-
-					memoryStream.Flush ();
-					memoryStream.Close ();
-					byte[] bytes = memoryStream.ToArray ();
-
-					// Write the encrypted content back to file
-					File.WriteAllBytes (file, bytes);
-				}
-			}
+			
+			this.Logger.LogDebug (String.Format (CultureInfo.CurrentCulture, "Encrypting {0}...", inputFile));
+			
+			byte[] data = File.ReadAllBytes(inputFile);
+			byte[] output = Encrypt(data, aes);
+			File.WriteAllBytes (outputFile, output);
 		}
 
-		private bool IsEncrypted (String file)
+		private void Decrypt (String inputFile, String outputFile, Aes aes)
 		{
-			int read;
-			byte[] header = new byte[4];
-			using (Stream sourceStream = new FileStream(file, FileMode.Open, FileAccess.Read)) {
-				read = sourceStream.Read (header, 0, 4);
-				sourceStream.Close ();
+			if (!IsEncrypted (inputFile)) {
+				return;
 			}
-			// Something went wrong, so consider the file is encrypted
-			if (read < 4) {
-				return true;
-			}
-			bool isEncrypted = true;
-			isEncrypted &= (header [0] == MAGIC_NUMBER [0]);
-			isEncrypted &= (header [1] == MAGIC_NUMBER [1]);
-			isEncrypted &= (header [2] == MAGIC_NUMBER [2]);
-			isEncrypted &= (header [3] == MAGIC_NUMBER [3]);
-			return isEncrypted;
+			
+			this.Logger.LogDebug (String.Format (CultureInfo.CurrentCulture, "Decrypting {0}...", inputFile));
+			
+			byte[] data = File.ReadAllBytes(inputFile);
+			byte[] output = Decrypt(data, aes);
+			File.WriteAllBytes (outputFile, output);
 		}
 	}
 }

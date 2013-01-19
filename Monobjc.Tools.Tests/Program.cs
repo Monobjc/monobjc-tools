@@ -65,6 +65,7 @@ namespace Monobjc.Tools
 
 			ArtworkEncrypterTests artworkEncrypterTests = new ArtworkEncrypterTests ();
 			artworkEncrypterTests.TestImageEncryption ();
+			artworkEncrypterTests.TestImageDecryption ();
 		}
 	}
 }
