@@ -21,7 +21,6 @@ using System.Globalization;
 using System.IO;
 using Monobjc.Tools.Utilities;
 using System.Security.Cryptography;
-using System.Text;
 
 namespace Monobjc.Tools.Generators
 {
@@ -30,8 +29,6 @@ namespace Monobjc.Tools.Generators
 	/// </summary>
 	public partial class ArtworkEncrypter
 	{
-		private static byte[] MAGIC_NUMBER = new byte[]{ 0x50 , 0x4B, 0x03, 0x04 };
-
 		/// <summary>
 		///   Initializes a new instance of the <see cref = "ArtworkEncrypter" /> class.
 		/// </summary>
@@ -105,8 +102,8 @@ namespace Monobjc.Tools.Generators
 			
 			this.Logger.LogDebug (String.Format (CultureInfo.CurrentCulture, "Encrypting {0}...", inputFile));
 			
-			byte[] data = File.ReadAllBytes(inputFile);
-			byte[] output = Encrypt(data, aes);
+			byte[] data = File.ReadAllBytes (inputFile);
+			byte[] output = Encrypt (data, aes);
 			File.WriteAllBytes (outputFile, output);
 		}
 
@@ -118,8 +115,8 @@ namespace Monobjc.Tools.Generators
 			
 			this.Logger.LogDebug (String.Format (CultureInfo.CurrentCulture, "Decrypting {0}...", inputFile));
 			
-			byte[] data = File.ReadAllBytes(inputFile);
-			byte[] output = Decrypt(data, aes);
+			byte[] data = File.ReadAllBytes (inputFile);
+			byte[] output = Decrypt (data, aes);
 			File.WriteAllBytes (outputFile, output);
 		}
 	}

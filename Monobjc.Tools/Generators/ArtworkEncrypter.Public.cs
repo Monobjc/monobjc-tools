@@ -24,38 +24,43 @@ namespace Monobjc.Tools.Generators
 {
 	public partial class ArtworkEncrypter
 	{
-		public static Aes GetProvider(String encryptionSeed) {
-			AesCryptoServiceProvider provider = new AesCryptoServiceProvider();
-			provider.Key = DeriveKey(encryptionSeed);
+		private static byte[] MAGIC_NUMBER = new byte[]{ 0x50 , 0x4B, 0x03, 0x04 };
+
+		/// <summary>
+		/// Returns an AES provider, that use a derivative of the encryption seed as key.
+		/// </summary>
+		public static Aes GetProvider (String encryptionSeed)
+		{
+			AesCryptoServiceProvider provider = new AesCryptoServiceProvider ();
+			provider.Key = DeriveKey (encryptionSeed);
 			return provider;
 		}
 
+		/// <summary>
+		/// Derives a private key from the given seed.
+		/// </summary>
 		public static byte[] DeriveKey (String seed)
 		{
 			return DeriveKey (Encoding.UTF8.GetBytes (seed));
 		}
 		
+		/// <summary>
+		/// Derives a private key from the given content.
+		/// </summary>
 		public static byte[] DeriveKey (byte[] content)
 		{
 			SHA256 sha = SHA256Managed.Create ();
 			byte[] result = sha.ComputeHash (content);
 			return result;
 		}
-		
+
+		/// <summary>
+		/// Encrypt a byte array by using the AES algorightm.
+		/// <para>The input is: [data]</para>
+		/// <para>The output is: [Magic Number (4 bytes)] [AES IV (16 bytes)] [AES(data) (xx bytes)] [HMAC(IV || AES(data)) (32 bytes)]</para>
+		/// </summary>
 		public static byte[] Encrypt (byte[] content, Aes aes)
 		{
-			//
-			// Encrypt a byte array by using AES
-			//
-			// Input:
-			// - data
-			//
-			// Output:
-			// - Magic Number (4 bytes)
-			// - IV (16 bytes)
-			// - AES(data)
-			// - HMAC(IV || AES(data)) (32 bytes)
-			//
 			using (MemoryStream outputStream = new MemoryStream()) {
 				// Write the magic number
 				outputStream.Write (MAGIC_NUMBER, 0, 4);
@@ -67,9 +72,9 @@ namespace Monobjc.Tools.Generators
 					// Write the AES encrypted content
 					using (ICryptoTransform transform = aes.CreateEncryptor ()) {
 						using (CryptoStream cryptoStream = new CryptoStream(cypherStream, transform, CryptoStreamMode.Write)) {
-							cryptoStream.Write(content, 0, content.Length);
-							cryptoStream.Flush();
-							cryptoStream.Close();
+							cryptoStream.Write (content, 0, content.Length);
+							cryptoStream.Flush ();
+							cryptoStream.Close ();
 						}
 					}
 
@@ -98,40 +103,33 @@ namespace Monobjc.Tools.Generators
 			}
 		}
 
+		/// <summary>
+		/// Encrypt a byte array by using the AES algorightm.
+		/// <para>The input is: [Magic Number (4 bytes)] [AES IV (16 bytes)] [AES(data) (xx bytes)] [HMAC(IV || AES(data)) (32 bytes)]</para>
+		/// <para>The output is: [data]</para>
+		/// </summary>
 		public static byte[] Decrypt (byte[] content, Aes aes)
 		{
-			//
-			// Decrypt a byte array by using AES
-			//
-			// Input:
-			// - Magic Number (4 bytes)
-			// - IV (16 bytes)
-			// - AES(data)
-			// - HMAC(IV || AES(data)) (32 bytes)
-			//
-			// Output:
-			// - data
-			//
 			byte[] headerBytes = new byte[4];
 			byte[] ivBytes = new byte[16];
 			byte[] dataBytes = new byte[content.Length - 4 - 16 - 32];
 			byte[] cypherBytes = new byte[ivBytes.Length + dataBytes.Length];
 			byte[] hmacBytes = new byte[32];
 
-			Array.Copy(content, 0, headerBytes, 0, headerBytes.Length);
-			Array.Copy(content, 4, ivBytes, 0, ivBytes.Length);
-			Array.Copy(content, 4 + 16, dataBytes, 0, dataBytes.Length);
-			Array.Copy(content, 4, cypherBytes, 0, cypherBytes.Length);
-			Array.Copy(content, content.Length - 32, hmacBytes, 0, hmacBytes.Length);
+			Array.Copy (content, 0, headerBytes, 0, headerBytes.Length);
+			Array.Copy (content, 4, ivBytes, 0, ivBytes.Length);
+			Array.Copy (content, 4 + 16, dataBytes, 0, dataBytes.Length);
+			Array.Copy (content, 4, cypherBytes, 0, cypherBytes.Length);
+			Array.Copy (content, content.Length - 32, hmacBytes, 0, hmacBytes.Length);
 
 			// Compute the HMAC of the cypher
 			using (HMACSHA256 hmac = new HMACSHA256 (DeriveKey (aes.Key))) {
 				byte[] newHmacBytes = hmac.ComputeHash (cypherBytes);
 
 				// Check for HMAC equality
-				for(int i = 0; i < newHmacBytes.Length; i++) {
-					if (newHmacBytes[i] != hmacBytes[i]) {
-						throw new CryptographicException("Content has been tampered. HMAC don't match.");
+				for (int i = 0; i < newHmacBytes.Length; i++) {
+					if (newHmacBytes [i] != hmacBytes [i]) {
+						throw new CryptographicException ("Content has been tampered. HMAC don't match.");
 					}
 				}
 			}
@@ -156,6 +154,9 @@ namespace Monobjc.Tools.Generators
 			}
 		}
 
+		/// <summary>
+		/// Determines if the given file contains an encrypted content.
+		/// </summary>
 		public static bool IsEncrypted (String file)
 		{
 			byte[] header = new byte[4];
@@ -166,17 +167,20 @@ namespace Monobjc.Tools.Generators
 			return IsEncrypted (header);
 		}
 
-		public static bool IsEncrypted (byte[] header)
+		/// <summary>
+		/// Determines if the given content contains an encrypted content.
+		/// </summary>
+		public static bool IsEncrypted (byte[] content)
 		{
-			if (header.Length < 4) {
-				throw new ArgumentException("Header should contain at least 4 bytes");
+			if (content.Length < 4) {
+				throw new ArgumentException ("Header should contain at least 4 bytes");
 			}
 
 			bool isEncrypted = true;
-			isEncrypted &= (header [0] == MAGIC_NUMBER [0]);
-			isEncrypted &= (header [1] == MAGIC_NUMBER [1]);
-			isEncrypted &= (header [2] == MAGIC_NUMBER [2]);
-			isEncrypted &= (header [3] == MAGIC_NUMBER [3]);
+			isEncrypted &= (content [0] == MAGIC_NUMBER [0]);
+			isEncrypted &= (content [1] == MAGIC_NUMBER [1]);
+			isEncrypted &= (content [2] == MAGIC_NUMBER [2]);
+			isEncrypted &= (content [3] == MAGIC_NUMBER [3]);
 			return isEncrypted;
 		}
 	}
