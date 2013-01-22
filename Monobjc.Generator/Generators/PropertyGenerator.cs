@@ -115,7 +115,7 @@ namespace Monobjc.Tools.Generator.Generators
 //                }
 //                else
 				{
-					this.Writer.WriteLineFormat (3, "get {{ return ObjectiveCRuntime.SendMessage<{0}>({1}, \"{2}\"); }}", type, propertyEntity.Static ? classEntity.Name + "Class" : "this", "" + propertyEntity.Getter.Selector);
+					this.Writer.WriteLineFormat (3, "get {{ return ObjectiveCRuntime.SendMessage<{0}>({1}, \"{2}\"); }}", type, propertyEntity.Static ? classEntity.Name + "." + classEntity.Name + "Class" : "this", "" + propertyEntity.Getter.Selector);
 				}
 
 				// Append setter
@@ -141,7 +141,7 @@ namespace Monobjc.Tools.Generator.Generators
 //                    }
 //                    else
 					{
-						this.Writer.WriteLineFormat (3, "set {{ ObjectiveCRuntime.SendMessage({0}, \"{1}\", value); }}", propertyEntity.Static ? classEntity.Name + "Class" : "this", "" + propertyEntity.Setter.Selector);
+						this.Writer.WriteLineFormat (3, "set {{ ObjectiveCRuntime.SendMessage({0}, \"{1}\", value); }}", propertyEntity.Static ? classEntity.Name + "." + classEntity.Name + "Class" : "this", "" + propertyEntity.Setter.Selector);
 					}
 				}
 

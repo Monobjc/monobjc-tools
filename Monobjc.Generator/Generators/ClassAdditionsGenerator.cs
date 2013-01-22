@@ -67,7 +67,7 @@ namespace Monobjc.Tools.Generator.Generators
 
 			// Append properties
 			foreach (PropertyEntity propertyEntity in classEntity.Properties.Where(e => e.Generate)) {
-				if (sameClass) {
+				if (sameClass || propertyEntity.Static) {
 					this.PropertyGenerator.Generate (extendedClass, propertyEntity);
 				} else {
 					this.MethodGenerator.Generate (extendedClass, propertyEntity.GetterAsMethodEntity (), true, true);

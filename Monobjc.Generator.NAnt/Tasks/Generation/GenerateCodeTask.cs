@@ -296,11 +296,15 @@ namespace Monobjc.Tools.Generator.NAnt
 				String[] parts = classEntity.ConformsTo.Split (new []{','}, StringSplitOptions.RemoveEmptyEntries);
 				classEntity.Protocols = new List<ProtocolEntity> ();
 				foreach (var p in parts) {
-					ProtocolEntity protocolEntity = this.FindAndLoad<ProtocolEntity> (baseFolder, entities, FrameworkEntityType.P, p);
-					if (protocolEntity == null) {
-						continue;
+					String name = p;
+					while (!String.IsNullOrEmpty(name)) {
+						ProtocolEntity protocolEntity = this.FindAndLoad<ProtocolEntity> (baseFolder, entities, FrameworkEntityType.P, name);
+						if (protocolEntity == null) {
+							break;
+						}
+						classEntity.Protocols.Add (protocolEntity);
+						name = protocolEntity.BaseType;
 					}
-					classEntity.Protocols.Add (protocolEntity);
 				}
 			}
 
