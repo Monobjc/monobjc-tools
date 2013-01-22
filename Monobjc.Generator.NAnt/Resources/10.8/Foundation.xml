@@ -1447,6 +1447,12 @@
 		</Class>
 		<Class name="NSPropertyListSerialization">
 			<File>Cocoa/Reference/Foundation/Classes/NSPropertyListSerialization_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["PropertyListFromDataMutabilityOptionFormatErrorDescription"].Parameters["format"].Type="NSPropertyListFormat"]]></Change>
 				<Change><![CDATA[Methods["PropertyListFromDataMutabilityOptionFormatErrorDescription"].Parameters["format"].IsOut=true]]></Change>

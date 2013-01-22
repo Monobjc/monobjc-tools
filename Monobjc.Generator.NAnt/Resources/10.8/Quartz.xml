@@ -160,6 +160,12 @@
 		</Class>
 		<Class name="PDFAnnotationText">
 			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationText_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="PDFAnnotationTextWidget">
 			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationTextWidget_Class/Reference/Reference.html</File>
@@ -180,9 +186,21 @@
 		</Class>
 		<Class name="PDFOutline">
 			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFOutline_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="PDFPage">
 			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFPage_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="PDFSelection">
 			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFSelection_Class/Reference/Reference.html</File>

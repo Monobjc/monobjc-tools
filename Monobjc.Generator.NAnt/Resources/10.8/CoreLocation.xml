@@ -4,7 +4,7 @@
 		<Type name="CoreLocationFramework.Constants">
 			<File>CoreLocation/Reference/CoreLocationConstantsRef/Reference/reference.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Enumerations["CLError"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["CLError"].BaseType="int"]]></Change>
 				<Change><![CDATA[Enumerations["CLDeviceOrientation"].BaseType="int"]]></Change>
 			</Patch>
 		</Type>
@@ -37,6 +37,12 @@
 		</Class>
 		<Class name="CLLocationManager">
 			<File>CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[MinAvailability="OS X v10.6"]]></Change>
 				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
@@ -62,6 +68,12 @@
 	<Protocols>
 		<Protocol name="CLLocationManagerDelegate">
 			<File>CoreLocation/Reference/CLLocationManagerDelegate_Protocol/CLLocationManagerDelegate/CLLocationManagerDelegate.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[DelegateFor="CLLocationManager"]]></Change>
 				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>

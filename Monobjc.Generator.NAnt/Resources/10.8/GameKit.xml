@@ -52,6 +52,12 @@
 		</Class>
 		<Class name="GKLeaderboard">
 			<File>GameKit/Reference/GKLeaderboard_Ref/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["SetDefaultLeaderboardWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
 				<Change><![CDATA[Methods["SetDefaultLeaderboardWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
@@ -64,6 +70,12 @@
 		</Class>
 		<Class name="GKLocalPlayer">
 			<File>GameKit/Reference/GKLocalPlayer_Ref/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["LoadFriendsWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
 				<Change><![CDATA[Methods["LoadFriendsWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
@@ -122,6 +134,12 @@
 		</Class>
 		<Class name="GKTurnBasedMatch">
 			<File>GameKit/Reference/GKTurnBasedMatch_Ref/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["FindMatchForRequestWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
 				<Change><![CDATA[Methods["FindMatchForRequestWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
@@ -188,6 +206,12 @@
 		</Protocol>
 		<Protocol name="GKTurnBasedEventHandlerDelegate">
 			<File>GameKit/Reference/GKTurnBasedEventHandlerDelegate_Ref/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[DelegateFor="GKTurnBasedEventHandler"]]></Change>
 				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>

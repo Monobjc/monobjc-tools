@@ -508,12 +508,14 @@
 	<Mapping type="void (^)(CMTime time)"><![CDATA[block:Action<CMTime>]]></Mapping>
 	<Mapping type="void (^)(NSAnimationContext *context)"><![CDATA[block:Action<NSAnimationContext>]]></Mapping>
 	<Mapping type="void (^)(NSArray *items)"><![CDATA[block:Action<NSArray>]]></Mapping>
+	<Mapping type="void (^)(NSArray *categories, NSArray *titles, NSError *error)"><![CDATA[block:Action<NSArray, NSArray, NSError>]]></Mapping>
 	<Mapping type="void (^)(NSDictionary *attrs, NSRange range,  BOOL *stop)"><![CDATA[block:Action<NSDictionary, NSRange, IntPtr>]]></Mapping>
 	<Mapping type="void (^)(NSDictionary *attrs, NSRange range, BOOL *stop)"><![CDATA[block:Action<NSDictionary, NSRange, IntPtr>]]></Mapping>
 	<Mapping type="void (^)(NSDictionary *newURLs, NSError *error)"><![CDATA[block:Action<NSDictionary, NSError>]]></Mapping>
 	<Mapping type="void (^)(NSDocument *document, BOOL documentWasAlreadyOpen, NSError *error)"><![CDATA[block:Action<NSDocument, bool, NSError>]]></Mapping>
 	<Mapping type="void (^)(NSDraggingItem *draggingItem, NSInteger idx, BOOL *stop)"><![CDATA[block:Action<NSDraggingItem, NSInteger, IntPtr>]]></Mapping>
 	<Mapping type="void (^)(NSError *)"><![CDATA[block:Action<NSError>]]></Mapping>
+	<Mapping type="void (^)(NSError *error)"><![CDATA[block:Action<NSError>]]></Mapping>
 	<Mapping type="void (^)(NSError *errorOrNil)"><![CDATA[block:Action<NSError>]]></Mapping>
 	<Mapping type="void (^)(NSEvent*)"><![CDATA[block:Action<NSEvent>]]></Mapping>
 	<Mapping type="void (^)(NSInteger result)"><![CDATA[block:Action<NSInteger>]]></Mapping>
