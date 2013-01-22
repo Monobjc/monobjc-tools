@@ -235,11 +235,10 @@
 				<Change><![CDATA[Methods["InitWithDocFormatDocumentAttributes"].GenerateConstructor=false]]></Change>
 				<Change><![CDATA[Methods["InitWithHTMLDocumentAttributes"].GenerateConstructor=false]]></Change>
 				<Change><![CDATA[Methods["InitWithRTFDDocumentAttributes"].GenerateConstructor=false]]></Change>
-				<Change><![CDATA[Enumerations["Underlining_Styles"].Name="NSUnderlineStyle"]]></Change>
-				<Change><![CDATA[Enumerations["NSUnderlineStyle"].BaseType="NSInteger"]]></Change>
-				<Change><![CDATA[Enumerations["Underlining_Patterns"].Name="NSUnderlinePattern"]]></Change>
-				<Change><![CDATA[Enumerations["NSUnderlinePattern"].BaseType="NSUInteger"]]></Change>
-				<Change><![CDATA[Enumerations["NSUnderlineStyle"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["Underlining_Styles"].Name="NSUnderlineStyles"]]></Change>
+				<Change><![CDATA[Enumerations["NSUnderlineStyles"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["Underlining_Patterns"].Name="NSUnderlinePatterns"]]></Change>
+				<Change><![CDATA[Enumerations["NSUnderlinePatterns"].BaseType="NSUInteger"]]></Change>
 				<Change><![CDATA[Enumerations["NSSpellingStateAttributeName_Flags"].Name="NSSpellingState"]]></Change>
 				<Change><![CDATA[Enumerations["NSSpellingState"].BaseType="int"]]></Change>
 				<Change><![CDATA[Enumerations["NSSpellingState"].Flags=true]]></Change>
@@ -1798,6 +1797,22 @@
 		</Class>
 		<Class name="NSTextView">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSTextView_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[>NSFindPanelSearchOptionsPboardType</a>]]></Source>
+					<With><![CDATA[>NSFindPanelSearchOptionsPboardType;</a>]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NSString *NSFindPanelCaseInsensitiveSearch
+]]></Source>
+					<With><![CDATA[NSString *NSFindPanelCaseInsensitiveSearch;
+]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[>NSFindPanelSubstringMatch</a>]]></Source>
+					<With><![CDATA[>NSFindPanelSubstringMatch;</a>]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["CompletionsForPartialWordRangeIndexOfSelectedItem"].Parameters["index"].Type="NSInteger"]]></Change>
 				<Change><![CDATA[Methods["CompletionsForPartialWordRangeIndexOfSelectedItem"].Parameters["index"].IsOut=true]]></Change>
@@ -1899,6 +1914,12 @@
 		</Class>
 		<Class name="NSView">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSView_Class/Reference/NSView.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["GetRectsBeingDrawnCount"].Parameters["rects"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["GetRectsBeingDrawnCount"].Parameters["count"].Type="NSInteger"]]></Change>

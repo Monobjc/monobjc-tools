@@ -3,6 +3,12 @@
 	<Types>
 		<Type name="UTType">
 			<File>MobileCoreServices/Reference/UTTypeRef/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[>kUTTypeAppleICNS</a>]]></Source>
+					<With><![CDATA[>kUTTypeAppleICNS;</a>]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 	</Types>
 </Framework>
