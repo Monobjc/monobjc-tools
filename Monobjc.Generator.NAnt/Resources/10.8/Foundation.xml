@@ -2231,6 +2231,9 @@
 		</Protocol>
 		<Protocol name="NSSecureCoding">
 			<File>Foundation/Reference/NSSecureCoding_Protocol_Ref/content/NSSecureCoding.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[BaseType="NSCoding"]]></Change>
+			</Patch>
 		</Protocol>
 		<Protocol name="NSSpellServerDelegate">
 			<File>Cocoa/Reference/NSSpellServerDelegate_Protocol/Reference/Reference.html</File>

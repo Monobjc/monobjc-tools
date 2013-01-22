@@ -105,7 +105,7 @@
 			<Patch type="Model">
 				<Change><![CDATA[AdditionFor="NSActionCell"]]></Change>
 				<Change><![CDATA[Methods["SetFloatingPointFormatLeftRight"].MaxAvailability="OS X v10.5"]]></Change>
-				<Change><![CDATA[Methods["setObjectValue"].MaxAvailability="OS X v10.5"]]></Change>
+				<Change><![CDATA[Methods["SetObjectValue"].MaxAvailability=""]]></Change>
 				<Change><![CDATA[Properties["ControlView"].MaxAvailability="OS X v10.5"]]></Change>
 				<Change><![CDATA[Properties["FloatValue"].MaxAvailability="OS X v10.5"]]></Change>
 				<Change><![CDATA[Properties["IntValue"].MaxAvailability="OS X v10.5"]]></Change>
@@ -145,6 +145,9 @@
 				<Change><![CDATA[Methods["RunAnimationGroupCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
 				<Change><![CDATA[Methods["RunAnimationGroupCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
 				<Change><![CDATA[Properties["CompletionHandler"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["CompletionHandler"].MinAvailability="OS X v10.7"]]></Change>
+				<Change><![CDATA[Properties["Duration"].MinAvailability="OS X v10.6"]]></Change>
+				<Change><![CDATA[Properties["TimingFunction"].MinAvailability="OS X v10.7"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSAppleScript_AppKitAdditions">
@@ -596,6 +599,7 @@
 				<Change><![CDATA[Methods["PerformActivityWithSynchronousWaitingUsingBlock"].Parameters["inBlock"].IsBlock=false]]></Change>
 				<Change><![CDATA[Methods["PerformAsynchronousFileAccessUsingBlock"].Parameters["inBlock"].Type="Block"]]></Change>
 				<Change><![CDATA[Methods["PerformAsynchronousFileAccessUsingBlock"].Parameters["inBlock"].IsBlock=false]]></Change>
+				<Change><![CDATA[Enumerations["NSSaveOperationType"].Values.Set("NSAutosaveOperation", "<EnumerationValue><Summary><Line>Old name for the NSAutosaveElsewhereOperation operation type. (Deprecated. Deprecated in OS X v10.7. Use NSAutosaveElsewhereOperation instead.)</Line></Summary><MinAvailability>Mac OS X v10.4</MinAvailability><MaxAvailability>Mac OS X v10.7</MaxAvailability><Name>NSAutosaveOperation</Name><Value>3</Value></EnumerationValue>")]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSDocument.Deprecated">
@@ -688,7 +692,6 @@
 				<Change><![CDATA[Methods["EventWithCGEvent"].Parameters["cgEvent"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["EventWithEventRef"].Parameters["eventRef"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Properties["EventRef"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Properties["EventRef"].Getter.ReturnType="IntPtr"]]></Change>
 				<Change><![CDATA[Properties["ModifierFlags"].Type="NSModifierFlags"]]></Change>
 				<Change><![CDATA[Properties["GlobalModifierFlags"].Type="NSModifierFlags"]]></Change>
 				<Change><![CDATA[Enumerations["NSEventType"].BaseType="NSUInteger"]]></Change>
@@ -793,6 +796,10 @@
 		<Class name="NSFont">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSFont_Class/Reference/Reference.html</File>
 			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
 				<Replace>
 					<Source><![CDATA[)<pre class="declaration">]]></Source>
 					<With><![CDATA[)</p><pre class="declaration">]]></With>
@@ -959,6 +966,10 @@
 		<Class name="NSImageCell">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSImageCell_Class/Reference/Reference.html</File>
 			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
 				<Replace>
 					<Source><![CDATA[)<pre class="declaration">]]></Source>
 					<With><![CDATA[)</p><pre class="declaration">]]></With>
@@ -1203,6 +1214,12 @@
 		</Class>
 		<Class name="NSOpenGLPixelFormat">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSOpenGLPixelFormat_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["GetValuesForAttributeForVirtualScreen"].Parameters["vals"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["InitWithAttributes"].Parameters["attribs"].Type="IntPtr"]]></Change>
@@ -1354,6 +1371,16 @@
 		</Class>
 		<Class name="NSPrintInfo">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSPrintInfo_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[<!--a-->*const<!--/a-->]]></Source>
+					<With><![CDATA[<!--a--> *const <!--/a-->]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NSPrintJobSavingFileNameExtensionHidden']]></Source>
+					<With><![CDATA[NSPrintJobSavingFileNameExtensionHidden;]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="NSPrintInfo.Deprecated">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSPrintInfo_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
@@ -1465,6 +1492,10 @@
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSScroller_Class/Reference/Reference.html</File>
 			<Patch type="Html">
 				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+				<Replace>
 					<Source><![CDATA[)<pre class="declaration">]]></Source>
 					<With><![CDATA[)</p><pre class="declaration">]]></With>
 				</Replace>
@@ -1484,6 +1515,12 @@
 		</Class>
 		<Class name="NSScrollView">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSScrollView_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Properties["ContentView"].Generate=false]]></Change>
 			</Patch>
@@ -2234,6 +2271,134 @@ enum {]]></Source>
 				<Change><![CDATA[BaseType="NSTableViewDelegate"]]></Change>
 				<Change><![CDATA[DelegateFor="NSOutlineView"]]></Change>
 				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[Methods.Set("OutlineViewColumnDidMove", "
+<Method>
+	<Summary><Line>Invoked whenever the user moves a column in the outline view.</Line></Summary>
+	<MinAvailability>Mac OS X v10.0</MinAvailability>
+	<Name>OutlineViewColumnDidMove</Name>
+	<Selector>outlineViewColumnDidMove:</Selector>
+	<Signature>- (void)outlineViewColumnDidMove:(NSNotification *)notification</Signature>
+	<ReturnType>void</ReturnType>
+	<Parameters>
+		<Parameter>
+			<Summary><Line>The posted notification.</Line></Summary>
+			<Name>notification</Name>
+			<Type>NSNotification</Type>
+		</Parameter>
+	</Parameters>
+</Method>")]]></Change>
+				<Change><![CDATA[Methods.Set("OutlineViewColumnDidResize", "
+<Method>
+	<Summary><Line>Invoked whenever the user resizes a column in the outline view.</Line></Summary>
+	<MinAvailability>Mac OS X v10.0</MinAvailability>
+	<Name>OutlineViewColumnDidResize</Name>
+	<Selector>outlineViewColumnDidResize:</Selector>
+	<Signature>- (void)outlineViewColumnDidResize:(NSNotification *)notification</Signature>
+	<ReturnType>void</ReturnType>
+	<Parameters>
+		<Parameter>
+			<Summary><Line>The posted notification.</Line></Summary>
+			<Name>notification</Name>
+			<Type>NSNotification</Type>
+		</Parameter>
+	</Parameters>
+</Method>")]]></Change>
+				<Change><![CDATA[Methods.Set("OutlineViewItemDidCollapse", "
+<Method>
+	<Summary><Line>Invoked when the did collapse notification is posted—that is, whenever the user collapses an item in the outline view.</Line></Summary>
+	<MinAvailability>Mac OS X v10.0</MinAvailability>
+	<Name>OutlineViewItemDidCollapse</Name>
+	<Selector>outlineViewItemDidCollapse:</Selector>
+	<Signature>- (void)outlineViewItemDidCollapse:(NSNotification *)notification</Signature>
+	<ReturnType>void</ReturnType>
+	<Parameters>
+		<Parameter>
+			<Summary><Line>The posted notification.</Line></Summary>
+			<Name>notification</Name>
+			<Type>NSNotification</Type>
+		</Parameter>
+	</Parameters>
+</Method>")]]></Change>
+				<Change><![CDATA[Methods.Set("OutlineViewItemDidExpand", "
+<Method>
+	<Summary><Line>Invoked when notification is posted—that is, whenever the user expands an item in the outline view.</Line></Summary>
+	<MinAvailability>Mac OS X v10.0</MinAvailability>
+	<Name>OutlineViewItemDidExpand</Name>
+	<Selector>outlineViewItemDidExpand:</Selector>
+	<Signature>- (void)outlineViewItemDidExpand:(NSNotification *)notification</Signature>
+	<ReturnType>void</ReturnType>
+	<Parameters>
+		<Parameter>
+			<Summary><Line>The posted notification.</Line></Summary>
+			<Name>notification</Name>
+			<Type>NSNotification</Type>
+		</Parameter>
+	</Parameters>
+</Method>")]]></Change>
+				<Change><![CDATA[Methods.Set("OutlineViewItemWillCollapse", "
+<Method>
+	<Summary><Line>Invoked when notification is posted—that is, whenever the user is about to collapse an item in the outline view.</Line></Summary>
+	<MinAvailability>Mac OS X v10.0</MinAvailability>
+	<Name>OutlineViewItemWillCollapse</Name>
+	<Selector>outlineViewItemWillCollapse:</Selector>
+	<Signature>- (void)outlineViewItemWillCollapse:(NSNotification *)notification</Signature>
+	<ReturnType>void</ReturnType>
+	<Parameters>
+		<Parameter>
+			<Summary><Line>The posted notification.</Line></Summary>
+			<Name>notification</Name>
+			<Type>NSNotification</Type>
+		</Parameter>
+	</Parameters>
+</Method>")]]></Change>
+				<Change><![CDATA[Methods.Set("OutlineViewItemWillExpand", "
+<Method>
+	<Summary><Line>Invoked when notification is posted—that is, whenever the user is about to expand an item in the outline view.</Line></Summary>
+	<MinAvailability>Mac OS X v10.0</MinAvailability>
+	<Name>OutlineViewItemWillExpand</Name>
+	<Selector>outlineViewItemWillExpand:</Selector>
+	<Signature>- (void)outlineViewItemWillExpand:(NSNotification *)notification</Signature>
+	<ReturnType>void</ReturnType>
+	<Parameters>
+		<Parameter>
+			<Summary><Line>The posted notification.</Line></Summary>
+			<Name>notification</Name>
+			<Type>NSNotification</Type>
+		</Parameter>
+	</Parameters>
+</Method>")]]></Change>
+				<Change><![CDATA[Methods.Set("OutlineViewSelectionDidChange", "
+<Method>
+	<Summary><Line>Invoked when the selection did change notification is posted—that is, immediately after the outline view’s selection has changed.</Line></Summary>
+	<MinAvailability>Mac OS X v10.0</MinAvailability>
+	<Name>OutlineViewSelectionDidChange</Name>
+	<Selector>outlineViewSelectionDidChange:</Selector>
+	<Signature>- (void)outlineViewSelectionDidChange:(NSNotification *)notification</Signature>
+	<ReturnType>void</ReturnType>
+	<Parameters>
+		<Parameter>
+			<Summary><Line>The posted notification.</Line></Summary>
+			<Name>notification</Name>
+			<Type>NSNotification</Type>
+		</Parameter>
+	</Parameters>
+</Method>")]]></Change>
+				<Change><![CDATA[Methods.Set("OutlineViewSelectionIsChanging", "
+<Method>
+	<Summary><Line>Invoked when notification is posted—that is, whenever the outline view’s selection changes.</Line></Summary>
+	<MinAvailability>Mac OS X v10.0</MinAvailability>
+	<Name>OutlineViewSelectionIsChanging</Name>
+	<Selector>outlineViewSelectionIsChanging:</Selector>
+	<Signature>- (void)outlineViewSelectionIsChanging:(NSNotification *)notification</Signature>
+	<ReturnType>void</ReturnType>
+	<Parameters>
+		<Parameter>
+			<Summary><Line>The posted notification.</Line></Summary>
+			<Name>notification</Name>
+			<Type>NSNotification</Type>
+		</Parameter>
+	</Parameters>
+</Method>")]]></Change>
 			</Patch>
 		</Protocol>
 		<Protocol name="NSPageControllerDelegate">
@@ -2413,9 +2578,19 @@ enum {]]></Source>
 		</Protocol>
 		<Protocol name="NSTextStorageDelegate">
 			<File>Cocoa/Reference/NSTextStorageDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSTextStorage"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
 		</Protocol>
 		<Protocol name="NSTextViewDelegate">
 			<File>Cocoa/Reference/NSTextViewDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[DelegateFor="NSTextView"]]></Change>
 				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>

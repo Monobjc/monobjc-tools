@@ -192,6 +192,12 @@ enum
 		</Class>
 		<Class name="CAKeyframeAnimation">
 			<File>GraphicsImaging/Reference/CAKeyframeAnimation_class/Introduction/Introduction.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[>kCAAnimationRotateAuto</a>]]></Source>
+					<With><![CDATA[>kCAAnimationRotateAuto;</a>]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="CALayer">
 			<File>GraphicsImaging/Reference/CALayer_class/Introduction/Introduction.html</File>
@@ -347,6 +353,12 @@ enum
 				<Change><![CDATA[Methods["InitWithIOSurface"].GenerateConstructor=false]]></Change>
 				<Change><![CDATA[Methods["InitWithIOSurfaceOptions"].Parameters["surface"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["InitWithIOSurfaceOptions"].GenerateConstructor=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CIImage_AutoAdjustmentAdditions">
+			<File>GraphicsAnimation/Reference/CIImageAutoAdjustmentAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="CIImage"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="CIImageAccumulator">

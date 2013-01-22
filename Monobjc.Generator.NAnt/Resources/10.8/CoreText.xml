@@ -94,6 +94,12 @@
 		</Type>
 		<Type name="CTFontManager">
 			<File>Carbon/Reference/CoreText_FontManager_Ref/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[CTFontManagerIsSupportedFontFile]]></Source>
+					<With><![CDATA[CTFontManagerIsSupportedFont]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Functions["CTFontManagerCopyAvailableFontFamilyNames"].Parameters["d"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["CTFontManagerCopyAvailableFontURLs"].Parameters["d"].Generate=false]]></Change>
