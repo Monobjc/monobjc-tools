@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Framework name="DiscRecordingUI" usings="AppKit,Foundation,DiscRecording" assembly="Monobjc.DiscRecordingUI" source="DocSet">
 	<Types>
-		<Type name="DiscRecordingUIResources_Header">
+		<Type name="DiscRecordingUIFramework">
 			<File>DiscRecordingUI/Reference/DiscRecordingUIResources_header_reference/Reference/reference.html</File>
 			<Patch type="Html">
 				<Replace>
@@ -10,10 +10,16 @@
 				</Replace>
 			</Patch>
 		</Type>
-		<Type name="DRBurnProgressPanel_Header">
+		<Type name="DRBurnProgressPanel">
 			<File>DiscRecordingUI/Reference/DRBurnProgressPanel_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+			</Patch>
 		</Type>
-		<Type name="DRBurnSession_Header">
+		<Type name="DRBurnSession">
 			<File>DiscRecordingUI/Reference/DRBurnSession_header_reference/Reference/reference.html</File>
 			<Patch type="Html">
 				<Replace>
@@ -64,7 +70,7 @@
 				<Change><![CDATA[Enumerations["kDRBurnProgressSetupCallbacksCurrentVersion_struct_version"].Generate=false]]></Change>
 			</Patch>
 		</Type>
-		<Type name="DRBurnSetupPanel_Header">
+		<Type name="DRBurnSetupPanel">
 			<File>DiscRecordingUI/Reference/DRBurnSetupPanel_header_reference/Reference/reference.html</File>
 			<Patch type="Html">
 				<Replace>
@@ -73,10 +79,16 @@
 				</Replace>
 			</Patch>
 		</Type>
-		<Type name="DREraseProgressPanel_Header">
+		<Type name="DREraseProgressPanel">
 			<File>DiscRecordingUI/Reference/DREraseProgressPanel_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+			</Patch>
 		</Type>
-		<Type name="DREraseSession_Header">
+		<Type name="DREraseSession">
 			<File>DiscRecordingUI/Reference/DREraseSession_header_reference/Reference/reference.html</File>
 			<Patch type="Html">
 				<Replace>
@@ -116,8 +128,14 @@
 				<Change><![CDATA[Enumerations["kDREraseProgressSetupCallbacksCurrentVersion_struct_version"].Generate=false]]></Change>
 			</Patch>
 		</Type>
-		<Type name="DRSetupPanel_Header">
+		<Type name="DRSetupPanel">
 			<File>DiscRecordingUI/Reference/DRSetupPanel_header_reference/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 	</Types>
 	<Classes>

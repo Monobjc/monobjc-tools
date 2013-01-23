@@ -92,6 +92,12 @@
 		</Class>
 		<Class name="QTCaptureSession">
 			<File>QuickTime/Reference/QTCaptureSession_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[>QTCaptureSessionErrorKey</a>]]></Source>
+					<With><![CDATA[>QTCaptureSessionErrorKey;</a>]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="QTCaptureVideoPreviewOutput">
 			<File>QuickTime/Reference/QTCaptureVideoPreviewOutput_Class/Reference/Reference.html</File>
@@ -109,6 +115,105 @@
 			<File>QuickTime/Reference/QTCompressionOptions_Ref/Introduction/Introduction.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["CompressionOptionsWithIdentifier"].ReturnType="QTCompressionOptions"]]></Change>
+				<Change><![CDATA[Constants.Set("QTCompressionOptionsLosslessAppleIntermediateVideo", "
+<Constant>
+<Summary><Line>Compresses video using the Apple Intermediate codec at lossless quality. This is appropriate for an intermediate format for media that requires further processing. Only available in 32-bit.</Line></Summary>
+<MinAvailability>OS X v10.5</MinAvailability>
+<Name>QTCompressionOptionsLosslessAppleIntermediateVideo</Name>
+<Type>NSString</Type>
+<Static>true</Static>
+<Value>QTCompressionOptionsLosslessAppleIntermediateVideo</Value>
+</Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("QTCompressionOptionsLosslessAnimationVideo", "
+<Constant>
+<Summary><Line>Compresses video using the Animation codec at highest quality and color depth. This is appropriate for an intermediate format for media that requires further processing.</Line></Summary>
+<MinAvailability>OS X v10.5</MinAvailability>
+<Name>QTCompressionOptionsLosslessAnimationVideo</Name>
+<Type>NSString</Type>
+<Static>true</Static>
+<Value>QTCompressionOptionsLosslessAnimationVideo</Value>
+</Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("QTCompressionOptions120SizeH264Video", "
+<Constant>
+<Summary><Line>Compresses video using the H.264 codec using medium bit-rate settings with dimensions no larger than 160x120. This is appropriate for delivery to low-bandwidth and low-capacity destinations.</Line></Summary>
+<MinAvailability>OS X v10.5</MinAvailability>
+<Name>QTCompressionOptions120SizeH264Video</Name>
+<Type>NSString</Type>
+<Static>true</Static>
+<Value>QTCompressionOptions120SizeH264Video</Value>
+</Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("QTCompressionOptions240SizeH264Video", "
+<Constant>
+<Summary><Line>Compresses video using the H.264 codec using medium bit-rate settings with dimensions no larger than 320x240. This is appropriate for delivery to medium-bandwidth and medium-capacity destinations.</Line></Summary>
+<MinAvailability>OS X v10.5</MinAvailability>
+<Name>QTCompressionOptions240SizeH264Video</Name>
+<Type>NSString</Type>
+<Static>true</Static>
+<Value>QTCompressionOptions240SizeH264Video</Value>
+</Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("QTCompressionOptionsSD480SizeH264Video", "
+<Constant>
+<Summary><Line>Compresses video using the H.264 codec using medium bit-rate settings with dimensions no larger than 720x480. This is appropriate for delivery to medium and high-bandwidth and medium- and high-capacity destinations.</Line></Summary>
+<MinAvailability>OS X v10.5</MinAvailability>
+<Name>QTCompressionOptionsSD480SizeH264Video</Name>
+<Type>NSString</Type>
+<Static>true</Static>
+<Value>QTCompressionOptionsSD480SizeH264Video</Value>
+</Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("QTCompressionOptions120SizeMPEG4Video", "
+<Constant>
+<Summary><Line>Compresses video using the MPEG-4 codec using medium bit-rate settings with dimensions no larger than 160x120. This is appropriate for delivery to low-bandwidth and low-capacity destinations. Only available in 32-bit.</Line></Summary>
+<MinAvailability>OS X v10.5</MinAvailability>
+<Name>QTCompressionOptions120SizeMPEG4Video</Name>
+<Type>NSString</Type>
+<Static>true</Static>
+<Value>QTCompressionOptions120SizeMPEG4Video</Value>
+</Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("QTCompressionOptions240SizeMPEG4Video", "
+<Constant>
+<Summary><Line>Compresses video using the MPEG-4 codec using medium bit-rate settings with dimensions no larger than 320x240. This is appropriate for delivery to medium-bandwidth and medium-capacity destinations. Only available in 32-bit.</Line></Summary>
+<MinAvailability>OS X v10.5</MinAvailability>
+<Name>QTCompressionOptions240SizeMPEG4Video</Name>
+<Type>NSString</Type>
+<Static>true</Static>
+<Value>QTCompressionOptions240SizeMPEG4Video</Value>
+</Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("QTCompressionOptionsSD480SizeMPEG4Video", "
+<Constant>
+<Summary><Line>Compresses video using the MPEG-4 codec using medium bit-rate settings with dimensions no larger than 720x480. This is appropriate for delivery to medium and high-bandwidth and medium- and high-capacity destinations. Only available in 32-bit.</Line></Summary>
+<MinAvailability>OS X v10.5</MinAvailability>
+<Name>QTCompressionOptionsSD480SizeMPEG4Video</Name>
+<Type>NSString</Type>
+<Static>true</Static>
+<Value>QTCompressionOptionsSD480SizeMPEG4Video</Value>
+</Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("QTCompressionOptionsLosslessALACAudio", "
+<Constant>
+<Summary><Line>Compresses audio using the Apple Lossless codec. This is appropriate for an intermediate format for media that requires further processing.</Line></Summary>
+<MinAvailability>OS X v10.5</MinAvailability>
+<Name>QTCompressionOptionsLosslessALACAudio</Name>
+<Type>NSString</Type>
+<Static>true</Static>
+<Value>QTCompressionOptionsLosslessALACAudio</Value>
+</Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("QTCompressionOptionsHighQualityAACAudio", "
+<Constant>
+<Summary><Line>Compresses audio using the AAC codec at 64 kbps per channel. This is appropriate for delivery of high-quality music and other audio.</Line></Summary>
+<MinAvailability>OS X v10.5</MinAvailability>
+<Name>QTCompressionOptionsHighQualityAACAudio</Name>
+<Type>NSString</Type>
+<Static>true</Static>
+<Value>QTCompressionOptionsHighQualityAACAudio</Value>
+</Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("QTCompressionOptionsVoiceQualityAACAudio", "
+<Constant>
+<Summary><Line>Compresses audio using the AAC codec at 32 kbps per channel. This is appropriate for delivery of voice recordings.</Line></Summary>
+<MinAvailability>OS X v10.5</MinAvailability>
+<Name>QTCompressionOptionsVoiceQualityAACAudio</Name>
+<Type>NSString</Type>
+<Static>true</Static>
+<Value>QTCompressionOptionsVoiceQualityAACAudio</Value>
+</Constant>")]]></Change>
 			</Patch>
 		</Class>
 		<Class name="QTDataReference">
@@ -171,6 +276,12 @@
 		</Class>
 		<Class name="QTSampleBuffer">
 			<File>QuickTime/Reference/QTSampleBuffer_Ref/Introduction/Introduction.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[>QTSampleBufferSMPTETimeAttribute</a>]]></Source>
+					<With><![CDATA[>QTSampleBufferSMPTETimeAttribute;</a>]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["AudioBufferListWithOptions"].ReturnType="IntPtr"]]></Change>
 			</Patch>

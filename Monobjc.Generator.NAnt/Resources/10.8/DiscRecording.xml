@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Framework name="DiscRecording" usings="Foundation" assembly="Monobjc.DiscRecording" source="DocSet">
 	<Types>
-		<Type name="DRBurn_Header">
+		<Type name="DRBurn">
 			<File>DiscRecording/Reference/DRBurn_header_reference/Reference/reference.html</File>
 			<Patch type="Html">
 				<Replace>
@@ -22,7 +22,7 @@
 				</Replace>
 			</Patch>
 		</Type>
-		<Type name="DRCDText_Header">
+		<Type name="DRCDText">
 			<File>DiscRecording/Reference/DRCDText_header_reference/Reference/reference.html</File>
 			<Patch type="Html">
 				<Replace>
@@ -31,7 +31,7 @@
 				</Replace>
 			</Patch>
 		</Type>
-		<Type name="DRContentFile_Header">
+		<Type name="DRContentFile">
 			<File>DiscRecording/Reference/DRContentFile_header_reference/Reference/reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Functions["DRFileCreateReal"].Generate=false]]></Change>
@@ -50,7 +50,7 @@
 				<Change><![CDATA[Enumerations["DRLinkType"].BaseType="uint"]]></Change>
 			</Patch>
 		</Type>
-		<Type name="DRContentFolder_Header">
+		<Type name="DRContentFolder">
 			<File>DiscRecording/Reference/DRContentFolder_header_reference/Reference/reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Functions["DRFolderAddChild"].Generate=false]]></Change>
@@ -64,7 +64,7 @@
 				<Change><![CDATA[Functions["DRFolderRemoveChild"].Generate=false]]></Change>
 			</Patch>
 		</Type>
-		<Type name="DRContentObject_Header">
+		<Type name="DRContentObject">
 			<File>DiscRecording/Reference/DRContentObject_header_reference/Reference/reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Functions["DRFSObjectCopyBaseName"].Generate=false]]></Change>
@@ -89,7 +89,7 @@
 				<Change><![CDATA[Enumerations["DRFilesystemMask"].BaseType="uint"]]></Change>
 			</Patch>
 		</Type>
-		<Type name="DRContentProperties_Header">
+		<Type name="DRContentProperties">
 			<File>DiscRecording/Reference/DRContentProperties_header_reference/Reference/reference.html</File>
 			<Patch type="Html">
 				<Replace>
@@ -110,7 +110,7 @@
 				</Replace>
 			</Patch>
 		</Type>
-		<Type name="DRContentTrack_Header">
+		<Type name="DRContentTrack">
 			<File>DiscRecording/Reference/DRContentTrack_header_reference/Reference/reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Functions["DRAudioTrackCreate"].Generate=false]]></Change>
@@ -119,7 +119,7 @@
 				<Change><![CDATA[Functions["DRFilesystemTrackEstimateOverhead"].Generate=false]]></Change>
 			</Patch>
 		</Type>
-		<Type name="DRCoreBurn_Header">
+		<Type name="DRCoreBurn">
 			<File>DiscRecording/Reference/DRCoreBurn_header_reference/Reference/reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Functions["DRBurnAbort"].Generate=false]]></Change>
@@ -132,7 +132,7 @@
 				<Change><![CDATA[Functions["DRBurnWriteLayout"].Generate=false]]></Change>
 			</Patch>
 		</Type>
-		<Type name="DRCoreCDText_Header">
+		<Type name="DRCoreCDText">
 			<File>DiscRecording/Reference/DRCoreCDText_header_reference/Reference/reference.html</File>
 			<Patch type="Html">
 				<Replace>
@@ -175,7 +175,7 @@
 				</Replace>
 			</Patch>
 		</Type>
-		<Type name="DRCoreDevice_Header">
+		<Type name="DRCoreDevice">
 			<File>DiscRecording/Reference/DRCoreDevice_header_reference/Reference/reference.html</File>
 			<Patch type="Html">
 				<Replace>
@@ -214,7 +214,7 @@
 				<Change><![CDATA[Functions["DRDeviceXFactorForKPS"].Generate=false]]></Change>
 			</Patch>
 		</Type>
-		<Type name="DRCoreErase_Header">
+		<Type name="DRCoreErase">
 			<File>DiscRecording/Reference/DRCoreErase_header_reference/Reference/reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Functions["DREraseCopyStatus"].Generate=false]]></Change>
@@ -226,7 +226,7 @@
 				<Change><![CDATA[Functions["DREraseStart"].Generate=false]]></Change>
 			</Patch>
 		</Type>
-		<Type name="DRCoreErrors_Header">
+		<Type name="DRCoreErrors">
 			<File>DiscRecording/Reference/DRCoreErrors_header_reference/Reference/reference.html</File>
 			<Patch type="Html">
 				<Replace>
@@ -246,7 +246,7 @@
 				<Change><![CDATA[Enumerations["DiscRecordingErrors"].BaseType="uint"]]></Change>
 			</Patch>
 		</Type>
-		<Type name="DRCoreNotifications_Header">
+		<Type name="DRCoreNotifications">
 			<File>DiscRecording/Reference/DRCoreNotifications_header_reference/Reference/reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Functions["DRNotificationCenterAddObserver"].Generate=false]]></Change>
@@ -256,7 +256,7 @@
 				<Change><![CDATA[Functions["DRNotificationCenterRemoveObserver"].Generate=false]]></Change>
 			</Patch>
 		</Type>
-		<Type name="DRCoreObject_Header">
+		<Type name="DRCoreObject">
 			<File>DiscRecording/Reference/DRCoreObject_header_reference/Reference/reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Functions["DRCopyLocalizedStringForValue"].Generate=false]]></Change>
@@ -264,7 +264,7 @@
 				<Change><![CDATA[Functions["DRSetRefCon"].Generate=false]]></Change>
 			</Patch>
 		</Type>
-		<Type name="DRCoreStatus_Header">
+		<Type name="DRCoreStatus">
 			<File>DiscRecording/Reference/DRCoreStatus_header_reference/Reference/reference.html</File>
 			<Patch type="Html">
 				<Replace>
@@ -277,7 +277,7 @@
 				</Replace>
 			</Patch>
 		</Type>
-		<Type name="DRCoreTrack_Header">
+		<Type name="DRCoreTrack">
 			<File>DiscRecording/Reference/DRCoreTrack_header_reference/Reference/reference.html</File>
 			<Patch type="Html">
 				<Replace>
@@ -337,7 +337,7 @@
 				<Change><![CDATA[Enumerations["DRTrackFlags"].Flags=true]]></Change>
 			</Patch>
 		</Type>
-		<Type name="DRDevice_Header">
+		<Type name="DRDevice">
 			<File>DiscRecording/Reference/DRDevice_header_reference/Reference/reference.html</File>
 			<Patch type="Html">
 				<Replace>
@@ -358,7 +358,7 @@
 				</Replace>
 			</Patch>
 		</Type>
-		<Type name="DRErase_Header">
+		<Type name="DRErase">
 			<File>DiscRecording/Reference/DRErase_header_reference/Reference/reference.html</File>
 			<Patch type="Html">
 				<Replace>
@@ -367,7 +367,7 @@
 				</Replace>
 			</Patch>
 		</Type>
-		<Type name="DRFile_Header">
+		<Type name="DRFile">
 			<File>DiscRecording/Reference/DRFile_header_reference/Reference/reference.html</File>
 			<Patch type="Html">
 				<Replace>
@@ -381,7 +381,7 @@
 				<Change><![CDATA[Enumerations["DRFileFork"].Generate=false]]></Change>
 			</Patch>
 		</Type>
-		<Type name="DRFSObject_Header">
+		<Type name="DRFSObject">
 			<File>DiscRecording/Reference/DRFSObject_header_reference/Reference/reference.html</File>
 			<Patch type="Html">
 				<Replace>
@@ -407,7 +407,7 @@
 				<Change><![CDATA[Enumerations["DRFilesystemInclusionMask"].Flags=true]]></Change>
 			</Patch>
 		</Type>
-		<Type name="DRStatus_Header">
+		<Type name="DRStatus">
 			<File>DiscRecording/Reference/DRStatus_header_reference/Reference/reference.html</File>
 			<Patch type="Html">
 				<Replace>
@@ -420,7 +420,7 @@
 				</Replace>
 			</Patch>
 		</Type>
-		<Type name="DRTrack_Header">
+		<Type name="DRTrack">
 			<File>DiscRecording/Reference/DRTrack_header_reference/Reference/reference.html</File>
 			<Patch type="Html">
 				<Replace>
