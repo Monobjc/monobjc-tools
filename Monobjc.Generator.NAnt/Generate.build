@@ -159,8 +159,12 @@
 		</doxygen-exec>
 
 		<!-- Move some files -->
-		<move file="./Sparkle/Xhtml/C/NSObject_SUAppcastDelegate.xhtml" tofile="./Sparkle/Xhtml/P/SUAppcastDelegate.xhtml" failonerror="false" />
-		<move file="./Sparkle/Xhtml/C/NSObject_SUUpdaterDelegateInformalProtocol.xhtml" tofile="./Sparkle/Xhtml/P/SUUpdaterDelegate.xhtml" failonerror="false" />
+		<move file="./Growl/Xhtml/C/NSObject_GrowlApplicationBridgeDelegate_InformalProtocol.xhtml" tofile="./Growl/Xhtml/P/GrowlApplicationBridgeDelegate.xhtml" overwrite="true" failonerror="false" />
+		<move file="./Growl/Xhtml/C/NSObject_GrowlApplicationBridgeDelegate_Installation_InformalProtocol.xhtml" tofile="./Growl/Xhtml/P/GrowlApplicationBridgeInstallationDelegate.xhtml" overwrite="true" failonerror="false" />
+
+		<!-- Move some files -->
+		<move file="./Sparkle/Xhtml/C/NSObject_SUAppcastDelegate.xhtml" tofile="./Sparkle/Xhtml/P/SUAppcastDelegate.xhtml" overwrite="true" failonerror="false" />
+		<move file="./Sparkle/Xhtml/C/NSObject_SUUpdaterDelegateInformalProtocol.xhtml" tofile="./Sparkle/Xhtml/P/SUUpdaterDelegate.xhtml" overwrite="true" failonerror="false" />
 	</target>
 
 	<!--
