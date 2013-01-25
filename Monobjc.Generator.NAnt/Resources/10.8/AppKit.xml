@@ -691,8 +691,8 @@
 				<Change><![CDATA[Methods["EventWithCGEvent"].Parameters["cgEvent"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["EventWithEventRef"].Parameters["eventRef"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Properties["EventRef"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Properties["ModifierFlags"].Type="NSModifierFlags"]]></Change>
-				<Change><![CDATA[Properties["GlobalModifierFlags"].Type="NSModifierFlags"]]></Change>
+				<Change><![CDATA[Properties.First(Name == "ModifierFlags" && Static == False).Type="NSModifierFlags"]]></Change>
+				<Change><![CDATA[Properties.First(Name == "ModifierFlags" && Static == True).Type="NSModifierFlags"]]></Change>
 				<Change><![CDATA[Enumerations["NSEventType"].BaseType="NSUInteger"]]></Change>
 				<Change><![CDATA[Enumerations["NSEventMaskFromType"].Name="NSEventMask"]]></Change>
 				<Change><![CDATA[Enumerations["NSEventMask"].BaseType="NSUInteger"]]></Change>

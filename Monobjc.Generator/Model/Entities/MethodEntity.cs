@@ -34,7 +34,7 @@ namespace Monobjc.Tools.Generator.Model
 		public MethodEntity ()
 		{
 			this.GenerateConstructor = true;
-			this.Parameters = new MethodParameterCollection();
+			this.Parameters = new MethodParameterCollection ();
 		}
 
 		/// <summary>
@@ -168,10 +168,18 @@ namespace Monobjc.Tools.Generator.Model
 		/// </returns>
 		public bool IsSetterFor (MethodEntity method)
 		{
-			bool result = true;
-			result &= String.Equals (this.ReturnType, "void", StringComparison.InvariantCultureIgnoreCase);
-			result &= (this.Parameters.Count == 1);
-			result &= (method.Static == this.Static);
+			if (!String.Equals (this.ReturnType, "void", StringComparison.InvariantCultureIgnoreCase)) {
+				return false;
+			}
+			if (method.Static != this.Static) {
+				return false;
+			}
+			if (this.Parameters.Count != 1) {
+				return false;
+			}
+			if (!String.Equals (method.ReturnType, this.Parameters [0].Type, StringComparison.InvariantCultureIgnoreCase)) {
+				return false;
+			}
 
 			String name = method.Name;
 			if (String.Equals (method.ReturnType, "bool", StringComparison.InvariantCultureIgnoreCase)) {
@@ -179,11 +187,9 @@ namespace Monobjc.Tools.Generator.Model
 				name = name.StartsWith ("Has") ? name.Substring (3) : name;
 			}
 			name = "Set" + name;
-			result &= String.Equals (this.Name, name, StringComparison.InvariantCultureIgnoreCase);
 
-			return result;
+			return String.Equals (this.Name, name, StringComparison.InvariantCultureIgnoreCase);
 		}
-
 
 		/// <summary>
 		///   Indicates whether the current object is equal to another object of the same type.
@@ -222,7 +228,7 @@ namespace Monobjc.Tools.Generator.Model
 		public override int GetHashCode ()
 		{
 			unchecked {
-				int hash = base.GetHashCode();
+				int hash = base.GetHashCode ();
 				hash = hash * 23 + this.GenerateConstructor.GetHashCode ();
 				hash = hash * 23 + this.Parameters.GetHashCode ();
 				hash = hash * 23 + (this.ReturnsDocumentation != null ? this.ReturnsDocumentation.GetHashCode () : 0);
@@ -266,7 +272,7 @@ namespace Monobjc.Tools.Generator.Model
 		public override int GetHashValue ()
 		{
 			unchecked {
-				int hash = base.GetHashValue();
+				int hash = base.GetHashValue ();
 				hash = hash * 23 + this.GenerateConstructor.GetHashCode ();
 				hash = hash * 23 + this.Parameters.GetHashValue ();
 				hash = hash * 23 + (this.ReturnsDocumentation != null ? this.ReturnsDocumentation.GetHashCode () : 0);
