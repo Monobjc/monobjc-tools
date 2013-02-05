@@ -220,6 +220,7 @@
 				<Change><![CDATA[Methods["WillSetLineFragmentRectForGlyphRangeUsedRectBaselineOffset"].Parameters["usedRect"].IsOut=true]]></Change>
 				<Change><![CDATA[Methods["WillSetLineFragmentRectForGlyphRangeUsedRectBaselineOffset"].Parameters["baselineOffset"].Type="CGFloat"]]></Change>
 				<Change><![CDATA[Methods["WillSetLineFragmentRectForGlyphRangeUsedRectBaselineOffset"].Parameters["baselineOffset"].IsOut=true]]></Change>
+				<Change><![CDATA[Properties["SharedTypesetter"].Type="NSATSTypesetter"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSATSTypesetter.Deprecated">
@@ -662,6 +663,9 @@
 		</Class>
 		<Class name="NSEPSImageRep">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSEPSImageRep_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ImageRepWithData"].ReturnType="NSEPSImageRep"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSEvent">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSEvent_Class/Reference/Reference.html</File>
@@ -840,7 +844,12 @@
 		<Class name="NSFontCollection">
 			<File>AppKit/Reference/NSFontCollection_Class/Reference/Reference.html</File>
 			<Patch type="Model">
+				<Change><![CDATA[Methods["FontCollectionWithDescriptors"].ReturnType="NSFontCollection"]]></Change>
+				<Change><![CDATA[Methods["FontCollectionWithLocale"].ReturnType="NSFontCollection"]]></Change>
+				<Change><![CDATA[Methods["FontCollectionWithName"].ReturnType="NSFontCollection"]]></Change>
+				<Change><![CDATA[Methods["FontCollectionWithNameVisibility"].ReturnType="NSFontCollection"]]></Change>
 				<Change><![CDATA[Methods["RenameFontCollectionWithNameVisibilityToNameError"].Parameters.Last(Name == "name").Name= ((entity.Methods["RenameFontCollectionWithNameVisibilityToNameError"].Parameters.Count(Name == "name") == 2) ? "name2" : "name")]]></Change>
+				<Change><![CDATA[Properties["FontCollectionWithAllAvailableDescriptors"].Type="NSFontCollection"]]></Change>
 			</Patch>
 			<Patch type="Generated">
 				<Replace>
@@ -1320,6 +1329,9 @@
 		</Class>
 		<Class name="NSPDFImageRep">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSPDFImageRep_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ImageRepWithData"].ReturnType="NSPDFImageRep"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSPersistentDocument">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSPersistentDocument_Class/Reference/Reference.html</File>
@@ -1332,6 +1344,9 @@
 		</Class>
 		<Class name="NSPICTImageRep">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSPICTImageRep_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ImageRepWithData"].ReturnType="NSPICTImageRep"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSPopover">
 			<File>AppKit/Reference/NSPopover_Class/Reference/Reference.html</File>
@@ -1898,6 +1913,8 @@
 				<Change><![CDATA[Methods["WillSetLineFragmentRectForGlyphRangeUsedRectBaselineOffset"].Parameters["baselineOffset"].IsOut=true]]></Change>
 				<Change><![CDATA[Methods["LayoutGlyphsInLayoutManagerStartingAtGlyphIndexMaxNumberOfLineFragmentsNextGlyphIndex"].Parameters["nextGlyph"].Type="NSUInteger"]]></Change>
 				<Change><![CDATA[Methods["LayoutGlyphsInLayoutManagerStartingAtGlyphIndexMaxNumberOfLineFragmentsNextGlyphIndex"].Parameters["nextGlyph"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["SharedSystemTypesetterForBehavior"].ReturnType="NSTypesetter"]]></Change>
+				<Change><![CDATA[Properties["SharedSystemTypesetter"].Type="NSTypesetter"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSURL_AppKitAdditions">
@@ -1934,7 +1951,6 @@
 				<Change><![CDATA[Methods["ViewWithTag"].ReturnType="NSView"]]></Change>
 				<Change><![CDATA[Properties.Set("Animator", "<Property><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>Mac OS X v10.5</MinAvailability><Name>Animator</Name><Type>Id</Type><Getter><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>Mac OS X v10.5</MinAvailability><Name>Animator</Name><Selector>animator</Selector><Signature>- (id)animator</Signature><ReturnType>Id</ReturnType><ReturnsDocumentation>Returns a proxy object for the receiver that can initiate implied animations in response to property changes.</ReturnsDocumentation><Parameters /></Getter></Property>")]]></Change>
 				<Change><![CDATA[Properties["Animator"].Type="NSView"]]></Change>
-				<Change><![CDATA[Properties["Animator"].Getter.ReturnType="NSView"]]></Change>
 				<Change><![CDATA[Properties["AutoresizingMask"].Type="NSAutoresizingMask"]]></Change>
 				<Change><![CDATA[Enumerations["Resizing_masks"].Name="NSAutoresizingMask"]]></Change>
 				<Change><![CDATA[Enumerations["NSAutoresizingMask"].BaseType="NSUInteger"]]></Change>
@@ -1999,7 +2015,6 @@ enum {]]></Source>
 				<Change><![CDATA[DelegateMethods["WindowWillEncodeRestorableState"].Generate=false]]></Change>
 				<Change><![CDATA[Properties.Set("Animator", "<Property><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>Mac OS X v10.5</MinAvailability><Name>Animator</Name><Type>Id</Type><Getter><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>Mac OS X v10.5</MinAvailability><Name>Animator</Name><Selector>animator</Selector><Signature>- (id)animator</Signature><ReturnType>Id</ReturnType><ReturnsDocumentation>Returns a proxy object for the receiver that can initiate implied animations in response to property changes.</ReturnsDocumentation><Parameters /></Getter></Property>")]]></Change>
 				<Change><![CDATA[Properties["Animator"].Type="NSWindow"]]></Change>
-				<Change><![CDATA[Properties["Animator"].Getter.ReturnType="NSWindow"]]></Change>
 				<Change><![CDATA[Properties["ContentView"].Type="NSView"]]></Change>
 				<Change><![CDATA[Properties["ContentView"].Getter.ReturnType="NSView"]]></Change>
 				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
@@ -2074,6 +2089,8 @@ enum {]]></Source>
 		<Protocol name="NSAnimatablePropertyContainer">
 			<File>Cocoa/Reference/NSAnimatablePropertyContainer_protocol/Introduction/Introduction.html</File>
 			<Patch type="Model">
+				<Change><![CDATA[Methods["DefaultAnimationForKey"].ReturnType="CAAnimation"]]></Change>
+				<Change><![CDATA[Methods["AnimationForKey"].ReturnType="CAAnimation"]]></Change>
 				<Change><![CDATA[Properties["Animator"].Generate=false]]></Change>
 			</Patch>
 		</Protocol>

@@ -442,6 +442,8 @@
 			<Patch type="Model">
 				<Change><![CDATA[Methods["RangeOfUnitStartDateIntervalForDate"].Parameters["tip"].Type="double"]]></Change>
 				<Change><![CDATA[Methods["RangeOfUnitStartDateIntervalForDate"].Parameters["tip"].IsOut=true]]></Change>
+				<Change><![CDATA[Properties["AutoupdatingCurrentCalendar"].Type="NSCalendar"]]></Change>
+				<Change><![CDATA[Properties["CurrentCalendar"].Type="NSCalendar"]]></Change>
 				<Change><![CDATA[Enumerations["NSCalendarUnit"].BaseType="NSUInteger"]]></Change>
 				<Change><![CDATA[Enumerations["NSDateComponents_wrapping_behavior"].Generate=false]]></Change>
 			</Patch>
@@ -515,6 +517,21 @@
 				<Change><![CDATA[Methods["CharacterSetWithContentsOfFile"].CopyInDescendants=true]]></Change>
 				<Change><![CDATA[Methods["CharacterSetWithRange"].ReturnType="NSCharacterSet"]]></Change>
 				<Change><![CDATA[Methods["CharacterSetWithRange"].CopyInDescendants=true]]></Change>
+				<Change><![CDATA[Properties["AlphanumericCharacterSet"].Type="NSCharacterSet"]]></Change>
+				<Change><![CDATA[Properties["CapitalizedLetterCharacterSet"].Type="NSCharacterSet"]]></Change>
+				<Change><![CDATA[Properties["ControlCharacterSet"].Type="NSCharacterSet"]]></Change>
+				<Change><![CDATA[Properties["DecimalDigitCharacterSet"].Type="NSCharacterSet"]]></Change>
+				<Change><![CDATA[Properties["DecomposableCharacterSet"].Type="NSCharacterSet"]]></Change>
+				<Change><![CDATA[Properties["IllegalCharacterSet"].Type="NSCharacterSet"]]></Change>
+				<Change><![CDATA[Properties["LetterCharacterSet"].Type="NSCharacterSet"]]></Change>
+				<Change><![CDATA[Properties["LowercaseLetterCharacterSet"].Type="NSCharacterSet"]]></Change>
+				<Change><![CDATA[Properties["NewlineCharacterSet"].Type="NSCharacterSet"]]></Change>
+				<Change><![CDATA[Properties["NonBaseCharacterSet"].Type="NSCharacterSet"]]></Change>
+				<Change><![CDATA[Properties["PunctuationCharacterSet"].Type="NSCharacterSet"]]></Change>
+				<Change><![CDATA[Properties["SymbolCharacterSet"].Type="NSCharacterSet"]]></Change>
+				<Change><![CDATA[Properties["UppercaseLetterCharacterSet"].Type="NSCharacterSet"]]></Change>
+				<Change><![CDATA[Properties["WhitespaceAndNewlineCharacterSet"].Type="NSCharacterSet"]]></Change>
+				<Change><![CDATA[Properties["WhitespaceCharacterSet"].Type="NSCharacterSet"]]></Change>
 				<Change><![CDATA[Enumerations["NSOpenStepUnicodeReservedBase"].Generate=false]]></Change>
 			</Patch>
 		</Class>
@@ -587,6 +604,8 @@
 				<Change><![CDATA[Methods["ConnectionWithReceivePortSendPort"].ReturnType="NSConnection"]]></Change>
 				<Change><![CDATA[Methods["ConnectionWithRegisteredNameHost"].ReturnType="NSConnection"]]></Change>
 				<Change><![CDATA[Methods["ConnectionWithRegisteredNameHostUsingNameServer"].ReturnType="NSConnection"]]></Change>
+				<Change><![CDATA[Methods["ServiceConnectionWithNameRootObject"].ReturnType="NSConnection"]]></Change>
+				<Change><![CDATA[Methods["ServiceConnectionWithNameRootObjectUsingNameServer"].ReturnType="NSConnection"]]></Change>
 				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
 			</Patch>
 		</Class>
@@ -880,6 +899,9 @@
 		</Class>
 		<Class name="NSGarbageCollector">
 			<File>Cocoa/Reference/NSGarbageCollector_class/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["DefaultCollector"].Type="NSGarbageCollector"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSGarbageCollector.Deprecated">
 			<File>Cocoa/Reference/NSGarbageCollector_class/Introduction/../DeprecationAppendix/AppendixADeprecatedAPI.html</File>
@@ -894,6 +916,7 @@
 			<File>Cocoa/Reference/NSHashTable_class/Introduction/Introduction.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["HashTableWithOptions"].ReturnType="NSHashTable"]]></Change>
+				<Change><![CDATA[Properties["WeakObjectsHashTable"].Type="NSHashTable"]]></Change>
 			</Patch>
 			<Patch type="Generated">
 				<Replace>
@@ -920,6 +943,9 @@
 		</Class>
 		<Class name="NSHTTPCookie">
 			<File>Cocoa/Reference/Foundation/Classes/NSHTTPCookie_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["CookieWithProperties"].Type="NSHTTPCookie"]]></Change>
+			</Patch>
 			<Patch type="Generated">
 				<Replace>
 					<Source><![CDATA[public virtual NSUInteger Version]]></Source>
@@ -1041,6 +1067,9 @@
 		</Class>
 		<Class name="NSMachBootstrapServer">
 			<File>Cocoa/Reference/Foundation/Classes/NSMachBootstrapServer_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["SharedInstance"].Type="NSMachBootstrapServer"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSMachPort">
 			<File>Cocoa/Reference/Foundation/Classes/NSMachPort_Class/Reference/Reference.html</File>
@@ -1054,6 +1083,10 @@
 			<File>Cocoa/Reference/NSMapTable_class/Reference/NSMapTable.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["MapTableWithKeyOptionsValueOptions"].ReturnType="NSMapTable"]]></Change>
+				<Change><![CDATA[Properties["StrongToStrongObjectsMapTable"].Type="NSMapTable"]]></Change>
+				<Change><![CDATA[Properties["StrongToWeakObjectsMapTable"].Type="NSMapTable"]]></Change>
+				<Change><![CDATA[Properties["WeakToStrongObjectsMapTable"].Type="NSMapTable"]]></Change>
+				<Change><![CDATA[Properties["WeakToWeakObjectsMapTable"].Type="NSMapTable"]]></Change>
 			</Patch>
 			<Patch type="Generated">
 				<Replace>
@@ -1077,6 +1110,9 @@
 		</Class>
 		<Class name="NSMessagePortNameServer">
 			<File>Cocoa/Reference/Foundation/Classes/NSMessagePortNameServer_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["SharedInstance"].Type="NSMessagePortNameServer"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSMetadataItem">
 			<File>Cocoa/Reference/Foundation/Classes/NSMetadataItem_Class/Reference/Reference.html</File>
@@ -1130,6 +1166,8 @@
 			<File>Cocoa/Reference/Foundation/Classes/NSMutableData_Class/Reference/NSMutableData.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["InitWithLength"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["DataWithCapacity"].ReturnType="NSMutableData"]]></Change>
+				<Change><![CDATA[Methods["DataWithLength"].ReturnType="NSMutableData"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSMutableDictionary">
@@ -1137,6 +1175,8 @@
 			<Patch type="Model">
 				<Change><![CDATA[Methods["SetObjectForKey"].Parameters["aKey"].Type="Id"]]></Change>
 				<Change><![CDATA[Methods["SetObjectForKeyedSubscript"].Parameters["aKey"].Type="Id"]]></Change>
+				<Change><![CDATA[Methods["DictionaryWithCapacity"].ReturnType="NSMutableDictionary"]]></Change>
+				<Change><![CDATA[Methods["DictionaryWithSharedKeySet"].ReturnType="NSMutableDictionary"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSMutableIndexSet">
@@ -1147,10 +1187,14 @@
 			<Patch type="Model">
 				<Change><![CDATA[Methods["AddObjectsCount"].Generate=false]]></Change>
 				<Change><![CDATA[Methods["ReplaceObjectsInRangeWithObjectsCount"].Generate=false]]></Change>
+				<Change><![CDATA[Methods["OrderedSetWithCapacity"].ReturnType="NSMutableOrderedSet"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSMutableSet">
 			<File>Cocoa/Reference/Foundation/Classes/NSMutableSet_Class/Reference/NSMutableSet.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["SetWithCapacity"].ReturnType="NSMutableSet"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSMutableString">
 			<File>Cocoa/Reference/Foundation/Classes/NSMutableString_Class/Reference/Reference.html</File>
@@ -1158,6 +1202,7 @@
 				<Change><![CDATA[Methods["AppendFormat"].Parameters["format..."].Generate=false]]></Change>
 				<Change><![CDATA[Methods["AppendFormat"].Parameters.Set("format", "<Parameter><Summary /><Name>format</Name><Type>NSString</Type></Parameter>")]]></Change>
 				<Change><![CDATA[Methods["AppendFormat"].Parameters.Set("values", "<Parameter><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["StringWithCapacity"].ReturnType="NSMutableString"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSMutableURLRequest">
@@ -1298,6 +1343,8 @@
 			<Patch type="Model">
 				<!-- TODO: Move to constants -->
 				<Change><![CDATA[Enumerations["Concurrent_Operation_Constants"].Generate=false]]></Change>
+				<Change><![CDATA[Properties["CurrentQueue"].Type="NSOperationQueue"]]></Change>
+				<Change><![CDATA[Properties["MainQueue"].Type="NSOperationQueue"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSOrderedSet">
@@ -1407,14 +1454,12 @@
 		</Class>
 		<Class name="NSPortCoder">
 			<File>Cocoa/Reference/Foundation/Classes/NSPortCoder_Class/Reference/Reference.html</File>
-			<Patch type="Model">
-				<Change><![CDATA[Methods["PortCoderWithReceivePortSendPortComponents"].ReturnType="NSPortCoder"]]></Change>
-			</Patch>
 		</Class>
 		<Class name="NSPortCoder.Deprecated">
 			<File>Cocoa/Reference/Foundation/Classes/NSPortCoder_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[AdditionFor="NSPortCoder"]]></Change>
+				<Change><![CDATA[Methods["PortCoderWithReceivePortSendPortComponents"].ReturnType="NSPortCoder"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSPortMessage">
@@ -1542,6 +1587,7 @@
 		<Class name="NSScanner">
 			<File>Cocoa/Reference/Foundation/Classes/NSScanner_Class/Reference/Reference.html</File>
 			<Patch type="Model">
+				<Change><![CDATA[Methods["LocalizedScannerWithString"].ReturnType="NSScanner"]]></Change>
 				<Change><![CDATA[Methods["ScanDecimal"].Parameters["decimalValue"].Type="NSDecimal"]]></Change>
 				<Change><![CDATA[Methods["ScanDecimal"].Parameters["decimalValue"].IsOut=true]]></Change>
 				<Change><![CDATA[Methods["ScanDouble"].Parameters["doubleValue"].Type="double"]]></Change>
@@ -1646,6 +1692,9 @@
 		</Class>
 		<Class name="NSSocketPortNameServer">
 			<File>Cocoa/Reference/Foundation/Classes/NSSocketPortNameServer_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["SharedInstance"].Type="NSSocketPortNameServer"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSSortDescriptor">
 			<File>Cocoa/Reference/Foundation/Classes/NSSortDescriptor_Class/Reference/Reference.html</File>
@@ -1786,6 +1835,10 @@
 				<Change><![CDATA[Methods["StringWithCStringLength"].Parameters["cString"].Type="String"]]></Change>
 				<Change><![CDATA[Properties["CString"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Properties["LossyCString"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["StringWithContentsOfFile"].ReturnType="NSString"]]></Change>
+				<Change><![CDATA[Methods["StringWithContentsOfURL"].ReturnType="NSString"]]></Change>
+				<Change><![CDATA[Methods["StringWithCString"].ReturnType="NSString"]]></Change>
+				<Change><![CDATA[Methods["StringWithCStringLength"].ReturnType="NSString"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSTask">
@@ -1966,6 +2019,7 @@
 			<Patch type="Model">
 				<Change><![CDATA[Methods["GetUUIDBytes"].Parameters["uuid"].Type="UUID"]]></Change>
 				<Change><![CDATA[Methods["InitWithUUIDBytes"].Parameters["bytes"].Type="UUID"]]></Change>
+				<Change><![CDATA[Properties["UUID"].Type="NSUUID"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSValue">
@@ -2070,6 +2124,10 @@
 		</Class>
 		<Class name="NSXPCListener">
 			<File>Foundation/Reference/NSXPCListener_reference/translated_content/NSXPCListener.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["AnonymousListener"].Type="NSXPCListener"]]></Change>
+				<Change><![CDATA[Properties["ServiceListener"].Type="NSXPCListener"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="NSXPCListenerEndpoint">
 			<File>Foundation/Reference/NSXPCListenerEndpoint_reference/translated_content/NSXPCListenerEndpoint.html</File>

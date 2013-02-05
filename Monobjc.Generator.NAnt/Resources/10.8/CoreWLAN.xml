@@ -102,6 +102,8 @@
 			<File>CoreWLAN/Reference/CWConfiguration_reference/translated_content/CWConfiguration.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["Init"].Generate=false]]></Change>
+				<Change><![CDATA[Methods["ConfigurationWithConfiguration"].ReturnType="CWConfiguration"]]></Change>
+				<Change><![CDATA[Properties["Configuration"].Type="CWConfiguration"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="CWInterface">
@@ -124,6 +126,10 @@
 		</Class>
 		<Class name="CWNetworkProfile">
 			<File>CoreWLAN/Reference/CWNetworkProfile_reference/translated_content/CWNetworkProfile.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["NetworkProfileWithNetworkProfile"].ReturnType="CWNetworkProfile"]]></Change>
+				<Change><![CDATA[Properties["NetworkProfile"].Type="CWNetworkProfile"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CWWirelessProfile">
 			<File>CoreWLAN/Reference/CWWirelessProfile_reference/translated_content/CWWirelessProfile.html</File>

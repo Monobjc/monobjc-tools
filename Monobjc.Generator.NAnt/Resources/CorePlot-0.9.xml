@@ -55,7 +55,12 @@
 				<Change><![CDATA[BaseType="NSView"]]></Change>
 			</Patch>
 		</Class>
-		<Class name="CPTLegend" />
+		<Class name="CPTLegend">
+			<Patch type="Model">
+				<Change><![CDATA[Methods["LegendWithPlots"].ReturnType="CPTLegend"]]></Change>
+				<Change><![CDATA[Methods["LegendWithGraph"].ReturnType="CPTLegend"]]></Change>
+			</Patch>
+		</Class>
 		<Class name="CPTLegendEntry" />
 		<Class name="CPTLimitBand" />
 		<Class name="CPTLineStyle">

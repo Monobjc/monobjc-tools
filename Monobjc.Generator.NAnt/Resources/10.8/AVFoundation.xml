@@ -52,6 +52,9 @@
 		</Class>
 		<Class name="AVAssetExportSession">
 			<File>AVFoundation/Reference/AVAssetExportSession_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ExportSessionWithAssetPresetName"].ReturnType="AVAssetExportSession"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="AVAssetImageGenerator">
 			<File>AVFoundation/Reference/AVAssetImageGenerator_Class/Reference/Reference.html</File>
@@ -154,6 +157,9 @@ enum {
 		</Class>
 		<Class name="AVCaptureDeviceInput">
 			<File>AVFoundation/Reference/AVCaptureDeviceInput_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["DeviceInputWithDeviceError"].ReturnType="AVCaptureDeviceInput"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="AVCaptureDeviceInputSource">
 			<File>AVFoundation/Reference/AVCaptureDeviceInputSource_Class/Reference/Reference.html</File>
@@ -189,6 +195,8 @@ enum {
 			<File>AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/Reference/Reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["InitWithSessionWithNoConnection"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["LayerWithSession"].ReturnType="AVCaptureVideoPreviewLayer"]]></Change>
+				<Change><![CDATA[Methods["LayerWithSessionWithNoConnection"].ReturnType="AVCaptureVideoPreviewLayer"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="AVComposition">

@@ -52,9 +52,17 @@
 		</Class>
 		<Class name="EKRecurrenceDayOfWeek">
 			<File>EventKit/Reference/EKRecurrenceDayOfWeekClassRef/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["DayOfWeek"].ReturnType="EKRecurrenceDayOfWeek"]]></Change>
+				<Change><![CDATA[Methods["DayOfWeekWeekNumber"].ReturnType="EKRecurrenceDayOfWeek"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="EKRecurrenceEnd">
 			<File>EventKit/Reference/EKRecurrenceEndClassRef/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["RecurrenceEndWithEndDate"].ReturnType="EKRecurrenceEnd"]]></Change>
+				<Change><![CDATA[Methods["RecurrenceEndWithOccurrenceCount"].ReturnType="EKRecurrenceEnd"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="EKRecurrenceRule">
 			<File>EventKit/Reference/EKRecurrenceRuleClassRef/Reference/Reference.html</File>

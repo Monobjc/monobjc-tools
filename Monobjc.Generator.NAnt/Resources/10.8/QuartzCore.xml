@@ -286,15 +286,16 @@ enum
 		</Class>
 		<Class name="CAValueFunction">
 			<File>GraphicsImaging/Reference/CAValueFunction_class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["FunctionWithName"].ReturnType="CAValueFunction"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="CIColor">
 			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/Reference/Reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["InitWithCGColor"].GenerateConstructor=false]]></Change>
 				<Change><![CDATA[Properties["Components"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Properties["Components"].Getter.ReturnType="IntPtr"]]></Change>
 				<Change><![CDATA[Properties["NumberOfComponents"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Properties["NumberOfComponents"].Getter.ReturnType="IntPtr"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="CIContext">

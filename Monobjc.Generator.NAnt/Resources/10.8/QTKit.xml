@@ -71,6 +71,9 @@
 		</Class>
 		<Class name="QTCaptureDeviceInput">
 			<File>QuickTime/Reference/QTCaptureDeviceInput_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["DeviceInputWithDevice"].ReturnType="QTCaptureDeviceInput"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="QTCaptureFileOutput">
 			<File>QuickTime/Reference/QTCaptureFileOutput_Ref/Introduction/Introduction.html</File>
@@ -83,6 +86,9 @@
 		</Class>
 		<Class name="QTCaptureLayer">
 			<File>QuickTime/Reference/QTCaptureLayer/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["LayerWithSession"].ReturnType="QTCaptureLayer"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="QTCaptureMovieFileOutput">
 			<File>QuickTime/Reference/QTCaptureMovieFileOutput_Ref/Introduction/Introduction.html</File>
@@ -261,6 +267,9 @@
 		</Class>
 		<Class name="QTMovieLayer">
 			<File>QuickTime/Reference/QTMovieLayer/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["LayerWithMovie"].ReturnType="QTMovieLayer"]]></Change>
+			</Patch>
 		</Class>
 		<Class name="QTMovieView">
 			<File>QuickTime/Reference/QTKitFramework/Classes/QTMovieView_Class/Reference/Reference.html</File>
