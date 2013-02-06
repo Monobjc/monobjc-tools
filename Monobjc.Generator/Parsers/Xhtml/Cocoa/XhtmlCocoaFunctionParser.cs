@@ -65,7 +65,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
 			functionEntity.Name = name;
 
 			this.Logger.WriteLine ("  Function '" + name + "'");
-			
+
 			// Extract abstract
 			XElement abstractElement = (from el in functionElement.ElementsAfterSelf ("p")
                                         where (String)el.Attribute ("class") == "abstract"
@@ -76,12 +76,17 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
 			XElement declarationElement = (from el in functionElement.ElementsAfterSelf ("pre")
                                            where (String)el.Attribute ("class") == "declaration"
                                            select el).FirstOrDefault ();
+
 			String signature = declarationElement.TrimAll ();
 			if (signature.StartsWith ("#define")) {
 				this.Logger.WriteLine ("SKIPPING define statement: " + name);
 				return null;
 			}
-			
+			if (signature.StartsWith ("typedef")) {
+				this.Logger.WriteLine ("SKIPPING define statement: " + name);
+				return null;
+			}
+
 			// Trim down signature
 			while (signature.IndexOf("  ") != -1) {
 				signature = signature.Replace ("  ", " ");
