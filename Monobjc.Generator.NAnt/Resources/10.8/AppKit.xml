@@ -1028,7 +1028,11 @@
 					<With><![CDATA[]]></With>
 				</Replace>
 				<Replace>
-					<Source><![CDATA[/* <!--a-->choose<!--/a--> <!--a-->only<!--/a--> <!--a-->one<!--/a--> <!--a-->of<!--/a--> <!--a-->these<!--/a--> <!--a-->three<!--/a--> */]]></Source>
+					<Source><![CDATA[/* choose only one of these */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[// default]]></Source>
 					<With><![CDATA[]]></With>
 				</Replace>
 			</Patch>
