@@ -77,6 +77,25 @@
 					<Source><![CDATA[// <!--a-->RSA<!--/a--> <!--a-->keysizes<!--/a--> <!--a-->must<!--/a--> <!--a-->be<!--/a--> <!--a-->multiples<!--/a--> <!--a-->of<!--/a--> 8]]></Source>
 					<With><![CDATA[]]></With>
 				</Replace>
+				<Replace>
+					<Source><![CDATA[// Symmetric Keysizes - default is currently kSecAES128 for AES.]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[// Supported ECC Keys for Suite-B from RFC 4492 section 5.1.1.
+   // default is currently kSecp256r1]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[// Yes,
+   521]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[// Boundaries for RSA KeySizes - default is currently 2048
+   // RSA keysizes must be multiples of 8]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
 			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Functions["SecCertificateCopyLongDescription"].Parameters["error"].Type="NSError"]]></Change>

@@ -312,6 +312,22 @@
 					<Source><![CDATA[/* <!--a-->added<!--/a--> <!--a-->in<!--/a--> 10.4 */]]></Source>
 					<With><![CDATA[ ]]></With>
 				</Replace>
+				<Replace>
+					<Source><![CDATA[#endif]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* added in 10.3 */]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* added in 10.4 */]]></Source>
+					<With><![CDATA[ ]]></With>
+				</Replace>
 			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Functions["DRTrackCreate"].Generate=false]]></Change>

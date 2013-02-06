@@ -165,6 +165,12 @@
 					<With><![CDATA[ = (1 &lt;&lt;  9),
    ]]></With>
 				</Replace>
+				<Replace>
+					<Source><![CDATA[= 1 &lt;&lt; 0
+]]></Source>
+					<With><![CDATA[= 1 &lt;&lt; 0,
+]]></With>
+				</Replace>
 			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["DiscardEventsMatchingMaskBeforeEvent"].Parameters["mask"].Type="NSEventMask"]]></Change>
@@ -569,6 +575,7 @@
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSCustomImageRep_Class/Reference/Reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["DrawingHandler"].Type="IntPtr"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSDatePicker">
@@ -687,8 +694,14 @@
 					<With><![CDATA[]]></With>
 				</Replace>
 				<Replace>
-					<Source><![CDATA[<!--a-->NX_SUBTYPE_TABLET_PROXIMITY<!--/a-->]]></Source>
-					<With><![CDATA[<!--a-->NX_SUBTYPE_TABLET_PROXIMITY,<!--/a-->]]></With>
+					<Source><![CDATA[NSUInteger NSEventMaskFromType(NSEventType type) { return (1 &lt;&lt; type); };]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_SUBTYPE_TABLET_PROXIMITY
+]]></Source>
+					<With><![CDATA[NX_SUBTYPE_TABLET_PROXIMITY,
+]]></With>
 				</Replace>
 			</Patch>
 			<Patch type="Model">

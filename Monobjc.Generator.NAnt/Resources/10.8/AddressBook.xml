@@ -8,6 +8,12 @@
 					<Source><![CDATA[<a href="#//apple_ref/doc/c_ref/kABMultiDateComponentsProperty">kABMultiDateComponentsProperty</a>]]></Source>
 					<With><![CDATA[<a href="#//apple_ref/doc/c_ref/kABMultiDateComponentsProperty">,kABMultiDateComponentsProperty</a>]]></With>
 				</Replace>
+				<Replace>
+					<Source><![CDATA[ | kABDataProperty
+]]></Source>
+					<With><![CDATA[ | kABDataProperty,
+]]></With>
+				</Replace>
 			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Enumerations["_ABPropertyType"].Name="ABPropertyType"]]></Change>

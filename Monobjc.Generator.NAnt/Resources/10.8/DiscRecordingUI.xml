@@ -104,6 +104,15 @@
    Don'<!--a-->t<!--/a--> <!--a-->handle<!--/a--> <!--a-->media<!--/a--> reservations. <!--a-->Application<!--/a--> <!--a-->handles<!--/a--> <!--a-->them<!--/a--> <!--a-->itself<!--/a--> */]]></Source>
 					<With><![CDATA[]]></With>
 				</Replace>
+				<Replace>
+					<Source><![CDATA[/* use defaults for all the options */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/*
+   Don't handle media reservations. Application handles them itself */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
 			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Functions["DREraseSessionBeginProgressDialog"].Generate=false]]></Change>

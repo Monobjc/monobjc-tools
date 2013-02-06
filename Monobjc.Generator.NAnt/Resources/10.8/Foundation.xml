@@ -435,6 +435,12 @@
 			<File>Cocoa/Reference/Foundation/Classes/NSCalendar_Class/Reference/NSCalendar.html</File>
 			<Patch type="Html">
 				<Replace>
+					<Source><![CDATA[kCFCalendarUnitYearForWeekOfYear
+]]></Source>
+					<With><![CDATA[kCFCalendarUnitYearForWeekOfYear,
+]]></With>
+				</Replace>
+				<Replace>
 					<Source><![CDATA[>kCFCalendarUnitYearForWeekOfYear</a>]]></Source>
 					<With><![CDATA[>kCFCalendarUnitYearForWeekOfYear,</a>]]></With>
 				</Replace>
@@ -1874,11 +1880,18 @@
 		</Class>
 		<Class name="NSTimeZone">
 			<File>Cocoa/Reference/Foundation/Classes/NSTimeZone_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[typedef enum : NSInteger {]]></Source>
+					<With><![CDATA[typedef enum {]]></With>
+				</Replace>
+			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["TimeZoneForSecondsFromGMT"].ReturnType="NSTimeZone"]]></Change>
 				<Change><![CDATA[Methods["TimeZoneWithAbbreviation"].ReturnType="NSTimeZone"]]></Change>
 				<Change><![CDATA[Methods["TimeZoneWithName"].ReturnType="NSTimeZone"]]></Change>
 				<Change><![CDATA[Methods["TimeZoneWithNameData"].ReturnType="NSTimeZone"]]></Change>
+				<Change><![CDATA[Enumerations["NSTimeZoneNameStyle"].BaseType="NSInteger"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSUbiquitousKeyValueStore">

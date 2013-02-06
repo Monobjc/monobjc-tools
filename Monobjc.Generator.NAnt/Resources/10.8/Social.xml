@@ -11,6 +11,11 @@
    <a href="#//apple_ref/doc/c_ref/SLRequestMethod">SLRequestMethod</a>)]]></Source>
 					<With><![CDATA[enum SLRequestMethod]]></With>
 				</Replace>
+				<Replace>
+					<Source><![CDATA[NS_ENUM(NSInteger,
+   SLRequestMethod)]]></Source>
+					<With><![CDATA[enum SLRequestMethod]]></With>
+				</Replace>
 			</Patch>
 			<Patch type="Model">
 			<Change><![CDATA[Enumerations["SLRequestMethod"].BaseType="NSInteger"]]></Change>

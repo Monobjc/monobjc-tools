@@ -13,7 +13,7 @@
 		<Type name="CMAttachment">
 			<File>CoreMedia/Reference/CMAttachment/Reference/reference.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Enumerations["Attachment_Propagation"].Name="CMAttachmentMode"]]></Change>
+				<Change><![CDATA[Enumerations["Attachment_Modes"].Name="CMAttachmentMode"]]></Change>
 				<Change><![CDATA[Enumerations["CMAttachmentMode"].BaseType="uint"]]></Change>
 				<Change><![CDATA[Functions["CMGetAttachment"].Parameters["attachmentModeOut"].Type="CMAttachmentMode"]]></Change>
 				<Change><![CDATA[Functions["CMGetAttachment"].Parameters["attachmentModeOut"].IsOut=true]]></Change>

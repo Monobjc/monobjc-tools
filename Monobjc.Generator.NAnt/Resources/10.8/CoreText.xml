@@ -71,6 +71,12 @@
 			<Patch type="Model">
 				<Change><![CDATA[Functions["CTFontCollectionGetTypeID"].Generate=false]]></Change>
 			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[1L <<]]></Source>
+					<With><![CDATA[1 <<]]></With>
+				</Replace>
+			</Patch>
 		</Type>
 		<Type name="CTFontDescriptor">
 			<File>Carbon/Reference/CTFontDescriptorRef/Reference/reference.html</File>

@@ -264,6 +264,14 @@
 		</Class>
 		<Class name="GLKTextureInfo">
 			<File>GLkit/Reference/GLKTextureInfo_Ref/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[GLKTextureInfoAlphaStateNonPremultiplied
+]]></Source>
+					<With><![CDATA[GLKTextureInfoAlphaStateNonPremultiplied,
+]]></With>
+				</Replace>
+			</Patch>
 		</Class>
 		<Class name="GLKTextureLoader">
 			<File>GLkit/Reference/GLKTextureLoader_ClassRef/Reference/Reference.html</File>

@@ -41,6 +41,12 @@
 			<File>Cocoa/Reference/CoreDataFramework/Classes/NSFetchRequest_Class/NSFetchRequest.html</File>
 			<Patch type="Html">
 				<Replace>
+					<Source><![CDATA[= 0x02
+]]></Source>
+					<With><![CDATA[= 0x02,
+]]></With>
+				</Replace>
+				<Replace>
 					<Source><![CDATA[= 0<!--a-->x02<!--/a-->]]></Source>
 					<With><![CDATA[= 0<!--a-->x02,<!--/a-->]]></With>
 				</Replace>
