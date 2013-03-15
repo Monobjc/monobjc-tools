@@ -31,26 +31,17 @@ namespace Monobjc.MSBuild.Tasks
 		/// <summary>
 		/// Gets or sets the path.
 		/// </summary>
-		/// <value>
-		/// The path.
-		/// </value>
         public ITaskItem Path { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the info P list.
 		/// </summary>
-		/// <value>
-		/// The info P list.
-		/// </value>
         [Required]
         public ITaskItem InfoPList { get; set; }
 		
 		/// <summary>
 		/// Gets or sets to directory.
 		/// </summary>
-		/// <value>
-		/// To directory.
-		/// </value>
         [Required]
         public ITaskItem ToDirectory { get; set; }
 
@@ -63,11 +54,11 @@ namespace Monobjc.MSBuild.Tasks
             receigen.Logger = new ExecutionLogger(this);
 			
 			if (this.Path != null) {
-				receigen.Executable = this.Path.ItemSpec;
+				receigen.Executable = this.Path.GetMetadata("FullPath");
 			}
 			
-			String plist = System.IO.Path.GetFullPath(this.InfoPList.ItemSpec);
-			String directory = System.IO.Path.GetFullPath(this.ToDirectory.ItemSpec);
+			String plist = this.InfoPList.GetMetadata("FullPath");
+			String directory = this.ToDirectory.GetMetadata("FullPath");
 			
 			String result = receigen.Generate(plist, directory);
 			this.Log.LogMessage(result);

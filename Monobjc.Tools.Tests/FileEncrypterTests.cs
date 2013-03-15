@@ -26,7 +26,7 @@ namespace Monobjc.Tools
 	[TestFixture]
 	[Category("Images")]
 	[Category("Encryption")]
-	public class ArtworkEncrypterTests
+	public class FileEncrypterTests
 	{
 		private static readonly String KEY = "123";
 
@@ -35,25 +35,25 @@ namespace Monobjc.Tools
 		{
 			File.Copy ("Embedded/application-sidebar-list.nopng", "dummy.png", true);
 			
-			ArtworkEncrypter encrypter = new ArtworkEncrypter ();
-			encrypter.Encrypt (".", KEY);
+			FileEncrypter encrypter = new FileEncrypter ();
+			encrypter.Encrypt (new String[]{"dummy.png"}, ".", KEY);
 		}
 
 		[Test]
 		public void TestImageDecryption ()
 		{
-			Aes provider = ArtworkEncrypter.GetProvider(KEY);
+			Aes provider = FileEncrypter.GetProvider (KEY);
 
 			{
 				byte[] clean = File.ReadAllBytes ("Embedded/application-sidebar-list.nopng");
-				byte [] content = ArtworkEncrypter.Encrypt (clean, provider);
+				byte [] content = FileEncrypter.Encrypt (clean, provider);
 				
-				byte[] output = ArtworkEncrypter.Decrypt (content, provider);
+				byte[] output = FileEncrypter.Decrypt (content, provider);
 				File.WriteAllBytes ("dummy2.png", output);
 			}
 			{
-				byte [] content = File.ReadAllBytes("dummy.png");
-				byte[] output = ArtworkEncrypter.Decrypt (content, provider);
+				byte [] content = File.ReadAllBytes ("dummy.png");
+				byte[] output = FileEncrypter.Decrypt (content, provider);
 				File.WriteAllBytes ("dummy3.png", output);
 			}
 		}

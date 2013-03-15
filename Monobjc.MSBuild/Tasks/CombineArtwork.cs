@@ -48,7 +48,7 @@ namespace Monobjc.MSBuild.Tasks
 				using (StringWriter errorWriter = new StringWriter()) {
 					ArtworkCombiner combiner = new ArtworkCombiner();
 					combiner.Logger = new ExecutionLogger(this);
-					combiner.Combine(this.Directory.ToString(), outputWriter, errorWriter);
+					combiner.Combine(this.Directory.GetMetadata("FullPath"), outputWriter, errorWriter);
 					String outputLog = outputWriter.ToString ();
 					String errorLog = errorWriter.ToString ();
 					this.Log.LogMessage (outputLog);

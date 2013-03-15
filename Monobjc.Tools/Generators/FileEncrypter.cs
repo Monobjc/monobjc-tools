@@ -25,17 +25,16 @@ using System.Security.Cryptography;
 namespace Monobjc.Tools.Generators
 {
 	/// <summary>
-	///   Wrapper to handle artwork combination.
+	///   Wrapper to handle file encryption.
 	/// </summary>
-	public partial class ArtworkEncrypter
+	public partial class FileEncrypter
 	{
 		/// <summary>
 		///   Initializes a new instance of the <see cref = "ArtworkEncrypter" /> class.
 		/// </summary>
-		public ArtworkEncrypter ()
+		public FileEncrypter ()
 		{
 			this.Logger = new NullLogger ();
-			this.Extensions = "png,tiff,jpg,jpeg";
 		}
 
 		/// <summary>
@@ -45,33 +44,31 @@ namespace Monobjc.Tools.Generators
 		public IExecutionLogger Logger { get; set; }
 
 		/// <summary>
-		/// Gets or sets the file extensions (comma separated).
+		/// Encrypt the specified files into the directory with the given encryptionSeed.
 		/// </summary>
-		/// <value>The file extensions.</value>
-		public String Extensions { get; set; }
+		public bool Encrypt (IEnumerable<String> files, String directory, String encryptionSeed)
+		{
+			try {
+				Aes provider = new AesCryptoServiceProvider ();
+				provider.Key = DeriveKey (encryptionSeed);
+				
+				return Encrypt (files, directory, provider);
+			} catch (Exception ex) {
+				this.Logger.LogError (ex.Message);
+				return false;
+			}
+		}
 
 		/// <summary>
-		/// Combine the specified low/high resolution images in the given directory.
+		/// Encrypt the specified files into the directory with the given provider.
 		/// </summary>
-		public bool Encrypt (String directory, String encryptionSeed)
+		public bool Encrypt (IEnumerable<String> files, String directory, Aes provider)
 		{
-			// TODO: I18N
-			this.Logger.LogDebug (String.Format (CultureInfo.CurrentCulture, "Encrypting artwork in {0}", directory));
-
 			try {
-				AesCryptoServiceProvider provider = new AesCryptoServiceProvider ();
-				provider.Key = DeriveKey (encryptionSeed);
-
-				// Perform the encryption
-				foreach (String extension in this.Extensions.Split(',')) {
-					String dotExtension = "." + extension;
-					IList<String> files = new List<String> (this.Enumerate (directory, dotExtension));
-					
-					foreach (var file in files) {
-						Encrypt (file, file, provider);
-					}
+				foreach (String file in files) {
+					String destination = Path.Combine (directory, Path.GetFileName (file));
+					Encrypt (file, destination, provider);
 				}
-
 				return true;
 			} catch (Exception ex) {
 				this.Logger.LogError (ex.Message);
@@ -79,22 +76,7 @@ namespace Monobjc.Tools.Generators
 			}
 		}
 
-		private IEnumerable<String> Enumerate (String directory, String suffix)
-		{
-			List<String> result = new List<String> ();
-			IEnumerable<FileSystemInfo> infos = new DirectoryInfo (directory).EnumerateFileSystemInfos ("*");
-			foreach (var info in infos) {
-				if (Directory.Exists (info.FullName)) {
-					result.AddRange (Enumerate (info.FullName, suffix));
-				}
-				if (info is FileInfo && info.FullName.EndsWith (suffix, StringComparison.InvariantCultureIgnoreCase)) {
-					result.Add (info.FullName);
-				}
-			}
-			return result;
-		}
-
-		private void Encrypt (String inputFile, String outputFile, Aes aes)
+		public void Encrypt (String inputFile, String outputFile, Aes aes)
 		{
 			if (IsEncrypted (inputFile)) {
 				return;
@@ -107,7 +89,7 @@ namespace Monobjc.Tools.Generators
 			File.WriteAllBytes (outputFile, output);
 		}
 
-		private void Decrypt (String inputFile, String outputFile, Aes aes)
+		public void Decrypt (String inputFile, String outputFile, Aes aes)
 		{
 			if (!IsEncrypted (inputFile)) {
 				return;

@@ -1,4 +1,4 @@
-﻿//
+//
 // This file is part of Monobjc, a .NET/Objective-C bridge
 // Copyright (C) 2007-2013 - Laurent Etiemble
 //
@@ -63,7 +63,7 @@ namespace Monobjc.Tools
 			//ArtworkCombinerTests artworkCombinerTests = new ArtworkCombinerTests();
 			//artworkCombinerTests.TestImageCombination();
 
-			ArtworkEncrypterTests artworkEncrypterTests = new ArtworkEncrypterTests ();
+			FileEncrypterTests artworkEncrypterTests = new FileEncrypterTests ();
 			artworkEncrypterTests.TestImageEncryption ();
 			artworkEncrypterTests.TestImageDecryption ();
 		}

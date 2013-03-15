@@ -61,7 +61,7 @@
     <Compile Include="Tasks\CopyFrameworks.cs" />
     <Compile Include="Tasks\CallReceigen.cs" />
     <Compile Include="Tasks\CombineArtwork.cs" />
-    <Compile Include="Tasks\EncryptArtwork.cs" />
+    <Compile Include="Tasks\EncryptFiles.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Monobjc.Tools\Monobjc.Tools.csproj">

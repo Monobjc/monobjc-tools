@@ -168,8 +168,8 @@
     <Compile Include="External\TiffUtil.cs" />
     <Compile Include="External\IconUtil.cs" />
     <Compile Include="Generators\ArtworkCombiner.cs" />
-    <Compile Include="Generators\ArtworkEncrypter.cs" />
-    <Compile Include="Generators\ArtworkEncrypter.Public.cs" />
+    <Compile Include="Generators\FileEncrypter.cs" />
+    <Compile Include="Generators\FileEncrypter.Public.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Embedded\Info.plist" />

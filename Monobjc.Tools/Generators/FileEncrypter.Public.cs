@@ -22,7 +22,7 @@ using System.Text;
 
 namespace Monobjc.Tools.Generators
 {
-	public partial class ArtworkEncrypter
+	public partial class FileEncrypter
 	{
 		private static byte[] MAGIC_NUMBER = new byte[]{ 0x50 , 0x4B, 0x03, 0x04 };
 

@@ -36,19 +36,16 @@ namespace Monobjc.MSBuild.Tasks
 		/// <summary>
 		///   Gets or sets the entitlements.
 		/// </summary>
-		/// <value>The entitlements.</value>
 		public ITaskItem Entitlements { get; set; }
 		
 		/// <summary>
 		/// Gets or sets the target.
 		/// </summary>
-		/// <value>The target.</value>
 		public ITaskItem Target { get; set; }
 
 		/// <summary>
 		/// Gets or sets the targets.
 		/// </summary>
-		/// <value>The targets.</value>
 		public ITaskItem[] Targets { get; set; }
 
 		/// <summary>
