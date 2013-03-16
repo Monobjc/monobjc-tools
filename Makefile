@@ -15,6 +15,7 @@
 # Set the directories
 export BUILD_DIR?=$(CURDIR)/build
 export DIST_DIR?=$(CURDIR)/dist
+export EXTERNAL_DIR=$(CURDIR)/external
 
 # Set the files
 export KEY_FILE?=$(CURDIR)/Monobjc.snk
@@ -24,7 +25,9 @@ export MONOBJC_VERSION?=5.0
 
 # Set the tools
 export CPC?=rsync -a
+export MCS=dmcs -sdk:4 -nowarn:"219,1574,1584,1591"
 export MKDIR?=mkdir -p
+export RESGEN=resgen
 export RMRF?=rm -Rf
 export XBUILD?=xbuild /p:Configuration=Release /verbosity:minimal
 
@@ -49,22 +52,13 @@ all:
 	$(MKDIR) "$(BUILD_DIR)"
 	$(MKDIR) "$(DIST_DIR)"
 	for i in $(PROJECTS); do \
-		(mkdir -p $(BUILD_DIR)/$$i; $(XBUILD) /p:OutDir=$(BUILD_DIR)/$$i/ $$i/$$i.csproj); \
+		($(MAKE) -C $$i all); \
 	done;
-	$(CPC) "$(BUILD_DIR)/Monobjc.Tools/Monobjc.Tools.dll" "$(DIST_DIR)"
-	$(CPC) "$(BUILD_DIR)/Monobjc.NAnt/Monobjc.NAnt.dll" "$(DIST_DIR)"
-	$(CPC) "$(BUILD_DIR)/Monobjc.MSBuild/Monobjc.CocoaApplication.targets" "$(DIST_DIR)"
-	$(CPC) "$(BUILD_DIR)/Monobjc.MSBuild/Monobjc.CocoaLibrary.targets" "$(DIST_DIR)"
-	$(CPC) "$(BUILD_DIR)/Monobjc.MSBuild/Monobjc.Common.targets" "$(DIST_DIR)"
-	$(CPC) "$(BUILD_DIR)/Monobjc.MSBuild/Monobjc.ConsoleApplication.targets" "$(DIST_DIR)"
-	$(CPC) "$(BUILD_DIR)/Monobjc.MSBuild/Monobjc.MSBuild.dll" "$(DIST_DIR)"
-	$(CPC) "$(BUILD_DIR)/Monobjc.MSBuild/Monobjc.MSBuild.tasks" "$(DIST_DIR)"
-	$(CPC) "$(BUILD_DIR)/Monobjc.Sdp/Monobjc.Tools.Sdp.exe" "$(DIST_DIR)"
-	$(CPC) "$(BUILD_DIR)/Monobjc.Sdp/monobjc-sdp" "$(DIST_DIR)"
+	$(RMRF) $(DIST_DIR)/*.mdb
 
 clean:
 	for i in $(PROJECTS); do \
-		($(XBUILD) /p:OutDir=$(BUILD_DIR)/$$i/ $$i/$$i.csproj /t:Clean); \
+		($(MAKE) -C $$i clean); \
 	done;
 	$(XBUILD) $(GENERATOR)/$(GENERATOR).csproj /t:Clean
 	$(RMRF) "$(BUILD_DIR)"

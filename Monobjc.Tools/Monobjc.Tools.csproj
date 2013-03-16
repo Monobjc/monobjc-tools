@@ -175,6 +175,7 @@
     <None Include="Embedded\Info.plist" />
     <None Include="Embedded\PropertyList.dtd" />
     <Compile Include="Generators\ManagedReferenceCollector.cs" />
+    <None Include="Makefile" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

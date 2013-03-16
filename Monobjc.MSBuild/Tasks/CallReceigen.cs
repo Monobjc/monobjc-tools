@@ -34,13 +34,13 @@ namespace Monobjc.MSBuild.Tasks
         public ITaskItem Path { get; set; }
 		
 		/// <summary>
-		/// Gets or sets the info P list.
+		/// Gets or sets the info.plist path.
 		/// </summary>
         [Required]
         public ITaskItem InfoPList { get; set; }
 		
 		/// <summary>
-		/// Gets or sets to directory.
+		/// Gets or sets the output directory.
 		/// </summary>
         [Required]
         public ITaskItem ToDirectory { get; set; }

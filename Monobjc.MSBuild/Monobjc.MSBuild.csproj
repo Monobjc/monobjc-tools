@@ -99,5 +99,6 @@
     <None Include="Monobjc.Common.targets">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Makefile" />
   </ItemGroup>
 </Project>

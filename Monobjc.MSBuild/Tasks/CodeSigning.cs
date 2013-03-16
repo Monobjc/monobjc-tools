@@ -68,14 +68,14 @@ namespace Monobjc.MSBuild.Tasks
 			}
 
 			String entitlements = null;
-			if (this.UseEntitlements && this.Entitlements != null && File.Exists (this.Entitlements.ItemSpec)) {
-				entitlements = this.Entitlements.ItemSpec;
+			if (this.UseEntitlements && this.Entitlements != null && File.Exists (this.Entitlements.GetMetadata("FullPath"))) {
+				entitlements = this.Entitlements.GetMetadata("FullPath");
 			}
 
 			foreach (ITaskItem item in items) {
 				using (StringWriter outputWriter = new StringWriter()) {
 					using (StringWriter errorWriter = new StringWriter()) {
-						CodeSign.SignApplication (item.ItemSpec, identity, entitlements, outputWriter, errorWriter);
+						CodeSign.SignApplication (item.GetMetadata("FullPath"), identity, entitlements, outputWriter, errorWriter);
 						String outputLog = outputWriter.ToString ();
 						String errorLog = errorWriter.ToString ();
 						this.Log.LogMessage (outputLog);
