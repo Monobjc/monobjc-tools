@@ -56,7 +56,7 @@ namespace Monobjc.MSBuild.Tasks
 				return true;
 			}
 
-			if (this.SourceFiles != null && this.DestinationFiles != null && this.SourceFiles.Length != this.DestinationFiles.Length) {
+			if (this.DestinationFiles != null && this.SourceFiles.Length != this.DestinationFiles.Length) {
 				this.Log.LogError ("Number of source files is different than number of destination files.");
 				return false;
 			}
@@ -84,6 +84,10 @@ namespace Monobjc.MSBuild.Tasks
 							destinationPath
 						});
 					} else {
+						String parentDestinationPath = Path.GetDirectoryName(destinationPath);
+						if (!Directory.Exists(parentDestinationPath)) {
+							Directory.CreateDirectory(parentDestinationPath);
+						}
 						encrypter.Encrypt (sourcePath, destinationPath, provider);
 					}
 				}
@@ -91,11 +95,15 @@ namespace Monobjc.MSBuild.Tasks
 			} 
 
 			if (this.DestinationFolder == null) {
-				this.Log.LogError ("You must specify DestinationFolder or DestinationFiles attribute.");
+				this.Log.LogError ("You must specify DestinationFolder attribute.");
 				return false;
 			}
 
 			String destinationFolder = this.DestinationFolder.GetMetadata ("FullPath");
+			if (!Directory.Exists (destinationFolder)) {
+				Directory.CreateDirectory(destinationFolder);
+			}
+
 			for (int i = 0; i < this.SourceFiles.Length; i++) {
 				ITaskItem sourceItem = this.SourceFiles [i];
 				String sourcePath = sourceItem.GetMetadata ("FullPath");
