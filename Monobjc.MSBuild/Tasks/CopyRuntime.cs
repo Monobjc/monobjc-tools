@@ -33,7 +33,7 @@ namespace Monobjc.MSBuild.Tasks
 		/// </summary>
 		public CopyRuntime()
 		{
-			this.targetOSVersion = MacOSVersion.MacOS105;
+			this.targetOSVersion = MacOSVersion.MacOS106;
 		}
 		
 		/// <summary>

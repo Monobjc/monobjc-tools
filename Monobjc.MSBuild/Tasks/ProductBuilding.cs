@@ -40,13 +40,13 @@ namespace Monobjc.MSBuild.Tasks
 		protected override bool PerformSigning (String identity)
 		{
 			String productDefinition = null;
-			if (this.ProductDefinition != null && File.Exists (this.ProductDefinition.ItemSpec)) {
-				productDefinition = this.ProductDefinition.ItemSpec;
+			if (this.ProductDefinition != null && File.Exists (this.ProductDefinition.GetMetadata("FullPath"))) {
+				productDefinition = this.ProductDefinition.GetMetadata("FullPath");
 			}
 
 			using (StringWriter outputWriter = new StringWriter()) {
 				using (StringWriter errorWriter = new StringWriter()) {
-					ProductBuild.ArchiveApplication (this.Bundle.ItemSpec, identity, productDefinition, outputWriter, errorWriter);
+					ProductBuild.ArchiveApplication (this.Bundle.GetMetadata("FullPath"), identity, productDefinition, outputWriter, errorWriter);
 					String outputLog = outputWriter.ToString ();
 					String errorLog = errorWriter.ToString ();
 					this.Log.LogMessage (outputLog);

@@ -39,7 +39,7 @@ namespace Monobjc.MSBuild.Tasks
         public GenerateInfoPList()
         {
             this.generator = new InfoPListGenerator();
-			this.minRequiredOSVersion = MacOSVersion.MacOS105;
+			this.minRequiredOSVersion = MacOSVersion.MacOS106;
 			this.DevelopmentRegion = "en";
         }
 
@@ -129,7 +129,7 @@ namespace Monobjc.MSBuild.Tasks
             // Use the given template if any
             if (this.Template != null)
             {
-				FileInfo fileInfo = new FileInfo(this.Template.ItemSpec);
+				FileInfo fileInfo = new FileInfo(this.Template.GetMetadata("FullPath"));
                 using (StreamReader reader = fileInfo.OpenText())
                 {
                     this.generator.Content = reader.ReadToEnd();
@@ -139,7 +139,7 @@ namespace Monobjc.MSBuild.Tasks
             // Extract information from the assembly if set
             if (this.MainAssembly != null)
             {
-                Assembly assembly = Assembly.ReflectionOnlyLoadFrom(this.MainAssembly.ItemSpec);
+                Assembly assembly = Assembly.ReflectionOnlyLoadFrom(this.MainAssembly.GetMetadata("FullPath"));
                 AssemblyName assemblyName = assembly.GetName();
                 this.generator.ApplicationName = assemblyName.Name;
                 this.generator.Identifier = assembly.EntryPoint.DeclaringType.Namespace;
@@ -158,7 +158,7 @@ namespace Monobjc.MSBuild.Tasks
 			this.generator.TargetOSVersion = this.minRequiredOSVersion;
 
             // Write the file
-            String path = Path.Combine(this.ToDirectory.ToString(), "Info.plist");
+			String path = Path.Combine(this.ToDirectory.GetMetadata("FullPath"), "Info.plist");
             this.generator.WriteTo(path);
 
             return true;
