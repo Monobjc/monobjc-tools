@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monobjc.Sdp.Tests", "Monobj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monobjc.Generator.NAnt", "Monobjc.Generator.NAnt\Monobjc.Generator.NAnt.csproj", "{5940F79E-6395-4D7D-A393-14CC40A71D42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monobjc.MSBuild.Tests", "Monobjc.MSBuild.Tests\Monobjc.MSBuild.Tests.csproj", "{F97A503F-4DC0-41D0-ABCD-D2660ECE9E7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,18 @@ Global
 		{F0B65148-1657-4B4A-AB29-53D2625E5550}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{F0B65148-1657-4B4A-AB29-53D2625E5550}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F0B65148-1657-4B4A-AB29-53D2625E5550}.Release|x86.ActiveCfg = Release|Any CPU
+		{F97A503F-4DC0-41D0-ABCD-D2660ECE9E7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F97A503F-4DC0-41D0-ABCD-D2660ECE9E7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F97A503F-4DC0-41D0-ABCD-D2660ECE9E7D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F97A503F-4DC0-41D0-ABCD-D2660ECE9E7D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F97A503F-4DC0-41D0-ABCD-D2660ECE9E7D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F97A503F-4DC0-41D0-ABCD-D2660ECE9E7D}.Debug|x86.Build.0 = Debug|Any CPU
+		{F97A503F-4DC0-41D0-ABCD-D2660ECE9E7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F97A503F-4DC0-41D0-ABCD-D2660ECE9E7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F97A503F-4DC0-41D0-ABCD-D2660ECE9E7D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F97A503F-4DC0-41D0-ABCD-D2660ECE9E7D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F97A503F-4DC0-41D0-ABCD-D2660ECE9E7D}.Release|x86.ActiveCfg = Release|Any CPU
+		{F97A503F-4DC0-41D0-ABCD-D2660ECE9E7D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection

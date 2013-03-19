@@ -45,6 +45,7 @@
     <Compile Include="CallReceigenTests.cs" />
     <Compile Include="EncryptFilesTests.cs" />
     <Compile Include="MockBuildEngine.cs" />
+    <Compile Include="CombineArtworkTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -55,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CallReceigenTests_Info.plist">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="calendar-blue.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="calendar-blue%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

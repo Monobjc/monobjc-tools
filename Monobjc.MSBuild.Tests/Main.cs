@@ -19,6 +19,10 @@ namespace Monobjc.MSBuild.Tests
 				tests.TestFilesToFolder();
 				tests.TestFilesToFiles();
 			}
+			{
+				CombineArtworkTests tests = new CombineArtworkTests();
+				tests.TestTask();
+			}
 		}
 	}
 }
