@@ -81,12 +81,13 @@ namespace Monobjc.Tools.Generators
             {
                 directories.AddRange(this.SearchDirectories);
             }
-			
-			this.Logger.LogInfo("Search Directories");
-			foreach(String path in directories) {
-				this.Logger.LogInfo("-> " + path);
-			}
-			
+            
+            this.Logger.LogInfo("Search Directories");
+            foreach (String path in directories)
+            {
+                this.Logger.LogInfo("-> " + path);
+            }
+            
             // First add the main assembly directory
             String folder = Path.GetDirectoryName(assembly);
             if (!directories.Contains(folder))
@@ -95,7 +96,7 @@ namespace Monobjc.Tools.Generators
             }
 
             // Then add the GAC folder
-            String corlibFolder = Path.GetDirectoryName(new Uri(typeof (Object).Assembly.CodeBase).AbsolutePath);
+            String corlibFolder = Path.GetDirectoryName(new Uri(typeof(Object).Assembly.CodeBase).AbsolutePath);
             if (!directories.Contains(corlibFolder))
             {
                 directories.Add(corlibFolder);
@@ -160,6 +161,8 @@ namespace Monobjc.Tools.Generators
                 Assembly a = this.LoadAssembly(assemblyName.Name, directories);
                 assemblies.Add(assemblyName.Name, new Uri(a.CodeBase).AbsolutePath);
 
+                this.Logger.LogInfo(string.Format(CultureInfo.CurrentCulture, "Loaded '{0}' from '{1}'", assemblyName.Name, new Uri(a.CodeBase).AbsolutePath));
+                
                 // Recurse for each asssembly found
                 Collect(a, assemblies, directories);
             }
@@ -181,7 +184,7 @@ namespace Monobjc.Tools.Generators
             // First try a direct load
             if (File.Exists(file))
             {
-                return Assembly.LoadFrom(file);
+                return Assembly.ReflectionOnlyLoadFrom(file);
             }
 
             // Probe each directory)
@@ -189,11 +192,14 @@ namespace Monobjc.Tools.Generators
             {
                 String name = Path.GetFileName(file);
                 String path = Path.Combine(searchDirectory, name);
+
+                this.Logger.LogInfo(String.Format(CultureInfo.CurrentCulture, "Probing location '{0}'...", path));
                 if (!File.Exists(path))
                 {
                     continue;
                 }
-                Assembly a = Assembly.LoadFrom(path);
+
+                Assembly a = Assembly.ReflectionOnlyLoadFrom(path);
                 if (a != null)
                 {
                     return a;

@@ -25,7 +25,6 @@ namespace Monobjc.Tools.Generators
     public class BundleMaker
     {
         private readonly string applicationName;
-
         private readonly string directory;
 
         /// <summary>
@@ -35,6 +34,14 @@ namespace Monobjc.Tools.Generators
         /// <param name = "directory">The directory.</param>
         public BundleMaker(String applicationName, String directory)
         {
+            if (applicationName == null)
+            {
+                throw new ArgumentNullException("applicationName");
+            }
+            if (directory == null)
+            {
+                throw new ArgumentNullException("directory");
+            }
             this.applicationName = applicationName;
             this.directory = Path.Combine(directory, this.applicationName + ".app");
         }
