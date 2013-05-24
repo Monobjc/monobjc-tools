@@ -93,7 +93,7 @@
 		<Copy SkipUnchangedFiles="true" SourceFiles="$(_MainAssembly).mdb" DestinationFolder="$(ResourcesPath)" Condition=" Exists('$(_MainAssembly).mdb') " />
 		<Copy SkipUnchangedFiles="true" SourceFiles="@(ReferenceCopyLocalPaths)" DestinationFolder="$(ResourcesPath)" />
 		<Copy SkipUnchangedFiles="true" SourceFiles="@(Content)" DestinationFiles="@(Content->'$(ResourcesPath)\%(Identity)')" />
-		<EncryptFiles SourceFiles="@(Content)" DestinationFiles="@(Content->'$(ResourcesPath)\%(Identity)')" EncryptionSeed="$(EncryptArtworkSeed)" />
+		<EncryptFiles SourceFiles="@(EncryptedContent)" DestinationFiles="@(EncryptedContent->'$(ResourcesPath)\%(Identity)')" EncryptionSeed="$(EncryptionSeed)" />
 		
 		<CombineArtwork DoCombine="$(CombineArtwork)" Directory="$(ResourcesPath)" />
 		
@@ -150,7 +150,7 @@
 		<CompileXib XibFiles="@(InterfaceDefinition)" ToDirectory="$(ResourcesPath)" />
 
 	    <Copy SkipUnchangedFiles="true" SourceFiles="@(Content)" DestinationFiles="@(Content->'$(ResourcesPath)\%(Identity)')" />
-		<EncryptFiles SourceFiles="@(EncryptedContent)" DestinationFiles="@(EncryptedContent->'$(ResourcesPath)\%(Identity)')" EncryptionSeed="$(EncryptArtworkSeed)" />
+		<EncryptFiles SourceFiles="@(EncryptedContent)" DestinationFiles="@(EncryptedContent->'$(ResourcesPath)\%(Identity)')" EncryptionSeed="$(EncryptionSeed)" />
 
 		<CombineArtwork DoCombine="$(CombineArtwork)" Directory="$(ResourcesPath)" />
 
