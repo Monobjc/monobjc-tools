@@ -2065,7 +2065,8 @@ enum {]]></Source>
 		<Class name="NSWindowController">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSWindowController_Class/Reference/Reference.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Methods["InitWithWindowNibPathOwner"].GenerateConstructor=false]]></Change>
+                <Change><![CDATA[Methods["InitWithWindowNibPathOwner"].GenerateConstructor=false]]></Change>
+                <Change><![CDATA[Properties["Document"].Type="NSDocument"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSWorkspace">
