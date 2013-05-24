@@ -515,6 +515,11 @@
     <Content Include="Files\10.8\CoreMIDI\Model\S\MIDITransform.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\CorePlot-1.2.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Growl-2.0.xml" />
+    <Content Include="Resources\Growl-1.3.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\doxygen.cfg" />
