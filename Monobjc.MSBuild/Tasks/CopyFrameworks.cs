@@ -16,7 +16,9 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Microsoft.Build.Framework;
 using Microsoft.Build.Tasks;
 using Microsoft.Build.Utilities;
@@ -26,67 +28,70 @@ namespace Monobjc.MSBuild.Tasks
 {
     public class CopyFrameworks : Task
     {
-		/// <summary>
-		/// Initializes a new instance of the <see cref="Monobjc.MSBuild.Tasks.CopyFrameworks"/> class.
-		/// </summary>
-		public CopyFrameworks()
-		{
-		}
-		
-		/// <summary>
-		/// Gets or sets the frameworks.
-		/// </summary>
-		/// <value>
-		/// The frameworks.
-		/// </value>
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Monobjc.MSBuild.Tasks.CopyFrameworks"/> class.
+        /// </summary>
+        public CopyFrameworks()
+        {
+        }
+        
+        /// <summary>
+        /// Gets or sets the frameworks.
+        /// </summary>
+        /// <value>
+        /// The frameworks.
+        /// </value>
         public String Frameworks { get; set; }
-		
+        
         /// <summary>
         /// Gets or sets the output dir.
         /// </summary>
         /// <value>The output dir.</value>
         [Required]
-		public ITaskItem ToDirectory { get; set; }
-		
+        public ITaskItem ToDirectory { get; set; }
+        
         public override bool Execute()
         {
-			if (this.Frameworks == null) {
-				return true;
-			}
-			
-			// TODO: I18N
+            if (this.Frameworks == null)
+            {
+                return true;
+            }
+            
+            // TODO: I18N
             this.Log.LogMessage("Copying frameworks");
-			
-			foreach(String name in this.Frameworks.Split(';')) {
-				String path;
-				
-				// Probe system location
-				path = String.Format("/System/Library/Frameworks/{0}.framework", name);
-				if (Directory.Exists(path)) {
-					goto copy;
-				}
-				path = String.Format("/Library/Frameworks/{0}.framework", name);
-				if (Directory.Exists(path)) {
-					goto copy;
-				}
-				path = String.Format("~/Library/Frameworks/{0}.framework", name);
-				if (Directory.Exists(path)) {
-					goto copy;
-				}
-				
-				// TODO: I18N
-				this.Log.LogError("Framework {0} not found", name);
-				continue;
-			copy:
-				Copy copy = new Copy();
-				copy.BuildEngine = this.BuildEngine;
-				copy.SourceFiles = new TaskItem[] { new TaskItem(path) };
-				copy.DestinationFolder = this.ToDirectory;
-				copy.SkipUnchangedFiles = true;
-				copy.Execute();
-			}
-			
-			return true;
+            
+            foreach (String name in this.Frameworks.Split(';'))
+            {
+                String path;
+                
+                // Probe system location
+                path = String.Format("/System/Library/Frameworks/{0}.framework", name);
+                if (Directory.Exists(path))
+                {
+                    goto copy;
+                }
+                path = String.Format("/Library/Frameworks/{0}.framework", name);
+                if (Directory.Exists(path))
+                {
+                    goto copy;
+                }
+                path = String.Format("~/Library/Frameworks/{0}.framework", name);
+                if (Directory.Exists(path))
+                {
+                    goto copy;
+                }
+                
+                // TODO: I18N
+                this.Log.LogError("Framework {0} not found", name);
+                return false;
+copy:
+                Exec exec = new Exec();
+                exec.BuildEngine = this.BuildEngine;
+                exec.Command = String.Format("rsync -rpl \"{0}\" \"{1}\"", path, this.ToDirectory.GetMetadata("FullPath"));
+                exec.Execute();
+            }
+            
+            return true;
         }
     }
 }

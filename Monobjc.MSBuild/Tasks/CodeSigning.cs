@@ -16,7 +16,9 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Monobjc.Tools.External;
 using Microsoft.Build.Framework;
 
@@ -48,6 +50,11 @@ namespace Monobjc.MSBuild.Tasks
 		/// </summary>
 		public ITaskItem[] Targets { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether the target(s) are versioned bundle (i.e. frameworks).
+        /// </summary>
+        public bool Versioned { get; set; }
+
 		/// <summary>
 		///   Performs the signing.
 		/// </summary>
@@ -67,15 +74,36 @@ namespace Monobjc.MSBuild.Tasks
 				return false;
 			}
 
+            // Gather all the paths
+            IList<String> paths;
+            if (this.Versioned) {
+                // If the items are versioned, then add all the versions
+                paths = new List<String>();
+                foreach (ITaskItem item in items) {
+                    String path = item.GetMetadata("FullPath");
+                    String root = Path.Combine(path, "Versions");
+                    String[] versions = Directory.GetDirectories(root);
+                    foreach(String version in versions) {
+                        if (Path.GetFileName(version) == "Current") {
+                            continue;
+                        }
+                        paths.Add(version);
+                    }
+                }
+            } else {
+                // If the items are not versioned, then directly add the paths
+                paths = items.Select(item => item.GetMetadata("FullPath")).ToList();
+            }
+
 			String entitlements = null;
 			if (this.UseEntitlements && this.Entitlements != null && File.Exists (this.Entitlements.GetMetadata("FullPath"))) {
 				entitlements = this.Entitlements.GetMetadata("FullPath");
 			}
 
-			foreach (ITaskItem item in items) {
+            foreach (String path in paths) {
 				using (StringWriter outputWriter = new StringWriter()) {
 					using (StringWriter errorWriter = new StringWriter()) {
-						CodeSign.SignApplication (item.GetMetadata("FullPath"), identity, entitlements, outputWriter, errorWriter);
+                        CodeSign.PerformSigning (path, identity, entitlements, outputWriter, errorWriter);
 						String outputLog = outputWriter.ToString ();
 						String errorLog = errorWriter.ToString ();
 						this.Log.LogMessage (outputLog);

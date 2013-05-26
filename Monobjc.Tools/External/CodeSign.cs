@@ -28,15 +28,15 @@ namespace Monobjc.Tools.External
     public static class CodeSign
     {
         /// <summary>
-        ///   Sign the application bundle with the following identity.
+        ///   Sign the target with the following identity.
         /// </summary>
-        /// <param name = "bundle">The path to the application bundle.</param>
+        /// <param name = "target">The path to the target.</param>
         /// <param name = "identity">The signing identity.</param>
         /// <param name = "identity">The entitlements.</param>
         /// <returns>The result of the command.</returns>
-        public static void SignApplication(String bundle, String identity, String entitlements, TextWriter outputWriter = null, TextWriter errorWriter = null)
+        public static void PerformSigning(String target, String identity, String entitlements, TextWriter outputWriter = null, TextWriter errorWriter = null)
         {
-            StringBuilder arguments = new StringBuilder(" -v ");
+            StringBuilder arguments = new StringBuilder(" --verbose --force ");
             if (identity != null)
             {
                 arguments.AppendFormat(" --sign \"{0}\" ", identity);
@@ -45,7 +45,7 @@ namespace Monobjc.Tools.External
             {
                 arguments.AppendFormat(" --entitlements \"{0}\" ", entitlements);
             }
-            arguments.AppendFormat(" \"{0}\" ", bundle);
+            arguments.AppendFormat(" \"{0}\" ", target);
 
             ProcessHelper helper = new ProcessHelper(Executable, arguments.ToString());
 			helper.OutputWriter = outputWriter;
@@ -54,14 +54,14 @@ namespace Monobjc.Tools.External
         }
 
         /// <summary>
-        ///   Sign the application bundle with the following identity.
+        ///   Sign the target with the following identity.
         /// </summary>
         /// <param name = "bundle">The path to the application bundle.</param>
         /// <param name = "identity">The signing identity.</param>
         /// <returns>The result of the command.</returns>
-        public static void SignApplication(String bundle, String identity, TextWriter outputWriter = null, TextWriter errorWriter = null)
+        public static void PerformSigning(String bundle, String identity, TextWriter outputWriter = null, TextWriter errorWriter = null)
         {
-			SignApplication(bundle, identity, null, outputWriter, errorWriter);
+			PerformSigning(bundle, identity, null, outputWriter, errorWriter);
         }
 
 		/// <summary>

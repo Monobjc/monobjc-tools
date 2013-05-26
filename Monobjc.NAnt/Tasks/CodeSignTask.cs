@@ -71,7 +71,7 @@ namespace Monobjc.NAnt.Tasks
 			foreach (String path in paths) {
 				using (StringWriter outputWriter = new StringWriter()) {
 					using (StringWriter errorWriter = new StringWriter()) {
-						CodeSign.SignApplication (path, identity, entitlements, outputWriter, errorWriter);
+						CodeSign.PerformSigning (path, identity, entitlements, outputWriter, errorWriter);
 						String outputLog = outputWriter.ToString ();
 						String errorLog = errorWriter.ToString ();
 						this.Log (Level.Info, outputLog);
