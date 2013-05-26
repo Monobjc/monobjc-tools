@@ -673,6 +673,12 @@
 		</Class>
 		<Class name="NSDate">
 			<File>Cocoa/Reference/Foundation/Classes/NSDate_Class/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[.)<div class="declaration">]]></Source>
+                    <With><![CDATA[.)</p><div class="declaration">]]></With>
+                </Replace>
+            </Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["DateWithNaturalLanguageString"].ReturnType="NSDate"]]></Change>
 				<Change><![CDATA[Methods["DateWithNaturalLanguageStringLocale"].ReturnType="NSDate"]]></Change>
@@ -1500,8 +1506,8 @@
 			<File>Cocoa/Reference/Foundation/Classes/NSPropertyListSerialization_Class/Reference/Reference.html</File>
 			<Patch type="Html">
 				<Replace>
-					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
-					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+					<Source><![CDATA[.)<div class="declaration">]]></Source>
+					<With><![CDATA[.)</p><div class="declaration">]]></With>
 				</Replace>
 			</Patch>
 			<Patch type="Model">
@@ -1734,6 +1740,12 @@
 		</Class>
 		<Class name="NSString">
 			<File>Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<pre class="declaration">]]></Source>
+                    <With><![CDATA[)</p><pre class="declaration">]]></With>
+                </Replace>
+            </Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["CharacterAtIndex"].ReturnType="char"]]></Change>
 				<Change><![CDATA[Methods["CStringUsingEncoding"].ReturnType="IntPtr"]]></Change>
@@ -2014,6 +2026,12 @@
 		</Class>
 		<Class name="NSUserDefaults">
 			<File>Cocoa/Reference/Foundation/Classes/NSUserDefaults_Class/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<pre class="declaration">]]></Source>
+                    <With><![CDATA[)</p><pre class="declaration">]]></With>
+                </Replace>
+            </Patch>
 		</Class>
 		<Class name="NSUserNotification">
 			<File>Foundation/Reference/NSUserNotification_Class/Reference/Reference.html</File>

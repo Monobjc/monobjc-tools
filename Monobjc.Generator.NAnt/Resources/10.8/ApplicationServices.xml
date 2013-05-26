@@ -126,6 +126,12 @@
 		</Type>
 		<Type name="CGFont">
 			<File>GraphicsImaging/Reference/CGFont/Reference/reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[.)<pre class="declaration">]]></Source>
+                    <With><![CDATA[.)</p><pre class="declaration">]]></With>
+                </Replace>
+            </Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Functions["CGFontCreatePostScriptEncoding"].Parameters["encoding[256]"].Name="encoding"]]></Change>
 				<Change><![CDATA[Functions["CGFontCreatePostScriptEncoding"].Parameters["encoding"].Type="IntPtr"]]></Change>

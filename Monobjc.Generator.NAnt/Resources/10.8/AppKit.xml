@@ -22,6 +22,12 @@
 		</Type>
 		<Type name="AppKitFramework.Functions">
 			<File>Cocoa/Reference/ApplicationKit/Miscellaneous/AppKit_Functions/Reference/reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<pre class="declaration">]]></Source>
+                    <With><![CDATA[)</p><pre class="declaration">]]></With>
+                </Replace>
+            </Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Functions["NSAvailableWindowDepths"].ReturnType="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["NSBestDepth"].Parameters["exactMatch"].Type="bool"]]></Change>
@@ -237,6 +243,12 @@
 		</Class>
 		<Class name="NSAttributedString_AppKitAdditions">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSAttributedString_AppKitAdditions/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<pre class="declaration">]]></Source>
+                    <With><![CDATA[)</p><pre class="declaration">]]></With>
+                </Replace>
+            </Patch>
 			<Patch type="Model">
 				<Change><![CDATA[AdditionFor="NSAttributedString"]]></Change>
 				<Change><![CDATA[Methods["InitWithDocFormatDocumentAttributes"].GenerateConstructor=false]]></Change>
@@ -402,6 +414,12 @@
 		</Class>
 		<Class name="NSCell">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSCell_Class/Reference/NSCell.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<pre class="declaration">]]></Source>
+                    <With><![CDATA[)</p><pre class="declaration">]]></With>
+                </Replace>
+            </Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["GetPeriodicDelayInterval"].Parameters["delay"].Type="float"]]></Change>
 				<Change><![CDATA[Methods["GetPeriodicDelayInterval"].Parameters["delay"].IsOut=true]]></Change>
@@ -813,12 +831,12 @@
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSFont_Class/Reference/Reference.html</File>
 			<Patch type="Html">
 				<Replace>
-					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
-					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+					<Source><![CDATA[.)<div class="declaration">]]></Source>
+					<With><![CDATA[.)</p><div class="declaration">]]></With>
 				</Replace>
 				<Replace>
-					<Source><![CDATA[)<pre class="declaration">]]></Source>
-					<With><![CDATA[)</p><pre class="declaration">]]></With>
+					<Source><![CDATA[.)<pre class="declaration">]]></Source>
+					<With><![CDATA[.)</p><pre class="declaration">]]></With>
 				</Replace>
 			</Patch>
 			<Patch type="Model">
@@ -896,6 +914,12 @@
 		</Class>
 		<Class name="NSFontPanel">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSFontPanel_Class/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<pre class="declaration">]]></Source>
+                    <With><![CDATA[)</p><pre class="declaration">]]></With>
+                </Replace>
+            </Patch>
 			<Patch type="Model">
 				<!-- TODO: Deprecated -->
 				<Change><![CDATA[Enumerations["Tags_of_Views_in_the_FontPanel"].Generate=false]]></Change>
@@ -988,12 +1012,12 @@
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSImageCell_Class/Reference/Reference.html</File>
 			<Patch type="Html">
 				<Replace>
-					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
-					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+					<Source><![CDATA[.)<div class="declaration">]]></Source>
+					<With><![CDATA[.)</p><div class="declaration">]]></With>
 				</Replace>
 				<Replace>
-					<Source><![CDATA[)<pre class="declaration">]]></Source>
-					<With><![CDATA[)</p><pre class="declaration">]]></With>
+					<Source><![CDATA[.)<pre class="declaration">]]></Source>
+					<With><![CDATA[.)</p><pre class="declaration">]]></With>
 				</Replace>
 			</Patch>
 		</Class>
@@ -1239,12 +1263,12 @@
 		</Class>
 		<Class name="NSOpenGLPixelFormat">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSOpenGLPixelFormat_Class/Reference/Reference.html</File>
-			<Patch type="Html">
-				<Replace>
-					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
-					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
-				</Replace>
-			</Patch>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[.)<div class="declaration">]]></Source>
+                    <With><![CDATA[.)</p><div class="declaration">]]></With>
+                </Replace>
+            </Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["GetValuesForAttributeForVirtualScreen"].Parameters["vals"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["InitWithAttributes"].Parameters["attribs"].Type="IntPtr"]]></Change>
@@ -1402,7 +1426,11 @@
 		</Class>
 		<Class name="NSPrintInfo">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSPrintInfo_Class/Reference/Reference.html</File>
-			<Patch type="Html">
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<pre class="declaration">]]></Source>
+                    <With><![CDATA[)</p><pre class="declaration">]]></With>
+                </Replace>
 				<Replace>
 					<Source><![CDATA[<!--a-->*const<!--/a-->]]></Source>
 					<With><![CDATA[<!--a--> *const <!--/a-->]]></With>
@@ -1523,8 +1551,8 @@
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSScroller_Class/Reference/Reference.html</File>
 			<Patch type="Html">
 				<Replace>
-					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
-					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+					<Source><![CDATA[.)<div class="declaration">]]></Source>
+					<With><![CDATA[.)</p><div class="declaration">]]></With>
 				</Replace>
 				<Replace>
 					<Source><![CDATA[)<pre class="declaration">]]></Source>
@@ -1548,8 +1576,8 @@
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSScrollView_Class/Reference/Reference.html</File>
 			<Patch type="Html">
 				<Replace>
-					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
-					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+					<Source><![CDATA[.)<div class="declaration">]]></Source>
+					<With><![CDATA[.)</p><div class="declaration">]]></With>
 				</Replace>
 			</Patch>
 			<Patch type="Model">
@@ -1829,7 +1857,11 @@
 		</Class>
 		<Class name="NSTextView">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSTextView_Class/Reference/Reference.html</File>
-			<Patch type="Html">
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<pre class="declaration">]]></Source>
+                    <With><![CDATA[)</p><pre class="declaration">]]></With>
+                </Replace>
 				<Replace>
 					<Source><![CDATA[>NSFindPanelSearchOptionsPboardType</a>]]></Source>
 					<With><![CDATA[>NSFindPanelSearchOptionsPboardType;</a>]]></With>
@@ -1950,8 +1982,8 @@
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSView_Class/Reference/NSView.html</File>
 			<Patch type="Html">
 				<Replace>
-					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
-					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+					<Source><![CDATA[.)<div class="declaration">]]></Source>
+					<With><![CDATA[.)</p><div class="declaration">]]></With>
 				</Replace>
 			</Patch>
 			<Patch type="Model">
@@ -1988,7 +2020,15 @@
 		</Class>
 		<Class name="NSWindow">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSWindow_Class/Reference/Reference.html</File>
-			<Patch type="Html">
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[.)<div class="declaration">]]></Source>
+                    <With><![CDATA[.)</p><div class="declaration">]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[.)<pre class="declaration">]]></Source>
+                    <With><![CDATA[.)</p><pre class="declaration">]]></With>
+                </Replace>
 				<Replace>
 					<Source><![CDATA[ = 1 &lt;&lt; 1
 };
@@ -2218,6 +2258,12 @@ enum {]]></Source>
 		</Protocol>
 		<Protocol name="NSDraggingInfo">
 			<File>Cocoa/Reference/ApplicationKit/Protocols/NSDraggingInfo_Protocol/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<pre class="declaration">]]></Source>
+                    <With><![CDATA[)</p><pre class="declaration">]]></With>
+                </Replace>
+            </Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Enumerations["NSDraggingItemEnumerationOptions"].Generate=false]]></Change>
 				<Change><![CDATA[Enumerations["NSDragOperation"].Values["NSDragOperationEvery"].Value="0xFFFFFFFFU"]]></Change>
@@ -2643,8 +2689,8 @@ enum {]]></Source>
 			<File>Cocoa/Reference/NSTextViewDelegate_Protocol/Reference/Reference.html</File>
 			<Patch type="Html">
 				<Replace>
-					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
-					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+					<Source><![CDATA[.)<div class="declaration">]]></Source>
+					<With><![CDATA[.)</p><div class="declaration">]]></With>
 				</Replace>
 			</Patch>
 			<Patch type="Model">
