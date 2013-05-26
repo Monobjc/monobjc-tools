@@ -93,7 +93,7 @@
 		<Copy SkipUnchangedFiles="true" SourceFiles="$(_MainAssembly).mdb" DestinationFolder="$(ResourcesPath)" Condition=" Exists('$(_MainAssembly).mdb') " />
 		<Copy SkipUnchangedFiles="true" SourceFiles="@(ReferenceCopyLocalPaths)" DestinationFolder="$(ResourcesPath)" />
 		<Copy SkipUnchangedFiles="true" SourceFiles="@(Content)" DestinationFiles="@(Content->'$(ResourcesPath)\%(Identity)')" />
-		<EncryptFiles SourceFiles="@(EncryptedContent)" DestinationFiles="@(EncryptedContent->'$(ResourcesPath)\%(Identity)')" EncryptionSeed="$(EncryptionSeed)" />
+        <EncryptFiles SourceFiles="@(EncryptedContent)" DestinationFiles="@(EncryptedContent->'$(ResourcesPath)\%(Identity)')" EncryptionSeed="$(EncryptionSeed)" Condition=" '$(EncryptionSeed)' != '' " />
 		
 		<CombineArtwork DoCombine="$(CombineArtwork)" Directory="$(ResourcesPath)" />
 		
@@ -150,18 +150,23 @@
 		<CompileXib XibFiles="@(InterfaceDefinition)" ToDirectory="$(ResourcesPath)" />
 
 	    <Copy SkipUnchangedFiles="true" SourceFiles="@(Content)" DestinationFiles="@(Content->'$(ResourcesPath)\%(Identity)')" />
-		<EncryptFiles SourceFiles="@(EncryptedContent)" DestinationFiles="@(EncryptedContent->'$(ResourcesPath)\%(Identity)')" EncryptionSeed="$(EncryptionSeed)" />
+		<EncryptFiles SourceFiles="@(EncryptedContent)" DestinationFiles="@(EncryptedContent->'$(ResourcesPath)\%(Identity)')" EncryptionSeed="$(EncryptionSeed)" Condition=" '$(EncryptionSeed)' != '' " />
 
 		<CombineArtwork DoCombine="$(CombineArtwork)" Directory="$(ResourcesPath)" />
 
 	    <CopyFrameworks Frameworks="$(EmbeddedFrameworks)" ToDirectory="$(FrameworksPath)" />
 
 		<CodeSigning Bundle="$(AppBundlePath)" Identity="$(SigningIdentity)" UseEntitlements="$(UseEntitlements)" Entitlements="$(Entitlements)" Condition=" '$(SigningIdentity)' != '' " />
-	
+
 	    <CreateItem Include="$(MacOSPath)\*.dylib">
 	      <Output TaskParameter="Include" ItemName="_NativeLibraries" />
 	    </CreateItem>
-		<CodeSigning Targets="@(_NativeLibraries)" Identity="$(SigningIdentity)" Condition=" '$(SigningIdentity)' != '' " />
+        <CodeSigning Targets="@(_NativeLibraries)" Identity="$(SigningIdentity)" Condition=" '$(SigningIdentity)' != '' " />
+
+        <CreateItem Include="$(FrameworksPath)\*.framework">
+          <Output TaskParameter="Include" ItemName="_NativeFrameworks" />
+        </CreateItem>
+		<CodeSigning Targets="@(_NativeFrameworks)" Identity="$(SigningIdentity)" Versioned="true" Condition=" '$(SigningIdentity)' != '' " />
 	</Target>
   
 	<!--
