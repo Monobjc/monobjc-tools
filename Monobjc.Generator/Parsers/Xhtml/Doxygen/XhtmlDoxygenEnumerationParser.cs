@@ -87,7 +87,9 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
                 String value;
                 if (enumerationValueElement.Element("initializer") != null)
                 {
-                    value = enumerationValueElement.Element("initializer").TrimAll();
+                    value = enumerationValueElement.Element("initializer").Value;
+                    value = value.Replace("=", String.Empty);
+                    value = value.TrimAll();
                 }
                 else
                 {

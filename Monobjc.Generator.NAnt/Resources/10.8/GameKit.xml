@@ -17,10 +17,14 @@
 			<Patch type="Model">
 				<Change><![CDATA[Methods["LoadAchievementsWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
 				<Change><![CDATA[Methods["LoadAchievementsWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
-				<Change><![CDATA[Methods["ResetAchievementsWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["ResetAchievementsWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
-				<Change><![CDATA[Methods["ReportAchievementWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["ReportAchievementWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["ReportAchievementWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["ReportAchievementWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["ReportAchievementsWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["ReportAchievementsWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["ResetAchievementsWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["ResetAchievementsWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["SelectChallengeablePlayerIDsWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["SelectChallengeablePlayerIDsWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
 			</Patch>
 		</Class>
 		<Class name="GKAchievementDescription">
@@ -59,10 +63,14 @@
 				</Replace>
 			</Patch>
 			<Patch type="Model">
+                <Change><![CDATA[Methods["LoadCategoriesWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["LoadCategoriesWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["LoadLeaderboardsWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["LoadLeaderboardsWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["LoadScoresWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["LoadScoresWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
 				<Change><![CDATA[Methods["SetDefaultLeaderboardWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
 				<Change><![CDATA[Methods["SetDefaultLeaderboardWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
-				<Change><![CDATA[Methods["LoadScoresWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["LoadScoresWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
 			</Patch>
 		</Class>
 		<Class name="GKLeaderboardViewController">
@@ -77,15 +85,26 @@
 				</Replace>
 			</Patch>
 			<Patch type="Model">
-				<Change><![CDATA[Methods["LoadFriendsWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["LoadFriendsWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["AuthenticateWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["AuthenticateWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["LoadDefaultLeaderboardCategoryIDWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["LoadDefaultLeaderboardCategoryIDWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["LoadFriendsWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["LoadFriendsWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["SetDefaultLeaderboardCategoryIDCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["SetDefaultLeaderboardCategoryIDCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Properties["AuthenticateHandler"].Type="Block"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="GKMatch">
 			<File>GameKit/Reference/GKMatch_Ref/Reference/Reference.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Methods["SendDataToPlayersWithDataModeError"].Parameters["*)playerIDs"].Name="playerIDs"]]></Change>
-				<Change><![CDATA[Methods["SendDataToPlayersWithDataModeError"].Parameters["playerIDs"].Type="NSArray"]]></Change>
+                <Change><![CDATA[Methods["ChooseBestHostPlayerWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["ChooseBestHostPlayerWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["RematchWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["RematchWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["SendDataToPlayersWithDataModeError"].Parameters["*)playerIDs"].Name="playerIDs"]]></Change>
+                <Change><![CDATA[Methods["SendDataToPlayersWithDataModeError"].Parameters["playerIDs"].Type="NSArray"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="GKMatchmaker">
@@ -95,12 +114,16 @@
 				<Change><![CDATA[Methods["AddPlayersToMatchMatchRequestCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
 				<Change><![CDATA[Methods["FindMatchForRequestWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
 				<Change><![CDATA[Methods["FindMatchForRequestWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
-				<Change><![CDATA[Methods["FindPlayersForHostedMatchRequestWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["FindPlayersForHostedMatchRequestWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["FindPlayersForHostedMatchRequestWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["FindPlayersForHostedMatchRequestWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["MatchForInviteCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["MatchForInviteCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
 				<Change><![CDATA[Methods["QueryActivityWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
 				<Change><![CDATA[Methods["QueryActivityWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
-				<Change><![CDATA[Methods["QueryPlayerGroupActivityWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["QueryPlayerGroupActivityWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["QueryPlayerGroupActivityWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["QueryPlayerGroupActivityWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["StartBrowsingForNearbyPlayersWithReachableHandler"].Parameters["reachableHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["StartBrowsingForNearbyPlayersWithReachableHandler"].Parameters["reachableHandler"].IsBlock=false]]></Change>
 				<Change><![CDATA[Properties["InviteHandler"].Type="Block"]]></Change>
 			</Patch>
 		</Class>
@@ -109,6 +132,9 @@
 		</Class>
 		<Class name="GKMatchRequest">
 			<File>GameKit/Reference/GKMatchRequest_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["InviteeResponseHandler"].Type="Block"]]></Change>
+            </Patch>
 		</Class>
 		<Class name="GKNotificationBanner">
 			<File>GameKit/Reference/GKNotificationBanner_Ref/Reference/Reference.html</File>
@@ -125,8 +151,10 @@
 		<Class name="GKScore">
 			<File>GameKit/Reference/GKScore_Ref/Reference/Reference.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Methods["ReportScoreWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["ReportScoreWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["ReportScoreWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["ReportScoreWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["ReportScoresWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["ReportScoresWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
 			</Patch>
 		</Class>
 		<Class name="GKTurnBasedEventHandler">
@@ -141,18 +169,36 @@
 				</Replace>
 			</Patch>
 			<Patch type="Model">
+                <Change><![CDATA[Methods["AcceptInviteWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["AcceptInviteWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["DeclineInviteWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["DeclineInviteWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["EndTurnWithNextParticipantMatchDataCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["EndTurnWithNextParticipantMatchDataCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["EndTurnWithNextParticipantsTurnTimeoutMatchDataCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["EndTurnWithNextParticipantsTurnTimeoutMatchDataCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
 				<Change><![CDATA[Methods["FindMatchForRequestWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
 				<Change><![CDATA[Methods["FindMatchForRequestWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
-				<Change><![CDATA[Methods["LoadMatchesWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["LoadMatchesWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["LoadMatchWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["LoadMatchWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["LoadMatchesWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["LoadMatchesWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
 				<Change><![CDATA[Methods["EndMatchInTurnWithMatchDataCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
 				<Change><![CDATA[Methods["EndMatchInTurnWithMatchDataCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
 				<Change><![CDATA[Methods["LoadMatchDataWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
 				<Change><![CDATA[Methods["LoadMatchDataWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
-				<Change><![CDATA[Methods["ParticipantQuitOutOfTurnWithOutcomeWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["ParticipantQuitOutOfTurnWithOutcomeWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
-				<Change><![CDATA[Methods["RemoveWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["RemoveWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["ParticipantQuitInTurnWithOutcomeNextParticipantMatchDataCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["ParticipantQuitInTurnWithOutcomeNextParticipantMatchDataCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["ParticipantQuitInTurnWithOutcomeNextParticipantsTurnTimeoutMatchDataCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["ParticipantQuitInTurnWithOutcomeNextParticipantsTurnTimeoutMatchDataCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["ParticipantQuitOutOfTurnWithOutcomeWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["ParticipantQuitOutOfTurnWithOutcomeWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["RematchWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["RematchWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["RemoveWithCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["RemoveWithCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["SaveCurrentTurnWithMatchDataCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
+                <Change><![CDATA[Methods["SaveCurrentTurnWithMatchDataCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
 			</Patch>
 		</Class>
 		<Class name="GKTurnBasedMatchmakerViewController">

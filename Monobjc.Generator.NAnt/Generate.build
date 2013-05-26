@@ -59,7 +59,7 @@
 		<framework descriptor="${data.dir}/Resources/10.8/JavaScriptCore.xml" />
 	</framework-set>
 	<framework-set id="thirdparty-frameworks">
-		<framework descriptor="${data.dir}/Resources/CorePlot-0.9.xml" />
+		<framework descriptor="${data.dir}/Resources/CorePlot-1.2.xml" />
 		<framework descriptor="${data.dir}/Resources/Growl-1.2.xml" />
 		<framework descriptor="${data.dir}/Resources/Sparkle-1.5.xml" />
 	</framework-set>

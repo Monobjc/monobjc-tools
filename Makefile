@@ -16,6 +16,7 @@
 export BUILD_DIR?=$(CURDIR)/build
 export DIST_DIR?=$(CURDIR)/dist
 export EXTERNAL_DIR=$(CURDIR)/external
+export CONFIGURATION=Release
 
 # Set the files
 export KEY_FILE?=$(CURDIR)/Monobjc.snk
@@ -29,7 +30,7 @@ export MCS=dmcs -sdk:4 -nowarn:"219,1574,1584,1591"
 export MKDIR?=mkdir -p
 export RESGEN=resgen
 export RMRF?=rm -Rf
-export XBUILD?=xbuild /p:Configuration=Release /verbosity:minimal
+export XBUILD?=xbuild /p:Configuration=$(CONFIGURATION) /verbosity:minimal
 
 PROJECTS= \
 	Monobjc.Tools \
@@ -40,9 +41,9 @@ PROJECTS= \
 GENERATOR=Monobjc.Generator.NAnt
 MARKER_FILE=.generated
 GENERATOR_FILES= \
-	$(wildcard $(GENERATOR)/bin/Release/Files/**/*.xml) \
-	$(wildcard $(GENERATOR)/bin/Release/Resources/*.xml) \
-	$(wildcard $(GENERATOR)/bin/Release/Resources/**/*.xml)
+	$(wildcard $(GENERATOR)/bin/$(CONFIGURATION)/Files/**/*.xml) \
+	$(wildcard $(GENERATOR)/bin/$(CONFIGURATION)/Resources/*.xml) \
+	$(wildcard $(GENERATOR)/bin/$(CONFIGURATION)/Resources/**/*.xml)
 
 # ----------------------------------------
 # Targets
@@ -70,5 +71,5 @@ generate-wrappers: $(MARKER_FILE)
 
 $(MARKER_FILE): $(GENERATOR_FILES)
 	$(XBUILD) $(GENERATOR)/$(GENERATOR).csproj
-	(cd $(GENERATOR)/bin/Release && mono NAnt.exe copy-in-place);
+	(cd $(GENERATOR)/bin/$(CONFIGURATION) && mono NAnt.exe copy-in-place);
 	if [ ! -f $(MARKER_FILE) ]; then touch $(MARKER_FILE); fi;

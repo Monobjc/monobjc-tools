@@ -114,7 +114,7 @@ namespace Monobjc.Tools.Generator.NAnt
 				if (className != categoryName) {
 					Patch patch = new Patch ();
 					patch.type = DocumentType.Model;
-					patch.Change = new String[]{ "AdditionFor=\"" + className + "\""};
+					patch.Change = new String[]{ "<![CDATA[AdditionFor=\"" + className + "\"]]>"};
 					entity.Patch = new Patch[]{ patch};
 				}
 				classes.Add (entity);
@@ -135,7 +135,7 @@ namespace Monobjc.Tools.Generator.NAnt
 				entity.name = categoryName;
 				Patch patch = new Patch ();
 				patch.type = DocumentType.Model;
-				patch.Change = new String[]{ "AdditionFor=\"" + className + "\""};
+                patch.Change = new String[]{ "<![CDATA[AdditionFor=\"" + className + "\"]]>"};
 				entity.Patch = new Patch[]{ patch};
 				classes.Add (entity);
 				
@@ -158,7 +158,7 @@ namespace Monobjc.Tools.Generator.NAnt
 				entity.name = className;
 				Patch patch = new Patch ();
 				patch.type = DocumentType.Model;
-				patch.Change = new String[]{ "AdditionFor=\"" + name + "\""};
+                patch.Change = new String[]{ "<![CDATA[AdditionFor=\"" + className + "\"]]>"};
 				entity.Patch = new Patch[]{ patch};
 				classes.Add (entity);
 

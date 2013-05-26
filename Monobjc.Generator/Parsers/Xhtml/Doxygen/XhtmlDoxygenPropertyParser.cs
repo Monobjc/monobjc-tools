@@ -61,11 +61,15 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Doxygen
 			String name = propertyElement.Element ("name").Value;
 
 			// Rebuild the signature from the documentation
-			String returnType = propertyElement.Element ("type").TrimAll ();
-			bool isStatic = (propertyElement.Attribute ("static").Value == "yes");
-			bool readable = (propertyElement.Attribute ("readable").Value == "yes");
-			bool writable = (propertyElement.Attribute ("writable").Value == "yes");
-			String accessor = propertyElement.Attribute ("accessor").Value;
+            String returnType = propertyElement.Element ("type").TrimAll ();
+            bool isStatic = (propertyElement.Attribute ("static").Value == "yes");
+            bool readable = (propertyElement.Attribute ("readable").Value == "yes");
+            bool writable = (propertyElement.Attribute ("writable").Value == "yes");
+
+            String accessor = String.Empty;
+            if (propertyElement.Attribute("accessor") != null) {
+                accessor = propertyElement.Attribute ("accessor").Value;
+            }
 
 			// Remove weak modifier
 			if (returnType.StartsWith ("__weak")) {

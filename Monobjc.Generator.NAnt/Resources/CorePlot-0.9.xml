@@ -36,6 +36,7 @@
 			</Patch>
 		</Class>
 		<Class name="CPTGraph" />
+        <Class name="CPTGraphHostingView" />
 		<Class name="CPTGridLineGroup" />
 		<Class name="CPTGridLines" />
 		<Class name="CPTImage">

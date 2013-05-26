@@ -1,759 +1,759 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Framework name="CorePlot" usings="Foundation,AppKit,QuartzCore,ApplicationServices" assembly="Monobjc.CorePlot" source="Doxygen" style="Doxygen" path="/Library/Frameworks/CorePlot.framework/Headers">
-	<Classes>
-		<Class name="CPTAnnotation" />
-		<Class name="CPTAnnotationHostLayer" />
-		<Class name="CPTAxis" />
-		<Class name="CPTAxisLabel" />
-		<Class name="CPTAxisLabelGroup" />
-		<Class name="CPTAxisSet" />
-		<Class name="CPTAxisTitle" />
-		<Class name="CPTBarPlot" />
-		<Class name="CPTBorderedLayer" />
-		<Class name="CPTColor">
-			<Patch type="Model">
-				<Change><![CDATA[Methods["InitWithCGColor"].GenerateConstructor=false]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTColorSpace">
-			<Patch type="Model">
-				<Change><![CDATA[Methods["InitWithCGColorSpace"].GenerateConstructor=false]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTConstrainedPosition" />
-		<Class name="CPTDarkGradientTheme" />
-		<Class name="CPTDecimalNumberValueTransformer">
-			<Patch type="Model">
-				<Change><![CDATA[BaseType="NSValueTransformer"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTFill" />
-		<Class name="CPTGradient">
-			<Patch type="Model">
-				<Change><![CDATA[Constants["colorspace"].Generate=false]]></Change>
-				<Change><![CDATA[Constants["elementList"].Generate=false]]></Change>
-				<Change><![CDATA[Constants["gradientFunction"].Generate=false]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTGraph" />
-		<Class name="CPTGridLineGroup" />
-		<Class name="CPTGridLines" />
-		<Class name="CPTImage">
-			<Patch type="Model">
-				<Change><![CDATA[Methods["InitWithCGImage"].GenerateConstructor=false]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTLayer">
-			<Patch type="Model">
-				<Change><![CDATA[BaseType="CALayer"]]></Change>
-				<Change><![CDATA[Properties["LayoutManager"].Generate=false]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTLayerAnnotation" />
-		<Class name="CPTLayerHostingView">
-			<Patch type="Model">
-				<Change><![CDATA[BaseType="NSView"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTLegend">
-			<Patch type="Model">
-				<Change><![CDATA[Methods["LegendWithPlots"].ReturnType="CPTLegend"]]></Change>
-				<Change><![CDATA[Methods["LegendWithGraph"].ReturnType="CPTLegend"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTLegendEntry" />
-		<Class name="CPTLimitBand" />
-		<Class name="CPTLineStyle">
-			<Patch type="Model">
-				<Change><![CDATA[Properties["LineStyle"].Type="CPTLineStyle"]]></Change>
-				<Change><![CDATA[Properties["LineStyle"].CopyInDescendants=true]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTMutableLineStyle">
-			<Patch type="Generated">
-				<Replace>
-					<Source><![CDATA[public virtual CGLineCap LineCap]]></Source>
-					<With><![CDATA[public new CGLineCap LineCap]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[public virtual CGLineJoin LineJoin]]></Source>
-					<With><![CDATA[public new CGLineJoin LineJoin]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[public virtual CGFloat MiterLimit]]></Source>
-					<With><![CDATA[public new CGFloat MiterLimit]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[public virtual CGFloat LineWidth]]></Source>
-					<With><![CDATA[public new CGFloat LineWidth]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[public virtual NSArray DashPattern]]></Source>
-					<With><![CDATA[public new NSArray DashPattern]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[public virtual CGFloat PatternPhase]]></Source>
-					<With><![CDATA[public new CGFloat PatternPhase]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[public virtual CPTColor LineColor]]></Source>
-					<With><![CDATA[public new CPTColor LineColor]]></With>
-				</Replace>
-			</Patch>
-		</Class>
-		<Class name="CPTMutableNumericData">
-			<Patch type="Generated">
-				<Replace>
-					<Source><![CDATA[public static CPTMutableNumericData NumericDataWithDataDataTypeShape]]></Source>
-					<With><![CDATA[public new static CPTMutableNumericData NumericDataWithDataDataTypeShape]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[public static CPTMutableNumericData NumericDataWithDataDataTypeStringShape]]></Source>
-					<With><![CDATA[public new static CPTMutableNumericData NumericDataWithDataDataTypeStringShape]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[public virtual NSArray Shape]]></Source>
-					<With><![CDATA[public new NSArray Shape]]></With>
-				</Replace>
-			</Patch>
-		</Class>
-		<Class name="CPTMutableTextStyle">
-			<Patch type="Generated">
-				<Replace>
-					<Source><![CDATA[public virtual NSString FontName]]></Source>
-					<With><![CDATA[public new NSString FontName]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[public virtual CGFloat FontSize]]></Source>
-					<With><![CDATA[public new CGFloat FontSize]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[public virtual CPTColor Color]]></Source>
-					<With><![CDATA[public new CPTColor Color]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[public virtual CPTTextAlignment TextAlignment]]></Source>
-					<With><![CDATA[public new CPTTextAlignment TextAlignment]]></With>
-				</Replace>
-			</Patch>
-		</Class>
-		<Class name="CPTMutableNumericData" />
-		<Class name="CPTMutableTextStyle" />
-		<Class name="CPTNumericData" />
-		<Class name="CPTPieChart" />
-		<Class name="CPTPlainBlackTheme" />
-		<Class name="CPTPlainWhiteTheme" />
-		<Class name="CPTPlot">
-			<Patch type="Model">
-				<Change><![CDATA[Properties["Identifier"].Type="Id"]]></Change>
-				<Change><![CDATA[Properties["DataSource"].Type="Id"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlotArea">
-			<Patch type="Model">
-				<Change><![CDATA[Constants["bottomUpLayerOrder"].Generate=false]]></Change>
-				<Change><![CDATA[Constants["updatingLayers"].Generate=false]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlotAreaFrame" />
-		<Class name="CPTPlotGroup">
-			<Patch type="Model">
-				<Change><![CDATA[Properties["Identifier"].Type="Id"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlotRange" />
-		<Class name="CPTPlotSpace">
-			<Patch type="Model">
-				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
-				<Change><![CDATA[Properties["Identifier"].Type="Id"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlotSpaceAnnotation" />
-		<Class name="CPTPlotSymbol" />
-		<Class name="CPTPolarPlotSpace" />
-		<Class name="CPTRangePlot" />
-		<Class name="CPTScatterPlot" />
-		<Class name="CPTSlateTheme" />
-		<Class name="CPTStocksTheme" />
-		<Class name="CPTTextLayer" />
-		<Class name="CPTTextStyle">
-			<Patch type="Model">
-				<Change><![CDATA[Properties["TextStyle"].Type="CPTTextStyle"]]></Change>
-				<Change><![CDATA[Properties["TextStyle"].CopyInDescendants=true]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTTheme" />
-		<Class name="CPTTimeFormatter">
-			<Patch type="Model">
-				<Change><![CDATA[BaseType="NSNumberFormatter"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTTradingRangePlot" />
-		<Class name="CPTXYAxis">
-			<Patch type="Generated">
-				<Replace>
-					<Source><![CDATA[public virtual CPTConstraints Constraints]]></Source>
-					<With><![CDATA[public new CPTConstraints Constraints]]></With>
-				</Replace>
-			</Patch>
-		</Class>
-		<Class name="CPTXYAxisSet" />
-		<Class name="CPTXYGraph" />
-		<Class name="CPTXYPlotSpace" />
-		<Class name="CPTXYTheme" />
-		<Class name="CPTAnnotation_AbstractMethods">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTAnnotation"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTAxis_AbstractMethods">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTAxis"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTColor_CPTPlatformSpecificColorExtensions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTColor"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTFill_AbstractMethods">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTFill"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTGraph_AbstractFactoryMethods">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTGraph"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTLayer_CPTPlatformSpecificLayerExtensions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTLayer"]]></Change>
-				<Change><![CDATA[Properties["ImageOfLayer"].Type="NSImage"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTMutableNumericData_TypeConversion">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTMutableNumericData"]]></Change>
-			</Patch>
-			<Patch type="Generated">
-				<Replace>
-					<Source><![CDATA[public virtual CPTNumericDataType DataType]]></Source>
-					<With><![CDATA[public new CPTNumericDataType DataType]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[public virtual CPTDataTypeFormat DataTypeFormat]]></Source>
-					<With><![CDATA[public new CPTDataTypeFormat DataTypeFormat]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[public virtual NSUInteger SampleBytes]]></Source>
-					<With><![CDATA[public new NSUInteger SampleBytes]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[public virtual NSInteger ByteOrder]]></Source>
-					<With><![CDATA[public new NSInteger ByteOrder]]></With>
-				</Replace>
-			</Patch>
-		</Class>
-		<Class name="CPTNumericData_TypeConversion">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTNumericData"]]></Change>
-				<Change><![CDATA[Methods["ConvertDataDataTypeToDataDataType"].Generate=false]]></Change>
-				<Change><![CDATA[Methods["ConvertDataDataTypeToDataDataType"].Parameters["sourceDataType"].Type="CPTNumericDataType"]]></Change>
-				<Change><![CDATA[Methods["ConvertDataDataTypeToDataDataType"].Parameters["sourceDataType"].IsByRef=true]]></Change>
-				<Change><![CDATA[Methods["ConvertDataDataTypeToDataDataType"].Parameters["destDataType"].Type="CPTNumericDataType"]]></Change>
-				<Change><![CDATA[Methods["ConvertDataDataTypeToDataDataType"].Parameters["destDataType"].IsByRef=true]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlot_AbstractMethods">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTPlot"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlotSpace_AbstractMethods">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTPlotSpace"]]></Change>
-				<Change><![CDATA[Methods["PlotAreaViewPointForPlotPoint"].Parameters["plotPoint"].Type="NSDecimal"]]></Change>
-				<Change><![CDATA[Methods["PlotAreaViewPointForPlotPoint"].Parameters["plotPoint"].IsByRef=true]]></Change>
-				<Change><![CDATA[Methods["PlotAreaViewPointForDoublePrecisionPlotPoint"].Parameters["plotPoint"].Type="double"]]></Change>
-				<Change><![CDATA[Methods["PlotAreaViewPointForDoublePrecisionPlotPoint"].Parameters["plotPoint"].IsByRef=true]]></Change>
-				<Change><![CDATA[Methods["PlotPointForPlotAreaViewPoint"].Parameters["plotPoint"].Type="NSDecimal"]]></Change>
-				<Change><![CDATA[Methods["PlotPointForPlotAreaViewPoint"].Parameters["plotPoint"].IsByRef=true]]></Change>
-				<Change><![CDATA[Methods["DoublePrecisionPlotPointForPlotAreaViewPoint"].Parameters["plotPoint"].Type="double"]]></Change>
-				<Change><![CDATA[Methods["DoublePrecisionPlotPointForPlotAreaViewPoint"].Parameters["plotPoint"].IsByRef=true]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTTheme_AbstractMethods">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTTheme"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="NSDecimalNumber_CPTExtensions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="NSDecimalNumber"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="NSException_CPTExtensions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="NSException"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="NSNumber_CPTExtensions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="NSNumber"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="NSString_CPTTextStyleExtensions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="NSString"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CorePlot_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CorePlot"]]></Change>
-				<Change><![CDATA[Generate=false]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTAnnotation_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTAnnotation"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTAnnotationHostLayer_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTAnnotationHostLayer"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTAxis_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTAxis"]]></Change>
-				<Change><![CDATA[Enumerations["CPTAxisLabelingPolicy"].BaseType="int"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTAxisLabel_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTAxisLabel"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTAxisLabelGroup_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTAxisLabelGroup"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTAxisSet_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTAxisSet"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTAxisTitle_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTAxisTitle"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTBarPlot_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTBarPlot"]]></Change>
-				<Change><![CDATA[Enumerations["CPTBarPlotField"].BaseType="int"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTBorderedLayer_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTBorderedLayer"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTColor_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTColor"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTColorSpace_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTColorSpace"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTConstrainedPosition_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTConstrainedPosition"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTDarkGradientTheme_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTDarkGradientTheme"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTDecimalNumberValueTransformer_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTDecimalNumberValueTransformer"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTDefinitions_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTDefinitions"]]></Change>
-				<Change><![CDATA[Enumerations["CPTNumericType"].BaseType="int"]]></Change>
-				<Change><![CDATA[Enumerations["CPTErrorBarType"].BaseType="int"]]></Change>
-				<Change><![CDATA[Enumerations["CPTScaleType"].BaseType="int"]]></Change>
-				<Change><![CDATA[Enumerations["CPTCoordinate"].BaseType="int"]]></Change>
-				<Change><![CDATA[Enumerations["CPTSign"].BaseType="int"]]></Change>
-				<Change><![CDATA[Enumerations["CPTConstraint"].BaseType="int"]]></Change>
-				<Change><![CDATA[Enumerations["CPTRectAnchor"].BaseType="int"]]></Change>
-				<Change><![CDATA[Enumerations["CPTAlignment"].BaseType="int"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTExceptions_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTExceptions"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTFill_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTFill"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTGradient_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTGradient"]]></Change>
-				<Change><![CDATA[Enumerations["CPTBlendingMode"].Name="CPTGradientBlendingMode"]]></Change>
-				<Change><![CDATA[Enumerations["CPTGradientBlendingMode"].BaseType="int"]]></Change>
-				<Change><![CDATA[Enumerations["CPTGradientType"].BaseType="int"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTGraph_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTGraph"]]></Change>
-				<Change><![CDATA[Enumerations["CPTGraphLayerType"].BaseType="int"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTGridLineGroup_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTGridLineGroup"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTGridLines_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTGridLines"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTImage_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTImage"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTLayer_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTLayer"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTLayerAnnotation_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTLayerAnnotation"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTLayerHostingView_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTLayerHostingView"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTLayoutManager_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTLayoutManager"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTLegend_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTLegend"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTLegendEntry_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTLegendEntry"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTLimitBand_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTLimitBand"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTLineStyle_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTLineStyle"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTMutableLineStyle_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTMutableLineStyle"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTMutableNumericData_TypeConversion_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTMutableNumericData_TypeConversion"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTMutableNumericData_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTMutableNumericData"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTMutableTextStyle_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTMutableTextStyle"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTNumericData_TypeConversion_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTNumericData_TypeConversion"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTNumericData_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTNumericData"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTNumericDataType_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTNumericDataType"]]></Change>
-				<Change><![CDATA[Enumerations["CPTDataTypeFormat"].BaseType="int"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPathExtensions_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTPathExtensions"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPieChart_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTPieChart"]]></Change>
-				<Change><![CDATA[Enumerations["CPTPieChartField"].BaseType="int"]]></Change>
-				<Change><![CDATA[Enumerations["CPTPieDirection"].BaseType="int"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlainBlackTheme_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTPlainBlackTheme"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlainWhiteTheme_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTPlainWhiteTheme"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlatformSpecificCategories_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTPlatformSpecificCategories"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlatformSpecificDefines_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTPlatformSpecificDefines"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlatformSpecificFunctions_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTPlatformSpecificFunctions"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlot_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTPlot"]]></Change>
-				<Change><![CDATA[Enumerations["CPTPlotCachePrecision"].BaseType="int"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlotArea_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTPlotArea"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlotAreaFrame_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTPlotAreaFrame"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlotGroup_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTPlotGroup"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlotRange_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTPlotRange"]]></Change>
-				<Change><![CDATA[Enumerations["CPTPlotRangeComparisonResult"].BaseType="int"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlotSpace_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTPlotSpace"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlotSpaceAnnotation_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTPlotSpaceAnnotation"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPlotSymbol_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTPlotSymbol"]]></Change>
-				<Change><![CDATA[Enumerations["CPTPlotSymbolType"].BaseType="int"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTPolarPlotSpace_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTPolarPlotSpace"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTRangePlot_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTRangePlot"]]></Change>
-				<Change><![CDATA[Enumerations["CPTRangePlotField"].BaseType="int"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTResponder_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTResponder"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTScatterPlot_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTScatterPlot"]]></Change>
-				<Change><![CDATA[Enumerations["CPTScatterPlotField"].BaseType="int"]]></Change>
-				<Change><![CDATA[Enumerations["CPTScatterPlotInterpolation"].BaseType="int"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTSlateTheme_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTSlateTheme"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTStocksTheme_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTStocksTheme"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTTextLayer_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTTextLayer"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTTextStyle_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTTextStyle"]]></Change>
-				<Change><![CDATA[Enumerations["CPTTextAlignment"].BaseType="int"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTTheme_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTTheme"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTTimeFormatter_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTTimeFormatter"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTTradingRangePlot_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTTradingRangePlot"]]></Change>
-				<Change><![CDATA[Enumerations["CPTTradingRangePlotStyle"].BaseType="int"]]></Change>
-				<Change><![CDATA[Enumerations["CPTTradingRangePlotField"].BaseType="int"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTUtilities_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTUtilities"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTXYAxis_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTXYAxis"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTXYAxisSet_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTXYAxisSet"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTXYGraph_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTXYGraph"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTXYPlotSpace_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTXYPlotSpace"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CPTXYTheme_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CPTXYTheme"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="NSDecimalNumberExtensions_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="NSDecimalNumberExtensions"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="NSExceptionExtensions_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="NSExceptionExtensions"]]></Change>
-			</Patch>
-		</Class>
-		<Class name="NSNumberExtensions_Definitions">
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="NSNumberExtensions"]]></Change>
-			</Patch>
-		</Class>
-	</Classes>
-	<Protocols>
-		<Protocol name="CPTAxisDelegate">
-			<Patch type="Model">
-				<Change><![CDATA[DelegateFor="CPTAxis"]]></Change>
-				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
-			</Patch>
-		</Protocol>
-		<Protocol name="CPTBarPlotDataSource" />
-		<Protocol name="CPTBarPlotDelegate">
-			<Patch type="Model">
-				<Change><![CDATA[DelegateFor="CPTBarPlot"]]></Change>
-				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
-			</Patch>
-		</Protocol>
-		<Protocol name="CPTLayoutManager" />
-		<Protocol name="CPTLegendDelegate">
-			<Patch type="Model">
-				<Change><![CDATA[DelegateFor="CPTLegend"]]></Change>
-				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
-			</Patch>
-		</Protocol>
-		<Protocol name="CPTPieChartDataSource" />
-		<Protocol name="CPTPieChartDelegate">
-			<Patch type="Model">
-				<Change><![CDATA[DelegateFor="CPTPieChart"]]></Change>
-				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
-			</Patch>
-		</Protocol>
-		<Protocol name="CPTPlotDataSource">
-			<Patch type="Model">
-				<Change><![CDATA[Methods["DoublesForPlotFieldRecordIndexRange"].ReturnType="IntPtr"]]></Change>
-			</Patch>
-		</Protocol>
-		<Protocol name="CPTPlotSpaceDelegate">
-			<Patch type="Model">
-				<Change><![CDATA[DelegateFor="CPTPlotSpace"]]></Change>
-				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
-			</Patch>
-		</Protocol>
-		<Protocol name="CPTResponder" />
-		<Protocol name="CPTScatterPlotDataSource" />
-		<Protocol name="CPTScatterPlotDelegate">
-			<Patch type="Model">
-				<Change><![CDATA[DelegateFor="CPTScatterPlot"]]></Change>
-				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
-			</Patch>
-		</Protocol>
-	</Protocols>
-	<Structures>
-		<Structure name="CPTConstraints" />
-		<Structure name="CPTContextNode" />
-		<Structure name="CPTGradientElement" />
-		<Structure name="CPTNumericDataType" />
-		<Structure name="CPTRGBAColor" />
-	</Structures>
+    <Classes>
+        <Class name="CPTAnimation" />
+        <Class name="CPTAnimationOperation" />
+        <Class name="CPTAnimationPeriod" />
+        <Class name="CPTAnnotation" />
+        <Class name="CPTAnnotationHostLayer" />
+        <Class name="CPTAxis" />
+        <Class name="CPTAxisLabel" />
+        <Class name="CPTAxisLabelGroup" />
+        <Class name="CPTAxisSet" />
+        <Class name="CPTAxisTitle" />
+        <Class name="CPTBarPlot" />
+        <Class name="CPTBorderedLayer" />
+        <Class name="CPTCalendarFormatter" />
+        <Class name="CPTColor">
+            <Patch type="Model">
+                <Change><![CDATA[Methods["InitWithCGColor"].GenerateConstructor=false]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTColorSpace">
+            <Patch type="Model">
+                <Change><![CDATA[Methods["InitWithCGColorSpace"].GenerateConstructor=false]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTConstraints">
+            <Patch type="Model">
+                <Change><![CDATA[Methods["InitWithLowerOffset"].GenerateConstructor=false]]></Change>
+                <Change><![CDATA[Methods["InitWithUpperOffset"].GenerateConstructor=false]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTDecimalNumberValueTransformer">
+            <Patch type="Model">
+                <Change><![CDATA[BaseType="NSValueTransformer"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTFill" />
+        <Class name="CPTGradient">
+            <Patch type="Model">
+                <Change><![CDATA[Constants["colorspace"].Generate=false]]></Change>
+                <Change><![CDATA[Constants["elementList"].Generate=false]]></Change>
+                <Change><![CDATA[Constants["gradientFunction"].Generate=false]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTGraph" />
+        <Class name="CPTGridLineGroup">
+            <Patch type="Model">
+                <Change><![CDATA[Properties["PlotArea"].Type="CPTPlotArea"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTGridLines">
+            <Patch type="Model">
+                <Change><![CDATA[Properties["Axis"].Type="CPTAxis"]]></Change>
+            </Patch>
+            <Patch type="Xhtml">
+                <Replace>
+                    <Source><![CDATA[__cpt_weak]]></Source>
+                    <With><![CDATA[]]></With>
+                </Replace>
+            </Patch>
+        </Class>
+        <Class name="CPTGraphHostingView" />
+        <Class name="CPTImage">
+            <Patch type="Model">
+                <Change><![CDATA[Methods["InitWithCGImage"].GenerateConstructor=false]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTLayer">
+            <Patch type="Model">
+                <Change><![CDATA[BaseType="CALayer"]]></Change>
+                <Change><![CDATA[Properties["Identifier"].Type="Id"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTLayerHostingView">
+            <Patch type="Model">
+                <Change><![CDATA[BaseType="NSView"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTLayerAnnotation" />
+        <Class name="CPTLegend">
+            <Patch type="Model">
+                <Change><![CDATA[Methods["LegendWithPlots"].ReturnType="CPTLegend"]]></Change>
+                <Change><![CDATA[Methods["LegendWithGraph"].ReturnType="CPTLegend"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTLegendEntry" />
+        <Class name="CPTLimitBand" />
+        <Class name="CPTLineCap" />
+        <Class name="CPTLineStyle">
+            <Patch type="Model">
+                <Change><![CDATA[Properties["LineStyle"].Type="CPTLineStyle"]]></Change>
+                <Change><![CDATA[Properties["LineStyle"].CopyInDescendants=true]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTMutableLineStyle">
+            <Patch type="Generated">
+                <Replace>
+                    <Source><![CDATA[public virtual CGLineCap LineCap]]></Source>
+                    <With><![CDATA[public new CGLineCap LineCap]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[public virtual CGLineJoin LineJoin]]></Source>
+                    <With><![CDATA[public new CGLineJoin LineJoin]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[public virtual CGFloat MiterLimit]]></Source>
+                    <With><![CDATA[public new CGFloat MiterLimit]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[public virtual CGFloat LineWidth]]></Source>
+                    <With><![CDATA[public new CGFloat LineWidth]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[public virtual NSArray DashPattern]]></Source>
+                    <With><![CDATA[public new NSArray DashPattern]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[public virtual CGFloat PatternPhase]]></Source>
+                    <With><![CDATA[public new CGFloat PatternPhase]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[public virtual CPTColor LineColor]]></Source>
+                    <With><![CDATA[public new CPTColor LineColor]]></With>
+                </Replace>
+            </Patch>
+        </Class>
+        <Class name="CPTMutableNumericData">
+            <Patch type="Generated">
+                <Replace>
+                    <Source><![CDATA[public static CPTMutableNumericData NumericDataWithDataDataTypeShape]]></Source>
+                    <With><![CDATA[public new static CPTMutableNumericData NumericDataWithDataDataTypeShape]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[public static CPTMutableNumericData NumericDataWithDataDataTypeStringShape]]></Source>
+                    <With><![CDATA[public new static CPTMutableNumericData NumericDataWithDataDataTypeStringShape]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[public virtual NSArray Shape]]></Source>
+                    <With><![CDATA[public new NSArray Shape]]></With>
+                </Replace>
+            </Patch>
+        </Class>
+        <Class name="CPTMutablePlotRange" />
+        <Class name="CPTMutableShadow" />
+        <Class name="CPTMutableTextStyle">
+            <Patch type="Generated">
+                <Replace>
+                    <Source><![CDATA[public virtual NSString FontName]]></Source>
+                    <With><![CDATA[public new NSString FontName]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[public virtual CGFloat FontSize]]></Source>
+                    <With><![CDATA[public new CGFloat FontSize]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[public virtual CPTColor Color]]></Source>
+                    <With><![CDATA[public new CPTColor Color]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[public virtual CPTTextAlignment TextAlignment]]></Source>
+                    <With><![CDATA[public new CPTTextAlignment TextAlignment]]></With>
+                </Replace>
+            </Patch>
+        </Class>
+        <Class name="CPTNumericData" />
+        <Class name="CPTPieChart" />
+        <Class name="CPTPlot">
+            <Patch type="Model">
+                <Change><![CDATA[Properties["Identifier"].Type="Id"]]></Change>
+                <Change><![CDATA[Properties["DataSource"].Type="Id"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTPlotArea">
+            <Patch type="Model">
+                <Change><![CDATA[Constants["bottomUpLayerOrder"].Generate=false]]></Change>
+                <Change><![CDATA[Constants["updatingLayers"].Generate=false]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTPlotAreaFrame" />
+        <Class name="CPTPlotGroup">
+            <Patch type="Model">
+                <Change><![CDATA[Properties["Identifier"].Type="Id"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTPlotRange" />
+        <Class name="CPTPlotSpace">
+            <Patch type="Model">
+                <Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+                <Change><![CDATA[Properties["Identifier"].Type="Id"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTPlotSpaceAnnotation" />
+        <Class name="CPTPlotSymbol" />
+        <Class name="CPTRangePlot" />
+        <Class name="CPTScatterPlot" />
+        <Class name="CPTShadow" />
+        <Class name="CPTTextLayer" />
+        <Class name="CPTTextStyle">
+            <Patch type="Model">
+                <Change><![CDATA[Properties["TextStyle"].Type="CPTTextStyle"]]></Change>
+                <Change><![CDATA[Properties["TextStyle"].CopyInDescendants=true]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTTheme" />
+        <Class name="CPTTimeFormatter">
+            <Patch type="Model">
+                <Change><![CDATA[BaseType="NSNumberFormatter"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTTradingRangePlot" />
+        <Class name="CPTXYAxis">
+            <Patch type="Generated">
+                <Replace>
+                    <Source><![CDATA[public virtual CPTConstraints Constraints]]></Source>
+                    <With><![CDATA[public new CPTConstraints Constraints]]></With>
+                </Replace>
+            </Patch>
+        </Class>
+        <Class name="CPTXYAxisSet" />
+        <Class name="CPTXYGraph" />
+        <Class name="CPTXYPlotSpace" />
+        <Class name="CPTAnimation_CPTAnimationPeriodAdditions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTAnimation"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTAnimationPeriod_AbstractMethods">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTAnimationPeriod"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTAnnotation_AbstractMethods">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTAnnotation"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTAxis_AbstractMethods">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTAxis"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTColor_CPTPlatformSpecificColorExtensions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTColor"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTConstraints_AbstractMethods">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTConstraints"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTFill_AbstractMethods">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTFill"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTGraph_AbstractFactoryMethods">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTGraph"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTLayer_CPTPlatformSpecificLayerExtensions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTLayer"]]></Change>
+                <Change><![CDATA[Properties["ImageOfLayer"].Type="NSImage"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTMutableNumericData_TypeConversion">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTMutableNumericData"]]></Change>
+            </Patch>
+            <Patch type="Generated">
+                <Replace>
+                    <Source><![CDATA[public virtual CPTNumericDataType DataType]]></Source>
+                    <With><![CDATA[public new CPTNumericDataType DataType]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[public virtual CPTDataTypeFormat DataTypeFormat]]></Source>
+                    <With><![CDATA[public new CPTDataTypeFormat DataTypeFormat]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[public virtual NSUInteger SampleBytes]]></Source>
+                    <With><![CDATA[public new NSUInteger SampleBytes]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[public virtual NSInteger ByteOrder]]></Source>
+                    <With><![CDATA[public new NSInteger ByteOrder]]></With>
+                </Replace>
+            </Patch>
+        </Class>
+        <Class name="CPTNumericData_TypeConversion">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTNumericData"]]></Change>
+                <Change><![CDATA[Methods["ConvertDataDataTypeToDataDataType"].Generate=false]]></Change>
+                <Change><![CDATA[Methods["ConvertDataDataTypeToDataDataType"].Parameters["sourceDataType"].Type="CPTNumericDataType"]]></Change>
+                <Change><![CDATA[Methods["ConvertDataDataTypeToDataDataType"].Parameters["sourceDataType"].IsByRef=true]]></Change>
+                <Change><![CDATA[Methods["ConvertDataDataTypeToDataDataType"].Parameters["destDataType"].Type="CPTNumericDataType"]]></Change>
+                <Change><![CDATA[Methods["ConvertDataDataTypeToDataDataType"].Parameters["destDataType"].IsByRef=true]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTPlot_AbstractMethods">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTPlot"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTPlotSpace_AbstractMethods">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTPlotSpace"]]></Change>
+                <Change><![CDATA[Methods["PlotAreaViewPointForPlotPoint"].Parameters["plotPoint"].Type="NSDecimal"]]></Change>
+                <Change><![CDATA[Methods["PlotAreaViewPointForPlotPoint"].Parameters["plotPoint"].IsByRef=true]]></Change>
+                <Change><![CDATA[Methods["PlotAreaViewPointForDoublePrecisionPlotPoint"].Parameters["plotPoint"].Type="double"]]></Change>
+                <Change><![CDATA[Methods["PlotAreaViewPointForDoublePrecisionPlotPoint"].Parameters["plotPoint"].IsByRef=true]]></Change>
+                <Change><![CDATA[Methods["PlotPointForPlotAreaViewPoint"].Parameters["plotPoint"].Type="NSDecimal"]]></Change>
+                <Change><![CDATA[Methods["PlotPointForPlotAreaViewPoint"].Parameters["plotPoint"].IsByRef=true]]></Change>
+                <Change><![CDATA[Methods["DoublePrecisionPlotPointForPlotAreaViewPoint"].Parameters["plotPoint"].Type="double"]]></Change>
+                <Change><![CDATA[Methods["DoublePrecisionPlotPointForPlotAreaViewPoint"].Parameters["plotPoint"].IsByRef=true]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTTheme_AbstractMethods">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTTheme"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="NSString_CPTTextStyleExtensions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="NSString"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CorePlot_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CorePlot"]]></Change>
+                <Change><![CDATA[Generate=false]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTAnimation_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTAnimation"]]></Change>
+                <Change><![CDATA[Enumerations["CPTAnimationCurve"].BaseType="int"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTAnimationOperation_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTAnimationOperation"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTAnimationPeriod_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTAnimationPeriod"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTAnnotation_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTAnnotation"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTAnnotationHostLayer_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTAnnotationHostLayer"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTAxis_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTAxis"]]></Change>
+                <Change><![CDATA[Enumerations["CPTAxisLabelingPolicy"].BaseType="int"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTAxisLabel_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTAxisLabel"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTAxisSet_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTAxisSet"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTAxisTitle_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTAxisTitle"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTBarPlot_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTBarPlot"]]></Change>
+                <Change><![CDATA[Enumerations["CPTBarPlotField"].BaseType="int"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTBorderedLayer_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTBorderedLayer"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTCalendarFormatter_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTCalendarFormatter"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTColor_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTColor"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTColorSpace_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTColorSpace"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTConstraints_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTConstraints"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTDecimalNumberValueTransformer_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTDecimalNumberValueTransformer"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTDefinitions_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTDefinitions"]]></Change>
+                <Change><![CDATA[Constants["CPT_SDK_SUPPORTS_WEAK"].Generate=false]]></Change>
+                <Change><![CDATA[Constants["__cpt_weak"].Generate=false]]></Change>
+                <Change><![CDATA[Constants["cpt_weak_property"].Generate=false]]></Change>
+                <Change><![CDATA[Constants["CPTFloat"].Generate=false]]></Change>
+                <Change><![CDATA[Constants["CPTPointMake"].Generate=false]]></Change>
+                <Change><![CDATA[Constants["CPTSizeMake"].Generate=false]]></Change>
+                <Change><![CDATA[Constants["CPTRectMake"].Generate=false]]></Change>
+                <Change><![CDATA[Constants["CPTRectInset"].Generate=false]]></Change>
+                <Change><![CDATA[Enumerations["CPTNumericType"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["CPTErrorBarType"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["CPTScaleType"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["CPTCoordinate"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["CPTSign"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["CPTConstraint"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["CPTRectAnchor"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["CPTAlignment"].BaseType="int"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTExceptions_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTExceptions"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTFill_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTFill"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTGradient_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTGradient"]]></Change>
+                <Change><![CDATA[Enumerations["CPTBlendingMode"].Name="CPTGradientBlendingMode"]]></Change>
+                <Change><![CDATA[Enumerations["CPTGradientBlendingMode"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["CPTGradientType"].BaseType="int"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTGraph_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTGraph"]]></Change>
+                <Change><![CDATA[Enumerations["CPTGraphLayerType"].BaseType="int"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTGraphHostingView_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTGraphHostingView"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTImage_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTImage"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTLayer_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTLayer"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTLayerAnnotation_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTLayerAnnotation"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTLegend_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTLegend"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTLegendEntry_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTLegendEntry"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTLimitBand_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTLimitBand"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTLineCap_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTLineCap"]]></Change>
+                <Change><![CDATA[Enumerations["CPTLineCapType"].BaseType="int"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTLineStyle_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTLineStyle"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTMutableLineStyle_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTMutableLineStyle"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTMutableNumericData_TypeConversion_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTMutableNumericData_TypeConversion"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTMutableNumericData_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTMutableNumericData"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTMutablePlotRange_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTMutablePlotRange"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTMutableShadow_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTMutableShadow"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTMutableTextStyle_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTMutableTextStyle"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTNumericData_TypeConversion_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTNumericData_TypeConversion"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTNumericData_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTNumericData"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTNumericDataType_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTNumericDataType"]]></Change>
+                <Change><![CDATA[Enumerations["CPTDataTypeFormat"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["CPTDataOrder"].BaseType="int"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTPathExtensions_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTPathExtensions"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTPieChart_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTPieChart"]]></Change>
+                <Change><![CDATA[Enumerations["CPTPieChartField"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["CPTPieDirection"].BaseType="int"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTPlatformSpecificCategories_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTPlatformSpecificCategories"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTPlatformSpecificDefines_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTPlatformSpecificDefines"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTPlatformSpecificFunctions_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTPlatformSpecificFunctions"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTPlot_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTPlot"]]></Change>
+                <Change><![CDATA[Enumerations["CPTPlotCachePrecision"].BaseType="int"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTPlotArea_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTPlotArea"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTPlotAreaFrame_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTPlotAreaFrame"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTPlotRange_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTPlotRange"]]></Change>
+                <Change><![CDATA[Enumerations["CPTPlotRangeComparisonResult"].BaseType="int"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTPlotSpace_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTPlotSpace"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTPlotSpaceAnnotation_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTPlotSpaceAnnotation"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTPlotSymbol_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTPlotSymbol"]]></Change>
+                <Change><![CDATA[Enumerations["CPTPlotSymbolType"].BaseType="int"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTRangePlot_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTRangePlot"]]></Change>
+                <Change><![CDATA[Enumerations["CPTRangePlotField"].BaseType="int"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTResponder_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTResponder"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTScatterPlot_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTScatterPlot"]]></Change>
+                <Change><![CDATA[Enumerations["CPTScatterPlotField"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["CPTScatterPlotInterpolation"].BaseType="int"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTShadow_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTShadow"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTTextLayer_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTTextLayer"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTTextStyle_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTTextStyle"]]></Change>
+                <Change><![CDATA[Enumerations["CPTTextAlignment"].BaseType="int"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTTheme_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTTheme"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTTimeFormatter_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTTimeFormatter"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTTradingRangePlot_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTTradingRangePlot"]]></Change>
+                <Change><![CDATA[Enumerations["CPTTradingRangePlotStyle"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["CPTTradingRangePlotField"].BaseType="int"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTUtilities_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTUtilities"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTXYAxis_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTXYAxis"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTXYAxisSet_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTXYAxisSet"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTXYGraph_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTXYGraph"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="CPTXYPlotSpace_Definitions">
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CPTXYPlotSpace"]]></Change>
+            </Patch>
+        </Class>
+    </Classes>
+    <Protocols>
+        <Protocol name="CPTAnimationDelegate" />
+        <Protocol name="CPTAxisDelegate">
+            <Patch type="Model">
+                <Change><![CDATA[DelegateFor="CPTAxis"]]></Change>
+                <Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+            </Patch>
+        </Protocol>
+        <Protocol name="CPTBarPlotDataSource" />
+        <Protocol name="CPTBarPlotDelegate">
+            <Patch type="Model">
+                <Change><![CDATA[DelegateFor="CPTBarPlot"]]></Change>
+                <Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+            </Patch>
+        </Protocol>
+        <Protocol name="CPTLegendDelegate">
+            <Patch type="Model">
+                <Change><![CDATA[DelegateFor="CPTLegend"]]></Change>
+                <Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+            </Patch>
+        </Protocol>
+        <Protocol name="CPTPieChartDataSource" />
+        <Protocol name="CPTPieChartDelegate">
+            <Patch type="Model">
+                <Change><![CDATA[DelegateFor="CPTPieChart"]]></Change>
+                <Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+            </Patch>
+        </Protocol>
+        <Protocol name="CPTPlotDataSource">
+            <Patch type="Model">
+                <Change><![CDATA[Methods["DoublesForPlotFieldRecordIndexRange"].ReturnType="IntPtr"]]></Change>
+            </Patch>
+        </Protocol>
+        <Protocol name="CPTPlotDelegate" />
+        <Protocol name="CPTPlotSpaceDelegate">
+            <Patch type="Model">
+                <Change><![CDATA[DelegateFor="CPTPlotSpace"]]></Change>
+                <Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+            </Patch>
+        </Protocol>
+        <Protocol name="CPTRangePlotDataSource" />
+        <Protocol name="CPTRangePlotDelegate" />
+        <Protocol name="CPTResponder" />
+        <Protocol name="CPTScatterPlotDataSource" />
+        <Protocol name="CPTScatterPlotDelegate">
+            <Patch type="Model">
+                <Change><![CDATA[DelegateFor="CPTScatterPlot"]]></Change>
+                <Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+            </Patch>
+        </Protocol>
+        <Protocol name="CPTTradingRangePlotDataSource" />
+        <Protocol name="CPTTradingRangePlotDelegate" />
+    </Protocols>
+    <Structures>
+        <Structure name="CPTContextNode" />
+        <Structure name="CPTGradientElement" />
+        <Structure name="CPTNumericDataType" />
+        <Structure name="CPTRGBAColor" />
+    </Structures>
+    <Enumerations />
 </Framework>

@@ -6,6 +6,16 @@
                 <Change><![CDATA[Properties["GrowlDelegate"].Type="Id"]]></Change>
             </Patch>
         </Class>
+        <Class name="Growl_Definitions">
+            <Patch type="Model">
+                <Change>AdditionFor="Growl"</Change>
+            </Patch>
+        </Class>
+        <Class name="GrowlApplicationBridge_Definitions">
+            <Patch type="Model">
+                <Change>AdditionFor="GrowlApplicationBridge"</Change>
+            </Patch>
+        </Class>
         <Class name="GrowlDefines_Definitions">
             <Patch type="Model">
                 <Change><![CDATA[AdditionFor="GrowlApplicationBridge"]]></Change>
