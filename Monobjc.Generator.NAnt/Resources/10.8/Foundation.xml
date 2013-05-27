@@ -675,8 +675,8 @@
 			<File>Cocoa/Reference/Foundation/Classes/NSDate_Class/Reference/Reference.html</File>
             <Patch type="Html">
                 <Replace>
-                    <Source><![CDATA[.)<div class="declaration">]]></Source>
-                    <With><![CDATA[.)</p><div class="declaration">]]></With>
+                    <Source><![CDATA[)<div class="declaration">]]></Source>
+                    <With><![CDATA[)</p><div class="declaration">]]></With>
                 </Replace>
             </Patch>
 			<Patch type="Model">
@@ -1506,8 +1506,8 @@
 			<File>Cocoa/Reference/Foundation/Classes/NSPropertyListSerialization_Class/Reference/Reference.html</File>
 			<Patch type="Html">
 				<Replace>
-					<Source><![CDATA[.)<div class="declaration">]]></Source>
-					<With><![CDATA[.)</p><div class="declaration">]]></With>
+					<Source><![CDATA[)<div class="declaration">]]></Source>
+					<With><![CDATA[)</p><div class="declaration">]]></With>
 				</Replace>
 			</Patch>
 			<Patch type="Model">
