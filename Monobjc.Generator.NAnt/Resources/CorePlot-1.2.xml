@@ -123,6 +123,10 @@
                     <Source><![CDATA[public virtual CPTColor LineColor]]></Source>
                     <With><![CDATA[public new CPTColor LineColor]]></With>
                 </Replace>
+                <Replace>
+                    <Source><![CDATA[public virtual CPTFill LineFill]]></Source>
+                    <With><![CDATA[public new CPTFill LineFill]]></With>
+                </Replace>
             </Patch>
         </Class>
         <Class name="CPTMutableNumericData">
@@ -141,8 +145,34 @@
                 </Replace>
             </Patch>
         </Class>
-        <Class name="CPTMutablePlotRange" />
-        <Class name="CPTMutableShadow" />
+        <Class name="CPTMutablePlotRange">
+            <Patch type="Generated">
+                <Replace>
+                    <Source><![CDATA[public virtual NSDecimal Location]]></Source>
+                    <With><![CDATA[public new NSDecimal Location]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[public virtual NSDecimal Length]]></Source>
+                    <With><![CDATA[public new NSDecimal Length]]></With>
+                </Replace>
+            </Patch>
+        </Class>
+        <Class name="CPTMutableShadow">
+            <Patch type="Generated">
+                <Replace>
+                    <Source><![CDATA[public virtual CGSize ShadowOffset]]></Source>
+                    <With><![CDATA[public new CGSize ShadowOffset]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[public virtual CGFloat ShadowBlurRadius]]></Source>
+                    <With><![CDATA[public new CGFloat ShadowBlurRadius]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[public virtual CPTColor ShadowColor]]></Source>
+                    <With><![CDATA[public new CPTColor ShadowColor]]></With>
+                </Replace>
+            </Patch>
+        </Class>
         <Class name="CPTMutableTextStyle">
             <Patch type="Generated">
                 <Replace>
