@@ -3,7 +3,16 @@
     <Classes>
         <Class name="CPTAnimation" />
         <Class name="CPTAnimationOperation" />
-        <Class name="CPTAnimationPeriod" />
+        <Class name="CPTAnimationPeriod">
+            <Patch type="Model">
+                <Change><![CDATA[Methods["PeriodWithStartEndDurationWithDelay"].ReturnType="CPTAnimationPeriod"]]></Change>
+                <Change><![CDATA[Methods["PeriodWithStartPointEndPointDurationWithDelay"].ReturnType="CPTAnimationPeriod"]]></Change>
+                <Change><![CDATA[Methods["PeriodWithStartSizeEndSizeDurationWithDelay"].ReturnType="CPTAnimationPeriod"]]></Change>
+                <Change><![CDATA[Methods["PeriodWithStartRectEndRectDurationWithDelay"].ReturnType="CPTAnimationPeriod"]]></Change>
+                <Change><![CDATA[Methods["PeriodWithStartDecimalEndDecimalDurationWithDelay"].ReturnType="CPTAnimationPeriod"]]></Change>
+                <Change><![CDATA[Methods["PeriodWithStartPlotRangeEndPlotRangeDurationWithDelay"].ReturnType="CPTAnimationPeriod"]]></Change>
+            </Patch>
+        </Class>
         <Class name="CPTAnnotation" />
         <Class name="CPTAnnotationHostLayer" />
         <Class name="CPTAxis" />
@@ -193,7 +202,18 @@
                 </Replace>
             </Patch>
         </Class>
-        <Class name="CPTNumericData" />
+        <Class name="CPTNumericData">
+            <Patch type="Model">
+                <Change><![CDATA[Methods["NumericDataWithDataDataTypeShape"].ReturnType="CPTNumericData"]]></Change>
+                <Change><![CDATA[Methods["NumericDataWithDataDataTypeStringShape"].ReturnType="CPTNumericData"]]></Change>
+                <Change><![CDATA[Methods["NumericDataWithArrayDataTypeShape"].ReturnType="CPTNumericData"]]></Change>
+                <Change><![CDATA[Methods["NumericDataWithArrayDataTypeStringShape"].ReturnType="CPTNumericData"]]></Change>
+                <Change><![CDATA[Methods["NumericDataWithDataDataTypeShapeDataOrder"].ReturnType="CPTNumericData"]]></Change>
+                <Change><![CDATA[Methods["NumericDataWithDataDataTypeStringShapeDataOrder"].ReturnType="CPTNumericData"]]></Change>
+                <Change><![CDATA[Methods["NumericDataWithArrayDataTypeShapeDataOrder"].ReturnType="CPTNumericData"]]></Change>
+                <Change><![CDATA[Methods["NumericDataWithArrayDataTypeStringShapeDataOrder"].ReturnType="CPTNumericData"]]></Change>
+            </Patch>
+        </Class>
         <Class name="CPTPieChart" />
         <Class name="CPTPlot">
             <Patch type="Model">
@@ -213,7 +233,11 @@
                 <Change><![CDATA[Properties["Identifier"].Type="Id"]]></Change>
             </Patch>
         </Class>
-        <Class name="CPTPlotRange" />
+        <Class name="CPTPlotRange">
+            <Patch type="Model">
+                <Change><![CDATA[Methods["PlotRangeWithLocationLength"].ReturnType="CPTPlotRange"]]></Change>
+            </Patch>
+        </Class>
         <Class name="CPTPlotSpace">
             <Patch type="Model">
                 <Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
