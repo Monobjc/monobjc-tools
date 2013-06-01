@@ -44,8 +44,8 @@
 		<MakeDir Directories="$(ResourcesPath)" />
 		<MakeDir Directories="$(FrameworksPath)" Condition=" '$(EmbeddedFrameworks)' != '' " />
 		
-		<GenerateInfoPList MainAssembly="$(_MainAssembly)" ToDirectory="$(ContentsPath)" MinRequiredOSVersion="$(MacOSVersion)" Icon="$(BundleIcon)" MainNibFile="$(MainNibFile)" Condition=" Exists('$(InfoPListPath)') " Template="$(InfoPListPath)" />
-		<GenerateInfoPList MainAssembly="$(_MainAssembly)" ToDirectory="$(ContentsPath)" MinRequiredOSVersion="$(MacOSVersion)" Icon="$(BundleIcon)" MainNibFile="$(MainNibFile)" Condition=" !Exists('$(InfoPListPath)') " />
+		<GenerateInfoPList MainAssembly="$(_MainAssembly)" ToDirectory="$(ContentsPath)" Identifier="$(BundleId)" Version="$(BundleVersion)" MinRequiredOSVersion="$(MacOSVersion)" Icon="$(BundleIcon)" MainNibFile="$(MainNibFile)" Condition=" Exists('$(InfoPListPath)') " Template="$(InfoPListPath)" />
+		<GenerateInfoPList MainAssembly="$(_MainAssembly)" ToDirectory="$(ContentsPath)" Identifier="$(BundleId)" Version="$(BundleVersion)" MinRequiredOSVersion="$(MacOSVersion)" Icon="$(BundleIcon)" MainNibFile="$(MainNibFile)" Condition=" !Exists('$(InfoPListPath)') " />
 	</Target>
   
 	<!--

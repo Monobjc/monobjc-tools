@@ -29,8 +29,7 @@ namespace Monobjc.MSBuild.Tasks
 {
     public class GenerateInfoPList : Task
     {
-		private MacOSVersion minRequiredOSVersion;
-		
+        private MacOSVersion minRequiredOSVersion;
         private readonly InfoPListGenerator generator;
 
         /// <summary>
@@ -39,8 +38,8 @@ namespace Monobjc.MSBuild.Tasks
         public GenerateInfoPList()
         {
             this.generator = new InfoPListGenerator();
-			this.minRequiredOSVersion = MacOSVersion.MacOS106;
-			this.DevelopmentRegion = "en";
+            this.minRequiredOSVersion = MacOSVersion.MacOS106;
+            this.DevelopmentRegion = "en";
         }
 
         /// <summary>
@@ -90,10 +89,10 @@ namespace Monobjc.MSBuild.Tasks
         /// </summary>
         /// <value>The mininum required OS version.</value>
         public String MinRequiredOSVersion
-		{
-			get { return this.minRequiredOSVersion.ToString(); }
-			set { this.minRequiredOSVersion = (MacOSVersion) Enum.Parse(typeof(MacOSVersion), value); }
-		}
+        {
+            get { return this.minRequiredOSVersion.ToString(); }
+            set { this.minRequiredOSVersion = (MacOSVersion)Enum.Parse(typeof(MacOSVersion), value); }
+        }
 
         /// <summary>
         /// Gets or sets the main nib file.
@@ -129,7 +128,7 @@ namespace Monobjc.MSBuild.Tasks
             // Use the given template if any
             if (this.Template != null)
             {
-				FileInfo fileInfo = new FileInfo(this.Template.GetMetadata("FullPath"));
+                FileInfo fileInfo = new FileInfo(this.Template.GetMetadata("FullPath"));
                 using (StreamReader reader = fileInfo.OpenText())
                 {
                     this.generator.Content = reader.ReadToEnd();
@@ -137,28 +136,28 @@ namespace Monobjc.MSBuild.Tasks
             }
 
             // Extract information from the assembly if set
-            if (this.MainAssembly != null)
+            if (this.ApplicationName != null)
+            {
+                this.generator.ApplicationName = this.ApplicationName;
+            }
+            else
             {
                 Assembly assembly = Assembly.ReflectionOnlyLoadFrom(this.MainAssembly.GetMetadata("FullPath"));
                 AssemblyName assemblyName = assembly.GetName();
                 this.generator.ApplicationName = assemblyName.Name;
-                this.generator.Identifier = assembly.EntryPoint.DeclaringType.Namespace;
-                this.generator.Version = assemblyName.Version.ToString();
-            } else {
-				this.generator.ApplicationName = this.ApplicationName;
-				this.generator.Identifier = this.Identifier;
-				this.generator.Version = this.Version;
-			}
-			
-			// Set other parameters
-			this.generator.DevelopmentRegion = this.DevelopmentRegion;
-			this.generator.Icon = this.Icon;
-			this.generator.MainNibFile = this.MainNibFile;
-			this.generator.PrincipalClass = this.PrincipalClass;
-			this.generator.TargetOSVersion = this.minRequiredOSVersion;
+            }
+            
+            // Set other parameters
+            this.generator.Identifier = this.Identifier;
+            this.generator.Version = this.Version;
+            this.generator.DevelopmentRegion = this.DevelopmentRegion;
+            this.generator.Icon = this.Icon;
+            this.generator.MainNibFile = this.MainNibFile;
+            this.generator.PrincipalClass = this.PrincipalClass;
+            this.generator.TargetOSVersion = this.minRequiredOSVersion;
 
             // Write the file
-			String path = Path.Combine(this.ToDirectory.GetMetadata("FullPath"), "Info.plist");
+            String path = Path.Combine(this.ToDirectory.GetMetadata("FullPath"), "Info.plist");
             this.generator.WriteTo(path);
 
             return true;
