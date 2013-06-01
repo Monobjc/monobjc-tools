@@ -61,7 +61,7 @@ namespace Monobjc.MSBuild.Tasks
 				}
 				return true;
 			} else {
-				return false;
+				return true;
 			}
 		}
 	}

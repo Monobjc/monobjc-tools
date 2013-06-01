@@ -70,8 +70,8 @@ namespace Monobjc.MSBuild.Tasks
 				items = this.Targets;
 			} else {
 				// TODO: I18N
-				this.Log.LogError ("You must provide at least one element to sign.");
-				return false;
+                this.Log.LogMessage("No element to sign.");
+				return true;
 			}
 
             // Gather all the paths

@@ -80,8 +80,7 @@ namespace Monobjc.MSBuild.Tasks
 			} else if (this.XibFile == null && this.XibFiles == null) {
 				return true;
 			} else {
-				this.Log.LogError (Resources.XibCompilationFailed);
-				return false;
+				return true;
 			}
 			
 			this.Log.LogMessage ("Processing {0} files to {1} folders", files.Count, directories.Count);
