@@ -305,7 +305,7 @@ namespace Monobjc.Tools.Generators
 	                sourceWriter.WriteLine("\t\treturn ret;");
 	                sourceWriter.WriteLine("\t}");
 	                sourceWriter.WriteLine();
-	                sourceWriter.WriteLine("\t\treturn 0;");
+	                sourceWriter.WriteLine("\treturn 0;");
 	                sourceWriter.WriteLine("}");
 	                sourceWriter.WriteLine();
 				}
@@ -331,7 +331,11 @@ namespace Monobjc.Tools.Generators
                 }
                 sourceWriter.WriteLine("\tbundled[{0}] = NULL;", i);
                 sourceWriter.WriteLine("\t");
-				
+
+                sourceWriter.WriteLine("\t// Disabled shared area");
+                sourceWriter.WriteLine("\tsetenv(\"MONO_DISABLE_SHARED_AREA\", \"1\", 1);");
+                sourceWriter.WriteLine("\t");
+
                 sourceWriter.WriteLine("\t// Shift the arguments to include the image name");
                 sourceWriter.WriteLine("\tchar **newargs = (char **) malloc (sizeof(char *) * (argc + 2));");
                 sourceWriter.WriteLine("\tnewargs [0] = argv[0];");
