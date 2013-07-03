@@ -44,19 +44,20 @@ namespace Monobjc.Tools.Generators
         }
 
         /// <summary>
-        ///   Gets or sets the logger.
+        /// Gets or sets the logger.
         /// </summary>
-        /// <value>The logger.</value>
         public IExecutionLogger Logger { get; set; }
 
-		/// <summary>
-		/// Gets or sets a value indicating whether this instance use Receigen.
-		/// </summary>
-		/// <value>
-		/// <c>true</c> to use Receigen; otherwise, <c>false</c>.
-		/// </value>
-		public bool UseReceigen { get; set; }
-		
+        /// <summary>
+        /// Gets or sets a value indicating whether to link against the SGEN version of Mono.
+        /// </summary>
+        public bool UseSGEN { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance use Receigen.
+        /// </summary>
+        public bool UseReceigen { get; set; }
+
         /// <summary>
         ///   Gets or sets the assemblies.
         /// </summary>
@@ -380,7 +381,8 @@ namespace Monobjc.Tools.Generators
 			}
 			
             // Add the pkg-config flags for Mono
-            using (ProcessHelper helper = new ProcessHelper("pkg-config", String.Format("{0} {1}", "--cflags", "mono-2")))
+            String monoLibrary = this.UseSGEN ? "monosgen-2" : "mono-2";
+            using (ProcessHelper helper = new ProcessHelper("pkg-config", String.Format("{0} {1}", "--cflags", monoLibrary)))
             {
                 helper.Logger = this.Logger;
 				String result = helper.ExecuteAndReturnOutput ();
@@ -405,7 +407,8 @@ namespace Monobjc.Tools.Generators
             builder.AppendFormat(" {0} -L\"{1}\" ", nativeOptions, directory);
 			
             // Add the pkg-config flags for Mono
-            using (ProcessHelper helper = new ProcessHelper("pkg-config", String.Format("{0} {1}", "--libs", "mono-2")))
+            String monoLibrary = this.UseSGEN ? "monosgen-2" : "mono-2";
+            using (ProcessHelper helper = new ProcessHelper("pkg-config", String.Format("{0} {1}", "--libs", monoLibrary)))
             {
                 helper.Logger = this.Logger;
 				String result = helper.ExecuteAndReturnOutput ();
@@ -439,8 +442,8 @@ namespace Monobjc.Tools.Generators
 			if (this.UseReceigen) {
                 builder.AppendFormat(" -framework {0}", "AppKit");
                 builder.AppendFormat(" -framework {0}", "Foundation");
-                builder.AppendFormat(" -framework {0}", "Security");
-                builder.AppendFormat(" -framework {0}", "IOKit");
+                //builder.AppendFormat(" -framework {0}", "Security");
+                //builder.AppendFormat(" -framework {0}", "IOKit");
 			}
 			
             builder.AppendFormat(" -o \"{0}\" \"{1}\" ", outputFile, objectFile);

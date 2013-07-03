@@ -41,14 +41,16 @@ namespace Monobjc.MSBuild.Tasks
 			this.targetArchitecture = MacOSArchitecture.X86;
 		}
 		
-		/// <summary>
-		/// Gets or sets a value indicating whether this instance use Receigen.
-		/// </summary>
-		/// <value>
-		/// <c>true</c> to use Receigen; otherwise, <c>false</c>.
-		/// </value>
-		public bool UseReceigen { get; set; }
-		
+        /// <summary>
+        /// Gets or sets a value indicating whether to link against the SGEN version of Mono.
+        /// </summary>
+        public bool UseSGEN { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance use Receigen.
+        /// </summary>
+        public bool UseReceigen { get; set; }
+
         /// <summary>
         /// Gets or sets the name of the application.
         /// </summary>
@@ -193,7 +195,8 @@ namespace Monobjc.MSBuild.Tasks
             codeGenerator.TargetOSVersion = this.targetOSVersion;
             codeGenerator.TargetArchitecture = this.targetArchitecture;
 			codeGenerator.Compress = this.Compress;
-			codeGenerator.UseReceigen = this.UseReceigen;
+            codeGenerator.UseSGEN = this.UseSGEN;
+            codeGenerator.UseReceigen = this.UseReceigen;
 			codeGenerator.NativeCompiler = this.NativeCompiler;
             String executableFile = codeGenerator.Generate(workingDir);
             String libraryFile = Path.Combine(workingDir, "libmonobjc.dylib");

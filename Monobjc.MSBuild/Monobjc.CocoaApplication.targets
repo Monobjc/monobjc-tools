@@ -25,6 +25,7 @@
 	<!-- Define defaults for embedding -->    
 	<PropertyGroup>
 		<UseCompression Condition="'$(UseCompression)' == ''">true</UseCompression>
+		<UseSGEN Condition="'$(UseSGEN)' == ''">false</UseSGEN>
 		<UseReceigen Condition="'$(UseReceigen)' == ''">false</UseReceigen>
 		<NativeCompiler Condition="'$(NativeCompiler)' == ''">cc</NativeCompiler>
 	</PropertyGroup>
@@ -143,6 +144,7 @@
 			TargetArchitecture="$(MacOSArch)"
 			TargetOSVersion="$(MacOSVersion)"
 			ToDirectory="$(MacOSPath)"
+			UseSGEN="$(UseSGEN)"
 			UseReceigen="$(UseReceigen)"
 			WorkingDirectory="$(_NativeWorkingPath)"/>
 
