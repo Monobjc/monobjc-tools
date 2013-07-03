@@ -5,11 +5,10 @@
 	Properties
 	-->
 	<property name="data.dir" value="." />
-	<property name="datastore.file" value="${data.dir}/datastore.db4o" unless="${property::exists('datastore.file')}" />
 	<property name="dest.dir" value="../../../../libraries" />
 	<loadtasks assembly="Monobjc.Generator.NAnt.dll" />
 	<docset id="10.8" name="10.8" path="~/Library/Developer/Shared/Documentation/DocSets/com.apple.adc.documentation.AppleOSX10_8.CoreReference.docset/Contents/Resources/Documents/documentation" />
-	<property name="methods" value="AbortEditing,AcceptsFirstResponder,Alloc,AttachToCurrentThread,Autorelease,BecomeFirstResponder,ClearContents,CloseTray,Copy,CreateCommandInstance,CreateViewController,DecodeDataObject,DecodeNXColor,DecodeNXObject,DecodeObject,DecodePoint,DecodePortObject,DecodePropertyList,DecodeRect,DecodeSize,DetachFromCurrentThread,Draw,EjectMedia,EstimateLength,ExecuteCommand,Flatten,ForceTerminate,GoBack,GoForward,Hide,Init,Load,MutableCopy,NextObject,New,OpenTray,Pause,Play,ResignFirstResponder,Resume,Retain,Run,RunModal,RunSetupPanel,Save,Set,Start,StartRendering,Stop,Suspend,Synchronize,Terminate,Unhide,Unload,UpdateMovieFile" />
+	<property name="methods" value="AbortEditing,AcceptsFirstResponder,Alloc,AttachToCurrentThread,Autorelease,BecomeFirstResponder,ClearContents,CloseTray,Copy,CreateCommandInstance,CreateViewController,DecodeDataObject,DecodeNXColor,DecodeNXObject,DecodeObject,DecodePoint,DecodePortObject,DecodePropertyList,DecodeRect,DecodeSize,DetachFromCurrentThread,Draw,EjectMedia,EstimateLength,ExecuteCommand,Flatten,ForceTerminate,GoBack,GoForward,Hide,Init,Load,MutableCopy,NextObject,New,OpenTray,Pause,Play,ResignFirstResponder,Resume,Retain,Run,RunModal,RunSetupPanel,Save,Set,Start,StartAccessingSecurityScopedResource,StartRendering,Stop,Suspend,Synchronize,Terminate,Unhide,Unload,UpdateMovieFile" />
 
 	<!--
 	Framework definitions
