@@ -194,6 +194,10 @@
 		</Protocol>
 		<Protocol name="WebScripting">
 			<File>Cocoa/Reference/WebKit/Protocols/WebScripting_Protocol/Reference/Reference.html</File>
+            <Patch type="Model">
+				<Change><![CDATA[Methods["IsKeyExcludedFromWebScript"].Parameters["name"].Type="String"]]></Change>
+				<Change><![CDATA[Methods["WebScriptNameForKey"].Parameters["name"].Type="String"]]></Change>
+            </Patch>
 		</Protocol>
 		<Protocol name="WebUIDelegate">
 			<File>Cocoa/Reference/WebKit/Protocols/WebUIDelegate_Protocol/Reference/Reference.html</File>
