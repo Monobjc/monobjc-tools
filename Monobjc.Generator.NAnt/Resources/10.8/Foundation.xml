@@ -1258,8 +1258,6 @@
 		<Class name="NSNotificationCenter">
 			<File>Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/Reference/Reference.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Methods["AddObserverForNameObjectQueueUsingBlock"].Parameters["block"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["AddObserverForNameObjectQueueUsingBlock"].Parameters["block"].IsBlock=false]]></Change>
 				<Change><![CDATA[Properties["DefaultCenter"].Type="NSNotificationCenter"]]></Change>
 				<Change><![CDATA[Properties["DefaultCenter"].CopyInDescendants=true]]></Change>
 			</Patch>

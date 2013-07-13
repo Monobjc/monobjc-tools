@@ -146,10 +146,6 @@
 		<Class name="NSAnimationContext">
 			<File>Cocoa/Reference/NSAnimationContext_class/Introduction/Introduction.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Methods["RunAnimationGroupCompletionHandler"].Parameters["changes"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["RunAnimationGroupCompletionHandler"].Parameters["changes"].IsBlock=false]]></Change>
-				<Change><![CDATA[Methods["RunAnimationGroupCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["RunAnimationGroupCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
 				<Change><![CDATA[Properties["CompletionHandler"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Properties["CompletionHandler"].MinAvailability="OS X v10.7"]]></Change>
 				<Change><![CDATA[Properties["Duration"].MinAvailability="OS X v10.6"]]></Change>
@@ -622,10 +618,10 @@
 		<Class name="NSDocument">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSDocument_Class/Reference/Reference.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Methods["PerformActivityWithSynchronousWaitingUsingBlock"].Parameters["inBlock"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["PerformActivityWithSynchronousWaitingUsingBlock"].Parameters["inBlock"].IsBlock=false]]></Change>
-				<Change><![CDATA[Methods["PerformAsynchronousFileAccessUsingBlock"].Parameters["inBlock"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["PerformAsynchronousFileAccessUsingBlock"].Parameters["inBlock"].IsBlock=false]]></Change>
+                <Change><![CDATA[Methods["PerformActivityWithSynchronousWaitingUsingBlock"].Parameters["inBlock"].Type="Action"]]></Change>
+                <Change><![CDATA[Methods["PerformActivityWithSynchronousWaitingUsingBlock"].Parameters["inBlock"].IsBlock=true]]></Change>
+                <Change><![CDATA[Methods["PerformAsynchronousFileAccessUsingBlock"].Parameters["inBlock"].Type="Action"]]></Change>
+                <Change><![CDATA[Methods["PerformAsynchronousFileAccessUsingBlock"].Parameters["inBlock"].IsBlock=true]]></Change>
 				<Change><![CDATA[Enumerations["NSSaveOperationType"].Values.Set("NSAutosaveOperation", "<EnumerationValue><Summary><Line>Old name for the NSAutosaveElsewhereOperation operation type. (Deprecated. Deprecated in OS X v10.7. Use NSAutosaveElsewhereOperation instead.)</Line></Summary><MinAvailability>Mac OS X v10.4</MinAvailability><MaxAvailability>Mac OS X v10.7</MaxAvailability><Name>NSAutosaveOperation</Name><Value>3</Value></EnumerationValue>")]]></Change>
 			</Patch>
 		</Class>
@@ -638,10 +634,6 @@
 		<Class name="NSDocumentController">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSDocumentController_Class/Reference/Reference.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Methods["OpenDocumentWithContentsOfURLDisplayCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["OpenDocumentWithContentsOfURLDisplayCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
-				<Change><![CDATA[Methods["ReopenDocumentForURLWithContentsOfURLDisplayCompletionHandler"].Parameters["completionHandler"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["ReopenDocumentForURLWithContentsOfURLDisplayCompletionHandler"].Parameters["completionHandler"].IsBlock=false]]></Change>
 				<Change><![CDATA[Properties["SharedDocumentController"].Type="NSDocumentController"]]></Change>
 			</Patch>
 		</Class>
@@ -1521,10 +1513,6 @@
 		<Class name="NSSavePanel">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/Reference/Reference.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Methods["BeginSheetModalForWindowCompletionHandler"].Parameters["handler"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["BeginSheetModalForWindowCompletionHandler"].Parameters["handler"].IsBlock=false]]></Change>
-				<Change><![CDATA[Methods["BeginWithCompletionHandler"].Parameters["handler"].Type="Block"]]></Change>
-				<Change><![CDATA[Methods["BeginWithCompletionHandler"].Parameters["handler"].IsBlock=false]]></Change>
 				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
 				<!-- TODO: Move to constant -->
 				<Change><![CDATA[Enumerations["Button_tags"].Generate=false]]></Change>
