@@ -49,37 +49,54 @@ namespace Monobjc.Tools.Generator.NAnt
 				case FrameworkEntityType.T:
 					{
 						TypedEntity entity = BaseEntity.LoadFrom<TypedEntity> (sourcePath);
-						foreach (EnumerationEntity enumerationEntity in entity.Enumerations) {
-							this.AddMixedType (mixedTypesTable, enumerationEntity);
+						if (entity.Generate) {
+							foreach (EnumerationEntity enumerationEntity in entity.Enumerations) {
+								if (!enumerationEntity.Generate)
+									continue;
+
+								this.AddMixedType (mixedTypesTable, enumerationEntity);
+							}
 						}
 					}
 					break;
 				case FrameworkEntityType.C:
 					{
 						ClassEntity entity = BaseEntity.LoadFrom<ClassEntity> (sourcePath);
-						foreach (EnumerationEntity enumerationEntity in entity.Enumerations) {
-							this.AddMixedType (mixedTypesTable, enumerationEntity);
+						if (entity.Generate) {
+							foreach (EnumerationEntity enumerationEntity in entity.Enumerations) {
+								if (!enumerationEntity.Generate)
+									continue;
+
+								this.AddMixedType (mixedTypesTable, enumerationEntity);
+							}
 						}
 					}
 					break;
 				case FrameworkEntityType.P:
 					{
 						ProtocolEntity entity = BaseEntity.LoadFrom<ProtocolEntity> (sourcePath);
-						foreach (EnumerationEntity enumerationEntity in entity.Enumerations) {
-							this.AddMixedType (mixedTypesTable, enumerationEntity);
+						if (entity.Generate) {
+							foreach (EnumerationEntity enumerationEntity in entity.Enumerations) {
+								if (!enumerationEntity.Generate)
+									continue;
+
+								this.AddMixedType (mixedTypesTable, enumerationEntity);
+							}
 						}
 					}
 					break;
 				case FrameworkEntityType.S:
 					{
 						StructureEntity entity = BaseEntity.LoadFrom<StructureEntity> (sourcePath);
-						this.AddMixedType (mixedTypesTable, entity);
+						if (entity.Generate)
+							this.AddMixedType (mixedTypesTable, entity);
 					}
 					break;
 				case FrameworkEntityType.E:
 					{
 						EnumerationEntity entity = BaseEntity.LoadFrom<EnumerationEntity> (sourcePath);
-						this.AddMixedType (mixedTypesTable, entity);
+						if (entity.Generate)
+							this.AddMixedType (mixedTypesTable, entity);
 					}
 					break;
 				default:
