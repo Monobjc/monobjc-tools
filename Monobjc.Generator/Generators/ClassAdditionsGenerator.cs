@@ -55,7 +55,7 @@ namespace Monobjc.Tools.Generator.Generators
 			if (sameClass) {
 				this.Writer.WriteLineFormat (1, "public partial class {0}", extendedClass.Name);
 			} else {
-				this.Writer.WriteLineFormat (1, "public static partial class {0}_{1}Additions", extendedClass.Name, classEntity.Namespace);
+				this.Writer.WriteLineFormat (1, "public static partial class {0}_{1}Additions", extendedClass.Name, classEntity.Namespace.Replace('.', '_'));
 			}
 			this.Writer.WriteLineFormat (1, "{{");
 
