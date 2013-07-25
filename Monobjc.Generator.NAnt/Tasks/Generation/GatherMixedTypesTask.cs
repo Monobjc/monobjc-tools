@@ -51,9 +51,9 @@ namespace Monobjc.Tools.Generator.NAnt
 						TypedEntity entity = BaseEntity.LoadFrom<TypedEntity> (sourcePath);
 						if (entity.Generate) {
 							foreach (EnumerationEntity enumerationEntity in entity.Enumerations) {
-								if (!enumerationEntity.Generate)
-									continue;
-
+                                if (!enumerationEntity.Generate) {
+                                    continue;
+                                }
 								this.AddMixedType (mixedTypesTable, enumerationEntity);
 							}
 						}
@@ -64,9 +64,9 @@ namespace Monobjc.Tools.Generator.NAnt
 						ClassEntity entity = BaseEntity.LoadFrom<ClassEntity> (sourcePath);
 						if (entity.Generate) {
 							foreach (EnumerationEntity enumerationEntity in entity.Enumerations) {
-								if (!enumerationEntity.Generate)
-									continue;
-
+                                if (!enumerationEntity.Generate) {
+                                    continue;
+                                }
 								this.AddMixedType (mixedTypesTable, enumerationEntity);
 							}
 						}
@@ -77,9 +77,9 @@ namespace Monobjc.Tools.Generator.NAnt
 						ProtocolEntity entity = BaseEntity.LoadFrom<ProtocolEntity> (sourcePath);
 						if (entity.Generate) {
 							foreach (EnumerationEntity enumerationEntity in entity.Enumerations) {
-								if (!enumerationEntity.Generate)
-									continue;
-
+                                if (!enumerationEntity.Generate) {
+                                    continue;
+                                }
 								this.AddMixedType (mixedTypesTable, enumerationEntity);
 							}
 						}
@@ -88,15 +88,17 @@ namespace Monobjc.Tools.Generator.NAnt
 				case FrameworkEntityType.S:
 					{
 						StructureEntity entity = BaseEntity.LoadFrom<StructureEntity> (sourcePath);
-						if (entity.Generate)
-							this.AddMixedType (mixedTypesTable, entity);
+                        if (entity.Generate) {
+                            this.AddMixedType (mixedTypesTable, entity);
+                        }
 					}
 					break;
 				case FrameworkEntityType.E:
 					{
 						EnumerationEntity entity = BaseEntity.LoadFrom<EnumerationEntity> (sourcePath);
-						if (entity.Generate)
-							this.AddMixedType (mixedTypesTable, entity);
+                        if (entity.Generate) {
+                            this.AddMixedType (mixedTypesTable, entity);
+                        }
 					}
 					break;
 				default:
