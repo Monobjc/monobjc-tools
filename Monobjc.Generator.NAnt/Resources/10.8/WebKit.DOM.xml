@@ -1234,6 +1234,12 @@
 		<Class type="C" name="WebUIDelegate_Definitions">
 			<Patch type="Model">
 				<Change>AdditionFor="WebUIDelegate"</Change>
+                <Change><![CDATA[Enumerations["@17"].Name="WebMenuItemTag"]]></Change>
+				<Change><![CDATA[Enumerations["WebMenuItemTag"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["WebDragDestinationAction"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["WebDragDestinationAction"].Values["WebDragDestinationActionAny"].Value="UInt32.MaxValue"]]></Change>
+				<Change><![CDATA[Enumerations["WebDragSourceAction"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["WebDragSourceAction"].Values["WebDragSourceActionAny"].Value="UInt32.MaxValue"]]></Change>
 			</Patch>
 		</Class>
 		<Class type="C" name="WebView_Definitions">
