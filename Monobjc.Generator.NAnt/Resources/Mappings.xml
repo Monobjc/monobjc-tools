@@ -438,13 +438,13 @@
     <Mapping type="bool *">ref:bool</Mapping>
     <Mapping type="const void *">IntPtr</Mapping>
     <Mapping type="const void*">IntPtr</Mapping>
-    <Mapping type="dispatch_block_t"><![CDATA[block:DispatchBlock]]></Mapping>
-    <Mapping type="dispatch_data_applier_t"><![CDATA[block:DispatchDataApplier]]></Mapping>
+    <Mapping type="dispatch_block_t"><![CDATA[block:dispatch_block_t]]></Mapping>
+    <Mapping type="dispatch_data_applier_t"><![CDATA[block:dispatch_data_applier_t]]></Mapping>
     <Mapping type="dispatch_data_t">IntPtr</Mapping>
     <Mapping type="dispatch_fd_t">int</Mapping>
     <Mapping type="dispatch_group_t">IntPtr</Mapping>
     <Mapping type="dispatch_io_close_flags_t">NSUInteger</Mapping>
-    <Mapping type="dispatch_io_handler_t"><![CDATA[block:DispatchIOHandler]]></Mapping>
+    <Mapping type="dispatch_io_handler_t"><![CDATA[block:dispatch_io_handler_t]]></Mapping>
     <Mapping type="dispatch_io_interval_flags_t">NSUInteger</Mapping>
     <Mapping type="dispatch_io_t">IntPtr</Mapping>
     <Mapping type="dispatch_io_type_t">NSUInteger</Mapping>
