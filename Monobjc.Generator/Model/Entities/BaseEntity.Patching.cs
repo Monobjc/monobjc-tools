@@ -21,7 +21,7 @@ namespace Monobjc.Tools.Generator.Model
                 //Console.WriteLine ("Patching '" + entity.Name + "' with '" + expr + "'");
                 Action<T> action = (Action<T>)expr.Compile ();
                 action (entity);
-            } catch(Exception e) {
+            } catch(Exception) {
                 Console.WriteLine ("Error while patching '" + entity.Name + "' with '" + expr + "'");
             }
 		}
