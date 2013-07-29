@@ -199,6 +199,7 @@ namespace Monobjc.MSBuild.Tasks
             codeGenerator.UseReceigen = this.UseReceigen;
 			codeGenerator.NativeCompiler = this.NativeCompiler;
             String executableFile = codeGenerator.Generate(workingDir);
+            // TODO: Use sgen if specified
             String libraryFile = Path.Combine(workingDir, "libmonobjc.dylib");
 			
             // Relocate the libraries

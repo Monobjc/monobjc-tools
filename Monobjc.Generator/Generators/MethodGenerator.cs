@@ -99,13 +99,13 @@ namespace Monobjc.Tools.Generator.Generators
 				// Collect information on 32/64 bits invocations to check if they differ
 				MethodEntity methodEntity32 = DeriveMethodEntity (methodEntity, false);
 				MethodEntity methodEntity64 = DeriveMethodEntity (methodEntity, true);
-				bool useMixedInvocation = !AreMethodTypesEqual (methodEntity32, methodEntity64);
+                bool useMixedInvocation = !AreMethodTypesEqual (methodEntity32, methodEntity64);
 
 				this.Writer.WriteLineFormat (2, "{{");
 
 				String target = GetTarget (classEntity, methodEntity, extension);
 
-				if (useMixedInvocation) {
+                if (useMixedInvocation && needStorage) {
 #if MIXED_MODE
                     this.Writer.WriteLineFormat(3, "if (ObjectiveCRuntime.Is64Bits)");
                     this.Writer.WriteLineFormat(3, "{{");
