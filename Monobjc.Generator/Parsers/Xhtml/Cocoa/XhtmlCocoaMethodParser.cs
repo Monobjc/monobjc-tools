@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using Monobjc.Tools.Generator.Model;
 using Monobjc.Tools.Generator.Utilities;
@@ -31,12 +32,14 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
     /// </summary>
     public class XhtmlCocoaMethodParser : XhtmlBaseParser
     {
+        protected static readonly Regex VARARG_PARAMETER_REGEX = new Regex (@"([0-9A-z]+),?\s*\.\.\.");
+
         /// <summary>
         ///   Initializes a new instance of the <see cref = "XhtmlMethodParser" /> class.
         /// </summary>
         /// <param name = "settings">The settings.</param>
         /// <param name = "typeManager">The type manager.</param>
-		public XhtmlCocoaMethodParser(NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger) {}
+        public XhtmlCocoaMethodParser(NameValueCollection settings, TypeManager typeManager, TextWriter logger) : base(settings, typeManager, logger) {}
 
         /// <summary>
         ///   Parses the specified entity.
@@ -53,7 +56,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
         /// </summary>
         /// <param name = "methodElement">The method element.</param>
         /// <returns></returns>
-		public MethodEntity Parse(TypedEntity typedEntity, XElement methodElement)
+        public MethodEntity Parse(TypedEntity typedEntity, XElement methodElement)
         {
             MethodEntity methodEntity = new MethodEntity();
 
@@ -61,7 +64,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
             methodEntity.Selector = selectorElement.TrimAll();
             methodEntity.Name = GetMethodName(methodEntity);
 
-			this.Logger.WriteLine("  Method '" + methodEntity.Selector + "'");
+            this.Logger.WriteLine("  Method '" + methodEntity.Selector + "'");
 
             // Extract signature
             XElement signatureElement = (from el in methodElement.Elements("div")
@@ -69,6 +72,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
                                          select el).FirstOrDefault();
             methodEntity.Signature = signatureElement.TrimAll();
             methodEntity.Signature = methodEntity.Signature.TrimEnd(';');
+            methodEntity.Signature = methodEntity.Signature.Replace(", ...", ",..."); // MethodParametersEnumerator needs this format
 
             methodEntity.Static = methodEntity.Signature.StartsWith("+");
 
@@ -91,7 +95,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
             MethodSignatureEnumerator signatureEnumerator = new MethodSignatureEnumerator(methodEntity.Signature);
             if (signatureEnumerator.MoveNext())
             {
-				methodEntity.ReturnType = this.TypeManager.ConvertType(signatureEnumerator.Current.TrimAll(), this.Logger);
+                methodEntity.ReturnType = this.TypeManager.ConvertType(signatureEnumerator.Current.TrimAll(), this.Logger);
             }
             else
             {
@@ -105,12 +109,27 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
             {
                 MethodParameterEntity parameterEntity = new MethodParameterEntity();
                 bool isOut, isByRef, isBlock;
-				parameterEntity.Type = this.TypeManager.ConvertType(parameterTypesEnumerator.Current, out isOut, out isByRef, out isBlock, this.Logger);
+                parameterEntity.Type = this.TypeManager.ConvertType(parameterTypesEnumerator.Current, out isOut, out isByRef, out isBlock, this.Logger);
                 parameterEntity.IsOut = isOut;
                 parameterEntity.IsByRef = isByRef;
                 parameterEntity.IsBlock = isBlock;
                 parameterEntity.Name = parameterNamesEnumerator.Current.Trim();
                 methodEntity.Parameters.Add(parameterEntity);
+
+                // Handle variadic parameters
+                Match r = VARARG_PARAMETER_REGEX.Match (parameterEntity.Name);
+                if (r.Success) 
+                {
+                    // Fix the last parameter name by removing "..."
+                    parameterEntity.Name = r.Groups [1].Value.Trim ();
+
+                    // Add a new variadic parameter
+                    parameterEntity = new MethodParameterEntity();
+                    parameterEntity.Type = "params Object[]";
+                    parameterEntity.Name = "values";
+                    parameterEntity.Summary.Add("Variable argument values");
+                    methodEntity.Parameters.Add(parameterEntity);
+                }
             }
 
             // Extract parameter documentation
@@ -135,7 +154,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
                             IEnumerable<String> summaries = ddList.ElementAt(i).Elements("p").Select(p => p.Value.TrimAll());
 
                             // Find the parameter
-                            MethodParameterEntity parameterEntity = methodEntity.Parameters.Find(p => String.Equals(p.Name, term));
+                            MethodParameterEntity parameterEntity = methodEntity.Parameters.Find(p => String.Equals(p.Name, term) || (VARARG_PARAMETER_REGEX.Match(term).Success && term.StartsWith(p.Name)));
                             if (parameterEntity != null)
                             {
                                 //parameterEntity.Summary.Add(summary);
