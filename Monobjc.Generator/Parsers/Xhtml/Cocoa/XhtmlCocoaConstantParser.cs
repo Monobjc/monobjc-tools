@@ -32,6 +32,10 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
 	/// </summary>
 	public class XhtmlCocoaConstantParser : XhtmlBaseParser
 	{
+		protected static readonly Regex L_VALUE_REGEX = new Regex (@"(?<=\d)L");
+		protected static readonly Regex UL_VALUE_REGEX = new Regex (@"(?<=\d)UL");
+		protected static readonly Regex ULL_VALUE_REGEX = new Regex (@"(?<=\d)ULL");
+
 		/// <summary>
 		///   Initializes a new instance of the <see cref = "XhtmlNotificationParser" /> class.
 		/// </summary>
@@ -81,8 +85,8 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
 				return entities;
 			}
 
-			if (isEnum) {
-				List<BaseEntity> entities = this.ExtractEnumeration (constantElement, name, summary, declaration);
+			if (isEnum) { // keep newlines for enum processing
+				List<BaseEntity> entities = this.ExtractEnumeration (constantElement, name, summary, declarationElement.TrimSpaces());
 				if (entities != null) {
 					return entities;
 				}
@@ -94,6 +98,34 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
 		private static List<BaseEntity> ExtractDefine (XElement constantElement, String name, String summary, String declaration)
 		{
 			return null;
+		}
+
+		private static String RefineEnumBaseType (String values)
+		{
+			if (ULL_VALUE_REGEX.IsMatch(values))
+				return "uint64_t";
+			else if (UL_VALUE_REGEX.IsMatch(values))
+				return "NSUInteger";
+			else if (values.Contains("&lt;&lt;")) // Flags
+				return "NSUInteger";
+			else if (L_VALUE_REGEX.IsMatch(values))
+				return "NSInteger";
+			else
+				return "NOTYPE";
+				// Consider: 
+				// return "NSInteger";
+		}
+
+		private static String ConvertNumericQualifier (String value)
+		{
+			if (L_VALUE_REGEX.IsMatch (value))
+				value = L_VALUE_REGEX.Replace(value, "");
+			else if (ULL_VALUE_REGEX.IsMatch (value))
+				value = ULL_VALUE_REGEX.Replace(value, "UL");
+			else if (UL_VALUE_REGEX.IsMatch (value))
+				value = UL_VALUE_REGEX.Replace(value, "U");
+
+			return value;
 		}
 
 		private List<BaseEntity> ExtractEnumeration (XElement constantElement, String name, String summary, String declaration)
@@ -110,6 +142,10 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
 				return null;
 			}
 
+			if (type == "NOTYPE") {
+				type = RefineEnumBaseType(values);
+			}
+
 			// Create the enumeration
 			EnumerationEntity enumerationEntity = new EnumerationEntity ();
 			enumerationEntity.Name = name;
@@ -118,10 +154,13 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
 			enumerationEntity.Summary.Add (summary);
 
 			// Parse the values
-			string[] pairs = values.Split (new []{','}, StringSplitOptions.RemoveEmptyEntries);
-			foreach (string pair in pairs) {
+			var pairs = values.Split (new []{'\n'}, StringSplitOptions.RemoveEmptyEntries);
+			foreach (string immutablePair in pairs) {
 				String key;
 				String value = String.Empty;
+				String pair = immutablePair.Replace(",","");
+				
+				// Handle value assignment
 				if (pair.IndexOf ('=') != -1) {
 					string[] parts = pair.Split (new []{'='}, StringSplitOptions.RemoveEmptyEntries);
 					key = parts [0].Trim ();
@@ -140,6 +179,9 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
 				} else {
 					enumerationValueEntity.Value = value;
 				}
+
+				// Convert number qualifiers from native to managed
+				enumerationValueEntity.Value = ConvertNumericQualifier (enumerationValueEntity.Value);
 
 				enumerationEntity.Values.Add (enumerationValueEntity);
 			}

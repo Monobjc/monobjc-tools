@@ -724,7 +724,7 @@
 				<Change><![CDATA[Properties.First(Name == "ModifierFlags" && Static == True).Type="NSModifierFlags"]]></Change>
 				<Change><![CDATA[Enumerations["NSEventType"].BaseType="NSUInteger"]]></Change>
 				<Change><![CDATA[Enumerations["NSEventMaskFromType"].Name="NSEventMask"]]></Change>
-				<Change><![CDATA[Enumerations["NSEventMask"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSEventMask"].BaseType="ulong"]]></Change>
 				<Change><![CDATA[Enumerations["NSEventMask"].Flags=true]]></Change>
 				<Change><![CDATA[Enumerations["Modifier_Flags"].Name="NSModifierFlags"]]></Change>
 				<Change><![CDATA[Enumerations["NSModifierFlags"].BaseType="NSUInteger"]]></Change>
@@ -758,16 +758,8 @@
 					<With><![CDATA[]]></With>
 				</Replace>
 				<Replace>
-					<Source><![CDATA[ = 1ULL << NS]]></Source>
-					<With><![CDATA[ = 1 << NS]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[ = 1U << NS]]></Source>
-					<With><![CDATA[ = 1 << NS]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[ = 1 << NS]]></Source>
-					<With><![CDATA[ = 1 << (int) NSEventType.NS]]></With>
+					<Source><![CDATA[ << NS]]></Source>
+					<With><![CDATA[ << (int) NSEventType.NS]]></With>
 				</Replace>
 				<Replace>
 					<Source><![CDATA[NX_TABLET_POINTER_UNKNOWN]]></Source>

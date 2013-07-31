@@ -158,14 +158,6 @@
 			</Patch>
 			<Patch type="Generated">
 				<Replace>
-					<Source><![CDATA[/*  ISO-Latin-1,]]></Source>
-					<With><![CDATA[]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[asofOSX v10.5 theappropriate CD-Textvariantwillnowbeused  */  ]]></Source>
-					<With><![CDATA[]]></With>
-				</Replace>
-				<Replace>
 					<Source><![CDATA[kCFStringEncodingISOLatin1]]></Source>
 					<With><![CDATA[NSStringEncoding.NSISOLatin1StringEncoding]]></With>
 				</Replace>

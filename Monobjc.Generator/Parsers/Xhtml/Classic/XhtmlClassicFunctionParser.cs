@@ -93,7 +93,11 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
 				this.Logger.WriteLine ("SKIPPING define statement: " + name);
 				return null;
 			}
-			
+			if (!signature.Contains ("(")) { // e.g. NS_DURING
+				this.Logger.WriteLine ("SKIPPING non-function statement: " + name);
+				return null;
+			}
+
 			// Trim down signature
 			while (signature.IndexOf("  ") != -1) {
 				signature = signature.Replace ("  ", " ");
@@ -133,8 +137,10 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Classic
 			}
 
 			String returnType = signature.Substring (0, pos).Trim ();
-			String parameters = signature.Substring (pos + name.Length).Trim ();
-			parameters = parameters.Trim (';', '(', ')');
+			int paramsIndex = pos + name.Length;
+			int paramsLength = signature.IndexOf(')') + 1 - paramsIndex; // Stop before getting to function body
+			String parameters = signature.Substring (paramsIndex, paramsLength).Trim ();
+			parameters = parameters.Trim (';', '(', ')').Trim();
 			if (parameters != "void") {
 				foreach (string parameter in parameters.Split(new []{','}, StringSplitOptions.RemoveEmptyEntries)) {
 					String parameterType = "NOTYPE";
