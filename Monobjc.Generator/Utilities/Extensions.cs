@@ -94,6 +94,22 @@ namespace Monobjc.Tools.Generator.Utilities
             return str.Trim();
         }
 
+		/// <summary>
+		///   Trims all the leading and tailing spaces, as well as double space characters.
+		/// </summary>
+		/// <param name = "element">The element.</param>
+		/// <returns>A trimmed string value.</returns>
+		public static String TrimSpaces(this XElement element)
+		{
+			if (element == null)
+			{
+				return String.Empty;
+			}
+			String str = element.Value;
+			str = str.Replace("  ", " ");
+			return str.Trim();
+		}
+
         /// <summary>
         ///   Trims all the leading and tailing spaces, as well as the the CR-LF characters.
         /// </summary>

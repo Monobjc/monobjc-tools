@@ -116,6 +116,11 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
                 parameterEntity.Name = parameterNamesEnumerator.Current.Trim();
                 methodEntity.Parameters.Add(parameterEntity);
 
+				// Correct names that end in a single period
+				if (parameterEntity.Name.EndsWith(".") && !parameterEntity.Name.EndsWith("..")) {
+					parameterEntity.Name = parameterEntity.Name.Substring(0, parameterEntity.Name.Length - 1);
+				}
+
                 // Handle variadic parameters
                 Match r = VARARG_PARAMETER_REGEX.Match (parameterEntity.Name);
                 if (r.Success) 

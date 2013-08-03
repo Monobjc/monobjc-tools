@@ -138,11 +138,11 @@ namespace Monobjc.Tools.Generator.Model
 		/// <value><c>true</c> if this instance is a getter; otherwise, <c>false</c>.</value>
 		public bool IsConstructor {
 			get {
-				bool result = this.GenerateConstructor;
-				result &= !this.Static;
-				result &= (this.Name.Length > 4);
-				result &= this.Name.StartsWith ("Init", StringComparison.OrdinalIgnoreCase);
-				return result;
+				return this.GenerateConstructor
+					&& !this.Static
+					&& this.Name.Length > 4
+					&& this.Name.StartsWith ("Init", StringComparison.OrdinalIgnoreCase) 
+					&& char.IsUpper(this.Name[4]); // to avoid words like "Initial"
 			}
 		}
 
