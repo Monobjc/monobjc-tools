@@ -20,6 +20,12 @@
 		</Type>
 		<Type name="CGColorSpace">
 			<File>GraphicsImaging/Reference/CGColorSpace/Reference/reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[CFStringRef kCGColor]]></Source>
+                    <With><![CDATA[;CFStringRef kCGColor]]></With>
+                </Replace>
+            </Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Functions["CGColorSpaceCreateCalibratedGray"].Parameters["whitePoint[3]"].Name="whitePoint"]]></Change>
 				<Change><![CDATA[Functions["CGColorSpaceCreateCalibratedGray"].Parameters["whitePoint"].Type="IntPtr"]]></Change>
