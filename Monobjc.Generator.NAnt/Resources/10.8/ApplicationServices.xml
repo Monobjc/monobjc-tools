@@ -3,6 +3,9 @@
 	<Types>
 		<Type name="CGAffineTransform">
 			<File>GraphicsImaging/Reference/CGAffineTransform/Reference/reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Generate=false]]></Change>
+            </Patch>
 		</Type>
 		<Type name="CGBitmapContext">
 			<File>GraphicsImaging/Reference/CGBitmapContext/Reference/reference.html</File>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Framework name="CoreData" usings="Foundation,AppKit" assembly="Monobjc.AppKit" source="DocSet">
+<Framework name="CoreData" usings="Foundation" assembly="Monobjc.Foundation" source="DocSet">
 	<Types>
 		<Type name="CoreDataFramework.Constants">
 			<File>Cocoa/Reference/CoreDataFramework/Miscellaneous/CoreData_Constants/Reference/reference.html</File>
