@@ -423,7 +423,6 @@
     <Mapping type="SecTrustedApplicationRef">IntPtr</Mapping>
     <Mapping type="TISInputSourceRef">IntPtr</Mapping>
     <Mapping type="Track">IntPtr</Mapping>
-    <Mapping type="UIImage *">UIImage</Mapping>
     <Mapping type="UInt16">ushort</Mapping>
     <Mapping type="UInt32 *">ref:uint</Mapping>
     <Mapping type="UInt32">uint</Mapping>
@@ -576,8 +575,6 @@
     <Mapping type="void (^)(NSURL *newURL1, NSURL *newURL2)"><![CDATA[block:Action<NSURL, NSURL>]]></Mapping>
     <Mapping type="void (^)(NSURLResponse*, NSData*, NSError*)"><![CDATA[block:Action<NSURLResponse, NSData, NSError>]]></Mapping>
     <Mapping type="void (^)(NSWindow *, NSError *)"><![CDATA[block:Action<NSWindow, NSError>]]></Mapping>
-    <Mapping type="void (^)(UIImage *image, NSError *error)"><![CDATA[block:Action<UIImage, NSError>]]></Mapping>
-    <Mapping type="void (^)(UIImage *photo, NSError *error)"><![CDATA[block:Action<UIImage, NSError>]]></Mapping>
     <Mapping type="void (^)(id key, id obj, BOOL *stop)"><![CDATA[block:Action_Id_Id_out_bool]]></Mapping>
     <Mapping type="void (^)(id obj, BOOL *stop)"><![CDATA[block:Action_Id_out_bool]]></Mapping>
     <Mapping type="void (^)(id obj, NSUIntegeridx, BOOL *stop)"><![CDATA[block:Action_Id_NSUInteger_out_bool]]></Mapping>
