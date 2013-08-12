@@ -21,6 +21,7 @@
 				<Change><![CDATA[Properties["Image"].Type="NSImage"]]></Change>
 				<Change><![CDATA[Properties["IncompleteAchievementImage"].Type="NSImage"]]></Change>
 				<Change><![CDATA[Properties["PlaceholderCompletedAchievementImage"].Type="NSImage"]]></Change>
+				<Change><![CDATA[Methods["LoadImageWithCompletionHandler"].Parameters["completionHandler"].Type="Action<NSImage, NSError>"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="GKAchievementViewController">
@@ -89,6 +90,9 @@
 		</Class>
 		<Class name="GKPlayer">
 			<File>GameKit/Reference/GKPlayer_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+				<Change><![CDATA[Methods["LoadPhotoForSizeWithCompletionHandler"].Parameters["completionHandler"].Type="Action<NSImage, NSError>"]]></Change>
+            </Patch>
 		</Class>
 		<Class name="GKScore">
 			<File>GameKit/Reference/GKScore_Ref/Reference/Reference.html</File>
