@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Protocol Generate="true">
 	<Summary />
-	<MinAvailability>Mac OS X v10.2 with Safari 1.0 installed</MinAvailability>
+	<MinAvailability>OS X v10.2 with Safari 1.0 installed</MinAvailability>
 	<MaxAvailability>VERSION</MaxAvailability>
 	<Name>NSURLDownloadDelegate</Name>
 	<Namespace>Foundation</Namespace>

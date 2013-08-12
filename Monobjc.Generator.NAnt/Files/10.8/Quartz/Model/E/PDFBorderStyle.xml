@@ -3,7 +3,7 @@
 	<Summary>
 		<Line>PDF Kit annotation borders may have the following styles:</Line>
 	</Summary>
-	<MinAvailability>Mac OS X v10.4</MinAvailability>
+	<MinAvailability>OS X v10.4</MinAvailability>
 	<MaxAvailability>VERSION</MaxAvailability>
 	<Name>PDFBorderStyle</Name>
 	<Namespace>Quartz</Namespace>
@@ -18,7 +18,7 @@
 				<Line>Solid border.</Line>
 			</Summary>
 			<Name>kPDFBorderStyleSolid</Name>
-			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<MinAvailability>OS X v10.4</MinAvailability>
 			<Value />
 		</EnumerationValue>
 		<EnumerationValue Generate="true">
@@ -26,7 +26,7 @@
 				<Line>Dashed border.</Line>
 			</Summary>
 			<Name>kPDFBorderStyleDashed</Name>
-			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<MinAvailability>OS X v10.4</MinAvailability>
 			<Value />
 		</EnumerationValue>
 		<EnumerationValue Generate="true">
@@ -34,7 +34,7 @@
 				<Line>Beveled border.</Line>
 			</Summary>
 			<Name>kPDFBorderStyleBeveled</Name>
-			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<MinAvailability>OS X v10.4</MinAvailability>
 			<Value />
 		</EnumerationValue>
 		<EnumerationValue Generate="true">
@@ -42,7 +42,7 @@
 				<Line>Inset border.</Line>
 			</Summary>
 			<Name>kPDFBorderStyleInset</Name>
-			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<MinAvailability>OS X v10.4</MinAvailability>
 			<Value />
 		</EnumerationValue>
 		<EnumerationValue Generate="true">
@@ -50,7 +50,7 @@
 				<Line>Underline border.</Line>
 			</Summary>
 			<Name>kPDFBorderStyleUnderline</Name>
-			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<MinAvailability>OS X v10.4</MinAvailability>
 			<Value />
 		</EnumerationValue>
 	</Values>

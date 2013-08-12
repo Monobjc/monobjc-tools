@@ -3,7 +3,7 @@
 	<Summary>
 		<Line>The following constants specify the available line ending styles:</Line>
 	</Summary>
-	<MinAvailability>Mac OS X v10.4</MinAvailability>
+	<MinAvailability>OS X v10.4</MinAvailability>
 	<MaxAvailability>VERSION</MaxAvailability>
 	<Name>PDFLineStyle</Name>
 	<Namespace>Quartz</Namespace>
@@ -18,7 +18,7 @@
 				<Line>No line ending.</Line>
 			</Summary>
 			<Name>kPDFLineStyleNone</Name>
-			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<MinAvailability>OS X v10.4</MinAvailability>
 			<Value />
 		</EnumerationValue>
 		<EnumerationValue Generate="true">
@@ -26,7 +26,7 @@
 				<Line>A square line ending filled with the annotation's interior color, if any.</Line>
 			</Summary>
 			<Name>kPDFLineStyleSquare</Name>
-			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<MinAvailability>OS X v10.4</MinAvailability>
 			<Value />
 		</EnumerationValue>
 		<EnumerationValue Generate="true">
@@ -34,7 +34,7 @@
 				<Line>A circular line ending filled with the annotation's interior color, if any.</Line>
 			</Summary>
 			<Name>kPDFLineStyleCircle</Name>
-			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<MinAvailability>OS X v10.4</MinAvailability>
 			<Value />
 		</EnumerationValue>
 		<EnumerationValue Generate="true">
@@ -42,7 +42,7 @@
 				<Line>A diamond-shaped line ending filled with the annotation's interior color, if any.</Line>
 			</Summary>
 			<Name>kPDFLineStyleDiamond</Name>
-			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<MinAvailability>OS X v10.4</MinAvailability>
 			<Value />
 		</EnumerationValue>
 		<EnumerationValue Generate="true">
@@ -50,7 +50,7 @@
 				<Line>An open arrowhead line ending, composed from two short lines meeting in an acute angle at the line end.</Line>
 			</Summary>
 			<Name>kPDFLineStyleOpenArrow</Name>
-			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<MinAvailability>OS X v10.4</MinAvailability>
 			<Value />
 		</EnumerationValue>
 		<EnumerationValue Generate="true">
@@ -58,7 +58,7 @@
 				<Line>A closed arrowhead line ending, consisting of a triangle with the acute vertex at the line end and filled with the annotation's interior color, if any.</Line>
 			</Summary>
 			<Name>kPDFLineStyleClosedArrow</Name>
-			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<MinAvailability>OS X v10.4</MinAvailability>
 			<Value />
 		</EnumerationValue>
 	</Values>

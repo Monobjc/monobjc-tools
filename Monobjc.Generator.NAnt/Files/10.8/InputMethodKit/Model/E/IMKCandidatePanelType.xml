@@ -3,7 +3,7 @@
 	<Summary>
 		<Line>Types of candidates windows provide by the Input Method Kit.</Line>
 	</Summary>
-	<MinAvailability>Mac OS X v10.5</MinAvailability>
+	<MinAvailability>OS X v10.5</MinAvailability>
 	<Name>IMKCandidatePanelType</Name>
 	<Namespace>InputMethodKit</Namespace>
 	<BaseType>uint</BaseType>
@@ -12,7 +12,7 @@
 			<Summary>
 				<Line>A window that displays one column and can scroll if necessary.</Line>
 			</Summary>
-			<MinAvailability>Mac OS X v10.5</MinAvailability>
+			<MinAvailability>OS X v10.5</MinAvailability>
 			<Name>kIMKSingleColumnScrollingCandidatePanel</Name>
 			<Value>1</Value>
 		</EnumerationValue>
@@ -20,7 +20,7 @@
 			<Summary>
 				<Line>A window that displays a grid and can scroll if necessary.</Line>
 			</Summary>
-			<MinAvailability>Mac OS X v10.5</MinAvailability>
+			<MinAvailability>OS X v10.5</MinAvailability>
 			<Name>kIMKScrollingGridCandidatePanel</Name>
 			<Value>2</Value>
 		</EnumerationValue>
@@ -28,7 +28,7 @@
 			<Summary>
 				<Line>A window that displays a single row.</Line>
 			</Summary>
-			<MinAvailability>Mac OS X v10.5</MinAvailability>
+			<MinAvailability>OS X v10.5</MinAvailability>
 			<Name>kIMKSingleRowSteppingCandidatePanel</Name>
 			<Value>3</Value>
 		</EnumerationValue>

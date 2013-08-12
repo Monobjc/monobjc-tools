@@ -2,7 +2,7 @@
 <Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Flags="true">
 	<Summary>
 	</Summary>
-	<MinAvailability>Mac OS X v10.3</MinAvailability>
+	<MinAvailability>OS X v10.3</MinAvailability>
 	<Name>QTMovieOperationPhase</Name>
 	<Namespace>QTKit</Namespace>
 	<BaseType>int</BaseType>
@@ -14,21 +14,21 @@
 		<EnumerationValue Generate="true">
 			<Summary>
 			</Summary>
-			<MinAvailability>Mac OS X v10.3</MinAvailability>
+			<MinAvailability>OS X v10.3</MinAvailability>
 			<Name>QTMovieOperationBeginPhase</Name>
 			<Value>0</Value>
 		</EnumerationValue>
 		<EnumerationValue Generate="true">
 			<Summary>
 			</Summary>
-			<MinAvailability>Mac OS X v10.3</MinAvailability>
+			<MinAvailability>OS X v10.3</MinAvailability>
 			<Name>QTMovieOperationUpdatePercentPhase</Name>
 			<Value>1</Value>
 		</EnumerationValue>
 		<EnumerationValue Generate="true">
 			<Summary>
 			</Summary>
-			<MinAvailability>Mac OS X v10.3</MinAvailability>
+			<MinAvailability>OS X v10.3</MinAvailability>
 			<Name>QTMovieOperationEndPhase</Name>
 			<Value>2</Value>
 		</EnumerationValue>

@@ -2,7 +2,7 @@
 <Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Flags="true">
 	<Summary>
 	</Summary>
-	<MinAvailability>Mac OS X v10.4</MinAvailability>
+	<MinAvailability>OS X v10.4</MinAvailability>
 	<Name>QTSampleBufferAudioBufferListOptions</Name>
 	<Namespace>QTKit</Namespace>
 	<BaseType>NSUInteger</BaseType>
@@ -15,7 +15,7 @@
 		<EnumerationValue Generate="true">
 			<Summary>
 			</Summary>
-			<MinAvailability>Mac OS X v10.4</MinAvailability>
+			<MinAvailability>OS X v10.4</MinAvailability>
 			<Name>QTSampleBufferAudioBufferListOptionAssure16ByteAlignment</Name>
 			<Value><![CDATA[(1 << 0)]]></Value>
 		</EnumerationValue>

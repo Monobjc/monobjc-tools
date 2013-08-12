@@ -3,7 +3,7 @@
   <Summary>
     <Line>Constants returned from awakeFromSnapshotEvents: to denote the reason why a managed object may need to reinitialize values. </Line>
   </Summary>
-  <MinAvailability>Mac OS X v10.6</MinAvailability>
+  <MinAvailability>OS X v10.6</MinAvailability>
   <Name>NSSnapshotEventType</Name>
   <Namespace>AppKit</Namespace>
   <BaseType>uint</BaseType>
@@ -13,7 +13,7 @@
       <Summary>
         <Line>Specifies a change due to undo from insertion.</Line>
       </Summary>
-      <MinAvailability>Mac OS X v10.6</MinAvailability>
+      <MinAvailability>OS X v10.6</MinAvailability>
       <Name>NSSnapshotEventUndoInsertion</Name>
       <Value>1 &lt;&lt; 1</Value>
     </EnumerationValue>
@@ -21,7 +21,7 @@
       <Summary>
         <Line>Specifies a change due to undo from deletion.</Line>
       </Summary>
-      <MinAvailability>Mac OS X v10.6</MinAvailability>
+      <MinAvailability>OS X v10.6</MinAvailability>
       <Name>NSSnapshotEventUndoDeletion</Name>
       <Value>1 &lt;&lt; 2</Value>
     </EnumerationValue>
@@ -29,7 +29,7 @@
       <Summary>
         <Line>Specifies a change due to a property-level undo.</Line>
       </Summary>
-      <MinAvailability>Mac OS X v10.6</MinAvailability>
+      <MinAvailability>OS X v10.6</MinAvailability>
       <Name>NSSnapshotEventUndoUpdate</Name>
       <Value>1 &lt;&lt; 3</Value>
     </EnumerationValue>
@@ -37,7 +37,7 @@
       <Summary>
         <Line>Specifies a change due to the managed object context being rolled back.</Line>
       </Summary>
-      <MinAvailability>Mac OS X v10.6</MinAvailability>
+      <MinAvailability>OS X v10.6</MinAvailability>
       <Name>NSSnapshotEventRollback</Name>
       <Value>1 &lt;&lt; 4</Value>
     </EnumerationValue>
@@ -45,7 +45,7 @@
       <Summary>
         <Line>Specifies a change due to the managed object being refreshed.</Line>
       </Summary>
-      <MinAvailability>Mac OS X v10.6</MinAvailability>
+      <MinAvailability>OS X v10.6</MinAvailability>
       <Name>NSSnapshotEventRefresh</Name>
       <Value>1 &lt;&lt; 5</Value>
     </EnumerationValue>
@@ -53,7 +53,7 @@
       <Summary>
         <Line>Specifies a change due to conflict resolution during a save operation.</Line>
       </Summary>
-      <MinAvailability>Mac OS X v10.6</MinAvailability>
+      <MinAvailability>OS X v10.6</MinAvailability>
       <Name>NSSnapshotEventMergePolicy</Name>
       <Value>1 &lt;&lt; 6</Value>
     </EnumerationValue>

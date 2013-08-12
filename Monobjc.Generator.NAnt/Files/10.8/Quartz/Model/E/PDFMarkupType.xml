@@ -3,7 +3,7 @@
 	<Summary>
 		<Line>The styles available for markup annotations in PDF Kit:</Line>
 	</Summary>
-	<MinAvailability>Mac OS X v10.5</MinAvailability>
+	<MinAvailability>OS X v10.5</MinAvailability>
 	<MaxAvailability>VERSION</MaxAvailability>
 	<Name>PDFMarkupType</Name>
 	<Namespace>Quartz</Namespace>
@@ -18,7 +18,7 @@
 				<Line>Highlight style for the markup.</Line>
 			</Summary>
 			<Name>kPDFMarkupTypeHighlight</Name>
-			<MinAvailability>Mac OS X v10.5</MinAvailability>
+			<MinAvailability>OS X v10.5</MinAvailability>
 			<Value />
 		</EnumerationValue>
 		<EnumerationValue Generate="true">
@@ -26,7 +26,7 @@
 				<Line>Strikethrough style for the markup.</Line>
 			</Summary>
 			<Name>kPDFMarkupTypeStrikeOut</Name>
-			<MinAvailability>Mac OS X v10.5</MinAvailability>
+			<MinAvailability>OS X v10.5</MinAvailability>
 			<Value />
 		</EnumerationValue>
 		<EnumerationValue Generate="true">
@@ -34,7 +34,7 @@
 				<Line>Underline style for the markup.</Line>
 			</Summary>
 			<Name>kPDFMarkupTypeUnderline</Name>
-			<MinAvailability>Mac OS X v10.5</MinAvailability>
+			<MinAvailability>OS X v10.5</MinAvailability>
 			<Value />
 		</EnumerationValue>
 	</Values>
