@@ -45,7 +45,8 @@ namespace Monobjc.Tools.Generator.Utilities
 			result.Add ("OS X v10.5", "");
 			result.Add ("OS X v10.6", "MACOSX_10_6");
 			result.Add ("OS X v10.7", "MACOSX_10_7");
-			result.Add ("OS X v10.8", "MACOSX_10_8");
+            result.Add ("OS X v10.8", "MACOSX_10_8");
+            result.Add ("OS X v10.9", "MACOSX_10_9");
 			result.Add ("Sparkle 1.5", "");
 			return result;
 		}
@@ -87,9 +88,12 @@ namespace Monobjc.Tools.Generator.Utilities
 				case "OS X v10.6":
 					v2 = "OS X v10.7";
 					break;
-				case "OS X v10.7":
-					v2 = "OS X v10.8";
-					break;
+                case "OS X v10.7":
+                    v2 = "OS X v10.8";
+                    break;
+                case "OS X v10.8":
+                    v2 = "OS X v10.9";
+                    break;
 				default:
 					break;
 				}

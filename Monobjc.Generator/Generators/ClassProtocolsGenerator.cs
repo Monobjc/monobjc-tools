@@ -54,8 +54,7 @@ namespace Monobjc.Tools.Generator.Generators
 			this.Writer.WriteLineFormat (1, "public partial class {0}", classEntity.Name);
 
 			// Sort protocols and emit them in order
-			classEntity.Protocols.Sort ((p1, p2) => p1.MinAvailability.CompareTo (p2.MinAvailability));
-
+            classEntity.Protocols.Sort (new ProtocolComparer());
 
 			for (int i = 0; i < classEntity.Protocols.Count; i++) {
 				ClassEntity protocolEntity = classEntity.Protocols [i];
@@ -119,5 +118,18 @@ namespace Monobjc.Tools.Generator.Generators
 			// Append namespace ender
 			this.Writer.WriteLineFormat (0, "}}");
 		}
+
+        private class ProtocolComparer : IComparer<ProtocolEntity>
+        {
+            public int Compare(ProtocolEntity p1, ProtocolEntity p2)
+            {
+                int result = p1.MinAvailability.CompareTo(p2.MinAvailability);
+                if (result == 0)
+                {
+                    result = p1.Name.CompareTo(p2.Name);
+                }
+                return result;
+            }
+        }
 	}
 }

@@ -127,6 +127,19 @@ namespace Monobjc.Tools.Generator.Utilities
             return str.Trim();
         }
 
+        /// <summary>
+        /// Checks if the attribute contains the given value.
+        /// </summary>
+        public static bool Contains(this XAttribute attribute, String str)
+        {
+            if (attribute == null)
+            {
+                return false;
+            }
+            String value = attribute.Value;
+            return value.Contains(str);
+        }
+
         public static bool IsOlderThan(this String fileName1, String fileName2)
         {
 			DateTime dt1 = fileName1 != null ? File.GetLastWriteTime(fileName1) : DateTime.MinValue;

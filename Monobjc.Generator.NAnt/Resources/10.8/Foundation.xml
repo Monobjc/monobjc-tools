@@ -1694,6 +1694,18 @@
 		</Class>
 		<Class name="NSStream">
 			<File>Cocoa/Reference/Foundation/Classes/NSStream_Class/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[NSString * const NSStreamNetworkService]]></Source>
+                    <With><![CDATA[;NSString * const NSStreamNetworkService]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef enum : NSUInteger]]></Source>
+                    <With><![CDATA[typedef enum]]></With>
+                </Replace>
+            </Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
 				<Change><![CDATA[Enumerations["Stream_Status_Constants"].Name="NSStreamStatus"]]></Change>

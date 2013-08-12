@@ -255,12 +255,6 @@ enum {
 				</Replace>
 			</Patch>
 		</Class>
-		<Class name="AVMutableComposition.Deprecated">
-			<File>AVFoundation/Reference/AVMutableComposition_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="AVMutableComposition"]]></Change>
-			</Patch>
-		</Class>
 		<Class name="AVMutableCompositionTrack">
 			<File>AVFoundation/Reference/AVMutableCompositionTrack_Class/Reference/Reference.html</File>
 			<Patch type="Generated">

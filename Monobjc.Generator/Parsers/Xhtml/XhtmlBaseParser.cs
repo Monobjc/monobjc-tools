@@ -125,6 +125,24 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml
 		/// <param name="values">Values to clean.</param>
 		private static void CleanEnumValues (String name, ref String values)
 		{
+            // Remove single line comment that appears on their own line.
+            // See NSAlignmentOptions.
+            //
+            // Example:
+            //
+            // enum {
+            //   v1 = 1,
+            //   // Comment
+            //   v2 = 2,
+            // }
+            //
+            // enum {
+            //   v1 = 1,
+            //   v2 = 2,
+            // }
+            var lines = values.Split(new [] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            values = String.Join("\n", lines.Where(l => !l.Trim().StartsWith("//")));
+
 			// Rejoin wrapped lines that had no comma (unless that would make for two = assignements).
 			// See UIInterfaceOrientationMask. Single line format is required for key / value parsing later.
 			//
@@ -140,7 +158,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml
 			//   v1 = 1,
 			//   v2 = 2,
 			// }
-			var lines = values.Split(new [] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+			lines = values.Split(new [] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
 			values = string.Empty;
 			for (int i = 0; i < lines.Length; ++i) {
 				var line = lines[i];

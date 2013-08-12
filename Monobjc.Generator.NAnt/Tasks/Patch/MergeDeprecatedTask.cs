@@ -91,10 +91,13 @@ namespace Monobjc.Tools.Generator.NAnt
 
 		private void LoadAndMerge<T>(IEnumerable<String> files, TextWriter writer, params Object[] actions) where T : BaseEntity {
 			IEnumerable<T> entities = files.Select(f => BaseEntity.LoadFrom<T>(f));
-			T target = entities.First();
+            T target = entities.First();
 			int hash = target.GetHashValue();
 
 			foreach(T entity in entities.Skip(1)) {
+                if (entity == null) {
+                    continue;
+                }
 				foreach(var a in actions) {
 					Action<T, T> action = (Action<T, T>) a;
 					action(target, entity);
@@ -102,6 +105,7 @@ namespace Monobjc.Tools.Generator.NAnt
 			}
 
 			int newHash = target.GetHashValue();
+            this.Log (Level.Verbose, "5");
 			
 			if (writer != null) {
 				writer.WriteLine("{0} {1}", (hash != newHash) ? "MODIFIED " : "UNTOUCHED", target.Name);

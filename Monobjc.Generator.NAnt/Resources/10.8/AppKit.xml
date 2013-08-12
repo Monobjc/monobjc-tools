@@ -463,7 +463,7 @@
 				<Change><![CDATA[Methods["DraggingImageForItemsAtIndexesWithEventOffset"].Parameters["dragImageOffset"].Type="NSPoint"]]></Change>
 				<Change><![CDATA[Methods["DraggingImageForItemsAtIndexesWithEventOffset"].Parameters["dragImageOffset"].IsOut=true]]></Change>
 				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
-				<Change><![CDATA[Properties["Delegate"].MinAvailability="Mac OS X v10.5"]]></Change>
+				<Change><![CDATA[Properties["Delegate"].MinAvailability="OS X v10.5"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSCollectionViewItem">
@@ -560,7 +560,7 @@
 		<Class name="NSControl">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSControl_Class/Reference/Reference.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Properties.Set("Delegate", "<Property><Summary><Line>Returns the delegate used by the receiver.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>Delegate</Name><Type>Id</Type><Getter><Summary/><MinAvailability>Mac OS X v10.0</MinAvailability><Name>Delegate</Name><Selector>delegate</Selector><Signature>- (id)delegate</Signature><ReturnType>Id</ReturnType><ReturnsDocumentation>The delegate used by the receiver and all other text views sharing the receiver’s layout manager, or nil if there is none.</ReturnsDocumentation><Parameters /></Getter><Setter><Summary/><MinAvailability>Mac OS X v10.0</MinAvailability><Name>SetDelegate</Name><Selector>setDelegate:</Selector><Signature>- (void)setDelegate:(id)anObject</Signature><ReturnType>void</ReturnType><Parameters><Parameter><Summary><Line>The new delegate object.</Line></Summary><Name>anObject</Name><Type>Id</Type></Parameter></Parameters></Setter></Property>")]]></Change>
+				<Change><![CDATA[Properties.Set("Delegate", "<Property><Summary><Line>Returns the delegate used by the receiver.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>Delegate</Name><Type>Id</Type><Getter><Summary/><MinAvailability>OS X v10.0</MinAvailability><Name>Delegate</Name><Selector>delegate</Selector><Signature>- (id)delegate</Signature><ReturnType>Id</ReturnType><ReturnsDocumentation>The delegate used by the receiver and all other text views sharing the receiver’s layout manager, or nil if there is none.</ReturnsDocumentation><Parameters /></Getter><Setter><Summary/><MinAvailability>OS X v10.0</MinAvailability><Name>SetDelegate</Name><Selector>setDelegate:</Selector><Signature>- (void)setDelegate:(id)anObject</Signature><ReturnType>void</ReturnType><Parameters><Parameter><Summary><Line>The new delegate object.</Line></Summary><Name>anObject</Name><Type>Id</Type></Parameter></Parameters></Setter></Property>")]]></Change>
 				<Change><![CDATA[Properties["Cell"].Type="NSCell"]]></Change>
 				<Change><![CDATA[Properties["Formatter"].Type="NSFormatter"]]></Change>
 				<Change><![CDATA[Properties["SelectedCell"].Type="NSCell"]]></Change>
@@ -622,7 +622,7 @@
                 <Change><![CDATA[Methods["PerformActivityWithSynchronousWaitingUsingBlock"].Parameters["inBlock"].IsBlock=true]]></Change>
                 <Change><![CDATA[Methods["PerformAsynchronousFileAccessUsingBlock"].Parameters["inBlock"].Type="Action"]]></Change>
                 <Change><![CDATA[Methods["PerformAsynchronousFileAccessUsingBlock"].Parameters["inBlock"].IsBlock=true]]></Change>
-				<Change><![CDATA[Enumerations["NSSaveOperationType"].Values.Set("NSAutosaveOperation", "<EnumerationValue><Summary><Line>Old name for the NSAutosaveElsewhereOperation operation type. (Deprecated. Deprecated in OS X v10.7. Use NSAutosaveElsewhereOperation instead.)</Line></Summary><MinAvailability>Mac OS X v10.4</MinAvailability><MaxAvailability>Mac OS X v10.7</MaxAvailability><Name>NSAutosaveOperation</Name><Value>3</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSSaveOperationType"].Values.Set("NSAutosaveOperation", "<EnumerationValue><Summary><Line>Old name for the NSAutosaveElsewhereOperation operation type. (Deprecated. Deprecated in OS X v10.7. Use NSAutosaveElsewhereOperation instead.)</Line></Summary><MinAvailability>OS X v10.4</MinAvailability><MaxAvailability>OS X v10.7</MaxAvailability><Name>NSAutosaveOperation</Name><Value>3</Value></EnumerationValue>")]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSDocument.Deprecated">
@@ -837,7 +837,7 @@
 				<Change><![CDATA[Enumerations["NSFontRenderingMode"].BaseType="NSUInteger"]]></Change>
 				<Change><![CDATA[Enumerations.First(Name == "NSMultibyteGlyphPacking").Generate=false]]></Change>
 				<Change><![CDATA[Enumerations.Last(Name == "NSMultibyteGlyphPacking").BaseType="NSUInteger"]]></Change>
-				<Change><![CDATA[Enumerations.Last(Name == "NSMultibyteGlyphPacking").Values.Set("NSNativeShortGlyphPacking", "<EnumerationValue><Summary><Line>The native format for Mac OS X.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>NSNativeShortGlyphPacking</Name><Value>5</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations.Last(Name == "NSMultibyteGlyphPacking").Values.Set("NSNativeShortGlyphPacking", "<EnumerationValue><Summary><Line>The native format for Mac OS X.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>NSNativeShortGlyphPacking</Name><Value>5</Value></EnumerationValue>")]]></Change>
 				<Change><![CDATA[Enumerations["NSGlyphRelation"].BaseType="NSUInteger"]]></Change>
 				<!-- TODO: Move to constants -->
 				<Change><![CDATA[Enumerations["Reserved_Glyph_Codes"].Generate=false]]></Change>
@@ -1307,12 +1307,12 @@
 				<Change><![CDATA[Enumerations["Modal_Panel_Return_Values"].Name="NSModalPanelReturn"]]></Change>
 				<Change><![CDATA[Enumerations["NSModalPanelReturn"].BaseType="NSInteger"]]></Change>
 				<Change><![CDATA[Enumerations["NSModalPanelReturn"].Generate=false]]></Change>
-				<Change><![CDATA[Constants.Set("NSOKButton", "<Constant><Summary><Line>The OK button</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>NSOKButton</Name><Type>NSInteger</Type><Static>true</Static><Value>1</Value></Constant>")]]></Change>
-				<Change><![CDATA[Constants.Set("NSCancelButton", "<Constant><Summary><Line>The Cancel button</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>NSCancelButton</Name><Type>NSInteger</Type><Static>true</Static><Value>0</Value></Constant>")]]></Change>
-				<Change><![CDATA[Constants.Set("NSAlertDefaultReturn", "<Constant><Summary><Line>The user pressed the default button.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>NSAlertDefaultReturn</Name><Type>NSInteger</Type><Static>true</Static><Value>1</Value></Constant>")]]></Change>
-				<Change><![CDATA[Constants.Set("NSAlertAlternateReturn", "<Constant><Summary><Line>The user pressed the alternate button.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>NSAlertAlternateReturn</Name><Type>NSInteger</Type><Static>true</Static><Value>0</Value></Constant>")]]></Change>
-				<Change><![CDATA[Constants.Set("NSAlertOtherReturn", "<Constant><Summary><Line>The user pressed a second alternate button.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>NSAlertOtherReturn</Name><Type>NSInteger</Type><Static>true</Static><Value>-1</Value></Constant>")]]></Change>
-				<Change><![CDATA[Constants.Set("NSAlertErrorReturn", "<Constant><Summary><Line>The alert cannot identify the reason it was closed; it may have been closed by an external source or by a button other than those listed above.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>NSAlertErrorReturn</Name><Type>NSInteger</Type><Static>true</Static><Value>-2</Value></Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("NSOKButton", "<Constant><Summary><Line>The OK button</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>NSOKButton</Name><Type>NSInteger</Type><Static>true</Static><Value>1</Value></Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("NSCancelButton", "<Constant><Summary><Line>The Cancel button</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>NSCancelButton</Name><Type>NSInteger</Type><Static>true</Static><Value>0</Value></Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("NSAlertDefaultReturn", "<Constant><Summary><Line>The user pressed the default button.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>NSAlertDefaultReturn</Name><Type>NSInteger</Type><Static>true</Static><Value>1</Value></Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("NSAlertAlternateReturn", "<Constant><Summary><Line>The user pressed the alternate button.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>NSAlertAlternateReturn</Name><Type>NSInteger</Type><Static>true</Static><Value>0</Value></Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("NSAlertOtherReturn", "<Constant><Summary><Line>The user pressed a second alternate button.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>NSAlertOtherReturn</Name><Type>NSInteger</Type><Static>true</Static><Value>-1</Value></Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("NSAlertErrorReturn", "<Constant><Summary><Line>The alert cannot identify the reason it was closed; it may have been closed by an external source or by a button other than those listed above.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>NSAlertErrorReturn</Name><Type>NSInteger</Type><Static>true</Static><Value>-2</Value></Constant>")]]></Change>
 			</Patch>
 			<Patch type="Generated">
 				<Replace>
@@ -1589,6 +1589,11 @@
 		</Class>
 		<Class name="NSShadow">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSShadow_Class/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties.First(Name == "ShadowBlurRadius").Generate=false]]></Change>
+                <Change><![CDATA[Properties.First(Name == "ShadowColor").Generate=false]]></Change>
+                <Change><![CDATA[Properties.First(Name == "ShadowOffset").Generate=false]]></Change>
+            </Patch>
 		</Class>
 		<Class name="NSSharingService">
 			<File>AppKit/Reference/NSSharingService_Class/Reference/Reference.html</File>
@@ -1727,9 +1732,9 @@
 				<Change><![CDATA[Enumerations["NSTableViewGridLineStyle"].Flags=true]]></Change>
 				<Change><![CDATA[Enumerations["No_Animation_Effects"].Generate=false]]></Change>
 				<Change><![CDATA[Enumerations["Row_Animation_Effects"].Generate=false]]></Change>
-				<Change><![CDATA[Enumerations["NSTableViewAnimationOptions"].Values.Set("NSTableViewAnimationEffectNone", "<EnumerationValue><Summary><Line>Specifies no animation effect should be used. Specifying any animation negates this effect.</Line></Summary><MinAvailability>Mac OS X v10.7</MinAvailability><Name>NSTableViewAnimationEffectNone</Name><Value>0x0</Value></EnumerationValue>")]]></Change>
-				<Change><![CDATA[Enumerations["NSTableViewAnimationOptions"].Values.Set("NSTableViewAnimationEffectFade", "<EnumerationValue><Summary><Line>Specifies that the tableview will use a fade for row or column removal. The effect can be combined with any NSTableViewAnimationOptions constant.</Line></Summary><MinAvailability>Mac OS X v10.7</MinAvailability><Name>NSTableViewAnimationEffectFade</Name><Value>0x1</Value></EnumerationValue>")]]></Change>
-				<Change><![CDATA[Enumerations["NSTableViewAnimationOptions"].Values.Set("NSTableViewAnimationEffectGap", "<EnumerationValue><Summary><Line>Creates a gap for newly inserted rows. This is useful for drag and drop animations that animate to a newly opened gap and should be used in the delegate method tableView:acceptDrop:row:dropOperation:.</Line></Summary><MinAvailability>Mac OS X v10.7</MinAvailability><Name>NSTableViewAnimationEffectGap</Name><Value>0x2</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSTableViewAnimationOptions"].Values.Set("NSTableViewAnimationEffectNone", "<EnumerationValue><Summary><Line>Specifies no animation effect should be used. Specifying any animation negates this effect.</Line></Summary><MinAvailability>OS X v10.7</MinAvailability><Name>NSTableViewAnimationEffectNone</Name><Value>0x0</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSTableViewAnimationOptions"].Values.Set("NSTableViewAnimationEffectFade", "<EnumerationValue><Summary><Line>Specifies that the tableview will use a fade for row or column removal. The effect can be combined with any NSTableViewAnimationOptions constant.</Line></Summary><MinAvailability>OS X v10.7</MinAvailability><Name>NSTableViewAnimationEffectFade</Name><Value>0x1</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSTableViewAnimationOptions"].Values.Set("NSTableViewAnimationEffectGap", "<EnumerationValue><Summary><Line>Creates a gap for newly inserted rows. This is useful for drag and drop animations that animate to a newly opened gap and should be used in the delegate method tableView:acceptDrop:row:dropOperation:.</Line></Summary><MinAvailability>OS X v10.7</MinAvailability><Name>NSTableViewAnimationEffectGap</Name><Value>0x2</Value></EnumerationValue>")]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSTableView.Deprecated">
@@ -1980,7 +1985,7 @@
 				<Change><![CDATA[Methods["AdjustPageWidthNewLeftRightLimit"].Parameters["newRight"].IsOut=true]]></Change>
 				<Change><![CDATA[Methods["SortSubviewsUsingFunctionContext"].Parameters["compare"].Type="IdComparator"]]></Change>
 				<Change><![CDATA[Methods["ViewWithTag"].ReturnType="NSView"]]></Change>
-				<Change><![CDATA[Properties.Set("Animator", "<Property><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>Mac OS X v10.5</MinAvailability><Name>Animator</Name><Type>Id</Type><Getter><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>Mac OS X v10.5</MinAvailability><Name>Animator</Name><Selector>animator</Selector><Signature>- (id)animator</Signature><ReturnType>Id</ReturnType><ReturnsDocumentation>Returns a proxy object for the receiver that can initiate implied animations in response to property changes.</ReturnsDocumentation><Parameters /></Getter></Property>")]]></Change>
+				<Change><![CDATA[Properties.Set("Animator", "<Property><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>OS X v10.5</MinAvailability><Name>Animator</Name><Type>Id</Type><Getter><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>OS X v10.5</MinAvailability><Name>Animator</Name><Selector>animator</Selector><Signature>- (id)animator</Signature><ReturnType>Id</ReturnType><ReturnsDocumentation>Returns a proxy object for the receiver that can initiate implied animations in response to property changes.</ReturnsDocumentation><Parameters /></Getter></Property>")]]></Change>
 				<Change><![CDATA[Properties["Animator"].Type="NSView"]]></Change>
 				<Change><![CDATA[Properties["AutoresizingMask"].Type="NSAutoresizingMask"]]></Change>
 				<Change><![CDATA[Enumerations["Resizing_masks"].Name="NSAutoresizingMask"]]></Change>
@@ -2052,7 +2057,7 @@ enum {]]></Source>
 				<Change><![CDATA[Methods["NextEventMatchingMaskUntilDateInModeDequeue"].Parameters["eventMask"].Type="NSEventMask"]]></Change>
 				<Change><![CDATA[DelegateMethods["WindowDidDecodeRestorableState"].Generate=false]]></Change>
 				<Change><![CDATA[DelegateMethods["WindowWillEncodeRestorableState"].Generate=false]]></Change>
-				<Change><![CDATA[Properties.Set("Animator", "<Property><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>Mac OS X v10.5</MinAvailability><Name>Animator</Name><Type>Id</Type><Getter><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>Mac OS X v10.5</MinAvailability><Name>Animator</Name><Selector>animator</Selector><Signature>- (id)animator</Signature><ReturnType>Id</ReturnType><ReturnsDocumentation>Returns a proxy object for the receiver that can initiate implied animations in response to property changes.</ReturnsDocumentation><Parameters /></Getter></Property>")]]></Change>
+				<Change><![CDATA[Properties.Set("Animator", "<Property><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>OS X v10.5</MinAvailability><Name>Animator</Name><Type>Id</Type><Getter><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>OS X v10.5</MinAvailability><Name>Animator</Name><Selector>animator</Selector><Signature>- (id)animator</Signature><ReturnType>Id</ReturnType><ReturnsDocumentation>Returns a proxy object for the receiver that can initiate implied animations in response to property changes.</ReturnsDocumentation><Parameters /></Getter></Property>")]]></Change>
 				<Change><![CDATA[Properties["Animator"].Type="NSWindow"]]></Change>
 				<Change><![CDATA[Properties["ContentView"].Type="NSView"]]></Change>
 				<Change><![CDATA[Properties["ContentView"].Getter.ReturnType="NSView"]]></Change>
@@ -2063,11 +2068,11 @@ enum {]]></Source>
 				<Change><![CDATA[Enumerations["Window_Style_Masks"].Name="NSWindowStyleMask"]]></Change>
 				<Change><![CDATA[Enumerations["NSWindowStyleMask"].BaseType="NSUInteger"]]></Change>
 				<Change><![CDATA[Enumerations["NSWindowStyleMask"].Flags=true]]></Change>
-				<Change><![CDATA[Enumerations["NSWindowStyleMask"].Values.Set("NSDocModalWindowMask", "<EnumerationValue><Summary><Line>The panel is created as a modal sheet.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>NSDocModalWindowMask</Name><Value>1 &amp;lt;&amp;lt; 6</Value></EnumerationValue>")]]></Change>
-				<Change><![CDATA[Enumerations["NSWindowStyleMask"].Values.Set("NSNonactivatingPanelMask", "<EnumerationValue><Summary><Line>The panel can receive keyboard input without activating the owning application.</Line><Line>Valid only for an instance of NSPanel or its subclasses; not valid for a window.</Line></Summary><MinAvailability>Mac OS X v10.2</MinAvailability><Name>NSNonactivatingPanelMask</Name><Value>1 &amp;lt;&amp;lt; 7</Value></EnumerationValue>")]]></Change>
-				<Change><![CDATA[Enumerations["NSWindowStyleMask"].Values.Set("NSHUDWindowMask", "<EnumerationValue><Summary><Line>The panel is created as a transparent panel (sometimes called a “heads-up display”).</Line><Line>Valid only for an instance of NSPanel or its subclasses; not valid for a window.</Line><Line>Using the C bitwise OR operator, , NSHUDWindowMask can be combined with other style masks (some of which are documented in Window_Style_Masks) with the following results:</Line><Line>The following constants cannot be combined with , NSHUDWindowMask: NSMiniaturizableWindowMask, NSTexturedBackgroundWindowMask, NSDocModalWindowMask, and NSUnifiedTitleAndToolbarWindowMask.</Line></Summary><MinAvailability>Mac OS X v10.5</MinAvailability><Name>NSHUDWindowMask</Name><Value>1 &amp;lt;&amp;lt; 13</Value></EnumerationValue>")]]></Change>
-				<Change><![CDATA[Enumerations["NSWindowStyleMask"].Values.Set("NSUnifiedTitleAndToolbarWindowMask", "<EnumerationValue><Summary><Line>Specifies a window whose toolbar and title bar are rendered on a single continuous background.</Line></Summary><MinAvailability>Mac OS X v10.4</MinAvailability><Name>NSUnifiedTitleAndToolbarWindowMask</Name><Value>1 &amp;lt;&amp;lt; 12</Value></EnumerationValue>")]]></Change>
-				<Change><![CDATA[Enumerations["NSWindowStyleMask"].Values.Set("NSFullScreenWindowMask", "<EnumerationValue><Summary><Line>Indicates that a window has fullscreen appearance.</Line><Line>A fullscreen window does not draw its titlebar, and may have special handling for its toolbar.</Line></Summary><MinAvailability>Mac OS X v10.7</MinAvailability><Name>NSFullScreenWindowMask</Name><Value>1 &amp;lt;&amp;lt; 14</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSWindowStyleMask"].Values.Set("NSDocModalWindowMask", "<EnumerationValue><Summary><Line>The panel is created as a modal sheet.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>NSDocModalWindowMask</Name><Value>1 &amp;lt;&amp;lt; 6</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSWindowStyleMask"].Values.Set("NSNonactivatingPanelMask", "<EnumerationValue><Summary><Line>The panel can receive keyboard input without activating the owning application.</Line><Line>Valid only for an instance of NSPanel or its subclasses; not valid for a window.</Line></Summary><MinAvailability>OS X v10.2</MinAvailability><Name>NSNonactivatingPanelMask</Name><Value>1 &amp;lt;&amp;lt; 7</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSWindowStyleMask"].Values.Set("NSHUDWindowMask", "<EnumerationValue><Summary><Line>The panel is created as a transparent panel (sometimes called a “heads-up display”).</Line><Line>Valid only for an instance of NSPanel or its subclasses; not valid for a window.</Line><Line>Using the C bitwise OR operator, , NSHUDWindowMask can be combined with other style masks (some of which are documented in Window_Style_Masks) with the following results:</Line><Line>The following constants cannot be combined with , NSHUDWindowMask: NSMiniaturizableWindowMask, NSTexturedBackgroundWindowMask, NSDocModalWindowMask, and NSUnifiedTitleAndToolbarWindowMask.</Line></Summary><MinAvailability>OS X v10.5</MinAvailability><Name>NSHUDWindowMask</Name><Value>1 &amp;lt;&amp;lt; 13</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSWindowStyleMask"].Values.Set("NSUnifiedTitleAndToolbarWindowMask", "<EnumerationValue><Summary><Line>Specifies a window whose toolbar and title bar are rendered on a single continuous background.</Line></Summary><MinAvailability>OS X v10.4</MinAvailability><Name>NSUnifiedTitleAndToolbarWindowMask</Name><Value>1 &amp;lt;&amp;lt; 12</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSWindowStyleMask"].Values.Set("NSFullScreenWindowMask", "<EnumerationValue><Summary><Line>Indicates that a window has fullscreen appearance.</Line><Line>A fullscreen window does not draw its titlebar, and may have special handling for its toolbar.</Line></Summary><MinAvailability>OS X v10.7</MinAvailability><Name>NSFullScreenWindowMask</Name><Value>1 &amp;lt;&amp;lt; 14</Value></EnumerationValue>")]]></Change>
 				<Change><![CDATA[Enumerations["Controlling_the_Look_of_a_Window_and_Its_Toolbar"].Generate=false]]></Change>
 				<Change><![CDATA[Enumerations["Supporting_Full_Screen_Appearance."].Generate=false]]></Change>
 				<Change><![CDATA[Enumerations["Managing_Scaling_Factors"].Generate=false]]></Change>
@@ -2214,9 +2219,9 @@ enum {]]></Source>
 				<Change><![CDATA[Methods["ControlTextViewCompletionsForPartialWordRangeIndexOfSelectedItem"].Parameters["index"].Type="NSInteger"]]></Change>
 				<Change><![CDATA[Methods["ControlTextViewCompletionsForPartialWordRangeIndexOfSelectedItem"].Parameters["index"].IsByRef=true]]></Change>
 				<!--
-        <Change><![CDATA[Methods["ControlTextDidBeginEditing]="<Method Generate="true" Static="false" GenerateConstructor="true"><Summary><Line>Sent when a control with editable text begins an editing session.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>ControlTextDidBeginEditing</Name><Selector>controlTextDidBeginEditing:</Selector><Signature>- (void)controlTextDidBeginEditing:(NSNotification *)aNotification</Signature><ReturnType>void</ReturnType><ReturnsDocumentation /><Parameters><Parameter IsBlock="false"><Summary><Line>The notification object. The name of the notification is always NSControlTextDidBeginEditingNotification.</Line></Summary><Name>aNotification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>"]]></Change>
-        <Change><![CDATA[Methods["ControlTextDidChange]="<Method Generate="true" Static="false" GenerateConstructor="true"><Summary><Line>Sent when the text in the receiving control changes.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>ControlTextDidChange</Name><Selector>controlTextDidChange:</Selector><Signature>- (void)controlTextDidChange:(NSNotification *)aNotification</Signature><ReturnType>void</ReturnType><ReturnsDocumentation /><Parameters><Parameter IsBlock="false"><Summary><Line>The notification object. The name of the notification is always NSControlTextDidChangeNotification.</Line></Summary><Name>aNotification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>"]]></Change>
-        <Change><![CDATA[Methods["ControlTextDidEndEditing]="<Method Generate="true" Static="false" GenerateConstructor="true"><Summary><Line>Sent when a control with editable text ends an editing session.</Line></Summary><MinAvailability>Mac OS X v10.0</MinAvailability><Name>ControlTextDidEndEditing</Name><Selector>controlTextDidEndEditing:</Selector><Signature>- (void)controlTextDidEndEditing:(NSNotification *)aNotification</Signature><ReturnType>void</ReturnType><ReturnsDocumentation /><Parameters><Parameter IsBlock="false"><Summary><Line>The notification object. The name of the notification is always NSControlTextDidEndEditingNotification.</Line></Summary><Name>aNotification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>"]]></Change>
+        <Change><![CDATA[Methods["ControlTextDidBeginEditing]="<Method Generate="true" Static="false" GenerateConstructor="true"><Summary><Line>Sent when a control with editable text begins an editing session.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>ControlTextDidBeginEditing</Name><Selector>controlTextDidBeginEditing:</Selector><Signature>- (void)controlTextDidBeginEditing:(NSNotification *)aNotification</Signature><ReturnType>void</ReturnType><ReturnsDocumentation /><Parameters><Parameter IsBlock="false"><Summary><Line>The notification object. The name of the notification is always NSControlTextDidBeginEditingNotification.</Line></Summary><Name>aNotification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>"]]></Change>
+        <Change><![CDATA[Methods["ControlTextDidChange]="<Method Generate="true" Static="false" GenerateConstructor="true"><Summary><Line>Sent when the text in the receiving control changes.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>ControlTextDidChange</Name><Selector>controlTextDidChange:</Selector><Signature>- (void)controlTextDidChange:(NSNotification *)aNotification</Signature><ReturnType>void</ReturnType><ReturnsDocumentation /><Parameters><Parameter IsBlock="false"><Summary><Line>The notification object. The name of the notification is always NSControlTextDidChangeNotification.</Line></Summary><Name>aNotification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>"]]></Change>
+        <Change><![CDATA[Methods["ControlTextDidEndEditing]="<Method Generate="true" Static="false" GenerateConstructor="true"><Summary><Line>Sent when a control with editable text ends an editing session.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>ControlTextDidEndEditing</Name><Selector>controlTextDidEndEditing:</Selector><Signature>- (void)controlTextDidEndEditing:(NSNotification *)aNotification</Signature><ReturnType>void</ReturnType><ReturnsDocumentation /><Parameters><Parameter IsBlock="false"><Summary><Line>The notification object. The name of the notification is always NSControlTextDidEndEditingNotification.</Line></Summary><Name>aNotification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>"]]></Change>
         -->
 			</Patch>
 		</Protocol>
@@ -2358,7 +2363,7 @@ enum {]]></Source>
 				<Change><![CDATA[Methods.Set("OutlineViewColumnDidMove", "
 <Method>
 	<Summary><Line>Invoked whenever the user moves a column in the outline view.</Line></Summary>
-	<MinAvailability>Mac OS X v10.0</MinAvailability>
+	<MinAvailability>OS X v10.0</MinAvailability>
 	<Name>OutlineViewColumnDidMove</Name>
 	<Selector>outlineViewColumnDidMove:</Selector>
 	<Signature>- (void)outlineViewColumnDidMove:(NSNotification *)notification</Signature>
@@ -2374,7 +2379,7 @@ enum {]]></Source>
 				<Change><![CDATA[Methods.Set("OutlineViewColumnDidResize", "
 <Method>
 	<Summary><Line>Invoked whenever the user resizes a column in the outline view.</Line></Summary>
-	<MinAvailability>Mac OS X v10.0</MinAvailability>
+	<MinAvailability>OS X v10.0</MinAvailability>
 	<Name>OutlineViewColumnDidResize</Name>
 	<Selector>outlineViewColumnDidResize:</Selector>
 	<Signature>- (void)outlineViewColumnDidResize:(NSNotification *)notification</Signature>
@@ -2390,7 +2395,7 @@ enum {]]></Source>
 				<Change><![CDATA[Methods.Set("OutlineViewItemDidCollapse", "
 <Method>
 	<Summary><Line>Invoked when the did collapse notification is posted—that is, whenever the user collapses an item in the outline view.</Line></Summary>
-	<MinAvailability>Mac OS X v10.0</MinAvailability>
+	<MinAvailability>OS X v10.0</MinAvailability>
 	<Name>OutlineViewItemDidCollapse</Name>
 	<Selector>outlineViewItemDidCollapse:</Selector>
 	<Signature>- (void)outlineViewItemDidCollapse:(NSNotification *)notification</Signature>
@@ -2406,7 +2411,7 @@ enum {]]></Source>
 				<Change><![CDATA[Methods.Set("OutlineViewItemDidExpand", "
 <Method>
 	<Summary><Line>Invoked when notification is posted—that is, whenever the user expands an item in the outline view.</Line></Summary>
-	<MinAvailability>Mac OS X v10.0</MinAvailability>
+	<MinAvailability>OS X v10.0</MinAvailability>
 	<Name>OutlineViewItemDidExpand</Name>
 	<Selector>outlineViewItemDidExpand:</Selector>
 	<Signature>- (void)outlineViewItemDidExpand:(NSNotification *)notification</Signature>
@@ -2422,7 +2427,7 @@ enum {]]></Source>
 				<Change><![CDATA[Methods.Set("OutlineViewItemWillCollapse", "
 <Method>
 	<Summary><Line>Invoked when notification is posted—that is, whenever the user is about to collapse an item in the outline view.</Line></Summary>
-	<MinAvailability>Mac OS X v10.0</MinAvailability>
+	<MinAvailability>OS X v10.0</MinAvailability>
 	<Name>OutlineViewItemWillCollapse</Name>
 	<Selector>outlineViewItemWillCollapse:</Selector>
 	<Signature>- (void)outlineViewItemWillCollapse:(NSNotification *)notification</Signature>
@@ -2438,7 +2443,7 @@ enum {]]></Source>
 				<Change><![CDATA[Methods.Set("OutlineViewItemWillExpand", "
 <Method>
 	<Summary><Line>Invoked when notification is posted—that is, whenever the user is about to expand an item in the outline view.</Line></Summary>
-	<MinAvailability>Mac OS X v10.0</MinAvailability>
+	<MinAvailability>OS X v10.0</MinAvailability>
 	<Name>OutlineViewItemWillExpand</Name>
 	<Selector>outlineViewItemWillExpand:</Selector>
 	<Signature>- (void)outlineViewItemWillExpand:(NSNotification *)notification</Signature>
@@ -2454,7 +2459,7 @@ enum {]]></Source>
 				<Change><![CDATA[Methods.Set("OutlineViewSelectionDidChange", "
 <Method>
 	<Summary><Line>Invoked when the selection did change notification is posted—that is, immediately after the outline view’s selection has changed.</Line></Summary>
-	<MinAvailability>Mac OS X v10.0</MinAvailability>
+	<MinAvailability>OS X v10.0</MinAvailability>
 	<Name>OutlineViewSelectionDidChange</Name>
 	<Selector>outlineViewSelectionDidChange:</Selector>
 	<Signature>- (void)outlineViewSelectionDidChange:(NSNotification *)notification</Signature>
@@ -2470,7 +2475,7 @@ enum {]]></Source>
 				<Change><![CDATA[Methods.Set("OutlineViewSelectionIsChanging", "
 <Method>
 	<Summary><Line>Invoked when notification is posted—that is, whenever the outline view’s selection changes.</Line></Summary>
-	<MinAvailability>Mac OS X v10.0</MinAvailability>
+	<MinAvailability>OS X v10.0</MinAvailability>
 	<Name>OutlineViewSelectionIsChanging</Name>
 	<Selector>outlineViewSelectionIsChanging:</Selector>
 	<Signature>- (void)outlineViewSelectionIsChanging:(NSNotification *)notification</Signature>

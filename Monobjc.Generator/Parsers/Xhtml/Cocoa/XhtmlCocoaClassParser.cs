@@ -71,7 +71,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
 
 				// Get the spec box
 				XElement specElement = (from el in root.Descendants ("div")
-                                        where (String)el.Attribute ("class") == "spec_sheet_info_box"
+                                        where el.Attribute ("class").Contains("spec_sheet_info_box")
                                         select el).FirstOrDefault ();
 				if (specElement != null) {
 					// Availability
