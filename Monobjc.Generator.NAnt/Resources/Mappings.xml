@@ -524,6 +524,7 @@
     <Mapping type="void (^)(NSArray *)"><![CDATA[block:Action<NSArray>]]></Mapping>
     <Mapping type="void (^)(NSArray *achievements, NSError *error)"><![CDATA[block:Action<NSArray, NSError>]]></Mapping>
     <Mapping type="void (^)(NSArray *challengeablePlayerIDs, NSError *error)"><![CDATA[block:Action<NSArray, NSError>]]></Mapping>
+    <Mapping type="void (^)(NSArray *challenges, NSError *error)"><![CDATA[block:Action<NSArray, NSError>]]></Mapping>
     <Mapping type="void (^)(NSArray *descriptions, NSError *error)"><![CDATA[block:Action<NSArray, NSError>]]></Mapping>
     <Mapping type="void (^)(NSArray *friends, NSError *error)"><![CDATA[block:Action<NSArray, NSError>]]></Mapping>
     <Mapping type="void (^)(NSArray *leaderboards, NSError *error)"><![CDATA[block:Action<NSArray, NSError>]]></Mapping>

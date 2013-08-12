@@ -24,9 +24,18 @@
 				<Change><![CDATA[Methods["LoadImageWithCompletionHandler"].Parameters["completionHandler"].Type="Action<NSImage, NSError>"]]></Change>
 			</Patch>
 		</Class>
-		<Class name="GKAchievementViewController">
-			<File>GameKit/Reference/GKAchievementViewController_Ref/Reference/Reference.html</File>
-		</Class>
+        <Class name="GKAchievementViewController">
+            <File>GameKit/Reference/GKAchievementViewController_Ref/Reference/Reference.html</File>
+        </Class>
+        <Class name="GKChallenge">
+            <File>GameKit/Reference/GKChallenge_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["GKChallengeState"].BaseType="NSInteger"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="GKChallengeEventHandler">
+            <File>GameKit/Reference/GKChallengeEventHandler_Ref/Reference/Reference.html</File>
+        </Class>
 		<Class name="GKDialogController">
 			<File>GameKit/Reference/GKDialogController_Ref/Reference/Reference.html</File>
 			<Patch type="Model">
@@ -36,9 +45,16 @@
 		<Class name="GKFriendRequestComposeViewController">
 			<File>GameKit/Reference/GKFriendRequestComposeViewController_Ref/Reference/Reference.html</File>
 		</Class>
-		<Class name="GKInvite">
-			<File>GameKit/Reference/GKInvite_Ref/Reference/Reference.html</File>
-		</Class>
+        <Class name="GKGameCenterViewController">
+            <File>GameKit/Reference/GKGameCenterViewController_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["GameCenterDelegate"].Type="Id"]]></Change>
+                <Change><![CDATA[Properties["ViewState"].Type="GKGameCenterViewControllerState"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="GKInvite">
+            <File>GameKit/Reference/GKInvite_Ref/Reference/Reference.html</File>
+        </Class>
 		<Class name="GKLeaderboard">
 			<File>GameKit/Reference/GKLeaderboard_Ref/Reference/Reference.html</File>
 			<Patch type="Html">
@@ -130,6 +146,13 @@
 				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
 			</Patch>
 		</Protocol>
+        <Protocol name="GKChallengeEventHandlerDelegate">
+            <File>GameKit/Reference/GKChallengeEventHandlerDelegate_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[DelegateFor="GKChallengeEventHandler"]]></Change>
+                <Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+            </Patch>
+        </Protocol>
 		<Protocol name="GKFriendRequestComposeViewControllerDelegate">
 			<File>GameKit/Reference/GKFriendRequestComposeViewControllerDelegate_Ref/Reference/Reference.html</File>
 			<Patch type="Model">
@@ -137,6 +160,13 @@
 				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
 			</Patch>
 		</Protocol>
+        <Protocol name="GKGameCenterControllerDelegate">
+            <File>GameKit/Reference/GKGameCenterViewControllerDelegate_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[DelegateFor="GKGameCenterViewController"]]></Change>
+                <Change><![CDATA[DelegateProperty="GameCenterDelegate"]]></Change>
+            </Patch>
+        </Protocol>
 		<Protocol name="GKLeaderboardViewControllerDelegate">
 			<File>GameKit/Reference/GKLeaderboardViewControllerDelegate_Ref/Reference/Reference.html</File>
 			<Patch type="Model">
