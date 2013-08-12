@@ -31,7 +31,7 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml
 	/// </summary>
 	public abstract class XhtmlBaseParser : BaseParser
 	{
-		protected static readonly Regex ENUMERATION_REGEX = new Regex (@"(typedef\s)?enum(\s?[_A-z]+)?\s*?\{(.+)\};?(\s?typedef)?(\s?[A-z0-9_]+\s?)?([A-z]+)?", RegexOptions.Singleline);
+		protected static readonly Regex ENUMERATION_REGEX = new Regex (@"(typedef\s)?enum(\s?[_A-z]+)?\s*(\/\*\s*:\s*(.+)?\s*\*\/)?\s*\{[\r\n]?(.+)\};?(\s?typedef)?(\s?[A-z0-9_]+\s?)?([A-z]+)?", RegexOptions.Singleline);
 		protected static readonly Regex CONSTANT_REGEX = new Regex (@"(id ?|unsigned ?|double ?|float ?\*?|NSString ?\*? ?|CFStringRef ?|CIFormat|CATransform3D|CLLocationDistance ?)([A-z0-9]+)$");
 		protected static readonly Regex PARAMETER_REGEX = new Regex (@"(const )?([0-9A-z]+ ?\*{0,2} ?)([0-9A-z]+)");
 		protected static readonly Regex COMMENTS_REGEX = new Regex (@"(/\*(.|[\r\n])*?\*/)|(//.*)", RegexOptions.Singleline);
@@ -67,13 +67,15 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml
 			while (trimmedDeclaration.Contains("  ")) {
 				trimmedDeclaration = trimmedDeclaration.Replace ("  ", " ");
 			}
+
 			Match r = ENUMERATION_REGEX.Match (trimmedDeclaration);
 			if (r.Success) {
-				String v2 = r.Groups [2].Value.Trim ();
-				String v5 = r.Groups [5].Value.Trim ();
-				String v6 = r.Groups [6].Value.Trim ();
+				String v2 = r.Groups [2].Value.Trim (); // Name at beginning
+				String v4 = r.Groups [4].Value.Trim (); // Type in comment
+				String v7 = r.Groups [7].Value.Trim (); // Name at end (or type)
+				String v8 = r.Groups [8].Value.Trim (); // Name at end (with preceding type)
 
-				values = r.Groups [3].Value.Trim ();
+				values = r.Groups [5].Value.Trim ();
 
 				// Make sure the values declaration didn't
 				// contain multiple enums like CFSocketStream 
@@ -82,14 +84,17 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml
 					return false;
 
 				// Name can be before enumeration values
-				if (!String.IsNullOrEmpty (v5) && !String.IsNullOrEmpty (v6)) {
-					type = v5;
-					name = v6;
-				} else if (!String.IsNullOrEmpty (v5) && String.IsNullOrEmpty (v6)) {
-					name = v5;
-				} else if (!String.IsNullOrEmpty (v2) && !String.IsNullOrEmpty (v5)) {
-					name = v5;
-				} else if (!String.IsNullOrEmpty (v2) && String.IsNullOrEmpty (v6)) {
+				if (!String.IsNullOrEmpty (v4) && !String.IsNullOrEmpty (v7)) {
+					type = v4;
+					name = v7;
+				} else if (!String.IsNullOrEmpty (v7) && !String.IsNullOrEmpty (v8)) {
+					type = v7;
+					name = v8;
+				} else if (!String.IsNullOrEmpty (v7) && String.IsNullOrEmpty (v8)) {
+					name = v7;
+				} else if (!String.IsNullOrEmpty (v2) && !String.IsNullOrEmpty (v7)) {
+					name = v7;
+				} else if (!String.IsNullOrEmpty (v2) && String.IsNullOrEmpty (v8)) {
 					name = v2;
 				}
 
