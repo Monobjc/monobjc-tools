@@ -227,9 +227,15 @@
 		</Class>
 		<Class name="GLKEffectPropertyFog">
 			<File>GLkit/Reference/GLKEffectPropertyFog_ClassRef/Reference/Reference.html</File>
-			<Patch type="Model">
-				<Change><![CDATA[Enumerations["GLKFogMode"].BaseType="int"]]></Change>
-			</Patch>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[GLKFogMode : GLint]]></Source>
+                    <With><![CDATA[GLKFogMode   ]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["GLKFogMode"].BaseType="int"]]></Change>
+            </Patch>
 		</Class>
 		<Class name="GLKEffectPropertyLight">
 			<File>GLkit/Reference/GLKEffectPropertyLight_ClassRef/Reference/Reference.html</File>
