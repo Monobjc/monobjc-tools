@@ -22,7 +22,7 @@ namespace Monobjc.Tools.Generator.NAnt
 		/// </summary>
 		protected override void ExecuteTask ()
 		{
-			String baseFolder = this.CreateBaseDir ();
+			//String baseFolder = this.CreateBaseDir ();
 			DocSet docSet = this.CreateDocSet ();
 			IEnumerable<Framework> frameworks = this.CreateFrameworks (docSet);
 

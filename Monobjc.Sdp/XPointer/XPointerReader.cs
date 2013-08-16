@@ -155,7 +155,7 @@ namespace Mvp.Xml.XPointer
                 //Not cached or GCollected                        
                 //XmlReader r = new XmlBaseAwareXmlReader(uri, new StringReader(content));
                 XmlReaderSettings settings = new XmlReaderSettings();
-                settings.ProhibitDtd = false;
+                settings.DtdProcessing = DtdProcessing.Parse;
                 XmlReader r = XmlReader.Create(new StringReader(content), settings, uri);
                 doc = CreateAndCacheDocument(r);
             }

@@ -90,7 +90,7 @@ namespace Mvp.Xml.XInclude
                 //_whiteSpaceHandling = xtr.WhitespaceHandling;
                 //_reader = vr;                                
                 XmlReaderSettings s = new XmlReaderSettings();
-                s.ProhibitDtd = false;
+                s.DtdProcessing = DtdProcessing.Parse;
                 s.ValidationType = ValidationType.None;
                 s.ValidationEventHandler += new ValidationEventHandler(
                     ValidationCallback);
