@@ -286,6 +286,11 @@ namespace Mvp.Xml.Common.XPath
 				}
 			}
 
+            public string Name 
+            {
+                get { return _name; }
+            }
+
 			#endregion Public Members
 
 			#region IXsltContextVariable Implementation
