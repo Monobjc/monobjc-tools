@@ -24,7 +24,7 @@ namespace Mvp.Xml.Common
 
         private static XmlReaderSettings CreateReaderSettings() {
             XmlReaderSettings settings = new XmlReaderSettings();
-            settings.ProhibitDtd = false;            
+            settings.DtdProcessing = DtdProcessing.Parse;
             return settings;
         }
 

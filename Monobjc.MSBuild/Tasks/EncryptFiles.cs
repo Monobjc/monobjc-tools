@@ -117,7 +117,6 @@ namespace Monobjc.MSBuild.Tasks
 				} else {
 					encrypter.Encrypt (sourcePath, destinationPath, provider);
 				}
-				return true;
 			}
 
 			return true;
