@@ -11,43 +11,43 @@
                 <Change><![CDATA[AdditionFor="GrowlApplicationBridge"]]></Change>
                 <Change><![CDATA[Constants["XSTR"].Generate=false]]></Change>
                 <Change><![CDATA[Constants["STRING_TYPE"].Generate=false]]></Change>
-                <Change><![CDATA[Constants["GROWL_APP_NAME"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_APP_ID"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_APP_ICON"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_NOTIFICATIONS_DEFAULT"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_NOTIFICATIONS_ALL"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_NOTIFICATIONS_HUMAN_READABLE_NAMES"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_NOTIFICATIONS_DESCRIPTIONS"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_TICKET_VERSION"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_NOTIFICATION_NAME"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_NOTIFICATION_TITLE"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_NOTIFICATION_DESCRIPTION"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_NOTIFICATION_ICON"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_NOTIFICATION_APP_ICON"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_NOTIFICATION_PRIORITY"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_NOTIFICATION_STICKY"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_NOTIFICATION_CLICK_CONTEXT"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_DISPLAY_PLUGIN"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_NOTIFICATION_IDENTIFIER"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_APP_PID"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_NOTIFICATION_PROGRESS"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_APP_REGISTRATION"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_APP_REGISTRATION_CONF"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_NOTIFICATION"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_SHUTDOWN"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_PING"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_PONG"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_IS_READY"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_NOTIFICATION_CLICKED"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_NOTIFICATION_TIMED_OUT"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_KEY_CLICKED_CONTEXT"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_REG_DICT_EXTENSION"].Type="NSString"]]></Change>
-                <Change><![CDATA[Constants["GROWL_POSITION_PREFERENCE_KEY"].Type="NSString"]]></Change>
+                <Change><![CDATA[Constants["GROWL_APP_NAME"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_APP_ID"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_APP_ICON"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_NOTIFICATIONS_DEFAULT"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_NOTIFICATIONS_ALL"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_NOTIFICATIONS_HUMAN_READABLE_NAMES"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_NOTIFICATIONS_DESCRIPTIONS"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_TICKET_VERSION"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_NOTIFICATION_NAME"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_NOTIFICATION_TITLE"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_NOTIFICATION_DESCRIPTION"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_NOTIFICATION_ICON"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_NOTIFICATION_APP_ICON"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_NOTIFICATION_PRIORITY"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_NOTIFICATION_STICKY"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_NOTIFICATION_CLICK_CONTEXT"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_DISPLAY_PLUGIN"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_NOTIFICATION_IDENTIFIER"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_APP_PID"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_NOTIFICATION_PROGRESS"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_APP_REGISTRATION"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_APP_REGISTRATION_CONF"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_NOTIFICATION"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_SHUTDOWN"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_PING"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_PONG"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_IS_READY"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_NOTIFICATION_CLICKED"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_NOTIFICATION_TIMED_OUT"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_KEY_CLICKED_CONTEXT"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_REG_DICT_EXTENSION"].Type="String"]]></Change>
+                <Change><![CDATA[Constants["GROWL_POSITION_PREFERENCE_KEY"].Type="String"]]></Change>
             </Patch>
             <Patch type="Generated">
                 <Replace>
                     <Source><![CDATA[XSTR(]]></Source>
-                    <With><![CDATA[NSString.NSPinnedString(]]></With>
+                    <With><![CDATA[(]]></With>
                 </Replace>
             </Patch>
         </Class>
