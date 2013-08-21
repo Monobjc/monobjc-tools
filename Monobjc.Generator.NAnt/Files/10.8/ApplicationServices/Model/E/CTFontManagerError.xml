@@ -7,7 +7,7 @@
 	<MinAvailability>OS X v10.6</MinAvailability>
 	<MaxAvailability>VERSION</MaxAvailability>
 	<Name>CTFontManagerError</Name>
-	<Namespace>MISSING</Namespace>
+	<Namespace>ApplicationServices</Namespace>
 	<BaseType>NSInteger</BaseType>
 	<MixedType>int,long</MixedType>
 	<Enumerations />
