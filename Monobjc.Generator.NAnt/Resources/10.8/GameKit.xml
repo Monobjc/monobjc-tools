@@ -26,6 +26,9 @@
 		</Class>
         <Class name="GKAchievementViewController">
             <File>GameKit/Reference/GKAchievementViewController_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["AchievementDelegate"].Type="Id"]]></Change>
+            </Patch>
         </Class>
         <Class name="GKChallenge">
             <File>GameKit/Reference/GKChallenge_Ref/Reference/Reference.html</File>
@@ -44,6 +47,9 @@
 		</Class>
 		<Class name="GKFriendRequestComposeViewController">
 			<File>GameKit/Reference/GKFriendRequestComposeViewController_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["ComposeViewDelegate"].Type="Id"]]></Change>
+            </Patch>
 		</Class>
         <Class name="GKGameCenterViewController">
             <File>GameKit/Reference/GKGameCenterViewController_Ref/Reference/Reference.html</File>
@@ -66,6 +72,9 @@
 		</Class>
 		<Class name="GKLeaderboardViewController">
 			<File>GameKit/Reference/GKLeaderboardViewController_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["LeaderboardDelegate"].Type="Id"]]></Change>
+            </Patch>
 		</Class>
 		<Class name="GKLocalPlayer">
 			<File>GameKit/Reference/GKLocalPlayer_Ref/Reference/Reference.html</File>
@@ -94,6 +103,9 @@
 		</Class>
 		<Class name="GKMatchmakerViewController">
 			<File>GameKit/Reference/GKMatchmakerViewController_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["MatchmakerDelegate"].Type="Id"]]></Change>
+            </Patch>
 		</Class>
 		<Class name="GKMatchRequest">
 			<File>GameKit/Reference/GKMatchRequest_Ref/Reference/Reference.html</File>
@@ -127,6 +139,9 @@
 		</Class>
 		<Class name="GKTurnBasedMatchmakerViewController">
 			<File>GameKit/Reference/GKTurnBasedMatchmakerViewController_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["TurnBasedMatchmakerDelegate"].Type="Id"]]></Change>
+            </Patch>
 		</Class>
 		<Class name="GKTurnBasedParticipant">
 			<File>GameKit/Reference/GKTurnBasedParticipant_Ref/Reference/Reference.html</File>
@@ -143,7 +158,7 @@
 			<File>GameKit/Reference/GKAchievementViewControllerDelegate_Ref/Reference/Reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[DelegateFor="GKAchievementViewController"]]></Change>
-				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[DelegateProperty="AchievementDelegate"]]></Change>
 			</Patch>
 		</Protocol>
         <Protocol name="GKChallengeEventHandlerDelegate">
@@ -157,7 +172,7 @@
 			<File>GameKit/Reference/GKFriendRequestComposeViewControllerDelegate_Ref/Reference/Reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[DelegateFor="GKFriendRequestComposeViewController"]]></Change>
-				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[DelegateProperty="ComposeViewDelegate"]]></Change>
 			</Patch>
 		</Protocol>
         <Protocol name="GKGameCenterControllerDelegate">
@@ -171,7 +186,7 @@
 			<File>GameKit/Reference/GKLeaderboardViewControllerDelegate_Ref/Reference/Reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[DelegateFor="GKLeaderboardViewController"]]></Change>
-				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[DelegateProperty="LeaderboardDelegate"]]></Change>
 			</Patch>
 		</Protocol>
 		<Protocol name="GKMatchDelegate">
@@ -185,7 +200,7 @@
 			<File>GameKit/Reference/GKMatchmakerViewControllerDelegate_Ref/Reference/Reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[DelegateFor="GKMatchmakerViewController"]]></Change>
-				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[DelegateProperty="MatchmakerDelegate"]]></Change>
 			</Patch>
 		</Protocol>
 		<Protocol name="GKTurnBasedEventHandlerDelegate">
@@ -205,7 +220,7 @@
 			<File>GameKit/Reference/GKTurnBasedMatchmakerViewControllerDelegate_Ref/Reference/Reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[DelegateFor="GKTurnBasedMatchmakerViewController"]]></Change>
-				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[DelegateProperty="TurnBasedMatchmakerDelegate"]]></Change>
 			</Patch>
 		</Protocol>
 	</Protocols>
