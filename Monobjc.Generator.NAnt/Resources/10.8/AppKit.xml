@@ -146,7 +146,7 @@
 		<Class name="NSAnimationContext">
 			<File>Cocoa/Reference/NSAnimationContext_class/Introduction/Introduction.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Properties["CompletionHandler"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["CompletionHandler"].Type="Block"]]></Change>
 				<Change><![CDATA[Properties["CompletionHandler"].MinAvailability="OS X v10.7"]]></Change>
 				<Change><![CDATA[Properties["Duration"].MinAvailability="OS X v10.6"]]></Change>
 				<Change><![CDATA[Properties["TimingFunction"].MinAvailability="OS X v10.7"]]></Change>
@@ -653,8 +653,7 @@
 			<File>AppKit/Reference/NSDraggingItem_Class/Reference/Reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["InitWithPasteboardWriter"].Parameters["pasteboardWriter"].Type="Id"]]></Change>
-				<!-- Replace by a block -->
-				<Change><![CDATA[Properties["ImageComponentsProvider"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["ImageComponentsProvider"].Type="NSArray"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSDraggingSession">
