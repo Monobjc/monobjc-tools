@@ -1748,7 +1748,7 @@
 				<Change><![CDATA[Methods["InitWithContentsOfFileUsedEncodingError"].Parameters["enc"].Type="NSStringEncoding"]]></Change>
 				<Change><![CDATA[Methods["InitWithContentsOfURLUsedEncodingError"].Parameters["enc"].IsOut=true]]></Change>
 				<Change><![CDATA[Methods["InitWithContentsOfURLUsedEncodingError"].Parameters["enc"].Type="NSStringEncoding"]]></Change>
-				<Change><![CDATA[Methods["InitWithCStringEncoding"].Parameters["nullTerminatedCString"].Type="String"]]></Change>
+				<Change><![CDATA[Methods["InitWithCStringEncoding"].Parameters["nullTerminatedCString"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["InitWithCStringEncoding"].GenerateConstructor=false]]></Change>
 				<Change><![CDATA[Methods["InitWithFormat"].Parameters.Set("format", "<Parameter><Summary /><Name>format</Name><Type>NSString</Type></Parameter>")]]></Change>
 				<Change><![CDATA[Methods["InitWithFormat"].Parameters.Set("values", "<Parameter><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
@@ -1777,7 +1777,7 @@
 				<Change><![CDATA[Methods["StringWithContentsOfURLUsedEncodingError"].Parameters["enc"].IsOut=true]]></Change>
 				<Change><![CDATA[Methods["StringWithContentsOfURLUsedEncodingError"].Parameters["enc"].Type="NSStringEncoding"]]></Change>
 				<Change><![CDATA[Methods["StringWithContentsOfURLUsedEncodingError"].ReturnType="NSString"]]></Change>
-				<Change><![CDATA[Methods["StringWithCStringEncoding"].Parameters["cString"].Type="String"]]></Change>
+				<Change><![CDATA[Methods["StringWithCStringEncoding"].Parameters["cString"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["StringWithCStringEncoding"].ReturnType="NSString"]]></Change>
 				<Change><![CDATA[Methods["StringWithFormat"].Parameters.Set("format", "<Parameter><Summary /><Name>format</Name><Type>NSString</Type></Parameter>")]]></Change>
 				<Change><![CDATA[Methods["StringWithFormat"].Parameters.Set("values", "<Parameter><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
