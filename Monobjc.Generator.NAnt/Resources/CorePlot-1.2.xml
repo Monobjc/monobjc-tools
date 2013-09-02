@@ -473,6 +473,7 @@
         <Class name="CPTDefinitions_Definitions">
             <Patch type="Model">
                 <Change><![CDATA[AdditionFor="CPTDefinitions"]]></Change>
+                <Change><![CDATA[Generate=false]]></Change>
                 <Change><![CDATA[Constants["CPT_SDK_SUPPORTS_WEAK"].Generate=false]]></Change>
                 <Change><![CDATA[Constants["__cpt_weak"].Generate=false]]></Change>
                 <Change><![CDATA[Constants["cpt_weak_property"].Generate=false]]></Change>
@@ -494,6 +495,7 @@
         <Class name="CPTExceptions_Definitions">
             <Patch type="Model">
                 <Change><![CDATA[AdditionFor="CPTExceptions"]]></Change>
+                <Change><![CDATA[Generate=false]]></Change>
             </Patch>
         </Class>
         <Class name="CPTFill_Definitions">
@@ -604,6 +606,7 @@
         <Class name="CPTNumericDataType_Definitions">
             <Patch type="Model">
                 <Change><![CDATA[AdditionFor="CPTNumericDataType"]]></Change>
+                <Change><![CDATA[Generate=false]]></Change>
                 <Change><![CDATA[Enumerations["CPTDataTypeFormat"].BaseType="int"]]></Change>
                 <Change><![CDATA[Enumerations["CPTDataOrder"].BaseType="int"]]></Change>
             </Patch>
@@ -611,6 +614,7 @@
         <Class name="CPTPathExtensions_Definitions">
             <Patch type="Model">
                 <Change><![CDATA[AdditionFor="CPTPathExtensions"]]></Change>
+                <Change><![CDATA[Generate=false]]></Change>
             </Patch>
         </Class>
         <Class name="CPTPieChart_Definitions">
@@ -623,16 +627,19 @@
         <Class name="CPTPlatformSpecificCategories_Definitions">
             <Patch type="Model">
                 <Change><![CDATA[AdditionFor="CPTPlatformSpecificCategories"]]></Change>
+                <Change><![CDATA[Generate=false]]></Change>
             </Patch>
         </Class>
         <Class name="CPTPlatformSpecificDefines_Definitions">
             <Patch type="Model">
                 <Change><![CDATA[AdditionFor="CPTPlatformSpecificDefines"]]></Change>
+                <Change><![CDATA[Generate=false]]></Change>
             </Patch>
         </Class>
         <Class name="CPTPlatformSpecificFunctions_Definitions">
             <Patch type="Model">
                 <Change><![CDATA[AdditionFor="CPTPlatformSpecificFunctions"]]></Change>
+                <Change><![CDATA[Generate=false]]></Change>
             </Patch>
         </Class>
         <Class name="CPTPlot_Definitions">
@@ -682,6 +689,7 @@
         <Class name="CPTResponder_Definitions">
             <Patch type="Model">
                 <Change><![CDATA[AdditionFor="CPTResponder"]]></Change>
+                <Change><![CDATA[Generate=false]]></Change>
             </Patch>
         </Class>
         <Class name="CPTScatterPlot_Definitions">
@@ -727,6 +735,7 @@
         <Class name="CPTUtilities_Definitions">
             <Patch type="Model">
                 <Change><![CDATA[AdditionFor="CPTUtilities"]]></Change>
+                <Change><![CDATA[Generate=false]]></Change>
             </Patch>
         </Class>
         <Class name="CPTXYAxis_Definitions">
