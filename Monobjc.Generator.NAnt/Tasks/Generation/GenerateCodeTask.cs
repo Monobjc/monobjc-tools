@@ -110,31 +110,22 @@ namespace Monobjc.Tools.Generator.NAnt
 		{
 			String file;
 			TypedEntity entity = BaseEntity.LoadFrom<TypedEntity> (sourcePath);
-			if (!entity.Generate) {
-				return;
-			}
 
 			// Make sure that availability is ready
 			entity.AdjustAvailability ();
 			
 			this.Log (Level.Info, String.Format ("Generating '{0}'...", e.name));
 			
-			file = destinationPath + ".cs";
-			this.Generate<TypedGenerator> (f, entity, file);
-
-//			if (entity.HasOpaqueFunctions) {
-//				file = destinationPath + ".Wrap.cs";
-//				this.Generate<OpaqueTypedGenerator> (f, entity, file);
-//			}
+            if (entity.Generate) {
+                file = destinationPath + ".cs";
+                this.Generate<TypedGenerator>(f, entity, file);
+            }
 		}
 
 		private void GenerateClassEntity (String baseFolder, IList<FrameworkEntity> entities, Framework f, FrameworkEntity e, String sourcePath, String destinationPath)
 		{
 			String file;
 			ClassEntity entity = BaseEntity.LoadFrom<ClassEntity> (sourcePath);
-			if (!entity.Generate) {
-				return;
-			}
 			
 			// Make sure that availability is ready
 			entity.AdjustAvailability ();
@@ -144,13 +135,17 @@ namespace Monobjc.Tools.Generator.NAnt
 			this.LoadClassDependencies (baseFolder, entities, entity);
 			
 			if (entity.ExtendedClass == null) {
-				file = destinationPath + ".cs";
-				this.Generate<ClassDefinitionGenerator> (f, entity, file);
+                if (entity.Generate) {
+                    file = destinationPath + ".cs";
+                    this.Generate<ClassDefinitionGenerator>(f, entity, file);
+                }
 
-				file = destinationPath + ".Class.cs";
-				this.Generate<ClassMembersGenerator> (f, entity, file);
+                if (entity.Generate) {
+                    file = destinationPath + ".Class.cs";
+                    this.Generate<ClassMembersGenerator>(f, entity, file);
+                }
 
-				if (entity.HasConstructors) {
+                if (entity.Generate && entity.HasConstructors) {
 					file = destinationPath + ".Constructors.cs";
 					this.Generate<ClassConstructorsGenerator> (f, entity, file);
 				}
@@ -160,13 +155,15 @@ namespace Monobjc.Tools.Generator.NAnt
 					this.Generate<ClassConstantsGenerator> (f, entity, file);
 				}
 
-				if (entity.Protocols != null && entity.Protocols.Count > 0) {
+                if (entity.Generate && entity.Protocols != null && entity.Protocols.Count > 0) {
 					file = destinationPath + ".Protocols.cs";
 					this.Generate<ClassProtocolsGenerator> (f, entity, file);
 				}
 			} else {
-				file = destinationPath + ".cs";
-				this.Generate<ClassAdditionsGenerator> (f, entity, file);
+                if (entity.Generate) {
+                    file = destinationPath + ".cs";
+                    this.Generate<ClassAdditionsGenerator>(f, entity, file);
+                }
 
 				if (entity.HasConstants || entity.HasEnumerations) {
 					file = destinationPath + ".Constants.cs";
@@ -179,9 +176,6 @@ namespace Monobjc.Tools.Generator.NAnt
 		{
 			String file;
 			ProtocolEntity entity = BaseEntity.LoadFrom<ProtocolEntity> (sourcePath);
-			if (!entity.Generate) {
-				return;
-			}
 			
 			// Make sure that availability is ready
 			entity.AdjustAvailability ();
@@ -190,10 +184,12 @@ namespace Monobjc.Tools.Generator.NAnt
 			
 			this.LoadProtocolDependencies (baseFolder, entities, entity);
 
-			file = destinationPath + ".Protocol.cs";
-			this.Generate<ProtocolGenerator> (f, entity, file);
+            if (entity.Generate) {
+                file = destinationPath + ".Protocol.cs";
+                this.Generate<ProtocolGenerator>(f, entity, file);
+            }
 
-			if (entity.DelegatorEntity != null) {
+            if (entity.Generate && entity.DelegatorEntity != null) {
 				String property = entity.DelegateProperty ?? "Delegate";
 				String dir = Path.GetDirectoryName (destinationPath);
 				file = Path.Combine (dir, entity.DelegatorEntity.Name + "." + property + ".cs");
