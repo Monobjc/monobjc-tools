@@ -48,7 +48,7 @@ namespace Monobjc.Tools.Generator.Generators
 			this.AppendStartCondition (classEntity);
 
 			// Append class starter
-			this.Writer.WriteLineFormat (1, "[ObjectiveCClass(\"{0}\")]", classEntity.Name);
+			this.Writer.WriteLineFormat (1, "[ObjectiveCClass(\"{0}\", IsNative = true)]", classEntity.Name);
 #if GENERATED_ATTRIBUTE
             this.Writer.WriteLineFormat(1, "[GeneratedCodeAttribute(\"{0}\", \"{1}\")]", GenerationHelper.ToolName, GenerationHelper.ToolVersion);
 #endif
