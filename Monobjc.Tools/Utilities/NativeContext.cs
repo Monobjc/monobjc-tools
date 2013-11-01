@@ -73,6 +73,7 @@ namespace Monobjc.Tools.Utilities
                         return "cc";
                     case MacOSVersion.MacOS107:
                     case MacOSVersion.MacOS108:
+                    case MacOSVersion.MacOS109:
                         return "clang";
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -98,6 +99,8 @@ namespace Monobjc.Tools.Utilities
                         return String.Format(CultureInfo.CurrentCulture, SDK_PATTERN, "10.7");
                     case MacOSVersion.MacOS108:
                         return String.Format(CultureInfo.CurrentCulture, SDK_PATTERN, "10.8");
+                    case MacOSVersion.MacOS109:
+                        return String.Format(CultureInfo.CurrentCulture, SDK_PATTERN, "10.9");
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
