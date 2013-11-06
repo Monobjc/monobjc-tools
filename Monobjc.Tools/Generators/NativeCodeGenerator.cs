@@ -103,6 +103,22 @@ namespace Monobjc.Tools.Generators
 		/// The native compiler.
 		/// </value>
 		public String NativeCompiler { get; set; }
+
+        /// <summary>
+        /// Gets or sets the native CFLAGS to use.
+        /// </summary>
+        /// <value>
+        /// The native CFLAGS.
+        /// </value>
+        public String NativeCFLAGS { get; set; }
+
+        /// <summary>
+        /// Gets or sets the native LDFLAGS to use.
+        /// </summary>
+        /// <value>
+        /// The native LDFLAGS.
+        /// </value>
+        public String NativeLDFLAGS { get; set; }
 		
         /// <summary>
         ///   Generates the native executable.
@@ -375,6 +391,7 @@ namespace Monobjc.Tools.Generators
             StringBuilder builder = new StringBuilder();
             builder.AppendFormat(" -Os -gdwarf-2 {0} -I\"{1}\" ", nativeOptions, directory);
             builder.AppendFormat(" -c \"{0}\" -o \"{1}\" ", sourceFile, objectFile);
+            builder.AppendFormat(" {0} ", this.NativeCFLAGS ?? String.Empty);
 
 			if (this.UseReceigen) {
 	            builder.AppendFormat(" -DRECEIGEN ");
@@ -405,6 +422,7 @@ namespace Monobjc.Tools.Generators
             // Build the command line
             StringBuilder builder = new StringBuilder();
             builder.AppendFormat(" {0} -L\"{1}\" ", nativeOptions, directory);
+            builder.AppendFormat(" {0} ", this.NativeLDFLAGS ?? String.Empty);
 			
             // Add the pkg-config flags for Mono
             String monoLibrary = this.UseSGEN ? "monosgen-2" : "mono-2";

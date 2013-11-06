@@ -136,14 +136,30 @@ namespace Monobjc.MSBuild.Tasks
 		/// </value>
 		public bool Compress { get; set; }
 		
-		/// <summary>
-		/// Gets or sets the native compiler.
-		/// </summary>
-		/// <value>
-		/// The native compiler.
-		/// </value>
-		public String NativeCompiler { get; set; }
-		
+        /// <summary>
+        /// Gets or sets the native compiler.
+        /// </summary>
+        /// <value>
+        /// The native compiler.
+        /// </value>
+        public String NativeCompiler { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the native CFLAGS to use.
+        /// </summary>
+        /// <value>
+        /// The native CFLAGS.
+        /// </value>
+        public String NativeCFLAGS { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the native LDFLAGS to use.
+        /// </summary>
+        /// <value>
+        /// The native LDFLAGS.
+        /// </value>
+        public String NativeLDFLAGS { get; set; }
+
         /// <summary>
         ///   Executes the task.
         /// </summary>
@@ -198,6 +214,8 @@ namespace Monobjc.MSBuild.Tasks
             codeGenerator.UseSGEN = this.UseSGEN;
             codeGenerator.UseReceigen = this.UseReceigen;
 			codeGenerator.NativeCompiler = this.NativeCompiler;
+            codeGenerator.NativeCFLAGS = this.NativeCFLAGS;
+            codeGenerator.NativeLDFLAGS = this.NativeLDFLAGS;
             String executableFile = codeGenerator.Generate(workingDir);
             // TODO: Use sgen if specified
             String libraryFile = Path.Combine(workingDir, "libmonobjc.dylib");

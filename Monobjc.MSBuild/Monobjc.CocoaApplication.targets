@@ -140,6 +140,8 @@
 			IncludedLibraries="@(AdditionalLibraries)"
 			MainAssembly="$(_MainAssembly)"
 			NativeCompiler="$(NativeCompiler)"
+			NativeCFLAGS="$(NativeCFLAGS)"
+			NativeLDFLAGS="$(NativeLDFLAGS)"
 			SearchDirectories="@(ResolvedFiles->'%(RootDir)%(Directory)')"
 			TargetArchitecture="$(MacOSArch)"
 			TargetOSVersion="$(MacOSVersion)"
