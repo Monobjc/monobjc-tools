@@ -170,6 +170,7 @@
     <Compile Include="Generators\ArtworkCombiner.cs" />
     <Compile Include="Generators\FileEncrypter.cs" />
     <Compile Include="Generators\FileEncrypter.Public.cs" />
+    <Compile Include="InterfaceBuilder\IIBClassDescriptor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Embedded\Info.plist" />

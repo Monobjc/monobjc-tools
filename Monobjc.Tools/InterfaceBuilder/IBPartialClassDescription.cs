@@ -24,8 +24,11 @@ namespace Monobjc.Tools.InterfaceBuilder
     ///   This subclass of <see cref = "IBArray" /> is used to carry the class description: the class name, the super class name, the outlets and the actions.
     ///   <para>A class can be described by zero or more <see cref = "IBPartialClassDescription" /> (from the IB file, from a header file, etc).</para>
     /// </summary>
-    public class IBPartialClassDescription : IBArray
+    public class IBPartialClassDescription : IBArray, IIBClassDescriptor
     {
+        private IList<IBActionDescriptor> actions = new List<IBActionDescriptor>();
+        private IList<IBOutletDescriptor> outlets = new List<IBOutletDescriptor>();
+
         /// <summary>
         ///   Initializes a new instance of the <see cref = "IBPartialClassDescription" /> class.
         /// </summary>
@@ -33,8 +36,6 @@ namespace Monobjc.Tools.InterfaceBuilder
         public IBPartialClassDescription(IDictionary<String, String> attributes)
             : base(attributes)
         {
-            this.Actions = new List<IBActionDescriptor>();
-            this.Outlets = new List<IBOutletDescriptor>();
         }
 
         /// <summary>
@@ -53,13 +54,13 @@ namespace Monobjc.Tools.InterfaceBuilder
         ///   Gets or sets the actions.
         /// </summary>
         /// <value>The actions.</value>
-        public IList<IBActionDescriptor> Actions { get; private set; }
+        public IEnumerable<IBActionDescriptor> Actions { get { return this.actions; } }
 
         /// <summary>
         ///   Gets or sets the outlets.
         /// </summary>
         /// <value>The outlets.</value>
-        public IList<IBOutletDescriptor> Outlets { get; private set; }
+        public IEnumerable<IBOutletDescriptor> Outlets { get { return this.outlets; } }
 
         /// <summary>
         ///   Accepts the specified visitor.
@@ -112,7 +113,7 @@ namespace Monobjc.Tools.InterfaceBuilder
                 {
                     itemValue = resolver.ResolveReference(reference);
                 }
-                this.Actions.Add(new IBActionDescriptor(key, itemValue.ToString()));
+                this.actions.Add(new IBActionDescriptor(key, itemValue.ToString()));
             }
         }
 
@@ -138,7 +139,7 @@ namespace Monobjc.Tools.InterfaceBuilder
                 {
                     itemValue = resolver.ResolveReference(reference);
                 }
-                this.Outlets.Add(new IBOutletDescriptor(key, itemValue.ToString()));
+                this.outlets.Add(new IBOutletDescriptor(key, itemValue.ToString()));
             }
         }
     }

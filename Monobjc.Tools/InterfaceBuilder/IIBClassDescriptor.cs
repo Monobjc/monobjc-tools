@@ -16,37 +16,35 @@
 // along with Monobjc.  If not, see <http://www.gnu.org/licenses/>.
 //
 using System;
-using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace Monobjc.Tools.InterfaceBuilder
 {
-    /// <summary>
-    ///   Structure to hold an outlet definition.
-    /// </summary>
-    [DebuggerDisplay("IBOutlet {ClassName} {Name};")]
-    public class IBOutletDescriptor
+    public interface IIBClassDescriptor
     {
         /// <summary>
-        ///   Initializes a new instance of the <see cref = "IBOutletDescriptor" /> struct.
-        /// </summary>
-        /// <param name = "name">The name.</param>
-        /// <param name = "className">Name of the class.</param>
-        public IBOutletDescriptor(string name, string className)
-        {
-            this.Name = name;
-            this.ClassName = className;
-        }
-
-        /// <summary>
-        ///   Gets or sets the name of the class.
+        ///   Gets the name of the class.
         /// </summary>
         /// <value>The name of the class.</value>
-        public String ClassName { get; private set; }
+        String ClassName { get; }
 
         /// <summary>
-        ///   Gets or sets the name.
+        ///   Gets the name of the super class.
         /// </summary>
-        /// <value>The name.</value>
-        public String Name { get; private set; }
+        /// <value>The name of the super class.</value>
+        String SuperClassName { get; }
+
+        /// <summary>
+        ///   Gets the actions.
+        /// </summary>
+        /// <value>The actions.</value>
+        IEnumerable<IBActionDescriptor> Actions { get; }
+
+        /// <summary>
+        ///   Gets the outlets.
+        /// </summary>
+        /// <value>The outlets.</value>
+        IEnumerable<IBOutletDescriptor> Outlets { get; }
     }
 }
+
