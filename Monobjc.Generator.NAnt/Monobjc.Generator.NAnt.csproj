@@ -71,31 +71,31 @@
     <Folder Include="Tasks\Generation\" />
     <Folder Include="Tasks\Diagnostics\" />
     <Folder Include="Tasks\Patch\" />
-    <Folder Include="Files\10.8\AppKit\Model\" />
-    <Folder Include="Files\10.8\AppKit\Model\S\" />
-    <Folder Include="Files\10.8\Security\Model\" />
-    <Folder Include="Files\10.8\QuartzCore\Model\S\" />
-    <Folder Include="Files\10.8\CoreMedia\" />
-    <Folder Include="Files\10.8\CoreMedia\Model\" />
-    <Folder Include="Files\10.8\AVFoundation\" />
-    <Folder Include="Files\10.8\AVFoundation\Html\" />
-    <Folder Include="Files\10.8\AVFoundation\Html\P\" />
-    <Folder Include="Files\10.8\AVFoundation\Html\C\" />
-    <Folder Include="Files\10.8\CoreLocation\" />
-    <Folder Include="Files\10.8\CoreLocation\Model\" />
-    <Folder Include="Files\10.8\CoreLocation\Model\S\" />
-    <Folder Include="Files\10.8\CorePlot\" />
-    <Folder Include="Files\10.8\CorePlot\Model\" />
-    <Folder Include="Files\10.8\CorePlot\Model\S\" />
-    <Folder Include="Files\10.8\GLKit\" />
-    <Folder Include="Files\10.8\GLKit\Model\" />
-    <Folder Include="Files\10.8\GLKit\Model\S\" />
-    <Folder Include="Files\10.8\SceneKit\" />
-    <Folder Include="Files\10.8\SceneKit\Model\" />
-    <Folder Include="Files\10.8\SceneKit\Model\S\" />
-    <Folder Include="Files\10.8\CoreMIDI\" />
-    <Folder Include="Files\10.8\CoreMIDI\Model\" />
-    <Folder Include="Files\10.8\CoreMIDI\Model\S\" />
+    <Folder Include="Files\OSX_10.8\AppKit\Model\" />
+    <Folder Include="Files\OSX_10.8\AppKit\Model\S\" />
+    <Folder Include="Files\OSX_10.8\Security\Model\" />
+    <Folder Include="Files\OSX_10.8\QuartzCore\Model\S\" />
+    <Folder Include="Files\OSX_10.8\CoreMedia\" />
+    <Folder Include="Files\OSX_10.8\CoreMedia\Model\" />
+    <Folder Include="Files\OSX_10.8\AVFoundation\" />
+    <Folder Include="Files\OSX_10.8\AVFoundation\Html\" />
+    <Folder Include="Files\OSX_10.8\AVFoundation\Html\P\" />
+    <Folder Include="Files\OSX_10.8\AVFoundation\Html\C\" />
+    <Folder Include="Files\OSX_10.8\CoreLocation\" />
+    <Folder Include="Files\OSX_10.8\CoreLocation\Model\" />
+    <Folder Include="Files\OSX_10.8\CoreLocation\Model\S\" />
+    <Folder Include="Files\OSX_10.8\CorePlot\" />
+    <Folder Include="Files\OSX_10.8\CorePlot\Model\" />
+    <Folder Include="Files\OSX_10.8\CorePlot\Model\S\" />
+    <Folder Include="Files\OSX_10.8\GLKit\" />
+    <Folder Include="Files\OSX_10.8\GLKit\Model\" />
+    <Folder Include="Files\OSX_10.8\GLKit\Model\S\" />
+    <Folder Include="Files\OSX_10.8\SceneKit\" />
+    <Folder Include="Files\OSX_10.8\SceneKit\Model\" />
+    <Folder Include="Files\OSX_10.8\SceneKit\Model\S\" />
+    <Folder Include="Files\OSX_10.8\CoreMIDI\" />
+    <Folder Include="Files\OSX_10.8\CoreMIDI\Model\" />
+    <Folder Include="Files\OSX_10.8\CoreMIDI\Model\S\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Generate.build">
@@ -110,409 +110,13 @@
     <Content Include="Resources\MIT.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\10.8\Foundation.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\AppKit.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\AddressBook.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\Accounts.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\ApplicationServices.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\Collaboration.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\AVFoundation.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\CoreData.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\CoreFoundation.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\CoreLocation.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\CoreMedia.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\CoreText.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\CoreWLAN.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\DiscRecording.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\DiscRecordingUI.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\EventKit.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\GameKit.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\GLKit.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\InputMethodKit.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\InstantMessage.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\QTKit.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\Quartz.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\QuartzCore.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\SceneKit.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\ScriptingBridge.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\Security.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\SecurityFoundation.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\SecurityInterface.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\Social.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\StoreKit.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\WebKit.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\Kernel.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\AssemblyInfo.template">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\AppKit\Model\E\NSTrackingAreaOptions.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\AppKit\Model\P\NSColorPanelDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\AppKit\Model\P\NSFontManagerDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\AppKit\Model\P\NSPanelDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\AppKit\Model\P\NSRulerViewDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\ApplicationServices\Model\E\CGRectEdge.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\ApplicationServices\Model\E\CTFontManagerError.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\ApplicationServices\Model\S\CGAffineTransform.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\ApplicationServices\Model\S\CGFloat.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\ApplicationServices\Model\S\CGPoint.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\ApplicationServices\Model\S\CGRect.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\ApplicationServices\Model\S\CGSize.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\AppKit\Model\S\NSEdgeInsets.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Foundation\Model\E\NSPropertyListReadOptions.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Foundation\Model\E\NSPropertyListWriteOptions.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Foundation\Model\P\NSFileManagerDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Foundation\Model\P\NSURLConnectionDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Foundation\Model\P\NSURLDownloadDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Foundation\Model\S\NSDecimal.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Foundation\Model\S\NSInteger.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Foundation\Model\S\NSPoint.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Foundation\Model\S\NSRange.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Foundation\Model\S\NSRect.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Foundation\Model\S\NSSize.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Foundation\Model\S\NSUInteger.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QuartzCore\Model\P\CAAnimationDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QuartzCore\Model\P\CALayerDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Quartz\Model\E\PDFAreaOfInterest.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Quartz\Model\E\PDFBorderStyle.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Quartz\Model\E\PDFDisplayBox.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Quartz\Model\E\PDFDisplayMode.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Quartz\Model\E\PDFLineStyle.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Quartz\Model\E\PDFMarkupType.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Quartz\Model\E\PDFTextAnnotationIconType.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Quartz\Model\P\IKSaveOptionsDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Quartz\Model\P\PDFDocumentDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Quartz\Model\P\PDFViewDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\WebKit\Model\P\WebDownloadDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\WebKit.DOM.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\JavaScriptCore.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QTKit\Model\E\QTMovieOperationPhase.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QTKit\Model\E\QTSampleBufferAudioBufferListOptions.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QTKit\Model\P\QTCaptureDecompressedAudioOutputDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QTKit\Model\P\QTCaptureDecompressedVideoOutputDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QTKit\Model\P\QTCaptureFileOutputDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QTKit\Model\P\QTCaptureVideoPreviewOutputDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QTKit\Model\P\QTCaptureViewDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QTKit\Model\P\QTMovieDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QTKit\Model\S\QTTime.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QTKit\Model\S\QTTimeRange.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\SecurityInterface\Model\P\SFAuthorizationViewDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\SecurityInterface\Model\P\SFCertificatePanelDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\SecurityInterface\Model\P\SFChooseIdentityPanelDelegate.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreFoundation\Model\S\CFHashCode.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreFoundation\Model\S\CFIndex.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreFoundation\Model\S\CFRange.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreFoundation\Model\S\CFTypeID.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreData\Model\E\NSSnapshotEventType.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\InputMethodKit\Model\E\IMKCandidatePanelType.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\InputMethodKit\Model\E\IMKCandidatesLocationHint.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\InputMethodKit\Model\E\IMKLocationToOffsetMappingMode.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Security\Model\E\SecCSFlags.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Growl-1.2.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Sparkle-1.5.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\CoreMIDI.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\CoreServices.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\ApplicationServices\Model\S\CTParagraphStyleSetting.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QuartzCore\Model\S\CVTimeStamp.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\10.8\OpenGL.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreMedia\Model\S\CMBlockBufferCustomBlockSource.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreMedia\Model\S\CMBufferCallbacks.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreMedia\Model\S\CMTime.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreMedia\Model\S\CMTimeRange.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QuartzCore\Model\S\CATransform3D.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QuartzCore\Model\S\CVSMPTETime.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreLocation\Model\S\CLLocationCoordinate2D.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreMedia\Model\S\CMTimeMapping.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CorePlot\Model\S\CPTConstraints.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CorePlot\Model\S\CPTNumericDataType.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\Foundation\Model\S\UUID.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\GLKit\Model\S\GLKMatrix2.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\GLKit\Model\S\GLKMatrix3.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\GLKit\Model\S\GLKMatrix4.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\GLKit\Model\S\GLKQuaternion.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\GLKit\Model\S\GLKVector2.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\GLKit\Model\S\GLKVector3.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\GLKit\Model\S\GLKVector4.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QTKit\Model\S\TimeRecord.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QTKit\Model\S\SMPTETime.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QTKit\Model\S\AudioBufferList.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\QTKit\Model\S\AudioBuffer.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\SceneKit\Model\S\SCNVector3.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\SceneKit\Model\S\SCNVector4.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreMIDI\Model\S\MIDINotification.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreMIDI\Model\S\MIDIObjectAddRemoveNotification.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreMIDI\Model\S\MIDIObjectPropertyChangeNotification.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreMIDI\Model\S\MIDIPacket.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreMIDI\Model\S\MIDIPacketList.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreMIDI\Model\S\MIDISysexSendRequest.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreMIDI\Model\S\MIDIThruConnectionEndpoint.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreMIDI\Model\S\MIDIThruConnectionParams.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\10.8\CoreMIDI\Model\S\MIDITransform.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\CorePlot-1.2.xml">
@@ -522,6 +126,402 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Growl-2.0.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\Foundation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\AppKit.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\AddressBook.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\Accounts.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\ApplicationServices.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\Collaboration.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\AVFoundation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\CoreData.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\CoreFoundation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\CoreLocation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\CoreMedia.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\CoreText.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\CoreWLAN.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\DiscRecording.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\DiscRecordingUI.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\EventKit.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\GameKit.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\GLKit.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\InputMethodKit.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\InstantMessage.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\QTKit.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\Quartz.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\QuartzCore.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\SceneKit.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\ScriptingBridge.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\Security.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\SecurityFoundation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\SecurityInterface.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\Social.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\StoreKit.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\WebKit.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\Kernel.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\WebKit.DOM.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\JavaScriptCore.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\CoreMIDI.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\CoreServices.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.8\OpenGL.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\AppKit\Model\E\NSTrackingAreaOptions.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\AppKit\Model\P\NSColorPanelDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\AppKit\Model\P\NSFontManagerDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\AppKit\Model\P\NSPanelDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\AppKit\Model\P\NSRulerViewDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\ApplicationServices\Model\E\CGRectEdge.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\ApplicationServices\Model\E\CTFontManagerError.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\ApplicationServices\Model\S\CGAffineTransform.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\ApplicationServices\Model\S\CGFloat.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\ApplicationServices\Model\S\CGPoint.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\ApplicationServices\Model\S\CGRect.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\ApplicationServices\Model\S\CGSize.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\AppKit\Model\S\NSEdgeInsets.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Foundation\Model\E\NSPropertyListReadOptions.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Foundation\Model\E\NSPropertyListWriteOptions.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Foundation\Model\P\NSFileManagerDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Foundation\Model\P\NSURLConnectionDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Foundation\Model\P\NSURLDownloadDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Foundation\Model\S\NSDecimal.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Foundation\Model\S\NSInteger.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Foundation\Model\S\NSPoint.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Foundation\Model\S\NSRange.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Foundation\Model\S\NSRect.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Foundation\Model\S\NSSize.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Foundation\Model\S\NSUInteger.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QuartzCore\Model\P\CAAnimationDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QuartzCore\Model\P\CALayerDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Quartz\Model\E\PDFAreaOfInterest.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Quartz\Model\E\PDFBorderStyle.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Quartz\Model\E\PDFDisplayBox.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Quartz\Model\E\PDFDisplayMode.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Quartz\Model\E\PDFLineStyle.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Quartz\Model\E\PDFMarkupType.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Quartz\Model\E\PDFTextAnnotationIconType.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Quartz\Model\P\IKSaveOptionsDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Quartz\Model\P\PDFDocumentDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Quartz\Model\P\PDFViewDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\WebKit\Model\P\WebDownloadDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QTKit\Model\E\QTMovieOperationPhase.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QTKit\Model\E\QTSampleBufferAudioBufferListOptions.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QTKit\Model\P\QTCaptureDecompressedAudioOutputDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QTKit\Model\P\QTCaptureDecompressedVideoOutputDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QTKit\Model\P\QTCaptureFileOutputDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QTKit\Model\P\QTCaptureVideoPreviewOutputDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QTKit\Model\P\QTCaptureViewDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QTKit\Model\P\QTMovieDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QTKit\Model\S\QTTime.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QTKit\Model\S\QTTimeRange.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\SecurityInterface\Model\P\SFAuthorizationViewDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\SecurityInterface\Model\P\SFCertificatePanelDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\SecurityInterface\Model\P\SFChooseIdentityPanelDelegate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreFoundation\Model\S\CFHashCode.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreFoundation\Model\S\CFIndex.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreFoundation\Model\S\CFRange.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreFoundation\Model\S\CFTypeID.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreData\Model\E\NSSnapshotEventType.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\InputMethodKit\Model\E\IMKCandidatePanelType.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\InputMethodKit\Model\E\IMKCandidatesLocationHint.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\InputMethodKit\Model\E\IMKLocationToOffsetMappingMode.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Security\Model\E\SecCSFlags.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\ApplicationServices\Model\S\CTParagraphStyleSetting.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QuartzCore\Model\S\CVTimeStamp.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreMedia\Model\S\CMBlockBufferCustomBlockSource.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreMedia\Model\S\CMBufferCallbacks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreMedia\Model\S\CMTime.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreMedia\Model\S\CMTimeRange.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QuartzCore\Model\S\CATransform3D.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QuartzCore\Model\S\CVSMPTETime.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreLocation\Model\S\CLLocationCoordinate2D.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreMedia\Model\S\CMTimeMapping.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CorePlot\Model\S\CPTConstraints.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CorePlot\Model\S\CPTNumericDataType.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\Foundation\Model\S\UUID.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\GLKit\Model\S\GLKMatrix2.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\GLKit\Model\S\GLKMatrix3.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\GLKit\Model\S\GLKMatrix4.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\GLKit\Model\S\GLKQuaternion.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\GLKit\Model\S\GLKVector2.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\GLKit\Model\S\GLKVector3.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\GLKit\Model\S\GLKVector4.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QTKit\Model\S\TimeRecord.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QTKit\Model\S\SMPTETime.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QTKit\Model\S\AudioBufferList.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\QTKit\Model\S\AudioBuffer.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\SceneKit\Model\S\SCNVector3.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\SceneKit\Model\S\SCNVector4.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreMIDI\Model\S\MIDINotification.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreMIDI\Model\S\MIDIObjectAddRemoveNotification.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreMIDI\Model\S\MIDIObjectPropertyChangeNotification.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreMIDI\Model\S\MIDIPacket.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreMIDI\Model\S\MIDIPacketList.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreMIDI\Model\S\MIDISysexSendRequest.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreMIDI\Model\S\MIDIThruConnectionEndpoint.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreMIDI\Model\S\MIDIThruConnectionParams.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.8\CoreMIDI\Model\S\MIDITransform.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -535,72 +535,72 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Files\10.8\Security\Model\S\AuthorizationEnvironment.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\Security\Model\S\AuthorizationItem.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\Security\Model\S\AuthorizationItemSet.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\Security\Model\S\AuthorizationRights.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\Security\Model\S\CSSM_DATA.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\Security\Model\S\CSSM_DL_DB_HANDLE.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\Security\Model\S\SecItemImportExportKeyParameters.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\Security\Model\S\SecKeychainSettings.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\Security\Model\S\SecKeyImportExportParameters.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\Security\Model\S\SecKeychainAttribute.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\Security\Model\S\SecKeychainAttributeInfo.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\Security\Model\S\SecKeychainAttributeList.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\AVFoundation\Html\P\AVVideoCompositionValidationHandling.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\AVFoundation\Html\C\AVMediaSelectionGroup.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\AVFoundation\Html\C\AVMediaSelectionOption.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\ApplicationServices\Model\S\CGDataConsumerCallbacks.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\ApplicationServices\Model\S\CGDataProviderCallbacks.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\ApplicationServices\Model\S\CGDataProviderDirectAccessCallbacks.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\ApplicationServices\Model\S\CGDataProviderDirectCallbacks.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Files\10.8\ApplicationServices\Model\S\CGDataProviderSequentialCallbacks.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="..\external\NAnt.exe">
       <Link>NAnt.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="..\external\NAnt.exe.config">
       <Link>NAnt.exe.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\Security\Model\S\AuthorizationEnvironment.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\Security\Model\S\AuthorizationItem.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\Security\Model\S\AuthorizationItemSet.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\Security\Model\S\AuthorizationRights.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\Security\Model\S\CSSM_DATA.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\Security\Model\S\CSSM_DL_DB_HANDLE.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\Security\Model\S\SecItemImportExportKeyParameters.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\Security\Model\S\SecKeychainSettings.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\Security\Model\S\SecKeyImportExportParameters.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\Security\Model\S\SecKeychainAttribute.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\Security\Model\S\SecKeychainAttributeInfo.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\Security\Model\S\SecKeychainAttributeList.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\AVFoundation\Html\P\AVVideoCompositionValidationHandling.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\AVFoundation\Html\C\AVMediaSelectionGroup.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\AVFoundation\Html\C\AVMediaSelectionOption.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\ApplicationServices\Model\S\CGDataConsumerCallbacks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\ApplicationServices\Model\S\CGDataProviderCallbacks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\ApplicationServices\Model\S\CGDataProviderDirectAccessCallbacks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\ApplicationServices\Model\S\CGDataProviderDirectCallbacks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Files\OSX_10.8\ApplicationServices\Model\S\CGDataProviderSequentialCallbacks.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
