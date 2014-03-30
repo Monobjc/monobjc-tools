@@ -4,10 +4,17 @@
 	<!--
 	Properties
 	-->
+	<property name="user.home" value="${environment::get-variable('HOME')}" />
 	<property name="data.dir" value="." />
 	<property name="dest.dir" value="../../../../libraries" />
 	<loadtasks assembly="Monobjc.Generator.NAnt.dll" />
-	<docset id="10.8" name="10.8" path="~/Library/Developer/Shared/Documentation/DocSets/com.apple.adc.documentation.AppleOSX10_8.CoreReference.docset/Contents/Resources/Documents/documentation" />
+
+	<property name="docset.path" value="~/Library/Developer/Shared/Documentation/DocSets/com.apple.adc.documentation.AppleOSX10_8.CoreReference.docset" />
+	<loadfile property="docset.info" file="${string::replace(docset.path, '~', user.home)}/Contents/Info.plist" />
+	<property name="docset.revision" value="419.33" />
+	<property name="docset.valid" value="${string::contains(docset.info, docset.revision)}" />
+	<docset id="OSX_10.8" name="OSX_10.8" path="${string::replace(docset.path, '~', user.home)}/Contents/Resources/Documents/documentation" />
+
 	<property name="methods" value="AbortEditing,AcceptsFirstResponder,Alloc,AttachToCurrentThread,Autorelease,BecomeFirstResponder,ClearContents,CloseTray,Copy,CreateCommandInstance,CreateViewController,DecodeDataObject,DecodeNXColor,DecodeNXObject,DecodeObject,DecodePoint,DecodePortObject,DecodePropertyList,DecodeRect,DecodeSize,DetachFromCurrentThread,Draw,EjectMedia,EstimateLength,ExecuteCommand,Flatten,ForceTerminate,GoBack,GoForward,Hide,Init,Load,MutableCopy,NextObject,New,OpenTray,Pause,Play,ResignFirstResponder,Resume,Retain,Run,RunModal,RunSetupPanel,Save,Set,Start,StartAccessingSecurityScopedResource,StartRendering,Stop,Suspend,Synchronize,Terminate,Unhide,Unload,UpdateMovieFile" />
 
 	<!--
@@ -77,6 +84,9 @@
 	================================================================================
 	-->
 	<target name="prepare">
+		<!-- Sanity check -->
+		<fail message="DocSet has an invalid revision." unless="${docset.valid}" />
+
 		<!-- Copy any prepared files -->
 		<copy todir="${data.dir}">
 			<fileset basedir="${data.dir}/Files">
@@ -95,31 +105,31 @@
 	<target name="process-docset" depends="prepare">
 		<!-- Copy files from DocSet -->
 		<copy-documents dir="${data.dir}" source-type="DocSet" destination-type="Html" check-source="true">
-			<docset refid="10.8" />
+			<docset refid="OSX_10.8" />
 			<framework-set refid="all" />
 		</copy-documents>
 
 		<!-- Clean-up classic format -->
 		<clean-classic-documents dir="${data.dir}" type="Html">
-			<docset refid="10.8" />
+			<docset refid="OSX_10.8" />
 			<framework-set refid="all" />
 		</clean-classic-documents>
 
 		<!-- Path HTML documents -->
 		<patch-documents dir="${data.dir}" type="Html">
-			<docset refid="10.8" />
+			<docset refid="OSX_10.8" />
 			<framework-set refid="docset" />
 		</patch-documents>
 
 		<!-- Convert HTML documents to XHTML -->
 		<html-to-xhtml dir="${data.dir}">
-			<docset refid="10.8" />
+			<docset refid="OSX_10.8" />
 			<framework-set refid="all" />
 		</html-to-xhtml>
 
 		<!-- Path XHTML documents -->
 		<patch-documents dir="${data.dir}" type="Xhtml">
-			<docset refid="10.8" />
+			<docset refid="OSX_10.8" />
 			<framework-set refid="all" />
 		</patch-documents>
 	</target>
@@ -182,25 +192,25 @@
 	<target name="convert" depends="process">
 		<!-- Convert Model documents to XHTML -->
 		<xhtml-to-model dir="${data.dir}" mappings="Resources/Mappings.xml" methods="${methods}" report="${data.dir}/xhtml-to-model.log" mapping-report="${data.dir}/Mappings.txt">
-			<docset refid="10.8" />
+			<docset refid="OSX_10.8" />
 			<framework-set refid="all" />
 		</xhtml-to-model>
 
 		<!-- Patch model -->
 		<patch-model dir="${data.dir}" report="${data.dir}/patch-model.log">
-			<docset refid="10.8" />
+			<docset refid="OSX_10.8" />
 			<framework-set refid="all" />
 		</patch-model>
 
 		<!-- Annotate deprecated model -->
 		<mark-deprecation dir="${data.dir}" report="${data.dir}/mark-deprecation.log">
-			<docset refid="10.8" />
+			<docset refid="OSX_10.8" />
 			<framework-set refid="all" />
 		</mark-deprecation>
 
 		<!-- Merge deprecated model -->
 		<merge-deprecated dir="${data.dir}" report="${data.dir}/merge-deprecated.log">
-			<docset refid="10.8" />
+			<docset refid="OSX_10.8" />
 			<framework-set refid="all" />
 		</merge-deprecated>
 	</target>
@@ -213,25 +223,25 @@
 	<target name="generate" depends="convert">
 		<!-- Collect mixed types -->
 		<gather-types dir="${data.dir}" mixed-types="${data.dir}/MixedTypes.txt">
-			<docset refid="10.8" />
+			<docset refid="OSX_10.8" />
 			<framework-set refid="all" />
 		</gather-types>
 
 		<!-- Generate source code -->
 		<generate-code dir="${data.dir}" mixed-types="${data.dir}/MixedTypes.txt" license="Resources/MIT.txt">
-			<docset refid="10.8" />
+			<docset refid="OSX_10.8" />
 			<framework-set refid="all" />
 		</generate-code>
 
 		<!-- Path generated documents -->
 		<patch-documents dir="${data.dir}" type="Generated">
-			<docset refid="10.8" />
+			<docset refid="OSX_10.8" />
 			<framework-set refid="all" />
 		</patch-documents>
 
 		<!-- Generate assembly information -->
 		<generate-info dir="${data.dir}" template="Resources/AssemblyInfo.template">
-			<docset refid="10.8" />
+			<docset refid="OSX_10.8" />
 			<framework-set refid="all" />
 		</generate-info>
 	</target>
@@ -257,21 +267,21 @@
 	<target name="analyze" depends="process">
 		<!-- Find deprecation inside documentation 
 		<find-deprecation dir="${data.dir}" report="${data.dir}/find-deprecation.log">
-			<docset refid="10.8" />
+			<docset refid="OSX_10.8" />
 			<framework-set refid="docset" />
 		</find-deprecation>
 		-->
 		
 		<!-- Find delegates 
 		<find-delegate dir="${data.dir}" report="${data.dir}/find-delegate.log">
-			<docset refid="10.8" />
+			<docset refid="OSX_10.8" />
 			<framework-set refid="docset" />
 		</find-delegate>
 		-->
 		
 		<!-- Generate mapping file -->
 		<generate-mapping dir="${data.dir}" mapping-report="${data.dir}/Mappings.txt" mixed-types="${data.dir}/MixedTypes.txt" mappings="${data.dir}/Mappings.xml">
-			<docset refid="10.8" />
+			<docset refid="OSX_10.8" />
 			<framework-set refid="docset" />
 		</generate-mapping>
 	</target>
@@ -283,7 +293,7 @@
 	-->
 	<target name="statistics">
 		<dump-statistics dir="${data.dir}" report="${data.dir}/TestResult.xml">
-			<docset refid="10.8" />
+			<docset refid="OSX_10.8" />
 			<framework-set refid="docset" />
 		</dump-statistics>
 	</target>
