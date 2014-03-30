@@ -160,8 +160,6 @@
 
 	    <CopyFrameworks Frameworks="$(EmbeddedFrameworks)" ToDirectory="$(FrameworksPath)" />
 
-		<CodeSigning Bundle="$(AppBundlePath)" Identity="$(SigningIdentity)" UseEntitlements="$(UseEntitlements)" Entitlements="$(Entitlements)" Condition=" '$(SigningIdentity)' != '' " />
-
 	    <CreateItem Include="$(MacOSPath)\*.dylib">
 	      <Output TaskParameter="Include" ItemName="_NativeLibraries" />
 	    </CreateItem>
@@ -171,6 +169,8 @@
           <Output TaskParameter="Include" ItemName="_NativeFrameworks" />
         </CreateItem>
 		<CodeSigning Targets="@(_NativeFrameworks)" Identity="$(SigningIdentity)" Versioned="true" Condition=" '$(SigningIdentity)' != '' " />
+
+		<CodeSigning Bundle="$(AppBundlePath)" Identity="$(SigningIdentity)" UseEntitlements="$(UseEntitlements)" Entitlements="$(Entitlements)" Condition=" '$(SigningIdentity)' != '' " />
 	</Target>
   
 	<!--
