@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="Quartz" usings="ApplicationServices,AppKit,Foundation,QuartzCore" assembly="Monobjc.Quartz" source="DocSet">
+	<Types>
+	</Types>
+	<Classes>
+		<Class name="CIFilter_ImageKitAdditions">
+			<File>GraphicsImaging/Reference/IKFilterUIAddition/IKFIlterUI_Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="CIFilter"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="IKCameraDeviceView">
+			<File>Quartz/Reference/IKCameraDeviceView_Class/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="IKDeviceBrowserView">
+			<File>Quartz/Reference/IKDeviceBrowserView_Class/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="IKFilterBrowserPanel">
+			<File>GraphicsImaging/Reference/IKFilterBrowserPanel_Class/IKFilterBrowserPanel_Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["FilterBrowserPanelWithStyleMask"].ReturnType="IKFilterBrowserPanel"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="IKFilterBrowserView">
+			<File>GraphicsImaging/Reference/IKFilterBrowserView_Class/IKFilterBrowserView_Reference.html</File>
+		</Class>
+		<Class name="IKFilterUIView">
+			<File>GraphicsImaging/Reference/IKFilterUIView_Class/IKFIlterUIView_Ref.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ViewWithFrameFilter"].ReturnType="IKFilterUIView"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="IKImageBrowserCell">
+			<File>Quartz/Reference/IKImageBrowserCell_Class/IKImageBrowserCell.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["IKImageBrowserCellState"].BaseType="int"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="IKImageBrowserView">
+			<File>GraphicsImaging/Reference/IKImageBrowserView/IKImageBrowserView_Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Enumerations["Cell_Appearance_Style_Masks"].Name="IKCellAppearanceStyleMask"]]></Change>
+				<Change><![CDATA[Enumerations["IKCellAppearanceStyleMask"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["IKCellAppearanceStyleMask"].Flags=true]]></Change>
+				<Change><![CDATA[Enumerations["Group_Style_Attributes"].Name="IKGroupStyleAttribute"]]></Change>
+				<Change><![CDATA[Enumerations["IKGroupStyleAttribute"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["IKImageBrowserDropOperation"].BaseType="int"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="IKImageEditPanel">
+			<File>GraphicsImaging/Reference/IKImageEditPanel/IKImageEditPanel_Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["DataSource"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="IKImageView">
+			<File>GraphicsImaging/Reference/IKImageView/IKImageView_Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="IKPictureTaker">
+			<File>GraphicsImaging/Reference/IKImagePicker_Class/IKImagePicker_Reference.html</File>
+		</Class>
+		<Class name="IKSaveOptions">
+			<File>GraphicsImaging/Reference/IKSaveOptions/IKSaveOptions_Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["ImageProperties"].Type="NSDictionary"]]></Change>
+				<Change><![CDATA[Properties["ImageProperties"].Getter.ReturnType="NSDictionary"]]></Change>
+				<Change><![CDATA[Properties["ImageUTType"].Type="NSString"]]></Change>
+				<Change><![CDATA[Properties["ImageUTType"].Getter.ReturnType="NSString"]]></Change>
+				<Change><![CDATA[Properties["UserSelection"].Type="NSDictionary"]]></Change>
+				<Change><![CDATA[Properties["UserSelection"].Getter.ReturnType="NSDictionary"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="IKScannerDeviceView">
+			<File>Quartz/Reference/IKScannerDeviceView_Class/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="IKSlideshow">
+			<File>GraphicsImaging/Reference/IKSlideShow/IKSlideshow_Reference.html</File>
+		</Class>
+		<Class name="PDFAction">
+			<File>GraphicsImaging/Reference/PDFAction_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFActionGoTo">
+			<File>GraphicsImaging/Reference/PDFActionGoTo_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFActionNamed">
+			<File>GraphicsImaging/Reference/PDFActionNamed_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Named_Action_Names"].Name="PDFActionNamedName"]]></Change>
+				<Change><![CDATA[Enumerations["PDFActionNamedName"].BaseType="NSInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="PDFActionRemoteGoTo">
+			<File>GraphicsImaging/Reference/PDFActionRemoteGoTo_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFActionResetForm">
+			<File>GraphicsImaging/Reference/PDFActionResetForm_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFActionURL">
+			<File>GraphicsImaging/Reference/PDFActionURL_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFAnnotation">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotation_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFAnnotationButtonWidget">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationButtonWidget_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Types_of_PDF_Annotation_Buttons"].Name="PDFWidgetControlType"]]></Change>
+				<Change><![CDATA[Enumerations["PDFWidgetControlType"].BaseType="NSInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="PDFAnnotationButtonWidget.Deprecated">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationButtonWidget_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="PDFAnnotationButtonWidget"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="PDFAnnotationChoiceWidget">
+			<File>GraphicsImaging/Reference/PDFAnnotationChoiceWidget_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFAnnotationCircle">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationCircle_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFAnnotationFreeText">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationFreeText_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFAnnotationInk">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationInk_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFAnnotationLine">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationLine_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFAnnotationLink">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationLink_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFAnnotationMarkup">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationMarkup_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFAnnotationPopup">
+			<File>GraphicsImaging/Reference/PDFAnnotationPopup_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFAnnotationSquare">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationSquare_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFAnnotationStamp">
+			<File>GraphicsImaging/Reference/PDFAnnotationStamp_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFAnnotationText">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationText_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="PDFAnnotationTextWidget">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFAnnotationTextWidget_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFBorder">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFBorder_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFDestination">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFDestination_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFDocument">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFDocument_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Enumerations["PDF_Page_Scaling_Modes_for_Printing"].Name="PDFPrintScalingMode"]]></Change>
+				<Change><![CDATA[Enumerations["PDFPrintScalingMode"].BaseType="NSInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="PDFOutline">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFOutline_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="PDFPage">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFPage_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="PDFSelection">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFSelection_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFThumbnailView">
+			<File>GraphicsImaging/Reference/PDFThumbnailView_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="PDFView">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/PDFView_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="QCComposition">
+			<File>Cocoa/Reference/QCComposition_Class/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="QCCompositionLayer">
+			<File>GraphicsImaging/Reference/QCCompositionLayer_class/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="QCCompositionParameterView">
+			<File>Cocoa/Reference/QCCompositionParameterView_Class/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="QCCompositionPickerPanel">
+			<File>Cocoa/Reference/QCCompositionPickerPanel_Class/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="QCCompositionPickerView">
+			<File>Cocoa/Reference/QCCompositionPickerView_Class/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="QCCompositionRepository">
+			<File>Cocoa/Reference/QCCompositionRepository_Class/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="QCPlugIn">
+			<File>Cocoa/Reference/QCPlugIn_Class/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["QCPlugInExecutionMode"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["QCPlugInTimeMode"].BaseType="int"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="QCPlugInViewController">
+			<File>Cocoa/Reference/QCPlugInViewController_Class/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="QCRenderer">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/QCRenderer_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="QCView">
+			<File>GraphicsImaging/Reference/QuartzFramework/Classes/QCView_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="QLPreviewPanel">
+			<File>Quartz/Reference/QLPreviewPanel_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["DataSource"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="IKCameraDeviceViewDelegate">
+			<File>Quartz/Reference/IKCameraDeviceViewDelegate_Protocol/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["CameraDeviceViewDidDownloadFileLocationFileDataError"].Parameters["file"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["CameraDeviceViewDidDownloadFileLocationFileDataError"].Parameters["file"].Type="IntPtr"]]></Change>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="IKCameraDeviceView"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="IKDeviceBrowserViewDelegate">
+			<File>Quartz/Reference/IKDeviceBrowserViewDelegate_Protocol/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="IKDeviceBrowserView"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="IKFilterCustomUIProvider">
+			<File>GraphicsImaging/Reference/IKFilterCustomUIProvider_Protocol/IKFilterCustomUIProvider_Reference.html</File>
+		</Protocol>
+		<Protocol name="IKImageBrowserDataSource">
+			<File>GraphicsImaging/Reference/IKImageBrowserDataSource_Protocol/IKImageBrowserDataSource_Reference.html</File>
+		</Protocol>
+		<Protocol name="IKImageBrowserDelegate">
+			<File>GraphicsImaging/Reference/IKImageBrowserDelegate_Protocol/IKImageBrowserDelegate_Reference.html</File>
+		</Protocol>
+		<Protocol name="IKImageBrowserItem">
+			<File>GraphicsImaging/Reference/IKImageBrowserItem_Protocol/IKImageBrowserItem_Reference.html</File>
+		</Protocol>
+		<Protocol name="IKImageEditPanelDataSource">
+			<File>GraphicsImaging/Reference/IKImageEditPanelDataSource/IKImageEditPanelDataSource_Ref.html</File>
+		</Protocol>
+		<Protocol name="IKSaveOptionsDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="IKSaveOptions"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="IKScannerDeviceViewDelegate">
+			<File>Quartz/Reference/IKScannerDeviceViewDelegate_Protocol/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="IKScannerDeviceView"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="IKSlideshowDataSource">
+			<File>GraphicsImaging/Reference/IKSlideShowDataSource/IKSlideshowDataSource_ref.html</File>
+		</Protocol>
+		<Protocol name="PDFDocumentDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="PDFDocument"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="PDFViewDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="PDFView"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="QCCompositionParameterViewDelegate">
+			<File>Cocoa/Reference/QCCompositionParameterViewDelegateProtocolRef/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="QCCompositionParameterView"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="QCCompositionPickerViewDelegate">
+			<File>Cocoa/Reference/QCCompositionPickerViewDelegate_Protocol/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="QCCompositionPickerView"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="QCCompositionRenderer">
+			<File>Cocoa/Reference/QCRenderer_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="QCPlugInContext">
+			<File>Cocoa/Reference/QCPlugInContext_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["LogMessage"].Generate=false]]></Change>
+				<Change><![CDATA[Methods["OutputImageProviderFromBufferWithPixelFormatPixelsWidePixelsHighBaseAddressBytesPerRowReleaseCallbackReleaseContextColorSpaceShouldColorMatch"].Generate=false]]></Change>
+				<Change><![CDATA[Methods["OutputImageProviderFromTextureWithPixelFormatPixelsWidePixelsHighNameFlippedReleaseCallbackReleaseContextColorSpaceShouldColorMatch"].Generate=false]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="QCPlugInInputImageSource">
+			<File>Cocoa/Reference/QCPlugInInputImageSource_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["TextureMatrix"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["TextureMatrix"].Getter.ReturnType="IntPtr"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="QCPlugInOutputImageProvider">
+			<File>Cocoa/Reference/QCPlugInOutputImageProvider_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["CopyRenderedTextureForCGLContextPixelFormatBoundsIsFlipped"].Parameters["flipped"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["CopyRenderedTextureForCGLContextPixelFormatBoundsIsFlipped"].Parameters["flipped"].IsOut=true]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="QLPreviewPanelDataSource">
+			<File>Quartz/Reference/QLPreviewPanelDataSource_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="QLPreviewPanelDelegate">
+			<File>Quartz/Reference/QLPreviewPanelDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="QLPreviewPanel"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[Methods["PreviewPanelTransitionImageForPreviewItemContentRect"].Parameters["contentRect"].Type="NSRect"]]></Change>
+				<Change><![CDATA[Methods["PreviewPanelTransitionImageForPreviewItemContentRect"].Parameters["contentRect"].IsOut=true]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="QLPreviewItem">
+			<File>Quartz/Reference/QLPreviewItem_Protocol/Reference/Reference.html</File>
+		</Protocol>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+		<Enumeration name="PDFAreaOfInterest" />
+		<Enumeration name="PDFBorderStyle" />
+		<Enumeration name="PDFDisplayBox" />
+		<Enumeration name="PDFDisplayMode" />
+		<Enumeration name="PDFLineStyle" />
+		<Enumeration name="PDFMarkupType" />
+		<Enumeration name="PDFTextAnnotationIconType" />
+	</Enumerations>
+</Framework>

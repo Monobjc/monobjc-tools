@@ -508,6 +508,7 @@
     <Mapping type="unsigned short">ushort</Mapping>
     <Mapping type="unsigned">uint</Mapping>
     <Mapping type="void (^)()"><![CDATA[block:Action]]></Mapping>
+    <Mapping type="void (^)(BOOL compatible)"><![CDATA[block:Action<bool>]]></Mapping>
     <Mapping type="void (^)(BOOL didLock)"><![CDATA[block:Action<bool>]]></Mapping>
     <Mapping type="void (^)(BOOL didMove)"><![CDATA[block:Action<bool>]]></Mapping>
     <Mapping type="void (^)(BOOL didUnlock)"><![CDATA[block:Action<bool>]]></Mapping>
@@ -518,6 +519,7 @@
     <Mapping type="void (^)(CMSampleBufferRef imageDataSampleBuffer, NSError *error)"><![CDATA[block:Action<IntPtr, NSError>]]></Mapping>
     <Mapping type="void (^)(CMTimetime)"><![CDATA[block:Action<CMTime>]]></Mapping>
     <Mapping type="void (^)(CMTime time)"><![CDATA[block:Action<CMTime>]]></Mapping>
+    <Mapping type="void (^)(const void *bytes, NSRangebyteRange, BOOL *stop)"><![CDATA[block:Action_IntPtr_NSRange_out_bool]]></Mapping>
     <Mapping type="void (^)(GKMatch *match, NSError *error)"><![CDATA[block:Action<GKMatch, NSError>]]></Mapping>
     <Mapping type="void (^)(GKTurnBasedMatch *match, NSError *error)"><![CDATA[block:Action<GKTurnBasedMatch, NSError>]]></Mapping>
     <Mapping type="void (^)(NSAnimationContext *context)"><![CDATA[block:Action<NSAnimationContext>]]></Mapping>
@@ -525,8 +527,10 @@
     <Mapping type="void (^)(NSArray *achievements, NSError *error)"><![CDATA[block:Action<NSArray, NSError>]]></Mapping>
     <Mapping type="void (^)(NSArray *challengeablePlayerIDs, NSError *error)"><![CDATA[block:Action<NSArray, NSError>]]></Mapping>
     <Mapping type="void (^)(NSArray *challenges, NSError *error)"><![CDATA[block:Action<NSArray, NSError>]]></Mapping>
+    <Mapping type="void (^)(NSArray *compatibleFileTypes)"><![CDATA[block:Action<NSArray>]]></Mapping>
     <Mapping type="void (^)(NSArray *descriptions, NSError *error)"><![CDATA[block:Action<NSArray, NSError>]]></Mapping>
     <Mapping type="void (^)(NSArray *friends, NSError *error)"><![CDATA[block:Action<NSArray, NSError>]]></Mapping>
+    <Mapping type="void (^)(NSArray *friendIDs, NSError *error)"><![CDATA[block:Action<NSArray, NSError>]]></Mapping>
     <Mapping type="void (^)(NSArray *leaderboards, NSError *error)"><![CDATA[block:Action<NSArray, NSError>]]></Mapping>
     <Mapping type="void (^)(NSArray *matches, NSError *error)"><![CDATA[block:Action<NSArray, NSError>]]></Mapping>
     <Mapping type="void (^)(NSArray *playerIDs, NSError *error)"><![CDATA[block:Action<NSArray, NSError>]]></Mapping>
@@ -552,6 +556,7 @@
     <Mapping type="void (^)(NSIntegersequenceNumber, NSArray *results, NSOrthography *orthography, NSIntegerwordCount)"><![CDATA[block:Action<NSInteger, NSArray, NSOrthography, int>]]></Mapping>
     <Mapping type="void (^)(NSInteger sequenceNumber,  NSArray *results, NSOrthography *orthography, NSInteger wordCount)"><![CDATA[block:Action<NSInteger, NSArray, NSOrthography, int>]]></Mapping>
     <Mapping type="void (^)(NSInteger sequenceNumber, NSArray *results, NSOrthography *orthography, NSInteger wordCount)"><![CDATA[block:Action<NSInteger, NSArray, NSOrthography, int>]]></Mapping>
+    <Mapping type="void (^)(NSModalResponsereturnCode)"><![CDATA[block:Action<NSModalResponse>]]></Mapping>
     <Mapping type="void (^)(NSNotification *)"><![CDATA[block:Action<NSNotification>]]></Mapping>
     <Mapping type="void (^)(NSRangerange, BOOL *stop)"><![CDATA[block:Action_NSRange_out_bool]]></Mapping>
     <Mapping type="void (^)(NSRange range, BOOL *stop)"><![CDATA[block:Action_NSRange_out_bool]]></Mapping>
@@ -580,9 +585,13 @@
     <Mapping type="void (^)(id obj, BOOL *stop)"><![CDATA[block:Action_Id_out_bool]]></Mapping>
     <Mapping type="void (^)(id obj, NSUIntegeridx, BOOL *stop)"><![CDATA[block:Action_Id_NSUInteger_out_bool]]></Mapping>
     <Mapping type="void (^)(id obj, NSUInteger idx, BOOL *stop)"><![CDATA[block:Action_Id_NSUInteger_out_bool]]></Mapping>
+    <Mapping type="void (^)(id result, NSUIntegeridx, BOOL *stop)"><![CDATA[block:Action_Id_NSUInteger_out_bool]]></Mapping>
     <Mapping type="void (^)(id value, NSRangerange, BOOL *stop)"><![CDATA[block:Action_Id_NSRange_out_bool]]></Mapping>
     <Mapping type="void (^)(id value, NSRange range, BOOL *stop)"><![CDATA[block:Action_Id_NSRange_out_bool]]></Mapping>
     <Mapping type="void (^)(void)"><![CDATA[block:Action]]></Mapping>
+    <Mapping type="void (^)(void *bytes, NSUIntegerlength)"><![CDATA[block:Action<IntPtr,NSUInteger>]]></Mapping>
+    <Mapping type="void (^)(void (^activityCompletionHandler)(void))"><![CDATA[block:Action<Action>]]></Mapping>
+    <Mapping type="void (^)(void (^fileAccessCompletionHandler)(void))"><![CDATA[block:Action<Action>]]></Mapping>
     <Mapping type="void *">IntPtr</Mapping>
     <Mapping type="void **">IntPtr</Mapping>
     <Mapping type="void *__strong">IntPtr</Mapping>

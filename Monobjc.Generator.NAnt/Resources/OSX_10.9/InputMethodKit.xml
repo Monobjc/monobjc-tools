@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="InputMethodKit" usings="Foundation,AppKit" assembly="Monobjc.InputMethodKit" source="DocSet">
+	<Types>
+	</Types>
+	<Classes>
+		<Class name="IMKCandidates">
+			<File>Cocoa/Reference/IMKCandidates_Class/Reference/IMKCandidates_ref.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public partial class IMKCandidates : NSResponder]]></Source>
+					<With><![CDATA[public partial class IMKCandidates :
+#if MACOSX_10_7
+		NSResponder
+#else
+		NSObject
+#endif]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="IMKInputController">
+			<File>Cocoa/Reference/IMKInputController_Class/Reference/IMKInputController_ref.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Client"].Type="IIMKTextInput"]]></Change>
+				<Change><![CDATA[Properties["Delegate;"].Name="Delegate"]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="IMKServer">
+			<File>Cocoa/Reference/IMKServer_Class/Reference/IMKServer_Ref.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[ConformsTo=""]]></Change>
+			</Patch>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="IMKMouseHandling">
+			<File>Cocoa/Reference/IMKMouseHandling_Protocol/Reference/IMKMouseHandling_Methods.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["MouseDownOnCharacterIndexCoordinateWithModifierContinueTrackingClient"].Parameters["keepTracking"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["MouseDownOnCharacterIndexCoordinateWithModifierContinueTrackingClient"].Parameters["keepTracking"].IsByRef=true]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="IMKServerInput">
+			<File>Cocoa/Reference/IMKServerInput_Additions/Reference/IMKServerInput.html</File>
+		</Protocol>
+		<Protocol name="IMKStateSetting">
+			<File>Cocoa/Reference/IMKStateSetting_Protocol/Reference/IMKStateSetting_Ref.html</File>
+		</Protocol>
+		<Protocol name="IMKTextInput">
+			<File>Cocoa/Reference/IMKTextInput_Protocol/Reference/IMKTextInput_Protocol.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["AttributesForCharacterIndexLineHeightRectangle"].Parameters["lineRect"].Type="NSRect"]]></Change>
+				<Change><![CDATA[Methods["AttributesForCharacterIndexLineHeightRectangle"].Parameters["lineRect"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["CharacterIndexForPointTrackingInMarkedRange"].Parameters["inMarkedRange"].Type="NSRect"]]></Change>
+				<Change><![CDATA[Methods["CharacterIndexForPointTrackingInMarkedRange"].Parameters["inMarkedRange"].IsOut=true]]></Change>
+			</Patch>
+		</Protocol>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+		<Enumeration name="IMKCandidatePanelType" />
+		<Enumeration name="IMKCandidatesLocationHint" />
+		<Enumeration name="IMKLocationToOffsetMappingMode" />
+	</Enumerations>
+</Framework>

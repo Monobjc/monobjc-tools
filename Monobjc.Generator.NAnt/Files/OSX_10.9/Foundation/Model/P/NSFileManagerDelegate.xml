@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Protocol Generate="true">
+	<Summary />
+	<MinAvailability />
+	<MaxAvailability>VERSION</MaxAvailability>
+	<Name>NSFileManagerDelegate</Name>
+	<Namespace>Foundation</Namespace>
+	<Enumerations />
+	<Constants />
+	<Functions />
+	<Methods />
+	<Properties />
+	<DelegateMethods />
+</Protocol>

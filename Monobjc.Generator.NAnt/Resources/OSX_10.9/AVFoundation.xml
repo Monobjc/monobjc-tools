@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="AVFoundation" usings="ApplicationServices,AppKit,CoreMedia,Foundation,QuartzCore" assembly="Monobjc.AVFoundation" source="DocSet">
+	<Types>
+		<Type name="AVFoundationFramework.AudioSettings.Constants">
+			<File>AVFoundation/Reference/AVFoundationAudioSettings_Constants/Reference/reference.html</File>
+		</Type>
+		<Type name="AVFoundationFramework.Constants">
+			<File>AVFoundation/Reference/AVFoundation_Constants/Reference/reference.html</File>
+		</Type>
+		<Type name="AVFoundationFramework.Error.Constants">
+			<File>AVFoundation/Reference/AVFoundation_ErrorConstants/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["General_Error_Codes"].Name="AVErrorCodes"]]></Change>
+				<Change><![CDATA[Enumerations["AVErrorCodes"].BaseType="int"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="AVFoundationFramework.Functions">
+			<File>AVFoundation/Reference/AVFoundation_Functions/Reference/reference.html</File>
+		</Type>
+		<Type name="AVFoundationFramework.ID3.Constants">
+			<File>AVFoundation/Reference/AVFoundation_ID3Constants/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[>*const<]]></Source>
+					<With><![CDATA[> *const<]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[ /*]]></Source>
+					<With><![CDATA[;/*]]></With>
+				</Replace>
+			</Patch>
+		</Type>
+		<Type name="AVFoundationFramework.iTunes.Constants">
+			<File>AVFoundation/Reference/AVFoundation_iTunesMetadataConstants/Reference/reference.html</File>
+		</Type>
+		<Type name="AVFoundationFramework.QuickTime.Constants">
+			<File>AVFoundation/Reference/AVFoundation_QuickTimeConstants/Reference/reference.html</File>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="AVAsset">
+			<File>AVFoundation/Reference/AVAsset_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["AssetWithURL"].ReturnType="AVAsset"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="AVAsset.Deprecated">
+			<File>AVFoundation/Reference/AVAsset_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="AVAsset"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="AVAssetExportSession">
+			<File>AVFoundation/Reference/AVAssetExportSession_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ExportSessionWithAssetPresetName"].ReturnType="AVAssetExportSession"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="AVAssetImageGenerator">
+			<File>AVFoundation/Reference/AVAssetImageGenerator_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[<pre class="declaration">
+{
+   <a]]></Source>
+					<With><![CDATA[<pre class="declaration">
+enum {
+   <a ]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["CopyCGImageAtTimeActualTimeError"].Parameters["actualTime"].Type="CMTime"]]></Change>
+				<Change><![CDATA[Methods["CopyCGImageAtTimeActualTimeError"].Parameters["actualTime"].IsOut=true]]></Change>
+			</Patch>
+		</Class>
+		<Class name="AVAssetReader">
+			<File>AVFoundation/Reference/AVAssetReader_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Reader_Status_Constants"].Name="AVAssetReaderStatus"]]></Change>
+				<Change><![CDATA[Enumerations["AVAssetReaderStatus"].BaseType="NSInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="AVAssetReaderAudioMixOutput">
+			<File>AVFoundation/Reference/AVAssetReaderAudioMixOutput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVAssetReaderOutput">
+			<File>AVFoundation/Reference/AVAssetReaderOutput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVAssetReaderTrackOutput">
+			<File>AVFoundation/Reference/AVAssetReaderTrackOutput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVAssetReaderVideoCompositionOutput">
+			<File>AVFoundation/Reference/AVAssetReaderVideoCompositionOutput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVAssetTrack">
+			<File>AVFoundation/Reference/AVAssetTrack_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVAssetTrackSegment">
+			<File>AVFoundation/Reference/AVAssetTrackSegment_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVAssetWriter">
+			<File>AVFoundation/Reference/AVAssetWriter_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Status_Constants"].Name="AVAssetWriterStatus"]]></Change>
+				<Change><![CDATA[Enumerations["AVAssetWriterStatus"].BaseType="NSInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="AVAssetWriterInput">
+			<File>AVFoundation/Reference/AVAssetWriterInput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVAssetWriterInputPixelBufferAdaptor">
+			<File>AVFoundation/Reference/AVAssetWriterInputPixelBufferAdaptor_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVAudioMix">
+			<File>AVFoundation/Reference/AVAudioMix_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVAudioMixInputParameters">
+			<File>AVFoundation/Reference/AVAudioMixInputParameters_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["GetVolumeRampForTimeStartVolumeEndVolumeTimeRange"].Parameters["startVolume"].Type="float"]]></Change>
+				<Change><![CDATA[Methods["GetVolumeRampForTimeStartVolumeEndVolumeTimeRange"].Parameters["startVolume"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetVolumeRampForTimeStartVolumeEndVolumeTimeRange"].Parameters["endVolume"].Type="float"]]></Change>
+				<Change><![CDATA[Methods["GetVolumeRampForTimeStartVolumeEndVolumeTimeRange"].Parameters["endVolume"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetVolumeRampForTimeStartVolumeEndVolumeTimeRange"].Parameters["timeRange"].Type="CMTimeRange"]]></Change>
+				<Change><![CDATA[Methods["GetVolumeRampForTimeStartVolumeEndVolumeTimeRange"].Parameters["timeRange"].IsOut=true]]></Change>
+			</Patch>
+		</Class>
+		<Class name="AVAudioPlayer">
+			<File>AVFoundation/Reference/AVAudioPlayerClassReference/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVAudioRecorder">
+			<File>AVFoundation/Reference/AVAudioRecorder_ClassReference/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCaptureAudioChannel">
+			<File>AVFoundation/Reference/AVCaptureAudioChannel_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCaptureAudioDataOutput">
+			<File>AVFoundation/Reference/AVCaptureAudioDataOutput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCaptureAudioFileOutput">
+			<File>AVFoundation/Reference/AVCaptureAudioFileOutput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCaptureAudioPreviewOutput">
+			<File>AVFoundation/Reference/AVCaptureAudioPreviewOutput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCaptureConnection">
+			<File>AVFoundation/Reference/AVCaptureConnection_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["AVCaptureVideoOrientation"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="AVCaptureDevice">
+			<File>AVFoundation/Reference/AVCaptureDevice_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCaptureDeviceFormat">
+			<File>AVFoundation/Reference/AVCaptureDeviceFormat_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCaptureDeviceInput">
+			<File>AVFoundation/Reference/AVCaptureDeviceInput_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["DeviceInputWithDeviceError"].ReturnType="AVCaptureDeviceInput"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="AVCaptureDeviceInputSource">
+			<File>AVFoundation/Reference/AVCaptureDeviceInputSource_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCaptureFileOutput">
+			<File>AVFoundation/Reference/AVCaptureFileOutput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCaptureInput">
+			<File>AVFoundation/Reference/AVCaptureInput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCaptureInputPort">
+			<File>AVFoundation/Reference/AVCaptureInputPort_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCaptureMovieFileOutput">
+			<File>AVFoundation/Reference/AVCaptureMovieFileOutput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCaptureOutput">
+			<File>AVFoundation/Reference/AVCaptureOutput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCaptureScreenInput">
+			<File>AVFoundation/Reference/AVCaptureScreenInput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCaptureSession">
+			<File>AVFoundation/Reference/AVCaptureSession_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCaptureStillImageOutput">
+			<File>AVFoundation/Reference/AVCaptureStillImageOutput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCaptureVideoDataOutput">
+			<File>AVFoundation/Reference/AVCaptureVideoDataOutput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCaptureVideoPreviewLayer">
+			<File>AVFoundation/Reference/AVCaptureVideoPreviewLayer_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["InitWithSessionWithNoConnection"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["LayerWithSession"].ReturnType="AVCaptureVideoPreviewLayer"]]></Change>
+				<Change><![CDATA[Methods["LayerWithSessionWithNoConnection"].ReturnType="AVCaptureVideoPreviewLayer"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="AVComposition">
+			<File>AVFoundation/Reference/AVComposition_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCompositionTrack">
+			<File>AVFoundation/Reference/AVCompositionTrack_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVCompositionTrackSegment">
+			<File>AVFoundation/Reference/AVCompositionTrackSegment_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVFrameRateRange">
+			<File>AVFoundation/Reference/AVFrameRateRange_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVMediaSelectionGroup">
+			<!-- Not yet published for OS X
+			<File>AVFoundation/Reference/AVMediaSelectionGroup_Class/Reference/Reference.html</File>
+			-->
+		</Class>
+		<Class name="AVMediaSelectionOption">
+			<!-- Not yet published for OS X
+			<File>AVFoundation/Reference/AVMediaSelectionOption_Class/Reference/Reference.html</File>
+			-->
+		</Class>
+		<Class name="AVMetadataItem">
+			<File>AVFoundation/Reference/AVMetadataItem_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Key"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["Value"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="AVMutableAudioMix">
+			<File>AVFoundation/Reference/AVMutableAudioMix_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSArray InputParameters]]></Source>
+					<With><![CDATA[public new NSArray InputParameters]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="AVMutableAudioMixInputParameters">
+			<File>AVFoundation/Reference/AVMutableAudioMixInputParameters_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual int TrackID]]></Source>
+					<With><![CDATA[public new int TrackID]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="AVMutableComposition">
+			<File>AVFoundation/Reference/AVMutableComposition_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual CGSize NaturalSize]]></Source>
+					<With><![CDATA[public new CGSize NaturalSize]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="AVMutableCompositionTrack">
+			<File>AVFoundation/Reference/AVMutableCompositionTrack_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSString ExtendedLanguageTag]]></Source>
+					<With><![CDATA[public new NSString ExtendedLanguageTag]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSString LanguageCode]]></Source>
+					<With><![CDATA[public new NSString LanguageCode]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual int NaturalTimeScale]]></Source>
+					<With><![CDATA[public new int NaturalTimeScale]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual CGAffineTransform PreferredTransform]]></Source>
+					<With><![CDATA[public new CGAffineTransform PreferredTransform]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual float PreferredVolume]]></Source>
+					<With><![CDATA[public new float PreferredVolume]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSArray Segments]]></Source>
+					<With><![CDATA[public new NSArray Segments]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="AVMutableMetadataItem">
+			<File>AVFoundation/Reference/AVMutableMetadataItem_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Key"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["Value"].Type="Id"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual CMTime Duration]]></Source>
+					<With><![CDATA[public new CMTime Duration]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSDictionary ExtraAttributes]]></Source>
+					<With><![CDATA[public new NSDictionary ExtraAttributes]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual Id Key]]></Source>
+					<With><![CDATA[public new Id Key]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSString KeySpace]]></Source>
+					<With><![CDATA[public new NSString KeySpace]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSLocale Locale]]></Source>
+					<With><![CDATA[public new NSLocale Locale]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual CMTime Time]]></Source>
+					<With><![CDATA[public new CMTime Time]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual Id Value]]></Source>
+					<With><![CDATA[public new Id Value]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="AVMutableTimedMetadataGroup">
+			<File>AVFoundation/Reference/AVMutableTimedMetadataGroup_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSArray Items]]></Source>
+					<With><![CDATA[public new NSArray Items]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual CMTimeRange TimeRange]]></Source>
+					<With><![CDATA[public new CMTimeRange TimeRange]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="AVMutableVideoComposition">
+			<File>AVFoundation/Reference/AVMutableVideoComposition_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual AVVideoCompositionCoreAnimationTool AnimationTool]]></Source>
+					<With><![CDATA[public new AVVideoCompositionCoreAnimationTool AnimationTool]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual CMTime FrameDuration]]></Source>
+					<With><![CDATA[public new CMTime FrameDuration]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSArray Instructions]]></Source>
+					<With><![CDATA[public new NSArray Instructions]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual CGSize RenderSize]]></Source>
+					<With><![CDATA[public new CGSize RenderSize]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="AVMutableVideoCompositionInstruction">
+			<File>AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual bool EnablePostProcessing]]></Source>
+					<With><![CDATA[public new bool EnablePostProcessing]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSArray LayerInstructions]]></Source>
+					<With><![CDATA[public new NSArray LayerInstructions]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual CMTimeRange TimeRange]]></Source>
+					<With><![CDATA[public new CMTimeRange TimeRange]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="AVMutableVideoCompositionLayerInstruction">
+			<File>AVFoundation/Reference/AVMutableVideoCompositionLayerInstruction_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual int TrackID]]></Source>
+					<With><![CDATA[public new int TrackID]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="AVPlayer">
+			<File>AVFoundation/Reference/AVPlayer_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["PlayerWithPlayerItem"].ReturnType="AVPlayer"]]></Change>
+				<Change><![CDATA[Methods["PlayerWithURL"].ReturnType="AVPlayer"]]></Change>
+				<Change><![CDATA[Properties["MasterClock"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="AVPlayerItem">
+			<File>AVFoundation/Reference/AVPlayerItem_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Timebase"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="AVPlayerItemAccessLog">
+			<File>AVFoundation/Reference/AVPlayerItemAccessLog_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVPlayerItemAccessLogEvent">
+			<File>AVFoundation/Reference/AVPlayerItemAccessLogEvent_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVPlayerItemErrorLog">
+			<File>AVFoundation/Reference/AVPlayerItemErrorLog_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVPlayerItemErrorLogEvent">
+			<File>AVFoundation/Reference/AVPlayerItemErrorLogEvent_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVPlayerItemOutput">
+			<File>AVFoundation/Reference/AVPlayerItemOutput_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVPlayerItemTrack">
+			<File>AVFoundation/Reference/AVPlayerItemTrack_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVPlayerLayer">
+			<File>AVFoundation/Reference/AVPlayerLayer_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVQueuePlayer">
+			<File>AVFoundation/Reference/AVQueuePlayer_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVSynchronizedLayer">
+			<File>AVFoundation/Reference/AVSynchronizedLayer_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVTimedMetadataGroup">
+			<File>AVFoundation/Reference/AVTimedMetadataGroup_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVURLAsset">
+			<File>AVFoundation/Reference/AVURLAsset_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+			<Replace>
+			<Source><![CDATA[= 0UL]]></Source>
+			<With><![CDATA[= 0]]></With>
+			</Replace>
+			<Replace>
+			<Source><![CDATA[= (1UL <<]]></Source>
+			<With><![CDATA[= (1 <<]]></With>
+			</Replace>
+			<Replace>
+			<Source><![CDATA[= 0xFFFFUL]]></Source>
+			<With><![CDATA[= 0xFFFFU]]></With>
+			</Replace>
+			</Patch>
+		</Class>
+		<Class name="AVVideoComposition">
+			<File>AVFoundation/Reference/AVVideoComposition_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVVideoCompositionCoreAnimationTool">
+			<File>AVFoundation/Reference/AVVideoCompositionCoreAnimationTool_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="AVVideoCompositionInstruction">
+			<File>AVFoundation/Reference/AVVideoCompositionInstruction_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["startOpacity"].Type="float"]]></Change>
+				<Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["startOpacity"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["endOpacity"].Type="float"]]></Change>
+				<Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["endOpacity"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["timeRange"].Type="CMTimeRange"]]></Change>
+				<Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["timeRange"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetTransformRampForTimeStartTransformEndTransformTimeRange"].Parameters["startTransform"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Methods["GetTransformRampForTimeStartTransformEndTransformTimeRange"].Parameters["startTransform"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetTransformRampForTimeStartTransformEndTransformTimeRange"].Parameters["endTransform"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Methods["GetTransformRampForTimeStartTransformEndTransformTimeRange"].Parameters["endTransform"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetTransformRampForTimeStartTransformEndTransformTimeRange"].Parameters["timeRange"].Type="CMTimeRange"]]></Change>
+				<Change><![CDATA[Methods["GetTransformRampForTimeStartTransformEndTransformTimeRange"].Parameters["timeRange"].IsOut=true]]></Change>
+			</Patch>
+		</Class>
+		<Class name="AVVideoCompositionLayerInstruction">
+			<File>AVFoundation/Reference/AVVideoCompositionLayerInstruction_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["startOpacity"].Type="float"]]></Change>
+				<Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["startOpacity"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["endOpacity"].Type="float"]]></Change>
+				<Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["endOpacity"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["timeRange"].Type="CMTimeRange"]]></Change>
+				<Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["timeRange"].IsByRef=true]]></Change>
+				
+				<Change><![CDATA[Methods["GetTransformRampForTimeStartTransformEndTransformTimeRange"].Parameters["timeRange"].Type="CMTimeRange"]]></Change>
+				<Change><![CDATA[Methods["GetTransformRampForTimeStartTransformEndTransformTimeRange"].Parameters["timeRange"].IsByRef=true]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSCoder_AVFoundationAdditions">
+			<File>AVFoundation/Reference/NSCoder_AVFoundation_Additions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSCoder"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSValue_AVFoundationAdditions">
+			<File>AVFoundation/Reference/NSValue_AVFoundation_Additions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSValue"]]></Change>
+			</Patch>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="AVAsynchronousKeyValueLoading">
+			<File>AVFoundation/Reference/AVAsynchronousKeyValueLoading_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Key_Loading_Status"].Name="AVKeyValueStatus"]]></Change>
+				<Change><![CDATA[Enumerations["AVKeyValueStatus"].BaseType="NSInteger"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="AVAudioPlayerDelegate">
+			<File>AVFoundation/Reference/AVAudioPlayerDelegateProtocolReference/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="AVAudioPlayer"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="AVAudioRecorderDelegate">
+			<File>AVFoundation/Reference/AVAudioRecorderDelegate_ProtocolReference/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="AVAudioRecorder"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="AVCaptureAudioDataOutputSampleBufferDelegate">
+			<File>AVFoundation/Reference/AVCaptureAudioDataOutputSampleBufferDelegate_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="AVCaptureFileOutputDelegate">
+			<File>AVFoundation/Reference/AVCaptureFileOutputDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="AVCaptureFileOutput"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="AVCaptureFileOutputRecordingDelegate">
+			<File>AVFoundation/Reference/AVCaptureFileOutputRecordingDelegate_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="AVCaptureVideoDataOutputSampleBufferDelegate">
+			<File>AVFoundation/Reference/AVCaptureVideoDataOutputSampleBufferDelegate_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="AVVideoCompositionValidationHandling">
+			<!-- Not yet published for OS X
+			<File>AVFoundation/Reference/AVVideoCompositionValidationHandling_Protocol/Reference/Reference.html</File>
+			-->
+			<Patch type="Model">
+				<Change><![CDATA[MinAvailability="OS X v10.7"]]></Change>
+				<Change><![CDATA[Methods["VideoCompositionShouldContinueValidatingAfterFindingEmptyTimeRange"].MinAvailability="OS X v10.7"]]></Change>
+				<Change><![CDATA[Methods["VideoCompositionShouldContinueValidatingAfterFindingInvalidTimeRangeInInstruction"].MinAvailability="OS X v10.7"]]></Change>
+				<Change><![CDATA[Methods["VideoCompositionShouldContinueValidatingAfterFindingInvalidTrackIDInInstructionLayerInstructionAsset"].MinAvailability="OS X v10.7"]]></Change>
+				<Change><![CDATA[Methods["VideoCompositionShouldContinueValidatingAfterFindingInvalidValueForKey"].MinAvailability="OS X v10.7"]]></Change>
+			</Patch>
+		</Protocol>
+	</Protocols>
+</Framework>

@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="ApplicationServices" usings="Foundation" assembly="Monobjc.Foundation" source="DocSet">
+	<Types>
+		<Type name="CGAffineTransform">
+			<File>GraphicsImaging/Reference/CGAffineTransform/Reference/reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Generate=false]]></Change>
+            </Patch>
+		</Type>
+		<Type name="CGBitmapContext">
+			<File>GraphicsImaging/Reference/CGBitmapContext/Reference/reference.html</File>
+		</Type>
+		<Type name="CGColor">
+			<File>GraphicsImaging/Reference/CGColor/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGColorCreate"].Parameters["components[]"].Name="components"]]></Change>
+				<Change><![CDATA[Functions["CGColorCreate"].Parameters["components"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGColorCreateWithPattern"].Parameters["components[]"].Name="components"]]></Change>
+				<Change><![CDATA[Functions["CGColorCreateWithPattern"].Parameters["components"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGColorGetComponents"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGColorGetTypeID"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGColorSpace">
+			<File>GraphicsImaging/Reference/CGColorSpace/Reference/reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[CFStringRef kCGColor]]></Source>
+                    <With><![CDATA[;CFStringRef kCGColor]]></With>
+                </Replace>
+            </Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGColorSpaceCreateCalibratedGray"].Parameters["whitePoint[3]"].Name="whitePoint"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateCalibratedGray"].Parameters["whitePoint"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateCalibratedGray"].Parameters["blackPoint[3]"].Name="blackPoint"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateCalibratedGray"].Parameters["blackPoint"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateCalibratedRGB"].Parameters["whitePoint[3]"].Name="whitePoint"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateCalibratedRGB"].Parameters["whitePoint"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateCalibratedRGB"].Parameters["blackPoint[3]"].Name="blackPoint"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateCalibratedRGB"].Parameters["blackPoint"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateCalibratedRGB"].Parameters["gamma[3]"].Name="gamma"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateCalibratedRGB"].Parameters["gamma"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateCalibratedRGB"].Parameters["matrix[9]"].Name="matrix"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateCalibratedRGB"].Parameters["matrix"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateDeviceCMYK"].Parameters["d"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateDeviceGray"].Parameters["d"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateDeviceRGB"].Parameters["d"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateICCBased"].Parameters["range"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateIndexed"].Parameters["char"].Name="colorTable"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateIndexed"].Parameters["colorTable"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateLab"].Parameters["whitePoint[3]"].Name="whitePoint"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateLab"].Parameters["whitePoint"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateLab"].Parameters["blackPoint[3]"].Name="blackPoint"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateLab"].Parameters["blackPoint"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateLab"].Parameters["range[4]"].Name="range"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceCreateLab"].Parameters["range"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceGetBaseColorSpace"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceGetColorTable"].Parameters["table"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGColorSpaceGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["CGColorSpaceModel"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CGColorRenderingIntent"].BaseType="int"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGContext">
+			<File>GraphicsImaging/Reference/CGContext/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGContextAddLines"].Parameters["points[]"].Name="points"]]></Change>
+				<Change><![CDATA[Functions["CGContextAddLines"].Parameters["points"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGContextAddRects"].Parameters["rects[]"].Name="rects"]]></Change>
+				<Change><![CDATA[Functions["CGContextAddRects"].Parameters["rects"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGContextBeginPage"].Parameters["mediaBox"].Type="CGRect"]]></Change>
+				<Change><![CDATA[Functions["CGContextBeginPage"].Parameters["mediaBox"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CGContextClipToRects"].Parameters["rects[]"].Name="rects"]]></Change>
+				<Change><![CDATA[Functions["CGContextClipToRects"].Parameters["rects"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGContextFillRects"].Parameters["rects[]"].Name="rects"]]></Change>
+				<Change><![CDATA[Functions["CGContextFillRects"].Parameters["rects"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGContextGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CGContextSelectFont"].Parameters["name"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["CGContextSetFillColor"].Parameters["components[]"].Name="components"]]></Change>
+				<Change><![CDATA[Functions["CGContextSetFillColor"].Parameters["components"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGContextSetFillPattern"].Parameters["components[]"].Name="components"]]></Change>
+				<Change><![CDATA[Functions["CGContextSetFillPattern"].Parameters["components"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGContextSetLineDash"].Parameters["lengths[]"].Name="lengths"]]></Change>
+				<Change><![CDATA[Functions["CGContextSetLineDash"].Parameters["lengths"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGContextSetStrokeColor"].Parameters["components[]"].Name="components"]]></Change>
+				<Change><![CDATA[Functions["CGContextSetStrokeColor"].Parameters["components"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGContextSetStrokePattern"].Parameters["components[]"].Name="components"]]></Change>
+				<Change><![CDATA[Functions["CGContextSetStrokePattern"].Parameters["components"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGContextShowGlyphs"].Parameters["g[]"].Name="g"]]></Change>
+				<Change><![CDATA[Functions["CGContextShowGlyphs"].Parameters["g"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGContextShowGlyphsAtPoint"].Parameters["glyphs[]"].Name="glyphs"]]></Change>
+				<Change><![CDATA[Functions["CGContextShowGlyphsAtPoint"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGContextShowGlyphsAtPositions"].Parameters["glyphs[]"].Name="glyphs"]]></Change>
+				<Change><![CDATA[Functions["CGContextShowGlyphsAtPositions"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGContextShowGlyphsAtPositions"].Parameters["positions[]"].Name="positions"]]></Change>
+				<Change><![CDATA[Functions["CGContextShowGlyphsAtPositions"].Parameters["positions"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGContextShowGlyphsWithAdvances"].Parameters["glyphs[]"].Name="glyphs"]]></Change>
+				<Change><![CDATA[Functions["CGContextShowGlyphsWithAdvances"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGContextShowGlyphsWithAdvances"].Parameters["advances[]"].Name="advances"]]></Change>
+				<Change><![CDATA[Functions["CGContextShowGlyphsWithAdvances"].Parameters["advances"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGContextShowText"].Parameters["@string"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["CGContextShowTextAtPoint"].Parameters["@string"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["CGContextStrokeLineSegments"].Parameters["points[]"].Name="points"]]></Change>
+				<Change><![CDATA[Functions["CGContextStrokeLineSegments"].Parameters["points"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Enumerations["CGBlendMode"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CGInterpolationQuality"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CGLineCap"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CGLineJoin"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CGTextDrawingMode"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CGTextEncoding"].BaseType="int"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGContext.Deprecated">
+			<File>GraphicsImaging/Reference/CGContext/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+		</Type>
+		<Type name="CGDataConsumer">
+			<File>GraphicsImaging/Reference/CGDataConsumer/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGDataConsumerCreate"].Parameters["callbacks"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGDataConsumerGetTypeID"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGDataProvider">
+			<File>GraphicsImaging/Reference/CGDataProvider/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGDataProviderCreateWithFilename"].Parameters["filename"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["CGDataProviderGetTypeID"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGDataProvider.Deprecated">
+			<File>GraphicsImaging/Reference/CGDataProvider/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGDataProviderCreateDirect"].Parameters["size"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGFont">
+			<File>GraphicsImaging/Reference/CGFont/Reference/reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[.)<pre class="declaration">]]></Source>
+                    <With><![CDATA[.)</p><pre class="declaration">]]></With>
+                </Replace>
+            </Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGFontCreatePostScriptEncoding"].Parameters["encoding[256]"].Name="encoding"]]></Change>
+				<Change><![CDATA[Functions["CGFontCreatePostScriptEncoding"].Parameters["encoding"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGFontCreatePostScriptSubset"].Parameters["glyphs[]"].Name="glyphs"]]></Change>
+				<Change><![CDATA[Functions["CGFontCreatePostScriptSubset"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGFontCreatePostScriptSubset"].Parameters["encoding[256]"].Name="encoding"]]></Change>
+				<Change><![CDATA[Functions["CGFontCreatePostScriptSubset"].Parameters["encoding"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGFontGetGlyphAdvances"].Parameters["glyphs[]"].Name="glyphs"]]></Change>
+				<Change><![CDATA[Functions["CGFontGetGlyphAdvances"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGFontGetGlyphAdvances"].Parameters["advances[]"].Name="advances"]]></Change>
+				<Change><![CDATA[Functions["CGFontGetGlyphAdvances"].Parameters["advances"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGFontGetGlyphBBoxes"].Parameters["glyphs[]"].Name="glyphs"]]></Change>
+				<Change><![CDATA[Functions["CGFontGetGlyphBBoxes"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGFontGetGlyphBBoxes"].Parameters["bboxes[]"].Name="bboxes"]]></Change>
+				<Change><![CDATA[Functions["CGFontGetGlyphBBoxes"].Parameters["bboxes"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGFontGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["CGFontPostScriptFormat"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["Font_Table_Index_Values"].Name="CGFontTableIndex"]]></Change>
+				<Change><![CDATA[Enumerations["CGFontTableIndex"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["Obsolete_Font_Table_Index_Values"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGFont.Deprecated">
+			<File>GraphicsImaging/Reference/CGFont/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+		</Type>
+		<Type name="CGFunction">
+			<File>GraphicsImaging/Reference/CGFunction/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGFunctionCreate"].Parameters["domain"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGFunctionCreate"].Parameters["range"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGFunctionCreate"].Parameters["callbacks"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGFunctionGetTypeID"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGGeometry">
+			<File>GraphicsImaging/Reference/CGGeometry/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGPointMakeWithDictionaryRepresentation"].Parameters["point"].Type="CGPoint"]]></Change>
+				<Change><![CDATA[Functions["CGPointMakeWithDictionaryRepresentation"].Parameters["point"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CGRectDivide"].Parameters["slice"].Type="CGRect"]]></Change>
+				<Change><![CDATA[Functions["CGRectDivide"].Parameters["slice"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CGRectDivide"].Parameters["remainder"].Type="CGRect"]]></Change>
+				<Change><![CDATA[Functions["CGRectDivide"].Parameters["remainder"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CGRectMakeWithDictionaryRepresentation"].Parameters["rect"].Type="CGRect"]]></Change>
+				<Change><![CDATA[Functions["CGRectMakeWithDictionaryRepresentation"].Parameters["rect"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CGSizeMakeWithDictionaryRepresentation"].Parameters["size"].Type="CGSize"]]></Change>
+				<Change><![CDATA[Functions["CGSizeMakeWithDictionaryRepresentation"].Parameters["size"].IsOut=true]]></Change>
+				<Change><![CDATA[Enumerations["CGRectEdge"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["CGRectEdge"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGGLContext">
+			<File>GraphicsImaging/Reference/CGGLContext/Reference/reference.html</File>
+		</Type>
+		<Type name="CGGradient">
+			<File>GraphicsImaging/Reference/CGGradient/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGGradientCreateWithColorComponents"].Parameters["components[]"].Name="components"]]></Change>
+				<Change><![CDATA[Functions["CGGradientCreateWithColorComponents"].Parameters["components"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGGradientCreateWithColorComponents"].Parameters["locations[]"].Name="locations"]]></Change>
+				<Change><![CDATA[Functions["CGGradientCreateWithColorComponents"].Parameters["locations"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGGradientCreateWithColors"].Parameters["locations[]"].Name="locations"]]></Change>
+				<Change><![CDATA[Functions["CGGradientCreateWithColors"].Parameters["locations"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGGradientGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["CGGradientDrawingOptions"].BaseType="int"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGImage">
+			<File>GraphicsImaging/Reference/CGImage/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGImageCreate"].Parameters["decode[]"].Name="decode"]]></Change>
+				<Change><![CDATA[Functions["CGImageCreate"].Parameters["decode"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGImageCreateWithJPEGDataProvider"].Parameters["decode[]"].Name="decode"]]></Change>
+				<Change><![CDATA[Functions["CGImageCreateWithJPEGDataProvider"].Parameters["decode"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGImageCreateWithMaskingColors"].Parameters["components[]"].Name="components"]]></Change>
+				<Change><![CDATA[Functions["CGImageCreateWithMaskingColors"].Parameters["components"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGImageCreateWithPNGDataProvider"].Parameters["decode[]"].Name="decode"]]></Change>
+				<Change><![CDATA[Functions["CGImageCreateWithPNGDataProvider"].Parameters["decode"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGImageGetDecode"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGImageGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CGImageMaskCreate"].Parameters["decode[]"].Name="decode"]]></Change>
+				<Change><![CDATA[Functions["CGImageMaskCreate"].Parameters["decode"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Enumerations["CGImageAlphaInfo"].BaseType="int"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGImageDestination">
+			<File>GraphicsImaging/Reference/CGImageDestination/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGImageDestinationCopyTypeIdentifiers"].Parameters["d"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CGImageDestinationGetTypeID"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGImageProperties">
+			<File>GraphicsImaging/Reference/CGImageProperties_Reference/Reference/reference.html</File>
+		</Type>
+		<Type name="CGImageSource">
+			<File>GraphicsImaging/Reference/CGImageSource/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGImageSourceCopyTypeIdentifiers"].Parameters["d"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CGImageSourceGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["CGImageSourceStatus"].BaseType="int"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGLayer">
+			<File>GraphicsImaging/Reference/CGLayer/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGLayerGetTypeID"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGPath">
+			<File>GraphicsImaging/Reference/CGPath/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGPathAddArc"].Parameters["m"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPathAddArcToPoint"].Parameters["m"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPathAddCurveToPoint"].Parameters["m"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPathAddEllipseInRect"].Parameters["m"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPathAddLines"].Parameters["m"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPathAddLines"].Parameters["points[]"].Name="points"]]></Change>
+				<Change><![CDATA[Functions["CGPathAddLines"].Parameters["points"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPathAddLineToPoint"].Parameters["m"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPathAddPath"].Parameters["m"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPathAddQuadCurveToPoint"].Parameters["m"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPathAddRect"].Parameters["m"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPathAddRects"].Parameters["m"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPathAddRects"].Parameters["rects[]"].Name="rects"]]></Change>
+				<Change><![CDATA[Functions["CGPathAddRects"].Parameters["rects"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPathAddRelativeArc"].Parameters["matrix"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Functions["CGPathAddRelativeArc"].Parameters["matrix"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CGPathApply"].Parameters["function"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPathContainsPoint"].Parameters["m"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPathCreateCopyByDashingPath"].Parameters["transform"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Functions["CGPathCreateCopyByDashingPath"].Parameters["transform"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CGPathCreateCopyByDashingPath"].Parameters["lengths"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPathCreateCopyByStrokingPath"].Parameters["transform"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Functions["CGPathCreateCopyByStrokingPath"].Parameters["transform"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CGPathCreateCopyByTransformingPath"].Parameters["transform"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Functions["CGPathCreateCopyByTransformingPath"].Parameters["transform"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CGPathCreateMutable"].Parameters["d"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CGPathCreateMutableCopyByTransformingPath"].Parameters["transform"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Functions["CGPathCreateMutableCopyByTransformingPath"].Parameters["transform"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CGPathCreateWithEllipseInRect"].Parameters["transform"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Functions["CGPathCreateWithEllipseInRect"].Parameters["transform"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CGPathCreateWithRect"].Parameters["transform"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Functions["CGPathCreateWithRect"].Parameters["transform"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CGPathIsRect"].Parameters["rect"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPathGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CGPathMoveToPoint"].Parameters["m"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Enumerations["CGPathDrawingMode"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CGPathElementType"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CGLineCap"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CGLineJoin"].BaseType="int"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGPattern">
+			<File>GraphicsImaging/Reference/CGPattern/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGPatternCreate"].Parameters["callbacks"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPatternGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["CGPatternTiling"].BaseType="int"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGPDFArray">
+			<File>GraphicsImaging/Reference/CGPDFArray/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGPDFArrayGetArray"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFArrayGetBoolean"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFArrayGetDictionary"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFArrayGetInteger"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFArrayGetName"].Parameters["value"].Type="System.Text.StringBuilder"]]></Change>
+				<Change><![CDATA[Functions["CGPDFArrayGetNumber"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFArrayGetObject"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFArrayGetStream"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFArrayGetString"].Parameters["value"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGPDFContentStream">
+			<File>GraphicsImaging/Reference/CGPDFContentStream/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGPDFContentStreamGetResource"].Parameters["category"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["CGPDFContentStreamGetResource"].Parameters["name"].Type="String"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGPDFContext">
+			<File>GraphicsImaging/Reference/CGPDFContext/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGPDFContextCreate"].Parameters["mediaBox"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFContextCreateWithURL"].Parameters["mediaBox"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGPDFDictionary">
+			<File>GraphicsImaging/Reference/CGPDFDictionary/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGPDFDictionaryApplyFunction"].Parameters["function"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDictionaryGetArray"].Parameters["key"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDictionaryGetArray"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDictionaryGetBoolean"].Parameters["key"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDictionaryGetBoolean"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDictionaryGetDictionary"].Parameters["key"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDictionaryGetDictionary"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDictionaryGetInteger"].Parameters["key"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDictionaryGetInteger"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDictionaryGetName"].Parameters["key"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDictionaryGetName"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDictionaryGetNumber"].Parameters["key"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDictionaryGetNumber"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDictionaryGetObject"].Parameters["key"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDictionaryGetObject"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDictionaryGetStream"].Parameters["key"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDictionaryGetStream"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDictionaryGetString"].Parameters["key"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDictionaryGetString"].Parameters["value"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGPDFDocument">
+			<File>GraphicsImaging/Reference/CGPDFDocument/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGPDFDocumentGetVersion"].Parameters["majorVersion"].Type="int"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDocumentGetVersion"].Parameters["majorVersion"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CGPDFDocumentGetVersion"].Parameters["minorVersion"].Type="int"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDocumentGetVersion"].Parameters["minorVersion"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CGPDFDocumentUnlockWithPassword"].Parameters["password"].Type="String"]]></Change>
+				<Change><![CDATA[Functions["CGPDFDocumentGetTypeID"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGPDFDocument.Deprecated">
+			<File>GraphicsImaging/Reference/CGPDFDocument/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[OS X version 10]]></Source>
+					<With><![CDATA[OS X v10]]></With>
+				</Replace>
+			</Patch>
+		</Type>
+		<Type name="CGPDFObject">
+			<File>GraphicsImaging/Reference/CGPDFObject/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["CGPDFObjectType"].BaseType="int"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGPDFOperatorTable">
+			<File>GraphicsImaging/Reference/CGPDFOperatorTable/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGPDFOperatorTableCreate"].Parameters["d"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CGPDFOperatorTableSetCallback"].Parameters["name"].Type="String"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGPDFPage">
+			<File>GraphicsImaging/Reference/CGPDFPage/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGPDFPageGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["CGPDFBox"].BaseType="int"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGPDFScanner">
+			<File>GraphicsImaging/Reference/CGPDFScanner/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGPDFScannerPopArray"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFScannerPopBoolean"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFScannerPopDictionary"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFScannerPopInteger"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFScannerPopName"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFScannerPopNumber"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFScannerPopObject"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFScannerPopStream"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFScannerPopString"].Parameters["value"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPDFScannerRetain"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGPDFStream">
+			<File>GraphicsImaging/Reference/CGPDFStream/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGPDFStreamCopyData"].Parameters["format"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Enumerations["CGPDFDataFormat"].BaseType="int"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGPDFString">
+			<File>GraphicsImaging/Reference/CGPDFString/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGPDFStringGetBytePtr"].ReturnType="IntPtr"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGPSConverter">
+			<File>GraphicsImaging/Reference/CGPSConverter/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGPSConverterCreate"].Parameters["callbacks"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CGPSConverterGetTypeID"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CGShading">
+			<File>GraphicsImaging/Reference/CGShading/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CGShadingGetTypeID"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+	</Types>
+	<Classes>
+	</Classes>
+	<Structures>
+		<Structure name="CGAffineTransform" />
+		<Structure name="CGDataConsumerCallbacks" />
+		<Structure name="CGDataProviderCallbacks" />
+		<Structure name="CGDataProviderDirectAccessCallbacks" />
+		<Structure name="CGDataProviderDirectCallbacks" />
+		<Structure name="CGDataProviderSequentialCallbacks" />
+		<Structure name="CGFloat" />
+		<Structure name="CGPoint" />
+		<Structure name="CGRect" />
+		<Structure name="CGSize" />
+	</Structures>
+	<Enumerations>
+		<Enumeration name="CGRectEdge" />
+	</Enumerations>
+</Framework>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Structure Generate="true">
+	<Name>TimeRecord</Name>
+	<Namespace>QTKit</Namespace>
+	<MixedType>TimeRecord,TimeRecord</MixedType>
+</Structure>

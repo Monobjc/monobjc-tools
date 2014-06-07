@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="CoreLocation" usings="Foundation" assembly="Monobjc.CoreLocation" source="DocSet">
+	<Types>
+		<Type name="CoreLocationFramework.Constants">
+			<File>CoreLocation/Reference/CoreLocationConstantsRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["CLError"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CLDeviceOrientation"].BaseType="int"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CoreLocationFramework.DataTypes">
+			<File>CoreLocation/Reference/CoreLocationDataTypesRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Constants["CLLocationAccuracy"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="CLGeocoder">
+			<File>CoreLocation/Reference/CLGeocoder_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="CLHeading">
+			<File>CoreLocation/Reference/CLHeading_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="CLLocation">
+			<File>CoreLocation/Reference/CLLocation_Class/CLLocation/CLLocation.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["DistanceFromLocation"].Parameters["location"].Type="CLLocation"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CLLocationManager">
+			<File>CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[MinAvailability="OS X v10.6"]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties.First(Name == "LocationServicesEnabled" && Static == True).Generate=false]]></Change>
+				<Change><![CDATA[Constants["CLLocationDistance"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["CLError"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CLAuthorizationStatus"].BaseType="int"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CLLocationManager.Deprecated">
+			<File>CoreLocation/Reference/CLLocationManager_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="CLLocationManager"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CLPlacemark">
+			<File>CoreLocation/Reference/CLPlacemark_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="CLRegion">
+			<File>CoreLocation/Reference/CLRegion_class/Reference/Reference.html</File>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="CLLocationManagerDelegate">
+			<File>CoreLocation/Reference/CLLocationManagerDelegate_Protocol/CLLocationManagerDelegate/CLLocationManagerDelegate.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="CLLocationManager"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+	</Protocols>
+	<Structures>
+		<Structure name="CLLocationCoordinate2D" />
+	</Structures>
+</Framework>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Framework name="JavaScriptCore" usings="Foundation,AppKit,WebKit" assembly="Monobjc.WebKit" source="Doxygen" style="Doxygen" path="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/JavaScriptCore.framework/Headers">
+	<Types />
+	<Classes>
+		<Class type="C" name="JavaScript_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="JavaScript"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="JavaScriptCore_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="JavaScriptCore"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="JSBase_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="JSBase"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="JSContextRef_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="JSContextRef"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="JSObjectRef_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="JSObjectRef"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="JSStringRef_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="JSStringRef"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="JSStringRefCF_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="JSStringRefCF"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="JSValueRef_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="JSValueRef"</Change>
+			</Patch>
+		</Class>
+		<Class type="C" name="WebKitAvailability_Definitions">
+			<Patch type="Model">
+				<Change>AdditionFor="WebKitAvailability"</Change>
+			</Patch>
+		</Class>
+	</Classes>
+	<Protocols />
+	<Structures>
+		<Structure type="S" name="JSClassDefinition" />
+		<Structure type="S" name="JSStaticFunction" />
+		<Structure type="S" name="JSStaticValue" />
+	</Structures>
+	<Enumerations />
+</Framework>

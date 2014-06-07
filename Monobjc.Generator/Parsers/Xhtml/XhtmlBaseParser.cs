@@ -31,8 +31,8 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml
 	/// </summary>
 	public abstract class XhtmlBaseParser : BaseParser
 	{
-		protected static readonly Regex ENUMERATION_REGEX = new Regex (@"(typedef\s)?enum(\s?[_A-z]+)?\s*(\/\*\s*:\s*(.+)?\s*\*\/)?\s*\{[\r\n]?(.+)\};?(\s?typedef)?(\s?[A-z0-9_]+\s?)?([A-z]+)?", RegexOptions.Singleline);
-		protected static readonly Regex CONSTANT_REGEX = new Regex (@"(id ?|unsigned ?|double ?|float ?\*?|NSString ?\*? ?|CFStringRef ?|CIFormat|CATransform3D|CLLocationDistance ?)([A-z0-9]+)$");
+        protected static readonly Regex ENUMERATION_REGEX = new Regex (@"(typedef\s)?enum(\s?[_A-z]+)?\s*(\/\*\s*:\s*(.+)?\s*\*\/)?\s*\{[\r\n]?(.+)\};?(\s?typedef)?(\s?[A-z0-9_]+\s?)?([A-z0-9]+)?", RegexOptions.Singleline);
+        protected static readonly Regex CONSTANT_REGEX = new Regex (@"(id ?|unsigned ?|double ?|float ?\*?|NSString ?\*? ?|CFStringRef ?|CIFormat|CATransform3D|CLLocationDistance ?)([A-z0-9]+)$");
 		protected static readonly Regex PARAMETER_REGEX = new Regex (@"(const )?([0-9A-z]+ ?\*{0,2} ?)([0-9A-z]+)");
 		protected static readonly Regex COMMENTS_REGEX = new Regex (@"(/\*(.|[\r\n])*?\*/)|(//.*)", RegexOptions.Singleline);
 

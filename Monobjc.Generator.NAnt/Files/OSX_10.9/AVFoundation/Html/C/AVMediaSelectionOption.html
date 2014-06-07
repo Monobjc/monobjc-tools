@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AVMediaSelectionOption Class Reference</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta id="book-resource-type" name="book-resource-type" content="Reference">
+    <script>String.prototype.cleanUpURL=function(){var c,b="",a=this;if(this.match("#")){b="#"+this.split("#")[1];a=this.split("#")[0]}a=a.replace(/\/\.\/|([^:])\/\//g,"$1/");if(a==="./"){return""+b}while(a!==c){c=a;a=a.replace(/[\/][^\/]+\/+\.\.\//,"/")}a=a.replace(/^.[^\/]+\/+\.\.\//,"");return a+b};(function(){var a="../../../../../";var c=window.location.pathname;var b=(c.slice(0,c.lastIndexOf("/"))+"/"+a).cleanUpURL();if(top.location.href==window.location.href){if("createTouch" in document){if(document.getElementById("book-resource-type").content!=="Standalone"){switch(navigator.platform){case"iPad":window.location.replace(a+"ipad/#"+c.replace(b,"")+window.location.hash);break;case"iPhone":break}}}else{window.location.replace(a+(window.location.protocol=="file:"?"index.html":"")+"#"+c.replace(b,"").cleanUpURL()+window.location.hash)}}})();</script>
+    <meta scheme="apple_ref" id="identifier" name="identifier" content="//apple_ref/doc/uid/TP40011012">
+	<meta id="document-version" name="document-version" content="1.0.3">
+    <meta id="chapterId" name="chapterId" content="TP40011012-CH1">
+    <meta id="date" name="date" content="2011-10-12">
+    <meta id="description" name="description" content="Describes an object that represents a specific option for the presentation of media within a group of options.">
+    <meta id="book-title" name="book-title" content="AVMediaSelectionOption Class Reference">
+    <meta id="book-root" name="book-root" content="../">
+    <meta id="book-json" name="book-json" content="../book.json">
+    <meta id="book-assignments" name="book-assignments" content="{Type/Reference}, {Framework/Media Layer/AVFoundation}">
+    <meta name="pdf" contents="../AVMediaSelectionOption_Class.pdf" /><link id="book-pdf" media="print" rel="alternate" type="application/pdf" href="../AVMediaSelectionOption_Class.pdf" />
+    
+    <meta id="generator" name="generator" content="Gutenberg 30223">
+    <meta name='numbat' content='aa879094b666337fdcde744b62fbff30'>
+    <meta id="copyright" name="copyright" content="Copyright 2012 Apple Inc. All Rights Reserved.">
+    <meta name = "viewport" content = "width = device-width" >
+    <meta id="xcode-display" name="xcode-display" content="render">
+    <meta id="IndexTitle" name="IndexTitle" content="AVMediaSelectionOption Class Reference">
+    <meta id="resources-uri" name="resources-uri" content="../../../../../Resources/677">
+    <link id="book-index-page" rel="Start" title="AVMediaSelectionOption Class Reference" type="text/html" href="../index.html">
+    <link id="next-page" rel="Next" type="text/html" href="../RevisionHistory.html">
+    <link id="previous-page" rel="Prev" type="text/html" href="">
+    <link rel="stylesheet" type="text/css" href="../../../../../Resources/677/CSS/ac_media.css" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../../../../Resources/677/CSS/devpubs.css" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../../../../Resources/677/CSS/docs.css" charset="utf-8">
+    <!--[if IE]><link rel="stylesheet" type="text/css" href="../../../../../Resources/677/CSS/ie.css"><![endif]-->
+    
+<link rel="stylesheet" type="text/css" href="../../../../../Resources/677/CSS/xcode4.css" charset="utf-8">
+</head>    
+<body><a name="//apple_ref/doc/uid/TP40011012-CH1" title="AVMediaSelectionOption"></a>
+    <article id="contents" tabindex="0" role="main">
+        <div id="pageNavigationLinks_top" class="pageNavigationLinks">
+            <a class='nextLink' rel='next' href='../RevisionHistory.html'>Next</a>
+        </div>
+        <a id="top" name="top"></a>
+        <a id="INDEX" href="../index.html" style="display:none;"></a>
+        
+        <a name="//apple_ref/doc/uid/TP40011012" title="AVMediaSelectionOption"></a><a name="//apple_ref/occ/cl/AVMediaSelectionOption" title="AVMediaSelectionOption"></a><a name="//apple_ref/doc/c_ref/AVMediaSelectionOption" title="AVMediaSelectionOption"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-SW1" title="AVMediaSelectionOption"></a><h1 id="pageTitle">AVMediaSelectionOption Class Reference</h1><div class="spec_sheet_info_box"><table cellspacing="0" class="specbox"><tr><td scope="row"><strong><span class="InheritsFrom">Inherits from</span></strong></td><td><div class="zSharedSpecBoxHeadList"><a href="../../../../Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html#//apple_ref/occ/cl/NSObject">NSObject</a></div></td></tr><tr><td scope="row"><strong><span class="noWrap">Conforms to</span></strong></td><td><div class="zSharedSpecBoxHeadList"><span class="content_text"><a href="../../../../Cocoa/Reference/Foundation/Protocols/NSCopying_Protocol/Reference/Reference.html#//apple_ref/occ/intf/NSCopying">NSCopying</a></span><br/><span class="content_text"><a href="../../../../Cocoa/Reference/Foundation/Protocols/NSObject_Protocol/Reference/NSObject.html#//apple_ref/occ/intf/NSObject">NSObject (NSObject)</a></span><br/></div></td></tr><tr><td scope="row"><strong><span class="FrameworkPath">Framework</span></strong></td><td><div class="zSharedSpecBoxHeadList">/System/Library/Frameworks/<a href="../../AVFoundationFramework/_index.html#//apple_ref/doc/uid/TP40008072">AVFoundation.framework</a></div></td></tr><tr><td scope="row"><strong>Availability</strong></td><td><div class="zSharedSpecBoxHeadList"><div>Available in iOS 5.0 and later.</div></div></td></tr><tr><td scope="row"><strong><span class="noWrap">Companion guide</span></strong></td><td><div class="zSharedSpecBoxHeadList"><span class="content_text"><a href="../../../../AudioVideo/Conceptual/AVFoundationPG/Articles/00_Introduction.html#//apple_ref/doc/uid/TP40010188" target="_self">AV Foundation Programming Guide</a></span><br/></div></td></tr><tr><td scope="row"><strong><span class="DeclaredIn">Declared in</span></strong></td><td><div class="zSharedSpecBoxHeadList"><span class="content_text">AVMediaSelectionGroup.h</span><br/></div></td></tr></table></div><div id="Overview_section" class="zClassDescription"><a name="//apple_ref/doc/uid/TP40011012-CH1-DontLinkElementID_1" title="Overview"></a><h2 class="jump zClassDescription_Name">Overview</h2><p class="abstract">An <code>AVMediaSelectionOption</code> object represents a specific option for the presentation of media within a group of options.</p></div><div id="Tasks_section" class="zMethodsByTask"><a name="//apple_ref/doc/uid/TP40011012-CH1-DontLinkElementID_2" title="Tasks"></a><h2 class="jump zMethodsByTask_Name">Tasks</h2>
+<a name="//apple_ref/doc/uid/TP40011012-CH1-SW2" title="Managing Media Types"></a>
+		<h3 class="tasks">Managing Media Types</h3>
+		
+		
+		
+		
+		<ul class="tooltip">
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/instp/AVMediaSelectionOption/mediaType">&#xA0;&#xA0;mediaType</a></code><span class="task_api_suffix">&#160;&#160;property</span>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='The media type of the media data. (read-only)'></span>
+                    
+                </span></li>
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/instp/AVMediaSelectionOption/mediaSubTypes">&#xA0;&#xA0;mediaSubTypes</a></code><span class="task_api_suffix">&#160;&#160;property</span>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='The media sub-types of the media data associated with the option. (read-only)'></span>
+                    
+                </span></li>
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/instm/AVMediaSelectionOption/hasMediaCharacteristic:">&#8211;&#xA0;hasMediaCharacteristic:</a></code>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='Returns a Boolean that indicates whether the receiver includes media a given media characteristic.'></span>
+                    
+                </span></li>
+			
+		</ul>
+
+
+<a name="//apple_ref/doc/uid/TP40011012-CH1-SW6" title="Managing Metadata"></a>
+		<h3 class="tasks">Managing Metadata</h3>
+		
+		
+		
+		
+		<ul class="tooltip">
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/instp/AVMediaSelectionOption/commonMetadata">&#xA0;&#xA0;commonMetadata</a></code><span class="task_api_suffix">&#160;&#160;property</span>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='An array of metadata items for each common metadata key for which a value is available. (read-only)'></span>
+                    
+                </span></li>
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/instp/AVMediaSelectionOption/availableMetadataFormats">&#xA0;&#xA0;availableMetadataFormats</a></code><span class="task_api_suffix">&#160;&#160;property</span>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='The metadata formats that contains metadata associated with the option. (read-only)'></span>
+                    
+                </span></li>
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/instm/AVMediaSelectionOption/metadataForFormat:">&#8211;&#xA0;metadataForFormat:</a></code>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='Returns an array of <code>AVMetadataItem</code> objects, one for each metadata item in the container of a given format.'></span>
+                    
+                </span></li>
+			
+		</ul>
+
+
+<a name="//apple_ref/doc/uid/TP40011012-CH1-SW10" title="New Methods"></a>
+		<h3 class="tasks">New Methods</h3>
+		
+		
+		
+		
+		<ul class="tooltip">
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/instp/AVMediaSelectionOption/playable">&#xA0;&#xA0;playable</a></code><span class="task_api_suffix">&#160;&#160;property</span>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='Indicates whether the media selection option is playable. (read-only)'></span>
+                    
+                </span></li>
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/instp/AVMediaSelectionOption/locale">&#xA0;&#xA0;locale</a></code><span class="task_api_suffix">&#160;&#160;property</span>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='The locale for which the media option was authored. (read-only)'></span>
+                    
+                </span></li>
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/instm/AVMediaSelectionOption/associatedMediaSelectionOptionInMediaSelectionGroup:">&#8211;&#xA0;associatedMediaSelectionOptionInMediaSelectionGroup:</a></code>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='Returns a media selection option associated with the receiver in a given group.'></span>
+                    
+                </span></li>
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/instm/AVMediaSelectionOption/propertyList">&#8211;&#xA0;propertyList</a></code>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract='Returns a serializable property list that’s sufficient to identify the option within its group.'></span>
+                    
+                </span></li>
+			
+		</ul>
+
+
+</div><a name="//apple_ref/doc/uid/TP40011012-CH1-DontLinkElementID_3" title="Properties"></a><h2 class="jump">Properties</h2><div class="api propertyObjC"><a name="//apple_ref/occ/instp/AVMediaSelectionOption/availableMetadataFormats" title="availableMetadataFormats"></a><a name="//apple_ref/occ/instm/AVMediaSelectionOption/availableMetadataFormats" title="availableMetadataFormats"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-SW8" title="availableMetadataFormats"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-DontLinkElementID_5"></a><h3 class="jump propertyObjC method_property">availableMetadataFormats</h3><p class="abstract">The metadata formats that contains metadata associated with the option. (read-only)</p><div class="declaration"><div class="declaration">@property(nonatomic, readonly) <a href="../../../../Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/c_ref/NSArray">NSArray</a> *availableMetadataFormats</div></div><div class="api discussion"><h5>Discussion</h5><p>The array contains <code>NSString</code> objects, each representing a metadata format that contains metadata associated with the option (for example, ID3, iTunes metadata, and so on).</p></div>  <div class="api availability"><h5>Availability</h5><ul><li>Available in iOS 5.0 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">AVMediaSelectionGroup.h</code></div></div><div class="api propertyObjC"><a name="//apple_ref/occ/instp/AVMediaSelectionOption/commonMetadata" title="commonMetadata"></a><a name="//apple_ref/occ/instm/AVMediaSelectionOption/commonMetadata" title="commonMetadata"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-SW7" title="commonMetadata"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-DontLinkElementID_6"></a><h3 class="jump propertyObjC method_property">commonMetadata</h3><p class="abstract">An array of metadata items for each common metadata key for which a value is available. (read-only)</p><div class="declaration"><div class="declaration">@property(nonatomic, readonly) <a href="../../../../Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/c_ref/NSArray">NSArray</a> *commonMetadata</div></div><div class="api discussion"><h5>Discussion</h5><p>You can filter the array of <code><a href="../../AVMetadataItem_Class/Reference/Reference.html#//apple_ref/occ/cl/AVMetadataItem" target="_self">AVMetadataItem</a></code> objects according to locale using <code><a href="../../AVMetadataItem_Class/Reference/Reference.html#//apple_ref/occ/clm/AVMetadataItem/metadataItemsFromArray:withLocale:" target="_self">metadataItemsFromArray:withLocale:</a></code> or according to key using <code><a href="../../AVMetadataItem_Class/Reference/Reference.html#//apple_ref/occ/clm/AVMetadataItem/metadataItemsFromArray:withKey:keySpace:" target="_self">metadataItemsFromArray:withKey:keySpace:</a></code>.</p><p>The following example illustrates how to obtain the name (or title) of a media selection option in the current locale.</p><div class="codesample clear"><table><tr><td scope="row"><pre>NSArray *titles = [AVMetadataItem metadataItemsFromArray:[mediaSelectionOption commonMetadata]<span></span></pre></td></tr><tr><td scope="row"><pre>                                  withKey:AVMetadataCommonKeyTitle keySpace:AVMetadataKeySpaceCommon];<span></span></pre></td></tr><tr><td scope="row"><pre>        if ([titles count] > 0) {<span></span></pre></td></tr><tr><td scope="row"><pre>                // Try to get a title that matches one of the user's preferred languages.<span></span></pre></td></tr><tr><td scope="row"><pre>                NSArray *preferredLanguages = [NSLocale preferredLanguages];<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>                for (NSString *thisLanguage in preferredLanguages) {<span></span></pre></td></tr><tr><td scope="row"><pre>                        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:thisLanguage];<span></span></pre></td></tr><tr><td scope="row"><pre>                        NSArray *titlesForLocale = [AVMetadataItem metadataItemsFromArray:titles withLocale:locale];<span></span></pre></td></tr><tr><td scope="row"><pre>                        [locale release];<span></span></pre></td></tr><tr><td scope="row"><pre>                        if ([titlesForLocale count] > 0) {<span></span></pre></td></tr><tr><td scope="row"><pre>                                title = [[titlesForLocale objectAtIndex:0] stringValue];<span></span></pre></td></tr><tr><td scope="row"><pre>                                break;<span></span></pre></td></tr><tr><td scope="row"><pre>                        }<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>                }<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>                // No matches in any of the preferred languages. Just use the primary title metadata we find.<span></span></pre></td></tr><tr><td scope="row"><pre>                if (title == nil) {<span></span></pre></td></tr><tr><td scope="row"><pre>                        title = [[titles objectAtIndex:0] stringValue];<span></span></pre></td></tr><tr><td scope="row"><pre>                }<span></span></pre></td></tr><tr><td scope="row"><pre>        }<span></span></pre></td></tr></table></div></div>  <div class="api availability"><h5>Availability</h5><ul><li>Available in iOS 5.0 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">AVMediaSelectionGroup.h</code></div></div><div class="api propertyObjC"><a name="//apple_ref/occ/instp/AVMediaSelectionOption/locale" title="locale"></a><a name="//apple_ref/occ/instm/AVMediaSelectionOption/locale" title="locale"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-SW12" title="locale"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-DontLinkElementID_7"></a><h3 class="jump propertyObjC method_property">locale</h3><p class="abstract">The locale for which the media option was authored. (read-only)</p><div class="declaration"><div class="declaration">@property(nonatomic, readonly) <a href="../../../../Cocoa/Reference/Foundation/Classes/NSLocale_Class/Reference/Reference.html#//apple_ref/doc/c_ref/NSLocale">NSLocale</a> *locale</div></div><div class="api availability"><h5>Availability</h5><ul><li>Available in iOS 5.0 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">AVMediaSelectionGroup.h</code></div></div><div class="api propertyObjC"><a name="//apple_ref/occ/instp/AVMediaSelectionOption/mediaSubTypes" title="mediaSubTypes"></a><a name="//apple_ref/occ/instm/AVMediaSelectionOption/mediaSubTypes" title="mediaSubTypes"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-SW4" title="mediaSubTypes"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-DontLinkElementID_8"></a><h3 class="jump propertyObjC method_property">mediaSubTypes</h3><p class="abstract">The media sub-types of the media data associated with the option. (read-only)</p><div class="declaration"><div class="declaration">@property(nonatomic, readonly) <a href="../../../../Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/c_ref/NSArray">NSArray</a> *mediaSubTypes</div></div><div class="api discussion"><h5>Discussion</h5><p>The value is an array of <code>NSNumber</code> objects carrying four character codes (of type FourCharCode) as defined in <code>CoreAudioTypes.h</code> for audio media and in <code>CMFormatDescription.h</code> for video media.</p><p>Also see <code><a href="../../../../CoreMedia/Reference/CMFormatDescription/Reference/reference.html#//apple_ref/c/func/CMFormatDescriptionGetMediaSubType" target="_self">CMFormatDescriptionGetMediaSubType</a></code> for more information about media subtypes.</p></div>  <div class="api availability"><h5>Availability</h5><ul><li>Available in iOS 5.0 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">AVMediaSelectionGroup.h</code></div></div><div class="api propertyObjC"><a name="//apple_ref/occ/instp/AVMediaSelectionOption/mediaType" title="mediaType"></a><a name="//apple_ref/occ/instm/AVMediaSelectionOption/mediaType" title="mediaType"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-SW3" title="mediaType"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-DontLinkElementID_9"></a><h3 class="jump propertyObjC method_property">mediaType</h3><p class="abstract">The media type of the media data. (read-only)</p><div class="declaration"><div class="declaration">@property(nonatomic, readonly) <a href="../../../../Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html#//apple_ref/doc/c_ref/NSString">NSString</a> *mediaType</div></div><div class="api discussion"><h5>Discussion</h5><p>The value of the property might be, for example, <code><a href="../../AVFoundation_Constants/Reference/reference.html#//apple_ref/c/data/AVMediaTypeAudio" target="_self">AVMediaTypeAudio</a></code> or <code><a href="../../AVFoundation_Constants/Reference/reference.html#//apple_ref/c/data/AVMediaTypeSubtitle" target="_self">AVMediaTypeSubtitle</a></code>.</p></div>  <div class="api availability"><h5>Availability</h5><ul><li>Available in iOS 5.0 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">AVMediaSelectionGroup.h</code></div></div><div class="api propertyObjC"><a name="//apple_ref/occ/instp/AVMediaSelectionOption/playable" title="playable"></a><a name="//apple_ref/occ/instm/AVMediaSelectionOption/isPlayable" title="playable"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-SW11" title="playable"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-DontLinkElementID_10"></a><h3 class="jump propertyObjC method_property">playable</h3><p class="abstract">Indicates whether the media selection option is playable. (read-only)</p><div class="declaration"><div class="declaration">@property(nonatomic, readonly, getter=isPlayable) BOOL playable</div></div><div class="api discussion"><h5>Discussion</h5><p>If the media data associated with the option cannot be decoded or otherwise rendered, the value of this property is <code>NO</code>.</p></div>  <div class="api availability"><h5>Availability</h5><ul><li>Available in iOS 5.0 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">AVMediaSelectionGroup.h</code></div></div><div id="InstanceMethods_section" class="zInstanceMethods"><a name="//apple_ref/doc/uid/TP40011012-CH1-DontLinkElementID_4" title="Instance Methods"></a><h2 class="jump">Instance Methods</h2><div class="api instanceMethod"><a name="//apple_ref/occ/instm/AVMediaSelectionOption/associatedMediaSelectionOptionInMediaSelectionGroup:" title="associatedMediaSelectionOptionInMediaSelectionGroup:"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-SW13" title="associatedMediaSelectionOptionInMediaSelectionGroup:"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-DontLinkElementID_11"></a><h3 class="jump instanceMethod">associatedMediaSelectionOptionInMediaSelectionGroup:</h3><p class="abstract">Returns a media selection option associated with the receiver in a given group.</p><div class="declaration">- (AVMediaSelectionOption *)associatedMediaSelectionOptionInMediaSelectionGroup:(<a href="../../AVMediaSelectionGroup_Class/Reference/Reference.html#//apple_ref/doc/c_ref/AVMediaSelectionGroup">AVMediaSelectionGroup</a> *)<em>mediaSelectionGroup</em></div><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>mediaSelectionGroup</em></dt><dd><p>A media selection group in which an associated option is to be sought.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>A media selection option associated with the receiver in <em>mediaSelectionGroup</em>, or <code>nil</code> if none were found.</p></div>   <div class="api discussion"><h5>Discussion</h5><p>Audible media selection options often have associated legible media selection options; in particular, audible options are typically associated with forced-only subtitle options with the same locale. See <code>AVMediaCharacteristicContainsOnlyForcedSubtitles</code> in <code>AVMediaFormat.h</code> for a discussion of forced-only subtitles.</p></div>  <div class="api availability"><h5>Availability</h5><ul><li>Available in iOS 5.0 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">AVMediaSelectionGroup.h</code></div></div><div class="api instanceMethod"><a name="//apple_ref/occ/instm/AVMediaSelectionOption/hasMediaCharacteristic:" title="hasMediaCharacteristic:"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-SW5" title="hasMediaCharacteristic:"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-DontLinkElementID_12"></a><h3 class="jump instanceMethod">hasMediaCharacteristic:</h3><p class="abstract">Returns a Boolean that indicates whether the receiver includes media a given media characteristic.</p><div class="declaration">- (BOOL)hasMediaCharacteristic:(<a href="../../../../Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html#//apple_ref/doc/c_ref/NSString">NSString</a> *)<em>mediaCharacteristic</em></div><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>mediaCharacteristic</em></dt><dd><p>The media characteristic of interest, for example, <code><a href="../../AVFoundation_Constants/Reference/reference.html#//apple_ref/c/data/AVMediaCharacteristicVisual" target="_self">AVMediaCharacteristicVisual</a></code>, <code><a href="../../AVFoundation_Constants/Reference/reference.html#//apple_ref/c/data/AVMediaCharacteristicAudible" target="_self">AVMediaCharacteristicAudible</a></code>, or <code><a href="../../AVFoundation_Constants/Reference/reference.html#//apple_ref/c/data/AVMediaCharacteristicLegible" target="_self">AVMediaCharacteristicLegible</a></code>.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p><code>YES</code> if the media selection option includes media with <!--a  -->mediaCharacteristic<!--/a-->, otherwise <code>NO</code>.</p></div>   <div class="api availability"><h5>Availability</h5><ul><li>Available in iOS 5.0 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">AVMediaSelectionGroup.h</code></div></div><div class="api instanceMethod"><a name="//apple_ref/occ/instm/AVMediaSelectionOption/metadataForFormat:" title="metadataForFormat:"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-SW9" title="metadataForFormat:"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-DontLinkElementID_13"></a><h3 class="jump instanceMethod">metadataForFormat:</h3><p class="abstract">Returns an array of <code>AVMetadataItem</code> objects, one for each metadata item in the container of a given format.</p><div class="declaration">- (<a href="../../../../Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/c_ref/NSArray">NSArray</a> *)metadataForFormat:(<a href="../../../../Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html#//apple_ref/doc/c_ref/NSString">NSString</a> *)<em>format</em></div><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>format</em></dt><dd><p>The metadata format for which items are requested.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>An array of <code>AVMetadataItem</code> objects, one for each metadata item in the container of format, or <code>nil</code> if there is no metadata of the specified format.</p></div>   <div class="api availability"><h5>Availability</h5><ul><li>Available in iOS 5.0 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">AVMediaSelectionGroup.h</code></div></div><div class="api instanceMethod"><a name="//apple_ref/occ/instm/AVMediaSelectionOption/propertyList" title="propertyList"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-SW14" title="propertyList"></a><a name="//apple_ref/doc/uid/TP40011012-CH1-DontLinkElementID_14"></a><h3 class="jump instanceMethod">propertyList</h3><p class="abstract">Returns a serializable property list that’s sufficient to identify the option within its group.</p><div class="declaration">- (id)propertyList</div><div class="return_value"><h5 class="tight">Return Value</h5><p>A serializable property list that you can use to obtain an instance of <code><a href="#//apple_ref/occ/cl/AVMediaSelectionOption" target="_self">AVMediaSelectionOption</a></code> representing the same option as the receiver using <code><a href="../../AVMediaSelectionGroup_Class/Reference/Reference.html#//apple_ref/occ/instm/AVMediaSelectionGroup/mediaSelectionOptionWithPropertyList:" target="_self">mediaSelectionOptionWithPropertyList:</a></code>.</p></div>   <div class="api discussion"><h5>Discussion</h5><p>You can serialize the returned property list using <code><a href="../../../../Cocoa/Reference/Foundation/Classes/NSPropertyListSerialization_Class/Reference/Reference.html#//apple_ref/occ/cl/NSPropertyListSerialization" target="_self">NSPropertyListSerialization</a></code>.</p></div>  <div class="api availability"><h5>Availability</h5><ul><li>Available in iOS 5.0 and later.</li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">AVMediaSelectionGroup.h</code></div></div></div>
+        <div id="pageNavigationLinks_bottom" class="pageNavigationLinks">
+            <a class='nextLink' rel='next' href='../RevisionHistory.html'>Next</a>
+        </div><br/>
+        <div class="copyright"><br/><hr /><div align="center"><p class="content_text" lang="en" dir="ltr"> &#x00a9; 2011 Apple Inc. All Rights Reserved. &#40;Last updated: 2011-10-12&#041;</p></div></div>
+
+        <div id="feedbackForm" class="hideOnPrint" style="margin-left: auto; margin-right: auto; width: 38em; margin-bottom: 15px; margin-top: 15px; font-weight: bold; color: #333333; background: #d9d9d9; padding: 5px 10px 5px 10px; height: 15px; text-align: center; -webkit-border-radius: 12px; -moz-border-radius: 12px; vertical-align: middle;">
+    Did this document help you?
+    <span class="tooltip" data-abstract="<b>Yes:</b> Tell us what works for you.">
+       <a href="http://developer.apple.com/feedback/?v=1&url=%2Flibrary%2Fios%2Fdocumentation%2FAVFoundation%2FReference%2FAVMediaSelectionOption_Class%2FReference%2FReference.html%3Fdocset%3Dcom.apple.adc.documentation.AppleiOS6.0.iOSLibrary-41.39%26id%3DTP40011012-1.0&media=xcode" class='urlLink'>Yes</a>
+    </span>
+    <span class="tooltip" data-abstract="<b>It's good, but:</b> Report typos, inaccuracies, and so forth.">
+        <a href="http://developer.apple.com/feedback/?v=2&url=%2Flibrary%2Fios%2Fdocumentation%2FAVFoundation%2FReference%2FAVMediaSelectionOption_Class%2FReference%2FReference.html%3Fdocset%3Dcom.apple.adc.documentation.AppleiOS6.0.iOSLibrary-41.39%26id%3DTP40011012-1.0&media=xcode" class='urlLink'>It's good, but...</a>
+    </span>
+    <span class="tooltip" data-abstract="<b>Not helpful:</b> Tell us what would have helped.">
+        <a href="http://developer.apple.com/feedback/?v=3&url=%2Flibrary%2Fios%2Fdocumentation%2FAVFoundation%2FReference%2FAVMediaSelectionOption_Class%2FReference%2FReference.html%3Fdocset%3Dcom.apple.adc.documentation.AppleiOS6.0.iOSLibrary-41.39%26id%3DTP40011012-1.0&media=xcode" class='urlLink'>Not helpful...</a>
+    </span>
+</div>
+        
+    </article>
+</body>
+<script charset="utf-8" src="../../../../../Resources/677/JavaScript/lib/prototype.js"></script>
+<!-- Media player includes -->
+<script charset="utf-8" src="../../../../../Resources/677/JavaScript/lib/scriptaculous.js"></script>
+<script charset="utf-8" src="../../../../../Resources/677/JavaScript/lib/event_mixins.js"></script>
+<script charset="utf-8" src="../../../../../Resources/677/JavaScript/lib/browserdetect.js"></script>
+<script charset="utf-8" src="../../../../../Resources/677/JavaScript/lib/ac_media.js"></script>
+<!-- /Media player includes -->
+<script charset="utf-8" src="../../../../../Resources/677/JavaScript/devpubs.js"></script>
+<script charset="utf-8" src="../../../../../Resources/677/JavaScript/book.js"></script>
+<script charset="utf-8" src="../../../../../Resources/677/JavaScript/tasks.js"></script>
+</html>

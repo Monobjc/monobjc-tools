@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="CoreMedia" usings="ApplicationServices,AppKit,Foundation" assembly="Monobjc.CoreMedia" source="DocSet">
+	<Types>
+		<Type name="CoreMediaFramework.Constants">
+			<File>CoreMedia/Reference/CoreMedia_Constants/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Invalid_Track_ID_Specifier"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CoreMediaFramework.DataTypes">
+			<File>CoreMedia/Reference/CoreMedia_DataTypes/Reference/reference.html</File>
+		</Type>
+		<Type name="CMAttachment">
+			<File>CoreMedia/Reference/CMAttachment/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Attachment_Modes"].Name="CMAttachmentMode"]]></Change>
+				<Change><![CDATA[Enumerations["CMAttachmentMode"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Functions["CMGetAttachment"].Parameters["attachmentModeOut"].Type="CMAttachmentMode"]]></Change>
+				<Change><![CDATA[Functions["CMGetAttachment"].Parameters["attachmentModeOut"].IsOut=true]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CMBlockBuffer">
+			<File>CoreMedia/Reference/CMBlockBuffer/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Custom_Block_Source_Version"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["CMBlockBuffer_Flags"].Name="CMBlockBufferFlags"]]></Change>
+				<Change><![CDATA[Enumerations["CMBlockBufferFlags"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["Error_Flags"].Name="CMBlockBufferErrors"]]></Change>
+				<Change><![CDATA[Enumerations["CMBlockBufferErrors"].BaseType="int"]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferAccessDataBytes"].Parameters["returnedPointer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferAccessDataBytes"].Parameters["returnedPointer"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferAppendMemoryBlock"].Parameters["customBlockSource"].Type="CMBlockBufferCustomBlockSource"]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferAppendMemoryBlock"].Parameters["customBlockSource"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferCreateContiguous"].Parameters["customBlockSource"].Type="CMBlockBufferCustomBlockSource"]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferCreateContiguous"].Parameters["customBlockSource"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferCreateContiguous"].Parameters["newBBufOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferCreateContiguous"].Parameters["newBBufOut"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferCreateEmpty"].Parameters["newBBufOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferCreateEmpty"].Parameters["newBBufOut"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferCreateWithBufferReference"].Parameters["newBBufOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferCreateWithBufferReference"].Parameters["newBBufOut"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferCreateWithMemoryBlock"].Parameters["customBlockSource"].Type="CMBlockBufferCustomBlockSource"]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferCreateWithMemoryBlock"].Parameters["customBlockSource"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferCreateWithMemoryBlock"].Parameters["newBBufOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferCreateWithMemoryBlock"].Parameters["newBBufOut"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferGetDataPointer"].Parameters["lengthAtOffset"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferGetDataPointer"].Parameters["lengthAtOffset"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferGetDataPointer"].Parameters["totalLength"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferGetDataPointer"].Parameters["totalLength"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferGetDataPointer"].Parameters["dataPointer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferGetDataPointer"].Parameters["dataPointer"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMBlockBufferGetTypeID"].Generate=false]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[= (1L<<]]></Source>
+					<With><![CDATA[= (1 <<]]></With>
+				</Replace>
+			</Patch>
+		</Type>
+		<Type name="CMBufferQueue">
+			<File>CoreMedia/Reference/CMBufferQueue/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CMBufferQueueCallForEachBuffer"].Parameters["s"].Name="callback"]]></Change>
+				<Change><![CDATA[Functions["CMBufferQueueCallForEachBuffer"].Parameters["callback"].Type="CMBufferQueueCallback"]]></Change>
+				<Change><![CDATA[Functions["CMBufferQueueCallForEachBuffer"].Parameters.Where(Name == "refcon").First().Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMBufferQueueCreate"].Parameters["callbacks"].Type="CMBufferCallbacks"]]></Change>
+				<Change><![CDATA[Functions["CMBufferQueueCreate"].Parameters["callbacks"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CMBufferQueueCreate"].Parameters["queueOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMBufferQueueCreate"].Parameters["queueOut"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMBufferQueueGetCallbacksForUnsortedSampleBuffers"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMBufferQueueGetCallbacksForUnsortedSampleBuffers"].Parameters["d"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMBufferQueueGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMBufferQueueInstallTrigger"].Parameters["triggerTokenOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMBufferQueueInstallTrigger"].Parameters["triggerTokenOut"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMBufferQueueInstallTriggerWithIntegerThreshold"].Parameters["triggerTokenOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMBufferQueueInstallTriggerWithIntegerThreshold"].Parameters["triggerTokenOut"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMBufferQueueResetWithCallback"].Parameters["d"].Name="callback"]]></Change>
+				<Change><![CDATA[Functions["CMBufferQueueResetWithCallback"].Parameters["callback"].Type="CMBufferQueueCallback"]]></Change>
+				<Change><![CDATA[Functions["CMBufferQueueResetWithCallback"].Parameters.Where(Name == "refcon").First().Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["Error_Codes"].Name="CMBufferQueueErrorCodes"]]></Change>
+				<Change><![CDATA[Enumerations["CMBufferQueueErrorCodes"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["Trigger_Conditions"].Name="CMBufferQueueTriggerConditions"]]></Change>
+				<Change><![CDATA[Enumerations["CMBufferQueueTriggerConditions"].BaseType="int"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CMFormatDescription">
+			<File>CoreMedia/Reference/CMFormatDescription/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Constants["eoFormatDescriptionRef"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMFormatDescriptionGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionCreate"].Parameters["asbd"].Type="AudioStreamBasicDescription"]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionCreate"].Parameters["asbd"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionCreate"].Parameters["layout"].Type="AudioChannelLayout"]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionCreate"].Parameters["layout"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionCreate"].Parameters["outDesc"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionCreate"].Parameters["outDesc"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionEqual"].Parameters["equalityMaskOut"].Type="CMAudioFormatDescriptionMask"]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionEqual"].Parameters["equalityMaskOut"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionGetChannelLayout"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionGetChannelLayout"].Parameters["layoutSize"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionGetChannelLayout"].Parameters["layoutSize"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionGetFormatList"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionGetFormatList"].Parameters["formatListSize"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionGetFormatList"].Parameters["formatListSize"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionGetMostCompatibleFormat"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionGetRichestDecodableFormat"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionGetStreamBasicDescription"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMTextFormatDescriptionGetDefaultStyle"].Parameters["descOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMTextFormatDescriptionGetDefaultStyle"].Parameters["descOut"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMTextFormatDescriptionGetDefaultStyle"].Parameters["outLocalFontID"].Type="ushort"]]></Change>
+				<Change><![CDATA[Functions["CMTextFormatDescriptionGetDefaultStyle"].Parameters["outLocalFontID"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMTextFormatDescriptionGetDefaultStyle"].Parameters["outBold"].Type="bool"]]></Change>
+				<Change><![CDATA[Functions["CMTextFormatDescriptionGetDefaultStyle"].Parameters["outBold"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMTextFormatDescriptionGetDefaultStyle"].Parameters["outItalic"].Type="bool"]]></Change>
+				<Change><![CDATA[Functions["CMTextFormatDescriptionGetDefaultStyle"].Parameters["outItalic"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMTextFormatDescriptionGetDefaultStyle"].Parameters["outUnderline"].Type="bool"]]></Change>
+				<Change><![CDATA[Functions["CMTextFormatDescriptionGetDefaultStyle"].Parameters["outUnderline"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMTextFormatDescriptionGetDefaultStyle"].Parameters["outFontSize"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Functions["CMTextFormatDescriptionGetDefaultStyle"].Parameters["outFontSize"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMTextFormatDescriptionGetDefaultStyle"].Parameters["outColorComponents[4]"].Name="outColorComponents"]]></Change>
+				<Change><![CDATA[Functions["CMTextFormatDescriptionGetDefaultStyle"].Parameters["outColorComponents"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionCreate"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMAudioFormatDescriptionGetMagicCookie"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMFormatDescriptionCreate"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMFormatDescriptionGetExtension"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMMetadataFormatDescriptionCreateWithKeys"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMMetadataFormatDescriptionGetKeyWithLocalID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMMuxedFormatDescriptionCreate"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMTextFormatDescriptionGetDefaultTextBox"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMTextFormatDescriptionGetDisplayFlags"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMTextFormatDescriptionGetFontName"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMTextFormatDescriptionGetJustification"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMTimeCodeFormatDescriptionCreate"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMTimeCodeFormatDescriptionGetFrameDuration"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMTimeCodeFormatDescriptionGetFrameQuanta"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMTimeCodeFormatDescriptionGetTimeCodeFlags"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMVideoFormatDescriptionCreate"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMVideoFormatDescriptionCreateForImageBuffer"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMVideoFormatDescriptionGetCleanAperture"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMVideoFormatDescriptionGetDimensions"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMVideoFormatDescriptionGetExtensionKeysCommonWithImageBuffers"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMVideoFormatDescriptionGetPresentationDimensions"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMVideoFormatDescriptionMatchesImageBuffer"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["CMMediaType"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["Error_Codes"].Name="CMFormatDescriptionErrorCodes"]]></Change>
+				<Change><![CDATA[Enumerations["CMFormatDescriptionErrorCodes"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CMTimeCodeFormatType"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["Time_Code_Flags"].Name="CMFormatDescriptionTimeCodeFlags"]]></Change>
+				<Change><![CDATA[Enumerations["CMFormatDescriptionTimeCodeFlags"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CMTextDisplayFlags"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["CMTextFormatType"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["CMTextJustificationValue"].BaseType="sbyte"]]></Change>
+				<Change><![CDATA[Enumerations["Audio_Format_Description_Masks"].Name="CMAudioFormatDescriptionMask"]]></Change>
+				<Change><![CDATA[Enumerations["CMAudioFormatDescriptionMask"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["CMMuxedStreamType"].Values["kCMMuxedStreamType_DV"].Value="0x65762020"]]></Change>
+				<Change><![CDATA[Enumerations["CMClosedCaptionFormatType"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["Video_Profiles"].Name="CMFormatDescriptionVideoProfiles"]]></Change>
+				<Change><![CDATA[Enumerations["CMFormatDescriptionVideoProfiles"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["CMVideoCodecType"].Values["kCMVideoCodecType_422YpCbCr8"].Value="CMPixelFormatType.kCMPixelFormat_422YpCbCr8"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CMSampleBuffer">
+			<File>CoreMedia/Reference/CMSampleBuffer/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CMAudioSampleBufferCreateWithPacketDescriptions"].Parameters["packetDescriptions"].Type="AudioStreamPacketDescription"]]></Change>
+				<Change><![CDATA[Functions["CMAudioSampleBufferCreateWithPacketDescriptions"].Parameters["packetDescriptions"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CMAudioSampleBufferCreateWithPacketDescriptions"].Parameters["sBufOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMAudioSampleBufferCreateWithPacketDescriptions"].Parameters["sBufOut"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCopySampleBufferForRange"].Parameters["sBufOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCopySampleBufferForRange"].Parameters["sBufOut"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreate"].Parameters["sampleTimingArray"].Type="CMSampleTimingInfo"]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreate"].Parameters["sampleTimingArray"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreate"].Parameters["sampleSizeArray"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreate"].Parameters["sampleSizeArray"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreate"].Parameters["sBufOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreate"].Parameters["sBufOut"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreateCopy"].Parameters["sbufCopyOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreateCopy"].Parameters["sbufCopyOut"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreateCopyWithNewTiming"].Parameters["sampleTimingArray"].Type="CMSampleTimingInfo"]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreateCopyWithNewTiming"].Parameters["sampleTimingArray"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreateCopyWithNewTiming"].Parameters["sbufCopyOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreateCopyWithNewTiming"].Parameters["sbufCopyOut"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreateForImageBuffer"].Parameters["sampleTiming"].Type="CMSampleTimingInfo"]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreateForImageBuffer"].Parameters["sampleTiming"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreateForImageBuffer"].Parameters["sBufOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreateForImageBuffer"].Parameters["sBufOut"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCallForEachSample"].Parameters["s"].Name="callback"]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCallForEachSample"].Parameters["callback"].Type="CMSampleBufferCallForEachSampleCallback"]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCallForEachSample"].Parameters["index"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCallForEachSample"].Parameters.Where(Name == "refcon").First().Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMAudioSampleBufferCreateWithPacketDescriptions"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreate"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreateCopyWithNewTiming"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferCreateForImageBuffer"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferGetAudioBufferListWithRetainedBlockBuffer"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferGetAudioStreamPacketDescriptions"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferGetAudioStreamPacketDescriptionsPtr"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferGetOutputSampleTimingInfoArray"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferGetSampleSizeArray"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferGetSampleTimingInfo"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferGetSampleTimingInfoArray"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferSetDataBufferFromAudioBufferList"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CMSampleBufferSetInvalidateCallback"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["Error_Codes"].Name="CMSampleBufferErrorCodes"]]></Change>
+				<Change><![CDATA[Enumerations["CMSampleBufferErrorCodes"].BaseType="int"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CMTime">
+			<File>CoreMedia/Reference/CMTime/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["CMTime_Flags"].Name="CMTimeFlags"]]></Change>
+				<Change><![CDATA[Enumerations["CMTimeFlags"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["Rounding_Methods"].Name="CMTimeRoundingMethod"]]></Change>
+				<Change><![CDATA[Enumerations["CMTimeRoundingMethod"].BaseType="uint"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[= 1UL<<]]></Source>
+					<With><![CDATA[= 1U <<]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public partial class CMTime]]></Source>
+					<With><![CDATA[public partial struct CMTime]]></With>
+				</Replace>
+			</Patch>
+		</Type>
+		<Type name="CMTimeRange">
+			<File>CoreMedia/Reference/CMTimeRange/Reference/reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public partial class CMTimeRange]]></Source>
+					<With><![CDATA[public partial struct CMTimeRange]]></With>
+				</Replace>
+			</Patch>
+		</Type>
+	</Types>
+	<Classes>
+	</Classes>
+	<Protocols>
+	</Protocols>
+	<Structures>
+		<Structure name="CMBlockBufferCustomBlockSource" />
+		<Structure name="CMBufferCallbacks" />
+		<Structure name="CMTime" />
+		<Structure name="CMTimeMapping" />
+		<Structure name="CMTimeRange" />
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

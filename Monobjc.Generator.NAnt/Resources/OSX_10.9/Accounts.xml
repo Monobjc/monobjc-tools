@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="Accounts" usings="Foundation" assembly="Monobjc.Accounts" source="DocSet">
+	<Types>
+		<Type name="AccountsFramework.Constants">
+			<File>Accounts/Reference/AccountsConstantsRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["ACErrorCode"].BaseType="int"]]></Change>
+			</Patch>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="ACAccount">
+			<File>Accounts/Reference/ACAccountClassRef/Reference/Reference.html</File>
+		</Class>
+		<Class name="ACAccountCredential">
+			<File>Accounts/Reference/ACAccountCredentialClassRef/Reference/Reference.html</File>
+		</Class>
+		<Class name="ACAccountStore">
+			<File>Accounts/Reference/ACAccountStoreClassRef/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["ACAccountCredentialRenewResult"].BaseType="NSInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="ACAccountType">
+			<File>Accounts/Reference/ACAccountTypeClassRef/Reference/Reference.html</File>
+		</Class>
+	</Classes>
+	<Protocols>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

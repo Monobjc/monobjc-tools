@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Override="false" Flags="false">
+	<Summary>
+		<Line>Hints that suggest where to place the candidates window.</Line>
+	</Summary>
+	<MinAvailability>OS X v10.5</MinAvailability>
+	<Name>IMKCandidatesLocationHint</Name>
+	<Namespace>InputMethodKit</Namespace>
+	<BaseType>uint</BaseType>
+	<Values>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>Place the candidates window above the start of the current text selection.</Line>
+			</Summary>
+			<MinAvailability>OS X v10.5</MinAvailability>
+			<Name>kIMKLocateCandidatesAboveHint</Name>
+			<Value>1</Value>
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>Place the candidates window below the start of the current text selection.</Line>
+			</Summary>
+			<MinAvailability>OS X v10.5</MinAvailability>
+			<Name>kIMKLocateCandidatesBelowHint</Name>
+			<Value>2</Value>
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>Place the candidates window to the left of the current text selection.</Line>
+			</Summary>
+			<MinAvailability>OS X v10.5</MinAvailability>
+			<Name>kIMKLocateCandidatesLeftHint</Name>
+			<Value>3</Value>
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>Place the candidates window to the right of the current text selection.</Line>
+			</Summary>
+			<MinAvailability>OS X v10.5</MinAvailability>
+			<Name>kIMKLocateCandidatesRightHint</Name>
+			<Value>4</Value>
+		</EnumerationValue>
+	</Values>
+</Enumeration>

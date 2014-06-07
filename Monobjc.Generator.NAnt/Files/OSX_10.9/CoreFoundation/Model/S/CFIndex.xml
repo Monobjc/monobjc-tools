@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Structure Generate="true">
+	<Name>CFIndex</Name>
+	<Namespace>CoreFoundation</Namespace>
+	<MixedType>int,long</MixedType>
+</Structure>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Structure Generate="true">
+	<Name>CFRange</Name>
+	<Namespace>CoreFoundation</Namespace>
+	<MixedType>CFRange,CFRange64</MixedType>
+</Structure>

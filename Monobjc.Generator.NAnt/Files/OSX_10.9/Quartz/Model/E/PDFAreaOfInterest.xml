@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Flags="false">
+	<Summary>
+		<Line>The following constants apply to mouse position over PDF view areas. These constants are components of a bit field and may be combined arbitrarily:</Line>
+	</Summary>
+	<MinAvailability>OS X v10.4</MinAvailability>
+	<MaxAvailability>VERSION</MaxAvailability>
+	<Name>PDFAreaOfInterest</Name>
+	<Namespace>Quartz</Namespace>
+	<BaseType>int</BaseType>
+	<Enumerations />
+	<Constants />
+	<Notifications />
+	<Functions />
+	<Values>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>The mouse is over an undefined area.</Line>
+			</Summary>
+			<Name>kPDFNoArea</Name>
+			<MinAvailability>OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>The mouse is over a page.</Line>
+			</Summary>
+			<Name>kPDFPageArea</Name>
+			<MinAvailability>OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>The mouse is over text.</Line>
+			</Summary>
+			<Name>kPDFTextArea</Name>
+			<MinAvailability>OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>The mouse is over an annotation.</Line>
+			</Summary>
+			<Name>kPDFAnnotationArea</Name>
+			<MinAvailability>OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>The mouse is over a link.</Line>
+			</Summary>
+			<Name>kPDFLinkArea</Name>
+			<MinAvailability>OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>The mouse is over a control.</Line>
+			</Summary>
+			<Name>kPDFControlArea</Name>
+			<MinAvailability>OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>The mouse is over a text field.</Line>
+			</Summary>
+			<Name>kPDFTextFieldArea</Name>
+			<MinAvailability>OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>The mouse is over an icon.</Line>
+			</Summary>
+			<Name>kPDFIconArea</Name>
+			<MinAvailability>OS X v10.5</MinAvailability>
+			<Value />
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>The mouse is over a popup menu.</Line>
+			</Summary>
+			<Name>kPDFPopupArea</Name>
+			<MinAvailability>OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+	</Values>
+</Enumeration>

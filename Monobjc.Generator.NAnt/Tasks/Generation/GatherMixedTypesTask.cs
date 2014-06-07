@@ -149,8 +149,12 @@ namespace Monobjc.Tools.Generator.NAnt
 
 		private void AddMixedType (Dictionary<String, String> table, String name, String types)
 		{
-			this.Log (Level.Info, String.Format ("Adding MixedType {0}={1}", name, types));
-			table [name] = types;
+            if (table.ContainsKey(name)) {
+                this.Log(Level.Verbose, String.Format("MixedType {0} already exists", name, types));
+            } else {
+                this.Log (Level.Info, String.Format ("Adding MixedType {0}={1}", name, types));
+                table [name] = types;
+            }
 		}
 	}
 }

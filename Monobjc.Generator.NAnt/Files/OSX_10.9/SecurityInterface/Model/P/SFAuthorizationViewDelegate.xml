@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Protocol xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" CopyInDescendants="false">
+  <Summary />
+  <MinAvailability>OS X v10.3</MinAvailability>
+  <MaxAvailability>VERSION</MaxAvailability>
+  <Obsolete xsi:nil="true" />
+  <Name>SFAuthorizationViewDelegate</Name>
+  <Namespace>SecurityInterface</Namespace>
+  <Enumerations />
+  <Constants />
+  <Functions />
+  <Methods />
+  <Properties />
+  <DelegateMethods />
+</Protocol>

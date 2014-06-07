@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure Generate="true">
+	<Name>MIDINotification</Name>
+	<Namespace>CoreMIDI</Namespace>
+	<MixedType>MIDINotification,MIDINotification</MixedType>
+</Structure>

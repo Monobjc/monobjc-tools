@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="InstantMessage" usings="AddressBook,AppKit,Foundation,QuartzCore" assembly="Monobjc.InstantMessage" source="DocSet">
+	<Types>
+		<Type name="InstantMessageFramework.Functions">
+			<File>Cocoa/Reference/InstantMessage_Functions/Reference/reference.html</File>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="IMAVButton">
+			<File>InstantMessage/Reference/IMAVButton_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="IMAVControl">
+			<File>InstantMessage/Reference/IMAVControl_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="IMAVControlBar">
+			<File>InstantMessage/Reference/IMAVControlBar_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="IMAVManager">
+			<File>Cocoa/Reference/IMManager_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="IMAVSlider">
+			<File>InstantMessage/Reference/IMAVSlider_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="IMService">
+			<File>AppleApplications/Reference/InstantMessageFrameworkRef/Classes/IMService_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="IMService.Deprecated">
+			<File>AppleApplications/Reference/InstantMessageFrameworkRef/Classes/IMService_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="IMService"]]></Change>
+			</Patch>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="IMVideoDataSource">
+			<File>Cocoa/Reference/IMAVDataSource_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["GetOpenGLBufferContextPixelFormat"].Parameters["contextOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetOpenGLBufferContextPixelFormat"].Parameters["pixelFormatOut"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Protocol>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

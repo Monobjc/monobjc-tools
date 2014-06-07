@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure Generate="true">
+	<Name>SCNVector3</Name>
+	<Namespace>SceneKit</Namespace>
+	<MixedType>SCNVector3,SCNVector3_64</MixedType>
+</Structure>

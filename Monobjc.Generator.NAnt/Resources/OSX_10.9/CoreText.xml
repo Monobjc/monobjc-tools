@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="ApplicationServices" usings="Foundation" assembly="Monobjc.Foundation" source="DocSet">
+	<Types>
+		<Type name="CoreTextUtilities">
+			<File>Carbon/Reference/CoreText_Utilities_Ref/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CTGetCoreTextVersion"].Parameters["d"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CoreTextStringAttributes">
+			<File>Carbon/Reference/CoreText_StringAttributes_Ref/Reference/reference.html</File>
+		</Type>
+		<Type name="CTFont">
+			<File>Carbon/Reference/CTFontRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CTFontCopyGraphicsFont"].Parameters["attributes"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTFontCopyGraphicsFont"].Parameters["attributes"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontCopyLocalizedName"].Parameters["language"].Type="NSString"]]></Change>
+				<Change><![CDATA[Functions["CTFontCopyLocalizedName"].Parameters["language"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateCopyWithAttributes"].Parameters["matrix"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateCopyWithAttributes"].Parameters["matrix"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateCopyWithFamily"].Parameters["matrix"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateCopyWithFamily"].Parameters["matrix"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateCopyWithSymbolicTraits"].Parameters["matrix"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateCopyWithSymbolicTraits"].Parameters["matrix"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontCreatePathForGlyph"].Parameters["transform"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Functions["CTFontCreatePathForGlyph"].Parameters["transform"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateWithFontDescriptor"].Parameters["matrix"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateWithFontDescriptor"].Parameters["matrix"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateWithFontDescriptorAndOptions"].Parameters["matrix"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateWithFontDescriptorAndOptions"].Parameters["matrix"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateWithGraphicsFont"].Parameters["matrix"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateWithGraphicsFont"].Parameters["matrix"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateWithName"].Parameters["matrix"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateWithName"].Parameters["matrix"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateWithNameAndOptions"].Parameters["matrix"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateWithNameAndOptions"].Parameters["matrix"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateWithPlatformFont"].Parameters["matrix"].Type="CGAffineTransform"]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateWithPlatformFont"].Parameters["matrix"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontCreateWithQuickdrawInstance"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CTFontDrawGlyphs"].Parameters["glyphs[]"].Name="glyphs"]]></Change>
+				<Change><![CDATA[Functions["CTFontDrawGlyphs"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTFontDrawGlyphs"].Parameters["positions[]"].Name="positions"]]></Change>
+				<Change><![CDATA[Functions["CTFontDrawGlyphs"].Parameters["positions"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTFontGetAdvancesForGlyphs"].Parameters["glyphs[]"].Name="glyphs"]]></Change>
+				<Change><![CDATA[Functions["CTFontGetAdvancesForGlyphs"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTFontGetAdvancesForGlyphs"].Parameters["advances[]"].Name="advances"]]></Change>
+				<Change><![CDATA[Functions["CTFontGetAdvancesForGlyphs"].Parameters["advances"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTFontGetBoundingRectsForGlyphs"].Parameters["glyphs[]"].Name="glyphs"]]></Change>
+				<Change><![CDATA[Functions["CTFontGetBoundingRectsForGlyphs"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTFontGetBoundingRectsForGlyphs"].Parameters["boundingRects[]"].Name="boundingRects"]]></Change>
+				<Change><![CDATA[Functions["CTFontGetBoundingRectsForGlyphs"].Parameters["boundingRects"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTFontGetGlyphsForCharacters"].Parameters["characters[]"].Name="characters"]]></Change>
+				<Change><![CDATA[Functions["CTFontGetGlyphsForCharacters"].Parameters["characters"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTFontGetGlyphsForCharacters"].Parameters["glyphs[]"].Name="glyphs"]]></Change>
+				<Change><![CDATA[Functions["CTFontGetGlyphsForCharacters"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTFontGetLigatureCaretPositions"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CTFontGetPlatformFont"].Parameters["attributes"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTFontGetPlatformFont"].Parameters["attributes"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontGetStringEncoding"].ReturnType="NSStringEncoding"]]></Change>
+				<Change><![CDATA[Functions["CTFontGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CTFontGetVerticalTranslationsForGlyphs"].Parameters["glyphs[]"].Name="glyphs"]]></Change>
+				<Change><![CDATA[Functions["CTFontGetVerticalTranslationsForGlyphs"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTFontGetVerticalTranslationsForGlyphs"].Parameters["translations[]"].Name="translations"]]></Change>
+				<Change><![CDATA[Functions["CTFontGetVerticalTranslationsForGlyphs"].Parameters["translations"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Enumerations["CTFontUIFontType"].Values["kCTFontNoFontType"].Value="0xFFFFFFFF"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CTFontCollection">
+			<File>Carbon/Reference/CTFontCollectionRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CTFontCollectionGetTypeID"].Generate=false]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[1L <<]]></Source>
+					<With><![CDATA[1 <<]]></With>
+				</Replace>
+			</Patch>
+		</Type>
+		<Type name="CTFontDescriptor">
+			<File>Carbon/Reference/CTFontDescriptorRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CTFontDescriptorCopyLocalizedAttribute"].Parameters["language"].Type="NSString"]]></Change>
+				<Change><![CDATA[Functions["CTFontDescriptorCopyLocalizedAttribute"].Parameters["language"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontDescriptorGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["Font_Class_Mask_Shift_Constants"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["CTFontSymbolicTraits"].Values["kCTFontClassMaskTrait"].Value="15U << 28"]]></Change>
+				<Change><![CDATA[Enumerations["CTFontStylisticClass"].Values["kCTFontSansSerifClass"].Value="8U << 28"]]></Change>
+				<Change><![CDATA[Enumerations["CTFontStylisticClass"].Values["kCTFontOrnamentalsClass"].Value="9U << 28"]]></Change>
+				<Change><![CDATA[Enumerations["CTFontStylisticClass"].Values["kCTFontScriptsClass"].Value="10U << 28"]]></Change>
+				<Change><![CDATA[Enumerations["CTFontStylisticClass"].Values["kCTFontSymbolicClass"].Value="12U << 28"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[<< kCTFontClassMaskShift]]></Source>
+					<With><![CDATA[<< 28]]></With>
+				</Replace>
+			</Patch>
+		</Type>
+		<Type name="CTFontManager">
+			<File>Carbon/Reference/CoreText_FontManager_Ref/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[CTFontManagerIsSupportedFontFile]]></Source>
+					<With><![CDATA[CTFontManagerIsSupportedFont]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CTFontManagerCopyAvailableFontFamilyNames"].Parameters["d"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerCopyAvailableFontURLs"].Parameters["d"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerCopyAvailablePostScriptNames"].Parameters["d"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerRegisterFontsForURL"].Parameters["error"].Type="NSError"]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerRegisterFontsForURL"].Parameters["error"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerRegisterFontsForURLs"].Parameters["errors"].Type="NSArray"]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerRegisterFontsForURLs"].Parameters["errors"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerRegisterGraphicsFont"].Parameters["error"].Type="NSError"]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerRegisterGraphicsFont"].Parameters["error"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerUnregisterFontsForURL"].Parameters["error"].Type="NSError"]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerUnregisterFontsForURL"].Parameters["error"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerUnregisterFontsForURLs"].Parameters["errors"].Type="NSArray"]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerUnregisterFontsForURLs"].Parameters["errors"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerUnregisterGraphicsFont"].Parameters["error"].Type="NSError"]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerUnregisterGraphicsFont"].Parameters["error"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTFontManagerCreateFontRequestRunLoopSource"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["Font_Registration_Errors"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["CTFontManagerError"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CTFrame">
+			<File>Carbon/Reference/CTFrameRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CTFrameGetLineOrigins"].Parameters["origins[]"].Name="origins"]]></Change>
+				<Change><![CDATA[Functions["CTFrameGetLineOrigins"].Parameters["origins"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTFrameGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations.Where(Name == "CTFramePathFillRule").First().Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CTFramesetter">
+			<File>Carbon/Reference/CTFramesetterRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CTFramesetterGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CTFramesetterSuggestFrameSizeWithConstraints"].Parameters["fitRange"].Type="NSRange"]]></Change>
+				<Change><![CDATA[Functions["CTFramesetterSuggestFrameSizeWithConstraints"].Parameters["fitRange"].IsOut=true]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CTGlyphInfo">
+			<File>Carbon/Reference/CTGlyphInfoRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CTGlyphInfoGetTypeID"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CTLine">
+			<File>Carbon/Reference/CTLineRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CTLineGetOffsetForStringIndex"].Parameters["secondaryOffset"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Functions["CTLineGetOffsetForStringIndex"].Parameters["secondaryOffset"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTLineGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CTLineGetTypographicBounds"].Parameters["ascent"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Functions["CTLineGetTypographicBounds"].Parameters["ascent"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTLineGetTypographicBounds"].Parameters["descent"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Functions["CTLineGetTypographicBounds"].Parameters["descent"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTLineGetTypographicBounds"].Parameters["leading"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Functions["CTLineGetTypographicBounds"].Parameters["leading"].IsOut=true]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CTParagraphStyle">
+			<File>Carbon/Reference/CTParagraphStyleRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CTParagraphStyleCreate"].Parameters["settings"].Type="CTParagraphStyleSetting"]]></Change>
+				<Change><![CDATA[Functions["CTParagraphStyleCreate"].Parameters["settings"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CTParagraphStyleGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["CTWritingDirection"].BaseType="sbyte"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CTRun">
+			<File>Carbon/Reference/CTRunRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CTRunGetAdvances"].Parameters["buffer[]"].Name="buffer"]]></Change>
+				<Change><![CDATA[Functions["CTRunGetAdvances"].Parameters["buffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTRunGetAdvancesPtr"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTRunGetGlyphs"].Parameters["buffer[]"].Name="buffer"]]></Change>
+				<Change><![CDATA[Functions["CTRunGetGlyphs"].Parameters["buffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTRunGetGlyphsPtr"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTRunGetPositions"].Parameters["buffer[]"].Name="buffer"]]></Change>
+				<Change><![CDATA[Functions["CTRunGetPositions"].Parameters["buffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTRunGetPositionsPtr"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTRunGetStringIndices"].Parameters["buffer[]"].Name="buffer"]]></Change>
+				<Change><![CDATA[Functions["CTRunGetStringIndices"].Parameters["buffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTRunGetStringIndicesPtr"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CTRunGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CTRunGetTypographicBounds"].Parameters["ascent"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Functions["CTRunGetTypographicBounds"].Parameters["ascent"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTRunGetTypographicBounds"].Parameters["descent"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Functions["CTRunGetTypographicBounds"].Parameters["descent"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["CTRunGetTypographicBounds"].Parameters["leading"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Functions["CTRunGetTypographicBounds"].Parameters["leading"].IsOut=true]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CTTextTab">
+			<File>Carbon/Reference/CTTextTabRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CTTextTabGetTypeID"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CTTypesetter">
+			<File>Carbon/Reference/CTTypesetterRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CTTypesetterGetTypeID"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+	</Types>
+	<Structures>
+		<Structure name="CTParagraphStyleSetting" />
+	</Structures>
+	<Enumerations>
+		<Enumeration name="CTFontManagerError" />
+	</Enumerations>
+</Framework>

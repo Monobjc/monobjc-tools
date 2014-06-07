@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Structure Generate="true">
+	<Name>QTTIme</Name>
+	<Namespace>QTKit</Namespace>
+	<MixedType>QTTIme,QTTIme64</MixedType>
+</Structure>

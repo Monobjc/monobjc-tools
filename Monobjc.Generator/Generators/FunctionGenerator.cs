@@ -305,9 +305,7 @@ namespace Monobjc.Tools.Generator.Generators
 				if (methodParameterEntity.IsOut || methodParameterEntity.IsByRef) {
 					parameters.Add ("IntPtr " + methodParameterEntity.Name);
 				} else if (methodParameterEntity.IsBlock) {
-
 					parameters.Add (String.Format ("[MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof (BlockMarshaler))] Block {0}", methodParameterEntity.Name));
-
 				} else {
 					String parameter = GetTypeSignature (methodParameterEntity);
 					if (TypeManager.HasClass (methodParameterEntity.Type)) {
