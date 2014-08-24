@@ -62,7 +62,7 @@ namespace Monobjc.Tools.Generator.NAnt
 			
 			// Try the cache first
 			String key = type + ":" + name;
-			BaseEntity result;
+			BaseEntity result = null;
 			if (useCache && !cache.TryGetValue (key, out result)) {
 				//this.Log (Level.Verbose, "Cache miss for '" + type + "' and name '" + name + "'");
 				
