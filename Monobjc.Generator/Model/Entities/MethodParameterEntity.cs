@@ -190,9 +190,11 @@ namespace Monobjc.Tools.Generator.Model
 		{
 			unchecked {
 				int hash = base.GetHashValue();
-				hash = hash * 23 + this.IsBlock.GetHashCode ();
-				hash = hash * 23 + this.IsByRef.GetHashCode ();
-				hash = hash * 23 + this.IsOut.GetHashCode ();
+                hash = hash * 23 + this.IsArray.GetHashCode ();
+                hash = hash * 23 + this.IsBlock.GetHashCode ();
+                hash = hash * 23 + this.IsByRef.GetHashCode ();
+                hash = hash * 23 + this.IsOut.GetHashCode ();
+                hash = hash * 23 + this.IsStruct.GetHashCode ();
 				hash = hash * 23 + (this.Type != null ? this.Type.GetHashCode () : 0);
 				return hash;
 			}

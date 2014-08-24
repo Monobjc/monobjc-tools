@@ -465,15 +465,15 @@ namespace Monobjc.Tools.Generator.Generators
 					case "float":
 					case "double":
 						this.Writer.WriteLineFormat (indent, "{0} = ({1}) Marshal.PtrToStructure(__local{2}, typeof({1}));", methodParameterEntity.Name, methodParameterEntity.Type, index++);
-						break;
-					default:
-						if (IsMixedType (methodParameterEntity.Type)) {
+    					break;
+                    default:
+                        if (IsMixedType (methodParameterEntity.Type) || methodParameterEntity.IsStruct) {
 							if (methodParameterEntity.Type.Equals (innerMethodParameterEntity.Type)) {
 								this.Writer.WriteLineFormat (indent, "{0} = ({1}) Marshal.PtrToStructure(__local{2}, typeof({1}));", methodParameterEntity.Name, methodParameterEntity.Type, index++, innerMethodParameterEntity.Type);
 							} else {
 								this.Writer.WriteLineFormat (indent, "{0} = ({1}) ({3}) Marshal.PtrToStructure(__local{2}, typeof({3}));", methodParameterEntity.Name, methodParameterEntity.Type, index++, innerMethodParameterEntity.Type);
 							}
-						} else {
+                        } else {
 							this.Writer.WriteLineFormat (indent, "{0} = ObjectiveCRuntime.GetInstance<{1}>(Marshal.ReadIntPtr(__local{2}));", methodParameterEntity.Name, methodParameterEntity.Type, index++);
 						}
 						break;
