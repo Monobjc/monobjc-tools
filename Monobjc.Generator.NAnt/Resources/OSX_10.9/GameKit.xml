@@ -37,7 +37,7 @@
             </Patch>
         </Class>
         <Class name="GKChallengeEventHandler">
-            <File>GameKit/Reference/GKChallengeEventHandler_Ref/Reference/Reference.html</File>
+            <File>GLkit/Reference/GKChallengeEventHandlerDelegate_Ref/index.html</File>
         </Class>
 		<Class name="GKDialogController">
 			<File>GameKit/Reference/GKDialogController_Ref/Reference/Reference.html</File>

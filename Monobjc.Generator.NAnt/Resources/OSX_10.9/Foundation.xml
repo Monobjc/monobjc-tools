@@ -576,6 +576,14 @@
 				<Change><![CDATA[Methods["EncodeValuesOfObjCTypes"].Parameters["valueTypes,..."].Generate=false]]></Change>
 				<Change><![CDATA[Methods["EncodeValuesOfObjCTypes"].Parameters.Set("valueTypes", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>valueTypes</Name><Type>String</Type></Parameter>")]]></Change>
 				<Change><![CDATA[Methods["EncodeValuesOfObjCTypes"].Parameters.Set("values", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
+                <Change><![CDATA[Methods["DecodeCMTimeForKey"].Generate=false]]></Change>
+                <Change><![CDATA[Methods["DecodeCMTimeMappingForKey"].Generate=false]]></Change>
+                <Change><![CDATA[Methods["DecodeCMTimeRangeForKey"].Generate=false]]></Change>
+                <Change><![CDATA[Methods["EncodeCMTimeForKey"].Generate=false]]></Change>
+                <Change><![CDATA[Methods["EncodeCMTimeMappingForKey"].Generate=false]]></Change>
+                <Change><![CDATA[Methods["EncodeCMTimeRangeForKey"].Generate=false]]></Change>
+                <Change><![CDATA[Methods["DecodeNXColor"].Generate=false]]></Change>
+
 			</Patch>
 		</Class>
 		<Class name="NSCoder.Deprecated">
@@ -1196,7 +1204,8 @@
 				<Change><![CDATA[Methods["SetObjectForKeyedSubscript"].Parameters["aKey"].Type="Id"]]></Change>
 				<Change><![CDATA[Methods["DictionaryWithCapacity"].ReturnType="NSMutableDictionary"]]></Change>
 				<Change><![CDATA[Methods["DictionaryWithSharedKeySet"].ReturnType="NSMutableDictionary"]]></Change>
-				<Change><![CDATA[Methods["InitWithCapacity"].ReturnType="Id"]]></Change>
+                <Change><![CDATA[Methods["Init"].ReturnType="Id"]]></Change>
+                <Change><![CDATA[Methods["InitWithCapacity"].ReturnType="Id"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSMutableIndexSet">
@@ -1206,6 +1215,7 @@
 			<File>Foundation/Reference/NSMutableOrderedSet_Class/Reference/Reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["AddObjectsCount"].Generate=false]]></Change>
+                <Change><![CDATA[Methods["Init"].ReturnType="Id"]]></Change>
 				<Change><![CDATA[Methods["InitWithCapacity"].ReturnType="Id"]]></Change>
 				<Change><![CDATA[Methods["ReplaceObjectsInRangeWithObjectsCount"].Generate=false]]></Change>
 				<Change><![CDATA[Methods["OrderedSetWithCapacity"].ReturnType="NSMutableOrderedSet"]]></Change>
@@ -1214,6 +1224,7 @@
 		<Class name="NSMutableSet">
 			<File>Cocoa/Reference/Foundation/Classes/NSMutableSet_Class/Reference/NSMutableSet.html</File>
 			<Patch type="Model">
+                <Change><![CDATA[Methods["Init"].ReturnType="Id"]]></Change>
 				<Change><![CDATA[Methods["InitWithCapacity"].ReturnType="Id"]]></Change>
 				<Change><![CDATA[Methods["SetWithCapacity"].ReturnType="NSMutableSet"]]></Change>
 			</Patch>
@@ -1794,6 +1805,10 @@
 		<Class name="NSString">
 			<File>Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html</File>
             <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[*precomposedStringWithCompatibilityMappin<]]></Source>
+                    <With><![CDATA[*precomposedStringWithCompatibilityMapping<]]></With>
+                </Replace>
                 <Replace>
                     <Source><![CDATA[)<pre class="declaration">]]></Source>
                     <With><![CDATA[)</p><pre class="declaration">]]></With>

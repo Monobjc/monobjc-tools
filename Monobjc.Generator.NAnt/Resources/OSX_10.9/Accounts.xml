@@ -16,13 +16,13 @@
 			<File>Accounts/Reference/ACAccountCredentialClassRef/Reference/Reference.html</File>
 		</Class>
 		<Class name="ACAccountStore">
-			<File>Accounts/Reference/ACAccountStoreClassRef/Reference/Reference.html</File>
+			<File>Accounts/Reference/ACAccountStoreClassRef/ACAccountStore.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Enumerations["ACAccountCredentialRenewResult"].BaseType="NSInteger"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="ACAccountType">
-			<File>Accounts/Reference/ACAccountTypeClassRef/Reference/Reference.html</File>
+			<File>Accounts/Reference/ACAccountTypeClassRef/ACAccountType.html</File>
 		</Class>
 	</Classes>
 	<Protocols>

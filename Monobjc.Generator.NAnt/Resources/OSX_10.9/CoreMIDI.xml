@@ -9,28 +9,9 @@
 					<With><![CDATA[ </span>]]></With>
 				</Replace>
 			</Patch>
-			<Patch type="Generated">
-				<Replace>
-					<Source><![CDATA[outObjectType = ObjectiveCRuntime.GetInstance<MIDIObjectType>(Marshal.ReadIntPtr(__local2));]]></Source>
-					<With><![CDATA[outObjectType = (MIDIObjectType) Marshal.ReadInt32(__local2);]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[pktlist = ObjectiveCRuntime.GetInstance<MIDIPacketList>(Marshal.ReadIntPtr(__local1));]]></Source>
-					<With><![CDATA[pktlist = (MIDIPacketList)Marshal.PtrToStructure(__local1, typeof(MIDIPacketList));]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[curPacket = ObjectiveCRuntime.GetInstance<MIDIPacket>(Marshal.ReadIntPtr(__local2));]]></Source>
-					<With><![CDATA[curPacket = (MIDIPacket)Marshal.PtrToStructure(__local2, typeof(MIDIPacket));]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[pkt = ObjectiveCRuntime.GetInstance<MIDIPacket>(Marshal.ReadIntPtr(__local1));]]></Source>
-					<With><![CDATA[pkt = (MIDIPacket)Marshal.PtrToStructure(__local1, typeof(MIDIPacket));]]></With>
-				</Replace>
-				<Replace>
-					<Source><![CDATA[request = ObjectiveCRuntime.GetInstance<MIDISysexSendRequest>(Marshal.ReadIntPtr(__local1));]]></Source>
-					<With><![CDATA[request = (MIDISysexSendRequest)Marshal.PtrToStructure(__local1, typeof(MIDISysexSendRequest));]]></With>
-				</Replace>
-			</Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Functions["MIDIObjectFindByUniqueID"].Parameters["outObjectType"].IsStruct=true]]></Change>
+            </Patch>
 		</Type>
 		<Type name="MIDISetup">
 			<File>MusicAudio/Reference/CACoreMIDIRef/MIDISetup/CompositePage.html</File>
@@ -49,12 +30,9 @@
 					<With><![CDATA[ </span>]]></With>
 				</Replace>
 			</Patch>
-			<Patch type="Generated">
-				<Replace>
-					<Source><![CDATA[inConnectionParams = ObjectiveCRuntime.GetInstance<MIDIThruConnectionParams>(Marshal.ReadIntPtr(__local1));]]></Source>
-					<With><![CDATA[inConnectionParams = (MIDIThruConnectionParams)Marshal.PtrToStructure(__local1, typeof(MIDIThruConnectionParams));]]></With>
-				</Replace>
-			</Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Functions["CGDataProviderCreateDirect"].Parameters["callbacks"].IsStruct=true]]></Change>
+            </Patch>
 		</Type>
 		<Type name="MIDIDriver">
 			<File>MusicAudio/Reference/CACoreMIDIServerRef/MIDIDriver/CompositePage.html</File>

@@ -112,6 +112,10 @@
 		</Type>
 		<Type name="CGContext.Deprecated">
 			<File>GraphicsImaging/Reference/CGContext/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Functions["CGContextShowGlyphs"].Parameters["g[]"].Name="g"]]></Change>
+                <Change><![CDATA[Functions["CGContextShowGlyphs"].Parameters["g"].Type="IntPtr"]]></Change>
+            </Patch>
 		</Type>
 		<Type name="CGDataConsumer">
 			<File>GraphicsImaging/Reference/CGDataConsumer/Reference/reference.html</File>
@@ -124,7 +128,12 @@
 			<File>GraphicsImaging/Reference/CGDataProvider/Reference/reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Functions["CGDataProviderCreateWithFilename"].Parameters["filename"].Type="String"]]></Change>
-				<Change><![CDATA[Functions["CGDataProviderGetTypeID"].Generate=false]]></Change>
+                <Change><![CDATA[Functions["CGDataProviderCreateDirect"].Parameters["callbacks"].IsStruct=true]]></Change>
+                <Change><![CDATA[Functions["CGDataProviderRef"].Parameters["callbacks"].IsStruct=true]]></Change>
+                <Change><![CDATA[Functions["CGDataProviderCreateSequential"].Parameters["callbacks"].IsStruct=true]]></Change>
+                <Change><![CDATA[Functions["CGDataProviderCreate"].Parameters["callbacks"].IsStruct=true]]></Change>
+                <Change><![CDATA[Functions["CGDataProviderCreateDirectAccess"].Parameters["callbacks"].IsStruct=true]]></Change>
+                <Change><![CDATA[Functions["CGDataProviderGetTypeID"].Generate=false]]></Change>
 			</Patch>
 		</Type>
 		<Type name="CGDataProvider.Deprecated">

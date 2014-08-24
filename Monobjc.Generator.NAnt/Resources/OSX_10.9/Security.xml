@@ -442,7 +442,8 @@ enum
 				<Change><![CDATA[Functions["SecItemCopyMatching"].Parameters["result"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecItemCopyMatching"].Parameters["result"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecItemExport"].Parameters["keyParams"].Type="SecItemImportExportKeyParameters"]]></Change>
-				<Change><![CDATA[Functions["SecItemExport"].Parameters["keyParams"].IsByRef=true]]></Change>
+                <Change><![CDATA[Functions["SecItemExport"].Parameters["keyParams"].IsByRef=true]]></Change>
+                <Change><![CDATA[Functions["SecItemExport"].Parameters["keyParams"].IsStruct=true]]></Change>
 				<Change><![CDATA[Functions["SecItemExport"].Parameters["exportedData"].Type="NSData"]]></Change>
 				<Change><![CDATA[Functions["SecItemExport"].Parameters["exportedData"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecItemImport"].Parameters["inputFormat"].Type="SecExternalFormat"]]></Change>
@@ -450,7 +451,8 @@ enum
 				<Change><![CDATA[Functions["SecItemImport"].Parameters["itemType"].Type="SecExternalItemType"]]></Change>
 				<Change><![CDATA[Functions["SecItemImport"].Parameters["itemType"].IsByRef=true]]></Change>
 				<Change><![CDATA[Functions["SecItemImport"].Parameters["keyParams"].Type="SecItemImportExportKeyParameters"]]></Change>
-				<Change><![CDATA[Functions["SecItemImport"].Parameters["keyParams"].IsByRef=true]]></Change>
+                <Change><![CDATA[Functions["SecItemImport"].Parameters["keyParams"].IsByRef=true]]></Change>
+                <Change><![CDATA[Functions["SecItemImport"].Parameters["keyParams"].IsStruct=true]]></Change>
 				<Change><![CDATA[Functions["SecItemImport"].Parameters["outItems"].Type="NSArray"]]></Change>
 				<Change><![CDATA[Functions["SecItemImport"].Parameters["outItems"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainAddGenericPassword"].Parameters["serviceName"].Type="String"]]></Change>
@@ -477,7 +479,8 @@ enum
 				<Change><![CDATA[Functions["SecKeychainCopySearchList"].Parameters["searchList"].Type="NSArray"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainCopySearchList"].Parameters["searchList"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainCopySettings"].Parameters["outSettings"].Type="SecKeychainSettings"]]></Change>
-				<Change><![CDATA[Functions["SecKeychainCopySettings"].Parameters["outSettings"].IsOut=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainCopySettings"].Parameters["outSettings"].IsOut=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainCopySettings"].Parameters["outSettings"].IsStruct=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainCreate"].Parameters["pathName"].Type="String"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainCreate"].Parameters["keychain"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainCreate"].Parameters["keychain"].IsOut=true]]></Change>
@@ -500,7 +503,8 @@ enum
 				<Change><![CDATA[Functions["SecKeychainFindInternetPassword"].Parameters["itemRef"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainFindInternetPassword"].Parameters["itemRef"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainFreeAttributeInfo"].Parameters["info"].Type="SecKeychainAttributeInfo"]]></Change>
-				<Change><![CDATA[Functions["SecKeychainFreeAttributeInfo"].Parameters["info"].IsByRef=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainFreeAttributeInfo"].Parameters["info"].IsByRef=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainFreeAttributeInfo"].Parameters["info"].IsStruct=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainGetCSPHandle"].Parameters["cspHandle"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainGetDLDBHandle"].Parameters["dldbHandle"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainGetPath"].Parameters["ioPathLength"].Type="uint"]]></Change>
@@ -520,6 +524,7 @@ enum
 				<Change><![CDATA[Functions["SecKeychainItemCopyAccess"].Parameters["access"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemCopyAttributesAndData"].Parameters["info"].Type="SecKeychainAttributeInfo"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemCopyAttributesAndData"].Parameters["info"].IsOut=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainItemCopyAttributesAndData"].Parameters["info"].IsStruct=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemCopyAttributesAndData"].Parameters["itemClass"].Type="SecItemClass"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemCopyAttributesAndData"].Parameters["itemClass"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemCopyAttributesAndData"].Parameters["attrList"].Type="IntPtr"]]></Change>
@@ -527,7 +532,7 @@ enum
 				<Change><![CDATA[Functions["SecKeychainItemCopyAttributesAndData"].Parameters["length"].Type="uint"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemCopyAttributesAndData"].Parameters["length"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemCopyAttributesAndData"].Parameters["outData"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["SecKeychainItemCopyAttributesAndData"].Parameters["outData"].IsOut=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainItemCopyAttributesAndData"].Parameters["outData"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemCopyContent"].Parameters["itemClass"].Type="SecItemClass"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemCopyContent"].Parameters["itemClass"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemCopyContent"].Parameters["attrList"].Type="IntPtr"]]></Change>
@@ -549,13 +554,16 @@ enum
 				<Change><![CDATA[Functions["SecKeychainItemCreatePersistentReference"].Parameters["persistentItemRef"].Type="NSData"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemCreatePersistentReference"].Parameters["persistentItemRef"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemExport"].Parameters["keyParams"].Type="SecKeyImportExportParameters"]]></Change>
-				<Change><![CDATA[Functions["SecKeychainItemExport"].Parameters["keyParams"].IsOut=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainItemExport"].Parameters["keyParams"].IsOut=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainItemExport"].Parameters["keyParams"].IsStruct=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemExport"].Parameters["exportedData"].Type="NSData"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemExport"].Parameters["exportedData"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemFreeAttributesAndData"].Parameters["attrList"].Type="SecKeychainAttributeList"]]></Change>
-				<Change><![CDATA[Functions["SecKeychainItemFreeAttributesAndData"].Parameters["attrList"].IsByRef=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainItemFreeAttributesAndData"].Parameters["attrList"].IsByRef=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainItemFreeAttributesAndData"].Parameters["attrList"].IsStruct=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemFreeContent"].Parameters["attrList"].Type="SecKeychainAttributeList"]]></Change>
-				<Change><![CDATA[Functions["SecKeychainItemFreeContent"].Parameters["attrList"].IsByRef=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainItemFreeContent"].Parameters["attrList"].IsByRef=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainItemFreeContent"].Parameters["attrList"].IsStruct=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemGetTypeID"].Parameters["d"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemGetDLDBHandle"].Parameters["dldbHandle"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemGetUniqueRecordID"].Parameters["uniqueRecordID"].Type="IntPtr"]]></Change>
@@ -564,26 +572,31 @@ enum
 				<Change><![CDATA[Functions["SecKeychainItemImport"].Parameters["itemType"].Type="SecExternalItemType"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemImport"].Parameters["itemType"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemImport"].Parameters["keyParams"].Type="SecKeyImportExportParameters"]]></Change>
-				<Change><![CDATA[Functions["SecKeychainItemImport"].Parameters["keyParams"].IsOut=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainItemImport"].Parameters["keyParams"].IsOut=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainItemImport"].Parameters["keyParams"].IsStruct=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemImport"].Parameters["outItems"].Type="NSArray"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemImport"].Parameters["outItems"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainLockAll"].Parameters["d"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemModifyAttributesAndData"].Parameters["attrList"].Type="SecKeychainAttributeList"]]></Change>
-				<Change><![CDATA[Functions["SecKeychainItemModifyAttributesAndData"].Parameters["attrList"].IsOut=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainItemModifyAttributesAndData"].Parameters["attrList"].IsOut=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainItemModifyAttributesAndData"].Parameters["attrList"].IsStruct=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainItemModifyContent"].Parameters["attrList"].Type="SecKeychainAttributeList"]]></Change>
-				<Change><![CDATA[Functions["SecKeychainItemModifyContent"].Parameters["attrList"].IsOut=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainItemModifyContent"].Parameters["attrList"].IsOut=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainItemModifyContent"].Parameters["attrList"].IsStruct=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainOpen"].Parameters["pathName"].Type="String"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainOpen"].Parameters["keychain"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainOpen"].Parameters["keychain"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainSearchCopyNext"].Parameters["itemRef"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainSearchCopyNext"].Parameters["itemRef"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainSearchCreateFromAttributes"].Parameters["attrList"].Type="SecKeychainAttributeList"]]></Change>
-				<Change><![CDATA[Functions["SecKeychainSearchCreateFromAttributes"].Parameters["attrList"].IsByRef=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainSearchCreateFromAttributes"].Parameters["attrList"].IsByRef=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainSearchCreateFromAttributes"].Parameters["attrList"].IsStruct=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainSearchCreateFromAttributes"].Parameters["searchRef"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["SecKeychainSearchCreateFromAttributes"].Parameters["searchRef"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecKeychainSearchGetTypeID"].Parameters["d"].Generate=false]]></Change>
 				<Change><![CDATA[Functions["SecKeychainSetSettings"].Parameters["newSettings"].Type="SecKeychainSettings"]]></Change>
-				<Change><![CDATA[Functions["SecKeychainSetSettings"].Parameters["newSettings"].IsByRef=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainSetSettings"].Parameters["newSettings"].IsByRef=true]]></Change>
+                <Change><![CDATA[Functions["SecKeychainSetSettings"].Parameters["newSettings"].IsStruct=true]]></Change>
 				<Change><![CDATA[Functions["SecTrustedApplicationCopyData"].Parameters["data"].Type="NSData"]]></Change>
 				<Change><![CDATA[Functions["SecTrustedApplicationCopyData"].Parameters["data"].IsOut=true]]></Change>
 				<Change><![CDATA[Functions["SecTrustedApplicationCreateFromPath"].Parameters["path"].Type="String"]]></Change>
@@ -625,7 +638,7 @@ enum
 				<Change><![CDATA[Enumerations["SecAuthenticationType"].Values["kSecAuthenticationTypeHTMLForm"].Value="0x666f726d"]]></Change>
 				<Change><![CDATA[Enumerations["SecAuthenticationType"].Values["kSecAuthenticationTypeDefault"].Value="0x64666c74"]]></Change>
 				<Change><![CDATA[Enumerations["SecAuthenticationType"].Values["kSecAuthenticationTypeAny"].Value="0x00000000"]]></Change>
-			</Patch>
+            </Patch>
 			<Patch type="Generated">
 				<Replace>
 					<Source><![CDATA[ = 1 << kSec]]></Source>

@@ -126,7 +126,7 @@ enum {
 			</Patch>
 		</Class>
 		<Class name="AVAudioPlayer">
-			<File>AVFoundation/Reference/AVAudioPlayerClassReference/Reference/Reference.html</File>
+			<File>AVFoundation/Reference/AVAudioPlayerClassReference/index.html</File>
 		</Class>
 		<Class name="AVAudioRecorder">
 			<File>AVFoundation/Reference/AVAudioRecorder_ClassReference/Reference/Reference.html</File>
@@ -382,7 +382,7 @@ enum {
 			</Patch>
 		</Class>
 		<Class name="AVPlayer">
-			<File>AVFoundation/Reference/AVPlayer_Class/Reference/Reference.html</File>
+			<File>AVFoundation/Reference/AVPlayer_Class/index.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["PlayerWithPlayerItem"].ReturnType="AVPlayer"]]></Change>
 				<Change><![CDATA[Methods["PlayerWithURL"].ReturnType="AVPlayer"]]></Change>
