@@ -11,7 +11,7 @@
 
 	<property name="docset.path" value="~/Library/Developer/Shared/Documentation/DocSets/com.apple.adc.documentation.AppleOSX10.9.CoreReference.docset" />
 	<loadfile property="docset.info" file="${string::replace(docset.path, '~', user.home)}/Contents/Info.plist" />
-	<property name="docset.revision" value="420.21" />
+	<property name="docset.revision" value="421.5" />
 	<property name="docset.valid" value="${string::contains(docset.info, docset.revision)}" />
 	<docset id="OSX_10.9" name="OSX_10.9" path="${string::replace(docset.path, '~', user.home)}/Contents/Resources/Documents/documentation" />
 
