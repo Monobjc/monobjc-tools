@@ -203,6 +203,8 @@
     <Mapping type="CMBufferQueueTriggerToken *">IntPtr</Mapping>
     <Mapping type="CMBufferQueueTriggerToken">IntPtr</Mapping>
     <Mapping type="CMBufferRef">IntPtr</Mapping>
+    <Mapping type="CMClockRef">IntPtr</Mapping>
+    <Mapping type="CMClockOrTimebaseRef">IntPtr</Mapping>
     <Mapping type="CMFormatDescriptionRef *">IntPtr</Mapping>
     <Mapping type="CMFormatDescriptionRef">IntPtr</Mapping>
     <Mapping type="CMItemCount *">ref:NSInteger</Mapping>
@@ -217,7 +219,11 @@
     <Mapping type="CMSampleTimingInfo *">IntPtr</Mapping>
     <Mapping type="CMTextDisplayFlags *">ref:CMTextDisplayFlags</Mapping>
     <Mapping type="CMTextJustificationValue *">ref:CMTextJustificationValue</Mapping>
+    <Mapping type="CMTime*">ref:CMTime</Mapping>
     <Mapping type="CMTime *">ref:CMTime</Mapping>
+    <Mapping type="CMTimebaseRef">IntPtr</Mapping>
+    <Mapping type="CMTimebaseRef*">ref:IntPtr</Mapping>
+    <Mapping type="CMTimebaseRef *">ref:IntPtr</Mapping>
     <Mapping type="CMTimeCodeFormatDescriptionRef *">IntPtr</Mapping>
     <Mapping type="CMTimeCodeFormatDescriptionRef">IntPtr</Mapping>
     <Mapping type="CMTimeEpoch">long</Mapping>
@@ -278,7 +284,11 @@
     <Mapping type="DescType">uint</Mapping>
     <Mapping type="FILE **">IntPtr</Mapping>
     <Mapping type="Float32">float</Mapping>
+    <Mapping type="Float32*">ref:float</Mapping>
+    <Mapping type="Float32 *">ref:float</Mapping>
     <Mapping type="Float64">double</Mapping>
+    <Mapping type="Float64*">ref:double</Mapping>
+    <Mapping type="Float64 *">ref:double</Mapping>
     <Mapping type="FourCharCode">uint</Mapping>
     <Mapping type="GLKMatrixStackRef">IntPtr</Mapping>
     <Mapping type="GLKVector3 *">IntPtr</Mapping>

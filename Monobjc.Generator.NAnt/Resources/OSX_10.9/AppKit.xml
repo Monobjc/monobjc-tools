@@ -173,12 +173,16 @@
 					<With><![CDATA[ = (1 &lt;&lt;  9),
    ]]></With>
 				</Replace>
-				<Replace>
-					<Source><![CDATA[= 1 &lt;&lt; 0
+                <Replace>
+                    <Source><![CDATA[= 1 &lt;&lt; 0
 ]]></Source>
-					<With><![CDATA[= 1 &lt;&lt; 0,
+                    <With><![CDATA[= 1 &lt;&lt; 0,
 ]]></With>
-				</Replace>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[typedef NS_OPTIONS(NSUInteger, NSApplicationOcclusionState)]]></Source>
+                    <With><![CDATA[enum NSApplicationOcclusionState]]></With>
+                </Replace>
 			</Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["DiscardEventsMatchingMaskBeforeEvent"].Parameters["mask"].Type="NSEventMask"]]></Change>
@@ -192,7 +196,8 @@
 				<Change><![CDATA[Enumerations["Return_values_for_modal_operations"].Name="NSRunResponse"]]></Change>
 				<Change><![CDATA[Enumerations["NSRunResponse"].BaseType="NSInteger"]]></Change>
 				<Change><![CDATA[Enumerations["Notification_Type_Constants"].Name="NSRemoteNotificationType"]]></Change>
-				<Change><![CDATA[Enumerations["NSRemoteNotificationType"].BaseType="NSUInteger"]]></Change>
+                <Change><![CDATA[Enumerations["NSRemoteNotificationType"].BaseType="NSUInteger"]]></Change>
+                <Change><![CDATA[Enumerations["NSApplicationOcclusionState"].BaseType="NSUInteger"]]></Change>
 				<!-- TODO: Move to a NSUInteger constant -->
 				<Change><![CDATA[Enumerations["NSUpdateWindowsRunLoopOrdering"].Generate=false]]></Change>
 			</Patch>
@@ -724,6 +729,7 @@
 			<Patch type="Model">
 				<Change><![CDATA[Methods["EventWithCGEvent"].Parameters["cgEvent"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["EventWithEventRef"].Parameters["eventRef"].Type="IntPtr"]]></Change>
+                <Change><![CDATA[Methods["LocationInNode"].Generate=false]]></Change>
 				<Change><![CDATA[Properties["EventRef"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Properties.First(Name == "ModifierFlags" && Static == False).Type="NSModifierFlags"]]></Change>
 				<Change><![CDATA[Properties.First(Name == "ModifierFlags" && Static == True).Type="NSModifierFlags"]]></Change>
@@ -2063,6 +2069,9 @@ enum {]]></Source>
 				<Change><![CDATA[Properties["StyleMask"].Type="NSWindowStyleMask"]]></Change>
 				<Change><![CDATA[Properties["RestorationClass"].Type="Class"]]></Change>
 				<Change><![CDATA[Properties["WindowController"].Type="NSWindowController"]]></Change>
+                <!-- TODO: Move values to NSApplication.NSModalResponse -->
+                <Change><![CDATA[Enumerations["Additional_NSModalResponse_Values"].Name="AdditionalNSModalResponseValues"]]></Change>
+                <Change><![CDATA[Enumerations["AdditionalNSModalResponseValues"].BaseType="NSInteger"]]></Change>
 				<Change><![CDATA[Enumerations["Window_Style_Masks"].Name="NSWindowStyleMask"]]></Change>
 				<Change><![CDATA[Enumerations["NSWindowStyleMask"].BaseType="NSUInteger"]]></Change>
 				<Change><![CDATA[Enumerations["NSWindowStyleMask"].Flags=true]]></Change>
@@ -2121,6 +2130,10 @@ enum {]]></Source>
 	<Protocols>
 		<Protocol name="NSAccessibility">
 			<File>Cocoa/Reference/ApplicationKit/Protocols/NSAccessibility_Protocol/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["Notification_Priority_Levels"].Name="NotificationPriorityLevels"]]></Change>
+                <Change><![CDATA[Enumerations["NotificationPriorityLevels"].BaseType="NSUInteger"]]></Change>
+            </Patch>
 		</Protocol>
 		<Protocol name="NSAlertDelegate">
 			<File>Cocoa/Reference/NSAlertDelegate_Protocol/Reference/Reference.html</File>

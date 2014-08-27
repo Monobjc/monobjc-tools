@@ -162,7 +162,7 @@
 			</Patch>
 		</Protocol>
         <Protocol name="GKChallengeEventHandlerDelegate">
-            <File>GameKit/Reference/GKChallengeEventHandlerDelegate_Ref/Reference/Reference.html</File>
+            <File>GLkit/Reference/GKChallengeEventHandlerDelegate_Ref/Reference/Reference.html</File>
             <Patch type="Model">
                 <Change><![CDATA[DelegateFor="GKChallengeEventHandler"]]></Change>
                 <Change><![CDATA[DelegateProperty="Delegate"]]></Change>

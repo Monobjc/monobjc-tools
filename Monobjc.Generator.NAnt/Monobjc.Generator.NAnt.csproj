@@ -930,6 +930,9 @@
     <Content Include="Files\OSX_10.9\AVFoundation\Html\P\AVVideoCompositionValidationHandling.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Files\OSX_10.9\AVFoundation\Model\C\AVMetadataItemFilter.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\doxygen.cfg" />

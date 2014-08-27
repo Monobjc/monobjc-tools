@@ -316,12 +316,15 @@ enum
 				<Change><![CDATA[Methods["Apply"].Parameters["k,..."].Generate=false]]></Change>
 				<Change><![CDATA[Methods["Apply"].Parameters.Set("k", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>k</Name><Type>NSString</Type></Parameter>")]]></Change>
 				<Change><![CDATA[Methods["Apply"].Parameters.Set("values", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
+                <Change><![CDATA[Methods["ViewForUIConfigurationExcludedKeys"].Generate=false]]></Change>
 			</Patch>
 		</Class>
 		<Class name="CIFilter_CoreAnimationAdditions">
 			<File>GraphicsImaging/Reference/CIFilter_CA_Additions/Introduction/Introduction.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[AdditionFor="CIFilter"]]></Change>
+                <Change><![CDATA[Properties["Name"].Generate=false]]></Change>
+                <Change><![CDATA[Properties["IsEnabled"].Generate=false]]></Change>
 			</Patch>
 		</Class>
 		<Class name="CIFilterGenerator">
@@ -354,12 +357,6 @@ enum
 				<Change><![CDATA[Methods["InitWithIOSurface"].GenerateConstructor=false]]></Change>
 				<Change><![CDATA[Methods["InitWithIOSurfaceOptions"].Parameters["surface"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Methods["InitWithIOSurfaceOptions"].GenerateConstructor=false]]></Change>
-			</Patch>
-		</Class>
-		<Class name="CIImage_AutoAdjustmentAdditions">
-			<File>GraphicsAnimation/Reference/CIImageAutoAdjustmentAdditions/Reference/Reference.html</File>
-			<Patch type="Model">
-				<Change><![CDATA[AdditionFor="CIImage"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="CIImageAccumulator">

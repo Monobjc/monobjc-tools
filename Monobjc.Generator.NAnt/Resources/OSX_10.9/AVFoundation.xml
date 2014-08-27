@@ -10,7 +10,7 @@
 		<Type name="AVFoundationFramework.Error.Constants">
 			<File>AVFoundation/Reference/AVFoundation_ErrorConstants/Reference/reference.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Enumerations["General_Error_Codes"].Name="AVErrorCodes"]]></Change>
+                <Change><![CDATA[Enumerations["Error_Codes"].Name="AVErrorCodes"]]></Change>
 				<Change><![CDATA[Enumerations["AVErrorCodes"].BaseType="int"]]></Change>
 			</Patch>
 		</Type>
@@ -92,9 +92,24 @@ enum {
 		<Class name="AVAssetReaderVideoCompositionOutput">
 			<File>AVFoundation/Reference/AVAssetReaderVideoCompositionOutput_Class/Reference/Reference.html</File>
 		</Class>
-		<Class name="AVAssetTrack">
-			<File>AVFoundation/Reference/AVAssetTrack_Class/Reference/Reference.html</File>
-		</Class>
+        <Class name="AVAssetResourceLoader">
+            <File>AVFoundation/Reference/AVAssetResourceLoader_Class/Reference/Reference.html</File>
+        </Class>
+        <Class name="AVAssetResourceLoadingContentInformationRequest">
+            <File>AVFoundation/Reference/AVAssetResourceLoadingContentInformationRequest_Class/Reference/Reference.html</File>
+        </Class>
+        <Class name="AVAssetResourceLoadingDataRequest">
+            <File>AVFoundation/Reference/AVAssetResourceLoadingDataRequest_Class/Reference/Reference.html</File>
+        </Class>
+        <Class name="AVAssetResourceLoadingRequest">
+            <File>AVFoundation/Reference/AVAssetResourceLoadingRequest_Class/Reference/Reference.html</File>
+        </Class>
+        <Class name="AVAssetTrack">
+            <File>AVFoundation/Reference/AVAssetTrack_Class/Reference/Reference.html</File>
+        </Class>
+        <Class name="AVAssetTrackGroup">
+            <File>AVFoundation/Reference/AVAssetTrackGroup_Class/Reference/Reference.html</File>
+        </Class>
 		<Class name="AVAssetTrackSegment">
 			<File>AVFoundation/Reference/AVAssetTrackSegment_Class/Reference/Reference.html</File>
 		</Class>
@@ -105,12 +120,18 @@ enum {
 				<Change><![CDATA[Enumerations["AVAssetWriterStatus"].BaseType="NSInteger"]]></Change>
 			</Patch>
 		</Class>
-		<Class name="AVAssetWriterInput">
-			<File>AVFoundation/Reference/AVAssetWriterInput_Class/Reference/Reference.html</File>
-		</Class>
+        <Class name="AVAssetWriterInput">
+            <File>AVFoundation/Reference/AVAssetWriterInput_Class/Reference/Reference.html</File>
+        </Class>
+        <Class name="AVAssetWriterInputGroup">
+            <File>AVFoundation/Reference/AVAssetWriterInputGroup_Class/Reference/Reference.html</File>
+        </Class>
 		<Class name="AVAssetWriterInputPixelBufferAdaptor">
 			<File>AVFoundation/Reference/AVAssetWriterInputPixelBufferAdaptor_Class/Reference/Reference.html</File>
 		</Class>
+        <Class name="AVAsynchronousVideoCompositionRequest">
+            <File>AVFoundation/Reference/AVAsynchronousVideoCompositionRequest_Class/Reference/Reference.html</File>
+        </Class>
 		<Class name="AVAudioMix">
 			<File>AVFoundation/Reference/AVAudioMix_Class/Reference/Reference.html</File>
 		</Class>
@@ -126,7 +147,7 @@ enum {
 			</Patch>
 		</Class>
 		<Class name="AVAudioPlayer">
-			<File>AVFoundation/Reference/AVAudioPlayerClassReference/index.html</File>
+			<File>AVFoundation/Reference/AVAudioPlayerClassReference/Chapters/Reference.html</File>
 		</Class>
 		<Class name="AVAudioRecorder">
 			<File>AVFoundation/Reference/AVAudioRecorder_ClassReference/Reference/Reference.html</File>
@@ -151,6 +172,21 @@ enum {
 		</Class>
 		<Class name="AVCaptureDevice">
 			<File>AVFoundation/Reference/AVCaptureDevice_Class/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef enum : NSInteger]]></Source>
+                    <With><![CDATA[typedef enum]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["AVCaptureDevicePosition"].BaseType="NSInteger"]]></Change>
+                <Change><![CDATA[Enumerations["AVCaptureFlashMode"].BaseType="NSInteger"]]></Change>
+                <Change><![CDATA[Enumerations["AVCaptureTorchMode"].BaseType="NSInteger"]]></Change>
+                <Change><![CDATA[Enumerations["AVCaptureFocusMode"].BaseType="NSInteger"]]></Change>
+                <Change><![CDATA[Enumerations["AVCaptureExposureMode"].BaseType="NSInteger"]]></Change>
+                <Change><![CDATA[Enumerations["AVCaptureWhiteBalanceMode"].BaseType="NSInteger"]]></Change>
+                <Change><![CDATA[Enumerations["AVCaptureDeviceTransportControlsPlaybackMode"].BaseType="NSInteger"]]></Change>
+            </Patch>
 		</Class>
 		<Class name="AVCaptureDeviceFormat">
 			<File>AVFoundation/Reference/AVCaptureDeviceFormat_Class/Reference/Reference.html</File>
@@ -173,9 +209,12 @@ enum {
 		<Class name="AVCaptureInputPort">
 			<File>AVFoundation/Reference/AVCaptureInputPort_Class/Reference/Reference.html</File>
 		</Class>
-		<Class name="AVCaptureMovieFileOutput">
-			<File>AVFoundation/Reference/AVCaptureMovieFileOutput_Class/Reference/Reference.html</File>
-		</Class>
+        <Class name="AVCaptureMetadataOutput">
+            <File>AVFoundation/Reference/AVCaptureMetadataOutput/Reference/Reference.html</File>
+        </Class>
+        <Class name="AVCaptureMovieFileOutput">
+            <File>AVFoundation/Reference/AVCaptureMovieFileOutput_Class/Reference/Reference.html</File>
+        </Class>
 		<Class name="AVCaptureOutput">
 			<File>AVFoundation/Reference/AVCaptureOutput_Class/Reference/Reference.html</File>
 		</Class>
@@ -212,14 +251,12 @@ enum {
 			<File>AVFoundation/Reference/AVFrameRateRange_Class/Reference/Reference.html</File>
 		</Class>
 		<Class name="AVMediaSelectionGroup">
-			<!-- Not yet published for OS X
+            <!-- Not yet published for OS X -->
 			<File>AVFoundation/Reference/AVMediaSelectionGroup_Class/Reference/Reference.html</File>
-			-->
 		</Class>
 		<Class name="AVMediaSelectionOption">
-			<!-- Not yet published for OS X
+			<!-- Not yet published for OS X -->
 			<File>AVFoundation/Reference/AVMediaSelectionOption_Class/Reference/Reference.html</File>
-			-->
 		</Class>
 		<Class name="AVMetadataItem">
 			<File>AVFoundation/Reference/AVMetadataItem_Class/Reference/Reference.html</File>
@@ -228,6 +265,10 @@ enum {
 				<Change><![CDATA[Properties["Value"].Type="Id"]]></Change>
 			</Patch>
 		</Class>
+        <Class name="AVMetadataItemFilter">
+            <!-- Not yet published for OS X -->
+            <File>AVFoundation/Reference/AVMetadataItemFilter_Class/Reference/Reference.html</File>
+        </Class>
 		<Class name="AVMutableAudioMix">
 			<File>AVFoundation/Reference/AVMutableAudioMix_Class/Reference/Reference.html</File>
 			<Patch type="Generated">
@@ -354,6 +395,9 @@ enum {
 					<With><![CDATA[public new CGSize RenderSize]]></With>
 				</Replace>
 			</Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["CustomVideoCompositorClass"].Type="Class"]]></Change>
+            </Patch>
 		</Class>
 		<Class name="AVMutableVideoCompositionInstruction">
 			<File>AVFoundation/Reference/AVMutableVideoCompositionInstruction_Class/Reference/Reference.html</File>
@@ -382,7 +426,7 @@ enum {
 			</Patch>
 		</Class>
 		<Class name="AVPlayer">
-			<File>AVFoundation/Reference/AVPlayer_Class/index.html</File>
+			<File>AVFoundation/Reference/AVPlayer_Class/Chapters/Reference.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["PlayerWithPlayerItem"].ReturnType="AVPlayer"]]></Change>
 				<Change><![CDATA[Methods["PlayerWithURL"].ReturnType="AVPlayer"]]></Change>
@@ -416,6 +460,9 @@ enum {
 		<Class name="AVPlayerLayer">
 			<File>AVFoundation/Reference/AVPlayerLayer_Class/Reference/Reference.html</File>
 		</Class>
+        <Class name="AVPlayerMediaSelectionCriteria">
+            <File>AVFoundation/Reference/AVPlayerMediaSelectionCriteria_Class/Reference/Reference.html</File>
+        </Class>
 		<Class name="AVQueuePlayer">
 			<File>AVFoundation/Reference/AVQueuePlayer_Class/Reference/Reference.html</File>
 		</Class>
@@ -444,6 +491,9 @@ enum {
 		</Class>
 		<Class name="AVVideoComposition">
 			<File>AVFoundation/Reference/AVVideoComposition_Class/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["CustomVideoCompositorClass"].Type="Class"]]></Change>
+            </Patch>
 		</Class>
 		<Class name="AVVideoCompositionCoreAnimationTool">
 			<File>AVFoundation/Reference/AVVideoCompositionCoreAnimationTool_Class/Reference/Reference.html</File>
@@ -479,6 +529,9 @@ enum {
 				<Change><![CDATA[Methods["GetTransformRampForTimeStartTransformEndTransformTimeRange"].Parameters["timeRange"].IsByRef=true]]></Change>
 			</Patch>
 		</Class>
+        <Class name="AVVideoCompositionRenderContext">
+            <File>AVFoundation/Reference/AVVideoCompositionRenderContext_Class/Reference/Reference.html</File>
+        </Class>
 		<Class name="NSCoder_AVFoundationAdditions">
 			<File>AVFoundation/Reference/NSCoder_AVFoundation_Additions/Reference/Reference.html</File>
 			<Patch type="Model">
@@ -493,6 +546,9 @@ enum {
 		</Class>
 	</Classes>
 	<Protocols>
+        <Protocol name="AVAssetResourceLoaderDelegate">
+            <File>AVFoundation/Reference/AVAssetResourceLoaderDelegate_Protocol/Reference/Reference.html</File>
+        </Protocol>
 		<Protocol name="AVAsynchronousKeyValueLoading">
 			<File>AVFoundation/Reference/AVAsynchronousKeyValueLoading_Protocol/Reference/Reference.html</File>
 			<Patch type="Model">
@@ -527,13 +583,21 @@ enum {
 		<Protocol name="AVCaptureFileOutputRecordingDelegate">
 			<File>AVFoundation/Reference/AVCaptureFileOutputRecordingDelegate_Protocol/Reference/Reference.html</File>
 		</Protocol>
+        <Protocol name="AVCaptureMetadataOutputObjectsDelegate">
+            <File>AVFoundation/Reference/AVCaptureMetadataOutputObjectsDelegate_Protocol/Reference/Reference.html</File>
+        </Protocol>
 		<Protocol name="AVCaptureVideoDataOutputSampleBufferDelegate">
 			<File>AVFoundation/Reference/AVCaptureVideoDataOutputSampleBufferDelegate_Protocol/Reference/Reference.html</File>
 		</Protocol>
+        <Protocol name="AVPlayerItemOutputPullDelegate">
+            <File>AVFoundation/Reference/AVPlayerItemOutputPullDelegate_Protocol/Reference/Reference.html</File>
+        </Protocol>
+        <Protocol name="AVVideoCompositing">
+            <File>AVFoundation/Reference/AVVideoCompositing_Protocol/Reference/Reference.html</File>
+        </Protocol>
 		<Protocol name="AVVideoCompositionValidationHandling">
-			<!-- Not yet published for OS X
+            <!-- Not yet published for OS X -->
 			<File>AVFoundation/Reference/AVVideoCompositionValidationHandling_Protocol/Reference/Reference.html</File>
-			-->
 			<Patch type="Model">
 				<Change><![CDATA[MinAvailability="OS X v10.7"]]></Change>
 				<Change><![CDATA[Methods["VideoCompositionShouldContinueValidatingAfterFindingEmptyTimeRange"].MinAvailability="OS X v10.7"]]></Change>

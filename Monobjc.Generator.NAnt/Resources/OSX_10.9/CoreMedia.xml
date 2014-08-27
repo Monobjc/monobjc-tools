@@ -207,6 +207,21 @@
 				<Change><![CDATA[Enumerations["CMSampleBufferErrorCodes"].BaseType="int"]]></Change>
 			</Patch>
 		</Type>
+        <Type name="CMSync">
+            <File>CoreMedia/Reference/CMSync/Reference/reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Functions["CMTimebaseGetRate"].ReturnType="double"]]></Change>
+                <Change><![CDATA[Functions["CMTimebaseGetTimeAndRate"].ReturnType="int"]]></Change>
+                <Change><![CDATA[Functions["CMTimebaseSetAnchorTime"].ReturnType="int"]]></Change>
+                <Change><![CDATA[Functions["CMTimebaseSetTimerNextFireTime"].ReturnType="int"]]></Change>
+                <Change><![CDATA[Enumerations["CMClock_Error_Codes"].Name="CMClockErrorCodes"]]></Change>
+                <Change><![CDATA[Enumerations["CMClockErrorCodes"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["CMTimebase_error_codes"].Name="CMTimebaseErrorCodes"]]></Change>
+                <Change><![CDATA[Enumerations["CMTimebaseErrorCodes"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["CMSync_error_codes"].Name="CMSyncErrorCodes"]]></Change>
+                <Change><![CDATA[Enumerations["CMSyncErrorCodes"].BaseType="int"]]></Change>
+            </Patch>
+        </Type>
 		<Type name="CMTime">
 			<File>CoreMedia/Reference/CMTime/Reference/reference.html</File>
 			<Patch type="Model">
