@@ -582,14 +582,13 @@
                 <Change><![CDATA[Methods["EncodeCMTimeForKey"].Generate=false]]></Change>
                 <Change><![CDATA[Methods["EncodeCMTimeMappingForKey"].Generate=false]]></Change>
                 <Change><![CDATA[Methods["EncodeCMTimeRangeForKey"].Generate=false]]></Change>
-                <Change><![CDATA[Methods["DecodeNXColor"].Generate=false]]></Change>
-
 			</Patch>
 		</Class>
 		<Class name="NSCoder.Deprecated">
 			<File>Cocoa/Reference/Foundation/Classes/NSCoder_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
 			<Patch type="Model">
 				<Change><![CDATA[AdditionFor="NSCoder"]]></Change>
+                <Change><![CDATA[Methods["DecodeNXColor"].Generate=false]]></Change>
 			</Patch>
 		</Class>
 		<Class name="NSComparisonPredicate">

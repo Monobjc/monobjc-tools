@@ -147,11 +147,6 @@ namespace Monobjc.Tools.Generator.Model
 		/// </summary>
 		public void AdjustAvailability ()
 		{
-            // Adjust the availability recursively
-            foreach (BaseEntity value in this.Children) {
-                value.AdjustAvailability();
-            }
-
             String minAvailability = this.MinAvailability ?? String.Empty;
             Version minAvailabilityVersion = this.MinAvailabilityAsVersion;
 
@@ -252,10 +247,10 @@ namespace Monobjc.Tools.Generator.Model
 				int hash = 17;
 				hash = hash * 23 + this.CopyInDescendants.GetHashCode ();
 				hash = hash * 23 + this.Generate.GetHashCode ();
-				//hash = hash * 23 + (this.MaxAvailability != null ? this.MaxAvailability.GetHashCode () : 0);
-				//hash = hash * 23 + (this.MinAvailability != null ? this.MinAvailability.GetHashCode () : 0);
+				hash = hash * 23 + (this.MaxAvailability != null ? this.MaxAvailability.GetHashCode () : 0);
+				hash = hash * 23 + (this.MinAvailability != null ? this.MinAvailability.GetHashCode () : 0);
 				hash = hash * 23 + (this.Name != null ? this.Name.GetHashCode () : 0);
-				//hash = hash * 23 + (this.Obsolete != null ? this.Obsolete.GetHashCode () : 0);
+				hash = hash * 23 + (this.Obsolete != null ? this.Obsolete.GetHashCode () : 0);
 				return hash;
 			}
 		}

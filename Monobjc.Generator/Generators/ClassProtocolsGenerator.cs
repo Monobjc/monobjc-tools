@@ -68,7 +68,6 @@ namespace Monobjc.Tools.Generator.Generators
 
 			// Collect all the existing methods
 			List<MethodEntity> methods = GetAllMethods (classEntity, true).ToList ();
-            List<int> methodHashes = methods.Select(m => m.GetHashValue()).ToList ();
 
 			// Collect all the existing properties
 			List<PropertyEntity> properties = GetProperties (classEntity, true).ToList ();
@@ -83,7 +82,7 @@ namespace Monobjc.Tools.Generator.Generators
 
 				// Append methods
 				foreach (MethodEntity methodEntity in protocolEntity.Methods.Where(e => e.Generate)) {
-                    if (methodHashes.Contains (methodEntity.GetHashValue())) {
+                    if (methods.Any (m => String.Equals (m.Name, methodEntity.Name) && m.Static == methodEntity.Static)) {
 						continue;
 					}
 					this.MethodGenerator.Generate (classEntity, methodEntity, true, false);

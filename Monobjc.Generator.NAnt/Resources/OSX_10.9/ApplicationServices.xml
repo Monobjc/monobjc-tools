@@ -125,19 +125,19 @@
 		<Type name="CGDataProvider">
 			<File>GraphicsImaging/Reference/CGDataProvider/Reference/reference.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Functions["CGDataProviderCreateWithFilename"].Parameters["filename"].Type="String"]]></Change>
+                <Change><![CDATA[Functions["CGDataProviderCreateDirect"].Parameters["size"].Type="IntPtr"]]></Change>
                 <Change><![CDATA[Functions["CGDataProviderCreateDirect"].Parameters["callbacks"].IsStruct=true]]></Change>
+				<Change><![CDATA[Functions["CGDataProviderCreateWithFilename"].Parameters["filename"].Type="String"]]></Change>
                 <Change><![CDATA[Functions["CGDataProviderRef"].Parameters["callbacks"].IsStruct=true]]></Change>
                 <Change><![CDATA[Functions["CGDataProviderCreateSequential"].Parameters["callbacks"].IsStruct=true]]></Change>
-                <Change><![CDATA[Functions["CGDataProviderCreate"].Parameters["callbacks"].IsStruct=true]]></Change>
-                <Change><![CDATA[Functions["CGDataProviderCreateDirectAccess"].Parameters["callbacks"].IsStruct=true]]></Change>
                 <Change><![CDATA[Functions["CGDataProviderGetTypeID"].Generate=false]]></Change>
 			</Patch>
 		</Type>
 		<Type name="CGDataProvider.Deprecated">
 			<File>GraphicsImaging/Reference/CGDataProvider/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Functions["CGDataProviderCreateDirect"].Parameters["size"].Type="IntPtr"]]></Change>
+                <Change><![CDATA[Functions["CGDataProviderCreate"].Parameters["callbacks"].IsStruct=true]]></Change>
+                <Change><![CDATA[Functions["CGDataProviderCreateDirectAccess"].Parameters["callbacks"].IsStruct=true]]></Change>
 			</Patch>
 		</Type>
 		<Type name="CGFont">

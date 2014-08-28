@@ -110,7 +110,7 @@ namespace Monobjc.Tools.Generator.Generators
             if (!String.IsNullOrEmpty (define)) {
 				this.Writer.WriteLineFormat (0, "#if {0}", define);
 			}
-			if (entity.Obsolete == null) {
+            if (String.IsNullOrEmpty(entity.Obsolete)) {
 				define = AvailabilityHelper.GetDefine (entity.MaxAvailability);
 				if (!String.IsNullOrEmpty (define)) {
 					this.Writer.WriteLineFormat (0, "#if !{0}", define);
@@ -128,7 +128,7 @@ namespace Monobjc.Tools.Generator.Generators
             if (!String.IsNullOrEmpty (define)) {
 				this.Writer.WriteLineFormat (0, "#endif");
 			}
-			if (entity.Obsolete == null) {
+            if (String.IsNullOrEmpty(entity.Obsolete)) {
 				define = AvailabilityHelper.GetDefine (entity.MaxAvailability);
 				if (!String.IsNullOrEmpty (define)) {
 					this.Writer.WriteLineFormat (0, "#endif");

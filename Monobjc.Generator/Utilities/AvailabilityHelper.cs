@@ -10,9 +10,9 @@ namespace Monobjc.Tools.Generator.Utilities
         private static readonly IDictionary<string, string> AVAILABILITIES_STRINGS = CreateAvailabilityStrings ();
         private static readonly IDictionary<string, Version> AVAILABILITIES_VERSIONS = CreateAvailabilityVersions ();
 		
-		private static readonly Regex MIN_MAX = new Regex(@"\(Available in (OS X v10\.\d) through (OS X v10\.\d)");
+		private static readonly Regex MIN_MAX = new Regex(@"\(Available in (OS X v10\.\d+) through (OS X v10\.\d+)");
 		
-		private static readonly Regex DEPRECATED = new Regex(@"\((Deprecated\sin\s)(OS\sX\sv\s?10\.\d(?:\.\d\d)?)(?:\.| and later\.)(.*)\)");
+		private static readonly Regex DEPRECATED = new Regex(@"\((Deprecated\sin\s)(OS\sX\sv\s?10\.\d+(?:\.\d+)?)(?:\.| and later\.)(.*)\)");
 
         /// <summary>
         ///   Gets the define string for the given version of OS.
@@ -55,6 +55,7 @@ namespace Monobjc.Tools.Generator.Utilities
 			{
 				String v1 = m.Groups[1].Value;
 				String v2 = m.Groups[2].Value;
+
 				if (!String.Equals(baseEntity.MinAvailability, v1))
 				{
 					baseEntity.MinAvailability = v1;
@@ -90,6 +91,9 @@ namespace Monobjc.Tools.Generator.Utilities
                 case "OS X v10.8":
                     v2 = "OS X v10.9";
                     break;
+                case "OS X v10.9":
+                    v2 = "OS X v10.10";
+                    break;
 				default:
 					break;
 				}
@@ -106,6 +110,7 @@ namespace Monobjc.Tools.Generator.Utilities
 			{
 				String v2 = m.Groups[2].Value;
 				String v3 = m.Groups[3].Value.Trim();
+
 				if (!String.Equals(baseEntity.MaxAvailability, v2))
 				{
 					baseEntity.MaxAvailability = v2;
