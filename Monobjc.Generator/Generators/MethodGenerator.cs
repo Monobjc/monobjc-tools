@@ -49,8 +49,8 @@ namespace Monobjc.Tools.Generator.Generators
 				return;
 			}
 
-			// Append static condition if needed
-			this.AppendStartCondition (methodEntity);
+            // Append static condition if needed
+            this.AppendStartCondition (methodEntity);
 
 			// Append documentation
 			this.AppendDocumentation (methodEntity, extension && !methodEntity.Static);
@@ -127,8 +127,8 @@ namespace Monobjc.Tools.Generator.Generators
 				this.Writer.WriteLineFormat (2, "}}");
 			}
 
-			// Append static condition if needed
-			this.AppendEndCondition (methodEntity);
+            // Append static condition if needed
+            this.AppendEndCondition(methodEntity);
 
 			// Update statistics
 			this.Statistics.Methods++;
@@ -165,7 +165,7 @@ namespace Monobjc.Tools.Generator.Generators
 			bool useMixedInvocation = false; // !AreMethodTypesEqual(methodEntity32, methodEntity64);
 
 			// Append static condition if needed
-			this.AppendStartCondition (methodEntity);
+            this.AppendStartCondition (methodEntity);
 
 			// Append documentation
 			this.AppendDocumentation (methodEntity);
@@ -223,7 +223,7 @@ namespace Monobjc.Tools.Generator.Generators
 			this.Writer.WriteLineFormat (2, "}}");
 
 			// Append static condition if needed
-			this.AppendEndCondition (methodEntity);
+            this.AppendEndCondition (methodEntity);
 
 			// Update statistics
 			this.Statistics.Methods++;

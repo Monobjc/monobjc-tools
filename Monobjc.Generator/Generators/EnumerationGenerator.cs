@@ -103,8 +103,10 @@ namespace Monobjc.Tools.Generator.Generators
 					continue;
 				}
 
-				// Append static condition if needed
-				this.AppendStartCondition (enumerationValueEntity);
+                if (enumerationValueEntity.MinAvailabilityAsVersion.IsGreaterThan(enumerationEntity.MinAvailabilityAsVersion)) {
+                    // Append static condition if needed
+                    this.AppendStartCondition(enumerationValueEntity);
+                }
 
 				this.Writer.WriteLineFormat (2, "/// <summary>");
 				foreach (String line in enumerationValueEntity.Summary) {
@@ -120,8 +122,10 @@ namespace Monobjc.Tools.Generator.Generators
 					this.Writer.WriteLineFormat (2, "{0} = {1},", enumerationValueEntity.Name, value);
 				}
 
-				// Append static condition if needed
-				this.AppendEndCondition (enumerationValueEntity);
+                if (enumerationValueEntity.MinAvailabilityAsVersion.IsGreaterThan(enumerationEntity.MinAvailabilityAsVersion)) {
+                    // Append static condition if needed
+                    this.AppendEndCondition(enumerationValueEntity);
+                }
 			}
 
 			// Append class ender

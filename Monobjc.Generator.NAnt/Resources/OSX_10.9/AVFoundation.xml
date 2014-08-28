@@ -595,6 +595,25 @@ enum {
         <Protocol name="AVVideoCompositing">
             <File>AVFoundation/Reference/AVVideoCompositing_Protocol/Reference/Reference.html</File>
         </Protocol>
+        <Protocol name="AVVideoCompositionInstruction">
+            <File>AVFoundation/Reference/AVVideoCompositionInstruction_Protocol/Reference/Reference.html</File>
+            <!--
+            <Patch type="Model">
+                <Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["startOpacity"].Type="float"]]></Change>
+                <Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["startOpacity"].IsOut=true]]></Change>
+                <Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["endOpacity"].Type="float"]]></Change>
+                <Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["endOpacity"].IsOut=true]]></Change>
+                <Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["timeRange"].Type="CMTimeRange"]]></Change>
+                <Change><![CDATA[Methods["GetOpacityRampForTimeStartOpacityEndOpacityTimeRange"].Parameters["timeRange"].IsOut=true]]></Change>
+                <Change><![CDATA[Methods["GetTransformRampForTimeStartTransformEndTransformTimeRange"].Parameters["startTransform"].Type="CGAffineTransform"]]></Change>
+                <Change><![CDATA[Methods["GetTransformRampForTimeStartTransformEndTransformTimeRange"].Parameters["startTransform"].IsOut=true]]></Change>
+                <Change><![CDATA[Methods["GetTransformRampForTimeStartTransformEndTransformTimeRange"].Parameters["endTransform"].Type="CGAffineTransform"]]></Change>
+                <Change><![CDATA[Methods["GetTransformRampForTimeStartTransformEndTransformTimeRange"].Parameters["endTransform"].IsOut=true]]></Change>
+                <Change><![CDATA[Methods["GetTransformRampForTimeStartTransformEndTransformTimeRange"].Parameters["timeRange"].Type="CMTimeRange"]]></Change>
+                <Change><![CDATA[Methods["GetTransformRampForTimeStartTransformEndTransformTimeRange"].Parameters["timeRange"].IsOut=true]]></Change>
+            </Patch>
+                -->
+        </Protocol>
 		<Protocol name="AVVideoCompositionValidationHandling">
             <!-- Not yet published for OS X -->
 			<File>AVFoundation/Reference/AVVideoCompositionValidationHandling_Protocol/Reference/Reference.html</File>

@@ -104,10 +104,10 @@ namespace Monobjc.Tools.Generator.Generators
 		///   Appends the start condition for OS version.
 		/// </summary>
 		/// <param name = "entity">The entity.</param>
-		protected void AppendStartCondition (BaseEntity entity)
+        protected void AppendStartCondition (BaseEntity entity)
 		{
 			String define = AvailabilityHelper.GetDefine (entity.MinAvailability);
-			if (!String.IsNullOrEmpty (define)) {
+            if (!String.IsNullOrEmpty (define)) {
 				this.Writer.WriteLineFormat (0, "#if {0}", define);
 			}
 			if (entity.Obsolete == null) {
@@ -122,10 +122,10 @@ namespace Monobjc.Tools.Generator.Generators
 		///   Appends the end condition for OS version.
 		/// </summary>
 		/// <param name = "entity">The entity.</param>
-		protected void AppendEndCondition (BaseEntity entity)
+        protected void AppendEndCondition (BaseEntity entity)
 		{
 			String define = AvailabilityHelper.GetDefine (entity.MinAvailability);
-			if (!String.IsNullOrEmpty (define)) {
+            if (!String.IsNullOrEmpty (define)) {
 				this.Writer.WriteLineFormat (0, "#endif");
 			}
 			if (entity.Obsolete == null) {

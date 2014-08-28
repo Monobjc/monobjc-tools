@@ -59,15 +59,16 @@ namespace Monobjc.Tools.Generator.Generators
 			for (int i = 0; i < classEntity.Protocols.Count; i++) {
 				ClassEntity protocolEntity = classEntity.Protocols [i];
 
-				this.AppendStartCondition (protocolEntity);
+                this.AppendStartCondition (protocolEntity);
 				this.Writer.WriteLineFormat (1, (i == 0) ? " : I{0}" : ", I{0}", protocolEntity.Name);
-				this.AppendEndCondition (protocolEntity);
+                this.AppendEndCondition (protocolEntity);
 			}
 
 			this.Writer.WriteLineFormat (1, "{{");
 
 			// Collect all the existing methods
 			List<MethodEntity> methods = GetAllMethods (classEntity, true).ToList ();
+            List<int> methodHashes = methods.Select(m => m.GetHashValue()).ToList ();
 
 			// Collect all the existing properties
 			List<PropertyEntity> properties = GetProperties (classEntity, true).ToList ();
@@ -75,14 +76,14 @@ namespace Monobjc.Tools.Generator.Generators
 			// Implement each protocol
 			foreach (ClassEntity protocolEntity in classEntity.Protocols) {
 				// Append static condition if needed
-				this.AppendStartCondition (protocolEntity);
+                this.AppendStartCondition (protocolEntity);
 
 				this.Writer.WriteLineFormat (2, "#region ----- " + protocolEntity.Name + " -----");
 				this.Writer.WriteLine ();
 
 				// Append methods
 				foreach (MethodEntity methodEntity in protocolEntity.Methods.Where(e => e.Generate)) {
-					if (methods.Contains (methodEntity)) {
+                    if (methodHashes.Contains (methodEntity.GetHashValue())) {
 						continue;
 					}
 					this.MethodGenerator.Generate (classEntity, methodEntity, true, false);
@@ -102,7 +103,7 @@ namespace Monobjc.Tools.Generator.Generators
 				this.Writer.WriteLine ();
 
 				// Append static condition if needed
-				this.AppendEndCondition (protocolEntity);
+                this.AppendEndCondition (protocolEntity);
 
 				// Add methods so they are now ignored
 				methods.AddRange (protocolEntity.Methods);

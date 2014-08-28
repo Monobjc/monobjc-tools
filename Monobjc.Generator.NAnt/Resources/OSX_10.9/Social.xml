@@ -16,9 +16,13 @@
    SLRequestMethod)]]></Source>
 					<With><![CDATA[enum SLRequestMethod]]></With>
 				</Replace>
+				<Replace>
+					<Source><![CDATA[SLRequestMethodPUT;]]></Source>
+					<With><![CDATA[SLRequestMethodPUT]]></With>
+				</Replace>
 			</Patch>
 			<Patch type="Model">
-			<Change><![CDATA[Enumerations["SLRequestMethod"].BaseType="NSInteger"]]></Change>
+                <Change><![CDATA[Enumerations["SLRequestMethod"].BaseType="NSInteger"]]></Change>
 			</Patch>
 		</Class>
 	</Classes>

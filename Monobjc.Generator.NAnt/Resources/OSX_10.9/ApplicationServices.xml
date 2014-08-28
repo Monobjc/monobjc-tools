@@ -75,7 +75,6 @@
 				<Change><![CDATA[Functions["CGContextFillRects"].Parameters["rects[]"].Name="rects"]]></Change>
 				<Change><![CDATA[Functions["CGContextFillRects"].Parameters["rects"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["CGContextGetTypeID"].Generate=false]]></Change>
-				<Change><![CDATA[Functions["CGContextSelectFont"].Parameters["name"].Type="String"]]></Change>
 				<Change><![CDATA[Functions["CGContextSetFillColor"].Parameters["components[]"].Name="components"]]></Change>
 				<Change><![CDATA[Functions["CGContextSetFillColor"].Parameters["components"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["CGContextSetFillPattern"].Parameters["components[]"].Name="components"]]></Change>
@@ -86,20 +85,10 @@
 				<Change><![CDATA[Functions["CGContextSetStrokeColor"].Parameters["components"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["CGContextSetStrokePattern"].Parameters["components[]"].Name="components"]]></Change>
 				<Change><![CDATA[Functions["CGContextSetStrokePattern"].Parameters["components"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["CGContextShowGlyphs"].Parameters["g[]"].Name="g"]]></Change>
-				<Change><![CDATA[Functions["CGContextShowGlyphs"].Parameters["g"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["CGContextShowGlyphsAtPoint"].Parameters["glyphs[]"].Name="glyphs"]]></Change>
-				<Change><![CDATA[Functions["CGContextShowGlyphsAtPoint"].Parameters["glyphs"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["CGContextShowGlyphsAtPositions"].Parameters["glyphs[]"].Name="glyphs"]]></Change>
 				<Change><![CDATA[Functions["CGContextShowGlyphsAtPositions"].Parameters["glyphs"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Functions["CGContextShowGlyphsAtPositions"].Parameters["positions[]"].Name="positions"]]></Change>
 				<Change><![CDATA[Functions["CGContextShowGlyphsAtPositions"].Parameters["positions"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["CGContextShowGlyphsWithAdvances"].Parameters["glyphs[]"].Name="glyphs"]]></Change>
-				<Change><![CDATA[Functions["CGContextShowGlyphsWithAdvances"].Parameters["glyphs"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["CGContextShowGlyphsWithAdvances"].Parameters["advances[]"].Name="advances"]]></Change>
-				<Change><![CDATA[Functions["CGContextShowGlyphsWithAdvances"].Parameters["advances"].Type="IntPtr"]]></Change>
-				<Change><![CDATA[Functions["CGContextShowText"].Parameters["@string"].Type="String"]]></Change>
-				<Change><![CDATA[Functions["CGContextShowTextAtPoint"].Parameters["@string"].Type="String"]]></Change>
 				<Change><![CDATA[Functions["CGContextStrokeLineSegments"].Parameters["points[]"].Name="points"]]></Change>
 				<Change><![CDATA[Functions["CGContextStrokeLineSegments"].Parameters["points"].Type="IntPtr"]]></Change>
 				<Change><![CDATA[Enumerations["CGBlendMode"].BaseType="int"]]></Change>
@@ -113,8 +102,17 @@
 		<Type name="CGContext.Deprecated">
 			<File>GraphicsImaging/Reference/CGContext/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
             <Patch type="Model">
+                <Change><![CDATA[Functions["CGContextSelectFont"].Parameters["name"].Type="String"]]></Change>
                 <Change><![CDATA[Functions["CGContextShowGlyphs"].Parameters["g[]"].Name="g"]]></Change>
                 <Change><![CDATA[Functions["CGContextShowGlyphs"].Parameters["g"].Type="IntPtr"]]></Change>
+                <Change><![CDATA[Functions["CGContextShowGlyphsAtPoint"].Parameters["glyphs[]"].Name="glyphs"]]></Change>
+                <Change><![CDATA[Functions["CGContextShowGlyphsAtPoint"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+                <Change><![CDATA[Functions["CGContextShowGlyphsWithAdvances"].Parameters["glyphs[]"].Name="glyphs"]]></Change>
+                <Change><![CDATA[Functions["CGContextShowGlyphsWithAdvances"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+                <Change><![CDATA[Functions["CGContextShowGlyphsWithAdvances"].Parameters["advances[]"].Name="advances"]]></Change>
+                <Change><![CDATA[Functions["CGContextShowGlyphsWithAdvances"].Parameters["advances"].Type="IntPtr"]]></Change>
+                <Change><![CDATA[Functions["CGContextShowText"].Parameters["@string"].Type="String"]]></Change>
+                <Change><![CDATA[Functions["CGContextShowTextAtPoint"].Parameters["@string"].Type="String"]]></Change>
             </Patch>
 		</Type>
 		<Type name="CGDataConsumer">

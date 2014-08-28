@@ -142,8 +142,10 @@ namespace Monobjc.Tools.Generator.Generators
 				return;
 			}
 
-			// Append static condition if needed
-			this.AppendStartCondition (functionEntity);
+            if (functionEntity.MinAvailabilityAsVersion.IsGreaterThan(typedEntity.MinAvailabilityAsVersion)) {
+                // Append static condition if needed
+                this.AppendStartCondition(functionEntity);
+            }
 
 			// Append documentation
 			this.AppendDocumentation (functionEntity);
@@ -174,8 +176,10 @@ namespace Monobjc.Tools.Generator.Generators
 				this.GenerateNativeFunction (typedEntity, functionEntity, null, true);
 			}
 
-			// Append static condition if needed
-			this.AppendEndCondition (functionEntity);
+            if (functionEntity.MinAvailabilityAsVersion.IsGreaterThan(typedEntity.MinAvailabilityAsVersion)) {
+                // Append static condition if needed
+                this.AppendEndCondition(functionEntity);
+            }
 
 			// Update statistics
 			this.Statistics.Functions++;

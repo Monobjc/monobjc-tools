@@ -64,8 +64,8 @@ namespace Monobjc.Tools.Generator.Generators
 				return;
 			}
 
-			// Append static condition if needed
-			this.AppendStartCondition (propertyEntity);
+            // Append static condition if needed
+            this.AppendStartCondition (propertyEntity);
 
 			// Append property comments
 			this.AppendDocumentation (propertyEntity);
@@ -162,8 +162,8 @@ namespace Monobjc.Tools.Generator.Generators
 				this.Writer.WriteLineFormat (2, "}}");
 			}
 
-			// Append static condition if needed
-			this.AppendEndCondition (propertyEntity);
+            // Append static condition if needed
+            this.AppendEndCondition(propertyEntity);
 
 			// Update statistics
 			this.Statistics.Properties++;

@@ -37,15 +37,15 @@ namespace Monobjc.Tools.Generator.Generators
 		/// </summary>
 		/// <param name = "framework">The framework.</param>
 		/// <param name = "entity">The entity.</param>
-		public void Generate (String framework, ConstantEntity entity)
+        public void Generate (TypedEntity typedEntity, ConstantEntity entity)
 		{
 			// Don't generate if required
 			if (!entity.Generate) {
 				return;
 			}
 
-			// Append static condition if needed
-			this.AppendStartCondition (entity);
+            // Append static condition if needed
+            this.AppendStartCondition(entity);
 
 			// Append property comments
 			this.Writer.WriteLineFormat (2, "/// <summary>");
@@ -60,11 +60,11 @@ namespace Monobjc.Tools.Generator.Generators
 				this.Writer.WriteLineFormat (2, "public static readonly {0} {1} = {2};", entity.Type, entity.Name, entity.Value);
 			} else {
 				// Print the extern constant
-				this.Writer.WriteLineFormat (2, "public static readonly {0} {2} = ObjectiveCRuntime.GetExtern<{0}>(\"{1}\", \"{2}\");", entity.Type, framework, entity.Name);
+                this.Writer.WriteLineFormat (2, "public static readonly {0} {2} = ObjectiveCRuntime.GetExtern<{0}>(\"{1}\", \"{2}\");", entity.Type, typedEntity.Namespace, entity.Name);
 			}
 
-			// Append static condition if needed
-			this.AppendEndCondition (entity);
+            // Append static condition if needed
+            this.AppendEndCondition(entity);
 
 			// Update statistics
 			this.Statistics.Constants++;

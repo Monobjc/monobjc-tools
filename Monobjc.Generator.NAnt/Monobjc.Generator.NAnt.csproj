@@ -97,6 +97,7 @@
     <Folder Include="Files\OSX_10.8\CoreMIDI\Model\" />
     <Folder Include="Files\OSX_10.8\CoreMIDI\Model\S\" />
     <Folder Include="Files\OSX_10.9\" />
+    <Folder Include="Files\OSX_10.9\AVFoundation\Model\S\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Generate.build">
@@ -931,6 +932,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Files\OSX_10.9\AVFoundation\Model\C\AVMetadataItemFilter.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.9\AVFoundation\Model\S\AVEdgeWidths.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.9\AVFoundation\Model\S\AVPixelAspectRatio.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

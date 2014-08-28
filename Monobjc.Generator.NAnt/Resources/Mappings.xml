@@ -353,6 +353,7 @@
     <Mapping type="Media">IntPtr</Mapping>
     <Mapping type="Movie">IntPtr</Mapping>
     <Mapping type="MovieController">IntPtr</Mapping>
+    <Mapping type="MTAudioProcessingTapRef">IntPtr</Mapping>
     <Mapping type="NS String *">NSString</Mapping>
     <Mapping type="NSView&lt; WebDocumentView &gt; *">NSView</Mapping>
     <Mapping type="NSAffineTransformStruct">CGAffineTransform</Mapping>
