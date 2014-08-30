@@ -36,7 +36,9 @@
 			<Patch type="Model">
 				<Change><![CDATA[Methods["FetchRemindersMatchingPredicateCompletion"].Parameters["completion"].Type="Action<NSArray>"]]></Change>
 				<Change><![CDATA[Methods["FetchRemindersMatchingPredicateCompletion"].Parameters["completion"].IsBlock=true]]></Change>
-				<Change><![CDATA[Enumerations["EKSpan"].BaseType="NSInteger"]]></Change>
+                <Change><![CDATA[Enumerations["EKSpan"].BaseType="NSInteger"]]></Change>
+                <Change><![CDATA[Enumerations["EKAuthorizationStatus"].MinAvailability="OS X v10.9"]]></Change>
+                <Change><![CDATA[Enumerations["EKAuthorizationStatus"].BaseType="NSInteger"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="EKObject">

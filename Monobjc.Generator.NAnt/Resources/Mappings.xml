@@ -35,7 +35,10 @@
     <Mapping type="BOOL (^)(id obj, BOOL *stop)"><![CDATA[block:Func_Id_out_bool_bool]]></Mapping>
     <Mapping type="BOOL (^)(id obj, NSUIntegeridx, BOOL *stop)"><![CDATA[block:Func_Id_NSUInteger_out_bool_bool]]></Mapping>
     <Mapping type="BOOL (^)(id obj, NSUInteger idx, BOOL *stop)"><![CDATA[block:Func_Id_NSUInteger_out_bool_bool]]></Mapping>
+    <Mapping type="BOOL (^)(id entry, NSString *identifier, BOOL *stop)"><![CDATA[block:Func_Id_NSString_out_bool_bool]]></Mapping>
+    <Mapping type="BOOL (^)(SCNNode *child, BOOL *stop)"><![CDATA[block:Func_SCNNode_out_bool_bool]]></Mapping>
     <Mapping type="BOOL (^)(SCNNode * child, BOOL *stop)"><![CDATA[block:Func_SCNNode_out_bool_bool]]></Mapping>
+    <Mapping type="BOOL (^)(void)"><![CDATA[block:Func<bool>]]></Mapping>
     <Mapping type="BOOL *">ref:bool</Mapping>
     <Mapping type="BOOL">bool</Mapping>
     <Mapping type="BOOL*">ref:bool</Mapping>
@@ -369,6 +372,7 @@
     <Mapping type="NSInteger *">ref:NSInteger</Mapping>
     <Mapping type="NSModalSession">IntPtr</Mapping>
     <Mapping type="NSObject&lt; CPTAnimationDelegate &gt; *">Id</Mapping>
+    <Mapping type="NSObject&lt;GKTurnBasedEventHandlerDelegate&gt;*">Id</Mapping>
     <Mapping type="NSObject&lt;GKTurnBasedEventHandlerDelegate&gt; *">Id</Mapping>
     <Mapping type="NSPoint (^)(NSRangeadjustedRange)"><![CDATA[block:Func<NSRange, NSPoint>]]></Mapping>
     <Mapping type="NSPoint (^)(NSRange adjustedRange)"><![CDATA[block:Func<NSRange, NSPoint>]]></Mapping>
@@ -561,6 +565,8 @@
     <Mapping type="void (^)(NSError *error)"><![CDATA[block:Action<NSError>]]></Mapping>
     <Mapping type="void (^)(NSError *errorOrNil)"><![CDATA[block:Action<NSError>]]></Mapping>
     <Mapping type="void (^)(NSEvent*)"><![CDATA[block:Action<NSEvent>]]></Mapping>
+    <Mapping type="void (^)(NSImage *image, NSError *error)"><![CDATA[block:Action<NSImage, NSEvent>]]></Mapping>
+    <Mapping type="void (^)(NSImage *photo, NSError *error)"><![CDATA[block:Action<NSImage, NSEvent>]]></Mapping>
     <Mapping type="void (^)(NSIntegeractivity, NSError *error)"><![CDATA[block:Action<NSInteger, NSError>]]></Mapping>
     <Mapping type="void (^)(NSIntegerresult)"><![CDATA[block:Action<NSInteger>]]></Mapping>
     <Mapping type="void (^)(NSInteger result)"><![CDATA[block:Action<NSInteger>]]></Mapping>

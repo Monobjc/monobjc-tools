@@ -265,20 +265,18 @@
 	================================================================================
 	-->
 	<target name="analyze" depends="process">
-		<!-- Find deprecation inside documentation 
+		<!-- Find deprecation inside documentation -->
 		<find-deprecation dir="${data.dir}" report="${data.dir}/find-deprecation.log">
 			<docset refid="OSX_10.9" />
 			<framework-set refid="docset" />
 		</find-deprecation>
-		-->
-		
-		<!-- Find delegates 
+
+		<!-- Find delegates -->
 		<find-delegate dir="${data.dir}" report="${data.dir}/find-delegate.log">
 			<docset refid="OSX_10.9" />
 			<framework-set refid="docset" />
 		</find-delegate>
-		-->
-		
+
 		<!-- Generate mapping file -->
 		<generate-mapping dir="${data.dir}" mapping-report="${data.dir}/Mappings.txt" mixed-types="${data.dir}/MixedTypes.txt" mappings="${data.dir}/Mappings.xml">
 			<docset refid="OSX_10.9" />

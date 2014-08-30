@@ -37,7 +37,7 @@
             </Patch>
         </Class>
         <Class name="GKChallengeEventHandler">
-            <File>GLkit/Reference/GKChallengeEventHandlerDelegate_Ref/index.html</File>
+            <File>GameKit/Reference/GKChallengeEventHandler_Ref/Reference/Reference.html</File>
         </Class>
 		<Class name="GKDialogController">
 			<File>GameKit/Reference/GKDialogController_Ref/Reference/Reference.html</File>
@@ -64,10 +64,14 @@
 		<Class name="GKLeaderboard">
 			<File>GameKit/Reference/GKLeaderboard_Ref/Reference/Reference.html</File>
 			<Patch type="Html">
-				<Replace>
-					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
-					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
-				</Replace>
+                <Replace>
+                    <Source><![CDATA[instead.)<div class="declaration">]]></Source>
+                    <With><![CDATA[instead.)</p><div class="declaration">]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[UIImage]]></Source>
+                    <With><![CDATA[NSImage]]></With>
+                </Replace>
 			</Patch>
 		</Class>
 		<Class name="GKLeaderboardViewController">
@@ -103,6 +107,12 @@
 		</Class>
 		<Class name="GKMatchmakerViewController">
 			<File>GameKit/Reference/GKMatchmakerViewController_Ref/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<div class="declaration">]]></Source>
+                    <With><![CDATA[)</p><div class="declaration">]]></With>
+                </Replace>
+            </Patch>
             <Patch type="Model">
                 <Change><![CDATA[Properties["MatchmakerDelegate"].Type="Id"]]></Change>
             </Patch>
@@ -131,10 +141,14 @@
 		<Class name="GKTurnBasedMatch">
 			<File>GameKit/Reference/GKTurnBasedMatch_Ref/Reference/Reference.html</File>
 			<Patch type="Html">
-				<Replace>
-					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
-					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
-				</Replace>
+                <Replace>
+                    <Source><![CDATA[instead.)<div class="declaration">]]></Source>
+                    <With><![CDATA[instead.)</p><div class="declaration">]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[typdef]]></Source>
+                    <With><![CDATA[typedef]]></With>
+                </Replace>
 			</Patch>
 		</Class>
 		<Class name="GKTurnBasedMatchmakerViewController">
@@ -145,6 +159,10 @@
 		</Class>
 		<Class name="GKTurnBasedParticipant">
 			<File>GameKit/Reference/GKTurnBasedParticipant_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["GKTurnBasedMatchOutcome"].Generate=false]]></Change>
+                <Change><![CDATA[Enumerations["GKTurnBasedParticipantStatus"].Generate=false]]></Change>
+            </Patch>
 		</Class>
 		<Class name="GKVoiceChat">
 			<File>GameKit/Reference/GKVoiceChat_Ref/Reference/Reference.html</File>
