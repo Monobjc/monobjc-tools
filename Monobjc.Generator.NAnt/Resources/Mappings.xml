@@ -524,6 +524,7 @@
     <Mapping type="unsigned short">ushort</Mapping>
     <Mapping type="unsigned">uint</Mapping>
     <Mapping type="void (^)()"><![CDATA[block:Action]]></Mapping>
+    <Mapping type="void (^)(AVPlayerViewTrimResultresult)"><![CDATA[block:Action<AVPlayerViewTrimResult>]]></Mapping>
     <Mapping type="void (^)(BOOL compatible)"><![CDATA[block:Action<bool>]]></Mapping>
     <Mapping type="void (^)(BOOL didLock)"><![CDATA[block:Action<bool>]]></Mapping>
     <Mapping type="void (^)(BOOL didMove)"><![CDATA[block:Action<bool>]]></Mapping>

@@ -36,6 +36,7 @@
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/Accounts.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/AddressBook.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/AVFoundation.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/AVKit.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/Collaboration.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/CoreData.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/CoreLocation.xml" />
@@ -46,6 +47,7 @@
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/DiscRecording.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/DiscRecordingUI.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/EventKit.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/GameController.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/GameKit.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/GLKit.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/InputMethodKit.xml" />

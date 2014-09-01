@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="GameController" usings="ApplicationServices,Foundation" assembly="Monobjc.GameController" source="DocSet">
+    <Classes>
+        <Class name="GCController">
+            <File>GameController/Reference/GCController_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["ControllerPausedHandler"].Type="IntPtr"]]></Change>
+                <Change><![CDATA[Enumerations["Controller_Player_Indices"].Name="GCControllerPlayerIndices"]]></Change>
+                <Change><![CDATA[Enumerations["GCControllerPlayerIndices"].BaseType="int"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="GCControllerAxisInput">
+            <File>GameController/Reference/GCControllerAxisInput_Ref/Reference/Reference.html</File>
+        </Class>
+        <Class name="GCControllerButtonInput">
+            <File>GameController/Reference/GCControllerButtonInput_Ref/Reference/Reference.html</File>
+        </Class>
+        <Class name="GCControllerDirectionPad">
+            <File>GameController/Reference/GCControllerDirectionPad_Ref/Reference/Reference.html</File>
+        </Class>
+        <Class name="GCControllerElement">
+            <File>GameController/Reference/GCControllerElement_Ref/Reference/Reference.html</File>
+        </Class>
+        <Class name="GCExtendedGamepad">
+            <File>GameController/Reference/GCExtendedGamePad_Ref/Reference/Reference.html</File>
+        </Class>
+        <Class name="GCExtendedGamepadSnapshot">
+            <File>GameController/Reference/GCExtendedGamePadSnapshot_Ref/Reference/Reference.html</File>
+        </Class>
+        <Class name="GCGamepad">
+            <File>GameController/Reference/GCGamePad_Ref/Reference/Reference.html</File>
+        </Class>
+        <Class name="GCGamepadSnapshot">
+            <File>GameController/Reference/GCGamePadSnapshot_Ref/Reference/Reference.html</File>
+        </Class>
+    </Classes>
+</Framework>

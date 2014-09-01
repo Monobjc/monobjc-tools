@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="AVKit" usings="ApplicationServices,AppKit,CoreMedia,Foundation,QuartzCore,AVFoundation" assembly="Monobjc.AVKit" source="DocSet">
+    <Classes>
+        <Class name="AVPlayerView">
+            <File>AVKit/Reference/AVPlayerView_Class/Reference/Reference.html</File>
+        </Class>
+    </Classes>
+</Framework>
