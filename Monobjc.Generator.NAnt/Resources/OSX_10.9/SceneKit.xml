@@ -3,6 +3,24 @@
 	<Types>
 	</Types>
 	<Classes>
+        <Class name="CAAnimation_SceneKitAdditions">
+            <File>SceneKit/Reference/CAAnimation_SceneKitAdditions/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="CAAnimation"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="NSValue_SceneKitAdditions">
+            <File>SceneKit/Reference/NSValue_ScreenKitAdditions/Reference/NSValue(SceneKitAdditions).html</File>
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="NSValue"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="SCNAnimationEvent">
+            <File>SceneKit/Reference/SCNAnimationEvent_Class/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["AnimationEventWithKeyTimeBlock"].ReturnType="SCNAnimationEvent"]]></Change>
+            </Patch>
+        </Class>
 		<Class name="SCNBox">
 			<File>SceneKit/Reference/SCNBox_Class/Reference/SCNBox.html</File>
 			<Patch type="Model">
@@ -11,6 +29,9 @@
 		</Class>
 		<Class name="SCNCamera">
 			<File>SceneKit/Reference/SCNCamera_Class/Reference/SCNCamera.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["Camera"].Type="SCNCamera"]]></Change>
+            </Patch>
 		</Class>
 		<Class name="SCNCapsule">
 			<File>SceneKit/Reference/SCNCapsule_Class/Reference/SCNCapsule.html</File>
@@ -18,12 +39,18 @@
 				<Change><![CDATA[Methods["CapsuleWithCapRadiusHeight"].ReturnType="SCNCapsule"]]></Change>
 			</Patch>
 		</Class>
-		<Class name="SCNCone">
-			<File>SceneKit/Reference/SCNCone_Class/Reference/SCNCone.html</File>
-			<Patch type="Model">
-				<Change><![CDATA[Methods["ConeWithTopRadiusBottomRadiusHeight"].ReturnType="SCNCone"]]></Change>
-			</Patch>
-		</Class>
+        <Class name="SCNCone">
+            <File>SceneKit/Reference/SCNCone_Class/Reference/SCNCone.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["ConeWithTopRadiusBottomRadiusHeight"].ReturnType="SCNCone"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="SCNConstraint">
+            <File>SceneKit/Reference/SCNConstraint_Class/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["ConeWithTopRadiusBottomRadiusHeight"].ReturnType="SCNCone"]]></Change>
+            </Patch>
+        </Class>
 		<Class name="SCNCylinder">
 			<File>SceneKit/Reference/SCNCylinder_Class/Reference/SCNCylinder.html</File>
 			<Patch type="Model">
@@ -39,7 +66,8 @@
 		<Class name="SCNGeometry">
 			<File>SceneKit/Reference/SCNGeometry_Class/Reference/SCNGeometry.html</File>
 			<Patch type="Model">
-				<Change><![CDATA[Methods["GeometryWithSourcesElements"].ReturnType="SCNGeometry"]]></Change>
+                <Change><![CDATA[Methods["GeometryWithSourcesElements"].ReturnType="SCNGeometry"]]></Change>
+                <Change><![CDATA[Properties["Geometry"].Type="SCNGeometry"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="SCNGeometryElement">
@@ -64,25 +92,77 @@
 		<Class name="SCNLayer">
 			<File>SceneKit/Reference/SCNLayer_Class/Reference/SCNLayer.html</File>
 		</Class>
+        <Class name="SCNLevelOfDetail">
+            <File>SceneKit/Reference/SCNLevelOfDetail_Class/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["LevelOfDetailWithGeometryScreenSpaceRadius"].ReturnType="SCNLevelOfDetail"]]></Change>
+                <Change><![CDATA[Methods["LevelOfDetailWithGeometryWorldSpaceDistance"].ReturnType="SCNLevelOfDetail"]]></Change>
+            </Patch>
+        </Class>
 		<Class name="SCNLight">
 			<File>SceneKit/Reference/SCNLight_Class/Reference/SCNLight.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["Light"].Type="SCNLight"]]></Change>
+            </Patch>
 		</Class>
+        <Class name="SCNLookAtConstraint">
+            <File>SceneKit/Reference/SCNLookAtConstraint_Class/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["LookAtConstraintWithTarget"].ReturnType="SCNLookAtConstraint"]]></Change>
+            </Patch>
+        </Class>
 		<Class name="SCNMaterial">
 			<File>SceneKit/Reference/SCNMaterial_Class/Reference/SCNMaterial.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef enum : NSInteger]]></Source>
+                    <With><![CDATA[typedef enum]]></With>
+                </Replace>
+            </Patch>
 			<Patch type="Model">
-				<Change><![CDATA[Enumerations["SCNCullMode"].BaseType="int"]]></Change>
-				<Change><![CDATA[Enumerations["SCNTransparencyMode"].BaseType="int"]]></Change>
+                <Change><![CDATA[Properties["Material"].Type="SCNMaterial"]]></Change>
+				<Change><![CDATA[Enumerations["SCNCullMode"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["SCNTransparencyMode"].BaseType="NSInteger"]]></Change>
 			</Patch>
 		</Class>
 		<Class name="SCNMaterialProperty">
 			<File>SceneKit/Reference/SCNMaterialProperty_Class/Reference/SCNMaterialProperty.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef enum : NSInteger]]></Source>
+                    <With><![CDATA[typedef enum]]></With>
+                </Replace>
+            </Patch>
 			<Patch type="Model">
-				<Change><![CDATA[Enumerations["SCNFilterMode"].BaseType="int"]]></Change>
-				<Change><![CDATA[Enumerations["SCNWrapMode"].BaseType="int"]]></Change>
+                <Change><![CDATA[Methods["MaterialPropertyWithContents"].ReturnType="SCNMaterialProperty"]]></Change>
+                <Change><![CDATA[Enumerations["SCNFilterMode"].BaseType="NSInteger"]]></Change>
+                <Change><![CDATA[Enumerations["SCNFilterMode"].Values["SCNNoFiltering"].Value="0"]]></Change>
+                <Change><![CDATA[Enumerations["SCNFilterMode"].Values["SCNNearestFiltering"].Value="1"]]></Change>
+                <Change><![CDATA[Enumerations["SCNFilterMode"].Values["SCNLinearFiltering"].Value="2"]]></Change>
+				<Change><![CDATA[Enumerations["SCNWrapMode"].BaseType="NSInteger"]]></Change>
+                <Change><![CDATA[Enumerations["SCNWrapMode"].Values["SCNClamp"].Value="1"]]></Change>
+                <Change><![CDATA[Enumerations["SCNWrapMode"].Values["SCNRepeat"].Value="2"]]></Change>
+                <Change><![CDATA[Enumerations["SCNWrapMode"].Values["SCNClampToBorder"].Value="3"]]></Change>
+                <Change><![CDATA[Enumerations["SCNWrapMode"].Values["SCNMirror"].Value="4"]]></Change>
 			</Patch>
 		</Class>
+        <Class name="SCNMorpher">
+            <File>SceneKit/Reference/SCNMorpher_Class/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef enum : NSInteger]]></Source>
+                    <With><![CDATA[typedef enum]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["SCNMorpherCalculationMode"].BaseType="NSInteger"]]></Change>
+            </Patch>
+        </Class>
 		<Class name="SCNNode">
 			<File>SceneKit/Reference/SCNNode_Class/Reference/SCNNode.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["Node"].Type="SCNNode"]]></Change>
+            </Patch>
 		</Class>
 		<Class name="SCNPlane">
 			<File>SceneKit/Reference/SCNPlane_Class/Reference/SCNPlane.html</File>
@@ -104,16 +184,44 @@
 		</Class>l
 		<Class name="SCNScene">
 			<File>SceneKit/Reference/SCNScene_Class/Reference/SCNScene.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["SceneNamed"].ReturnType="SCNScene"]]></Change>
+                <Change><![CDATA[Methods["SceneWithURLOptionsError"].ReturnType="SCNScene"]]></Change>
+                <Change><![CDATA[Properties["Scene"].Type="SCNScene"]]></Change>
+            </Patch>
 		</Class>
 		<Class name="SCNSceneSource">
 			<File>SceneKit/Reference/SCNSceneSource_Class/Reference/SCNSceneSource.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef enum : NSInteger]]></Source>
+                    <With><![CDATA[typedef enum]]></With>
+                </Replace>
+            </Patch>
 			<Patch type="Model">
 				<Change><![CDATA[Methods["SceneSourceWithDataOptions"].ReturnType="SCNSceneSource"]]></Change>
 				<Change><![CDATA[Methods["SceneSourceWithURLOptions"].ReturnType="SCNSceneSource"]]></Change>
-				<Change><![CDATA[Enumerations["ConsistencyErrorCodes"].BaseType="int"]]></Change>
-				<Change><![CDATA[Enumerations["SCNSceneSourceStatus"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["ConsistencyErrorCodes"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["Scene_File_Consistency_Check_Error_Codes"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["SCNSceneSourceStatus"].BaseType="NSInteger"]]></Change>
 			</Patch>
 		</Class>
+        <Class name="SCNShape">
+            <File>SceneKit/Reference/SCNShape_Class/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef enum : NSInteger]]></Source>
+                    <With><![CDATA[typedef enum]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["ShapeWithPathExtrusionDepth"].ReturnType="SCNShape"]]></Change>
+                <Change><![CDATA[Enumerations["SCNChamferMode"].BaseType="NSInteger"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="SCNSkinner">
+            <File>SceneKit/Reference/SCNSkinner_Class/Reference/Reference.html</File>
+        </Class>
 		<Class name="SCNSphere">
 			<File>SceneKit/Reference/SCNSphere_Class/Reference/SCNSphere.html</File>
 			<Patch type="Model">
@@ -167,6 +275,12 @@
 				</Replace>
 			</Patch>
 		</Class>
+        <Class name="SCNTransformConstraint">
+            <File>SceneKit/Reference/SCNTransformConstraint_Class/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["TransformConstraintInWorldSpaceWithBlock"].ReturnType="SCNTransformConstraint"]]></Change>
+            </Patch>
+        </Class>
 		<Class name="SCNTube">
 			<File>SceneKit/Reference/SCNTube_Class/Reference/SCNTube.html</File>
 			<Patch type="Model">
@@ -194,9 +308,12 @@
 				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
 			</Patch>
 		</Protocol>
-		<Protocol name="SCNSceneRenderer">
-			<File>SceneKit/Reference/SCNSceneRenderer_Protocol/Reference/SCNSceneRenderer.html</File>
-		</Protocol>
+        <Protocol name="SCNSceneExportDelegate">
+            <File>SceneKit/Reference/SCNSceneExportDelegate_Protocol/Reference/Reference.html</File>
+        </Protocol>
+        <Protocol name="SCNSceneRenderer">
+            <File>SceneKit/Reference/SCNSceneRenderer_Protocol/Reference/SCNSceneRenderer.html</File>
+        </Protocol>
 		<Protocol name="SCNSceneRendererDelegate">
 			<File>SceneKit/Reference/SCNSceneRendererDelegate_Protocol/Reference/SCNSceneRendererDelegate.html</File>
 			<Patch type="Model">
@@ -204,6 +321,9 @@
 				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
 			</Patch>
 		</Protocol>
+        <Protocol name="SCNShadable">
+            <File>SceneKit/Reference/SCNShadable_Protocol/Reference/Reference.html</File>
+        </Protocol>
 	</Protocols>
 	<Structures>
 		<Structure name="SCNVector3" />

@@ -46,6 +46,7 @@
     <Mapping type="Boolean">bool</Mapping>
     <Mapping type="Byte *">IntPtr</Mapping>
     <Mapping type="ByteCount">uint</Mapping>
+    <Mapping type="CATransform3D (^)(SCNNode *node, CATransform3Dtransform)"><![CDATA[block:Func<SCNNode, CATransform3D>]]></Mapping>
     <Mapping type="CFAbsoluteTime *">ref:double</Mapping>
     <Mapping type="CFAbsoluteTime">double</Mapping>
     <Mapping type="CFAllocatorContext *">IntPtr</Mapping>
