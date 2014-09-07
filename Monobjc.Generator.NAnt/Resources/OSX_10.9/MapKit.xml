@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="MapKit" usings="Foundation,AppKit,ApplicationServices,CoreLocation" assembly="Monobjc.MapKit" source="DocSet">
+	<Types>
+		<Type name="MapKitFramework.Functions">
+			<File>MapKit/Reference/MapKitFunctionsReference/Reference/reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[UIKIT_STATIC_INLINE]]></Source>
+                    <With><![CDATA[]]></With>
+                </Replace>
+            </Patch>
+		</Type>
+		<Type name="MapKitFramework.DataTypes">
+			<File>MapKit/Reference/MapKitDataTypesReference/Reference/reference.html</File>
+		</Type>
+		<Type name="MapKitFramework.Constants">
+			<File>MapKit/Reference/MapKitConstantsReference/Reference/reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["MKErrorCode"].BaseType="NSUInteger"]]></Change>
+            </Patch>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="MKAnnotationView">
+			<File>MapKit/Reference/MKAnnotationView_Class/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[UIImage]]></Source>
+                    <With><![CDATA[NSImage]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["MKAnnotationViewDragState"].BaseType="NSUInteger"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="MKCircle">
+			<File>MapKit/Reference/MKCircle_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKCircleRenderer">
+			<File>MapKit/Reference/MKCircleRenderer_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKDirections">
+			<File>MapKit/Reference/MKDirections_class/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["InitWithRequest"].ReturnType="MKDirections"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="MKDirectionsRequest">
+			<File>MapKit/Reference/MKDirectionsRequest_class/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["MKDirectionsTransportType"].Values["MKDirectionsTransportTypeAny"].Value="UInt32.MaxValue"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="MKDirectionsResponse">
+			<File>MapKit/Reference/MKDirectionsResponse_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKETAResponse">
+			<File>MapKit/Reference/MKETAResponse_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKGeodesicPolyline">
+			<File>MapKit/Reference/MKGeodesicPolyline_class/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["PolylineWithCoordinatesCount"].ReturnType="MKGeodesicPolyline"]]></Change>
+                <Change><![CDATA[Methods["PolylineWithPointsCount"].ReturnType="MKGeodesicPolyline"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="MKLocalSearch">
+			<File>MapKit/Reference/MKLocalSearch/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKLocalSearchRequest">
+			<File>MapKit/Reference/MKLocalSearchRequest_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKLocalSearchResponse">
+			<File>MapKit/Reference/MKLocalSearchResponse_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKMapCamera">
+			<File>MapKit/Reference/MKMapCamera_class/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["CameraLookingAtCenterCoordinateFromEyeCoordinateEyeAltitude"].ReturnType="MKMapCamera"]]></Change>
+                <Change><![CDATA[Properties["Camera"].Type="MKMapCamera"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="MKMapItem">
+			<File>MapKit/Reference/MKMapItem_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKMapSnapshot">
+			<File>MapKit/Reference/MKMapSnapshot_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKMapSnapshotOptions">
+			<File>MapKit/Reference/MKMapSnapshotOptions_class/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[MKMapRect</a> rect</div>]]></Source>
+                    <With><![CDATA[MKMapRect</a> mapRect</div>]]></With>
+                </Replace>
+            </Patch>
+		</Class>
+		<Class name="MKMapSnapshotter">
+			<File>MapKit/Reference/MKMapSnapshotter_class/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["InitWithOptions"].ReturnType="MKMapSnapshotter"]]></Change>
+                <Change><![CDATA[Methods["StartWithCompletionHandler"].ReturnType="MKMapSnapshotter"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="MKMapView">
+			<File>MapKit/Reference/MKMapView_Class/MKMapView/MKMapView.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[UIView]]></Source>
+                    <With><![CDATA[NSView]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[UIEdgeInsets]]></Source>
+                    <With><![CDATA[NSEdgeInsets]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[typedef enum : NSUInteger]]></Source>
+                    <With><![CDATA[typedef enum]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[typedef enum : NSInteger]]></Source>
+                    <With><![CDATA[typedef enum]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["MKMapType"].BaseType="NSUInteger"]]></Change>
+                <Change><![CDATA[Enumerations["MKOverlayLevel"].BaseType="NSInteger"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="MKMultiPoint">
+			<File>MapKit/Reference/MKMultiPoint_class/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["Points"].Type="IntPtr"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="MKOverlayPathRenderer">
+			<File>MapKit/Reference/MKOverlayPathRenderer_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKOverlayRenderer">
+			<File>MapKit/Reference/MKOverlayRenderer_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKPinAnnotationView">
+			<File>MapKit/Reference/MKPinAnnotationView_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKPlacemark">
+			<File>MapKit/Reference/MKPlacemark_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKPointAnnotation">
+			<File>MapKit/Reference/MKPointAnnotation_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKPolygon">
+			<File>MapKit/Reference/MKPolygon_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKPolygonRenderer">
+			<File>MapKit/Reference/MKPolygonRenderer_clas/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKPolyline">
+			<File>MapKit/Reference/MKPolyline_class/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["PolylineWithCoordinatesCount"].ReturnType="MKPolyline"]]></Change>
+                <Change><![CDATA[Methods["PolylineWithPointsCount"].ReturnType="MKPolyline"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="MKPolylineRenderer">
+			<File>MapKit/Reference/MKPolylineRenderer_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKRoute">
+			<File>MapKit/Reference/MKRoute_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKRouteStep">
+			<File>MapKit/Reference/MKRouteStep_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKShape">
+			<File>MapKit/Reference/MKShape_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKTileOverlay">
+			<File>MapKit/Reference/MKTileOverlay_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKTileOverlayRenderer">
+			<File>MapKit/Reference/MKTileOverlayRenderer_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="MKUserLocation">
+			<File>MapKit/Reference/MKUserLocation_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSValue_MapKitAdditions">
+			<File>MapKit/Reference/NSValue_MapKit_additions/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="NSValue"]]></Change>
+            </Patch>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="MKAnnotation">
+			<File>MapKit/Reference/MKAnnotation_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="MKMapViewDelegate">
+			<File>MapKit/Reference/MKMapViewDelegate_Protocol/MKMapViewDelegate/MKMapViewDelegate.html</File>
+		</Protocol>
+		<Protocol name="MKOverlay">
+			<File>MapKit/Reference/MKOverlay_protocol/Reference/Reference.html</File>
+		</Protocol>
+	</Protocols>
+	<Structures>
+        <Structure name="MKCoordinateRegion" />
+        <Structure name="MKCoordinateSpan" />
+        <Structure name="MKMapPoint" />
+        <Structure name="MKMapRect" />
+        <Structure name="MKMapSize" />
+        <Structure name="MKTileOverlayPath" />
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

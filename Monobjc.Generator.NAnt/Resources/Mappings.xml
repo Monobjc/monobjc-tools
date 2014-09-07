@@ -189,6 +189,7 @@
     <Mapping type="CLGeocodeCompletionHandler"><![CDATA[block:CLGeocodeCompletionHandler]]></Mapping>
     <Mapping type="CLHeadingComponentValue">double</Mapping>
     <Mapping type="CLLocationAccuracy">double</Mapping>
+    <Mapping type="CLLocationCoordinate2D *">ref:CLLocationCoordinate2D</Mapping>
     <Mapping type="CLLocationDegrees">double</Mapping>
     <Mapping type="CLLocationDirection">double</Mapping>
     <Mapping type="CLLocationDistance">double</Mapping>
@@ -355,6 +356,10 @@
     <Mapping type="MIDITimeStamp">ulong</Mapping>
     <Mapping type="MIDIUniqueID">int</Mapping>
     <Mapping type="Media">IntPtr</Mapping>
+    <Mapping type="MKZoomScale">CGFloat</Mapping>
+    <Mapping type="MKMapPoint *">ref:MKMapPoint</Mapping>
+    <Mapping type="MKMapRect *">ref:MKMapRect</Mapping>
+    <Mapping type="MKMapSize *">ref:MKMapSize</Mapping>
     <Mapping type="Movie">IntPtr</Mapping>
     <Mapping type="MovieController">IntPtr</Mapping>
     <Mapping type="MTAudioProcessingTapRef">IntPtr</Mapping>
@@ -437,6 +442,7 @@
     <Mapping type="SecStaticCodeRef">IntPtr</Mapping>
     <Mapping type="SecTrustRef">IntPtr</Mapping>
     <Mapping type="SecTrustedApplicationRef">IntPtr</Mapping>
+    <Mapping type="SKColor *">NSColor</Mapping>
     <Mapping type="TISInputSourceRef">IntPtr</Mapping>
     <Mapping type="Track">IntPtr</Mapping>
     <Mapping type="UInt16">ushort</Mapping>
@@ -556,6 +562,7 @@
     <Mapping type="void (^)(NSArray *items)"><![CDATA[block:Action<NSArray>]]></Mapping>
     <Mapping type="void (^)(NSArray *categories, NSArray *titles, NSError *error)"><![CDATA[block:Action<NSArray, NSArray, NSError>]]></Mapping>
     <Mapping type="void (^)(NSData *matchData, NSError *error)"><![CDATA[block:Action<NSData, NSError>]]></Mapping>
+    <Mapping type="void (^)(NSData *tileData, NSError *error)"><![CDATA[block:Action<NSData, NSError>]]></Mapping>
     <Mapping type="void (^)(NSDictionary *attrs, NSRangerange, BOOL *stop)"><![CDATA[block:Action_NSDictionary_NSRange_out_bool]]></Mapping>
     <Mapping type="void (^)(NSDictionary *attrs, NSRange range,  BOOL *stop)"><![CDATA[block:Action_NSDictionary_NSRange_out_bool]]></Mapping>
     <Mapping type="void (^)(NSDictionary *attrs, NSRange range, BOOL *stop)"><![CDATA[block:Action_NSDictionary_NSRange_out_bool]]></Mapping>
@@ -600,6 +607,10 @@
     <Mapping type="void (^)(NSURL *newURL1, NSURL *newURL2)"><![CDATA[block:Action<NSURL, NSURL>]]></Mapping>
     <Mapping type="void (^)(NSURLResponse*, NSData*, NSError*)"><![CDATA[block:Action<NSURLResponse, NSData, NSError>]]></Mapping>
     <Mapping type="void (^)(NSWindow *, NSError *)"><![CDATA[block:Action<NSWindow, NSError>]]></Mapping>
+    <Mapping type="void (^)(SKNode *node, BOOL *stop)"><![CDATA[block:Action_SKNode_out_bool]]></Mapping>
+    <Mapping type="void (^)(SKNode *node, CGFloatelapsedTime)"><![CDATA[block:Action<SKNode, CGFloat>]]></Mapping>
+    <Mapping type="void (^)(SKPhysicsBody *body, BOOL *stop)"><![CDATA[block:Action_SKPhysicsBody_out_bool]]></Mapping>
+    <Mapping type="void (^)(SKPhysicsBody *body, CGPointpoint, CGVectornormal, BOOL *stop)"><![CDATA[block:Action_SKPhysicsBody_CGPoint_CGVector_out_bool]]></Mapping>
     <Mapping type="void (^)(id key, id obj, BOOL *stop)"><![CDATA[block:Action_Id_Id_out_bool]]></Mapping>
     <Mapping type="void (^)(id obj, BOOL *stop)"><![CDATA[block:Action_Id_out_bool]]></Mapping>
     <Mapping type="void (^)(id obj, NSUIntegeridx, BOOL *stop)"><![CDATA[block:Action_Id_NSUInteger_out_bool]]></Mapping>

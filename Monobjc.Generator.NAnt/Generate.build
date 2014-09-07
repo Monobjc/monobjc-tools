@@ -52,6 +52,8 @@
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/GLKit.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/InputMethodKit.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/InstantMessage.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/MapKit.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/MediaLibrary.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/QTKit.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/SceneKit.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/ScriptingBridge.xml" />
@@ -59,6 +61,7 @@
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/SecurityFoundation.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/SecurityInterface.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/Social.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/SpriteKit.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/StoreKit.xml" />
 		<framework descriptor="${data.dir}/Resources/OSX_10.9/WebKit.xml" />
 	</framework-set>

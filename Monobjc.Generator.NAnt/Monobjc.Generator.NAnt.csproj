@@ -98,6 +98,9 @@
     <Folder Include="Files\OSX_10.8\CoreMIDI\Model\S\" />
     <Folder Include="Files\OSX_10.9\" />
     <Folder Include="Files\OSX_10.9\AVFoundation\Model\S\" />
+    <Folder Include="Files\OSX_10.9\MapKit\" />
+    <Folder Include="Files\OSX_10.9\MapKit\Model\" />
+    <Folder Include="Files\OSX_10.9\MapKit\Model\S\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Generate.build">
@@ -946,6 +949,36 @@
     <Content Include="Resources\OSX_10.9\GameController.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\OSX_10.9\MapKit.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.9\MediaLibrary.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\OSX_10.9\SpriteKit.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.9\MapKit\Model\S\MKCoordinateRegion.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.9\MapKit\Model\S\MKCoordinateSpan.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.9\MapKit\Model\S\MKMapPoint.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.9\MapKit\Model\S\MKMapRect.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.9\MapKit\Model\S\MKMapSize.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.9\MapKit\Model\S\MKTileOverlayPath.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.9\ApplicationServices\Model\S\CGVector.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\doxygen.cfg" />
@@ -965,5 +998,10 @@
       <Link>NAnt.exe.config</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Files\OSX_10.9\ApplicationServices\Model\S\CGDataConsumerCallbacks.xml" />
+    <None Include="Files\OSX_10.9\ApplicationServices\Model\S\CGDataProviderCallbacks.xml" />
+    <None Include="Files\OSX_10.9\ApplicationServices\Model\S\CGDataProviderDirectAccessCallbacks.xml" />
+    <None Include="Files\OSX_10.9\ApplicationServices\Model\S\CGDataProviderDirectCallbacks.xml" />
+    <None Include="Files\OSX_10.9\ApplicationServices\Model\S\CGDataProviderSequentialCallbacks.xml" />
   </ItemGroup>
 </Project>

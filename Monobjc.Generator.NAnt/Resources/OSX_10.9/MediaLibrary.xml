@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="MediaLibrary" usings="Foundation,AppKit" assembly="Monobjc.MediaLibrary" source="DocSet">
+	<Types>
+		<Type name="MediaLibraryFramework.Constants">
+			<File>MediaLibrary/Reference/MediaLibraryConstantsReference/Reference/reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef NS_OPTIONS(NSUInteger,
+   MLMediaSourceType)]]></Source>
+                    <With><![CDATA[typedef enum MLMediaSourceType]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef NS_ENUM(NSUInteger,
+   MLMediaType)]]></Source>
+                    <With><![CDATA[typedef enum MLMediaType]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["MLMediaSourceType"].BaseType="NSUInteger"]]></Change>
+                <Change><![CDATA[Enumerations["MLMediaType"].BaseType="NSUInteger"]]></Change>
+            </Patch>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="MLMediaGroup">
+			<File>MediaLibrary/Reference/MLMediaGroupClassReference/Reference/Reference.html</File>
+		</Class>
+		<Class name="MLMediaLibrary">
+			<File>MediaLibrary/Reference/MLMediaLibraryClassReference/Reference/Reference.html</File>
+		</Class>
+		<Class name="MLMediaObject">
+			<File>MediaLibrary/Reference/MLMediaObjectClassReference/Reference/Reference.html</File>
+		</Class>
+		<Class name="MLMediaSource">
+			<File>MediaLibrary/Reference/MLMediaSourceClassReference/Reference/Reference.html</File>
+		</Class>
+	</Classes>
+	<Protocols>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

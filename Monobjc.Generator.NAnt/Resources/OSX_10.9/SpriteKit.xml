@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="SpriteKit" usings="Foundation,AppKit,ApplicationServices,AVFoundation,QuartzCore,Kernel" assembly="Monobjc.SpriteKit" source="DocSet">
+	<Types>
+		<Type name="SpriteKitFramework.Functions">
+			<File>SpriteKit/Reference/SpriteKitFunctionReference/Reference/reference.html</File>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="NSEvent_SpriteKitAdditions">
+			<File>SpriteKit/Reference/NSEvent_SpriteKit_Additions/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[AdditionFor="NSEvent"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="SKAction">
+			<File>SpriteKit/Reference/SKAction_Ref/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef SKActionTimingMode : NSInteger]]></Source>
+                    <With><![CDATA[typedef enum SKActionTimingMode]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["SKActionTimingMode"].BaseType="NSInteger"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="SKCropNode">
+			<File>SpriteKit/Reference/SKCropNode_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="SKEffectNode">
+			<File>SpriteKit/Reference/SKEffectNode_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="SKEmitterNode">
+			<File>SpriteKit/Reference/SKEmitterNode_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="SKKeyframeSequence">
+			<File>SpriteKit/Reference/SKKeyframeSequence_Ref/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef NS_ENUM(NSInteger,
+   SKInterpolationMode)]]></Source>
+                    <With><![CDATA[typedef enum SKInterpolationMode]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[typedef NS_ENUM(NSInteger,
+   SKRepeatMode)]]></Source>
+                    <With><![CDATA[typedef enum SKRepeatMode]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["InitWithCapacity"].ReturnType="SKKeyframeSequence"]]></Change>
+                <Change><![CDATA[Methods["InitWithKeyframeValuesTimes"].ReturnType="SKKeyframeSequence"]]></Change>
+                <Change><![CDATA[Enumerations["SKInterpolationMode"].BaseType="NSInteger"]]></Change>
+                <Change><![CDATA[Enumerations["SKRepeatMode"].BaseType="NSInteger"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="SKLabelNode">
+			<File>SpriteKit/Reference/SKLabelNode_Ref/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef NS_ENUM(NSInteger,
+   SKLabelHorizontalAlignmentMode)]]></Source>
+                    <With><![CDATA[typedef enum SKLabelHorizontalAlignmentMode]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[typedef NS_ENUM(NSInteger,
+   SKLabelVerticalAlignmentMode)]]></Source>
+                    <With><![CDATA[typedef enum SKLabelVerticalAlignmentMode]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["LabelNodeWithFontNamed"].ReturnType="SKLabelNode"]]></Change>
+                <Change><![CDATA[Methods["InitWithFontNamed"].ReturnType="SKLabelNode"]]></Change>
+                <Change><![CDATA[Enumerations["SKLabelHorizontalAlignmentMode"].BaseType="NSInteger"]]></Change>
+                <Change><![CDATA[Enumerations["SKLabelVerticalAlignmentMode"].BaseType="NSInteger"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="SKNode">
+			<File>SpriteKit/Reference/SKNode_Ref/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef NS_ENUM(NSInteger,
+   SKBlendMode)]]></Source>
+                    <With><![CDATA[typedef enum SKBlendMode]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["Node"].Type="SKNode"]]></Change>
+                <Change><![CDATA[Enumerations["SKBlendMode"].BaseType="NSInteger"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="SKPhysicsBody">
+			<File>SpriteKit/Reference/SKPhysicsBody_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="SKPhysicsContact">
+			<File>SpriteKit/Reference/SKPhysicsContact/Reference/Reference.html</File>
+		</Class>
+		<Class name="SKPhysicsJoint">
+			<File>SpriteKit/Reference/SKPhysicsJoint_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="SKPhysicsJointFixed">
+			<File>SpriteKit/Reference/SKPhysicsJointFixed_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="SKPhysicsJointLimit">
+			<File>SpriteKit/Reference/SKPhysicsJointLimit/Reference/Reference.html</File>
+		</Class>
+		<Class name="SKPhysicsJointPin">
+			<File>SpriteKit/Reference/SKPhysicsJointPin_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="SKPhysicsJointSliding">
+			<File>SpriteKit/Reference/SKPhysicsJointSliding_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="SKPhysicsJointSpring">
+			<File>SpriteKit/Reference/SKPhysicsJointSpring_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="SKPhysicsWorld">
+			<File>SpriteKit/Reference/SKPhysicsWorld_Ref/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="SKScene">
+			<File>SpriteKit/Reference/SKScene_Ref/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef NS_ENUM(NSInteger,
+   SKSceneScaleMode)]]></Source>
+                    <With><![CDATA[typedef enum SKSceneScaleMode]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["SceneWithSize"].ReturnType="SKScene"]]></Change>
+                <Change><![CDATA[Methods["InitWithSize"].ReturnType="SKScene"]]></Change>
+                <Change><![CDATA[Enumerations["SKSceneScaleMode"].BaseType="NSInteger"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="SKShapeNode">
+			<File>SpriteKit/Reference/SKShapeNode_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="SKSpriteNode">
+			<File>SpriteKit/Reference/SKSpriteNode_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["SpriteNodeWithColorSize"].ReturnType="SKSpriteNode"]]></Change>
+                <Change><![CDATA[Methods["SpriteNodeWithImageNamed"].ReturnType="SKSpriteNode"]]></Change>
+                <Change><![CDATA[Methods["SpriteNodeWithTexture"].ReturnType="SKSpriteNode"]]></Change>
+                <Change><![CDATA[Methods["SpriteNodeWithTextureSize"].ReturnType="SKSpriteNode"]]></Change>
+                <Change><![CDATA[Methods["InitWithColorSize"].ReturnType="SKSpriteNode"]]></Change>
+                <Change><![CDATA[Methods["InitWithImageNamed"].ReturnType="SKSpriteNode"]]></Change>
+                <Change><![CDATA[Methods["InitWithTexture"].ReturnType="SKSpriteNode"]]></Change>
+                <Change><![CDATA[Methods["InitWithTextureColorSize"].ReturnType="SKSpriteNode"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="SKTexture">
+			<File>SpriteKit/Reference/SKTexture_Ref/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef NS_ENUM(NSInteger,
+   SKTextureFilteringMode)]]></Source>
+                    <With><![CDATA[typedef enum SKTextureFilteringMode]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["SKTextureFilteringMode"].BaseType="NSInteger"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="SKTextureAtlas">
+			<File>SpriteKit/Reference/SKTextureAtlas/Reference/Reference.html</File>
+		</Class>
+		<Class name="SKTransition">
+			<File>SpriteKit/Reference/SKTransition_Ref/Introduction/Introduction.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef NS_ENUM(NSInteger,
+   SKTransitionDirection)]]></Source>
+                    <With><![CDATA[typedef enum SKTransitionDirection]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["SKTransitionDirection"].BaseType="NSInteger"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="SKVideoNode">
+			<File>SpriteKit/Reference/SKVideoNode/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["InitWithAVPlayer"].ReturnType="SKVideoNode"]]></Change>
+                <Change><![CDATA[Methods["InitWithVideoFileNamed"].ReturnType="SKVideoNode"]]></Change>
+                <Change><![CDATA[Methods["InitWithVideoURL"].ReturnType="SKVideoNode"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="SKView">
+			<File>SpriteKit/Reference/SKView/Reference/Reference.html</File>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="SKPhysicsContactDelegate">
+			<File>SpriteKit/Reference/SKPhysicsContactDelegate_Ref/Reference/Reference.html</File>
+		</Protocol>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>
