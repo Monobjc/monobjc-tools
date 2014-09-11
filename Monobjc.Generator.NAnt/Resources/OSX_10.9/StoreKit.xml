@@ -56,6 +56,10 @@
 		<Class name="SKProductsResponse">
 			<File>StoreKit/Reference/SKProductsResponse/Reference/Reference.html</File>
 		</Class>
+        <!-- Not yet published for OS X -->
+        <Class name="SKReceiptRefreshRequest">
+            <File>NYP</File>
+        </Class>
 		<Class name="SKRequest">
 			<File>StoreKit/Reference/SKRequest/Reference/Reference.html</File>
 		</Class>

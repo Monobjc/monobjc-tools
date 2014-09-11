@@ -197,6 +197,10 @@
 				<Change><![CDATA[Functions["CTRunGetTypographicBounds"].Parameters["leading"].IsOut=true]]></Change>
 			</Patch>
 		</Type>
+        <!-- Not yet published for OS X -->
+        <Type name="CTRunDelegate">
+            <File>NYP</File>
+        </Type>
 		<Type name="CTTextTab">
 			<File>Carbon/Reference/CTTextTabRef/Reference/reference.html</File>
 			<Patch type="Model">

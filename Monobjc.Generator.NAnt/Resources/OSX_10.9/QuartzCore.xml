@@ -178,6 +178,10 @@ enum
 				<Change><![CDATA[Properties["LayoutManager"].Type="CAConstraintLayoutManager"]]></Change>
 			</Patch>
 		</Class>
+        <!-- Not yet published for OS X -->
+        <Class name="CAEmitterBehavior">
+            <File>NYP</File>
+        </Class>
 		<Class name="CAEmitterCell">
 			<File>GraphicsImaging/Reference/CAEmitterCell_class/Reference/Reference.html</File>
 			<Patch type="Model">

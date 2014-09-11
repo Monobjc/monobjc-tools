@@ -69,9 +69,13 @@
 		<Class name="ABPerson">
 			<File>UserExperience/Reference/AddressBook/Classes/ABPerson_Class/Reference/Reference.html</File>
 		</Class>
-		<Class name="ABPersonView">
-			<File>AddressBook/Reference/ABPersonView_Class/Reference/Reference.html</File>
-		</Class>
+        <!-- Not yet published for OS X -->
+        <Class name="ABPersonPicker">
+            <File>NYP</File>
+        </Class>
+        <Class name="ABPersonView">
+            <File>AddressBook/Reference/ABPersonView_Class/Reference/Reference.html</File>
+        </Class>
 		<Class name="ABRecord">
 			<File>UserExperience/Reference/AddressBook/Classes/ABRecord_Class/Reference/Reference.html</File>
 		</Class>
@@ -86,6 +90,10 @@
 		<Protocol name="ABImageClient">
 			<File>UserExperience/Reference/AddressBook/Protocols/ABImageClient_Protocol/Reference/Reference.html</File>
 		</Protocol>
+        <!-- Not yet published for OS X -->
+        <Protocol name="ABPersonPickerDelegate">
+            <File>NYP</File>
+        </Protocol>
 	</Protocols>
 	<Structures>
 	</Structures>

@@ -158,6 +158,9 @@
 				<Change><![CDATA[Properties["TimingFunction"].MinAvailability="OS X v10.7"]]></Change>
 			</Patch>
 		</Class>
+        <Class name="NSAppearance">
+            <File>AppKit/Reference/NSAppearance_Class/Reference/Reference.html</File>
+        </Class>
 		<Class name="NSAppleScript_AppKitAdditions">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSAppleScript_AppKitAdditions/Reference/Reference.html</File>
 			<Patch type="Model">
@@ -1156,6 +1159,9 @@
 				</Replace>
 			</Patch>
 		</Class>
+        <Class name="NSMediaLibraryBrowserController">
+            <File>AppKit/Reference/NSMediaLibraryBrowserController_Class/Reference/Reference.html</File>
+        </Class>
 		<Class name="NSMenu">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSMenu_Class/Reference/Reference.html</File>
 			<Patch type="Html">
@@ -1364,6 +1370,12 @@
 				<Change><![CDATA[Methods["ImageRepWithData"].ReturnType="NSPDFImageRep"]]></Change>
 			</Patch>
 		</Class>
+        <Class name="NSPDFInfo">
+            <File>AppKit/Reference/NSPDFInfo_Class/Reference/Reference.html</File>
+        </Class>
+        <Class name="NSPDFPanel">
+            <File>AppKit/Reference/NSPDFPanel_Class/Reference/Reference.html</File>
+        </Class>
 		<Class name="NSPersistentDocument">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSPersistentDocument_Class/Reference/Reference.html</File>
 		</Class>
@@ -1671,6 +1683,21 @@
 				<Change><![CDATA[AdditionFor="NSSplitView"]]></Change>
 			</Patch>
 		</Class>
+        <Class name="NSStackView">
+            <File>AppKit/Reference/NSStackView_Class/Chapters/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef enum : NSInteger]]></Source>
+                    <With><![CDATA[typedef enum]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["NSUserInterfaceLayoutOrientation"].BaseType="NSInteger"]]></Change>
+                <Change><![CDATA[Enumerations["NSStackViewGravity"].BaseType="NSInteger"]]></Change>
+                <Change><![CDATA[Enumerations["NSStackViewVisibilityPriority"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["NSStackViewVisibilityPriority"].MixedType="float,float"]]></Change>
+            </Patch>
+        </Class>
 		<Class name="NSStatusBar">
 			<File>Cocoa/Reference/ApplicationKit/Classes/NSStatusBar_Class/Reference/Reference.html</File>
 		</Class>
@@ -2327,6 +2354,9 @@ enum {]]></Source>
 			<File>Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference.html</File>
 		</Protocol>
 		-->
+        <Protocol name="NSLayerDelegateContentsScaleUpdating">
+            <File>AppKit/Reference/NSLayerDelegateContentsScaleUpdatingProtocol/Reference/Reference.html</File>
+        </Protocol>
 		<Protocol name="NSLayoutManagerDelegate">
 			<File>Cocoa/Reference/NSLayoutManagerDelegate_Protocol/Reference/Reference.html</File>
 			<Patch type="Model">
@@ -2572,9 +2602,12 @@ enum {]]></Source>
 				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
 			</Patch>
 		</Protocol>
-		<Protocol name="NSServicesRequests">
-			<File>Cocoa/Reference/ApplicationKit/Protocols/NSServicesRequests_Protocol/Reference/Reference.html</File>
-		</Protocol>
+        <Protocol name="NSServicesMenuRequestor">
+            <File>Cocoa/Reference/ApplicationKit/Protocols/NSServicesRequests_Protocol/Reference/Reference.html</File>
+        </Protocol>
+        <Protocol name="NSServicesRequests">
+            <File>Cocoa/Reference/ApplicationKit/Protocols/NSServicesRequests_Protocol/Reference/Reference.html</File>
+        </Protocol>
 		<Protocol name="NSSharingServiceDelegate">
 			<File>AppKit/Reference/NSSharingServiceDelegate_Protocol/Reference/Reference.html</File>
 			<Patch type="Model">
@@ -2621,6 +2654,9 @@ enum {]]></Source>
 				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
 			</Patch>
 		</Protocol>
+        <Protocol name="NSStackViewDelegate">
+            <File>AppKit/Reference/NSStackViewDelegate_Protocol/Chapters/Reference.html</File>
+        </Protocol>
 		<Protocol name="NSTableViewDataSource">
 			<File>Cocoa/Reference/ApplicationKit/Protocols/NSTableDataSource_Protocol/Reference/Reference.html</File>
 		</Protocol>
@@ -2734,6 +2770,9 @@ enum {]]></Source>
 		<Protocol name="NSUserInterfaceItemIdentification">
 			<File>Cocoa/Reference/NSUserInterfaceItemIdentification_Protocol/Introduction/Introduction.html</File>
 		</Protocol>
+        <Protocol name="NSUserInterfaceItemSearchDataSource">
+            <File>Cocoa/Reference/NSUserInterfaceItemSearchDataSource_Protocol/Reference/Reference.html</File>
+        </Protocol>
 		<Protocol name="NSUserInterfaceItemSearching">
 			<File>AppKit/Reference/NSUserInterfaceItemSearching_Protocol/Reference/Reference.html</File>
 		</Protocol>
@@ -2760,7 +2799,9 @@ enum {]]></Source>
 	<Structures>
 	</Structures>
 	<Enumerations>
-		<Enumeration name="NSTrackingAreaOptions">
-		</Enumeration>
+        <Enumeration name="NSPaperOrientation">
+        </Enumeration>
+        <Enumeration name="NSTrackingAreaOptions">
+        </Enumeration>
 	</Enumerations>
 </Framework>

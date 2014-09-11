@@ -271,6 +271,23 @@
 				<Change><![CDATA[Methods["LayerWithMovie"].ReturnType="QTMovieLayer"]]></Change>
 			</Patch>
 		</Class>
+        <Class name="QTMovieModernizer">
+            <File>QTKit/Reference/QTMovieModernizer_Class/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[enum {     QTMovieModernizerStatusUnknown]]></Source>
+                    <With><![CDATA[typedef enum QTMovieModernizerStatus {     QTMovieModernizerStatusUnknown]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[typedef NSInteger,
+   QTMovieModernizerStatus;]]></Source>
+                    <With><![CDATA[]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["QTMovieModernizerStatus"].BaseType="NSInteger"]]></Change>
+            </Patch>
+        </Class>
 		<Class name="QTMovieView">
 			<File>QuickTime/Reference/QTKitFramework/Classes/QTMovieView_Class/Reference/Reference.html</File>
 			<Patch type="Model">

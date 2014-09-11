@@ -576,6 +576,7 @@
     <Mapping type="void (^)(NSEvent*)"><![CDATA[block:Action<NSEvent>]]></Mapping>
     <Mapping type="void (^)(NSImage *image, NSError *error)"><![CDATA[block:Action<NSImage, NSEvent>]]></Mapping>
     <Mapping type="void (^)(NSImage *photo, NSError *error)"><![CDATA[block:Action<NSImage, NSEvent>]]></Mapping>
+    <Mapping type="void (^)(NSInteger)"><![CDATA[block:Action<NSInteger>]]></Mapping>
     <Mapping type="void (^)(NSIntegeractivity, NSError *error)"><![CDATA[block:Action<NSInteger, NSError>]]></Mapping>
     <Mapping type="void (^)(NSIntegerresult)"><![CDATA[block:Action<NSInteger>]]></Mapping>
     <Mapping type="void (^)(NSInteger result)"><![CDATA[block:Action<NSInteger>]]></Mapping>
@@ -622,6 +623,15 @@
     <Mapping type="void (^)(void *bytes, NSUIntegerlength)"><![CDATA[block:Action<IntPtr,NSUInteger>]]></Mapping>
     <Mapping type="void (^)(void (^activityCompletionHandler)(void))"><![CDATA[block:Action<Action>]]></Mapping>
     <Mapping type="void (^)(void (^fileAccessCompletionHandler)(void))"><![CDATA[block:Action<Action>]]></Mapping>
+    <Mapping type="void (^)(NSArray *dataTasks, NSArray *uploadTasks, NSArray *downloadTasks)"><![CDATA[block:Action<NSArray,NSArray,NSArray>]]></Mapping>
+    <Mapping type="void (^)(NSData *data, NSURLResponse *response, NSError *error)"><![CDATA[block:Action<NSData,NSURLResponse,NSError>]]></Mapping>
+    <Mapping type="void (^)(NSURL *location, NSURLResponse *response, NSError *error)"><![CDATA[block:Action<NSURL,NSURLResponse,NSError>]]></Mapping>
+    <Mapping type="void (^)(NSCachedURLResponse *cachedResponse)"><![CDATA[block:Action<NSCachedURLResponse>]]></Mapping>
+    <Mapping type="void (^)(NSData *resumeData)"><![CDATA[block:Action<NSData>]]></Mapping>
+    <Mapping type="void (^)(NSInputStream *bodyStream)"><![CDATA[block:Action<NSInputStream>]]></Mapping>
+    <Mapping type="void (^)(NSURLRequest *)"><![CDATA[block:Action<NSURLRequest>]]></Mapping>
+    <Mapping type="void (^)(NSURLSessionAuthChallengeDispositiondisposition, NSURLCredential *credential)"><![CDATA[block:Action<NSURLSessionAuthChallengeDisposition,NSURLCredential>]]></Mapping>
+    <Mapping type="void (^)(NSURLSessionResponseDispositiondisposition)"><![CDATA[block:Action<NSURLSessionResponseDisposition>]]></Mapping>
     <Mapping type="void *">IntPtr</Mapping>
     <Mapping type="void **">IntPtr</Mapping>
     <Mapping type="void *__strong">IntPtr</Mapping>

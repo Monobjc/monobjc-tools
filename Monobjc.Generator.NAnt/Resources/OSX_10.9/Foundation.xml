@@ -15,7 +15,6 @@
 					<With><![CDATA[]]></With>
 				</Replace>
 			</Patch>
-			
 			<Patch type="Model">
 				<Change><![CDATA[Enumerations["_NSByteOrder"].Name="NSByteOrder"]]></Change>
 				<Change><![CDATA[Enumerations["NSByteOrder"].BaseType="NSInteger"]]></Change>
@@ -1547,6 +1546,14 @@
                 </Replace>
             </Patch>
 		</Class>
+        <Class name="NSProgress">
+            <File>Foundation/Reference/NSProgress_Class/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Methods["InitWithParentUserInfo"].ReturnType="NSProgress"]]></Change>
+                <Change><![CDATA[Properties["CancellationHandler"].Type="IntPtr"]]></Change>
+                <Change><![CDATA[Properties["PausingHandler"].Type="IntPtr"]]></Change>
+            </Patch>
+        </Class>
 		<Class name="NSPropertyListSerialization">
 			<File>Cocoa/Reference/Foundation/Classes/NSPropertyListSerialization_Class/Reference/Reference.html</File>
 			<Patch type="Html">
@@ -2100,6 +2107,24 @@
 		<Class name="NSURLResponse">
 			<File>Cocoa/Reference/Foundation/Classes/NSURLResponse_Class/Reference/Reference.html</File>
 		</Class>
+        <Class name="NSURLSession">
+            <File>Foundation/Reference/NSURLSession_class/Introduction/Introduction.html</File>
+        </Class>
+        <Class name="NSURLSessionConfiguration">
+            <File>Foundation/Reference/NSURLSessionConfiguration_class/Reference/Reference.html</File>
+        </Class>
+        <Class name="NSURLSessionDataTask">
+            <File>Foundation/Reference/NSURLSessionDataTask_class/Reference/Reference.html</File>
+        </Class>
+        <Class name="NSURLSessionDownloadTask">
+            <File>Foundation/Reference/NSURLSessionDownloadTask_class/Reference/Reference.html</File>
+        </Class>
+        <Class name="NSURLSessionTask">
+            <File>Foundation/Reference/NSURLSessionTask_class/Reference/Reference.html</File>
+        </Class>
+        <Class name="NSURLSessionUploadTask">
+            <File>Foundation/Reference/NSURLSessionUploadTask_class/Reference/Reference.html</File>
+        </Class>
 		<Class name="NSUserAppleScriptTask">
 			<File>Foundation/Reference/NSUserAppleScriptTask_Class/Reference/Reference.html</File>
 		</Class>
@@ -2466,6 +2491,28 @@
 		<Protocol name="NSURLProtocolClient">
 			<File>Cocoa/Reference/Foundation/Protocols/NSURLProtocolClient_Protocol/Reference/Reference.html</File>
 		</Protocol>
+        <Protocol name="NSURLSessionDataDelegate">
+            <File>Foundation/Reference/NSURLSessionDataDelegate_protocol/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef NS_ENUM(NSInteger,
+   NSURLSessionResponseDisposition)]]></Source>
+                    <With><![CDATA[typedef enum NSURLSessionResponseDisposition]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["NSURLSessionResponseDisposition"].BaseType="NSInteger"]]></Change>
+            </Patch>
+        </Protocol>
+        <Protocol name="NSURLSessionDelegate">
+            <File>Foundation/Reference/NSURLSessionDelegate_protocol/Reference/Reference.html</File>
+        </Protocol>
+        <Protocol name="NSURLSessionDownloadDelegate">
+            <File>Foundation/Reference/NSURLSessionDownloadDelegate_protocol/Reference/Reference.html</File>
+        </Protocol>
+        <Protocol name="NSURLSessionTaskDelegate">
+            <File>Foundation/Reference/NSURLSessionTaskDelegate_protocol/Reference/Reference.html</File>
+        </Protocol>
 		<Protocol name="NSUserNotificationCenterDelegate">
 			<File>Foundation/Reference/NSUserNotificationCenterDelegate_Protocol/Reference/Reference.html</File>
 			<Patch type="Model">
@@ -2487,6 +2534,9 @@
 				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
 			</Patch>
 		</Protocol>
+        <Protocol name="NSXPCProxyCreating">
+            <File>Foundation/Reference/NSXPCProxyCreating_reference/translated_content/NSXPCProxyCreating.html</File>
+        </Protocol>
 	</Protocols>
 	<Structures>
 		<Structure name="NSDecimal" />

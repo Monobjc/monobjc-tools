@@ -222,6 +222,9 @@
                 <Change><![CDATA[Enumerations["CMSyncErrorCodes"].BaseType="int"]]></Change>
             </Patch>
         </Type>
+        <Type name="CMTextMarkup">
+            <File>CoreMedia/Reference/CMTextMarkup_Reference/Reference/reference.html</File>
+        </Type>
 		<Type name="CMTime">
 			<File>CoreMedia/Reference/CMTime/Reference/reference.html</File>
 			<Patch type="Model">

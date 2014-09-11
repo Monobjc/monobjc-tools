@@ -61,6 +61,7 @@
     <Compile Include="Tasks\Patch\MarkDeprecationTask.cs" />
     <Compile Include="Tasks\Patch\MergeDeprecatedTask.cs" />
     <Compile Include="Tasks\Diagnostics\GenerateMappingTask.cs" />
+    <Compile Include="Tasks\Diagnostics\CompareDescriptor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tasks\" />
@@ -977,6 +978,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Files\OSX_10.9\ApplicationServices\Model\S\CGVector.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\OSX_10.9\AppKit\Model\E\NSPaperOrientation.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
