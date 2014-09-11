@@ -92,14 +92,17 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
 			}
 
 			// Trim down signature
-			while (signature.IndexOf("  ") != -1) {
-				signature = signature.Replace ("  ", " ");
-			}
+            while (signature.IndexOf("  ") != -1) {
+                signature = signature.Replace ("  ", " ");
+            }
+            while (signature.IndexOf(" (") != -1) {
+                signature = signature.Replace (" (", "(");
+            }
 			functionEntity.Signature = signature;
-			//Console.WriteLine("signature='" + signature + "'");
+			//Console.WriteLine("name='" + name + "' signature='" + signature + "'");
 
 			// Parse signature
-			int pos = signature.IndexOf (name);
+			int pos = signature.IndexOf (name + "(");
 			if (pos == -1) {
 				this.Logger.WriteLine ("MISMATCH between name and declaration: " + name);
 				return null;
@@ -202,7 +205,14 @@ namespace Monobjc.Tools.Generator.Parsers.Xhtml.Cocoa
 			XElement availabilityElement = (from el in functionElement.ElementsAfterSelf ("div")
                                             where (String)el.Attribute ("class") == "api availability"
                                             select el).FirstOrDefault ();
-			String minAvailability = availabilityElement.Elements ("ul").Elements ("li").FirstOrDefault ().TrimAll ();
+            XElement minAvailabilityElement = null;
+            if (availabilityElement != null) {
+                minAvailabilityElement = availabilityElement.Elements("ul").Elements("li").FirstOrDefault();
+            }
+            String minAvailability = "";
+            if (minAvailabilityElement != null) {
+                minAvailability = minAvailabilityElement.TrimAll();
+            }
 			functionEntity.MinAvailability = CommentHelper.ExtractAvailability (minAvailability);
 
 			return functionEntity;

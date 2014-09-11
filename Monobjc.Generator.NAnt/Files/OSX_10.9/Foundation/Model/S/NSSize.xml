@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure Generate="true">
+	<Name>NSSize</Name>
+	<Namespace>Foundation</Namespace>
+	<MixedType>NSSize,NSSize64</MixedType>
+</Structure>

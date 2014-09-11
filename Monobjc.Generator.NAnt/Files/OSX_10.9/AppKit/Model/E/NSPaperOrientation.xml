@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Enumeration Generate="true" Flags="true">
+	<Summary>
+		<Line>Valid values for the NSPrintOrientation attribute.</Line>
+	</Summary>
+	<MinAvailability>OS X v10.9</MinAvailability>
+	<Name>NSPaperOrientation</Name>
+	<Namespace>AppKit</Namespace>
+	<BaseType>NSInteger</BaseType>
+	<MixedType>int,long</MixedType>
+	<Values>
+		<EnumerationValue Generate="true">
+			<MinAvailability>OS X v10.9</MinAvailability>
+			<Name>NSPaperOrientationPortrait</Name>
+			<Value>0</Value>
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<MinAvailability>OS X v10.9</MinAvailability>
+			<Name>NSPaperOrientationLandscape</Name>
+			<Value>1</Value>
+		</EnumerationValue>
+	</Values>
+</Enumeration>

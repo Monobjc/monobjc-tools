@@ -275,10 +275,9 @@ namespace Monobjc.Tools.Generator.Model
 				int hash = base.GetHashValue ();
 				hash = hash * 23 + this.GenerateConstructor.GetHashCode ();
 				hash = hash * 23 + this.Parameters.GetHashValue ();
-				hash = hash * 23 + (this.ReturnsDocumentation != null ? this.ReturnsDocumentation.GetHashCode () : 0);
 				hash = hash * 23 + (this.ReturnType != null ? this.ReturnType.GetHashCode () : 0);
 				hash = hash * 23 + (this.Selector != null ? this.Selector.GetHashCode () : 0);
-				hash = hash * 23 + (this.Signature != null ? this.Signature.GetHashCode () : 0);
+				//hash = hash * 23 + (this.Signature != null ? this.Signature.GetHashCode () : 0);
 				hash = hash * 23 + this.Static.GetHashCode ();
 				return hash;
 			}

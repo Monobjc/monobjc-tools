@@ -142,8 +142,10 @@ namespace Monobjc.Tools.Generator.Generators
 				return;
 			}
 
-			// Append static condition if needed
-			this.AppendStartCondition (functionEntity);
+            if (functionEntity.MinAvailabilityAsVersion.IsGreaterThan(typedEntity.MinAvailabilityAsVersion)) {
+                // Append static condition if needed
+                this.AppendStartCondition(functionEntity);
+            }
 
 			// Append documentation
 			this.AppendDocumentation (functionEntity);
@@ -174,8 +176,10 @@ namespace Monobjc.Tools.Generator.Generators
 				this.GenerateNativeFunction (typedEntity, functionEntity, null, true);
 			}
 
-			// Append static condition if needed
-			this.AppendEndCondition (functionEntity);
+            if (functionEntity.MinAvailabilityAsVersion.IsGreaterThan(typedEntity.MinAvailabilityAsVersion)) {
+                // Append static condition if needed
+                this.AppendEndCondition(functionEntity);
+            }
 
 			// Update statistics
 			this.Statistics.Functions++;
@@ -305,9 +309,7 @@ namespace Monobjc.Tools.Generator.Generators
 				if (methodParameterEntity.IsOut || methodParameterEntity.IsByRef) {
 					parameters.Add ("IntPtr " + methodParameterEntity.Name);
 				} else if (methodParameterEntity.IsBlock) {
-
 					parameters.Add (String.Format ("[MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof (BlockMarshaler))] Block {0}", methodParameterEntity.Name));
-
 				} else {
 					String parameter = GetTypeSignature (methodParameterEntity);
 					if (TypeManager.HasClass (methodParameterEntity.Type)) {

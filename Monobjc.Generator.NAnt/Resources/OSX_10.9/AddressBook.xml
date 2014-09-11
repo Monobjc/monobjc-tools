@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="AddressBook" usings="Foundation,AppKit" assembly="Monobjc.AddressBook" source="DocSet">
+	<Types>
+		<Type name="AddressBookFramework.Constants">
+			<File>UserExperience/Reference/AddressBook/Miscellaneous/AddressBook_Constants/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[<a href="#//apple_ref/doc/c_ref/kABMultiDateComponentsProperty">kABMultiDateComponentsProperty</a>]]></Source>
+					<With><![CDATA[<a href="#//apple_ref/doc/c_ref/kABMultiDateComponentsProperty">,kABMultiDateComponentsProperty</a>]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[ | kABDataProperty
+]]></Source>
+					<With><![CDATA[ | kABDataProperty,
+]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["_ABPropertyType"].Name="ABPropertyType"]]></Change>
+				<Change><![CDATA[Enumerations["ABPropertyType"].BaseType="CFIndex"]]></Change>
+				<Change><![CDATA[Enumerations["Error_Constants"].Name="ABErrorCodes"]]></Change>
+				<Change><![CDATA[Enumerations["ABErrorCodes"].BaseType="int"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[kABMultiValueMask]]></Source>
+					<With><![CDATA[0x100]]></With>
+				</Replace>
+			</Patch>
+		</Type>
+		<Type name="AddressBookFramework.Functions">
+			<File>UserExperience/Reference/AddressBook/Miscellaneous/AddressBook_Functions/Reference/reference.html</File>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="ABAddressBook">
+			<File>UserExperience/Reference/AddressBook/Classes/ABAddressBook_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Errors"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="ABGroup">
+			<File>UserExperience/Reference/AddressBook/Classes/ABGroup_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="ABMultiValue">
+			<File>UserExperience/Reference/AddressBook/Classes/ABMultiValue_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="ABMutableMultiValue">
+			<File>UserExperience/Reference/AddressBook/Classes/ABMutableMultiValue_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="ABPeoplePickerView">
+			<File>UserExperience/Reference/AddressBook/Classes/ABPeoplePickerView_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["ABPeoplePickerSelectionBehavior"].BaseType="int"]]></Change>
+				<!--
+				<Change><![CDATA[Properties["AccessoryView"].MinAvailability="Mac OS X v10.5"]]></Change>
+				<Change><![CDATA[Properties["AllowsGroupSelection"].MinAvailability="Mac OS X v10.5"]]></Change>
+				<Change><![CDATA[Properties["AllowsMultipleSelection"].MinAvailability="Mac OS X v10.5"]]></Change>
+				<Change><![CDATA[Properties["AutosaveName"].MinAvailability="Mac OS X v10.5"]]></Change>
+				<Change><![CDATA[Properties["DisplayedProperty"].MinAvailability="Mac OS X v10.5"]]></Change>
+				<Change><![CDATA[Properties["GroupDoubleAction"].MinAvailability="Mac OS X v10.5"]]></Change>
+				<Change><![CDATA[Properties["NameDoubleAction"].MinAvailability="Mac OS X v10.5"]]></Change>
+				<Change><![CDATA[Properties["SelectedGroups"].MinAvailability="Mac OS X v10.5"]]></Change>
+				<Change><![CDATA[Properties["SelectedRecords"].MinAvailability="Mac OS X v10.5"]]></Change>
+				<Change><![CDATA[Properties["ValueSelectionBehavior"].MinAvailability="Mac OS X v10.5"]]></Change>
+				-->
+			</Patch>
+		</Class>
+		<Class name="ABPerson">
+			<File>UserExperience/Reference/AddressBook/Classes/ABPerson_Class/Reference/Reference.html</File>
+		</Class>
+        <!-- Not yet published for OS X -->
+        <Class name="ABPersonPicker">
+            <File>NYP</File>
+        </Class>
+        <Class name="ABPersonView">
+            <File>AddressBook/Reference/ABPersonView_Class/Reference/Reference.html</File>
+        </Class>
+		<Class name="ABRecord">
+			<File>UserExperience/Reference/AddressBook/Classes/ABRecord_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="ABSearchElement">
+			<File>UserExperience/Reference/AddressBook/Classes/ABSearchElement_Class/Reference/Reference.html</File>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="ABActionDelegate">
+			<File>UserExperience/Reference/AddressBook/Protocols/ABActionDelegate_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="ABImageClient">
+			<File>UserExperience/Reference/AddressBook/Protocols/ABImageClient_Protocol/Reference/Reference.html</File>
+		</Protocol>
+        <!-- Not yet published for OS X -->
+        <Protocol name="ABPersonPickerDelegate">
+            <File>NYP</File>
+        </Protocol>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

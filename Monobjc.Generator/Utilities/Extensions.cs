@@ -140,6 +140,9 @@ namespace Monobjc.Tools.Generator.Utilities
             return value.Contains(str);
         }
 
+        /// <summary>
+        /// Check if a filename is older than the other.
+        /// </summary>
         public static bool IsOlderThan(this String fileName1, String fileName2)
         {
 			DateTime dt1 = fileName1 != null ? File.GetLastWriteTime(fileName1) : DateTime.MinValue;
@@ -147,6 +150,9 @@ namespace Monobjc.Tools.Generator.Utilities
             return (dt1.CompareTo(dt2) < 0);
         }
 
+        /// <summary>
+        /// Check if a filename is younger than the other.
+        /// </summary>
         public static bool IsYoungerThan(this String fileName1, String fileName2)
         {
 			DateTime dt1 = fileName1 != null ? File.GetLastWriteTime(fileName1) : DateTime.MaxValue;
@@ -180,6 +186,20 @@ namespace Monobjc.Tools.Generator.Utilities
             writer.Write(new String(' ', level*4));
             writer.Write(String.Format(format, parameters));
             writer.WriteLine();
+        }
+
+        /// <summary>
+        /// Check if a version is greater than the other.
+        /// </summary>
+        public static bool IsGreaterThan(this Version version1, Version version2) {
+            return (version1.CompareTo(version2) > 0);
+        }
+
+        /// <summary>
+        /// Check if a version is lower than the other.
+        /// </summary>
+        public static bool IsLowerThan(this Version version1, Version version2) {
+            return (version1.CompareTo(version2) < 0);
         }
     }
 }

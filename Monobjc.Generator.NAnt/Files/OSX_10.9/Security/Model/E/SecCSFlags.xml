@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" CopyInDescendants="false" nature="E" Flags="true">
+  <Summary />
+  <MinAvailability>OS X v10.6</MinAvailability>
+  <MaxAvailability>VERSION</MaxAvailability>
+  <Obsolete xsi:nil="true" />
+  <Name>SecCSFlags</Name>
+  <Namespace>Security</Namespace>
+  <BaseType>uint</BaseType>
+  <Values>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Internal code signing information.</Line>
+        <Line>This information is for use by Apple, Inc.., and is subject to change without notice.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCSInternalInformation</Name>
+      <Value>1 &amp;lt;&amp;lt; 0</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Cryptographic signing information.</Line>
+        <Line>The certificate chain and Cryptographic Message Syntax (CMS) data (if any). For ad-hoc signed code, there are no certificates and the CMS data is empty.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCSSigningInformation</Name>
+      <Value>1 &amp;lt;&amp;lt; 1</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Code requirements—including the designated requirement—embedded in the code.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCSRequirementInformation</Name>
+      <Value>1 &amp;lt;&amp;lt; 2</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Dynamic validity information about running code.</Line>
+        <Line>This information cannot be returned for code on disk (represented by a SecStaticCodeRef).</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCSDynamicInformation</Name>
+      <Value>1 &amp;lt;&amp;lt; 3</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>More information about the file system contents making up the signed code on disk.</Line>
+        <Line>It is not generally advisable to make use of this information, but some utilities (such as software-update tools) may find it useful.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCSContentInformation</Name>
+      <Value>1 &amp;lt;&amp;lt; 4</Value>
+    </EnumerationValue>
+
+	
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Declares dedicated hosting for the given host.</Line>
+        <Line>In dedicated hosting, the host has exactly one guest (the one this call specifies) and the host spends all of its time running that guest (or running on its behalf). This declaration is irreversable for the lifetime of the host. If the guest terminates, the host terminates as well. Any code object that refers to a dedicated host is assumed by the system to be referring to the guest. Note that this is a declaration about the given host, and is not binding on other hosts on either side of the hosting chain (though they may declare dedicated hosting as well).</Line>
+        <Line>It is invalid to declare dedicated hosting if the host already has other guests, and it is invalid to introduce additional guests for this host after this call.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCSDedicatedHost</Name>
+      <Value>1 &amp;lt;&amp;lt; 0</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Ask the host to generate the unique binary identifier (kSecCodeInfoUnique) from the copy on disk at the path given.</Line>
+        <Line>Ideally, when the host launches the guest code it should bring the signature in the code directory into memory at the same time, create the unique binary identifier by calculating the SHA-1 hash of the signature, and pass it to the SecHostCreateGuest function as the kSecGuestAttributeHash attribute in the dictionary when it creates a guest. Doing so guarantees that the identifier was made from the same version of the code as was loaded into memory. This identifier can be used by the host and other processes to make sure the code has not been altered, because the hash of the code directory is a unique identifier of a particular instance of the signature. The kSecCSGenerateGuestHash flag tells Code Signing Services to fetch the signature from disk and do the calculation itself. Having the system create the identifier from the code on disk is convenient but is not the most secure option because it is possible for an attacker with write access to substitute a different copy of the code directory on disk after the code is loaded into memory but before the system generates the identifier.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCSGenerateGuestHash</Name>
+      <Value>1 &amp;lt;&amp;lt; 1</Value>
+    </EnumerationValue>
+
+	
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>No flags (use the default behavior).</Line>
+        <Line>Do not mix this value with other flag values.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCSDefaultFlags</Name>
+      <Value>0</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Consider expired certificates invalid. </Line>
+        <Line>When passed to a function that performs code validation, this flag requests that code signatures made by expired certificates be rejected. By default, expiration of participating certificates is not automatic grounds for rejection.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCSConsiderExpiration</Name>
+      <Value>1U &amp;lt;&amp;lt; 31</Value>
+    </EnumerationValue>
+
+	
+ 	<EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>May host guest code.</Line>
+        <Line>Indicates that the code may act as a host that controls and supervises guest code. If this flag is not set in a code signature, the code is never considered eligible to be a host, and any attempt to act like one is ignored.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCodeSignatureHost</Name>
+      <Value>0x0001</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Must be used without a signing identity.</Line>
+        <Line>The code has been sealed without a signing identity. No identity may be retrieved from it, and any code requirement placing restrictions on the signing identity will fail. This flag is set by Code Signing Services when you create an ad-hoc signature, and cannot be set explicitly. An ad-hoc signature is created by signing with the pseudo-identity “-” (a dash).</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCodeSignatureAdhoc</Name>
+      <Value>0x0002</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Always set the kSecCodeStatusHard status flag on launch.</Line>
+        <Line>The kSecCodeStatusHard flag indicates that the code prefers to be denied access to a resource if gaining such access would cause its invalidation. Once the hard bit is set, it cannot be cleared. Therefore, setting this option flag guarantees that the code will always have the kSecCodeStatusHard flag set.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCodeSignatureForceHard</Name>
+      <Value>0x0100</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Always set the kSecCodeStatusKill status flag on launch.</Line>
+        <Line>The kSecCodeStatusKill flag indicates that the code wishes to be terminated if it is ever invalidated. Once the kill bit is set, it cannot be cleared. Therefore, setting this option flag guarantees that the running code will always be valid, since it will die immediately if it becomes invalid.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCodeSignatureForceKill</Name>
+      <Value>0x0200</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Always set the kSecCSConsiderExpiration flag when validating the code.</Line>
+        <Line>When passed to a function that performs code validation, the kSecCSConsiderExpiration flag requests that code signatures made by expired certificates be rejected. By default, expiration of participating certificates is not automatic grounds for rejection.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCodeSignatureForceExpiration</Name>
+      <Value>0x0400</Value>
+    </EnumerationValue>
+
+
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Indicates that the code is dynamically valid</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCodeStatusValid</Name>
+      <Value>0x0001</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Indicates that the code prefers to be denied access to resources if gaining access would invalidate it.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCodeStatusHard</Name>
+      <Value>0x0100</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Indicates that the code wants to be killed (terminated) if it ever loses its validity.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCodeStatusKill</Name>
+      <Value>0x0200</Value>
+    </EnumerationValue>
+
+	
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>What hosts may run this code.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecHostRequirementType</Name>
+      <Value>1</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>What guests this code may run.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecGuestRequirementType</Name>
+      <Value>2</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>A designated requirement.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecDesignatedRequirementType</Name>
+      <Value>3</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>What libraries this code may link against.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecLibraryRequirementType</Name>
+      <Value>4</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Invalid type of requirement.</Line>
+        <Line>This constant is for Apple internal use.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecInvalidRequirementType</Name>
+      <Value />
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>The number of valid requirement types.</Line>
+        <Line>This constant is for Apple internal use.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecRequirementTypeCount</Name>
+      <Value>kSecInvalidRequirementType</Value>
+    </EnumerationValue>
+
+	
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>For multi-architecture (universal) Mach-O programs, validate all architectures included.</Line>
+        <Line>By default, only the native architecture is validated.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCSCheckAllArchitectures</Name>
+      <Value>1 &amp;lt;&amp;lt; 0</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Do not validate the contents of the main executable.</Line>
+        <Line>The contents of the main executable are normally validated.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCSDoNotValidateExecutable</Name>
+      <Value>1 &amp;lt;&amp;lt; 1</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Do not validate the presence and contents of all bundle resources (if any).</Line>
+        <Line>By default, a mismatch in any bundle resource causes validation to fail.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCSDoNotValidateResources</Name>
+      <Value>1 &amp;lt;&amp;lt; 2</Value>
+    </EnumerationValue>
+    <EnumerationValue Generate="true" CopyInDescendants="false">
+      <Summary>
+        <Line>Combination of kSecCSDoNotValidateExecutable and kSecCSDoNotValidateResources.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.6</MinAvailability>
+      <Obsolete xsi:nil="true" />
+      <Name>kSecCSBasicValidateOnly</Name>
+      <Value>kSecCSDoNotValidateExecutable | kSecCSDoNotValidateResources</Value>
+    </EnumerationValue>
+  </Values>
+</Enumeration>

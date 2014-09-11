@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="StoreKit" usings="Foundation" assembly="Monobjc.StoreKit" source="DocSet">
+	<Types>
+		<Type name="StoreKitFramework.Constants">
+			<File>StoreKit/Reference/StoreKitTypes/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Store_Kit_Errors"].Name="StoreKitError"]]></Change>
+				<Change><![CDATA[Enumerations["StoreKitError"].BaseType="int"]]></Change>
+			</Patch>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="SKMutablePayment">
+			<File>StoreKit/Reference/SKMutablePaymentRequest_Class/Reference/Reference.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSString ProductIdentifier]]></Source>
+					<With><![CDATA[public new NSString ProductIdentifier]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSInteger Quantity]]></Source>
+					<With><![CDATA[public new NSInteger Quantity]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public virtual NSData RequestData]]></Source>
+					<With><![CDATA[public new NSData RequestData]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="SKPayment">
+			<File>StoreKit/Reference/SKPaymentRequest_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["PaymentWithProduct"].ReturnType="SKPayment"]]></Change>
+				<Change><![CDATA[Methods["PaymentWithProduct"].CopyInDescendants=true]]></Change>
+			</Patch>
+		</Class>
+		<Class name="SKPaymentQueue">
+			<File>StoreKit/Reference/SKPaymentQueue_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["AddTransactionObserver"].Parameters["observer"].Type="Id"]]></Change>
+				<Change><![CDATA[Methods["RemoveTransactionObserver"].Parameters["observer"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="SKPaymentTransaction">
+			<File>StoreKit/Reference/SKPaymentTransaction_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="SKProduct">
+			<File>StoreKit/Reference/SKProduct_Reference/Reference/Reference.html</File>
+		</Class>
+		<Class name="SKProductsRequest">
+			<File>StoreKit/Reference/SKProductsRequest/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="SKProductsResponse">
+			<File>StoreKit/Reference/SKProductsResponse/Reference/Reference.html</File>
+		</Class>
+        <!-- Not yet published for OS X -->
+        <Class name="SKReceiptRefreshRequest">
+            <File>NYP</File>
+        </Class>
+		<Class name="SKRequest">
+			<File>StoreKit/Reference/SKRequest/Reference/Reference.html</File>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="SKPaymentTransactionObserver">
+			<File>StoreKit/Reference/SKPaymentTransactionObserver_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="SKProductsRequestDelegate">
+			<File>StoreKit/Reference/SKProductsRequestDelegate/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[BaseType="SKRequestDelegate"]]></Change>
+				<Change><![CDATA[DelegateFor="SKProductsRequest"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="SKRequestDelegate">
+			<File>StoreKit/Reference/SKRequestDelegate/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="SKRequest"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

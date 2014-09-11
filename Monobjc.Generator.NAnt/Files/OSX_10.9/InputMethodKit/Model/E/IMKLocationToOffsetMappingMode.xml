@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Override="false" Flags="false">
+	<Summary>
+		<Line>List modes for mapping a screen location to a text offset.</Line>
+	</Summary>
+	<MinAvailability>OS X v10.5</MinAvailability>
+	<Name>IMKLocationToOffsetMappingMode</Name>
+	<Namespace>InputMethodKit</Namespace>
+	<BaseType>int</BaseType>
+	<Values>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>Mouse tracking mode. When tracking, a coordinate does not change the offset until the coordinate is completely past a given character.</Line>
+			</Summary>
+			<MinAvailability>OS X v10.5</MinAvailability>
+			<Name>kIMKMouseTrackingMode</Name>
+			<Value>1</Value>
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>Nearest boundary mode. When trying to place an insertion point, a coordinate is mapped to the nearest character boundary.</Line>
+			</Summary>
+			<MinAvailability>OS X v10.5</MinAvailability>
+			<Name>kIMKNearestBoundaryMode</Name>
+			<Value>2</Value>
+		</EnumerationValue>
+	</Values>
+</Enumeration>

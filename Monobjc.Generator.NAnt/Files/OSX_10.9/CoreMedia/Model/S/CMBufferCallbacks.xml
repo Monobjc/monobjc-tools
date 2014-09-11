@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure Generate="true">
+	<Name>CMBufferCallbacks</Name>
+	<Namespace>CoreMedia</Namespace>
+	<MixedType>CMBufferCallbacks,CMBufferCallbacks</MixedType>
+</Structure>

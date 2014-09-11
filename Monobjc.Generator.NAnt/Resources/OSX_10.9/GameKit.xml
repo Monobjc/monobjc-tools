@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="GameKit" usings="Foundation,AppKit" assembly="Monobjc.GameKit" source="DocSet">
+	<Types>
+		<Type name="GameKitFramework.Constants">
+			<File>GameKit/Reference/GameKit_ConstantsRef/Reference/reference.html</File>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="GKAchievement">
+			<File>GameKit/Reference/GKAchievement_Ref/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[)<div class="declaration">]]></Source>
+					<With><![CDATA[)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="GKAchievementDescription">
+			<File>GameKit/Reference/GKAchievementDescription_Ref/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Image"].Type="NSImage"]]></Change>
+				<Change><![CDATA[Properties["IncompleteAchievementImage"].Type="NSImage"]]></Change>
+				<Change><![CDATA[Properties["PlaceholderCompletedAchievementImage"].Type="NSImage"]]></Change>
+				<Change><![CDATA[Methods["LoadImageWithCompletionHandler"].Parameters["completionHandler"].Type="Action<NSImage, NSError>"]]></Change>
+			</Patch>
+		</Class>
+        <Class name="GKAchievementViewController">
+            <File>GameKit/Reference/GKAchievementViewController_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["AchievementDelegate"].Type="Id"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="GKChallenge">
+            <File>GameKit/Reference/GKChallenge_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["GKChallengeState"].BaseType="NSInteger"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="GKChallengeEventHandler">
+            <File>GameKit/Reference/GKChallengeEventHandler_Ref/Reference/Reference.html</File>
+        </Class>
+		<Class name="GKDialogController">
+			<File>GameKit/Reference/GKDialogController_Ref/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["PresentViewController"].Parameters["viewController"].Type="NSViewController"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="GKFriendRequestComposeViewController">
+			<File>GameKit/Reference/GKFriendRequestComposeViewController_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["ComposeViewDelegate"].Type="Id"]]></Change>
+            </Patch>
+		</Class>
+        <Class name="GKGameCenterViewController">
+            <File>GameKit/Reference/GKGameCenterViewController_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["GameCenterDelegate"].Type="Id"]]></Change>
+                <Change><![CDATA[Properties["ViewState"].Type="GKGameCenterViewControllerState"]]></Change>
+            </Patch>
+        </Class>
+        <Class name="GKInvite">
+            <File>GameKit/Reference/GKInvite_Ref/Reference/Reference.html</File>
+        </Class>
+		<Class name="GKLeaderboard">
+			<File>GameKit/Reference/GKLeaderboard_Ref/Reference/Reference.html</File>
+			<Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[instead.)<div class="declaration">]]></Source>
+                    <With><![CDATA[instead.)</p><div class="declaration">]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[UIImage]]></Source>
+                    <With><![CDATA[NSImage]]></With>
+                </Replace>
+			</Patch>
+		</Class>
+		<Class name="GKLeaderboardViewController">
+			<File>GameKit/Reference/GKLeaderboardViewController_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["LeaderboardDelegate"].Type="Id"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="GKLocalPlayer">
+			<File>GameKit/Reference/GKLocalPlayer_Ref/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+                <Change><![CDATA[Properties["AuthenticateHandler"].Type="Block"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="GKMatch">
+			<File>GameKit/Reference/GKMatch_Ref/Reference/Reference.html</File>
+			<Patch type="Model">
+                <Change><![CDATA[Methods["SendDataToPlayersWithDataModeError"].Parameters["*)playerIDs"].Name="playerIDs"]]></Change>
+                <Change><![CDATA[Methods["SendDataToPlayersWithDataModeError"].Parameters["playerIDs"].Type="NSArray"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="GKMatchmaker">
+			<File>GameKit/Reference/GKMatchmaker_Ref/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["InviteHandler"].Type="Block"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="GKMatchmakerViewController">
+			<File>GameKit/Reference/GKMatchmakerViewController_Ref/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<div class="declaration">]]></Source>
+                    <With><![CDATA[)</p><div class="declaration">]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["MatchmakerDelegate"].Type="Id"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="GKMatchRequest">
+			<File>GameKit/Reference/GKMatchRequest_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["InviteeResponseHandler"].Type="Block"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="GKNotificationBanner">
+			<File>GameKit/Reference/GKNotificationBanner_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKPlayer">
+			<File>GameKit/Reference/GKPlayer_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+				<Change><![CDATA[Methods["LoadPhotoForSizeWithCompletionHandler"].Parameters["completionHandler"].Type="Action<NSImage, NSError>"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="GKScore">
+			<File>GameKit/Reference/GKScore_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKTurnBasedEventHandler">
+			<File>GameKit/Reference/GKTurnBasedEventHandler_Ref/Reference/Reference.html</File>
+		</Class>
+		<Class name="GKTurnBasedMatch">
+			<File>GameKit/Reference/GKTurnBasedMatch_Ref/Reference/Reference.html</File>
+			<Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[instead.)<div class="declaration">]]></Source>
+                    <With><![CDATA[instead.)</p><div class="declaration">]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[typdef]]></Source>
+                    <With><![CDATA[typedef]]></With>
+                </Replace>
+			</Patch>
+		</Class>
+		<Class name="GKTurnBasedMatchmakerViewController">
+			<File>GameKit/Reference/GKTurnBasedMatchmakerViewController_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties["TurnBasedMatchmakerDelegate"].Type="Id"]]></Change>
+            </Patch>
+		</Class>
+		<Class name="GKTurnBasedParticipant">
+			<File>GameKit/Reference/GKTurnBasedParticipant_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["GKTurnBasedMatchOutcome"].Generate=false]]></Change>
+                <Change><![CDATA[Enumerations["GKTurnBasedParticipantStatus"].Generate=false]]></Change>
+            </Patch>
+		</Class>
+		<Class name="GKVoiceChat">
+			<File>GameKit/Reference/GKVoiceChat_Ref/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["PlayerStateUpdateHandler"].Type="Block"]]></Change>
+			</Patch>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="GKAchievementViewControllerDelegate">
+			<File>GameKit/Reference/GKAchievementViewControllerDelegate_Ref/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="GKAchievementViewController"]]></Change>
+				<Change><![CDATA[DelegateProperty="AchievementDelegate"]]></Change>
+			</Patch>
+		</Protocol>
+        <Protocol name="GKChallengeEventHandlerDelegate">
+            <File>GLkit/Reference/GKChallengeEventHandlerDelegate_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[DelegateFor="GKChallengeEventHandler"]]></Change>
+                <Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+            </Patch>
+        </Protocol>
+		<Protocol name="GKFriendRequestComposeViewControllerDelegate">
+			<File>GameKit/Reference/GKFriendRequestComposeViewControllerDelegate_Ref/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="GKFriendRequestComposeViewController"]]></Change>
+				<Change><![CDATA[DelegateProperty="ComposeViewDelegate"]]></Change>
+			</Patch>
+		</Protocol>
+        <Protocol name="GKGameCenterControllerDelegate">
+            <File>GameKit/Reference/GKGameCenterViewControllerDelegate_Ref/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[DelegateFor="GKGameCenterViewController"]]></Change>
+                <Change><![CDATA[DelegateProperty="GameCenterDelegate"]]></Change>
+            </Patch>
+        </Protocol>
+		<Protocol name="GKLeaderboardViewControllerDelegate">
+			<File>GameKit/Reference/GKLeaderboardViewControllerDelegate_Ref/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="GKLeaderboardViewController"]]></Change>
+				<Change><![CDATA[DelegateProperty="LeaderboardDelegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="GKMatchDelegate">
+			<File>GameKit/Reference/GKMatchDelegate_Ref/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="GKMatch"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="GKMatchmakerViewControllerDelegate">
+			<File>GameKit/Reference/GKMatchmakerViewControllerDelegate_Ref/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="GKMatchmakerViewController"]]></Change>
+				<Change><![CDATA[DelegateProperty="MatchmakerDelegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="GKTurnBasedEventHandlerDelegate">
+			<File>GameKit/Reference/GKTurnBasedEventHandlerDelegate_Ref/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[instead.)<div class="declaration">]]></Source>
+					<With><![CDATA[instead.)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="GKTurnBasedEventHandler"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="GKTurnBasedMatchmakerViewControllerDelegate">
+			<File>GameKit/Reference/GKTurnBasedMatchmakerViewControllerDelegate_Ref/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="GKTurnBasedMatchmakerViewController"]]></Change>
+				<Change><![CDATA[DelegateProperty="TurnBasedMatchmakerDelegate"]]></Change>
+			</Patch>
+		</Protocol>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

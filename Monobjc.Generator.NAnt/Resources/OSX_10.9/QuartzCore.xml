@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="QuartzCore" usings="ApplicationServices,Foundation,AppKit" assembly="Monobjc.AppKit" source="DocSet">
+	<Types>
+		<Type name="CoreVideoFramework.Constants">
+			<File>QuartzCore/Reference/CVConstantsRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CoreAnimationFramework.Functions">
+			<File>Cocoa/Reference/CoreAnimation_functions/Reference/reference.html</File>
+		</Type>
+		<Type name="CVBuffer">
+			<File>QuartzCore/Reference/CVBufferRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CVBufferGetAttachment"].Parameters["attachmentMode"].Type="CVAttachmentMode"]]></Change>
+				<Change><![CDATA[Functions["CVBufferGetAttachment"].Parameters["attachmentMode"].IsOut=true]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CVDisplayLink">
+			<File>QuartzCore/Reference/CVDisplayLinkRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CVDisplayLinkCreateWithActiveCGDisplays"].Parameters["displayLinkOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkCreateWithActiveCGDisplays"].Parameters["displayLinkOut"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkCreateWithCGDisplay"].Parameters["displayLinkOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkCreateWithCGDisplay"].Parameters["displayLinkOut"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkCreateWithCGDisplays"].Parameters["displayArray"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkCreateWithCGDisplays"].Parameters["count"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkCreateWithCGDisplays"].Parameters["displayLinkOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkCreateWithCGDisplays"].Parameters["displayLinkOut"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkCreateWithOpenGLDisplayMask"].Parameters["mask"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkCreateWithOpenGLDisplayMask"].Parameters["displayLinkOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkCreateWithOpenGLDisplayMask"].Parameters["displayLinkOut"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkGetCurrentTime"].Parameters["outTime"].Type="CVTimeStamp"]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkGetCurrentTime"].Parameters["outTime"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkGetNominalOutputVideoRefreshPeriod"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkGetOutputVideoLatency"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkTranslateTime"].Parameters["inTime"].Type="CVTimeStamp"]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkTranslateTime"].Parameters["inTime"].IsByRef=true]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkTranslateTime"].Parameters["outTime"].Type="CVTimeStamp"]]></Change>
+				<Change><![CDATA[Functions["CVDisplayLinkTranslateTime"].Parameters["outTime"].IsByRef=true]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CVImageBuffer">
+			<File>QuartzCore/Reference/CVImageBufferRef/Reference/reference.html</File>
+		</Type>
+		<Type name="CVOpenGLBuffer">
+			<File>QuartzCore/Reference/CVOpenGLBufferRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CVOpenGLBufferCreate"].Parameters["bufferOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVOpenGLBufferGetTypeID"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CVOpenGLBufferPool">
+			<File>QuartzCore/Reference/CVOpenGLBufferPoolRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CVOpenGLBufferPoolCreate"].Parameters["poolOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVOpenGLBufferPoolCreateOpenGLBuffer"].Parameters["openGLBufferOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVOpenGLBufferPoolGetTypeID"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CVOpenGLTexture">
+			<File>QuartzCore/Reference/CVOpenGLTextureRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CVOpenGLTextureGetCleanTexCoords"].Parameters["lowerLeft[2]"].Name="lowerLeft"]]></Change>
+				<Change><![CDATA[Functions["CVOpenGLTextureGetCleanTexCoords"].Parameters["lowerLeft"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVOpenGLTextureGetCleanTexCoords"].Parameters["lowerRight[2]"].Name="lowerRight"]]></Change>
+				<Change><![CDATA[Functions["CVOpenGLTextureGetCleanTexCoords"].Parameters["lowerRight"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVOpenGLTextureGetCleanTexCoords"].Parameters["upperRight[2]"].Name="upperRight"]]></Change>
+				<Change><![CDATA[Functions["CVOpenGLTextureGetCleanTexCoords"].Parameters["upperRight"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVOpenGLTextureGetCleanTexCoords"].Parameters["upperLeft[2]"].Name="upperLeft"]]></Change>
+				<Change><![CDATA[Functions["CVOpenGLTextureGetCleanTexCoords"].Parameters["upperLeft"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVOpenGLTextureGetTypeID"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CVPixelBuffer">
+			<File>QuartzCore/Reference/CVPixelBufferRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CVPixelBufferCreate"].Parameters["pixelBufferOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferCreateResolvedAttributesDictionary"].Parameters["resolvedDictionaryOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferCreateWithBytes"].Parameters["releaseCallback"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferCreateWithBytes"].Parameters["pixelBufferOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferCreateWithPlanarBytes"].Parameters["planeBaseAddress[]"].Name="planeBaseAddress"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferCreateWithPlanarBytes"].Parameters["planeBaseAddress"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferCreateWithPlanarBytes"].Parameters["planeWidth[]"].Name="planeWidth"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferCreateWithPlanarBytes"].Parameters["planeWidth"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferCreateWithPlanarBytes"].Parameters["planeHeight[]"].Name="planeHeight"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferCreateWithPlanarBytes"].Parameters["planeHeight"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferCreateWithPlanarBytes"].Parameters["planeBytesPerRow[]"].Name="planeBytesPerRow"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferCreateWithPlanarBytes"].Parameters["planeBytesPerRow"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferCreateWithPlanarBytes"].Parameters["releaseCallback"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferCreateWithPlanarBytes"].Parameters["pixelBufferOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferGetExtendedPixels"].Parameters["extraColumnsOnLeft"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferGetExtendedPixels"].Parameters["extraColumnsOnRight"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferGetExtendedPixels"].Parameters["extraRowsOnTop"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferGetExtendedPixels"].Parameters["extraRowsOnBottom"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferGetTypeID"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["CVPixelBufferLockFlags"].BaseType="uint"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CVPixelBufferPool">
+			<File>QuartzCore/Reference/CVPixelBufferPoolRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CVPixelBufferPoolCreate"].Parameters["poolOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferPoolCreatePixelBuffer"].Parameters["pixelBufferOut"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["CVPixelBufferPoolGetTypeID"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CVPixelFormatDescription">
+			<File>QuartzCore/Reference/CVPixelFormatDescriptionRef/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Pixel_Format_Types"].Name="PixelFormatTypes"]]></Change>
+				<Change><![CDATA[Enumerations["PixelFormatTypes"].BaseType="uint"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="CVTime">
+			<File>QuartzCore/Reference/CVTimeRef/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[ &lt;&lt; 17)
+};
+enum
+{]]></Source>
+					<With><![CDATA[ &lt;&lt; 17),
+]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["CVGetCurrentHostTime"].Parameters["d"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CVGetHostClockFrequency"].Parameters["d"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["CVGetHostClockMinimumTimeDelta"].Parameters["d"].Generate=false]]></Change>
+				<!-- TODO: Move to constants -->
+				<Change><![CDATA[Enumerations["CVTime_Constants"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["CVTimeStamp_Flags"].Name="CVTimeStampFlags"]]></Change>
+				<Change><![CDATA[Enumerations["CVTimeStampFlags"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["CVTimeStampFlags"].Flags=true]]></Change>
+				<Change><![CDATA[Enumerations["SMPTE_State_Flags"].Name="SMPTEStateFlags"]]></Change>
+				<Change><![CDATA[Enumerations["SMPTEStateFlags"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["SMPTEStateFlags"].Flags=true]]></Change>
+				<Change><![CDATA[Enumerations["SMPTE_Time_Types"].Name="SMPTETimeTypes"]]></Change>
+				<Change><![CDATA[Enumerations["SMPTETimeTypes"].BaseType="uint"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[ = (1L <<]]></Source>
+					<With><![CDATA[ = (1 <<]]></With>
+				</Replace>
+			</Patch>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="CAAnimation">
+			<File>GraphicsImaging/Reference/CAAnimation_class/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Animation"].Type="CAAnimation"]]></Change>
+				<Change><![CDATA[Properties["Animation"].Getter.ReturnType="CAAnimation"]]></Change>
+				<Change><![CDATA[Properties["Animation"].CopyInDescendants=true]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CAAnimationGroup">
+			<File>GraphicsImaging/Reference/CAAnimationGroup_class/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="CABasicAnimation">
+			<File>GraphicsImaging/Reference/CABasicAnimation_class/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="CAConstraint">
+			<File>GraphicsImaging/Reference/CAConstraint_class/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ConstraintWithAttributeRelativeToAttribute"].ReturnType="CAConstraint"]]></Change>
+				<Change><![CDATA[Methods["ConstraintWithAttributeRelativeToAttributeOffset"].ReturnType="CAConstraint"]]></Change>
+				<Change><![CDATA[Methods["ConstraintWithAttributeRelativeToAttributeScaleOffset"].ReturnType="CAConstraint"]]></Change>
+				<Change><![CDATA[Enumerations["_CAConstraintAttribute"].Name="CAConstraintAttribute"]]></Change>
+				<Change><![CDATA[Enumerations["CAConstraintAttribute"].BaseType="int"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CAConstraintLayoutManager">
+			<File>GraphicsImaging/Reference/CAConstraintLayoutManager_class/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["LayoutManager"].Type="CAConstraintLayoutManager"]]></Change>
+			</Patch>
+		</Class>
+        <!-- Not yet published for OS X -->
+        <Class name="CAEmitterBehavior">
+            <File>NYP</File>
+        </Class>
+		<Class name="CAEmitterCell">
+			<File>GraphicsImaging/Reference/CAEmitterCell_class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["EmitterCell"].Type="CAEmitterCell"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CAEmitterLayer">
+			<File>GraphicsImaging/Reference/CAEmitterLayer_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="CAGradientLayer">
+			<File>GraphicsImaging/Reference/CAGradientLayer_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="CAKeyframeAnimation">
+			<File>GraphicsImaging/Reference/CAKeyframeAnimation_class/Introduction/Introduction.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[>kCAAnimationRotateAuto</a>]]></Source>
+					<With><![CDATA[>kCAAnimationRotateAuto;</a>]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="CALayer">
+			<File>GraphicsImaging/Reference/CALayer_class/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["AutoresizingMask"].Type="CAAutoresizingMask"]]></Change>
+				<Change><![CDATA[Properties["CompositingFilter"].Type="CIFilter"]]></Change>
+				<Change><![CDATA[Properties["EdgeAntialiasingMask"].Type="CAEdgeAntialiasingMask"]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["Layer"].Type="CALayer"]]></Change>
+				<Change><![CDATA[Properties["Layer"].Getter.ReturnType="CALayer"]]></Change>
+				<Change><![CDATA[Properties["Layer"].CopyInDescendants=true]]></Change>
+				<Change><![CDATA[Enumerations["CAAutoresizingMask"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["CAAutoresizingMask"].Flags=true]]></Change>
+				<Change><![CDATA[Enumerations["CAEdgeAntialiasingMask"].BaseType="uint"]]></Change>
+				<Change><![CDATA[Enumerations["CAEdgeAntialiasingMask"].Flags=true]]></Change>
+				<Change><![CDATA[Constants["CATransform3DIdentity"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CAMediaTimingFunction">
+			<File>Cocoa/Reference/CAMediaTimingFunction_class/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["FunctionWithControlPoints"].ReturnType="CAMediaTimingFunction"]]></Change>
+				<Change><![CDATA[Methods["FunctionWithName"].ReturnType="CAMediaTimingFunction"]]></Change>
+				<Change><![CDATA[Methods["GetControlPointAtIndexValues"].Parameters["index"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CAOpenGLLayer">
+			<File>GraphicsImaging/Reference/CAOpenGLLayer_class/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["CanDrawInCGLContextPixelFormatForLayerTimeDisplayTime"].Parameters["timeStamp"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["DrawInCGLContextPixelFormatForLayerTimeDisplayTime"].Parameters["timeStamp"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CAPropertyAnimation">
+			<File>GraphicsImaging/Reference/CAPropertyAnimation_class/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["AnimationWithKeyPath"].ReturnType="CAPropertyAnimation"]]></Change>
+				<Change><![CDATA[Methods["AnimationWithKeyPath"].CopyInDescendants=true]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CARenderer">
+			<File>GraphicsImaging/Reference/CARenderer_class/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["BeginFrameAtTimeTimeStamp"].Parameters["timeStamp"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CAReplicatorLayer">
+			<File>GraphicsImaging/Reference/CAReplicatorLayer_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="CAScrollLayer">
+			<File>GraphicsImaging/Reference/CAScrollLayer_class/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="CAShapeLayer">
+			<File>GraphicsImaging/Reference/CAShapeLayer_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="CATextLayer">
+			<File>GraphicsImaging/Reference/CATextLayer_class/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="CATiledLayer">
+			<File>GraphicsImaging/Reference/CATiledLayer_class/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["LevelsOfDetail"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["LevelsOfDetail"].Getter.ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["LevelsOfDetailBias"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["LevelsOfDetailBias"].Getter.ReturnType="IntPtr"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CATransaction">
+			<File>GraphicsImaging/Reference/CATransaction_class/Introduction/Introduction.html</File>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public static void SetValueForKey]]></Source>
+					<With><![CDATA[public new static void SetValueForKey]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[public static Id ValueForKey]]></Source>
+					<With><![CDATA[public new static Id ValueForKey]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="CATransformLayer">
+			<File>GraphicsImaging/Reference/CATransformLayer_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="CATransition">
+			<File>GraphicsImaging/Reference/CATransition_class/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="CAValueFunction">
+			<File>GraphicsImaging/Reference/CAValueFunction_class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["FunctionWithName"].ReturnType="CAValueFunction"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CIColor">
+			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIColor_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["InitWithCGColor"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Properties["Components"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["NumberOfComponents"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CIContext">
+			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="CIContext.Deprecated">
+			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIContext_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="CIContext"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CIFilter">
+			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["FilterWithNameKeysAndValues"].Parameters["key0,..."].Generate=false]]></Change>
+				<Change><![CDATA[Methods["FilterWithNameKeysAndValues"].Parameters.Set("key0", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>key0</Name><Type>NSString</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["FilterWithNameKeysAndValues"].Parameters.Set("values", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["Apply"].Parameters["k,..."].Generate=false]]></Change>
+				<Change><![CDATA[Methods["Apply"].Parameters.Set("k", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>k</Name><Type>NSString</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["Apply"].Parameters.Set("values", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
+                <Change><![CDATA[Methods["ViewForUIConfigurationExcludedKeys"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CIFilter_CoreAnimationAdditions">
+			<File>GraphicsImaging/Reference/CIFilter_CA_Additions/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="CIFilter"]]></Change>
+                <Change><![CDATA[Properties["Name"].Generate=false]]></Change>
+                <Change><![CDATA[Properties["IsEnabled"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CIFilterGenerator">
+			<File>GraphicsImaging/Reference/CIFilterGenerator_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="CIFilterShape">
+			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilterShape_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ShapeWithRect"].ReturnType="CIFilterShape"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CIImage">
+			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImage_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ImageWithBitmapDataBytesPerRowSizeFormatColorSpace"].Parameters["bpr"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ImageWithImageProviderSizeFormatColorSpaceOptions"].Parameters["width"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ImageWithImageProviderSizeFormatColorSpaceOptions"].Parameters["height"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ImageWithIOSurface"].Parameters["surface"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ImageWithIOSurfaceOptions"].Parameters["surface"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithBitmapDataBytesPerRowSizeFormatColorSpace"].Parameters["bpr"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithCGImage"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithCGImageOptions"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithCGLayer"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithCGLayerOptions"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithCVImageBuffer"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithImageProviderSizeFormatColorSpaceOptions"].Parameters["width:(size_t)height"].Name="width"]]></Change>
+				<Change><![CDATA[Methods["InitWithImageProviderSizeFormatColorSpaceOptions"].Parameters["width"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithImageProviderSizeFormatColorSpaceOptions"].Parameters["height"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithIOSurface"].Parameters["surface"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithIOSurface"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithIOSurfaceOptions"].Parameters["surface"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithIOSurfaceOptions"].GenerateConstructor=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CIImageAccumulator">
+			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIImageAccumulator_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="CIKernel">
+			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIKernel_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="CIPlugIn">
+			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIPlugIn_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="CIPlugIn.Deprecated">
+			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIPlugIn_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="CIPlugIn"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CISampler">
+			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CISampler_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["InitWithImageKeysAndValues"].Parameters.Set("keysAndValues", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>keysAndValues</Name><Type>params object[]</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["SamplerWithImageKeysAndValues"].Parameters.Set("keysAndValues", "<Parameter><Summary><Line>MISSING</Line></Summary><Name>keysAndValues</Name><Type>params object[]</Type></Parameter>")]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CIVector">
+			<File>GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIVector_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["VectorWithValuesCount"].Parameters["values"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["VectorWithValuesCount"].Parameters["count"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithValuesCount"].Parameters["values"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithValuesCount"].Parameters["count"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ValueAtIndex"].Parameters["index"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["Count"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["Count"].Getter.ReturnType="IntPtr"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSValue_CoreAnimationAdditions">
+			<File>GraphicsImaging/Reference/NSValue_CA_additions/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSValue"]]></Change>
+			</Patch>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="CAAction">
+			<File>GraphicsImaging/Reference/CAAction_protocol/Introduction/Introduction.html</File>
+		</Protocol>
+		<Protocol name="CAAnimationDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="CAAnimation"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="CALayerDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="CALayer"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="CALayoutManager">
+			<File>GraphicsImaging/Reference/CALayoutManager_protocol/Introduction/Introduction.html</File>
+		</Protocol>
+		<Protocol name="CAMediaTiming">
+			<File>GraphicsImaging/Reference/CAMediaTiming_protocol/Introduction/Introduction.html</File>
+		</Protocol>
+		<Protocol name="CIImageProvider">
+			<File>GraphicsImaging/Reference/QuartzCoreFramework/Protocols/CIImageProvider_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["x:(size_t)y"].Name="x"]]></Change>
+				<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["width:(size_t)height"].Name="width"]]></Change>
+				<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["rowbytes"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["x"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["y"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["width"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ProvideImageDataBytesPerRowOriginSizeUserInfo"].Parameters["height"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="CIPlugInRegistration">
+			<File>GraphicsImaging/Reference/QuartzCoreFramework/Protocols/CIPlugInRegistration_Protocol/Reference/Reference.html</File>
+		</Protocol>
+	</Protocols>
+	<Structures>
+		<Structure name="CATransform3D" />
+		<Structure name="CVSMPTETime" />
+		<Structure name="CVTimeStamp" />
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

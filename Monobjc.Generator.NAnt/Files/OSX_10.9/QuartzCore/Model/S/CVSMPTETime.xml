@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure Generate="true">
+	<Name>CVSMPTETime</Name>
+	<Namespace>QuartzCore</Namespace>
+	<MixedType>CVSMPTETime,CVSMPTETime</MixedType>
+</Structure>

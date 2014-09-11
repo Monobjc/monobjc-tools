@@ -65,7 +65,7 @@ namespace Monobjc.Tools.Generator.Generators
 			// Emit delegate handlers
 			foreach (MethodEntity methodEntity in methods) {
 				// Append static condition if needed
-				this.AppendStartCondition (methodEntity);
+                this.AppendStartCondition (methodEntity);
 
 				this.AppendDocumentation (2, methodEntity);
 
@@ -80,8 +80,8 @@ namespace Monobjc.Tools.Generator.Generators
 
 				this.Writer.WriteLineFormat (2, signature.ToString ());
 
-				// Append static condition if needed
-				this.AppendEndCondition (methodEntity);
+                // Append static condition if needed
+                this.AppendEndCondition(methodEntity);
 
 				this.Writer.WriteLine ();
 			}
@@ -89,7 +89,7 @@ namespace Monobjc.Tools.Generator.Generators
 			//if (property != null)
 			if (propertyEntity != null) {
 				// Append static condition if needed
-				this.AppendStartCondition (propertyEntity);
+                this.AppendStartCondition (propertyEntity);
 
 				// Emit the delegate assignment
 				this.Writer.WriteLineFormat (2, "/// <summary>");
@@ -119,7 +119,7 @@ namespace Monobjc.Tools.Generator.Generators
 				this.Writer.WriteLine ();
 
 				// Append static condition if needed
-				this.AppendEndCondition (propertyEntity);
+                this.AppendEndCondition (propertyEntity);
 			}
 
 			// Emit the inner class
@@ -165,13 +165,13 @@ namespace Monobjc.Tools.Generator.Generators
 			this.Writer.WriteLineFormat (4, "{{");
 			foreach (MethodEntity methodEntity in methods) {
 				// Append static condition if needed
-				this.AppendStartCondition (methodEntity);
+                this.AppendStartCondition (methodEntity);
 
 				this.Writer.WriteLineFormat (5, "case \"{0}\":", methodEntity.Selector);
 				this.Writer.WriteLineFormat (6, "return (this.{0} != null);", methodEntity.Name);
 
 				// Append static condition if needed);
-				this.AppendEndCondition (methodEntity);
+                this.AppendEndCondition (methodEntity);
 			}
 			this.Writer.WriteLineFormat (5, "default:");
 			this.Writer.WriteLineFormat (6, "return this.SendMessageSuper<bool>({0}EventDispatcherClass, \"respondsToSelector:\", aSelector);", protocolEntity.Name);
@@ -185,7 +185,7 @@ namespace Monobjc.Tools.Generator.Generators
 			this.Writer.WriteLineFormat (3, "{{");
 			foreach (MethodEntity methodEntity in methods) {
 				// Append static condition if needed
-				this.AppendStartCondition (methodEntity);
+                this.AppendStartCondition (methodEntity);
 
 				this.Writer.WriteLineFormat (4, "if (this.{0} != null)", methodEntity.Name);
 				this.Writer.WriteLineFormat (4, "{{");
@@ -196,7 +196,7 @@ namespace Monobjc.Tools.Generator.Generators
 				this.Writer.WriteLineFormat (4, "}}");
 
 				// Append static condition if needed);
-				this.AppendEndCondition (methodEntity);
+                this.AppendEndCondition (methodEntity);
 			}
 			this.Writer.WriteLineFormat (4, "this.SendMessageSuper({0}EventDispatcherClass, \"dealloc\");", protocolEntity.Name);
 			this.Writer.WriteLineFormat (3, "}}");
@@ -205,13 +205,13 @@ namespace Monobjc.Tools.Generator.Generators
 			// Emit the event handlers
 			foreach (MethodEntity methodEntity in methods) {
 				// Append static condition if needed
-				this.AppendStartCondition (methodEntity);
+                this.AppendStartCondition (methodEntity);
 
 				this.AppendDocumentation (3, methodEntity);
 				this.Writer.WriteLineFormat (3, "public event {0}EventHandler {0};", methodEntity.Name);
 
 				// Append static condition if needed);
-				this.AppendEndCondition (methodEntity);
+                this.AppendEndCondition (methodEntity);
 
 				this.Writer.WriteLine ();
 			}
@@ -221,7 +221,7 @@ namespace Monobjc.Tools.Generator.Generators
 				bool hasReturnType = !String.Equals (methodEntity.ReturnType, "void", StringComparison.OrdinalIgnoreCase);
 
 				// Append static condition if needed
-				this.AppendStartCondition (methodEntity);
+                this.AppendStartCondition (methodEntity);
 
 				this.AppendDocumentation (3, methodEntity);
 
@@ -259,7 +259,7 @@ namespace Monobjc.Tools.Generator.Generators
 				this.Writer.WriteLineFormat (3, "}}");
 
 				// Append static condition if needed);
-				this.AppendEndCondition (methodEntity);
+                this.AppendEndCondition (methodEntity);
 
 				this.Writer.WriteLine ();
 			}

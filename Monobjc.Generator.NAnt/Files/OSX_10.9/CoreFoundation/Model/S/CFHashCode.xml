@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Structure Generate="true">
+	<Name>CFHashCode</Name>
+	<Namespace>CoreFoundation</Namespace>
+	<MixedType>uint,ulong</MixedType>
+</Structure>

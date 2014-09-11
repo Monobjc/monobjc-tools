@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure Generate="true">
+	<Name>GLKMatrix3</Name>
+	<Namespace>GLKit</Namespace>
+	<MixedType>GLKMatrix3,GLKMatrix3</MixedType>
+</Structure>

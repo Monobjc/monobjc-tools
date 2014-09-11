@@ -9,11 +9,11 @@
 	<property name="dest.dir" value="../../../../libraries" />
 	<loadtasks assembly="Monobjc.Generator.NAnt.dll" />
 
-	<property name="docset.path" value="~/Library/Developer/Shared/Documentation/DocSets/com.apple.adc.documentation.AppleOSX10_8.CoreReference.docset" />
+	<property name="docset.path" value="~/Library/Developer/Shared/Documentation/DocSets/com.apple.adc.documentation.AppleOSX10.9.CoreReference.docset" />
 	<loadfile property="docset.info" file="${string::replace(docset.path, '~', user.home)}/Contents/Info.plist" />
-	<property name="docset.revision" value="419.33" />
+	<property name="docset.revision" value="421.5" />
 	<property name="docset.valid" value="${string::contains(docset.info, docset.revision)}" />
-	<docset id="OSX_10.8" name="OSX_10.8" path="${string::replace(docset.path, '~', user.home)}/Contents/Resources/Documents/documentation" />
+	<docset id="OSX_10.9" name="OSX_10.9" path="${string::replace(docset.path, '~', user.home)}/Contents/Resources/Documents/documentation" />
 
 	<property name="methods" value="AbortEditing,AcceptsFirstResponder,Alloc,AttachToCurrentThread,Autorelease,BecomeFirstResponder,ClearContents,CloseTray,Copy,CreateCommandInstance,CreateViewController,DecodeDataObject,DecodeNXColor,DecodeNXObject,DecodeObject,DecodePoint,DecodePortObject,DecodePropertyList,DecodeRect,DecodeSize,DetachFromCurrentThread,Draw,EjectMedia,EstimateLength,ExecuteCommand,Flatten,ForceTerminate,GoBack,GoForward,Hide,Init,Load,MutableCopy,NextObject,New,OpenTray,Pause,Play,ResignFirstResponder,Resume,Retain,Run,RunModal,RunSetupPanel,Save,Set,Start,StartAccessingSecurityScopedResource,StartRendering,Stop,Suspend,Synchronize,Terminate,Unhide,Unload,UpdateMovieFile" />
 
@@ -21,48 +21,53 @@
 	Framework definitions
 	-->
 	<framework-set id="base">
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/ApplicationServices.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/CoreFoundation.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/Foundation.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/Kernel.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/AppKit.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/CoreText.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/Quartz.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/QuartzCore.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/OpenGL.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/ApplicationServices.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/CoreFoundation.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/Foundation.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/Kernel.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/AppKit.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/CoreText.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/Quartz.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/QuartzCore.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/OpenGL.xml" />
 	</framework-set>
 	<framework-set id="docset">
 		<framework-set refid="base" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/Accounts.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/AddressBook.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/AVFoundation.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/Collaboration.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/CoreData.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/CoreLocation.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/CoreMedia.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/CoreMIDI.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/CoreServices.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/CoreWLAN.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/DiscRecording.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/DiscRecordingUI.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/EventKit.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/GameKit.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/GLKit.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/InputMethodKit.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/InstantMessage.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/QTKit.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/SceneKit.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/ScriptingBridge.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/Security.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/SecurityFoundation.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/SecurityInterface.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/Social.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/StoreKit.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/WebKit.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/Accounts.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/AddressBook.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/AVFoundation.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/AVKit.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/Collaboration.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/CoreData.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/CoreLocation.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/CoreMedia.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/CoreMIDI.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/CoreServices.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/CoreWLAN.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/DiscRecording.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/DiscRecordingUI.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/EventKit.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/GameController.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/GameKit.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/GLKit.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/InputMethodKit.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/InstantMessage.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/MapKit.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/MediaLibrary.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/QTKit.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/SceneKit.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/ScriptingBridge.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/Security.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/SecurityFoundation.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/SecurityInterface.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/Social.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/SpriteKit.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/StoreKit.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/WebKit.xml" />
 	</framework-set>
 	<framework-set id="system-frameworks">
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/WebKit.DOM.xml" />
-		<framework descriptor="${data.dir}/Resources/OSX_10.8/JavaScriptCore.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/WebKit.DOM.xml" />
+		<framework descriptor="${data.dir}/Resources/OSX_10.9/JavaScriptCore.xml" />
 	</framework-set>
 	<framework-set id="thirdparty-frameworks">
 		<framework descriptor="${data.dir}/Resources/CorePlot-1.2.xml" />
@@ -105,31 +110,31 @@
 	<target name="process-docset" depends="prepare">
 		<!-- Copy files from DocSet -->
 		<copy-documents dir="${data.dir}" source-type="DocSet" destination-type="Html" check-source="true">
-			<docset refid="OSX_10.8" />
+			<docset refid="OSX_10.9" />
 			<framework-set refid="all" />
 		</copy-documents>
 
 		<!-- Clean-up classic format -->
 		<clean-classic-documents dir="${data.dir}" type="Html">
-			<docset refid="OSX_10.8" />
+			<docset refid="OSX_10.9" />
 			<framework-set refid="all" />
 		</clean-classic-documents>
 
-		<!-- Path HTML documents -->
+		<!-- Patch HTML documents -->
 		<patch-documents dir="${data.dir}" type="Html">
-			<docset refid="OSX_10.8" />
+			<docset refid="OSX_10.9" />
 			<framework-set refid="docset" />
 		</patch-documents>
 
 		<!-- Convert HTML documents to XHTML -->
 		<html-to-xhtml dir="${data.dir}">
-			<docset refid="OSX_10.8" />
+			<docset refid="OSX_10.9" />
 			<framework-set refid="all" />
 		</html-to-xhtml>
 
-		<!-- Path XHTML documents -->
+		<!-- Patch XHTML documents -->
 		<patch-documents dir="${data.dir}" type="Xhtml">
-			<docset refid="OSX_10.8" />
+			<docset refid="OSX_10.9" />
 			<framework-set refid="all" />
 		</patch-documents>
 	</target>
@@ -192,25 +197,25 @@
 	<target name="convert" depends="process">
 		<!-- Convert Model documents to XHTML -->
 		<xhtml-to-model dir="${data.dir}" mappings="Resources/Mappings.xml" methods="${methods}" report="${data.dir}/xhtml-to-model.log" mapping-report="${data.dir}/Mappings.txt">
-			<docset refid="OSX_10.8" />
+			<docset refid="OSX_10.9" />
 			<framework-set refid="all" />
 		</xhtml-to-model>
 
 		<!-- Patch model -->
 		<patch-model dir="${data.dir}" report="${data.dir}/patch-model.log">
-			<docset refid="OSX_10.8" />
+			<docset refid="OSX_10.9" />
 			<framework-set refid="all" />
 		</patch-model>
 
 		<!-- Annotate deprecated model -->
 		<mark-deprecation dir="${data.dir}" report="${data.dir}/mark-deprecation.log">
-			<docset refid="OSX_10.8" />
+			<docset refid="OSX_10.9" />
 			<framework-set refid="all" />
 		</mark-deprecation>
 
 		<!-- Merge deprecated model -->
 		<merge-deprecated dir="${data.dir}" report="${data.dir}/merge-deprecated.log">
-			<docset refid="OSX_10.8" />
+			<docset refid="OSX_10.9" />
 			<framework-set refid="all" />
 		</merge-deprecated>
 	</target>
@@ -223,25 +228,25 @@
 	<target name="generate" depends="convert">
 		<!-- Collect mixed types -->
 		<gather-types dir="${data.dir}" mixed-types="${data.dir}/MixedTypes.txt">
-			<docset refid="OSX_10.8" />
+			<docset refid="OSX_10.9" />
 			<framework-set refid="all" />
 		</gather-types>
 
 		<!-- Generate source code -->
 		<generate-code dir="${data.dir}" mixed-types="${data.dir}/MixedTypes.txt" license="Resources/MIT.txt">
-			<docset refid="OSX_10.8" />
+			<docset refid="OSX_10.9" />
 			<framework-set refid="all" />
 		</generate-code>
 
-		<!-- Path generated documents -->
+		<!-- Patch generated documents -->
 		<patch-documents dir="${data.dir}" type="Generated">
-			<docset refid="OSX_10.8" />
+			<docset refid="OSX_10.9" />
 			<framework-set refid="all" />
 		</patch-documents>
 
 		<!-- Generate assembly information -->
 		<generate-info dir="${data.dir}" template="Resources/AssemblyInfo.template">
-			<docset refid="OSX_10.8" />
+			<docset refid="OSX_10.9" />
 			<framework-set refid="all" />
 		</generate-info>
 	</target>
@@ -265,23 +270,21 @@
 	================================================================================
 	-->
 	<target name="analyze" depends="process">
-		<!-- Find deprecation inside documentation 
+		<!-- Find deprecation inside documentation -->
 		<find-deprecation dir="${data.dir}" report="${data.dir}/find-deprecation.log">
-			<docset refid="OSX_10.8" />
+			<docset refid="OSX_10.9" />
 			<framework-set refid="docset" />
 		</find-deprecation>
-		-->
-		
-		<!-- Find delegates 
+
+		<!-- Find delegates -->
 		<find-delegate dir="${data.dir}" report="${data.dir}/find-delegate.log">
-			<docset refid="OSX_10.8" />
+			<docset refid="OSX_10.9" />
 			<framework-set refid="docset" />
 		</find-delegate>
-		-->
-		
+
 		<!-- Generate mapping file -->
 		<generate-mapping dir="${data.dir}" mapping-report="${data.dir}/Mappings.txt" mixed-types="${data.dir}/MixedTypes.txt" mappings="${data.dir}/Mappings.xml">
-			<docset refid="OSX_10.8" />
+			<docset refid="OSX_10.9" />
 			<framework-set refid="docset" />
 		</generate-mapping>
 	</target>
@@ -293,9 +296,18 @@
 	-->
 	<target name="statistics">
 		<dump-statistics dir="${data.dir}" report="${data.dir}/TestResult.xml">
-			<docset refid="OSX_10.8" />
+			<docset refid="OSX_10.9" />
 			<framework-set refid="docset" />
 		</dump-statistics>
+	</target>
+
+	<!--
+	================================================================================
+	Compare two descriptors files
+	================================================================================
+	-->
+	<target name="compare">
+		<compare-descriptor file1="${file1}" file2="${file2}" report="${data.dir}/Compare.txt" />
 	</target>
 
 	<!--
@@ -310,7 +322,6 @@
 		<delete file="${data.dir}/TestResult.xml" />
 		
 		<delete dir="${data.dir}/Generated" />
-		<delete dir="${data.dir}/10.8" />
 		<delete dir="${data.dir}/CorePlot" />
 		<delete dir="${data.dir}/Sparkle" />
 		<delete dir="${data.dir}/JavaScriptCore" />

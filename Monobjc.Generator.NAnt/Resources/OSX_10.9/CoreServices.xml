@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="CoreServices" usings="CoreFoundation,Foundation,ApplicationServices" assembly="Monobjc.Foundation" source="DocSet">
+	<Types>
+		<Type name="UTType">
+			<File>MobileCoreServices/Reference/UTTypeRef/Reference/reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[>kUTTypeAppleICNS</a>]]></Source>
+					<With><![CDATA[>kUTTypeAppleICNS;</a>]]></With>
+				</Replace>
+			</Patch>
+		</Type>
+	</Types>
+</Framework>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" CopyInDescendants="false" Nature="C">
+  <Summary />
+  <MinAvailability>OS X v10.9</MinAvailability>
+  <MaxAvailability>VERSION</MaxAvailability>
+  <Name>AVMetadataItemFilter</Name>
+  <Namespace>AVFoundation</Namespace>
+  <BaseType>NSObject</BaseType>
+  <MixedType />
+  <Enumerations />
+  <Constants />
+  <Functions />
+  <Protocols />
+  <Properties>
+    <Property Generate="true" CopyInDescendants="false" Static="true">
+      <Summary>
+        <Line>Provides an instance of an AVMetadataItemFilter useful for sharing assets.  Removes many user-identifying metadata items, such as location information, leaving only playback-, copyright- and commercial-related metadata (such as the purchaser's Apple ID), along with metadata either derivable from the media itself or necessary for its proper behavior.</Line>
+      </Summary>
+      <MinAvailability>OS X v10.9</MinAvailability>
+      <Name>MetadataItemFilterForSharing</Name>
+      <Type>AVMetadataItemFilter</Type>
+      <Getter Generate="true" CopyInDescendants="false" Static="true" GenerateConstructor="true">
+        <Summary />
+        <Selector>metadataItemFilterForSharing</Selector>
+        <Signature>+ (AVMetadataItemFilter *)metadataItemFilterForSharing;</Signature>
+        <Parameters />
+      </Getter>
+    </Property>
+  </Properties>
+</Class>

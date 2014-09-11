@@ -62,7 +62,7 @@ namespace Monobjc.Tools.Generator.Generators
 
 				// Output the constants
 				foreach (ConstantEntity constantEntity in classEntity.Constants.Where(e => e.Generate)) {
-					this.ConstantGenerator.Generate (classEntity.Namespace, constantEntity);
+					this.ConstantGenerator.Generate (classEntity, constantEntity);
 					this.Writer.WriteLine ();
 				}
 

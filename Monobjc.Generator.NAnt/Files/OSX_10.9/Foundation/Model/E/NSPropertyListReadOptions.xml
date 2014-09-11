@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Enumeration Generate="true">
+	<Summary>
+		<Line>The read options are not currently implemented and the value should be set to 0.</Line>
+	</Summary>
+	<MinAvailability>OS X v10.6</MinAvailability>
+	<Name>NSPropertyListReadOptions</Name>
+	<Namespace>Foundation</Namespace>
+	<BaseType>uint</BaseType>
+	<MixedType>uint,ulong</MixedType>
+</Enumeration>

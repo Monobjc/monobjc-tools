@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Enumeration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Generate="true" Flags="false">
+	<Summary>
+		<Line>PDF Kit annotation borders may have the following styles:</Line>
+	</Summary>
+	<MinAvailability>OS X v10.4</MinAvailability>
+	<MaxAvailability>VERSION</MaxAvailability>
+	<Name>PDFBorderStyle</Name>
+	<Namespace>Quartz</Namespace>
+	<BaseType>int</BaseType>
+	<Enumerations />
+	<Constants />
+	<Notifications />
+	<Functions />
+	<Values>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>Solid border.</Line>
+			</Summary>
+			<Name>kPDFBorderStyleSolid</Name>
+			<MinAvailability>OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>Dashed border.</Line>
+			</Summary>
+			<Name>kPDFBorderStyleDashed</Name>
+			<MinAvailability>OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>Beveled border.</Line>
+			</Summary>
+			<Name>kPDFBorderStyleBeveled</Name>
+			<MinAvailability>OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>Inset border.</Line>
+			</Summary>
+			<Name>kPDFBorderStyleInset</Name>
+			<MinAvailability>OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>Underline border.</Line>
+			</Summary>
+			<Name>kPDFBorderStyleUnderline</Name>
+			<MinAvailability>OS X v10.4</MinAvailability>
+			<Value />
+		</EnumerationValue>
+	</Values>
+</Enumeration>

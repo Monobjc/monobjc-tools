@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Enumeration Generate="true">
+	<Summary>
+		<Line>Coordinates that establish the edges of a rectangle.</Line>
+	</Summary>
+	<MinAvailability>OS X v10.0</MinAvailability>
+	<MaxAvailability>VERSION</MaxAvailability>
+	<Name>CGRectEdge</Name>
+	<Namespace>ApplicationServices</Namespace>
+	<BaseType>NSUInteger</BaseType>
+	<MixedType>uint,ulong</MixedType>
+	<Enumerations />
+	<Constants />
+	<Notifications />
+	<Functions />
+	<Values>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>The x-coordinate that establishes the left edge of a rectangle.</Line>
+			</Summary>
+			<MinAvailability>OS X v10.0</MinAvailability>
+			<Name>CGRectMinXEdge</Name>
+			<Value>0</Value>
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>The y-coordinate that establishes the minimum edge of a rectangle. In Mac OS X, this is typically the bottom edge of the rectangle. If the coordinate system is flipped (or if you are using the default coordinate system in iOS), this constant refers to the top edge of the rectangle.</Line>
+			</Summary>
+			<MinAvailability>OS X v10.0</MinAvailability>
+			<Name>CGRectMinYEdge</Name>
+			<Value>1</Value>
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>The x-coordinate that establishes the right edge of a rectangle.</Line>
+			</Summary>
+			<MinAvailability>OS X v10.0</MinAvailability>
+			<Name>CGRectMaxXEdge</Name>
+			<Value>2</Value>
+		</EnumerationValue>
+		<EnumerationValue Generate="true">
+			<Summary>
+				<Line>The y-coordinate that establishes the maximum edge of a rectangle. In Mac OS X, this is typically the top edge of the rectangle. If the coordinate system is flipped (or if you are using the default coordinate system in iOS), this constant refers to the bottom edge of the rectangle.</Line>
+			</Summary>
+			<MinAvailability>OS X v10.0</MinAvailability>
+			<Name>CGRectMaxYEdge</Name>
+			<Value>3</Value>
+		</EnumerationValue>
+	</Values>
+</Enumeration>

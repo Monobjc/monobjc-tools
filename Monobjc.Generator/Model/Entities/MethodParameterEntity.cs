@@ -45,7 +45,9 @@ namespace Monobjc.Tools.Generator.Model
 			this.Generate = methodParameterEntity.Generate;
 			this.IsBlock = methodParameterEntity.IsBlock;
 			this.IsByRef = methodParameterEntity.IsByRef;
-			this.IsOut = methodParameterEntity.IsOut;
+            this.IsOut = methodParameterEntity.IsOut;
+            this.IsArray = methodParameterEntity.IsArray;
+            this.IsStruct = methodParameterEntity.IsStruct;
 			this.Name = methodParameterEntity.Name;
 			this.Summary = new List<string> (methodParameterEntity.Summary);
 			this.Type = methodParameterEntity.Type;
@@ -90,16 +92,26 @@ namespace Monobjc.Tools.Generator.Model
 			get;
 			set;
 		}
-		
-		/// <summary>
-		///   Gets or sets a value indicating whether this instance is an array.
-		/// </summary>
-		/// <value><c>true</c> if this instance is an array; otherwise, <c>false</c>.</value>
-		[XmlAttribute]
-		public bool IsArray {
-			get;
-			set;
-		}
+
+        /// <summary>
+        ///   Gets or sets a value indicating whether this instance is an array.
+        /// </summary>
+        /// <value><c>true</c> if this instance is an array; otherwise, <c>false</c>.</value>
+        [XmlAttribute]
+        public bool IsArray {
+            get;
+            set;
+        }
+
+        /// <summary>
+        ///   Gets or sets a value indicating whether this instance is a struct.
+        /// </summary>
+        /// <value><c>true</c> if this instance is an array; otherwise, <c>false</c>.</value>
+        [XmlAttribute]
+        public bool IsStruct {
+            get;
+            set;
+        }
 
 		/// <summary>
 		/// Serves as a hash function for a <see cref="Monobjc.Tools.Generator.Model.MethodParameterEntity"/> object.
@@ -111,9 +123,11 @@ namespace Monobjc.Tools.Generator.Model
 		{
 			unchecked {
 				int hash = base.GetHashCode();
+                hash = hash * 23 + this.IsArray.GetHashCode ();
 				hash = hash * 23 + this.IsBlock.GetHashCode ();
 				hash = hash * 23 + this.IsByRef.GetHashCode ();
-				hash = hash * 23 + this.IsOut.GetHashCode ();
+                hash = hash * 23 + this.IsOut.GetHashCode ();
+                hash = hash * 23 + this.IsStruct.GetHashCode ();
 				hash = hash * 23 + (this.Type != null ? this.Type.GetHashCode () : 0);
 				return hash;
 			}
@@ -137,8 +151,10 @@ namespace Monobjc.Tools.Generator.Model
 			}
 			return Equals (other.Type, this.Type) &&
 				other.IsOut.Equals (this.IsOut) &&
-				other.IsByRef.Equals (this.IsByRef) &&
-				other.IsBlock.Equals (this.IsBlock);
+                other.IsByRef.Equals (this.IsByRef) &&
+                other.IsBlock.Equals (this.IsBlock) &&
+                other.IsBlock.Equals (this.IsArray) &&
+                other.IsBlock.Equals (this.IsStruct);
 		}
 
 		/// <summary>
@@ -174,9 +190,11 @@ namespace Monobjc.Tools.Generator.Model
 		{
 			unchecked {
 				int hash = base.GetHashValue();
-				hash = hash * 23 + this.IsBlock.GetHashCode ();
-				hash = hash * 23 + this.IsByRef.GetHashCode ();
-				hash = hash * 23 + this.IsOut.GetHashCode ();
+                hash = hash * 23 + this.IsArray.GetHashCode ();
+                hash = hash * 23 + this.IsBlock.GetHashCode ();
+                hash = hash * 23 + this.IsByRef.GetHashCode ();
+                hash = hash * 23 + this.IsOut.GetHashCode ();
+                hash = hash * 23 + this.IsStruct.GetHashCode ();
 				hash = hash * 23 + (this.Type != null ? this.Type.GetHashCode () : 0);
 				return hash;
 			}

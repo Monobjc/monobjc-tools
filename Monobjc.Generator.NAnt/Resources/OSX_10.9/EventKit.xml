@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="EventKit" usings="AddressBook,AppKit,CoreLocation,Foundation" assembly="Monobjc.EventKit" source="DocSet">
+	<Types>
+	</Types>
+	<Classes>
+		<Class name="EKAlarm">
+			<File>EventKit/Reference/EKAlarmClassRef/EKAlarmClassReference/EKAlarmClassReference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Proximity"].Type="EKAlarmProximity"]]></Change>
+				<Change><![CDATA[Enumerations["EKAlarmType"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["EKAlarmType"].MinAvailability="OS X v10.8"]]></Change>
+				<Change><![CDATA[Enumerations["EKAlarmProximity"].BaseType="NSInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="EKCalendar">
+			<File>DataManagement/Reference/EKCalendarClassRef/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["CalendarForEntityTypeEventStore"].Parameters["entityType"].Type="EKEntityType"]]></Change>
+				<Change><![CDATA[Properties["SupportedEventAvailabilities"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["EKCalendarType"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["EKCalendarEventAvailability"].BaseType="NSInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="EKCalendarItem">
+			<File>EventKit/Reference/EKCalendarItemClassRef/Reference/Reference.html</File>
+		</Class>
+		<Class name="EKEvent">
+			<File>EventKit/Reference/EKEventClassRef/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["EKEventAvailability"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["EKEventStatus"].BaseType="NSInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="EKEventStore">
+			<File>EventKit/Reference/EKEventStoreClassRef/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["FetchRemindersMatchingPredicateCompletion"].Parameters["completion"].Type="Action<NSArray>"]]></Change>
+				<Change><![CDATA[Methods["FetchRemindersMatchingPredicateCompletion"].Parameters["completion"].IsBlock=true]]></Change>
+                <Change><![CDATA[Enumerations["EKSpan"].BaseType="NSInteger"]]></Change>
+                <Change><![CDATA[Enumerations["EKAuthorizationStatus"].BaseType="NSInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="EKObject">
+			<File>EventKit/Reference/EKObjectClassRef/Reference/Reference.html</File>
+		</Class>
+		<Class name="EKParticipant">
+			<File>EventKit/Reference/EKParticipantClassRef/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["EKParticipantRole"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["EKParticipantStatus"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["EKParticipantType"].BaseType="NSInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="EKRecurrenceDayOfWeek">
+			<File>EventKit/Reference/EKRecurrenceDayOfWeekClassRef/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["DayOfWeek"].ReturnType="EKRecurrenceDayOfWeek"]]></Change>
+				<Change><![CDATA[Methods["DayOfWeekWeekNumber"].ReturnType="EKRecurrenceDayOfWeek"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="EKRecurrenceEnd">
+			<File>EventKit/Reference/EKRecurrenceEndClassRef/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["RecurrenceEndWithEndDate"].ReturnType="EKRecurrenceEnd"]]></Change>
+				<Change><![CDATA[Methods["RecurrenceEndWithOccurrenceCount"].ReturnType="EKRecurrenceEnd"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="EKRecurrenceRule">
+			<File>EventKit/Reference/EKRecurrenceRuleClassRef/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["EKRecurrenceFrequency"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["Days_of_the_Week"].Name="EKDaysOfTheWeek"]]></Change>
+				<Change><![CDATA[Enumerations["EKDaysOfTheWeek"].BaseType="int"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="EKReminder">
+			<File>EventKit/Reference/EKReminderClassRef/Reference/Reference.html</File>
+		</Class>
+		<Class name="EKSource">
+			<File>EventKit/Reference/EKSourceClassRef/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["EKSourceType"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["EKEntityType"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["EKEntityMask"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["EKEntityMask"].MinAvailability="OS X v10.8"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="EKStructuredLocation">
+			<File>EventKit/Reference/EKStructuredLocationClassRef/Reference/Reference.html</File>
+		</Class>
+	</Classes>
+	<Protocols>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+	</Enumerations>
+</Framework>

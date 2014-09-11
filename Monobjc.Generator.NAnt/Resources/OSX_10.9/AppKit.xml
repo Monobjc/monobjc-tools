@@ -1,0 +1,2807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Framework name="AppKit" usings="ApplicationServices,Foundation,CoreData,QuartzCore" assembly="Monobjc.AppKit" source="DocSet">
+	<Types>
+		<Type name="AppKitFramework.Constants">
+			<File>Cocoa/Reference/ApplicationKit/Miscellaneous/AppKit_Constants/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Attributed_String_Errors"].Name="NSAttributedStringError"]]></Change>
+				<Change><![CDATA[Enumerations["NSAttributedStringError"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["Services_Error_Codes"].Name="NSServicesError"]]></Change>
+				<Change><![CDATA[Enumerations["NSServicesError"].BaseType="NSInteger"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="AppKitFramework.DataTypes">
+			<File>Cocoa/Reference/ApplicationKit/Miscellaneous/AppKit_DataTypes/Reference/reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["NSAnimationEffect"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSFocusRingPlacement"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSFocusRingType"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSInterfaceStyle"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSOpenGLGlobalOption"].BaseType="int"]]></Change>
+			</Patch>
+		</Type>
+		<Type name="AppKitFramework.Functions">
+			<File>Cocoa/Reference/ApplicationKit/Miscellaneous/AppKit_Functions/Reference/reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<pre class="declaration">]]></Source>
+                    <With><![CDATA[)</p><pre class="declaration">]]></With>
+                </Replace>
+            </Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Functions["NSAvailableWindowDepths"].ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Functions["NSBestDepth"].Parameters["exactMatch"].Type="bool"]]></Change>
+				<Change><![CDATA[Functions["NSBestDepth"].Parameters["exactMatch"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["NSCountWindows"].Parameters["count"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Functions["NSCountWindows"].Parameters["count"].IsOut=true]]></Change>
+				<Change><![CDATA[Functions["NSEventMaskFromType"].ReturnType="NSEventMask"]]></Change>
+				<Change><![CDATA[Functions["NSBeginAlertSheet"].Parameters["values"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSBeginCriticalAlertSheet"].Parameters["values"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSBeginInformationalAlertSheet"].Parameters["values"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSGetAlertPanel"].Parameters["values"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSGetCriticalAlertPanel"].Parameters["values"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSGetInformationalAlertPanel"].Parameters["values"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRunAlertPanel"].Parameters["values"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRunCriticalAlertPanel"].Parameters["values"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRunInformationalAlertPanel"].Parameters["values"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSApplicationLoad"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSApplicationMain"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSConvertGlyphsToPackedGlyphs"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSCopyBits"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSCountWindowsForContext"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSCreateFileContentsPboardType"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSCreateFilenamePboardType"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSDottedFrameRect"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSDrawBitmap"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSDrawButton"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSDrawColorTiledRects"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSDrawDarkBezel"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSDrawGrayBezel"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSDrawGroove"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSDrawLightBezel"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSDrawTiledRects"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSGetFileType"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSGetFileTypes"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSGetWindowServerMemory"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSInterfaceStyleForKey"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSIsControllerMarker"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSNumberOfColorComponents"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSOpenGLGetOption"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSOpenGLGetVersion"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSOpenGLSetOption"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSPerformService"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRectClipList"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRectFillList"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRectFillListUsingOperation"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRectFillListWithColors"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRectFillListWithColorsUsingOperation"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRectFillListWithGrays"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSRegisterServicesProvider"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSSetFocusRingStyle"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSSetShowsServicesMenuItem"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSShowsServicesMenuItem"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSUnregisterServicesProvider"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSUpdateDynamicServices"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSWindowList"].Generate=false]]></Change>
+				<Change><![CDATA[Functions["NSWindowListForContext"].Generate=false]]></Change>
+			</Patch>
+		</Type>
+	</Types>
+	<Classes>
+		<Class name="CIColor_AppKitAdditions">
+			<File>Cocoa/Reference/ApplicationKit/Classes/CIColor_AppKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="CIColor"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="CIImage_AppKitAdditions">
+			<File>Cocoa/Reference/ApplicationKit/Classes/CIImage_AppKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="CIImage"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSActionCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSActionCell_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["IntegerValue"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSActionCell.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSActionCell_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSActionCell"]]></Change>
+				<Change><![CDATA[Methods["SetFloatingPointFormatLeftRight"].MaxAvailability="OS X v10.5"]]></Change>
+				<Change><![CDATA[Methods["SetObjectValue"].MaxAvailability=""]]></Change>
+				<Change><![CDATA[Properties["ControlView"].MaxAvailability="OS X v10.5"]]></Change>
+				<Change><![CDATA[Properties["FloatValue"].MaxAvailability="OS X v10.5"]]></Change>
+				<Change><![CDATA[Properties["IntValue"].MaxAvailability="OS X v10.5"]]></Change>
+				<Change><![CDATA[Properties["StringValue"].MaxAvailability="OS X v10.5"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSAffineTransform_AppKitAdditions">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSAffineTransform_AppKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSAffineTransform"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSAlert">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSAlert_Class/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<div class="declaration">]]></Source>
+                    <With><![CDATA[)</p><div class="declaration">]]></With>
+                </Replace>
+            </Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["AlertWithMessageTextDefaultButtonAlternateButtonOtherButtonInformativeTextWithFormat"].Parameters["informativeText,"].Generate=false]]></Change>
+				<Change><![CDATA[Methods["AlertWithMessageTextDefaultButtonAlternateButtonOtherButtonInformativeTextWithFormat"].Parameters.Set("informativeText", "<Parameter><Summary /><Name>informativeText</Name><Type>NSString</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["AlertWithMessageTextDefaultButtonAlternateButtonOtherButtonInformativeTextWithFormat"].Parameters.Set("values", "<Parameter><Summary /><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["Window"].Type="NSWindow"]]></Change>
+				<Change><![CDATA[Enumerations["Button_Return_Values"].Name="NSButtonReturn"]]></Change>
+				<Change><![CDATA[Enumerations["NSButtonReturn"].BaseType="NSInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSAnimation">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSAnimation_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Constants["NSAnimationProgress"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSAnimationContext">
+			<File>Cocoa/Reference/NSAnimationContext_class/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["CompletionHandler"].Type="Block"]]></Change>
+				<Change><![CDATA[Properties["CompletionHandler"].MinAvailability="OS X v10.7"]]></Change>
+				<Change><![CDATA[Properties["Duration"].MinAvailability="OS X v10.6"]]></Change>
+				<Change><![CDATA[Properties["TimingFunction"].MinAvailability="OS X v10.7"]]></Change>
+			</Patch>
+		</Class>
+        <Class name="NSAppearance">
+            <File>AppKit/Reference/NSAppearance_Class/Reference/Reference.html</File>
+        </Class>
+		<Class name="NSAppleScript_AppKitAdditions">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSAppleScript_AppKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSAppleScript"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSApplication">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSApplication_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[ = (1 &lt;&lt;  9)
+   ]]></Source>
+					<With><![CDATA[ = (1 &lt;&lt;  9),
+   ]]></With>
+				</Replace>
+                <Replace>
+                    <Source><![CDATA[= 1 &lt;&lt; 0
+]]></Source>
+                    <With><![CDATA[= 1 &lt;&lt; 0,
+]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[typedef NS_OPTIONS(NSUInteger, NSApplicationOcclusionState)]]></Source>
+                    <With><![CDATA[enum NSApplicationOcclusionState]]></With>
+                </Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["DiscardEventsMatchingMaskBeforeEvent"].Parameters["mask"].Type="NSEventMask"]]></Change>
+				<Change><![CDATA[Methods["NextEventMatchingMaskUntilDateInModeDequeue"].Parameters["mask"].Type="NSEventMask"]]></Change>
+				<Change><![CDATA[Methods["RegisterUserInterfaceItemSearchHandler"].Parameters["handler"].Type="Id"]]></Change>
+				<Change><![CDATA[Methods["SearchStringInUserInterfaceItemStringSearchRangeFoundRange"].Parameters["foundRange"].Type="NSRange"]]></Change>
+				<Change><![CDATA[Methods["SearchStringInUserInterfaceItemStringSearchRangeFoundRange"].Parameters["foundRange"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["UnregisterUserInterfaceItemSearchHandler"].Parameters["handler"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Constants["NSApp"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["Return_values_for_modal_operations"].Name="NSRunResponse"]]></Change>
+				<Change><![CDATA[Enumerations["NSRunResponse"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["Notification_Type_Constants"].Name="NSRemoteNotificationType"]]></Change>
+                <Change><![CDATA[Enumerations["NSRemoteNotificationType"].BaseType="NSUInteger"]]></Change>
+                <Change><![CDATA[Enumerations["NSApplicationOcclusionState"].BaseType="NSUInteger"]]></Change>
+				<!-- TODO: Move to a NSUInteger constant -->
+				<Change><![CDATA[Enumerations["NSUpdateWindowsRunLoopOrdering"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSApplication.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSApplication_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSApplication"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSArrayController">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSArrayController_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["ArrangedObjects"].Type="NSArray"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSATSTypesetter">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSATSTypesetter_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["glyphBuffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["charIndexBuffer"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["charIndexBuffer"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["inscribeBuffer"].Type="NSGlyphInscription"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["inscribeBuffer"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["elasticBuffer"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["elasticBuffer"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetLineFragmentRectUsedRectForParagraphSeparatorGlyphRangeAtProposedOrigin"].Parameters["lineFragmentRect"].Type="NSRect"]]></Change>
+				<Change><![CDATA[Methods["GetLineFragmentRectUsedRectForParagraphSeparatorGlyphRangeAtProposedOrigin"].Parameters["lineFragmentRect"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetLineFragmentRectUsedRectForParagraphSeparatorGlyphRangeAtProposedOrigin"].Parameters["lineFragmentUsedRect"].Type="NSRect"]]></Change>
+				<Change><![CDATA[Methods["GetLineFragmentRectUsedRectForParagraphSeparatorGlyphRangeAtProposedOrigin"].Parameters["lineFragmentUsedRect"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["LayoutParagraphAtPoint"].Parameters["lineFragmentOrigin"].Type="NSPoint"]]></Change>
+				<Change><![CDATA[Methods["LayoutParagraphAtPoint"].Parameters["lineFragmentOrigin"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["SetBidiLevelsForGlyphRange"].Parameters["levels"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["SetLocationWithAdvancementsForStartOfGlyphRange"].Parameters["advancements"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["SubstituteGlyphsInRangeWithGlyphs"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["WillSetLineFragmentRectForGlyphRangeUsedRectBaselineOffset"].Parameters["lineRect"].Type="NSRect"]]></Change>
+				<Change><![CDATA[Methods["WillSetLineFragmentRectForGlyphRangeUsedRectBaselineOffset"].Parameters["lineRect"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["WillSetLineFragmentRectForGlyphRangeUsedRectBaselineOffset"].Parameters["usedRect"].Type="NSRect"]]></Change>
+				<Change><![CDATA[Methods["WillSetLineFragmentRectForGlyphRangeUsedRectBaselineOffset"].Parameters["usedRect"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["WillSetLineFragmentRectForGlyphRangeUsedRectBaselineOffset"].Parameters["baselineOffset"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["WillSetLineFragmentRectForGlyphRangeUsedRectBaselineOffset"].Parameters["baselineOffset"].IsOut=true]]></Change>
+				<Change><![CDATA[Properties["SharedTypesetter"].Type="NSATSTypesetter"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSATSTypesetter.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSATSTypesetter_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSATSTypesetter"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSAttributedString_AppKitAdditions">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSAttributedString_AppKitAdditions/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<pre class="declaration">]]></Source>
+                    <With><![CDATA[)</p><pre class="declaration">]]></With>
+                </Replace>
+            </Patch>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSAttributedString"]]></Change>
+				<Change><![CDATA[Methods["InitWithDocFormatDocumentAttributes"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithHTMLDocumentAttributes"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithRTFDDocumentAttributes"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Enumerations["Underlining_Styles"].Name="NSUnderlineStyles"]]></Change>
+				<Change><![CDATA[Enumerations["NSUnderlineStyles"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["Underlining_Patterns"].Name="NSUnderlinePatterns"]]></Change>
+				<Change><![CDATA[Enumerations["NSUnderlinePatterns"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSSpellingStateAttributeName_Flags"].Name="NSSpellingState"]]></Change>
+				<Change><![CDATA[Enumerations["NSSpellingState"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["NSSpellingState"].Flags=true]]></Change>
+				<Change><![CDATA[Constants["NSUnderlineByWordMask"].Type="NSUInteger"]]></Change>
+                <Change><![CDATA[Enumerations.First(Name == "NSUnderlineStrikethroughMask").Generate=false]]></Change>
+                <Change><![CDATA[Enumerations.Last(Name == "NSUnderlineStrikethroughMask").Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSAttributedString_AppKitAdditions.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSAttributedString_AppKitAdditions/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSAttributedString_AppKitAdditions"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSBezierPath">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSBezierPath_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["AppendBezierPathWithGlyphsCountInFont"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["AppendBezierPathWithPackedGlyphs"].Parameters["packedGlyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["DrawPackedGlyphsAtPoint"].Parameters["packedGlyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetLineDashCountPhase"].Parameters["pattern"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetLineDashCountPhase"].Parameters["count"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetLineDashCountPhase"].Parameters["phase"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["SetLineDashCountPhase"].Parameters["pattern"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Enumerations["NSBezierPathElement"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSLineJoinStyle"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSLineCapStyle"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSWindingRule"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSBezierPath.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSBezierPath_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSBezierPath"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSBitmapImageRep">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSBitmapImageRep_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["GetTIFFCompressionTypesCount"].Parameters["list"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetTIFFCompressionTypesCount"].Parameters["numTypes"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetBitmapDataPlanes"].Parameters["data"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetCompressionFactor"].Parameters["compression"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetCompressionFactor"].Parameters["factor"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ImageRepWithData"].ReturnType="NSBitmapImageRep"]]></Change>
+				<Change><![CDATA[Methods["InitWithBitmapDataPlanesPixelsWidePixelsHighBitsPerSampleSamplesPerPixelHasAlphaIsPlanarColorSpaceNameBitmapFormatBytesPerRowBitsPerPixel"].Parameters["planes"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithBitmapDataPlanesPixelsWidePixelsHighBitsPerSampleSamplesPerPixelHasAlphaIsPlanarColorSpaceNameBytesPerRowBitsPerPixel"].Parameters["planes"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithCGImage"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Properties["BitmapData"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["BitmapData"].Getter.ReturnType="IntPtr"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSBox">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSBox_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["NSTitlePosition"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Properties["TitleCell"].Type="NSCell"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSBox.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSBox_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSBox"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSBrowser">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSBrowser_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["DraggingImageForRowsWithIndexesInColumnWithEventOffset"].Parameters["dragImageOffset"].Type="NSPoint"]]></Change>
+				<Change><![CDATA[Methods["DraggingImageForRowsWithIndexesInColumnWithEventOffset"].Parameters["dragImageOffset"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetRowColumnForPoint"].Parameters["row"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["GetRowColumnForPoint"].Parameters["row"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetRowColumnForPoint"].Parameters["column"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["GetRowColumnForPoint"].Parameters["column"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["LoadedCellAtRowColumn"].ReturnType="NSCell"]]></Change>
+				<Change><![CDATA[Properties["CellPrototype"].Type="NSCell"]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["SelectedCell"].Type="NSCell"]]></Change>
+				<Change><![CDATA[Properties["CellClass"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSBrowser.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSBrowser_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSBrowser"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSBrowserCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSBrowserCell_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSBundle_AppKitAdditions">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSBundle_AppKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSBundle"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSBundle_AppKitAdditions.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSBundle_AppKitAdditions/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSBundle_AppKitAdditions"]]></Change>
+				<Change><![CDATA[Methods.First(Name == "LoadNibFileExternalNameTableWithZone" && Static == False).Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSButton">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSButton_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["GetPeriodicDelayInterval"].Parameters["delay"].Type="float"]]></Change>
+				<Change><![CDATA[Methods["GetPeriodicDelayInterval"].Parameters["delay"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetPeriodicDelayInterval"].Parameters["interval"].Type="float"]]></Change>
+				<Change><![CDATA[Methods["GetPeriodicDelayInterval"].Parameters["interval"].IsOut=true]]></Change>
+				<Change><![CDATA[Properties["State"].Type="NSCellStateValue"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSButton.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSButton_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSButton"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSButtonCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSButtonCell_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["GetPeriodicDelayInterval"].Parameters["delay"].Type="float"]]></Change>
+				<Change><![CDATA[Methods["GetPeriodicDelayInterval"].Parameters["delay"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetPeriodicDelayInterval"].Parameters["interval"].Type="float"]]></Change>
+				<Change><![CDATA[Methods["GetPeriodicDelayInterval"].Parameters["interval"].IsOut=true]]></Change>
+				<Change><![CDATA[Properties["HighlightsBy"].Type="NSCellAttribute"]]></Change>
+				<Change><![CDATA[Properties["KeyEquivalentModifierMask"].Type="NSModifierFlags"]]></Change>
+				<Change><![CDATA[Enumerations["Bezel_Styles"].Name="NSBezelStyle"]]></Change>
+				<Change><![CDATA[Enumerations["NSBezelStyle"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["Button_Types"].Name="NSButtonType"]]></Change>
+				<Change><![CDATA[Enumerations["NSButtonType"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSGradientType"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSString KeyEquivalent]]></Source>
+					<With><![CDATA[public new NSString KeyEquivalent]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="NSButtonCell.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSButtonCell_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSButtonCell"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSCachedImageRep">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSCachedImageRep_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSCachedImageRep.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSCachedImageRep_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSCachedImageRep"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSCell_Class/Reference/NSCell.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<pre class="declaration">]]></Source>
+                    <With><![CDATA[)</p><pre class="declaration">]]></With>
+                </Replace>
+            </Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["GetPeriodicDelayInterval"].Parameters["delay"].Type="float"]]></Change>
+				<Change><![CDATA[Methods["GetPeriodicDelayInterval"].Parameters["delay"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetPeriodicDelayInterval"].Parameters["interval"].Type="float"]]></Change>
+				<Change><![CDATA[Methods["GetPeriodicDelayInterval"].Parameters["interval"].IsOut=true]]></Change>
+				<Change><![CDATA[Properties["NextState"].Type="NSArray"]]></Change>
+				<Change><![CDATA[Properties["State"].Type="NSCellStateValue"]]></Change>
+				<Change><![CDATA[Enumerations["NSCellStateValue"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["State_Masks"].Name="NSStateMask"]]></Change>
+				<Change><![CDATA[Enumerations["NSStateMask"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSStateMask"].Flags=true]]></Change>
+				<Change><![CDATA[Enumerations["Hit_Testing"].Name="NSHitTesting"]]></Change>
+				<Change><![CDATA[Enumerations["NSHitTesting"].BaseType="NSUInteger"]]></Change>
+				<!-- TODO: Deprecated -->
+				<Change><![CDATA[Enumerations["Deprecated_Scaling_Constants"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["Data_Entry_Types"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSCell.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSCell_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSCell"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSCIImageRep">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSCIImageRep_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ImageRepWithCIImage"].ReturnType="NSCIImageRep"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSClipView">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSClipView_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSCoder_AppKitAdditions">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSCoder_AppKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSCoder"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSCollectionView">
+			<File>Cocoa/Reference/NSCollectionView_Class/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["DraggingImageForItemsAtIndexesWithEventOffset"].Parameters["dragImageOffset"].Type="NSPoint"]]></Change>
+				<Change><![CDATA[Methods["DraggingImageForItemsAtIndexesWithEventOffset"].Parameters["dragImageOffset"].IsOut=true]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["Delegate"].MinAvailability="OS X v10.5"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSCollectionViewItem">
+			<File>Cocoa/Reference/NSCollectionViewItem_Class/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="NSCollectionViewItem.Deprecated">
+			<File>Cocoa/Reference/NSCollectionViewItem_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSCollectionViewItem"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSColor">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSColor_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ColorWithColorSpaceComponentsCount"].Parameters["components"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetComponents"].Parameters["components"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetCyanMagentaYellowBlackAlpha"].Parameters["cyan"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["GetCyanMagentaYellowBlackAlpha"].Parameters["cyan"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetCyanMagentaYellowBlackAlpha"].Parameters["magenta"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["GetCyanMagentaYellowBlackAlpha"].Parameters["magenta"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetCyanMagentaYellowBlackAlpha"].Parameters["yellow"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["GetCyanMagentaYellowBlackAlpha"].Parameters["yellow"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetCyanMagentaYellowBlackAlpha"].Parameters["black"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["GetCyanMagentaYellowBlackAlpha"].Parameters["black"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetCyanMagentaYellowBlackAlpha"].Parameters["alpha"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["GetCyanMagentaYellowBlackAlpha"].Parameters["alpha"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetHueSaturationBrightnessAlpha"].Parameters["hue"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["GetHueSaturationBrightnessAlpha"].Parameters["hue"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetHueSaturationBrightnessAlpha"].Parameters["saturation"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["GetHueSaturationBrightnessAlpha"].Parameters["saturation"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetHueSaturationBrightnessAlpha"].Parameters["brightness"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["GetHueSaturationBrightnessAlpha"].Parameters["brightness"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetHueSaturationBrightnessAlpha"].Parameters["alpha"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["GetHueSaturationBrightnessAlpha"].Parameters["alpha"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetRedGreenBlueAlpha"].Parameters["red"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["GetRedGreenBlueAlpha"].Parameters["red"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetRedGreenBlueAlpha"].Parameters["green"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["GetRedGreenBlueAlpha"].Parameters["green"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetRedGreenBlueAlpha"].Parameters["blue"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["GetRedGreenBlueAlpha"].Parameters["blue"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetRedGreenBlueAlpha"].Parameters["alpha"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["GetRedGreenBlueAlpha"].Parameters["alpha"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetWhiteAlpha"].Parameters["white"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["GetWhiteAlpha"].Parameters["white"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetWhiteAlpha"].Parameters["alpha"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["GetWhiteAlpha"].Parameters["alpha"].IsOut=true]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSColorList">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSColorList_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSColorPanel">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSColorPanel_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Color_Panel_Modes"].Name="NSColorPanelMode"]]></Change>
+				<Change><![CDATA[Enumerations["NSColorPanelMode"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["Color_Picker_Mode_Masks"].Name="NSColorPickerModeMask"]]></Change>
+				<Change><![CDATA[Enumerations["NSColorPickerModeMask"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSColorPickerModeMask"].Flags=true]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSColorPicker">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSColorPicker_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSColorSpace">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSColorSpace_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["InitWithCGColorSpace"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithColorSyncProfile"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Properties["AdobeRGB1998ColorSpace"].Type="NSColorSpace"]]></Change>
+				<Change><![CDATA[Properties["AdobeRGB1998ColorSpace"].Getter.ReturnType="NSColorSpace"]]></Change>
+				<Change><![CDATA[Properties["SRGBColorSpace"].Type="NSColorSpace"]]></Change>
+				<Change><![CDATA[Properties["SRGBColorSpace"].Getter.ReturnType="NSColorSpace"]]></Change>
+				<Change><![CDATA[Enumerations["Color_Space_Models"].Name="NSColorSpaceModel"]]></Change>
+				<Change><![CDATA[Enumerations["NSColorSpaceModel"].BaseType="NSInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSColorWell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSColorWell_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSComboBox">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSComboBox_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["DataSource"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSComboBoxCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSComboBoxCell_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["DataSource"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSControl">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSControl_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties.Set("Delegate", "<Property><Summary><Line>Returns the delegate used by the receiver.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>Delegate</Name><Type>Id</Type><Getter><Summary/><MinAvailability>OS X v10.0</MinAvailability><Name>Delegate</Name><Selector>delegate</Selector><Signature>- (id)delegate</Signature><ReturnType>Id</ReturnType><ReturnsDocumentation>The delegate used by the receiver and all other text views sharing the receiver’s layout manager, or nil if there is none.</ReturnsDocumentation><Parameters /></Getter><Setter><Summary/><MinAvailability>OS X v10.0</MinAvailability><Name>SetDelegate</Name><Selector>setDelegate:</Selector><Signature>- (void)setDelegate:(id)anObject</Signature><ReturnType>void</ReturnType><Parameters><Parameter><Summary><Line>The new delegate object.</Line></Summary><Name>anObject</Name><Type>Id</Type></Parameter></Parameters></Setter></Property>")]]></Change>
+				<Change><![CDATA[Properties["Cell"].Type="NSCell"]]></Change>
+				<Change><![CDATA[Properties["Formatter"].Type="NSFormatter"]]></Change>
+				<Change><![CDATA[Properties["SelectedCell"].Type="NSCell"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual NSInteger Tag]]></Source>
+					<With><![CDATA[public new NSInteger Tag]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="NSControl.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSControl_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSControl"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSController">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSController_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSCursor">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSCursor_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods.First(Name == "Pop" && Static == True).Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSCustomImageRep">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSCustomImageRep_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["DrawingHandler"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSDatePicker">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSDatePicker_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSDatePickerCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSDatePickerCell_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSDictionaryController">
+			<File>Cocoa/Reference/NSDictionaryController_Class/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["ArrangedObjects"].Type="NSArray"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSDockTile">
+			<File>Cocoa/Reference/NSDockTile_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSDocument">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSDocument_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+                <Change><![CDATA[Methods["PerformActivityWithSynchronousWaitingUsingBlock"].Parameters["inBlock"].Type="Action"]]></Change>
+                <Change><![CDATA[Methods["PerformActivityWithSynchronousWaitingUsingBlock"].Parameters["inBlock"].IsBlock=true]]></Change>
+                <Change><![CDATA[Methods["PerformAsynchronousFileAccessUsingBlock"].Parameters["inBlock"].Type="Action"]]></Change>
+                <Change><![CDATA[Methods["PerformAsynchronousFileAccessUsingBlock"].Parameters["inBlock"].IsBlock=true]]></Change>
+				<Change><![CDATA[Enumerations["NSSaveOperationType"].Values.Set("NSAutosaveOperation", "<EnumerationValue><Summary><Line>Old name for the NSAutosaveElsewhereOperation operation type. (Deprecated. Deprecated in OS X v10.7. Use NSAutosaveElsewhereOperation instead.)</Line></Summary><MinAvailability>OS X v10.4</MinAvailability><MaxAvailability>OS X v10.7</MaxAvailability><Name>NSAutosaveOperation</Name><Value>3</Value></EnumerationValue>")]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSDocument.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSDocument_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSDocument"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSDocumentController">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSDocumentController_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["SharedDocumentController"].Type="NSDocumentController"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSDocumentController.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSDocumentController_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSDocumentController"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSDraggingImageComponent">
+			<File>AppKit/Reference/NSDraggingImageComponent_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["DraggingImageComponentWithKey"].ReturnType="NSDraggingImageComponent"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSDraggingItem">
+			<File>AppKit/Reference/NSDraggingItem_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["InitWithPasteboardWriter"].Parameters["pasteboardWriter"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["ImageComponentsProvider"].Type="NSArray"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSDraggingSession">
+			<File>AppKit/Reference/NSDraggingSession_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["NSDraggingItemEnumerationOptions"].Values["NSDraggingItemEnumerationConcurrent"].Value="1U << 0"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[ = 1U <<]]></Source>
+					<With><![CDATA[ = 1 <<]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[= (1UL <<]]></Source>
+					<With><![CDATA[= (1 <<]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="NSDrawer">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSDrawer_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Enumerations["NSDrawerState"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSEPSImageRep">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSEPSImageRep_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ImageRepWithData"].ReturnType="NSEPSImageRep"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSEvent">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSEvent_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[  = 27
+   ]]></Source>
+					<With><![CDATA[= 27,
+   ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[   = 20
+   ]]></Source>
+					<With><![CDATA[   = 20,
+   ]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[typedef unsigned long long NSEventMask;]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NSUInteger NSEventMaskFromType(NSEventType type) { return (1 &lt;&lt; type); };]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_SUBTYPE_TABLET_PROXIMITY
+]]></Source>
+					<With><![CDATA[NX_SUBTYPE_TABLET_PROXIMITY,
+]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["EventWithCGEvent"].Parameters["cgEvent"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["EventWithEventRef"].Parameters["eventRef"].Type="IntPtr"]]></Change>
+                <Change><![CDATA[Methods["LocationInNode"].Generate=false]]></Change>
+				<Change><![CDATA[Properties["EventRef"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties.First(Name == "ModifierFlags" && Static == False).Type="NSModifierFlags"]]></Change>
+				<Change><![CDATA[Properties.First(Name == "ModifierFlags" && Static == True).Type="NSModifierFlags"]]></Change>
+				<Change><![CDATA[Enumerations["NSEventType"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSEventMaskFromType"].Name="NSEventMask"]]></Change>
+				<Change><![CDATA[Enumerations["NSEventMask"].BaseType="ulong"]]></Change>
+				<Change><![CDATA[Enumerations["NSEventMask"].Flags=true]]></Change>
+				<Change><![CDATA[Enumerations["Modifier_Flags"].Name="NSModifierFlags"]]></Change>
+				<Change><![CDATA[Enumerations["NSModifierFlags"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSModifierFlags"].Flags=true]]></Change>
+				<Change><![CDATA[Enumerations["Mouse_event_subtypes"].Name="NSMouseEventSubType"]]></Change>
+				<Change><![CDATA[Enumerations["NSMouseEventSubType"].BaseType="short"]]></Change>
+				<Change><![CDATA[Enumerations["Tablet_event_masks"].Name="TabletEventMask"]]></Change>
+				<Change><![CDATA[Enumerations["TabletEventMask"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["TabletEventMask"].Flags=true]]></Change>
+				<Change><![CDATA[Enumerations["NSPointingDeviceType"].BaseType="NSUInteger"]]></Change>
+				<!-- TODO: Move to constants -->
+				<Change><![CDATA[Enumerations["Types_Defined_by_the_Application_Kit"].Generate=false]]></Change>
+				<!-- TODO: Move to constants -->
+				<Change><![CDATA[Enumerations["Power_off_event"].Generate=false]]></Change>
+				<!-- TODO: Move to constants -->
+				<Change><![CDATA[Enumerations["Function_Key_Unicodes"].Generate=false]]></Change>
+				<!-- Duplicate definition in NSTouch -->
+				<Change><![CDATA[Enumerations["NSTouchPhase"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["NSEventSwipeTrackingOptions"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSEventGestureAxis"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSEventPhase"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSEventMask"].Values["NSEventMaskSwipe"].Value="0x80000000U"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public static NSModifierFlags ModifierFlags]]></Source>
+					<With><![CDATA[public static NSModifierFlags GlobalModifierFlags]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[ }; NSUIntegerNSEventMaskFromType(NSEventTypetype) { return (1 << type);]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[ << NS]]></Source>
+					<With><![CDATA[ << (int) NSEventType.NS]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_TABLET_POINTER_UNKNOWN]]></Source>
+					<With>0</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_TABLET_POINTER_PEN]]></Source>
+					<With>1</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_TABLET_POINTER_CURSOR]]></Source>
+					<With>2</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_TABLET_POINTER_ERASER]]></Source>
+					<With>3</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_SUBTYPE_DEFAULT]]></Source>
+					<With>0</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_SUBTYPE_TABLET_POINT]]></Source>
+					<With>1</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_SUBTYPE_TABLET_PROXIMITY]]></Source>
+					<With>2</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_SUBTYPE_MOUSE_TOUCH]]></Source>
+					<With>3</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_TABLET_BUTTON_PENTIPMASK]]></Source>
+					<With>1</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_TABLET_BUTTON_PENLOWERSIDEMASK]]></Source>
+					<With>2</With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NX_TABLET_BUTTON_PENUPPERSIDEMASK]]></Source>
+					<With>4</With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="NSFileWrapper_AppKitAdditions">
+			<File>AppKit/Reference/NSFileWrapper_AppKitAdditions/NSFileWrapperApplicationKitAdditions.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSFileWrapper"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSFont">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSFont_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[)<div class="declaration">]]></Source>
+					<With><![CDATA[)</p><div class="declaration">]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[)<pre class="declaration">]]></Source>
+					<With><![CDATA[)</p><pre class="declaration">]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["FontWithNameMatrix"].Parameters["fontMatrix"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetAdvancementsForGlyphsCount"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetAdvancementsForPackedGlyphsLength"].Parameters["length-"].Generate=false]]></Change>
+				<Change><![CDATA[Methods["GetAdvancementsForPackedGlyphsLength"].Parameters.Set("length", "<Parameter><Summary /><Name>length</Name><Type>NSUInteger</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["GetAdvancementsForPackedGlyphsLength"].Parameters["getAdvancements"].Generate=false]]></Change>
+				<Change><![CDATA[Methods["GetBoundingRectsForGlyphsCount"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["Matrix"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["Matrix"].Getter.ReturnType="IntPtr"]]></Change>
+				<Change><![CDATA[Enumerations["NSFontRenderingMode"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations.First(Name == "NSMultibyteGlyphPacking").Generate=false]]></Change>
+				<Change><![CDATA[Enumerations.Last(Name == "NSMultibyteGlyphPacking").BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations.Last(Name == "NSMultibyteGlyphPacking").Values.Set("NSNativeShortGlyphPacking", "<EnumerationValue><Summary><Line>The native format for Mac OS X.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>NSNativeShortGlyphPacking</Name><Value>5</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSGlyphRelation"].BaseType="NSUInteger"]]></Change>
+				<!-- TODO: Move to constants -->
+				<Change><![CDATA[Enumerations["Reserved_Glyph_Codes"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSFont.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSFont_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSFont"]]></Change>
+				<Change><![CDATA[Methods["PositionOfGlyphPrecededByGlyphIsNominal"].Parameters["flag"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["PositionOfGlyphPrecededByGlyphIsNominal"].Parameters["flag"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["PositionOfGlyphStruckOverGlyphMetricsExist"].Parameters["flag"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["PositionOfGlyphStruckOverGlyphMetricsExist"].Parameters["flag"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["PositionOfGlyphStruckOverRectMetricsExist"].Parameters["flag"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["PositionOfGlyphStruckOverRectMetricsExist"].Parameters["flag"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["PositionOfGlyphWithRelationToBaseGlyphTotalAdvancementMetricsExist"].Parameters["flag"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["PositionOfGlyphWithRelationToBaseGlyphTotalAdvancementMetricsExist"].Parameters["flag"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["PositionsForCompositeSequenceNumberOfGlyphsPointArray"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSFontCollection">
+			<File>AppKit/Reference/NSFontCollection_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["FontCollectionWithDescriptors"].ReturnType="NSFontCollection"]]></Change>
+				<Change><![CDATA[Methods["FontCollectionWithLocale"].ReturnType="NSFontCollection"]]></Change>
+				<Change><![CDATA[Methods["FontCollectionWithName"].ReturnType="NSFontCollection"]]></Change>
+				<Change><![CDATA[Methods["FontCollectionWithNameVisibility"].ReturnType="NSFontCollection"]]></Change>
+				<Change><![CDATA[Methods["RenameFontCollectionWithNameVisibilityToNameError"].Parameters.Last(Name == "name").Name= ((entity.Methods["RenameFontCollectionWithNameVisibilityToNameError"].Parameters.Count(Name == "name") == 2) ? "name2" : "name")]]></Change>
+				<Change><![CDATA[Properties["FontCollectionWithAllAvailableDescriptors"].Type="NSFontCollection"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[ = (1UL <<]]></Source>
+					<With><![CDATA[ = (1 <<]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="NSFontDescriptor">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSFontDescriptor_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Typeface_Information"].Name="NSTypefaceInformation"]]></Change>
+				<!-- TODO: Move to constants -->
+				<Change><![CDATA[Enumerations["NSFontFamilyClass"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["NSFontFamilyClassMask"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["NSTypefaceInformation"].BaseType="uint"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSFontManager">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSFontManager_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Enumerations["Font_Collection_Mask"].Name="NSFontCollectionMask"]]></Change>
+				<!-- TODO: Move to constants -->
+				<Change><![CDATA[Enumerations["NSFontCollectionMask"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["Font_traits"].Name="NSFontTraitMask"]]></Change>
+				<Change><![CDATA[Enumerations["NSFontTraitMask"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSFontTraitMask"].Flags=true]]></Change>
+				<Change><![CDATA[Enumerations["NSFontAction"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSFontPanel">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSFontPanel_Class/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<pre class="declaration">]]></Source>
+                    <With><![CDATA[)</p><pre class="declaration">]]></With>
+                </Replace>
+            </Patch>
+			<Patch type="Model">
+				<!-- TODO: Deprecated -->
+				<Change><![CDATA[Enumerations["Tags_of_Views_in_the_FontPanel"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSForm">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSForm_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["CellAtIndex"].ReturnType="NSCell"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSFormCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSFormCell_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["TitleWidth"].Name="GetTitleWidth"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSFormCell.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSFormCell_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSFormCell"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSGlyphGenerator">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSGlyphGenerator_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["GenerateGlyphsForGlyphStorageDesiredNumberOfCharactersGlyphIndexCharacterIndex"].Parameters["glyphStorage"].Type="Id"]]></Change>
+				<Change><![CDATA[Methods["GenerateGlyphsForGlyphStorageDesiredNumberOfCharactersGlyphIndexCharacterIndex"].Parameters["glyphIndex"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Methods["GenerateGlyphsForGlyphStorageDesiredNumberOfCharactersGlyphIndexCharacterIndex"].Parameters["glyphIndex"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GenerateGlyphsForGlyphStorageDesiredNumberOfCharactersGlyphIndexCharacterIndex"].Parameters["charIndex"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Methods["GenerateGlyphsForGlyphStorageDesiredNumberOfCharactersGlyphIndexCharacterIndex"].Parameters["charIndex"].IsOut=true]]></Change>
+				<Change><![CDATA[Properties["SharedGlyphGenerator"].Type="NSGlyphGenerator"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSGlyphInfo">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSGlyphInfo_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["NSCharacterCollection"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSGradient">
+			<File>Cocoa/Reference/NSGradient_class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["GetColorLocationAtIndex"].Parameters["location"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["GetColorLocationAtIndex"].Parameters["location"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["InitWithColorsAtLocationsColorSpace"].Parameters["locations"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithColorsAndLocations"].Parameters["firstColor,..."].Generate=false]]></Change>
+				<Change><![CDATA[Methods["InitWithColorsAndLocations"].Parameters.Set("firstColor", "<Parameter><Summary/><Name>firstColor</Name><Type>NSColor</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Methods["InitWithColorsAndLocations"].Parameters.Set("values", "<Parameter><Summary/><Name>values</Name><Type>params object[]</Type></Parameter>")]]></Change>
+				<Change><![CDATA[Enumerations["Gradient_Drawing_Options"].Name="NSGradientDrawingOptions"]]></Change>
+				<Change><![CDATA[Enumerations["NSGradientDrawingOptions"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSGraphicsContext">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSGraphicsContext_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods.First(Name == "RestoreGraphicsState" && Static == True).Generate=false]]></Change>
+				<Change><![CDATA[Methods.First(Name == "SaveGraphicsState" && Static == True).Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSGraphicsContext.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSGraphicsContext_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSGraphicsContext"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSHelpManager">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSHelpManager_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSImage">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSImage_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["CGImageForProposedRectContextHints"].Parameters["proposedDestRect"].Type="NSRect"]]></Change>
+				<Change><![CDATA[Methods["CGImageForProposedRectContextHints"].Parameters["proposedDestRect"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["ImageNamed"].ReturnType="NSImage"]]></Change>
+				<Change><![CDATA[Methods["InitByReferencingFile"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitByReferencingURL"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithDataIgnoringOrientation"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithIconRef"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSImage.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSImage_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSImage"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSImageCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSImageCell_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[)<div class="declaration">]]></Source>
+					<With><![CDATA[)</p><div class="declaration">]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[)<pre class="declaration">]]></Source>
+					<With><![CDATA[)</p><pre class="declaration">]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="NSImageRep">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSImageRep_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["CGImageForProposedRectContextHints"].Parameters["proposedDestRect"].Type="NSRect"]]></Change>
+				<Change><![CDATA[Methods["CGImageForProposedRectContextHints"].Parameters["proposedDestRect"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["ImageRepWithContentsOfFile"].ReturnType="NSImageRep"]]></Change>
+				<Change><![CDATA[Methods["ImageRepWithContentsOfFile"].CopyInDescendants=true]]></Change>
+				<Change><![CDATA[Methods["ImageRepWithContentsOfURL"].ReturnType="NSImageRep"]]></Change>
+				<Change><![CDATA[Methods["ImageRepWithContentsOfURL"].CopyInDescendants=true]]></Change>
+				<Change><![CDATA[Methods["ImageRepWithPasteboard"].ReturnType="NSImageRep"]]></Change>
+				<Change><![CDATA[Methods["ImageRepWithPasteboard"].CopyInDescendants=true]]></Change>
+				<Change><![CDATA[Enumerations["Display_Device_Matching"].Name="NSDisplayDeviceMatching"]]></Change>
+				<!-- TODO: Move to constants -->
+				<Change><![CDATA[Enumerations["NSDisplayDeviceMatching"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSImageView">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSImageView_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSLayoutConstraint">
+			<File>AppKit/Reference/NSLayoutConstraint_Class/NSLayoutConstraint/NSLayoutConstraint.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[/* <!--a-->choose<!--/a--> <!--a-->only<!--/a--> <!--a-->one<!--/a--> <!--a-->of<!--/a--> <!--a-->these<!--/a--> */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[// <!--a-->default<!--/a-->]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[/* choose only one of these */]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[// default]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ConstraintWithItemAttributeRelatedByToItemAttributeMultiplierConstant"].ReturnType="NSLayoutConstraint"]]></Change>
+				<Change><![CDATA[Enumerations["NSLayoutPriority"].BaseType="int"]]></Change>
+				<Change><![CDATA[Enumerations["NSLayoutPriority"].MixedType="float,float"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[ = NS]]></Source>
+					<With><![CDATA[ =  NSLayoutAttribute.NS]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="NSLayoutManager">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSLayoutManager_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["CharacterIndexForPointInTextContainerFractionOfDistanceBetweenInsertionPoints"].Parameters["partialFraction"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["CharacterIndexForPointInTextContainerFractionOfDistanceBetweenInsertionPoints"].Parameters["partialFraction"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetFirstUnlaidCharacterIndexGlyphIndex"].Parameters["charIndex"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Methods["GetFirstUnlaidCharacterIndexGlyphIndex"].Parameters["charIndex"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetFirstUnlaidCharacterIndexGlyphIndex"].Parameters["glyphIndex"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Methods["GetFirstUnlaidCharacterIndexGlyphIndex"].Parameters["glyphIndex"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsRange"].Parameters["glyphArray"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["glyphBuffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["charIndexBuffer"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["charIndexBuffer"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["inscribeBuffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["elasticBuffer"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBits"].Parameters["elasticBuffer"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBitsBidiLevels"].Parameters["glyphBuffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBitsBidiLevels"].Parameters["charIndexBuffer"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBitsBidiLevels"].Parameters["charIndexBuffer"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBitsBidiLevels"].Parameters["inscribeBuffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBitsBidiLevels"].Parameters["elasticBuffer"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBitsBidiLevels"].Parameters["elasticBuffer"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBitsBidiLevels"].Parameters["bidiLevelBuffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetLineFragmentInsertionPointsForCharacterAtIndexAlternatePositionsInDisplayOrderPositionsCharacterIndexes"].Parameters["positions"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetLineFragmentInsertionPointsForCharacterAtIndexAlternatePositionsInDisplayOrderPositionsCharacterIndexes"].Parameters["charIndexes"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GlyphAtIndexIsValidIndex"].Parameters["isValidIndex"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["GlyphAtIndexIsValidIndex"].Parameters["isValidIndex"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GlyphIndexForPointInTextContainerFractionOfDistanceThroughGlyph"].Parameters["partialFraction"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["GlyphIndexForPointInTextContainerFractionOfDistanceThroughGlyph"].Parameters["partialFraction"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["InsertGlyphsLengthForStartingGlyphAtIndexCharacterIndex"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["RectArrayForCharacterRangeWithinSelectedCharacterRangeInTextContainerRectCount"].Parameters["rectCount"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Methods["RectArrayForCharacterRangeWithinSelectedCharacterRangeInTextContainerRectCount"].Parameters["rectCount"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["RectArrayForGlyphRangeWithinSelectedGlyphRangeInTextContainerRectCount"].Parameters["rectCount"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Methods["RectArrayForGlyphRangeWithinSelectedGlyphRangeInTextContainerRectCount"].Parameters["rectCount"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["SetLocationsStartingGlyphIndexesCountForGlyphRange"].Parameters["glyphIndexes"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ShowCGGlyphsPositionsCountFontMatrixAttributesInContext"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["ShowCGGlyphsPositionsCountFontMatrixAttributesInContext"].Parameters["positions"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Enumerations["Glyph_Attributes"].Name="NSGlyphAttributes"]]></Change>
+				<Change><![CDATA[Enumerations["NSGlyphAttributes"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSGlyphInscription"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSTypesetterBehavior"].BaseType="NSInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSLayoutManager.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSLayoutManager_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSLayoutManager"]]></Change>
+				<Change><![CDATA[Methods["ShowPackedGlyphsLengthGlyphRangeAtPointFontColorPrintingAdjustment"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSLevelIndicator">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSLevelIndicator_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSLevelIndicatorCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSLevelIndicatorCell_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSMatrix">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSMatrix_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["CellAtRowColumn"].ReturnType="NSCell"]]></Change>
+				<Change><![CDATA[Methods["CellWithTag"].ReturnType="NSCell"]]></Change>
+				<Change><![CDATA[Methods["GetNumberOfRowsColumns"].Parameters["rowCount"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["GetNumberOfRowsColumns"].Parameters["rowCount"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetNumberOfRowsColumns"].Parameters["columnCount"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["GetNumberOfRowsColumns"].Parameters["columnCount"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetRowColumnForPoint"].Parameters["row"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["GetRowColumnForPoint"].Parameters["row"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetRowColumnForPoint"].Parameters["column"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["GetRowColumnForPoint"].Parameters["column"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetRowColumnOfCell"].Parameters["row"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["GetRowColumnOfCell"].Parameters["row"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetRowColumnOfCell"].Parameters["column"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["GetRowColumnOfCell"].Parameters["column"].IsOut=true]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["KeyCell"].Type="NSCell"]]></Change>
+				<Change><![CDATA[Properties["Prototype"].Type="NSCell"]]></Change>
+				<Change><![CDATA[Properties["SelectedCell"].Type="NSCell"]]></Change>
+				<Change><![CDATA[Enumerations["NSMatrixMode"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual Class CellClass]]></Source>
+					<With><![CDATA[public new Class CellClass]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+        <Class name="NSMediaLibraryBrowserController">
+            <File>AppKit/Reference/NSMediaLibraryBrowserController_Class/Reference/Reference.html</File>
+        </Class>
+		<Class name="NSMenu">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSMenu_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[ = 1 &lt;&lt; 1
+   ]]></Source>
+					<With><![CDATA[ = 1 &lt;&lt; 1,
+   ]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSMenu.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSMenu_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSMenu"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSMenuItem">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSMenuItem_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["State"].Type="NSCellStateValue"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSMenuItem.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSMenuItem_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSMenuItem"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSMenuItemCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSMenuItemCell_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Tag"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSMenuView">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSMenuView_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSMutableAttributedString_AppKitAdditions">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSMutableAttributedString_AppKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSMutableAttributedString"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSMutableFontCollection">
+			<File>AppKit/Reference/NSMutableFontCollection_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSMutableParagraphStyle">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSMutableParagraphStyle_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSNib">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSNib_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSNib.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSNib_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSNib"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSObjectController">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSObjectController_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSOpenGLContext">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSOpenGLContext_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["InitWithCGLContextObj"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["GetValuesForParameter"].Parameters["vals"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["SetValuesForParameter"].Parameters["vals"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Enumerations["NSOpenGLContextParameter"].BaseType="int"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSOpenGLContext.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSOpenGLContext_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSOpenGLContext"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSOpenGLLayer">
+			<File>AppKit/Reference/NSOpenGLLayer_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["CanDrawInOpenGLContextPixelFormatForLayerTimeDisplayTime"].Parameters["timeStamp"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["DrawInOpenGLContextPixelFormatForLayerTimeDisplayTime"].Parameters["timeStamp"].Type="IntPtr"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSOpenGLPixelBuffer">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSOpenGLPixelBuffer_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["InitWithCGLPBufferObj"].GenerateConstructor=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSOpenGLPixelFormat">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSOpenGLPixelFormat_Class/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<div class="declaration">]]></Source>
+                    <With><![CDATA[)</p><div class="declaration">]]></With>
+                </Replace>
+            </Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["GetValuesForAttributeForVirtualScreen"].Parameters["vals"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithAttributes"].Parameters["attribs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["InitWithAttributes"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["InitWithCGLPixelFormatObj"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Enumerations["OpenGL_Profiles"].Name="NSOpenGLPFAOpenGLProfile"]]></Change>
+				<Change><![CDATA[Enumerations["NSOpenGLPFAOpenGLProfile"].BaseType="int"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSOpenGLView">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSOpenGLView_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSOpenPanel">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSOpenPanel_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSOpenPanel.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSOpenPanel_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSOpenPanel"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSOutlineView">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSOutlineView_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["DataSource"].Type="Id"]]></Change>
+				<!-- TODO: Move to constants -->
+				<Change><![CDATA[Enumerations["Drop_on_Item_Index"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSPageController">
+			<File>AppKit/Reference/NSPageController_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSPageLayout">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSPageLayout_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSPageLayout.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSPageLayout_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSPageLayout"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSPanel">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSPanel_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Style_Masks"].Generate=false]]></Change>
+				<!-- TODO: Combine with other panels -->
+				<Change><![CDATA[Enumerations["Alert_Panel_Return_Values"].Name="NSAlertPanelReturn"]]></Change>
+				<Change><![CDATA[Enumerations["NSAlertPanelReturn"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSAlertPanelReturn"].Generate=false]]></Change>
+				<!-- TODO: Combine with other panels -->
+				<Change><![CDATA[Enumerations["Modal_Panel_Return_Values"].Name="NSModalPanelReturn"]]></Change>
+				<Change><![CDATA[Enumerations["NSModalPanelReturn"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSModalPanelReturn"].Generate=false]]></Change>
+				<Change><![CDATA[Constants.Set("NSOKButton", "<Constant><Summary><Line>The OK button</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>NSOKButton</Name><Type>NSInteger</Type><Static>true</Static><Value>1</Value></Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("NSCancelButton", "<Constant><Summary><Line>The Cancel button</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>NSCancelButton</Name><Type>NSInteger</Type><Static>true</Static><Value>0</Value></Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("NSAlertDefaultReturn", "<Constant><Summary><Line>The user pressed the default button.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>NSAlertDefaultReturn</Name><Type>NSInteger</Type><Static>true</Static><Value>1</Value></Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("NSAlertAlternateReturn", "<Constant><Summary><Line>The user pressed the alternate button.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>NSAlertAlternateReturn</Name><Type>NSInteger</Type><Static>true</Static><Value>0</Value></Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("NSAlertOtherReturn", "<Constant><Summary><Line>The user pressed a second alternate button.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>NSAlertOtherReturn</Name><Type>NSInteger</Type><Static>true</Static><Value>-1</Value></Constant>")]]></Change>
+				<Change><![CDATA[Constants.Set("NSAlertErrorReturn", "<Constant><Summary><Line>The alert cannot identify the reason it was closed; it may have been closed by an external source or by a button other than those listed above.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>NSAlertErrorReturn</Name><Type>NSInteger</Type><Static>true</Static><Value>-2</Value></Constant>")]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual bool WorksWhenModal]]></Source>
+					<With><![CDATA[public new bool WorksWhenModal]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="NSParagraphStyle">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSParagraphStyle_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[>NSLineBreakMode<]]></Source>
+					<With><![CDATA[> NSLineBreakMode <]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="NSPasteboard">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSPasteboard_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSPasteboardItem">
+			<File>Cocoa/Reference/NSPasteboardItem_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["SetDataProviderForTypes"].Parameters["dataProvider"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSPathCell">
+			<File>Cocoa/Reference/NSPathCell_class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSPathComponentCell">
+			<File>Cocoa/Reference/NSPathComponentCell_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSPathControl">
+			<File>Cocoa/Reference/NSPathControl_class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSPDFImageRep">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSPDFImageRep_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ImageRepWithData"].ReturnType="NSPDFImageRep"]]></Change>
+			</Patch>
+		</Class>
+        <Class name="NSPDFInfo">
+            <File>AppKit/Reference/NSPDFInfo_Class/Reference/Reference.html</File>
+        </Class>
+        <Class name="NSPDFPanel">
+            <File>AppKit/Reference/NSPDFPanel_Class/Reference/Reference.html</File>
+        </Class>
+		<Class name="NSPersistentDocument">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSPersistentDocument_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSPersistentDocument.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSPersistentDocument_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSPersistentDocument"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSPICTImageRep">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSPICTImageRep_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ImageRepWithData"].ReturnType="NSPICTImageRep"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSPopover">
+			<File>AppKit/Reference/NSPopover_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Appearance"].Type="NSPopoverAppearance"]]></Change>
+				<Change><![CDATA[Properties["Behavior"].Type="NSPopoverBehavior"]]></Change>
+				<Change><![CDATA[Properties["ContentViewController"].Type="NSViewController"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSPopUpButton">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSPopUpButton_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSPopUpButtonCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSPopUpButtonCell_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["NSPopUpArrowPosition"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSPredicateEditor">
+			<File>Cocoa/Reference/NSPredicateEditor_class/Reference/NSPredicateEditor.html</File>
+		</Class>
+		<Class name="NSPredicateEditorRowTemplate">
+			<File>Cocoa/Reference/NSPredicateEditorRowTemplate_class/Reference/NSPredicateEditorRowTemplate.html</File>
+		</Class>
+		<Class name="NSPrinter">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSPrinter_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["NSPrinterTableStatus"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSPrinter.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSPrinter_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSPrinter"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSPrintInfo">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSPrintInfo_Class/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<pre class="declaration">]]></Source>
+                    <With><![CDATA[)</p><pre class="declaration">]]></With>
+                </Replace>
+				<Replace>
+					<Source><![CDATA[<!--a-->*const<!--/a-->]]></Source>
+					<With><![CDATA[<!--a--> *const <!--/a-->]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NSPrintJobSavingFileNameExtensionHidden']]></Source>
+					<With><![CDATA[NSPrintJobSavingFileNameExtensionHidden;]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="NSPrintInfo.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSPrintInfo_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSPrintInfo"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSPrintOperation">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSPrintOperation_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["NSPrintingPageOrder"].BaseType="NSInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSPrintOperation.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSPrintOperation_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSPrintOperation"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSPrintPanel">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSPrintPanel_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["AddAccessoryController"].Parameters["accessoryController"].Type="Id"]]></Change>
+				<Change><![CDATA[Methods["RemoveAccessoryController"].Parameters["accessoryController"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSPrintPanel.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSPrintPanel_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSPrintPanel"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSProgressIndicator">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSProgressIndicator_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["NSProgressIndicatorStyle"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSProgressIndicatorThickness"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSProgressIndicator.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSProgressIndicator_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSProgressIndicator"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSResponder">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSResponder_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSResponder.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSResponder_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSResponder"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSRuleEditor">
+			<File>Cocoa/Reference/NSRuleEditor_class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Enumerations["Nesting_Modes"].Name="NSRuleEditorNestingMode"]]></Change>
+				<Change><![CDATA[Enumerations["NSRuleEditorNestingMode"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["Row_Types"].Name="NSRuleEditorRowType"]]></Change>
+				<Change><![CDATA[Enumerations["NSRuleEditorRowType"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSRulerMarker">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSRulerMarker_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSRulerView">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSRulerView_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["NSRulerOrientation"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSRunningApplication">
+			<File>AppKit/Reference/NSRunningApplication_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSSavePanel">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<!-- TODO: Move to constant -->
+				<Change><![CDATA[Enumerations["Button_tags"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSSavePanel.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSSavePanel"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSScreen">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSScreen_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["SupportedWindowDepths"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Properties["SupportedWindowDepths"].Getter.ReturnType="IntPtr"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSScreen.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSScreen_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSScreen"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSScroller">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSScroller_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[)<div class="declaration">]]></Source>
+					<With><![CDATA[)</p><div class="declaration">]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[)<pre class="declaration">]]></Source>
+					<With><![CDATA[)</p><pre class="declaration">]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["NSScrollArrowPosition"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSScrollerArrow"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSScrollerPart"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSUsableScrollerParts"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSScroller.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSScroller_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSScroller"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSScrollView">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSScrollView_Class/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[)<div class="declaration">]]></Source>
+					<With><![CDATA[)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["ContentView"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSSearchField">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSSearchField_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSSearchFieldCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSSearchFieldCell_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSSecureTextField">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSSecureTextField_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSSecureTextFieldCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSSecureTextFieldCell_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSSegmentedCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSSegmentedCell_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["NSSegmentSwitchTracking"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSSegmentedControl">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSSegmentedControl_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSShadow">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSShadow_Class/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Properties.First(Name == "ShadowBlurRadius").Generate=false]]></Change>
+                <Change><![CDATA[Properties.First(Name == "ShadowColor").Generate=false]]></Change>
+                <Change><![CDATA[Properties.First(Name == "ShadowOffset").Generate=false]]></Change>
+            </Patch>
+		</Class>
+		<Class name="NSSharingService">
+			<File>AppKit/Reference/NSSharingService_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSSharingServicePicker">
+			<File>AppKit/Reference/NSSharingServicePicker_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSSlider">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSSlider_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["TitleCell"].Type="NSCell"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSSliderCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSSliderCell_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["TitleCell"].Type="NSCell"]]></Change>
+				<Change><![CDATA[Enumerations["NSTickMarkPosition"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSSliderType"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSSound">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSSound_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["SoundNamed"].ReturnType="NSSound"]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSSound.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSSound_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSSound"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSSpeechRecognizer">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSSpeechRecognizer_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSSpeechSynthesizer">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSSpeechSynthesizer_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSSpellChecker">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSSpellChecker_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["CheckSpellingOfStringStartingAtLanguageWrapInSpellDocumentWithTagWordCount"].Parameters["wordCount"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["CheckSpellingOfStringStartingAtLanguageWrapInSpellDocumentWithTagWordCount"].Parameters["wordCount"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["CheckStringRangeTypesOptionsInSpellDocumentWithTagOrthographyWordCount"].Parameters["wordCount"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["CheckStringRangeTypesOptionsInSpellDocumentWithTagOrthographyWordCount"].Parameters["wordCount"].IsOut=true]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSSpellChecker.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSSpellChecker_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSSpellChecker"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSSplitView">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSSplitView_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSSplitView.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSSplitView_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSSplitView"]]></Change>
+			</Patch>
+		</Class>
+        <Class name="NSStackView">
+            <File>AppKit/Reference/NSStackView_Class/Chapters/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[typedef enum : NSInteger]]></Source>
+                    <With><![CDATA[typedef enum]]></With>
+                </Replace>
+            </Patch>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["NSUserInterfaceLayoutOrientation"].BaseType="NSInteger"]]></Change>
+                <Change><![CDATA[Enumerations["NSStackViewGravity"].BaseType="NSInteger"]]></Change>
+                <Change><![CDATA[Enumerations["NSStackViewVisibilityPriority"].BaseType="int"]]></Change>
+                <Change><![CDATA[Enumerations["NSStackViewVisibilityPriority"].MixedType="float,float"]]></Change>
+            </Patch>
+        </Class>
+		<Class name="NSStatusBar">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSStatusBar_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSStatusItem">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSStatusItem_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSStepper">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSStepper_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSStepperCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSStepperCell_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSString_AppKitAdditions">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSString_AppKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSString"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTableCellView">
+			<File>Cocoa/Reference/NSTableCellView_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSTableColumn">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTableColumn_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["DataCellForRow"].ReturnType="NSCell"]]></Change>
+				<Change><![CDATA[Properties["DataCell"].Type="NSCell"]]></Change>
+				<Change><![CDATA[Properties["HeaderCell"].Type="NSCell"]]></Change>
+				<Change><![CDATA[Properties["Identifier"].Type="NSString"]]></Change>
+				<Change><![CDATA[Enumerations["Resizing_Modes"].Name="NSResizingMode"]]></Change>
+				<Change><![CDATA[Enumerations["NSResizingMode"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTableColumn.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTableColumn_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSTableColumn"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTableHeaderCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTableHeaderCell_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSTableHeaderView">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTableHeaderView_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSTableRowView">
+			<File>Cocoa/Reference/NSTableRowView_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ViewAtColumn"].ReturnType="NSView"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTableView">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTableView_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["DragImageForRowsWithIndexesTableColumnsEventOffset"].Parameters["dragImageOffset"].Type="NSPoint"]]></Change>
+				<Change><![CDATA[Methods["DragImageForRowsWithIndexesTableColumnsEventOffset"].Parameters["dragImageOffset"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["ViewAtColumnRowMakeIfNecessary"].ReturnType="NSView"]]></Change>
+				<Change><![CDATA[Properties["DataSource"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["GridStyleMask"].Type="NSTableViewGridLineStyle"]]></Change>
+				<Change><![CDATA[Enumerations["NSTableViewDraggingDestinationFeedbackStyle"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["Grid_styles"].Name="NSTableViewGridLineStyle"]]></Change>
+				<Change><![CDATA[Enumerations["NSTableViewGridLineStyle"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSTableViewGridLineStyle"].Flags=true]]></Change>
+				<Change><![CDATA[Enumerations["No_Animation_Effects"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["Row_Animation_Effects"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["NSTableViewAnimationOptions"].Values.Set("NSTableViewAnimationEffectNone", "<EnumerationValue><Summary><Line>Specifies no animation effect should be used. Specifying any animation negates this effect.</Line></Summary><MinAvailability>OS X v10.7</MinAvailability><Name>NSTableViewAnimationEffectNone</Name><Value>0x0</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSTableViewAnimationOptions"].Values.Set("NSTableViewAnimationEffectFade", "<EnumerationValue><Summary><Line>Specifies that the tableview will use a fade for row or column removal. The effect can be combined with any NSTableViewAnimationOptions constant.</Line></Summary><MinAvailability>OS X v10.7</MinAvailability><Name>NSTableViewAnimationEffectFade</Name><Value>0x1</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSTableViewAnimationOptions"].Values.Set("NSTableViewAnimationEffectGap", "<EnumerationValue><Summary><Line>Creates a gap for newly inserted rows. This is useful for drag and drop animations that animate to a newly opened gap and should be used in the delegate method tableView:acceptDrop:row:dropOperation:.</Line></Summary><MinAvailability>OS X v10.7</MinAvailability><Name>NSTableViewAnimationEffectGap</Name><Value>0x2</Value></EnumerationValue>")]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTableView.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTableView_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSTableView"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTabView">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTabView_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTabViewItem">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTabViewItem_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["View"].Type="NSView"]]></Change>
+				<Change><![CDATA[Enumerations["NSTabState"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSText">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSText_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Enumerations["NSTextAlignment"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["Additional_Writing_Directions"].Name="NSAdditionalWritingDirection"]]></Change>
+				<Change><![CDATA[Enumerations["NSAdditionalWritingDirection"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["Movement_Codes"].Name="NSMovementCode"]]></Change>
+				<Change><![CDATA[Enumerations["NSMovementCode"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["Commonly_used_Unicode_characters"].Name="NSCommonUnicodeCharacters"]]></Change>
+				<Change><![CDATA[Enumerations["NSCommonUnicodeCharacters"].BaseType="uint"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTextAttachment">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTextAttachment_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<!-- TODO: Move to constants -->
+				<Change><![CDATA[Enumerations["Attachment_Character"].Name="NSAttachmentCharacter"]]></Change>
+				<Change><![CDATA[Enumerations["NSAttachmentCharacter"].Generate=false]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTextAttachmentCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTextAttachmentCell_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSTextBlock">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTextBlock_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSTextContainer">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTextContainer_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["NSLineMovementDirection"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSLineSweepDirection"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTextField">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTextField_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTextField.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTextField_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSTextField"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTextFieldCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTextFieldCell_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSTextFinder">
+			<File>AppKit/Reference/NSTextFinder_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Client"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["FindBarContainer"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTextInputContext">
+			<File>Cocoa/Reference/NSTextInputContext_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["InitWithClient"].Parameters["theClient"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTextList">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTextList_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSTextStorage">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTextStorage_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Enumerations["Change_notifications"].Name="NSTextStorageEditedMask"]]></Change>
+				<Change><![CDATA[Enumerations["NSTextStorageEditedMask"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSTextStorageEditedMask"].Flags=true]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTextTab">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTextTab_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["NSTextTabType"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTextTable">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTextTable_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSTextTableBlock">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTextTableBlock_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSTextView">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTextView_Class/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<pre class="declaration">]]></Source>
+                    <With><![CDATA[)</p><pre class="declaration">]]></With>
+                </Replace>
+				<Replace>
+					<Source><![CDATA[>NSFindPanelSearchOptionsPboardType</a>]]></Source>
+					<With><![CDATA[>NSFindPanelSearchOptionsPboardType;</a>]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[NSString *NSFindPanelCaseInsensitiveSearch
+]]></Source>
+					<With><![CDATA[NSString *NSFindPanelCaseInsensitiveSearch;
+]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[>NSFindPanelSubstringMatch</a>]]></Source>
+					<With><![CDATA[>NSFindPanelSubstringMatch;</a>]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["CompletionsForPartialWordRangeIndexOfSelectedItem"].Parameters["index"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["CompletionsForPartialWordRangeIndexOfSelectedItem"].Parameters["index"].IsOut=true]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Enumerations["NSSelectionGranularity"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSSelectionAffinity"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSFindPanelAction"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+			<Patch type="Generated">
+				<Replace>
+					<Source><![CDATA[public virtual bool IsRulerVisible]]></Source>
+					<With><![CDATA[public new bool IsRulerVisible]]></With>
+				</Replace>
+			</Patch>
+		</Class>
+		<Class name="NSTextView.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTextView_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSTextView"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTokenField">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTokenField_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTokenFieldCell">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTokenFieldCell_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSToolbar">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSToolbar_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSToolbarItem">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSToolbarItem_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Item_Priority"].Name="NSItemPriority"]]></Change>
+				<Change><![CDATA[Enumerations["NSItemPriority"].BaseType="NSInteger"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSToolbarItemGroup">
+			<File>Cocoa/Reference/NSToolbarItemGroup_Class/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="NSTouch">
+			<File>AppKit/Reference/NSTouch_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["Identity"].Type="INSCopying"]]></Change>
+				<Change><![CDATA[Properties["Identity"].Getter.ReturnType="INSCopying"]]></Change>
+				<Change><![CDATA[Enumerations["NSTouchPhase"].Values["NSTouchPhaseAny"].Value="0xFFFFFFFFU"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTrackingArea">
+			<File>Cocoa/Reference/NSTrackingArea_class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSTreeController">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTreeController_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSTreeNode">
+			<File>Cocoa/Reference/NSTreeNode_class/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["TreeNodeWithRepresentedObject"].ReturnType="NSTreeNode"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSTypesetter">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSTypesetter_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["PrintingAdjustmentInLayoutManagerForNominallySpacedGlyphRangePackedGlyphsCount"].Parameters["packedGlyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBitsBidiLevels"].Parameters["glyphBuffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBitsBidiLevels"].Parameters["charIndexBuffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBitsBidiLevels"].Parameters["inscribeBuffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBitsBidiLevels"].Parameters["elasticBuffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetGlyphsInRangeGlyphsCharacterIndexesGlyphInscriptionsElasticBitsBidiLevels"].Parameters["bidiLevelBuffer"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["SetBidiLevelsForGlyphRange"].Parameters["levels"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["SetLocationWithAdvancementsForStartOfGlyphRange"].Parameters["advancements"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["SubstituteGlyphsInRangeWithGlyphs"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["WillSetLineFragmentRectForGlyphRangeUsedRectBaselineOffset"].Parameters["baselineOffset"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["WillSetLineFragmentRectForGlyphRangeUsedRectBaselineOffset"].Parameters["baselineOffset"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["LayoutGlyphsInLayoutManagerStartingAtGlyphIndexMaxNumberOfLineFragmentsNextGlyphIndex"].Parameters["nextGlyph"].Type="NSUInteger"]]></Change>
+				<Change><![CDATA[Methods["LayoutGlyphsInLayoutManagerStartingAtGlyphIndexMaxNumberOfLineFragmentsNextGlyphIndex"].Parameters["nextGlyph"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["SharedSystemTypesetterForBehavior"].ReturnType="NSTypesetter"]]></Change>
+				<Change><![CDATA[Properties["SharedSystemTypesetter"].Type="NSTypesetter"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSURL_AppKitAdditions">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSURL_AppKitAdditions/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSURL"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSUserDefaultsController">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSUserDefaultsController_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Properties["SharedUserDefaultsController"].Type="NSUserDefaultsController"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSView">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSView_Class/Reference/NSView.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[)<div class="declaration">]]></Source>
+					<With><![CDATA[)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["GetRectsBeingDrawnCount"].Parameters["rects"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["GetRectsBeingDrawnCount"].Parameters["count"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["GetRectsBeingDrawnCount"].Parameters["count"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetRectsExposedDuringLiveResizeCount"].Parameters["count"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["GetRectsExposedDuringLiveResizeCount"].Parameters["count"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["AdjustPageHeightNewTopBottomLimit"].Parameters["newBottom"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["AdjustPageHeightNewTopBottomLimit"].Parameters["newBottom"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["AdjustPageWidthNewLeftRightLimit"].Parameters["newRight"].Type="CGFloat"]]></Change>
+				<Change><![CDATA[Methods["AdjustPageWidthNewLeftRightLimit"].Parameters["newRight"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["SortSubviewsUsingFunctionContext"].Parameters["compare"].Type="IdComparator"]]></Change>
+				<Change><![CDATA[Methods["ViewWithTag"].ReturnType="NSView"]]></Change>
+				<Change><![CDATA[Properties.Set("Animator", "<Property><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>OS X v10.5</MinAvailability><Name>Animator</Name><Type>Id</Type><Getter><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>OS X v10.5</MinAvailability><Name>Animator</Name><Selector>animator</Selector><Signature>- (id)animator</Signature><ReturnType>Id</ReturnType><ReturnsDocumentation>Returns a proxy object for the receiver that can initiate implied animations in response to property changes.</ReturnsDocumentation><Parameters /></Getter></Property>")]]></Change>
+				<Change><![CDATA[Properties["Animator"].Type="NSView"]]></Change>
+				<Change><![CDATA[Properties["AutoresizingMask"].Type="NSAutoresizingMask"]]></Change>
+				<Change><![CDATA[Enumerations["Resizing_masks"].Name="NSAutoresizingMask"]]></Change>
+				<Change><![CDATA[Enumerations["NSAutoresizingMask"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSAutoresizingMask"].Flags=true]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSView.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSView_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSView"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSViewAnimation">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSViewAnimation_Class/Reference/Reference.html</File>
+		</Class>
+		<Class name="NSViewController">
+			<File>Cocoa/Reference/NSViewController_Class/Introduction/Introduction.html</File>
+		</Class>
+		<Class name="NSWindow">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSWindow_Class/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<div class="declaration">]]></Source>
+                    <With><![CDATA[)</p><div class="declaration">]]></With>
+                </Replace>
+                <Replace>
+                    <Source><![CDATA[)<pre class="declaration">]]></Source>
+                    <With><![CDATA[)</p><pre class="declaration">]]></With>
+                </Replace>
+				<Replace>
+					<Source><![CDATA[ = 1 &lt;&lt; 1
+};
+enum {]]></Source>
+					<With><![CDATA[ = 1 &lt;&lt; 1,
+]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[ = 1 &lt;&lt; 4,
+};
+enum {]]></Source>
+					<With><![CDATA[ = 1 &lt;&lt; 4 ,
+]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[ = 1 &lt;&lt; 6
+};
+enum {]]></Source>
+					<With><![CDATA[ = 1 &lt;&lt; 6,
+]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[// <!--a-->let<!--/a--> <!--a-->AppKit<!--/a--> <!--a-->infer<!--/a--> <!--a-->animation<!--/a--> <!--a-->behavior<!--/a--> <!--a-->for<!--/a--> <!--a-->this<!--/a--> <!--a-->window<!--/a-->]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+				<Replace>
+					<Source><![CDATA[// <!--a-->suppress<!--/a--> <!--a-->inferred<!--/a--> <!--a-->animations<!--/a--> (don'<!--a-->t<!--/a--> <!--a-->animate<!--/a-->)]]></Source>
+					<With><![CDATA[]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["ContentRectForFrameRectStyleMask"].Parameters["windowStyle"].Type="NSWindowStyleMask"]]></Change>
+				<Change><![CDATA[Methods["FrameRectForContentRectStyleMask"].Parameters["windowStyle"].Type="NSWindowStyleMask"]]></Change>
+				<Change><![CDATA[Methods["MinFrameWidthWithTitleStyleMask"].Parameters["windowStyle"].Type="NSWindowStyleMask"]]></Change>
+				<Change><![CDATA[Methods["InitWithContentRectStyleMaskBackingDefer"].Parameters["windowStyle"].Type="NSWindowStyleMask"]]></Change>
+				<Change><![CDATA[Methods["InitWithContentRectStyleMaskBackingDeferScreen"].Parameters["windowStyle"].Type="NSWindowStyleMask"]]></Change>
+				<Change><![CDATA[Methods["InitWithWindowRef"].GenerateConstructor=false]]></Change>
+				<Change><![CDATA[Methods["NextEventMatchingMask"].Parameters["eventMask"].Type="NSEventMask"]]></Change>
+				<Change><![CDATA[Methods["NextEventMatchingMaskUntilDateInModeDequeue"].Parameters["eventMask"].Type="NSEventMask"]]></Change>
+				<Change><![CDATA[DelegateMethods["WindowDidDecodeRestorableState"].Generate=false]]></Change>
+				<Change><![CDATA[DelegateMethods["WindowWillEncodeRestorableState"].Generate=false]]></Change>
+				<Change><![CDATA[Properties.Set("Animator", "<Property><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>OS X v10.5</MinAvailability><Name>Animator</Name><Type>Id</Type><Getter><Summary><Line>Returns a proxy object for the receiver that can be used to initiate implied animation for property changes. (required)</Line></Summary><MinAvailability>OS X v10.5</MinAvailability><Name>Animator</Name><Selector>animator</Selector><Signature>- (id)animator</Signature><ReturnType>Id</ReturnType><ReturnsDocumentation>Returns a proxy object for the receiver that can initiate implied animations in response to property changes.</ReturnsDocumentation><Parameters /></Getter></Property>")]]></Change>
+				<Change><![CDATA[Properties["Animator"].Type="NSWindow"]]></Change>
+				<Change><![CDATA[Properties["ContentView"].Type="NSView"]]></Change>
+				<Change><![CDATA[Properties["ContentView"].Getter.ReturnType="NSView"]]></Change>
+				<Change><![CDATA[Properties["Delegate"].Type="Id"]]></Change>
+				<Change><![CDATA[Properties["StyleMask"].Type="NSWindowStyleMask"]]></Change>
+				<Change><![CDATA[Properties["RestorationClass"].Type="Class"]]></Change>
+				<Change><![CDATA[Properties["WindowController"].Type="NSWindowController"]]></Change>
+                <!-- TODO: Move values to NSApplication.NSModalResponse -->
+                <Change><![CDATA[Enumerations["Additional_NSModalResponse_Values"].Name="AdditionalNSModalResponseValues"]]></Change>
+                <Change><![CDATA[Enumerations["AdditionalNSModalResponseValues"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["Window_Style_Masks"].Name="NSWindowStyleMask"]]></Change>
+				<Change><![CDATA[Enumerations["NSWindowStyleMask"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSWindowStyleMask"].Flags=true]]></Change>
+				<Change><![CDATA[Enumerations["NSWindowStyleMask"].Values.Set("NSDocModalWindowMask", "<EnumerationValue><Summary><Line>The panel is created as a modal sheet.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>NSDocModalWindowMask</Name><Value>1 &amp;lt;&amp;lt; 6</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSWindowStyleMask"].Values.Set("NSNonactivatingPanelMask", "<EnumerationValue><Summary><Line>The panel can receive keyboard input without activating the owning application.</Line><Line>Valid only for an instance of NSPanel or its subclasses; not valid for a window.</Line></Summary><MinAvailability>OS X v10.2</MinAvailability><Name>NSNonactivatingPanelMask</Name><Value>1 &amp;lt;&amp;lt; 7</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSWindowStyleMask"].Values.Set("NSHUDWindowMask", "<EnumerationValue><Summary><Line>The panel is created as a transparent panel (sometimes called a “heads-up display”).</Line><Line>Valid only for an instance of NSPanel or its subclasses; not valid for a window.</Line><Line>Using the C bitwise OR operator, , NSHUDWindowMask can be combined with other style masks (some of which are documented in Window_Style_Masks) with the following results:</Line><Line>The following constants cannot be combined with , NSHUDWindowMask: NSMiniaturizableWindowMask, NSTexturedBackgroundWindowMask, NSDocModalWindowMask, and NSUnifiedTitleAndToolbarWindowMask.</Line></Summary><MinAvailability>OS X v10.5</MinAvailability><Name>NSHUDWindowMask</Name><Value>1 &amp;lt;&amp;lt; 13</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSWindowStyleMask"].Values.Set("NSUnifiedTitleAndToolbarWindowMask", "<EnumerationValue><Summary><Line>Specifies a window whose toolbar and title bar are rendered on a single continuous background.</Line></Summary><MinAvailability>OS X v10.4</MinAvailability><Name>NSUnifiedTitleAndToolbarWindowMask</Name><Value>1 &amp;lt;&amp;lt; 12</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["NSWindowStyleMask"].Values.Set("NSFullScreenWindowMask", "<EnumerationValue><Summary><Line>Indicates that a window has fullscreen appearance.</Line><Line>A fullscreen window does not draw its titlebar, and may have special handling for its toolbar.</Line></Summary><MinAvailability>OS X v10.7</MinAvailability><Name>NSFullScreenWindowMask</Name><Value>1 &amp;lt;&amp;lt; 14</Value></EnumerationValue>")]]></Change>
+				<Change><![CDATA[Enumerations["Controlling_the_Look_of_a_Window_and_Its_Toolbar"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["Supporting_Full_Screen_Appearance."].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["Managing_Scaling_Factors"].Generate=false]]></Change>
+				<!-- TODO: Merge with other ordering -->
+				<Change><![CDATA[Enumerations["NSRunLoop_Ordering_Modes_for_NSWindow"].Name="NSWindowRunLoopOrderingMode"]]></Change>
+				<Change><![CDATA[Enumerations["NSWindowRunLoopOrderingMode"].BaseType="NSInteger"]]></Change>
+				<Change><![CDATA[Enumerations["Explicit_Window_Depth_Limits"].Name="NSWindowDepthLimit"]]></Change>
+				<Change><![CDATA[Enumerations["NSWindowDepthLimit"].BaseType="int"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSWindow.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSWindow_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSWindow"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSWindowController">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSWindowController_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+                <Change><![CDATA[Methods["InitWithWindowNibPathOwner"].GenerateConstructor=false]]></Change>
+                <Change><![CDATA[Properties["Document"].Type="NSDocument"]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSWorkspace">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSWorkspace_Class/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["GetFileSystemInfoForPathIsRemovableIsWritableIsUnmountableDescriptionType"].Parameters["removableFlag"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["GetFileSystemInfoForPathIsRemovableIsWritableIsUnmountableDescriptionType"].Parameters["removableFlag"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetFileSystemInfoForPathIsRemovableIsWritableIsUnmountableDescriptionType"].Parameters["writableFlag"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["GetFileSystemInfoForPathIsRemovableIsWritableIsUnmountableDescriptionType"].Parameters["writableFlag"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetFileSystemInfoForPathIsRemovableIsWritableIsUnmountableDescriptionType"].Parameters["unmountableFlag"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["GetFileSystemInfoForPathIsRemovableIsWritableIsUnmountableDescriptionType"].Parameters["unmountableFlag"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetFileSystemInfoForPathIsRemovableIsWritableIsUnmountableDescriptionType"].Parameters["description"].Type="NSString"]]></Change>
+				<Change><![CDATA[Methods["GetFileSystemInfoForPathIsRemovableIsWritableIsUnmountableDescriptionType"].Parameters["description"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["GetFileSystemInfoForPathIsRemovableIsWritableIsUnmountableDescriptionType"].Parameters["fileSystemType"].Type="NSString"]]></Change>
+				<Change><![CDATA[Methods["GetFileSystemInfoForPathIsRemovableIsWritableIsUnmountableDescriptionType"].Parameters["fileSystemType"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["PerformFileOperationSourceDestinationFilesTag"].Parameters["tag"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["PerformFileOperationSourceDestinationFilesTag"].Parameters["tag"].IsOut=true]]></Change>
+			</Patch>
+		</Class>
+		<Class name="NSWorkspace.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Classes/NSWorkspace_Class/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSWorkspace"]]></Change>
+			</Patch>
+		</Class>
+	</Classes>
+	<Protocols>
+		<Protocol name="NSAccessibility">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSAccessibility_Protocol/Reference/Reference.html</File>
+            <Patch type="Model">
+                <Change><![CDATA[Enumerations["Notification_Priority_Levels"].Name="NotificationPriorityLevels"]]></Change>
+                <Change><![CDATA[Enumerations["NotificationPriorityLevels"].BaseType="NSUInteger"]]></Change>
+            </Patch>
+		</Protocol>
+		<Protocol name="NSAlertDelegate">
+			<File>Cocoa/Reference/NSAlertDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSAlert"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSAnimatablePropertyContainer">
+			<File>Cocoa/Reference/NSAnimatablePropertyContainer_protocol/Introduction/Introduction.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["DefaultAnimationForKey"].ReturnType="CAAnimation"]]></Change>
+				<Change><![CDATA[Methods["AnimationForKey"].ReturnType="CAAnimation"]]></Change>
+				<Change><![CDATA[Properties["Animator"].Generate=false]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSAnimationDelegate">
+			<File>Cocoa/Reference/NSAnimationDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSAnimation"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSApplicationDelegate">
+			<File>Cocoa/Reference/NSApplicationDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSApplication"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSBrowserDelegate">
+			<File>Cocoa/Reference/NSBrowserDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[BaseType="NSControlTextEditingDelegate"]]></Change>
+				<Change><![CDATA[DelegateFor="NSBrowser"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[Methods["BrowserDraggingImageForRowsWithIndexesInColumnWithEventOffset"].Parameters["dragImageOffset"].Type="NSPoint"]]></Change>
+				<Change><![CDATA[Methods["BrowserDraggingImageForRowsWithIndexesInColumnWithEventOffset"].Parameters["dragImageOffset"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["BrowserValidateDropProposedRowColumnDropOperation"].Parameters["row"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["BrowserValidateDropProposedRowColumnDropOperation"].Parameters["row"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["BrowserValidateDropProposedRowColumnDropOperation"].Parameters["column"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["BrowserValidateDropProposedRowColumnDropOperation"].Parameters["column"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["BrowserValidateDropProposedRowColumnDropOperation"].Parameters["dropOperation"].Type="NSBrowserDropOperation"]]></Change>
+				<Change><![CDATA[Methods["BrowserValidateDropProposedRowColumnDropOperation"].Parameters["dropOperation"].IsByRef=true]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSChangeSpelling">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSChangeSpelling_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSCollectionViewDelegate">
+			<File>Cocoa/Reference/NSCollectionViewDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSCollectionView"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[Methods["CollectionViewDraggingImageForItemsAtIndexesWithEventOffset"].Parameters["dragImageOffset"].Type="NSPoint"]]></Change>
+				<Change><![CDATA[Methods["CollectionViewDraggingImageForItemsAtIndexesWithEventOffset"].Parameters["dragImageOffset"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["CollectionViewValidateDropProposedIndexDropOperation"].Parameters["proposedDropIndex"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["CollectionViewValidateDropProposedIndexDropOperation"].Parameters["proposedDropIndex"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["CollectionViewValidateDropProposedIndexDropOperation"].Parameters["proposedDropOperation"].Type="NSCollectionViewDropOperation"]]></Change>
+				<Change><![CDATA[Methods["CollectionViewValidateDropProposedIndexDropOperation"].Parameters["proposedDropOperation"].IsByRef=true]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSColorPanelDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[BaseType="NSPanelDelegate"]]></Change>
+				<Change><![CDATA[DelegateFor="NSColorPanel"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSColorPickingCustom">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSColorPickingCustom_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSColorPickingDefault">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSColorPickingDefault_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSComboBoxCellDataSource">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSComboBoxCellDataSource_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSComboBoxDataSource">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSComboBoxDataSource_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSComboBoxDelegate">
+			<File>Cocoa/Reference/NSComboBoxDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[BaseType="NSTextFieldDelegate"]]></Change>
+				<Change><![CDATA[DelegateFor="NSComboBox"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSControlTextEditingDelegate">
+			<File>Cocoa/Reference/NSControlTextEditingDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSControl"]]></Change>
+				<Change><![CDATA[Methods["ControlTextViewCompletionsForPartialWordRangeIndexOfSelectedItem"].Parameters["index"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["ControlTextViewCompletionsForPartialWordRangeIndexOfSelectedItem"].Parameters["index"].IsByRef=true]]></Change>
+				<!--
+        <Change><![CDATA[Methods["ControlTextDidBeginEditing]="<Method Generate="true" Static="false" GenerateConstructor="true"><Summary><Line>Sent when a control with editable text begins an editing session.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>ControlTextDidBeginEditing</Name><Selector>controlTextDidBeginEditing:</Selector><Signature>- (void)controlTextDidBeginEditing:(NSNotification *)aNotification</Signature><ReturnType>void</ReturnType><ReturnsDocumentation /><Parameters><Parameter IsBlock="false"><Summary><Line>The notification object. The name of the notification is always NSControlTextDidBeginEditingNotification.</Line></Summary><Name>aNotification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>"]]></Change>
+        <Change><![CDATA[Methods["ControlTextDidChange]="<Method Generate="true" Static="false" GenerateConstructor="true"><Summary><Line>Sent when the text in the receiving control changes.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>ControlTextDidChange</Name><Selector>controlTextDidChange:</Selector><Signature>- (void)controlTextDidChange:(NSNotification *)aNotification</Signature><ReturnType>void</ReturnType><ReturnsDocumentation /><Parameters><Parameter IsBlock="false"><Summary><Line>The notification object. The name of the notification is always NSControlTextDidChangeNotification.</Line></Summary><Name>aNotification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>"]]></Change>
+        <Change><![CDATA[Methods["ControlTextDidEndEditing]="<Method Generate="true" Static="false" GenerateConstructor="true"><Summary><Line>Sent when a control with editable text ends an editing session.</Line></Summary><MinAvailability>OS X v10.0</MinAvailability><Name>ControlTextDidEndEditing</Name><Selector>controlTextDidEndEditing:</Selector><Signature>- (void)controlTextDidEndEditing:(NSNotification *)aNotification</Signature><ReturnType>void</ReturnType><ReturnsDocumentation /><Parameters><Parameter IsBlock="false"><Summary><Line>The notification object. The name of the notification is always NSControlTextDidEndEditingNotification.</Line></Summary><Name>aNotification</Name><Type>NSNotification</Type></Parameter></Parameters></Method>"]]></Change>
+        -->
+			</Patch>
+		</Protocol>
+		<Protocol name="NSDatePickerCellDelegate">
+			<File>Cocoa/Reference/NSDatePickerCellDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSDatePickerCell"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[Methods["DatePickerCellValidateProposedDateValueTimeInterval"].Parameters["proposedTimeInterval"].Type="double"]]></Change>
+				<Change><![CDATA[Methods["DatePickerCellValidateProposedDateValueTimeInterval"].Parameters["proposedTimeInterval"].IsByRef=true]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSDictionaryControllerKeyValuePair">
+			<File>Cocoa/Reference/NSDictionaryControllerKeyValuePair_Protocol/Introduction/Introduction.html</File>
+		</Protocol>
+		<Protocol name="NSDockTilePlugIn">
+			<File>AppKit/Reference/NSDockTilePlugIn_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSDraggingDestination">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSDraggingDestination_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSDraggingInfo">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSDraggingInfo_Protocol/Reference/Reference.html</File>
+            <Patch type="Html">
+                <Replace>
+                    <Source><![CDATA[)<pre class="declaration">]]></Source>
+                    <With><![CDATA[)</p><pre class="declaration">]]></With>
+                </Replace>
+            </Patch>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["NSDraggingItemEnumerationOptions"].Generate=false]]></Change>
+				<Change><![CDATA[Enumerations["NSDragOperation"].Values["NSDragOperationEvery"].Value="0xFFFFFFFFU"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSDraggingSource">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSDraggingSource_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSDraggingSource.Deprecated">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSDraggingSource_Protocol/DeprecationAppendix/AppendixADeprecatedAPI.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[AdditionFor="NSDraggingSource"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSDrawerDelegate">
+			<File>Cocoa/Reference/NSDrawerDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSDrawer"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSEditor">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSEditor_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSEditorRegistration">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSEditorRegistration_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSFontManagerDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSFontManager"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSFontPanelValidation">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSFontPanelValidation_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Mode_Masks"].Name="NSFontPanelModeMask"]]></Change>
+				<Change><![CDATA[Enumerations["NSFontPanelModeMask"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSFontPanelModeMask"].Flags=true]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSGlyphStorage">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSGlyphStorage_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["InsertGlyphsLengthForStartingGlyphAtIndexCharacterIndex"].Parameters["glyphs"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Enumerations["Layout_Options"].Name="NSLayoutOption"]]></Change>
+				<Change><![CDATA[Enumerations["NSLayoutOption"].BaseType="NSUInteger"]]></Change>
+				<Change><![CDATA[Enumerations["NSLayoutOption"].Flags=true]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSIgnoreMisspelledWords">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSIgnoreMisspelledWords_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSImageDelegate">
+			<File>Cocoa/Reference/NSImageDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSImage"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<!-- Moved to Foundation
+		<Protocol name="NSKeyValueBindingCreation">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSKeyValueBindingCreation_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		-->
+        <Protocol name="NSLayerDelegateContentsScaleUpdating">
+            <File>AppKit/Reference/NSLayerDelegateContentsScaleUpdatingProtocol/Reference/Reference.html</File>
+        </Protocol>
+		<Protocol name="NSLayoutManagerDelegate">
+			<File>Cocoa/Reference/NSLayoutManagerDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSLayoutManager"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSMatrixDelegate">
+			<File>Cocoa/Reference/NSMatrixDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[BaseType="NSControlTextEditingDelegate"]]></Change>
+				<Change><![CDATA[DelegateFor="NSMatrix"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSMenuDelegate">
+			<File>Cocoa/Reference/NSMenuDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSMenu"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[Methods["MenuHasKeyEquivalentForEventTargetAction"].Parameters["target"].Type="Id"]]></Change>
+				<Change><![CDATA[Methods["MenuHasKeyEquivalentForEventTargetAction"].Parameters["target"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["MenuHasKeyEquivalentForEventTargetAction"].Parameters["action"].Type="IntPtr"]]></Change>
+				<Change><![CDATA[Methods["MenuHasKeyEquivalentForEventTargetAction"].Parameters["action"].IsOut=true]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSMenuValidation">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSMenuValidation_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSNibAwaking">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSNibAwaking_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSOpenSavePanelDelegate">
+			<File>Cocoa/Reference/NSOpenSavePanelDelegate_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSOutlineViewDataSource">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSOutlineViewDataSource_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSOutlineViewDelegate">
+			<File>Cocoa/Reference/NSOutlineViewDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[BaseType="NSTableViewDelegate"]]></Change>
+				<Change><![CDATA[DelegateFor="NSOutlineView"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[Methods.Set("OutlineViewColumnDidMove", "
+<Method>
+	<Summary><Line>Invoked whenever the user moves a column in the outline view.</Line></Summary>
+	<MinAvailability>OS X v10.0</MinAvailability>
+	<Name>OutlineViewColumnDidMove</Name>
+	<Selector>outlineViewColumnDidMove:</Selector>
+	<Signature>- (void)outlineViewColumnDidMove:(NSNotification *)notification</Signature>
+	<ReturnType>void</ReturnType>
+	<Parameters>
+		<Parameter>
+			<Summary><Line>The posted notification.</Line></Summary>
+			<Name>notification</Name>
+			<Type>NSNotification</Type>
+		</Parameter>
+	</Parameters>
+</Method>")]]></Change>
+				<Change><![CDATA[Methods.Set("OutlineViewColumnDidResize", "
+<Method>
+	<Summary><Line>Invoked whenever the user resizes a column in the outline view.</Line></Summary>
+	<MinAvailability>OS X v10.0</MinAvailability>
+	<Name>OutlineViewColumnDidResize</Name>
+	<Selector>outlineViewColumnDidResize:</Selector>
+	<Signature>- (void)outlineViewColumnDidResize:(NSNotification *)notification</Signature>
+	<ReturnType>void</ReturnType>
+	<Parameters>
+		<Parameter>
+			<Summary><Line>The posted notification.</Line></Summary>
+			<Name>notification</Name>
+			<Type>NSNotification</Type>
+		</Parameter>
+	</Parameters>
+</Method>")]]></Change>
+				<Change><![CDATA[Methods.Set("OutlineViewItemDidCollapse", "
+<Method>
+	<Summary><Line>Invoked when the did collapse notification is posted—that is, whenever the user collapses an item in the outline view.</Line></Summary>
+	<MinAvailability>OS X v10.0</MinAvailability>
+	<Name>OutlineViewItemDidCollapse</Name>
+	<Selector>outlineViewItemDidCollapse:</Selector>
+	<Signature>- (void)outlineViewItemDidCollapse:(NSNotification *)notification</Signature>
+	<ReturnType>void</ReturnType>
+	<Parameters>
+		<Parameter>
+			<Summary><Line>The posted notification.</Line></Summary>
+			<Name>notification</Name>
+			<Type>NSNotification</Type>
+		</Parameter>
+	</Parameters>
+</Method>")]]></Change>
+				<Change><![CDATA[Methods.Set("OutlineViewItemDidExpand", "
+<Method>
+	<Summary><Line>Invoked when notification is posted—that is, whenever the user expands an item in the outline view.</Line></Summary>
+	<MinAvailability>OS X v10.0</MinAvailability>
+	<Name>OutlineViewItemDidExpand</Name>
+	<Selector>outlineViewItemDidExpand:</Selector>
+	<Signature>- (void)outlineViewItemDidExpand:(NSNotification *)notification</Signature>
+	<ReturnType>void</ReturnType>
+	<Parameters>
+		<Parameter>
+			<Summary><Line>The posted notification.</Line></Summary>
+			<Name>notification</Name>
+			<Type>NSNotification</Type>
+		</Parameter>
+	</Parameters>
+</Method>")]]></Change>
+				<Change><![CDATA[Methods.Set("OutlineViewItemWillCollapse", "
+<Method>
+	<Summary><Line>Invoked when notification is posted—that is, whenever the user is about to collapse an item in the outline view.</Line></Summary>
+	<MinAvailability>OS X v10.0</MinAvailability>
+	<Name>OutlineViewItemWillCollapse</Name>
+	<Selector>outlineViewItemWillCollapse:</Selector>
+	<Signature>- (void)outlineViewItemWillCollapse:(NSNotification *)notification</Signature>
+	<ReturnType>void</ReturnType>
+	<Parameters>
+		<Parameter>
+			<Summary><Line>The posted notification.</Line></Summary>
+			<Name>notification</Name>
+			<Type>NSNotification</Type>
+		</Parameter>
+	</Parameters>
+</Method>")]]></Change>
+				<Change><![CDATA[Methods.Set("OutlineViewItemWillExpand", "
+<Method>
+	<Summary><Line>Invoked when notification is posted—that is, whenever the user is about to expand an item in the outline view.</Line></Summary>
+	<MinAvailability>OS X v10.0</MinAvailability>
+	<Name>OutlineViewItemWillExpand</Name>
+	<Selector>outlineViewItemWillExpand:</Selector>
+	<Signature>- (void)outlineViewItemWillExpand:(NSNotification *)notification</Signature>
+	<ReturnType>void</ReturnType>
+	<Parameters>
+		<Parameter>
+			<Summary><Line>The posted notification.</Line></Summary>
+			<Name>notification</Name>
+			<Type>NSNotification</Type>
+		</Parameter>
+	</Parameters>
+</Method>")]]></Change>
+				<Change><![CDATA[Methods.Set("OutlineViewSelectionDidChange", "
+<Method>
+	<Summary><Line>Invoked when the selection did change notification is posted—that is, immediately after the outline view’s selection has changed.</Line></Summary>
+	<MinAvailability>OS X v10.0</MinAvailability>
+	<Name>OutlineViewSelectionDidChange</Name>
+	<Selector>outlineViewSelectionDidChange:</Selector>
+	<Signature>- (void)outlineViewSelectionDidChange:(NSNotification *)notification</Signature>
+	<ReturnType>void</ReturnType>
+	<Parameters>
+		<Parameter>
+			<Summary><Line>The posted notification.</Line></Summary>
+			<Name>notification</Name>
+			<Type>NSNotification</Type>
+		</Parameter>
+	</Parameters>
+</Method>")]]></Change>
+				<Change><![CDATA[Methods.Set("OutlineViewSelectionIsChanging", "
+<Method>
+	<Summary><Line>Invoked when notification is posted—that is, whenever the outline view’s selection changes.</Line></Summary>
+	<MinAvailability>OS X v10.0</MinAvailability>
+	<Name>OutlineViewSelectionIsChanging</Name>
+	<Selector>outlineViewSelectionIsChanging:</Selector>
+	<Signature>- (void)outlineViewSelectionIsChanging:(NSNotification *)notification</Signature>
+	<ReturnType>void</ReturnType>
+	<Parameters>
+		<Parameter>
+			<Summary><Line>The posted notification.</Line></Summary>
+			<Name>notification</Name>
+			<Type>NSNotification</Type>
+		</Parameter>
+	</Parameters>
+</Method>")]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSPageControllerDelegate">
+			<File>../releasenotes/WindowsViews/NSPageControllerDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSPageController"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSPanelDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[BaseType="NSWindowDelegate"]]></Change>
+				<Change><![CDATA[DelegateFor="NSPanel"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSPasteboardItemDataProvider">
+			<File>Cocoa/Reference/NSPasteboardItemDataProvider_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSPasteboardReading">
+			<File>Cocoa/Reference/NSPasteboardReading_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Pasteboard_Reading_Options"].Name="NSPasteboardReadingOptions"]]></Change>
+				<Change><![CDATA[Enumerations["NSPasteboardReadingOptions"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSPasteboardWriting">
+			<File>Cocoa/Reference/NSPasteboardWriting_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Enumerations["Pasteboard_Writing_Options"].Name="NSPasteboardWritingOptions"]]></Change>
+				<Change><![CDATA[Enumerations["NSPasteboardWritingOptions"].BaseType="NSUInteger"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSPathCellDelegate">
+			<File>Cocoa/Reference/NSPathCellDelegate_protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSPathCell"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSPathControlDelegate">
+			<File>Cocoa/Reference/NSPathControlDelegate_protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSPathControl"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSPlaceholders">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSPlaceholders_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSPopoverDelegate">
+			<File>AppKit/Reference/NSPopoverDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSPopover"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSPrintPanelAccessorizing">
+			<File>Cocoa/Reference/NSPrintPanelAccessorizing_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSRuleEditorDelegate">
+			<File>Cocoa/Reference/NSRuleEditorDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSRuleEditor"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSRulerViewDelegate">
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSRulerView"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+        <Protocol name="NSServicesMenuRequestor">
+            <File>Cocoa/Reference/ApplicationKit/Protocols/NSServicesRequests_Protocol/Reference/Reference.html</File>
+        </Protocol>
+        <Protocol name="NSServicesRequests">
+            <File>Cocoa/Reference/ApplicationKit/Protocols/NSServicesRequests_Protocol/Reference/Reference.html</File>
+        </Protocol>
+		<Protocol name="NSSharingServiceDelegate">
+			<File>AppKit/Reference/NSSharingServiceDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSSharingService"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[Methods["SharingServiceSourceWindowForShareItemsSharingContentScope"].Parameters["sharingContentScope"].Type="NSSharingContentScope"]]></Change>
+				<Change><![CDATA[Methods["SharingServiceSourceWindowForShareItemsSharingContentScope"].Parameters["sharingContentScope"].IsByRef=true]]></Change>
+				<Change><![CDATA[Methods["SharingServiceTransitionImageForShareItemContentRect"].Parameters["contentRect"].Type="NSRect"]]></Change>
+				<Change><![CDATA[Methods["SharingServiceTransitionImageForShareItemContentRect"].Parameters["contentRect"].IsByRef=true]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSSharingServicePickerDelegate">
+			<File>AppKit/Reference/NSSharingServicePickerDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSSharingServicePicker"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSSoundDelegate">
+			<File>MusicAudio/Reference/NSSoundDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSSound"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSSpeechRecognizerDelegate">
+			<File>Cocoa/Reference/NSSpeechRecognizerDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSSpeechRecognizer"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSSpeechSynthesizerDelegate">
+			<File>Cocoa/Reference/NSSpeechSynthesizerDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSSpeechSynthesizer"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSSplitViewDelegate">
+			<File>Cocoa/Reference/NSSplitViewDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSSplitView"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+        <Protocol name="NSStackViewDelegate">
+            <File>AppKit/Reference/NSStackViewDelegate_Protocol/Chapters/Reference.html</File>
+        </Protocol>
+		<Protocol name="NSTableViewDataSource">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSTableDataSource_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSTableViewDelegate">
+			<File>Cocoa/Reference/NSTableViewDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[BaseType="NSControlTextEditingDelegate"]]></Change>
+				<Change><![CDATA[DelegateFor="NSTableView"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSTabViewDelegate">
+			<File>Cocoa/Reference/NSTabViewDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSTabView"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSTextAttachmentCell">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSTextAttachmentCell_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSTextDelegate">
+			<File>Cocoa/Reference/NSTextDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[BaseType="NSControlTextEditingDelegate"]]></Change>
+				<Change><![CDATA[DelegateFor="NSText"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSTextFieldDelegate">
+			<File>Cocoa/Reference/NSTextFieldDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSTextField"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSTextFinderBarContainer">
+			<File>AppKit/Reference/NSTextFinderBarContainer_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSTextFinderClient">
+			<File>AppKit/Reference/NSTextFinderClient_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[Methods["StringAtIndexEffectiveRangeEndsWithSearchBoundary"].Parameters["outFlag"].Type="bool"]]></Change>
+				<Change><![CDATA[Methods["StringAtIndexEffectiveRangeEndsWithSearchBoundary"].Parameters["outFlag"].IsOut=true]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSTextInput">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSTextInput_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSTextInputClient">
+			<File>Cocoa/Reference/NSTextInputClient_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSTextLayoutOrientationProvider">
+			<File>Cocoa/Reference/NSTextLayoutOrientationProvider_Protocol/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSTextStorageDelegate">
+			<File>Cocoa/Reference/NSTextStorageDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSTextStorage"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSTextViewDelegate">
+			<File>Cocoa/Reference/NSTextViewDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Html">
+				<Replace>
+					<Source><![CDATA[)<div class="declaration">]]></Source>
+					<With><![CDATA[)</p><div class="declaration">]]></With>
+				</Replace>
+			</Patch>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSTextView"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[Methods["TextViewCompletionsForPartialWordRangeIndexOfSelectedItem"].Parameters["index"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["TextViewCompletionsForPartialWordRangeIndexOfSelectedItem"].Parameters["index"].IsOut=true]]></Change>
+				<Change><![CDATA[Methods["TextViewWillCheckTextInRangeOptionsTypes"].Parameters["checkingTypes"].Type="NSTextCheckingTypes"]]></Change>
+				<Change><![CDATA[Methods["TextViewWillCheckTextInRangeOptionsTypes"].Parameters["checkingTypes"].IsByRef=true]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSTokenFieldCellDelegate">
+			<File>Cocoa/Reference/NSTokenFieldCellDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSTokenFieldCell"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[Methods["TokenFieldCellCompletionsForSubstringIndexOfTokenIndexOfSelectedItem"].Parameters["selectedIndex"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["TokenFieldCellCompletionsForSubstringIndexOfTokenIndexOfSelectedItem"].Parameters["selectedIndex"].IsOut=true]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSTokenFieldDelegate">
+			<File>Cocoa/Reference/NSTokenFieldDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSTokenField"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+				<Change><![CDATA[Methods["TokenFieldCompletionsForSubstringIndexOfTokenIndexOfSelectedItem"].Parameters["selectedIndex"].Type="NSInteger"]]></Change>
+				<Change><![CDATA[Methods["TokenFieldCompletionsForSubstringIndexOfTokenIndexOfSelectedItem"].Parameters["selectedIndex"].IsOut=true]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSToolbarDelegate">
+			<File>Cocoa/Reference/NSToolbarDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSToolbar"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSToolbarItemValidation">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSToolbarItemValidation_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSToolTipOwner">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSToolTipOwner_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSUserInterfaceItemIdentification">
+			<File>Cocoa/Reference/NSUserInterfaceItemIdentification_Protocol/Introduction/Introduction.html</File>
+		</Protocol>
+        <Protocol name="NSUserInterfaceItemSearchDataSource">
+            <File>Cocoa/Reference/NSUserInterfaceItemSearchDataSource_Protocol/Reference/Reference.html</File>
+        </Protocol>
+		<Protocol name="NSUserInterfaceItemSearching">
+			<File>AppKit/Reference/NSUserInterfaceItemSearching_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSUserInterfaceValidations">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSUserInterfaceValidations_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSValidatedUserInterfaceItem">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSValidatedUserInterfaceItem_Protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSWindowDelegate">
+			<File>Cocoa/Reference/NSWindowDelegate_Protocol/Reference/Reference.html</File>
+			<Patch type="Model">
+				<Change><![CDATA[DelegateFor="NSWindow"]]></Change>
+				<Change><![CDATA[DelegateProperty="Delegate"]]></Change>
+			</Patch>
+		</Protocol>
+		<Protocol name="NSWindowRestoration">
+			<File>AppKit/Reference/NSWindowRestoration_protocol/Reference/Reference.html</File>
+		</Protocol>
+		<Protocol name="NSWindowScripting">
+			<File>Cocoa/Reference/ApplicationKit/Protocols/NSWindowScripting_Protocol/Reference/Reference.html</File>
+		</Protocol>
+	</Protocols>
+	<Structures>
+	</Structures>
+	<Enumerations>
+        <Enumeration name="NSPaperOrientation">
+        </Enumeration>
+        <Enumeration name="NSTrackingAreaOptions">
+        </Enumeration>
+	</Enumerations>
+</Framework>

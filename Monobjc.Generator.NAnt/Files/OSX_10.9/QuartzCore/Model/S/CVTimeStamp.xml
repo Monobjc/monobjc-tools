@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure Generate="true">
+	<Name>CVTimeStamp</Name>
+	<Namespace>QuartzCore</Namespace>
+	<MixedType>CVTimeStamp,CVTimeStamp</MixedType>
+</Structure>

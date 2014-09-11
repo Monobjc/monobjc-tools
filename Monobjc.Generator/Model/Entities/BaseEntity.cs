@@ -18,7 +18,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Xml.Serialization;
+using Monobjc.Tools.Generator.Utilities;
 
 namespace Monobjc.Tools.Generator.Model
 {
@@ -59,6 +61,17 @@ namespace Monobjc.Tools.Generator.Model
 			set;
 		}
 
+        /// <summary>
+        /// Gets the minimum availability as version.
+        /// </summary>
+        /// <value>The minimum availability as version.</value>
+        [XmlIgnore]
+        public Version MinAvailabilityAsVersion {
+            get {
+                return AvailabilityHelper.GetVersion(this.MinAvailability, new Version(10, 0));
+            }
+        }
+
 		/// <summary>
 		///   Gets or sets the maximum availability.
 		/// </summary>
@@ -68,6 +81,17 @@ namespace Monobjc.Tools.Generator.Model
 			get;
 			set;
 		}
+
+        /// <summary>
+        /// Gets the max availability as version.
+        /// </summary>
+        /// <value>The max availability as version.</value>
+        [XmlIgnore]
+        public Version MaxAvailabilityAsVersion {
+            get {
+                return AvailabilityHelper.GetVersion(this.MaxAvailability, new Version(Int16.MaxValue, Int16.MaxValue));
+            }
+        }
 
 		/// <summary>
 		///   Gets or sets the obsolete attribute content.
@@ -123,22 +147,16 @@ namespace Monobjc.Tools.Generator.Model
 		/// </summary>
 		public void AdjustAvailability ()
 		{
-			String minAvailability = String.IsNullOrEmpty(this.MinAvailability) ? "VERSION" : this.MinAvailability;
-			String maxAvailability = String.IsNullOrEmpty(this.MaxAvailability) ? "VERSION" : this.MaxAvailability;
+            String minAvailability = this.MinAvailability ?? String.Empty;
+            Version minAvailabilityVersion = this.MinAvailabilityAsVersion;
 
 			foreach (BaseEntity value in this.Children.Where(c => c.Generate)) {
-				string valueMinAvailability = value.MinAvailability ?? String.Empty;
-				if (String.Compare (valueMinAvailability, minAvailability) < 0) {
-					minAvailability = valueMinAvailability;
-				}
-				string valueMaxAvailability = value.MaxAvailability ?? String.Empty;
-				if (String.Compare (valueMaxAvailability, maxAvailability) > 0) {
-					maxAvailability = valueMaxAvailability;
-				}
+                if (value.MinAvailabilityAsVersion.IsLowerThan(minAvailabilityVersion)) {
+                    minAvailability = value.MinAvailability ?? String.Empty;
+                }
 			}
 
 			this.MinAvailability = minAvailability;
-			this.MaxAvailability = maxAvailability;
 		}
 
 		/// <summary>
