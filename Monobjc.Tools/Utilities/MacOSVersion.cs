@@ -46,5 +46,9 @@ namespace Monobjc.Tools.Utilities
         ///   Target for Mac OS X 10.9
         /// </summary>
         MacOS109,
+        /// <summary>
+        ///   Target for Mac OS X 10.10
+        /// </summary>
+        MacOS1010,
     }
 }

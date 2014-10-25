@@ -35,6 +35,7 @@ namespace Monobjc.Tools.Utilities
 				{ MacOSVersion.MacOS107, "monobjc-10.7" },
                 { MacOSVersion.MacOS108, "monobjc-10.8" },
                 { MacOSVersion.MacOS109, "monobjc-10.9" },
+                { MacOSVersion.MacOS1010, "monobjc-10.10" },
 			};
 
 			String result = null;
